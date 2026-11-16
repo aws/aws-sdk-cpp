@@ -34,6 +34,11 @@ class GetRecordsRequest : public DynamoDBStreamsRequest {
 
   AWS_DYNAMODBSTREAMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  /**
+   * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+   */
+  AWS_DYNAMODBSTREAMS_API EndpointParameters GetEndpointContextParams() const override;
+
   ///@{
   /**
    * <p>A shard iterator that was retrieved from a previous GetShardIterator

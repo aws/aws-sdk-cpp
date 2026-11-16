@@ -17,8 +17,16 @@
 #include <aws/health/HealthWaiter.h>
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/health/internal/HealthEndpointRules.h>
+#include <aws/health/model/AccountEntity.h>
 #include <aws/health/model/AccountEntityAggregate.h>
+#include <aws/health/model/AccountTag.h>
+#include <aws/health/model/AccountTagType.h>
+#include <aws/health/model/AffectedAccountFilter.h>
 #include <aws/health/model/AffectedEntity.h>
+#include <aws/health/model/ConfigureTagsForOrganizationRequest.h>
+#include <aws/health/model/ConfigureTagsForOrganizationResult.h>
+#include <aws/health/model/ConfigureTagsRequest.h>
+#include <aws/health/model/ConfigureTagsResult.h>
 #include <aws/health/model/DateTimeRange.h>
 #include <aws/health/model/DescribeAffectedAccountsForOrganizationPaginationTraits.h>
 #include <aws/health/model/DescribeAffectedAccountsForOrganizationRequest.h>
@@ -54,10 +62,30 @@
 #include <aws/health/model/DescribeServiceLifecyclePaginationTraits.h>
 #include <aws/health/model/DescribeServiceLifecycleRequest.h>
 #include <aws/health/model/DescribeServiceLifecycleResult.h>
+#include <aws/health/model/DescribeTagKeysForOrganizationRequest.h>
+#include <aws/health/model/DescribeTagKeysForOrganizationResult.h>
+#include <aws/health/model/DescribeTagKeysRequest.h>
+#include <aws/health/model/DescribeTagKeysResult.h>
+#include <aws/health/model/DescribeTagsForOrganizationFilter.h>
+#include <aws/health/model/DescribeTagsForOrganizationPaginationTraits.h>
+#include <aws/health/model/DescribeTagsForOrganizationRequest.h>
+#include <aws/health/model/DescribeTagsForOrganizationResult.h>
+#include <aws/health/model/DescribeTagsOnboardingStatusForOrganizationRequest.h>
+#include <aws/health/model/DescribeTagsOnboardingStatusForOrganizationResult.h>
+#include <aws/health/model/DescribeTagsOnboardingStatusRequest.h>
+#include <aws/health/model/DescribeTagsOnboardingStatusResult.h>
+#include <aws/health/model/DescribeTagsPaginationTraits.h>
+#include <aws/health/model/DescribeTagsRequest.h>
+#include <aws/health/model/DescribeTagsResult.h>
 #include <aws/health/model/DisableHealthServiceAccessForOrganizationRequest.h>
+#include <aws/health/model/DisableTagsForOrganizationRequest.h>
+#include <aws/health/model/DisableTagsRequest.h>
 #include <aws/health/model/EnableHealthServiceAccessForOrganizationRequest.h>
+#include <aws/health/model/EnableTagsForOrganizationRequest.h>
+#include <aws/health/model/EnableTagsRequest.h>
 #include <aws/health/model/EntityAccountFilter.h>
 #include <aws/health/model/EntityAggregate.h>
+#include <aws/health/model/EntityAggregateFilter.h>
 #include <aws/health/model/EntityFilter.h>
 #include <aws/health/model/EntityStatusCode.h>
 #include <aws/health/model/Event.h>
@@ -78,12 +106,19 @@
 #include <aws/health/model/LifecycleEvent.h>
 #include <aws/health/model/OrganizationAffectedEntitiesErrorItem.h>
 #include <aws/health/model/OrganizationEntityAggregate.h>
+#include <aws/health/model/OrganizationEntityAggregateFilter.h>
 #include <aws/health/model/OrganizationEvent.h>
 #include <aws/health/model/OrganizationEventDetails.h>
 #include <aws/health/model/OrganizationEventDetailsErrorItem.h>
 #include <aws/health/model/OrganizationEventFilter.h>
+#include <aws/health/model/OrganizationTag.h>
+#include <aws/health/model/OrganizationTagType.h>
 #include <aws/health/model/ServiceLifecycle.h>
 #include <aws/health/model/ServiceLifecycleFilter.h>
+#include <aws/health/model/TagKeyForOrganization.h>
+#include <aws/health/model/TagKeyStatus.h>
+#include <aws/health/model/TagsOnboardingStatus.h>
+#include <aws/health/model/TagsOnboardingStatusForOrganization.h>
 
 using HealthIncludeTest = ::testing::Test;
 

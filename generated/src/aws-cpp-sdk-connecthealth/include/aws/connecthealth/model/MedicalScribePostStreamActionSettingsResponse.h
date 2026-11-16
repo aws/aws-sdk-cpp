@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connecthealth/ConnectHealth_EXPORTS.h>
 #include <aws/connecthealth/model/ClinicalNoteGenerationSettingsResponse.h>
+#include <aws/connecthealth/model/MedicalCodeGenerationSettingsResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -70,12 +71,34 @@ class MedicalScribePostStreamActionSettingsResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Settings for medical code generation. Returned only if you specified
+   * medicalCodeGenerationSettings when you started the session.</p>
+   */
+  inline const MedicalCodeGenerationSettingsResponse& GetMedicalCodeGenerationSettings() const { return m_medicalCodeGenerationSettings; }
+  inline bool MedicalCodeGenerationSettingsHasBeenSet() const { return m_medicalCodeGenerationSettingsHasBeenSet; }
+  template <typename MedicalCodeGenerationSettingsT = MedicalCodeGenerationSettingsResponse>
+  void SetMedicalCodeGenerationSettings(MedicalCodeGenerationSettingsT&& value) {
+    m_medicalCodeGenerationSettingsHasBeenSet = true;
+    m_medicalCodeGenerationSettings = std::forward<MedicalCodeGenerationSettingsT>(value);
+  }
+  template <typename MedicalCodeGenerationSettingsT = MedicalCodeGenerationSettingsResponse>
+  MedicalScribePostStreamActionSettingsResponse& WithMedicalCodeGenerationSettings(MedicalCodeGenerationSettingsT&& value) {
+    SetMedicalCodeGenerationSettings(std::forward<MedicalCodeGenerationSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_outputS3Uri;
 
   ClinicalNoteGenerationSettingsResponse m_clinicalNoteGenerationSettings;
+
+  MedicalCodeGenerationSettingsResponse m_medicalCodeGenerationSettings;
   bool m_outputS3UriHasBeenSet = false;
   bool m_clinicalNoteGenerationSettingsHasBeenSet = false;
+  bool m_medicalCodeGenerationSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

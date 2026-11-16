@@ -2512,6 +2512,38 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes all active sessions for the specified entity in the specified Connect
+   * Customer instance. The operation supports only the <code>USER</code> entity
+   * type, so you can use it to sign out all of a user's active sessions. Use it when
+   * you need to end a user's access right away, for example when they leave your
+   * organization or you suspect that their credentials are
+   * compromised.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteAllEntitySessions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAllEntitySessionsOutcome DeleteAllEntitySessions(const Model::DeleteAllEntitySessionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAllEntitySessions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteAllEntitySessionsRequestT = Model::DeleteAllEntitySessionsRequest>
+  Model::DeleteAllEntitySessionsOutcomeCallable DeleteAllEntitySessionsCallable(const DeleteAllEntitySessionsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteAllEntitySessions, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAllEntitySessions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteAllEntitySessionsRequestT = Model::DeleteAllEntitySessionsRequest>
+  void DeleteAllEntitySessionsAsync(const DeleteAllEntitySessionsRequestT& request,
+                                    const DeleteAllEntitySessionsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteAllEntitySessions, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an attached file along with the underlying S3 Object.</p>
    * <p>The attached file is <b>permanently deleted</b> if S3 bucket versioning is
    * not enabled.</p> <p><h3>See Also:</h3>   <a

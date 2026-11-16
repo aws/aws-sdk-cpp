@@ -138,25 +138,25 @@ class EntityFilter {
 
   ///@{
   /**
-   * <p>A map of entity tags attached to the affected entity.</p>
+   * <p>A map of resource tag key-value pairs to filter affected entities.</p>
    * <p>Currently, the <code>tags</code> property isn't supported.</p>
    */
-  inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetTags() const { return m_tags; }
+  inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-  template <typename TagsT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+  template <typename TagsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
   void SetTags(TagsT&& value) {
     m_tagsHasBeenSet = true;
     m_tags = std::forward<TagsT>(value);
   }
-  template <typename TagsT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+  template <typename TagsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
   EntityFilter& WithTags(TagsT&& value) {
     SetTags(std::forward<TagsT>(value));
     return *this;
   }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  EntityFilter& AddTags(TagsT&& value) {
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::Vector<Aws::String>>
+  EntityFilter& AddTags(TagsKeyT&& key, TagsValueT&& value) {
     m_tagsHasBeenSet = true;
-    m_tags.emplace_back(std::forward<TagsT>(value));
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
     return *this;
   }
   ///@}
@@ -193,7 +193,7 @@ class EntityFilter {
 
   Aws::Vector<DateTimeRange> m_lastUpdatedTimes;
 
-  Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_tags;
+  Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_tags;
 
   Aws::Vector<EntityStatusCode> m_statusCodes;
   bool m_eventArnsHasBeenSet = false;

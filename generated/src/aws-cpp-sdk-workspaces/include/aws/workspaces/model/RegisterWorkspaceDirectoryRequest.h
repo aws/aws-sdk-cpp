@@ -13,6 +13,7 @@
 #include <aws/workspaces/model/Tag.h>
 #include <aws/workspaces/model/Tenancy.h>
 #include <aws/workspaces/model/UserIdentityType.h>
+#include <aws/workspaces/model/WorkspaceOSUserMode.h>
 #include <aws/workspaces/model/WorkspaceType.h>
 
 #include <utility>
@@ -204,6 +205,24 @@ class RegisterWorkspaceDirectoryRequest : public WorkSpacesRequest {
 
   ///@{
   /**
+   * <p>Indicates how users are set up on the WorkSpace operating system. To use
+   * local users with an AWS IAM Identity Center directory, specify
+   * <code>LOCAL_USER</code>.</p>
+   */
+  inline WorkspaceOSUserMode GetWorkspaceOsUserMode() const { return m_workspaceOsUserMode; }
+  inline bool WorkspaceOsUserModeHasBeenSet() const { return m_workspaceOsUserModeHasBeenSet; }
+  inline void SetWorkspaceOsUserMode(WorkspaceOSUserMode value) {
+    m_workspaceOsUserModeHasBeenSet = true;
+    m_workspaceOsUserMode = value;
+  }
+  inline RegisterWorkspaceDirectoryRequest& WithWorkspaceOsUserMode(WorkspaceOSUserMode value) {
+    SetWorkspaceOsUserMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
    */
   inline const Aws::String& GetIdcInstanceArn() const { return m_idcInstanceArn; }
@@ -288,6 +307,8 @@ class RegisterWorkspaceDirectoryRequest : public WorkSpacesRequest {
 
   UserIdentityType m_userIdentityType{UserIdentityType::NOT_SET};
 
+  WorkspaceOSUserMode m_workspaceOsUserMode{WorkspaceOSUserMode::NOT_SET};
+
   Aws::String m_idcInstanceArn;
 
   MicrosoftEntraConfig m_microsoftEntraConfig;
@@ -303,6 +324,7 @@ class RegisterWorkspaceDirectoryRequest : public WorkSpacesRequest {
   bool m_workspaceDirectoryNameHasBeenSet = false;
   bool m_workspaceDirectoryDescriptionHasBeenSet = false;
   bool m_userIdentityTypeHasBeenSet = false;
+  bool m_workspaceOsUserModeHasBeenSet = false;
   bool m_idcInstanceArnHasBeenSet = false;
   bool m_microsoftEntraConfigHasBeenSet = false;
   bool m_workspaceTypeHasBeenSet = false;

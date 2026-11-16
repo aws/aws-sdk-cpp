@@ -58,7 +58,9 @@ class StartAgentRecommendationGenerationRequest : public WellArchitectedRequest 
 
   ///@{
   /**
-   * <p>The types of recommendations to generate.</p>
+   * <p>The types of recommendations to generate. You can specify up to two types in
+   * a single request. Currently, only <code>ARCHITECTURE</code> is supported for
+   * this operation.</p>
    */
   inline const Aws::Vector<RecommendationType>& GetTypes() const { return m_types; }
   inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
@@ -81,8 +83,10 @@ class StartAgentRecommendationGenerationRequest : public WellArchitectedRequest 
 
   ///@{
   /**
-   * <p>An optional name for this generation process to help identify it in lists and
-   * logs.</p>
+   * <p>An optional name for this generation that identifies the architecture review
+   * in the console and in <code>ListAgentRecommendationGenerations</code> results.
+   * Applies to <code>ARCHITECTURE</code> type only. Must be absent for other
+   * types.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -100,8 +104,16 @@ class StartAgentRecommendationGenerationRequest : public WellArchitectedRequest 
 
   ///@{
   /**
-   * <p>Optional additional context to guide the recommendation generation, such as
-   * specific business requirements or constraints.</p>
+   * <p>The location of the infrastructure as code (IaC) template to review, and the
+   * lenses to review it against. Required for the <code>ARCHITECTURE</code> type.
+   * Must be absent for other types. Specify a JSON object with the following
+   * members:</p> <ul> <li> <p> <code>s3Uri</code>: The Amazon S3 URI of the IaC
+   * template, .zip archive, or folder to review.</p> </li> <li> <p>
+   * <code>s3VersionId</code>: The version ID of the Amazon S3 object. If you omit
+   * this member, the current version is used.</p> </li> <li> <p>
+   * <code>lensArns</code>: The ARNs of the lenses to review against. Only
+   * <code>arn:aws:wellarchitected::aws:lens/wellarchitected</code> is supported.</p>
+   * </li> </ul>
    */
   inline Aws::Utils::DocumentView GetAdditionalContext() const { return m_additionalContext; }
   inline bool AdditionalContextHasBeenSet() const { return m_additionalContextHasBeenSet; }
@@ -119,7 +131,8 @@ class StartAgentRecommendationGenerationRequest : public WellArchitectedRequest 
 
   ///@{
   /**
-   * <p>Scope configuration to focus the generation on specific pillars or goals.</p>
+   * <p>Defines which pillars, goals, and items the review covers. Required for the
+   * <code>ARCHITECTURE</code> type. Must be absent for other types.</p>
    */
   inline const Scope& GetScope() const { return m_scope; }
   inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }

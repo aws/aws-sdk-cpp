@@ -228,6 +228,8 @@
 #include <aws/cognito-idp/model/GetCSVHeaderResult.h>
 #include <aws/cognito-idp/model/GetClientTokenRequest.h>
 #include <aws/cognito-idp/model/GetClientTokenResult.h>
+#include <aws/cognito-idp/model/GetDerivedTokenRequest.h>
+#include <aws/cognito-idp/model/GetDerivedTokenResult.h>
 #include <aws/cognito-idp/model/GetDeviceRequest.h>
 #include <aws/cognito-idp/model/GetDeviceResult.h>
 #include <aws/cognito-idp/model/GetGroupRequest.h>
@@ -267,6 +269,7 @@
 #include <aws/cognito-idp/model/InitiateAuthRequest.h>
 #include <aws/cognito-idp/model/InitiateAuthResult.h>
 #include <aws/cognito-idp/model/InvalidParameterException.h>
+#include <aws/cognito-idp/model/IssuedTokenTypeIdentifierType.h>
 #include <aws/cognito-idp/model/IssuerConfigurationType.h>
 #include <aws/cognito-idp/model/IssuerType.h>
 #include <aws/cognito-idp/model/KeyConfigurationType.h>
@@ -323,6 +326,7 @@
 #include <aws/cognito-idp/model/NotifyEmailType.h>
 #include <aws/cognito-idp/model/NumberAttributeConstraintsType.h>
 #include <aws/cognito-idp/model/OAuthFlowType.h>
+#include <aws/cognito-idp/model/OAuthTokenTypeType.h>
 #include <aws/cognito-idp/model/PasswordHashingAlgorithmType.h>
 #include <aws/cognito-idp/model/PasswordPolicyType.h>
 #include <aws/cognito-idp/model/PreTokenGenerationLambdaVersionType.h>
@@ -397,6 +401,7 @@
 #include <aws/cognito-idp/model/TermsSourceType.h>
 #include <aws/cognito-idp/model/TermsType.h>
 #include <aws/cognito-idp/model/TimeUnitsType.h>
+#include <aws/cognito-idp/model/TokenTypeIdentifierType.h>
 #include <aws/cognito-idp/model/TokenValidityUnitsType.h>
 #include <aws/cognito-idp/model/UICustomizationType.h>
 #include <aws/cognito-idp/model/UntagResourceRequest.h>

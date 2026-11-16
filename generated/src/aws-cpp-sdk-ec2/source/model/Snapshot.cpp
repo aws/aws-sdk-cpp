@@ -91,6 +91,17 @@ Snapshot& Snapshot::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fullSnapshotSizeInBytesNode.GetText()).c_str()).c_str());
       m_fullSnapshotSizeInBytesHasBeenSet = true;
     }
+    XmlNode associatedKmsKeysNode = resultNode.FirstChild("associatedKmsKeySet");
+    if (!associatedKmsKeysNode.IsNull()) {
+      XmlNode associatedKmsKeysMember = associatedKmsKeysNode.FirstChild("item");
+      m_associatedKmsKeysHasBeenSet = !associatedKmsKeysMember.IsNull();
+      while (!associatedKmsKeysMember.IsNull()) {
+        m_associatedKmsKeys.push_back(associatedKmsKeysMember);
+        associatedKmsKeysMember = associatedKmsKeysMember.NextNode("item");
+      }
+
+      m_associatedKmsKeysHasBeenSet = true;
+    }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if (!snapshotIdNode.IsNull()) {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
@@ -216,6 +227,15 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
     oStream << location << index << locationValue << ".FullSnapshotSizeInBytes=" << m_fullSnapshotSizeInBytes << "&";
   }
 
+  if (m_associatedKmsKeysHasBeenSet) {
+    unsigned associatedKmsKeysIdx = 1;
+    for (auto& item : m_associatedKmsKeys) {
+      Aws::StringStream associatedKmsKeysSs;
+      associatedKmsKeysSs << location << index << locationValue << ".AssociatedKmsKeySet." << associatedKmsKeysIdx++;
+      item.OutputToStream(oStream, associatedKmsKeysSs.str().c_str());
+    }
+  }
+
   if (m_snapshotIdHasBeenSet) {
     oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
@@ -313,6 +333,14 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if (m_fullSnapshotSizeInBytesHasBeenSet) {
     oStream << location << ".FullSnapshotSizeInBytes=" << m_fullSnapshotSizeInBytes << "&";
+  }
+  if (m_associatedKmsKeysHasBeenSet) {
+    unsigned associatedKmsKeysIdx = 1;
+    for (auto& item : m_associatedKmsKeys) {
+      Aws::StringStream associatedKmsKeysSs;
+      associatedKmsKeysSs << location << ".AssociatedKmsKeySet." << associatedKmsKeysIdx++;
+      item.OutputToStream(oStream, associatedKmsKeysSs.str().c_str());
+    }
   }
   if (m_snapshotIdHasBeenSet) {
     oStream << location << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";

@@ -47,6 +47,7 @@
 #include <aws/ec2/model/AssociateInstanceEventWindowRequest.h>
 #include <aws/ec2/model/AssociateIpamByoasnRequest.h>
 #include <aws/ec2/model/AssociateIpamResourceDiscoveryRequest.h>
+#include <aws/ec2/model/AssociateKmsKeyIdRequest.h>
 #include <aws/ec2/model/AssociateNatGatewayAddressRequest.h>
 #include <aws/ec2/model/AssociateNetworkingFlexCostAllocationPolicyRequest.h>
 #include <aws/ec2/model/AssociateRouteServerRequest.h>
@@ -118,7 +119,6 @@
 #include <aws/ec2/model/CreateIpamInternetRegistryAssociationRequest.h>
 #include <aws/ec2/model/CreateIpamPolicyRequest.h>
 #include <aws/ec2/model/CreateIpamPoolRequest.h>
-#include <aws/ec2/model/CreateIpamPrefixListResolverRequest.h>
 #include <aws/ec2/model/CreateIpamRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -442,6 +442,12 @@ AssociateIpamResourceDiscoveryOutcome EC2Client::AssociateIpamResourceDiscovery(
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AssociateIpamResourceDiscoveryOutcome(result.GetResultWithOwnership())
                             : AssociateIpamResourceDiscoveryOutcome(std::move(result.GetError()));
+}
+
+AssociateKmsKeyIdOutcome EC2Client::AssociateKmsKeyId(const AssociateKmsKeyIdRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateKmsKeyIdOutcome(result.GetResultWithOwnership())
+                            : AssociateKmsKeyIdOutcome(std::move(result.GetError()));
 }
 
 AssociateNatGatewayAddressOutcome EC2Client::AssociateNatGatewayAddress(const AssociateNatGatewayAddressRequest& request) const {
@@ -895,10 +901,4 @@ CreateIpamPolicyOutcome EC2Client::CreateIpamPolicy(const CreateIpamPolicyReques
 CreateIpamPoolOutcome EC2Client::CreateIpamPool(const CreateIpamPoolRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateIpamPoolOutcome(result.GetResultWithOwnership()) : CreateIpamPoolOutcome(std::move(result.GetError()));
-}
-
-CreateIpamPrefixListResolverOutcome EC2Client::CreateIpamPrefixListResolver(const CreateIpamPrefixListResolverRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateIpamPrefixListResolverOutcome(result.GetResultWithOwnership())
-                            : CreateIpamPrefixListResolverOutcome(std::move(result.GetError()));
 }

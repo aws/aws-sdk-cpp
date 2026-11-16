@@ -59,5 +59,9 @@ Aws::String StartJobRunRequest::SerializePayload() const {
     payload.WithObject("retryPolicy", m_retryPolicy.Jsonize());
   }
 
+  if (m_flexExecutionHasBeenSet) {
+    payload.WithObject("flexExecution", m_flexExecution.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

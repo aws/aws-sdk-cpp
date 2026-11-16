@@ -22,6 +22,10 @@ EncounterContext& EncounterContext::operator=(JsonView jsonValue) {
     m_unstructuredContext = jsonValue.GetString("unstructuredContext");
     m_unstructuredContextHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("medicalCodingContext")) {
+    m_medicalCodingContext = jsonValue.GetObject("medicalCodingContext");
+    m_medicalCodingContextHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue EncounterContext::Jsonize() const {
 
   if (m_unstructuredContextHasBeenSet) {
     payload.WithString("unstructuredContext", m_unstructuredContext);
+  }
+
+  if (m_medicalCodingContextHasBeenSet) {
+    payload.WithObject("medicalCodingContext", m_medicalCodingContext.Jsonize());
   }
 
   return payload;

@@ -53,6 +53,18 @@ Aws::String QueryVectorsRequest::SerializePayload() const {
     payload.WithBool("returnDistance", m_returnDistance);
   }
 
+  if (m_queryTextsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> queryTextsJsonList(m_queryTexts.size());
+    for (unsigned queryTextsIndex = 0; queryTextsIndex < queryTextsJsonList.GetLength(); ++queryTextsIndex) {
+      queryTextsJsonList[queryTextsIndex].AsObject(m_queryTexts[queryTextsIndex].Jsonize());
+    }
+    payload.WithArray("queryTexts", std::move(queryTextsJsonList));
+  }
+
+  if (m_returnScoresHasBeenSet) {
+    payload.WithBool("returnScores", m_returnScores);
+  }
+
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
   }

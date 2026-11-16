@@ -20,12 +20,14 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/DeleteContextRequest.h>
 #include <aws/sagemaker/model/DeleteDataQualityJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DeleteDeviceFleetRequest.h>
 #include <aws/sagemaker/model/DeleteDomainRequest.h>
 #include <aws/sagemaker/model/DeleteEdgeDeploymentPlanRequest.h>
 #include <aws/sagemaker/model/DeleteEdgeDeploymentStageRequest.h>
 #include <aws/sagemaker/model/DeleteEndpointConfigRequest.h>
+#include <aws/sagemaker/model/DeleteEndpointPolicyRequest.h>
 #include <aws/sagemaker/model/DeleteEndpointRequest.h>
 #include <aws/sagemaker/model/DeleteExperimentRequest.h>
 #include <aws/sagemaker/model/DeleteFeatureGroupRequest.h>
@@ -39,6 +41,7 @@
 #include <aws/sagemaker/model/DeleteImageVersionRequest.h>
 #include <aws/sagemaker/model/DeleteInferenceComponentRequest.h>
 #include <aws/sagemaker/model/DeleteInferenceExperimentRequest.h>
+#include <aws/sagemaker/model/DeleteInferenceRouterRequest.h>
 #include <aws/sagemaker/model/DeleteJobRequest.h>
 #include <aws/sagemaker/model/DeleteMlflowAppRequest.h>
 #include <aws/sagemaker/model/DeleteMlflowTrackingServerRequest.h>
@@ -110,16 +113,13 @@
 #include <aws/sagemaker/model/DescribeInferenceComponentRequest.h>
 #include <aws/sagemaker/model/DescribeInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/DescribeInferenceRecommendationsJobRequest.h>
+#include <aws/sagemaker/model/DescribeInferenceRouterRequest.h>
 #include <aws/sagemaker/model/DescribeJobRequest.h>
 #include <aws/sagemaker/model/DescribeJobSchemaVersionRequest.h>
 #include <aws/sagemaker/model/DescribeLabelingJobRequest.h>
 #include <aws/sagemaker/model/DescribeLineageGroupRequest.h>
 #include <aws/sagemaker/model/DescribeMlflowAppRequest.h>
 #include <aws/sagemaker/model/DescribeMlflowTrackingServerRequest.h>
-#include <aws/sagemaker/model/DescribeModelBiasJobDefinitionRequest.h>
-#include <aws/sagemaker/model/DescribeModelCardExportJobRequest.h>
-#include <aws/sagemaker/model/DescribeModelCardRequest.h>
-#include <aws/sagemaker/model/DescribeModelRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,11 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteContextOutcome SageMakerClient::DeleteContext(const DeleteContextRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteContextOutcome(result.GetResultWithOwnership()) : DeleteContextOutcome(std::move(result.GetError()));
+}
 
 DeleteDataQualityJobDefinitionOutcome SageMakerClient::DeleteDataQualityJobDefinition(
     const DeleteDataQualityJobDefinitionRequest& request) const {
@@ -171,6 +176,12 @@ DeleteEndpointConfigOutcome SageMakerClient::DeleteEndpointConfig(const DeleteEn
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteEndpointConfigOutcome(result.GetResultWithOwnership())
                             : DeleteEndpointConfigOutcome(std::move(result.GetError()));
+}
+
+DeleteEndpointPolicyOutcome SageMakerClient::DeleteEndpointPolicy(const DeleteEndpointPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEndpointPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteEndpointPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteExperimentOutcome SageMakerClient::DeleteExperiment(const DeleteExperimentRequest& request) const {
@@ -242,6 +253,12 @@ DeleteInferenceExperimentOutcome SageMakerClient::DeleteInferenceExperiment(cons
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteInferenceExperimentOutcome(result.GetResultWithOwnership())
                             : DeleteInferenceExperimentOutcome(std::move(result.GetError()));
+}
+
+DeleteInferenceRouterOutcome SageMakerClient::DeleteInferenceRouter(const DeleteInferenceRouterRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInferenceRouterOutcome(result.GetResultWithOwnership())
+                            : DeleteInferenceRouterOutcome(std::move(result.GetError()));
 }
 
 DeleteJobOutcome SageMakerClient::DeleteJob(const DeleteJobRequest& request) const {
@@ -665,6 +682,12 @@ DescribeInferenceRecommendationsJobOutcome SageMakerClient::DescribeInferenceRec
                             : DescribeInferenceRecommendationsJobOutcome(std::move(result.GetError()));
 }
 
+DescribeInferenceRouterOutcome SageMakerClient::DescribeInferenceRouter(const DescribeInferenceRouterRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInferenceRouterOutcome(result.GetResultWithOwnership())
+                            : DescribeInferenceRouterOutcome(std::move(result.GetError()));
+}
+
 DescribeJobOutcome SageMakerClient::DescribeJob(const DescribeJobRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeJobOutcome(result.GetResultWithOwnership()) : DescribeJobOutcome(std::move(result.GetError()));
@@ -699,28 +722,4 @@ DescribeMlflowTrackingServerOutcome SageMakerClient::DescribeMlflowTrackingServe
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeMlflowTrackingServerOutcome(result.GetResultWithOwnership())
                             : DescribeMlflowTrackingServerOutcome(std::move(result.GetError()));
-}
-
-DescribeModelOutcome SageMakerClient::DescribeModel(const DescribeModelRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeModelOutcome(result.GetResultWithOwnership()) : DescribeModelOutcome(std::move(result.GetError()));
-}
-
-DescribeModelBiasJobDefinitionOutcome SageMakerClient::DescribeModelBiasJobDefinition(
-    const DescribeModelBiasJobDefinitionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeModelBiasJobDefinitionOutcome(result.GetResultWithOwnership())
-                            : DescribeModelBiasJobDefinitionOutcome(std::move(result.GetError()));
-}
-
-DescribeModelCardOutcome SageMakerClient::DescribeModelCard(const DescribeModelCardRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeModelCardOutcome(result.GetResultWithOwnership())
-                            : DescribeModelCardOutcome(std::move(result.GetError()));
-}
-
-DescribeModelCardExportJobOutcome SageMakerClient::DescribeModelCardExportJob(const DescribeModelCardExportJobRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeModelCardExportJobOutcome(result.GetResultWithOwnership())
-                            : DescribeModelCardExportJobOutcome(std::move(result.GetError()));
 }

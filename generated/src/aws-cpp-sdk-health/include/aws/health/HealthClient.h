@@ -20,13 +20,17 @@ namespace Health {
  * information that appears in the <a
  * href="https://health.aws.amazon.com/health/home">Health Dashboard</a>. You can
  * use the API operations to get information about events that might affect your
- * Amazon Web Services services and resources.</p> <p>You must have a Business,
- * Enterprise On-Ramp, or Enterprise Support plan from <a
+ * Amazon Web Services services and resources.</p> <p>You must have an Amazon Web
+ * Services Business Support+, Amazon Web Services Enterprise Support, or Amazon
+ * Web Services Unified Operations plan from <a
  * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to
- * use the Health API. If you call the Health API from an Amazon Web Services
- * account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support
- * plan, you receive a <code>SubscriptionRequiredException</code> error.</p> <p>For
- * API access, you need an access key ID and a secret access key. Use temporary
+ * use the Health API. If you're in an Amazon Web Services Region that doesn't
+ * offer one of these Amazon Web Services Support plans, or if you haven't
+ * transitioned to one of these plans, you can use the Health API with a Business,
+ * Enterprise On-Ramp, or Enterprise Support plan. If you call the Health API from
+ * an Amazon Web Services account that isn't enrolled in one of these plans, then
+ * you receive a <code>SubscriptionRequiredException</code> error.</p> <p>For API
+ * access, you need an access key ID and a secret access key. Use temporary
  * credentials instead of long-term access keys when possible. Temporary
  * credentials include an access key ID, a secret access key, and a security token
  * that indicates when the credentials expire. For more information, see <a
@@ -118,6 +122,66 @@ class AWS_HEALTH_API HealthClient : public Aws::Client::AWSRpcV2CborClient,
 
   /* End of legacy constructors due deprecation */
   virtual ~HealthClient();
+
+  /**
+   * <p>Configures which resource tag keys are tracked by Health for your account.
+   * This operation replaces the existing configuration with the specified tag keys.
+   * Only configured tag keys will appear in Health event data.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/ConfigureTags">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ConfigureTagsOutcome ConfigureTags(const Model::ConfigureTagsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ConfigureTags that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ConfigureTagsRequestT = Model::ConfigureTagsRequest>
+  Model::ConfigureTagsOutcomeCallable ConfigureTagsCallable(const ConfigureTagsRequestT& request) const {
+    return SubmitCallable(&HealthClient::ConfigureTags, request);
+  }
+
+  /**
+   * An Async wrapper for ConfigureTags that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ConfigureTagsRequestT = Model::ConfigureTagsRequest>
+  void ConfigureTagsAsync(const ConfigureTagsRequestT& request, const ConfigureTagsResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthClient::ConfigureTags, request, handler, context);
+  }
+
+  /**
+   * <p>Configures which tag keys are tracked by Health for all accounts in your
+   * organization. This operation replaces the existing configuration with the
+   * specified tag keys. Only configured tag keys will appear in Health event data
+   * across the organization.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/ConfigureTagsForOrganization">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ConfigureTagsForOrganizationOutcome ConfigureTagsForOrganization(
+      const Model::ConfigureTagsForOrganizationRequest& request) const;
+
+  /**
+   * A Callable wrapper for ConfigureTagsForOrganization that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ConfigureTagsForOrganizationRequestT = Model::ConfigureTagsForOrganizationRequest>
+  Model::ConfigureTagsForOrganizationOutcomeCallable ConfigureTagsForOrganizationCallable(
+      const ConfigureTagsForOrganizationRequestT& request) const {
+    return SubmitCallable(&HealthClient::ConfigureTagsForOrganization, request);
+  }
+
+  /**
+   * An Async wrapper for ConfigureTagsForOrganization that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ConfigureTagsForOrganizationRequestT = Model::ConfigureTagsForOrganizationRequest>
+  void ConfigureTagsForOrganizationAsync(const ConfigureTagsForOrganizationRequestT& request,
+                                         const ConfigureTagsForOrganizationResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&HealthClient::ConfigureTagsForOrganization, request, handler, context);
+  }
 
   /**
    * <p>Returns a list of accounts in the organization from Organizations that are
@@ -624,6 +688,181 @@ class AWS_HEALTH_API HealthClient : public Aws::Client::AWSRpcV2CborClient,
   }
 
   /**
+   * <p>Returns the list of resource tag keys configured for Health event tracking in
+   * your account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagKeys">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTagKeysOutcome DescribeTagKeys(const Model::DescribeTagKeysRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeTagKeys that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeTagKeysRequestT = Model::DescribeTagKeysRequest>
+  Model::DescribeTagKeysOutcomeCallable DescribeTagKeysCallable(const DescribeTagKeysRequestT& request = {}) const {
+    return SubmitCallable(&HealthClient::DescribeTagKeys, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTagKeys that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeTagKeysRequestT = Model::DescribeTagKeysRequest>
+  void DescribeTagKeysAsync(const DescribeTagKeysResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                            const DescribeTagKeysRequestT& request = {}) const {
+    return SubmitAsync(&HealthClient::DescribeTagKeys, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the list of tag keys configured for Health event tracking across your
+   * organization.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagKeysForOrganization">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTagKeysForOrganizationOutcome DescribeTagKeysForOrganization(
+      const Model::DescribeTagKeysForOrganizationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeTagKeysForOrganization that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeTagKeysForOrganizationRequestT = Model::DescribeTagKeysForOrganizationRequest>
+  Model::DescribeTagKeysForOrganizationOutcomeCallable DescribeTagKeysForOrganizationCallable(
+      const DescribeTagKeysForOrganizationRequestT& request = {}) const {
+    return SubmitCallable(&HealthClient::DescribeTagKeysForOrganization, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTagKeysForOrganization that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeTagKeysForOrganizationRequestT = Model::DescribeTagKeysForOrganizationRequest>
+  void DescribeTagKeysForOrganizationAsync(const DescribeTagKeysForOrganizationResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                           const DescribeTagKeysForOrganizationRequestT& request = {}) const {
+    return SubmitAsync(&HealthClient::DescribeTagKeysForOrganization, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the resource tags associated with Health events for your account. Use
+   * this operation to retrieve the actual tag key-value pairs attached to affected
+   * entities.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTags">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeTags that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeTagsRequestT = Model::DescribeTagsRequest>
+  Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const DescribeTagsRequestT& request = {}) const {
+    return SubmitCallable(&HealthClient::DescribeTags, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTags that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeTagsRequestT = Model::DescribeTagsRequest>
+  void DescribeTagsAsync(const DescribeTagsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                         const DescribeTagsRequestT& request = {}) const {
+    return SubmitAsync(&HealthClient::DescribeTags, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the tags associated with Health events across all accounts in your
+   * organization.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagsForOrganization">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTagsForOrganizationOutcome DescribeTagsForOrganization(
+      const Model::DescribeTagsForOrganizationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeTagsForOrganization that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeTagsForOrganizationRequestT = Model::DescribeTagsForOrganizationRequest>
+  Model::DescribeTagsForOrganizationOutcomeCallable DescribeTagsForOrganizationCallable(
+      const DescribeTagsForOrganizationRequestT& request = {}) const {
+    return SubmitCallable(&HealthClient::DescribeTagsForOrganization, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTagsForOrganization that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeTagsForOrganizationRequestT = Model::DescribeTagsForOrganizationRequest>
+  void DescribeTagsForOrganizationAsync(const DescribeTagsForOrganizationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const DescribeTagsForOrganizationRequestT& request = {}) const {
+    return SubmitAsync(&HealthClient::DescribeTagsForOrganization, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the current onboarding status of the Health tags feature for your
+   * account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagsOnboardingStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTagsOnboardingStatusOutcome DescribeTagsOnboardingStatus(
+      const Model::DescribeTagsOnboardingStatusRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeTagsOnboardingStatus that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeTagsOnboardingStatusRequestT = Model::DescribeTagsOnboardingStatusRequest>
+  Model::DescribeTagsOnboardingStatusOutcomeCallable DescribeTagsOnboardingStatusCallable(
+      const DescribeTagsOnboardingStatusRequestT& request = {}) const {
+    return SubmitCallable(&HealthClient::DescribeTagsOnboardingStatus, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTagsOnboardingStatus that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeTagsOnboardingStatusRequestT = Model::DescribeTagsOnboardingStatusRequest>
+  void DescribeTagsOnboardingStatusAsync(const DescribeTagsOnboardingStatusResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                         const DescribeTagsOnboardingStatusRequestT& request = {}) const {
+    return SubmitAsync(&HealthClient::DescribeTagsOnboardingStatus, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the current onboarding status of the Health tags feature for your
+   * organization.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagsOnboardingStatusForOrganization">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTagsOnboardingStatusForOrganizationOutcome DescribeTagsOnboardingStatusForOrganization(
+      const Model::DescribeTagsOnboardingStatusForOrganizationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeTagsOnboardingStatusForOrganization that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DescribeTagsOnboardingStatusForOrganizationRequestT = Model::DescribeTagsOnboardingStatusForOrganizationRequest>
+  Model::DescribeTagsOnboardingStatusForOrganizationOutcomeCallable DescribeTagsOnboardingStatusForOrganizationCallable(
+      const DescribeTagsOnboardingStatusForOrganizationRequestT& request = {}) const {
+    return SubmitCallable(&HealthClient::DescribeTagsOnboardingStatusForOrganization, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTagsOnboardingStatusForOrganization that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DescribeTagsOnboardingStatusForOrganizationRequestT = Model::DescribeTagsOnboardingStatusForOrganizationRequest>
+  void DescribeTagsOnboardingStatusForOrganizationAsync(const DescribeTagsOnboardingStatusForOrganizationResponseReceivedHandler& handler,
+                                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                        const DescribeTagsOnboardingStatusForOrganizationRequestT& request = {}) const {
+    return SubmitAsync(&HealthClient::DescribeTagsOnboardingStatusForOrganization, request, handler, context);
+  }
+
+  /**
    * <p>Disables Health from working with Organizations. To call this operation, you
    * must sign in to the organization's management account. For more information, see
    * <a
@@ -669,18 +908,78 @@ class AWS_HEALTH_API HealthClient : public Aws::Client::AWSRpcV2CborClient,
   }
 
   /**
+   * <p>Disables the Health tags feature for your account. After disabling, Health
+   * events will no longer include resource tag information. Previously configured
+   * tag keys are discarded.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DisableTags">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisableTagsOutcome DisableTags(const Model::DisableTagsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DisableTags that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DisableTagsRequestT = Model::DisableTagsRequest>
+  Model::DisableTagsOutcomeCallable DisableTagsCallable(const DisableTagsRequestT& request = {}) const {
+    return SubmitCallable(&HealthClient::DisableTags, request);
+  }
+
+  /**
+   * An Async wrapper for DisableTags that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DisableTagsRequestT = Model::DisableTagsRequest>
+  void DisableTagsAsync(const DisableTagsResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                        const DisableTagsRequestT& request = {}) const {
+    return SubmitAsync(&HealthClient::DisableTags, request, handler, context);
+  }
+
+  /**
+   * <p>Disables the Health tags feature for all accounts in your
+   * organization.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DisableTagsForOrganization">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisableTagsForOrganizationOutcome DisableTagsForOrganization(
+      const Model::DisableTagsForOrganizationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DisableTagsForOrganization that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DisableTagsForOrganizationRequestT = Model::DisableTagsForOrganizationRequest>
+  Model::DisableTagsForOrganizationOutcomeCallable DisableTagsForOrganizationCallable(
+      const DisableTagsForOrganizationRequestT& request = {}) const {
+    return SubmitCallable(&HealthClient::DisableTagsForOrganization, request);
+  }
+
+  /**
+   * An Async wrapper for DisableTagsForOrganization that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisableTagsForOrganizationRequestT = Model::DisableTagsForOrganizationRequest>
+  void DisableTagsForOrganizationAsync(const DisableTagsForOrganizationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                       const DisableTagsForOrganizationRequestT& request = {}) const {
+    return SubmitAsync(&HealthClient::DisableTagsForOrganization, request, handler, context);
+  }
+
+  /**
    * <p>Enables Health to work with Organizations. You can use the organizational
    * view feature to aggregate events from all Amazon Web Services accounts in your
    * organization in a centralized location. </p> <p>This operation also creates a
    * service-linked role for the management account in the organization. </p>
    * <p>To call this operation, you must meet the following requirements:</p> <ul>
-   * <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan
-   * from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
-   * Support</a> to use the Health API. If you call the Health API from an Amazon Web
-   * Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
-   * Support plan, you receive a <code>SubscriptionRequiredException</code>
-   * error.</p> </li> <li> <p>You must have permission to call this operation from
-   * the organization's management account. For example IAM policies, see <a
+   * <li> <p>You must have a Amazon Web Services Business Support+, Amazon Web
+   * Services Enterprise Support, or Amazon Web Services Unified Operations plan from
+   * <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>
+   * to use the Health API. If you call the Health API from an Amazon Web Services
+   * account that doesn't have a Amazon Web Services Business Support+, Amazon Web
+   * Services Enterprise Support, or Amazon Web Services Unified Operations plan, you
+   * receive a <code>SubscriptionRequiredException</code> error.</p> </li> <li>
+   * <p>You must have permission to call this operation from the organization's
+   * management account. For example IAM policies, see <a
    * href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health
    * identity-based policy examples</a>.</p> </li> </ul>  <p>If you don't have
    * the required support plan, you can instead use the Health console to enable the
@@ -712,6 +1011,65 @@ class AWS_HEALTH_API HealthClient : public Aws::Client::AWSRpcV2CborClient,
                                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                                      const EnableHealthServiceAccessForOrganizationRequestT& request = {}) const {
     return SubmitAsync(&HealthClient::EnableHealthServiceAccessForOrganization, request, handler, context);
+  }
+
+  /**
+   * <p>Enables the Health tags feature for your account. Once enabled, Health events
+   * will include resource tag information for affected entities. If the feature is
+   * already enabled, this operation has no effect.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EnableTags">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::EnableTagsOutcome EnableTags(const Model::EnableTagsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for EnableTags that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename EnableTagsRequestT = Model::EnableTagsRequest>
+  Model::EnableTagsOutcomeCallable EnableTagsCallable(const EnableTagsRequestT& request = {}) const {
+    return SubmitCallable(&HealthClient::EnableTags, request);
+  }
+
+  /**
+   * An Async wrapper for EnableTags that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename EnableTagsRequestT = Model::EnableTagsRequest>
+  void EnableTagsAsync(const EnableTagsResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                       const EnableTagsRequestT& request = {}) const {
+    return SubmitAsync(&HealthClient::EnableTags, request, handler, context);
+  }
+
+  /**
+   * <p>Enables the Health tags feature for all accounts in your organization. Once
+   * enabled, Health events will include resource tag information for affected
+   * entities across your organization.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EnableTagsForOrganization">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::EnableTagsForOrganizationOutcome EnableTagsForOrganization(
+      const Model::EnableTagsForOrganizationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for EnableTagsForOrganization that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename EnableTagsForOrganizationRequestT = Model::EnableTagsForOrganizationRequest>
+  Model::EnableTagsForOrganizationOutcomeCallable EnableTagsForOrganizationCallable(
+      const EnableTagsForOrganizationRequestT& request = {}) const {
+    return SubmitCallable(&HealthClient::EnableTagsForOrganization, request);
+  }
+
+  /**
+   * An Async wrapper for EnableTagsForOrganization that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename EnableTagsForOrganizationRequestT = Model::EnableTagsForOrganizationRequest>
+  void EnableTagsForOrganizationAsync(const EnableTagsForOrganizationResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                      const EnableTagsForOrganizationRequestT& request = {}) const {
+    return SubmitAsync(&HealthClient::EnableTagsForOrganization, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

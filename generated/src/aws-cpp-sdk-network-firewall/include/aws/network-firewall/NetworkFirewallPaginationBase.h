@@ -10,11 +10,13 @@
 #include <aws/network-firewall/model/GetAnalysisReportResultsPaginationTraits.h>
 #include <aws/network-firewall/model/ListAnalysisReportsPaginationTraits.h>
 #include <aws/network-firewall/model/ListContainerAssociationsPaginationTraits.h>
+#include <aws/network-firewall/model/ListContextStoresPaginationTraits.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesPaginationTraits.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesV2PaginationTraits.h>
 #include <aws/network-firewall/model/ListFirewallsPaginationTraits.h>
 #include <aws/network-firewall/model/ListFlowOperationResultsPaginationTraits.h>
 #include <aws/network-firewall/model/ListFlowOperationsPaginationTraits.h>
+#include <aws/network-firewall/model/ListResourcesInContextStorePaginationTraits.h>
 #include <aws/network-firewall/model/ListRuleGroupsPaginationTraits.h>
 #include <aws/network-firewall/model/ListTLSInspectionConfigurationsPaginationTraits.h>
 #include <aws/network-firewall/model/ListTagsForResourcePaginationTraits.h>
@@ -61,6 +63,18 @@ class NetworkFirewallPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContainerAssociationsRequest,
                                              Pagination::ListContainerAssociationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListContextStores operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContextStoresRequest,
+                                    Pagination::ListContextStoresPaginationTraits<DerivedClient>>
+  ListContextStoresPaginator(const Model::ListContextStoresRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContextStoresRequest,
+                                             Pagination::ListContextStoresPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 
@@ -120,6 +134,18 @@ class NetworkFirewallPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFlowOperationsRequest,
                                              Pagination::ListFlowOperationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListResourcesInContextStore operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesInContextStoreRequest,
+                                    Pagination::ListResourcesInContextStorePaginationTraits<DerivedClient>>
+  ListResourcesInContextStorePaginator(const Model::ListResourcesInContextStoreRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesInContextStoreRequest,
+                                             Pagination::ListResourcesInContextStorePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

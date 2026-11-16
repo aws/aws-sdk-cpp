@@ -50,6 +50,7 @@
 #include <aws/ec2/model/AssociateInstanceEventWindowResponse.h>
 #include <aws/ec2/model/AssociateIpamByoasnResponse.h>
 #include <aws/ec2/model/AssociateIpamResourceDiscoveryResponse.h>
+#include <aws/ec2/model/AssociateKmsKeyIdResponse.h>
 #include <aws/ec2/model/AssociateNatGatewayAddressResponse.h>
 #include <aws/ec2/model/AssociateNetworkingFlexCostAllocationPolicyResponse.h>
 #include <aws/ec2/model/AssociateRouteServerResponse.h>
@@ -184,6 +185,7 @@
 #include <aws/ec2/model/CreateTransitGatewayMeteringPolicyEntryResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayMulticastDomainResponse.h>
+#include <aws/ec2/model/CreateTransitGatewayNetworkFunctionAttachmentResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayPolicyTableEntryResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayPolicyTableResponse.h>
@@ -279,6 +281,7 @@
 #include <aws/ec2/model/DeleteTransitGatewayMeteringPolicyEntryResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayMulticastDomainResponse.h>
+#include <aws/ec2/model/DeleteTransitGatewayNetworkFunctionAttachmentResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPeeringAttachmentResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPolicyTableEntryResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPolicyTableResponse.h>
@@ -611,6 +614,8 @@
 #include <aws/ec2/model/DescribeTransitGatewayMeteringPoliciesResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayMulticastDomainsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayMulticastDomainsResponse.h>
+#include <aws/ec2/model/DescribeTransitGatewayNetworkFunctionAttachmentsRequest.h>
+#include <aws/ec2/model/DescribeTransitGatewayNetworkFunctionAttachmentsResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayPeeringAttachmentsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayPeeringAttachmentsResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayPolicyTablesRequest.h>
@@ -719,6 +724,7 @@
 #include <aws/ec2/model/DisassociateInstanceEventWindowResponse.h>
 #include <aws/ec2/model/DisassociateIpamByoasnResponse.h>
 #include <aws/ec2/model/DisassociateIpamResourceDiscoveryResponse.h>
+#include <aws/ec2/model/DisassociateKmsKeyIdResponse.h>
 #include <aws/ec2/model/DisassociateNatGatewayAddressResponse.h>
 #include <aws/ec2/model/DisassociateNetworkingFlexCostAllocationPolicyResponse.h>
 #include <aws/ec2/model/DisassociateRouteServerResponse.h>
@@ -929,6 +935,7 @@
 #include <aws/ec2/model/ModifyTrafficMirrorSessionResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyResponse.h>
+#include <aws/ec2/model/ModifyTransitGatewayNetworkFunctionAttachmentResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayResponse.h>
@@ -1096,6 +1103,7 @@ class AssociateIamInstanceProfileRequest;
 class AssociateInstanceEventWindowRequest;
 class AssociateIpamByoasnRequest;
 class AssociateIpamResourceDiscoveryRequest;
+class AssociateKmsKeyIdRequest;
 class AssociateNatGatewayAddressRequest;
 class AssociateNetworkingFlexCostAllocationPolicyRequest;
 class AssociateRouteServerRequest;
@@ -1223,6 +1231,7 @@ class CreateTransitGatewayConnectPeerRequest;
 class CreateTransitGatewayMeteringPolicyRequest;
 class CreateTransitGatewayMeteringPolicyEntryRequest;
 class CreateTransitGatewayMulticastDomainRequest;
+class CreateTransitGatewayNetworkFunctionAttachmentRequest;
 class CreateTransitGatewayPeeringAttachmentRequest;
 class CreateTransitGatewayPolicyTableRequest;
 class CreateTransitGatewayPolicyTableEntryRequest;
@@ -1323,6 +1332,7 @@ class DeleteTransitGatewayConnectPeerRequest;
 class DeleteTransitGatewayMeteringPolicyRequest;
 class DeleteTransitGatewayMeteringPolicyEntryRequest;
 class DeleteTransitGatewayMulticastDomainRequest;
+class DeleteTransitGatewayNetworkFunctionAttachmentRequest;
 class DeleteTransitGatewayPeeringAttachmentRequest;
 class DeleteTransitGatewayPolicyTableRequest;
 class DeleteTransitGatewayPolicyTableEntryRequest;
@@ -1517,6 +1527,7 @@ class DescribeTransitGatewayConnectPeersRequest;
 class DescribeTransitGatewayConnectsRequest;
 class DescribeTransitGatewayMeteringPoliciesRequest;
 class DescribeTransitGatewayMulticastDomainsRequest;
+class DescribeTransitGatewayNetworkFunctionAttachmentsRequest;
 class DescribeTransitGatewayPeeringAttachmentsRequest;
 class DescribeTransitGatewayPolicyTablesRequest;
 class DescribeTransitGatewayRouteTableAnnouncementsRequest;
@@ -1589,6 +1600,7 @@ class DisassociateIamInstanceProfileRequest;
 class DisassociateInstanceEventWindowRequest;
 class DisassociateIpamByoasnRequest;
 class DisassociateIpamResourceDiscoveryRequest;
+class DisassociateKmsKeyIdRequest;
 class DisassociateNatGatewayAddressRequest;
 class DisassociateNetworkingFlexCostAllocationPolicyRequest;
 class DisassociateRouteServerRequest;
@@ -1782,6 +1794,7 @@ class ModifyTrafficMirrorSessionRequest;
 class ModifyTransitGatewayRequest;
 class ModifyTransitGatewayAttachmentNatConfigurationRequest;
 class ModifyTransitGatewayMeteringPolicyRequest;
+class ModifyTransitGatewayNetworkFunctionAttachmentRequest;
 class ModifyTransitGatewayPolicyTableEntryRequest;
 class ModifyTransitGatewayPrefixListReferenceRequest;
 class ModifyTransitGatewayVpcAttachmentRequest;
@@ -1924,6 +1937,7 @@ typedef Aws::Utils::Outcome<AssociateIamInstanceProfileResponse, EC2Error> Assoc
 typedef Aws::Utils::Outcome<AssociateInstanceEventWindowResponse, EC2Error> AssociateInstanceEventWindowOutcome;
 typedef Aws::Utils::Outcome<AssociateIpamByoasnResponse, EC2Error> AssociateIpamByoasnOutcome;
 typedef Aws::Utils::Outcome<AssociateIpamResourceDiscoveryResponse, EC2Error> AssociateIpamResourceDiscoveryOutcome;
+typedef Aws::Utils::Outcome<AssociateKmsKeyIdResponse, EC2Error> AssociateKmsKeyIdOutcome;
 typedef Aws::Utils::Outcome<AssociateNatGatewayAddressResponse, EC2Error> AssociateNatGatewayAddressOutcome;
 typedef Aws::Utils::Outcome<AssociateNetworkingFlexCostAllocationPolicyResponse, EC2Error>
     AssociateNetworkingFlexCostAllocationPolicyOutcome;
@@ -2056,6 +2070,8 @@ typedef Aws::Utils::Outcome<CreateTransitGatewayConnectPeerResponse, EC2Error> C
 typedef Aws::Utils::Outcome<CreateTransitGatewayMeteringPolicyResponse, EC2Error> CreateTransitGatewayMeteringPolicyOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayMeteringPolicyEntryResponse, EC2Error> CreateTransitGatewayMeteringPolicyEntryOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayMulticastDomainResponse, EC2Error> CreateTransitGatewayMulticastDomainOutcome;
+typedef Aws::Utils::Outcome<CreateTransitGatewayNetworkFunctionAttachmentResponse, EC2Error>
+    CreateTransitGatewayNetworkFunctionAttachmentOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayPeeringAttachmentResponse, EC2Error> CreateTransitGatewayPeeringAttachmentOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayPolicyTableResponse, EC2Error> CreateTransitGatewayPolicyTableOutcome;
 typedef Aws::Utils::Outcome<CreateTransitGatewayPolicyTableEntryResponse, EC2Error> CreateTransitGatewayPolicyTableEntryOutcome;
@@ -2158,6 +2174,8 @@ typedef Aws::Utils::Outcome<DeleteTransitGatewayConnectPeerResponse, EC2Error> D
 typedef Aws::Utils::Outcome<DeleteTransitGatewayMeteringPolicyResponse, EC2Error> DeleteTransitGatewayMeteringPolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayMeteringPolicyEntryResponse, EC2Error> DeleteTransitGatewayMeteringPolicyEntryOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayMulticastDomainResponse, EC2Error> DeleteTransitGatewayMulticastDomainOutcome;
+typedef Aws::Utils::Outcome<DeleteTransitGatewayNetworkFunctionAttachmentResponse, EC2Error>
+    DeleteTransitGatewayNetworkFunctionAttachmentOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayPeeringAttachmentResponse, EC2Error> DeleteTransitGatewayPeeringAttachmentOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayPolicyTableResponse, EC2Error> DeleteTransitGatewayPolicyTableOutcome;
 typedef Aws::Utils::Outcome<DeleteTransitGatewayPolicyTableEntryResponse, EC2Error> DeleteTransitGatewayPolicyTableEntryOutcome;
@@ -2364,6 +2382,8 @@ typedef Aws::Utils::Outcome<DescribeTransitGatewayConnectPeersResponse, EC2Error
 typedef Aws::Utils::Outcome<DescribeTransitGatewayConnectsResponse, EC2Error> DescribeTransitGatewayConnectsOutcome;
 typedef Aws::Utils::Outcome<DescribeTransitGatewayMeteringPoliciesResponse, EC2Error> DescribeTransitGatewayMeteringPoliciesOutcome;
 typedef Aws::Utils::Outcome<DescribeTransitGatewayMulticastDomainsResponse, EC2Error> DescribeTransitGatewayMulticastDomainsOutcome;
+typedef Aws::Utils::Outcome<DescribeTransitGatewayNetworkFunctionAttachmentsResponse, EC2Error>
+    DescribeTransitGatewayNetworkFunctionAttachmentsOutcome;
 typedef Aws::Utils::Outcome<DescribeTransitGatewayPeeringAttachmentsResponse, EC2Error> DescribeTransitGatewayPeeringAttachmentsOutcome;
 typedef Aws::Utils::Outcome<DescribeTransitGatewayPolicyTablesResponse, EC2Error> DescribeTransitGatewayPolicyTablesOutcome;
 typedef Aws::Utils::Outcome<DescribeTransitGatewayRouteTableAnnouncementsResponse, EC2Error>
@@ -2440,6 +2460,7 @@ typedef Aws::Utils::Outcome<DisassociateIamInstanceProfileResponse, EC2Error> Di
 typedef Aws::Utils::Outcome<DisassociateInstanceEventWindowResponse, EC2Error> DisassociateInstanceEventWindowOutcome;
 typedef Aws::Utils::Outcome<DisassociateIpamByoasnResponse, EC2Error> DisassociateIpamByoasnOutcome;
 typedef Aws::Utils::Outcome<DisassociateIpamResourceDiscoveryResponse, EC2Error> DisassociateIpamResourceDiscoveryOutcome;
+typedef Aws::Utils::Outcome<DisassociateKmsKeyIdResponse, EC2Error> DisassociateKmsKeyIdOutcome;
 typedef Aws::Utils::Outcome<DisassociateNatGatewayAddressResponse, EC2Error> DisassociateNatGatewayAddressOutcome;
 typedef Aws::Utils::Outcome<DisassociateNetworkingFlexCostAllocationPolicyResponse, EC2Error>
     DisassociateNetworkingFlexCostAllocationPolicyOutcome;
@@ -2646,6 +2667,8 @@ typedef Aws::Utils::Outcome<ModifyTransitGatewayResponse, EC2Error> ModifyTransi
 typedef Aws::Utils::Outcome<ModifyTransitGatewayAttachmentNatConfigurationResponse, EC2Error>
     ModifyTransitGatewayAttachmentNatConfigurationOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayMeteringPolicyResponse, EC2Error> ModifyTransitGatewayMeteringPolicyOutcome;
+typedef Aws::Utils::Outcome<ModifyTransitGatewayNetworkFunctionAttachmentResponse, EC2Error>
+    ModifyTransitGatewayNetworkFunctionAttachmentOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayPolicyTableEntryResponse, EC2Error> ModifyTransitGatewayPolicyTableEntryOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayPrefixListReferenceResponse, EC2Error> ModifyTransitGatewayPrefixListReferenceOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayVpcAttachmentResponse, EC2Error> ModifyTransitGatewayVpcAttachmentOutcome;
@@ -2795,6 +2818,7 @@ typedef std::future<AssociateIamInstanceProfileOutcome> AssociateIamInstanceProf
 typedef std::future<AssociateInstanceEventWindowOutcome> AssociateInstanceEventWindowOutcomeCallable;
 typedef std::future<AssociateIpamByoasnOutcome> AssociateIpamByoasnOutcomeCallable;
 typedef std::future<AssociateIpamResourceDiscoveryOutcome> AssociateIpamResourceDiscoveryOutcomeCallable;
+typedef std::future<AssociateKmsKeyIdOutcome> AssociateKmsKeyIdOutcomeCallable;
 typedef std::future<AssociateNatGatewayAddressOutcome> AssociateNatGatewayAddressOutcomeCallable;
 typedef std::future<AssociateNetworkingFlexCostAllocationPolicyOutcome> AssociateNetworkingFlexCostAllocationPolicyOutcomeCallable;
 typedef std::future<AssociateRouteServerOutcome> AssociateRouteServerOutcomeCallable;
@@ -2925,6 +2949,7 @@ typedef std::future<CreateTransitGatewayConnectPeerOutcome> CreateTransitGateway
 typedef std::future<CreateTransitGatewayMeteringPolicyOutcome> CreateTransitGatewayMeteringPolicyOutcomeCallable;
 typedef std::future<CreateTransitGatewayMeteringPolicyEntryOutcome> CreateTransitGatewayMeteringPolicyEntryOutcomeCallable;
 typedef std::future<CreateTransitGatewayMulticastDomainOutcome> CreateTransitGatewayMulticastDomainOutcomeCallable;
+typedef std::future<CreateTransitGatewayNetworkFunctionAttachmentOutcome> CreateTransitGatewayNetworkFunctionAttachmentOutcomeCallable;
 typedef std::future<CreateTransitGatewayPeeringAttachmentOutcome> CreateTransitGatewayPeeringAttachmentOutcomeCallable;
 typedef std::future<CreateTransitGatewayPolicyTableOutcome> CreateTransitGatewayPolicyTableOutcomeCallable;
 typedef std::future<CreateTransitGatewayPolicyTableEntryOutcome> CreateTransitGatewayPolicyTableEntryOutcomeCallable;
@@ -3026,6 +3051,7 @@ typedef std::future<DeleteTransitGatewayConnectPeerOutcome> DeleteTransitGateway
 typedef std::future<DeleteTransitGatewayMeteringPolicyOutcome> DeleteTransitGatewayMeteringPolicyOutcomeCallable;
 typedef std::future<DeleteTransitGatewayMeteringPolicyEntryOutcome> DeleteTransitGatewayMeteringPolicyEntryOutcomeCallable;
 typedef std::future<DeleteTransitGatewayMulticastDomainOutcome> DeleteTransitGatewayMulticastDomainOutcomeCallable;
+typedef std::future<DeleteTransitGatewayNetworkFunctionAttachmentOutcome> DeleteTransitGatewayNetworkFunctionAttachmentOutcomeCallable;
 typedef std::future<DeleteTransitGatewayPeeringAttachmentOutcome> DeleteTransitGatewayPeeringAttachmentOutcomeCallable;
 typedef std::future<DeleteTransitGatewayPolicyTableOutcome> DeleteTransitGatewayPolicyTableOutcomeCallable;
 typedef std::future<DeleteTransitGatewayPolicyTableEntryOutcome> DeleteTransitGatewayPolicyTableEntryOutcomeCallable;
@@ -3223,6 +3249,8 @@ typedef std::future<DescribeTransitGatewayConnectPeersOutcome> DescribeTransitGa
 typedef std::future<DescribeTransitGatewayConnectsOutcome> DescribeTransitGatewayConnectsOutcomeCallable;
 typedef std::future<DescribeTransitGatewayMeteringPoliciesOutcome> DescribeTransitGatewayMeteringPoliciesOutcomeCallable;
 typedef std::future<DescribeTransitGatewayMulticastDomainsOutcome> DescribeTransitGatewayMulticastDomainsOutcomeCallable;
+typedef std::future<DescribeTransitGatewayNetworkFunctionAttachmentsOutcome>
+    DescribeTransitGatewayNetworkFunctionAttachmentsOutcomeCallable;
 typedef std::future<DescribeTransitGatewayPeeringAttachmentsOutcome> DescribeTransitGatewayPeeringAttachmentsOutcomeCallable;
 typedef std::future<DescribeTransitGatewayPolicyTablesOutcome> DescribeTransitGatewayPolicyTablesOutcomeCallable;
 typedef std::future<DescribeTransitGatewayRouteTableAnnouncementsOutcome> DescribeTransitGatewayRouteTableAnnouncementsOutcomeCallable;
@@ -3296,6 +3324,7 @@ typedef std::future<DisassociateIamInstanceProfileOutcome> DisassociateIamInstan
 typedef std::future<DisassociateInstanceEventWindowOutcome> DisassociateInstanceEventWindowOutcomeCallable;
 typedef std::future<DisassociateIpamByoasnOutcome> DisassociateIpamByoasnOutcomeCallable;
 typedef std::future<DisassociateIpamResourceDiscoveryOutcome> DisassociateIpamResourceDiscoveryOutcomeCallable;
+typedef std::future<DisassociateKmsKeyIdOutcome> DisassociateKmsKeyIdOutcomeCallable;
 typedef std::future<DisassociateNatGatewayAddressOutcome> DisassociateNatGatewayAddressOutcomeCallable;
 typedef std::future<DisassociateNetworkingFlexCostAllocationPolicyOutcome> DisassociateNetworkingFlexCostAllocationPolicyOutcomeCallable;
 typedef std::future<DisassociateRouteServerOutcome> DisassociateRouteServerOutcomeCallable;
@@ -3489,6 +3518,7 @@ typedef std::future<ModifyTrafficMirrorSessionOutcome> ModifyTrafficMirrorSessio
 typedef std::future<ModifyTransitGatewayOutcome> ModifyTransitGatewayOutcomeCallable;
 typedef std::future<ModifyTransitGatewayAttachmentNatConfigurationOutcome> ModifyTransitGatewayAttachmentNatConfigurationOutcomeCallable;
 typedef std::future<ModifyTransitGatewayMeteringPolicyOutcome> ModifyTransitGatewayMeteringPolicyOutcomeCallable;
+typedef std::future<ModifyTransitGatewayNetworkFunctionAttachmentOutcome> ModifyTransitGatewayNetworkFunctionAttachmentOutcomeCallable;
 typedef std::future<ModifyTransitGatewayPolicyTableEntryOutcome> ModifyTransitGatewayPolicyTableEntryOutcomeCallable;
 typedef std::future<ModifyTransitGatewayPrefixListReferenceOutcome> ModifyTransitGatewayPrefixListReferenceOutcomeCallable;
 typedef std::future<ModifyTransitGatewayVpcAttachmentOutcome> ModifyTransitGatewayVpcAttachmentOutcomeCallable;
@@ -3703,6 +3733,9 @@ typedef std::function<void(const EC2Client*, const Model::AssociateIpamResourceD
                            const Model::AssociateIpamResourceDiscoveryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateIpamResourceDiscoveryResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::AssociateKmsKeyIdRequest&, const Model::AssociateKmsKeyIdOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateKmsKeyIdResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::AssociateNatGatewayAddressRequest&,
                            const Model::AssociateNatGatewayAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateNatGatewayAddressResponseReceivedHandler;
@@ -4126,6 +4159,10 @@ typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayMu
                            const Model::CreateTransitGatewayMulticastDomainOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateTransitGatewayMulticastDomainResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayNetworkFunctionAttachmentRequest&,
+                           const Model::CreateTransitGatewayNetworkFunctionAttachmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateTransitGatewayNetworkFunctionAttachmentResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayPeeringAttachmentRequest&,
                            const Model::CreateTransitGatewayPeeringAttachmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -4468,6 +4505,10 @@ typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayMu
                            const Model::DeleteTransitGatewayMulticastDomainOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTransitGatewayMulticastDomainResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayNetworkFunctionAttachmentRequest&,
+                           const Model::DeleteTransitGatewayNetworkFunctionAttachmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteTransitGatewayNetworkFunctionAttachmentResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayPeeringAttachmentRequest&,
                            const Model::DeleteTransitGatewayPeeringAttachmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -5140,6 +5181,10 @@ typedef std::function<void(const EC2Client*, const Model::DescribeTransitGateway
                            const Model::DescribeTransitGatewayMulticastDomainsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeTransitGatewayMulticastDomainsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayNetworkFunctionAttachmentsRequest&,
+                           const Model::DescribeTransitGatewayNetworkFunctionAttachmentsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeTransitGatewayNetworkFunctionAttachmentsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayPeeringAttachmentsRequest&,
                            const Model::DescribeTransitGatewayPeeringAttachmentsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -5398,6 +5443,9 @@ typedef std::function<void(const EC2Client*, const Model::DisassociateIpamResour
                            const Model::DisassociateIpamResourceDiscoveryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateIpamResourceDiscoveryResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DisassociateKmsKeyIdRequest&, const Model::DisassociateKmsKeyIdOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateKmsKeyIdResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DisassociateNatGatewayAddressRequest&,
                            const Model::DisassociateNatGatewayAddressOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -6077,6 +6125,10 @@ typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayMe
                            const Model::ModifyTransitGatewayMeteringPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyTransitGatewayMeteringPolicyResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayNetworkFunctionAttachmentRequest&,
+                           const Model::ModifyTransitGatewayNetworkFunctionAttachmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyTransitGatewayNetworkFunctionAttachmentResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayPolicyTableEntryRequest&,
                            const Model::ModifyTransitGatewayPolicyTableEntryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

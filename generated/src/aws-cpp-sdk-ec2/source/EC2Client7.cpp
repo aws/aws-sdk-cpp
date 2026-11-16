@@ -20,6 +20,11 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/ModifyMetricCategoryRequest.h>
+#include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
+#include <aws/ec2/model/ModifyNetworkingFlexCostAllocationPolicyRequest.h>
+#include <aws/ec2/model/ModifyPrivateDnsNameOptionsRequest.h>
+#include <aws/ec2/model/ModifyPublicIpDnsNameOptionsRequest.h>
 #include <aws/ec2/model/ModifyReservedInstancesRequest.h>
 #include <aws/ec2/model/ModifyRouteServerRequest.h>
 #include <aws/ec2/model/ModifySecurityGroupRulesRequest.h>
@@ -32,6 +37,7 @@
 #include <aws/ec2/model/ModifyTrafficMirrorSessionRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyRequest.h>
+#include <aws/ec2/model/ModifyTransitGatewayNetworkFunctionAttachmentRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayRequest.h>
@@ -114,12 +120,6 @@
 #include <aws/ec2/model/RestoreSnapshotFromRecycleBinRequest.h>
 #include <aws/ec2/model/RestoreSnapshotTierRequest.h>
 #include <aws/ec2/model/RestoreVolumeFromRecycleBinRequest.h>
-#include <aws/ec2/model/RevokeClientVpnIngressRequest.h>
-#include <aws/ec2/model/RevokeSecurityGroupEgressRequest.h>
-#include <aws/ec2/model/RevokeSecurityGroupIngressRequest.h>
-#include <aws/ec2/model/RunInstancesRequest.h>
-#include <aws/ec2/model/RunScheduledInstancesRequest.h>
-#include <aws/ec2/model/SearchLocalGatewayRoutesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,38 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ModifyMetricCategoryOutcome EC2Client::ModifyMetricCategory(const ModifyMetricCategoryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyMetricCategoryOutcome(result.GetResultWithOwnership())
+                            : ModifyMetricCategoryOutcome(std::move(result.GetError()));
+}
+
+ModifyNetworkInterfaceAttributeOutcome EC2Client::ModifyNetworkInterfaceAttribute(
+    const ModifyNetworkInterfaceAttributeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyNetworkInterfaceAttributeOutcome(result.GetResultWithOwnership())
+                            : ModifyNetworkInterfaceAttributeOutcome(std::move(result.GetError()));
+}
+
+ModifyNetworkingFlexCostAllocationPolicyOutcome EC2Client::ModifyNetworkingFlexCostAllocationPolicy(
+    const ModifyNetworkingFlexCostAllocationPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyNetworkingFlexCostAllocationPolicyOutcome(result.GetResultWithOwnership())
+                            : ModifyNetworkingFlexCostAllocationPolicyOutcome(std::move(result.GetError()));
+}
+
+ModifyPrivateDnsNameOptionsOutcome EC2Client::ModifyPrivateDnsNameOptions(const ModifyPrivateDnsNameOptionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyPrivateDnsNameOptionsOutcome(result.GetResultWithOwnership())
+                            : ModifyPrivateDnsNameOptionsOutcome(std::move(result.GetError()));
+}
+
+ModifyPublicIpDnsNameOptionsOutcome EC2Client::ModifyPublicIpDnsNameOptions(const ModifyPublicIpDnsNameOptionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyPublicIpDnsNameOptionsOutcome(result.GetResultWithOwnership())
+                            : ModifyPublicIpDnsNameOptionsOutcome(std::move(result.GetError()));
+}
 
 ModifyReservedInstancesOutcome EC2Client::ModifyReservedInstances(const ModifyReservedInstancesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -211,6 +243,13 @@ ModifyTransitGatewayMeteringPolicyOutcome EC2Client::ModifyTransitGatewayMeterin
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyTransitGatewayMeteringPolicyOutcome(result.GetResultWithOwnership())
                             : ModifyTransitGatewayMeteringPolicyOutcome(std::move(result.GetError()));
+}
+
+ModifyTransitGatewayNetworkFunctionAttachmentOutcome EC2Client::ModifyTransitGatewayNetworkFunctionAttachment(
+    const ModifyTransitGatewayNetworkFunctionAttachmentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyTransitGatewayNetworkFunctionAttachmentOutcome(result.GetResultWithOwnership())
+                            : ModifyTransitGatewayNetworkFunctionAttachmentOutcome(std::move(result.GetError()));
 }
 
 ModifyTransitGatewayPolicyTableEntryOutcome EC2Client::ModifyTransitGatewayPolicyTableEntry(
@@ -723,39 +762,4 @@ RestoreVolumeFromRecycleBinOutcome EC2Client::RestoreVolumeFromRecycleBin(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RestoreVolumeFromRecycleBinOutcome(result.GetResultWithOwnership())
                             : RestoreVolumeFromRecycleBinOutcome(std::move(result.GetError()));
-}
-
-RevokeClientVpnIngressOutcome EC2Client::RevokeClientVpnIngress(const RevokeClientVpnIngressRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RevokeClientVpnIngressOutcome(result.GetResultWithOwnership())
-                            : RevokeClientVpnIngressOutcome(std::move(result.GetError()));
-}
-
-RevokeSecurityGroupEgressOutcome EC2Client::RevokeSecurityGroupEgress(const RevokeSecurityGroupEgressRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RevokeSecurityGroupEgressOutcome(result.GetResultWithOwnership())
-                            : RevokeSecurityGroupEgressOutcome(std::move(result.GetError()));
-}
-
-RevokeSecurityGroupIngressOutcome EC2Client::RevokeSecurityGroupIngress(const RevokeSecurityGroupIngressRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RevokeSecurityGroupIngressOutcome(result.GetResultWithOwnership())
-                            : RevokeSecurityGroupIngressOutcome(std::move(result.GetError()));
-}
-
-RunInstancesOutcome EC2Client::RunInstances(const RunInstancesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RunInstancesOutcome(result.GetResultWithOwnership()) : RunInstancesOutcome(std::move(result.GetError()));
-}
-
-RunScheduledInstancesOutcome EC2Client::RunScheduledInstances(const RunScheduledInstancesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RunScheduledInstancesOutcome(result.GetResultWithOwnership())
-                            : RunScheduledInstancesOutcome(std::move(result.GetError()));
-}
-
-SearchLocalGatewayRoutesOutcome EC2Client::SearchLocalGatewayRoutes(const SearchLocalGatewayRoutesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? SearchLocalGatewayRoutesOutcome(result.GetResultWithOwnership())
-                            : SearchLocalGatewayRoutesOutcome(std::move(result.GetError()));
 }

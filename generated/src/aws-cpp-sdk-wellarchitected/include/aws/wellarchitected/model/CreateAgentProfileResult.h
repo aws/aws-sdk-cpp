@@ -103,8 +103,8 @@ class CreateAgentProfileResult {
 
   ///@{
   /**
-   * <p>The Well-Architected Tool Framework pillars associated with the created
-   * profile.</p>
+   * <p>The Amazon Web Services Well-Architected Framework pillars associated with
+   * the created profile.</p>
    */
   inline const Aws::Vector<Pillar>& GetPillars() const { return m_pillars; }
   template <typename PillarsT = Aws::Vector<Pillar>>

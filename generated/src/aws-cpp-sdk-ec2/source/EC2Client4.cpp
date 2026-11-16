@@ -20,6 +20,9 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeNetworkInterfacePermissionsRequest.h>
+#include <aws/ec2/model/DescribeNetworkInterfacesRequest.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPoliciesRequest.h>
 #include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest.h>
 #include <aws/ec2/model/DescribeOutpostLagsRequest.h>
 #include <aws/ec2/model/DescribePlacementGroupsRequest.h>
@@ -68,6 +71,7 @@
 #include <aws/ec2/model/DescribeTransitGatewayConnectsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayMeteringPoliciesRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayMulticastDomainsRequest.h>
+#include <aws/ec2/model/DescribeTransitGatewayNetworkFunctionAttachmentsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayPeeringAttachmentsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayPolicyTablesRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayRouteTableAnnouncementsRequest.h>
@@ -116,10 +120,6 @@
 #include <aws/ec2/model/DisableCapacityManagerRequest.h>
 #include <aws/ec2/model/DisableEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/DisableFastLaunchRequest.h>
-#include <aws/ec2/model/DisableFastSnapshotRestoresRequest.h>
-#include <aws/ec2/model/DisableImageBlockPublicAccessRequest.h>
-#include <aws/ec2/model/DisableImageDeprecationRequest.h>
-#include <aws/ec2/model/DisableImageRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,26 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeNetworkInterfacePermissionsOutcome EC2Client::DescribeNetworkInterfacePermissions(
+    const DescribeNetworkInterfacePermissionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeNetworkInterfacePermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeNetworkInterfacePermissionsOutcome(std::move(result.GetError()));
+}
+
+DescribeNetworkInterfacesOutcome EC2Client::DescribeNetworkInterfaces(const DescribeNetworkInterfacesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeNetworkInterfacesOutcome(result.GetResultWithOwnership())
+                            : DescribeNetworkInterfacesOutcome(std::move(result.GetError()));
+}
+
+DescribeNetworkingFlexCostAllocationPoliciesOutcome EC2Client::DescribeNetworkingFlexCostAllocationPolicies(
+    const DescribeNetworkingFlexCostAllocationPoliciesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeNetworkingFlexCostAllocationPoliciesOutcome(result.GetResultWithOwnership())
+                            : DescribeNetworkingFlexCostAllocationPoliciesOutcome(std::move(result.GetError()));
+}
 
 DescribeNetworkingFlexCostAllocationPolicyAssociationsOutcome EC2Client::DescribeNetworkingFlexCostAllocationPolicyAssociations(
     const DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest& request) const {
@@ -434,6 +454,13 @@ DescribeTransitGatewayMulticastDomainsOutcome EC2Client::DescribeTransitGatewayM
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeTransitGatewayMulticastDomainsOutcome(result.GetResultWithOwnership())
                             : DescribeTransitGatewayMulticastDomainsOutcome(std::move(result.GetError()));
+}
+
+DescribeTransitGatewayNetworkFunctionAttachmentsOutcome EC2Client::DescribeTransitGatewayNetworkFunctionAttachments(
+    const DescribeTransitGatewayNetworkFunctionAttachmentsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTransitGatewayNetworkFunctionAttachmentsOutcome(result.GetResultWithOwnership())
+                            : DescribeTransitGatewayNetworkFunctionAttachmentsOutcome(std::move(result.GetError()));
 }
 
 DescribeTransitGatewayPeeringAttachmentsOutcome EC2Client::DescribeTransitGatewayPeeringAttachments(
@@ -741,27 +768,4 @@ DisableFastLaunchOutcome EC2Client::DisableFastLaunch(const DisableFastLaunchReq
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisableFastLaunchOutcome(result.GetResultWithOwnership())
                             : DisableFastLaunchOutcome(std::move(result.GetError()));
-}
-
-DisableFastSnapshotRestoresOutcome EC2Client::DisableFastSnapshotRestores(const DisableFastSnapshotRestoresRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableFastSnapshotRestoresOutcome(result.GetResultWithOwnership())
-                            : DisableFastSnapshotRestoresOutcome(std::move(result.GetError()));
-}
-
-DisableImageOutcome EC2Client::DisableImage(const DisableImageRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableImageOutcome(result.GetResultWithOwnership()) : DisableImageOutcome(std::move(result.GetError()));
-}
-
-DisableImageBlockPublicAccessOutcome EC2Client::DisableImageBlockPublicAccess(const DisableImageBlockPublicAccessRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableImageBlockPublicAccessOutcome(result.GetResultWithOwnership())
-                            : DisableImageBlockPublicAccessOutcome(std::move(result.GetError()));
-}
-
-DisableImageDeprecationOutcome EC2Client::DisableImageDeprecation(const DisableImageDeprecationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableImageDeprecationOutcome(result.GetResultWithOwnership())
-                            : DisableImageDeprecationOutcome(std::move(result.GetError()));
 }

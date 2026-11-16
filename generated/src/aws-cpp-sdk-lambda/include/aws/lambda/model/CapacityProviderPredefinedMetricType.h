@@ -10,7 +10,11 @@
 namespace Aws {
 namespace Lambda {
 namespace Model {
-enum class CapacityProviderPredefinedMetricType { NOT_SET, LambdaCapacityProviderAverageCPUUtilization };
+enum class CapacityProviderPredefinedMetricType {
+  NOT_SET,
+  LambdaCapacityProviderAverageCPUUtilization,
+  LambdaCapacityProviderAverageGPUUtilization
+};
 
 namespace CapacityProviderPredefinedMetricTypeMapper {
 AWS_LAMBDA_API CapacityProviderPredefinedMetricType GetCapacityProviderPredefinedMetricTypeForName(const Aws::String& name);

@@ -57,7 +57,10 @@ class ListAgentContextsRequest : public WellArchitectedRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The maximum number of contexts to return in a single call. Default is
+   * 100.</p>
+   */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
   inline void SetMaxResults(int value) {
@@ -71,7 +74,10 @@ class ListAgentContextsRequest : public WellArchitectedRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>A pagination token returned from a previous call to continue retrieving
+   * results.</p>
+   */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
   template <typename NextTokenT = Aws::String>

@@ -366,6 +366,8 @@
 #include <aws/connect/model/DecimalComparisonType.h>
 #include <aws/connect/model/DecimalCondition.h>
 #include <aws/connect/model/DefaultVocabulary.h>
+#include <aws/connect/model/DeleteAllEntitySessionsRequest.h>
+#include <aws/connect/model/DeleteAllEntitySessionsResult.h>
 #include <aws/connect/model/DeleteAttachedFileRequest.h>
 #include <aws/connect/model/DeleteAttachedFileResult.h>
 #include <aws/connect/model/DeleteContactDataRequest.h>
@@ -1372,6 +1374,7 @@
 #include <aws/connect/model/SentimentConfiguration.h>
 #include <aws/connect/model/ServiceQuotaExceededException.h>
 #include <aws/connect/model/ServiceQuotaExceededExceptionReason.h>
+#include <aws/connect/model/SessionEntityType.h>
 #include <aws/connect/model/SignInConfig.h>
 #include <aws/connect/model/SignInDistribution.h>
 #include <aws/connect/model/SingleSelectQuestionRuleCategoryAutomation.h>

@@ -41,6 +41,9 @@ Aws::String RegisterWorkspaceDirectoryRequest::SerializePayload() const {
   if (m_userIdentityTypeHasBeenSet) {
     mapSize++;
   }
+  if (m_workspaceOsUserModeHasBeenSet) {
+    mapSize++;
+  }
   if (m_idcInstanceArnHasBeenSet) {
     mapSize++;
   }
@@ -100,6 +103,12 @@ Aws::String RegisterWorkspaceDirectoryRequest::SerializePayload() const {
   if (m_userIdentityTypeHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("UserIdentityType"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(UserIdentityTypeMapper::GetNameForUserIdentityType(m_userIdentityType).c_str()));
+  }
+
+  if (m_workspaceOsUserModeHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("WorkspaceOsUserMode"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(WorkspaceOSUserModeMapper::GetNameForWorkspaceOSUserMode(m_workspaceOsUserMode).c_str()));
   }
 
   if (m_idcInstanceArnHasBeenSet) {

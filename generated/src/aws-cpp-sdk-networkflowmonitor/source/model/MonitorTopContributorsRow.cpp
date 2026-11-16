@@ -122,6 +122,10 @@ MonitorTopContributorsRow& MonitorTopContributorsRow::operator=(JsonView jsonVal
     m_remoteVpcArn = jsonValue.GetString("remoteVpcArn");
     m_remoteVpcArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("additionalFlowInfo")) {
+    m_additionalFlowInfo = jsonValue.GetObject("additionalFlowInfo");
+    m_additionalFlowInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -231,6 +235,10 @@ JsonValue MonitorTopContributorsRow::Jsonize() const {
 
   if (m_remoteVpcArnHasBeenSet) {
     payload.WithString("remoteVpcArn", m_remoteVpcArn);
+  }
+
+  if (m_additionalFlowInfoHasBeenSet) {
+    payload.WithObject("additionalFlowInfo", m_additionalFlowInfo.Jsonize());
   }
 
   return payload;

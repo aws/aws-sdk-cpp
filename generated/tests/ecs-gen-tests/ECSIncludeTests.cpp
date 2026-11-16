@@ -254,6 +254,7 @@
 #include <aws/ecs/model/GatewayConnectionAlbResources.h>
 #include <aws/ecs/model/GatewayConnectionResources.h>
 #include <aws/ecs/model/GatewayConnector.h>
+#include <aws/ecs/model/GatewayConnectorDeregistrationDelay.h>
 #include <aws/ecs/model/GatewayConnectorFilters.h>
 #include <aws/ecs/model/GatewayConnectorHealthCheck.h>
 #include <aws/ecs/model/GatewayConnectorHealthCheckMatcher.h>

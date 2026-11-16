@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecr/ECR_EXPORTS.h>
+#include <aws/ecr/model/DeleteReplication.h>
 #include <aws/ecr/model/ReplicationDestination.h>
 #include <aws/ecr/model/RepositoryFilter.h>
 
@@ -83,12 +84,37 @@ class ReplicationRule {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The delete replication settings for the replication rule. When delete
+   * replication is enabled, the service replicates image deletions and image tag
+   * removals from the source registry to the replication destinations. If you do not
+   * specify this parameter, the service does not replicate image deletions or image
+   * tag removals for the replication rule.</p>
+   */
+  inline const DeleteReplication& GetDeleteReplication() const { return m_deleteReplication; }
+  inline bool DeleteReplicationHasBeenSet() const { return m_deleteReplicationHasBeenSet; }
+  template <typename DeleteReplicationT = DeleteReplication>
+  void SetDeleteReplication(DeleteReplicationT&& value) {
+    m_deleteReplicationHasBeenSet = true;
+    m_deleteReplication = std::forward<DeleteReplicationT>(value);
+  }
+  template <typename DeleteReplicationT = DeleteReplication>
+  ReplicationRule& WithDeleteReplication(DeleteReplicationT&& value) {
+    SetDeleteReplication(std::forward<DeleteReplicationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<ReplicationDestination> m_destinations;
 
   Aws::Vector<RepositoryFilter> m_repositoryFilters;
+
+  DeleteReplication m_deleteReplication;
   bool m_destinationsHasBeenSet = false;
   bool m_repositoryFiltersHasBeenSet = false;
+  bool m_deleteReplicationHasBeenSet = false;
 };
 
 }  // namespace Model

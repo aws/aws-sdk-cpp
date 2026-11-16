@@ -19,6 +19,7 @@ static const int DisallowedByVpcEncryptionControl_HASH = HashingUtils::HashStrin
 static const int Ec2RequestLimitExceeded_HASH = HashingUtils::HashString("Ec2RequestLimitExceeded");
 static const int InsufficientRolePermissions_HASH = HashingUtils::HashString("InsufficientRolePermissions");
 static const int InternalError_HASH = HashingUtils::HashString("InternalError");
+static const int InternetGatewayNotAttached_HASH = HashingUtils::HashString("InternetGatewayNotAttached");
 static const int InvalidSecurityGroup_HASH = HashingUtils::HashString("InvalidSecurityGroup");
 static const int InvalidSubnet_HASH = HashingUtils::HashString("InvalidSubnet");
 static const int SecurityGroupsPerInterfaceLimitExceeded_HASH = HashingUtils::HashString("SecurityGroupsPerInterfaceLimitExceeded");
@@ -34,6 +35,8 @@ NetworkConnectorLastUpdateStatusReasonCode GetNetworkConnectorLastUpdateStatusRe
     return NetworkConnectorLastUpdateStatusReasonCode::InsufficientRolePermissions;
   } else if (hashCode == InternalError_HASH) {
     return NetworkConnectorLastUpdateStatusReasonCode::InternalError;
+  } else if (hashCode == InternetGatewayNotAttached_HASH) {
+    return NetworkConnectorLastUpdateStatusReasonCode::InternetGatewayNotAttached;
   } else if (hashCode == InvalidSecurityGroup_HASH) {
     return NetworkConnectorLastUpdateStatusReasonCode::InvalidSecurityGroup;
   } else if (hashCode == InvalidSubnet_HASH) {
@@ -64,6 +67,8 @@ Aws::String GetNameForNetworkConnectorLastUpdateStatusReasonCode(NetworkConnecto
       return "InsufficientRolePermissions";
     case NetworkConnectorLastUpdateStatusReasonCode::InternalError:
       return "InternalError";
+    case NetworkConnectorLastUpdateStatusReasonCode::InternetGatewayNotAttached:
+      return "InternetGatewayNotAttached";
     case NetworkConnectorLastUpdateStatusReasonCode::InvalidSecurityGroup:
       return "InvalidSecurityGroup";
     case NetworkConnectorLastUpdateStatusReasonCode::InvalidSubnet:

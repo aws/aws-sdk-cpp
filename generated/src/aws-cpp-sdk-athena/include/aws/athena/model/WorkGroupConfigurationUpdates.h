@@ -184,9 +184,7 @@ class WorkGroupConfigurationUpdates {
   /**
    * <p>The engine version requested when a workgroup is updated. After the update,
    * all queries on the workgroup run on the requested engine version. If no value
-   * was previously set, the default is Auto. Queries on the
-   * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
-   * engine regardless of this setting.</p>
+   * was previously set, the default is Auto.</p>
    */
   inline const EngineVersion& GetEngineVersion() const { return m_engineVersion; }
   inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }

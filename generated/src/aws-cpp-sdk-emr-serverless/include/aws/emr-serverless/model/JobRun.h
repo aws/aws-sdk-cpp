@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 #include <aws/emr-serverless/model/ConfigurationOverrides.h>
+#include <aws/emr-serverless/model/FlexExecution.h>
 #include <aws/emr-serverless/model/ImageConfiguration.h>
 #include <aws/emr-serverless/model/JobDriver.h>
 #include <aws/emr-serverless/model/JobRunExecutionIamPolicy.h>
@@ -594,6 +595,24 @@ class JobRun {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon EMR Serverless Flex settings for the job run.</p>
+   */
+  inline const FlexExecution& GetFlexExecution() const { return m_flexExecution; }
+  inline bool FlexExecutionHasBeenSet() const { return m_flexExecutionHasBeenSet; }
+  template <typename FlexExecutionT = FlexExecution>
+  void SetFlexExecution(FlexExecutionT&& value) {
+    m_flexExecutionHasBeenSet = true;
+    m_flexExecution = std::forward<FlexExecutionT>(value);
+  }
+  template <typename FlexExecutionT = FlexExecution>
+  JobRun& WithFlexExecution(FlexExecutionT&& value) {
+    SetFlexExecution(std::forward<FlexExecutionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_applicationId;
 
@@ -654,6 +673,8 @@ class JobRun {
   ImageConfiguration m_imageConfiguration;
 
   Aws::Map<Aws::String, WorkerTypeSpecification> m_workerTypeSpecifications;
+
+  FlexExecution m_flexExecution;
   bool m_applicationIdHasBeenSet = false;
   bool m_jobRunIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -684,6 +705,7 @@ class JobRun {
   bool m_queuedDurationMillisecondsHasBeenSet = false;
   bool m_imageConfigurationHasBeenSet = false;
   bool m_workerTypeSpecificationsHasBeenSet = false;
+  bool m_flexExecutionHasBeenSet = false;
 };
 
 }  // namespace Model

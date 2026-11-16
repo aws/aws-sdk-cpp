@@ -78,6 +78,10 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const {
     payload.WithObject("MetricsConfig", m_metricsConfig.Jsonize());
   }
 
+  if (m_crossRegionTrafficConfigHasBeenSet) {
+    payload.WithObject("CrossRegionTrafficConfig", m_crossRegionTrafficConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

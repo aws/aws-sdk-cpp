@@ -73,7 +73,7 @@ class DescribeServiceLifecycleRequest : public HealthRequest {
 
   ///@{
   /**
-   * <p>The maximum number of items to return in one batch, between 1 and 20,
+   * <p>The maximum number of items to return in one batch, between 10 and 100,
    * inclusive.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }

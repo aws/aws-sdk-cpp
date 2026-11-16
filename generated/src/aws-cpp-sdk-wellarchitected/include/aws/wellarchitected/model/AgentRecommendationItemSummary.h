@@ -8,6 +8,7 @@
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
+#include <aws/wellarchitected/model/AutoRemediation.h>
 #include <aws/wellarchitected/model/RecommendationItemType.h>
 
 #include <utility>
@@ -180,6 +181,26 @@ class AgentRecommendationItemSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The optional per-resource auto-remediation for this affected resource,
+   * representing an SSM runbook execution. Present only when the item's check is
+   * backed by an SSM automation runbook.</p>
+   */
+  inline const AutoRemediation& GetAutoRemediation() const { return m_autoRemediation; }
+  inline bool AutoRemediationHasBeenSet() const { return m_autoRemediationHasBeenSet; }
+  template <typename AutoRemediationT = AutoRemediation>
+  void SetAutoRemediation(AutoRemediationT&& value) {
+    m_autoRemediationHasBeenSet = true;
+    m_autoRemediation = std::forward<AutoRemediationT>(value);
+  }
+  template <typename AutoRemediationT = AutoRemediation>
+  AgentRecommendationItemSummary& WithAutoRemediation(AutoRemediationT&& value) {
+    SetAutoRemediation(std::forward<AutoRemediationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -196,6 +217,8 @@ class AgentRecommendationItemSummary {
   Aws::String m_lastModifiedBy;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
+
+  AutoRemediation m_autoRemediation;
   bool m_idHasBeenSet = false;
   bool m_recommendationArnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
@@ -204,6 +227,7 @@ class AgentRecommendationItemSummary {
   bool m_createdAtHasBeenSet = false;
   bool m_lastModifiedByHasBeenSet = false;
   bool m_lastModifiedAtHasBeenSet = false;
+  bool m_autoRemediationHasBeenSet = false;
 };
 
 }  // namespace Model

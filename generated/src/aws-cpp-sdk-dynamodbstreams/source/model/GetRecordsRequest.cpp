@@ -31,3 +31,13 @@ Aws::Http::HeaderValueCollection GetRecordsRequest::GetRequestSpecificHeaders() 
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDBStreams_20120810.GetRecords"));
   return headers;
 }
+
+GetRecordsRequest::EndpointParameters GetRecordsRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Operation context parameters
+  if (ShardIteratorHasBeenSet()) {
+    parameters.emplace_back(Aws::String("ShardIterator"), this->GetShardIterator(),
+                            Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  return parameters;
+}

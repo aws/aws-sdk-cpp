@@ -23,6 +23,15 @@ Aws::String ListKeysRequest::SerializePayload() const {
     payload.WithString("Marker", m_marker);
   }
 
+  if (m_resourceOwnersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceOwnersJsonList(m_resourceOwners.size());
+    for (unsigned resourceOwnersIndex = 0; resourceOwnersIndex < resourceOwnersJsonList.GetLength(); ++resourceOwnersIndex) {
+      resourceOwnersJsonList[resourceOwnersIndex].AsString(
+          ResourceOwnerTypeMapper::GetNameForResourceOwnerType(m_resourceOwners[resourceOwnersIndex]));
+    }
+    payload.WithArray("ResourceOwners", std::move(resourceOwnersJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -45,6 +45,10 @@ NetworkConnectorVpcEgressConfiguration& NetworkConnectorVpcEgressConfiguration::
     }
     m_associatedComputeResourceTypesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ElasticIpConfiguration")) {
+    m_elasticIpConfiguration = jsonValue.GetObject("ElasticIpConfiguration");
+    m_elasticIpConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -79,6 +83,10 @@ JsonValue NetworkConnectorVpcEgressConfiguration::Jsonize() const {
           ComputeResourceTypeMapper::GetNameForComputeResourceType(m_associatedComputeResourceTypes[associatedComputeResourceTypesIndex]));
     }
     payload.WithArray("AssociatedComputeResourceTypes", std::move(associatedComputeResourceTypesJsonList));
+  }
+
+  if (m_elasticIpConfigurationHasBeenSet) {
+    payload.WithObject("ElasticIpConfiguration", m_elasticIpConfiguration.Jsonize());
   }
 
   return payload;

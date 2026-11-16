@@ -21,6 +21,7 @@
 #include <aws/iam-toolbox/IAMToolboxEndpointProvider.h>
 #include <aws/iam-toolbox/IAMToolboxErrorMarshaller.h>
 #include <aws/iam-toolbox/model/GetRequestAuthorizationDetailsRequest.h>
+#include <aws/iam-toolbox/model/GetRequestAuthorizationPolicyRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -193,4 +194,29 @@ GetRequestAuthorizationDetailsOutcome IAMToolboxClient::GetRequestAuthorizationD
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetRequestAuthorizationDetailsOutcome(result.GetResultWithOwnership())
                             : GetRequestAuthorizationDetailsOutcome(std::move(result.GetError()));
+}
+
+GetRequestAuthorizationPolicyOutcome IAMToolboxClient::GetRequestAuthorizationPolicy(
+    const GetRequestAuthorizationPolicyRequest& request) const {
+  if (!request.AuthorizationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRequestAuthorizationPolicy", "Required field: AuthorizationId, is not set");
+    return GetRequestAuthorizationPolicyOutcome(Aws::Client::AWSError<IAMToolboxErrors>(
+        IAMToolboxErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizationId]", false));
+  }
+  if (!request.PolicyUriHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRequestAuthorizationPolicy", "Required field: PolicyUri, is not set");
+    return GetRequestAuthorizationPolicyOutcome(Aws::Client::AWSError<IAMToolboxErrors>(
+        IAMToolboxErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyUri]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/authorization-details/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAuthorizationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRequestAuthorizationPolicyOutcome(result.GetResultWithOwnership())
+                            : GetRequestAuthorizationPolicyOutcome(std::move(result.GetError()));
 }

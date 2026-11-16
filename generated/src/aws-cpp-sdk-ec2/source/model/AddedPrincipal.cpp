@@ -44,6 +44,12 @@ AddedPrincipal& AddedPrincipal::operator=(const XmlNode& xmlNode) {
       m_serviceId = Aws::Utils::Xml::DecodeEscapedXmlText(serviceIdNode.GetText());
       m_serviceIdHasBeenSet = true;
     }
+    XmlNode permissionTypeNode = resultNode.FirstChild("permissionType");
+    if (!permissionTypeNode.IsNull()) {
+      m_permissionType = PermissionTypeMapper::GetPermissionTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionTypeNode.GetText()).c_str()));
+      m_permissionTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -67,6 +73,11 @@ void AddedPrincipal::OutputToStream(Aws::OStream& oStream, const char* location,
   if (m_serviceIdHasBeenSet) {
     oStream << location << index << locationValue << ".ServiceId=" << StringUtils::URLEncode(m_serviceId.c_str()) << "&";
   }
+
+  if (m_permissionTypeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".PermissionType=" << StringUtils::URLEncode(PermissionTypeMapper::GetNameForPermissionType(m_permissionType)) << "&";
+  }
 }
 
 void AddedPrincipal::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -82,6 +93,10 @@ void AddedPrincipal::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if (m_serviceIdHasBeenSet) {
     oStream << location << ".ServiceId=" << StringUtils::URLEncode(m_serviceId.c_str()) << "&";
+  }
+  if (m_permissionTypeHasBeenSet) {
+    oStream << location << ".PermissionType=" << StringUtils::URLEncode(PermissionTypeMapper::GetNameForPermissionType(m_permissionType))
+            << "&";
   }
 }
 

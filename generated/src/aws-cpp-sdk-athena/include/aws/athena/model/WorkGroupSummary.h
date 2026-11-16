@@ -107,9 +107,7 @@ class WorkGroupSummary {
 
   ///@{
   /**
-   * <p>The engine version setting for all queries on the workgroup. Queries on the
-   * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
-   * engine regardless of this setting.</p>
+   * <p>The engine version setting for all queries on the workgroup.</p>
    */
   inline const EngineVersion& GetEngineVersion() const { return m_engineVersion; }
   inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }

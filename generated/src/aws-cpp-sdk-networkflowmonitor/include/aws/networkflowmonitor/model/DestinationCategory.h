@@ -10,7 +10,20 @@
 namespace Aws {
 namespace NetworkFlowMonitor {
 namespace Model {
-enum class DestinationCategory { NOT_SET, INTRA_AZ, INTER_AZ, INTER_VPC, UNCLASSIFIED, AMAZON_S3, AMAZON_DYNAMODB, INTER_REGION };
+enum class DestinationCategory {
+  NOT_SET,
+  INTRA_AZ,
+  INTER_AZ,
+  INTER_VPC,
+  UNCLASSIFIED,
+  AMAZON_S3,
+  AMAZON_DYNAMODB,
+  INTER_REGION,
+  INTERNET,
+  AWS_SERVICE,
+  LOCAL_ZONE,
+  TRANSIT_GATEWAY
+};
 
 namespace DestinationCategoryMapper {
 AWS_NETWORKFLOWMONITOR_API DestinationCategory GetDestinationCategoryForName(const Aws::String& name);

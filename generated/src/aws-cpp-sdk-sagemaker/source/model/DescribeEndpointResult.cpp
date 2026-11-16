@@ -90,6 +90,10 @@ DescribeEndpointResult& DescribeEndpointResult::operator=(const Aws::AmazonWebSe
     m_metricsConfig = jsonValue.GetObject("MetricsConfig");
     m_metricsConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CrossRegionTrafficConfig")) {
+    m_crossRegionTrafficConfig = jsonValue.GetObject("CrossRegionTrafficConfig");
+    m_crossRegionTrafficConfigHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

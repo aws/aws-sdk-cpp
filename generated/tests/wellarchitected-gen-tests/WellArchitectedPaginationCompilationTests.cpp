@@ -27,6 +27,7 @@
 #include <aws/wellarchitected/model/ListAgentRecommendationGenerationsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAgentRecommendationsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAgentProfilesPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentOrganizationalReportsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListCheckDetailsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListWorkloadSharesPaginationTraits.h>
 #include <aws/wellarchitected/model/ListNotificationsPaginationTraits.h>

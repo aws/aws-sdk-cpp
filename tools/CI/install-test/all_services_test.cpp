@@ -112,6 +112,7 @@
 #include <aws/connectcases/ConnectCasesClient.h>
 #include <aws/connecthealth/ConnectHealthClient.h>
 #include <aws/connectparticipant/ConnectParticipantClient.h>
+#include <aws/connectscheduling/ConnectSchedulingClient.h>
 #include <aws/continuum/ContinuumClient.h>
 #include <aws/controlcatalog/ControlCatalogClient.h>
 #include <aws/controltower/ControlTowerClient.h>
@@ -299,6 +300,7 @@
 #include <aws/odb/OdbClient.h>
 #include <aws/omics/OmicsClient.h>
 #include <aws/opensearch/OpenSearchServiceClient.h>
+#include <aws/opensearchmemory/OpenSearchMemoryClient.h>
 #include <aws/opensearchserverless/OpenSearchServerlessClient.h>
 #include <aws/organizations/OrganizationsClient.h>
 #include <aws/osis/OSISClient.h>
@@ -365,6 +367,7 @@
 #include <aws/sagemaker-edge/SagemakerEdgeManagerClient.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeClient.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialClient.h>
+#include <aws/sagemaker-inference-router-runtime/SageMakerInferenceRouterRuntimeClient.h>
 #include <aws/sagemaker-metrics/SageMakerMetricsClient.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2Client.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeClient.h>

@@ -68,6 +68,7 @@
 #include <aws/sagemaker/model/CreateInferenceComponentRequest.h>
 #include <aws/sagemaker/model/CreateInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/CreateInferenceRecommendationsJobRequest.h>
+#include <aws/sagemaker/model/CreateInferenceRouterRequest.h>
 #include <aws/sagemaker/model/CreateJobRequest.h>
 #include <aws/sagemaker/model/CreateLabelingJobRequest.h>
 #include <aws/sagemaker/model/CreateMlflowAppRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/sagemaker/model/DeleteCodeRepositoryRequest.h>
 #include <aws/sagemaker/model/DeleteCompilationJobRequest.h>
 #include <aws/sagemaker/model/DeleteComputeQuotaRequest.h>
-#include <aws/sagemaker/model/DeleteContextRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -555,6 +555,12 @@ CreateInferenceRecommendationsJobOutcome SageMakerClient::CreateInferenceRecomme
                             : CreateInferenceRecommendationsJobOutcome(std::move(result.GetError()));
 }
 
+CreateInferenceRouterOutcome SageMakerClient::CreateInferenceRouter(const CreateInferenceRouterRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInferenceRouterOutcome(result.GetResultWithOwnership())
+                            : CreateInferenceRouterOutcome(std::move(result.GetError()));
+}
+
 CreateJobOutcome SageMakerClient::CreateJob(const CreateJobRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateJobOutcome(result.GetResultWithOwnership()) : CreateJobOutcome(std::move(result.GetError()));
@@ -856,9 +862,4 @@ DeleteComputeQuotaOutcome SageMakerClient::DeleteComputeQuota(const DeleteComput
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteComputeQuotaOutcome(result.GetResultWithOwnership())
                             : DeleteComputeQuotaOutcome(std::move(result.GetError()));
-}
-
-DeleteContextOutcome SageMakerClient::DeleteContext(const DeleteContextRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteContextOutcome(result.GetResultWithOwnership()) : DeleteContextOutcome(std::move(result.GetError()));
 }

@@ -83,11 +83,12 @@ class AWS_IAMTOOLBOX_API IAMToolboxClient : public Aws::Client::AWSJsonClient,
    * details include the request context, the evaluations performed, and the policies
    * that were evaluated.</p> <p>Use this operation to understand why a request was
    * denied. Supported services include an authorization ID in the access denied
-   * error message. Pass that ID to this operation to retrieve the details.</p>
-   * <p>Authorization details are available for at least 24 hours after the
-   * denial.</p> <p>To use this operation, you must have the
-   * <code>iam:GetRequestAuthorizationDetails</code> permission.</p><p><h3>See
-   * Also:</h3>   <a
+   * error message. Pass that ID to this operation to retrieve the details.</p> <p>To
+   * retrieve the content for a policy in the <code>policies</code> list, call
+   * <code>GetRequestAuthorizationPolicy</code>.</p> <p>Authorization details are
+   * available for at least 24 hours after the denial.</p> <p>To use this operation,
+   * you must have the <code>iam:GetRequestAuthorizationDetails</code>
+   * permission.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-toolbox-2018-05-10/GetRequestAuthorizationDetails">AWS
    * API Reference</a></p>
    */
@@ -113,6 +114,48 @@ class AWS_IAMTOOLBOX_API IAMToolboxClient : public Aws::Client::AWSJsonClient,
                                            const GetRequestAuthorizationDetailsResponseReceivedHandler& handler,
                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IAMToolboxClient::GetRequestAuthorizationDetails, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a policy that was evaluated for a specific access denied request.
+   * The operation returns the structured JSON document of the policy that was
+   * captured with the original authorization request. It doesn't retrieve the
+   * current version of the policy.</p> <p>For some AWS services and policy types,
+   * the returned policy document includes all actions relevant to the service that
+   * processed the denied request, but might omit actions for other services.</p>
+   * <p>Specify the authorization ID from the access denied error message and the
+   * policy URI returned by <code>GetRequestAuthorizationDetails</code> for the same
+   * authorization ID.</p> <p>Access depends on the account and organization recorded
+   * for the principal that made the denied request. If an organization was recorded,
+   * the calling principal must belong to that organization. Otherwise, the calling
+   * principal must belong to the recorded account.</p> <p>To use this operation, you
+   * must have the <code>iam:GetRequestAuthorizationPolicy</code>
+   * permission.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-toolbox-2018-05-10/GetRequestAuthorizationPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRequestAuthorizationPolicyOutcome GetRequestAuthorizationPolicy(
+      const Model::GetRequestAuthorizationPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRequestAuthorizationPolicy that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetRequestAuthorizationPolicyRequestT = Model::GetRequestAuthorizationPolicyRequest>
+  Model::GetRequestAuthorizationPolicyOutcomeCallable GetRequestAuthorizationPolicyCallable(
+      const GetRequestAuthorizationPolicyRequestT& request) const {
+    return SubmitCallable(&IAMToolboxClient::GetRequestAuthorizationPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for GetRequestAuthorizationPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetRequestAuthorizationPolicyRequestT = Model::GetRequestAuthorizationPolicyRequest>
+  void GetRequestAuthorizationPolicyAsync(const GetRequestAuthorizationPolicyRequestT& request,
+                                          const GetRequestAuthorizationPolicyResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IAMToolboxClient::GetRequestAuthorizationPolicy, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

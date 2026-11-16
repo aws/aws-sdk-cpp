@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/connecthealth/ConnectHealth_EXPORTS.h>
+#include <aws/connecthealth/model/MedicalScribeChecklistEvent.h>
+#include <aws/connecthealth/model/MedicalScribePeriodontalChartEvent.h>
 #include <aws/connecthealth/model/MedicalScribeTranscriptEvent.h>
 
 #include <utility>
@@ -20,8 +22,9 @@ namespace ConnectHealth {
 namespace Model {
 
 /**
- * <p>Output stream from Medical Scribe containing transcript events and
- * errors</p><p><h3>See Also:</h3>   <a
+ * <p>The output stream of a listening session. It carries transcript events,
+ * periodontal chart events, checklist events, and errors.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/MedicalScribeOutputStream">AWS
  * API Reference</a></p>
  */
@@ -85,15 +88,65 @@ class MedicalScribeOutputStream {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Real-time extraction is in preview release for Amazon Connect Health and is
+   * subject to change. To request access to this feature, contact your AWS account
+   * team.</p> <p>A snapshot of the periodontal chart. Amazon Connect Health sends
+   * this event only when real-time extraction is enabled for the account and
+   * periodontal charting is dictated during the session.</p>
+   */
+  inline const MedicalScribePeriodontalChartEvent& GetPeriodontalChartEvent() const { return m_periodontalChartEvent; }
+  inline bool PeriodontalChartEventHasBeenSet() const { return m_periodontalChartEventHasBeenSet; }
+  template <typename PeriodontalChartEventT = MedicalScribePeriodontalChartEvent>
+  void SetPeriodontalChartEvent(PeriodontalChartEventT&& value) {
+    m_periodontalChartEventHasBeenSet = true;
+    m_periodontalChartEvent = std::forward<PeriodontalChartEventT>(value);
+  }
+  template <typename PeriodontalChartEventT = MedicalScribePeriodontalChartEvent>
+  MedicalScribeOutputStream& WithPeriodontalChartEvent(PeriodontalChartEventT&& value) {
+    SetPeriodontalChartEvent(std::forward<PeriodontalChartEventT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Real-time extraction is in preview release for Amazon Connect Health and is
+   * subject to change. To request access to this feature, contact your AWS account
+   * team.</p> <p>A snapshot of the session's checklist. Amazon Connect Health sends
+   * this event only when real-time extraction is enabled for the account and the
+   * session uses a supported note template.</p>
+   */
+  inline const MedicalScribeChecklistEvent& GetChecklistEvent() const { return m_checklistEvent; }
+  inline bool ChecklistEventHasBeenSet() const { return m_checklistEventHasBeenSet; }
+  template <typename ChecklistEventT = MedicalScribeChecklistEvent>
+  void SetChecklistEvent(ChecklistEventT&& value) {
+    m_checklistEventHasBeenSet = true;
+    m_checklistEvent = std::forward<ChecklistEventT>(value);
+  }
+  template <typename ChecklistEventT = MedicalScribeChecklistEvent>
+  MedicalScribeOutputStream& WithChecklistEvent(ChecklistEventT&& value) {
+    SetChecklistEvent(std::forward<ChecklistEventT>(value));
+    return *this;
+  }
+  ///@}
  private:
   MedicalScribeTranscriptEvent m_transcriptEvent;
 
   ConnectHealthError m_internalFailureException;
 
   ConnectHealthError m_validationException;
+
+  MedicalScribePeriodontalChartEvent m_periodontalChartEvent;
+
+  MedicalScribeChecklistEvent m_checklistEvent;
   bool m_transcriptEventHasBeenSet = false;
   bool m_internalFailureExceptionHasBeenSet = false;
   bool m_validationExceptionHasBeenSet = false;
+  bool m_periodontalChartEventHasBeenSet = false;
+  bool m_checklistEventHasBeenSet = false;
 };
 
 }  // namespace Model

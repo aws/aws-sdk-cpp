@@ -49,6 +49,8 @@
 #include <aws/s3vectors/model/TagResourceResult.h>
 #include <aws/s3vectors/model/UntagResourceResult.h>
 #include <aws/s3vectors/model/UpdateIndexModeResult.h>
+#include <aws/s3vectors/model/UpdateMetadataConfigurationRequest.h>
+#include <aws/s3vectors/model/UpdateMetadataConfigurationResult.h>
 /* End of service model headers required in S3VectorsClient header */
 
 namespace Aws {
@@ -103,6 +105,7 @@ class QueryVectorsRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateIndexModeRequest;
+class UpdateMetadataConfigurationRequest;
 /* End of service model forward declarations required in S3VectorsClient header */
 
 /* Service model Outcome class definitions */
@@ -127,6 +130,7 @@ typedef Aws::Utils::Outcome<QueryVectorsResult, S3VectorsError> QueryVectorsOutc
 typedef Aws::Utils::Outcome<TagResourceResult, S3VectorsError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, S3VectorsError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateIndexModeResult, S3VectorsError> UpdateIndexModeOutcome;
+typedef Aws::Utils::Outcome<UpdateMetadataConfigurationResult, S3VectorsError> UpdateMetadataConfigurationOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -151,6 +155,7 @@ typedef std::future<QueryVectorsOutcome> QueryVectorsOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateIndexModeOutcome> UpdateIndexModeOutcomeCallable;
+typedef std::future<UpdateMetadataConfigurationOutcome> UpdateMetadataConfigurationOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -221,6 +226,9 @@ typedef std::function<void(const S3VectorsClient*, const Model::UntagResourceReq
 typedef std::function<void(const S3VectorsClient*, const Model::UpdateIndexModeRequest&, const Model::UpdateIndexModeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateIndexModeResponseReceivedHandler;
+typedef std::function<void(const S3VectorsClient*, const Model::UpdateMetadataConfigurationRequest&,
+                           const Model::UpdateMetadataConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateMetadataConfigurationResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace S3Vectors
 }  // namespace Aws

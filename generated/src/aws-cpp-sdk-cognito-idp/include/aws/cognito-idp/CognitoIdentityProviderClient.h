@@ -3208,6 +3208,49 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Exchanges an existing token for a new token that is scoped and audience-bound
+   * for a specific downstream service, following the OAuth 2.0 Token Exchange grant
+   * type. For more information about the OAuth 2.0 Token Exchange grant type, see <a
+   * href="https://tools.ietf.org/html/rfc8693">RFC 8693 - OAuth 2.0 Token
+   * Exchange</a> on the IETF website. Present a <code>SubjectToken</code>, the
+   * credential that you already hold, to receive a new token appropriate for calling
+   * a specific resource server or audience.</p> <p>If you also present an
+   * <code>ActorToken</code> that identifies an intermediary service, the issued
+   * token carries an <code>act</code> claim that identifies the intermediary, and
+   * downstream services can distinguish a user acting directly from an intermediary
+   * acting on the user's behalf. If you don't present an <code>ActorToken</code>,
+   * the issued token appears as if the user acted directly.</p> <p>To use this
+   * operation, you must have IAM credentials, or you must present the requesting app
+   * client's <code>ClientId</code> and, if the client has a secret,
+   * <code>ClientSecret</code>, in the request.</p> <p>The requesting app client must
+   * have <code>ALLOW_TOKEN_EXCHANGE_IMPERSONATION</code> or
+   * <code>ALLOW_TOKEN_EXCHANGE_DELEGATION</code> in its
+   * <code>ExplicitAuthFlows</code> (depending on whether you include an
+   * <code>ActorToken</code>), or the request fails.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDerivedToken">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDerivedTokenOutcome GetDerivedToken(const Model::GetDerivedTokenRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDerivedToken that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetDerivedTokenRequestT = Model::GetDerivedTokenRequest>
+  Model::GetDerivedTokenOutcomeCallable GetDerivedTokenCallable(const GetDerivedTokenRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::GetDerivedToken, request);
+  }
+
+  /**
+   * An Async wrapper for GetDerivedToken that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetDerivedTokenRequestT = Model::GetDerivedTokenRequest>
+  void GetDerivedTokenAsync(const GetDerivedTokenRequestT& request, const GetDerivedTokenResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::GetDerivedToken, request, handler, context);
+  }
+
+  /**
    * <p>Given a device key, returns information about a remembered device for the
    * current user. For more information about device authentication, see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working

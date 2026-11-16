@@ -36,6 +36,8 @@
 #include <aws/lambda-core/model/DeleteRuntimeResult.h>
 #include <aws/lambda-core/model/DeleteRuntimeVersionRequest.h>
 #include <aws/lambda-core/model/DeleteRuntimeVersionResult.h>
+#include <aws/lambda-core/model/ElasticIpConfiguration.h>
+#include <aws/lambda-core/model/ElasticIpType.h>
 #include <aws/lambda-core/model/GetNetworkConnectorRequest.h>
 #include <aws/lambda-core/model/GetNetworkConnectorResult.h>
 #include <aws/lambda-core/model/GetRuntimeAliasRequest.h>

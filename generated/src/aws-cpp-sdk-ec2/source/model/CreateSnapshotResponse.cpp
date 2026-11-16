@@ -97,6 +97,17 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator=(const Aws::AmazonWebSe
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fullSnapshotSizeInBytesNode.GetText()).c_str()).c_str());
       m_fullSnapshotSizeInBytesHasBeenSet = true;
     }
+    XmlNode associatedKmsKeysNode = resultNode.FirstChild("associatedKmsKeySet");
+    if (!associatedKmsKeysNode.IsNull()) {
+      XmlNode associatedKmsKeysMember = associatedKmsKeysNode.FirstChild("item");
+      m_associatedKmsKeysHasBeenSet = !associatedKmsKeysMember.IsNull();
+      while (!associatedKmsKeysMember.IsNull()) {
+        m_associatedKmsKeys.push_back(associatedKmsKeysMember);
+        associatedKmsKeysMember = associatedKmsKeysMember.NextNode("item");
+      }
+
+      m_associatedKmsKeysHasBeenSet = true;
+    }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if (!snapshotIdNode.IsNull()) {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());

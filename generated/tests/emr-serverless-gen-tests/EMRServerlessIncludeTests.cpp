@@ -33,6 +33,7 @@
 #include <aws/emr-serverless/model/DeleteApplicationRequest.h>
 #include <aws/emr-serverless/model/DeleteApplicationResult.h>
 #include <aws/emr-serverless/model/DiskEncryptionConfiguration.h>
+#include <aws/emr-serverless/model/FlexExecution.h>
 #include <aws/emr-serverless/model/GetApplicationRequest.h>
 #include <aws/emr-serverless/model/GetApplicationResult.h>
 #include <aws/emr-serverless/model/GetDashboardForJobRunRequest.h>

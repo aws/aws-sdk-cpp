@@ -78,6 +78,10 @@ JobRunAttemptSummary& JobRunAttemptSummary::operator=(JsonView jsonValue) {
     m_attempt = jsonValue.GetInteger("attempt");
     m_attemptHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("flexExecution")) {
+    m_flexExecution = jsonValue.GetObject("flexExecution");
+    m_flexExecutionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -142,6 +146,10 @@ JsonValue JobRunAttemptSummary::Jsonize() const {
 
   if (m_attemptHasBeenSet) {
     payload.WithInteger("attempt", m_attempt);
+  }
+
+  if (m_flexExecutionHasBeenSet) {
+    payload.WithObject("flexExecution", m_flexExecution.Jsonize());
   }
 
   return payload;

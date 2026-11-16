@@ -45,6 +45,12 @@
 #include <aws/network-firewall/model/ContainerAttribute.h>
 #include <aws/network-firewall/model/ContainerMonitoringConfiguration.h>
 #include <aws/network-firewall/model/ContainerMonitoringType.h>
+#include <aws/network-firewall/model/ContextFilters.h>
+#include <aws/network-firewall/model/ContextSet.h>
+#include <aws/network-firewall/model/ContextStore.h>
+#include <aws/network-firewall/model/ContextStoreSyncState.h>
+#include <aws/network-firewall/model/ContextStoreSyncStatus.h>
+#include <aws/network-firewall/model/ContextType.h>
 #include <aws/network-firewall/model/CreateContainerAssociationRequest.h>
 #include <aws/network-firewall/model/CreateContainerAssociationResult.h>
 #include <aws/network-firewall/model/CreateFirewallPolicyRequest.h>
@@ -167,6 +173,9 @@
 #include <aws/network-firewall/model/ListContainerAssociationsPaginationTraits.h>
 #include <aws/network-firewall/model/ListContainerAssociationsRequest.h>
 #include <aws/network-firewall/model/ListContainerAssociationsResult.h>
+#include <aws/network-firewall/model/ListContextStoresPaginationTraits.h>
+#include <aws/network-firewall/model/ListContextStoresRequest.h>
+#include <aws/network-firewall/model/ListContextStoresResult.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesPaginationTraits.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesRequest.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesResult.h>
@@ -182,6 +191,9 @@
 #include <aws/network-firewall/model/ListFlowOperationsPaginationTraits.h>
 #include <aws/network-firewall/model/ListFlowOperationsRequest.h>
 #include <aws/network-firewall/model/ListFlowOperationsResult.h>
+#include <aws/network-firewall/model/ListResourcesInContextStorePaginationTraits.h>
+#include <aws/network-firewall/model/ListResourcesInContextStoreRequest.h>
+#include <aws/network-firewall/model/ListResourcesInContextStoreResult.h>
 #include <aws/network-firewall/model/ListRuleGroupsPaginationTraits.h>
 #include <aws/network-firewall/model/ListRuleGroupsRequest.h>
 #include <aws/network-firewall/model/ListRuleGroupsResult.h>
@@ -221,9 +233,11 @@
 #include <aws/network-firewall/model/ReferenceSets.h>
 #include <aws/network-firewall/model/RejectNetworkFirewallTransitGatewayAttachmentRequest.h>
 #include <aws/network-firewall/model/RejectNetworkFirewallTransitGatewayAttachmentResult.h>
+#include <aws/network-firewall/model/ResourceContext.h>
 #include <aws/network-firewall/model/ResourceManagedStatus.h>
 #include <aws/network-firewall/model/ResourceManagedType.h>
 #include <aws/network-firewall/model/ResourceStatus.h>
+#include <aws/network-firewall/model/ResourceType.h>
 #include <aws/network-firewall/model/RevocationCheckAction.h>
 #include <aws/network-firewall/model/Route53ResolvedIPValidation.h>
 #include <aws/network-firewall/model/Route53ResolvedIPValidationAction.h>

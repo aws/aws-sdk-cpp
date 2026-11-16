@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connecthealth/ConnectHealth_EXPORTS.h>
 #include <aws/connecthealth/model/ClinicalNoteGenerationResult.h>
+#include <aws/connecthealth/model/MedicalCodeGenerationResult.h>
 
 #include <utility>
 
@@ -49,9 +50,32 @@ class MedicalScribePostStreamActionsResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Results of medical code generation. Returned if medical code generation runs
+   * for the session. Not returned if you set enabled to false in
+   * medicalCodeGenerationSettings.</p>
+   */
+  inline const MedicalCodeGenerationResult& GetMedicalCodeGenerationResult() const { return m_medicalCodeGenerationResult; }
+  inline bool MedicalCodeGenerationResultHasBeenSet() const { return m_medicalCodeGenerationResultHasBeenSet; }
+  template <typename MedicalCodeGenerationResultT = MedicalCodeGenerationResult>
+  void SetMedicalCodeGenerationResult(MedicalCodeGenerationResultT&& value) {
+    m_medicalCodeGenerationResultHasBeenSet = true;
+    m_medicalCodeGenerationResult = std::forward<MedicalCodeGenerationResultT>(value);
+  }
+  template <typename MedicalCodeGenerationResultT = MedicalCodeGenerationResult>
+  MedicalScribePostStreamActionsResult& WithMedicalCodeGenerationResult(MedicalCodeGenerationResultT&& value) {
+    SetMedicalCodeGenerationResult(std::forward<MedicalCodeGenerationResultT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ClinicalNoteGenerationResult m_clinicalNoteGenerationResult;
+
+  MedicalCodeGenerationResult m_medicalCodeGenerationResult;
   bool m_clinicalNoteGenerationResultHasBeenSet = false;
+  bool m_medicalCodeGenerationResultHasBeenSet = false;
 };
 
 }  // namespace Model

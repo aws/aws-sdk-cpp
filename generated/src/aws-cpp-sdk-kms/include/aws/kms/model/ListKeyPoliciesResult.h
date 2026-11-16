@@ -30,7 +30,9 @@ class ListKeyPoliciesResult {
 
   ///@{
   /**
-   * <p>A list of key policy names. The only valid value is <code>default</code>.</p>
+   * <p>A list of key policy names. Valid values are:</p> <dl> <dt>default</dt> <dd>
+   * <p>The key policy that you manage.</p> </dd> <dt>AWS_RAM</dt> <dd> <p>The key
+   * policy that RAM manages for KMS keys that you share through RAM.</p> </dd> </dl>
    */
   inline const Aws::Vector<Aws::String>& GetPolicyNames() const { return m_policyNames; }
   template <typename PolicyNamesT = Aws::Vector<Aws::String>>

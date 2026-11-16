@@ -2226,11 +2226,30 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Gets a key policy attached to the specified KMS key.</p> <p> <b>Cross-account
+   * <p>Gets a key policy attached to the specified KMS key.</p> <p>A KMS key can
+   * have two key policies. You manage the <code>default</code> key policy. Resource
+   * Access Manager (RAM) manages the <code>AWS_RAM</code> key policy for KMS keys
+   * that you share through RAM. You can use <code>GetKeyPolicy</code> to view the
+   * <code>AWS_RAM</code> key policy, but you can't change it with
+   * <a>PutKeyPolicy</a>. To get the <code>AWS_RAM</code> key policy, set the
+   * <code>PolicyName</code> parameter to <code>AWS_RAM</code>. If the KMS key
+   * doesn't have an <code>AWS_RAM</code> key policy, <code>GetKeyPolicy</code>
+   * returns a <code>NotFoundException</code>. For information about sharing KMS
+   * keys, see <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+   * KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>. For
+   * information about RAM managed permissions, see <a
+   * href="https://docs.aws.amazon.com/ram/latest/userguide/security-ram-permissions.html">Managing
+   * permissions in RAM</a> in the <i>RAM User Guide</i>.</p> <p> <b>Cross-account
    * use</b>: No. You cannot perform this operation on a KMS key in a different
    * Amazon Web Services account.</p> <p> <b>Required permissions</b>: <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetKeyPolicy</a>
-   * (key policy)</p> <p> <b>Related operations</b>: <a
+   * (key policy)</p> <p>You can use the <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-policy-name">kms:PolicyName</a>
+   * condition key to control access to this operation based on the value of the
+   * <code>PolicyName</code> parameter in the request. If the request doesn't include
+   * <code>PolicyName</code>, the value of <code>kms:PolicyName</code> is
+   * <code>default</code>.</p> <p> <b>Related operations</b>: <a
    * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
    * </p> <p> <b>Eventual consistency</b>: The KMS API follows an eventual
    * consistency model. For more information, see <a
@@ -2739,10 +2758,14 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Gets the names of the key policies that are attached to a KMS key. This
    * operation is designed to get policy names that you can use in a
-   * <a>GetKeyPolicy</a> operation. However, the only valid policy name is
-   * <code>default</code>. </p> <p> <b>Cross-account use</b>: No. You cannot perform
-   * this operation on a KMS key in a different Amazon Web Services account.</p> <p>
-   * <b>Required permissions</b>: <a
+   * <a>GetKeyPolicy</a> operation. The valid policy names are <code>default</code>
+   * and <code>AWS_RAM</code>.</p> <p>For information about the <code>AWS_RAM</code>
+   * key policy, see <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+   * KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>.</p>
+   * <p> <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key
+   * in a different Amazon Web Services account.</p> <p> <b>Required permissions</b>:
+   * <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListKeyPolicies</a>
    * (key policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
    * <a>GetKeyPolicy</a> </p> </li> <li> <p> <a
@@ -2821,18 +2844,41 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Gets a list of all KMS keys in the caller's Amazon Web Services account and
-   * Region.</p> <p> <b>Cross-account use</b>: No. You cannot perform this operation
-   * on a KMS key in a different Amazon Web Services account.</p> <p> <b>Required
-   * permissions</b>: <a
+   * Region.</p> <p>You can also use <code>ListKeys</code> to list KMS keys in the
+   * Region that other Amazon Web Services accounts shared with the caller's Amazon
+   * Web Services account through Resource Access Manager (RAM). To list them, use
+   * the <code>ResourceOwners</code> parameter. If you omit
+   * <code>ResourceOwners</code>, <code>ListKeys</code> lists only the KMS keys in
+   * the caller's Amazon Web Services account.</p> <p>When
+   * <code>ResourceOwners</code> includes <code>OTHER_ACCOUNTS_VIA_RAM</code>,
+   * <code>ListKeys</code> returns the KMS keys that other Amazon Web Services
+   * accounts currently share with the caller's Amazon Web Services account through
+   * RAM. For information about how and when a resource that another account shares
+   * becomes available to your Amazon Web Services account, see <a
+   * href="https://docs.aws.amazon.com/ram/latest/userguide/working-with-shared.html">Access
+   * Amazon Web Services resources shared with you</a> in the <i>RAM User
+   * Guide</i>.</p> <p> <b>Cross-account use</b>: No. This operation doesn't take a
+   * KMS key parameter, so you can't use it to list the KMS keys of a specific Amazon
+   * Web Services account. The only KMS keys in other Amazon Web Services accounts
+   * that <code>ListKeys</code> returns are the ones that other accounts shared with
+   * the caller's Amazon Web Services account through RAM. To list them, set the
+   * <code>ResourceOwners</code> parameter to include
+   * <code>OTHER_ACCOUNTS_VIA_RAM</code>.</p> <p> <b>Required permissions</b>: <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListKeys</a>
-   * (IAM policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
-   * <a>CreateKey</a> </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> <li> <p>
-   * <a>ListAliases</a> </p> </li> <li> <p> <a>ListResourceTags</a> </p> </li> </ul>
-   * <p> <b>Eventual consistency</b>: The KMS API follows an eventual consistency
-   * model. For more information, see <a
+   * (IAM policy)</p> <p>The same <code>kms:ListKeys</code> permission lets you list
+   * the KMS keys that other accounts shared with you through RAM. KMS doesn't
+   * evaluate the key policies of shared KMS keys when it lists them. To use a shared
+   * KMS key, you need permission for each operation on that KMS key.</p> <p>
+   * <b>Related operations:</b> </p> <ul> <li> <p> <a>CreateKey</a> </p> </li> <li>
+   * <p> <a>DescribeKey</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li>
+   * <p> <a>ListResourceTags</a> </p> </li> </ul> <p> <b>Eventual consistency</b>:
+   * The KMS API follows an eventual consistency model. For more information, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
-   * eventual consistency</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">AWS API
+   * eventual consistency</a>.</p> <p>KMS keys that other Amazon Web Services
+   * accounts share with you can take some time to appear in or disappear from
+   * <code>ListKeys</code> results after changes to resource shares, such as
+   * accepting an invitation or deleting a resource share.</p><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">AWS API
    * Reference</a></p>
    */
   virtual Model::ListKeysOutcome ListKeys(const Model::ListKeysRequest& request = {}) const;
@@ -2963,8 +3009,9 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Attaches a key policy to the specified KMS key. </p> <p>For more information
-   * about key policies, see <a
+   * <p>Attaches a key policy to the specified KMS key. You can use this operation to
+   * set only the <code>default</code> key policy.</p> <p>For more information about
+   * key policies, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
    * Policies</a> in the <i>Key Management Service Developer Guide</i>. For help
    * writing and formatting a JSON policy document, see the <a
@@ -2974,13 +3021,28 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
    * languages, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/example_kms_PutKeyPolicy_section.html">Use
    * PutKeyPolicy with an Amazon Web Services SDK or CLI</a> in the <i>Key Management
-   * Service Developer Guide</i>.</p> <p> <b>Cross-account use</b>: No. You cannot
-   * perform this operation on a KMS key in a different Amazon Web Services
-   * account.</p> <p> <b>Required permissions</b>: <a
+   * Service Developer Guide</i>.</p> <p>A KMS key can also have an
+   * <code>AWS_RAM</code> key policy, which Resource Access Manager (RAM) manages for
+   * KMS keys that you share through RAM. You can't use <code>PutKeyPolicy</code> to
+   * create, change, or delete the <code>AWS_RAM</code> key policy. If you set
+   * <code>PolicyName</code> to <code>AWS_RAM</code>, the request fails with a
+   * <code>ValidationException</code> and the message <code>The AWS_RAM policy can
+   * only be managed by the RAM service.</code> To view the <code>AWS_RAM</code> key
+   * policy, use <a>GetKeyPolicy</a>. For information about sharing KMS keys, see <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing
+   * KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>.</p>
+   * <p> <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key
+   * in a different Amazon Web Services account.</p> <p> <b>Required permissions</b>:
+   * <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:PutKeyPolicy</a>
-   * (key policy)</p> <p> <b>Related operations</b>: <a>GetKeyPolicy</a> </p> <p>
-   * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model.
-   * For more information, see <a
+   * (key policy)</p> <p>You can use the <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-policy-name">kms:PolicyName</a>
+   * condition key to control access to this operation based on the value of the
+   * <code>PolicyName</code> parameter in the request. If the request doesn't include
+   * <code>PolicyName</code>, the value of <code>kms:PolicyName</code> is
+   * <code>default</code>.</p> <p> <b>Related operations</b>: <a>GetKeyPolicy</a>
+   * </p> <p> <b>Eventual consistency</b>: The KMS API follows an eventual
+   * consistency model. For more information, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
    * eventual consistency</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">AWS

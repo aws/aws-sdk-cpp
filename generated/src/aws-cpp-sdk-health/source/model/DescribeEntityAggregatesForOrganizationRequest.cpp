@@ -23,6 +23,9 @@ Aws::String DescribeEntityAggregatesForOrganizationRequest::SerializePayload() c
   if (m_awsAccountIdsHasBeenSet) {
     mapSize++;
   }
+  if (m_filterHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -40,6 +43,11 @@ Aws::String DescribeEntityAggregatesForOrganizationRequest::SerializePayload() c
     for (const auto& item_0 : m_awsAccountIds) {
       encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
+  }
+
+  if (m_filterHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("filter"));
+    m_filter.CborEncode(encoder);
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

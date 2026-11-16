@@ -11,7 +11,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/wellarchitected/model/AggregationConfiguration.h>
+#include <aws/wellarchitected/model/OrganizationalAggregationConfiguration.h>
 #include <aws/wellarchitected/model/Pillar.h>
+#include <aws/wellarchitected/model/ProfileType.h>
 #include <aws/wellarchitected/model/Tag.h>
 
 #include <utility>
@@ -103,7 +105,8 @@ class GetAgentProfileResult {
 
   ///@{
   /**
-   * <p>The Well-Architected Tool Framework pillars associated with the profile.</p>
+   * <p>The Amazon Web Services Well-Architected Framework pillars associated with
+   * the profile. Not present for basic profiles.</p>
    */
   inline const Aws::Vector<Pillar>& GetPillars() const { return m_pillars; }
   template <typename PillarsT = Aws::Vector<Pillar>>
@@ -140,7 +143,22 @@ class GetAgentProfileResult {
 
   ///@{
   /**
-   * <p>The ARN of the IAM execution role.</p>
+   * <p>The type of the profile.</p>
+   */
+  inline ProfileType GetProfileType() const { return m_profileType; }
+  inline void SetProfileType(ProfileType value) {
+    m_profileTypeHasBeenSet = true;
+    m_profileType = value;
+  }
+  inline GetAgentProfileResult& WithProfileType(ProfileType value) {
+    SetProfileType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the IAM execution role. Not present for basic profiles.</p>
    */
   inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
   template <typename ExecutionRoleArnT = Aws::String>
@@ -157,7 +175,7 @@ class GetAgentProfileResult {
 
   ///@{
   /**
-   * <p>The aggregation configuration.</p>
+   * <p>The aggregation configuration. Not present for basic profiles.</p>
    */
   inline const Aws::Vector<AggregationConfiguration>& GetAggregationConfiguration() const { return m_aggregationConfiguration; }
   template <typename AggregationConfigurationT = Aws::Vector<AggregationConfiguration>>
@@ -343,6 +361,26 @@ class GetAgentProfileResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The organizational monitoring boundary. Present only for organizational
+   * profiles.</p>
+   */
+  inline const OrganizationalAggregationConfiguration& GetOrganizationalAggregationConfiguration() const {
+    return m_organizationalAggregationConfiguration;
+  }
+  template <typename OrganizationalAggregationConfigurationT = OrganizationalAggregationConfiguration>
+  void SetOrganizationalAggregationConfiguration(OrganizationalAggregationConfigurationT&& value) {
+    m_organizationalAggregationConfigurationHasBeenSet = true;
+    m_organizationalAggregationConfiguration = std::forward<OrganizationalAggregationConfigurationT>(value);
+  }
+  template <typename OrganizationalAggregationConfigurationT = OrganizationalAggregationConfiguration>
+  GetAgentProfileResult& WithOrganizationalAggregationConfiguration(OrganizationalAggregationConfigurationT&& value) {
+    SetOrganizationalAggregationConfiguration(std::forward<OrganizationalAggregationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -371,6 +409,8 @@ class GetAgentProfileResult {
 
   bool m_deletionProtection{false};
 
+  ProfileType m_profileType{ProfileType::NOT_SET};
+
   Aws::String m_executionRoleArn;
 
   Aws::Vector<AggregationConfiguration> m_aggregationConfiguration;
@@ -393,6 +433,8 @@ class GetAgentProfileResult {
 
   Aws::Utils::DateTime m_lastModifiedAt{};
 
+  OrganizationalAggregationConfiguration m_organizationalAggregationConfiguration;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nameHasBeenSet = false;
@@ -401,6 +443,7 @@ class GetAgentProfileResult {
   bool m_businessOverviewHasBeenSet = false;
   bool m_pillarsHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
+  bool m_profileTypeHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
   bool m_aggregationConfigurationHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -412,6 +455,7 @@ class GetAgentProfileResult {
   bool m_createdAtHasBeenSet = false;
   bool m_lastModifiedByHasBeenSet = false;
   bool m_lastModifiedAtHasBeenSet = false;
+  bool m_organizationalAggregationConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -53,7 +53,9 @@ class ListAgentContextsResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>A pagination token to retrieve the next set of results, if available.</p>
+   */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>
   void SetNextToken(NextTokenT&& value) {

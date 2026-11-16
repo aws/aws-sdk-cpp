@@ -16,11 +16,14 @@ namespace Model {
 namespace CapacityProviderPredefinedMetricTypeMapper {
 
 static const int LambdaCapacityProviderAverageCPUUtilization_HASH = HashingUtils::HashString("LambdaCapacityProviderAverageCPUUtilization");
+static const int LambdaCapacityProviderAverageGPUUtilization_HASH = HashingUtils::HashString("LambdaCapacityProviderAverageGPUUtilization");
 
 CapacityProviderPredefinedMetricType GetCapacityProviderPredefinedMetricTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == LambdaCapacityProviderAverageCPUUtilization_HASH) {
     return CapacityProviderPredefinedMetricType::LambdaCapacityProviderAverageCPUUtilization;
+  } else if (hashCode == LambdaCapacityProviderAverageGPUUtilization_HASH) {
+    return CapacityProviderPredefinedMetricType::LambdaCapacityProviderAverageGPUUtilization;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForCapacityProviderPredefinedMetricType(CapacityProviderPrede
       return {};
     case CapacityProviderPredefinedMetricType::LambdaCapacityProviderAverageCPUUtilization:
       return "LambdaCapacityProviderAverageCPUUtilization";
+    case CapacityProviderPredefinedMetricType::LambdaCapacityProviderAverageGPUUtilization:
+      return "LambdaCapacityProviderAverageGPUUtilization";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

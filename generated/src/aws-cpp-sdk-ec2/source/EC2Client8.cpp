@@ -20,6 +20,12 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/RevokeClientVpnIngressRequest.h>
+#include <aws/ec2/model/RevokeSecurityGroupEgressRequest.h>
+#include <aws/ec2/model/RevokeSecurityGroupIngressRequest.h>
+#include <aws/ec2/model/RunInstancesRequest.h>
+#include <aws/ec2/model/RunScheduledInstancesRequest.h>
+#include <aws/ec2/model/SearchLocalGatewayRoutesRequest.h>
 #include <aws/ec2/model/SearchTransitGatewayMulticastGroupsRequest.h>
 #include <aws/ec2/model/SearchTransitGatewayRoutesRequest.h>
 #include <aws/ec2/model/SendDiagnosticInterruptRequest.h>
@@ -54,6 +60,41 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+RevokeClientVpnIngressOutcome EC2Client::RevokeClientVpnIngress(const RevokeClientVpnIngressRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeClientVpnIngressOutcome(result.GetResultWithOwnership())
+                            : RevokeClientVpnIngressOutcome(std::move(result.GetError()));
+}
+
+RevokeSecurityGroupEgressOutcome EC2Client::RevokeSecurityGroupEgress(const RevokeSecurityGroupEgressRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeSecurityGroupEgressOutcome(result.GetResultWithOwnership())
+                            : RevokeSecurityGroupEgressOutcome(std::move(result.GetError()));
+}
+
+RevokeSecurityGroupIngressOutcome EC2Client::RevokeSecurityGroupIngress(const RevokeSecurityGroupIngressRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeSecurityGroupIngressOutcome(result.GetResultWithOwnership())
+                            : RevokeSecurityGroupIngressOutcome(std::move(result.GetError()));
+}
+
+RunInstancesOutcome EC2Client::RunInstances(const RunInstancesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RunInstancesOutcome(result.GetResultWithOwnership()) : RunInstancesOutcome(std::move(result.GetError()));
+}
+
+RunScheduledInstancesOutcome EC2Client::RunScheduledInstances(const RunScheduledInstancesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RunScheduledInstancesOutcome(result.GetResultWithOwnership())
+                            : RunScheduledInstancesOutcome(std::move(result.GetError()));
+}
+
+SearchLocalGatewayRoutesOutcome EC2Client::SearchLocalGatewayRoutes(const SearchLocalGatewayRoutesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchLocalGatewayRoutesOutcome(result.GetResultWithOwnership())
+                            : SearchLocalGatewayRoutesOutcome(std::move(result.GetError()));
+}
 
 SearchTransitGatewayMulticastGroupsOutcome EC2Client::SearchTransitGatewayMulticastGroups(
     const SearchTransitGatewayMulticastGroupsRequest& request) const {

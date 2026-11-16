@@ -140,6 +140,37 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Associates a transit gateway with a context store. The transit gateway must
+   * be registered with the global network of the context store, and can't be
+   * associated with more than one context store. The context store must be in the
+   * <code>AVAILABLE</code> state.</p> <p>The association is in the
+   * <code>ASSOCIATING</code> state when it's created, and changes to
+   * <code>ASSOCIATED</code> when it's complete.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateContextStore">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateContextStoreOutcome AssociateContextStore(const Model::AssociateContextStoreRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateContextStore that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AssociateContextStoreRequestT = Model::AssociateContextStoreRequest>
+  Model::AssociateContextStoreOutcomeCallable AssociateContextStoreCallable(const AssociateContextStoreRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::AssociateContextStore, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateContextStore that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AssociateContextStoreRequestT = Model::AssociateContextStoreRequest>
+  void AssociateContextStoreAsync(const AssociateContextStoreRequestT& request, const AssociateContextStoreResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::AssociateContextStore, request, handler, context);
+  }
+
+  /**
    * <p>Associates a customer gateway with a device and optionally, with a link. If
    * you specify a link, it must be associated with the specified device. </p> <p>You
    * can only associate customer gateways that are connected to a VPN attachment on a
@@ -324,6 +355,37 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
   void CreateConnectionAsync(const CreateConnectionRequestT& request, const CreateConnectionResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkManagerClient::CreateConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a context store in a global network. A context store maintains
+   * context entries, such as security groups, subnets, and attachments, for the
+   * resources connected to the transit gateways that you associate with it.</p>
+   * <p>The context store is in the <code>PENDING</code> state when it's created, and
+   * changes to <code>AVAILABLE</code> when it's ready to use.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateContextStore">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateContextStoreOutcome CreateContextStore(const Model::CreateContextStoreRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateContextStore that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateContextStoreRequestT = Model::CreateContextStoreRequest>
+  Model::CreateContextStoreOutcomeCallable CreateContextStoreCallable(const CreateContextStoreRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::CreateContextStore, request);
+  }
+
+  /**
+   * An Async wrapper for CreateContextStore that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateContextStoreRequestT = Model::CreateContextStoreRequest>
+  void CreateContextStoreAsync(const CreateContextStoreRequestT& request, const CreateContextStoreResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::CreateContextStore, request, handler, context);
   }
 
   /**
@@ -715,6 +777,34 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Deletes a context store. The context store must be in the
+   * <code>AVAILABLE</code> state. You must disassociate all transit gateways from
+   * the context store before you can delete it.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteContextStore">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteContextStoreOutcome DeleteContextStore(const Model::DeleteContextStoreRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteContextStore that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteContextStoreRequestT = Model::DeleteContextStoreRequest>
+  Model::DeleteContextStoreOutcomeCallable DeleteContextStoreCallable(const DeleteContextStoreRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::DeleteContextStore, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteContextStore that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteContextStoreRequestT = Model::DeleteContextStoreRequest>
+  void DeleteContextStoreAsync(const DeleteContextStoreRequestT& request, const DeleteContextStoreResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::DeleteContextStore, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a core network along with all core network policies. This can only be
    * done if there are no attachments on a core network.</p><p><h3>See Also:</h3>
    * <a
@@ -1050,6 +1140,36 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Disassociates a transit gateway from a context store. The association must be
+   * in the <code>ASSOCIATED</code> or <code>FAILED</code> state. The association
+   * stays in the <code>DISASSOCIATING</code> state until the disassociation
+   * completes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateContextStore">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateContextStoreOutcome DisassociateContextStore(const Model::DisassociateContextStoreRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateContextStore that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DisassociateContextStoreRequestT = Model::DisassociateContextStoreRequest>
+  Model::DisassociateContextStoreOutcomeCallable DisassociateContextStoreCallable(const DisassociateContextStoreRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::DisassociateContextStore, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateContextStore that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisassociateContextStoreRequestT = Model::DisassociateContextStoreRequest>
+  void DisassociateContextStoreAsync(const DisassociateContextStoreRequestT& request,
+                                     const DisassociateContextStoreResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::DisassociateContextStore, request, handler, context);
+  }
+
+  /**
    * <p>Disassociates a customer gateway from a device and a link.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateCustomerGateway">AWS
@@ -1274,6 +1394,89 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
   void GetConnectionsAsync(const GetConnectionsRequestT& request, const GetConnectionsResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkManagerClient::GetConnections, request, handler, context);
+  }
+
+  /**
+   * <p>Returns information about a context store.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetContextStore">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetContextStoreOutcome GetContextStore(const Model::GetContextStoreRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetContextStore that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetContextStoreRequestT = Model::GetContextStoreRequest>
+  Model::GetContextStoreOutcomeCallable GetContextStoreCallable(const GetContextStoreRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::GetContextStore, request);
+  }
+
+  /**
+   * An Async wrapper for GetContextStore that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetContextStoreRequestT = Model::GetContextStoreRequest>
+  void GetContextStoreAsync(const GetContextStoreRequestT& request, const GetContextStoreResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::GetContextStore, request, handler, context);
+  }
+
+  /**
+   * <p>Returns information about the association between a context store and a
+   * transit gateway.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetContextStoreAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetContextStoreAssociationOutcome GetContextStoreAssociation(
+      const Model::GetContextStoreAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetContextStoreAssociation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetContextStoreAssociationRequestT = Model::GetContextStoreAssociationRequest>
+  Model::GetContextStoreAssociationOutcomeCallable GetContextStoreAssociationCallable(
+      const GetContextStoreAssociationRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::GetContextStoreAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for GetContextStoreAssociation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetContextStoreAssociationRequestT = Model::GetContextStoreAssociationRequest>
+  void GetContextStoreAssociationAsync(const GetContextStoreAssociationRequestT& request,
+                                       const GetContextStoreAssociationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::GetContextStoreAssociation, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the current version of the context entries of a context store. The
+   * context store must be in the <code>AVAILABLE</code> state.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetContextVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetContextVersionOutcome GetContextVersion(const Model::GetContextVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetContextVersion that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetContextVersionRequestT = Model::GetContextVersionRequest>
+  Model::GetContextVersionOutcomeCallable GetContextVersionCallable(const GetContextVersionRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::GetContextVersion, request);
+  }
+
+  /**
+   * An Async wrapper for GetContextVersion that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetContextVersionRequestT = Model::GetContextVersionRequest>
+  void GetContextVersionAsync(const GetContextVersionRequestT& request, const GetContextVersionResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::GetContextVersion, request, handler, context);
   }
 
   /**
@@ -2039,6 +2242,121 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Returns the context entries that were added to or removed from a context
+   * store after the specified version. The context store must be in the
+   * <code>AVAILABLE</code> state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListContextChanges">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListContextChangesOutcome ListContextChanges(const Model::ListContextChangesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListContextChanges that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListContextChangesRequestT = Model::ListContextChangesRequest>
+  Model::ListContextChangesOutcomeCallable ListContextChangesCallable(const ListContextChangesRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::ListContextChanges, request);
+  }
+
+  /**
+   * An Async wrapper for ListContextChanges that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListContextChangesRequestT = Model::ListContextChangesRequest>
+  void ListContextChangesAsync(const ListContextChangesRequestT& request, const ListContextChangesResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::ListContextChanges, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the transit gateway associations of a context store.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListContextStoreAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListContextStoreAssociationsOutcome ListContextStoreAssociations(
+      const Model::ListContextStoreAssociationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListContextStoreAssociations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListContextStoreAssociationsRequestT = Model::ListContextStoreAssociationsRequest>
+  Model::ListContextStoreAssociationsOutcomeCallable ListContextStoreAssociationsCallable(
+      const ListContextStoreAssociationsRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::ListContextStoreAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for ListContextStoreAssociations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListContextStoreAssociationsRequestT = Model::ListContextStoreAssociationsRequest>
+  void ListContextStoreAssociationsAsync(const ListContextStoreAssociationsRequestT& request,
+                                         const ListContextStoreAssociationsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::ListContextStoreAssociations, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the context stores in your account. You can optionally return only
+   * the context stores in a specific global network.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListContextStores">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListContextStoresOutcome ListContextStores(const Model::ListContextStoresRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListContextStores that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListContextStoresRequestT = Model::ListContextStoresRequest>
+  Model::ListContextStoresOutcomeCallable ListContextStoresCallable(const ListContextStoresRequestT& request = {}) const {
+    return SubmitCallable(&NetworkManagerClient::ListContextStores, request);
+  }
+
+  /**
+   * An Async wrapper for ListContextStores that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListContextStoresRequestT = Model::ListContextStoresRequest>
+  void ListContextStoresAsync(const ListContextStoresResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const ListContextStoresRequestT& request = {}) const {
+    return SubmitAsync(&NetworkManagerClient::ListContextStores, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the context entries of a context store, and the version of the
+   * context entries. To get the context entries that were added or removed after
+   * this version, specify the returned <code>VersionId</code> in a
+   * <code>ListContextChanges</code> request. The context store must be in the
+   * <code>AVAILABLE</code> state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListContexts">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListContextsOutcome ListContexts(const Model::ListContextsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListContexts that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListContextsRequestT = Model::ListContextsRequest>
+  Model::ListContextsOutcomeCallable ListContextsCallable(const ListContextsRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::ListContexts, request);
+  }
+
+  /**
+   * An Async wrapper for ListContexts that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListContextsRequestT = Model::ListContextsRequest>
+  void ListContextsAsync(const ListContextsRequestT& request, const ListContextsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::ListContexts, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of core network policy versions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions">AWS
    * API Reference</a></p>
@@ -2618,6 +2936,33 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
   void UpdateConnectionAsync(const UpdateConnectionRequestT& request, const UpdateConnectionResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkManagerClient::UpdateConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the description of a context store. The context store must be in the
+   * <code>AVAILABLE</code> state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateContextStore">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateContextStoreOutcome UpdateContextStore(const Model::UpdateContextStoreRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateContextStore that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateContextStoreRequestT = Model::UpdateContextStoreRequest>
+  Model::UpdateContextStoreOutcomeCallable UpdateContextStoreCallable(const UpdateContextStoreRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::UpdateContextStore, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateContextStore that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateContextStoreRequestT = Model::UpdateContextStoreRequest>
+  void UpdateContextStoreAsync(const UpdateContextStoreRequestT& request, const UpdateContextStoreResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::UpdateContextStore, request, handler, context);
   }
 
   /**

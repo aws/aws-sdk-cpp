@@ -15,6 +15,8 @@
 #include <aws/health/model/DescribeEventsForOrganizationPaginationTraits.h>
 #include <aws/health/model/DescribeEventsPaginationTraits.h>
 #include <aws/health/model/DescribeServiceLifecyclePaginationTraits.h>
+#include <aws/health/model/DescribeTagsForOrganizationPaginationTraits.h>
+#include <aws/health/model/DescribeTagsPaginationTraits.h>
 
 #include <memory>
 
@@ -116,6 +118,29 @@ class HealthPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServiceLifecycleRequest,
                                              Pagination::DescribeServiceLifecyclePaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeTags operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTagsRequest, Pagination::DescribeTagsPaginationTraits<DerivedClient>>
+  DescribeTagsPaginator(const Model::DescribeTagsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTagsRequest,
+                                             Pagination::DescribeTagsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                      request};
+  }
+
+  /**
+   * Create a paginator for DescribeTagsForOrganization operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTagsForOrganizationRequest,
+                                    Pagination::DescribeTagsForOrganizationPaginationTraits<DerivedClient>>
+  DescribeTagsForOrganizationPaginator(const Model::DescribeTagsForOrganizationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTagsForOrganizationRequest,
+                                             Pagination::DescribeTagsForOrganizationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 };

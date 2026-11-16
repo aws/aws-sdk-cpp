@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3vectors/S3VectorsRequest.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
 #include <aws/s3vectors/model/IndexMode.h>
+#include <aws/s3vectors/model/QueryText.h>
 #include <aws/s3vectors/model/VectorData.h>
 
 #include <utility>
@@ -103,10 +105,12 @@ class QueryVectorsRequest : public S3VectorsRequest {
 
   ///@{
   /**
-   * <p>The query vector. Ensure that the query vector has the same dimension as the
-   * dimension of the vector index that's being queried. For example, if your vector
-   * index contains vectors with 384 dimensions, your query vector must also have 384
-   * dimensions. </p>
+   * <p>The query vector for vector similarity search. The query vector must have the
+   * same dimension as the vector index. For example, if the vector index has 384
+   * dimensions, the query vector must also have 384 dimensions. You can omit this
+   * parameter when you supply <code>queryTexts</code> to perform a full-text-only
+   * search. A request must include <code>queryVector</code>,
+   * <code>queryTexts</code>, or both.</p>
    */
   inline const VectorData& GetQueryVector() const { return m_queryVector; }
   inline bool QueryVectorHasBeenSet() const { return m_queryVectorHasBeenSet; }
@@ -200,6 +204,51 @@ class QueryVectorsRequest : public S3VectorsRequest {
 
   ///@{
   /**
+   * <p>Full-text queries for searchable metadata keys. Omit <code>queryVector</code>
+   * to run a full-text-only search, or provide both fields to run a hybrid search.
+   * Each entry must target a distinct searchable metadata key.</p>
+   */
+  inline const Aws::Vector<QueryText>& GetQueryTexts() const { return m_queryTexts; }
+  inline bool QueryTextsHasBeenSet() const { return m_queryTextsHasBeenSet; }
+  template <typename QueryTextsT = Aws::Vector<QueryText>>
+  void SetQueryTexts(QueryTextsT&& value) {
+    m_queryTextsHasBeenSet = true;
+    m_queryTexts = std::forward<QueryTextsT>(value);
+  }
+  template <typename QueryTextsT = Aws::Vector<QueryText>>
+  QueryVectorsRequest& WithQueryTexts(QueryTextsT&& value) {
+    SetQueryTexts(std::forward<QueryTextsT>(value));
+    return *this;
+  }
+  template <typename QueryTextsT = QueryText>
+  QueryVectorsRequest& AddQueryTexts(QueryTextsT&& value) {
+    m_queryTextsHasBeenSet = true;
+    m_queryTexts.emplace_back(std::forward<QueryTextsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether to include relevance scores in the response. Full-text-only
+   * results can include BM25 scores. Hybrid results can also include a Reciprocal
+   * Rank Fusion (RRF) score and vector distance. This setting doesn't add scores to
+   * vector-only requests. The default value is <code>false</code>.</p>
+   */
+  inline bool GetReturnScores() const { return m_returnScores; }
+  inline bool ReturnScoresHasBeenSet() const { return m_returnScoresHasBeenSet; }
+  inline void SetReturnScores(bool value) {
+    m_returnScoresHasBeenSet = true;
+    m_returnScores = value;
+  }
+  inline QueryVectorsRequest& WithReturnScores(bool value) {
+    SetReturnScores(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Pagination token from a previous request. The value of this field is empty
    * for an initial request.</p>
    */
@@ -235,6 +284,10 @@ class QueryVectorsRequest : public S3VectorsRequest {
 
   bool m_returnDistance{false};
 
+  Aws::Vector<QueryText> m_queryTexts;
+
+  bool m_returnScores{false};
+
   Aws::String m_nextToken;
   bool m_vectorBucketNameHasBeenSet = false;
   bool m_indexNameHasBeenSet = false;
@@ -245,6 +298,8 @@ class QueryVectorsRequest : public S3VectorsRequest {
   bool m_queryModeHasBeenSet = false;
   bool m_returnMetadataHasBeenSet = false;
   bool m_returnDistanceHasBeenSet = false;
+  bool m_queryTextsHasBeenSet = false;
+  bool m_returnScoresHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

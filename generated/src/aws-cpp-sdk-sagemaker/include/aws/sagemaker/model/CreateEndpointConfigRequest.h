@@ -9,6 +9,7 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AsyncInferenceConfig.h>
+#include <aws/sagemaker/model/CrossRegionTrafficConfig.h>
 #include <aws/sagemaker/model/DataCaptureConfig.h>
 #include <aws/sagemaker/model/ExplainerConfig.h>
 #include <aws/sagemaker/model/MetricsConfig.h>
@@ -311,6 +312,31 @@ class CreateEndpointConfigRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The cross-Region traffic cap for the endpoint. The cap limits the requests
+   * per second that the endpoint accepts from inference routers in other Amazon Web
+   * Services Regions. If you don't specify it, these requests aren't limited. You
+   * can't specify it with serverless variants or with
+   * <code>AsyncInferenceConfig</code>. For information about the cross-Region
+   * traffic cap, see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router.html#inference-router-cross-region-limit">Limit
+   * requests from other Regions</a>.</p>
+   */
+  inline const CrossRegionTrafficConfig& GetCrossRegionTrafficConfig() const { return m_crossRegionTrafficConfig; }
+  inline bool CrossRegionTrafficConfigHasBeenSet() const { return m_crossRegionTrafficConfigHasBeenSet; }
+  template <typename CrossRegionTrafficConfigT = CrossRegionTrafficConfig>
+  void SetCrossRegionTrafficConfig(CrossRegionTrafficConfigT&& value) {
+    m_crossRegionTrafficConfigHasBeenSet = true;
+    m_crossRegionTrafficConfig = std::forward<CrossRegionTrafficConfigT>(value);
+  }
+  template <typename CrossRegionTrafficConfigT = CrossRegionTrafficConfig>
+  CreateEndpointConfigRequest& WithCrossRegionTrafficConfig(CrossRegionTrafficConfigT&& value) {
+    SetCrossRegionTrafficConfig(std::forward<CrossRegionTrafficConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_endpointConfigName;
 
@@ -335,6 +361,8 @@ class CreateEndpointConfigRequest : public SageMakerRequest {
   bool m_enableNetworkIsolation{false};
 
   MetricsConfig m_metricsConfig;
+
+  CrossRegionTrafficConfig m_crossRegionTrafficConfig;
   bool m_endpointConfigNameHasBeenSet = false;
   bool m_productionVariantsHasBeenSet = false;
   bool m_dataCaptureConfigHasBeenSet = false;
@@ -347,6 +375,7 @@ class CreateEndpointConfigRequest : public SageMakerRequest {
   bool m_vpcConfigHasBeenSet = false;
   bool m_enableNetworkIsolationHasBeenSet = false;
   bool m_metricsConfigHasBeenSet = false;
+  bool m_crossRegionTrafficConfigHasBeenSet = false;
 };
 
 }  // namespace Model

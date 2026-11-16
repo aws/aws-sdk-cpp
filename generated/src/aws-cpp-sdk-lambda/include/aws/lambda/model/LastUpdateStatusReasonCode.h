@@ -47,6 +47,7 @@ enum class LastUpdateStatusReasonCode {
   FunctionError_TooManyExtensions,
   FunctionError_InitResourceExhausted,
   DisallowedByVpcEncryptionControl,
+  IncompatibleAcceleratorInstanceTypes,
   DependencyError
 };
 

@@ -37,8 +37,8 @@ class Scope {
 
   ///@{
   /**
-   * <p>The Well-Architected Tool Framework pillars to include in the generation
-   * scope.</p>
+   * <p>The Amazon Web Services Well-Architected Framework pillars to include in the
+   * generation scope.</p>
    */
   inline const Aws::Vector<Pillar>& GetPillars() const { return m_pillars; }
   inline bool PillarsHasBeenSet() const { return m_pillarsHasBeenSet; }
@@ -61,7 +61,8 @@ class Scope {
 
   ///@{
   /**
-   * <p>Specific goal IDs to focus on during recommendation generation.</p>
+   * <p>Specific goal IDs to focus on during recommendation generation. Use
+   * <code>ListAgentGoals</code> to retrieve goal IDs.</p>
    */
   inline const Aws::Vector<Aws::String>& GetGoalIds() const { return m_goalIds; }
   inline bool GoalIdsHasBeenSet() const { return m_goalIdsHasBeenSet; }
@@ -85,7 +86,8 @@ class Scope {
 
   ///@{
   /**
-   * <p>Optional per-pillar item filtering configuration.</p>
+   * <p>An optional per-pillar filter. When you specify items, only the listed items
+   * are processed for each pillar. When you omit items, all items are processed.</p>
    */
   inline const Aws::Vector<PillarItem>& GetItems() const { return m_items; }
   inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }

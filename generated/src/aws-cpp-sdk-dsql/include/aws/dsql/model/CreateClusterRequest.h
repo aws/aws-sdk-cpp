@@ -7,8 +7,10 @@
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dsql/DSQLRequest.h>
 #include <aws/dsql/DSQL_EXPORTS.h>
+#include <aws/dsql/model/MetricGroupRequest.h>
 #include <aws/dsql/model/MultiRegionProperties.h>
 
 #include <utility>
@@ -156,6 +158,33 @@ class CreateClusterRequest : public DSQLRequest {
 
   ///@{
   /**
+   * <p>The metric groups to enable for advanced monitoring on the cluster. Advanced
+   * monitoring collects detailed, query-level database metrics to help you analyze
+   * and resolve performance issues. If you omit this parameter, no metric groups are
+   * enabled.</p>
+   */
+  inline const Aws::Vector<MetricGroupRequest>& GetMetricGroups() const { return m_metricGroups; }
+  inline bool MetricGroupsHasBeenSet() const { return m_metricGroupsHasBeenSet; }
+  template <typename MetricGroupsT = Aws::Vector<MetricGroupRequest>>
+  void SetMetricGroups(MetricGroupsT&& value) {
+    m_metricGroupsHasBeenSet = true;
+    m_metricGroups = std::forward<MetricGroupsT>(value);
+  }
+  template <typename MetricGroupsT = Aws::Vector<MetricGroupRequest>>
+  CreateClusterRequest& WithMetricGroups(MetricGroupsT&& value) {
+    SetMetricGroups(std::forward<MetricGroupsT>(value));
+    return *this;
+  }
+  template <typename MetricGroupsT = MetricGroupRequest>
+  CreateClusterRequest& AddMetricGroups(MetricGroupsT&& value) {
+    m_metricGroupsHasBeenSet = true;
+    m_metricGroups.emplace_back(std::forward<MetricGroupsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An optional field that controls whether to bypass the lockout prevention
    * check. When set to true, this parameter allows you to apply a policy that might
    * lock you out of the cluster. Use with caution.</p>
@@ -184,6 +213,8 @@ class CreateClusterRequest : public DSQLRequest {
 
   Aws::String m_policy;
 
+  Aws::Vector<MetricGroupRequest> m_metricGroups;
+
   bool m_bypassPolicyLockoutSafetyCheck{false};
   bool m_deletionProtectionEnabledHasBeenSet = false;
   bool m_kmsEncryptionKeyHasBeenSet = false;
@@ -191,6 +222,7 @@ class CreateClusterRequest : public DSQLRequest {
   bool m_clientTokenHasBeenSet = true;
   bool m_multiRegionPropertiesHasBeenSet = false;
   bool m_policyHasBeenSet = false;
+  bool m_metricGroupsHasBeenSet = false;
   bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
 };
 

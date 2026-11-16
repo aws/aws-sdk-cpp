@@ -51,6 +51,9 @@
 #include <aws/dsql/model/ListStreamsResult.h>
 #include <aws/dsql/model/ListTagsForResourceRequest.h>
 #include <aws/dsql/model/ListTagsForResourceResult.h>
+#include <aws/dsql/model/MetricGroup.h>
+#include <aws/dsql/model/MetricGroupRequest.h>
+#include <aws/dsql/model/MetricGroupResponse.h>
 #include <aws/dsql/model/MultiRegionProperties.h>
 #include <aws/dsql/model/PutClusterPolicyRequest.h>
 #include <aws/dsql/model/PutClusterPolicyResult.h>

@@ -126,6 +126,38 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::
   }
 
   /**
+   * <p>Create a performance monitor to monitor the traffic of the Amazon Virtual
+   * Private Clouds (VPCs) that you specify as targets, to determine whether the
+   * Amazon Web Services network is causing issues for your workloads. With a
+   * performance monitor, you can identify network degradation across paths between
+   * Availability Zones and across Amazon Web Services Regions.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/CreatePerformanceMonitor">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreatePerformanceMonitorOutcome CreatePerformanceMonitor(const Model::CreatePerformanceMonitorRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreatePerformanceMonitor that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreatePerformanceMonitorRequestT = Model::CreatePerformanceMonitorRequest>
+  Model::CreatePerformanceMonitorOutcomeCallable CreatePerformanceMonitorCallable(const CreatePerformanceMonitorRequestT& request) const {
+    return SubmitCallable(&NetworkFlowMonitorClient::CreatePerformanceMonitor, request);
+  }
+
+  /**
+   * An Async wrapper for CreatePerformanceMonitor that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreatePerformanceMonitorRequestT = Model::CreatePerformanceMonitorRequest>
+  void CreatePerformanceMonitorAsync(const CreatePerformanceMonitorRequestT& request,
+                                     const CreatePerformanceMonitorResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFlowMonitorClient::CreatePerformanceMonitor, request, handler, context);
+  }
+
+  /**
    * <p>In Network Flow Monitor, you specify a scope for the service to generate
    * metrics for. By using the scope, Network Flow Monitor can generate a topology of
    * all the resources to measure performance metrics for. When you create a scope,
@@ -191,6 +223,35 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::
   }
 
   /**
+   * <p>Delete a performance monitor. Network Flow Monitor stops tracking network
+   * performance for the resources that the monitor included.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/DeletePerformanceMonitor">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeletePerformanceMonitorOutcome DeletePerformanceMonitor(const Model::DeletePerformanceMonitorRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeletePerformanceMonitor that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeletePerformanceMonitorRequestT = Model::DeletePerformanceMonitorRequest>
+  Model::DeletePerformanceMonitorOutcomeCallable DeletePerformanceMonitorCallable(const DeletePerformanceMonitorRequestT& request) const {
+    return SubmitCallable(&NetworkFlowMonitorClient::DeletePerformanceMonitor, request);
+  }
+
+  /**
+   * An Async wrapper for DeletePerformanceMonitor that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeletePerformanceMonitorRequestT = Model::DeletePerformanceMonitorRequest>
+  void DeletePerformanceMonitorAsync(const DeletePerformanceMonitorRequestT& request,
+                                     const DeletePerformanceMonitorResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFlowMonitorClient::DeletePerformanceMonitor, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a scope that has been defined.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/DeleteScope">AWS
    * API Reference</a></p>
@@ -244,6 +305,67 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::
   }
 
   /**
+   * <p>Returns the accounts that are sending traffic to, or receiving traffic from,
+   * resources in a monitor, but that aren't included in the monitoring scope for the
+   * monitor. By adding the suggested accounts to your scope, you enable Network Flow
+   * Monitor to resolve the network paths for that traffic.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetMonitorScopeSuggestions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetMonitorScopeSuggestionsOutcome GetMonitorScopeSuggestions(
+      const Model::GetMonitorScopeSuggestionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetMonitorScopeSuggestions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetMonitorScopeSuggestionsRequestT = Model::GetMonitorScopeSuggestionsRequest>
+  Model::GetMonitorScopeSuggestionsOutcomeCallable GetMonitorScopeSuggestionsCallable(
+      const GetMonitorScopeSuggestionsRequestT& request) const {
+    return SubmitCallable(&NetworkFlowMonitorClient::GetMonitorScopeSuggestions, request);
+  }
+
+  /**
+   * An Async wrapper for GetMonitorScopeSuggestions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetMonitorScopeSuggestionsRequestT = Model::GetMonitorScopeSuggestionsRequest>
+  void GetMonitorScopeSuggestionsAsync(const GetMonitorScopeSuggestionsRequestT& request,
+                                       const GetMonitorScopeSuggestionsResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFlowMonitorClient::GetMonitorScopeSuggestions, request, handler, context);
+  }
+
+  /**
+   * <p>Returns information about a performance monitor, including the resources that
+   * it monitors, its status, and the tags for the monitor.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetPerformanceMonitor">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPerformanceMonitorOutcome GetPerformanceMonitor(const Model::GetPerformanceMonitorRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPerformanceMonitor that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetPerformanceMonitorRequestT = Model::GetPerformanceMonitorRequest>
+  Model::GetPerformanceMonitorOutcomeCallable GetPerformanceMonitorCallable(const GetPerformanceMonitorRequestT& request) const {
+    return SubmitCallable(&NetworkFlowMonitorClient::GetPerformanceMonitor, request);
+  }
+
+  /**
+   * An Async wrapper for GetPerformanceMonitor that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetPerformanceMonitorRequestT = Model::GetPerformanceMonitorRequest>
+  void GetPerformanceMonitorAsync(const GetPerformanceMonitorRequestT& request, const GetPerformanceMonitorResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFlowMonitorClient::GetPerformanceMonitor, request, handler, context);
+  }
+
+  /**
    * <p>Return the data for a query with the Network Flow Monitor query interface.
    * You specify the query that you want to return results for by providing a query
    * ID and a monitor name. This query returns the top contributors for a specific
@@ -280,6 +402,40 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::
                                                   const GetQueryResultsMonitorTopContributorsResponseReceivedHandler& handler,
                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFlowMonitorClient::GetQueryResultsMonitorTopContributors, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the results of a query for the Network Flow Monitor query interface,
+   * for a specified query ID and performance monitor. This call returns the top
+   * paths for a performance monitor.</p> <p>Create a query with <a
+   * href="https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_StartQueryPerformanceMonitor.html">
+   * StartQueryPerformanceMonitor</a>, and then use the query ID with this call to
+   * return the results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryResultsPerformanceMonitor">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetQueryResultsPerformanceMonitorOutcome GetQueryResultsPerformanceMonitor(
+      const Model::GetQueryResultsPerformanceMonitorRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetQueryResultsPerformanceMonitor that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetQueryResultsPerformanceMonitorRequestT = Model::GetQueryResultsPerformanceMonitorRequest>
+  Model::GetQueryResultsPerformanceMonitorOutcomeCallable GetQueryResultsPerformanceMonitorCallable(
+      const GetQueryResultsPerformanceMonitorRequestT& request) const {
+    return SubmitCallable(&NetworkFlowMonitorClient::GetQueryResultsPerformanceMonitor, request);
+  }
+
+  /**
+   * An Async wrapper for GetQueryResultsPerformanceMonitor that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetQueryResultsPerformanceMonitorRequestT = Model::GetQueryResultsPerformanceMonitorRequest>
+  void GetQueryResultsPerformanceMonitorAsync(const GetQueryResultsPerformanceMonitorRequestT& request,
+                                              const GetQueryResultsPerformanceMonitorResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFlowMonitorClient::GetQueryResultsPerformanceMonitor, request, handler, context);
   }
 
   /**
@@ -409,6 +565,41 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::
                                                  const GetQueryStatusMonitorTopContributorsResponseReceivedHandler& handler,
                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFlowMonitorClient::GetQueryStatusMonitorTopContributors, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the current status of a query for the Network Flow Monitor query
+   * interface, for a specified query ID and performance monitor. This call returns
+   * the query status for the top paths for a performance monitor.</p> <p>When you
+   * run a query, use this call to check the status of the query to make sure that
+   * the query has <code>SUCCEEDED</code> before you review the results. Use the same
+   * query ID that you used for the corresponding API call to start (create) the
+   * query, <code>StartQueryPerformanceMonitor</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryStatusPerformanceMonitor">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetQueryStatusPerformanceMonitorOutcome GetQueryStatusPerformanceMonitor(
+      const Model::GetQueryStatusPerformanceMonitorRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetQueryStatusPerformanceMonitor that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetQueryStatusPerformanceMonitorRequestT = Model::GetQueryStatusPerformanceMonitorRequest>
+  Model::GetQueryStatusPerformanceMonitorOutcomeCallable GetQueryStatusPerformanceMonitorCallable(
+      const GetQueryStatusPerformanceMonitorRequestT& request) const {
+    return SubmitCallable(&NetworkFlowMonitorClient::GetQueryStatusPerformanceMonitor, request);
+  }
+
+  /**
+   * An Async wrapper for GetQueryStatusPerformanceMonitor that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetQueryStatusPerformanceMonitorRequestT = Model::GetQueryStatusPerformanceMonitorRequest>
+  void GetQueryStatusPerformanceMonitorAsync(const GetQueryStatusPerformanceMonitorRequestT& request,
+                                             const GetQueryStatusPerformanceMonitorResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFlowMonitorClient::GetQueryStatusPerformanceMonitor, request, handler, context);
   }
 
   /**
@@ -552,6 +743,36 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::
   }
 
   /**
+   * <p>Returns a list of the performance monitors in an account. You can optionally
+   * return only the monitors that have a specific status or type.</p> <p>Results are
+   * paginated. Use the <code>nextToken</code> parameter to return additional
+   * results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/ListPerformanceMonitors">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPerformanceMonitorsOutcome ListPerformanceMonitors(const Model::ListPerformanceMonitorsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListPerformanceMonitors that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPerformanceMonitorsRequestT = Model::ListPerformanceMonitorsRequest>
+  Model::ListPerformanceMonitorsOutcomeCallable ListPerformanceMonitorsCallable(const ListPerformanceMonitorsRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFlowMonitorClient::ListPerformanceMonitors, request);
+  }
+
+  /**
+   * An Async wrapper for ListPerformanceMonitors that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListPerformanceMonitorsRequestT = Model::ListPerformanceMonitorsRequest>
+  void ListPerformanceMonitorsAsync(const ListPerformanceMonitorsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const ListPerformanceMonitorsRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFlowMonitorClient::ListPerformanceMonitors, request, handler, context);
+  }
+
+  /**
    * <p>List all the scopes for an account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/ListScopes">AWS
    * API Reference</a></p>
@@ -640,6 +861,45 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::
                                              const StartQueryMonitorTopContributorsResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFlowMonitorClient::StartQueryMonitorTopContributors, request, handler, context);
+  }
+
+  /**
+   * <p>Create a query that you can use with the Network Flow Monitor query interface
+   * to return the top paths for a performance monitor. Specify the performance
+   * monitor that you want to create the query for.</p> <p>The call returns a query
+   * ID that you can use with <a
+   * href="https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryResultsPerformanceMonitor.html">
+   * GetQueryResultsPerformanceMonitor</a> to return the results of the query.</p>
+   * <p>Top paths in Network Flow Monitor are the network paths used by the traffic
+   * for the resources that a performance monitor tracks, ranked by impact score and
+   * then by traffic volume. Each path includes the traffic and round-trip time for
+   * the path, together with a breakdown of the subnet pairs that the path
+   * includes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StartQueryPerformanceMonitor">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartQueryPerformanceMonitorOutcome StartQueryPerformanceMonitor(
+      const Model::StartQueryPerformanceMonitorRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartQueryPerformanceMonitor that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartQueryPerformanceMonitorRequestT = Model::StartQueryPerformanceMonitorRequest>
+  Model::StartQueryPerformanceMonitorOutcomeCallable StartQueryPerformanceMonitorCallable(
+      const StartQueryPerformanceMonitorRequestT& request) const {
+    return SubmitCallable(&NetworkFlowMonitorClient::StartQueryPerformanceMonitor, request);
+  }
+
+  /**
+   * An Async wrapper for StartQueryPerformanceMonitor that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartQueryPerformanceMonitorRequestT = Model::StartQueryPerformanceMonitorRequest>
+  void StartQueryPerformanceMonitorAsync(const StartQueryPerformanceMonitorRequestT& request,
+                                         const StartQueryPerformanceMonitorResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFlowMonitorClient::StartQueryPerformanceMonitor, request, handler, context);
   }
 
   /**
@@ -755,6 +1015,38 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::
                                             const StopQueryMonitorTopContributorsResponseReceivedHandler& handler,
                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFlowMonitorClient::StopQueryMonitorTopContributors, request, handler, context);
+  }
+
+  /**
+   * <p>Stop a query for the Network Flow Monitor query interface, for a specified
+   * query ID and performance monitor. Use the same query ID that you used for the
+   * corresponding API call to start the query,
+   * <code>StartQueryPerformanceMonitor</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StopQueryPerformanceMonitor">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopQueryPerformanceMonitorOutcome StopQueryPerformanceMonitor(
+      const Model::StopQueryPerformanceMonitorRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopQueryPerformanceMonitor that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StopQueryPerformanceMonitorRequestT = Model::StopQueryPerformanceMonitorRequest>
+  Model::StopQueryPerformanceMonitorOutcomeCallable StopQueryPerformanceMonitorCallable(
+      const StopQueryPerformanceMonitorRequestT& request) const {
+    return SubmitCallable(&NetworkFlowMonitorClient::StopQueryPerformanceMonitor, request);
+  }
+
+  /**
+   * An Async wrapper for StopQueryPerformanceMonitor that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StopQueryPerformanceMonitorRequestT = Model::StopQueryPerformanceMonitorRequest>
+  void StopQueryPerformanceMonitorAsync(const StopQueryPerformanceMonitorRequestT& request,
+                                        const StopQueryPerformanceMonitorResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFlowMonitorClient::StopQueryPerformanceMonitor, request, handler, context);
   }
 
   /**
@@ -903,6 +1195,34 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::
   void UpdateMonitorAsync(const UpdateMonitorRequestT& request, const UpdateMonitorResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFlowMonitorClient::UpdateMonitor, request, handler, context);
+  }
+
+  /**
+   * <p>Update a performance monitor, to add or remove the resources that the monitor
+   * tracks network performance for.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/UpdatePerformanceMonitor">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdatePerformanceMonitorOutcome UpdatePerformanceMonitor(const Model::UpdatePerformanceMonitorRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdatePerformanceMonitor that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdatePerformanceMonitorRequestT = Model::UpdatePerformanceMonitorRequest>
+  Model::UpdatePerformanceMonitorOutcomeCallable UpdatePerformanceMonitorCallable(const UpdatePerformanceMonitorRequestT& request) const {
+    return SubmitCallable(&NetworkFlowMonitorClient::UpdatePerformanceMonitor, request);
+  }
+
+  /**
+   * An Async wrapper for UpdatePerformanceMonitor that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdatePerformanceMonitorRequestT = Model::UpdatePerformanceMonitorRequest>
+  void UpdatePerformanceMonitorAsync(const UpdatePerformanceMonitorRequestT& request,
+                                     const UpdatePerformanceMonitorResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFlowMonitorClient::UpdatePerformanceMonitor, request, handler, context);
   }
 
   /**

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/health/HealthRequest.h>
 #include <aws/health/Health_EXPORTS.h>
+#include <aws/health/model/OrganizationEntityAggregateFilter.h>
 
 #include <utility>
 
@@ -82,12 +83,33 @@ class DescribeEntityAggregatesForOrganizationRequest : public HealthRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Values to narrow the results returned.</p>
+   */
+  inline const OrganizationEntityAggregateFilter& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = OrganizationEntityAggregateFilter>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = OrganizationEntityAggregateFilter>
+  DescribeEntityAggregatesForOrganizationRequest& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_eventArns;
 
   Aws::Vector<Aws::String> m_awsAccountIds;
+
+  OrganizationEntityAggregateFilter m_filter;
   bool m_eventArnsHasBeenSet = false;
   bool m_awsAccountIdsHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/connecthealth/ConnectHealthErrors.h>
 #include <aws/connecthealth/ConnectHealth_EXPORTS.h>
+#include <aws/connecthealth/model/MedicalScribeChecklistEvent.h>
+#include <aws/connecthealth/model/MedicalScribePeriodontalChartEvent.h>
 #include <aws/connecthealth/model/MedicalScribeTranscriptEvent.h>
 #include <aws/connecthealth/model/StartMedicalScribeListeningSessionInitialResponse.h>
 #include <aws/core/client/AWSError.h>
@@ -15,7 +17,13 @@
 namespace Aws {
 namespace ConnectHealth {
 namespace Model {
-enum class StartMedicalScribeListeningSessionEventType { INITIAL_RESPONSE, TRANSCRIPTEVENT, UNKNOWN };
+enum class StartMedicalScribeListeningSessionEventType {
+  INITIAL_RESPONSE,
+  TRANSCRIPTEVENT,
+  PERIODONTALCHARTEVENT,
+  CHECKLISTEVENT,
+  UNKNOWN
+};
 
 class StartMedicalScribeListeningSessionHandler : public Aws::Utils::Event::EventStreamHandler {
   typedef std::function<void(const StartMedicalScribeListeningSessionInitialResponse&)>
@@ -23,6 +31,8 @@ class StartMedicalScribeListeningSessionHandler : public Aws::Utils::Event::Even
   typedef std::function<void(const StartMedicalScribeListeningSessionInitialResponse&, const Utils::Event::InitialResponseType)>
       StartMedicalScribeListeningSessionInitialResponseCallbackEx;
   typedef std::function<void(const MedicalScribeTranscriptEvent&)> MedicalScribeTranscriptEventCallback;
+  typedef std::function<void(const MedicalScribePeriodontalChartEvent&)> MedicalScribePeriodontalChartEventCallback;
+  typedef std::function<void(const MedicalScribeChecklistEvent&)> MedicalScribeChecklistEventCallback;
   typedef std::function<void(const Aws::Client::AWSError<ConnectHealthErrors>& error)> ErrorCallback;
 
  public:
@@ -53,6 +63,12 @@ class StartMedicalScribeListeningSessionHandler : public Aws::Utils::Event::Even
   inline void SetMedicalScribeTranscriptEventCallback(const MedicalScribeTranscriptEventCallback& callback) {
     m_onMedicalScribeTranscriptEvent = callback;
   }
+  inline void SetMedicalScribePeriodontalChartEventCallback(const MedicalScribePeriodontalChartEventCallback& callback) {
+    m_onMedicalScribePeriodontalChartEvent = callback;
+  }
+  inline void SetMedicalScribeChecklistEventCallback(const MedicalScribeChecklistEventCallback& callback) {
+    m_onMedicalScribeChecklistEvent = callback;
+  }
   inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
   inline StartMedicalScribeListeningSessionInitialResponseCallbackEx& GetInitialResponseCallbackEx() { return m_onInitialResponse; }
@@ -64,6 +80,8 @@ class StartMedicalScribeListeningSessionHandler : public Aws::Utils::Event::Even
 
   StartMedicalScribeListeningSessionInitialResponseCallbackEx m_onInitialResponse;
   MedicalScribeTranscriptEventCallback m_onMedicalScribeTranscriptEvent;
+  MedicalScribePeriodontalChartEventCallback m_onMedicalScribePeriodontalChartEvent;
+  MedicalScribeChecklistEventCallback m_onMedicalScribeChecklistEvent;
   ErrorCallback m_onError;
 };
 

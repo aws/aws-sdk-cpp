@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
+#include <aws/emr-serverless/model/FlexExecution.h>
 #include <aws/emr-serverless/model/JobRunMode.h>
 #include <aws/emr-serverless/model/JobRunState.h>
 
@@ -317,6 +318,24 @@ class JobRunSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon EMR Serverless Flex settings for the job run.</p>
+   */
+  inline const FlexExecution& GetFlexExecution() const { return m_flexExecution; }
+  inline bool FlexExecutionHasBeenSet() const { return m_flexExecutionHasBeenSet; }
+  template <typename FlexExecutionT = FlexExecution>
+  void SetFlexExecution(FlexExecutionT&& value) {
+    m_flexExecutionHasBeenSet = true;
+    m_flexExecution = std::forward<FlexExecutionT>(value);
+  }
+  template <typename FlexExecutionT = FlexExecution>
+  JobRunSummary& WithFlexExecution(FlexExecutionT&& value) {
+    SetFlexExecution(std::forward<FlexExecutionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_applicationId;
 
@@ -349,6 +368,8 @@ class JobRunSummary {
   Aws::Utils::DateTime m_attemptCreatedAt{};
 
   Aws::Utils::DateTime m_attemptUpdatedAt{};
+
+  FlexExecution m_flexExecution;
   bool m_applicationIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -365,6 +386,7 @@ class JobRunSummary {
   bool m_attemptHasBeenSet = false;
   bool m_attemptCreatedAtHasBeenSet = false;
   bool m_attemptUpdatedAtHasBeenSet = false;
+  bool m_flexExecutionHasBeenSet = false;
 };
 
 }  // namespace Model

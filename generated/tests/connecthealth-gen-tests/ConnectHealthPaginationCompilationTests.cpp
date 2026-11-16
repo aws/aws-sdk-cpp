@@ -9,6 +9,7 @@
 #include <aws/connecthealth/ConnectHealthClientPagination.h>
 #include <aws/connecthealth/ConnectHealthPaginationBase.h>
 #include <aws/connecthealth/model/ListSubscriptionsPaginationTraits.h>
+#include <aws/connecthealth/model/ListDatasetsPaginationTraits.h>
 #include <aws/connecthealth/model/ListDomainsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

@@ -122,6 +122,16 @@ VpcEndpointConnection& VpcEndpointConnection::operator=(const XmlNode& xmlNode) 
 
       m_payerResponsibilitiesHasBeenSet = true;
     }
+    XmlNode transitGatewayAttachmentIdNode = resultNode.FirstChild("transitGatewayAttachmentId");
+    if (!transitGatewayAttachmentIdNode.IsNull()) {
+      m_transitGatewayAttachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayAttachmentIdNode.GetText());
+      m_transitGatewayAttachmentIdHasBeenSet = true;
+    }
+    XmlNode transitGatewayAttachmentOwnerNode = resultNode.FirstChild("transitGatewayAttachmentOwner");
+    if (!transitGatewayAttachmentOwnerNode.IsNull()) {
+      m_transitGatewayAttachmentOwner = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayAttachmentOwnerNode.GetText());
+      m_transitGatewayAttachmentOwnerHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -207,6 +217,16 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
       item.OutputToStream(oStream, payerResponsibilitiesSs.str().c_str());
     }
   }
+
+  if (m_transitGatewayAttachmentIdHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".TransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transitGatewayAttachmentId.c_str()) << "&";
+  }
+
+  if (m_transitGatewayAttachmentOwnerHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".TransitGatewayAttachmentOwner=" << StringUtils::URLEncode(m_transitGatewayAttachmentOwner.c_str()) << "&";
+  }
 }
 
 void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -274,6 +294,12 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
       payerResponsibilitiesSs << location << ".PayerResponsibilitySet." << payerResponsibilitiesIdx++;
       item.OutputToStream(oStream, payerResponsibilitiesSs.str().c_str());
     }
+  }
+  if (m_transitGatewayAttachmentIdHasBeenSet) {
+    oStream << location << ".TransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transitGatewayAttachmentId.c_str()) << "&";
+  }
+  if (m_transitGatewayAttachmentOwnerHasBeenSet) {
+    oStream << location << ".TransitGatewayAttachmentOwner=" << StringUtils::URLEncode(m_transitGatewayAttachmentOwner.c_str()) << "&";
   }
 }
 

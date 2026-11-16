@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
+#include <aws/lambda/model/AcceleratorConfig.h>
 #include <aws/lambda/model/Architecture.h>
 #include <aws/lambda/model/CapacityProviderConfig.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
@@ -648,8 +649,9 @@ class UpdateFunctionCodeResult {
   ///@{
   /**
    * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-   * value is 512, but can be any whole number between 512 and 10,240 MB. For more
-   * information, see <a
+   * value is 512, but can be any whole number between 512 and 10,240 MB. For
+   * functions that use <code>AcceleratorConfig</code>, the maximum is 32,768 MB. For
+   * more information, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
    * ephemeral storage (console)</a>.</p>
    */
@@ -812,6 +814,23 @@ class UpdateFunctionCodeResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The accelerator resource settings for a Lambda execution environment.</p>
+   */
+  inline const AcceleratorConfig& GetAcceleratorConfig() const { return m_acceleratorConfig; }
+  template <typename AcceleratorConfigT = AcceleratorConfig>
+  void SetAcceleratorConfig(AcceleratorConfigT&& value) {
+    m_acceleratorConfigHasBeenSet = true;
+    m_acceleratorConfig = std::forward<AcceleratorConfigT>(value);
+  }
+  template <typename AcceleratorConfigT = AcceleratorConfig>
+  UpdateFunctionCodeResult& WithAcceleratorConfig(AcceleratorConfigT&& value) {
+    SetAcceleratorConfig(std::forward<AcceleratorConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -910,6 +929,8 @@ class UpdateFunctionCodeResult {
 
   FunctionRuntimeConfig m_runtimeConfig;
 
+  AcceleratorConfig m_acceleratorConfig;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_functionNameHasBeenSet = false;
@@ -953,6 +974,7 @@ class UpdateFunctionCodeResult {
   bool m_configSha256HasBeenSet = false;
   bool m_durableConfigHasBeenSet = false;
   bool m_runtimeConfigHasBeenSet = false;
+  bool m_acceleratorConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

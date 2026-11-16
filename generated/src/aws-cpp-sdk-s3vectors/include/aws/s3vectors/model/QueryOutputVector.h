@@ -7,6 +7,7 @@
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
+#include <aws/s3vectors/model/QueryScores.h>
 
 #include <utility>
 
@@ -21,8 +22,9 @@ namespace S3Vectors {
 namespace Model {
 
 /**
- * <p>The attributes of a vector in the approximate nearest neighbor
- * search.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains the key and optional distance, relevance scores, and metadata for a
+ * vector returned by the <code>QueryVectors</code> operation.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/QueryOutputVector">AWS
  * API Reference</a></p>
  */
@@ -52,7 +54,26 @@ class QueryOutputVector {
 
   ///@{
   /**
-   * <p>The key of the vector in the approximate nearest neighbor search.</p>
+   * <p>The relevance scores for a full-text-only or hybrid result, when requested
+   * through <code>returnScores</code>.</p>
+   */
+  inline const QueryScores& GetScores() const { return m_scores; }
+  inline bool ScoresHasBeenSet() const { return m_scoresHasBeenSet; }
+  template <typename ScoresT = QueryScores>
+  void SetScores(ScoresT&& value) {
+    m_scoresHasBeenSet = true;
+    m_scores = std::forward<ScoresT>(value);
+  }
+  template <typename ScoresT = QueryScores>
+  QueryOutputVector& WithScores(ScoresT&& value) {
+    SetScores(std::forward<ScoresT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The key of the matching vector.</p>
    */
   inline const Aws::String& GetKey() const { return m_key; }
   inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
@@ -88,10 +109,13 @@ class QueryOutputVector {
  private:
   double m_distance{0.0};
 
+  QueryScores m_scores;
+
   Aws::String m_key;
 
   Aws::Utils::Document m_metadata;
   bool m_distanceHasBeenSet = false;
+  bool m_scoresHasBeenSet = false;
   bool m_keyHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };

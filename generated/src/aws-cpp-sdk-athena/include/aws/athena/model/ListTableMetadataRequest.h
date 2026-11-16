@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/athena/AthenaRequest.h>
 #include <aws/athena/Athena_EXPORTS.h>
+#include <aws/athena/model/TableAttributes.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -139,6 +141,38 @@ class ListTableMetadataRequest : public AthenaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the table properties returned by the <code>ListTableMetadata</code>
+   * call. This parameter doesn't accept an empty list, and the request must include
+   * <code>NAME</code>. The valid combinations of values are <code>NAME</code>, which
+   * returns the name of each table, and <code>NAME</code> and
+   * <code>TABLE_TYPE</code>, which return the name and table type of each table. The
+   * remaining properties are omitted. If you omit this parameter, all table
+   * properties are returned.</p> <p>Requesting only the properties you need can
+   * reduce response time for databases that contain many tables.</p> <p>This
+   * parameter applies only to the Glue Data Catalog. For other data catalog types,
+   * it is ignored.</p>
+   */
+  inline const Aws::Vector<TableAttributes>& GetAttributesToGet() const { return m_attributesToGet; }
+  inline bool AttributesToGetHasBeenSet() const { return m_attributesToGetHasBeenSet; }
+  template <typename AttributesToGetT = Aws::Vector<TableAttributes>>
+  void SetAttributesToGet(AttributesToGetT&& value) {
+    m_attributesToGetHasBeenSet = true;
+    m_attributesToGet = std::forward<AttributesToGetT>(value);
+  }
+  template <typename AttributesToGetT = Aws::Vector<TableAttributes>>
+  ListTableMetadataRequest& WithAttributesToGet(AttributesToGetT&& value) {
+    SetAttributesToGet(std::forward<AttributesToGetT>(value));
+    return *this;
+  }
+  inline ListTableMetadataRequest& AddAttributesToGet(TableAttributes value) {
+    m_attributesToGetHasBeenSet = true;
+    m_attributesToGet.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalogName;
 
@@ -151,12 +185,15 @@ class ListTableMetadataRequest : public AthenaRequest {
   int m_maxResults{0};
 
   Aws::String m_workGroup;
+
+  Aws::Vector<TableAttributes> m_attributesToGet;
   bool m_catalogNameHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
   bool m_expressionHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_workGroupHasBeenSet = false;
+  bool m_attributesToGetHasBeenSet = false;
 };
 
 }  // namespace Model

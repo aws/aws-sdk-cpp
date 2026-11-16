@@ -10,8 +10,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/wellarchitected/model/AggregationConfiguration.h>
+#include <aws/wellarchitected/model/OrganizationalAggregationConfiguration.h>
 #include <aws/wellarchitected/model/Pillar.h>
-#include <aws/wellarchitected/model/Tag.h>
+#include <aws/wellarchitected/model/ProfileType.h>
 
 #include <utility>
 
@@ -112,7 +113,8 @@ class AgentProfileSummary {
 
   ///@{
   /**
-   * <p>The Well-Architected Tool Framework pillars associated with this profile.</p>
+   * <p>The Amazon Web Services Well-Architected Framework pillars associated with
+   * this profile. Not present for basic profiles.</p>
    */
   inline const Aws::Vector<Pillar>& GetPillars() const { return m_pillars; }
   inline bool PillarsHasBeenSet() const { return m_pillarsHasBeenSet; }
@@ -151,7 +153,24 @@ class AgentProfileSummary {
 
   ///@{
   /**
-   * <p>The ARN of the IAM execution role used for recommendation actions.</p>
+   * <p>The type of the profile.</p>
+   */
+  inline ProfileType GetProfileType() const { return m_profileType; }
+  inline bool ProfileTypeHasBeenSet() const { return m_profileTypeHasBeenSet; }
+  inline void SetProfileType(ProfileType value) {
+    m_profileTypeHasBeenSet = true;
+    m_profileType = value;
+  }
+  inline AgentProfileSummary& WithProfileType(ProfileType value) {
+    SetProfileType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the IAM execution role used for recommendation actions. Not
+   * present for basic profiles.</p>
    */
   inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
   inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
@@ -170,7 +189,7 @@ class AgentProfileSummary {
   ///@{
   /**
    * <p>The aggregation configuration that defines which Amazon Web Services accounts
-   * and Regions to analyze.</p>
+   * and Regions to analyze. Not present for basic profiles.</p>
    */
   inline const Aws::Vector<AggregationConfiguration>& GetAggregationConfiguration() const { return m_aggregationConfiguration; }
   inline bool AggregationConfigurationHasBeenSet() const { return m_aggregationConfigurationHasBeenSet; }
@@ -271,30 +290,6 @@ class AgentProfileSummary {
 
   ///@{
   /**
-   * <p>The tags associated with the profile.</p>
-   */
-  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
-  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-  template <typename TagsT = Aws::Vector<Tag>>
-  void SetTags(TagsT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags = std::forward<TagsT>(value);
-  }
-  template <typename TagsT = Aws::Vector<Tag>>
-  AgentProfileSummary& WithTags(TagsT&& value) {
-    SetTags(std::forward<TagsT>(value));
-    return *this;
-  }
-  template <typename TagsT = Tag>
-  AgentProfileSummary& AddTags(TagsT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags.emplace_back(std::forward<TagsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the user or system that created this profile.</p>
    */
   inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
@@ -364,6 +359,27 @@ class AgentProfileSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The organizational monitoring boundary. Present only for organizational
+   * profiles.</p>
+   */
+  inline const OrganizationalAggregationConfiguration& GetOrganizationalAggregationConfiguration() const {
+    return m_organizationalAggregationConfiguration;
+  }
+  inline bool OrganizationalAggregationConfigurationHasBeenSet() const { return m_organizationalAggregationConfigurationHasBeenSet; }
+  template <typename OrganizationalAggregationConfigurationT = OrganizationalAggregationConfiguration>
+  void SetOrganizationalAggregationConfiguration(OrganizationalAggregationConfigurationT&& value) {
+    m_organizationalAggregationConfigurationHasBeenSet = true;
+    m_organizationalAggregationConfiguration = std::forward<OrganizationalAggregationConfigurationT>(value);
+  }
+  template <typename OrganizationalAggregationConfigurationT = OrganizationalAggregationConfiguration>
+  AgentProfileSummary& WithOrganizationalAggregationConfiguration(OrganizationalAggregationConfigurationT&& value) {
+    SetOrganizationalAggregationConfiguration(std::forward<OrganizationalAggregationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -377,6 +393,8 @@ class AgentProfileSummary {
 
   bool m_deletionProtection{false};
 
+  ProfileType m_profileType{ProfileType::NOT_SET};
+
   Aws::String m_executionRoleArn;
 
   Aws::Vector<AggregationConfiguration> m_aggregationConfiguration;
@@ -389,8 +407,6 @@ class AgentProfileSummary {
 
   Aws::Map<Aws::String, Aws::String> m_fieldErrors;
 
-  Aws::Vector<Tag> m_tags;
-
   Aws::String m_createdBy;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -398,23 +414,26 @@ class AgentProfileSummary {
   Aws::String m_lastModifiedBy;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
+
+  OrganizationalAggregationConfiguration m_organizationalAggregationConfiguration;
   bool m_nameHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_businessOverviewHasBeenSet = false;
   bool m_pillarsHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
+  bool m_profileTypeHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
   bool m_aggregationConfigurationHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_eligibleForScheduledGenerationHasBeenSet = false;
   bool m_eligibleForArchitectureGenerationHasBeenSet = false;
   bool m_fieldErrorsHasBeenSet = false;
-  bool m_tagsHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_lastModifiedByHasBeenSet = false;
   bool m_lastModifiedAtHasBeenSet = false;
+  bool m_organizationalAggregationConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,8 +18,9 @@ namespace Model {
 
 /**
  * <p>The size of the function's <code>/tmp</code> directory in MB. The default
- * value is 512, but can be any whole number between 512 and 10,240 MB. For more
- * information, see <a
+ * value is 512, but can be any whole number between 512 and 10,240 MB. For
+ * functions that use <code>AcceleratorConfig</code>, the maximum is 32,768 MB. For
+ * more information, see <a
  * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
  * ephemeral storage (console)</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EphemeralStorage">AWS

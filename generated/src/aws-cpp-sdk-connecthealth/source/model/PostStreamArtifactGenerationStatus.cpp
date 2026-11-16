@@ -18,6 +18,8 @@ namespace PostStreamArtifactGenerationStatusMapper {
 static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+static const int SKIPPED_HASH = HashingUtils::HashString("SKIPPED");
 
 PostStreamArtifactGenerationStatus GetPostStreamArtifactGenerationStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ PostStreamArtifactGenerationStatus GetPostStreamArtifactGenerationStatusForName(
     return PostStreamArtifactGenerationStatus::FAILED;
   } else if (hashCode == COMPLETED_HASH) {
     return PostStreamArtifactGenerationStatus::COMPLETED;
+  } else if (hashCode == PENDING_HASH) {
+    return PostStreamArtifactGenerationStatus::PENDING;
+  } else if (hashCode == SKIPPED_HASH) {
+    return PostStreamArtifactGenerationStatus::SKIPPED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForPostStreamArtifactGenerationStatus(PostStreamArtifactGener
       return "FAILED";
     case PostStreamArtifactGenerationStatus::COMPLETED:
       return "COMPLETED";
+    case PostStreamArtifactGenerationStatus::PENDING:
+      return "PENDING";
+    case PostStreamArtifactGenerationStatus::SKIPPED:
+      return "SKIPPED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -62,6 +62,10 @@ MedicalScribeListeningSessionDetails& MedicalScribeListeningSessionDetails::oper
     m_encounterContextProvided = jsonValue.GetBool("encounterContextProvided");
     m_encounterContextProvidedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("medicalCodingContextProvided")) {
+    m_medicalCodingContextProvided = jsonValue.GetBool("medicalCodingContextProvided");
+    m_medicalCodingContextProvidedHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("streamStatus")) {
     m_streamStatus = MedicalScribeStreamStatusMapper::GetMedicalScribeStreamStatusForName(jsonValue.GetString("streamStatus"));
     m_streamStatusHasBeenSet = true;
@@ -123,6 +127,10 @@ JsonValue MedicalScribeListeningSessionDetails::Jsonize() const {
 
   if (m_encounterContextProvidedHasBeenSet) {
     payload.WithBool("encounterContextProvided", m_encounterContextProvided);
+  }
+
+  if (m_medicalCodingContextProvidedHasBeenSet) {
+    payload.WithBool("medicalCodingContextProvided", m_medicalCodingContextProvided);
   }
 
   if (m_streamStatusHasBeenSet) {

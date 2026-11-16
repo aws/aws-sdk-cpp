@@ -8,9 +8,11 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dsql/DSQL_EXPORTS.h>
 #include <aws/dsql/model/ClusterStatus.h>
 #include <aws/dsql/model/EncryptionDetails.h>
+#include <aws/dsql/model/MetricGroupResponse.h>
 #include <aws/dsql/model/MultiRegionProperties.h>
 
 #include <utility>
@@ -192,6 +194,30 @@ class GetClusterResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The metric groups that you enabled for advanced monitoring on the cluster. If
+   * you haven't enabled any metric groups, the list is empty.</p>
+   */
+  inline const Aws::Vector<MetricGroupResponse>& GetMetricGroups() const { return m_metricGroups; }
+  template <typename MetricGroupsT = Aws::Vector<MetricGroupResponse>>
+  void SetMetricGroups(MetricGroupsT&& value) {
+    m_metricGroupsHasBeenSet = true;
+    m_metricGroups = std::forward<MetricGroupsT>(value);
+  }
+  template <typename MetricGroupsT = Aws::Vector<MetricGroupResponse>>
+  GetClusterResult& WithMetricGroups(MetricGroupsT&& value) {
+    SetMetricGroups(std::forward<MetricGroupsT>(value));
+    return *this;
+  }
+  template <typename MetricGroupsT = MetricGroupResponse>
+  GetClusterResult& AddMetricGroups(MetricGroupsT&& value) {
+    m_metricGroupsHasBeenSet = true;
+    m_metricGroups.emplace_back(std::forward<MetricGroupsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -226,6 +252,8 @@ class GetClusterResult {
 
   Aws::String m_endpoint;
 
+  Aws::Vector<MetricGroupResponse> m_metricGroups;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identifierHasBeenSet = false;
@@ -237,6 +265,7 @@ class GetClusterResult {
   bool m_tagsHasBeenSet = false;
   bool m_encryptionDetailsHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
+  bool m_metricGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

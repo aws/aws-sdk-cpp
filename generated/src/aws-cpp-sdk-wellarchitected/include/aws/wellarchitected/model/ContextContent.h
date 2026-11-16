@@ -160,6 +160,32 @@ class ContextContent {
 
   ///@{
   /**
+   * <p>The AWS Organizations organizational unit (OU) IDs associated with this
+   * application context. Valid only for organizational profiles; rejected for
+   * standard profiles.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const { return m_organizationalUnitIds; }
+  inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
+  template <typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+  void SetOrganizationalUnitIds(OrganizationalUnitIdsT&& value) {
+    m_organizationalUnitIdsHasBeenSet = true;
+    m_organizationalUnitIds = std::forward<OrganizationalUnitIdsT>(value);
+  }
+  template <typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+  ContextContent& WithOrganizationalUnitIds(OrganizationalUnitIdsT&& value) {
+    SetOrganizationalUnitIds(std::forward<OrganizationalUnitIdsT>(value));
+    return *this;
+  }
+  template <typename OrganizationalUnitIdsT = Aws::String>
+  ContextContent& AddOrganizationalUnitIds(OrganizationalUnitIdsT&& value) {
+    m_organizationalUnitIdsHasBeenSet = true;
+    m_organizationalUnitIds.emplace_back(std::forward<OrganizationalUnitIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A free-form overview of the application.</p>
    */
   inline const Aws::String& GetApplicationOverview() const { return m_applicationOverview; }
@@ -272,6 +298,8 @@ class ContextContent {
 
   Aws::Vector<ContextResourceTag> m_resourceTags;
 
+  Aws::Vector<Aws::String> m_organizationalUnitIds;
+
   Aws::String m_applicationOverview;
 
   Aws::String m_industry;
@@ -288,6 +316,7 @@ class ContextContent {
   bool m_awsServicesHasBeenSet = false;
   bool m_resourceTypesHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
+  bool m_organizationalUnitIdsHasBeenSet = false;
   bool m_applicationOverviewHasBeenSet = false;
   bool m_industryHasBeenSet = false;
   bool m_applicationTypeHasBeenSet = false;

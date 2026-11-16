@@ -46,7 +46,9 @@ class GetKeyPolicyResult {
 
   ///@{
   /**
-   * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+   * <p>The name of the key policy. Valid values are:</p> <dl> <dt>default</dt> <dd>
+   * <p>The key policy that you manage.</p> </dd> <dt>AWS_RAM</dt> <dd> <p>The key
+   * policy that RAM manages for KMS keys that you share through RAM.</p> </dd> </dl>
    */
   inline const Aws::String& GetPolicyName() const { return m_policyName; }
   template <typename PolicyNameT = Aws::String>

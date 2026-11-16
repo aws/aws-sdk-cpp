@@ -20,8 +20,13 @@
 
 /* Service model headers required in WellArchitectedClient header */
 #include <aws/core/NoResult.h>
+#include <aws/wellarchitected/model/CreateAgentBasicProfileRequest.h>
+#include <aws/wellarchitected/model/CreateAgentBasicProfileResult.h>
 #include <aws/wellarchitected/model/CreateAgentContextResult.h>
 #include <aws/wellarchitected/model/CreateAgentGoalResult.h>
+#include <aws/wellarchitected/model/CreateAgentOrganizationalProfileResult.h>
+#include <aws/wellarchitected/model/CreateAgentOrganizationalReportRequest.h>
+#include <aws/wellarchitected/model/CreateAgentOrganizationalReportResult.h>
 #include <aws/wellarchitected/model/CreateAgentProfileResult.h>
 #include <aws/wellarchitected/model/CreateLensShareResult.h>
 #include <aws/wellarchitected/model/CreateLensVersionResult.h>
@@ -34,12 +39,21 @@
 #include <aws/wellarchitected/model/CreateWorkloadShareResult.h>
 #include <aws/wellarchitected/model/DeleteAgentContextResult.h>
 #include <aws/wellarchitected/model/DeleteAgentGoalResult.h>
+#include <aws/wellarchitected/model/DeleteAgentOrganizationalReportResult.h>
+#include <aws/wellarchitected/model/DeleteAgentProfilePolicyResult.h>
 #include <aws/wellarchitected/model/DeleteAgentProfileResult.h>
+#include <aws/wellarchitected/model/DeleteAgentRecommendationPolicyResult.h>
 #include <aws/wellarchitected/model/ExportLensResult.h>
 #include <aws/wellarchitected/model/GetAgentContextResult.h>
 #include <aws/wellarchitected/model/GetAgentGoalResult.h>
+#include <aws/wellarchitected/model/GetAgentOrganizationalReportDataResult.h>
+#include <aws/wellarchitected/model/GetAgentOrganizationalReportResult.h>
+#include <aws/wellarchitected/model/GetAgentPreferencesRequest.h>
+#include <aws/wellarchitected/model/GetAgentPreferencesResult.h>
+#include <aws/wellarchitected/model/GetAgentProfilePolicyResult.h>
 #include <aws/wellarchitected/model/GetAgentProfileResult.h>
 #include <aws/wellarchitected/model/GetAgentRecommendationGenerationResult.h>
+#include <aws/wellarchitected/model/GetAgentRecommendationPolicyResult.h>
 #include <aws/wellarchitected/model/GetAgentRecommendationResult.h>
 #include <aws/wellarchitected/model/GetAnswerResult.h>
 #include <aws/wellarchitected/model/GetConsolidatedReportResult.h>
@@ -60,6 +74,8 @@
 #include <aws/wellarchitected/model/ImportLensResult.h>
 #include <aws/wellarchitected/model/ListAgentContextsResult.h>
 #include <aws/wellarchitected/model/ListAgentGoalsResult.h>
+#include <aws/wellarchitected/model/ListAgentOrganizationalReportsRequest.h>
+#include <aws/wellarchitected/model/ListAgentOrganizationalReportsResult.h>
 #include <aws/wellarchitected/model/ListAgentProfilesRequest.h>
 #include <aws/wellarchitected/model/ListAgentProfilesResult.h>
 #include <aws/wellarchitected/model/ListAgentRecommendationGenerationsResult.h>
@@ -91,12 +107,17 @@
 #include <aws/wellarchitected/model/ListWorkloadSharesResult.h>
 #include <aws/wellarchitected/model/ListWorkloadsRequest.h>
 #include <aws/wellarchitected/model/ListWorkloadsResult.h>
+#include <aws/wellarchitected/model/PutAgentPreferencesResult.h>
+#include <aws/wellarchitected/model/PutAgentProfilePolicyResult.h>
 #include <aws/wellarchitected/model/PutAgentRecommendationFeedbackResult.h>
+#include <aws/wellarchitected/model/PutAgentRecommendationPolicyResult.h>
+#include <aws/wellarchitected/model/SendAgentOrganizationalReportDataToS3Result.h>
 #include <aws/wellarchitected/model/StartAgentRecommendationGenerationResult.h>
 #include <aws/wellarchitected/model/TagResourceResult.h>
 #include <aws/wellarchitected/model/UntagResourceResult.h>
 #include <aws/wellarchitected/model/UpdateAgentContextResult.h>
 #include <aws/wellarchitected/model/UpdateAgentGoalResult.h>
+#include <aws/wellarchitected/model/UpdateAgentOrganizationalProfileResult.h>
 #include <aws/wellarchitected/model/UpdateAgentProfileResult.h>
 #include <aws/wellarchitected/model/UpdateAgentRecommendationStatusResult.h>
 #include <aws/wellarchitected/model/UpdateAnswerResult.h>
@@ -144,8 +165,11 @@ namespace Model {
 /* Service model forward declarations required in WellArchitectedClient header */
 class AssociateLensesRequest;
 class AssociateProfilesRequest;
+class CreateAgentBasicProfileRequest;
 class CreateAgentContextRequest;
 class CreateAgentGoalRequest;
+class CreateAgentOrganizationalProfileRequest;
+class CreateAgentOrganizationalReportRequest;
 class CreateAgentProfileRequest;
 class CreateLensShareRequest;
 class CreateLensVersionRequest;
@@ -158,7 +182,10 @@ class CreateWorkloadRequest;
 class CreateWorkloadShareRequest;
 class DeleteAgentContextRequest;
 class DeleteAgentGoalRequest;
+class DeleteAgentOrganizationalReportRequest;
 class DeleteAgentProfileRequest;
+class DeleteAgentProfilePolicyRequest;
+class DeleteAgentRecommendationPolicyRequest;
 class DeleteLensRequest;
 class DeleteLensShareRequest;
 class DeleteProfileRequest;
@@ -172,9 +199,14 @@ class DisassociateProfilesRequest;
 class ExportLensRequest;
 class GetAgentContextRequest;
 class GetAgentGoalRequest;
+class GetAgentOrganizationalReportRequest;
+class GetAgentOrganizationalReportDataRequest;
+class GetAgentPreferencesRequest;
 class GetAgentProfileRequest;
+class GetAgentProfilePolicyRequest;
 class GetAgentRecommendationRequest;
 class GetAgentRecommendationGenerationRequest;
+class GetAgentRecommendationPolicyRequest;
 class GetAnswerRequest;
 class GetConsolidatedReportRequest;
 class GetGlobalSettingsRequest;
@@ -192,6 +224,7 @@ class GetWorkloadRequest;
 class ImportLensRequest;
 class ListAgentContextsRequest;
 class ListAgentGoalsRequest;
+class ListAgentOrganizationalReportsRequest;
 class ListAgentProfilesRequest;
 class ListAgentRecommendationGenerationsRequest;
 class ListAgentRecommendationItemsRequest;
@@ -215,12 +248,17 @@ class ListTagsForResourceRequest;
 class ListTemplateSharesRequest;
 class ListWorkloadSharesRequest;
 class ListWorkloadsRequest;
+class PutAgentPreferencesRequest;
+class PutAgentProfilePolicyRequest;
 class PutAgentRecommendationFeedbackRequest;
+class PutAgentRecommendationPolicyRequest;
+class SendAgentOrganizationalReportDataToS3Request;
 class StartAgentRecommendationGenerationRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAgentContextRequest;
 class UpdateAgentGoalRequest;
+class UpdateAgentOrganizationalProfileRequest;
 class UpdateAgentProfileRequest;
 class UpdateAgentRecommendationStatusRequest;
 class UpdateAnswerRequest;
@@ -242,8 +280,11 @@ class UpgradeReviewTemplateLensReviewRequest;
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> AssociateLensesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> AssociateProfilesOutcome;
+typedef Aws::Utils::Outcome<CreateAgentBasicProfileResult, WellArchitectedError> CreateAgentBasicProfileOutcome;
 typedef Aws::Utils::Outcome<CreateAgentContextResult, WellArchitectedError> CreateAgentContextOutcome;
 typedef Aws::Utils::Outcome<CreateAgentGoalResult, WellArchitectedError> CreateAgentGoalOutcome;
+typedef Aws::Utils::Outcome<CreateAgentOrganizationalProfileResult, WellArchitectedError> CreateAgentOrganizationalProfileOutcome;
+typedef Aws::Utils::Outcome<CreateAgentOrganizationalReportResult, WellArchitectedError> CreateAgentOrganizationalReportOutcome;
 typedef Aws::Utils::Outcome<CreateAgentProfileResult, WellArchitectedError> CreateAgentProfileOutcome;
 typedef Aws::Utils::Outcome<CreateLensShareResult, WellArchitectedError> CreateLensShareOutcome;
 typedef Aws::Utils::Outcome<CreateLensVersionResult, WellArchitectedError> CreateLensVersionOutcome;
@@ -256,7 +297,10 @@ typedef Aws::Utils::Outcome<CreateWorkloadResult, WellArchitectedError> CreateWo
 typedef Aws::Utils::Outcome<CreateWorkloadShareResult, WellArchitectedError> CreateWorkloadShareOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentContextResult, WellArchitectedError> DeleteAgentContextOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentGoalResult, WellArchitectedError> DeleteAgentGoalOutcome;
+typedef Aws::Utils::Outcome<DeleteAgentOrganizationalReportResult, WellArchitectedError> DeleteAgentOrganizationalReportOutcome;
 typedef Aws::Utils::Outcome<DeleteAgentProfileResult, WellArchitectedError> DeleteAgentProfileOutcome;
+typedef Aws::Utils::Outcome<DeleteAgentProfilePolicyResult, WellArchitectedError> DeleteAgentProfilePolicyOutcome;
+typedef Aws::Utils::Outcome<DeleteAgentRecommendationPolicyResult, WellArchitectedError> DeleteAgentRecommendationPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteLensOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteLensShareOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteProfileOutcome;
@@ -270,9 +314,14 @@ typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DisassociatePro
 typedef Aws::Utils::Outcome<ExportLensResult, WellArchitectedError> ExportLensOutcome;
 typedef Aws::Utils::Outcome<GetAgentContextResult, WellArchitectedError> GetAgentContextOutcome;
 typedef Aws::Utils::Outcome<GetAgentGoalResult, WellArchitectedError> GetAgentGoalOutcome;
+typedef Aws::Utils::Outcome<GetAgentOrganizationalReportResult, WellArchitectedError> GetAgentOrganizationalReportOutcome;
+typedef Aws::Utils::Outcome<GetAgentOrganizationalReportDataResult, WellArchitectedError> GetAgentOrganizationalReportDataOutcome;
+typedef Aws::Utils::Outcome<GetAgentPreferencesResult, WellArchitectedError> GetAgentPreferencesOutcome;
 typedef Aws::Utils::Outcome<GetAgentProfileResult, WellArchitectedError> GetAgentProfileOutcome;
+typedef Aws::Utils::Outcome<GetAgentProfilePolicyResult, WellArchitectedError> GetAgentProfilePolicyOutcome;
 typedef Aws::Utils::Outcome<GetAgentRecommendationResult, WellArchitectedError> GetAgentRecommendationOutcome;
 typedef Aws::Utils::Outcome<GetAgentRecommendationGenerationResult, WellArchitectedError> GetAgentRecommendationGenerationOutcome;
+typedef Aws::Utils::Outcome<GetAgentRecommendationPolicyResult, WellArchitectedError> GetAgentRecommendationPolicyOutcome;
 typedef Aws::Utils::Outcome<GetAnswerResult, WellArchitectedError> GetAnswerOutcome;
 typedef Aws::Utils::Outcome<GetConsolidatedReportResult, WellArchitectedError> GetConsolidatedReportOutcome;
 typedef Aws::Utils::Outcome<GetGlobalSettingsResult, WellArchitectedError> GetGlobalSettingsOutcome;
@@ -290,6 +339,7 @@ typedef Aws::Utils::Outcome<GetWorkloadResult, WellArchitectedError> GetWorkload
 typedef Aws::Utils::Outcome<ImportLensResult, WellArchitectedError> ImportLensOutcome;
 typedef Aws::Utils::Outcome<ListAgentContextsResult, WellArchitectedError> ListAgentContextsOutcome;
 typedef Aws::Utils::Outcome<ListAgentGoalsResult, WellArchitectedError> ListAgentGoalsOutcome;
+typedef Aws::Utils::Outcome<ListAgentOrganizationalReportsResult, WellArchitectedError> ListAgentOrganizationalReportsOutcome;
 typedef Aws::Utils::Outcome<ListAgentProfilesResult, WellArchitectedError> ListAgentProfilesOutcome;
 typedef Aws::Utils::Outcome<ListAgentRecommendationGenerationsResult, WellArchitectedError> ListAgentRecommendationGenerationsOutcome;
 typedef Aws::Utils::Outcome<ListAgentRecommendationItemsResult, WellArchitectedError> ListAgentRecommendationItemsOutcome;
@@ -313,12 +363,17 @@ typedef Aws::Utils::Outcome<ListTagsForResourceResult, WellArchitectedError> Lis
 typedef Aws::Utils::Outcome<ListTemplateSharesResult, WellArchitectedError> ListTemplateSharesOutcome;
 typedef Aws::Utils::Outcome<ListWorkloadSharesResult, WellArchitectedError> ListWorkloadSharesOutcome;
 typedef Aws::Utils::Outcome<ListWorkloadsResult, WellArchitectedError> ListWorkloadsOutcome;
+typedef Aws::Utils::Outcome<PutAgentPreferencesResult, WellArchitectedError> PutAgentPreferencesOutcome;
+typedef Aws::Utils::Outcome<PutAgentProfilePolicyResult, WellArchitectedError> PutAgentProfilePolicyOutcome;
 typedef Aws::Utils::Outcome<PutAgentRecommendationFeedbackResult, WellArchitectedError> PutAgentRecommendationFeedbackOutcome;
+typedef Aws::Utils::Outcome<PutAgentRecommendationPolicyResult, WellArchitectedError> PutAgentRecommendationPolicyOutcome;
+typedef Aws::Utils::Outcome<SendAgentOrganizationalReportDataToS3Result, WellArchitectedError> SendAgentOrganizationalReportDataToS3Outcome;
 typedef Aws::Utils::Outcome<StartAgentRecommendationGenerationResult, WellArchitectedError> StartAgentRecommendationGenerationOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, WellArchitectedError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, WellArchitectedError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAgentContextResult, WellArchitectedError> UpdateAgentContextOutcome;
 typedef Aws::Utils::Outcome<UpdateAgentGoalResult, WellArchitectedError> UpdateAgentGoalOutcome;
+typedef Aws::Utils::Outcome<UpdateAgentOrganizationalProfileResult, WellArchitectedError> UpdateAgentOrganizationalProfileOutcome;
 typedef Aws::Utils::Outcome<UpdateAgentProfileResult, WellArchitectedError> UpdateAgentProfileOutcome;
 typedef Aws::Utils::Outcome<UpdateAgentRecommendationStatusResult, WellArchitectedError> UpdateAgentRecommendationStatusOutcome;
 typedef Aws::Utils::Outcome<UpdateAnswerResult, WellArchitectedError> UpdateAnswerOutcome;
@@ -340,8 +395,11 @@ typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> UpgradeReviewTe
 /* Service model Outcome callable definitions */
 typedef std::future<AssociateLensesOutcome> AssociateLensesOutcomeCallable;
 typedef std::future<AssociateProfilesOutcome> AssociateProfilesOutcomeCallable;
+typedef std::future<CreateAgentBasicProfileOutcome> CreateAgentBasicProfileOutcomeCallable;
 typedef std::future<CreateAgentContextOutcome> CreateAgentContextOutcomeCallable;
 typedef std::future<CreateAgentGoalOutcome> CreateAgentGoalOutcomeCallable;
+typedef std::future<CreateAgentOrganizationalProfileOutcome> CreateAgentOrganizationalProfileOutcomeCallable;
+typedef std::future<CreateAgentOrganizationalReportOutcome> CreateAgentOrganizationalReportOutcomeCallable;
 typedef std::future<CreateAgentProfileOutcome> CreateAgentProfileOutcomeCallable;
 typedef std::future<CreateLensShareOutcome> CreateLensShareOutcomeCallable;
 typedef std::future<CreateLensVersionOutcome> CreateLensVersionOutcomeCallable;
@@ -354,7 +412,10 @@ typedef std::future<CreateWorkloadOutcome> CreateWorkloadOutcomeCallable;
 typedef std::future<CreateWorkloadShareOutcome> CreateWorkloadShareOutcomeCallable;
 typedef std::future<DeleteAgentContextOutcome> DeleteAgentContextOutcomeCallable;
 typedef std::future<DeleteAgentGoalOutcome> DeleteAgentGoalOutcomeCallable;
+typedef std::future<DeleteAgentOrganizationalReportOutcome> DeleteAgentOrganizationalReportOutcomeCallable;
 typedef std::future<DeleteAgentProfileOutcome> DeleteAgentProfileOutcomeCallable;
+typedef std::future<DeleteAgentProfilePolicyOutcome> DeleteAgentProfilePolicyOutcomeCallable;
+typedef std::future<DeleteAgentRecommendationPolicyOutcome> DeleteAgentRecommendationPolicyOutcomeCallable;
 typedef std::future<DeleteLensOutcome> DeleteLensOutcomeCallable;
 typedef std::future<DeleteLensShareOutcome> DeleteLensShareOutcomeCallable;
 typedef std::future<DeleteProfileOutcome> DeleteProfileOutcomeCallable;
@@ -368,9 +429,14 @@ typedef std::future<DisassociateProfilesOutcome> DisassociateProfilesOutcomeCall
 typedef std::future<ExportLensOutcome> ExportLensOutcomeCallable;
 typedef std::future<GetAgentContextOutcome> GetAgentContextOutcomeCallable;
 typedef std::future<GetAgentGoalOutcome> GetAgentGoalOutcomeCallable;
+typedef std::future<GetAgentOrganizationalReportOutcome> GetAgentOrganizationalReportOutcomeCallable;
+typedef std::future<GetAgentOrganizationalReportDataOutcome> GetAgentOrganizationalReportDataOutcomeCallable;
+typedef std::future<GetAgentPreferencesOutcome> GetAgentPreferencesOutcomeCallable;
 typedef std::future<GetAgentProfileOutcome> GetAgentProfileOutcomeCallable;
+typedef std::future<GetAgentProfilePolicyOutcome> GetAgentProfilePolicyOutcomeCallable;
 typedef std::future<GetAgentRecommendationOutcome> GetAgentRecommendationOutcomeCallable;
 typedef std::future<GetAgentRecommendationGenerationOutcome> GetAgentRecommendationGenerationOutcomeCallable;
+typedef std::future<GetAgentRecommendationPolicyOutcome> GetAgentRecommendationPolicyOutcomeCallable;
 typedef std::future<GetAnswerOutcome> GetAnswerOutcomeCallable;
 typedef std::future<GetConsolidatedReportOutcome> GetConsolidatedReportOutcomeCallable;
 typedef std::future<GetGlobalSettingsOutcome> GetGlobalSettingsOutcomeCallable;
@@ -388,6 +454,7 @@ typedef std::future<GetWorkloadOutcome> GetWorkloadOutcomeCallable;
 typedef std::future<ImportLensOutcome> ImportLensOutcomeCallable;
 typedef std::future<ListAgentContextsOutcome> ListAgentContextsOutcomeCallable;
 typedef std::future<ListAgentGoalsOutcome> ListAgentGoalsOutcomeCallable;
+typedef std::future<ListAgentOrganizationalReportsOutcome> ListAgentOrganizationalReportsOutcomeCallable;
 typedef std::future<ListAgentProfilesOutcome> ListAgentProfilesOutcomeCallable;
 typedef std::future<ListAgentRecommendationGenerationsOutcome> ListAgentRecommendationGenerationsOutcomeCallable;
 typedef std::future<ListAgentRecommendationItemsOutcome> ListAgentRecommendationItemsOutcomeCallable;
@@ -411,12 +478,17 @@ typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallab
 typedef std::future<ListTemplateSharesOutcome> ListTemplateSharesOutcomeCallable;
 typedef std::future<ListWorkloadSharesOutcome> ListWorkloadSharesOutcomeCallable;
 typedef std::future<ListWorkloadsOutcome> ListWorkloadsOutcomeCallable;
+typedef std::future<PutAgentPreferencesOutcome> PutAgentPreferencesOutcomeCallable;
+typedef std::future<PutAgentProfilePolicyOutcome> PutAgentProfilePolicyOutcomeCallable;
 typedef std::future<PutAgentRecommendationFeedbackOutcome> PutAgentRecommendationFeedbackOutcomeCallable;
+typedef std::future<PutAgentRecommendationPolicyOutcome> PutAgentRecommendationPolicyOutcomeCallable;
+typedef std::future<SendAgentOrganizationalReportDataToS3Outcome> SendAgentOrganizationalReportDataToS3OutcomeCallable;
 typedef std::future<StartAgentRecommendationGenerationOutcome> StartAgentRecommendationGenerationOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAgentContextOutcome> UpdateAgentContextOutcomeCallable;
 typedef std::future<UpdateAgentGoalOutcome> UpdateAgentGoalOutcomeCallable;
+typedef std::future<UpdateAgentOrganizationalProfileOutcome> UpdateAgentOrganizationalProfileOutcomeCallable;
 typedef std::future<UpdateAgentProfileOutcome> UpdateAgentProfileOutcomeCallable;
 typedef std::future<UpdateAgentRecommendationStatusOutcome> UpdateAgentRecommendationStatusOutcomeCallable;
 typedef std::future<UpdateAnswerOutcome> UpdateAnswerOutcomeCallable;
@@ -445,12 +517,23 @@ typedef std::function<void(const WellArchitectedClient*, const Model::AssociateL
 typedef std::function<void(const WellArchitectedClient*, const Model::AssociateProfilesRequest&, const Model::AssociateProfilesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateProfilesResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::CreateAgentBasicProfileRequest&,
+                           const Model::CreateAgentBasicProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateAgentBasicProfileResponseReceivedHandler;
 typedef std::function<void(const WellArchitectedClient*, const Model::CreateAgentContextRequest&, const Model::CreateAgentContextOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAgentContextResponseReceivedHandler;
 typedef std::function<void(const WellArchitectedClient*, const Model::CreateAgentGoalRequest&, const Model::CreateAgentGoalOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAgentGoalResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::CreateAgentOrganizationalProfileRequest&,
+                           const Model::CreateAgentOrganizationalProfileOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateAgentOrganizationalProfileResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::CreateAgentOrganizationalReportRequest&,
+                           const Model::CreateAgentOrganizationalReportOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateAgentOrganizationalReportResponseReceivedHandler;
 typedef std::function<void(const WellArchitectedClient*, const Model::CreateAgentProfileRequest&, const Model::CreateAgentProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAgentProfileResponseReceivedHandler;
@@ -487,9 +570,20 @@ typedef std::function<void(const WellArchitectedClient*, const Model::DeleteAgen
 typedef std::function<void(const WellArchitectedClient*, const Model::DeleteAgentGoalRequest&, const Model::DeleteAgentGoalOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAgentGoalResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::DeleteAgentOrganizationalReportRequest&,
+                           const Model::DeleteAgentOrganizationalReportOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteAgentOrganizationalReportResponseReceivedHandler;
 typedef std::function<void(const WellArchitectedClient*, const Model::DeleteAgentProfileRequest&, const Model::DeleteAgentProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAgentProfileResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::DeleteAgentProfilePolicyRequest&,
+                           const Model::DeleteAgentProfilePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteAgentProfilePolicyResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::DeleteAgentRecommendationPolicyRequest&,
+                           const Model::DeleteAgentRecommendationPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteAgentRecommendationPolicyResponseReceivedHandler;
 typedef std::function<void(const WellArchitectedClient*, const Model::DeleteLensRequest&, const Model::DeleteLensOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteLensResponseReceivedHandler;
@@ -529,9 +623,23 @@ typedef std::function<void(const WellArchitectedClient*, const Model::GetAgentCo
 typedef std::function<void(const WellArchitectedClient*, const Model::GetAgentGoalRequest&, const Model::GetAgentGoalOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAgentGoalResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::GetAgentOrganizationalReportRequest&,
+                           const Model::GetAgentOrganizationalReportOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAgentOrganizationalReportResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::GetAgentOrganizationalReportDataRequest&,
+                           const Model::GetAgentOrganizationalReportDataOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAgentOrganizationalReportDataResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::GetAgentPreferencesRequest&, const Model::GetAgentPreferencesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAgentPreferencesResponseReceivedHandler;
 typedef std::function<void(const WellArchitectedClient*, const Model::GetAgentProfileRequest&, const Model::GetAgentProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAgentProfileResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::GetAgentProfilePolicyRequest&,
+                           const Model::GetAgentProfilePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAgentProfilePolicyResponseReceivedHandler;
 typedef std::function<void(const WellArchitectedClient*, const Model::GetAgentRecommendationRequest&,
                            const Model::GetAgentRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAgentRecommendationResponseReceivedHandler;
@@ -539,6 +647,10 @@ typedef std::function<void(const WellArchitectedClient*, const Model::GetAgentRe
                            const Model::GetAgentRecommendationGenerationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAgentRecommendationGenerationResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::GetAgentRecommendationPolicyRequest&,
+                           const Model::GetAgentRecommendationPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAgentRecommendationPolicyResponseReceivedHandler;
 typedef std::function<void(const WellArchitectedClient*, const Model::GetAnswerRequest&, const Model::GetAnswerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAnswerResponseReceivedHandler;
@@ -590,6 +702,10 @@ typedef std::function<void(const WellArchitectedClient*, const Model::ListAgentC
 typedef std::function<void(const WellArchitectedClient*, const Model::ListAgentGoalsRequest&, const Model::ListAgentGoalsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAgentGoalsResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::ListAgentOrganizationalReportsRequest&,
+                           const Model::ListAgentOrganizationalReportsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAgentOrganizationalReportsResponseReceivedHandler;
 typedef std::function<void(const WellArchitectedClient*, const Model::ListAgentProfilesRequest&, const Model::ListAgentProfilesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAgentProfilesResponseReceivedHandler;
@@ -661,10 +777,24 @@ typedef std::function<void(const WellArchitectedClient*, const Model::ListWorklo
 typedef std::function<void(const WellArchitectedClient*, const Model::ListWorkloadsRequest&, const Model::ListWorkloadsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListWorkloadsResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::PutAgentPreferencesRequest&, const Model::PutAgentPreferencesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutAgentPreferencesResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::PutAgentProfilePolicyRequest&,
+                           const Model::PutAgentProfilePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutAgentProfilePolicyResponseReceivedHandler;
 typedef std::function<void(const WellArchitectedClient*, const Model::PutAgentRecommendationFeedbackRequest&,
                            const Model::PutAgentRecommendationFeedbackOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutAgentRecommendationFeedbackResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::PutAgentRecommendationPolicyRequest&,
+                           const Model::PutAgentRecommendationPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutAgentRecommendationPolicyResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::SendAgentOrganizationalReportDataToS3Request&,
+                           const Model::SendAgentOrganizationalReportDataToS3Outcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SendAgentOrganizationalReportDataToS3ResponseReceivedHandler;
 typedef std::function<void(const WellArchitectedClient*, const Model::StartAgentRecommendationGenerationRequest&,
                            const Model::StartAgentRecommendationGenerationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -681,6 +811,10 @@ typedef std::function<void(const WellArchitectedClient*, const Model::UpdateAgen
 typedef std::function<void(const WellArchitectedClient*, const Model::UpdateAgentGoalRequest&, const Model::UpdateAgentGoalOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAgentGoalResponseReceivedHandler;
+typedef std::function<void(const WellArchitectedClient*, const Model::UpdateAgentOrganizationalProfileRequest&,
+                           const Model::UpdateAgentOrganizationalProfileOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateAgentOrganizationalProfileResponseReceivedHandler;
 typedef std::function<void(const WellArchitectedClient*, const Model::UpdateAgentProfileRequest&, const Model::UpdateAgentProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAgentProfileResponseReceivedHandler;

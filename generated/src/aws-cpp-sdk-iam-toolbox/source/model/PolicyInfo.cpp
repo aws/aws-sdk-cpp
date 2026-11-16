@@ -37,6 +37,13 @@ PolicyInfo& PolicyInfo::operator=(JsonView jsonValue) {
     }
     m_attachedToHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("policySource")) {
+    Aws::Map<Aws::String, JsonView> policySourceJsonMap = jsonValue.GetObject("policySource").GetAllObjects();
+    for (auto& policySourceItem : policySourceJsonMap) {
+      m_policySource[policySourceItem.first] = policySourceItem.second.AsString();
+    }
+    m_policySourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +68,14 @@ JsonValue PolicyInfo::Jsonize() const {
       attachedToJsonList[attachedToIndex].AsObject(m_attachedTo[attachedToIndex].Jsonize());
     }
     payload.WithArray("attachedTo", std::move(attachedToJsonList));
+  }
+
+  if (m_policySourceHasBeenSet) {
+    JsonValue policySourceJsonMap;
+    for (auto& policySourceItem : m_policySource) {
+      policySourceJsonMap.WithString(policySourceItem.first, policySourceItem.second);
+    }
+    payload.WithObject("policySource", std::move(policySourceJsonMap));
   }
 
   return payload;

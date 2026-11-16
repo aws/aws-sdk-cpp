@@ -61,13 +61,18 @@ GetAgentRecommendationGenerationResult& GetAgentRecommendationGenerationResult::
     m_lastModifiedAt = jsonValue.GetString("lastModifiedAt");
     m_lastModifiedAtHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("additionalContext")) {
-    m_additionalContext = jsonValue.GetObject("additionalContext");
-    m_additionalContextHasBeenSet = true;
+  if (jsonValue.ValueExists("generationType")) {
+    m_generationType = GenerationTypeMapper::GetGenerationTypeForName(jsonValue.GetString("generationType"));
+    m_generationTypeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("scope")) {
-    m_scope = jsonValue.GetObject("scope");
-    m_scopeHasBeenSet = true;
+  if (jsonValue.ValueExists("generationRecommendationTypes")) {
+    Aws::Utils::Array<JsonView> generationRecommendationTypesJsonList = jsonValue.GetArray("generationRecommendationTypes");
+    for (unsigned generationRecommendationTypesIndex = 0;
+         generationRecommendationTypesIndex < generationRecommendationTypesJsonList.GetLength(); ++generationRecommendationTypesIndex) {
+      m_generationRecommendationTypes.push_back(RecommendationTypeMapper::GetRecommendationTypeForName(
+          generationRecommendationTypesJsonList[generationRecommendationTypesIndex].AsString()));
+    }
+    m_generationRecommendationTypesHasBeenSet = true;
   }
   if (jsonValue.ValueExists("startedAt")) {
     m_startedAt = jsonValue.GetString("startedAt");
@@ -77,13 +82,21 @@ GetAgentRecommendationGenerationResult& GetAgentRecommendationGenerationResult::
     m_endedAt = jsonValue.GetString("endedAt");
     m_endedAtHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("progress")) {
-    m_progress = jsonValue.GetObject("progress");
-    m_progressHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("errorDetails")) {
     m_errorDetails = jsonValue.GetObject("errorDetails");
     m_errorDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("additionalContext")) {
+    m_additionalContext = jsonValue.GetObject("additionalContext");
+    m_additionalContextHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("scope")) {
+    m_scope = jsonValue.GetObject("scope");
+    m_scopeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("progress")) {
+    m_progress = jsonValue.GetObject("progress");
+    m_progressHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

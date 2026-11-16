@@ -492,6 +492,47 @@ class Firewall {
 
   ///@{
   /**
+   * <p>The unique identifier of the context store that the firewall uses to resolve
+   * context sets in its rule groups. Network Firewall discovers the context store
+   * from the transit gateway association in Network Manager. This field is only
+   * present for transit gateway-attached firewalls whose transit gateway is
+   * associated with a context store.</p>
+   */
+  inline const Aws::String& GetContextStoreId() const { return m_contextStoreId; }
+  inline bool ContextStoreIdHasBeenSet() const { return m_contextStoreIdHasBeenSet; }
+  template <typename ContextStoreIdT = Aws::String>
+  void SetContextStoreId(ContextStoreIdT&& value) {
+    m_contextStoreIdHasBeenSet = true;
+    m_contextStoreId = std::forward<ContextStoreIdT>(value);
+  }
+  template <typename ContextStoreIdT = Aws::String>
+  Firewall& WithContextStoreId(ContextStoreIdT&& value) {
+    SetContextStoreId(std::forward<ContextStoreIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services account ID that owns the context store. This may be
+   * different from the firewall owner's account ID.</p>
+   */
+  inline const Aws::String& GetContextStoreOwnerAccountId() const { return m_contextStoreOwnerAccountId; }
+  inline bool ContextStoreOwnerAccountIdHasBeenSet() const { return m_contextStoreOwnerAccountIdHasBeenSet; }
+  template <typename ContextStoreOwnerAccountIdT = Aws::String>
+  void SetContextStoreOwnerAccountId(ContextStoreOwnerAccountIdT&& value) {
+    m_contextStoreOwnerAccountIdHasBeenSet = true;
+    m_contextStoreOwnerAccountId = std::forward<ContextStoreOwnerAccountIdT>(value);
+  }
+  template <typename ContextStoreOwnerAccountIdT = Aws::String>
+  Firewall& WithContextStoreOwnerAccountId(ContextStoreOwnerAccountIdT&& value) {
+    SetContextStoreOwnerAccountId(std::forward<ContextStoreOwnerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>How a proxy mode firewall handles traffic that isn't sent to its proxy
    * listener. <code>NAT_ALL</code> sends this traffic out through the firewall's NAT
    * gateway after inspection. <code>NAT_NONE</code> returns it to the firewall
@@ -551,6 +592,10 @@ class Firewall {
 
   VpcEndpoint m_vpcEndpoint;
 
+  Aws::String m_contextStoreId;
+
+  Aws::String m_contextStoreOwnerAccountId;
+
   TransparentFilteringNatScope m_transparentFilteringNatScope{TransparentFilteringNatScope::NOT_SET};
   bool m_firewallNameHasBeenSet = false;
   bool m_firewallArnHasBeenSet = false;
@@ -573,6 +618,8 @@ class Firewall {
   bool m_natGatewayCreateMappingsHasBeenSet = false;
   bool m_proxySettingsHasBeenSet = false;
   bool m_vpcEndpointHasBeenSet = false;
+  bool m_contextStoreIdHasBeenSet = false;
+  bool m_contextStoreOwnerAccountIdHasBeenSet = false;
   bool m_transparentFilteringNatScopeHasBeenSet = false;
 };
 

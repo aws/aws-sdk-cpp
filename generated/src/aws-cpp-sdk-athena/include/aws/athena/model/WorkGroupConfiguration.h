@@ -174,9 +174,7 @@ class WorkGroupConfiguration {
 
   ///@{
   /**
-   * <p>The engine version that all queries running on the workgroup use. Queries on
-   * the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
-   * engine regardless of this setting.</p>
+   * <p>The engine version that all queries running on the workgroup use.</p>
    */
   inline const EngineVersion& GetEngineVersion() const { return m_engineVersion; }
   inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }

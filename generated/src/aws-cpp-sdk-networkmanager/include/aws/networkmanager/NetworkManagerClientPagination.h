@@ -27,6 +27,10 @@
 #include <aws/networkmanager/model/ListAttachmentRoutingPolicyAssociationsPaginationTraits.h>
 #include <aws/networkmanager/model/ListAttachmentsPaginationTraits.h>
 #include <aws/networkmanager/model/ListConnectPeersPaginationTraits.h>
+#include <aws/networkmanager/model/ListContextChangesPaginationTraits.h>
+#include <aws/networkmanager/model/ListContextStoreAssociationsPaginationTraits.h>
+#include <aws/networkmanager/model/ListContextStoresPaginationTraits.h>
+#include <aws/networkmanager/model/ListContextsPaginationTraits.h>
 #include <aws/networkmanager/model/ListCoreNetworkPolicyVersionsPaginationTraits.h>
 #include <aws/networkmanager/model/ListCoreNetworkPrefixListAssociationsPaginationTraits.h>
 #include <aws/networkmanager/model/ListCoreNetworkRoutingInformationPaginationTraits.h>
@@ -92,6 +96,15 @@ using ListAttachmentsPaginator = Aws::Utils::Pagination::Paginator<NetworkManage
                                                                    Pagination::ListAttachmentsPaginationTraits<NetworkManagerClient>>;
 using ListConnectPeersPaginator = Aws::Utils::Pagination::Paginator<NetworkManagerClient, Model::ListConnectPeersRequest,
                                                                     Pagination::ListConnectPeersPaginationTraits<NetworkManagerClient>>;
+using ListContextChangesPaginator = Aws::Utils::Pagination::Paginator<NetworkManagerClient, Model::ListContextChangesRequest,
+                                                                      Pagination::ListContextChangesPaginationTraits<NetworkManagerClient>>;
+using ListContextsPaginator = Aws::Utils::Pagination::Paginator<NetworkManagerClient, Model::ListContextsRequest,
+                                                                Pagination::ListContextsPaginationTraits<NetworkManagerClient>>;
+using ListContextStoreAssociationsPaginator =
+    Aws::Utils::Pagination::Paginator<NetworkManagerClient, Model::ListContextStoreAssociationsRequest,
+                                      Pagination::ListContextStoreAssociationsPaginationTraits<NetworkManagerClient>>;
+using ListContextStoresPaginator = Aws::Utils::Pagination::Paginator<NetworkManagerClient, Model::ListContextStoresRequest,
+                                                                     Pagination::ListContextStoresPaginationTraits<NetworkManagerClient>>;
 using ListCoreNetworkPolicyVersionsPaginator =
     Aws::Utils::Pagination::Paginator<NetworkManagerClient, Model::ListCoreNetworkPolicyVersionsRequest,
                                       Pagination::ListCoreNetworkPolicyVersionsPaginationTraits<NetworkManagerClient>>;

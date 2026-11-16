@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ConnectHealth {
 namespace Model {
-enum class PostStreamArtifactGenerationStatus { NOT_SET, IN_PROGRESS, FAILED, COMPLETED };
+enum class PostStreamArtifactGenerationStatus { NOT_SET, IN_PROGRESS, FAILED, COMPLETED, PENDING, SKIPPED };
 
 namespace PostStreamArtifactGenerationStatusMapper {
 AWS_CONNECTHEALTH_API PostStreamArtifactGenerationStatus GetPostStreamArtifactGenerationStatusForName(const Aws::String& name);

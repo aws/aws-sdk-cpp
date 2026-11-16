@@ -106,8 +106,8 @@ class OrganizationEventDetailsErrorItem {
    * must enter a null value for the Amazon Web Services account ID in the
    * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
    * Amazon Web Services Support plan required to use the Health API. You must have
-   * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
-   * </ul>
+   * either a Amazon Web Services Business Support+, Amazon Web Services Enterprise
+   * Support, or Amazon Web Services Unified Operations plan.</p> </li> </ul>
    */
   inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
   inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }

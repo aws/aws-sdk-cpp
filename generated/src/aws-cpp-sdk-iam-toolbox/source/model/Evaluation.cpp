@@ -37,12 +37,12 @@ Evaluation& Evaluation::operator=(JsonView jsonValue) {
     m_evaluatedEffect = EvaluatedEffectMapper::GetEvaluatedEffectForName(jsonValue.GetString("evaluatedEffect"));
     m_evaluatedEffectHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("matchedPolicies")) {
-    Aws::Utils::Array<JsonView> matchedPoliciesJsonList = jsonValue.GetArray("matchedPolicies");
-    for (unsigned matchedPoliciesIndex = 0; matchedPoliciesIndex < matchedPoliciesJsonList.GetLength(); ++matchedPoliciesIndex) {
-      m_matchedPolicies.push_back(matchedPoliciesJsonList[matchedPoliciesIndex].AsObject());
+  if (jsonValue.ValueExists("checks")) {
+    Aws::Utils::Array<JsonView> checksJsonList = jsonValue.GetArray("checks");
+    for (unsigned checksIndex = 0; checksIndex < checksJsonList.GetLength(); ++checksIndex) {
+      m_checks.push_back(checksJsonList[checksIndex].AsObject());
     }
-    m_matchedPoliciesHasBeenSet = true;
+    m_checksHasBeenSet = true;
   }
   return *this;
 }
@@ -70,12 +70,12 @@ JsonValue Evaluation::Jsonize() const {
     payload.WithString("evaluatedEffect", EvaluatedEffectMapper::GetNameForEvaluatedEffect(m_evaluatedEffect));
   }
 
-  if (m_matchedPoliciesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> matchedPoliciesJsonList(m_matchedPolicies.size());
-    for (unsigned matchedPoliciesIndex = 0; matchedPoliciesIndex < matchedPoliciesJsonList.GetLength(); ++matchedPoliciesIndex) {
-      matchedPoliciesJsonList[matchedPoliciesIndex].AsObject(m_matchedPolicies[matchedPoliciesIndex].Jsonize());
+  if (m_checksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> checksJsonList(m_checks.size());
+    for (unsigned checksIndex = 0; checksIndex < checksJsonList.GetLength(); ++checksIndex) {
+      checksJsonList[checksIndex].AsObject(m_checks[checksIndex].Jsonize());
     }
-    payload.WithArray("matchedPolicies", std::move(matchedPoliciesJsonList));
+    payload.WithArray("checks", std::move(checksJsonList));
   }
 
   return payload;

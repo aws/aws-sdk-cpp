@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/GatewayConnectorDeregistrationDelay.h>
 #include <aws/ecs/model/GatewayConnectorFilters.h>
 #include <aws/ecs/model/GatewayConnectorHealthCheck.h>
 
@@ -92,15 +93,36 @@ class GatewayConnector {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The deregistration delay settings for the targets of this connector.</p>
+   */
+  inline const GatewayConnectorDeregistrationDelay& GetDeregistrationDelay() const { return m_deregistrationDelay; }
+  inline bool DeregistrationDelayHasBeenSet() const { return m_deregistrationDelayHasBeenSet; }
+  template <typename DeregistrationDelayT = GatewayConnectorDeregistrationDelay>
+  void SetDeregistrationDelay(DeregistrationDelayT&& value) {
+    m_deregistrationDelayHasBeenSet = true;
+    m_deregistrationDelay = std::forward<DeregistrationDelayT>(value);
+  }
+  template <typename DeregistrationDelayT = GatewayConnectorDeregistrationDelay>
+  GatewayConnector& WithDeregistrationDelay(DeregistrationDelayT&& value) {
+    SetDeregistrationDelay(std::forward<DeregistrationDelayT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_portName;
 
   GatewayConnectorHealthCheck m_healthCheck;
 
   GatewayConnectorFilters m_filters;
+
+  GatewayConnectorDeregistrationDelay m_deregistrationDelay;
   bool m_portNameHasBeenSet = false;
   bool m_healthCheckHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
+  bool m_deregistrationDelayHasBeenSet = false;
 };
 
 }  // namespace Model

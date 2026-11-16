@@ -21,29 +21,39 @@
 #include <aws/networkflowmonitor/NetworkFlowMonitorEndpointProvider.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorErrorMarshaller.h>
 #include <aws/networkflowmonitor/model/CreateMonitorRequest.h>
+#include <aws/networkflowmonitor/model/CreatePerformanceMonitorRequest.h>
 #include <aws/networkflowmonitor/model/CreateScopeRequest.h>
 #include <aws/networkflowmonitor/model/DeleteMonitorRequest.h>
+#include <aws/networkflowmonitor/model/DeletePerformanceMonitorRequest.h>
 #include <aws/networkflowmonitor/model/DeleteScopeRequest.h>
 #include <aws/networkflowmonitor/model/GetMonitorRequest.h>
+#include <aws/networkflowmonitor/model/GetMonitorScopeSuggestionsRequest.h>
+#include <aws/networkflowmonitor/model/GetPerformanceMonitorRequest.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsMonitorTopContributorsRequest.h>
+#include <aws/networkflowmonitor/model/GetQueryResultsPerformanceMonitorRequest.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsWorkloadInsightsTopContributorsDataRequest.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsWorkloadInsightsTopContributorsRequest.h>
 #include <aws/networkflowmonitor/model/GetQueryStatusMonitorTopContributorsRequest.h>
+#include <aws/networkflowmonitor/model/GetQueryStatusPerformanceMonitorRequest.h>
 #include <aws/networkflowmonitor/model/GetQueryStatusWorkloadInsightsTopContributorsDataRequest.h>
 #include <aws/networkflowmonitor/model/GetQueryStatusWorkloadInsightsTopContributorsRequest.h>
 #include <aws/networkflowmonitor/model/GetScopeRequest.h>
 #include <aws/networkflowmonitor/model/ListMonitorsRequest.h>
+#include <aws/networkflowmonitor/model/ListPerformanceMonitorsRequest.h>
 #include <aws/networkflowmonitor/model/ListScopesRequest.h>
 #include <aws/networkflowmonitor/model/ListTagsForResourceRequest.h>
 #include <aws/networkflowmonitor/model/StartQueryMonitorTopContributorsRequest.h>
+#include <aws/networkflowmonitor/model/StartQueryPerformanceMonitorRequest.h>
 #include <aws/networkflowmonitor/model/StartQueryWorkloadInsightsTopContributorsDataRequest.h>
 #include <aws/networkflowmonitor/model/StartQueryWorkloadInsightsTopContributorsRequest.h>
 #include <aws/networkflowmonitor/model/StopQueryMonitorTopContributorsRequest.h>
+#include <aws/networkflowmonitor/model/StopQueryPerformanceMonitorRequest.h>
 #include <aws/networkflowmonitor/model/StopQueryWorkloadInsightsTopContributorsDataRequest.h>
 #include <aws/networkflowmonitor/model/StopQueryWorkloadInsightsTopContributorsRequest.h>
 #include <aws/networkflowmonitor/model/TagResourceRequest.h>
 #include <aws/networkflowmonitor/model/UntagResourceRequest.h>
 #include <aws/networkflowmonitor/model/UpdateMonitorRequest.h>
+#include <aws/networkflowmonitor/model/UpdatePerformanceMonitorRequest.h>
 #include <aws/networkflowmonitor/model/UpdateScopeRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -215,6 +225,17 @@ CreateMonitorOutcome NetworkFlowMonitorClient::CreateMonitor(const CreateMonitor
   return result.IsSuccess() ? CreateMonitorOutcome(result.GetResultWithOwnership()) : CreateMonitorOutcome(std::move(result.GetError()));
 }
 
+CreatePerformanceMonitorOutcome NetworkFlowMonitorClient::CreatePerformanceMonitor(const CreatePerformanceMonitorRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/performance-monitors");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePerformanceMonitorOutcome(result.GetResultWithOwnership())
+                            : CreatePerformanceMonitorOutcome(std::move(result.GetError()));
+}
+
 CreateScopeOutcome NetworkFlowMonitorClient::CreateScope(const CreateScopeRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -240,6 +261,24 @@ DeleteMonitorOutcome NetworkFlowMonitorClient::DeleteMonitor(const DeleteMonitor
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteMonitorOutcome(result.GetResultWithOwnership()) : DeleteMonitorOutcome(std::move(result.GetError()));
+}
+
+DeletePerformanceMonitorOutcome NetworkFlowMonitorClient::DeletePerformanceMonitor(const DeletePerformanceMonitorRequest& request) const {
+  if (!request.MonitorNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeletePerformanceMonitor", "Required field: MonitorName, is not set");
+    return DeletePerformanceMonitorOutcome(Aws::Client::AWSError<NetworkFlowMonitorErrors>(
+        NetworkFlowMonitorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MonitorName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/performance-monitors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePerformanceMonitorOutcome(result.GetResultWithOwnership())
+                            : DeletePerformanceMonitorOutcome(std::move(result.GetError()));
 }
 
 DeleteScopeOutcome NetworkFlowMonitorClient::DeleteScope(const DeleteScopeRequest& request) const {
@@ -276,6 +315,42 @@ GetMonitorOutcome NetworkFlowMonitorClient::GetMonitor(const GetMonitorRequest& 
   return result.IsSuccess() ? GetMonitorOutcome(result.GetResultWithOwnership()) : GetMonitorOutcome(std::move(result.GetError()));
 }
 
+GetMonitorScopeSuggestionsOutcome NetworkFlowMonitorClient::GetMonitorScopeSuggestions(
+    const GetMonitorScopeSuggestionsRequest& request) const {
+  if (!request.MonitorArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetMonitorScopeSuggestions", "Required field: MonitorArn, is not set");
+    return GetMonitorScopeSuggestionsOutcome(Aws::Client::AWSError<NetworkFlowMonitorErrors>(
+        NetworkFlowMonitorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MonitorArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/monitor-scope-suggestions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMonitorScopeSuggestionsOutcome(result.GetResultWithOwnership())
+                            : GetMonitorScopeSuggestionsOutcome(std::move(result.GetError()));
+}
+
+GetPerformanceMonitorOutcome NetworkFlowMonitorClient::GetPerformanceMonitor(const GetPerformanceMonitorRequest& request) const {
+  if (!request.MonitorNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPerformanceMonitor", "Required field: MonitorName, is not set");
+    return GetPerformanceMonitorOutcome(Aws::Client::AWSError<NetworkFlowMonitorErrors>(
+        NetworkFlowMonitorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MonitorName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/performance-monitors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPerformanceMonitorOutcome(result.GetResultWithOwnership())
+                            : GetPerformanceMonitorOutcome(std::move(result.GetError()));
+}
+
 GetQueryResultsMonitorTopContributorsOutcome NetworkFlowMonitorClient::GetQueryResultsMonitorTopContributors(
     const GetQueryResultsMonitorTopContributorsRequest& request) const {
   if (!request.MonitorNameHasBeenSet()) {
@@ -301,6 +376,33 @@ GetQueryResultsMonitorTopContributorsOutcome NetworkFlowMonitorClient::GetQueryR
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetQueryResultsMonitorTopContributorsOutcome(result.GetResultWithOwnership())
                             : GetQueryResultsMonitorTopContributorsOutcome(std::move(result.GetError()));
+}
+
+GetQueryResultsPerformanceMonitorOutcome NetworkFlowMonitorClient::GetQueryResultsPerformanceMonitor(
+    const GetQueryResultsPerformanceMonitorRequest& request) const {
+  if (!request.MonitorNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetQueryResultsPerformanceMonitor", "Required field: MonitorName, is not set");
+    return GetQueryResultsPerformanceMonitorOutcome(Aws::Client::AWSError<NetworkFlowMonitorErrors>(
+        NetworkFlowMonitorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MonitorName]", false));
+  }
+  if (!request.QueryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetQueryResultsPerformanceMonitor", "Required field: QueryId, is not set");
+    return GetQueryResultsPerformanceMonitorOutcome(Aws::Client::AWSError<NetworkFlowMonitorErrors>(
+        NetworkFlowMonitorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/performance-monitors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/results");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueryResultsPerformanceMonitorOutcome(result.GetResultWithOwnership())
+                            : GetQueryResultsPerformanceMonitorOutcome(std::move(result.GetError()));
 }
 
 GetQueryResultsWorkloadInsightsTopContributorsOutcome NetworkFlowMonitorClient::GetQueryResultsWorkloadInsightsTopContributors(
@@ -384,6 +486,33 @@ GetQueryStatusMonitorTopContributorsOutcome NetworkFlowMonitorClient::GetQuerySt
                             : GetQueryStatusMonitorTopContributorsOutcome(std::move(result.GetError()));
 }
 
+GetQueryStatusPerformanceMonitorOutcome NetworkFlowMonitorClient::GetQueryStatusPerformanceMonitor(
+    const GetQueryStatusPerformanceMonitorRequest& request) const {
+  if (!request.MonitorNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetQueryStatusPerformanceMonitor", "Required field: MonitorName, is not set");
+    return GetQueryStatusPerformanceMonitorOutcome(Aws::Client::AWSError<NetworkFlowMonitorErrors>(
+        NetworkFlowMonitorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MonitorName]", false));
+  }
+  if (!request.QueryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetQueryStatusPerformanceMonitor", "Required field: QueryId, is not set");
+    return GetQueryStatusPerformanceMonitorOutcome(Aws::Client::AWSError<NetworkFlowMonitorErrors>(
+        NetworkFlowMonitorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/performance-monitors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/status");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueryStatusPerformanceMonitorOutcome(result.GetResultWithOwnership())
+                            : GetQueryStatusPerformanceMonitorOutcome(std::move(result.GetError()));
+}
+
 GetQueryStatusWorkloadInsightsTopContributorsOutcome NetworkFlowMonitorClient::GetQueryStatusWorkloadInsightsTopContributors(
     const GetQueryStatusWorkloadInsightsTopContributorsRequest& request) const {
   if (!request.ScopeIdHasBeenSet()) {
@@ -465,6 +594,17 @@ ListMonitorsOutcome NetworkFlowMonitorClient::ListMonitors(const ListMonitorsReq
   return result.IsSuccess() ? ListMonitorsOutcome(result.GetResultWithOwnership()) : ListMonitorsOutcome(std::move(result.GetError()));
 }
 
+ListPerformanceMonitorsOutcome NetworkFlowMonitorClient::ListPerformanceMonitors(const ListPerformanceMonitorsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/performance-monitors");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPerformanceMonitorsOutcome(result.GetResultWithOwnership())
+                            : ListPerformanceMonitorsOutcome(std::move(result.GetError()));
+}
+
 ListScopesOutcome NetworkFlowMonitorClient::ListScopes(const ListScopesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -511,6 +651,26 @@ StartQueryMonitorTopContributorsOutcome NetworkFlowMonitorClient::StartQueryMoni
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartQueryMonitorTopContributorsOutcome(result.GetResultWithOwnership())
                             : StartQueryMonitorTopContributorsOutcome(std::move(result.GetError()));
+}
+
+StartQueryPerformanceMonitorOutcome NetworkFlowMonitorClient::StartQueryPerformanceMonitor(
+    const StartQueryPerformanceMonitorRequest& request) const {
+  if (!request.MonitorNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartQueryPerformanceMonitor", "Required field: MonitorName, is not set");
+    return StartQueryPerformanceMonitorOutcome(Aws::Client::AWSError<NetworkFlowMonitorErrors>(
+        NetworkFlowMonitorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MonitorName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/performance-monitors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queries");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQueryPerformanceMonitorOutcome(result.GetResultWithOwnership())
+                            : StartQueryPerformanceMonitorOutcome(std::move(result.GetError()));
 }
 
 StartQueryWorkloadInsightsTopContributorsOutcome NetworkFlowMonitorClient::StartQueryWorkloadInsightsTopContributors(
@@ -577,6 +737,32 @@ StopQueryMonitorTopContributorsOutcome NetworkFlowMonitorClient::StopQueryMonito
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? StopQueryMonitorTopContributorsOutcome(result.GetResultWithOwnership())
                             : StopQueryMonitorTopContributorsOutcome(std::move(result.GetError()));
+}
+
+StopQueryPerformanceMonitorOutcome NetworkFlowMonitorClient::StopQueryPerformanceMonitor(
+    const StopQueryPerformanceMonitorRequest& request) const {
+  if (!request.MonitorNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopQueryPerformanceMonitor", "Required field: MonitorName, is not set");
+    return StopQueryPerformanceMonitorOutcome(Aws::Client::AWSError<NetworkFlowMonitorErrors>(
+        NetworkFlowMonitorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MonitorName]", false));
+  }
+  if (!request.QueryIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopQueryPerformanceMonitor", "Required field: QueryId, is not set");
+    return StopQueryPerformanceMonitorOutcome(Aws::Client::AWSError<NetworkFlowMonitorErrors>(
+        NetworkFlowMonitorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueryId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/performance-monitors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/queries/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? StopQueryPerformanceMonitorOutcome(result.GetResultWithOwnership())
+                            : StopQueryPerformanceMonitorOutcome(std::move(result.GetError()));
 }
 
 StopQueryWorkloadInsightsTopContributorsOutcome NetworkFlowMonitorClient::StopQueryWorkloadInsightsTopContributors(
@@ -685,6 +871,24 @@ UpdateMonitorOutcome NetworkFlowMonitorClient::UpdateMonitor(const UpdateMonitor
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateMonitorOutcome(result.GetResultWithOwnership()) : UpdateMonitorOutcome(std::move(result.GetError()));
+}
+
+UpdatePerformanceMonitorOutcome NetworkFlowMonitorClient::UpdatePerformanceMonitor(const UpdatePerformanceMonitorRequest& request) const {
+  if (!request.MonitorNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdatePerformanceMonitor", "Required field: MonitorName, is not set");
+    return UpdatePerformanceMonitorOutcome(Aws::Client::AWSError<NetworkFlowMonitorErrors>(
+        NetworkFlowMonitorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MonitorName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/performance-monitors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdatePerformanceMonitorOutcome(result.GetResultWithOwnership())
+                            : UpdatePerformanceMonitorOutcome(std::move(result.GetError()));
 }
 
 UpdateScopeOutcome NetworkFlowMonitorClient::UpdateScope(const UpdateScopeRequest& request) const {

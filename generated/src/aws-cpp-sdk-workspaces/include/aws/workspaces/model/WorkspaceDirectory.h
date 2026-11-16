@@ -22,6 +22,7 @@
 #include <aws/workspaces/model/WorkspaceAccessProperties.h>
 #include <aws/workspaces/model/WorkspaceDirectoryState.h>
 #include <aws/workspaces/model/WorkspaceDirectoryType.h>
+#include <aws/workspaces/model/WorkspaceOSUserMode.h>
 #include <aws/workspaces/model/WorkspaceType.h>
 
 #include <utility>
@@ -587,6 +588,22 @@ class WorkspaceDirectory {
 
   ///@{
   /**
+   * <p>Indicates how users are set up on the WorkSpace operating system.</p>
+   */
+  inline WorkspaceOSUserMode GetWorkspaceOsUserMode() const { return m_workspaceOsUserMode; }
+  inline bool WorkspaceOsUserModeHasBeenSet() const { return m_workspaceOsUserModeHasBeenSet; }
+  inline void SetWorkspaceOsUserMode(WorkspaceOSUserMode value) {
+    m_workspaceOsUserModeHasBeenSet = true;
+    m_workspaceOsUserMode = value;
+  }
+  inline WorkspaceDirectory& WithWorkspaceOsUserMode(WorkspaceOSUserMode value) {
+    SetWorkspaceOsUserMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The error message returned.</p>
    */
   inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
@@ -659,6 +676,8 @@ class WorkspaceDirectory {
 
   StreamingProperties m_streamingProperties;
 
+  WorkspaceOSUserMode m_workspaceOsUserMode{WorkspaceOSUserMode::NOT_SET};
+
   Aws::String m_errorMessage;
   bool m_directoryIdHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
@@ -688,6 +707,7 @@ class WorkspaceDirectory {
   bool m_iDCConfigHasBeenSet = false;
   bool m_activeDirectoryConfigHasBeenSet = false;
   bool m_streamingPropertiesHasBeenSet = false;
+  bool m_workspaceOsUserModeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

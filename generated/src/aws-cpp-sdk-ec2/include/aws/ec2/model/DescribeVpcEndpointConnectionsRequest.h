@@ -58,14 +58,16 @@ class DescribeVpcEndpointConnectionsRequest : public EC2Request {
    * <p>The filters.</p> <ul> <li> <p> <code>ip-address-type</code> - The IP address
    * type (<code>ipv4</code> | <code>ipv6</code>).</p> </li> <li> <p>
    * <code>service-id</code> - The ID of the service.</p> </li> <li> <p>
-   * <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID
-   * that owns the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-region</code> -
-   * The Region of the endpoint or <code>cross-region</code> to find endpoints for
-   * other Regions.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The state of
-   * the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
-   * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
-   * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
-   * <code>vpc-endpoint-id</code> - The ID of the endpoint.</p> </li> </ul>
+   * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway
+   * attachment.</p> </li> <li> <p> <code>vpc-endpoint-owner</code> - The ID of the
+   * Amazon Web Services account ID that owns the endpoint.</p> </li> <li> <p>
+   * <code>vpc-endpoint-region</code> - The Region of the endpoint or
+   * <code>cross-region</code> to find endpoints for other Regions.</p> </li> <li>
+   * <p> <code>vpc-endpoint-state</code> - The state of the endpoint
+   * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
+   * | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> |
+   * <code>failed</code>).</p> </li> <li> <p> <code>vpc-endpoint-id</code> - The ID
+   * of the endpoint.</p> </li> </ul>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

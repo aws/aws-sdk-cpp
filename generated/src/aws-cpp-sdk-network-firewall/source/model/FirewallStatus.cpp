@@ -92,6 +92,11 @@ FirewallStatus& FirewallStatus::operator=(const std::shared_ptr<Aws::Crt::Cbor::
               else if (initialKeyStr == "TransitGatewayAttachmentSyncState") {
                 m_transitGatewayAttachmentSyncState = TransitGatewayAttachmentSyncState(decoder);
                 m_transitGatewayAttachmentSyncStateHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ContextStoreSyncState") {
+                m_contextStoreSyncState = ContextStoreSyncState(decoder);
+                m_contextStoreSyncStateHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -181,6 +186,11 @@ FirewallStatus& FirewallStatus::operator=(const std::shared_ptr<Aws::Crt::Cbor::
             else if (initialKeyStr == "TransitGatewayAttachmentSyncState") {
               m_transitGatewayAttachmentSyncState = TransitGatewayAttachmentSyncState(decoder);
               m_transitGatewayAttachmentSyncStateHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ContextStoreSyncState") {
+              m_contextStoreSyncState = ContextStoreSyncState(decoder);
+              m_contextStoreSyncStateHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -210,6 +220,9 @@ void FirewallStatus::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     mapSize++;
   }
   if (m_transitGatewayAttachmentSyncStateHasBeenSet) {
+    mapSize++;
+  }
+  if (m_contextStoreSyncStateHasBeenSet) {
     mapSize++;
   }
 
@@ -243,6 +256,11 @@ void FirewallStatus::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_transitGatewayAttachmentSyncStateHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("TransitGatewayAttachmentSyncState"));
     m_transitGatewayAttachmentSyncState.CborEncode(encoder);
+  }
+
+  if (m_contextStoreSyncStateHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ContextStoreSyncState"));
+    m_contextStoreSyncState.CborEncode(encoder);
   }
 }
 

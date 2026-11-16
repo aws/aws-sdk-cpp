@@ -22,12 +22,14 @@
 #include <aws/networkmanager/NetworkManagerErrorMarshaller.h>
 #include <aws/networkmanager/model/AcceptAttachmentRequest.h>
 #include <aws/networkmanager/model/AssociateConnectPeerRequest.h>
+#include <aws/networkmanager/model/AssociateContextStoreRequest.h>
 #include <aws/networkmanager/model/AssociateCustomerGatewayRequest.h>
 #include <aws/networkmanager/model/AssociateLinkRequest.h>
 #include <aws/networkmanager/model/AssociateTransitGatewayConnectPeerRequest.h>
 #include <aws/networkmanager/model/CreateConnectAttachmentRequest.h>
 #include <aws/networkmanager/model/CreateConnectPeerRequest.h>
 #include <aws/networkmanager/model/CreateConnectionRequest.h>
+#include <aws/networkmanager/model/CreateContextStoreRequest.h>
 #include <aws/networkmanager/model/CreateCoreNetworkPrefixListAssociationRequest.h>
 #include <aws/networkmanager/model/CreateCoreNetworkRequest.h>
 #include <aws/networkmanager/model/CreateDeviceRequest.h>
@@ -42,6 +44,7 @@
 #include <aws/networkmanager/model/DeleteAttachmentRequest.h>
 #include <aws/networkmanager/model/DeleteConnectPeerRequest.h>
 #include <aws/networkmanager/model/DeleteConnectionRequest.h>
+#include <aws/networkmanager/model/DeleteContextStoreRequest.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkPolicyVersionRequest.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkPrefixListAssociationRequest.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkRequest.h>
@@ -54,6 +57,7 @@
 #include <aws/networkmanager/model/DeregisterTransitGatewayRequest.h>
 #include <aws/networkmanager/model/DescribeGlobalNetworksRequest.h>
 #include <aws/networkmanager/model/DisassociateConnectPeerRequest.h>
+#include <aws/networkmanager/model/DisassociateContextStoreRequest.h>
 #include <aws/networkmanager/model/DisassociateCustomerGatewayRequest.h>
 #include <aws/networkmanager/model/DisassociateLinkRequest.h>
 #include <aws/networkmanager/model/DisassociateTransitGatewayConnectPeerRequest.h>
@@ -62,6 +66,9 @@
 #include <aws/networkmanager/model/GetConnectPeerAssociationsRequest.h>
 #include <aws/networkmanager/model/GetConnectPeerRequest.h>
 #include <aws/networkmanager/model/GetConnectionsRequest.h>
+#include <aws/networkmanager/model/GetContextStoreAssociationRequest.h>
+#include <aws/networkmanager/model/GetContextStoreRequest.h>
+#include <aws/networkmanager/model/GetContextVersionRequest.h>
 #include <aws/networkmanager/model/GetCoreNetworkChangeEventsRequest.h>
 #include <aws/networkmanager/model/GetCoreNetworkChangeSetRequest.h>
 #include <aws/networkmanager/model/GetCoreNetworkPolicyRequest.h>
@@ -89,6 +96,10 @@
 #include <aws/networkmanager/model/ListAttachmentRoutingPolicyAssociationsRequest.h>
 #include <aws/networkmanager/model/ListAttachmentsRequest.h>
 #include <aws/networkmanager/model/ListConnectPeersRequest.h>
+#include <aws/networkmanager/model/ListContextChangesRequest.h>
+#include <aws/networkmanager/model/ListContextStoreAssociationsRequest.h>
+#include <aws/networkmanager/model/ListContextStoresRequest.h>
+#include <aws/networkmanager/model/ListContextsRequest.h>
 #include <aws/networkmanager/model/ListCoreNetworkPolicyVersionsRequest.h>
 #include <aws/networkmanager/model/ListCoreNetworkPrefixListAssociationsRequest.h>
 #include <aws/networkmanager/model/ListCoreNetworkRoutingInformationRequest.h>
@@ -109,6 +120,7 @@
 #include <aws/networkmanager/model/UntagResourceRequest.h>
 #include <aws/networkmanager/model/UpdateAttachmentNatConfigurationRequest.h>
 #include <aws/networkmanager/model/UpdateConnectionRequest.h>
+#include <aws/networkmanager/model/UpdateContextStoreRequest.h>
 #include <aws/networkmanager/model/UpdateCoreNetworkRequest.h>
 #include <aws/networkmanager/model/UpdateDeviceRequest.h>
 #include <aws/networkmanager/model/UpdateDirectConnectGatewayAttachmentRequest.h>
@@ -311,6 +323,25 @@ AssociateConnectPeerOutcome NetworkManagerClient::AssociateConnectPeer(const Ass
                             : AssociateConnectPeerOutcome(std::move(result.GetError()));
 }
 
+AssociateContextStoreOutcome NetworkManagerClient::AssociateContextStore(const AssociateContextStoreRequest& request) const {
+  if (!request.ContextStoreIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("AssociateContextStore", "Required field: ContextStoreId, is not set");
+    return AssociateContextStoreOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContextStoreId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-stores/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContextStoreId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateContextStoreOutcome(result.GetResultWithOwnership())
+                            : AssociateContextStoreOutcome(std::move(result.GetError()));
+}
+
 AssociateCustomerGatewayOutcome NetworkManagerClient::AssociateCustomerGateway(const AssociateCustomerGatewayRequest& request) const {
   if (!request.GlobalNetworkIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AssociateCustomerGateway", "Required field: GlobalNetworkId, is not set");
@@ -407,6 +438,25 @@ CreateConnectionOutcome NetworkManagerClient::CreateConnection(const CreateConne
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateConnectionOutcome(result.GetResultWithOwnership())
                             : CreateConnectionOutcome(std::move(result.GetError()));
+}
+
+CreateContextStoreOutcome NetworkManagerClient::CreateContextStore(const CreateContextStoreRequest& request) const {
+  if (!request.GlobalNetworkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateContextStore", "Required field: GlobalNetworkId, is not set");
+    return CreateContextStoreOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/global-networks/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGlobalNetworkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-stores");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateContextStoreOutcome(result.GetResultWithOwnership())
+                            : CreateContextStoreOutcome(std::move(result.GetError()));
 }
 
 CreateCoreNetworkOutcome NetworkManagerClient::CreateCoreNetwork(const CreateCoreNetworkRequest& request) const {
@@ -615,6 +665,24 @@ DeleteConnectionOutcome NetworkManagerClient::DeleteConnection(const DeleteConne
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteConnectionOutcome(result.GetResultWithOwnership())
                             : DeleteConnectionOutcome(std::move(result.GetError()));
+}
+
+DeleteContextStoreOutcome NetworkManagerClient::DeleteContextStore(const DeleteContextStoreRequest& request) const {
+  if (!request.ContextStoreIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteContextStore", "Required field: ContextStoreId, is not set");
+    return DeleteContextStoreOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContextStoreId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-stores/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContextStoreId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContextStoreOutcome(result.GetResultWithOwnership())
+                            : DeleteContextStoreOutcome(std::move(result.GetError()));
 }
 
 DeleteCoreNetworkOutcome NetworkManagerClient::DeleteCoreNetwork(const DeleteCoreNetworkRequest& request) const {
@@ -873,6 +941,31 @@ DisassociateConnectPeerOutcome NetworkManagerClient::DisassociateConnectPeer(con
                             : DisassociateConnectPeerOutcome(std::move(result.GetError()));
 }
 
+DisassociateContextStoreOutcome NetworkManagerClient::DisassociateContextStore(const DisassociateContextStoreRequest& request) const {
+  if (!request.ContextStoreIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DisassociateContextStore", "Required field: ContextStoreId, is not set");
+    return DisassociateContextStoreOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContextStoreId]", false));
+  }
+  if (!request.TransitGatewayArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DisassociateContextStore", "Required field: TransitGatewayArn, is not set");
+    return DisassociateContextStoreOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TransitGatewayArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-stores/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContextStoreId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/associations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTransitGatewayArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateContextStoreOutcome(result.GetResultWithOwnership())
+                            : DisassociateContextStoreOutcome(std::move(result.GetError()));
+}
+
 DisassociateCustomerGatewayOutcome NetworkManagerClient::DisassociateCustomerGateway(
     const DisassociateCustomerGatewayRequest& request) const {
   if (!request.GlobalNetworkIdHasBeenSet()) {
@@ -1051,6 +1144,68 @@ GetConnectionsOutcome NetworkManagerClient::GetConnections(const GetConnectionsR
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetConnectionsOutcome(result.GetResultWithOwnership()) : GetConnectionsOutcome(std::move(result.GetError()));
+}
+
+GetContextStoreOutcome NetworkManagerClient::GetContextStore(const GetContextStoreRequest& request) const {
+  if (!request.ContextStoreIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetContextStore", "Required field: ContextStoreId, is not set");
+    return GetContextStoreOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [ContextStoreId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-stores/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContextStoreId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContextStoreOutcome(result.GetResultWithOwnership())
+                            : GetContextStoreOutcome(std::move(result.GetError()));
+}
+
+GetContextStoreAssociationOutcome NetworkManagerClient::GetContextStoreAssociation(const GetContextStoreAssociationRequest& request) const {
+  if (!request.ContextStoreIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetContextStoreAssociation", "Required field: ContextStoreId, is not set");
+    return GetContextStoreAssociationOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContextStoreId]", false));
+  }
+  if (!request.TransitGatewayArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetContextStoreAssociation", "Required field: TransitGatewayArn, is not set");
+    return GetContextStoreAssociationOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TransitGatewayArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-stores/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContextStoreId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/associations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTransitGatewayArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContextStoreAssociationOutcome(result.GetResultWithOwnership())
+                            : GetContextStoreAssociationOutcome(std::move(result.GetError()));
+}
+
+GetContextVersionOutcome NetworkManagerClient::GetContextVersion(const GetContextVersionRequest& request) const {
+  if (!request.ContextStoreIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetContextVersion", "Required field: ContextStoreId, is not set");
+    return GetContextVersionOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContextStoreId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-stores/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContextStoreId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-version");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContextVersionOutcome(result.GetResultWithOwnership())
+                            : GetContextVersionOutcome(std::move(result.GetError()));
 }
 
 GetCoreNetworkOutcome NetworkManagerClient::GetCoreNetwork(const GetCoreNetworkRequest& request) const {
@@ -1556,6 +1711,79 @@ ListConnectPeersOutcome NetworkManagerClient::ListConnectPeers(const ListConnect
                             : ListConnectPeersOutcome(std::move(result.GetError()));
 }
 
+ListContextChangesOutcome NetworkManagerClient::ListContextChanges(const ListContextChangesRequest& request) const {
+  if (!request.ContextStoreIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListContextChanges", "Required field: ContextStoreId, is not set");
+    return ListContextChangesOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContextStoreId]", false));
+  }
+  if (!request.FromVersionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListContextChanges", "Required field: FromVersionId, is not set");
+    return ListContextChangesOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FromVersionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-stores/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContextStoreId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-changes");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListContextChangesOutcome(result.GetResultWithOwnership())
+                            : ListContextChangesOutcome(std::move(result.GetError()));
+}
+
+ListContextStoreAssociationsOutcome NetworkManagerClient::ListContextStoreAssociations(
+    const ListContextStoreAssociationsRequest& request) const {
+  if (!request.ContextStoreIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListContextStoreAssociations", "Required field: ContextStoreId, is not set");
+    return ListContextStoreAssociationsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContextStoreId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-stores/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContextStoreId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListContextStoreAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListContextStoreAssociationsOutcome(std::move(result.GetError()));
+}
+
+ListContextStoresOutcome NetworkManagerClient::ListContextStores(const ListContextStoresRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-stores");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListContextStoresOutcome(result.GetResultWithOwnership())
+                            : ListContextStoresOutcome(std::move(result.GetError()));
+}
+
+ListContextsOutcome NetworkManagerClient::ListContexts(const ListContextsRequest& request) const {
+  if (!request.ContextStoreIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListContexts", "Required field: ContextStoreId, is not set");
+    return ListContextsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [ContextStoreId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-stores/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContextStoreId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contexts");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListContextsOutcome(result.GetResultWithOwnership()) : ListContextsOutcome(std::move(result.GetError()));
+}
+
 ListCoreNetworkPolicyVersionsOutcome NetworkManagerClient::ListCoreNetworkPolicyVersions(
     const ListCoreNetworkPolicyVersionsRequest& request) const {
   if (!request.CoreNetworkIdHasBeenSet()) {
@@ -1919,6 +2147,24 @@ UpdateConnectionOutcome NetworkManagerClient::UpdateConnection(const UpdateConne
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateConnectionOutcome(result.GetResultWithOwnership())
                             : UpdateConnectionOutcome(std::move(result.GetError()));
+}
+
+UpdateContextStoreOutcome NetworkManagerClient::UpdateContextStore(const UpdateContextStoreRequest& request) const {
+  if (!request.ContextStoreIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateContextStore", "Required field: ContextStoreId, is not set");
+    return UpdateContextStoreOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContextStoreId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/context-stores/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContextStoreId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateContextStoreOutcome(result.GetResultWithOwnership())
+                            : UpdateContextStoreOutcome(std::move(result.GetError()));
 }
 
 UpdateCoreNetworkOutcome NetworkManagerClient::UpdateCoreNetwork(const UpdateCoreNetworkRequest& request) const {

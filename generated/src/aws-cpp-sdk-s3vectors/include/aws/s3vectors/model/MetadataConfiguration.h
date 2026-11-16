@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
+#include <aws/s3vectors/model/TextSearchConfiguration.h>
 
 #include <utility>
 
@@ -35,11 +36,11 @@ class MetadataConfiguration {
   ///@{
   /**
    * <p>Non-filterable metadata keys allow you to enrich vectors with additional
-   * context during storage and retrieval. Unlike default metadata keys, these keys
-   * can’t be used as query filters. Non-filterable metadata keys can be retrieved
-   * but can’t be searched, queried, or filtered. You can access non-filterable
-   * metadata keys of your vectors after finding the vectors. For more information
-   * about non-filterable metadata keys, see <a
+   * context during storage and retrieval. You can't use these keys in metadata
+   * filters. You can still make a non-filterable key full-text searchable by
+   * configuring it separately in <code>textSearchConfigurations</code>. You can
+   * retrieve non-filterable metadata keys after finding the vectors. For more
+   * information about non-filterable metadata keys, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a>
    * and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations
@@ -64,9 +65,36 @@ class MetadataConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Full-text search configurations for searchable metadata keys.</p>
+   */
+  inline const Aws::Vector<TextSearchConfiguration>& GetTextSearchConfigurations() const { return m_textSearchConfigurations; }
+  inline bool TextSearchConfigurationsHasBeenSet() const { return m_textSearchConfigurationsHasBeenSet; }
+  template <typename TextSearchConfigurationsT = Aws::Vector<TextSearchConfiguration>>
+  void SetTextSearchConfigurations(TextSearchConfigurationsT&& value) {
+    m_textSearchConfigurationsHasBeenSet = true;
+    m_textSearchConfigurations = std::forward<TextSearchConfigurationsT>(value);
+  }
+  template <typename TextSearchConfigurationsT = Aws::Vector<TextSearchConfiguration>>
+  MetadataConfiguration& WithTextSearchConfigurations(TextSearchConfigurationsT&& value) {
+    SetTextSearchConfigurations(std::forward<TextSearchConfigurationsT>(value));
+    return *this;
+  }
+  template <typename TextSearchConfigurationsT = TextSearchConfiguration>
+  MetadataConfiguration& AddTextSearchConfigurations(TextSearchConfigurationsT&& value) {
+    m_textSearchConfigurationsHasBeenSet = true;
+    m_textSearchConfigurations.emplace_back(std::forward<TextSearchConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_nonFilterableMetadataKeys;
+
+  Aws::Vector<TextSearchConfiguration> m_textSearchConfigurations;
   bool m_nonFilterableMetadataKeysHasBeenSet = false;
+  bool m_textSearchConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

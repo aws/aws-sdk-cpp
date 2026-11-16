@@ -1822,23 +1822,75 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates an inference router. An inference router is a Regional SageMaker AI
+   * resource that sends each inference request to one of the endpoints or inference
+   * components that you list for a routing target. These destinations can be in any
+   * Amazon Web Services account, and in any Amazon Web Services Region in the same
+   * partition as the router.</p> <p>The router's status is <code>Creating</code>
+   * until it's ready to use. SageMaker AI checks that each endpoint is a real-time
+   * or asynchronous endpoint, as the routing target requires, and rejects one of the
+   * wrong type. It checks endpoints in other accounts with your credentials, so the
+   * endpoint policy must allow <code>sagemaker:DescribeEndpoint</code>. SageMaker AI
+   * accepts an endpoint that it can't check, for example one that doesn't exist.
+   * Requests to it fail if it's the wrong type or doesn't exist. To see the status
+   * of each destination, call <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceRouter.html">DescribeInferenceRouter</a>
+   * and see the <code>RoutingStatus</code> of each destination.</p> <p>To invoke the
+   * router, use <code>InvokeInferenceRouter</code> or
+   * <code>InvokeInferenceRouterAsync</code>. For information about inference
+   * routers, see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router.html">Route
+   * requests across Regions with inference routers</a>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceRouter">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateInferenceRouterOutcome CreateInferenceRouter(const Model::CreateInferenceRouterRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateInferenceRouter that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateInferenceRouterRequestT = Model::CreateInferenceRouterRequest>
+  Model::CreateInferenceRouterOutcomeCallable CreateInferenceRouterCallable(const CreateInferenceRouterRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::CreateInferenceRouter, request);
+  }
+
+  /**
+   * An Async wrapper for CreateInferenceRouter that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateInferenceRouterRequestT = Model::CreateInferenceRouterRequest>
+  void CreateInferenceRouterAsync(const CreateInferenceRouterRequestT& request, const CreateInferenceRouterResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::CreateInferenceRouter, request, handler, context);
+  }
+
+  /**
    * <p>Creates a model customization job in Amazon SageMaker. A job runs a workload
    * based on the job category and configuration you provide. You specify the job
    * category, a schema-versioned configuration document, and an IAM role that grants
-   * Amazon SageMaker permission to access resources on your behalf.</p> <p>Use the
-   * <code>AgentRFT</code> category to fine-tune a model using multi-turn
-   * reinforcement learning with reward signals. Use the
-   * <code>AgentRFTEvaluation</code> category to evaluate a fine-tuned or base model
-   * by running multi-turn rollouts against a held-out prompt dataset and computing
-   * metrics such as pass@k and mean reward.</p> <p>Before creating a job, call
-   * <code>ListJobSchemaVersions</code> and <code>DescribeJobSchemaVersion</code> to
-   * retrieve the configuration schema for your job category. The
-   * <code>JobConfigDocument</code> must conform to the schema specified by
-   * <code>JobConfigSchemaVersion</code>.</p> <p>The following operations are related
-   * to <code>CreateJob</code>:</p> <ul> <li> <p> <code>DescribeJob</code> </p> </li>
-   * <li> <p> <code>ListJobs</code> </p> </li> <li> <p> <code>StopJob</code> </p>
-   * </li> <li> <p> <code>DeleteJob</code> </p> </li> <li> <p>
-   * <code>ListJobSchemaVersions</code> </p> </li> <li> <p>
+   * Amazon SageMaker permission to access resources on your behalf.</p> <p>Specify
+   * one of the following job categories, which determines the type of workload that
+   * the job runs:</p> <dl> <dt>AgentRFT</dt> <dd> <p>Fine-tune a model using
+   * multi-turn reinforcement learning with reward signals.</p> </dd>
+   * <dt>AgentRFTEvaluation</dt> <dd> <p>Evaluate a fine-tuned or base model by
+   * running multi-turn rollouts against a held-out prompt dataset. This category
+   * computes metrics such as pass@k and mean reward.</p> </dd>
+   * <dt>DataQualityEvaluation</dt> <dd> <p>Evaluate the quality of a generated or
+   * bring-your-own dataset using quality metrics or your own specification.</p>
+   * </dd> <dt>DataTransformation</dt> <dd> <p>Transform datasets into the format you
+   * need, for example for model customization.</p> </dd>
+   * <dt>SyntheticDataGeneration</dt> <dd> <p>Generate synthetic training and testing
+   * datasets from your context data and specifications.</p> </dd> </dl> <p>Before
+   * creating a job, call <code>ListJobSchemaVersions</code> and
+   * <code>DescribeJobSchemaVersion</code> to retrieve the configuration schema for
+   * your job category. The <code>JobConfigDocument</code> must conform to the schema
+   * specified by <code>JobConfigSchemaVersion</code>.</p> <p>The following
+   * operations are related to <code>CreateJob</code>:</p> <ul> <li> <p>
+   * <code>DescribeJob</code> </p> </li> <li> <p> <code>ListJobs</code> </p> </li>
+   * <li> <p> <code>StopJob</code> </p> </li> <li> <p> <code>DeleteJob</code> </p>
+   * </li> <li> <p> <code>ListJobSchemaVersions</code> </p> </li> <li> <p>
    * <code>DescribeJobSchemaVersion</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateJob">AWS
    * API Reference</a></p>
@@ -3791,6 +3843,40 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes the resource-based policy that is attached to an endpoint. After you
+   * delete the policy, other accounts can no longer send requests to the endpoint
+   * through an inference router. The endpoint continues to serve requests from your
+   * account. If the endpoint doesn't have a policy, the operation succeeds.</p>
+   * <p>The change typically takes effect within 30 seconds, and can take up to 5
+   * minutes. To revoke access for one account only, use <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PutEndpointPolicy.html">PutEndpointPolicy</a>
+   * to replace the policy with one that doesn't include that account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEndpointPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteEndpointPolicyOutcome DeleteEndpointPolicy(const Model::DeleteEndpointPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteEndpointPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteEndpointPolicyRequestT = Model::DeleteEndpointPolicyRequest>
+  Model::DeleteEndpointPolicyOutcomeCallable DeleteEndpointPolicyCallable(const DeleteEndpointPolicyRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DeleteEndpointPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteEndpointPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteEndpointPolicyRequestT = Model::DeleteEndpointPolicyRequest>
+  void DeleteEndpointPolicyAsync(const DeleteEndpointPolicyRequestT& request, const DeleteEndpointPolicyResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DeleteEndpointPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an SageMaker experiment. All trials associated with the experiment
    * must be deleted first. Use the <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html">ListTrials</a>
@@ -4134,6 +4220,35 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                       const DeleteInferenceExperimentResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::DeleteInferenceExperiment, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an inference router. The endpoints and inference components that the
+   * router sends requests to aren't deleted.</p> <p>If the router is being created,
+   * updated, or deleted, you get a <code>ConflictException</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceRouter">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteInferenceRouterOutcome DeleteInferenceRouter(const Model::DeleteInferenceRouterRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteInferenceRouter that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteInferenceRouterRequestT = Model::DeleteInferenceRouterRequest>
+  Model::DeleteInferenceRouterOutcomeCallable DeleteInferenceRouterCallable(const DeleteInferenceRouterRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DeleteInferenceRouter, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteInferenceRouter that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteInferenceRouterRequestT = Model::DeleteInferenceRouterRequest>
+  void DeleteInferenceRouterAsync(const DeleteInferenceRouterRequestT& request, const DeleteInferenceRouterResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DeleteInferenceRouter, request, handler, context);
   }
 
   /**
@@ -6150,6 +6265,38 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns information about an inference router, including the routing status
+   * of each destination.</p> <p>SageMaker AI checks each destination with your
+   * permissions when you call this operation, so callers with different permissions
+   * can see a different <code>RoutingStatus</code>. To get the router's tags, use <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTags.html">ListTags</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceRouter">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeInferenceRouterOutcome DescribeInferenceRouter(const Model::DescribeInferenceRouterRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeInferenceRouter that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeInferenceRouterRequestT = Model::DescribeInferenceRouterRequest>
+  Model::DescribeInferenceRouterOutcomeCallable DescribeInferenceRouterCallable(const DescribeInferenceRouterRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeInferenceRouter, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeInferenceRouter that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeInferenceRouterRequestT = Model::DescribeInferenceRouterRequest>
+  void DescribeInferenceRouterAsync(const DescribeInferenceRouterRequestT& request,
+                                    const DescribeInferenceRouterResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeInferenceRouter, request, handler, context);
+  }
+
+  /**
    * <p>Returns detailed information about a job, including its current status,
    * secondary status, configuration, and timestamps. Use
    * <code>SecondaryStatus</code> for granular progress tracking and
@@ -7442,6 +7589,34 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void GetDeviceFleetReportAsync(const GetDeviceFleetReportRequestT& request, const GetDeviceFleetReportResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::GetDeviceFleetReport, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the resource-based policy that is attached to an endpoint. If the
+   * endpoint doesn't have a policy, you get a
+   * <code>ValidationException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetEndpointPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetEndpointPolicyOutcome GetEndpointPolicy(const Model::GetEndpointPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetEndpointPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetEndpointPolicyRequestT = Model::GetEndpointPolicyRequest>
+  Model::GetEndpointPolicyOutcomeCallable GetEndpointPolicyCallable(const GetEndpointPolicyRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::GetEndpointPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for GetEndpointPolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetEndpointPolicyRequestT = Model::GetEndpointPolicyRequest>
+  void GetEndpointPolicyAsync(const GetEndpointPolicyRequestT& request, const GetEndpointPolicyResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::GetEndpointPolicy, request, handler, context);
   }
 
   /**
@@ -8882,6 +9057,35 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the inference routers in your account in the current Amazon Web
+   * Services Region. A router that you just created might not appear in the list
+   * right away.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRouters">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListInferenceRoutersOutcome ListInferenceRouters(const Model::ListInferenceRoutersRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListInferenceRouters that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListInferenceRoutersRequestT = Model::ListInferenceRoutersRequest>
+  Model::ListInferenceRoutersOutcomeCallable ListInferenceRoutersCallable(const ListInferenceRoutersRequestT& request = {}) const {
+    return SubmitCallable(&SageMakerClient::ListInferenceRouters, request);
+  }
+
+  /**
+   * An Async wrapper for ListInferenceRouters that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListInferenceRoutersRequestT = Model::ListInferenceRoutersRequest>
+  void ListInferenceRoutersAsync(const ListInferenceRoutersResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const ListInferenceRoutersRequestT& request = {}) const {
+    return SubmitAsync(&SageMakerClient::ListInferenceRouters, request, handler, context);
+  }
+
+  /**
    * <p>Lists available configuration schema versions for a specified job category.
    * Use the schema versions with <code>DescribeJobSchemaVersion</code> to retrieve
    * the full schema document.</p> <p>The following operations are related to
@@ -10289,6 +10493,43 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                           const ListWorkteamsRequestT& request = {}) const {
     return SubmitAsync(&SageMakerClient::ListWorkteams, request, handler, context);
+  }
+
+  /**
+   * <p>Attaches a resource-based policy to an endpoint. With an endpoint policy, you
+   * can allow other Amazon Web Services accounts to send requests to your endpoint,
+   * or to inference components on it, through an inference router. The policy that
+   * you specify replaces the endpoint's existing policy, if it has one.</p> <p>You
+   * can't attach a policy to an endpoint whose status is <code>Deleting</code> or
+   * <code>Failed</code>. SageMaker AI rejects a policy that doesn't follow the
+   * endpoint policy rules. For information about the policy rules, see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router-cross-account.html">Use
+   * destinations in other accounts</a>.</p> <p>Policy changes typically take effect
+   * within 30 seconds, and can take up to 5 minutes. If you delete the endpoint, its
+   * policy is also deleted, and a new endpoint with the same name has no
+   * policy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PutEndpointPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutEndpointPolicyOutcome PutEndpointPolicy(const Model::PutEndpointPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutEndpointPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutEndpointPolicyRequestT = Model::PutEndpointPolicyRequest>
+  Model::PutEndpointPolicyOutcomeCallable PutEndpointPolicyCallable(const PutEndpointPolicyRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::PutEndpointPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for PutEndpointPolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PutEndpointPolicyRequestT = Model::PutEndpointPolicyRequest>
+  void PutEndpointPolicyAsync(const PutEndpointPolicyRequestT& request, const PutEndpointPolicyResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::PutEndpointPolicy, request, handler, context);
   }
 
   /**
@@ -12166,6 +12407,41 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                       const UpdateInferenceExperimentResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::UpdateInferenceExperiment, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the routing targets of an inference router. The routing targets that
+   * you specify replace all of the router's existing routing targets. To change one
+   * routing target, call <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceRouter.html">DescribeInferenceRouter</a>,
+   * edit the routing targets, and send all of them.</p> <p>The update is applied in
+   * full or not at all, and each request uses either the previous configuration or
+   * the new one. Updates typically take effect within about 2 minutes.</p> <p>If the
+   * router is being created, updated, or deleted, or another request changes it at
+   * the same time, you get a <code>ConflictException</code>. Describe the router,
+   * and then send your update again.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceRouter">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateInferenceRouterOutcome UpdateInferenceRouter(const Model::UpdateInferenceRouterRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateInferenceRouter that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateInferenceRouterRequestT = Model::UpdateInferenceRouterRequest>
+  Model::UpdateInferenceRouterOutcomeCallable UpdateInferenceRouterCallable(const UpdateInferenceRouterRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::UpdateInferenceRouter, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateInferenceRouter that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateInferenceRouterRequestT = Model::UpdateInferenceRouterRequest>
+  void UpdateInferenceRouterAsync(const UpdateInferenceRouterRequestT& request, const UpdateInferenceRouterResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::UpdateInferenceRouter, request, handler, context);
   }
 
   /**

@@ -1420,6 +1420,40 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSRpc
   }
 
   /**
+   * <p>Lists the active context stores that are associated with your firewalls. A
+   * context store records network resources that can be used to evaluate
+   * context-aware rules. You can list the following resource types: VPCs, subnets,
+   * security groups, and transit gateway attachments.</p> <p>When using a small page
+   * size, a single call might not return the full list. A response can contain fewer
+   * than <code>MaxResults</code> results, or none, and still include a
+   * <code>NextToken</code>. Keep making requests until the response does not include
+   * a <code>NextToken</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListContextStores">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListContextStoresOutcome ListContextStores(const Model::ListContextStoresRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListContextStores that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListContextStoresRequestT = Model::ListContextStoresRequest>
+  Model::ListContextStoresOutcomeCallable ListContextStoresCallable(const ListContextStoresRequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::ListContextStores, request);
+  }
+
+  /**
+   * An Async wrapper for ListContextStores that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListContextStoresRequestT = Model::ListContextStoresRequest>
+  void ListContextStoresAsync(const ListContextStoresResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const ListContextStoresRequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::ListContextStores, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the metadata for the firewall policies that you have defined.
    * Depending on your setting for max results and the number of firewall policies, a
    * single call might not return the full list. </p><p><h3>See Also:</h3>   <a
@@ -1571,6 +1605,41 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSRpc
   void ListFlowOperationsAsync(const ListFlowOperationsRequestT& request, const ListFlowOperationsResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFirewallClient::ListFlowOperations, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the resources that a context store records. The context store must be
+   * associated with a transit gateway that your firewall is attached to. You can
+   * filter the results by Region, resource type, or both.</p> <p>When using a small
+   * page size, a single call might not return the full list. A response can contain
+   * fewer than <code>MaxResults</code> results, or none, and still include a
+   * <code>NextToken</code>. Keep making requests until the response does not include
+   * a <code>NextToken</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListResourcesInContextStore">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListResourcesInContextStoreOutcome ListResourcesInContextStore(
+      const Model::ListResourcesInContextStoreRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListResourcesInContextStore that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListResourcesInContextStoreRequestT = Model::ListResourcesInContextStoreRequest>
+  Model::ListResourcesInContextStoreOutcomeCallable ListResourcesInContextStoreCallable(
+      const ListResourcesInContextStoreRequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::ListResourcesInContextStore, request);
+  }
+
+  /**
+   * An Async wrapper for ListResourcesInContextStore that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListResourcesInContextStoreRequestT = Model::ListResourcesInContextStoreRequest>
+  void ListResourcesInContextStoreAsync(const ListResourcesInContextStoreRequestT& request,
+                                        const ListResourcesInContextStoreResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::ListResourcesInContextStore, request, handler, context);
   }
 
   /**

@@ -29,6 +29,14 @@ Aws::String AcceptVpcEndpointConnectionsRequest::SerializePayload() const {
     }
   }
 
+  if (m_transitGatewayAttachmentIdsHasBeenSet) {
+    unsigned transitGatewayAttachmentIdsCount = 1;
+    for (auto& item : m_transitGatewayAttachmentIds) {
+      ss << "TransitGatewayAttachmentId." << transitGatewayAttachmentIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      transitGatewayAttachmentIdsCount++;
+    }
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

@@ -9,11 +9,13 @@
 #include <aws/network-firewall/model/GetAnalysisReportResultsPaginationTraits.h>
 #include <aws/network-firewall/model/ListAnalysisReportsPaginationTraits.h>
 #include <aws/network-firewall/model/ListContainerAssociationsPaginationTraits.h>
+#include <aws/network-firewall/model/ListContextStoresPaginationTraits.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesPaginationTraits.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesV2PaginationTraits.h>
 #include <aws/network-firewall/model/ListFirewallsPaginationTraits.h>
 #include <aws/network-firewall/model/ListFlowOperationResultsPaginationTraits.h>
 #include <aws/network-firewall/model/ListFlowOperationsPaginationTraits.h>
+#include <aws/network-firewall/model/ListResourcesInContextStorePaginationTraits.h>
 #include <aws/network-firewall/model/ListRuleGroupsPaginationTraits.h>
 #include <aws/network-firewall/model/ListTLSInspectionConfigurationsPaginationTraits.h>
 #include <aws/network-firewall/model/ListTagsForResourcePaginationTraits.h>
@@ -31,6 +33,8 @@ using ListAnalysisReportsPaginator =
 using ListContainerAssociationsPaginator =
     Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListContainerAssociationsRequest,
                                       Pagination::ListContainerAssociationsPaginationTraits<NetworkFirewallClient>>;
+using ListContextStoresPaginator = Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListContextStoresRequest,
+                                                                     Pagination::ListContextStoresPaginationTraits<NetworkFirewallClient>>;
 using ListFirewallPoliciesPaginator =
     Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListFirewallPoliciesRequest,
                                       Pagination::ListFirewallPoliciesPaginationTraits<NetworkFirewallClient>>;
@@ -45,6 +49,9 @@ using ListFlowOperationResultsPaginator =
 using ListFlowOperationsPaginator =
     Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListFlowOperationsRequest,
                                       Pagination::ListFlowOperationsPaginationTraits<NetworkFirewallClient>>;
+using ListResourcesInContextStorePaginator =
+    Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListResourcesInContextStoreRequest,
+                                      Pagination::ListResourcesInContextStorePaginationTraits<NetworkFirewallClient>>;
 using ListRuleGroupsPaginator = Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListRuleGroupsRequest,
                                                                   Pagination::ListRuleGroupsPaginationTraits<NetworkFirewallClient>>;
 using ListTagsForResourcePaginator =

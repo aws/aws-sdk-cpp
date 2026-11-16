@@ -32,6 +32,10 @@ ReplicationRule& ReplicationRule::operator=(JsonView jsonValue) {
     }
     m_repositoryFiltersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("deleteReplication")) {
+    m_deleteReplication = jsonValue.GetObject("deleteReplication");
+    m_deleteReplicationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -52,6 +56,10 @@ JsonValue ReplicationRule::Jsonize() const {
       repositoryFiltersJsonList[repositoryFiltersIndex].AsObject(m_repositoryFilters[repositoryFiltersIndex].Jsonize());
     }
     payload.WithArray("repositoryFilters", std::move(repositoryFiltersJsonList));
+  }
+
+  if (m_deleteReplicationHasBeenSet) {
+    payload.WithObject("deleteReplication", m_deleteReplication.Jsonize());
   }
 
   return payload;

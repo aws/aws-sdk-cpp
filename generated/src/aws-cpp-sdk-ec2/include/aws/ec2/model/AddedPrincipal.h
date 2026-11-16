@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/PermissionType.h>
 #include <aws/ec2/model/PrincipalType.h>
 
 #include <utility>
@@ -103,6 +104,22 @@ class AddedPrincipal {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of permission granted to the principal.</p>
+   */
+  inline PermissionType GetPermissionType() const { return m_permissionType; }
+  inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
+  inline void SetPermissionType(PermissionType value) {
+    m_permissionTypeHasBeenSet = true;
+    m_permissionType = value;
+  }
+  inline AddedPrincipal& WithPermissionType(PermissionType value) {
+    SetPermissionType(value);
+    return *this;
+  }
+  ///@}
  private:
   PrincipalType m_principalType{PrincipalType::NOT_SET};
 
@@ -111,10 +128,13 @@ class AddedPrincipal {
   Aws::String m_servicePermissionId;
 
   Aws::String m_serviceId;
+
+  PermissionType m_permissionType{PermissionType::NOT_SET};
   bool m_principalTypeHasBeenSet = false;
   bool m_principalHasBeenSet = false;
   bool m_servicePermissionIdHasBeenSet = false;
   bool m_serviceIdHasBeenSet = false;
+  bool m_permissionTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -35,6 +35,14 @@ StartMedicalScribeListeningSessionHandler::StartMedicalScribeListeningSessionHan
     AWS_LOGSTREAM_TRACE(STARTMEDICALSCRIBELISTENINGSESSION_HANDLER_CLASS_TAG, "MedicalScribeTranscriptEvent received.");
   };
 
+  m_onMedicalScribePeriodontalChartEvent = [&](const MedicalScribePeriodontalChartEvent&) {
+    AWS_LOGSTREAM_TRACE(STARTMEDICALSCRIBELISTENINGSESSION_HANDLER_CLASS_TAG, "MedicalScribePeriodontalChartEvent received.");
+  };
+
+  m_onMedicalScribeChecklistEvent = [&](const MedicalScribeChecklistEvent&) {
+    AWS_LOGSTREAM_TRACE(STARTMEDICALSCRIBELISTENINGSESSION_HANDLER_CLASS_TAG, "MedicalScribeChecklistEvent received.");
+  };
+
   m_onError = [&](const AWSError<ConnectHealthErrors>& error) {
     AWS_LOGSTREAM_TRACE(STARTMEDICALSCRIBELISTENINGSESSION_HANDLER_CLASS_TAG, "ConnectHealth Errors received, " << error);
   };
@@ -100,6 +108,28 @@ void StartMedicalScribeListeningSessionHandler::HandleEventInMessage() {
       m_onMedicalScribeTranscriptEvent(MedicalScribeTranscriptEvent{json.View()});
       break;
     }
+    case StartMedicalScribeListeningSessionEventType::PERIODONTALCHARTEVENT: {
+      JsonValue json(GetEventPayloadAsString());
+      if (!json.WasParseSuccessful()) {
+        AWS_LOGSTREAM_WARN(STARTMEDICALSCRIBELISTENINGSESSION_HANDLER_CLASS_TAG,
+                           "Unable to generate a proper MedicalScribePeriodontalChartEvent object from the response in JSON format.");
+        break;
+      }
+
+      m_onMedicalScribePeriodontalChartEvent(MedicalScribePeriodontalChartEvent{json.View()});
+      break;
+    }
+    case StartMedicalScribeListeningSessionEventType::CHECKLISTEVENT: {
+      JsonValue json(GetEventPayloadAsString());
+      if (!json.WasParseSuccessful()) {
+        AWS_LOGSTREAM_WARN(STARTMEDICALSCRIBELISTENINGSESSION_HANDLER_CLASS_TAG,
+                           "Unable to generate a proper MedicalScribeChecklistEvent object from the response in JSON format.");
+        break;
+      }
+
+      m_onMedicalScribeChecklistEvent(MedicalScribeChecklistEvent{json.View()});
+      break;
+    }
     default:
       AWS_LOGSTREAM_WARN(STARTMEDICALSCRIBELISTENINGSESSION_HANDLER_CLASS_TAG,
                          "Unexpected event type: " << eventTypeHeaderIter->second.GetEventHeaderValueAsString());
@@ -132,7 +162,7 @@ void StartMedicalScribeListeningSessionHandler::HandleErrorInMessage() {
     JsonValue exceptionPayload(GetEventPayloadAsString());
     if (!exceptionPayload.WasParseSuccessful()) {
       AWS_LOGSTREAM_ERROR(STARTMEDICALSCRIBELISTENINGSESSION_HANDLER_CLASS_TAG,
-                          "Unable to generate a proper ValidationException object from the response in JSON format.");
+                          "Unable to generate a proper MedicalScribeChecklistEvent object from the response in JSON format.");
       auto contentTypeIter = headers.find(Aws::Utils::Event::CONTENT_TYPE_HEADER);
       if (contentTypeIter != headers.end()) {
         AWS_LOGSTREAM_DEBUG(STARTMEDICALSCRIBELISTENINGSESSION_HANDLER_CLASS_TAG,
@@ -179,6 +209,8 @@ void StartMedicalScribeListeningSessionHandler::MarshallError(const Aws::String&
 namespace StartMedicalScribeListeningSessionEventMapper {
 static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
 static const int TRANSCRIPTEVENT_HASH = Aws::Utils::HashingUtils::HashString("transcriptEvent");
+static const int PERIODONTALCHARTEVENT_HASH = Aws::Utils::HashingUtils::HashString("periodontalChartEvent");
+static const int CHECKLISTEVENT_HASH = Aws::Utils::HashingUtils::HashString("checklistEvent");
 
 StartMedicalScribeListeningSessionEventType GetStartMedicalScribeListeningSessionEventTypeForName(const Aws::String& name) {
   int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
@@ -187,6 +219,10 @@ StartMedicalScribeListeningSessionEventType GetStartMedicalScribeListeningSessio
     return StartMedicalScribeListeningSessionEventType::INITIAL_RESPONSE;
   } else if (hashCode == TRANSCRIPTEVENT_HASH) {
     return StartMedicalScribeListeningSessionEventType::TRANSCRIPTEVENT;
+  } else if (hashCode == PERIODONTALCHARTEVENT_HASH) {
+    return StartMedicalScribeListeningSessionEventType::PERIODONTALCHARTEVENT;
+  } else if (hashCode == CHECKLISTEVENT_HASH) {
+    return StartMedicalScribeListeningSessionEventType::CHECKLISTEVENT;
   }
   return StartMedicalScribeListeningSessionEventType::UNKNOWN;
 }
@@ -197,6 +233,10 @@ Aws::String GetNameForStartMedicalScribeListeningSessionEventType(StartMedicalSc
       return "initial-response";
     case StartMedicalScribeListeningSessionEventType::TRANSCRIPTEVENT:
       return "transcriptEvent";
+    case StartMedicalScribeListeningSessionEventType::PERIODONTALCHARTEVENT:
+      return "periodontalChartEvent";
+    case StartMedicalScribeListeningSessionEventType::CHECKLISTEVENT:
+      return "checklistEvent";
     default:
       return "Unknown";
   }

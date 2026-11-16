@@ -114,6 +114,43 @@ class AWS_CONNECTHEALTH_API ConnectHealthClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Creates a Dataset in a Domain and starts building it. A new dataset has the
+   * status CREATING. When it's ready to use, its status changes to ACTIVE, or to
+   * CREATE_FAILED if it fails to build. To check the status, call GetDataset.</p>
+   * <p>This operation is idempotent: if you retry a request with the same
+   * clientToken, it returns the dataset that the first request created.</p> <p>For a
+   * medical coding dataset, Amazon Connect Health uses the coded examples that are
+   * in the s3InputPath when you create the dataset, and writes evaluation scores to
+   * the s3OutputPath. Later changes to the s3InputPath don't change the dataset. To
+   * use this operation, you must have s3:GetObject and s3:ListBucket permissions for
+   * the input location and s3:PutObject permission for the output location, and
+   * kms:Decrypt and kms:GenerateDataKey permissions if you encrypt the locations
+   * with an AWS KMS key.</p> <p>Datasets are in preview release and are subject to
+   * change.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/CreateDataset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateDatasetRequestT = Model::CreateDatasetRequest>
+  Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const CreateDatasetRequestT& request) const {
+    return SubmitCallable(&ConnectHealthClient::CreateDataset, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDataset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateDatasetRequestT = Model::CreateDatasetRequest>
+  void CreateDatasetAsync(const CreateDatasetRequestT& request, const CreateDatasetResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectHealthClient::CreateDataset, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new Domain for managing HealthAgent resources.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/CreateDomain">AWS
@@ -195,6 +232,37 @@ class AWS_CONNECTHEALTH_API ConnectHealthClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Starts deleting a Dataset and the resources that Amazon Connect Health built
+   * for it. You can delete a dataset whose status is ACTIVE, CREATE_FAILED, or
+   * DELETE_FAILED. The dataset moves to DELETING, and then to DELETED. If the delete
+   * fails, the dataset moves to DELETE_FAILED, and you can call DeleteDataset
+   * again.</p> <p>Medical coding jobs that already use the dataset finish. Amazon
+   * Connect Health rejects new requests that specify the dataset.</p> <p>Datasets
+   * are in preview release and are subject to change.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/DeleteDataset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteDatasetRequestT = Model::DeleteDatasetRequest>
+  Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const DeleteDatasetRequestT& request) const {
+    return SubmitCallable(&ConnectHealthClient::DeleteDataset, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDataset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteDatasetRequestT = Model::DeleteDatasetRequest>
+  void DeleteDatasetAsync(const DeleteDatasetRequestT& request, const DeleteDatasetResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectHealthClient::DeleteDataset, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a Domain and all associated resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/DeleteDomain">AWS
    * API Reference</a></p>
@@ -220,6 +288,34 @@ class AWS_CONNECTHEALTH_API ConnectHealthClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Retrieves information about a Dataset, including its status and, after it is
+   * built, its results. A dataset whose status is DELETED returns
+   * ResourceNotFoundException.</p> <p>Datasets are in preview release and are
+   * subject to change.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/GetDataset">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDatasetOutcome GetDataset(const Model::GetDatasetRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetDatasetRequestT = Model::GetDatasetRequest>
+  Model::GetDatasetOutcomeCallable GetDatasetCallable(const GetDatasetRequestT& request) const {
+    return SubmitCallable(&ConnectHealthClient::GetDataset, request);
+  }
+
+  /**
+   * An Async wrapper for GetDataset that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetDatasetRequestT = Model::GetDatasetRequest>
+  void GetDatasetAsync(const GetDatasetRequestT& request, const GetDatasetResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectHealthClient::GetDataset, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves information about a Domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/GetDomain">AWS
    * API Reference</a></p>
@@ -242,6 +338,34 @@ class AWS_CONNECTHEALTH_API ConnectHealthClient : public Aws::Client::AWSJsonCli
   void GetDomainAsync(const GetDomainRequestT& request, const GetDomainResponseReceivedHandler& handler,
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectHealthClient::GetDomain, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a medical coding job, including its status and,
+   * when it succeeds, the location of its results.</p> <p>Medical coding jobs are in
+   * preview release and are subject to change.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/GetMedicalCodingJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetMedicalCodingJobOutcome GetMedicalCodingJob(const Model::GetMedicalCodingJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetMedicalCodingJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetMedicalCodingJobRequestT = Model::GetMedicalCodingJobRequest>
+  Model::GetMedicalCodingJobOutcomeCallable GetMedicalCodingJobCallable(const GetMedicalCodingJobRequestT& request) const {
+    return SubmitCallable(&ConnectHealthClient::GetMedicalCodingJob, request);
+  }
+
+  /**
+   * An Async wrapper for GetMedicalCodingJob that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetMedicalCodingJobRequestT = Model::GetMedicalCodingJobRequest>
+  void GetMedicalCodingJobAsync(const GetMedicalCodingJobRequestT& request, const GetMedicalCodingJobResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectHealthClient::GetMedicalCodingJob, request, handler, context);
   }
 
   /**
@@ -326,6 +450,35 @@ class AWS_CONNECTHEALTH_API ConnectHealthClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Lists the Datasets in a Domain. You can list only the datasets of one type.
+   * The operation doesn't return datasets whose status is DELETED, and the order of
+   * the results isn't specified. We recommend using pagination to ensure that the
+   * operation returns quickly and successfully.</p> <p>Datasets are in preview
+   * release and are subject to change.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/ListDatasets">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListDatasetsRequestT = Model::ListDatasetsRequest>
+  Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request) const {
+    return SubmitCallable(&ConnectHealthClient::ListDatasets, request);
+  }
+
+  /**
+   * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListDatasetsRequestT = Model::ListDatasetsRequest>
+  void ListDatasetsAsync(const ListDatasetsRequestT& request, const ListDatasetsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectHealthClient::ListDatasets, request, handler, context);
+  }
+
+  /**
    * <p>Lists Domains for a given account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/ListDomains">AWS
    * API Reference</a></p>
@@ -405,6 +558,38 @@ class AWS_CONNECTHEALTH_API ConnectHealthClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Starts an asynchronous job that generates medical codes (ICD-10 and CPT) for
+   * clinical text. Call GetMedicalCodingJob to check the status of the job. When the
+   * job succeeds, Amazon Connect Health writes the results to the output Amazon S3
+   * location.</p> <p>To tailor the codes to your organization, specify an ACTIVE
+   * medical coding dataset in the Domain. If you don't specify a dataset, the job
+   * uses the general medical coding knowledge base.</p> <p>Medical coding jobs are
+   * in preview release and are subject to change.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/StartMedicalCodingJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartMedicalCodingJobOutcome StartMedicalCodingJob(const Model::StartMedicalCodingJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartMedicalCodingJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartMedicalCodingJobRequestT = Model::StartMedicalCodingJobRequest>
+  Model::StartMedicalCodingJobOutcomeCallable StartMedicalCodingJobCallable(const StartMedicalCodingJobRequestT& request) const {
+    return SubmitCallable(&ConnectHealthClient::StartMedicalCodingJob, request);
+  }
+
+  /**
+   * An Async wrapper for StartMedicalCodingJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartMedicalCodingJobRequestT = Model::StartMedicalCodingJobRequest>
+  void StartMedicalCodingJobAsync(const StartMedicalCodingJobRequestT& request, const StartMedicalCodingJobResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectHealthClient::StartMedicalCodingJob, request, handler, context);
+  }
+
+  /**
    * <p>Starts a new Medical Scribe listening session for real-time audio
    * transcription</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/StartMedicalScribeListeningSession">AWS
@@ -445,6 +630,32 @@ class AWS_CONNECTHEALTH_API ConnectHealthClient : public Aws::Client::AWSJsonCli
                                     const StartPatientInsightsJobResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectHealthClient::StartPatientInsightsJob, request, handler, context);
+  }
+
+  /**
+   * <p>Submits feedback on a clinical document or a set of medical codes that Amazon
+   * Connect Health generated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/SubmitFeedback">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SubmitFeedbackOutcome SubmitFeedback(const Model::SubmitFeedbackRequest& request) const;
+
+  /**
+   * A Callable wrapper for SubmitFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SubmitFeedbackRequestT = Model::SubmitFeedbackRequest>
+  Model::SubmitFeedbackOutcomeCallable SubmitFeedbackCallable(const SubmitFeedbackRequestT& request) const {
+    return SubmitCallable(&ConnectHealthClient::SubmitFeedback, request);
+  }
+
+  /**
+   * An Async wrapper for SubmitFeedback that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SubmitFeedbackRequestT = Model::SubmitFeedbackRequest>
+  void SubmitFeedbackAsync(const SubmitFeedbackRequestT& request, const SubmitFeedbackResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectHealthClient::SubmitFeedback, request, handler, context);
   }
 
   /**

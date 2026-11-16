@@ -82,6 +82,7 @@
 #include <aws/cognito-idp/model/ForgotPasswordRequest.h>
 #include <aws/cognito-idp/model/GetCSVHeaderRequest.h>
 #include <aws/cognito-idp/model/GetClientTokenRequest.h>
+#include <aws/cognito-idp/model/GetDerivedTokenRequest.h>
 #include <aws/cognito-idp/model/GetDeviceRequest.h>
 #include <aws/cognito-idp/model/GetGroupRequest.h>
 #include <aws/cognito-idp/model/GetIdentityProviderByIdentifierRequest.h>
@@ -776,6 +777,12 @@ GetCSVHeaderOutcome CognitoIdentityProviderClient::GetCSVHeader(const GetCSVHead
 GetClientTokenOutcome CognitoIdentityProviderClient::GetClientToken(const GetClientTokenRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetClientTokenOutcome(result.GetResultWithOwnership()) : GetClientTokenOutcome(std::move(result.GetError()));
+}
+
+GetDerivedTokenOutcome CognitoIdentityProviderClient::GetDerivedToken(const GetDerivedTokenRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDerivedTokenOutcome(result.GetResultWithOwnership())
+                            : GetDerivedTokenOutcome(std::move(result.GetError()));
 }
 
 GetDeviceOutcome CognitoIdentityProviderClient::GetDevice(const GetDeviceRequest& request) const {

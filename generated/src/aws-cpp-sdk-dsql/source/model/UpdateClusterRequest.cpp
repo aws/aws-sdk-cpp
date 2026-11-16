@@ -31,5 +31,13 @@ Aws::String UpdateClusterRequest::SerializePayload() const {
     payload.WithObject("multiRegionProperties", m_multiRegionProperties.Jsonize());
   }
 
+  if (m_metricGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
+    for (unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex) {
+      metricGroupsJsonList[metricGroupsIndex].AsObject(m_metricGroups[metricGroupsIndex].Jsonize());
+    }
+    payload.WithArray("metricGroups", std::move(metricGroupsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

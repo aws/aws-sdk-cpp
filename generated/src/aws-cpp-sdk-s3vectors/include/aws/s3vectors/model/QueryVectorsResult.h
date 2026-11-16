@@ -32,7 +32,9 @@ class QueryVectorsResult {
 
   ///@{
   /**
-   * <p>The vectors in the approximate nearest neighbor search.</p>
+   * <p>The matching vector results in ranked order. Results are ranked by vector
+   * distance for a vector-only search, by BM25 relevance for a full-text-only
+   * search, and by RRF score for a hybrid search.</p>
    */
   inline const Aws::Vector<QueryOutputVector>& GetVectors() const { return m_vectors; }
   template <typename VectorsT = Aws::Vector<QueryOutputVector>>

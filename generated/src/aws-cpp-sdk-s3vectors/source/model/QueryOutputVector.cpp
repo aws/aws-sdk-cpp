@@ -22,6 +22,10 @@ QueryOutputVector& QueryOutputVector::operator=(JsonView jsonValue) {
     m_distance = jsonValue.GetDouble("distance");
     m_distanceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("scores")) {
+    m_scores = jsonValue.GetObject("scores");
+    m_scoresHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("key")) {
     m_key = jsonValue.GetString("key");
     m_keyHasBeenSet = true;
@@ -38,6 +42,10 @@ JsonValue QueryOutputVector::Jsonize() const {
 
   if (m_distanceHasBeenSet) {
     payload.WithDouble("distance", m_distance);
+  }
+
+  if (m_scoresHasBeenSet) {
+    payload.WithObject("scores", m_scores.Jsonize());
   }
 
   if (m_keyHasBeenSet) {

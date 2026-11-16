@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connecthealth/ConnectHealth_EXPORTS.h>
+#include <aws/connecthealth/model/MedicalCodingContext.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -49,9 +50,30 @@ class EncounterContext {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Structured patient and encounter context for medical code generation.</p>
+   */
+  inline const MedicalCodingContext& GetMedicalCodingContext() const { return m_medicalCodingContext; }
+  inline bool MedicalCodingContextHasBeenSet() const { return m_medicalCodingContextHasBeenSet; }
+  template <typename MedicalCodingContextT = MedicalCodingContext>
+  void SetMedicalCodingContext(MedicalCodingContextT&& value) {
+    m_medicalCodingContextHasBeenSet = true;
+    m_medicalCodingContext = std::forward<MedicalCodingContextT>(value);
+  }
+  template <typename MedicalCodingContextT = MedicalCodingContext>
+  EncounterContext& WithMedicalCodingContext(MedicalCodingContextT&& value) {
+    SetMedicalCodingContext(std::forward<MedicalCodingContextT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_unstructuredContext;
+
+  MedicalCodingContext m_medicalCodingContext;
   bool m_unstructuredContextHasBeenSet = false;
+  bool m_medicalCodingContextHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/connecthealth/model/ListDatasetsPaginationTraits.h>
 #include <aws/connecthealth/model/ListDomainsPaginationTraits.h>
 #include <aws/connecthealth/model/ListSubscriptionsPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
@@ -18,6 +19,17 @@ namespace ConnectHealth {
 template <typename DerivedClient>
 class ConnectHealthPaginationBase {
  public:
+  /**
+   * Create a paginator for ListDatasets operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetsRequest, Pagination::ListDatasetsPaginationTraits<DerivedClient>>
+  ListDatasetsPaginator(const Model::ListDatasetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetsRequest,
+                                             Pagination::ListDatasetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                      request};
+  }
+
   /**
    * Create a paginator for ListDomains operation
    */

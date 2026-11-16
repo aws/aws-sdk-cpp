@@ -196,6 +196,10 @@ GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator=(const 
     m_runtimeConfig = jsonValue.GetObject("RuntimeConfig");
     m_runtimeConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AcceleratorConfig")) {
+    m_acceleratorConfig = jsonValue.GetObject("AcceleratorConfig");
+    m_acceleratorConfigHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

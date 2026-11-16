@@ -76,7 +76,8 @@ class UpdateAgentProfileRequest : public WellArchitectedRequest {
 
   ///@{
   /**
-   * <p>The updated display name of the profile.</p>
+   * <p>The updated display name of the profile. Omit this field to keep the current
+   * display name. A display name is required, so it cannot be cleared.</p>
    */
   inline const Aws::String& GetDisplayName() const { return m_displayName; }
   inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
@@ -94,7 +95,9 @@ class UpdateAgentProfileRequest : public WellArchitectedRequest {
 
   ///@{
   /**
-   * <p>The updated description of the profile.</p>
+   * <p>The updated description of the profile. Omit this field to keep the current
+   * description, or supply an empty string to clear it; a cleared description is
+   * read back as absent rather than as an empty string.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -112,7 +115,8 @@ class UpdateAgentProfileRequest : public WellArchitectedRequest {
 
   ///@{
   /**
-   * <p>The updated ARN of the IAM execution role.</p>
+   * <p>The updated ARN of the IAM execution role. Omit this field to keep the
+   * current execution role.</p>
    */
   inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
   inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
@@ -130,7 +134,10 @@ class UpdateAgentProfileRequest : public WellArchitectedRequest {
 
   ///@{
   /**
-   * <p>The updated aggregation configuration.</p>
+   * <p>The updated aggregation configuration, as a list of per-account entries. Omit
+   * this field to keep the current entries, or supply an empty list to remove them
+   * all. The field remains set either way — an emptied configuration is read back as
+   * an empty list, not as an absent field.</p>
    */
   inline const Aws::Vector<AggregationConfiguration>& GetAggregationConfiguration() const { return m_aggregationConfiguration; }
   inline bool AggregationConfigurationHasBeenSet() const { return m_aggregationConfigurationHasBeenSet; }
@@ -154,7 +161,9 @@ class UpdateAgentProfileRequest : public WellArchitectedRequest {
 
   ///@{
   /**
-   * <p>The updated business overview for the profile.</p>
+   * <p>The updated business overview for the profile. Omit this field to keep the
+   * current business overview, or supply an empty string to clear it; a cleared
+   * business overview is read back as absent rather than as an empty string.</p>
    */
   inline const Aws::String& GetBusinessOverview() const { return m_businessOverview; }
   inline bool BusinessOverviewHasBeenSet() const { return m_businessOverviewHasBeenSet; }
@@ -172,7 +181,9 @@ class UpdateAgentProfileRequest : public WellArchitectedRequest {
 
   ///@{
   /**
-   * <p>The updated Well-Architected Tool Framework pillars for the profile.</p>
+   * <p>The updated Amazon Web Services Well-Architected Framework pillars for the
+   * profile. Omit this field to keep the current pillars. A profile must target at
+   * least one pillar, so an empty list is rejected.</p>
    */
   inline const Aws::Vector<Pillar>& GetPillars() const { return m_pillars; }
   inline bool PillarsHasBeenSet() const { return m_pillarsHasBeenSet; }

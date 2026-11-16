@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DeleteIpamInternetRegistryAssociationRequest.h>
+#include <aws/ec2/model/DeleteIpamPolicyRequest.h>
 #include <aws/ec2/model/DeleteIpamPoolRequest.h>
 #include <aws/ec2/model/DeleteIpamPrefixListResolverRequest.h>
 #include <aws/ec2/model/DeleteIpamPrefixListResolverTargetRequest.h>
@@ -73,6 +75,7 @@
 #include <aws/ec2/model/DeleteTransitGatewayMeteringPolicyEntryRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayMeteringPolicyRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayMulticastDomainRequest.h>
+#include <aws/ec2/model/DeleteTransitGatewayNetworkFunctionAttachmentRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayPeeringAttachmentRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayPolicyTableEntryRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayPolicyTableRequest.h>
@@ -117,9 +120,6 @@
 #include <aws/ec2/model/DescribeApplicationStatusRequest.h>
 #include <aws/ec2/model/DescribeAvailabilityZonesRequest.h>
 #include <aws/ec2/model/DescribeAwsNetworkPerformanceMetricSubscriptionsRequest.h>
-#include <aws/ec2/model/DescribeBundleTasksRequest.h>
-#include <aws/ec2/model/DescribeByoipCidrsRequest.h>
-#include <aws/ec2/model/DescribeCapacityBlockExtensionHistoryRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,19 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteIpamInternetRegistryAssociationOutcome EC2Client::DeleteIpamInternetRegistryAssociation(
+    const DeleteIpamInternetRegistryAssociationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIpamInternetRegistryAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteIpamInternetRegistryAssociationOutcome(std::move(result.GetError()));
+}
+
+DeleteIpamPolicyOutcome EC2Client::DeleteIpamPolicy(const DeleteIpamPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIpamPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteIpamPolicyOutcome(std::move(result.GetError()));
+}
 
 DeleteIpamPoolOutcome EC2Client::DeleteIpamPool(const DeleteIpamPoolRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -466,6 +479,13 @@ DeleteTransitGatewayMulticastDomainOutcome EC2Client::DeleteTransitGatewayMultic
                             : DeleteTransitGatewayMulticastDomainOutcome(std::move(result.GetError()));
 }
 
+DeleteTransitGatewayNetworkFunctionAttachmentOutcome EC2Client::DeleteTransitGatewayNetworkFunctionAttachment(
+    const DeleteTransitGatewayNetworkFunctionAttachmentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransitGatewayNetworkFunctionAttachmentOutcome(result.GetResultWithOwnership())
+                            : DeleteTransitGatewayNetworkFunctionAttachmentOutcome(std::move(result.GetError()));
+}
+
 DeleteTransitGatewayPeeringAttachmentOutcome EC2Client::DeleteTransitGatewayPeeringAttachment(
     const DeleteTransitGatewayPeeringAttachmentRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -738,23 +758,4 @@ DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome EC2Client::DescribeAwsNe
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome(result.GetResultWithOwnership())
                             : DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome(std::move(result.GetError()));
-}
-
-DescribeBundleTasksOutcome EC2Client::DescribeBundleTasks(const DescribeBundleTasksRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeBundleTasksOutcome(result.GetResultWithOwnership())
-                            : DescribeBundleTasksOutcome(std::move(result.GetError()));
-}
-
-DescribeByoipCidrsOutcome EC2Client::DescribeByoipCidrs(const DescribeByoipCidrsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeByoipCidrsOutcome(result.GetResultWithOwnership())
-                            : DescribeByoipCidrsOutcome(std::move(result.GetError()));
-}
-
-DescribeCapacityBlockExtensionHistoryOutcome EC2Client::DescribeCapacityBlockExtensionHistory(
-    const DescribeCapacityBlockExtensionHistoryRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCapacityBlockExtensionHistoryOutcome(result.GetResultWithOwnership())
-                            : DescribeCapacityBlockExtensionHistoryOutcome(std::move(result.GetError()));
 }

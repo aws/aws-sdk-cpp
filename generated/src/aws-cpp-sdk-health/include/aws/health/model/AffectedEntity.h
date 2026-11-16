@@ -173,8 +173,56 @@ class AffectedEntity {
 
   ///@{
   /**
-   * <p>A map of entity tags attached to the affected entity.</p>
-   * <p>Currently, the <code>tags</code> property isn't supported.</p>
+   * <p>A map of resource tag key-value pairs attached to the affected entity.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetResourceTags() const { return m_resourceTags; }
+  inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
+  template <typename ResourceTagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetResourceTags(ResourceTagsT&& value) {
+    m_resourceTagsHasBeenSet = true;
+    m_resourceTags = std::forward<ResourceTagsT>(value);
+  }
+  template <typename ResourceTagsT = Aws::Map<Aws::String, Aws::String>>
+  AffectedEntity& WithResourceTags(ResourceTagsT&& value) {
+    SetResourceTags(std::forward<ResourceTagsT>(value));
+    return *this;
+  }
+  template <typename ResourceTagsKeyT = Aws::String, typename ResourceTagsValueT = Aws::String>
+  AffectedEntity& AddResourceTags(ResourceTagsKeyT&& key, ResourceTagsValueT&& value) {
+    m_resourceTagsHasBeenSet = true;
+    m_resourceTags.emplace(std::forward<ResourceTagsKeyT>(key), std::forward<ResourceTagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A map of account tag key-value pairs attached to the affected entity.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetAccountTags() const { return m_accountTags; }
+  inline bool AccountTagsHasBeenSet() const { return m_accountTagsHasBeenSet; }
+  template <typename AccountTagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetAccountTags(AccountTagsT&& value) {
+    m_accountTagsHasBeenSet = true;
+    m_accountTags = std::forward<AccountTagsT>(value);
+  }
+  template <typename AccountTagsT = Aws::Map<Aws::String, Aws::String>>
+  AffectedEntity& WithAccountTags(AccountTagsT&& value) {
+    SetAccountTags(std::forward<AccountTagsT>(value));
+    return *this;
+  }
+  template <typename AccountTagsKeyT = Aws::String, typename AccountTagsValueT = Aws::String>
+  AffectedEntity& AddAccountTags(AccountTagsKeyT&& key, AccountTagsValueT&& value) {
+    m_accountTagsHasBeenSet = true;
+    m_accountTags.emplace(std::forward<AccountTagsKeyT>(key), std::forward<AccountTagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A map of resource tag key-value pairs attached to the affected entity.</p>
+   *  <p>Currently, the <code>tags</code> property isn't supported.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -234,6 +282,10 @@ class AffectedEntity {
 
   EntityStatusCode m_statusCode{EntityStatusCode::NOT_SET};
 
+  Aws::Map<Aws::String, Aws::String> m_resourceTags;
+
+  Aws::Map<Aws::String, Aws::String> m_accountTags;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::Map<Aws::String, Aws::String> m_entityMetadata;
@@ -244,6 +296,8 @@ class AffectedEntity {
   bool m_awsAccountIdHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_accountTagsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_entityMetadataHasBeenSet = false;
 };

@@ -72,7 +72,9 @@ class AcceptVpcEndpointConnectionsRequest : public EC2Request {
 
   ///@{
   /**
-   * <p>The IDs of the interface VPC endpoints.</p>
+   * <p>The IDs of the interface VPC endpoints.</p> <p>You must specify either
+   * <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not
+   * both.</p>
    */
   inline const Aws::Vector<Aws::String>& GetVpcEndpointIds() const { return m_vpcEndpointIds; }
   inline bool VpcEndpointIdsHasBeenSet() const { return m_vpcEndpointIdsHasBeenSet; }
@@ -93,15 +95,45 @@ class AcceptVpcEndpointConnectionsRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IDs of the transit gateway attachments to accept. This parameter is
+   * supported only for Gateway Load Balancer endpoint services.</p> <p>You must
+   * specify either <code>VpcEndpointIds</code> or
+   * <code>TransitGatewayAttachmentIds</code>, but not both.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetTransitGatewayAttachmentIds() const { return m_transitGatewayAttachmentIds; }
+  inline bool TransitGatewayAttachmentIdsHasBeenSet() const { return m_transitGatewayAttachmentIdsHasBeenSet; }
+  template <typename TransitGatewayAttachmentIdsT = Aws::Vector<Aws::String>>
+  void SetTransitGatewayAttachmentIds(TransitGatewayAttachmentIdsT&& value) {
+    m_transitGatewayAttachmentIdsHasBeenSet = true;
+    m_transitGatewayAttachmentIds = std::forward<TransitGatewayAttachmentIdsT>(value);
+  }
+  template <typename TransitGatewayAttachmentIdsT = Aws::Vector<Aws::String>>
+  AcceptVpcEndpointConnectionsRequest& WithTransitGatewayAttachmentIds(TransitGatewayAttachmentIdsT&& value) {
+    SetTransitGatewayAttachmentIds(std::forward<TransitGatewayAttachmentIdsT>(value));
+    return *this;
+  }
+  template <typename TransitGatewayAttachmentIdsT = Aws::String>
+  AcceptVpcEndpointConnectionsRequest& AddTransitGatewayAttachmentIds(TransitGatewayAttachmentIdsT&& value) {
+    m_transitGatewayAttachmentIdsHasBeenSet = true;
+    m_transitGatewayAttachmentIds.emplace_back(std::forward<TransitGatewayAttachmentIdsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
 
   Aws::String m_serviceId;
 
   Aws::Vector<Aws::String> m_vpcEndpointIds;
+
+  Aws::Vector<Aws::String> m_transitGatewayAttachmentIds;
   bool m_dryRunHasBeenSet = false;
   bool m_serviceIdHasBeenSet = false;
   bool m_vpcEndpointIdsHasBeenSet = false;
+  bool m_transitGatewayAttachmentIdsHasBeenSet = false;
 };
 
 }  // namespace Model

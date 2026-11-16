@@ -220,6 +220,22 @@ class MedicalScribeListeningSessionDetails {
 
   ///@{
   /**
+   * <p>Indicates whether medical coding context was provided.</p>
+   */
+  inline bool GetMedicalCodingContextProvided() const { return m_medicalCodingContextProvided; }
+  inline bool MedicalCodingContextProvidedHasBeenSet() const { return m_medicalCodingContextProvidedHasBeenSet; }
+  inline void SetMedicalCodingContextProvided(bool value) {
+    m_medicalCodingContextProvidedHasBeenSet = true;
+    m_medicalCodingContextProvided = value;
+  }
+  inline MedicalScribeListeningSessionDetails& WithMedicalCodingContextProvided(bool value) {
+    SetMedicalCodingContextProvided(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current status of the stream</p>
    */
   inline MedicalScribeStreamStatus GetStreamStatus() const { return m_streamStatus; }
@@ -290,6 +306,8 @@ class MedicalScribeListeningSessionDetails {
 
   bool m_encounterContextProvided{false};
 
+  bool m_medicalCodingContextProvided{false};
+
   MedicalScribeStreamStatus m_streamStatus{MedicalScribeStreamStatus::NOT_SET};
 
   Aws::Utils::DateTime m_streamCreationTime{};
@@ -305,6 +323,7 @@ class MedicalScribeListeningSessionDetails {
   bool m_postStreamActionSettingsHasBeenSet = false;
   bool m_postStreamActionResultHasBeenSet = false;
   bool m_encounterContextProvidedHasBeenSet = false;
+  bool m_medicalCodingContextProvidedHasBeenSet = false;
   bool m_streamStatusHasBeenSet = false;
   bool m_streamCreationTimeHasBeenSet = false;
   bool m_streamEndTimeHasBeenSet = false;

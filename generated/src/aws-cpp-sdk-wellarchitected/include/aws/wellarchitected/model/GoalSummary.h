@@ -73,7 +73,8 @@ class GoalSummary {
 
   ///@{
   /**
-   * <p>The Well-Architected Tool Framework pillars associated with this goal.</p>
+   * <p>The Amazon Web Services Well-Architected Framework pillars associated with
+   * this goal.</p>
    */
   inline const Aws::Vector<Pillar>& GetPillars() const { return m_pillars; }
   inline bool PillarsHasBeenSet() const { return m_pillarsHasBeenSet; }

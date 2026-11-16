@@ -83,6 +83,7 @@
 #include <aws/cognito-idp/model/ForgotPasswordResult.h>
 #include <aws/cognito-idp/model/GetCSVHeaderResult.h>
 #include <aws/cognito-idp/model/GetClientTokenResult.h>
+#include <aws/cognito-idp/model/GetDerivedTokenResult.h>
 #include <aws/cognito-idp/model/GetDeviceResult.h>
 #include <aws/cognito-idp/model/GetGroupResult.h>
 #include <aws/cognito-idp/model/GetIdentityProviderByIdentifierResult.h>
@@ -258,6 +259,7 @@ class ForgetDeviceRequest;
 class ForgotPasswordRequest;
 class GetCSVHeaderRequest;
 class GetClientTokenRequest;
+class GetDerivedTokenRequest;
 class GetDeviceRequest;
 class GetGroupRequest;
 class GetIdentityProviderByIdentifierRequest;
@@ -402,6 +404,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> ForgetD
 typedef Aws::Utils::Outcome<ForgotPasswordResult, CognitoIdentityProviderError> ForgotPasswordOutcome;
 typedef Aws::Utils::Outcome<GetCSVHeaderResult, CognitoIdentityProviderError> GetCSVHeaderOutcome;
 typedef Aws::Utils::Outcome<GetClientTokenResult, CognitoIdentityProviderError> GetClientTokenOutcome;
+typedef Aws::Utils::Outcome<GetDerivedTokenResult, CognitoIdentityProviderError> GetDerivedTokenOutcome;
 typedef Aws::Utils::Outcome<GetDeviceResult, CognitoIdentityProviderError> GetDeviceOutcome;
 typedef Aws::Utils::Outcome<GetGroupResult, CognitoIdentityProviderError> GetGroupOutcome;
 typedef Aws::Utils::Outcome<GetIdentityProviderByIdentifierResult, CognitoIdentityProviderError> GetIdentityProviderByIdentifierOutcome;
@@ -547,6 +550,7 @@ typedef std::future<ForgetDeviceOutcome> ForgetDeviceOutcomeCallable;
 typedef std::future<ForgotPasswordOutcome> ForgotPasswordOutcomeCallable;
 typedef std::future<GetCSVHeaderOutcome> GetCSVHeaderOutcomeCallable;
 typedef std::future<GetClientTokenOutcome> GetClientTokenOutcomeCallable;
+typedef std::future<GetDerivedTokenOutcome> GetDerivedTokenOutcomeCallable;
 typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
 typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
 typedef std::future<GetIdentityProviderByIdentifierOutcome> GetIdentityProviderByIdentifierOutcomeCallable;
@@ -849,6 +853,9 @@ typedef std::function<void(const CognitoIdentityProviderClient*, const Model::Ge
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetClientTokenRequest&, const Model::GetClientTokenOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetClientTokenResponseReceivedHandler;
+typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetDerivedTokenRequest&, const Model::GetDerivedTokenOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDerivedTokenResponseReceivedHandler;
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetDeviceRequest&, const Model::GetDeviceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDeviceResponseReceivedHandler;

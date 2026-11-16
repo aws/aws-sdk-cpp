@@ -302,6 +302,44 @@ class VpcEndpointConnection {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the transit gateway attachment, if the connection is for a transit
+   * gateway attachment.</p>
+   */
+  inline const Aws::String& GetTransitGatewayAttachmentId() const { return m_transitGatewayAttachmentId; }
+  inline bool TransitGatewayAttachmentIdHasBeenSet() const { return m_transitGatewayAttachmentIdHasBeenSet; }
+  template <typename TransitGatewayAttachmentIdT = Aws::String>
+  void SetTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) {
+    m_transitGatewayAttachmentIdHasBeenSet = true;
+    m_transitGatewayAttachmentId = std::forward<TransitGatewayAttachmentIdT>(value);
+  }
+  template <typename TransitGatewayAttachmentIdT = Aws::String>
+  VpcEndpointConnection& WithTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) {
+    SetTransitGatewayAttachmentId(std::forward<TransitGatewayAttachmentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Amazon Web Services account that owns the transit gateway
+   * attachment, if the connection is for a transit gateway attachment.</p>
+   */
+  inline const Aws::String& GetTransitGatewayAttachmentOwner() const { return m_transitGatewayAttachmentOwner; }
+  inline bool TransitGatewayAttachmentOwnerHasBeenSet() const { return m_transitGatewayAttachmentOwnerHasBeenSet; }
+  template <typename TransitGatewayAttachmentOwnerT = Aws::String>
+  void SetTransitGatewayAttachmentOwner(TransitGatewayAttachmentOwnerT&& value) {
+    m_transitGatewayAttachmentOwnerHasBeenSet = true;
+    m_transitGatewayAttachmentOwner = std::forward<TransitGatewayAttachmentOwnerT>(value);
+  }
+  template <typename TransitGatewayAttachmentOwnerT = Aws::String>
+  VpcEndpointConnection& WithTransitGatewayAttachmentOwner(TransitGatewayAttachmentOwnerT&& value) {
+    SetTransitGatewayAttachmentOwner(std::forward<TransitGatewayAttachmentOwnerT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serviceId;
 
@@ -328,6 +366,10 @@ class VpcEndpointConnection {
   Aws::String m_vpcEndpointRegion;
 
   Aws::Vector<PayerResponsibilityEntry> m_payerResponsibilities;
+
+  Aws::String m_transitGatewayAttachmentId;
+
+  Aws::String m_transitGatewayAttachmentOwner;
   bool m_serviceIdHasBeenSet = false;
   bool m_vpcEndpointIdHasBeenSet = false;
   bool m_vpcEndpointOwnerHasBeenSet = false;
@@ -341,6 +383,8 @@ class VpcEndpointConnection {
   bool m_tagsHasBeenSet = false;
   bool m_vpcEndpointRegionHasBeenSet = false;
   bool m_payerResponsibilitiesHasBeenSet = false;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_transitGatewayAttachmentOwnerHasBeenSet = false;
 };
 
 }  // namespace Model

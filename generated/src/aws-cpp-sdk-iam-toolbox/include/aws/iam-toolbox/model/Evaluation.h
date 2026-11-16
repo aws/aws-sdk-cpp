@@ -9,8 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iam-toolbox/IAMToolbox_EXPORTS.h>
+#include <aws/iam-toolbox/model/Check.h>
 #include <aws/iam-toolbox/model/EvaluatedEffect.h>
-#include <aws/iam-toolbox/model/MatchedPolicy.h>
 
 #include <utility>
 
@@ -107,8 +107,9 @@ class Evaluation {
    * <p>The result of the evaluation. Valid values:</p> <ul> <li> <p>
    * <code>ALLOW</code> - The action was allowed.</p> </li> <li> <p>
    * <code>EXPLICIT_DENY</code> - The action was explicitly denied by a policy.</p>
-   * </li> <li> <p> <code>IMPLICIT_DENY</code> - The action was denied because no
-   * policy allowed it.</p> </li> </ul>
+   * </li> <li> <p> <code>IMPLICIT_DENY</code> - The action was denied because at
+   * least one required authorization check had no matching allow statement.</p>
+   * </li> </ul>
    */
   inline EvaluatedEffect GetEvaluatedEffect() const { return m_evaluatedEffect; }
   inline bool EvaluatedEffectHasBeenSet() const { return m_evaluatedEffectHasBeenSet; }
@@ -124,25 +125,43 @@ class Evaluation {
 
   ///@{
   /**
-   * <p>The policies that matched during evaluation of this action and resource. An
-   * implicit denial produces no matched policies.</p>
+   * <p> <code>checks</code> contains the authorization checks that explain an
+   * evaluation result. Each check is one authorization requirement and reports its
+   * result and policies from the top-level <code>policies</code> list with matching
+   * statements. The output lists RCP checks from the organization root to the
+   * account, then SCP checks from the organization root to the account. It then
+   * lists VPC endpoint, resource, principal, permissions boundary, and session
+   * checks. When <code>checks</code> is present, an <code>EXPLICIT_DENY</code>
+   * evaluation includes an <code>EXPLICIT_DENY</code> check. When
+   * <code>checks</code> is present for an <code>IMPLICIT_DENY</code> evaluation, it
+   * includes an <code>IMPLICIT_DENY</code> check and no <code>EXPLICIT_DENY</code>
+   * check. For more information about how IAM evaluates policies, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic_policy-eval-denyallow.html">Policy
+   * evaluation logic</a>.</p> <p> <code>PRINCIPAL</code>,
+   * <code>PERMISSIONS_BOUNDARY</code>, and <code>SESSION</code> checks appear when
+   * they apply to the principal that made the request, even if none of their
+   * policies matched. A missing allow produces <code>IMPLICIT_DENY</code>, or
+   * <code>NO_IMPACT</code> when another path already allowed the request.</p>
+   * <p>Returned when the caller is in the request principal's account or
+   * organization. The absence of <code>checks</code> does not mean no authorization
+   * checks applied.</p>
    */
-  inline const Aws::Vector<MatchedPolicy>& GetMatchedPolicies() const { return m_matchedPolicies; }
-  inline bool MatchedPoliciesHasBeenSet() const { return m_matchedPoliciesHasBeenSet; }
-  template <typename MatchedPoliciesT = Aws::Vector<MatchedPolicy>>
-  void SetMatchedPolicies(MatchedPoliciesT&& value) {
-    m_matchedPoliciesHasBeenSet = true;
-    m_matchedPolicies = std::forward<MatchedPoliciesT>(value);
+  inline const Aws::Vector<Check>& GetChecks() const { return m_checks; }
+  inline bool ChecksHasBeenSet() const { return m_checksHasBeenSet; }
+  template <typename ChecksT = Aws::Vector<Check>>
+  void SetChecks(ChecksT&& value) {
+    m_checksHasBeenSet = true;
+    m_checks = std::forward<ChecksT>(value);
   }
-  template <typename MatchedPoliciesT = Aws::Vector<MatchedPolicy>>
-  Evaluation& WithMatchedPolicies(MatchedPoliciesT&& value) {
-    SetMatchedPolicies(std::forward<MatchedPoliciesT>(value));
+  template <typename ChecksT = Aws::Vector<Check>>
+  Evaluation& WithChecks(ChecksT&& value) {
+    SetChecks(std::forward<ChecksT>(value));
     return *this;
   }
-  template <typename MatchedPoliciesT = MatchedPolicy>
-  Evaluation& AddMatchedPolicies(MatchedPoliciesT&& value) {
-    m_matchedPoliciesHasBeenSet = true;
-    m_matchedPolicies.emplace_back(std::forward<MatchedPoliciesT>(value));
+  template <typename ChecksT = Check>
+  Evaluation& AddChecks(ChecksT&& value) {
+    m_checksHasBeenSet = true;
+    m_checks.emplace_back(std::forward<ChecksT>(value));
     return *this;
   }
   ///@}
@@ -155,12 +174,12 @@ class Evaluation {
 
   EvaluatedEffect m_evaluatedEffect{EvaluatedEffect::NOT_SET};
 
-  Aws::Vector<MatchedPolicy> m_matchedPolicies;
+  Aws::Vector<Check> m_checks;
   bool m_actionHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
   bool m_contextHasBeenSet = false;
   bool m_evaluatedEffectHasBeenSet = false;
-  bool m_matchedPoliciesHasBeenSet = false;
+  bool m_checksHasBeenSet = false;
 };
 
 }  // namespace Model

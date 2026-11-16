@@ -30,6 +30,10 @@ GatewayConnector& GatewayConnector::operator=(JsonView jsonValue) {
     m_filters = jsonValue.GetObject("filters");
     m_filtersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("deregistrationDelay")) {
+    m_deregistrationDelay = jsonValue.GetObject("deregistrationDelay");
+    m_deregistrationDelayHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue GatewayConnector::Jsonize() const {
 
   if (m_filtersHasBeenSet) {
     payload.WithObject("filters", m_filters.Jsonize());
+  }
+
+  if (m_deregistrationDelayHasBeenSet) {
+    payload.WithObject("deregistrationDelay", m_deregistrationDelay.Jsonize());
   }
 
   return payload;

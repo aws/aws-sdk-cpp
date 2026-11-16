@@ -39,3 +39,13 @@ Aws::Http::HeaderValueCollection DescribeStreamRequest::GetRequestSpecificHeader
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDBStreams_20120810.DescribeStream"));
   return headers;
 }
+
+DescribeStreamRequest::EndpointParameters DescribeStreamRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Operation context parameters
+  if (StreamArnHasBeenSet()) {
+    parameters.emplace_back(Aws::String("StreamArn"), this->GetStreamArn(),
+                            Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  return parameters;
+}

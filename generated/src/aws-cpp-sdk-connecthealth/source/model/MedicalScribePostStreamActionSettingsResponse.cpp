@@ -26,6 +26,10 @@ MedicalScribePostStreamActionSettingsResponse& MedicalScribePostStreamActionSett
     m_clinicalNoteGenerationSettings = jsonValue.GetObject("clinicalNoteGenerationSettings");
     m_clinicalNoteGenerationSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("medicalCodeGenerationSettings")) {
+    m_medicalCodeGenerationSettings = jsonValue.GetObject("medicalCodeGenerationSettings");
+    m_medicalCodeGenerationSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue MedicalScribePostStreamActionSettingsResponse::Jsonize() const {
 
   if (m_clinicalNoteGenerationSettingsHasBeenSet) {
     payload.WithObject("clinicalNoteGenerationSettings", m_clinicalNoteGenerationSettings.Jsonize());
+  }
+
+  if (m_medicalCodeGenerationSettingsHasBeenSet) {
+    payload.WithObject("medicalCodeGenerationSettings", m_medicalCodeGenerationSettings.Jsonize());
   }
 
   return payload;

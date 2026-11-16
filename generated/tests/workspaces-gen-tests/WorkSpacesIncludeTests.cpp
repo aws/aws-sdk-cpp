@@ -353,6 +353,7 @@
 #include <aws/workspaces/model/WorkspaceImageIngestionProcess.h>
 #include <aws/workspaces/model/WorkspaceImageRequiredTenancy.h>
 #include <aws/workspaces/model/WorkspaceImageState.h>
+#include <aws/workspaces/model/WorkspaceOSUserMode.h>
 #include <aws/workspaces/model/WorkspaceProperties.h>
 #include <aws/workspaces/model/WorkspaceRequest.h>
 #include <aws/workspaces/model/WorkspaceResourceAssociation.h>

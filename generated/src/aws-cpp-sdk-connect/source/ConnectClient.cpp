@@ -81,6 +81,7 @@
 #include <aws/connect/model/CreateWorkspacePageRequest.h>
 #include <aws/connect/model/CreateWorkspaceRequest.h>
 #include <aws/connect/model/DeactivateEvaluationFormRequest.h>
+#include <aws/connect/model/DeleteAllEntitySessionsRequest.h>
 #include <aws/connect/model/DeleteAttachedFileRequest.h>
 #include <aws/connect/model/DeleteContactDataRequest.h>
 #include <aws/connect/model/DeleteContactEvaluationRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/DeletePromptRequest.h>
 #include <aws/connect/model/DeletePushNotificationRegistrationRequest.h>
 #include <aws/connect/model/DeleteQueueRequest.h>
-#include <aws/connect/model/DeleteQuickConnectRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -1799,6 +1799,17 @@ DeactivateEvaluationFormOutcome ConnectClient::DeactivateEvaluationForm(const De
                             : DeactivateEvaluationFormOutcome(std::move(result.GetError()));
 }
 
+DeleteAllEntitySessionsOutcome ConnectClient::DeleteAllEntitySessions(const DeleteAllEntitySessionsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/auth/sessions/delete-all-entity-sessions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAllEntitySessionsOutcome(result.GetResultWithOwnership())
+                            : DeleteAllEntitySessionsOutcome(std::move(result.GetError()));
+}
+
 DeleteAttachedFileOutcome ConnectClient::DeleteAttachedFile(const DeleteAttachedFileRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteAttachedFile", "Required field: InstanceId, is not set");
@@ -2420,28 +2431,4 @@ DeleteQueueOutcome ConnectClient::DeleteQueue(const DeleteQueueRequest& request)
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteQueueOutcome(result.GetResultWithOwnership()) : DeleteQueueOutcome(std::move(result.GetError()));
-}
-
-DeleteQuickConnectOutcome ConnectClient::DeleteQuickConnect(const DeleteQuickConnectRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteQuickConnect", "Required field: InstanceId, is not set");
-    return DeleteQuickConnectOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                          "Missing required field [InstanceId]", false));
-  }
-  if (!request.QuickConnectIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteQuickConnect", "Required field: QuickConnectId, is not set");
-    return DeleteQuickConnectOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                          "Missing required field [QuickConnectId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/quick-connects/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuickConnectId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
-  return result.IsSuccess() ? DeleteQuickConnectOutcome(result.GetResultWithOwnership())
-                            : DeleteQuickConnectOutcome(std::move(result.GetError()));
 }

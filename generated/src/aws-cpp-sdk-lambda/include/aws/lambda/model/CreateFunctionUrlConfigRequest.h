@@ -122,7 +122,7 @@ class CreateFunctionUrlConfigRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>Use one of the following options:</p> <ul> <li> <p> <code>BUFFERED</code> –
+   * <p>Use one of the following options:</p> <ul> <li> <p> <code>BUFFERED</code> ��
    * This is the default option. Lambda invokes your function using the
    * <code>Invoke</code> API operation. Invocation results are available when the
    * payload is complete. The maximum payload size is 6 MB.</p> </li> <li> <p>

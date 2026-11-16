@@ -433,6 +433,8 @@
 #include <aws/sagemaker/model/CreateInferenceExperimentResult.h>
 #include <aws/sagemaker/model/CreateInferenceRecommendationsJobRequest.h>
 #include <aws/sagemaker/model/CreateInferenceRecommendationsJobResult.h>
+#include <aws/sagemaker/model/CreateInferenceRouterRequest.h>
+#include <aws/sagemaker/model/CreateInferenceRouterResult.h>
 #include <aws/sagemaker/model/CreateJobRequest.h>
 #include <aws/sagemaker/model/CreateJobResult.h>
 #include <aws/sagemaker/model/CreateLabelingJobRequest.h>
@@ -507,6 +509,7 @@
 #include <aws/sagemaker/model/CreateWorkteamRequest.h>
 #include <aws/sagemaker/model/CreateWorkteamResult.h>
 #include <aws/sagemaker/model/CrossAccountFilterOption.h>
+#include <aws/sagemaker/model/CrossRegionTrafficConfig.h>
 #include <aws/sagemaker/model/CustomFileSystem.h>
 #include <aws/sagemaker/model/CustomFileSystemConfig.h>
 #include <aws/sagemaker/model/CustomImage.h>
@@ -565,6 +568,8 @@
 #include <aws/sagemaker/model/DeleteEdgeDeploymentPlanRequest.h>
 #include <aws/sagemaker/model/DeleteEdgeDeploymentStageRequest.h>
 #include <aws/sagemaker/model/DeleteEndpointConfigRequest.h>
+#include <aws/sagemaker/model/DeleteEndpointPolicyRequest.h>
+#include <aws/sagemaker/model/DeleteEndpointPolicyResult.h>
 #include <aws/sagemaker/model/DeleteEndpointRequest.h>
 #include <aws/sagemaker/model/DeleteExperimentRequest.h>
 #include <aws/sagemaker/model/DeleteExperimentResult.h>
@@ -584,6 +589,7 @@
 #include <aws/sagemaker/model/DeleteInferenceComponentRequest.h>
 #include <aws/sagemaker/model/DeleteInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/DeleteInferenceExperimentResult.h>
+#include <aws/sagemaker/model/DeleteInferenceRouterRequest.h>
 #include <aws/sagemaker/model/DeleteJobRequest.h>
 #include <aws/sagemaker/model/DeleteJobResult.h>
 #include <aws/sagemaker/model/DeleteMlflowAppRequest.h>
@@ -714,6 +720,8 @@
 #include <aws/sagemaker/model/DescribeInferenceExperimentResult.h>
 #include <aws/sagemaker/model/DescribeInferenceRecommendationsJobRequest.h>
 #include <aws/sagemaker/model/DescribeInferenceRecommendationsJobResult.h>
+#include <aws/sagemaker/model/DescribeInferenceRouterRequest.h>
+#include <aws/sagemaker/model/DescribeInferenceRouterResult.h>
 #include <aws/sagemaker/model/DescribeJobRequest.h>
 #include <aws/sagemaker/model/DescribeJobResult.h>
 #include <aws/sagemaker/model/DescribeJobSchemaVersionRequest.h>
@@ -792,6 +800,7 @@
 #include <aws/sagemaker/model/DescribeWorkteamRequest.h>
 #include <aws/sagemaker/model/DescribeWorkteamResult.h>
 #include <aws/sagemaker/model/DesiredWeightAndCapacity.h>
+#include <aws/sagemaker/model/Destination.h>
 #include <aws/sagemaker/model/DetachClusterNodeVolumeRequest.h>
 #include <aws/sagemaker/model/DetachClusterNodeVolumeResult.h>
 #include <aws/sagemaker/model/DetailedAlgorithmStatus.h>
@@ -926,6 +935,8 @@
 #include <aws/sagemaker/model/GenerativeAiSettings.h>
 #include <aws/sagemaker/model/GetDeviceFleetReportRequest.h>
 #include <aws/sagemaker/model/GetDeviceFleetReportResult.h>
+#include <aws/sagemaker/model/GetEndpointPolicyRequest.h>
+#include <aws/sagemaker/model/GetEndpointPolicyResult.h>
 #include <aws/sagemaker/model/GetLineageGroupPolicyRequest.h>
 #include <aws/sagemaker/model/GetLineageGroupPolicyResult.h>
 #include <aws/sagemaker/model/GetModelPackageGroupPolicyRequest.h>
@@ -1039,6 +1050,9 @@
 #include <aws/sagemaker/model/InferenceRecommendation.h>
 #include <aws/sagemaker/model/InferenceRecommendationsJob.h>
 #include <aws/sagemaker/model/InferenceRecommendationsJobStep.h>
+#include <aws/sagemaker/model/InferenceRouterRoutingPreference.h>
+#include <aws/sagemaker/model/InferenceRouterStatus.h>
+#include <aws/sagemaker/model/InferenceRouterSummary.h>
 #include <aws/sagemaker/model/InferenceSpecification.h>
 #include <aws/sagemaker/model/InfraCheckConfig.h>
 #include <aws/sagemaker/model/InputConfig.h>
@@ -1239,6 +1253,9 @@
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsRequest.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsResult.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsSortBy.h>
+#include <aws/sagemaker/model/ListInferenceRoutersPaginationTraits.h>
+#include <aws/sagemaker/model/ListInferenceRoutersRequest.h>
+#include <aws/sagemaker/model/ListInferenceRoutersResult.h>
 #include <aws/sagemaker/model/ListJobSchemaVersionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListJobSchemaVersionsRequest.h>
 #include <aws/sagemaker/model/ListJobSchemaVersionsResult.h>
@@ -1666,6 +1683,8 @@
 #include <aws/sagemaker/model/PropertyNameSuggestion.h>
 #include <aws/sagemaker/model/ProvisioningParameter.h>
 #include <aws/sagemaker/model/PublicWorkforceTaskPrice.h>
+#include <aws/sagemaker/model/PutEndpointPolicyRequest.h>
+#include <aws/sagemaker/model/PutEndpointPolicyResult.h>
 #include <aws/sagemaker/model/PutModelPackageGroupPolicyRequest.h>
 #include <aws/sagemaker/model/PutModelPackageGroupPolicyResult.h>
 #include <aws/sagemaker/model/QualityCheckStepMetadata.h>
@@ -1736,7 +1755,13 @@
 #include <aws/sagemaker/model/RollingDeploymentPolicy.h>
 #include <aws/sagemaker/model/RollingUpdatePolicy.h>
 #include <aws/sagemaker/model/RootAccess.h>
+#include <aws/sagemaker/model/RoutingStatus.h>
 #include <aws/sagemaker/model/RoutingStrategy.h>
+#include <aws/sagemaker/model/RoutingTarget.h>
+#include <aws/sagemaker/model/RoutingTargetAsyncInferenceClientConfig.h>
+#include <aws/sagemaker/model/RoutingTargetAsyncInferenceConfig.h>
+#include <aws/sagemaker/model/RoutingTargetAsyncInferenceNotificationConfig.h>
+#include <aws/sagemaker/model/RoutingTargetAsyncInferenceOutputConfig.h>
 #include <aws/sagemaker/model/RuleEvaluationStatus.h>
 #include <aws/sagemaker/model/S3DataDistribution.h>
 #include <aws/sagemaker/model/S3DataSource.h>
@@ -2031,6 +2056,8 @@
 #include <aws/sagemaker/model/UpdateInferenceComponentRuntimeConfigResult.h>
 #include <aws/sagemaker/model/UpdateInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/UpdateInferenceExperimentResult.h>
+#include <aws/sagemaker/model/UpdateInferenceRouterRequest.h>
+#include <aws/sagemaker/model/UpdateInferenceRouterResult.h>
 #include <aws/sagemaker/model/UpdateMlflowAppRequest.h>
 #include <aws/sagemaker/model/UpdateMlflowAppResult.h>
 #include <aws/sagemaker/model/UpdateMlflowTrackingServerRequest.h>

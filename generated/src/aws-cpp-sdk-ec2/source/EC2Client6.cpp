@@ -20,6 +20,11 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/GetIpamDiscoveredRoutesRequest.h>
+#include <aws/ec2/model/GetIpamInternetRegistryAssociationAsnsRequest.h>
+#include <aws/ec2/model/GetIpamInternetRegistryAssociationCidrsRequest.h>
+#include <aws/ec2/model/GetIpamPolicyAllocationRulesRequest.h>
+#include <aws/ec2/model/GetIpamPolicyOrganizationTargetsRequest.h>
 #include <aws/ec2/model/GetIpamPoolAllocationsRequest.h>
 #include <aws/ec2/model/GetIpamPoolCidrsRequest.h>
 #include <aws/ec2/model/GetIpamPrefixListResolverRulesRequest.h>
@@ -115,11 +120,6 @@
 #include <aws/ec2/model/ModifyLocalGatewayRouteRequest.h>
 #include <aws/ec2/model/ModifyManagedPrefixListRequest.h>
 #include <aws/ec2/model/ModifyManagedResourceVisibilityRequest.h>
-#include <aws/ec2/model/ModifyMetricCategoryRequest.h>
-#include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
-#include <aws/ec2/model/ModifyNetworkingFlexCostAllocationPolicyRequest.h>
-#include <aws/ec2/model/ModifyPrivateDnsNameOptionsRequest.h>
-#include <aws/ec2/model/ModifyPublicIpDnsNameOptionsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,39 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+GetIpamDiscoveredRoutesOutcome EC2Client::GetIpamDiscoveredRoutes(const GetIpamDiscoveredRoutesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamDiscoveredRoutesOutcome(result.GetResultWithOwnership())
+                            : GetIpamDiscoveredRoutesOutcome(std::move(result.GetError()));
+}
+
+GetIpamInternetRegistryAssociationAsnsOutcome EC2Client::GetIpamInternetRegistryAssociationAsns(
+    const GetIpamInternetRegistryAssociationAsnsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamInternetRegistryAssociationAsnsOutcome(result.GetResultWithOwnership())
+                            : GetIpamInternetRegistryAssociationAsnsOutcome(std::move(result.GetError()));
+}
+
+GetIpamInternetRegistryAssociationCidrsOutcome EC2Client::GetIpamInternetRegistryAssociationCidrs(
+    const GetIpamInternetRegistryAssociationCidrsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamInternetRegistryAssociationCidrsOutcome(result.GetResultWithOwnership())
+                            : GetIpamInternetRegistryAssociationCidrsOutcome(std::move(result.GetError()));
+}
+
+GetIpamPolicyAllocationRulesOutcome EC2Client::GetIpamPolicyAllocationRules(const GetIpamPolicyAllocationRulesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamPolicyAllocationRulesOutcome(result.GetResultWithOwnership())
+                            : GetIpamPolicyAllocationRulesOutcome(std::move(result.GetError()));
+}
+
+GetIpamPolicyOrganizationTargetsOutcome EC2Client::GetIpamPolicyOrganizationTargets(
+    const GetIpamPolicyOrganizationTargetsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamPolicyOrganizationTargetsOutcome(result.GetResultWithOwnership())
+                            : GetIpamPolicyOrganizationTargetsOutcome(std::move(result.GetError()));
+}
 
 GetIpamPoolAllocationsOutcome EC2Client::GetIpamPoolAllocations(const GetIpamPoolAllocationsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -729,36 +762,4 @@ ModifyManagedResourceVisibilityOutcome EC2Client::ModifyManagedResourceVisibilit
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyManagedResourceVisibilityOutcome(result.GetResultWithOwnership())
                             : ModifyManagedResourceVisibilityOutcome(std::move(result.GetError()));
-}
-
-ModifyMetricCategoryOutcome EC2Client::ModifyMetricCategory(const ModifyMetricCategoryRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyMetricCategoryOutcome(result.GetResultWithOwnership())
-                            : ModifyMetricCategoryOutcome(std::move(result.GetError()));
-}
-
-ModifyNetworkInterfaceAttributeOutcome EC2Client::ModifyNetworkInterfaceAttribute(
-    const ModifyNetworkInterfaceAttributeRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyNetworkInterfaceAttributeOutcome(result.GetResultWithOwnership())
-                            : ModifyNetworkInterfaceAttributeOutcome(std::move(result.GetError()));
-}
-
-ModifyNetworkingFlexCostAllocationPolicyOutcome EC2Client::ModifyNetworkingFlexCostAllocationPolicy(
-    const ModifyNetworkingFlexCostAllocationPolicyRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyNetworkingFlexCostAllocationPolicyOutcome(result.GetResultWithOwnership())
-                            : ModifyNetworkingFlexCostAllocationPolicyOutcome(std::move(result.GetError()));
-}
-
-ModifyPrivateDnsNameOptionsOutcome EC2Client::ModifyPrivateDnsNameOptions(const ModifyPrivateDnsNameOptionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyPrivateDnsNameOptionsOutcome(result.GetResultWithOwnership())
-                            : ModifyPrivateDnsNameOptionsOutcome(std::move(result.GetError()));
-}
-
-ModifyPublicIpDnsNameOptionsOutcome EC2Client::ModifyPublicIpDnsNameOptions(const ModifyPublicIpDnsNameOptionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyPublicIpDnsNameOptionsOutcome(result.GetResultWithOwnership())
-                            : ModifyPublicIpDnsNameOptionsOutcome(std::move(result.GetError()));
 }

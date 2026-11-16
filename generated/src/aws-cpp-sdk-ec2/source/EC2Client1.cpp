@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/CreateIpamPrefixListResolverRequest.h>
 #include <aws/ec2/model/CreateIpamPrefixListResolverTargetRequest.h>
 #include <aws/ec2/model/CreateIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/CreateIpamRoutingPolicyRegistrationRequest.h>
@@ -73,6 +74,7 @@
 #include <aws/ec2/model/CreateTransitGatewayMeteringPolicyEntryRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayMeteringPolicyRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayMulticastDomainRequest.h>
+#include <aws/ec2/model/CreateTransitGatewayNetworkFunctionAttachmentRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayPolicyTableEntryRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayPolicyTableRequest.h>
@@ -117,8 +119,6 @@
 #include <aws/ec2/model/DeleteInstanceEventWindowRequest.h>
 #include <aws/ec2/model/DeleteInternetGatewayRequest.h>
 #include <aws/ec2/model/DeleteIpamExternalResourceVerificationTokenRequest.h>
-#include <aws/ec2/model/DeleteIpamInternetRegistryAssociationRequest.h>
-#include <aws/ec2/model/DeleteIpamPolicyRequest.h>
 #include <aws/ec2/model/DeleteIpamRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+CreateIpamPrefixListResolverOutcome EC2Client::CreateIpamPrefixListResolver(const CreateIpamPrefixListResolverRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamPrefixListResolverOutcome(result.GetResultWithOwnership())
+                            : CreateIpamPrefixListResolverOutcome(std::move(result.GetError()));
+}
 
 CreateIpamPrefixListResolverTargetOutcome EC2Client::CreateIpamPrefixListResolverTarget(
     const CreateIpamPrefixListResolverTargetRequest& request) const {
@@ -467,6 +473,13 @@ CreateTransitGatewayMulticastDomainOutcome EC2Client::CreateTransitGatewayMultic
                             : CreateTransitGatewayMulticastDomainOutcome(std::move(result.GetError()));
 }
 
+CreateTransitGatewayNetworkFunctionAttachmentOutcome EC2Client::CreateTransitGatewayNetworkFunctionAttachment(
+    const CreateTransitGatewayNetworkFunctionAttachmentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTransitGatewayNetworkFunctionAttachmentOutcome(result.GetResultWithOwnership())
+                            : CreateTransitGatewayNetworkFunctionAttachmentOutcome(std::move(result.GetError()));
+}
+
 CreateTransitGatewayPeeringAttachmentOutcome EC2Client::CreateTransitGatewayPeeringAttachment(
     const CreateTransitGatewayPeeringAttachmentRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -737,17 +750,4 @@ DeleteIpamExternalResourceVerificationTokenOutcome EC2Client::DeleteIpamExternal
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteIpamExternalResourceVerificationTokenOutcome(result.GetResultWithOwnership())
                             : DeleteIpamExternalResourceVerificationTokenOutcome(std::move(result.GetError()));
-}
-
-DeleteIpamInternetRegistryAssociationOutcome EC2Client::DeleteIpamInternetRegistryAssociation(
-    const DeleteIpamInternetRegistryAssociationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteIpamInternetRegistryAssociationOutcome(result.GetResultWithOwnership())
-                            : DeleteIpamInternetRegistryAssociationOutcome(std::move(result.GetError()));
-}
-
-DeleteIpamPolicyOutcome EC2Client::DeleteIpamPolicy(const DeleteIpamPolicyRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteIpamPolicyOutcome(result.GetResultWithOwnership())
-                            : DeleteIpamPolicyOutcome(std::move(result.GetError()));
 }

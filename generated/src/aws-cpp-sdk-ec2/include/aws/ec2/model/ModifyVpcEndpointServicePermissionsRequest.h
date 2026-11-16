@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/PermissionType.h>
 
 #include <utility>
 
@@ -120,6 +121,32 @@ class ModifyVpcEndpointServicePermissionsRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of permission to add or remove. The permission type applies to all
+   * principals in <code>AddAllowedPrincipals</code> and
+   * <code>RemoveAllowedPrincipals</code>.</p> <ul> <li> <p>
+   * <code>vpc-endpoint</code> - Principals can create VPC endpoints that connect to
+   * the endpoint service.</p> </li> <li> <p> <code>transit-gateway-attachment</code>
+   * - Principals can create transit gateway attachments that connect to the endpoint
+   * service. This permission type is supported only for Gateway Load Balancer
+   * endpoint services. You can grant it only to Amazon Web Services accounts
+   * (<code>arn:aws:iam::account-id:root</code>). You can't grant it to users, IAM
+   * roles, organizations, organizational units, or all principals (*).</p> </li>
+   * </ul> <p>Default: <code>vpc-endpoint</code> </p>
+   */
+  inline PermissionType GetPermissionType() const { return m_permissionType; }
+  inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
+  inline void SetPermissionType(PermissionType value) {
+    m_permissionTypeHasBeenSet = true;
+    m_permissionType = value;
+  }
+  inline ModifyVpcEndpointServicePermissionsRequest& WithPermissionType(PermissionType value) {
+    SetPermissionType(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
 
@@ -128,10 +155,13 @@ class ModifyVpcEndpointServicePermissionsRequest : public EC2Request {
   Aws::Vector<Aws::String> m_addAllowedPrincipals;
 
   Aws::Vector<Aws::String> m_removeAllowedPrincipals;
+
+  PermissionType m_permissionType{PermissionType::NOT_SET};
   bool m_dryRunHasBeenSet = false;
   bool m_serviceIdHasBeenSet = false;
   bool m_addAllowedPrincipalsHasBeenSet = false;
   bool m_removeAllowedPrincipalsHasBeenSet = false;
+  bool m_permissionTypeHasBeenSet = false;
 };
 
 }  // namespace Model

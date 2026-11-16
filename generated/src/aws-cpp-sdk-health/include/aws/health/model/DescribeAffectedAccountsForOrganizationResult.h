@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/health/Health_EXPORTS.h>
+#include <aws/health/model/AccountEntity.h>
 #include <aws/health/model/EventScopeCode.h>
 
 #include <utility>
@@ -49,6 +50,30 @@ class DescribeAffectedAccountsForOrganizationResult {
   DescribeAffectedAccountsForOrganizationResult& AddAffectedAccounts(AffectedAccountsT&& value) {
     m_affectedAccountsHasBeenSet = true;
     m_affectedAccounts.emplace_back(std::forward<AffectedAccountsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of affected account entities, including account IDs and their
+   * associated tags.</p>
+   */
+  inline const Aws::Vector<AccountEntity>& GetAffectedAccountEntities() const { return m_affectedAccountEntities; }
+  template <typename AffectedAccountEntitiesT = Aws::Vector<AccountEntity>>
+  void SetAffectedAccountEntities(AffectedAccountEntitiesT&& value) {
+    m_affectedAccountEntitiesHasBeenSet = true;
+    m_affectedAccountEntities = std::forward<AffectedAccountEntitiesT>(value);
+  }
+  template <typename AffectedAccountEntitiesT = Aws::Vector<AccountEntity>>
+  DescribeAffectedAccountsForOrganizationResult& WithAffectedAccountEntities(AffectedAccountEntitiesT&& value) {
+    SetAffectedAccountEntities(std::forward<AffectedAccountEntitiesT>(value));
+    return *this;
+  }
+  template <typename AffectedAccountEntitiesT = AccountEntity>
+  DescribeAffectedAccountsForOrganizationResult& AddAffectedAccountEntities(AffectedAccountEntitiesT&& value) {
+    m_affectedAccountEntitiesHasBeenSet = true;
+    m_affectedAccountEntities.emplace_back(std::forward<AffectedAccountEntitiesT>(value));
     return *this;
   }
   ///@}
@@ -119,6 +144,8 @@ class DescribeAffectedAccountsForOrganizationResult {
  private:
   Aws::Vector<Aws::String> m_affectedAccounts;
 
+  Aws::Vector<AccountEntity> m_affectedAccountEntities;
+
   EventScopeCode m_eventScopeCode{EventScopeCode::NOT_SET};
 
   Aws::String m_nextToken;
@@ -126,6 +153,7 @@ class DescribeAffectedAccountsForOrganizationResult {
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_affectedAccountsHasBeenSet = false;
+  bool m_affectedAccountEntitiesHasBeenSet = false;
   bool m_eventScopeCodeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

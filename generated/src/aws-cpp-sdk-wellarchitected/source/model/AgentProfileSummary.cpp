@@ -45,6 +45,10 @@ AgentProfileSummary& AgentProfileSummary::operator=(JsonView jsonValue) {
     m_deletionProtection = jsonValue.GetBool("deletionProtection");
     m_deletionProtectionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("profileType")) {
+    m_profileType = ProfileTypeMapper::GetProfileTypeForName(jsonValue.GetString("profileType"));
+    m_profileTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("executionRoleArn")) {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
     m_executionRoleArnHasBeenSet = true;
@@ -76,13 +80,6 @@ AgentProfileSummary& AgentProfileSummary::operator=(JsonView jsonValue) {
     }
     m_fieldErrorsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("tags")) {
-    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
-    }
-    m_tagsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("createdBy")) {
     m_createdBy = jsonValue.GetString("createdBy");
     m_createdByHasBeenSet = true;
@@ -98,6 +95,10 @@ AgentProfileSummary& AgentProfileSummary::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("lastModifiedAt")) {
     m_lastModifiedAt = jsonValue.GetString("lastModifiedAt");
     m_lastModifiedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("organizationalAggregationConfiguration")) {
+    m_organizationalAggregationConfiguration = jsonValue.GetObject("organizationalAggregationConfiguration");
+    m_organizationalAggregationConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -131,6 +132,10 @@ JsonValue AgentProfileSummary::Jsonize() const {
 
   if (m_deletionProtectionHasBeenSet) {
     payload.WithBool("deletionProtection", m_deletionProtection);
+  }
+
+  if (m_profileTypeHasBeenSet) {
+    payload.WithString("profileType", ProfileTypeMapper::GetNameForProfileType(m_profileType));
   }
 
   if (m_executionRoleArnHasBeenSet) {
@@ -167,14 +172,6 @@ JsonValue AgentProfileSummary::Jsonize() const {
     payload.WithObject("fieldErrors", std::move(fieldErrorsJsonMap));
   }
 
-  if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-    }
-    payload.WithArray("tags", std::move(tagsJsonList));
-  }
-
   if (m_createdByHasBeenSet) {
     payload.WithString("createdBy", m_createdBy);
   }
@@ -189,6 +186,10 @@ JsonValue AgentProfileSummary::Jsonize() const {
 
   if (m_lastModifiedAtHasBeenSet) {
     payload.WithString("lastModifiedAt", m_lastModifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_organizationalAggregationConfigurationHasBeenSet) {
+    payload.WithObject("organizationalAggregationConfiguration", m_organizationalAggregationConfiguration.Jsonize());
   }
 
   return payload;

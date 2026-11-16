@@ -23,6 +23,7 @@
 #include <aws/sagemaker/model/ListPipelineVersionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListWorkteamsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClustersPaginationTraits.h>
+#include <aws/sagemaker/model/ListInferenceRoutersPaginationTraits.h>
 #include <aws/sagemaker/model/ListModelExplainabilityJobDefinitionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListModelPackageGroupsPaginationTraits.h>
 #include <aws/sagemaker/model/ListMonitoringExecutionsPaginationTraits.h>

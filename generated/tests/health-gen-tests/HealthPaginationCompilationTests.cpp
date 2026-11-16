@@ -10,6 +10,8 @@
 #include <aws/health/HealthPaginationBase.h>
 #include <aws/health/model/DescribeAffectedAccountsForOrganizationPaginationTraits.h>
 #include <aws/health/model/DescribeAffectedEntitiesForOrganizationPaginationTraits.h>
+#include <aws/health/model/DescribeTagsForOrganizationPaginationTraits.h>
+#include <aws/health/model/DescribeTagsPaginationTraits.h>
 #include <aws/health/model/DescribeEventsPaginationTraits.h>
 #include <aws/health/model/DescribeServiceLifecyclePaginationTraits.h>
 #include <aws/health/model/DescribeAffectedEntitiesPaginationTraits.h>

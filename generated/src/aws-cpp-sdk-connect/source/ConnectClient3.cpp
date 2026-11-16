@@ -6,6 +6,7 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/SearchWorkspaceAssociationsRequest.h>
 #include <aws/connect/model/SearchWorkspacesRequest.h>
 #include <aws/connect/model/SendChatIntegrationEventRequest.h>
 #include <aws/connect/model/SendOutboundEmailRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/UpdateUserRoutingProfileRequest.h>
 #include <aws/connect/model/UpdateUserSecurityProfilesRequest.h>
 #include <aws/connect/model/UpdateViewContentRequest.h>
-#include <aws/connect/model/UpdateViewMetadataRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -131,6 +131,17 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+SearchWorkspaceAssociationsOutcome ConnectClient::SearchWorkspaceAssociations(const SearchWorkspaceAssociationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/search-workspace-associations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchWorkspaceAssociationsOutcome(result.GetResultWithOwnership())
+                            : SearchWorkspaceAssociationsOutcome(std::move(result.GetError()));
+}
 
 SearchWorkspacesOutcome ConnectClient::SearchWorkspaces(const SearchWorkspacesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -2223,29 +2234,4 @@ UpdateViewContentOutcome ConnectClient::UpdateViewContent(const UpdateViewConten
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateViewContentOutcome(result.GetResultWithOwnership())
                             : UpdateViewContentOutcome(std::move(result.GetError()));
-}
-
-UpdateViewMetadataOutcome ConnectClient::UpdateViewMetadata(const UpdateViewMetadataRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateViewMetadata", "Required field: InstanceId, is not set");
-    return UpdateViewMetadataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                          "Missing required field [InstanceId]", false));
-  }
-  if (!request.ViewIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateViewMetadata", "Required field: ViewId, is not set");
-    return UpdateViewMetadataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                          "Missing required field [ViewId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/views/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetViewId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateViewMetadataOutcome(result.GetResultWithOwnership())
-                            : UpdateViewMetadataOutcome(std::move(result.GetError()));
 }

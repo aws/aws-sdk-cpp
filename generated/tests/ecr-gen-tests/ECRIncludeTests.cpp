@@ -47,6 +47,7 @@
 #include <aws/ecr/model/DeletePullThroughCacheRuleResult.h>
 #include <aws/ecr/model/DeleteRegistryPolicyRequest.h>
 #include <aws/ecr/model/DeleteRegistryPolicyResult.h>
+#include <aws/ecr/model/DeleteReplication.h>
 #include <aws/ecr/model/DeleteRepositoryCreationTemplateRequest.h>
 #include <aws/ecr/model/DeleteRepositoryCreationTemplateResult.h>
 #include <aws/ecr/model/DeleteRepositoryPolicyRequest.h>

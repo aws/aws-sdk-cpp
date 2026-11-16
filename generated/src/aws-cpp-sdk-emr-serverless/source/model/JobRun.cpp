@@ -144,6 +144,10 @@ JobRun& JobRun::operator=(JsonView jsonValue) {
     }
     m_workerTypeSpecificationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("flexExecution")) {
+    m_flexExecution = jsonValue.GetObject("flexExecution");
+    m_flexExecutionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -276,6 +280,10 @@ JsonValue JobRun::Jsonize() const {
       workerTypeSpecificationsJsonMap.WithObject(workerTypeSpecificationsItem.first, workerTypeSpecificationsItem.second.Jsonize());
     }
     payload.WithObject("workerTypeSpecifications", std::move(workerTypeSpecificationsJsonMap));
+  }
+
+  if (m_flexExecutionHasBeenSet) {
+    payload.WithObject("flexExecution", m_flexExecution.Jsonize());
   }
 
   return payload;

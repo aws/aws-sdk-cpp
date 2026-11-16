@@ -59,7 +59,8 @@ class ListKeyPoliciesRequest : public KMSRequest {
    * this value is present, KMS does not return more than the specified number of
    * items, but it might return fewer.</p> <p>This value is optional. If you include
    * a value, it must be between 1 and 1000, inclusive. If you do not include a
-   * value, it defaults to 100.</p> <p>Only one policy can be attached to a key.</p>
+   * value, it defaults to 100.</p> <p>A KMS key can have at most two key policies,
+   * <code>default</code> and <code>AWS_RAM</code>.</p>
    */
   inline int GetLimit() const { return m_limit; }
   inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }

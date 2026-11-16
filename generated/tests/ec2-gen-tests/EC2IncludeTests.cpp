@@ -140,6 +140,8 @@
 #include <aws/ec2/model/AssociateIpamByoasnResponse.h>
 #include <aws/ec2/model/AssociateIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/AssociateIpamResourceDiscoveryResponse.h>
+#include <aws/ec2/model/AssociateKmsKeyIdRequest.h>
+#include <aws/ec2/model/AssociateKmsKeyIdResponse.h>
 #include <aws/ec2/model/AssociateNatGatewayAddressRequest.h>
 #include <aws/ec2/model/AssociateNatGatewayAddressResponse.h>
 #include <aws/ec2/model/AssociateNetworkingFlexCostAllocationPolicyRequest.h>
@@ -162,6 +164,7 @@
 #include <aws/ec2/model/AssociateTrunkInterfaceResponse.h>
 #include <aws/ec2/model/AssociateVpcCidrBlockRequest.h>
 #include <aws/ec2/model/AssociateVpcCidrBlockResponse.h>
+#include <aws/ec2/model/AssociatedKmsKey.h>
 #include <aws/ec2/model/AssociatedNetworkType.h>
 #include <aws/ec2/model/AssociatedRole.h>
 #include <aws/ec2/model/AssociatedTargetNetwork.h>
@@ -569,6 +572,8 @@
 #include <aws/ec2/model/CreateTransitGatewayMulticastDomainRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayMulticastDomainRequestOptions.h>
 #include <aws/ec2/model/CreateTransitGatewayMulticastDomainResponse.h>
+#include <aws/ec2/model/CreateTransitGatewayNetworkFunctionAttachmentRequest.h>
+#include <aws/ec2/model/CreateTransitGatewayNetworkFunctionAttachmentResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentRequestOptions.h>
 #include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentResponse.h>
@@ -795,6 +800,8 @@
 #include <aws/ec2/model/DeleteTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayMulticastDomainRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayMulticastDomainResponse.h>
+#include <aws/ec2/model/DeleteTransitGatewayNetworkFunctionAttachmentRequest.h>
+#include <aws/ec2/model/DeleteTransitGatewayNetworkFunctionAttachmentResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPeeringAttachmentRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayPeeringAttachmentResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayPolicyTableEntryRequest.h>
@@ -1303,6 +1310,8 @@
 #include <aws/ec2/model/DescribeTransitGatewayMulticastDomainsPaginationTraits.h>
 #include <aws/ec2/model/DescribeTransitGatewayMulticastDomainsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayMulticastDomainsResponse.h>
+#include <aws/ec2/model/DescribeTransitGatewayNetworkFunctionAttachmentsRequest.h>
+#include <aws/ec2/model/DescribeTransitGatewayNetworkFunctionAttachmentsResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayPeeringAttachmentsPaginationTraits.h>
 #include <aws/ec2/model/DescribeTransitGatewayPeeringAttachmentsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayPeeringAttachmentsResponse.h>
@@ -1483,6 +1492,8 @@
 #include <aws/ec2/model/DisassociateIpamByoasnResponse.h>
 #include <aws/ec2/model/DisassociateIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/DisassociateIpamResourceDiscoveryResponse.h>
+#include <aws/ec2/model/DisassociateKmsKeyIdRequest.h>
+#include <aws/ec2/model/DisassociateKmsKeyIdResponse.h>
 #include <aws/ec2/model/DisassociateNatGatewayAddressRequest.h>
 #include <aws/ec2/model/DisassociateNatGatewayAddressResponse.h>
 #include <aws/ec2/model/DisassociateNetworkingFlexCostAllocationPolicyRequest.h>
@@ -2442,6 +2453,8 @@
 #include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyResponse.h>
+#include <aws/ec2/model/ModifyTransitGatewayNetworkFunctionAttachmentRequest.h>
+#include <aws/ec2/model/ModifyTransitGatewayNetworkFunctionAttachmentResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayOptions.h>
 #include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryResponse.h>
@@ -2605,6 +2618,7 @@
 #include <aws/ec2/model/PerformanceStatusSummary.h>
 #include <aws/ec2/model/PeriodType.h>
 #include <aws/ec2/model/PermissionGroup.h>
+#include <aws/ec2/model/PermissionType.h>
 #include <aws/ec2/model/Phase1DHGroupNumbersListValue.h>
 #include <aws/ec2/model/Phase1DHGroupNumbersRequestListValue.h>
 #include <aws/ec2/model/Phase1EncryptionAlgorithmsListValue.h>
@@ -3090,6 +3104,7 @@
 #include <aws/ec2/model/TransitGatewayNatRule.h>
 #include <aws/ec2/model/TransitGatewayNatRuleRequest.h>
 #include <aws/ec2/model/TransitGatewayNatRuleState.h>
+#include <aws/ec2/model/TransitGatewayNetworkFunctionAttachment.h>
 #include <aws/ec2/model/TransitGatewayOptions.h>
 #include <aws/ec2/model/TransitGatewayPeeringAttachment.h>
 #include <aws/ec2/model/TransitGatewayPeeringAttachmentOptions.h>

@@ -7,19 +7,26 @@
 #include <aws/connecthealth/ConnectHealthEndpointProvider.h>
 #include <aws/connecthealth/ConnectHealthErrorMarshaller.h>
 #include <aws/connecthealth/model/ActivateSubscriptionRequest.h>
+#include <aws/connecthealth/model/CreateDatasetRequest.h>
 #include <aws/connecthealth/model/CreateDomainRequest.h>
 #include <aws/connecthealth/model/CreateSubscriptionRequest.h>
 #include <aws/connecthealth/model/DeactivateSubscriptionRequest.h>
+#include <aws/connecthealth/model/DeleteDatasetRequest.h>
 #include <aws/connecthealth/model/DeleteDomainRequest.h>
+#include <aws/connecthealth/model/GetDatasetRequest.h>
 #include <aws/connecthealth/model/GetDomainRequest.h>
+#include <aws/connecthealth/model/GetMedicalCodingJobRequest.h>
 #include <aws/connecthealth/model/GetMedicalScribeListeningSessionRequest.h>
 #include <aws/connecthealth/model/GetPatientInsightsJobRequest.h>
 #include <aws/connecthealth/model/GetSubscriptionRequest.h>
+#include <aws/connecthealth/model/ListDatasetsRequest.h>
 #include <aws/connecthealth/model/ListDomainsRequest.h>
 #include <aws/connecthealth/model/ListSubscriptionsRequest.h>
 #include <aws/connecthealth/model/ListTagsForResourceRequest.h>
+#include <aws/connecthealth/model/StartMedicalCodingJobRequest.h>
 #include <aws/connecthealth/model/StartMedicalScribeListeningSessionRequest.h>
 #include <aws/connecthealth/model/StartPatientInsightsJobRequest.h>
+#include <aws/connecthealth/model/SubmitFeedbackRequest.h>
 #include <aws/connecthealth/model/TagResourceRequest.h>
 #include <aws/connecthealth/model/UntagResourceRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -225,6 +232,24 @@ ActivateSubscriptionOutcome ConnectHealthClient::ActivateSubscription(const Acti
                             : ActivateSubscriptionOutcome(std::move(result.GetError()));
 }
 
+CreateDatasetOutcome ConnectHealthClient::CreateDataset(const CreateDatasetRequest& request) const {
+  if (!request.DomainIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateDataset", "Required field: DomainId, is not set");
+    return CreateDatasetOutcome(Aws::Client::AWSError<ConnectHealthErrors>(ConnectHealthErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [DomainId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetOutcome(result.GetResultWithOwnership()) : CreateDatasetOutcome(std::move(result.GetError()));
+}
+
 CreateDomainOutcome ConnectHealthClient::CreateDomain(const CreateDomainRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -280,6 +305,30 @@ DeactivateSubscriptionOutcome ConnectHealthClient::DeactivateSubscription(const 
                             : DeactivateSubscriptionOutcome(std::move(result.GetError()));
 }
 
+DeleteDatasetOutcome ConnectHealthClient::DeleteDataset(const DeleteDatasetRequest& request) const {
+  if (!request.DomainIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDataset", "Required field: DomainId, is not set");
+    return DeleteDatasetOutcome(Aws::Client::AWSError<ConnectHealthErrors>(ConnectHealthErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [DomainId]", false));
+  }
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDataset", "Required field: DatasetId, is not set");
+    return DeleteDatasetOutcome(Aws::Client::AWSError<ConnectHealthErrors>(ConnectHealthErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDatasetOutcome(result.GetResultWithOwnership()) : DeleteDatasetOutcome(std::move(result.GetError()));
+}
+
 DeleteDomainOutcome ConnectHealthClient::DeleteDomain(const DeleteDomainRequest& request) const {
   if (!request.DomainIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteDomain", "Required field: DomainId, is not set");
@@ -297,6 +346,30 @@ DeleteDomainOutcome ConnectHealthClient::DeleteDomain(const DeleteDomainRequest&
   return result.IsSuccess() ? DeleteDomainOutcome(result.GetResultWithOwnership()) : DeleteDomainOutcome(std::move(result.GetError()));
 }
 
+GetDatasetOutcome ConnectHealthClient::GetDataset(const GetDatasetRequest& request) const {
+  if (!request.DomainIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDataset", "Required field: DomainId, is not set");
+    return GetDatasetOutcome(Aws::Client::AWSError<ConnectHealthErrors>(ConnectHealthErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [DomainId]", false));
+  }
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDataset", "Required field: DatasetId, is not set");
+    return GetDatasetOutcome(Aws::Client::AWSError<ConnectHealthErrors>(ConnectHealthErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDatasetOutcome(result.GetResultWithOwnership()) : GetDatasetOutcome(std::move(result.GetError()));
+}
+
 GetDomainOutcome ConnectHealthClient::GetDomain(const GetDomainRequest& request) const {
   if (!request.DomainIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetDomain", "Required field: DomainId, is not set");
@@ -312,6 +385,31 @@ GetDomainOutcome ConnectHealthClient::GetDomain(const GetDomainRequest& request)
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetDomainOutcome(result.GetResultWithOwnership()) : GetDomainOutcome(std::move(result.GetError()));
+}
+
+GetMedicalCodingJobOutcome ConnectHealthClient::GetMedicalCodingJob(const GetMedicalCodingJobRequest& request) const {
+  if (!request.DomainIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetMedicalCodingJob", "Required field: DomainId, is not set");
+    return GetMedicalCodingJobOutcome(Aws::Client::AWSError<ConnectHealthErrors>(
+        ConnectHealthErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainId]", false));
+  }
+  if (!request.JobIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetMedicalCodingJob", "Required field: JobId, is not set");
+    return GetMedicalCodingJobOutcome(Aws::Client::AWSError<ConnectHealthErrors>(
+        ConnectHealthErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domain/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/medical-coding-job/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMedicalCodingJobOutcome(result.GetResultWithOwnership())
+                            : GetMedicalCodingJobOutcome(std::move(result.GetError()));
 }
 
 GetMedicalScribeListeningSessionOutcome ConnectHealthClient::GetMedicalScribeListeningSession(
@@ -397,6 +495,24 @@ GetSubscriptionOutcome ConnectHealthClient::GetSubscription(const GetSubscriptio
                             : GetSubscriptionOutcome(std::move(result.GetError()));
 }
 
+ListDatasetsOutcome ConnectHealthClient::ListDatasets(const ListDatasetsRequest& request) const {
+  if (!request.DomainIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDatasets", "Required field: DomainId, is not set");
+    return ListDatasetsOutcome(Aws::Client::AWSError<ConnectHealthErrors>(ConnectHealthErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [DomainId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDatasetsOutcome(result.GetResultWithOwnership()) : ListDatasetsOutcome(std::move(result.GetError()));
+}
+
 ListDomainsOutcome ConnectHealthClient::ListDomains(const ListDomainsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -442,6 +558,25 @@ ListTagsForResourceOutcome ConnectHealthClient::ListTagsForResource(const ListTa
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
+}
+
+StartMedicalCodingJobOutcome ConnectHealthClient::StartMedicalCodingJob(const StartMedicalCodingJobRequest& request) const {
+  if (!request.DomainIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartMedicalCodingJob", "Required field: DomainId, is not set");
+    return StartMedicalCodingJobOutcome(Aws::Client::AWSError<ConnectHealthErrors>(
+        ConnectHealthErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domain/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/medical-coding-job");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMedicalCodingJobOutcome(result.GetResultWithOwnership())
+                            : StartMedicalCodingJobOutcome(std::move(result.GetError()));
 }
 
 void ConnectHealthClient::StartMedicalScribeListeningSessionAsync(
@@ -586,6 +721,24 @@ StartPatientInsightsJobOutcome ConnectHealthClient::StartPatientInsightsJob(cons
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartPatientInsightsJobOutcome(result.GetResultWithOwnership())
                             : StartPatientInsightsJobOutcome(std::move(result.GetError()));
+}
+
+SubmitFeedbackOutcome ConnectHealthClient::SubmitFeedback(const SubmitFeedbackRequest& request) const {
+  if (!request.DomainIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SubmitFeedback", "Required field: DomainId, is not set");
+    return SubmitFeedbackOutcome(Aws::Client::AWSError<ConnectHealthErrors>(ConnectHealthErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [DomainId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domain/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/feedback");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SubmitFeedbackOutcome(result.GetResultWithOwnership()) : SubmitFeedbackOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ConnectHealthClient::TagResource(const TagResourceRequest& request) const {

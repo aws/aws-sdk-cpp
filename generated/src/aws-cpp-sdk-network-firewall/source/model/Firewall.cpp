@@ -488,6 +488,66 @@ Firewall& Firewall::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
                 m_vpcEndpointHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "ContextStoreId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_contextStoreId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_contextStoreId = ss.str();
+                  }
+                }
+                m_contextStoreIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ContextStoreOwnerAccountId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_contextStoreOwnerAccountId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_contextStoreOwnerAccountId = ss.str();
+                  }
+                }
+                m_contextStoreOwnerAccountIdHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "TransparentFilteringNatScope") {
                 auto val = decoder->PopNextTextVal();
                 if (val.has_value()) {
@@ -980,6 +1040,66 @@ Firewall& Firewall::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
               m_vpcEndpointHasBeenSet = true;
             }
 
+            else if (initialKeyStr == "ContextStoreId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_contextStoreId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_contextStoreId = ss.str();
+                }
+              }
+              m_contextStoreIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ContextStoreOwnerAccountId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_contextStoreOwnerAccountId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_contextStoreOwnerAccountId = ss.str();
+                }
+              }
+              m_contextStoreOwnerAccountIdHasBeenSet = true;
+            }
+
             else if (initialKeyStr == "TransparentFilteringNatScope") {
               auto val = decoder->PopNextTextVal();
               if (val.has_value()) {
@@ -1064,6 +1184,12 @@ void Firewall::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     mapSize++;
   }
   if (m_vpcEndpointHasBeenSet) {
+    mapSize++;
+  }
+  if (m_contextStoreIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_contextStoreOwnerAccountIdHasBeenSet) {
     mapSize++;
   }
   if (m_transparentFilteringNatScopeHasBeenSet) {
@@ -1190,6 +1316,16 @@ void Firewall::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_vpcEndpointHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("VpcEndpoint"));
     m_vpcEndpoint.CborEncode(encoder);
+  }
+
+  if (m_contextStoreIdHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ContextStoreId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_contextStoreId.c_str()));
+  }
+
+  if (m_contextStoreOwnerAccountIdHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ContextStoreOwnerAccountId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_contextStoreOwnerAccountId.c_str()));
   }
 
   if (m_transparentFilteringNatScopeHasBeenSet) {

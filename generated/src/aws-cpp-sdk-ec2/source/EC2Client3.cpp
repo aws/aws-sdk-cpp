@@ -20,6 +20,9 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeBundleTasksRequest.h>
+#include <aws/ec2/model/DescribeByoipCidrsRequest.h>
+#include <aws/ec2/model/DescribeCapacityBlockExtensionHistoryRequest.h>
 #include <aws/ec2/model/DescribeCapacityBlockExtensionOfferingsRequest.h>
 #include <aws/ec2/model/DescribeCapacityBlockOfferingsRequest.h>
 #include <aws/ec2/model/DescribeCapacityBlockStatusRequest.h>
@@ -117,9 +120,6 @@
 #include <aws/ec2/model/DescribeNetworkInsightsAnalysesRequest.h>
 #include <aws/ec2/model/DescribeNetworkInsightsPathsRequest.h>
 #include <aws/ec2/model/DescribeNetworkInterfaceAttributeRequest.h>
-#include <aws/ec2/model/DescribeNetworkInterfacePermissionsRequest.h>
-#include <aws/ec2/model/DescribeNetworkInterfacesRequest.h>
-#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPoliciesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,25 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeBundleTasksOutcome EC2Client::DescribeBundleTasks(const DescribeBundleTasksRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBundleTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeBundleTasksOutcome(std::move(result.GetError()));
+}
+
+DescribeByoipCidrsOutcome EC2Client::DescribeByoipCidrs(const DescribeByoipCidrsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeByoipCidrsOutcome(result.GetResultWithOwnership())
+                            : DescribeByoipCidrsOutcome(std::move(result.GetError()));
+}
+
+DescribeCapacityBlockExtensionHistoryOutcome EC2Client::DescribeCapacityBlockExtensionHistory(
+    const DescribeCapacityBlockExtensionHistoryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityBlockExtensionHistoryOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityBlockExtensionHistoryOutcome(std::move(result.GetError()));
+}
 
 DescribeCapacityBlockExtensionOfferingsOutcome EC2Client::DescribeCapacityBlockExtensionOfferings(
     const DescribeCapacityBlockExtensionOfferingsRequest& request) const {
@@ -744,24 +763,4 @@ DescribeNetworkInterfaceAttributeOutcome EC2Client::DescribeNetworkInterfaceAttr
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeNetworkInterfaceAttributeOutcome(result.GetResultWithOwnership())
                             : DescribeNetworkInterfaceAttributeOutcome(std::move(result.GetError()));
-}
-
-DescribeNetworkInterfacePermissionsOutcome EC2Client::DescribeNetworkInterfacePermissions(
-    const DescribeNetworkInterfacePermissionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeNetworkInterfacePermissionsOutcome(result.GetResultWithOwnership())
-                            : DescribeNetworkInterfacePermissionsOutcome(std::move(result.GetError()));
-}
-
-DescribeNetworkInterfacesOutcome EC2Client::DescribeNetworkInterfaces(const DescribeNetworkInterfacesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeNetworkInterfacesOutcome(result.GetResultWithOwnership())
-                            : DescribeNetworkInterfacesOutcome(std::move(result.GetError()));
-}
-
-DescribeNetworkingFlexCostAllocationPoliciesOutcome EC2Client::DescribeNetworkingFlexCostAllocationPolicies(
-    const DescribeNetworkingFlexCostAllocationPoliciesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeNetworkingFlexCostAllocationPoliciesOutcome(result.GetResultWithOwnership())
-                            : DescribeNetworkingFlexCostAllocationPoliciesOutcome(std::move(result.GetError()));
 }

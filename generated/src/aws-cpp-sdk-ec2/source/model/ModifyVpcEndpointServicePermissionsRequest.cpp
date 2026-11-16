@@ -37,6 +37,10 @@ Aws::String ModifyVpcEndpointServicePermissionsRequest::SerializePayload() const
     }
   }
 
+  if (m_permissionTypeHasBeenSet) {
+    ss << "PermissionType=" << StringUtils::URLEncode(PermissionTypeMapper::GetNameForPermissionType(m_permissionType)) << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

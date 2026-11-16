@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class JobCategory { NOT_SET, AgentRFT, AgentRFTEvaluation };
+enum class JobCategory { NOT_SET, AgentRFT, SyntheticDataGeneration, DataQualityEvaluation, AgentRFTEvaluation, DataTransformation };
 
 namespace JobCategoryMapper {
 AWS_SAGEMAKER_API JobCategory GetJobCategoryForName(const Aws::String& name);

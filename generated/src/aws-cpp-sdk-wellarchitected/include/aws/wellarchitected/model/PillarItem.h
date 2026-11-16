@@ -22,8 +22,8 @@ namespace WellArchitected {
 namespace Model {
 
 /**
- * <p>Item configuration for a specific Well-Architected Tool Framework
- * pillar.</p><p><h3>See Also:</h3>   <a
+ * <p>Item configuration for a specific Amazon Web Services Well-Architected
+ * Framework pillar.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PillarItem">AWS
  * API Reference</a></p>
  */

@@ -53,6 +53,14 @@ ContextContent& ContextContent::operator=(JsonView jsonValue) {
     }
     m_resourceTagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("organizationalUnitIds")) {
+    Aws::Utils::Array<JsonView> organizationalUnitIdsJsonList = jsonValue.GetArray("organizationalUnitIds");
+    for (unsigned organizationalUnitIdsIndex = 0; organizationalUnitIdsIndex < organizationalUnitIdsJsonList.GetLength();
+         ++organizationalUnitIdsIndex) {
+      m_organizationalUnitIds.push_back(organizationalUnitIdsJsonList[organizationalUnitIdsIndex].AsString());
+    }
+    m_organizationalUnitIdsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("applicationOverview")) {
     m_applicationOverview = jsonValue.GetString("applicationOverview");
     m_applicationOverviewHasBeenSet = true;
@@ -121,6 +129,15 @@ JsonValue ContextContent::Jsonize() const {
       resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
     }
     payload.WithArray("resourceTags", std::move(resourceTagsJsonList));
+  }
+
+  if (m_organizationalUnitIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> organizationalUnitIdsJsonList(m_organizationalUnitIds.size());
+    for (unsigned organizationalUnitIdsIndex = 0; organizationalUnitIdsIndex < organizationalUnitIdsJsonList.GetLength();
+         ++organizationalUnitIdsIndex) {
+      organizationalUnitIdsJsonList[organizationalUnitIdsIndex].AsString(m_organizationalUnitIds[organizationalUnitIdsIndex]);
+    }
+    payload.WithArray("organizationalUnitIds", std::move(organizationalUnitIdsJsonList));
   }
 
   if (m_applicationOverviewHasBeenSet) {

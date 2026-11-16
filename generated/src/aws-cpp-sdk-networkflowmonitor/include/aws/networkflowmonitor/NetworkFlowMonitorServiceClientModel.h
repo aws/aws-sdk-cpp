@@ -20,31 +20,42 @@
 
 /* Service model headers required in NetworkFlowMonitorClient header */
 #include <aws/networkflowmonitor/model/CreateMonitorResult.h>
+#include <aws/networkflowmonitor/model/CreatePerformanceMonitorResult.h>
 #include <aws/networkflowmonitor/model/CreateScopeResult.h>
 #include <aws/networkflowmonitor/model/DeleteMonitorResult.h>
+#include <aws/networkflowmonitor/model/DeletePerformanceMonitorResult.h>
 #include <aws/networkflowmonitor/model/DeleteScopeResult.h>
 #include <aws/networkflowmonitor/model/GetMonitorResult.h>
+#include <aws/networkflowmonitor/model/GetMonitorScopeSuggestionsResult.h>
+#include <aws/networkflowmonitor/model/GetPerformanceMonitorResult.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsMonitorTopContributorsResult.h>
+#include <aws/networkflowmonitor/model/GetQueryResultsPerformanceMonitorResult.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsWorkloadInsightsTopContributorsDataResult.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsWorkloadInsightsTopContributorsResult.h>
 #include <aws/networkflowmonitor/model/GetQueryStatusMonitorTopContributorsResult.h>
+#include <aws/networkflowmonitor/model/GetQueryStatusPerformanceMonitorResult.h>
 #include <aws/networkflowmonitor/model/GetQueryStatusWorkloadInsightsTopContributorsDataResult.h>
 #include <aws/networkflowmonitor/model/GetQueryStatusWorkloadInsightsTopContributorsResult.h>
 #include <aws/networkflowmonitor/model/GetScopeResult.h>
 #include <aws/networkflowmonitor/model/ListMonitorsRequest.h>
 #include <aws/networkflowmonitor/model/ListMonitorsResult.h>
+#include <aws/networkflowmonitor/model/ListPerformanceMonitorsRequest.h>
+#include <aws/networkflowmonitor/model/ListPerformanceMonitorsResult.h>
 #include <aws/networkflowmonitor/model/ListScopesRequest.h>
 #include <aws/networkflowmonitor/model/ListScopesResult.h>
 #include <aws/networkflowmonitor/model/ListTagsForResourceResult.h>
 #include <aws/networkflowmonitor/model/StartQueryMonitorTopContributorsResult.h>
+#include <aws/networkflowmonitor/model/StartQueryPerformanceMonitorResult.h>
 #include <aws/networkflowmonitor/model/StartQueryWorkloadInsightsTopContributorsDataResult.h>
 #include <aws/networkflowmonitor/model/StartQueryWorkloadInsightsTopContributorsResult.h>
 #include <aws/networkflowmonitor/model/StopQueryMonitorTopContributorsResult.h>
+#include <aws/networkflowmonitor/model/StopQueryPerformanceMonitorResult.h>
 #include <aws/networkflowmonitor/model/StopQueryWorkloadInsightsTopContributorsDataResult.h>
 #include <aws/networkflowmonitor/model/StopQueryWorkloadInsightsTopContributorsResult.h>
 #include <aws/networkflowmonitor/model/TagResourceResult.h>
 #include <aws/networkflowmonitor/model/UntagResourceResult.h>
 #include <aws/networkflowmonitor/model/UpdateMonitorResult.h>
+#include <aws/networkflowmonitor/model/UpdatePerformanceMonitorResult.h>
 #include <aws/networkflowmonitor/model/UpdateScopeResult.h>
 /* End of service model headers required in NetworkFlowMonitorClient header */
 
@@ -80,60 +91,79 @@ using NetworkFlowMonitorEndpointProvider = Aws::NetworkFlowMonitor::Endpoint::Ne
 namespace Model {
 /* Service model forward declarations required in NetworkFlowMonitorClient header */
 class CreateMonitorRequest;
+class CreatePerformanceMonitorRequest;
 class CreateScopeRequest;
 class DeleteMonitorRequest;
+class DeletePerformanceMonitorRequest;
 class DeleteScopeRequest;
 class GetMonitorRequest;
+class GetMonitorScopeSuggestionsRequest;
+class GetPerformanceMonitorRequest;
 class GetQueryResultsMonitorTopContributorsRequest;
+class GetQueryResultsPerformanceMonitorRequest;
 class GetQueryResultsWorkloadInsightsTopContributorsRequest;
 class GetQueryResultsWorkloadInsightsTopContributorsDataRequest;
 class GetQueryStatusMonitorTopContributorsRequest;
+class GetQueryStatusPerformanceMonitorRequest;
 class GetQueryStatusWorkloadInsightsTopContributorsRequest;
 class GetQueryStatusWorkloadInsightsTopContributorsDataRequest;
 class GetScopeRequest;
 class ListMonitorsRequest;
+class ListPerformanceMonitorsRequest;
 class ListScopesRequest;
 class ListTagsForResourceRequest;
 class StartQueryMonitorTopContributorsRequest;
+class StartQueryPerformanceMonitorRequest;
 class StartQueryWorkloadInsightsTopContributorsRequest;
 class StartQueryWorkloadInsightsTopContributorsDataRequest;
 class StopQueryMonitorTopContributorsRequest;
+class StopQueryPerformanceMonitorRequest;
 class StopQueryWorkloadInsightsTopContributorsRequest;
 class StopQueryWorkloadInsightsTopContributorsDataRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateMonitorRequest;
+class UpdatePerformanceMonitorRequest;
 class UpdateScopeRequest;
 /* End of service model forward declarations required in NetworkFlowMonitorClient header */
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<CreateMonitorResult, NetworkFlowMonitorError> CreateMonitorOutcome;
+typedef Aws::Utils::Outcome<CreatePerformanceMonitorResult, NetworkFlowMonitorError> CreatePerformanceMonitorOutcome;
 typedef Aws::Utils::Outcome<CreateScopeResult, NetworkFlowMonitorError> CreateScopeOutcome;
 typedef Aws::Utils::Outcome<DeleteMonitorResult, NetworkFlowMonitorError> DeleteMonitorOutcome;
+typedef Aws::Utils::Outcome<DeletePerformanceMonitorResult, NetworkFlowMonitorError> DeletePerformanceMonitorOutcome;
 typedef Aws::Utils::Outcome<DeleteScopeResult, NetworkFlowMonitorError> DeleteScopeOutcome;
 typedef Aws::Utils::Outcome<GetMonitorResult, NetworkFlowMonitorError> GetMonitorOutcome;
+typedef Aws::Utils::Outcome<GetMonitorScopeSuggestionsResult, NetworkFlowMonitorError> GetMonitorScopeSuggestionsOutcome;
+typedef Aws::Utils::Outcome<GetPerformanceMonitorResult, NetworkFlowMonitorError> GetPerformanceMonitorOutcome;
 typedef Aws::Utils::Outcome<GetQueryResultsMonitorTopContributorsResult, NetworkFlowMonitorError>
     GetQueryResultsMonitorTopContributorsOutcome;
+typedef Aws::Utils::Outcome<GetQueryResultsPerformanceMonitorResult, NetworkFlowMonitorError> GetQueryResultsPerformanceMonitorOutcome;
 typedef Aws::Utils::Outcome<GetQueryResultsWorkloadInsightsTopContributorsResult, NetworkFlowMonitorError>
     GetQueryResultsWorkloadInsightsTopContributorsOutcome;
 typedef Aws::Utils::Outcome<GetQueryResultsWorkloadInsightsTopContributorsDataResult, NetworkFlowMonitorError>
     GetQueryResultsWorkloadInsightsTopContributorsDataOutcome;
 typedef Aws::Utils::Outcome<GetQueryStatusMonitorTopContributorsResult, NetworkFlowMonitorError>
     GetQueryStatusMonitorTopContributorsOutcome;
+typedef Aws::Utils::Outcome<GetQueryStatusPerformanceMonitorResult, NetworkFlowMonitorError> GetQueryStatusPerformanceMonitorOutcome;
 typedef Aws::Utils::Outcome<GetQueryStatusWorkloadInsightsTopContributorsResult, NetworkFlowMonitorError>
     GetQueryStatusWorkloadInsightsTopContributorsOutcome;
 typedef Aws::Utils::Outcome<GetQueryStatusWorkloadInsightsTopContributorsDataResult, NetworkFlowMonitorError>
     GetQueryStatusWorkloadInsightsTopContributorsDataOutcome;
 typedef Aws::Utils::Outcome<GetScopeResult, NetworkFlowMonitorError> GetScopeOutcome;
 typedef Aws::Utils::Outcome<ListMonitorsResult, NetworkFlowMonitorError> ListMonitorsOutcome;
+typedef Aws::Utils::Outcome<ListPerformanceMonitorsResult, NetworkFlowMonitorError> ListPerformanceMonitorsOutcome;
 typedef Aws::Utils::Outcome<ListScopesResult, NetworkFlowMonitorError> ListScopesOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, NetworkFlowMonitorError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<StartQueryMonitorTopContributorsResult, NetworkFlowMonitorError> StartQueryMonitorTopContributorsOutcome;
+typedef Aws::Utils::Outcome<StartQueryPerformanceMonitorResult, NetworkFlowMonitorError> StartQueryPerformanceMonitorOutcome;
 typedef Aws::Utils::Outcome<StartQueryWorkloadInsightsTopContributorsResult, NetworkFlowMonitorError>
     StartQueryWorkloadInsightsTopContributorsOutcome;
 typedef Aws::Utils::Outcome<StartQueryWorkloadInsightsTopContributorsDataResult, NetworkFlowMonitorError>
     StartQueryWorkloadInsightsTopContributorsDataOutcome;
 typedef Aws::Utils::Outcome<StopQueryMonitorTopContributorsResult, NetworkFlowMonitorError> StopQueryMonitorTopContributorsOutcome;
+typedef Aws::Utils::Outcome<StopQueryPerformanceMonitorResult, NetworkFlowMonitorError> StopQueryPerformanceMonitorOutcome;
 typedef Aws::Utils::Outcome<StopQueryWorkloadInsightsTopContributorsResult, NetworkFlowMonitorError>
     StopQueryWorkloadInsightsTopContributorsOutcome;
 typedef Aws::Utils::Outcome<StopQueryWorkloadInsightsTopContributorsDataResult, NetworkFlowMonitorError>
@@ -141,36 +171,47 @@ typedef Aws::Utils::Outcome<StopQueryWorkloadInsightsTopContributorsDataResult, 
 typedef Aws::Utils::Outcome<TagResourceResult, NetworkFlowMonitorError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, NetworkFlowMonitorError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateMonitorResult, NetworkFlowMonitorError> UpdateMonitorOutcome;
+typedef Aws::Utils::Outcome<UpdatePerformanceMonitorResult, NetworkFlowMonitorError> UpdatePerformanceMonitorOutcome;
 typedef Aws::Utils::Outcome<UpdateScopeResult, NetworkFlowMonitorError> UpdateScopeOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
 typedef std::future<CreateMonitorOutcome> CreateMonitorOutcomeCallable;
+typedef std::future<CreatePerformanceMonitorOutcome> CreatePerformanceMonitorOutcomeCallable;
 typedef std::future<CreateScopeOutcome> CreateScopeOutcomeCallable;
 typedef std::future<DeleteMonitorOutcome> DeleteMonitorOutcomeCallable;
+typedef std::future<DeletePerformanceMonitorOutcome> DeletePerformanceMonitorOutcomeCallable;
 typedef std::future<DeleteScopeOutcome> DeleteScopeOutcomeCallable;
 typedef std::future<GetMonitorOutcome> GetMonitorOutcomeCallable;
+typedef std::future<GetMonitorScopeSuggestionsOutcome> GetMonitorScopeSuggestionsOutcomeCallable;
+typedef std::future<GetPerformanceMonitorOutcome> GetPerformanceMonitorOutcomeCallable;
 typedef std::future<GetQueryResultsMonitorTopContributorsOutcome> GetQueryResultsMonitorTopContributorsOutcomeCallable;
+typedef std::future<GetQueryResultsPerformanceMonitorOutcome> GetQueryResultsPerformanceMonitorOutcomeCallable;
 typedef std::future<GetQueryResultsWorkloadInsightsTopContributorsOutcome> GetQueryResultsWorkloadInsightsTopContributorsOutcomeCallable;
 typedef std::future<GetQueryResultsWorkloadInsightsTopContributorsDataOutcome>
     GetQueryResultsWorkloadInsightsTopContributorsDataOutcomeCallable;
 typedef std::future<GetQueryStatusMonitorTopContributorsOutcome> GetQueryStatusMonitorTopContributorsOutcomeCallable;
+typedef std::future<GetQueryStatusPerformanceMonitorOutcome> GetQueryStatusPerformanceMonitorOutcomeCallable;
 typedef std::future<GetQueryStatusWorkloadInsightsTopContributorsOutcome> GetQueryStatusWorkloadInsightsTopContributorsOutcomeCallable;
 typedef std::future<GetQueryStatusWorkloadInsightsTopContributorsDataOutcome>
     GetQueryStatusWorkloadInsightsTopContributorsDataOutcomeCallable;
 typedef std::future<GetScopeOutcome> GetScopeOutcomeCallable;
 typedef std::future<ListMonitorsOutcome> ListMonitorsOutcomeCallable;
+typedef std::future<ListPerformanceMonitorsOutcome> ListPerformanceMonitorsOutcomeCallable;
 typedef std::future<ListScopesOutcome> ListScopesOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<StartQueryMonitorTopContributorsOutcome> StartQueryMonitorTopContributorsOutcomeCallable;
+typedef std::future<StartQueryPerformanceMonitorOutcome> StartQueryPerformanceMonitorOutcomeCallable;
 typedef std::future<StartQueryWorkloadInsightsTopContributorsOutcome> StartQueryWorkloadInsightsTopContributorsOutcomeCallable;
 typedef std::future<StartQueryWorkloadInsightsTopContributorsDataOutcome> StartQueryWorkloadInsightsTopContributorsDataOutcomeCallable;
 typedef std::future<StopQueryMonitorTopContributorsOutcome> StopQueryMonitorTopContributorsOutcomeCallable;
+typedef std::future<StopQueryPerformanceMonitorOutcome> StopQueryPerformanceMonitorOutcomeCallable;
 typedef std::future<StopQueryWorkloadInsightsTopContributorsOutcome> StopQueryWorkloadInsightsTopContributorsOutcomeCallable;
 typedef std::future<StopQueryWorkloadInsightsTopContributorsDataOutcome> StopQueryWorkloadInsightsTopContributorsDataOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateMonitorOutcome> UpdateMonitorOutcomeCallable;
+typedef std::future<UpdatePerformanceMonitorOutcome> UpdatePerformanceMonitorOutcomeCallable;
 typedef std::future<UpdateScopeOutcome> UpdateScopeOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -181,22 +222,38 @@ class NetworkFlowMonitorClient;
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::CreateMonitorRequest&, const Model::CreateMonitorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateMonitorResponseReceivedHandler;
+typedef std::function<void(const NetworkFlowMonitorClient*, const Model::CreatePerformanceMonitorRequest&,
+                           const Model::CreatePerformanceMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreatePerformanceMonitorResponseReceivedHandler;
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::CreateScopeRequest&, const Model::CreateScopeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateScopeResponseReceivedHandler;
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::DeleteMonitorRequest&, const Model::DeleteMonitorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteMonitorResponseReceivedHandler;
+typedef std::function<void(const NetworkFlowMonitorClient*, const Model::DeletePerformanceMonitorRequest&,
+                           const Model::DeletePerformanceMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeletePerformanceMonitorResponseReceivedHandler;
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::DeleteScopeRequest&, const Model::DeleteScopeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteScopeResponseReceivedHandler;
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::GetMonitorRequest&, const Model::GetMonitorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMonitorResponseReceivedHandler;
+typedef std::function<void(const NetworkFlowMonitorClient*, const Model::GetMonitorScopeSuggestionsRequest&,
+                           const Model::GetMonitorScopeSuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetMonitorScopeSuggestionsResponseReceivedHandler;
+typedef std::function<void(const NetworkFlowMonitorClient*, const Model::GetPerformanceMonitorRequest&,
+                           const Model::GetPerformanceMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPerformanceMonitorResponseReceivedHandler;
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::GetQueryResultsMonitorTopContributorsRequest&,
                            const Model::GetQueryResultsMonitorTopContributorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetQueryResultsMonitorTopContributorsResponseReceivedHandler;
+typedef std::function<void(const NetworkFlowMonitorClient*, const Model::GetQueryResultsPerformanceMonitorRequest&,
+                           const Model::GetQueryResultsPerformanceMonitorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetQueryResultsPerformanceMonitorResponseReceivedHandler;
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::GetQueryResultsWorkloadInsightsTopContributorsRequest&,
                            const Model::GetQueryResultsWorkloadInsightsTopContributorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -209,6 +266,10 @@ typedef std::function<void(const NetworkFlowMonitorClient*, const Model::GetQuer
                            const Model::GetQueryStatusMonitorTopContributorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetQueryStatusMonitorTopContributorsResponseReceivedHandler;
+typedef std::function<void(const NetworkFlowMonitorClient*, const Model::GetQueryStatusPerformanceMonitorRequest&,
+                           const Model::GetQueryStatusPerformanceMonitorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetQueryStatusPerformanceMonitorResponseReceivedHandler;
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::GetQueryStatusWorkloadInsightsTopContributorsRequest&,
                            const Model::GetQueryStatusWorkloadInsightsTopContributorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -223,6 +284,9 @@ typedef std::function<void(const NetworkFlowMonitorClient*, const Model::GetScop
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::ListMonitorsRequest&, const Model::ListMonitorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListMonitorsResponseReceivedHandler;
+typedef std::function<void(const NetworkFlowMonitorClient*, const Model::ListPerformanceMonitorsRequest&,
+                           const Model::ListPerformanceMonitorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPerformanceMonitorsResponseReceivedHandler;
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::ListScopesRequest&, const Model::ListScopesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListScopesResponseReceivedHandler;
@@ -233,6 +297,10 @@ typedef std::function<void(const NetworkFlowMonitorClient*, const Model::StartQu
                            const Model::StartQueryMonitorTopContributorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartQueryMonitorTopContributorsResponseReceivedHandler;
+typedef std::function<void(const NetworkFlowMonitorClient*, const Model::StartQueryPerformanceMonitorRequest&,
+                           const Model::StartQueryPerformanceMonitorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartQueryPerformanceMonitorResponseReceivedHandler;
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::StartQueryWorkloadInsightsTopContributorsRequest&,
                            const Model::StartQueryWorkloadInsightsTopContributorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -245,6 +313,9 @@ typedef std::function<void(const NetworkFlowMonitorClient*, const Model::StopQue
                            const Model::StopQueryMonitorTopContributorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopQueryMonitorTopContributorsResponseReceivedHandler;
+typedef std::function<void(const NetworkFlowMonitorClient*, const Model::StopQueryPerformanceMonitorRequest&,
+                           const Model::StopQueryPerformanceMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopQueryPerformanceMonitorResponseReceivedHandler;
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::StopQueryWorkloadInsightsTopContributorsRequest&,
                            const Model::StopQueryWorkloadInsightsTopContributorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -262,6 +333,9 @@ typedef std::function<void(const NetworkFlowMonitorClient*, const Model::UntagRe
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::UpdateMonitorRequest&, const Model::UpdateMonitorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateMonitorResponseReceivedHandler;
+typedef std::function<void(const NetworkFlowMonitorClient*, const Model::UpdatePerformanceMonitorRequest&,
+                           const Model::UpdatePerformanceMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdatePerformanceMonitorResponseReceivedHandler;
 typedef std::function<void(const NetworkFlowMonitorClient*, const Model::UpdateScopeRequest&, const Model::UpdateScopeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateScopeResponseReceivedHandler;

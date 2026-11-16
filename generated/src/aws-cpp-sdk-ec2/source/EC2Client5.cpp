@@ -20,7 +20,11 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DisableFastSnapshotRestoresRequest.h>
+#include <aws/ec2/model/DisableImageBlockPublicAccessRequest.h>
+#include <aws/ec2/model/DisableImageDeprecationRequest.h>
 #include <aws/ec2/model/DisableImageDeregistrationProtectionRequest.h>
+#include <aws/ec2/model/DisableImageRequest.h>
 #include <aws/ec2/model/DisableInstanceSqlHaStandbyDetectionsRequest.h>
 #include <aws/ec2/model/DisableIpamOrganizationAdminAccountRequest.h>
 #include <aws/ec2/model/DisableIpamPolicyRequest.h>
@@ -40,6 +44,7 @@
 #include <aws/ec2/model/DisassociateInstanceEventWindowRequest.h>
 #include <aws/ec2/model/DisassociateIpamByoasnRequest.h>
 #include <aws/ec2/model/DisassociateIpamResourceDiscoveryRequest.h>
+#include <aws/ec2/model/DisassociateKmsKeyIdRequest.h>
 #include <aws/ec2/model/DisassociateNatGatewayAddressRequest.h>
 #include <aws/ec2/model/DisassociateNetworkingFlexCostAllocationPolicyRequest.h>
 #include <aws/ec2/model/DisassociateRouteServerRequest.h>
@@ -115,11 +120,6 @@
 #include <aws/ec2/model/GetIpamDiscoveredAccountsRequest.h>
 #include <aws/ec2/model/GetIpamDiscoveredPublicAddressesRequest.h>
 #include <aws/ec2/model/GetIpamDiscoveredResourceCidrsRequest.h>
-#include <aws/ec2/model/GetIpamDiscoveredRoutesRequest.h>
-#include <aws/ec2/model/GetIpamInternetRegistryAssociationAsnsRequest.h>
-#include <aws/ec2/model/GetIpamInternetRegistryAssociationCidrsRequest.h>
-#include <aws/ec2/model/GetIpamPolicyAllocationRulesRequest.h>
-#include <aws/ec2/model/GetIpamPolicyOrganizationTargetsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,29 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DisableFastSnapshotRestoresOutcome EC2Client::DisableFastSnapshotRestores(const DisableFastSnapshotRestoresRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableFastSnapshotRestoresOutcome(result.GetResultWithOwnership())
+                            : DisableFastSnapshotRestoresOutcome(std::move(result.GetError()));
+}
+
+DisableImageOutcome EC2Client::DisableImage(const DisableImageRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableImageOutcome(result.GetResultWithOwnership()) : DisableImageOutcome(std::move(result.GetError()));
+}
+
+DisableImageBlockPublicAccessOutcome EC2Client::DisableImageBlockPublicAccess(const DisableImageBlockPublicAccessRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableImageBlockPublicAccessOutcome(result.GetResultWithOwnership())
+                            : DisableImageBlockPublicAccessOutcome(std::move(result.GetError()));
+}
+
+DisableImageDeprecationOutcome EC2Client::DisableImageDeprecation(const DisableImageDeprecationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableImageDeprecationOutcome(result.GetResultWithOwnership())
+                            : DisableImageDeprecationOutcome(std::move(result.GetError()));
+}
 
 DisableImageDeregistrationProtectionOutcome EC2Client::DisableImageDeregistrationProtection(
     const DisableImageDeregistrationProtectionRequest& request) const {
@@ -263,6 +286,12 @@ DisassociateIpamResourceDiscoveryOutcome EC2Client::DisassociateIpamResourceDisc
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisassociateIpamResourceDiscoveryOutcome(result.GetResultWithOwnership())
                             : DisassociateIpamResourceDiscoveryOutcome(std::move(result.GetError()));
+}
+
+DisassociateKmsKeyIdOutcome EC2Client::DisassociateKmsKeyId(const DisassociateKmsKeyIdRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateKmsKeyIdOutcome(result.GetResultWithOwnership())
+                            : DisassociateKmsKeyIdOutcome(std::move(result.GetError()));
 }
 
 DisassociateNatGatewayAddressOutcome EC2Client::DisassociateNatGatewayAddress(const DisassociateNatGatewayAddressRequest& request) const {
@@ -740,37 +769,4 @@ GetIpamDiscoveredResourceCidrsOutcome EC2Client::GetIpamDiscoveredResourceCidrs(
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetIpamDiscoveredResourceCidrsOutcome(result.GetResultWithOwnership())
                             : GetIpamDiscoveredResourceCidrsOutcome(std::move(result.GetError()));
-}
-
-GetIpamDiscoveredRoutesOutcome EC2Client::GetIpamDiscoveredRoutes(const GetIpamDiscoveredRoutesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamDiscoveredRoutesOutcome(result.GetResultWithOwnership())
-                            : GetIpamDiscoveredRoutesOutcome(std::move(result.GetError()));
-}
-
-GetIpamInternetRegistryAssociationAsnsOutcome EC2Client::GetIpamInternetRegistryAssociationAsns(
-    const GetIpamInternetRegistryAssociationAsnsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamInternetRegistryAssociationAsnsOutcome(result.GetResultWithOwnership())
-                            : GetIpamInternetRegistryAssociationAsnsOutcome(std::move(result.GetError()));
-}
-
-GetIpamInternetRegistryAssociationCidrsOutcome EC2Client::GetIpamInternetRegistryAssociationCidrs(
-    const GetIpamInternetRegistryAssociationCidrsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamInternetRegistryAssociationCidrsOutcome(result.GetResultWithOwnership())
-                            : GetIpamInternetRegistryAssociationCidrsOutcome(std::move(result.GetError()));
-}
-
-GetIpamPolicyAllocationRulesOutcome EC2Client::GetIpamPolicyAllocationRules(const GetIpamPolicyAllocationRulesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamPolicyAllocationRulesOutcome(result.GetResultWithOwnership())
-                            : GetIpamPolicyAllocationRulesOutcome(std::move(result.GetError()));
-}
-
-GetIpamPolicyOrganizationTargetsOutcome EC2Client::GetIpamPolicyOrganizationTargets(
-    const GetIpamPolicyOrganizationTargetsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamPolicyOrganizationTargetsOutcome(result.GetResultWithOwnership())
-                            : GetIpamPolicyOrganizationTargetsOutcome(std::move(result.GetError()));
 }

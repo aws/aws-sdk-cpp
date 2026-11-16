@@ -80,8 +80,7 @@ class AgentRecommendationSummary {
 
   ///@{
   /**
-   * <p>The identifier of the generation process that produced this
-   * recommendation.</p>
+   * <p>The identifier of the generation that produced this recommendation.</p>
    */
   inline const Aws::String& GetGenerationId() const { return m_generationId; }
   inline bool GenerationIdHasBeenSet() const { return m_generationIdHasBeenSet; }
@@ -151,8 +150,8 @@ class AgentRecommendationSummary {
 
   ///@{
   /**
-   * <p>The Well-Architected Tool Framework pillar that the recommendation
-   * addresses.</p>
+   * <p>The Amazon Web Services Well-Architected Framework pillar that the
+   * recommendation addresses.</p>
    */
   inline Pillar GetPillar() const { return m_pillar; }
   inline bool PillarHasBeenSet() const { return m_pillarHasBeenSet; }

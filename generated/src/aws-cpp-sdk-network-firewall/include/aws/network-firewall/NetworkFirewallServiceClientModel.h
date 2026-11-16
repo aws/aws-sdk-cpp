@@ -78,6 +78,8 @@
 #include <aws/network-firewall/model/ListAnalysisReportsResult.h>
 #include <aws/network-firewall/model/ListContainerAssociationsRequest.h>
 #include <aws/network-firewall/model/ListContainerAssociationsResult.h>
+#include <aws/network-firewall/model/ListContextStoresRequest.h>
+#include <aws/network-firewall/model/ListContextStoresResult.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesRequest.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesResult.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesV2Request.h>
@@ -86,6 +88,7 @@
 #include <aws/network-firewall/model/ListFirewallsResult.h>
 #include <aws/network-firewall/model/ListFlowOperationResultsResult.h>
 #include <aws/network-firewall/model/ListFlowOperationsResult.h>
+#include <aws/network-firewall/model/ListResourcesInContextStoreResult.h>
 #include <aws/network-firewall/model/ListRuleGroupsRequest.h>
 #include <aws/network-firewall/model/ListRuleGroupsResult.h>
 #include <aws/network-firewall/model/ListTLSInspectionConfigurationsRequest.h>
@@ -192,11 +195,13 @@ class DisassociateSubnetsRequest;
 class GetAnalysisReportResultsRequest;
 class ListAnalysisReportsRequest;
 class ListContainerAssociationsRequest;
+class ListContextStoresRequest;
 class ListFirewallPoliciesRequest;
 class ListFirewallPoliciesV2Request;
 class ListFirewallsRequest;
 class ListFlowOperationResultsRequest;
 class ListFlowOperationsRequest;
+class ListResourcesInContextStoreRequest;
 class ListRuleGroupsRequest;
 class ListTLSInspectionConfigurationsRequest;
 class ListTagsForResourceRequest;
@@ -267,11 +272,13 @@ typedef Aws::Utils::Outcome<DisassociateSubnetsResult, NetworkFirewallError> Dis
 typedef Aws::Utils::Outcome<GetAnalysisReportResultsResult, NetworkFirewallError> GetAnalysisReportResultsOutcome;
 typedef Aws::Utils::Outcome<ListAnalysisReportsResult, NetworkFirewallError> ListAnalysisReportsOutcome;
 typedef Aws::Utils::Outcome<ListContainerAssociationsResult, NetworkFirewallError> ListContainerAssociationsOutcome;
+typedef Aws::Utils::Outcome<ListContextStoresResult, NetworkFirewallError> ListContextStoresOutcome;
 typedef Aws::Utils::Outcome<ListFirewallPoliciesResult, NetworkFirewallError> ListFirewallPoliciesOutcome;
 typedef Aws::Utils::Outcome<ListFirewallPoliciesV2Result, NetworkFirewallError> ListFirewallPoliciesV2Outcome;
 typedef Aws::Utils::Outcome<ListFirewallsResult, NetworkFirewallError> ListFirewallsOutcome;
 typedef Aws::Utils::Outcome<ListFlowOperationResultsResult, NetworkFirewallError> ListFlowOperationResultsOutcome;
 typedef Aws::Utils::Outcome<ListFlowOperationsResult, NetworkFirewallError> ListFlowOperationsOutcome;
+typedef Aws::Utils::Outcome<ListResourcesInContextStoreResult, NetworkFirewallError> ListResourcesInContextStoreOutcome;
 typedef Aws::Utils::Outcome<ListRuleGroupsResult, NetworkFirewallError> ListRuleGroupsOutcome;
 typedef Aws::Utils::Outcome<ListTLSInspectionConfigurationsResult, NetworkFirewallError> ListTLSInspectionConfigurationsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, NetworkFirewallError> ListTagsForResourceOutcome;
@@ -342,11 +349,13 @@ typedef std::future<DisassociateSubnetsOutcome> DisassociateSubnetsOutcomeCallab
 typedef std::future<GetAnalysisReportResultsOutcome> GetAnalysisReportResultsOutcomeCallable;
 typedef std::future<ListAnalysisReportsOutcome> ListAnalysisReportsOutcomeCallable;
 typedef std::future<ListContainerAssociationsOutcome> ListContainerAssociationsOutcomeCallable;
+typedef std::future<ListContextStoresOutcome> ListContextStoresOutcomeCallable;
 typedef std::future<ListFirewallPoliciesOutcome> ListFirewallPoliciesOutcomeCallable;
 typedef std::future<ListFirewallPoliciesV2Outcome> ListFirewallPoliciesV2OutcomeCallable;
 typedef std::future<ListFirewallsOutcome> ListFirewallsOutcomeCallable;
 typedef std::future<ListFlowOperationResultsOutcome> ListFlowOperationResultsOutcomeCallable;
 typedef std::future<ListFlowOperationsOutcome> ListFlowOperationsOutcomeCallable;
+typedef std::future<ListResourcesInContextStoreOutcome> ListResourcesInContextStoreOutcomeCallable;
 typedef std::future<ListRuleGroupsOutcome> ListRuleGroupsOutcomeCallable;
 typedef std::future<ListTLSInspectionConfigurationsOutcome> ListTLSInspectionConfigurationsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -509,6 +518,9 @@ typedef std::function<void(const NetworkFirewallClient*, const Model::ListAnalys
 typedef std::function<void(const NetworkFirewallClient*, const Model::ListContainerAssociationsRequest&,
                            const Model::ListContainerAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListContainerAssociationsResponseReceivedHandler;
+typedef std::function<void(const NetworkFirewallClient*, const Model::ListContextStoresRequest&, const Model::ListContextStoresOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListContextStoresResponseReceivedHandler;
 typedef std::function<void(const NetworkFirewallClient*, const Model::ListFirewallPoliciesRequest&,
                            const Model::ListFirewallPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFirewallPoliciesResponseReceivedHandler;
@@ -524,6 +536,9 @@ typedef std::function<void(const NetworkFirewallClient*, const Model::ListFlowOp
 typedef std::function<void(const NetworkFirewallClient*, const Model::ListFlowOperationsRequest&, const Model::ListFlowOperationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFlowOperationsResponseReceivedHandler;
+typedef std::function<void(const NetworkFirewallClient*, const Model::ListResourcesInContextStoreRequest&,
+                           const Model::ListResourcesInContextStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListResourcesInContextStoreResponseReceivedHandler;
 typedef std::function<void(const NetworkFirewallClient*, const Model::ListRuleGroupsRequest&, const Model::ListRuleGroupsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRuleGroupsResponseReceivedHandler;

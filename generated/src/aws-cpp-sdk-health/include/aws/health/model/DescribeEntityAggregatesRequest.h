@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/health/HealthRequest.h>
 #include <aws/health/Health_EXPORTS.h>
+#include <aws/health/model/EntityAggregateFilter.h>
 
 #include <utility>
 
@@ -57,9 +58,30 @@ class DescribeEntityAggregatesRequest : public HealthRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Values to narrow the results returned.</p>
+   */
+  inline const EntityAggregateFilter& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = EntityAggregateFilter>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = EntityAggregateFilter>
+  DescribeEntityAggregatesRequest& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_eventArns;
+
+  EntityAggregateFilter m_filter;
   bool m_eventArnsHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
 };
 
 }  // namespace Model

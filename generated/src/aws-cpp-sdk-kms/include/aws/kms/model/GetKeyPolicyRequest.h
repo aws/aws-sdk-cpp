@@ -32,8 +32,8 @@ class GetKeyPolicyRequest : public KMSRequest {
 
   ///@{
   /**
-   * <p>Gets the key policy for the specified KMS key.</p> <p>Specify the key ID or
-   * key ARN of the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+   * <p>Identifies the KMS key whose key policy you want to get.</p> <p>Specify the
+   * key ID or key ARN of the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
    * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
    * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
    * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
@@ -56,8 +56,11 @@ class GetKeyPolicyRequest : public KMSRequest {
   ///@{
   /**
    * <p>Specifies the name of the key policy. If no policy name is specified, the
-   * default value is <code>default</code>. The only valid name is
-   * <code>default</code>. To get the names of key policies, use
+   * default value is <code>default</code>. Valid values are <code>default</code> and
+   * <code>AWS_RAM</code>. Use <code>AWS_RAM</code> to get the key policy that RAM
+   * manages for a KMS key that you share through RAM. If the KMS key doesn't have an
+   * <code>AWS_RAM</code> key policy, the request fails with a
+   * <code>NotFoundException</code>. To get the names of key policies, use
    * <a>ListKeyPolicies</a>.</p>
    */
   inline const Aws::String& GetPolicyName() const { return m_policyName; }

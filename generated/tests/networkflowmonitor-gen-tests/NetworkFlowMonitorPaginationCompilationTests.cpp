@@ -9,10 +9,13 @@
 #include <aws/networkflowmonitor/NetworkFlowMonitorClientPagination.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorPaginationBase.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsWorkloadInsightsTopContributorsPaginationTraits.h>
+#include <aws/networkflowmonitor/model/GetMonitorScopeSuggestionsPaginationTraits.h>
 #include <aws/networkflowmonitor/model/ListMonitorsPaginationTraits.h>
 #include <aws/networkflowmonitor/model/ListScopesPaginationTraits.h>
+#include <aws/networkflowmonitor/model/GetQueryResultsPerformanceMonitorPaginationTraits.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsWorkloadInsightsTopContributorsDataPaginationTraits.h>
 #include <aws/networkflowmonitor/model/GetQueryResultsMonitorTopContributorsPaginationTraits.h>
+#include <aws/networkflowmonitor/model/ListPerformanceMonitorsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

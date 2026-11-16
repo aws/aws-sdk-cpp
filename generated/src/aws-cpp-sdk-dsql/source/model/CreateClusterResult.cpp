@@ -54,6 +54,13 @@ CreateClusterResult& CreateClusterResult::operator=(const Aws::AmazonWebServiceR
     m_endpoint = jsonValue.GetString("endpoint");
     m_endpointHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("metricGroups")) {
+    Aws::Utils::Array<JsonView> metricGroupsJsonList = jsonValue.GetArray("metricGroups");
+    for (unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex) {
+      m_metricGroups.push_back(metricGroupsJsonList[metricGroupsIndex].AsObject());
+    }
+    m_metricGroupsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

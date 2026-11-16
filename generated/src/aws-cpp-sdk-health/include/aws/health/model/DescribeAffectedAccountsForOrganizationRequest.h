@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/health/HealthRequest.h>
 #include <aws/health/Health_EXPORTS.h>
+#include <aws/health/model/AffectedAccountFilter.h>
 
 #include <utility>
 
@@ -91,15 +92,36 @@ class DescribeAffectedAccountsForOrganizationRequest : public HealthRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Values to narrow the results returned.</p>
+   */
+  inline const AffectedAccountFilter& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = AffectedAccountFilter>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = AffectedAccountFilter>
+  DescribeAffectedAccountsForOrganizationRequest& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_eventArn;
 
   Aws::String m_nextToken;
 
   int m_maxResults{0};
+
+  AffectedAccountFilter m_filter;
   bool m_eventArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -60,11 +60,13 @@
 #include <aws/network-firewall/model/GetAnalysisReportResultsRequest.h>
 #include <aws/network-firewall/model/ListAnalysisReportsRequest.h>
 #include <aws/network-firewall/model/ListContainerAssociationsRequest.h>
+#include <aws/network-firewall/model/ListContextStoresRequest.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesRequest.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesV2Request.h>
 #include <aws/network-firewall/model/ListFirewallsRequest.h>
 #include <aws/network-firewall/model/ListFlowOperationResultsRequest.h>
 #include <aws/network-firewall/model/ListFlowOperationsRequest.h>
+#include <aws/network-firewall/model/ListResourcesInContextStoreRequest.h>
 #include <aws/network-firewall/model/ListRuleGroupsRequest.h>
 #include <aws/network-firewall/model/ListTLSInspectionConfigurationsRequest.h>
 #include <aws/network-firewall/model/ListTagsForResourceRequest.h>
@@ -499,6 +501,12 @@ ListContainerAssociationsOutcome NetworkFirewallClient::ListContainerAssociation
                             : ListContainerAssociationsOutcome(std::move(result.GetError()));
 }
 
+ListContextStoresOutcome NetworkFirewallClient::ListContextStores(const ListContextStoresRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListContextStoresOutcome(result.GetResultWithOwnership())
+                            : ListContextStoresOutcome(std::move(result.GetError()));
+}
+
 ListFirewallPoliciesOutcome NetworkFirewallClient::ListFirewallPolicies(const ListFirewallPoliciesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListFirewallPoliciesOutcome(result.GetResultWithOwnership())
@@ -526,6 +534,13 @@ ListFlowOperationsOutcome NetworkFirewallClient::ListFlowOperations(const ListFl
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListFlowOperationsOutcome(result.GetResultWithOwnership())
                             : ListFlowOperationsOutcome(std::move(result.GetError()));
+}
+
+ListResourcesInContextStoreOutcome NetworkFirewallClient::ListResourcesInContextStore(
+    const ListResourcesInContextStoreRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourcesInContextStoreOutcome(result.GetResultWithOwnership())
+                            : ListResourcesInContextStoreOutcome(std::move(result.GetError()));
 }
 
 ListRuleGroupsOutcome NetworkFirewallClient::ListRuleGroups(const ListRuleGroupsRequest& request) const {

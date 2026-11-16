@@ -26,6 +26,9 @@ Aws::String DescribeAffectedAccountsForOrganizationRequest::SerializePayload() c
   if (m_maxResultsHasBeenSet) {
     mapSize++;
   }
+  if (m_filterHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -42,6 +45,11 @@ Aws::String DescribeAffectedAccountsForOrganizationRequest::SerializePayload() c
   if (m_maxResultsHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("maxResults"));
     (m_maxResults >= 0) ? encoder.WriteUInt(m_maxResults) : encoder.WriteNegInt(m_maxResults);
+  }
+
+  if (m_filterHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("filter"));
+    m_filter.CborEncode(encoder);
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

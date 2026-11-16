@@ -12,7 +12,6 @@
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/wellarchitected/model/AggregationConfiguration.h>
 #include <aws/wellarchitected/model/Pillar.h>
-#include <aws/wellarchitected/model/Tag.h>
 
 #include <utility>
 
@@ -103,8 +102,8 @@ class UpdateAgentProfileResult {
 
   ///@{
   /**
-   * <p>The Well-Architected Tool Framework pillars associated with the updated
-   * profile.</p>
+   * <p>The Amazon Web Services Well-Architected Framework pillars associated with
+   * the updated profile.</p>
    */
   inline const Aws::Vector<Pillar>& GetPillars() const { return m_pillars; }
   template <typename PillarsT = Aws::Vector<Pillar>>
@@ -254,29 +253,6 @@ class UpdateAgentProfileResult {
 
   ///@{
   /**
-   * <p>The tags associated with the updated profile.</p>
-   */
-  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
-  template <typename TagsT = Aws::Vector<Tag>>
-  void SetTags(TagsT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags = std::forward<TagsT>(value);
-  }
-  template <typename TagsT = Aws::Vector<Tag>>
-  UpdateAgentProfileResult& WithTags(TagsT&& value) {
-    SetTags(std::forward<TagsT>(value));
-    return *this;
-  }
-  template <typename TagsT = Tag>
-  UpdateAgentProfileResult& AddTags(TagsT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags.emplace_back(std::forward<TagsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the user or system that created this profile.</p>
    */
   inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
@@ -384,8 +360,6 @@ class UpdateAgentProfileResult {
 
   Aws::Map<Aws::String, Aws::String> m_fieldErrors;
 
-  Aws::Vector<Tag> m_tags;
-
   Aws::String m_createdBy;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -408,7 +382,6 @@ class UpdateAgentProfileResult {
   bool m_eligibleForScheduledGenerationHasBeenSet = false;
   bool m_eligibleForArchitectureGenerationHasBeenSet = false;
   bool m_fieldErrorsHasBeenSet = false;
-  bool m_tagsHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_lastModifiedByHasBeenSet = false;

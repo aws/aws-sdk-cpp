@@ -16,22 +16,30 @@
 namespace Aws {
 namespace WellArchitected {
 /**
- * <p><fullname>Amazon Web Services Well-Architected</fullname> <p>Amazon Web
- * Services Well-Architected helps you evaluate your architectures against Amazon
- * Web Services best practices across operational excellence, security,
- * reliability, performance efficiency, cost optimization, and sustainability. The
- * service includes the Amazon Web Services Well-Architected Agent for AI-powered
- * recommendations tailored to your specific environment, and the <a
- * href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> for
- * conducting reviews and tracking improvements.</p> <p>This is the <i>Amazon Web
- * Services Well-Architected API Reference</i>. Through this API, you can
- * programmatically access personalized recommendations and automation scripts from
- * the Amazon Web Services Well-Architected Agent, and create and manage workloads,
- * conduct lens reviews, track milestones, manage custom lenses, share workloads
- * across accounts, and manage profiles with the Well-Architected Tool.</p> <p>For
- * more information about the service, see the <a
- * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Amazon
- * Web Services Well-Architected User Guide</a>.</p></p>
+ * <p><fullname>Amazon Web Services Well-Architected</fullname> <p>This is the
+ * <i>Amazon Web Services Well-Architected API Reference</i>. Amazon Web Services
+ * Well-Architected helps you evaluate your architectures against Amazon Web
+ * Services best practices across operational excellence, security, reliability,
+ * performance efficiency, cost optimization, and sustainability.</p> <p>To view
+ * API actions organized by service, see <a
+ * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/wa-api-actions.html">API
+ * actions</a>.</p> <p> <b>Amazon Web Services Well-Architected Agent (preview)</b>
+ * </p> <p>Describes the API operations for managing optimization profiles, goals,
+ * application context, and recommendations in the Amazon Web Services
+ * Well-Architected Agent. Through this API, you can create and configure agent
+ * profiles that define the scope of your Amazon Web Services environment to
+ * analyze, set optimization goals across cost, security, performance, and
+ * resilience pillars, start recommendation generation, retrieve prioritized
+ * recommendations with ready-to-deploy remediation scripts, and provide feedback
+ * to improve future recommendations.</p> <p>For more information, see <a
+ * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/agent.html">What
+ * is Amazon Web Services Well-Architected Agent?</a> </p> <p> <b>Well-Architected
+ * Tool</b> </p> <p>Describes the API operations for creating and managing
+ * workloads, conducting lens reviews, tracking milestones, managing custom lenses,
+ * sharing workloads across accounts, and managing profiles with the
+ * Well-Architected Tool.</p> <p>For more information, see <a
+ * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/tool.html">What
+ * is Well-Architected Tool?</a> </p></p>
  */
 class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<WellArchitectedClient>,
@@ -152,6 +160,37 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Creates a Basic profile for the calling account. No configuration input is
+   * required because the account and region are inferred from the caller. The
+   * profile uses the reserved name <code>basic</code>. This operation is idempotent.
+   * Calling it twice returns the same ARN. Each account can have at most one Basic
+   * profile.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentBasicProfile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAgentBasicProfileOutcome CreateAgentBasicProfile(const Model::CreateAgentBasicProfileRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for CreateAgentBasicProfile that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateAgentBasicProfileRequestT = Model::CreateAgentBasicProfileRequest>
+  Model::CreateAgentBasicProfileOutcomeCallable CreateAgentBasicProfileCallable(const CreateAgentBasicProfileRequestT& request = {}) const {
+    return SubmitCallable(&WellArchitectedClient::CreateAgentBasicProfile, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAgentBasicProfile that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateAgentBasicProfileRequestT = Model::CreateAgentBasicProfileRequest>
+  void CreateAgentBasicProfileAsync(const CreateAgentBasicProfileResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const CreateAgentBasicProfileRequestT& request = {}) const {
+    return SubmitAsync(&WellArchitectedClient::CreateAgentBasicProfile, request, handler, context);
+  }
+
+  /**
    * <p>Creates a context associated with an optimization profile. Contexts provide
    * application and environment information used during recommendation
    * generation.</p><p><h3>See Also:</h3>   <a
@@ -204,6 +243,74 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   void CreateAgentGoalAsync(const CreateAgentGoalRequestT& request, const CreateAgentGoalResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&WellArchitectedClient::CreateAgentGoal, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an Organizational Profile for use with AWS Organizations integration.
+   * Organizational Profiles are scoped to an AWS Organization and do not require an
+   * execution role or aggregation configuration. The organization is inferred from
+   * the caller's identity.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentOrganizationalProfile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAgentOrganizationalProfileOutcome CreateAgentOrganizationalProfile(
+      const Model::CreateAgentOrganizationalProfileRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAgentOrganizationalProfile that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CreateAgentOrganizationalProfileRequestT = Model::CreateAgentOrganizationalProfileRequest>
+  Model::CreateAgentOrganizationalProfileOutcomeCallable CreateAgentOrganizationalProfileCallable(
+      const CreateAgentOrganizationalProfileRequestT& request) const {
+    return SubmitCallable(&WellArchitectedClient::CreateAgentOrganizationalProfile, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAgentOrganizationalProfile that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateAgentOrganizationalProfileRequestT = Model::CreateAgentOrganizationalProfileRequest>
+  void CreateAgentOrganizationalProfileAsync(const CreateAgentOrganizationalProfileRequestT& request,
+                                             const CreateAgentOrganizationalProfileResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WellArchitectedClient::CreateAgentOrganizationalProfile, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an Organizational Report, which is an asynchronously-materialized,
+   * point-in-time snapshot of recommendations across all Agent Profiles within the
+   * caller's AWS Organization. You can optionally narrow the scope with filters. The
+   * operation is idempotent on the caller-supplied clientToken. The AWS Organization
+   * the report belongs to is inferred from the caller's authorization context.
+   * Reports are retained for 90 days from creation, after which they are
+   * automatically deleted. Use DeleteAgentOrganizationalReport to delete a report
+   * earlier.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentOrganizationalReport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAgentOrganizationalReportOutcome CreateAgentOrganizationalReport(
+      const Model::CreateAgentOrganizationalReportRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for CreateAgentOrganizationalReport that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateAgentOrganizationalReportRequestT = Model::CreateAgentOrganizationalReportRequest>
+  Model::CreateAgentOrganizationalReportOutcomeCallable CreateAgentOrganizationalReportCallable(
+      const CreateAgentOrganizationalReportRequestT& request = {}) const {
+    return SubmitCallable(&WellArchitectedClient::CreateAgentOrganizationalReport, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAgentOrganizationalReport that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateAgentOrganizationalReportRequestT = Model::CreateAgentOrganizationalReportRequest>
+  void CreateAgentOrganizationalReportAsync(const CreateAgentOrganizationalReportResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                            const CreateAgentOrganizationalReportRequestT& request = {}) const {
+    return SubmitAsync(&WellArchitectedClient::CreateAgentOrganizationalReport, request, handler, context);
   }
 
   /**
@@ -575,6 +682,37 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Deletes an Organizational Report and its associated artifacts. The operation
+   * is idempotent, so repeated calls for a report that has already been deleted
+   * return success.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentOrganizationalReport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAgentOrganizationalReportOutcome DeleteAgentOrganizationalReport(
+      const Model::DeleteAgentOrganizationalReportRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAgentOrganizationalReport that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteAgentOrganizationalReportRequestT = Model::DeleteAgentOrganizationalReportRequest>
+  Model::DeleteAgentOrganizationalReportOutcomeCallable DeleteAgentOrganizationalReportCallable(
+      const DeleteAgentOrganizationalReportRequestT& request) const {
+    return SubmitCallable(&WellArchitectedClient::DeleteAgentOrganizationalReport, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAgentOrganizationalReport that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteAgentOrganizationalReportRequestT = Model::DeleteAgentOrganizationalReportRequest>
+  void DeleteAgentOrganizationalReportAsync(const DeleteAgentOrganizationalReportRequestT& request,
+                                            const DeleteAgentOrganizationalReportResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WellArchitectedClient::DeleteAgentOrganizationalReport, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an optimization profile and its associated configuration. This action
    * cannot be undone.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentProfile">AWS
@@ -599,6 +737,67 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   void DeleteAgentProfileAsync(const DeleteAgentProfileRequestT& request, const DeleteAgentProfileResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&WellArchitectedClient::DeleteAgentProfile, request, handler, context);
+  }
+
+  /**
+   * <p>Removes the resource-based policy from an Agent Profile. This revokes all
+   * cross-account access previously granted by the policy. Only the profile owner
+   * can call this operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentProfilePolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAgentProfilePolicyOutcome DeleteAgentProfilePolicy(const Model::DeleteAgentProfilePolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAgentProfilePolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteAgentProfilePolicyRequestT = Model::DeleteAgentProfilePolicyRequest>
+  Model::DeleteAgentProfilePolicyOutcomeCallable DeleteAgentProfilePolicyCallable(const DeleteAgentProfilePolicyRequestT& request) const {
+    return SubmitCallable(&WellArchitectedClient::DeleteAgentProfilePolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAgentProfilePolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteAgentProfilePolicyRequestT = Model::DeleteAgentProfilePolicyRequest>
+  void DeleteAgentProfilePolicyAsync(const DeleteAgentProfilePolicyRequestT& request,
+                                     const DeleteAgentProfilePolicyResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WellArchitectedClient::DeleteAgentProfilePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Removes the resource-based policy from an individual Agent Recommendation.
+   * This revokes all cross-account access previously granted by the policy. The
+   * recommendation owner or any principal with profile write access on the parent
+   * profile can call this operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentRecommendationPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAgentRecommendationPolicyOutcome DeleteAgentRecommendationPolicy(
+      const Model::DeleteAgentRecommendationPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAgentRecommendationPolicy that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteAgentRecommendationPolicyRequestT = Model::DeleteAgentRecommendationPolicyRequest>
+  Model::DeleteAgentRecommendationPolicyOutcomeCallable DeleteAgentRecommendationPolicyCallable(
+      const DeleteAgentRecommendationPolicyRequestT& request) const {
+    return SubmitCallable(&WellArchitectedClient::DeleteAgentRecommendationPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAgentRecommendationPolicy that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteAgentRecommendationPolicyRequestT = Model::DeleteAgentRecommendationPolicyRequest>
+  void DeleteAgentRecommendationPolicyAsync(const DeleteAgentRecommendationPolicyRequestT& request,
+                                            const DeleteAgentRecommendationPolicyResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WellArchitectedClient::DeleteAgentRecommendationPolicy, request, handler, context);
   }
 
   /**
@@ -981,6 +1180,98 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Retrieves metadata and current state for a single Organizational Report. The
+   * coverageSummary is populated once the report reaches COMPLETED and is absent for
+   * reports still in progress or in a failed state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentOrganizationalReport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgentOrganizationalReportOutcome GetAgentOrganizationalReport(
+      const Model::GetAgentOrganizationalReportRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgentOrganizationalReport that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetAgentOrganizationalReportRequestT = Model::GetAgentOrganizationalReportRequest>
+  Model::GetAgentOrganizationalReportOutcomeCallable GetAgentOrganizationalReportCallable(
+      const GetAgentOrganizationalReportRequestT& request) const {
+    return SubmitCallable(&WellArchitectedClient::GetAgentOrganizationalReport, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgentOrganizationalReport that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAgentOrganizationalReportRequestT = Model::GetAgentOrganizationalReportRequest>
+  void GetAgentOrganizationalReportAsync(const GetAgentOrganizationalReportRequestT& request,
+                                         const GetAgentOrganizationalReportResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WellArchitectedClient::GetAgentOrganizationalReport, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the data artifact for a completed Organizational Report as a
+   * short-lived presigned S3 URL. The response contains the URL in downloadUrl and
+   * its expiration in expiresAt. To have the service write the artifact directly
+   * into a caller-owned bucket instead, use
+   * SendAgentOrganizationalReportDataToS3.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentOrganizationalReportData">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgentOrganizationalReportDataOutcome GetAgentOrganizationalReportData(
+      const Model::GetAgentOrganizationalReportDataRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgentOrganizationalReportData that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetAgentOrganizationalReportDataRequestT = Model::GetAgentOrganizationalReportDataRequest>
+  Model::GetAgentOrganizationalReportDataOutcomeCallable GetAgentOrganizationalReportDataCallable(
+      const GetAgentOrganizationalReportDataRequestT& request) const {
+    return SubmitCallable(&WellArchitectedClient::GetAgentOrganizationalReportData, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgentOrganizationalReportData that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetAgentOrganizationalReportDataRequestT = Model::GetAgentOrganizationalReportDataRequest>
+  void GetAgentOrganizationalReportDataAsync(const GetAgentOrganizationalReportDataRequestT& request,
+                                             const GetAgentOrganizationalReportDataResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WellArchitectedClient::GetAgentOrganizationalReportData, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the caller's complete set of Well-Architected Agent preferences with
+   * their current states.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentPreferences">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgentPreferencesOutcome GetAgentPreferences(const Model::GetAgentPreferencesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetAgentPreferences that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAgentPreferencesRequestT = Model::GetAgentPreferencesRequest>
+  Model::GetAgentPreferencesOutcomeCallable GetAgentPreferencesCallable(const GetAgentPreferencesRequestT& request = {}) const {
+    return SubmitCallable(&WellArchitectedClient::GetAgentPreferences, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgentPreferences that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetAgentPreferencesRequestT = Model::GetAgentPreferencesRequest>
+  void GetAgentPreferencesAsync(const GetAgentPreferencesResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const GetAgentPreferencesRequestT& request = {}) const {
+    return SubmitAsync(&WellArchitectedClient::GetAgentPreferences, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves detailed information about an optimization profile, including its
    * configuration and metadata.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentProfile">AWS
@@ -1007,9 +1298,40 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Retrieves detailed information about a specific optimization recommendation,
-   * including its impact analysis, content, and implementation
-   * guidance.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves the resource-based policy attached to an Agent Profile. Only the
+   * profile owner can call this operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentProfilePolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgentProfilePolicyOutcome GetAgentProfilePolicy(const Model::GetAgentProfilePolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgentProfilePolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAgentProfilePolicyRequestT = Model::GetAgentProfilePolicyRequest>
+  Model::GetAgentProfilePolicyOutcomeCallable GetAgentProfilePolicyCallable(const GetAgentProfilePolicyRequestT& request) const {
+    return SubmitCallable(&WellArchitectedClient::GetAgentProfilePolicy, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgentProfilePolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAgentProfilePolicyRequestT = Model::GetAgentProfilePolicyRequest>
+  void GetAgentProfilePolicyAsync(const GetAgentProfilePolicyRequestT& request, const GetAgentProfilePolicyResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WellArchitectedClient::GetAgentProfilePolicy, request, handler, context);
+  }
+
+  /**
+   * <p> <p>Application-level recommendations are a new recommendation
+   * format currently in beta. We are actively seeking customer feedback to improve
+   * their quality and relevance. As with any AI-generated content, please thoroughly
+   * review each recommendation before taking any action based on it.</p>
+   *  <p>Retrieves detailed information about a specific optimization
+   * recommendation, including its impact analysis, content, and implementation
+   * guidance.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentRecommendation">AWS
    * API Reference</a></p>
    */
@@ -1036,11 +1358,15 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Retrieves information about a recommendation generation process, including
-   * its status, progress, and results. Recommendation generation is asynchronous:
-   * poll this operation until status reaches a terminal value of COMPLETED (results
-   * are ready) or ERROR (see errorDetails). Intermediate values are QUEUED and
-   * IN_PROGRESS.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Application-level recommendations are a new recommendation
+   * format currently in beta. We are actively seeking customer feedback to improve
+   * their quality and relevance. As with any AI-generated content, please thoroughly
+   * review each recommendation before taking any action based on it.</p>
+   *  <p>Retrieves information about a recommendation generation process,
+   * including its status, progress, and results. Recommendation generation is
+   * asynchronous: poll this operation until status reaches a terminal value of
+   * COMPLETED (results are ready) or ERROR (see errorDetails). Intermediate values
+   * are QUEUED and IN_PROGRESS.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentRecommendationGeneration">AWS
    * API Reference</a></p>
    */
@@ -1066,6 +1392,38 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
                                              const GetAgentRecommendationGenerationResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&WellArchitectedClient::GetAgentRecommendationGeneration, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the resource-based policy attached to an individual Agent
+   * Recommendation. The recommendation owner or any principal with profile write
+   * access on the parent profile can call this operation.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentRecommendationPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgentRecommendationPolicyOutcome GetAgentRecommendationPolicy(
+      const Model::GetAgentRecommendationPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgentRecommendationPolicy that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetAgentRecommendationPolicyRequestT = Model::GetAgentRecommendationPolicyRequest>
+  Model::GetAgentRecommendationPolicyOutcomeCallable GetAgentRecommendationPolicyCallable(
+      const GetAgentRecommendationPolicyRequestT& request) const {
+    return SubmitCallable(&WellArchitectedClient::GetAgentRecommendationPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgentRecommendationPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAgentRecommendationPolicyRequestT = Model::GetAgentRecommendationPolicyRequest>
+  void GetAgentRecommendationPolicyAsync(const GetAgentRecommendationPolicyRequestT& request,
+                                         const GetAgentRecommendationPolicyResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WellArchitectedClient::GetAgentRecommendationPolicy, request, handler, context);
   }
 
   /**
@@ -1532,6 +1890,37 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Lists Organizational Reports owned by the caller's account within the
+   * caller's AWS Organization, ordered by most recently created first. Supports
+   * pagination and an optional state filter.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentOrganizationalReports">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAgentOrganizationalReportsOutcome ListAgentOrganizationalReports(
+      const Model::ListAgentOrganizationalReportsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAgentOrganizationalReports that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAgentOrganizationalReportsRequestT = Model::ListAgentOrganizationalReportsRequest>
+  Model::ListAgentOrganizationalReportsOutcomeCallable ListAgentOrganizationalReportsCallable(
+      const ListAgentOrganizationalReportsRequestT& request = {}) const {
+    return SubmitCallable(&WellArchitectedClient::ListAgentOrganizationalReports, request);
+  }
+
+  /**
+   * An Async wrapper for ListAgentOrganizationalReports that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListAgentOrganizationalReportsRequestT = Model::ListAgentOrganizationalReportsRequest>
+  void ListAgentOrganizationalReportsAsync(const ListAgentOrganizationalReportsResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                           const ListAgentOrganizationalReportsRequestT& request = {}) const {
+    return SubmitAsync(&WellArchitectedClient::ListAgentOrganizationalReports, request, handler, context);
+  }
+
+  /**
    * <p>Lists optimization profiles in your account. Profiles define the scope and
    * configuration for generating optimization recommendations.</p><p><h3>See
    * Also:</h3>   <a
@@ -1561,8 +1950,12 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Lists recommendation generation processes for a specified
-   * profile.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Application-level recommendations are a new recommendation
+   * format currently in beta. We are actively seeking customer feedback to improve
+   * their quality and relevance. As with any AI-generated content, please thoroughly
+   * review each recommendation before taking any action based on it.</p>
+   *  <p>Lists recommendation generation processes for a specified
+   * profile.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentRecommendationGenerations">AWS
    * API Reference</a></p>
    */
@@ -1591,9 +1984,13 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Lists recommendation items for a specific recommendation. Recommendation
-   * items provide detailed information about individual optimization
-   * opportunities.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Application-level recommendations are a new recommendation
+   * format currently in beta. We are actively seeking customer feedback to improve
+   * their quality and relevance. As with any AI-generated content, please thoroughly
+   * review each recommendation before taking any action based on it.</p>
+   *  <p>Lists recommendation items for a specific recommendation.
+   * Recommendation items provide detailed information about individual optimization
+   * opportunities.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentRecommendationItems">AWS
    * API Reference</a></p>
    */
@@ -1622,8 +2019,12 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Lists active optimization recommendations for a specified profile with
-   * optional filtering by state.</p><p><h3>See Also:</h3>   <a
+   * <p> <p>Application-level recommendations are a new recommendation
+   * format currently in beta. We are actively seeking customer feedback to improve
+   * their quality and relevance. As with any AI-generated content, please thoroughly
+   * review each recommendation before taking any action based on it.</p>
+   *  <p>Lists active optimization recommendations for a specified
+   * profile with optional filtering by state.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentRecommendations">AWS
    * API Reference</a></p>
    */
@@ -2160,6 +2561,69 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Creates or replaces the caller's Well-Architected Agent preferences. Each
+   * supplied update sets the desired state of one preference. Preferences not named
+   * in the request are left unchanged. Enabling or disabling is performed
+   * synchronously, so a failure to reach the requested state is returned as a
+   * modeled exception rather than a FAILED status. On success the operation returns
+   * an empty response. Call GetAgentPreferences to read the resulting state. The
+   * account the preferences belong to is inferred from the caller's authorization
+   * context.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PutAgentPreferences">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAgentPreferencesOutcome PutAgentPreferences(const Model::PutAgentPreferencesRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAgentPreferences that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutAgentPreferencesRequestT = Model::PutAgentPreferencesRequest>
+  Model::PutAgentPreferencesOutcomeCallable PutAgentPreferencesCallable(const PutAgentPreferencesRequestT& request) const {
+    return SubmitCallable(&WellArchitectedClient::PutAgentPreferences, request);
+  }
+
+  /**
+   * An Async wrapper for PutAgentPreferences that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PutAgentPreferencesRequestT = Model::PutAgentPreferencesRequest>
+  void PutAgentPreferencesAsync(const PutAgentPreferencesRequestT& request, const PutAgentPreferencesResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WellArchitectedClient::PutAgentPreferences, request, handler, context);
+  }
+
+  /**
+   * <p>Attaches or replaces a resource-based policy on an Agent Profile. The policy
+   * controls cross-account access to the profile and its child resources such as
+   * recommendations, goals, and contexts. Only the profile owner can call this
+   * operation. The policy must be valid IAM JSON with Allow-only statements and no
+   * negation condition operators.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PutAgentProfilePolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAgentProfilePolicyOutcome PutAgentProfilePolicy(const Model::PutAgentProfilePolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAgentProfilePolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutAgentProfilePolicyRequestT = Model::PutAgentProfilePolicyRequest>
+  Model::PutAgentProfilePolicyOutcomeCallable PutAgentProfilePolicyCallable(const PutAgentProfilePolicyRequestT& request) const {
+    return SubmitCallable(&WellArchitectedClient::PutAgentProfilePolicy, request);
+  }
+
+  /**
+   * An Async wrapper for PutAgentProfilePolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutAgentProfilePolicyRequestT = Model::PutAgentProfilePolicyRequest>
+  void PutAgentProfilePolicyAsync(const PutAgentProfilePolicyRequestT& request, const PutAgentProfilePolicyResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WellArchitectedClient::PutAgentProfilePolicy, request, handler, context);
+  }
+
+  /**
    * <p>Submits user feedback on a recommendation to help improve future optimization
    * suggestions and track implementation outcomes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PutAgentRecommendationFeedback">AWS
@@ -2190,11 +2654,90 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Initiates a new recommendation generation process for the specified
-   * optimization profile. This asynchronous operation analyzes your Amazon Web
-   * Services resources and generates optimization recommendations based on the
-   * configured pillars and scope. Use GetAgentRecommendationGeneration to check
-   * status.</p><p><h3>See Also:</h3>   <a
+   * <p>Attaches or replaces a resource-based policy on an individual Agent
+   * Recommendation. The policy controls cross-account access to the recommendation
+   * and its child resources such as items and remediations. The recommendation owner
+   * or any principal with profile write access on the parent profile can call this
+   * operation. The policy must be valid IAM JSON with Allow-only statements and no
+   * negation condition operators.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PutAgentRecommendationPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAgentRecommendationPolicyOutcome PutAgentRecommendationPolicy(
+      const Model::PutAgentRecommendationPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAgentRecommendationPolicy that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutAgentRecommendationPolicyRequestT = Model::PutAgentRecommendationPolicyRequest>
+  Model::PutAgentRecommendationPolicyOutcomeCallable PutAgentRecommendationPolicyCallable(
+      const PutAgentRecommendationPolicyRequestT& request) const {
+    return SubmitCallable(&WellArchitectedClient::PutAgentRecommendationPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for PutAgentRecommendationPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutAgentRecommendationPolicyRequestT = Model::PutAgentRecommendationPolicyRequest>
+  void PutAgentRecommendationPolicyAsync(const PutAgentRecommendationPolicyRequestT& request,
+                                         const PutAgentRecommendationPolicyResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WellArchitectedClient::PutAgentRecommendationPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Writes the data artifact for a completed Organizational Report directly into
+   * a caller-owned S3 bucket. The artifact is written in the requested format to the
+   * supplied bucketArn and objectKey, and the resulting S3 location is returned in
+   * deliveredTo. This operation creates an S3 object and should not be retried
+   * indiscriminately. To download the artifact through a short-lived presigned URL
+   * instead, use GetAgentOrganizationalReportData.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/SendAgentOrganizationalReportDataToS3">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SendAgentOrganizationalReportDataToS3Outcome SendAgentOrganizationalReportDataToS3(
+      const Model::SendAgentOrganizationalReportDataToS3Request& request) const;
+
+  /**
+   * A Callable wrapper for SendAgentOrganizationalReportDataToS3 that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename SendAgentOrganizationalReportDataToS3RequestT = Model::SendAgentOrganizationalReportDataToS3Request>
+  Model::SendAgentOrganizationalReportDataToS3OutcomeCallable SendAgentOrganizationalReportDataToS3Callable(
+      const SendAgentOrganizationalReportDataToS3RequestT& request) const {
+    return SubmitCallable(&WellArchitectedClient::SendAgentOrganizationalReportDataToS3, request);
+  }
+
+  /**
+   * An Async wrapper for SendAgentOrganizationalReportDataToS3 that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename SendAgentOrganizationalReportDataToS3RequestT = Model::SendAgentOrganizationalReportDataToS3Request>
+  void SendAgentOrganizationalReportDataToS3Async(const SendAgentOrganizationalReportDataToS3RequestT& request,
+                                                  const SendAgentOrganizationalReportDataToS3ResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WellArchitectedClient::SendAgentOrganizationalReportDataToS3, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a recommendation generation process for the specified agent profile.
+   * This asynchronous operation returns immediately. Use
+   * <code>GetAgentRecommendationGeneration</code> to check the status of the
+   * generation.</p> <p>Currently, only the <code>ARCHITECTURE</code> recommendation
+   * type is supported. <code>RESOURCE</code> and <code>APPLICATION</code>
+   * recommendations are generated only by the scheduled generation cycle and cannot
+   * be started with this operation.</p> <p>For the <code>ARCHITECTURE</code> type,
+   * the generation analyzes the infrastructure as code (IaC) template that you
+   * specify in <code>additionalContext</code>, and returns updated templates with
+   * best practice fixes applied. You must specify <code>scope</code> and
+   * <code>additionalContext</code>. You can optionally specify
+   * <code>name</code>.</p> <p>Architecture review generations are subject to a daily
+   * quota for each profile. For more information, see <a
+   * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/agent-quotas.html">Quotas
+   * and limits</a> in the Amazon Web Services Well-Architected User
+   * Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/StartAgentRecommendationGeneration">AWS
    * API Reference</a></p>
    */
@@ -2333,8 +2876,67 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Updates an Organizational Profile. Organizational Profiles are specific to
+   * Profiles created using AWS Organizations integration. Include only the fields
+   * you want to change; any field you omit from the request keeps its current
+   * value.</p> <p>To clear an optional text field, supply an empty string for it;
+   * the field is then unset, and a subsequent read omits it rather than returning an
+   * empty string. Omitting the field from the request leaves the stored value in
+   * place. <code>description</code> and <code>businessOverview</code> can be cleared
+   * this way. <code>displayName</code> cannot be cleared because a display name is
+   * required, though you can change it. <code>pillars</code> cannot be cleared
+   * because a profile must target at least one pillar.</p> <p>
+   * <code>organizationalAggregationConfiguration</code> behaves differently because
+   * it is a structure rather than a text field. Supplying it with both its
+   * <code>organizationalUnits</code> and <code>accounts</code> lists empty removes
+   * every monitored organizational unit and account, but the field itself remains
+   * set: a subsequent read returns the structure with two empty lists rather than
+   * omitting it. Omitting the field from the request keeps the stored
+   * boundary.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAgentOrganizationalProfile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAgentOrganizationalProfileOutcome UpdateAgentOrganizationalProfile(
+      const Model::UpdateAgentOrganizationalProfileRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAgentOrganizationalProfile that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdateAgentOrganizationalProfileRequestT = Model::UpdateAgentOrganizationalProfileRequest>
+  Model::UpdateAgentOrganizationalProfileOutcomeCallable UpdateAgentOrganizationalProfileCallable(
+      const UpdateAgentOrganizationalProfileRequestT& request) const {
+    return SubmitCallable(&WellArchitectedClient::UpdateAgentOrganizationalProfile, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAgentOrganizationalProfile that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateAgentOrganizationalProfileRequestT = Model::UpdateAgentOrganizationalProfileRequest>
+  void UpdateAgentOrganizationalProfileAsync(const UpdateAgentOrganizationalProfileRequestT& request,
+                                             const UpdateAgentOrganizationalProfileResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WellArchitectedClient::UpdateAgentOrganizationalProfile, request, handler, context);
+  }
+
+  /**
    * <p>Updates an existing optimization profile's configuration, including its
-   * pillars, execution role, and aggregation settings.</p><p><h3>See Also:</h3>   <a
+   * pillars, execution role, and aggregation settings. Include only the fields you
+   * want to change. Any field you omit from the request keeps its current value, so
+   * you do not need to retrieve the profile first and resend the fields you are not
+   * changing.</p> <p>To clear an optional text field, supply an empty string for it;
+   * the field is then unset, and a subsequent read omits it rather than returning an
+   * empty string. Omitting the field from the request leaves the stored value in
+   * place. <code>description</code> and <code>businessOverview</code> can be cleared
+   * this way. <code>displayName</code> cannot be cleared because a display name is
+   * required, though you can change it. <code>pillars</code> cannot be cleared
+   * because a profile must target at least one pillar.</p> <p>
+   * <code>aggregationConfiguration</code> behaves differently because it is a list
+   * of per-account configurations rather than a text field. Supplying an empty list
+   * removes every account entry, but the field itself remains set: a subsequent read
+   * returns an empty list rather than omitting the field. Omitting it from the
+   * request keeps the stored entries.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAgentProfile">AWS
    * API Reference</a></p>
    */

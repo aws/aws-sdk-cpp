@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/athena/AthenaRequest.h>
 #include <aws/athena/Athena_EXPORTS.h>
+#include <aws/athena/model/DatabaseAttributes.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -103,6 +105,36 @@ class ListDatabasesRequest : public AthenaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the database properties returned by the <code>ListDatabases</code>
+   * call. The only valid value is <code>NAME</code>, which returns only the name of
+   * each database and omits the remaining properties. If you omit this parameter or
+   * specify an empty list, all database properties are returned.</p> <p>Requesting
+   * only names can reduce response time for catalogs that contain many databases,
+   * especially resource links to databases shared from other accounts.</p> <p>This
+   * parameter applies only to the Glue Data Catalog. For other data catalog types,
+   * it is ignored.</p>
+   */
+  inline const Aws::Vector<DatabaseAttributes>& GetAttributesToGet() const { return m_attributesToGet; }
+  inline bool AttributesToGetHasBeenSet() const { return m_attributesToGetHasBeenSet; }
+  template <typename AttributesToGetT = Aws::Vector<DatabaseAttributes>>
+  void SetAttributesToGet(AttributesToGetT&& value) {
+    m_attributesToGetHasBeenSet = true;
+    m_attributesToGet = std::forward<AttributesToGetT>(value);
+  }
+  template <typename AttributesToGetT = Aws::Vector<DatabaseAttributes>>
+  ListDatabasesRequest& WithAttributesToGet(AttributesToGetT&& value) {
+    SetAttributesToGet(std::forward<AttributesToGetT>(value));
+    return *this;
+  }
+  inline ListDatabasesRequest& AddAttributesToGet(DatabaseAttributes value) {
+    m_attributesToGetHasBeenSet = true;
+    m_attributesToGet.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalogName;
 
@@ -111,10 +143,13 @@ class ListDatabasesRequest : public AthenaRequest {
   int m_maxResults{0};
 
   Aws::String m_workGroup;
+
+  Aws::Vector<DatabaseAttributes> m_attributesToGet;
   bool m_catalogNameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_workGroupHasBeenSet = false;
+  bool m_attributesToGetHasBeenSet = false;
 };
 
 }  // namespace Model

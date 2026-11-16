@@ -8,10 +8,13 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/wellarchitected/model/ErrorDetails.h>
 #include <aws/wellarchitected/model/GenerationStatus.h>
+#include <aws/wellarchitected/model/GenerationType.h>
 #include <aws/wellarchitected/model/Progress.h>
+#include <aws/wellarchitected/model/RecommendationType.h>
 #include <aws/wellarchitected/model/Scope.h>
 
 #include <utility>
@@ -187,36 +190,37 @@ class GetAgentRecommendationGenerationResult {
 
   ///@{
   /**
-   * <p>Additional context information provided to guide the recommendation
-   * generation process.</p>
+   * <p>How the generation was started.</p>
    */
-  inline Aws::Utils::DocumentView GetAdditionalContext() const { return m_additionalContext; }
-  template <typename AdditionalContextT = Aws::Utils::Document>
-  void SetAdditionalContext(AdditionalContextT&& value) {
-    m_additionalContextHasBeenSet = true;
-    m_additionalContext = std::forward<AdditionalContextT>(value);
+  inline GenerationType GetGenerationType() const { return m_generationType; }
+  inline void SetGenerationType(GenerationType value) {
+    m_generationTypeHasBeenSet = true;
+    m_generationType = value;
   }
-  template <typename AdditionalContextT = Aws::Utils::Document>
-  GetAgentRecommendationGenerationResult& WithAdditionalContext(AdditionalContextT&& value) {
-    SetAdditionalContext(std::forward<AdditionalContextT>(value));
+  inline GetAgentRecommendationGenerationResult& WithGenerationType(GenerationType value) {
+    SetGenerationType(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The scope configuration that defines which pillars and goals to focus on
-   * during generation.</p>
+   * <p>The recommendation types the generation covers.</p>
    */
-  inline const Scope& GetScope() const { return m_scope; }
-  template <typename ScopeT = Scope>
-  void SetScope(ScopeT&& value) {
-    m_scopeHasBeenSet = true;
-    m_scope = std::forward<ScopeT>(value);
+  inline const Aws::Vector<RecommendationType>& GetGenerationRecommendationTypes() const { return m_generationRecommendationTypes; }
+  template <typename GenerationRecommendationTypesT = Aws::Vector<RecommendationType>>
+  void SetGenerationRecommendationTypes(GenerationRecommendationTypesT&& value) {
+    m_generationRecommendationTypesHasBeenSet = true;
+    m_generationRecommendationTypes = std::forward<GenerationRecommendationTypesT>(value);
   }
-  template <typename ScopeT = Scope>
-  GetAgentRecommendationGenerationResult& WithScope(ScopeT&& value) {
-    SetScope(std::forward<ScopeT>(value));
+  template <typename GenerationRecommendationTypesT = Aws::Vector<RecommendationType>>
+  GetAgentRecommendationGenerationResult& WithGenerationRecommendationTypes(GenerationRecommendationTypesT&& value) {
+    SetGenerationRecommendationTypes(std::forward<GenerationRecommendationTypesT>(value));
+    return *this;
+  }
+  inline GetAgentRecommendationGenerationResult& AddGenerationRecommendationTypes(RecommendationType value) {
+    m_generationRecommendationTypesHasBeenSet = true;
+    m_generationRecommendationTypes.push_back(value);
     return *this;
   }
   ///@}
@@ -257,6 +261,60 @@ class GetAgentRecommendationGenerationResult {
 
   ///@{
   /**
+   * <p>Details about the error if the generation status is ERROR.</p>
+   */
+  inline const ErrorDetails& GetErrorDetails() const { return m_errorDetails; }
+  template <typename ErrorDetailsT = ErrorDetails>
+  void SetErrorDetails(ErrorDetailsT&& value) {
+    m_errorDetailsHasBeenSet = true;
+    m_errorDetails = std::forward<ErrorDetailsT>(value);
+  }
+  template <typename ErrorDetailsT = ErrorDetails>
+  GetAgentRecommendationGenerationResult& WithErrorDetails(ErrorDetailsT&& value) {
+    SetErrorDetails(std::forward<ErrorDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The additional context that was provided when the generation was started. For
+   * <code>ARCHITECTURE</code> generations, this includes the location of the
+   * reviewed IaC template and the lenses used.</p>
+   */
+  inline Aws::Utils::DocumentView GetAdditionalContext() const { return m_additionalContext; }
+  template <typename AdditionalContextT = Aws::Utils::Document>
+  void SetAdditionalContext(AdditionalContextT&& value) {
+    m_additionalContextHasBeenSet = true;
+    m_additionalContext = std::forward<AdditionalContextT>(value);
+  }
+  template <typename AdditionalContextT = Aws::Utils::Document>
+  GetAgentRecommendationGenerationResult& WithAdditionalContext(AdditionalContextT&& value) {
+    SetAdditionalContext(std::forward<AdditionalContextT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The scope configuration that defines which pillars and goals to focus on
+   * during generation.</p>
+   */
+  inline const Scope& GetScope() const { return m_scope; }
+  template <typename ScopeT = Scope>
+  void SetScope(ScopeT&& value) {
+    m_scopeHasBeenSet = true;
+    m_scope = std::forward<ScopeT>(value);
+  }
+  template <typename ScopeT = Scope>
+  GetAgentRecommendationGenerationResult& WithScope(ScopeT&& value) {
+    SetScope(std::forward<ScopeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Current progress information including steps completed and completion
    * percentage.</p>
    */
@@ -269,23 +327,6 @@ class GetAgentRecommendationGenerationResult {
   template <typename ProgressT = Progress>
   GetAgentRecommendationGenerationResult& WithProgress(ProgressT&& value) {
     SetProgress(std::forward<ProgressT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Details about the error if the generation status is ERROR.</p>
-   */
-  inline const ErrorDetails& GetErrorDetails() const { return m_errorDetails; }
-  template <typename ErrorDetailsT = ErrorDetails>
-  void SetErrorDetails(ErrorDetailsT&& value) {
-    m_errorDetailsHasBeenSet = true;
-    m_errorDetails = std::forward<ErrorDetailsT>(value);
-  }
-  template <typename ErrorDetailsT = ErrorDetails>
-  GetAgentRecommendationGenerationResult& WithErrorDetails(ErrorDetailsT&& value) {
-    SetErrorDetails(std::forward<ErrorDetailsT>(value));
     return *this;
   }
   ///@}
@@ -325,17 +366,21 @@ class GetAgentRecommendationGenerationResult {
 
   Aws::Utils::DateTime m_lastModifiedAt{};
 
-  Aws::Utils::Document m_additionalContext;
+  GenerationType m_generationType{GenerationType::NOT_SET};
 
-  Scope m_scope;
+  Aws::Vector<RecommendationType> m_generationRecommendationTypes;
 
   Aws::Utils::DateTime m_startedAt{};
 
   Aws::Utils::DateTime m_endedAt{};
 
-  Progress m_progress;
-
   ErrorDetails m_errorDetails;
+
+  Aws::Utils::Document m_additionalContext;
+
+  Scope m_scope;
+
+  Progress m_progress;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
@@ -348,12 +393,14 @@ class GetAgentRecommendationGenerationResult {
   bool m_createdAtHasBeenSet = false;
   bool m_lastModifiedByHasBeenSet = false;
   bool m_lastModifiedAtHasBeenSet = false;
-  bool m_additionalContextHasBeenSet = false;
-  bool m_scopeHasBeenSet = false;
+  bool m_generationTypeHasBeenSet = false;
+  bool m_generationRecommendationTypesHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
   bool m_endedAtHasBeenSet = false;
-  bool m_progressHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;
+  bool m_additionalContextHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

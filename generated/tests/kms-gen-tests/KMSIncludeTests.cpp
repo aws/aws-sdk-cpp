@@ -140,6 +140,7 @@
 #include <aws/kms/model/RecipientInfo.h>
 #include <aws/kms/model/ReplicateKeyRequest.h>
 #include <aws/kms/model/ReplicateKeyResult.h>
+#include <aws/kms/model/ResourceOwnerType.h>
 #include <aws/kms/model/RetireGrantRequest.h>
 #include <aws/kms/model/RevokeGrantRequest.h>
 #include <aws/kms/model/RotateKeyOnDemandRequest.h>

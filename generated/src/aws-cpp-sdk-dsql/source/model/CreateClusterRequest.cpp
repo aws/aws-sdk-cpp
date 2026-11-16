@@ -43,6 +43,14 @@ Aws::String CreateClusterRequest::SerializePayload() const {
     payload.WithString("policy", m_policy);
   }
 
+  if (m_metricGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
+    for (unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex) {
+      metricGroupsJsonList[metricGroupsIndex].AsObject(m_metricGroups[metricGroupsIndex].Jsonize());
+    }
+    payload.WithArray("metricGroups", std::move(metricGroupsJsonList));
+  }
+
   if (m_bypassPolicyLockoutSafetyCheckHasBeenSet) {
     payload.WithBool("bypassPolicyLockoutSafetyCheck", m_bypassPolicyLockoutSafetyCheck);
   }

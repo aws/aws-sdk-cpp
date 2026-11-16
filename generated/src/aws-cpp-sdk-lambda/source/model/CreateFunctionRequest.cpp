@@ -147,5 +147,9 @@ Aws::String CreateFunctionRequest::SerializePayload() const {
     payload.WithObject("RuntimeConfig", m_runtimeConfig.Jsonize());
   }
 
+  if (m_acceleratorConfigHasBeenSet) {
+    payload.WithObject("AcceleratorConfig", m_acceleratorConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

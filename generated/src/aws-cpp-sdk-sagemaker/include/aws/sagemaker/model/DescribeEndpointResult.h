@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AsyncInferenceConfig.h>
+#include <aws/sagemaker/model/CrossRegionTrafficConfig.h>
 #include <aws/sagemaker/model/DataCaptureConfigSummary.h>
 #include <aws/sagemaker/model/DeploymentConfig.h>
 #include <aws/sagemaker/model/EndpointStatus.h>
@@ -348,6 +349,23 @@ class DescribeEndpointResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The cross-Region traffic cap, if the endpoint configuration sets one.</p>
+   */
+  inline const CrossRegionTrafficConfig& GetCrossRegionTrafficConfig() const { return m_crossRegionTrafficConfig; }
+  template <typename CrossRegionTrafficConfigT = CrossRegionTrafficConfig>
+  void SetCrossRegionTrafficConfig(CrossRegionTrafficConfigT&& value) {
+    m_crossRegionTrafficConfigHasBeenSet = true;
+    m_crossRegionTrafficConfig = std::forward<CrossRegionTrafficConfigT>(value);
+  }
+  template <typename CrossRegionTrafficConfigT = CrossRegionTrafficConfig>
+  DescribeEndpointResult& WithCrossRegionTrafficConfig(CrossRegionTrafficConfigT&& value) {
+    SetCrossRegionTrafficConfig(std::forward<CrossRegionTrafficConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -394,6 +412,8 @@ class DescribeEndpointResult {
 
   MetricsConfig m_metricsConfig;
 
+  CrossRegionTrafficConfig m_crossRegionTrafficConfig;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_endpointNameHasBeenSet = false;
@@ -411,6 +431,7 @@ class DescribeEndpointResult {
   bool m_explainerConfigHasBeenSet = false;
   bool m_shadowProductionVariantsHasBeenSet = false;
   bool m_metricsConfigHasBeenSet = false;
+  bool m_crossRegionTrafficConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

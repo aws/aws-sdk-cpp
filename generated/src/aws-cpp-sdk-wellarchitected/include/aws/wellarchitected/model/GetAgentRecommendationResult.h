@@ -81,8 +81,7 @@ class GetAgentRecommendationResult {
 
   ///@{
   /**
-   * <p>The identifier of the generation process that produced this
-   * recommendation.</p>
+   * <p>The identifier of the generation that produced this recommendation.</p>
    */
   inline const Aws::String& GetGenerationId() const { return m_generationId; }
   template <typename GenerationIdT = Aws::String>
@@ -148,8 +147,8 @@ class GetAgentRecommendationResult {
 
   ///@{
   /**
-   * <p>The Well-Architected Tool Framework pillar that the recommendation
-   * addresses.</p>
+   * <p>The Amazon Web Services Well-Architected Framework pillar that the
+   * recommendation addresses.</p>
    */
   inline Pillar GetPillar() const { return m_pillar; }
   inline void SetPillar(Pillar value) {

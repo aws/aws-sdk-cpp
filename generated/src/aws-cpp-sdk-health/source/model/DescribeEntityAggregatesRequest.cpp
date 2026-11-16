@@ -20,6 +20,9 @@ Aws::String DescribeEntityAggregatesRequest::SerializePayload() const {
   if (m_eventArnsHasBeenSet) {
     mapSize++;
   }
+  if (m_filterHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -29,6 +32,11 @@ Aws::String DescribeEntityAggregatesRequest::SerializePayload() const {
     for (const auto& item_0 : m_eventArns) {
       encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
+  }
+
+  if (m_filterHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("filter"));
+    m_filter.CborEncode(encoder);
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

@@ -723,6 +723,15 @@ WorkspaceDirectory& WorkspaceDirectory::operator=(const std::shared_ptr<Aws::Crt
                 m_streamingPropertiesHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "WorkspaceOsUserMode") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_workspaceOsUserMode = WorkspaceOSUserModeMapper::GetWorkspaceOSUserModeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_workspaceOsUserModeHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "ErrorMessage") {
                 auto peekType = decoder->PeekType();
                 if (peekType.has_value()) {
@@ -1470,6 +1479,15 @@ WorkspaceDirectory& WorkspaceDirectory::operator=(const std::shared_ptr<Aws::Crt
               m_streamingPropertiesHasBeenSet = true;
             }
 
+            else if (initialKeyStr == "WorkspaceOsUserMode") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_workspaceOsUserMode = WorkspaceOSUserModeMapper::GetWorkspaceOSUserModeForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_workspaceOsUserModeHasBeenSet = true;
+            }
+
             else if (initialKeyStr == "ErrorMessage") {
               auto peekType = decoder->PeekType();
               if (peekType.has_value()) {
@@ -1596,6 +1614,9 @@ void WorkspaceDirectory::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const 
     mapSize++;
   }
   if (m_streamingPropertiesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_workspaceOsUserModeHasBeenSet) {
     mapSize++;
   }
   if (m_errorMessageHasBeenSet) {
@@ -1756,6 +1777,12 @@ void WorkspaceDirectory::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const 
   if (m_streamingPropertiesHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("StreamingProperties"));
     m_streamingProperties.CborEncode(encoder);
+  }
+
+  if (m_workspaceOsUserModeHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("WorkspaceOsUserMode"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(WorkspaceOSUserModeMapper::GetNameForWorkspaceOSUserMode(m_workspaceOsUserMode).c_str()));
   }
 
   if (m_errorMessageHasBeenSet) {

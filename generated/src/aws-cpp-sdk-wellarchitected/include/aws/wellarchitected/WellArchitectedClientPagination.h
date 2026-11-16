@@ -9,6 +9,7 @@
 #include <aws/wellarchitected/model/GetConsolidatedReportPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAgentContextsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAgentGoalsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentOrganizationalReportsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAgentProfilesPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAgentRecommendationGenerationsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAgentRecommendationItemsPaginationTraits.h>
@@ -42,6 +43,9 @@ using ListAgentContextsPaginator = Aws::Utils::Pagination::Paginator<WellArchite
                                                                      Pagination::ListAgentContextsPaginationTraits<WellArchitectedClient>>;
 using ListAgentGoalsPaginator = Aws::Utils::Pagination::Paginator<WellArchitectedClient, Model::ListAgentGoalsRequest,
                                                                   Pagination::ListAgentGoalsPaginationTraits<WellArchitectedClient>>;
+using ListAgentOrganizationalReportsPaginator =
+    Aws::Utils::Pagination::Paginator<WellArchitectedClient, Model::ListAgentOrganizationalReportsRequest,
+                                      Pagination::ListAgentOrganizationalReportsPaginationTraits<WellArchitectedClient>>;
 using ListAgentProfilesPaginator = Aws::Utils::Pagination::Paginator<WellArchitectedClient, Model::ListAgentProfilesRequest,
                                                                      Pagination::ListAgentProfilesPaginationTraits<WellArchitectedClient>>;
 using ListAgentRecommendationGenerationsPaginator =

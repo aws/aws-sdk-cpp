@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/AssociatedKmsKey.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/SSEType.h>
 #include <aws/ec2/model/SnapshotState.h>
@@ -243,6 +244,29 @@ class CreateSnapshotResponse {
   }
   inline CreateSnapshotResponse& WithFullSnapshotSizeInBytes(long long value) {
     SetFullSnapshotSizeInBytes(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The additional KMS keys that are associated with the snapshot.</p>
+   */
+  inline const Aws::Vector<AssociatedKmsKey>& GetAssociatedKmsKeys() const { return m_associatedKmsKeys; }
+  template <typename AssociatedKmsKeysT = Aws::Vector<AssociatedKmsKey>>
+  void SetAssociatedKmsKeys(AssociatedKmsKeysT&& value) {
+    m_associatedKmsKeysHasBeenSet = true;
+    m_associatedKmsKeys = std::forward<AssociatedKmsKeysT>(value);
+  }
+  template <typename AssociatedKmsKeysT = Aws::Vector<AssociatedKmsKey>>
+  CreateSnapshotResponse& WithAssociatedKmsKeys(AssociatedKmsKeysT&& value) {
+    SetAssociatedKmsKeys(std::forward<AssociatedKmsKeysT>(value));
+    return *this;
+  }
+  template <typename AssociatedKmsKeysT = AssociatedKmsKey>
+  CreateSnapshotResponse& AddAssociatedKmsKeys(AssociatedKmsKeysT&& value) {
+    m_associatedKmsKeysHasBeenSet = true;
+    m_associatedKmsKeys.emplace_back(std::forward<AssociatedKmsKeysT>(value));
     return *this;
   }
   ///@}
@@ -496,6 +520,8 @@ class CreateSnapshotResponse {
 
   long long m_fullSnapshotSizeInBytes{0};
 
+  Aws::Vector<AssociatedKmsKey> m_associatedKmsKeys;
+
   Aws::String m_snapshotId;
 
   Aws::String m_volumeId;
@@ -533,6 +559,7 @@ class CreateSnapshotResponse {
   bool m_completionDurationMinutesHasBeenSet = false;
   bool m_completionTimeHasBeenSet = false;
   bool m_fullSnapshotSizeInBytesHasBeenSet = false;
+  bool m_associatedKmsKeysHasBeenSet = false;
   bool m_snapshotIdHasBeenSet = false;
   bool m_volumeIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;

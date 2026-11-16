@@ -51,6 +51,7 @@ enum class StateReasonCode {
   FunctionError_InitResourceExhausted,
   DisallowedByVpcEncryptionControl,
   DrainingDurableExecutions,
+  IncompatibleAcceleratorInstanceTypes,
   DependencyError
 };
 

@@ -16,6 +16,7 @@ enum class NetworkConnectorLastUpdateStatusReasonCode {
   Ec2RequestLimitExceeded,
   InsufficientRolePermissions,
   InternalError,
+  InternetGatewayNotAttached,
   InvalidSecurityGroup,
   InvalidSubnet,
   SecurityGroupsPerInterfaceLimitExceeded,

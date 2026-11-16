@@ -41,6 +41,7 @@
 #include <aws/s3vectors/model/TagResourceRequest.h>
 #include <aws/s3vectors/model/UntagResourceRequest.h>
 #include <aws/s3vectors/model/UpdateIndexModeRequest.h>
+#include <aws/s3vectors/model/UpdateMetadataConfigurationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -441,4 +442,15 @@ UpdateIndexModeOutcome S3VectorsClient::UpdateIndexMode(const UpdateIndexModeReq
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateIndexModeOutcome(result.GetResultWithOwnership())
                             : UpdateIndexModeOutcome(std::move(result.GetError()));
+}
+
+UpdateMetadataConfigurationOutcome S3VectorsClient::UpdateMetadataConfiguration(const UpdateMetadataConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateMetadataConfiguration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMetadataConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateMetadataConfigurationOutcome(std::move(result.GetError()));
 }

@@ -68,6 +68,7 @@
 #include <aws/athena/model/DataCatalogSummary.h>
 #include <aws/athena/model/DataCatalogType.h>
 #include <aws/athena/model/Database.h>
+#include <aws/athena/model/DatabaseAttributes.h>
 #include <aws/athena/model/Datum.h>
 #include <aws/athena/model/DeleteCapacityReservationRequest.h>
 #include <aws/athena/model/DeleteCapacityReservationResult.h>
@@ -242,6 +243,7 @@
 #include <aws/athena/model/SystemTableName.h>
 #include <aws/athena/model/SystemTableStatus.h>
 #include <aws/athena/model/SystemTableType.h>
+#include <aws/athena/model/TableAttributes.h>
 #include <aws/athena/model/TableMetadata.h>
 #include <aws/athena/model/Tag.h>
 #include <aws/athena/model/TagResourceRequest.h>

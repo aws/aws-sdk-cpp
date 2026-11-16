@@ -20,6 +20,14 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/UpdateImageVersionRequest.h>
+#include <aws/sagemaker/model/UpdateInferenceComponentRequest.h>
+#include <aws/sagemaker/model/UpdateInferenceComponentRuntimeConfigRequest.h>
+#include <aws/sagemaker/model/UpdateInferenceExperimentRequest.h>
+#include <aws/sagemaker/model/UpdateInferenceRouterRequest.h>
+#include <aws/sagemaker/model/UpdateMlflowAppRequest.h>
+#include <aws/sagemaker/model/UpdateMlflowTrackingServerRequest.h>
+#include <aws/sagemaker/model/UpdateModelCardRequest.h>
 #include <aws/sagemaker/model/UpdateModelPackageRequest.h>
 #include <aws/sagemaker/model/UpdateMonitoringAlertRequest.h>
 #include <aws/sagemaker/model/UpdateMonitoringScheduleRequest.h>
@@ -48,6 +56,55 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UpdateImageVersionOutcome SageMakerClient::UpdateImageVersion(const UpdateImageVersionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateImageVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateImageVersionOutcome(std::move(result.GetError()));
+}
+
+UpdateInferenceComponentOutcome SageMakerClient::UpdateInferenceComponent(const UpdateInferenceComponentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateInferenceComponentOutcome(result.GetResultWithOwnership())
+                            : UpdateInferenceComponentOutcome(std::move(result.GetError()));
+}
+
+UpdateInferenceComponentRuntimeConfigOutcome SageMakerClient::UpdateInferenceComponentRuntimeConfig(
+    const UpdateInferenceComponentRuntimeConfigRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateInferenceComponentRuntimeConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateInferenceComponentRuntimeConfigOutcome(std::move(result.GetError()));
+}
+
+UpdateInferenceExperimentOutcome SageMakerClient::UpdateInferenceExperiment(const UpdateInferenceExperimentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateInferenceExperimentOutcome(result.GetResultWithOwnership())
+                            : UpdateInferenceExperimentOutcome(std::move(result.GetError()));
+}
+
+UpdateInferenceRouterOutcome SageMakerClient::UpdateInferenceRouter(const UpdateInferenceRouterRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateInferenceRouterOutcome(result.GetResultWithOwnership())
+                            : UpdateInferenceRouterOutcome(std::move(result.GetError()));
+}
+
+UpdateMlflowAppOutcome SageMakerClient::UpdateMlflowApp(const UpdateMlflowAppRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMlflowAppOutcome(result.GetResultWithOwnership())
+                            : UpdateMlflowAppOutcome(std::move(result.GetError()));
+}
+
+UpdateMlflowTrackingServerOutcome SageMakerClient::UpdateMlflowTrackingServer(const UpdateMlflowTrackingServerRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMlflowTrackingServerOutcome(result.GetResultWithOwnership())
+                            : UpdateMlflowTrackingServerOutcome(std::move(result.GetError()));
+}
+
+UpdateModelCardOutcome SageMakerClient::UpdateModelCard(const UpdateModelCardRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateModelCardOutcome(result.GetResultWithOwnership())
+                            : UpdateModelCardOutcome(std::move(result.GetError()));
+}
 
 UpdateModelPackageOutcome SageMakerClient::UpdateModelPackage(const UpdateModelPackageRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

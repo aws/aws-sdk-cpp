@@ -18,6 +18,7 @@ namespace RoutingStrategyMapper {
 static const int LEAST_OUTSTANDING_REQUESTS_HASH = HashingUtils::HashString("LEAST_OUTSTANDING_REQUESTS");
 static const int RANDOM_HASH = HashingUtils::HashString("RANDOM");
 static const int PREFIX_AWARE_HASH = HashingUtils::HashString("PREFIX_AWARE");
+static const int KV_AWARE_HASH = HashingUtils::HashString("KV_AWARE");
 
 RoutingStrategy GetRoutingStrategyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ RoutingStrategy GetRoutingStrategyForName(const Aws::String& name) {
     return RoutingStrategy::RANDOM;
   } else if (hashCode == PREFIX_AWARE_HASH) {
     return RoutingStrategy::PREFIX_AWARE;
+  } else if (hashCode == KV_AWARE_HASH) {
+    return RoutingStrategy::KV_AWARE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForRoutingStrategy(RoutingStrategy enumValue) {
       return "RANDOM";
     case RoutingStrategy::PREFIX_AWARE:
       return "PREFIX_AWARE";
+    case RoutingStrategy::KV_AWARE:
+      return "KV_AWARE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

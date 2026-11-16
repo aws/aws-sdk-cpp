@@ -20,6 +20,8 @@
 #include <aws/health/HealthClient.h>
 #include <aws/health/HealthEndpointProvider.h>
 #include <aws/health/HealthErrorMarshaller.h>
+#include <aws/health/model/ConfigureTagsForOrganizationRequest.h>
+#include <aws/health/model/ConfigureTagsRequest.h>
 #include <aws/health/model/DescribeAffectedAccountsForOrganizationRequest.h>
 #include <aws/health/model/DescribeAffectedEntitiesForOrganizationRequest.h>
 #include <aws/health/model/DescribeAffectedEntitiesRequest.h>
@@ -33,8 +35,18 @@
 #include <aws/health/model/DescribeEventsRequest.h>
 #include <aws/health/model/DescribeHealthServiceStatusForOrganizationRequest.h>
 #include <aws/health/model/DescribeServiceLifecycleRequest.h>
+#include <aws/health/model/DescribeTagKeysForOrganizationRequest.h>
+#include <aws/health/model/DescribeTagKeysRequest.h>
+#include <aws/health/model/DescribeTagsForOrganizationRequest.h>
+#include <aws/health/model/DescribeTagsOnboardingStatusForOrganizationRequest.h>
+#include <aws/health/model/DescribeTagsOnboardingStatusRequest.h>
+#include <aws/health/model/DescribeTagsRequest.h>
 #include <aws/health/model/DisableHealthServiceAccessForOrganizationRequest.h>
+#include <aws/health/model/DisableTagsForOrganizationRequest.h>
+#include <aws/health/model/DisableTagsRequest.h>
 #include <aws/health/model/EnableHealthServiceAccessForOrganizationRequest.h>
+#include <aws/health/model/EnableTagsForOrganizationRequest.h>
+#include <aws/health/model/EnableTagsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -190,6 +202,17 @@ HealthClient::InvokeOperationOutcome HealthClient::InvokeServiceOperation(const 
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+ConfigureTagsOutcome HealthClient::ConfigureTags(const ConfigureTagsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConfigureTagsOutcome(result.GetResultWithOwnership()) : ConfigureTagsOutcome(std::move(result.GetError()));
+}
+
+ConfigureTagsForOrganizationOutcome HealthClient::ConfigureTagsForOrganization(const ConfigureTagsForOrganizationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConfigureTagsForOrganizationOutcome(result.GetResultWithOwnership())
+                            : ConfigureTagsForOrganizationOutcome(std::move(result.GetError()));
+}
+
 DescribeAffectedAccountsForOrganizationOutcome HealthClient::DescribeAffectedAccountsForOrganization(
     const DescribeAffectedAccountsForOrganizationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -273,6 +296,43 @@ DescribeServiceLifecycleOutcome HealthClient::DescribeServiceLifecycle(const Des
                             : DescribeServiceLifecycleOutcome(std::move(result.GetError()));
 }
 
+DescribeTagKeysOutcome HealthClient::DescribeTagKeys(const DescribeTagKeysRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTagKeysOutcome(result.GetResultWithOwnership())
+                            : DescribeTagKeysOutcome(std::move(result.GetError()));
+}
+
+DescribeTagKeysForOrganizationOutcome HealthClient::DescribeTagKeysForOrganization(
+    const DescribeTagKeysForOrganizationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTagKeysForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DescribeTagKeysForOrganizationOutcome(std::move(result.GetError()));
+}
+
+DescribeTagsOutcome HealthClient::DescribeTags(const DescribeTagsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTagsOutcome(result.GetResultWithOwnership()) : DescribeTagsOutcome(std::move(result.GetError()));
+}
+
+DescribeTagsForOrganizationOutcome HealthClient::DescribeTagsForOrganization(const DescribeTagsForOrganizationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTagsForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DescribeTagsForOrganizationOutcome(std::move(result.GetError()));
+}
+
+DescribeTagsOnboardingStatusOutcome HealthClient::DescribeTagsOnboardingStatus(const DescribeTagsOnboardingStatusRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTagsOnboardingStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeTagsOnboardingStatusOutcome(std::move(result.GetError()));
+}
+
+DescribeTagsOnboardingStatusForOrganizationOutcome HealthClient::DescribeTagsOnboardingStatusForOrganization(
+    const DescribeTagsOnboardingStatusForOrganizationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTagsOnboardingStatusForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DescribeTagsOnboardingStatusForOrganizationOutcome(std::move(result.GetError()));
+}
+
 DisableHealthServiceAccessForOrganizationOutcome HealthClient::DisableHealthServiceAccessForOrganization(
     const DisableHealthServiceAccessForOrganizationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -280,9 +340,31 @@ DisableHealthServiceAccessForOrganizationOutcome HealthClient::DisableHealthServ
                             : DisableHealthServiceAccessForOrganizationOutcome(std::move(result.GetError()));
 }
 
+DisableTagsOutcome HealthClient::DisableTags(const DisableTagsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableTagsOutcome(result.GetResultWithOwnership()) : DisableTagsOutcome(std::move(result.GetError()));
+}
+
+DisableTagsForOrganizationOutcome HealthClient::DisableTagsForOrganization(const DisableTagsForOrganizationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableTagsForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DisableTagsForOrganizationOutcome(std::move(result.GetError()));
+}
+
 EnableHealthServiceAccessForOrganizationOutcome HealthClient::EnableHealthServiceAccessForOrganization(
     const EnableHealthServiceAccessForOrganizationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? EnableHealthServiceAccessForOrganizationOutcome(result.GetResultWithOwnership())
                             : EnableHealthServiceAccessForOrganizationOutcome(std::move(result.GetError()));
+}
+
+EnableTagsOutcome HealthClient::EnableTags(const EnableTagsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableTagsOutcome(result.GetResultWithOwnership()) : EnableTagsOutcome(std::move(result.GetError()));
+}
+
+EnableTagsForOrganizationOutcome HealthClient::EnableTagsForOrganization(const EnableTagsForOrganizationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableTagsForOrganizationOutcome(result.GetResultWithOwnership())
+                            : EnableTagsForOrganizationOutcome(std::move(result.GetError()));
 }

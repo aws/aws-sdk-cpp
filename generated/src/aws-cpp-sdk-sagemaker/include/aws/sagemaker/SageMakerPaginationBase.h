@@ -51,6 +51,7 @@
 #include <aws/sagemaker/model/ListInferenceExperimentsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsPaginationTraits.h>
+#include <aws/sagemaker/model/ListInferenceRoutersPaginationTraits.h>
 #include <aws/sagemaker/model/ListJobSchemaVersionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamPaginationTraits.h>
@@ -623,6 +624,18 @@ class SageMakerPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInferenceRecommendationsJobStepsRequest,
                                              Pagination::ListInferenceRecommendationsJobStepsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListInferenceRouters operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInferenceRoutersRequest,
+                                    Pagination::ListInferenceRoutersPaginationTraits<DerivedClient>>
+  ListInferenceRoutersPaginator(const Model::ListInferenceRoutersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInferenceRoutersRequest,
+                                             Pagination::ListInferenceRoutersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

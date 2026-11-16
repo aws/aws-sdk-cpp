@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
+#include <aws/networkflowmonitor/model/AdditionalFlowInfo.h>
 #include <aws/networkflowmonitor/model/DestinationCategory.h>
 #include <aws/networkflowmonitor/model/KubernetesMetadata.h>
 #include <aws/networkflowmonitor/model/TraversedComponent.h>
@@ -505,6 +506,25 @@ class MonitorTopContributorsRow {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Additional information about the network flow, such as the network that the
+   * remote address belongs to and the location of the client.</p>
+   */
+  inline const AdditionalFlowInfo& GetAdditionalFlowInfo() const { return m_additionalFlowInfo; }
+  inline bool AdditionalFlowInfoHasBeenSet() const { return m_additionalFlowInfoHasBeenSet; }
+  template <typename AdditionalFlowInfoT = AdditionalFlowInfo>
+  void SetAdditionalFlowInfo(AdditionalFlowInfoT&& value) {
+    m_additionalFlowInfoHasBeenSet = true;
+    m_additionalFlowInfo = std::forward<AdditionalFlowInfoT>(value);
+  }
+  template <typename AdditionalFlowInfoT = AdditionalFlowInfo>
+  MonitorTopContributorsRow& WithAdditionalFlowInfo(AdditionalFlowInfoT&& value) {
+    SetAdditionalFlowInfo(std::forward<AdditionalFlowInfoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_localIp;
 
@@ -555,6 +575,8 @@ class MonitorTopContributorsRow {
   Aws::String m_remoteSubnetArn;
 
   Aws::String m_remoteVpcArn;
+
+  AdditionalFlowInfo m_additionalFlowInfo;
   bool m_localIpHasBeenSet = false;
   bool m_snatIpHasBeenSet = false;
   bool m_localInstanceIdHasBeenSet = false;
@@ -580,6 +602,7 @@ class MonitorTopContributorsRow {
   bool m_remoteInstanceArnHasBeenSet = false;
   bool m_remoteSubnetArnHasBeenSet = false;
   bool m_remoteVpcArnHasBeenSet = false;
+  bool m_additionalFlowInfoHasBeenSet = false;
 };
 
 }  // namespace Model

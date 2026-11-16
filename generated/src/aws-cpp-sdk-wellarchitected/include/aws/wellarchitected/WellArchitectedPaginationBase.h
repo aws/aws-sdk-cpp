@@ -10,6 +10,7 @@
 #include <aws/wellarchitected/model/GetConsolidatedReportPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAgentContextsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAgentGoalsPaginationTraits.h>
+#include <aws/wellarchitected/model/ListAgentOrganizationalReportsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAgentProfilesPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAgentRecommendationGenerationsPaginationTraits.h>
 #include <aws/wellarchitected/model/ListAgentRecommendationItemsPaginationTraits.h>
@@ -74,6 +75,18 @@ class WellArchitectedPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentGoalsRequest,
                                              Pagination::ListAgentGoalsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
+  }
+
+  /**
+   * Create a paginator for ListAgentOrganizationalReports operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentOrganizationalReportsRequest,
+                                    Pagination::ListAgentOrganizationalReportsPaginationTraits<DerivedClient>>
+  ListAgentOrganizationalReportsPaginator(const Model::ListAgentOrganizationalReportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentOrganizationalReportsRequest,
+                                             Pagination::ListAgentOrganizationalReportsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

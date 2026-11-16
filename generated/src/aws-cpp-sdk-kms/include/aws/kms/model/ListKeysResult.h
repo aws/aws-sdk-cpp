@@ -31,7 +31,9 @@ class ListKeysResult {
 
   ///@{
   /**
-   * <p>A list of KMS keys.</p>
+   * <p>A list of KMS keys. For a KMS key that another Amazon Web Services account
+   * shared with you through RAM, the key ARN contains the account ID of the Amazon
+   * Web Services account that owns the KMS key.</p>
    */
   inline const Aws::Vector<KeyListEntry>& GetKeys() const { return m_keys; }
   template <typename KeysT = Aws::Vector<KeyListEntry>>

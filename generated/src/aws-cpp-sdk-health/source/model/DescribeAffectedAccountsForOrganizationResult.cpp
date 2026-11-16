@@ -123,6 +123,35 @@ DescribeAffectedAccountsForOrganizationResult& DescribeAffectedAccountsForOrgani
                 m_affectedAccountsHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "affectedAccountEntities") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_affectedAccountEntities.push_back(AccountEntity(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_affectedAccountEntities.push_back(AccountEntity(decoder));
+                    }
+                  }
+                }
+                m_affectedAccountEntitiesHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "eventScopeCode") {
                 auto val = decoder->PopNextTextVal();
                 if (val.has_value()) {
@@ -268,6 +297,35 @@ DescribeAffectedAccountsForOrganizationResult& DescribeAffectedAccountsForOrgani
                 }
               }
               m_affectedAccountsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "affectedAccountEntities") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_affectedAccountEntities.push_back(AccountEntity(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_affectedAccountEntities.push_back(AccountEntity(decoder));
+                  }
+                }
+              }
+              m_affectedAccountEntitiesHasBeenSet = true;
             }
 
             else if (initialKeyStr == "eventScopeCode") {

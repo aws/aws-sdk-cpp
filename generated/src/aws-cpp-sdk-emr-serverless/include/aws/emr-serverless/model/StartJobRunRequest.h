@@ -10,6 +10,7 @@
 #include <aws/emr-serverless/EMRServerlessRequest.h>
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 #include <aws/emr-serverless/model/ConfigurationOverrides.h>
+#include <aws/emr-serverless/model/FlexExecution.h>
 #include <aws/emr-serverless/model/JobDriver.h>
 #include <aws/emr-serverless/model/JobRunExecutionIamPolicy.h>
 #include <aws/emr-serverless/model/JobRunMode.h>
@@ -241,6 +242,25 @@ class StartJobRunRequest : public EMRServerlessRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon EMR Serverless Flex settings for the job run. If you don't specify
+   * these settings, the job run doesn't use Flex capacity.</p>
+   */
+  inline const FlexExecution& GetFlexExecution() const { return m_flexExecution; }
+  inline bool FlexExecutionHasBeenSet() const { return m_flexExecutionHasBeenSet; }
+  template <typename FlexExecutionT = FlexExecution>
+  void SetFlexExecution(FlexExecutionT&& value) {
+    m_flexExecutionHasBeenSet = true;
+    m_flexExecution = std::forward<FlexExecutionT>(value);
+  }
+  template <typename FlexExecutionT = FlexExecution>
+  StartJobRunRequest& WithFlexExecution(FlexExecutionT&& value) {
+    SetFlexExecution(std::forward<FlexExecutionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_applicationId;
 
@@ -263,6 +283,8 @@ class StartJobRunRequest : public EMRServerlessRequest {
   JobRunMode m_mode{JobRunMode::NOT_SET};
 
   RetryPolicy m_retryPolicy;
+
+  FlexExecution m_flexExecution;
   bool m_applicationIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_executionRoleArnHasBeenSet = false;
@@ -274,6 +296,7 @@ class StartJobRunRequest : public EMRServerlessRequest {
   bool m_nameHasBeenSet = false;
   bool m_modeHasBeenSet = false;
   bool m_retryPolicyHasBeenSet = false;
+  bool m_flexExecutionHasBeenSet = false;
 };
 
 }  // namespace Model

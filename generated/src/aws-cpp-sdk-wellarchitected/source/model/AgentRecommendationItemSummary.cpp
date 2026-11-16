@@ -50,6 +50,10 @@ AgentRecommendationItemSummary& AgentRecommendationItemSummary::operator=(JsonVi
     m_lastModifiedAt = jsonValue.GetString("lastModifiedAt");
     m_lastModifiedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("autoRemediation")) {
+    m_autoRemediation = jsonValue.GetObject("autoRemediation");
+    m_autoRemediationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -88,6 +92,10 @@ JsonValue AgentRecommendationItemSummary::Jsonize() const {
 
   if (m_lastModifiedAtHasBeenSet) {
     payload.WithString("lastModifiedAt", m_lastModifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_autoRemediationHasBeenSet) {
+    payload.WithObject("autoRemediation", m_autoRemediation.Jsonize());
   }
 
   return payload;

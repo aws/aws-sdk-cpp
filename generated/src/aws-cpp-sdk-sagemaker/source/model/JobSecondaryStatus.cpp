@@ -27,7 +27,15 @@ static const int Failed_HASH = HashingUtils::HashString("Failed");
 static const int Completed_HASH = HashingUtils::HashString("Completed");
 static const int Restarting_HASH = HashingUtils::HashString("Restarting");
 static const int Pending_HASH = HashingUtils::HashString("Pending");
+static const int Generating_HASH = HashingUtils::HashString("Generating");
+static const int PartialGeneration_HASH = HashingUtils::HashString("PartialGeneration");
 static const int Evaluating_HASH = HashingUtils::HashString("Evaluating");
+static const int Validating_HASH = HashingUtils::HashString("Validating");
+static const int Preparing_HASH = HashingUtils::HashString("Preparing");
+static const int Executing_HASH = HashingUtils::HashString("Executing");
+static const int Publishing_HASH = HashingUtils::HashString("Publishing");
+static const int Finalizing_HASH = HashingUtils::HashString("Finalizing");
+static const int Transforming_HASH = HashingUtils::HashString("Transforming");
 static const int Deleting_HASH = HashingUtils::HashString("Deleting");
 static const int DeleteFailed_HASH = HashingUtils::HashString("DeleteFailed");
 
@@ -57,8 +65,24 @@ JobSecondaryStatus GetJobSecondaryStatusForName(const Aws::String& name) {
     return JobSecondaryStatus::Restarting;
   } else if (hashCode == Pending_HASH) {
     return JobSecondaryStatus::Pending;
+  } else if (hashCode == Generating_HASH) {
+    return JobSecondaryStatus::Generating;
+  } else if (hashCode == PartialGeneration_HASH) {
+    return JobSecondaryStatus::PartialGeneration;
   } else if (hashCode == Evaluating_HASH) {
     return JobSecondaryStatus::Evaluating;
+  } else if (hashCode == Validating_HASH) {
+    return JobSecondaryStatus::Validating;
+  } else if (hashCode == Preparing_HASH) {
+    return JobSecondaryStatus::Preparing;
+  } else if (hashCode == Executing_HASH) {
+    return JobSecondaryStatus::Executing;
+  } else if (hashCode == Publishing_HASH) {
+    return JobSecondaryStatus::Publishing;
+  } else if (hashCode == Finalizing_HASH) {
+    return JobSecondaryStatus::Finalizing;
+  } else if (hashCode == Transforming_HASH) {
+    return JobSecondaryStatus::Transforming;
   } else if (hashCode == Deleting_HASH) {
     return JobSecondaryStatus::Deleting;
   } else if (hashCode == DeleteFailed_HASH) {
@@ -101,8 +125,24 @@ Aws::String GetNameForJobSecondaryStatus(JobSecondaryStatus enumValue) {
       return "Restarting";
     case JobSecondaryStatus::Pending:
       return "Pending";
+    case JobSecondaryStatus::Generating:
+      return "Generating";
+    case JobSecondaryStatus::PartialGeneration:
+      return "PartialGeneration";
     case JobSecondaryStatus::Evaluating:
       return "Evaluating";
+    case JobSecondaryStatus::Validating:
+      return "Validating";
+    case JobSecondaryStatus::Preparing:
+      return "Preparing";
+    case JobSecondaryStatus::Executing:
+      return "Executing";
+    case JobSecondaryStatus::Publishing:
+      return "Publishing";
+    case JobSecondaryStatus::Finalizing:
+      return "Finalizing";
+    case JobSecondaryStatus::Transforming:
+      return "Transforming";
     case JobSecondaryStatus::Deleting:
       return "Deleting";
     case JobSecondaryStatus::DeleteFailed:

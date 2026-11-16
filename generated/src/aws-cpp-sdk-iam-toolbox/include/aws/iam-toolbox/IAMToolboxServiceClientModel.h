@@ -20,6 +20,7 @@
 
 /* Service model headers required in IAMToolboxClient header */
 #include <aws/iam-toolbox/model/GetRequestAuthorizationDetailsResult.h>
+#include <aws/iam-toolbox/model/GetRequestAuthorizationPolicyResult.h>
 /* End of service model headers required in IAMToolboxClient header */
 
 namespace Aws {
@@ -54,14 +55,17 @@ using IAMToolboxEndpointProvider = Aws::IAMToolbox::Endpoint::IAMToolboxEndpoint
 namespace Model {
 /* Service model forward declarations required in IAMToolboxClient header */
 class GetRequestAuthorizationDetailsRequest;
+class GetRequestAuthorizationPolicyRequest;
 /* End of service model forward declarations required in IAMToolboxClient header */
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<GetRequestAuthorizationDetailsResult, IAMToolboxError> GetRequestAuthorizationDetailsOutcome;
+typedef Aws::Utils::Outcome<GetRequestAuthorizationPolicyResult, IAMToolboxError> GetRequestAuthorizationPolicyOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
 typedef std::future<GetRequestAuthorizationDetailsOutcome> GetRequestAuthorizationDetailsOutcomeCallable;
+typedef std::future<GetRequestAuthorizationPolicyOutcome> GetRequestAuthorizationPolicyOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -72,6 +76,10 @@ typedef std::function<void(const IAMToolboxClient*, const Model::GetRequestAutho
                            const Model::GetRequestAuthorizationDetailsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRequestAuthorizationDetailsResponseReceivedHandler;
+typedef std::function<void(const IAMToolboxClient*, const Model::GetRequestAuthorizationPolicyRequest&,
+                           const Model::GetRequestAuthorizationPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRequestAuthorizationPolicyResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace IAMToolbox
 }  // namespace Aws

@@ -54,6 +54,31 @@ AgentRecommendationGenerationSummary& AgentRecommendationGenerationSummary::oper
     m_lastModifiedAt = jsonValue.GetString("lastModifiedAt");
     m_lastModifiedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("generationType")) {
+    m_generationType = GenerationTypeMapper::GetGenerationTypeForName(jsonValue.GetString("generationType"));
+    m_generationTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("generationRecommendationTypes")) {
+    Aws::Utils::Array<JsonView> generationRecommendationTypesJsonList = jsonValue.GetArray("generationRecommendationTypes");
+    for (unsigned generationRecommendationTypesIndex = 0;
+         generationRecommendationTypesIndex < generationRecommendationTypesJsonList.GetLength(); ++generationRecommendationTypesIndex) {
+      m_generationRecommendationTypes.push_back(RecommendationTypeMapper::GetRecommendationTypeForName(
+          generationRecommendationTypesJsonList[generationRecommendationTypesIndex].AsString()));
+    }
+    m_generationRecommendationTypesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("startedAt")) {
+    m_startedAt = jsonValue.GetString("startedAt");
+    m_startedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endedAt")) {
+    m_endedAt = jsonValue.GetString("endedAt");
+    m_endedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("errorDetails")) {
+    m_errorDetails = jsonValue.GetObject("errorDetails");
+    m_errorDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +119,32 @@ JsonValue AgentRecommendationGenerationSummary::Jsonize() const {
 
   if (m_lastModifiedAtHasBeenSet) {
     payload.WithString("lastModifiedAt", m_lastModifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_generationTypeHasBeenSet) {
+    payload.WithString("generationType", GenerationTypeMapper::GetNameForGenerationType(m_generationType));
+  }
+
+  if (m_generationRecommendationTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> generationRecommendationTypesJsonList(m_generationRecommendationTypes.size());
+    for (unsigned generationRecommendationTypesIndex = 0;
+         generationRecommendationTypesIndex < generationRecommendationTypesJsonList.GetLength(); ++generationRecommendationTypesIndex) {
+      generationRecommendationTypesJsonList[generationRecommendationTypesIndex].AsString(
+          RecommendationTypeMapper::GetNameForRecommendationType(m_generationRecommendationTypes[generationRecommendationTypesIndex]));
+    }
+    payload.WithArray("generationRecommendationTypes", std::move(generationRecommendationTypesJsonList));
+  }
+
+  if (m_startedAtHasBeenSet) {
+    payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_endedAtHasBeenSet) {
+    payload.WithString("endedAt", m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_errorDetailsHasBeenSet) {
+    payload.WithObject("errorDetails", m_errorDetails.Jsonize());
   }
 
   return payload;

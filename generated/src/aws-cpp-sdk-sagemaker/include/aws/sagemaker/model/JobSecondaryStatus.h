@@ -24,7 +24,15 @@ enum class JobSecondaryStatus {
   Completed,
   Restarting,
   Pending,
+  Generating,
+  PartialGeneration,
   Evaluating,
+  Validating,
+  Preparing,
+  Executing,
+  Publishing,
+  Finalizing,
+  Transforming,
   Deleting,
   DeleteFailed
 };

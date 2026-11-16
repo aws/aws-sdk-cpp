@@ -24,6 +24,8 @@ static const int ALLOW_USER_PASSWORD_AUTH_HASH = HashingUtils::HashString("ALLOW
 static const int ALLOW_USER_SRP_AUTH_HASH = HashingUtils::HashString("ALLOW_USER_SRP_AUTH");
 static const int ALLOW_REFRESH_TOKEN_AUTH_HASH = HashingUtils::HashString("ALLOW_REFRESH_TOKEN_AUTH");
 static const int ALLOW_USER_AUTH_HASH = HashingUtils::HashString("ALLOW_USER_AUTH");
+static const int ALLOW_TOKEN_EXCHANGE_DELEGATION_HASH = HashingUtils::HashString("ALLOW_TOKEN_EXCHANGE_DELEGATION");
+static const int ALLOW_TOKEN_EXCHANGE_IMPERSONATION_HASH = HashingUtils::HashString("ALLOW_TOKEN_EXCHANGE_IMPERSONATION");
 
 ExplicitAuthFlowsType GetExplicitAuthFlowsTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +47,10 @@ ExplicitAuthFlowsType GetExplicitAuthFlowsTypeForName(const Aws::String& name) {
     return ExplicitAuthFlowsType::ALLOW_REFRESH_TOKEN_AUTH;
   } else if (hashCode == ALLOW_USER_AUTH_HASH) {
     return ExplicitAuthFlowsType::ALLOW_USER_AUTH;
+  } else if (hashCode == ALLOW_TOKEN_EXCHANGE_DELEGATION_HASH) {
+    return ExplicitAuthFlowsType::ALLOW_TOKEN_EXCHANGE_DELEGATION;
+  } else if (hashCode == ALLOW_TOKEN_EXCHANGE_IMPERSONATION_HASH) {
+    return ExplicitAuthFlowsType::ALLOW_TOKEN_EXCHANGE_IMPERSONATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +83,10 @@ Aws::String GetNameForExplicitAuthFlowsType(ExplicitAuthFlowsType enumValue) {
       return "ALLOW_REFRESH_TOKEN_AUTH";
     case ExplicitAuthFlowsType::ALLOW_USER_AUTH:
       return "ALLOW_USER_AUTH";
+    case ExplicitAuthFlowsType::ALLOW_TOKEN_EXCHANGE_DELEGATION:
+      return "ALLOW_TOKEN_EXCHANGE_DELEGATION";
+    case ExplicitAuthFlowsType::ALLOW_TOKEN_EXCHANGE_IMPERSONATION:
+      return "ALLOW_TOKEN_EXCHANGE_IMPERSONATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

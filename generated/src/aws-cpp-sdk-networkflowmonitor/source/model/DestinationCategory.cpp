@@ -22,6 +22,10 @@ static const int UNCLASSIFIED_HASH = HashingUtils::HashString("UNCLASSIFIED");
 static const int AMAZON_S3_HASH = HashingUtils::HashString("AMAZON_S3");
 static const int AMAZON_DYNAMODB_HASH = HashingUtils::HashString("AMAZON_DYNAMODB");
 static const int INTER_REGION_HASH = HashingUtils::HashString("INTER_REGION");
+static const int INTERNET_HASH = HashingUtils::HashString("INTERNET");
+static const int AWS_SERVICE_HASH = HashingUtils::HashString("AWS_SERVICE");
+static const int LOCAL_ZONE_HASH = HashingUtils::HashString("LOCAL_ZONE");
+static const int TRANSIT_GATEWAY_HASH = HashingUtils::HashString("TRANSIT_GATEWAY");
 
 DestinationCategory GetDestinationCategoryForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +43,14 @@ DestinationCategory GetDestinationCategoryForName(const Aws::String& name) {
     return DestinationCategory::AMAZON_DYNAMODB;
   } else if (hashCode == INTER_REGION_HASH) {
     return DestinationCategory::INTER_REGION;
+  } else if (hashCode == INTERNET_HASH) {
+    return DestinationCategory::INTERNET;
+  } else if (hashCode == AWS_SERVICE_HASH) {
+    return DestinationCategory::AWS_SERVICE;
+  } else if (hashCode == LOCAL_ZONE_HASH) {
+    return DestinationCategory::LOCAL_ZONE;
+  } else if (hashCode == TRANSIT_GATEWAY_HASH) {
+    return DestinationCategory::TRANSIT_GATEWAY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +79,14 @@ Aws::String GetNameForDestinationCategory(DestinationCategory enumValue) {
       return "AMAZON_DYNAMODB";
     case DestinationCategory::INTER_REGION:
       return "INTER_REGION";
+    case DestinationCategory::INTERNET:
+      return "INTERNET";
+    case DestinationCategory::AWS_SERVICE:
+      return "AWS_SERVICE";
+    case DestinationCategory::LOCAL_ZONE:
+      return "LOCAL_ZONE";
+    case DestinationCategory::TRANSIT_GATEWAY:
+      return "TRANSIT_GATEWAY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

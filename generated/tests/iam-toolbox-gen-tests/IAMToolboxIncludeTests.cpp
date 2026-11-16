@@ -18,11 +18,16 @@
 #include <aws/iam-toolbox/IAMToolbox_EXPORTS.h>
 #include <aws/iam-toolbox/internal/IAMToolboxEndpointRules.h>
 #include <aws/iam-toolbox/model/AttachedTo.h>
+#include <aws/iam-toolbox/model/Check.h>
+#include <aws/iam-toolbox/model/CheckEffect.h>
+#include <aws/iam-toolbox/model/CheckType.h>
 #include <aws/iam-toolbox/model/EvaluatedEffect.h>
 #include <aws/iam-toolbox/model/Evaluation.h>
 #include <aws/iam-toolbox/model/GetRequestAuthorizationDetailsPaginationTraits.h>
 #include <aws/iam-toolbox/model/GetRequestAuthorizationDetailsRequest.h>
 #include <aws/iam-toolbox/model/GetRequestAuthorizationDetailsResult.h>
+#include <aws/iam-toolbox/model/GetRequestAuthorizationPolicyRequest.h>
+#include <aws/iam-toolbox/model/GetRequestAuthorizationPolicyResult.h>
 #include <aws/iam-toolbox/model/MatchedPolicy.h>
 #include <aws/iam-toolbox/model/MatchedStatement.h>
 #include <aws/iam-toolbox/model/PolicyInfo.h>

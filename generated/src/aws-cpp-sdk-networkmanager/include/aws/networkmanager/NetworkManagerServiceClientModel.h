@@ -21,12 +21,14 @@
 /* Service model headers required in NetworkManagerClient header */
 #include <aws/networkmanager/model/AcceptAttachmentResult.h>
 #include <aws/networkmanager/model/AssociateConnectPeerResult.h>
+#include <aws/networkmanager/model/AssociateContextStoreResult.h>
 #include <aws/networkmanager/model/AssociateCustomerGatewayResult.h>
 #include <aws/networkmanager/model/AssociateLinkResult.h>
 #include <aws/networkmanager/model/AssociateTransitGatewayConnectPeerResult.h>
 #include <aws/networkmanager/model/CreateConnectAttachmentResult.h>
 #include <aws/networkmanager/model/CreateConnectPeerResult.h>
 #include <aws/networkmanager/model/CreateConnectionResult.h>
+#include <aws/networkmanager/model/CreateContextStoreResult.h>
 #include <aws/networkmanager/model/CreateCoreNetworkPrefixListAssociationResult.h>
 #include <aws/networkmanager/model/CreateCoreNetworkResult.h>
 #include <aws/networkmanager/model/CreateDeviceResult.h>
@@ -42,6 +44,7 @@
 #include <aws/networkmanager/model/DeleteAttachmentResult.h>
 #include <aws/networkmanager/model/DeleteConnectPeerResult.h>
 #include <aws/networkmanager/model/DeleteConnectionResult.h>
+#include <aws/networkmanager/model/DeleteContextStoreResult.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkPolicyVersionResult.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkPrefixListAssociationResult.h>
 #include <aws/networkmanager/model/DeleteCoreNetworkResult.h>
@@ -55,6 +58,7 @@
 #include <aws/networkmanager/model/DescribeGlobalNetworksRequest.h>
 #include <aws/networkmanager/model/DescribeGlobalNetworksResult.h>
 #include <aws/networkmanager/model/DisassociateConnectPeerResult.h>
+#include <aws/networkmanager/model/DisassociateContextStoreResult.h>
 #include <aws/networkmanager/model/DisassociateCustomerGatewayResult.h>
 #include <aws/networkmanager/model/DisassociateLinkResult.h>
 #include <aws/networkmanager/model/DisassociateTransitGatewayConnectPeerResult.h>
@@ -63,6 +67,9 @@
 #include <aws/networkmanager/model/GetConnectPeerAssociationsResult.h>
 #include <aws/networkmanager/model/GetConnectPeerResult.h>
 #include <aws/networkmanager/model/GetConnectionsResult.h>
+#include <aws/networkmanager/model/GetContextStoreAssociationResult.h>
+#include <aws/networkmanager/model/GetContextStoreResult.h>
+#include <aws/networkmanager/model/GetContextVersionResult.h>
 #include <aws/networkmanager/model/GetCoreNetworkChangeEventsResult.h>
 #include <aws/networkmanager/model/GetCoreNetworkChangeSetResult.h>
 #include <aws/networkmanager/model/GetCoreNetworkPolicyResult.h>
@@ -93,6 +100,11 @@
 #include <aws/networkmanager/model/ListAttachmentsResult.h>
 #include <aws/networkmanager/model/ListConnectPeersRequest.h>
 #include <aws/networkmanager/model/ListConnectPeersResult.h>
+#include <aws/networkmanager/model/ListContextChangesResult.h>
+#include <aws/networkmanager/model/ListContextStoreAssociationsResult.h>
+#include <aws/networkmanager/model/ListContextStoresRequest.h>
+#include <aws/networkmanager/model/ListContextStoresResult.h>
+#include <aws/networkmanager/model/ListContextsResult.h>
 #include <aws/networkmanager/model/ListCoreNetworkPolicyVersionsResult.h>
 #include <aws/networkmanager/model/ListCoreNetworkPrefixListAssociationsResult.h>
 #include <aws/networkmanager/model/ListCoreNetworkRoutingInformationResult.h>
@@ -116,6 +128,7 @@
 #include <aws/networkmanager/model/UntagResourceResult.h>
 #include <aws/networkmanager/model/UpdateAttachmentNatConfigurationResult.h>
 #include <aws/networkmanager/model/UpdateConnectionResult.h>
+#include <aws/networkmanager/model/UpdateContextStoreResult.h>
 #include <aws/networkmanager/model/UpdateCoreNetworkResult.h>
 #include <aws/networkmanager/model/UpdateDeviceResult.h>
 #include <aws/networkmanager/model/UpdateDirectConnectGatewayAttachmentResult.h>
@@ -159,12 +172,14 @@ namespace Model {
 /* Service model forward declarations required in NetworkManagerClient header */
 class AcceptAttachmentRequest;
 class AssociateConnectPeerRequest;
+class AssociateContextStoreRequest;
 class AssociateCustomerGatewayRequest;
 class AssociateLinkRequest;
 class AssociateTransitGatewayConnectPeerRequest;
 class CreateConnectAttachmentRequest;
 class CreateConnectPeerRequest;
 class CreateConnectionRequest;
+class CreateContextStoreRequest;
 class CreateCoreNetworkRequest;
 class CreateCoreNetworkPrefixListAssociationRequest;
 class CreateDeviceRequest;
@@ -179,6 +194,7 @@ class CreateVpcAttachmentRequest;
 class DeleteAttachmentRequest;
 class DeleteConnectPeerRequest;
 class DeleteConnectionRequest;
+class DeleteContextStoreRequest;
 class DeleteCoreNetworkRequest;
 class DeleteCoreNetworkPolicyVersionRequest;
 class DeleteCoreNetworkPrefixListAssociationRequest;
@@ -191,6 +207,7 @@ class DeleteSiteRequest;
 class DeregisterTransitGatewayRequest;
 class DescribeGlobalNetworksRequest;
 class DisassociateConnectPeerRequest;
+class DisassociateContextStoreRequest;
 class DisassociateCustomerGatewayRequest;
 class DisassociateLinkRequest;
 class DisassociateTransitGatewayConnectPeerRequest;
@@ -199,6 +216,9 @@ class GetConnectAttachmentRequest;
 class GetConnectPeerRequest;
 class GetConnectPeerAssociationsRequest;
 class GetConnectionsRequest;
+class GetContextStoreRequest;
+class GetContextStoreAssociationRequest;
+class GetContextVersionRequest;
 class GetCoreNetworkRequest;
 class GetCoreNetworkChangeEventsRequest;
 class GetCoreNetworkChangeSetRequest;
@@ -226,6 +246,10 @@ class ListAttachmentNatConfigurationsRequest;
 class ListAttachmentRoutingPolicyAssociationsRequest;
 class ListAttachmentsRequest;
 class ListConnectPeersRequest;
+class ListContextChangesRequest;
+class ListContextStoreAssociationsRequest;
+class ListContextStoresRequest;
+class ListContextsRequest;
 class ListCoreNetworkPolicyVersionsRequest;
 class ListCoreNetworkPrefixListAssociationsRequest;
 class ListCoreNetworkRoutingInformationRequest;
@@ -246,6 +270,7 @@ class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAttachmentNatConfigurationRequest;
 class UpdateConnectionRequest;
+class UpdateContextStoreRequest;
 class UpdateCoreNetworkRequest;
 class UpdateDeviceRequest;
 class UpdateDirectConnectGatewayAttachmentRequest;
@@ -259,12 +284,14 @@ class UpdateVpcAttachmentRequest;
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<AcceptAttachmentResult, NetworkManagerError> AcceptAttachmentOutcome;
 typedef Aws::Utils::Outcome<AssociateConnectPeerResult, NetworkManagerError> AssociateConnectPeerOutcome;
+typedef Aws::Utils::Outcome<AssociateContextStoreResult, NetworkManagerError> AssociateContextStoreOutcome;
 typedef Aws::Utils::Outcome<AssociateCustomerGatewayResult, NetworkManagerError> AssociateCustomerGatewayOutcome;
 typedef Aws::Utils::Outcome<AssociateLinkResult, NetworkManagerError> AssociateLinkOutcome;
 typedef Aws::Utils::Outcome<AssociateTransitGatewayConnectPeerResult, NetworkManagerError> AssociateTransitGatewayConnectPeerOutcome;
 typedef Aws::Utils::Outcome<CreateConnectAttachmentResult, NetworkManagerError> CreateConnectAttachmentOutcome;
 typedef Aws::Utils::Outcome<CreateConnectPeerResult, NetworkManagerError> CreateConnectPeerOutcome;
 typedef Aws::Utils::Outcome<CreateConnectionResult, NetworkManagerError> CreateConnectionOutcome;
+typedef Aws::Utils::Outcome<CreateContextStoreResult, NetworkManagerError> CreateContextStoreOutcome;
 typedef Aws::Utils::Outcome<CreateCoreNetworkResult, NetworkManagerError> CreateCoreNetworkOutcome;
 typedef Aws::Utils::Outcome<CreateCoreNetworkPrefixListAssociationResult, NetworkManagerError>
     CreateCoreNetworkPrefixListAssociationOutcome;
@@ -281,6 +308,7 @@ typedef Aws::Utils::Outcome<CreateVpcAttachmentResult, NetworkManagerError> Crea
 typedef Aws::Utils::Outcome<DeleteAttachmentResult, NetworkManagerError> DeleteAttachmentOutcome;
 typedef Aws::Utils::Outcome<DeleteConnectPeerResult, NetworkManagerError> DeleteConnectPeerOutcome;
 typedef Aws::Utils::Outcome<DeleteConnectionResult, NetworkManagerError> DeleteConnectionOutcome;
+typedef Aws::Utils::Outcome<DeleteContextStoreResult, NetworkManagerError> DeleteContextStoreOutcome;
 typedef Aws::Utils::Outcome<DeleteCoreNetworkResult, NetworkManagerError> DeleteCoreNetworkOutcome;
 typedef Aws::Utils::Outcome<DeleteCoreNetworkPolicyVersionResult, NetworkManagerError> DeleteCoreNetworkPolicyVersionOutcome;
 typedef Aws::Utils::Outcome<DeleteCoreNetworkPrefixListAssociationResult, NetworkManagerError>
@@ -294,6 +322,7 @@ typedef Aws::Utils::Outcome<DeleteSiteResult, NetworkManagerError> DeleteSiteOut
 typedef Aws::Utils::Outcome<DeregisterTransitGatewayResult, NetworkManagerError> DeregisterTransitGatewayOutcome;
 typedef Aws::Utils::Outcome<DescribeGlobalNetworksResult, NetworkManagerError> DescribeGlobalNetworksOutcome;
 typedef Aws::Utils::Outcome<DisassociateConnectPeerResult, NetworkManagerError> DisassociateConnectPeerOutcome;
+typedef Aws::Utils::Outcome<DisassociateContextStoreResult, NetworkManagerError> DisassociateContextStoreOutcome;
 typedef Aws::Utils::Outcome<DisassociateCustomerGatewayResult, NetworkManagerError> DisassociateCustomerGatewayOutcome;
 typedef Aws::Utils::Outcome<DisassociateLinkResult, NetworkManagerError> DisassociateLinkOutcome;
 typedef Aws::Utils::Outcome<DisassociateTransitGatewayConnectPeerResult, NetworkManagerError> DisassociateTransitGatewayConnectPeerOutcome;
@@ -302,6 +331,9 @@ typedef Aws::Utils::Outcome<GetConnectAttachmentResult, NetworkManagerError> Get
 typedef Aws::Utils::Outcome<GetConnectPeerResult, NetworkManagerError> GetConnectPeerOutcome;
 typedef Aws::Utils::Outcome<GetConnectPeerAssociationsResult, NetworkManagerError> GetConnectPeerAssociationsOutcome;
 typedef Aws::Utils::Outcome<GetConnectionsResult, NetworkManagerError> GetConnectionsOutcome;
+typedef Aws::Utils::Outcome<GetContextStoreResult, NetworkManagerError> GetContextStoreOutcome;
+typedef Aws::Utils::Outcome<GetContextStoreAssociationResult, NetworkManagerError> GetContextStoreAssociationOutcome;
+typedef Aws::Utils::Outcome<GetContextVersionResult, NetworkManagerError> GetContextVersionOutcome;
 typedef Aws::Utils::Outcome<GetCoreNetworkResult, NetworkManagerError> GetCoreNetworkOutcome;
 typedef Aws::Utils::Outcome<GetCoreNetworkChangeEventsResult, NetworkManagerError> GetCoreNetworkChangeEventsOutcome;
 typedef Aws::Utils::Outcome<GetCoreNetworkChangeSetResult, NetworkManagerError> GetCoreNetworkChangeSetOutcome;
@@ -331,6 +363,10 @@ typedef Aws::Utils::Outcome<ListAttachmentRoutingPolicyAssociationsResult, Netwo
     ListAttachmentRoutingPolicyAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListAttachmentsResult, NetworkManagerError> ListAttachmentsOutcome;
 typedef Aws::Utils::Outcome<ListConnectPeersResult, NetworkManagerError> ListConnectPeersOutcome;
+typedef Aws::Utils::Outcome<ListContextChangesResult, NetworkManagerError> ListContextChangesOutcome;
+typedef Aws::Utils::Outcome<ListContextStoreAssociationsResult, NetworkManagerError> ListContextStoreAssociationsOutcome;
+typedef Aws::Utils::Outcome<ListContextStoresResult, NetworkManagerError> ListContextStoresOutcome;
+typedef Aws::Utils::Outcome<ListContextsResult, NetworkManagerError> ListContextsOutcome;
 typedef Aws::Utils::Outcome<ListCoreNetworkPolicyVersionsResult, NetworkManagerError> ListCoreNetworkPolicyVersionsOutcome;
 typedef Aws::Utils::Outcome<ListCoreNetworkPrefixListAssociationsResult, NetworkManagerError> ListCoreNetworkPrefixListAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListCoreNetworkRoutingInformationResult, NetworkManagerError> ListCoreNetworkRoutingInformationOutcome;
@@ -351,6 +387,7 @@ typedef Aws::Utils::Outcome<TagResourceResult, NetworkManagerError> TagResourceO
 typedef Aws::Utils::Outcome<UntagResourceResult, NetworkManagerError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAttachmentNatConfigurationResult, NetworkManagerError> UpdateAttachmentNatConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateConnectionResult, NetworkManagerError> UpdateConnectionOutcome;
+typedef Aws::Utils::Outcome<UpdateContextStoreResult, NetworkManagerError> UpdateContextStoreOutcome;
 typedef Aws::Utils::Outcome<UpdateCoreNetworkResult, NetworkManagerError> UpdateCoreNetworkOutcome;
 typedef Aws::Utils::Outcome<UpdateDeviceResult, NetworkManagerError> UpdateDeviceOutcome;
 typedef Aws::Utils::Outcome<UpdateDirectConnectGatewayAttachmentResult, NetworkManagerError> UpdateDirectConnectGatewayAttachmentOutcome;
@@ -364,12 +401,14 @@ typedef Aws::Utils::Outcome<UpdateVpcAttachmentResult, NetworkManagerError> Upda
 /* Service model Outcome callable definitions */
 typedef std::future<AcceptAttachmentOutcome> AcceptAttachmentOutcomeCallable;
 typedef std::future<AssociateConnectPeerOutcome> AssociateConnectPeerOutcomeCallable;
+typedef std::future<AssociateContextStoreOutcome> AssociateContextStoreOutcomeCallable;
 typedef std::future<AssociateCustomerGatewayOutcome> AssociateCustomerGatewayOutcomeCallable;
 typedef std::future<AssociateLinkOutcome> AssociateLinkOutcomeCallable;
 typedef std::future<AssociateTransitGatewayConnectPeerOutcome> AssociateTransitGatewayConnectPeerOutcomeCallable;
 typedef std::future<CreateConnectAttachmentOutcome> CreateConnectAttachmentOutcomeCallable;
 typedef std::future<CreateConnectPeerOutcome> CreateConnectPeerOutcomeCallable;
 typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
+typedef std::future<CreateContextStoreOutcome> CreateContextStoreOutcomeCallable;
 typedef std::future<CreateCoreNetworkOutcome> CreateCoreNetworkOutcomeCallable;
 typedef std::future<CreateCoreNetworkPrefixListAssociationOutcome> CreateCoreNetworkPrefixListAssociationOutcomeCallable;
 typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
@@ -384,6 +423,7 @@ typedef std::future<CreateVpcAttachmentOutcome> CreateVpcAttachmentOutcomeCallab
 typedef std::future<DeleteAttachmentOutcome> DeleteAttachmentOutcomeCallable;
 typedef std::future<DeleteConnectPeerOutcome> DeleteConnectPeerOutcomeCallable;
 typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
+typedef std::future<DeleteContextStoreOutcome> DeleteContextStoreOutcomeCallable;
 typedef std::future<DeleteCoreNetworkOutcome> DeleteCoreNetworkOutcomeCallable;
 typedef std::future<DeleteCoreNetworkPolicyVersionOutcome> DeleteCoreNetworkPolicyVersionOutcomeCallable;
 typedef std::future<DeleteCoreNetworkPrefixListAssociationOutcome> DeleteCoreNetworkPrefixListAssociationOutcomeCallable;
@@ -396,6 +436,7 @@ typedef std::future<DeleteSiteOutcome> DeleteSiteOutcomeCallable;
 typedef std::future<DeregisterTransitGatewayOutcome> DeregisterTransitGatewayOutcomeCallable;
 typedef std::future<DescribeGlobalNetworksOutcome> DescribeGlobalNetworksOutcomeCallable;
 typedef std::future<DisassociateConnectPeerOutcome> DisassociateConnectPeerOutcomeCallable;
+typedef std::future<DisassociateContextStoreOutcome> DisassociateContextStoreOutcomeCallable;
 typedef std::future<DisassociateCustomerGatewayOutcome> DisassociateCustomerGatewayOutcomeCallable;
 typedef std::future<DisassociateLinkOutcome> DisassociateLinkOutcomeCallable;
 typedef std::future<DisassociateTransitGatewayConnectPeerOutcome> DisassociateTransitGatewayConnectPeerOutcomeCallable;
@@ -404,6 +445,9 @@ typedef std::future<GetConnectAttachmentOutcome> GetConnectAttachmentOutcomeCall
 typedef std::future<GetConnectPeerOutcome> GetConnectPeerOutcomeCallable;
 typedef std::future<GetConnectPeerAssociationsOutcome> GetConnectPeerAssociationsOutcomeCallable;
 typedef std::future<GetConnectionsOutcome> GetConnectionsOutcomeCallable;
+typedef std::future<GetContextStoreOutcome> GetContextStoreOutcomeCallable;
+typedef std::future<GetContextStoreAssociationOutcome> GetContextStoreAssociationOutcomeCallable;
+typedef std::future<GetContextVersionOutcome> GetContextVersionOutcomeCallable;
 typedef std::future<GetCoreNetworkOutcome> GetCoreNetworkOutcomeCallable;
 typedef std::future<GetCoreNetworkChangeEventsOutcome> GetCoreNetworkChangeEventsOutcomeCallable;
 typedef std::future<GetCoreNetworkChangeSetOutcome> GetCoreNetworkChangeSetOutcomeCallable;
@@ -431,6 +475,10 @@ typedef std::future<ListAttachmentNatConfigurationsOutcome> ListAttachmentNatCon
 typedef std::future<ListAttachmentRoutingPolicyAssociationsOutcome> ListAttachmentRoutingPolicyAssociationsOutcomeCallable;
 typedef std::future<ListAttachmentsOutcome> ListAttachmentsOutcomeCallable;
 typedef std::future<ListConnectPeersOutcome> ListConnectPeersOutcomeCallable;
+typedef std::future<ListContextChangesOutcome> ListContextChangesOutcomeCallable;
+typedef std::future<ListContextStoreAssociationsOutcome> ListContextStoreAssociationsOutcomeCallable;
+typedef std::future<ListContextStoresOutcome> ListContextStoresOutcomeCallable;
+typedef std::future<ListContextsOutcome> ListContextsOutcomeCallable;
 typedef std::future<ListCoreNetworkPolicyVersionsOutcome> ListCoreNetworkPolicyVersionsOutcomeCallable;
 typedef std::future<ListCoreNetworkPrefixListAssociationsOutcome> ListCoreNetworkPrefixListAssociationsOutcomeCallable;
 typedef std::future<ListCoreNetworkRoutingInformationOutcome> ListCoreNetworkRoutingInformationOutcomeCallable;
@@ -451,6 +499,7 @@ typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAttachmentNatConfigurationOutcome> UpdateAttachmentNatConfigurationOutcomeCallable;
 typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
+typedef std::future<UpdateContextStoreOutcome> UpdateContextStoreOutcomeCallable;
 typedef std::future<UpdateCoreNetworkOutcome> UpdateCoreNetworkOutcomeCallable;
 typedef std::future<UpdateDeviceOutcome> UpdateDeviceOutcomeCallable;
 typedef std::future<UpdateDirectConnectGatewayAttachmentOutcome> UpdateDirectConnectGatewayAttachmentOutcomeCallable;
@@ -471,6 +520,9 @@ typedef std::function<void(const NetworkManagerClient*, const Model::AcceptAttac
 typedef std::function<void(const NetworkManagerClient*, const Model::AssociateConnectPeerRequest&,
                            const Model::AssociateConnectPeerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateConnectPeerResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::AssociateContextStoreRequest&,
+                           const Model::AssociateContextStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateContextStoreResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::AssociateCustomerGatewayRequest&,
                            const Model::AssociateCustomerGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateCustomerGatewayResponseReceivedHandler;
@@ -490,6 +542,9 @@ typedef std::function<void(const NetworkManagerClient*, const Model::CreateConne
 typedef std::function<void(const NetworkManagerClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateConnectionResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::CreateContextStoreRequest&, const Model::CreateContextStoreOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateContextStoreResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::CreateCoreNetworkRequest&, const Model::CreateCoreNetworkOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCoreNetworkResponseReceivedHandler;
@@ -536,6 +591,9 @@ typedef std::function<void(const NetworkManagerClient*, const Model::DeleteConne
 typedef std::function<void(const NetworkManagerClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteConnectionResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::DeleteContextStoreRequest&, const Model::DeleteContextStoreOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteContextStoreResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::DeleteCoreNetworkRequest&, const Model::DeleteCoreNetworkOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteCoreNetworkResponseReceivedHandler;
@@ -574,6 +632,9 @@ typedef std::function<void(const NetworkManagerClient*, const Model::DescribeGlo
 typedef std::function<void(const NetworkManagerClient*, const Model::DisassociateConnectPeerRequest&,
                            const Model::DisassociateConnectPeerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateConnectPeerResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::DisassociateContextStoreRequest&,
+                           const Model::DisassociateContextStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateContextStoreResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::DisassociateCustomerGatewayRequest&,
                            const Model::DisassociateCustomerGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateCustomerGatewayResponseReceivedHandler;
@@ -599,6 +660,15 @@ typedef std::function<void(const NetworkManagerClient*, const Model::GetConnectP
 typedef std::function<void(const NetworkManagerClient*, const Model::GetConnectionsRequest&, const Model::GetConnectionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetConnectionsResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::GetContextStoreRequest&, const Model::GetContextStoreOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetContextStoreResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::GetContextStoreAssociationRequest&,
+                           const Model::GetContextStoreAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetContextStoreAssociationResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::GetContextVersionRequest&, const Model::GetContextVersionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetContextVersionResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::GetCoreNetworkRequest&, const Model::GetCoreNetworkOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCoreNetworkResponseReceivedHandler;
@@ -688,6 +758,19 @@ typedef std::function<void(const NetworkManagerClient*, const Model::ListAttachm
 typedef std::function<void(const NetworkManagerClient*, const Model::ListConnectPeersRequest&, const Model::ListConnectPeersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListConnectPeersResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::ListContextChangesRequest&, const Model::ListContextChangesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListContextChangesResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::ListContextStoreAssociationsRequest&,
+                           const Model::ListContextStoreAssociationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListContextStoreAssociationsResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::ListContextStoresRequest&, const Model::ListContextStoresOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListContextStoresResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::ListContextsRequest&, const Model::ListContextsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListContextsResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::ListCoreNetworkPolicyVersionsRequest&,
                            const Model::ListCoreNetworkPolicyVersionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -757,6 +840,9 @@ typedef std::function<void(const NetworkManagerClient*, const Model::UpdateAttac
 typedef std::function<void(const NetworkManagerClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateConnectionResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::UpdateContextStoreRequest&, const Model::UpdateContextStoreOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateContextStoreResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::UpdateCoreNetworkRequest&, const Model::UpdateCoreNetworkOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateCoreNetworkResponseReceivedHandler;

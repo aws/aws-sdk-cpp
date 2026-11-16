@@ -49,6 +49,10 @@ GetAgentProfileResult& GetAgentProfileResult::operator=(const Aws::AmazonWebServ
     m_deletionProtection = jsonValue.GetBool("deletionProtection");
     m_deletionProtectionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("profileType")) {
+    m_profileType = ProfileTypeMapper::GetProfileTypeForName(jsonValue.GetString("profileType"));
+    m_profileTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("executionRoleArn")) {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
     m_executionRoleArnHasBeenSet = true;
@@ -102,6 +106,10 @@ GetAgentProfileResult& GetAgentProfileResult::operator=(const Aws::AmazonWebServ
   if (jsonValue.ValueExists("lastModifiedAt")) {
     m_lastModifiedAt = jsonValue.GetString("lastModifiedAt");
     m_lastModifiedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("organizationalAggregationConfiguration")) {
+    m_organizationalAggregationConfiguration = jsonValue.GetObject("organizationalAggregationConfiguration");
+    m_organizationalAggregationConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

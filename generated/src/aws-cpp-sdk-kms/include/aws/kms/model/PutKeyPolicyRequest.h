@@ -56,7 +56,13 @@ class PutKeyPolicyRequest : public KMSRequest {
   ///@{
   /**
    * <p>The name of the key policy. If no policy name is specified, the default value
-   * is <code>default</code>. The only valid value is <code>default</code>.</p>
+   * is <code>default</code>. Valid values are <code>default</code> and
+   * <code>AWS_RAM</code>, but you can set only the <code>default</code> key policy.
+   * RAM manages the <code>AWS_RAM</code> key policy for KMS keys that you share
+   * through RAM. If you specify <code>AWS_RAM</code>, the request fails with a
+   * <code>ValidationException</code>, or with an <code>AccessDeniedException</code>
+   * if you don't have permission to call <code>PutKeyPolicy</code> with that policy
+   * name.</p>
    */
   inline const Aws::String& GetPolicyName() const { return m_policyName; }
   inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
@@ -140,7 +146,12 @@ class PutKeyPolicyRequest : public KMSRequest {
    *  <p>Use this parameter only when you intend to prevent the principal
    * that is making the request from making a subsequent <a
    * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
-   * request on the KMS key.</p>
+   * request on the KMS key.</p> <p>The key policy lockout safety check and the
+   * <code>BypassPolicyLockoutSafetyCheck</code> parameter apply only to the
+   * <code>default</code> key policy. The check evaluates only the new
+   * <code>default</code> key policy, with <code>kms:PolicyName</code> set to
+   * <code>default</code>. It doesn't consider permissions in the
+   * <code>AWS_RAM</code> key policy.</p>
    */
   inline bool GetBypassPolicyLockoutSafetyCheck() const { return m_bypassPolicyLockoutSafetyCheck; }
   inline bool BypassPolicyLockoutSafetyCheckHasBeenSet() const { return m_bypassPolicyLockoutSafetyCheckHasBeenSet; }

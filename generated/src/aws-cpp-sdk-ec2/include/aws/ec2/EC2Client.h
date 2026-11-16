@@ -1062,6 +1062,38 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Associates an additional KMS key with an encrypted Amazon EBS snapshot. With
+   * the associated key, you have a second, independent way to access the snapshot's
+   * data, in addition to the key the snapshot is already encrypted under.
+   * Associating a key doesn't re-encrypt the snapshot or grant access to its
+   * original key.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/ebs/latest/userguide/associated-kms-keys.html">Associated
+   * KMS keys</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateKmsKeyId">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateKmsKeyIdOutcome AssociateKmsKeyId(const Model::AssociateKmsKeyIdRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateKmsKeyId that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AssociateKmsKeyIdRequestT = Model::AssociateKmsKeyIdRequest>
+  Model::AssociateKmsKeyIdOutcomeCallable AssociateKmsKeyIdCallable(const AssociateKmsKeyIdRequestT& request) const {
+    return SubmitCallable(&EC2Client::AssociateKmsKeyId, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateKmsKeyId that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename AssociateKmsKeyIdRequestT = Model::AssociateKmsKeyIdRequest>
+  void AssociateKmsKeyIdAsync(const AssociateKmsKeyIdRequestT& request, const AssociateKmsKeyIdResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::AssociateKmsKeyId, request, handler, context);
+  }
+
+  /**
    * <p>Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a
    * public NAT gateway. For more information, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Work
@@ -5564,6 +5596,43 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Creates a network function attachment that connects the specified transit
+   * gateway to a Gateway Load Balancer endpoint service. Traffic that you route to
+   * the attachment is sent to the network function appliances behind the endpoint
+   * service. To use this operation, you must be the owner of the transit
+   * gateway.</p> <p>You can create one network function attachment for each
+   * combination of transit gateway and endpoint service. The attachment remains in
+   * the <code>pendingAcceptance</code> state until the endpoint service owner
+   * accepts the endpoint connection.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayNetworkFunctionAttachment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateTransitGatewayNetworkFunctionAttachmentOutcome CreateTransitGatewayNetworkFunctionAttachment(
+      const Model::CreateTransitGatewayNetworkFunctionAttachmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateTransitGatewayNetworkFunctionAttachment that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename CreateTransitGatewayNetworkFunctionAttachmentRequestT = Model::CreateTransitGatewayNetworkFunctionAttachmentRequest>
+  Model::CreateTransitGatewayNetworkFunctionAttachmentOutcomeCallable CreateTransitGatewayNetworkFunctionAttachmentCallable(
+      const CreateTransitGatewayNetworkFunctionAttachmentRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateTransitGatewayNetworkFunctionAttachment, request);
+  }
+
+  /**
+   * An Async wrapper for CreateTransitGatewayNetworkFunctionAttachment that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename CreateTransitGatewayNetworkFunctionAttachmentRequestT = Model::CreateTransitGatewayNetworkFunctionAttachmentRequest>
+  void CreateTransitGatewayNetworkFunctionAttachmentAsync(
+      const CreateTransitGatewayNetworkFunctionAttachmentRequestT& request,
+      const CreateTransitGatewayNetworkFunctionAttachmentResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateTransitGatewayNetworkFunctionAttachment, request, handler, context);
+  }
+
+  /**
    * <p>Requests a transit gateway peering attachment between the specified transit
    * gateway (requester) and a peer transit gateway (accepter). The peer transit
    * gateway can be in your account or a different Amazon Web Services account.</p>
@@ -8670,6 +8739,38 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                                 const DeleteTransitGatewayMulticastDomainResponseReceivedHandler& handler,
                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DeleteTransitGatewayMulticastDomain, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified network function attachment. The attachment must be in
+   * the <code>available</code> or <code>pendingAcceptance</code>
+   * state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayNetworkFunctionAttachment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTransitGatewayNetworkFunctionAttachmentOutcome DeleteTransitGatewayNetworkFunctionAttachment(
+      const Model::DeleteTransitGatewayNetworkFunctionAttachmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTransitGatewayNetworkFunctionAttachment that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename DeleteTransitGatewayNetworkFunctionAttachmentRequestT = Model::DeleteTransitGatewayNetworkFunctionAttachmentRequest>
+  Model::DeleteTransitGatewayNetworkFunctionAttachmentOutcomeCallable DeleteTransitGatewayNetworkFunctionAttachmentCallable(
+      const DeleteTransitGatewayNetworkFunctionAttachmentRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteTransitGatewayNetworkFunctionAttachment, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTransitGatewayNetworkFunctionAttachment that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename DeleteTransitGatewayNetworkFunctionAttachmentRequestT = Model::DeleteTransitGatewayNetworkFunctionAttachmentRequest>
+  void DeleteTransitGatewayNetworkFunctionAttachmentAsync(
+      const DeleteTransitGatewayNetworkFunctionAttachmentRequestT& request,
+      const DeleteTransitGatewayNetworkFunctionAttachmentResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteTransitGatewayNetworkFunctionAttachment, request, handler, context);
   }
 
   /**
@@ -15084,6 +15185,40 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Describes one or more network function attachments. You can describe
+   * attachments that you own or that are attached to a transit gateway that you
+   * own.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayNetworkFunctionAttachments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTransitGatewayNetworkFunctionAttachmentsOutcome DescribeTransitGatewayNetworkFunctionAttachments(
+      const Model::DescribeTransitGatewayNetworkFunctionAttachmentsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeTransitGatewayNetworkFunctionAttachments that returns a future to the operation so that it can be
+   * executed in parallel to other requests.
+   */
+  template <
+      typename DescribeTransitGatewayNetworkFunctionAttachmentsRequestT = Model::DescribeTransitGatewayNetworkFunctionAttachmentsRequest>
+  Model::DescribeTransitGatewayNetworkFunctionAttachmentsOutcomeCallable DescribeTransitGatewayNetworkFunctionAttachmentsCallable(
+      const DescribeTransitGatewayNetworkFunctionAttachmentsRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeTransitGatewayNetworkFunctionAttachments, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTransitGatewayNetworkFunctionAttachments that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <
+      typename DescribeTransitGatewayNetworkFunctionAttachmentsRequestT = Model::DescribeTransitGatewayNetworkFunctionAttachmentsRequest>
+  void DescribeTransitGatewayNetworkFunctionAttachmentsAsync(
+      const DescribeTransitGatewayNetworkFunctionAttachmentsResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+      const DescribeTransitGatewayNetworkFunctionAttachmentsRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeTransitGatewayNetworkFunctionAttachments, request, handler, context);
+  }
+
+  /**
    * <p>Describes your transit gateway peering attachments.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPeeringAttachments">AWS
@@ -17439,6 +17574,35 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                               const DisassociateIpamResourceDiscoveryResponseReceivedHandler& handler,
                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DisassociateIpamResourceDiscovery, request, handler, context);
+  }
+
+  /**
+   * <p>Removes an associated KMS key from an Amazon EBS snapshot. After you
+   * disassociate the key, it can no longer be used to access the snapshot's data.
+   * The snapshot's original encryption key is unaffected.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateKmsKeyId">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateKmsKeyIdOutcome DisassociateKmsKeyId(const Model::DisassociateKmsKeyIdRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateKmsKeyId that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DisassociateKmsKeyIdRequestT = Model::DisassociateKmsKeyIdRequest>
+  Model::DisassociateKmsKeyIdOutcomeCallable DisassociateKmsKeyIdCallable(const DisassociateKmsKeyIdRequestT& request) const {
+    return SubmitCallable(&EC2Client::DisassociateKmsKeyId, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateKmsKeyId that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisassociateKmsKeyIdRequestT = Model::DisassociateKmsKeyIdRequest>
+  void DisassociateKmsKeyIdAsync(const DisassociateKmsKeyIdRequestT& request, const DisassociateKmsKeyIdResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DisassociateKmsKeyId, request, handler, context);
   }
 
   /**
@@ -23921,6 +24085,44 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Adds Availability Zones to or removes Availability Zones from the specified
+   * network function attachment. The attachment must be in the
+   * <code>available</code> state. You must specify at least one Availability Zone to
+   * add or remove, and the attachment must keep at least one Availability Zone.</p>
+   * <p>Adding an Availability Zone provisions a new Gateway Load Balancer endpoint
+   * in that Availability Zone. If the endpoint service doesn't automatically accept
+   * connection requests, the endpoint service owner must accept the endpoint
+   * connection for each Availability Zone that you add.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayNetworkFunctionAttachment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyTransitGatewayNetworkFunctionAttachmentOutcome ModifyTransitGatewayNetworkFunctionAttachment(
+      const Model::ModifyTransitGatewayNetworkFunctionAttachmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyTransitGatewayNetworkFunctionAttachment that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename ModifyTransitGatewayNetworkFunctionAttachmentRequestT = Model::ModifyTransitGatewayNetworkFunctionAttachmentRequest>
+  Model::ModifyTransitGatewayNetworkFunctionAttachmentOutcomeCallable ModifyTransitGatewayNetworkFunctionAttachmentCallable(
+      const ModifyTransitGatewayNetworkFunctionAttachmentRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyTransitGatewayNetworkFunctionAttachment, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyTransitGatewayNetworkFunctionAttachment that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename ModifyTransitGatewayNetworkFunctionAttachmentRequestT = Model::ModifyTransitGatewayNetworkFunctionAttachmentRequest>
+  void ModifyTransitGatewayNetworkFunctionAttachmentAsync(
+      const ModifyTransitGatewayNetworkFunctionAttachmentRequestT& request,
+      const ModifyTransitGatewayNetworkFunctionAttachmentResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyTransitGatewayNetworkFunctionAttachment, request, handler, context);
+  }
+
+  /**
    * <p>Modifies the specified transit gateway policy table entry.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPolicyTableEntry">AWS
@@ -24591,7 +24793,13 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * aren't supported.</p> <p>If you grant permissions to all principals, the service
    * is public. Any users who know the name of a public service can send a request to
    * attach an endpoint. If the service does not require manual approval, attachments
-   * are automatically approved.</p><p><h3>See Also:</h3>   <a
+   * are automatically approved.</p> <p>By default, principals that you grant
+   * permissions to can create VPC endpoints that connect to your endpoint service.
+   * For Gateway Load Balancer endpoint services, you can instead grant permissions
+   * so that principals can create transit gateway attachments that connect to your
+   * endpoint service. To do so, specify <code>transit-gateway-attachment</code> for
+   * <code>PermissionType</code>. The two permission types are independent. A
+   * principal can have either or both.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions">AWS
    * API Reference</a></p>
    */
