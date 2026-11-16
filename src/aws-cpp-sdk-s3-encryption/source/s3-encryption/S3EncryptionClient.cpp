@@ -294,24 +294,6 @@ namespace Aws
             return instructionOutcome;
         }
 
-        void S3EncryptionClientV2::Init(const Aws::S3Encryption::CryptoConfigurationV2& cryptoConfig)
-        {
-            // This validation could be, in a bizarre set of circumstances, a breaking change
-            // if (ValidateStorageMethod(cryptoConfig.GetStorageMethod())) return;
-            // if (ValidateRangeGetMode(cryptoConfig.GetUnAuthenticatedRangeGet())) return;
-            // if (ValidateSecurityProfile(cryptoConfig.GetSecurityProfile())) return;
-
-            m_cryptoConfig.SetSecurityProfile(cryptoConfig.GetSecurityProfile());
-            m_cryptoConfig.SetUnAuthenticatedRangeGet(cryptoConfig.GetUnAuthenticatedRangeGet());
-            m_cryptoConfig.SetCommitmentPolicy(CommitmentPolicy::FORBID_ENCRYPT_ALLOW_DECRYPT);
-            m_cryptoConfig.SetEncryptionAlgorithm(AlgorithmSuite::AES_GCM);
-            m_cryptoConfig.SetStorageMethod(cryptoConfig.GetStorageMethod());
-            
-            m_s3Client->AppendToUserAgent("ft/S3CryptoV2");
-            if (cryptoConfig.GetSecurityProfile() == SecurityProfile::V2_AND_LEGACY) {
-                AWS_LOGSTREAM_WARN(ALLOCATION_TAG, "The S3 Encryption Client is configured to read encrypted data with legacy encryption modes. If you don't have objects encrypted with these legacy modes, you should disable support for them to enhance security. See https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html");
-            }
-        }
         void S3EncryptionClientV3::Init(const Aws::S3Encryption::CryptoConfigurationV3& cryptoConfig)
         {
             if (ValidateStorageMethod(cryptoConfig.GetStorageMethod())) return;
