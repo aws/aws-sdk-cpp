@@ -95,13 +95,15 @@ void CrtCredentialsProvider::RefreshIfExpired() {
 
 AWSCredentials CrtCredentialsProvider::ExtractCredentialsFromCrt(const Aws::Crt::Auth::Credentials& crtCredentials) {
   AWSCredentials credentials{};
-  const auto accountIdCursor = crtCredentials.GetAccessKeyId();
-  credentials.SetAWSAccessKeyId({reinterpret_cast<char*>(accountIdCursor.ptr), accountIdCursor.len});
+  const auto accessKeyIdCursor = crtCredentials.GetAccessKeyId();
+  credentials.SetAWSAccessKeyId({reinterpret_cast<char*>(accessKeyIdCursor.ptr), accessKeyIdCursor.len});
   const auto secretKeyCursor = crtCredentials.GetSecretAccessKey();
   credentials.SetAWSSecretKey({reinterpret_cast<char*>(secretKeyCursor.ptr), secretKeyCursor.len});
   const uint64_t expiration = crtCredentials.GetExpirationTimepointInSeconds();
   credentials.SetExpiration(DateTime{expiration});
   const auto sessionTokenCursor = crtCredentials.GetSessionToken();
   credentials.SetSessionToken({reinterpret_cast<char*>(sessionTokenCursor.ptr), sessionTokenCursor.len});
+  const auto accountIdCursor = crtCredentials.GetAccountId();
+  credentials.SetAccountId({reinterpret_cast<char*>(accountIdCursor.ptr), accountIdCursor.len});
   return credentials;
 }
