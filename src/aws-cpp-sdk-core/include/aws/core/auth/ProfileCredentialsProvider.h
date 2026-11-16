@@ -57,5 +57,7 @@ class AWS_CORE_API ProfileCredentialsProvider : public AWSCredentialsProvider {
   class ProfileCredentialsProviderImp;
   std::shared_ptr<ProfileCredentialsProviderImp> m_impl;
 };
+
+using ProfileConfigFileAWSCredentialsProvider [[deprecated("Use ProfileCredentialsProvider")]] = ProfileCredentialsProvider;
 }  // namespace Auth
 }  // namespace Aws

@@ -10,6 +10,7 @@
 #include <aws/testing/mocks/aws/auth/MockAWSHttpResourceClient.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/auth/GeneralHTTPCredentialsProvider.h>
 #include <aws/core/client/AWSClient.h>
@@ -172,13 +173,20 @@ TEST_F(CredentialTrackingTest, TestProfileCredentialsTracking)
     credentialsFile << "aws_secret_access_key = test-profile-secret-key" << std::endl;
     credentialsFile.close();
 
-    // Set environment to use our test credentials file
+    // ProfileCredentialsProvider also reads the config file and AWS_PROFILE, so pin both: a config left by another
+    // test (for example with role_arn or SSO settings in [default]) would otherwise take over.
+    Aws::Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+    configFile.close();
+
     Aws::Environment::EnvironmentRAII testEnvironment{{
         {"AWS_SHARED_CREDENTIALS_FILE", credentialsFile.GetFileName().c_str()},
+        {"AWS_CONFIG_FILE", configFile.GetFileName().c_str()},
+        {"AWS_PROFILE", ""},
     }};
     Aws::Config::ReloadCachedCredentialsFile();
 
-    auto credsProvider = Aws::MakeShared<Aws::Auth::ProfileConfigFileAWSCredentialsProvider>(TEST_LOG_TAG);
+    auto credsProvider = Aws::MakeShared<Aws::Auth::ProfileCredentialsProvider>(TEST_LOG_TAG);
     RunTestWithCredentialsProvider(std::move(credsProvider), "n");
 }
 
@@ -191,16 +199,51 @@ TEST_F(CredentialTrackingTest, TestProfileProcessCredentialsTracking)
     configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"test-process-key\", \"SecretAccessKey\": \"test-process-secret\"}") << std::endl;
     configFile.close();
 
+    // ProfileCredentialsProvider also reads the credentials file, so point it at an empty one to keep a local [default] from taking over.
+    Aws::Utils::TempFile credentialsFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(credentialsFile.good());
+    credentialsFile.close();
+
     // Set environment to use our test config file
     Aws::Environment::EnvironmentRAII testEnvironment{{
         {"AWS_CONFIG_FILE", configFile.GetFileName().c_str()},
+        {"AWS_SHARED_CREDENTIALS_FILE", credentialsFile.GetFileName().c_str()},
+        {"AWS_PROFILE", ""},
     }};
 
     // Force reload config file after setting environment variable
     Aws::Config::ReloadCachedConfigFile();
 
-    auto credsProvider = Aws::MakeShared<Aws::Auth::ProcessCredentialsProvider>(TEST_LOG_TAG);
+    auto credsProvider = Aws::MakeShared<Aws::Auth::ProfileCredentialsProvider>(TEST_LOG_TAG);
+    ASSERT_STREQ("test-process-key", credsProvider->GetAWSCredentials().GetAWSAccessKeyId().c_str());
     RunTestWithCredentialsProvider(std::move(credsProvider), "v");
+}
+
+TEST_F(CredentialTrackingTest, TestProfileStaticKeysWinOverCredentialProcessTracking)
+{
+    // With static keys in the profile the CRT uses them and never runs credential_process, so the source is the profile.
+    Aws::Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+    configFile << "[default]" << std::endl;
+    configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"test-process-key\", \"SecretAccessKey\": \"test-process-secret\"}") << std::endl;
+    configFile.close();
+
+    Aws::Utils::TempFile credentialsFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(credentialsFile.good());
+    credentialsFile << "[default]" << std::endl;
+    credentialsFile << "aws_access_key_id = test-profile-access-key" << std::endl;
+    credentialsFile << "aws_secret_access_key = test-profile-secret-key" << std::endl;
+    credentialsFile.close();
+
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_CONFIG_FILE", configFile.GetFileName().c_str()},
+        {"AWS_SHARED_CREDENTIALS_FILE", credentialsFile.GetFileName().c_str()},
+        {"AWS_PROFILE", ""},
+    }};
+
+    auto credsProvider = Aws::MakeShared<Aws::Auth::ProfileCredentialsProvider>(TEST_LOG_TAG);
+    ASSERT_STREQ("test-profile-access-key", credsProvider->GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    RunTestWithCredentialsProvider(std::move(credsProvider), "n");
 }
 
 TEST_F(CredentialTrackingTest, TestInstanceProfileCredentialsTracking)
