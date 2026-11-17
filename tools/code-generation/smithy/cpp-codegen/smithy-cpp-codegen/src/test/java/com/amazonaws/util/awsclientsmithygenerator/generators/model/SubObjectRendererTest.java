@@ -125,7 +125,7 @@ class SubObjectRendererTest {
     void nonStreamingUnion_sourceHasSerdeImpls() {
         String c = renderAll().get("ContentBlock.cpp");
         assertTrue(c.contains("ContentBlock::ContentBlock(JsonView jsonValue)"), c);
-        assertTrue(c.contains("ContentBlock& ContentBlock::operator=(JsonView jsonValue)"), c);
+        assertTrue(c.contains("ContentBlock& ContentBlock::operator=(JsonView)"), c);
         assertTrue(c.contains("JsonValue ContentBlock::Jsonize() const"), c);
     }
 

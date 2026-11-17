@@ -85,6 +85,7 @@ tools/code-generation/smithy/codegen/.gradle/
 tools/code-generation/smithy/cpp-codegen/.gradle/
 tools/code-generation/smithy/cpp-codegen/output/
 tools/code-generation/smithy/cpp-codegen/smithy-build.json
+tools/code-generation/smithy/cpp-codegen/protocol-tests-smithy-build.json
 
 #config output
 aws-cpp-sdk-core/include/aws/core/SDKConfig.h

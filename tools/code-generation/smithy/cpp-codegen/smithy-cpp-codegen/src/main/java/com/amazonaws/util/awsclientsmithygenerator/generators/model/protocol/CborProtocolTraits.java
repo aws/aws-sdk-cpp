@@ -77,7 +77,8 @@ public final class CborProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public void writeResultSerdeDecls(CppWriter writer, String exportMacro, String className) {
+    public void writeResultSerdeDecls(CppWriter writer, String exportMacro, String className,
+                                      StructureShape shape, Model model) {
         writer.write("$L $L(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);",
             exportMacro, className);
         writer.write("$L $L& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);",

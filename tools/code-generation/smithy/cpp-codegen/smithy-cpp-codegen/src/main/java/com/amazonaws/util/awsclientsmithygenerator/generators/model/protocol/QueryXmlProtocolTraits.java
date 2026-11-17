@@ -64,6 +64,7 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
         writer.write("class XmlDocument;");
         writer.writeNamespaceClose("Xml");
         writer.writeNamespaceClose("Utils");
+        ProtocolTraits.writeSerializableStructForwardDeclaration(writer);
     }
 
     @Override
@@ -81,11 +82,15 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public void writeResultSerdeDecls(CppWriter writer, String exportMacro, String className) {
+    public void writeResultSerdeDecls(CppWriter writer, String exportMacro, String className,
+                                      StructureShape shape, Model model) {
         writer.write("$L $L(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);",
             exportMacro, className);
         writer.write("$L $L& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);",
             exportMacro, className);
+        if (RequestBindings.nonEmptySchemaSerializable(RequestBindings.resultMembers(shape), model)) {
+            SchemaSerdeRenderer.writeResultDeserMethodDecls(writer, exportMacro);
+        }
     }
 
     @Override
@@ -94,8 +99,9 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             case SUBOBJECT_HEADER:
                 return List.of("aws/core/utils/memory/stl/AWSStreamFwd.h");
             case RESULT_HEADER:
-                // Query/EC2 result headers forward-declare XmlDocument; no serde include.
-                return List.of();
+                // Query/EC2 result headers forward-declare XmlDocument; AWSMemory is needed for the
+                // Aws::UniquePtr return type of the schema-serde GetSchemaSerdeOutput() hook.
+                return List.of("aws/core/utils/memory/AWSMemory.h");
             // Request sources also serialize @httpHeader/@httpQuery members, needing URI,
             // StringUtils, the stringstream, and <numeric> (std::accumulate for comma-joined list
             // headers). URI.h added only here to avoid widening other source kinds.
@@ -108,9 +114,38 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
                     "aws/core/utils/memory/stl/AWSStringStream.h",
                     "aws/core/utils/HashingUtils.h",
                     "aws/core/http/URI.h",
+                    "aws/core/utils/memory/AWSMemory.h",
+                    "smithy/client/schema/Schema.h",
+                    "smithy/client/schema/SchemaBuilder.h",
+                    "smithy/client/schema/SerializableStruct.h",
+                    "smithy/client/schema/MapSerializer.h",
+                    "smithy/client/schema/ShapeSerializer.h",
+                    "smithy/client/schema/ClientProtocol.h",
+                    "smithy/client/schema/XmlTraits.h",
+                    "smithy/client/schema/SerdeTraits.h",
+                    "smithy/client/schema/HttpTraits.h",
+                    "smithy/client/schema/DocumentConversion.h",
                     "numeric");
-            case SUBOBJECT_SOURCE:
             case RESULT_SOURCE:
+                // Result sources also carry the schema-serde deserialize adapter (GetSchemaSerdeOutput),
+                // needing the Schema/SerializableStruct/ShapeDeserializer headers + AWSMemory (MakeUnique).
+                return List.of(
+                    "aws/core/utils/xml/XmlSerializer.h",
+                    "aws/core/utils/logging/LogMacros.h",
+                    "aws/core/utils/UnreferencedParam.h",
+                    "aws/core/utils/StringUtils.h",
+                    "aws/core/utils/memory/stl/AWSStringStream.h",
+                    "aws/core/utils/HashingUtils.h",
+                    "aws/core/utils/memory/AWSMemory.h",
+                    "smithy/client/schema/Schema.h",
+                    "smithy/client/schema/SchemaBuilder.h",
+                    "smithy/client/schema/SerializableStruct.h",
+                    "smithy/client/schema/ShapeDeserializer.h",
+                    "smithy/client/schema/XmlTraits.h",
+                    "smithy/client/schema/SerdeTraits.h",
+                    "smithy/client/schema/HttpTraits.h",
+                    "smithy/client/schema/DocumentConversion.h");
+            case SUBOBJECT_SOURCE:
             case STREAMING_RESULT_SOURCE:
             case EVENT_HANDLER_SOURCE:
             case INITIAL_RESPONSE_SOURCE:
@@ -152,15 +187,17 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
     public void writeSerdeMethodImpls(CppWriter writer, String className) {
         writer.write("$L::$L(const XmlNode& xmlNode) { *this = xmlNode; }", className, className);
         writer.write("");
-        writer.openBlock("$L& $L::operator=(const XmlNode& xmlNode) {", "}", className, className, () -> {
+        // Unnamed params: these are placeholder serde stubs (bodies pending); named params would trip
+        // -Werror,-Wunused-parameter.
+        writer.openBlock("$L& $L::operator=(const XmlNode&) {", "}", className, className, () -> {
             writer.write("return *this;");
         });
         writer.write("");
-        writer.openBlock("void $L::OutputToStream(Aws::OStream& ostream, const char* location, "
-            + "unsigned index, const char* locationValue) const {", "}", className, () -> {
+        writer.openBlock("void $L::OutputToStream(Aws::OStream&, const char*, unsigned, const char*) const {",
+            "}", className, () -> {
         });
         writer.write("");
-        writer.openBlock("void $L::OutputToStream(Aws::OStream& ostream, const char* location) const {",
+        writer.openBlock("void $L::OutputToStream(Aws::OStream&, const char*) const {",
             "}", className, () -> {
         });
     }
@@ -176,7 +213,6 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             writer.write("m_HttpResponseCode = result.GetResponseCode();");
             writer.write("const XmlDocument& xmlDocument = result.GetPayload();");
             writer.write("XmlNode rootNode = xmlDocument.GetRootElement();");
-            writer.write("// TODO: protocol-specific body member deserialization");
             // Query extracts <ResponseMetadata>; EC2 extracts a top-level <requestId>. Both
             // populate m_responseMetadata; rest-xml/json/cbor do neither.
             if (protocol == Protocol.EC2) {
@@ -200,6 +236,19 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
             writeResultStatusCodeMembers(writer, shape, model);
             writer.write("return *this;");
         });
+        // The body members are NOT read by operator= (which handles only the HTTP status and ResponseMetadata):
+        // the client drives ClientProtocol::DeserializeResponse over GetSchemaSerdeOutput(), and the protocol
+        // peels the aws-query <OperationResult> envelope (ec2 members sit at the response root).
+        if (RequestBindings.nonEmptySchemaSerializable(RequestBindings.resultMembers(shape), model)) {
+            writer.write("");
+            SchemaSerdeRenderer.writeResultDeser(writer, className, RequestBindings.resultMembers(shape), model,
+                memberTraits());
+        }
+    }
+
+    /** ec2 names members by {@code @ec2QueryName}; aws-query by {@code @xmlName}. */
+    private SchemaSerdeRenderer.MemberTraits memberTraits() {
+        return protocol == Protocol.EC2 ? SchemaSerdeRenderer::ec2MemberTraits : SchemaSerdeRenderer::xmlMemberTraits;
     }
 
     @Override
@@ -207,15 +256,13 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
                                         StructureShape shape, OperationShape operation, Model model) {
         if (RequestBindings.emitsSerializePayload(operation, model)) {
             writer.write("$L Aws::String SerializePayload() const override;", exportMacro);
+            SchemaSerdeRenderer.writeOperationContextDecl(writer, exportMacro);
+            if (RequestBindings.schemaSerializable(RequestBindings.members(shape), model)) {
+                SchemaSerdeRenderer.writeSchemaSerdeMethodDecls(writer, exportMacro);
+            }
         }
-        if (RequestBindings.hasHeaderMembers(shape, model)) {
-            writer.write("");
-            writeGetRequestSpecificHeadersDecl(writer, exportMacro);
-        }
-        if (RequestBindings.hasQueryStringMembers(shape, model)) {
-            writer.write("");
-            writeAddQueryStringParametersDecl(writer, exportMacro);
-        }
+        // aws-query / ec2 are RPC protocols: HTTP binding traits are ignored (C2J parity), so every member is
+        // a body field and no header / query-string methods are declared.
         // The DumpBodyToUrl override decl is emitted protocol-agnostically by RequestRenderer
         // (gated on SupportsPresigningTrait); only the impl below is protocol-specific.
     }
@@ -225,15 +272,18 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
                                         StructureShape shape, OperationShape operation,
                                         ServiceShape service, Model model) {
         if (RequestBindings.emitsSerializePayload(operation, model)) {
-            writer.write("Aws::String $L::SerializePayload() const { return {}; }", className);
-        }
-        if (RequestBindings.hasHeaderMembers(shape, model)) {
-            writer.write("");
-            writeGetRequestSpecificHeadersImpl(writer, className, shape, operation, service, model);
-        }
-        if (RequestBindings.hasQueryStringMembers(shape, model)) {
-            writer.write("");
-            writeAddQueryStringParametersImpl(writer, className, shape, model);
+            if (RequestBindings.schemaSerializable(RequestBindings.members(shape), model)) {
+                // aws-query/ec2 wrap the member body with Action/Version (owned by the protocol via the
+                // OperationRequestContext); ec2 uses Ec2QueryNameTrait wire names. HTTP binding traits are
+                // ignored, so every member is a body field.
+                SchemaSerdeRenderer.writeSerializePayload(writer, className, RequestBindings.members(shape), model,
+                    memberTraits());
+            } else {
+                writer.write("Aws::String $L::SerializePayload() const { return {}; }", className);
+            }
+            // The operation context (Action/Version) is emitted for every request, not just serializable
+            // ones: the response path uses the Action to peel the query <OperationResult> envelope.
+            SchemaSerdeRenderer.writeOperationContext(writer, className, operation.getId().getName(), service.getVersion());
         }
         // Gate the DumpBodyToUrl impl on the same trait as the RequestRenderer decl so the two stay
         // symmetric.

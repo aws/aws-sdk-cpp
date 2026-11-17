@@ -7,7 +7,7 @@
 #if($serviceModel.metadata.findFirstSupportedProtocol() == "json" || $serviceModel.metadata.findFirstSupportedProtocol() == "rest-json" || $serviceModel.metadata.findFirstSupportedProtocol() == "application-json")
 #set($serializer = "JsonOutcomeSerializer")
 #set($serializerOutcome = "JsonOutcome")
-#elseif($serviceModel.metadata.findFirstSupportedProtocol() == "rest-xml" || $serviceModel.metadata.findFirstSupportedProtocol() == "query")
+#elseif($serviceModel.metadata.findFirstSupportedProtocol() == "rest-xml" || $serviceModel.metadata.findFirstSupportedProtocol() == "query" || $serviceModel.metadata.findFirstSupportedProtocol() == "ec2")
 #set($serializer = "XmlOutcomeSerializer")
 #set($serializerOutcome = "XmlOutcome")
 #end

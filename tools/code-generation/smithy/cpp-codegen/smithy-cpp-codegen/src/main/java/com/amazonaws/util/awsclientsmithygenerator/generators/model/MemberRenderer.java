@@ -256,8 +256,15 @@ public final class MemberRenderer {
         }
     }
 
-    /** True if this member's direct target forms a reference cycle with the enclosing shape. */
+    /**
+     * True if this member's direct target forms a reference cycle with the enclosing shape. Only when the class
+     * rendered is the shape's own class: an operation's request/result class is referenced by nothing, so a
+     * member targeting its input/output shape (also used as data, e.g. KitchenSink) is a plain by-value member.
+     */
     private boolean isRecursiveMember(MemberShape member) {
+        if (className != null && !className.equals(CppTypeMapper.cppShapeName(shape))) {
+            return false;
+        }
         Shape target = model.expectShape(member.getTarget());
         return CppTypeMapper.isRecursiveStructMember(shape, target, model);
     }

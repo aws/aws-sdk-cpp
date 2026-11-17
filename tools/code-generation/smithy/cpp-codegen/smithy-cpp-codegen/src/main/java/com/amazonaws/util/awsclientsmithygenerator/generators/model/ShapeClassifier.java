@@ -259,13 +259,22 @@ public final class ShapeClassifier {
      * stream when its target is a blob or string (or is explicitly {@code @streaming}) and it is
      * not an event stream — no {@code @streaming} trait is required for blob/string payloads.
      */
+    /**
+     * True if an {@code @httpPayload} target is a raw byte/character stream: a blob, string, or explicitly
+     * {@code @streaming} shape. Enums are excluded: although Smithy models an enum atop a string, an enum payload
+     * serializes as a scalar value into an enum member, so C2J treats it as a normal (non-streaming) operation.
+     */
+    private static boolean isRawStreamPayloadTarget(Shape target) {
+        boolean isEnum = target.isEnumShape() || (target.isStringShape() && target.hasTrait(EnumTrait.class));
+        return !isEnum && (target.isBlobShape() || target.isStringShape() || target.hasTrait(StreamingTrait.class));
+    }
+
     private static boolean hasRawStreamingPayload(StructureShape shape, Model model) {
         for (MemberShape member : shape.getAllMembers().values()) {
             if (!member.hasTrait(HttpPayloadTrait.class) || StreamingTrait.isEventStream(model, member)) {
                 continue;
             }
-            Shape target = model.expectShape(member.getTarget());
-            if (target.isBlobShape() || target.isStringShape() || target.hasTrait(StreamingTrait.class)) {
+            if (isRawStreamPayloadTarget(model.expectShape(member.getTarget()))) {
                 return true;
             }
         }
@@ -376,8 +385,7 @@ public final class ShapeClassifier {
             if (!member.hasTrait(HttpPayloadTrait.class) || StreamingTrait.isEventStream(model, member)) {
                 continue;
             }
-            Shape target = model.expectShape(member.getTarget());
-            if (target.isBlobShape() || target.isStringShape() || target.hasTrait(StreamingTrait.class)) {
+            if (isRawStreamPayloadTarget(model.expectShape(member.getTarget()))) {
                 return Optional.of(member.getMemberName());
             }
         }

@@ -56,8 +56,9 @@ public final class RequestHeaderSerializer {
 
         if (target.isListShape()) {
             Shape element = model.expectShape(target.asListShape().get().getMember().getTarget());
+            MemberShape elementMember = target.asListShape().get().getMember();
             writer.openBlock("if ($LHasBeenSet) {", "}", field, () ->
-                renderListBody(writer, field, location, element, model));
+                renderListBody(writer, field, location, element, elementMember, model));
             return;
         }
 
@@ -65,12 +66,12 @@ public final class RequestHeaderSerializer {
             String enumType = CppTypeMapper.getCppType(target, model, false);
             writer.openBlock("if ($1LHasBeenSet && $1L != $2L::NOT_SET) {", "}", field, enumType, () ->
                 writer.write("headers.emplace(\"$1L\", $2L);",
-                    location, headerValueExpression(target, field, model)));
+                    location, headerValueExpression(target, member, field, model)));
             return;
         }
 
         writer.openBlock("if ($LHasBeenSet) {", "}", field, () ->
-            renderScalarBody(writer, field, location, target, model));
+            renderScalarBody(writer, field, location, target, member, model));
     }
 
     // @httpPrefixHeaders map: each entry becomes a header named prefix+key. A @sparse value is
@@ -95,12 +96,12 @@ public final class RequestHeaderSerializer {
 
     // @httpHeader list: comma-joins the elements into a single header value via std::accumulate.
     private static void renderListBody(CppWriter writer, String field, String location, Shape element,
-                                       Model model) {
+                                       MemberShape elementMember, Model model) {
         String elementType = CppTypeMapper.getCppType(element, model, false);
         writer.write("headers.emplace(\"$1L\", std::accumulate(std::begin($2L), std::end($2L), Aws::String{},",
             location, field);
         writer.write("  [](const Aws::String& acc, const $L& item) -> Aws::String {", elementType);
-        writer.write("    const auto headerValue = $L;", headerValueExpression(element, "item", model));
+        writer.write("    const auto headerValue = $L;", headerValueExpression(element, elementMember, "item", model));
         writer.write("    return acc.empty() ? headerValue : acc + \",\" + headerValue;");
         writer.write("  }));");
     }
@@ -108,14 +109,15 @@ public final class RequestHeaderSerializer {
     // Shared per-type header value expression, keyed on target shape: enum → Mapper lookup,
     // timestamp → header mapping (epoch-seconds→Seconds(), date-time→ISO_8601, else→RFC822),
     // primitive → to_string, else (string) used directly. The value expr (scalar field or list
-    // loop var) is the parameter, so scalar and list paths share this mapping.
-    private static String headerValueExpression(Shape shape, String valueExpr, Model model) {
+    // loop var) is the parameter, so scalar and list paths share this mapping. A member-level
+    // @timestampFormat overrides the target's.
+    private static String headerValueExpression(Shape shape, MemberShape member, String valueExpr, Model model) {
         if (CppTypeMapper.isEnum(shape)) {
             String enumType = CppTypeMapper.getCppType(shape, model, false);
             return enumType + "Mapper::GetNameFor" + enumType + "(" + valueExpr + ")";
         }
         if (shape.isTimestampShape()) {
-            String format = shape.getTrait(TimestampFormatTrait.class)
+            String format = member.getMemberTrait(model, TimestampFormatTrait.class)
                 .map(TimestampFormatTrait::getValue)
                 .orElse("http-date");
             if (format.equals("epoch-seconds")) {
@@ -131,7 +133,7 @@ public final class RequestHeaderSerializer {
     }
 
     private static void renderScalarBody(CppWriter writer, String field, String location, Shape target,
-                                         Model model) {
+                                         MemberShape member, Model model) {
         if (target.isBooleanShape()) {
             writer.write("ss << std::boolalpha << $L;", field);
             emplaceFromStream(writer, location);
@@ -143,7 +145,7 @@ public final class RequestHeaderSerializer {
             return;
         }
         if (target.isTimestampShape()) {
-            writer.write("headers.emplace(\"$L\", $L);", location, headerValueExpression(target, field, model));
+            writer.write("headers.emplace(\"$L\", $L);", location, headerValueExpression(target, member, field, model));
             return;
         }
         // string / default scalar

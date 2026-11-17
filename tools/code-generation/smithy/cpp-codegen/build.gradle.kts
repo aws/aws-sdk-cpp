@@ -1,8 +1,10 @@
 import software.amazon.smithy.model.Model
 import software.amazon.smithy.model.node.Node
+import software.amazon.smithy.model.node.StringNode
 import software.amazon.smithy.model.shapes.ServiceShape
 import software.amazon.smithy.aws.traits.ServiceTrait
 import org.gradle.api.logging.Logging
+import java.net.URLClassLoader
 import kotlin.streams.toList
 
 val logger = Logging.getLogger("MyLogger")
@@ -167,3 +169,75 @@ tasks.register("generate-smithy-build") {
 }
 
 tasks["build"].dependsOn(tasks["generate-smithy-build"])
+
+// Protocol-test client models: `smithyBuild -PprotocolTests -PprotocolTestOperations=<json>` builds one projection per
+// protocol-test client package (projection name = package) from ../../protocol-tests/smithy-models/<package>.json, the
+// Smithy models SmithyC2jProtocolTests converted into the C2J clients in ../../protocol-tests/api-descriptions.
+if (project.hasProperty("protocolTests")) {
+    tasks.named<software.amazon.smithy.gradle.tasks.SmithyBuildTask>("smithyBuild") {
+        dependsOn("generate-protocol-test-smithy-build")
+        getSmithyBuildConfigs().set(files("protocol-tests-smithy-build.json"))
+    }
+}
+
+tasks.register("generate-protocol-test-smithy-build") {
+    doLast {
+        // package -> operations to generate, e.g. {"rest-json-protocol": ["AllQueryStringTypes", ...]}
+        val operations = Node.parse(project.findProperty("protocolTestOperations")?.toString() ?: "{}")
+            .expectObjectNode().stringMap
+        val smithyModels = project.file("../../protocol-tests/smithy-models")
+        val importsDir = layout.buildDirectory.dir("protocol-test-models").get().asFile.apply { mkdirs() }
+
+        // The smithy-models are flattened: they inline the definitions of the traits they use (aws.auth#sigv4, ...),
+        // which smithyBuild also discovers on its classpath (smithy-aws-traits, ...) and which may differ slightly.
+        // Import only the shapes the classpath doesn't already define.
+        val classpath = configurations.getByName("runtimeClasspath").files.map { it.toURI().toURL() }.toTypedArray()
+        val loader = URLClassLoader(classpath, Model::class.java.classLoader)
+        val classpathShapes = Model.assembler(loader).discoverModels(loader).assemble().unwrap()
+            .toSet().map { it.id.toString() }.toSet()
+
+        val projectionsBuilder = Node.objectNodeBuilder()
+        operations.forEach { (packageName, packageOperations) ->
+            val modelFile = File(smithyModels, "$packageName.json")
+            if (!modelFile.isFile) throw GradleException("No Smithy model for protocol-test client $packageName: $modelFile")
+            val modelNode = Node.parse(modelFile.readText()).expectObjectNode()
+            val shapes = modelNode.expectObjectMember("shapes")
+            val importFile = File(importsDir, "$packageName.json")
+            importFile.writeText(Node.prettyPrintJson(modelNode.withMember("shapes",
+                Node.objectNode(shapes.members.filterKeys { it.value !in classpathShapes }))))
+            val service = Model.assembler(loader).discoverModels(loader).addImport(importFile.absolutePath).assemble()
+                .unwrap().shapes(ServiceShape::class.java).toList().single()
+            // The plugin derives the package from the sdkId; map it to the C2J package where they differ.
+            val sdkIdPackage = service.getTrait(ServiceTrait::class.java).map { it.sdkId }.orElse(service.id.name)
+                .trim().lowercase().replace(" ", "-")
+            val c2jMap = if (sdkIdPackage == packageName) "{}" else Node.printJson(
+                Node.objectNode().withMember(sdkIdPackage, packageName))
+            val operationNames = packageOperations.expectArrayNode().getElementsAs(StringNode::getValue)
+
+            projectionsBuilder.withMember(packageName, Node.objectNodeBuilder()
+                .withMember("imports", Node.fromStrings(importFile.absolutePath))
+                .withMember("transforms", Node.fromNodes(
+                    Node.objectNodeBuilder()
+                        .withMember("name", "excludeShapesBySelector")
+                        .withMember("args", Node.objectNodeBuilder().withMember("selector",
+                            "operation :not([id|name = ${operationNames.joinToString(", ") { "'$it'" }}])").build())
+                        .build(),
+                    Node.objectNodeBuilder()
+                        .withMember("name", "removeUnusedShapes")
+                        .withMember("args", Node.objectNode())
+                        .build()))
+                .withMember("plugins", Node.objectNode()
+                    .withMember("smithy-cpp-codegen-models", Node.objectNodeBuilder()
+                        .withMember("c2jMap", Node.from(c2jMap))
+                        .withMember("namespaceMappings", Node.from("{}"))
+                        .build()))
+                .build())
+        }
+
+        file("protocol-tests-smithy-build.json").writeText(Node.prettyPrintJson(Node.objectNodeBuilder()
+            .withMember("version", "1.0")
+            .withMember("projections", projectionsBuilder.build())
+            .withMember("outputDirectory", "output")
+            .build()))
+    }
+}

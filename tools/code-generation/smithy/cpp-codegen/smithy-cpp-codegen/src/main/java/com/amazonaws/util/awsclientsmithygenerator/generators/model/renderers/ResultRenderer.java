@@ -96,7 +96,7 @@ public final class ResultRenderer implements ShapeRenderer {
             // AWSString.h only for top-level m_requestId; string members self-include. Matches C2J.
             List<String> includes = new java.util.ArrayList<>(IncludeSets.resultHeaderBase(
                 ctx.smithyServiceName(), ctx.classNamePrefix(), ctx.protocolTraits().resultHasTopLevelRequestId()));
-            for (String memberInc : CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName())) {
+            for (String memberInc : CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName(), false)) {
                 includes.add(memberInc);
             }
             // Protocols naming serde types in the class signature (CBOR: CborValue) add their header; JSON/XML forward-declare.
@@ -123,7 +123,7 @@ public final class ResultRenderer implements ShapeRenderer {
             writer.openBlock("class $L {", "};", className, () -> {
                 writer.write("public:");
                 writer.write("$L $L() = default;", ctx.exportMacro(), className);
-                ctx.protocolTraits().writeResultSerdeDecls(writer, ctx.exportMacro(), className);
+                ctx.protocolTraits().writeResultSerdeDecls(writer, ctx.exportMacro(), className, shape, ctx.model());
                 writer.write("");
 
                 // A result that already models the RequestId member lets it stand; the injected
@@ -211,7 +211,7 @@ public final class ResultRenderer implements ShapeRenderer {
 
             List<String> includes = new java.util.ArrayList<>(
                 IncludeSets.streamingResultHeaderBase(ctx.smithyServiceName(), ctx.classNamePrefix()));
-            for (String memberInc : CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName())) {
+            for (String memberInc : CppTypeMapper.getIncludesForShape(shape, ctx.model(), ctx.smithyServiceName(), false)) {
                 includes.add(memberInc);
             }
             IncludeSets.emitAngleIncludes(writer, includes);
