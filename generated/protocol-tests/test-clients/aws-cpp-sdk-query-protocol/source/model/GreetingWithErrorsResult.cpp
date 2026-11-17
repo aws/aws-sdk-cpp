@@ -4,10 +4,22 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/query-protocol/model/GreetingWithErrorsResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
+#include <smithy/client/schema/XmlTraits.h>
 
 #include <utility>
 
@@ -23,19 +35,6 @@ GreetingWithErrorsResult& GreetingWithErrorsResult::operator=(const Aws::AmazonW
   m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "GreetingWithErrorsResult")) {
-    resultNode = rootNode.FirstChild("GreetingWithErrorsResult");
-  }
-
-  if (!resultNode.IsNull()) {
-    XmlNode greetingNode = resultNode.FirstChild("greeting");
-    if (!greetingNode.IsNull()) {
-      m_greeting = Aws::Utils::Xml::DecodeEscapedXmlText(greetingNode.GetText());
-      m_greetingHasBeenSet = true;
-    }
-  }
-
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
@@ -43,4 +42,42 @@ GreetingWithErrorsResult& GreetingWithErrorsResult::operator=(const Aws::AmazonW
     AWS_LOGSTREAM_DEBUG("Aws::QueryProtocol::Model::GreetingWithErrorsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
+}
+
+namespace {
+class GreetingWithErrorsResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit GreetingWithErrorsResultDeserializable(GreetingWithErrorsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  GreetingWithErrorsResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void GreetingWithErrorsResultDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                                  smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "greeting") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetGreeting(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> GreetingWithErrorsResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("GreetingWithErrorsResult")
+      .PutMember("greeting", smithy::schema::Schema::CreateString("greeting"))
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> GreetingWithErrorsResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<GreetingWithErrorsResultDeserializable>("GreetingWithErrorsResultDeserializable", *this);
 }

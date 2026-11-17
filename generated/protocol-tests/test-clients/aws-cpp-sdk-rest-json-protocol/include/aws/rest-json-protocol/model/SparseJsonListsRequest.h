@@ -29,8 +29,8 @@ class SparseJsonListsRequest : public RestJsonProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "SparseJsonLists"; }
 
   AWS_RESTJSONPROTOCOL_API Aws::String SerializePayload() const override;
-
-  AWS_RESTJSONPROTOCOL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  AWS_RESTJSONPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   ///@{
 
@@ -84,31 +84,12 @@ class SparseJsonListsRequest : public RestJsonProtocolRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  SparseJsonListsRequest& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::Vector<Aws::Crt::Optional<Aws::String>> m_sparseStringList;
 
   Aws::Vector<Aws::Crt::Optional<int>> m_sparseShortList;
-
-  Aws::String m_requestId;
   bool m_sparseStringListHasBeenSet = false;
   bool m_sparseShortListHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

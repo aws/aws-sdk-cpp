@@ -6,9 +6,20 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/query-protocol/model/XmlBlobsResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
+#include <smithy/client/schema/XmlTraits.h>
 
 #include <utility>
 
@@ -24,19 +35,6 @@ XmlBlobsResult& XmlBlobsResult::operator=(const Aws::AmazonWebServiceResult<XmlD
   m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "XmlBlobsResult")) {
-    resultNode = rootNode.FirstChild("XmlBlobsResult");
-  }
-
-  if (!resultNode.IsNull()) {
-    XmlNode dataNode = resultNode.FirstChild("data");
-    if (!dataNode.IsNull()) {
-      m_data = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(dataNode.GetText()));
-      m_dataHasBeenSet = true;
-    }
-  }
-
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
@@ -44,4 +42,39 @@ XmlBlobsResult& XmlBlobsResult::operator=(const Aws::AmazonWebServiceResult<XmlD
     AWS_LOGSTREAM_DEBUG("Aws::QueryProtocol::Model::XmlBlobsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
+}
+
+namespace {
+class XmlBlobsResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit XmlBlobsResultDeserializable(XmlBlobsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  XmlBlobsResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void XmlBlobsResultDeserializable::From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "data") {
+    auto value0 = deserializer.ReadBlob(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetData(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> XmlBlobsResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("XmlBlobsResult").PutMember("data", smithy::schema::Schema::CreateBlob("data")).Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> XmlBlobsResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<XmlBlobsResultDeserializable>("XmlBlobsResultDeserializable", *this);
 }

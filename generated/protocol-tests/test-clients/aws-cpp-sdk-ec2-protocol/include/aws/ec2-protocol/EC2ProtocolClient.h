@@ -4,25 +4,32 @@
  */
 
 #pragma once
-#include <aws/core/AmazonSerializableWebServiceRequest.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2-protocol/EC2ProtocolErrorMarshaller.h>
 #include <aws/ec2-protocol/EC2ProtocolServiceClientModel.h>
 #include <aws/ec2-protocol/EC2Protocol_EXPORTS.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
 namespace Aws {
 namespace EC2Protocol {
+AWS_EC2PROTOCOL_API extern const char SERVICE_NAME[];
 /**
  * <p>An EC2 query service that sends query requests and XML responses.</p>
  */
-class AWS_EC2PROTOCOL_API EC2ProtocolClient : public Aws::Client::AWSXMLClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<EC2ProtocolClient> {
+class AWS_EC2PROTOCOL_API EC2ProtocolClient
+    : Aws::Client::ClientWithAsyncTemplateMethods<EC2ProtocolClient>,
+      public smithy::client::AwsSmithyClientT<Aws::EC2Protocol::SERVICE_NAME, Aws::EC2Protocol::EC2ProtocolClientConfiguration,
+                                              smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+                                              EC2ProtocolEndpointProviderBase, smithy::client::XmlOutcomeSerializer,
+                                              smithy::client::XmlOutcome, Aws::Client::EC2ProtocolErrorMarshaller> {
  public:
-  typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
+  inline const char* GetServiceClientName() const override { return "EC2 Protocol"; }
 
   typedef EC2ProtocolClientConfiguration ClientConfigurationType;
   typedef EC2ProtocolEndpointProvider EndpointProviderType;
@@ -753,14 +760,10 @@ class AWS_EC2PROTOCOL_API EC2ProtocolClient : public Aws::Client::AWSXMLClient,
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EC2ProtocolClient>;
-  void init(const EC2ProtocolClientConfiguration& clientConfiguration);
 
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EC2ProtocolError> InvokeOperationOutcome;
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>, EC2ProtocolError> InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
-
-  EC2ProtocolClientConfiguration m_clientConfiguration;
-  std::shared_ptr<EC2ProtocolEndpointProviderBase> m_endpointProvider;
 };
 
 }  // namespace EC2Protocol

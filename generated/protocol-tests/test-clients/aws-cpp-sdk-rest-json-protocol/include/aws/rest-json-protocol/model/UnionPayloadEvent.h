@@ -19,6 +19,8 @@ class JsonView;
 namespace RestJsonProtocol {
 namespace Model {
 
+/**
+ */
 class UnionPayloadEvent {
  public:
   AWS_RESTJSONPROTOCOL_API UnionPayloadEvent() = default;

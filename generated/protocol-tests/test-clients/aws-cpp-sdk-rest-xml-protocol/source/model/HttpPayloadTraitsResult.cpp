@@ -6,7 +6,9 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/rest-xml-protocol/model/HttpPayloadTraitsResult.h>
 
 #include <utility>
@@ -22,19 +24,6 @@ HttpPayloadTraitsResult& HttpPayloadTraitsResult::operator=(Aws::AmazonWebServic
   m_HttpResponseCode = result.GetResponseCode();
   m_blob = result.TakeOwnershipOfPayload();
   m_blobHasBeenSet = true;
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& fooIter = headers.find("x-foo");
-  if (fooIter != headers.end()) {
-    m_foo = fooIter->second;
-    m_fooHasBeenSet = true;
-  }
-
-  const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
+  // TODO: header-bound member deserialization
   return *this;
 }

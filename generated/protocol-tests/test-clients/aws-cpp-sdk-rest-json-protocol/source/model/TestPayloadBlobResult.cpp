@@ -6,6 +6,8 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/TestPayloadBlobResult.h>
 
@@ -22,13 +24,6 @@ TestPayloadBlobResult& TestPayloadBlobResult::operator=(Aws::AmazonWebServiceRes
   m_HttpResponseCode = result.GetResponseCode();
   m_data = result.TakeOwnershipOfPayload();
   m_dataHasBeenSet = true;
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if (requestIdIter != headers.end()) {
-    m_requestId = requestIdIter->second;
-    m_requestIdHasBeenSet = true;
-  }
-
+  // TODO: header-bound member deserialization
   return *this;
 }

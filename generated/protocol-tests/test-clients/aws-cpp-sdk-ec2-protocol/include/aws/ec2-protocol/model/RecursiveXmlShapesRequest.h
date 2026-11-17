@@ -24,6 +24,8 @@ class RecursiveXmlShapesRequest : public EC2ProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "RecursiveXmlShapes"; }
 
   AWS_EC2PROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_EC2PROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_EC2PROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
  protected:
   AWS_EC2PROTOCOL_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;

@@ -21,7 +21,7 @@ namespace EC2Protocol {
 namespace Model {
 
 /**
- * <p>This error is thrown when a request is invalid.</p><p><h3>See Also:</h3>   <a
+ * This error is thrown when a request is invalid.<p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/ComplexError">AWS
  * API Reference</a></p>
  */
@@ -30,9 +30,8 @@ class ComplexError {
   AWS_EC2PROTOCOL_API ComplexError() = default;
   AWS_EC2PROTOCOL_API ComplexError(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_EC2PROTOCOL_API ComplexError& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_EC2PROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_EC2PROTOCOL_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_EC2PROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location) const;
 
   ///@{
 

@@ -4,11 +4,16 @@
  */
 
 #include <aws/core/client/CoreErrors.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/event/EventStreamErrors.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/RestJsonProtocolErrorMarshaller.h>
 #include <aws/rest-json-protocol/model/DuplexStreamHandler.h>
+
+#include <utility>
 
 using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Event;
@@ -30,54 +35,43 @@ DuplexStreamHandler::DuplexStreamHandler() : EventStreamHandler() {
                         "DuplexStream initial response received from "
                             << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
   };
-
   m_onHeadersEvent = [&](const HeadersEvent&) { AWS_LOGSTREAM_TRACE(DUPLEXSTREAM_HANDLER_CLASS_TAG, "HeadersEvent received."); };
-
   m_onBlobPayloadEvent = [&](const BlobPayloadEvent&) {
     AWS_LOGSTREAM_TRACE(DUPLEXSTREAM_HANDLER_CLASS_TAG, "BlobPayloadEvent received.");
   };
-
   m_onStringPayloadEvent = [&](const StringPayloadEvent&) {
     AWS_LOGSTREAM_TRACE(DUPLEXSTREAM_HANDLER_CLASS_TAG, "StringPayloadEvent received.");
   };
-
   m_onStructurePayloadEvent = [&](const StructurePayloadEvent&) {
     AWS_LOGSTREAM_TRACE(DUPLEXSTREAM_HANDLER_CLASS_TAG, "StructurePayloadEvent received.");
   };
-
   m_onUnionPayloadEvent = [&](const UnionPayloadEvent&) {
     AWS_LOGSTREAM_TRACE(DUPLEXSTREAM_HANDLER_CLASS_TAG, "UnionPayloadEvent received.");
   };
-
   m_onHeadersAndExplicitPayloadEvent = [&](const HeadersAndExplicitPayloadEvent&) {
     AWS_LOGSTREAM_TRACE(DUPLEXSTREAM_HANDLER_CLASS_TAG, "HeadersAndExplicitPayloadEvent received.");
   };
-
   m_onHeadersAndImplicitPayloadEvent = [&](const HeadersAndImplicitPayloadEvent&) {
     AWS_LOGSTREAM_TRACE(DUPLEXSTREAM_HANDLER_CLASS_TAG, "HeadersAndImplicitPayloadEvent received.");
   };
-
   m_onError = [&](const AWSError<RestJsonProtocolErrors>& error) {
     AWS_LOGSTREAM_TRACE(DUPLEXSTREAM_HANDLER_CLASS_TAG, "RestJsonProtocol Errors received, " << error);
   };
 }
 
 void DuplexStreamHandler::OnEvent() {
-  // Handler internal error during event stream decoding.
   if (!*this) {
     AWSError<CoreErrors> error = EventStreamErrorsMapper::GetAwsErrorForEventStreamError(GetInternalError());
     error.SetMessage(GetEventPayloadAsString());
     m_onError(AWSError<RestJsonProtocolErrors>(error));
     return;
   }
-
   const auto& headers = GetEventHeaders();
   auto messageTypeHeaderIter = headers.find(MESSAGE_TYPE_HEADER);
   if (messageTypeHeaderIter == headers.end()) {
     AWS_LOGSTREAM_WARN(DUPLEXSTREAM_HANDLER_CLASS_TAG, "Header: " << MESSAGE_TYPE_HEADER << " not found in the message.");
     return;
   }
-
   switch (Aws::Utils::Event::Message::GetMessageTypeForName(messageTypeHeaderIter->second.GetEventHeaderValueAsString())) {
     case Aws::Utils::Event::Message::MessageType::EVENT:
       HandleEventInMessage();
@@ -107,108 +101,39 @@ void DuplexStreamHandler::HandleEventInMessage() {
       m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
       break;
     }
-
     case DuplexStreamEventType::HEADERS: {
-      HeadersEvent event;
-      const auto booleanHeaderHeader = headers.find("booleanHeader");
-      if (booleanHeaderHeader != headers.end()) {
-        event.SetBooleanHeader(booleanHeaderHeader->second.GetEventHeaderValueAsBoolean());
-      }
-      const auto byteHeaderHeader = headers.find("byteHeader");
-      if (byteHeaderHeader != headers.end()) {
-        event.SetByteHeader(byteHeaderHeader->second.GetEventHeaderValueAsInt32());
-      }
-      const auto shortHeaderHeader = headers.find("shortHeader");
-      if (shortHeaderHeader != headers.end()) {
-        event.SetShortHeader(shortHeaderHeader->second.GetEventHeaderValueAsInt32());
-      }
-      const auto intHeaderHeader = headers.find("intHeader");
-      if (intHeaderHeader != headers.end()) {
-        event.SetIntHeader(intHeaderHeader->second.GetEventHeaderValueAsInt32());
-      }
-      const auto longHeaderHeader = headers.find("longHeader");
-      if (longHeaderHeader != headers.end()) {
-        event.SetLongHeader(longHeaderHeader->second.GetEventHeaderValueAsInt64());
-      }
-      const auto blobHeaderHeader = headers.find("blobHeader");
-      if (blobHeaderHeader != headers.end()) {
-        event.SetBlobHeader(blobHeaderHeader->second.GetEventHeaderValueAsBytebuf());
-      }
-      const auto stringHeaderHeader = headers.find("stringHeader");
-      if (stringHeaderHeader != headers.end()) {
-        event.SetStringHeader(stringHeaderHeader->second.GetEventHeaderValueAsString());
-      }
-      const auto timestampHeaderHeader = headers.find("timestampHeader");
-      if (timestampHeaderHeader != headers.end()) {
-        event.SetTimestampHeader(Aws::Utils::DateTime(timestampHeaderHeader->second.GetEventHeaderValueAsTimestamp()));
-      }
-      m_onHeadersEvent(event);
+      // TODO: protocol-specific event payload deserialization
+      m_onHeadersEvent(HeadersEvent{});
       break;
     }
     case DuplexStreamEventType::BLOBPAYLOAD: {
-      BlobPayloadEvent event(GetEventPayloadWithOwnership());
-      m_onBlobPayloadEvent(event);
+      // TODO: protocol-specific event payload deserialization
+      m_onBlobPayloadEvent(BlobPayloadEvent{});
       break;
     }
     case DuplexStreamEventType::STRINGPAYLOAD: {
-      StringPayloadEvent event;
-      event.SetPayload(GetEventPayloadAsString());
-      m_onStringPayloadEvent(event);
+      // TODO: protocol-specific event payload deserialization
+      m_onStringPayloadEvent(StringPayloadEvent{});
       break;
     }
     case DuplexStreamEventType::STRUCTUREPAYLOAD: {
-      JsonValue json(GetEventPayloadAsString());
-      if (!json.WasParseSuccessful()) {
-        AWS_LOGSTREAM_WARN(DUPLEXSTREAM_HANDLER_CLASS_TAG,
-                           "Unable to generate a proper StructurePayloadEvent object from the response in JSON format.");
-        break;
-      }
-      StructurePayloadEvent event;
-      event.SetPayload(PayloadStructure{json.View()});
-      m_onStructurePayloadEvent(event);
+      // TODO: protocol-specific event payload deserialization
+      m_onStructurePayloadEvent(StructurePayloadEvent{});
       break;
     }
     case DuplexStreamEventType::UNIONPAYLOAD: {
-      JsonValue json(GetEventPayloadAsString());
-      if (!json.WasParseSuccessful()) {
-        AWS_LOGSTREAM_WARN(DUPLEXSTREAM_HANDLER_CLASS_TAG,
-                           "Unable to generate a proper UnionPayloadEvent object from the response in JSON format.");
-        break;
-      }
-      UnionPayloadEvent event;
-      event.SetPayload(PayloadUnion{json.View()});
-      m_onUnionPayloadEvent(event);
+      // TODO: protocol-specific event payload deserialization
+      m_onUnionPayloadEvent(UnionPayloadEvent{});
       break;
     }
     case DuplexStreamEventType::HEADERSANDEXPLICITPAYLOAD: {
-      JsonValue json(GetEventPayloadAsString());
-      if (!json.WasParseSuccessful()) {
-        AWS_LOGSTREAM_WARN(DUPLEXSTREAM_HANDLER_CLASS_TAG,
-                           "Unable to generate a proper HeadersAndExplicitPayloadEvent object from the response in JSON format.");
-        break;
-      }
-      HeadersAndExplicitPayloadEvent event;
-      event.SetPayload(PayloadStructure{json.View()});
-      const auto headerHeader = headers.find("header");
-      if (headerHeader != headers.end()) {
-        event.SetHeader(headerHeader->second.GetEventHeaderValueAsString());
-      }
-      m_onHeadersAndExplicitPayloadEvent(event);
+      // TODO: protocol-specific event payload deserialization
+      m_onHeadersAndExplicitPayloadEvent(HeadersAndExplicitPayloadEvent{});
       break;
     }
     case DuplexStreamEventType::HEADERSANDIMPLICITPAYLOAD: {
-      JsonValue json(GetEventPayloadAsString());
-      if (!json.WasParseSuccessful()) {
-        AWS_LOGSTREAM_WARN(DUPLEXSTREAM_HANDLER_CLASS_TAG,
-                           "Unable to generate a proper HeadersAndImplicitPayloadEvent object from the response in JSON format.");
-        break;
-      }
-      HeadersAndImplicitPayloadEvent event{json.View()};
-      const auto headerHeader = headers.find("header");
-      if (headerHeader != headers.end()) {
-        event.SetHeader(headerHeader->second.GetEventHeaderValueAsString());
-      }
-      m_onHeadersAndImplicitPayloadEvent(event);
+      // TODO: protocol-specific event payload deserialization
+      m_onHeadersAndImplicitPayloadEvent(HeadersAndImplicitPayloadEvent{});
       break;
     }
     default:
@@ -230,33 +155,11 @@ void DuplexStreamHandler::HandleErrorInMessage() {
       return;
     }
   }
-
   errorCode = errorHeaderIter->second.GetEventHeaderValueAsString();
   errorHeaderIter = headers.find(ERROR_MESSAGE_HEADER);
   if (errorHeaderIter == headers.end()) {
-    errorHeaderIter = headers.find(EXCEPTION_TYPE_HEADER);
-    if (errorHeaderIter == headers.end()) {
-      AWS_LOGSTREAM_ERROR(DUPLEXSTREAM_HANDLER_CLASS_TAG, "Error description was not found in the event message.");
-      return;
-    }
-
-    JsonValue exceptionPayload(GetEventPayloadAsString());
-    if (!exceptionPayload.WasParseSuccessful()) {
-      AWS_LOGSTREAM_ERROR(DUPLEXSTREAM_HANDLER_CLASS_TAG,
-                          "Unable to generate a proper ErrorEvent object from the response in JSON format.");
-      auto contentTypeIter = headers.find(Aws::Utils::Event::CONTENT_TYPE_HEADER);
-      if (contentTypeIter != headers.end()) {
-        AWS_LOGSTREAM_DEBUG(DUPLEXSTREAM_HANDLER_CLASS_TAG,
-                            "Error content-type: " << contentTypeIter->second.GetEventHeaderValueAsString());
-      }
-      return;
-    }
-
-    JsonView payloadView(exceptionPayload);
-    errorMessage = payloadView.ValueExists(MESSAGE_CAMEL_CASE)   ? payloadView.GetString(MESSAGE_CAMEL_CASE)
-                   : payloadView.ValueExists(MESSAGE_LOWER_CASE) ? payloadView.GetString(MESSAGE_LOWER_CASE)
-                                                                 : "";
-
+    // TODO: read error message from payload once protocol-specific serde lands
+    // TODO: protocol-specific error payload deserialization
   } else {
     errorMessage = errorHeaderIter->second.GetEventHeaderValueAsString();
   }
@@ -266,7 +169,6 @@ void DuplexStreamHandler::HandleErrorInMessage() {
 void DuplexStreamHandler::MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage) {
   RestJsonProtocolErrorMarshaller errorMarshaller;
   AWSError<CoreErrors> error;
-
   if (errorCode.empty()) {
     error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", errorMessage, false);
   } else {
@@ -282,7 +184,6 @@ void DuplexStreamHandler::MarshallError(const Aws::String& errorCode, const Aws:
                                    "Unable to parse ExceptionName: " + errorCode + " Message: " + errorMessage, false);
     }
   }
-
   m_onError(AWSError<RestJsonProtocolErrors>(error));
 }
 
@@ -298,7 +199,6 @@ static const int HEADERSANDIMPLICITPAYLOAD_HASH = Aws::Utils::HashingUtils::Hash
 
 DuplexStreamEventType GetDuplexStreamEventTypeForName(const Aws::String& name) {
   int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-
   if (hashCode == INITIAL_RESPONSE_HASH) {
     return DuplexStreamEventType::INITIAL_RESPONSE;
   } else if (hashCode == HEADERS_HASH) {

@@ -21,6 +21,8 @@ namespace RestJsonProtocol {
 namespace Model {
 class RecursiveShapesInputOutputNested2;
 
+/**
+ */
 class RecursiveShapesInputOutputNested1 {
  public:
   AWS_RESTJSONPROTOCOL_API RecursiveShapesInputOutputNested1() = default;

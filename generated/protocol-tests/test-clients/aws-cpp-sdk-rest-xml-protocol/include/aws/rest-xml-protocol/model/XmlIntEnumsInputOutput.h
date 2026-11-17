@@ -1,0 +1,158 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace RestXmlProtocol {
+namespace Model {
+
+/**
+ */
+class XmlIntEnumsInputOutput {
+ public:
+  AWS_RESTXMLPROTOCOL_API XmlIntEnumsInputOutput() = default;
+  AWS_RESTXMLPROTOCOL_API XmlIntEnumsInputOutput(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_RESTXMLPROTOCOL_API XmlIntEnumsInputOutput& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_RESTXMLPROTOCOL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+
+  ///@{
+
+  inline int GetIntEnum1() const { return m_intEnum1; }
+  inline bool IntEnum1HasBeenSet() const { return m_intEnum1HasBeenSet; }
+  inline void SetIntEnum1(int value) {
+    m_intEnum1HasBeenSet = true;
+    m_intEnum1 = value;
+  }
+  inline XmlIntEnumsInputOutput& WithIntEnum1(int value) {
+    SetIntEnum1(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline int GetIntEnum2() const { return m_intEnum2; }
+  inline bool IntEnum2HasBeenSet() const { return m_intEnum2HasBeenSet; }
+  inline void SetIntEnum2(int value) {
+    m_intEnum2HasBeenSet = true;
+    m_intEnum2 = value;
+  }
+  inline XmlIntEnumsInputOutput& WithIntEnum2(int value) {
+    SetIntEnum2(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline int GetIntEnum3() const { return m_intEnum3; }
+  inline bool IntEnum3HasBeenSet() const { return m_intEnum3HasBeenSet; }
+  inline void SetIntEnum3(int value) {
+    m_intEnum3HasBeenSet = true;
+    m_intEnum3 = value;
+  }
+  inline XmlIntEnumsInputOutput& WithIntEnum3(int value) {
+    SetIntEnum3(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::Vector<int>& GetIntEnumList() const { return m_intEnumList; }
+  inline bool IntEnumListHasBeenSet() const { return m_intEnumListHasBeenSet; }
+  template <typename IntEnumListT = Aws::Vector<int>>
+  void SetIntEnumList(IntEnumListT&& value) {
+    m_intEnumListHasBeenSet = true;
+    m_intEnumList = std::forward<IntEnumListT>(value);
+  }
+  template <typename IntEnumListT = Aws::Vector<int>>
+  XmlIntEnumsInputOutput& WithIntEnumList(IntEnumListT&& value) {
+    SetIntEnumList(std::forward<IntEnumListT>(value));
+    return *this;
+  }
+  inline XmlIntEnumsInputOutput& AddIntEnumList(int value) {
+    m_intEnumListHasBeenSet = true;
+    m_intEnumList.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::Vector<int>& GetIntEnumSet() const { return m_intEnumSet; }
+  inline bool IntEnumSetHasBeenSet() const { return m_intEnumSetHasBeenSet; }
+  template <typename IntEnumSetT = Aws::Vector<int>>
+  void SetIntEnumSet(IntEnumSetT&& value) {
+    m_intEnumSetHasBeenSet = true;
+    m_intEnumSet = std::forward<IntEnumSetT>(value);
+  }
+  template <typename IntEnumSetT = Aws::Vector<int>>
+  XmlIntEnumsInputOutput& WithIntEnumSet(IntEnumSetT&& value) {
+    SetIntEnumSet(std::forward<IntEnumSetT>(value));
+    return *this;
+  }
+  inline XmlIntEnumsInputOutput& AddIntEnumSet(int value) {
+    m_intEnumSetHasBeenSet = true;
+    m_intEnumSet.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::Map<Aws::String, int>& GetIntEnumMap() const { return m_intEnumMap; }
+  inline bool IntEnumMapHasBeenSet() const { return m_intEnumMapHasBeenSet; }
+  template <typename IntEnumMapT = Aws::Map<Aws::String, int>>
+  void SetIntEnumMap(IntEnumMapT&& value) {
+    m_intEnumMapHasBeenSet = true;
+    m_intEnumMap = std::forward<IntEnumMapT>(value);
+  }
+  template <typename IntEnumMapT = Aws::Map<Aws::String, int>>
+  XmlIntEnumsInputOutput& WithIntEnumMap(IntEnumMapT&& value) {
+    SetIntEnumMap(std::forward<IntEnumMapT>(value));
+    return *this;
+  }
+  inline XmlIntEnumsInputOutput& AddIntEnumMap(Aws::String key, int value) {
+    m_intEnumMapHasBeenSet = true;
+    m_intEnumMap.emplace(key, value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_intEnum1{0};
+
+  int m_intEnum2{0};
+
+  int m_intEnum3{0};
+
+  Aws::Vector<int> m_intEnumList;
+
+  Aws::Vector<int> m_intEnumSet;
+
+  Aws::Map<Aws::String, int> m_intEnumMap;
+  bool m_intEnum1HasBeenSet = false;
+  bool m_intEnum2HasBeenSet = false;
+  bool m_intEnum3HasBeenSet = false;
+  bool m_intEnumListHasBeenSet = false;
+  bool m_intEnumSetHasBeenSet = false;
+  bool m_intEnumMapHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws

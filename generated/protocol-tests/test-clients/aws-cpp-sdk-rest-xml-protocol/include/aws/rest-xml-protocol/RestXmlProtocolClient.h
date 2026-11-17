@@ -4,25 +4,32 @@
  */
 
 #pragma once
-#include <aws/core/AmazonSerializableWebServiceRequest.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rest-xml-protocol/RestXmlProtocolErrorMarshaller.h>
 #include <aws/rest-xml-protocol/RestXmlProtocolServiceClientModel.h>
 #include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
 namespace Aws {
 namespace RestXmlProtocol {
+AWS_RESTXMLPROTOCOL_API extern const char SERVICE_NAME[];
 /**
  * <p>A REST XML service that sends XML requests and responses.</p>
  */
-class AWS_RESTXMLPROTOCOL_API RestXmlProtocolClient : public Aws::Client::AWSXMLClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<RestXmlProtocolClient> {
+class AWS_RESTXMLPROTOCOL_API RestXmlProtocolClient
+    : Aws::Client::ClientWithAsyncTemplateMethods<RestXmlProtocolClient>,
+      public smithy::client::AwsSmithyClientT<Aws::RestXmlProtocol::SERVICE_NAME, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration,
+                                              smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+                                              RestXmlProtocolEndpointProviderBase, smithy::client::XmlOutcomeSerializer,
+                                              smithy::client::XmlOutcome, Aws::Client::RestXmlProtocolErrorMarshaller> {
  public:
-  typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
+  inline const char* GetServiceClientName() const override { return "Rest Xml Protocol"; }
 
   typedef RestXmlProtocolClientConfiguration ClientConfigurationType;
   typedef RestXmlProtocolEndpointProvider EndpointProviderType;
@@ -1837,16 +1844,12 @@ class AWS_RESTXMLPROTOCOL_API RestXmlProtocolClient : public Aws::Client::AWSXML
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RestXmlProtocolClient>;
-  void init(const RestXmlProtocolClientConfiguration& clientConfiguration);
 
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RestXmlProtocolError> InvokeOperationOutcome;
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>, RestXmlProtocolError> InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
-                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                const std::function<void(Aws::Endpoint::AWSEndpoint&)>& resolveUri,
                                                 Aws::Http::HttpMethod httpMethod) const;
-
-  RestXmlProtocolClientConfiguration m_clientConfiguration;
-  std::shared_ptr<RestXmlProtocolEndpointProviderBase> m_endpointProvider;
 };
 
 }  // namespace RestXmlProtocol

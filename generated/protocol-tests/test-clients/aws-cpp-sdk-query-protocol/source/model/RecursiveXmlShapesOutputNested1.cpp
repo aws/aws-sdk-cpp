@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/query-protocol/model/RecursiveXmlShapesOutputNested1.h>
@@ -20,48 +23,11 @@ namespace Model {
 
 RecursiveXmlShapesOutputNested1::RecursiveXmlShapesOutputNested1(const XmlNode& xmlNode) { *this = xmlNode; }
 
-RecursiveXmlShapesOutputNested1& RecursiveXmlShapesOutputNested1::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+RecursiveXmlShapesOutputNested1& RecursiveXmlShapesOutputNested1::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode fooNode = resultNode.FirstChild("foo");
-    if (!fooNode.IsNull()) {
-      m_foo = Aws::Utils::Xml::DecodeEscapedXmlText(fooNode.GetText());
-      m_fooHasBeenSet = true;
-    }
-    XmlNode nestedNode = resultNode.FirstChild("nested");
-    if (!nestedNode.IsNull()) {
-      m_nested = Aws::MakeShared<RecursiveXmlShapesOutputNested2>("RecursiveXmlShapesOutputNested1", nestedNode);
-      m_nestedHasBeenSet = true;
-    }
-  }
+void RecursiveXmlShapesOutputNested1::OutputToStream(Aws::OStream&, const char*, unsigned, const char*) const {}
 
-  return *this;
-}
-
-void RecursiveXmlShapesOutputNested1::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
-                                                     const char* locationValue) const {
-  if (m_fooHasBeenSet) {
-    oStream << location << index << locationValue << ".foo=" << StringUtils::URLEncode(m_foo.c_str()) << "&";
-  }
-
-  if (m_nestedHasBeenSet) {
-    Aws::StringStream nestedLocationAndMemberSs;
-    nestedLocationAndMemberSs << location << index << locationValue << ".nested";
-    m_nested->OutputToStream(oStream, nestedLocationAndMemberSs.str().c_str());
-  }
-}
-
-void RecursiveXmlShapesOutputNested1::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_fooHasBeenSet) {
-    oStream << location << ".foo=" << StringUtils::URLEncode(m_foo.c_str()) << "&";
-  }
-  if (m_nestedHasBeenSet) {
-    Aws::String nestedLocationAndMember(location);
-    nestedLocationAndMember += ".nested";
-    m_nested->OutputToStream(oStream, nestedLocationAndMember.c_str());
-  }
-}
+void RecursiveXmlShapesOutputNested1::OutputToStream(Aws::OStream&, const char*) const {}
 
 }  // namespace Model
 }  // namespace QueryProtocol

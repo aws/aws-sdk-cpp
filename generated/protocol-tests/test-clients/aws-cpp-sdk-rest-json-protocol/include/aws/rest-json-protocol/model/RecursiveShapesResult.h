@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
 #include <aws/rest-json-protocol/model/RecursiveShapesInputOutputNested1.h>
@@ -20,6 +21,13 @@ namespace Json {
 class JsonValue;
 }  // namespace Json
 }  // namespace Utils
+}  // namespace Aws
+namespace smithy {
+namespace schema {
+class SerializableStruct;
+}
+}  // namespace smithy
+namespace Aws {
 namespace RestJsonProtocol {
 namespace Model {
 class RecursiveShapesResult {
@@ -27,6 +35,7 @@ class RecursiveShapesResult {
   AWS_RESTJSONPROTOCOL_API RecursiveShapesResult() = default;
   AWS_RESTJSONPROTOCOL_API RecursiveShapesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_RESTJSONPROTOCOL_API RecursiveShapesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{
 

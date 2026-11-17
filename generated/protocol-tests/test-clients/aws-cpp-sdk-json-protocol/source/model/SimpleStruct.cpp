@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/json-protocol/model/SimpleStruct.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 SimpleStruct::SimpleStruct(JsonView jsonValue) { *this = jsonValue; }
 
-SimpleStruct& SimpleStruct::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Value")) {
-    m_value = jsonValue.GetString("Value");
-    m_valueHasBeenSet = true;
-  }
-  return *this;
-}
+SimpleStruct& SimpleStruct::operator=(JsonView) { return *this; }
 
 JsonValue SimpleStruct::Jsonize() const {
   JsonValue payload;
-
-  if (m_valueHasBeenSet) {
-    payload.WithString("Value", m_value);
-  }
-
   return payload;
 }
 

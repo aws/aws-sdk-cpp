@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/NestedPayload.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 NestedPayload::NestedPayload(JsonView jsonValue) { *this = jsonValue; }
 
-NestedPayload& NestedPayload::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("greeting")) {
-    m_greeting = jsonValue.GetString("greeting");
-    m_greetingHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  return *this;
-}
+NestedPayload& NestedPayload::operator=(JsonView) { return *this; }
 
 JsonValue NestedPayload::Jsonize() const {
   JsonValue payload;
-
-  if (m_greetingHasBeenSet) {
-    payload.WithString("greeting", m_greeting);
-  }
-
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
   return payload;
 }
 

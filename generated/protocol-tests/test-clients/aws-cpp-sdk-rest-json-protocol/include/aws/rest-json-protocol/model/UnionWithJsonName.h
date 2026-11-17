@@ -19,6 +19,8 @@ class JsonView;
 namespace RestJsonProtocol {
 namespace Model {
 
+/**
+ */
 class UnionWithJsonName {
  public:
   AWS_RESTJSONPROTOCOL_API UnionWithJsonName() = default;

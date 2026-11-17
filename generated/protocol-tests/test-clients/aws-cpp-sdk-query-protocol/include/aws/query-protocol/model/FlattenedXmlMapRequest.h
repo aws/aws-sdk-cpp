@@ -24,6 +24,8 @@ class FlattenedXmlMapRequest : public QueryProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "FlattenedXmlMap"; }
 
   AWS_QUERYPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_QUERYPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_QUERYPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
  protected:
   AWS_QUERYPROTOCOL_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;

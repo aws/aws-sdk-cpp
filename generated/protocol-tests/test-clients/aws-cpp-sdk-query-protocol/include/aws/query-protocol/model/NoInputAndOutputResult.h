@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/query-protocol/QueryProtocol_EXPORTS.h>
 #include <aws/query-protocol/model/ResponseMetadata.h>
 
@@ -19,6 +20,13 @@ namespace Xml {
 class XmlDocument;
 }  // namespace Xml
 }  // namespace Utils
+}  // namespace Aws
+namespace smithy {
+namespace schema {
+class SerializableStruct;
+}
+}  // namespace smithy
+namespace Aws {
 namespace QueryProtocol {
 namespace Model {
 class NoInputAndOutputResult {

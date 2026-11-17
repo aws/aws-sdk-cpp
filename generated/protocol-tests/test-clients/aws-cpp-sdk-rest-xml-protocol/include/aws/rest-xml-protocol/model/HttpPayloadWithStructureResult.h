@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 #include <aws/rest-xml-protocol/model/NestedPayload.h>
@@ -20,6 +21,13 @@ namespace Xml {
 class XmlDocument;
 }  // namespace Xml
 }  // namespace Utils
+}  // namespace Aws
+namespace smithy {
+namespace schema {
+class SerializableStruct;
+}
+}  // namespace smithy
+namespace Aws {
 namespace RestXmlProtocol {
 namespace Model {
 class HttpPayloadWithStructureResult {
@@ -28,6 +36,7 @@ class HttpPayloadWithStructureResult {
   AWS_RESTXMLPROTOCOL_API HttpPayloadWithStructureResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
   AWS_RESTXMLPROTOCOL_API HttpPayloadWithStructureResult& operator=(
       const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{
 

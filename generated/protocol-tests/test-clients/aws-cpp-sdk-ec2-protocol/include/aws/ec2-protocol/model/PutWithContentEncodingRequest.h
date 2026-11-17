@@ -27,15 +27,17 @@ class PutWithContentEncodingRequest : public EC2ProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "PutWithContentEncoding"; }
 
   AWS_EC2PROTOCOL_API Aws::String SerializePayload() const override;
-
-#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
-  virtual Aws::Client::CompressionAlgorithm GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const override;
-#endif
+  AWS_EC2PROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_EC2PROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
  protected:
   AWS_EC2PROTOCOL_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
 
  public:
+#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
+  virtual Aws::Client::CompressionAlgorithm GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const override;
+#endif
+
   ///@{
 
   inline const Aws::String& GetEncoding() const { return m_encoding; }

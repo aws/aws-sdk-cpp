@@ -4,11 +4,8 @@
  */
 
 #pragma once
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/json-protocol/JsonProtocolRequest.h>
 #include <aws/json-protocol/JsonProtocol_EXPORTS.h>
-
-#include <utility>
 
 namespace Aws {
 namespace JsonProtocol {
@@ -27,6 +24,8 @@ class SimpleScalarPropertiesRequest : public JsonProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "SimpleScalarProperties"; }
 
   AWS_JSONPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_JSONPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_JSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   AWS_JSONPROTOCOL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
@@ -57,31 +56,12 @@ class SimpleScalarPropertiesRequest : public JsonProtocolRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  SimpleScalarPropertiesRequest& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   double m_floatValue{0.0};
 
   double m_doubleValue{0.0};
-
-  Aws::String m_requestId;
   bool m_floatValueHasBeenSet = false;
   bool m_doubleValueHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

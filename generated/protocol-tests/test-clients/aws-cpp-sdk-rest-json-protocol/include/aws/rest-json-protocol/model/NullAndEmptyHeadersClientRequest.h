@@ -28,6 +28,8 @@ class NullAndEmptyHeadersClientRequest : public RestJsonProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "NullAndEmptyHeadersClient"; }
 
   AWS_RESTJSONPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_RESTJSONPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   AWS_RESTJSONPROTOCOL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
@@ -84,34 +86,15 @@ class NullAndEmptyHeadersClientRequest : public RestJsonProtocolRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  NullAndEmptyHeadersClientRequest& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_a;
 
   Aws::String m_b;
 
   Aws::Vector<Aws::String> m_c;
-
-  Aws::String m_requestId;
   bool m_aHasBeenSet = false;
   bool m_bHasBeenSet = false;
   bool m_cHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

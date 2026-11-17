@@ -36,6 +36,7 @@ class DuplexStreamWithInitialMessagesRequest : public RestJsonProtocolRequest {
   // This request is sent by encoding its data in event-streams which is sent as IOStream via GetBody()
   AWS_RESTJSONPROTOCOL_API Aws::String SerializePayload() const override { return {}; }
   AWS_RESTJSONPROTOCOL_API std::shared_ptr<Aws::IOStream> GetBody() const override;
+
   AWS_RESTJSONPROTOCOL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
   /**
@@ -81,7 +82,6 @@ class DuplexStreamWithInitialMessagesRequest : public RestJsonProtocolRequest {
   ///@}
 
   ///@{
-
   AWS_RESTJSONPROTOCOL_API std::shared_ptr<EventStream> GetStream() const { return m_stream; }
   AWS_RESTJSONPROTOCOL_API void SetStream(const std::shared_ptr<EventStream>& value) {
     m_streamHasBeenSet = true;
@@ -91,11 +91,9 @@ class DuplexStreamWithInitialMessagesRequest : public RestJsonProtocolRequest {
     SetStream(value);
     return *this;
   }
-
   ///@}
  private:
   Aws::String m_initialRequestMember;
-
   std::shared_ptr<EventStream> m_stream;
   DuplexStreamWithInitialMessagesHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};

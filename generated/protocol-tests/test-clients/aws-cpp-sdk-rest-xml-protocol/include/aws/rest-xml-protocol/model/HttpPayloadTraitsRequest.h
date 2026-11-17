@@ -44,28 +44,9 @@ class HttpPayloadTraitsRequest : public StreamingRestXmlProtocolRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  HttpPayloadTraitsRequest& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_foo;
-
-  Aws::String m_requestId;
   bool m_fooHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

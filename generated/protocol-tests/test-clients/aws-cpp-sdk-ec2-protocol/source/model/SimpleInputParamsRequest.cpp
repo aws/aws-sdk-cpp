@@ -3,75 +3,142 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/ec2-protocol/model/SimpleInputParamsRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/MapSerializer.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeSerializer.h>
+#include <smithy/client/schema/XmlTraits.h>
+
+#include <numeric>
 
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-Aws::String SimpleInputParamsRequest::SerializePayload() const {
-  Aws::StringStream ss;
-  ss << "Action=SimpleInputParams&";
-  if (m_fooHasBeenSet) {
-    ss << "Foo=" << StringUtils::URLEncode(m_foo.c_str()) << "&";
-  }
+namespace {
+class SimpleInputParamsRequestSerializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit SimpleInputParamsRequestSerializable(const SimpleInputParamsRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
+  void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
 
-  if (m_barHasBeenSet) {
-    ss << "Bar=" << StringUtils::URLEncode(m_bar.c_str()) << "&";
-  }
+ private:
+  const SimpleInputParamsRequest& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
 
-  if (m_bazHasBeenSet) {
-    ss << "Baz=" << std::boolalpha << m_baz << "&";
+void SimpleInputParamsRequestSerializable::SerializeMembers(smithy::schema::ShapeSerializer& serializer) const {
+  if (m_obj.FooHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("Foo").value();
+    serializer.WriteString(memberSchema, m_obj.GetFoo());
   }
-
-  if (m_bamHasBeenSet) {
-    ss << "Bam=" << m_bam << "&";
+  if (m_obj.BarHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("Bar").value();
+    serializer.WriteString(memberSchema, m_obj.GetBar());
   }
-
-  if (m_floatValueHasBeenSet) {
-    ss << "FloatValue=" << m_floatValue << "&";
+  if (m_obj.BazHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("Baz").value();
+    serializer.WriteBoolean(memberSchema, m_obj.GetBaz());
   }
-
-  if (m_booHasBeenSet) {
-    ss << "Boo=" << StringUtils::URLEncode(m_boo) << "&";
+  if (m_obj.BamHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("Bam").value();
+    serializer.WriteInteger(memberSchema, m_obj.GetBam());
   }
-
-  if (m_quxHasBeenSet) {
-    ss << "Qux=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_qux).c_str()) << "&";
+  if (m_obj.FloatValueHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("FloatValue").value();
+    serializer.WriteDouble(memberSchema, m_obj.GetFloatValue());
   }
-
-  if (m_fooEnumHasBeenSet) {
-    ss << "FooEnum=" << StringUtils::URLEncode(FooEnumMapper::GetNameForFooEnum(m_fooEnum)) << "&";
+  if (m_obj.BooHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("Boo").value();
+    serializer.WriteDouble(memberSchema, m_obj.GetBoo());
   }
-
-  if (m_hasQueryNameHasBeenSet) {
-    ss << "HasQueryName=" << StringUtils::URLEncode(m_hasQueryName.c_str()) << "&";
+  if (m_obj.QuxHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("Qux").value();
+    serializer.WriteBlob(memberSchema, m_obj.GetQux());
   }
-
-  if (m_hasQueryAndXmlNameHasBeenSet) {
-    ss << "HasQueryAndXmlName=" << StringUtils::URLEncode(m_hasQueryAndXmlName.c_str()) << "&";
+  if (m_obj.FooEnumHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("FooEnum").value();
+    serializer.WriteString(memberSchema, FooEnumMapper::GetNameForFooEnum(m_obj.GetFooEnum()));
   }
-
-  if (m_usesXmlNameHasBeenSet) {
-    ss << "UsesXmlName=" << StringUtils::URLEncode(m_usesXmlName.c_str()) << "&";
+  if (m_obj.HasQueryNameHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("HasQueryName").value();
+    serializer.WriteString(memberSchema, m_obj.GetHasQueryName());
   }
-
-  if (m_distinctQueryNameHasBeenSet) {
-    ss << "DistinctQueryName=" << StringUtils::URLEncode(m_distinctQueryName.c_str()) << "&";
+  if (m_obj.HasQueryAndXmlNameHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("HasQueryAndXmlName").value();
+    serializer.WriteString(memberSchema, m_obj.GetHasQueryAndXmlName());
   }
-
-  if (m_distinctQueryAndXmlNameHasBeenSet) {
-    ss << "XmlAndQueryName=" << StringUtils::URLEncode(m_distinctQueryAndXmlName.c_str()) << "&";
+  if (m_obj.UsesXmlNameHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("UsesXmlName").value();
+    serializer.WriteString(memberSchema, m_obj.GetUsesXmlName());
   }
-
-  if (m_distinctXmlNameHasBeenSet) {
-    ss << "XmlNameOnly=" << StringUtils::URLEncode(m_distinctXmlName.c_str()) << "&";
+  if (m_obj.DistinctQueryNameHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("DistinctQueryName").value();
+    serializer.WriteString(memberSchema, m_obj.GetDistinctQueryName());
   }
+  if (m_obj.DistinctQueryAndXmlNameHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("DistinctQueryAndXmlName").value();
+    serializer.WriteString(memberSchema, m_obj.GetDistinctQueryAndXmlName());
+  }
+  if (m_obj.DistinctXmlNameHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("DistinctXmlName").value();
+    serializer.WriteString(memberSchema, m_obj.GetDistinctXmlName());
+  }
+}
 
-  ss << "Version=2020-01-08";
-  return ss.str();
+std::shared_ptr<const smithy::schema::Schema> SimpleInputParamsRequestSerializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("SimpleInputParamsRequest")
+      .PutMember("Foo", smithy::schema::Schema::CreateString("Foo"))
+      .PutMember("Bar", smithy::schema::Schema::CreateString("Bar"))
+      .PutMember("Baz", smithy::schema::Schema::CreateBoolean("Baz"))
+      .PutMember("Bam", smithy::schema::Schema::CreateInteger("Bam"))
+      .PutMember("FloatValue", smithy::schema::Schema::CreateDouble("FloatValue"))
+      .PutMember("Boo", smithy::schema::Schema::CreateDouble("Boo"))
+      .PutMember("Qux", smithy::schema::Schema::CreateBlob("Qux"))
+      .PutMember("FooEnum", smithy::schema::Schema::CreateEnum("FooEnum"))
+      .PutMember("HasQueryName", smithy::schema::Schema::CreateString("HasQueryName"),
+                 {{smithy::schema::Ec2QueryNameTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::Ec2QueryNameTrait>("SchemaSerdeTrait", "HasQueryName")}})
+      .PutMember("HasQueryAndXmlName", smithy::schema::Schema::CreateString("HasQueryAndXmlName"),
+                 {{smithy::schema::Ec2QueryNameTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::Ec2QueryNameTrait>("SchemaSerdeTrait", "HasQueryAndXmlName")}})
+      .PutMember("UsesXmlName", smithy::schema::Schema::CreateString("UsesXmlName"),
+                 {{smithy::schema::XmlNameTrait::KEY(), Aws::MakeShared<smithy::schema::XmlNameTrait>("SchemaSerdeTrait", "usesXmlName")}})
+      .PutMember(
+          "DistinctQueryName", smithy::schema::Schema::CreateString("DistinctQueryName"),
+          {{smithy::schema::Ec2QueryNameTrait::KEY(), Aws::MakeShared<smithy::schema::Ec2QueryNameTrait>("SchemaSerdeTrait", "QueryName")}})
+      .PutMember("DistinctQueryAndXmlName", smithy::schema::Schema::CreateString("DistinctQueryAndXmlName"),
+                 {{smithy::schema::Ec2QueryNameTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::Ec2QueryNameTrait>("SchemaSerdeTrait", "queryAndXmlName")}})
+      .PutMember("DistinctXmlName", smithy::schema::Schema::CreateString("DistinctXmlName"),
+                 {{smithy::schema::XmlNameTrait::KEY(), Aws::MakeShared<smithy::schema::XmlNameTrait>("SchemaSerdeTrait", "xmlNameOnly")}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> SimpleInputParamsRequest::GetSchemaSerdeInput() const {
+  return Aws::MakeUnique<SimpleInputParamsRequestSerializable>("SimpleInputParamsRequestSerializable", *this);
+}
+
+Aws::String SimpleInputParamsRequest::SerializePayload() const { return {}; }
+smithy::schema::OperationRequestContext SimpleInputParamsRequest::GetSchemaSerdeContext() const {
+  return {"SimpleInputParams", "2020-01-08"};
 }
 
 void SimpleInputParamsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }
