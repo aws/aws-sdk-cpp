@@ -4,6 +4,7 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
+import software.amazon.smithy.aws.traits.protocols.Ec2QueryTrait;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.IntegerShape;
 import software.amazon.smithy.model.shapes.LongShape;
@@ -150,8 +151,9 @@ public class ShapeUtil {
      * @return "Response" for EC2 protocol, "SdkResult" if naming conflict exists, otherwise "Result"
      */
     public static String getResultSuffix(Model model, OperationShape operation, String smithyServiceName) {
-        // EC2 protocol services rename all Result shapes to Response
-        if ("ec2".equals(smithyServiceName)) {
+        // EC2 protocol services rename all Result shapes to Response (C2J applies this to every ec2Query service)
+        if ("ec2".equals(smithyServiceName)
+                || model.getServiceShapes().stream().anyMatch(s -> s.hasTrait(Ec2QueryTrait.class))) {
             return "Response";
         }
         

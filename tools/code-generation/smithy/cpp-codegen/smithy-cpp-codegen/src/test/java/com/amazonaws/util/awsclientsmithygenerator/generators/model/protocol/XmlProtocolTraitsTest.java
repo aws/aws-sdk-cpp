@@ -108,8 +108,8 @@ class XmlProtocolTraitsTest {
     void restXml_serdeMethodImpls_emitAddToNodeBody() {
         String out = render(w -> restXml.writeSerdeMethodImpls(w, "Nested"));
         assertTrue(out.contains("Nested::Nested(const XmlNode& xmlNode) { *this = xmlNode; }"), out);
-        assertTrue(out.contains("Nested& Nested::operator=(const XmlNode& xmlNode) {"), out);
-        assertTrue(out.contains("void Nested::AddToNode(XmlNode& parentNode) const {"), out);
+        assertTrue(out.contains("Nested& Nested::operator=(const XmlNode&) {"), out);
+        assertTrue(out.contains("void Nested::AddToNode(XmlNode&) const {"), out);
     }
 
     @Test
@@ -173,10 +173,10 @@ class XmlProtocolTraitsTest {
         ProtocolTraits traits = new QueryXmlProtocolTraits(p);
         String out = render(w -> traits.writeSerdeMethodImpls(w, "Nested"));
         assertTrue(out.contains("Nested::Nested(const XmlNode& xmlNode) { *this = xmlNode; }"), out);
-        assertTrue(out.contains("void Nested::OutputToStream(Aws::OStream& ostream, const char* location, "
-            + "unsigned index, const char* locationValue) const {"), out);
-        assertTrue(out.contains("void Nested::OutputToStream(Aws::OStream& ostream, "
-            + "const char* location) const {"), out);
+        assertTrue(out.contains("void Nested::OutputToStream(Aws::OStream&, const char*, "
+            + "unsigned, const char*) const {"), out);
+        assertTrue(out.contains("void Nested::OutputToStream(Aws::OStream&, "
+            + "const char*) const {"), out);
     }
 
     @ParameterizedTest
@@ -218,8 +218,11 @@ class XmlProtocolTraitsTest {
 
     @Test
     void allXmlTraits_useXmlDocumentForResults() {
+        software.amazon.smithy.model.shapes.StructureShape emptyResult =
+            software.amazon.smithy.model.shapes.StructureShape.builder().id("com.example#DoThingResult").build();
+        software.amazon.smithy.model.Model emptyModel = software.amazon.smithy.model.Model.builder().addShape(emptyResult).build();
         for (ProtocolTraits traits : java.util.List.of(restXml, queryXml, ec2)) {
-            String decls = render(w -> traits.writeResultSerdeDecls(w, "AWS_EXAMPLE_API", "DoThingResult"));
+            String decls = render(w -> traits.writeResultSerdeDecls(w, "AWS_EXAMPLE_API", "DoThingResult", emptyResult, emptyModel));
             assertTrue(decls.contains("AWS_EXAMPLE_API DoThingResult(const "
                 + "Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);"), decls);
             assertTrue(decls.contains("AWS_EXAMPLE_API DoThingResult& operator=(const "
@@ -332,11 +335,12 @@ class XmlProtocolTraitsTest {
     }
 
     @Test
-    void queryXml_withHeaderMember_alsoEmitsHeaders() {
+    void queryXml_withHeaderMember_ignoresHttpBindings() {
+        // aws-query / ec2 are RPC protocols: a member's @httpHeader is ignored (C2J parity), so no header method.
         var req = reqWith(true, false); var model = modelWith(req);
         ProtocolTraits q = new QueryXmlProtocolTraits(Protocol.QUERY_XML);
         String d = renderInClassBody(w -> q.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
-        assertTrue(d.contains("GetRequestSpecificHeaders() const override;"), d);
+        assertFalse(d.contains("GetRequestSpecificHeaders() const override;"), d);
         assertFalse(d.contains("DumpBodyToUrl"),
             "DumpBodyToUrl decl moved to RequestRenderer; query traits must not emit it: " + d);
     }

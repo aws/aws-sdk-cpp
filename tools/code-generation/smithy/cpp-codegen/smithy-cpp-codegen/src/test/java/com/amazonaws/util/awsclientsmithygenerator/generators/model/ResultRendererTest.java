@@ -485,8 +485,11 @@ class ResultRendererTest {
 
     @Test
     void statusCodeMember_setFromResponseCode() {
+        // restJson1: the HttpBindingProtocol delivers the status code through the result adapter.
         String cpp = renderResultSource(statusCodeResultModel(), "StatResult.cpp");
-        assertTrue(cpp.contains("m_status = static_cast<int>(result.GetResponseCode());"), cpp);
+        assertTrue(cpp.contains("smithy::schema::HttpResponseCodeTrait::KEY()"), cpp);
+        assertTrue(cpp.contains("m_obj.SetStatus("), cpp);
+        assertFalse(cpp.contains("m_status = static_cast<int>(result.GetResponseCode());"), cpp);
     }
 
     /**

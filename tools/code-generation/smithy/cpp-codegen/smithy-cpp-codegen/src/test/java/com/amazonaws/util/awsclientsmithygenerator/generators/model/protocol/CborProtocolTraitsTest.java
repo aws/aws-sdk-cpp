@@ -152,7 +152,10 @@ class CborProtocolTraitsTest {
 
     @Test
     void resultSerdeDecls_useCborValuePayload() {
-        String out = render(w -> cbor.writeResultSerdeDecls(w, "AWS_EXAMPLE_API", "DoThingResult"));
+        software.amazon.smithy.model.shapes.StructureShape emptyResult =
+            software.amazon.smithy.model.shapes.StructureShape.builder().id("com.example#DoThingResult").build();
+        software.amazon.smithy.model.Model emptyModel = software.amazon.smithy.model.Model.builder().addShape(emptyResult).build();
+        String out = render(w -> cbor.writeResultSerdeDecls(w, "AWS_EXAMPLE_API", "DoThingResult", emptyResult, emptyModel));
         assertTrue(out.contains("Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>"), out);
     }
 

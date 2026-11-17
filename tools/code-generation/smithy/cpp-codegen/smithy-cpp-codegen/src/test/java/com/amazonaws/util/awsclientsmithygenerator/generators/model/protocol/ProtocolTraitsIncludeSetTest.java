@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -148,14 +149,17 @@ class ProtocolTraitsIncludeSetTest {
     @Test
     void resultHeader_onlyCborHardIncludesCborHeader() {
         // CborResultHeader.vm hard-includes <aws/crt/cbor/Cbor.h>; JSON/XML/Query result headers
-        // forward-declare their payload type and add no serde include.
+        // forward-declare their payload type and add no payload serde include.
         assertTrue(new CborProtocolTraits().serdeIncludes(FileKind.RESULT_HEADER)
             .contains("aws/crt/cbor/Cbor.h"),
             new CborProtocolTraits().serdeIncludes(FileKind.RESULT_HEADER).toString());
-        assertTrue(new JsonProtocolTraits(Protocol.JSON).serdeIncludes(FileKind.RESULT_HEADER).isEmpty());
-        assertTrue(new RestXmlProtocolTraits().serdeIncludes(FileKind.RESULT_HEADER).isEmpty());
-        assertTrue(new QueryXmlProtocolTraits(Protocol.QUERY_XML)
-            .serdeIncludes(FileKind.RESULT_HEADER).isEmpty());
+        // JSON/XML/Query result headers carry only AWSMemory.h, for the Aws::UniquePtr return type of
+        // the schema-serde GetSchemaSerdeOutput() hook.
+        for (ProtocolTraits traits : List.of(new JsonProtocolTraits(Protocol.JSON), new RestXmlProtocolTraits(),
+                new QueryXmlProtocolTraits(Protocol.QUERY_XML))) {
+            assertEquals(List.of("aws/core/utils/memory/AWSMemory.h"), traits.serdeIncludes(FileKind.RESULT_HEADER),
+                traits.protocol().toString());
+        }
     }
 
     @Test

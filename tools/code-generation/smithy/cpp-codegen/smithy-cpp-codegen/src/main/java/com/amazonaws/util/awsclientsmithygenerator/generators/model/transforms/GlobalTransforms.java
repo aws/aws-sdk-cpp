@@ -25,6 +25,7 @@ import software.amazon.smithy.model.transform.ModelTransformer;
 import software.amazon.smithy.aws.traits.protocols.AwsQueryCompatibleTrait;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -165,9 +166,9 @@ public final class GlobalTransforms implements ModelTransform {
     }
 
     /**
-     * Returns this class as a ModelTransform: {@link #dropDeprecatedMembers} first (so reachability
-     * sees the pruned model), then {@link #renameReservedRequestMembers}, then
-     * {@link #injectResponseMetadata}.
+     * Returns this class as a ModelTransform: {@link #applyServiceRenames} first (so every later step
+     * sees the final shape names), then {@link #dropDeprecatedMembers} (so reachability sees the pruned
+     * model), then {@link #renameReservedRequestMembers}, then {@link #injectResponseMetadata}.
      */
     @Override
     public boolean shouldRun(ServiceShape service) {
@@ -177,7 +178,28 @@ public final class GlobalTransforms implements ModelTransform {
     @Override
     public Model transform(Model model, ServiceShape service) {
         return injectResponseMetadata(
-            renameReservedRequestMembers(dropDeprecatedMembers(model, service), service), service);
+            renameReservedRequestMembers(dropDeprecatedMembers(applyServiceRenames(model, service), service), service),
+            service);
+    }
+
+    /**
+     * Applies the service's {@code rename} map, which disambiguates shapes that share a simple name across
+     * namespaces (e.g. two {@code GreetingStruct}s, one renamed to {@code RenamedGreeting}). The C++ generator
+     * names classes by simple shape name, so the renamed shape and every reference to it take the new name,
+     * matching C2J. The new id keeps the original namespace. No-op when the service declares no renames.
+     *
+     * @param model   the current model
+     * @param service the service being generated (source of the rename map)
+     * @return the model with renamed shapes, or the input model if there are no renames
+     */
+    static Model applyServiceRenames(Model model, ServiceShape service) {
+        Map<ShapeId, String> rename = service.getRename();
+        if (rename.isEmpty()) {
+            return model;
+        }
+        Map<ShapeId, ShapeId> renames = new HashMap<>();
+        rename.forEach((from, to) -> renames.put(from, ShapeId.fromParts(from.getNamespace(), to)));
+        return ModelTransformer.create().renameShapes(model, renames);
     }
 
     /**
