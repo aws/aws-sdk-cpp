@@ -18,6 +18,8 @@ namespace CriticalitySourceTypeMapper {
 static const int AutomationRule_HASH = HashingUtils::HashString("AutomationRule");
 static const int ResourceName_HASH = HashingUtils::HashString("ResourceName");
 static const int TagInference_HASH = HashingUtils::HashString("TagInference");
+static const int CloudWatchTelemetryInference_HASH = HashingUtils::HashString("CloudWatchTelemetryInference");
+static const int InstalledSoftwareAndPackageInference_HASH = HashingUtils::HashString("InstalledSoftwareAndPackageInference");
 
 CriticalitySourceType GetCriticalitySourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ CriticalitySourceType GetCriticalitySourceTypeForName(const Aws::String& name) {
     return CriticalitySourceType::ResourceName;
   } else if (hashCode == TagInference_HASH) {
     return CriticalitySourceType::TagInference;
+  } else if (hashCode == CloudWatchTelemetryInference_HASH) {
+    return CriticalitySourceType::CloudWatchTelemetryInference;
+  } else if (hashCode == InstalledSoftwareAndPackageInference_HASH) {
+    return CriticalitySourceType::InstalledSoftwareAndPackageInference;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForCriticalitySourceType(CriticalitySourceType enumValue) {
       return "ResourceName";
     case CriticalitySourceType::TagInference:
       return "TagInference";
+    case CriticalitySourceType::CloudWatchTelemetryInference:
+      return "CloudWatchTelemetryInference";
+    case CriticalitySourceType::InstalledSoftwareAndPackageInference:
+      return "InstalledSoftwareAndPackageInference";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

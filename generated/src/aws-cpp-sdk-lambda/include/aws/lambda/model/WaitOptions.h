@@ -17,8 +17,7 @@ namespace Lambda {
 namespace Model {
 
 /**
- * <p>Specifies how long to pause the durable execution.</p><p><h3>See Also:</h3>
- * <a
+ * <p>Specifies how long the durable execution waits.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/WaitOptions">AWS
  * API Reference</a></p>
  */

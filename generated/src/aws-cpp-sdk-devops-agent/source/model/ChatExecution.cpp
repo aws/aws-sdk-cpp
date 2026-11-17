@@ -34,6 +34,10 @@ ChatExecution& ChatExecution::operator=(JsonView jsonValue) {
     m_summary = jsonValue.GetString("summary");
     m_summaryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("archiveStatus")) {
+    m_archiveStatus = ChatArchiveStatusMapper::GetChatArchiveStatusForName(jsonValue.GetString("archiveStatus"));
+    m_archiveStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue ChatExecution::Jsonize() const {
 
   if (m_summaryHasBeenSet) {
     payload.WithString("summary", m_summary);
+  }
+
+  if (m_archiveStatusHasBeenSet) {
+    payload.WithString("archiveStatus", ChatArchiveStatusMapper::GetNameForChatArchiveStatus(m_archiveStatus));
   }
 
   return payload;

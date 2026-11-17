@@ -1,0 +1,115 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
+#include <aws/observabilityadmin/model/TelemetryManifest.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ObservabilityAdmin {
+namespace Model {
+class GetConnectorTelemetryManifestResult {
+ public:
+  AWS_OBSERVABILITYADMIN_API GetConnectorTelemetryManifestResult() = default;
+  AWS_OBSERVABILITYADMIN_API GetConnectorTelemetryManifestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_OBSERVABILITYADMIN_API GetConnectorTelemetryManifestResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The telemetry manifest.</p>
+   */
+  inline const TelemetryManifest& GetManifest() const { return m_manifest; }
+  template <typename ManifestT = TelemetryManifest>
+  void SetManifest(ManifestT&& value) {
+    m_manifestHasBeenSet = true;
+    m_manifest = std::forward<ManifestT>(value);
+  }
+  template <typename ManifestT = TelemetryManifest>
+  GetConnectorTelemetryManifestResult& WithManifest(ManifestT&& value) {
+    SetManifest(std::forward<ManifestT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The current version of the telemetry manifest. Pass this value as
+   * <code>ExpectedVersion</code> when you next call
+   * <code>PutConnectorTelemetryManifest</code>.</p>
+   */
+  inline long long GetVersion() const { return m_version; }
+  inline void SetVersion(long long value) {
+    m_versionHasBeenSet = true;
+    m_version = value;
+  }
+  inline GetConnectorTelemetryManifestResult& WithVersion(long long value) {
+    SetVersion(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time when the telemetry manifest was last updated, in milliseconds since
+   * the Unix epoch.</p>
+   */
+  inline long long GetLastUpdateTimeStamp() const { return m_lastUpdateTimeStamp; }
+  inline void SetLastUpdateTimeStamp(long long value) {
+    m_lastUpdateTimeStampHasBeenSet = true;
+    m_lastUpdateTimeStamp = value;
+  }
+  inline GetConnectorTelemetryManifestResult& WithLastUpdateTimeStamp(long long value) {
+    SetLastUpdateTimeStamp(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetConnectorTelemetryManifestResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  TelemetryManifest m_manifest;
+
+  long long m_version{0};
+
+  long long m_lastUpdateTimeStamp{0};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_manifestHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_lastUpdateTimeStampHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ObservabilityAdmin
+}  // namespace Aws

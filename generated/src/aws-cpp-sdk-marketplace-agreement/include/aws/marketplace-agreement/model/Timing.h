@@ -10,7 +10,7 @@
 namespace Aws {
 namespace AgreementService {
 namespace Model {
-enum class Timing { NOT_SET, ON_ACCEPTANCE, SCHEDULED, BILLING_PERIOD };
+enum class Timing { NOT_SET, ON_ACCEPTANCE, SCHEDULED, BILLING_PERIOD, NOT_APPLICABLE };
 
 namespace TimingMapper {
 AWS_AGREEMENTSERVICE_API Timing GetTimingForName(const Aws::String& name);

@@ -35,6 +35,9 @@ Aws::String CreateAgreementRequestRequest::SerializePayload() const {
   if (m_taxConfigurationHasBeenSet) {
     mapSize++;
   }
+  if (m_acceptorContactHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -69,6 +72,11 @@ Aws::String CreateAgreementRequestRequest::SerializePayload() const {
   if (m_taxConfigurationHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("taxConfiguration"));
     m_taxConfiguration.CborEncode(encoder);
+  }
+
+  if (m_acceptorContactHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("acceptorContact"));
+    m_acceptorContact.CborEncode(encoder);
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

@@ -7,6 +7,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/kinesis/KinesisClient.h>
 #include <aws/kinesis/model/ListChannelsPaginationTraits.h>
+#include <aws/kinesis/model/ListQueuesPaginationTraits.h>
 #include <aws/kinesis/model/ListStreamConsumersPaginationTraits.h>
 #include <aws/kinesis/model/ListStreamsPaginationTraits.h>
 
@@ -15,6 +16,8 @@ namespace Kinesis {
 
 using ListChannelsPaginator =
     Aws::Utils::Pagination::Paginator<KinesisClient, Model::ListChannelsRequest, Pagination::ListChannelsPaginationTraits<KinesisClient>>;
+using ListQueuesPaginator =
+    Aws::Utils::Pagination::Paginator<KinesisClient, Model::ListQueuesRequest, Pagination::ListQueuesPaginationTraits<KinesisClient>>;
 using ListStreamConsumersPaginator = Aws::Utils::Pagination::Paginator<KinesisClient, Model::ListStreamConsumersRequest,
                                                                        Pagination::ListStreamConsumersPaginationTraits<KinesisClient>>;
 using ListStreamsPaginator =

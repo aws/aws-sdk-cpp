@@ -89,6 +89,24 @@ class CreateLaunchConfigurationTemplateRequest : public MgnRequest {
 
   ///@{
   /**
+   * <p>Launch configuration template map auto tagging key.</p>
+   */
+  inline const Aws::String& GetMapAutoTaggingKey() const { return m_mapAutoTaggingKey; }
+  inline bool MapAutoTaggingKeyHasBeenSet() const { return m_mapAutoTaggingKeyHasBeenSet; }
+  template <typename MapAutoTaggingKeyT = Aws::String>
+  void SetMapAutoTaggingKey(MapAutoTaggingKeyT&& value) {
+    m_mapAutoTaggingKeyHasBeenSet = true;
+    m_mapAutoTaggingKey = std::forward<MapAutoTaggingKeyT>(value);
+  }
+  template <typename MapAutoTaggingKeyT = Aws::String>
+  CreateLaunchConfigurationTemplateRequest& WithMapAutoTaggingKey(MapAutoTaggingKeyT&& value) {
+    SetMapAutoTaggingKey(std::forward<MapAutoTaggingKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Request to associate tags during creation of a Launch Configuration
    * Template.</p>
    */
@@ -318,6 +336,8 @@ class CreateLaunchConfigurationTemplateRequest : public MgnRequest {
 
   Aws::String m_mapAutoTaggingMpeID;
 
+  Aws::String m_mapAutoTaggingKey;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   LaunchDisposition m_launchDisposition{LaunchDisposition::NOT_SET};
@@ -346,6 +366,7 @@ class CreateLaunchConfigurationTemplateRequest : public MgnRequest {
   bool m_postLaunchActionsHasBeenSet = false;
   bool m_enableMapAutoTaggingHasBeenSet = false;
   bool m_mapAutoTaggingMpeIDHasBeenSet = false;
+  bool m_mapAutoTaggingKeyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_launchDispositionHasBeenSet = false;
   bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;

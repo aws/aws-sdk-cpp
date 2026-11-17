@@ -38,7 +38,7 @@ class ConfigurableUpfrontPricingTerm {
 
   ///@{
   /**
-   * <p>Category of selector.</p>
+   * <p>Category of the term.</p>
    */
   inline const Aws::String& GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

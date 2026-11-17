@@ -33,6 +33,7 @@
 #include <aws/lambda/model/DeleteAliasRequest.h>
 #include <aws/lambda/model/DeleteCapacityProviderRequest.h>
 #include <aws/lambda/model/DeleteCodeSigningConfigRequest.h>
+#include <aws/lambda/model/DeleteDurableExecutionRequest.h>
 #include <aws/lambda/model/DeleteEventSourceMappingRequest.h>
 #include <aws/lambda/model/DeleteFunctionCodeSigningConfigRequest.h>
 #include <aws/lambda/model/DeleteFunctionConcurrencyRequest.h>
@@ -82,6 +83,7 @@
 #include <aws/lambda/model/ListProvisionedConcurrencyConfigsRequest.h>
 #include <aws/lambda/model/ListTagsRequest.h>
 #include <aws/lambda/model/ListVersionsByFunctionRequest.h>
+#include <aws/lambda/model/PauseDurableExecutionRequest.h>
 #include <aws/lambda/model/PublishLayerVersionRequest.h>
 #include <aws/lambda/model/PublishVersionRequest.h>
 #include <aws/lambda/model/PutFunctionCodeSigningConfigRequest.h>
@@ -94,6 +96,7 @@
 #include <aws/lambda/model/PutRuntimeManagementConfigRequest.h>
 #include <aws/lambda/model/RemoveLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/RemovePermissionRequest.h>
+#include <aws/lambda/model/ResumeDurableExecutionRequest.h>
 #include <aws/lambda/model/SendDurableExecutionCallbackFailureRequest.h>
 #include <aws/lambda/model/SendDurableExecutionCallbackHeartbeatRequest.h>
 #include <aws/lambda/model/SendDurableExecutionCallbackSuccessRequest.h>
@@ -468,6 +471,24 @@ DeleteCodeSigningConfigOutcome LambdaClient::DeleteCodeSigningConfig(const Delet
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteCodeSigningConfigOutcome(result.GetResultWithOwnership())
                             : DeleteCodeSigningConfigOutcome(std::move(result.GetError()));
+}
+
+DeleteDurableExecutionOutcome LambdaClient::DeleteDurableExecution(const DeleteDurableExecutionRequest& request) const {
+  if (!request.DurableExecutionArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDurableExecution", "Required field: DurableExecutionArn, is not set");
+    return DeleteDurableExecutionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [DurableExecutionArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2025-12-01/durable-executions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDurableExecutionArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDurableExecutionOutcome(result.GetResultWithOwnership())
+                            : DeleteDurableExecutionOutcome(std::move(result.GetError()));
 }
 
 DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const DeleteEventSourceMappingRequest& request) const {
@@ -1444,6 +1465,25 @@ ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVer
                             : ListVersionsByFunctionOutcome(std::move(result.GetError()));
 }
 
+PauseDurableExecutionOutcome LambdaClient::PauseDurableExecution(const PauseDurableExecutionRequest& request) const {
+  if (!request.DurableExecutionArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PauseDurableExecution", "Required field: DurableExecutionArn, is not set");
+    return PauseDurableExecutionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [DurableExecutionArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2025-12-01/durable-executions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDurableExecutionArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/pause");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PauseDurableExecutionOutcome(result.GetResultWithOwnership())
+                            : PauseDurableExecutionOutcome(std::move(result.GetError()));
+}
+
 PublishLayerVersionOutcome LambdaClient::PublishLayerVersion(const PublishLayerVersionRequest& request) const {
   if (!request.LayerNameHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("PublishLayerVersion", "Required field: LayerName, is not set");
@@ -1698,6 +1738,25 @@ RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionReq
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? RemovePermissionOutcome(result.GetResultWithOwnership())
                             : RemovePermissionOutcome(std::move(result.GetError()));
+}
+
+ResumeDurableExecutionOutcome LambdaClient::ResumeDurableExecution(const ResumeDurableExecutionRequest& request) const {
+  if (!request.DurableExecutionArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ResumeDurableExecution", "Required field: DurableExecutionArn, is not set");
+    return ResumeDurableExecutionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [DurableExecutionArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2025-12-01/durable-executions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDurableExecutionArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/resume");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResumeDurableExecutionOutcome(result.GetResultWithOwnership())
+                            : ResumeDurableExecutionOutcome(std::move(result.GetError()));
 }
 
 SendDurableExecutionCallbackFailureOutcome LambdaClient::SendDurableExecutionCallbackFailure(

@@ -12,9 +12,11 @@
 #include <aws/observabilityadmin/model/ListTelemetryRulesPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListDatasetIntegrationsPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListTelemetryPipelinesPaginationTraits.h>
+#include <aws/observabilityadmin/model/ListThirdPartyTelemetryEnrichmentsPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListS3TableIntegrationsPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListCentralizationRulesForOrganizationPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryForOrganizationPaginationTraits.h>
+#include <aws/observabilityadmin/model/ListConnectorsPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesForOrganizationPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

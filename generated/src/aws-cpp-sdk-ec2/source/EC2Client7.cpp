@@ -38,6 +38,7 @@
 #include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayNetworkFunctionAttachmentRequest.h>
+#include <aws/ec2/model/ModifyTransitGatewayPeeringAttachmentRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/RestoreManagedPrefixListVersionRequest.h>
 #include <aws/ec2/model/RestoreSnapshotFromRecycleBinRequest.h>
 #include <aws/ec2/model/RestoreSnapshotTierRequest.h>
-#include <aws/ec2/model/RestoreVolumeFromRecycleBinRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -250,6 +250,13 @@ ModifyTransitGatewayNetworkFunctionAttachmentOutcome EC2Client::ModifyTransitGat
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyTransitGatewayNetworkFunctionAttachmentOutcome(result.GetResultWithOwnership())
                             : ModifyTransitGatewayNetworkFunctionAttachmentOutcome(std::move(result.GetError()));
+}
+
+ModifyTransitGatewayPeeringAttachmentOutcome EC2Client::ModifyTransitGatewayPeeringAttachment(
+    const ModifyTransitGatewayPeeringAttachmentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyTransitGatewayPeeringAttachmentOutcome(result.GetResultWithOwnership())
+                            : ModifyTransitGatewayPeeringAttachmentOutcome(std::move(result.GetError()));
 }
 
 ModifyTransitGatewayPolicyTableEntryOutcome EC2Client::ModifyTransitGatewayPolicyTableEntry(
@@ -756,10 +763,4 @@ RestoreSnapshotTierOutcome EC2Client::RestoreSnapshotTier(const RestoreSnapshotT
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RestoreSnapshotTierOutcome(result.GetResultWithOwnership())
                             : RestoreSnapshotTierOutcome(std::move(result.GetError()));
-}
-
-RestoreVolumeFromRecycleBinOutcome EC2Client::RestoreVolumeFromRecycleBin(const RestoreVolumeFromRecycleBinRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RestoreVolumeFromRecycleBinOutcome(result.GetResultWithOwnership())
-                            : RestoreVolumeFromRecycleBinOutcome(std::move(result.GetError()));
 }

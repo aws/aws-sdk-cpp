@@ -221,6 +221,13 @@
 #include <aws/apigateway/model/IntegrationResponse.h>
 #include <aws/apigateway/model/IntegrationType.h>
 #include <aws/apigateway/model/IpAddressType.h>
+#include <aws/apigateway/model/JwtAdditionalClaim.h>
+#include <aws/apigateway/model/JwtClaimFormat.h>
+#include <aws/apigateway/model/JwtConfiguration.h>
+#include <aws/apigateway/model/JwtConfigurationInput.h>
+#include <aws/apigateway/model/JwtIssuer.h>
+#include <aws/apigateway/model/JwtIssuerInput.h>
+#include <aws/apigateway/model/JwtSigningAlgorithm.h>
 #include <aws/apigateway/model/LimitExceededException.h>
 #include <aws/apigateway/model/LocationStatusType.h>
 #include <aws/apigateway/model/Method.h>

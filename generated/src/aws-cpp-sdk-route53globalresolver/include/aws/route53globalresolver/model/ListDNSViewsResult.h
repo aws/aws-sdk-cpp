@@ -51,7 +51,7 @@ class ListDNSViewsResult {
   ///@{
   /**
    * <p>An array of information about the DNS views, such as whether DNSSEC is
-   * enabled, creation time, etc.</p>
+   * enabled and the creation time.</p>
    */
   inline const Aws::Vector<DNSViewSummary>& GetDnsViews() const { return m_dnsViews; }
   template <typename DnsViewsT = Aws::Vector<DNSViewSummary>>

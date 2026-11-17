@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/CapacityBlockInstanceTypePreference.h>
 
 #include <utility>
 
@@ -232,6 +234,32 @@ class DescribeCapacityBlockOfferingsRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>List of instance type preferences for the Capacity Block offering search.
+   * Accepts one or more instance type names. Either this or the legacy
+   * <code>InstanceType</code> parameter is required.</p>
+   */
+  inline const Aws::Vector<CapacityBlockInstanceTypePreference>& GetInstanceTypePreferences() const { return m_instanceTypePreferences; }
+  inline bool InstanceTypePreferencesHasBeenSet() const { return m_instanceTypePreferencesHasBeenSet; }
+  template <typename InstanceTypePreferencesT = Aws::Vector<CapacityBlockInstanceTypePreference>>
+  void SetInstanceTypePreferences(InstanceTypePreferencesT&& value) {
+    m_instanceTypePreferencesHasBeenSet = true;
+    m_instanceTypePreferences = std::forward<InstanceTypePreferencesT>(value);
+  }
+  template <typename InstanceTypePreferencesT = Aws::Vector<CapacityBlockInstanceTypePreference>>
+  DescribeCapacityBlockOfferingsRequest& WithInstanceTypePreferences(InstanceTypePreferencesT&& value) {
+    SetInstanceTypePreferences(std::forward<InstanceTypePreferencesT>(value));
+    return *this;
+  }
+  template <typename InstanceTypePreferencesT = CapacityBlockInstanceTypePreference>
+  DescribeCapacityBlockOfferingsRequest& AddInstanceTypePreferences(InstanceTypePreferencesT&& value) {
+    m_instanceTypePreferencesHasBeenSet = true;
+    m_instanceTypePreferences.emplace_back(std::forward<InstanceTypePreferencesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
 
@@ -254,6 +282,8 @@ class DescribeCapacityBlockOfferingsRequest : public EC2Request {
   int m_ultraserverCount{0};
 
   bool m_allAvailabilityZones{false};
+
+  Aws::Vector<CapacityBlockInstanceTypePreference> m_instanceTypePreferences;
   bool m_dryRunHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;
@@ -265,6 +295,7 @@ class DescribeCapacityBlockOfferingsRequest : public EC2Request {
   bool m_ultraserverTypeHasBeenSet = false;
   bool m_ultraserverCountHasBeenSet = false;
   bool m_allAvailabilityZonesHasBeenSet = false;
+  bool m_instanceTypePreferencesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -97,6 +97,7 @@ class ListSecurityControlDefinitionsRequest : public SecurityHubRequest {
   /**
    * <p>A list of cloud providers to filter the security control definitions by. For
    * example, specify <code>Azure</code> to return only controls that evaluate Azure
+   * resources, or <code>GCP</code> to return only controls that evaluate GCP
    * resources.</p>
    */
   inline const Aws::Vector<SecurityControlsProvider>& GetProviders() const { return m_providers; }

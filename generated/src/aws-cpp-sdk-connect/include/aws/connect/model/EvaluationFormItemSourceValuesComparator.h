@@ -10,7 +10,19 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class EvaluationFormItemSourceValuesComparator { NOT_SET, IN, NOT_IN, ALL_IN, EXACT };
+enum class EvaluationFormItemSourceValuesComparator {
+  NOT_SET,
+  IN,
+  NOT_IN,
+  ALL_IN,
+  EXACT,
+  GREATER_THAN,
+  LESS_THAN,
+  GREATER_THAN_OR_EQUAL_TO,
+  LESS_THAN_OR_EQUAL_TO,
+  EQUAL_TO,
+  NOT_EQUAL_TO
+};
 
 namespace EvaluationFormItemSourceValuesComparatorMapper {
 AWS_CONNECT_API EvaluationFormItemSourceValuesComparator GetEvaluationFormItemSourceValuesComparatorForName(const Aws::String& name);

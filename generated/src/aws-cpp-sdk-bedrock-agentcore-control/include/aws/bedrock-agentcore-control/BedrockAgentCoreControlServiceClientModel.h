@@ -80,6 +80,7 @@
 #include <aws/bedrock-agentcore-control/model/DeleteRegistryResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteResourcePolicyResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteWorkloadIdentityResult.h>
+#include <aws/bedrock-agentcore-control/model/GetAgentInsightStoreResult.h>
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeResult.h>
 #include <aws/bedrock-agentcore-control/model/GetApiKeyCredentialProviderResult.h>
@@ -116,6 +117,8 @@
 #include <aws/bedrock-agentcore-control/model/GetTokenVaultRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetTokenVaultResult.h>
 #include <aws/bedrock-agentcore-control/model/GetWorkloadIdentityResult.h>
+#include <aws/bedrock-agentcore-control/model/ListAgentInsightStoresRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListAgentInsightStoresResult.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsResult.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsByCapacityProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsResult.h>
@@ -186,6 +189,7 @@
 #include <aws/bedrock-agentcore-control/model/SynchronizeGatewayTargetsResult.h>
 #include <aws/bedrock-agentcore-control/model/TagResourceResult.h>
 #include <aws/bedrock-agentcore-control/model/UntagResourceResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateAgentInsightStoreResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateApiKeyCredentialProviderResult.h>
@@ -307,6 +311,7 @@ class DeleteRegistryRequest;
 class DeleteRegistryRecordRequest;
 class DeleteResourcePolicyRequest;
 class DeleteWorkloadIdentityRequest;
+class GetAgentInsightStoreRequest;
 class GetAgentRuntimeRequest;
 class GetAgentRuntimeEndpointRequest;
 class GetApiKeyCredentialProviderRequest;
@@ -342,6 +347,7 @@ class GetRegistryRecordRequest;
 class GetResourcePolicyRequest;
 class GetTokenVaultRequest;
 class GetWorkloadIdentityRequest;
+class ListAgentInsightStoresRequest;
 class ListAgentRuntimeEndpointsRequest;
 class ListAgentRuntimeVersionsRequest;
 class ListAgentRuntimeVersionsByCapacityProviderRequest;
@@ -391,6 +397,7 @@ class SubmitRegistryRecordForApprovalRequest;
 class SynchronizeGatewayTargetsRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateAgentInsightStoreRequest;
 class UpdateAgentRuntimeRequest;
 class UpdateAgentRuntimeEndpointRequest;
 class UpdateApiKeyCredentialProviderRequest;
@@ -482,6 +489,7 @@ typedef Aws::Utils::Outcome<DeleteRegistryResult, BedrockAgentCoreControlError> 
 typedef Aws::Utils::Outcome<DeleteRegistryRecordResult, BedrockAgentCoreControlError> DeleteRegistryRecordOutcome;
 typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, BedrockAgentCoreControlError> DeleteResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteWorkloadIdentityResult, BedrockAgentCoreControlError> DeleteWorkloadIdentityOutcome;
+typedef Aws::Utils::Outcome<GetAgentInsightStoreResult, BedrockAgentCoreControlError> GetAgentInsightStoreOutcome;
 typedef Aws::Utils::Outcome<GetAgentRuntimeResult, BedrockAgentCoreControlError> GetAgentRuntimeOutcome;
 typedef Aws::Utils::Outcome<GetAgentRuntimeEndpointResult, BedrockAgentCoreControlError> GetAgentRuntimeEndpointOutcome;
 typedef Aws::Utils::Outcome<GetApiKeyCredentialProviderResult, BedrockAgentCoreControlError> GetApiKeyCredentialProviderOutcome;
@@ -517,6 +525,7 @@ typedef Aws::Utils::Outcome<GetRegistryRecordResult, BedrockAgentCoreControlErro
 typedef Aws::Utils::Outcome<GetResourcePolicyResult, BedrockAgentCoreControlError> GetResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<GetTokenVaultResult, BedrockAgentCoreControlError> GetTokenVaultOutcome;
 typedef Aws::Utils::Outcome<GetWorkloadIdentityResult, BedrockAgentCoreControlError> GetWorkloadIdentityOutcome;
+typedef Aws::Utils::Outcome<ListAgentInsightStoresResult, BedrockAgentCoreControlError> ListAgentInsightStoresOutcome;
 typedef Aws::Utils::Outcome<ListAgentRuntimeEndpointsResult, BedrockAgentCoreControlError> ListAgentRuntimeEndpointsOutcome;
 typedef Aws::Utils::Outcome<ListAgentRuntimeVersionsResult, BedrockAgentCoreControlError> ListAgentRuntimeVersionsOutcome;
 typedef Aws::Utils::Outcome<ListAgentRuntimeVersionsByCapacityProviderResult, BedrockAgentCoreControlError>
@@ -567,6 +576,7 @@ typedef Aws::Utils::Outcome<SubmitRegistryRecordForApprovalResult, BedrockAgentC
 typedef Aws::Utils::Outcome<SynchronizeGatewayTargetsResult, BedrockAgentCoreControlError> SynchronizeGatewayTargetsOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, BedrockAgentCoreControlError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, BedrockAgentCoreControlError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateAgentInsightStoreResult, BedrockAgentCoreControlError> UpdateAgentInsightStoreOutcome;
 typedef Aws::Utils::Outcome<UpdateAgentRuntimeResult, BedrockAgentCoreControlError> UpdateAgentRuntimeOutcome;
 typedef Aws::Utils::Outcome<UpdateAgentRuntimeEndpointResult, BedrockAgentCoreControlError> UpdateAgentRuntimeEndpointOutcome;
 typedef Aws::Utils::Outcome<UpdateApiKeyCredentialProviderResult, BedrockAgentCoreControlError> UpdateApiKeyCredentialProviderOutcome;
@@ -658,6 +668,7 @@ typedef std::future<DeleteRegistryOutcome> DeleteRegistryOutcomeCallable;
 typedef std::future<DeleteRegistryRecordOutcome> DeleteRegistryRecordOutcomeCallable;
 typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
 typedef std::future<DeleteWorkloadIdentityOutcome> DeleteWorkloadIdentityOutcomeCallable;
+typedef std::future<GetAgentInsightStoreOutcome> GetAgentInsightStoreOutcomeCallable;
 typedef std::future<GetAgentRuntimeOutcome> GetAgentRuntimeOutcomeCallable;
 typedef std::future<GetAgentRuntimeEndpointOutcome> GetAgentRuntimeEndpointOutcomeCallable;
 typedef std::future<GetApiKeyCredentialProviderOutcome> GetApiKeyCredentialProviderOutcomeCallable;
@@ -693,6 +704,7 @@ typedef std::future<GetRegistryRecordOutcome> GetRegistryRecordOutcomeCallable;
 typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
 typedef std::future<GetTokenVaultOutcome> GetTokenVaultOutcomeCallable;
 typedef std::future<GetWorkloadIdentityOutcome> GetWorkloadIdentityOutcomeCallable;
+typedef std::future<ListAgentInsightStoresOutcome> ListAgentInsightStoresOutcomeCallable;
 typedef std::future<ListAgentRuntimeEndpointsOutcome> ListAgentRuntimeEndpointsOutcomeCallable;
 typedef std::future<ListAgentRuntimeVersionsOutcome> ListAgentRuntimeVersionsOutcomeCallable;
 typedef std::future<ListAgentRuntimeVersionsByCapacityProviderOutcome> ListAgentRuntimeVersionsByCapacityProviderOutcomeCallable;
@@ -742,6 +754,7 @@ typedef std::future<SubmitRegistryRecordForApprovalOutcome> SubmitRegistryRecord
 typedef std::future<SynchronizeGatewayTargetsOutcome> SynchronizeGatewayTargetsOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateAgentInsightStoreOutcome> UpdateAgentInsightStoreOutcomeCallable;
 typedef std::future<UpdateAgentRuntimeOutcome> UpdateAgentRuntimeOutcomeCallable;
 typedef std::future<UpdateAgentRuntimeEndpointOutcome> UpdateAgentRuntimeEndpointOutcomeCallable;
 typedef std::future<UpdateApiKeyCredentialProviderOutcome> UpdateApiKeyCredentialProviderOutcomeCallable;
@@ -966,6 +979,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::De
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteWorkloadIdentityRequest&,
                            const Model::DeleteWorkloadIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteWorkloadIdentityResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetAgentInsightStoreRequest&,
+                           const Model::GetAgentInsightStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAgentInsightStoreResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetAgentRuntimeRequest&, const Model::GetAgentRuntimeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAgentRuntimeResponseReceivedHandler;
@@ -1073,6 +1089,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Ge
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetWorkloadIdentityRequest&,
                            const Model::GetWorkloadIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetWorkloadIdentityResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListAgentInsightStoresRequest&,
+                           const Model::ListAgentInsightStoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAgentInsightStoresResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListAgentRuntimeEndpointsRequest&,
                            const Model::ListAgentRuntimeEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAgentRuntimeEndpointsResponseReceivedHandler;
@@ -1228,6 +1247,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Ta
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateAgentInsightStoreRequest&,
+                           const Model::UpdateAgentInsightStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateAgentInsightStoreResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdateAgentRuntimeRequest&,
                            const Model::UpdateAgentRuntimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAgentRuntimeResponseReceivedHandler;

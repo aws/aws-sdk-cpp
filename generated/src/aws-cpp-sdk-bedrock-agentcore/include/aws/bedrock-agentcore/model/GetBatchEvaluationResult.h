@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/BatchEvaluationStatus.h>
 #include <aws/bedrock-agentcore/model/DataSourceConfig.h>
+#include <aws/bedrock-agentcore/model/DatasetExecutionDetails.h>
 #include <aws/bedrock-agentcore/model/EvaluationJobResults.h>
 #include <aws/bedrock-agentcore/model/Evaluator.h>
 #include <aws/bedrock-agentcore/model/ExecutionSummaryClusteringResultContent.h>
@@ -377,6 +378,26 @@ class GetBatchEvaluationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The details of the dataset and agent that the batch evaluation ran, including
+   * the dataset version and agent runtime version that the service resolved when the
+   * batch evaluation started. This field is present only if the batch evaluation was
+   * started with a <code>datasetExecutionConfig</code>.</p>
+   */
+  inline const DatasetExecutionDetails& GetDatasetExecutionDetails() const { return m_datasetExecutionDetails; }
+  template <typename DatasetExecutionDetailsT = DatasetExecutionDetails>
+  void SetDatasetExecutionDetails(DatasetExecutionDetailsT&& value) {
+    m_datasetExecutionDetailsHasBeenSet = true;
+    m_datasetExecutionDetails = std::forward<DatasetExecutionDetailsT>(value);
+  }
+  template <typename DatasetExecutionDetailsT = DatasetExecutionDetails>
+  GetBatchEvaluationResult& WithDatasetExecutionDetails(DatasetExecutionDetailsT&& value) {
+    SetDatasetExecutionDetails(std::forward<DatasetExecutionDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -429,6 +450,8 @@ class GetBatchEvaluationResult {
 
   Aws::String m_kmsKeyArn;
 
+  DatasetExecutionDetails m_datasetExecutionDetails;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_batchEvaluationIdHasBeenSet = false;
@@ -449,6 +472,7 @@ class GetBatchEvaluationResult {
   bool m_descriptionHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
+  bool m_datasetExecutionDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

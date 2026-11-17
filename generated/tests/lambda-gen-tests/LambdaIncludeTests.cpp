@@ -93,6 +93,8 @@
 #include <aws/lambda/model/DeleteCapacityProviderResult.h>
 #include <aws/lambda/model/DeleteCodeSigningConfigRequest.h>
 #include <aws/lambda/model/DeleteCodeSigningConfigResult.h>
+#include <aws/lambda/model/DeleteDurableExecutionRequest.h>
+#include <aws/lambda/model/DeleteDurableExecutionResult.h>
 #include <aws/lambda/model/DeleteEventSourceMappingRequest.h>
 #include <aws/lambda/model/DeleteEventSourceMappingResult.h>
 #include <aws/lambda/model/DeleteFunctionCodeSigningConfigRequest.h>
@@ -127,7 +129,9 @@
 #include <aws/lambda/model/Event.h>
 #include <aws/lambda/model/EventError.h>
 #include <aws/lambda/model/EventInput.h>
+#include <aws/lambda/model/EventPauseReason.h>
 #include <aws/lambda/model/EventResult.h>
+#include <aws/lambda/model/EventResumeReason.h>
 #include <aws/lambda/model/EventSourceMappingConfiguration.h>
 #include <aws/lambda/model/EventSourceMappingLoggingConfig.h>
 #include <aws/lambda/model/EventSourceMappingMetric.h>
@@ -138,6 +142,8 @@
 #include <aws/lambda/model/Execution.h>
 #include <aws/lambda/model/ExecutionDetails.h>
 #include <aws/lambda/model/ExecutionFailedDetails.h>
+#include <aws/lambda/model/ExecutionPausedDetails.h>
+#include <aws/lambda/model/ExecutionResumedDetails.h>
 #include <aws/lambda/model/ExecutionStartedDetails.h>
 #include <aws/lambda/model/ExecutionStatus.h>
 #include <aws/lambda/model/ExecutionStoppedDetails.h>
@@ -307,6 +313,9 @@
 #include <aws/lambda/model/OperationType.h>
 #include <aws/lambda/model/OperationUpdate.h>
 #include <aws/lambda/model/PackageType.h>
+#include <aws/lambda/model/PauseDetails.h>
+#include <aws/lambda/model/PauseDurableExecutionRequest.h>
+#include <aws/lambda/model/PauseDurableExecutionResult.h>
 #include <aws/lambda/model/PolicyLengthExceededException.h>
 #include <aws/lambda/model/PreconditionFailedException.h>
 #include <aws/lambda/model/PropagateTags.h>
@@ -347,6 +356,8 @@
 #include <aws/lambda/model/ResourceNotFoundException.h>
 #include <aws/lambda/model/ResourceNotReadyException.h>
 #include <aws/lambda/model/ResponseStreamingInvocationType.h>
+#include <aws/lambda/model/ResumeDurableExecutionRequest.h>
+#include <aws/lambda/model/ResumeDurableExecutionResult.h>
 #include <aws/lambda/model/RetryDetails.h>
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/RuntimeAliasDeletedException.h>

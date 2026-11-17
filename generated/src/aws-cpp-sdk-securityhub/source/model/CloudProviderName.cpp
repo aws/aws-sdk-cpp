@@ -17,6 +17,7 @@ namespace CloudProviderNameMapper {
 
 static const int Azure_HASH = HashingUtils::HashString("Azure");
 static const int AWS_HASH = HashingUtils::HashString("AWS");
+static const int GCP_HASH = HashingUtils::HashString("GCP");
 
 CloudProviderName GetCloudProviderNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ CloudProviderName GetCloudProviderNameForName(const Aws::String& name) {
     return CloudProviderName::Azure;
   } else if (hashCode == AWS_HASH) {
     return CloudProviderName::AWS;
+  } else if (hashCode == GCP_HASH) {
+    return CloudProviderName::GCP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForCloudProviderName(CloudProviderName enumValue) {
       return "Azure";
     case CloudProviderName::AWS:
       return "AWS";
+    case CloudProviderName::GCP:
+      return "GCP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

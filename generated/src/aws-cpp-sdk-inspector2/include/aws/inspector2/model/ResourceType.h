@@ -20,7 +20,10 @@ enum class ResourceType {
   Microsoft_Compute_virtualMachines,
   Microsoft_ContainerRegistry_registry_containerImage,
   Microsoft_Web_sites,
-  MACHINE_IMAGE
+  MACHINE_IMAGE,
+  cloudfunctions_googleapis_com_Function,
+  compute_googleapis_com_Instance,
+  artifactregistry_googleapis_com_DockerImage
 };
 
 namespace ResourceTypeMapper {

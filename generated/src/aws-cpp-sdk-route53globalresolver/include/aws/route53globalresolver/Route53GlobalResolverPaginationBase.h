@@ -9,6 +9,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/route53globalresolver/model/ListAccessSourcesPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListAccessTokensPaginationTraits.h>
+#include <aws/route53globalresolver/model/ListCoreNetworkEndpointsPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListDNSViewsPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListFirewallDomainListsPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListFirewallDomainsPaginationTraits.h>
@@ -48,6 +49,18 @@ class Route53GlobalResolverPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessTokensRequest,
                                              Pagination::ListAccessTokensPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
+  }
+
+  /**
+   * Create a paginator for ListCoreNetworkEndpoints operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoreNetworkEndpointsRequest,
+                                    Pagination::ListCoreNetworkEndpointsPaginationTraits<DerivedClient>>
+  ListCoreNetworkEndpointsPaginator(const Model::ListCoreNetworkEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoreNetworkEndpointsRequest,
+                                             Pagination::ListCoreNetworkEndpointsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

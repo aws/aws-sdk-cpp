@@ -74,6 +74,14 @@ GetDurableExecutionResult& GetDurableExecutionResult::operator=(const Aws::Amazo
     m_durableConfig = jsonValue.GetObject("DurableConfig");
     m_durableConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PauseDetails")) {
+    m_pauseDetails = jsonValue.GetObject("PauseDetails");
+    m_pauseDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExpectedExecutionTimeoutTimestamp")) {
+    m_expectedExecutionTimeoutTimestamp = jsonValue.GetDouble("ExpectedExecutionTimeoutTimestamp");
+    m_expectedExecutionTimeoutTimestampHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

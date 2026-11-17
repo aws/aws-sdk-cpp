@@ -65,6 +65,10 @@ GetAuthorizerResult& GetAuthorizerResult::operator=(const Aws::AmazonWebServiceR
     m_authorizerResultTtlInSeconds = jsonValue.GetInteger("authorizerResultTtlInSeconds");
     m_authorizerResultTtlInSecondsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jwtConfiguration")) {
+    m_jwtConfiguration = jsonValue.GetObject("jwtConfiguration");
+    m_jwtConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

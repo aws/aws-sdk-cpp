@@ -18,6 +18,9 @@ namespace ConformancePackStateMapper {
 static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
 static const int CREATE_COMPLETE_HASH = HashingUtils::HashString("CREATE_COMPLETE");
 static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
+static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
+static const int UPDATE_COMPLETE_HASH = HashingUtils::HashString("UPDATE_COMPLETE");
+static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
 static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
 
@@ -29,6 +32,12 @@ ConformancePackState GetConformancePackStateForName(const Aws::String& name) {
     return ConformancePackState::CREATE_COMPLETE;
   } else if (hashCode == CREATE_FAILED_HASH) {
     return ConformancePackState::CREATE_FAILED;
+  } else if (hashCode == UPDATE_IN_PROGRESS_HASH) {
+    return ConformancePackState::UPDATE_IN_PROGRESS;
+  } else if (hashCode == UPDATE_COMPLETE_HASH) {
+    return ConformancePackState::UPDATE_COMPLETE;
+  } else if (hashCode == UPDATE_FAILED_HASH) {
+    return ConformancePackState::UPDATE_FAILED;
   } else if (hashCode == DELETE_IN_PROGRESS_HASH) {
     return ConformancePackState::DELETE_IN_PROGRESS;
   } else if (hashCode == DELETE_FAILED_HASH) {
@@ -53,6 +62,12 @@ Aws::String GetNameForConformancePackState(ConformancePackState enumValue) {
       return "CREATE_COMPLETE";
     case ConformancePackState::CREATE_FAILED:
       return "CREATE_FAILED";
+    case ConformancePackState::UPDATE_IN_PROGRESS:
+      return "UPDATE_IN_PROGRESS";
+    case ConformancePackState::UPDATE_COMPLETE:
+      return "UPDATE_COMPLETE";
+    case ConformancePackState::UPDATE_FAILED:
+      return "UPDATE_FAILED";
     case ConformancePackState::DELETE_IN_PROGRESS:
       return "DELETE_IN_PROGRESS";
     case ConformancePackState::DELETE_FAILED:

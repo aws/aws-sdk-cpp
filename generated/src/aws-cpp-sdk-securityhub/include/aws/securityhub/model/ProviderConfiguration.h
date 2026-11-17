@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/AzureProviderConfiguration.h>
+#include <aws/securityhub/model/GcpProviderConfiguration.h>
 #include <aws/securityhub/model/JiraCloudProviderConfiguration.h>
 #include <aws/securityhub/model/ServiceNowProviderConfiguration.h>
 
@@ -90,15 +91,37 @@ class ProviderConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration settings required to establish a CSPM integration with
+   * Google Cloud Platform (GCP).</p>
+   */
+  inline const GcpProviderConfiguration& GetGCP() const { return m_gCP; }
+  inline bool GCPHasBeenSet() const { return m_gCPHasBeenSet; }
+  template <typename GCPT = GcpProviderConfiguration>
+  void SetGCP(GCPT&& value) {
+    m_gCPHasBeenSet = true;
+    m_gCP = std::forward<GCPT>(value);
+  }
+  template <typename GCPT = GcpProviderConfiguration>
+  ProviderConfiguration& WithGCP(GCPT&& value) {
+    SetGCP(std::forward<GCPT>(value));
+    return *this;
+  }
+  ///@}
  private:
   JiraCloudProviderConfiguration m_jiraCloud;
 
   ServiceNowProviderConfiguration m_serviceNow;
 
   AzureProviderConfiguration m_azure;
+
+  GcpProviderConfiguration m_gCP;
   bool m_jiraCloudHasBeenSet = false;
   bool m_serviceNowHasBeenSet = false;
   bool m_azureHasBeenSet = false;
+  bool m_gCPHasBeenSet = false;
 };
 
 }  // namespace Model

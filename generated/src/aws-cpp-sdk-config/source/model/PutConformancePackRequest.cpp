@@ -57,6 +57,14 @@ Aws::String PutConformancePackRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("Source", m_source.Jsonize());
+  }
+
+  if (m_scopeHasBeenSet) {
+    payload.WithObject("Scope", m_scope.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

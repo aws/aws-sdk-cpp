@@ -22,6 +22,10 @@ ProviderDetailUpdate& ProviderDetailUpdate::operator=(JsonView jsonValue) {
     m_azure = jsonValue.GetObject("azure");
     m_azureHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("gcp")) {
+    m_gcp = jsonValue.GetObject("gcp");
+    m_gcpHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ProviderDetailUpdate::Jsonize() const {
 
   if (m_azureHasBeenSet) {
     payload.WithObject("azure", m_azure.Jsonize());
+  }
+
+  if (m_gcpHasBeenSet) {
+    payload.WithObject("gcp", m_gcp.Jsonize());
   }
 
   return payload;

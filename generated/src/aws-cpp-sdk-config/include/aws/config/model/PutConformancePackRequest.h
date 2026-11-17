@@ -7,6 +7,8 @@
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/ConformancePackInputParameter.h>
+#include <aws/config/model/ConformancePackScope.h>
+#include <aws/config/model/ConformancePackSource.h>
 #include <aws/config/model/Tag.h>
 #include <aws/config/model/TemplateSSMDocumentDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -139,7 +141,9 @@ class PutConformancePackRequest : public ConfigServiceRequest {
 
   ///@{
   /**
-   * <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+   * <p>A list of <code>ConformancePackInputParameter</code> objects. Custom
+   * conformance packs can have at most 60 input parameters. Managed conformance
+   * packs can have at most 330 input parameters.</p>
    */
   inline const Aws::Vector<ConformancePackInputParameter>& GetConformancePackInputParameters() const {
     return m_conformancePackInputParameters;
@@ -208,6 +212,58 @@ class PutConformancePackRequest : public ConfigServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object of type <code>ConformancePackSource</code>, which contains the
+   * identifier of the managed conformance pack that you want to deploy. If you
+   * specify a source, Config creates a managed conformance pack. Managed conformance
+   * packs are predefined collections of Config rules that are created and maintained
+   * by Amazon Web Services.</p>  <p>If you specify a source, you cannot
+   * specify <code>TemplateS3Uri</code>, <code>TemplateBody</code>,
+   * <code>TemplateSSMDocumentDetails</code>, <code>DeliveryS3Bucket</code>, or
+   * <code>DeliveryS3KeyPrefix</code>. You cannot convert an existing conformance
+   * pack between a managed conformance pack and a custom conformance pack. You also
+   * cannot change the source of an existing managed conformance pack.</p>
+   */
+  inline const ConformancePackSource& GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  template <typename SourceT = ConformancePackSource>
+  void SetSource(SourceT&& value) {
+    m_sourceHasBeenSet = true;
+    m_source = std::forward<SourceT>(value);
+  }
+  template <typename SourceT = ConformancePackSource>
+  PutConformancePackRequest& WithSource(SourceT&& value) {
+    SetSource(std::forward<SourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An object of type <code>ConformancePackScope</code> that defines which
+   * resources can trigger an evaluation for Config rules in the conformance pack.
+   * The scope can include a tag key and optional tag value. Specify a scope to
+   * constrain the resources that can trigger an evaluation for rules in the
+   * conformance pack. If you do not specify a scope, all rules in the conformance
+   * pack are unscoped.</p>  <p>This field is optional and is supported only
+   * for managed conformance packs. If you specify a scope, you must also specify
+   * <code>Source</code>.</p>
+   */
+  inline const ConformancePackScope& GetScope() const { return m_scope; }
+  inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+  template <typename ScopeT = ConformancePackScope>
+  void SetScope(ScopeT&& value) {
+    m_scopeHasBeenSet = true;
+    m_scope = std::forward<ScopeT>(value);
+  }
+  template <typename ScopeT = ConformancePackScope>
+  PutConformancePackRequest& WithScope(ScopeT&& value) {
+    SetScope(std::forward<ScopeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_conformancePackName;
 
@@ -224,6 +280,10 @@ class PutConformancePackRequest : public ConfigServiceRequest {
   TemplateSSMDocumentDetails m_templateSSMDocumentDetails;
 
   Aws::Vector<Tag> m_tags;
+
+  ConformancePackSource m_source;
+
+  ConformancePackScope m_scope;
   bool m_conformancePackNameHasBeenSet = false;
   bool m_templateS3UriHasBeenSet = false;
   bool m_templateBodyHasBeenSet = false;
@@ -232,6 +292,8 @@ class PutConformancePackRequest : public ConfigServiceRequest {
   bool m_conformancePackInputParametersHasBeenSet = false;
   bool m_templateSSMDocumentDetailsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
 };
 
 }  // namespace Model

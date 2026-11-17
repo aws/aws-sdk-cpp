@@ -76,7 +76,8 @@ class DescribeStandardsRequest : public SecurityHubRequest {
   ///@{
   /**
    * <p>A list of cloud providers to filter the standards by. For example, specify
-   * <code>Azure</code> to return only standards that evaluate Azure resources.</p>
+   * <code>Azure</code> to return only standards that evaluate Azure resources, or
+   * <code>GCP</code> to return only standards that evaluate GCP resources.</p>
    */
   inline const Aws::Vector<StandardsProvider>& GetProviders() const { return m_providers; }
   inline bool ProvidersHasBeenSet() const { return m_providersHasBeenSet; }

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Route53GlobalResolver {
 namespace Model {
-enum class IpAddressType { NOT_SET, IPV4, IPV6 };
+enum class IpAddressType { NOT_SET, IPV4, IPV6, NONE };
 
 namespace IpAddressTypeMapper {
 AWS_ROUTE53GLOBALRESOLVER_API IpAddressType GetIpAddressTypeForName(const Aws::String& name);

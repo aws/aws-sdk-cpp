@@ -605,6 +605,42 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes a completed Lambda <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+   * execution</a> and its data. The execution must be in a terminal state
+   * (<code>SUCCEEDED</code>, <code>FAILED</code>, <code>STOPPED</code>, or
+   * <code>TIMED_OUT</code>). Otherwise, this operation returns a
+   * <code>ResourceConflictException</code>.</p> <p>The execution has
+   * <code>DELETING</code> status until the deletion finishes. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-delete.html">Deleting
+   * durable executions</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteDurableExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDurableExecutionOutcome DeleteDurableExecution(const Model::DeleteDurableExecutionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDurableExecution that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteDurableExecutionRequestT = Model::DeleteDurableExecutionRequest>
+  Model::DeleteDurableExecutionOutcomeCallable DeleteDurableExecutionCallable(const DeleteDurableExecutionRequestT& request) const {
+    return SubmitCallable(&LambdaClient::DeleteDurableExecution, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDurableExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteDurableExecutionRequestT = Model::DeleteDurableExecutionRequest>
+  void DeleteDurableExecutionAsync(const DeleteDurableExecutionRequestT& request,
+                                   const DeleteDurableExecutionResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::DeleteDurableExecution, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event
    * source mapping</a>. You can get the identifier of a mapping from the output of
@@ -2118,6 +2154,43 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Pauses a running <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+   * execution</a>. While an execution is paused, Lambda doesn't invoke your
+   * function, but pending operations such as waits and callbacks continue to
+   * complete.</p> <p>If an invocation is in progress, the execution status changes
+   * to <code>PAUSING</code> until the invocation reaches its next checkpoint, and
+   * then changes to <code>PAUSED</code>. This operation returns a successful
+   * response while the execution status is still <code>RUNNING</code>, and the
+   * status changes when Lambda processes the request. For more information about
+   * pausing executions, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-pause-resume.html">Pausing
+   * and resuming durable executions</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PauseDurableExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PauseDurableExecutionOutcome PauseDurableExecution(const Model::PauseDurableExecutionRequest& request) const;
+
+  /**
+   * A Callable wrapper for PauseDurableExecution that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PauseDurableExecutionRequestT = Model::PauseDurableExecutionRequest>
+  Model::PauseDurableExecutionOutcomeCallable PauseDurableExecutionCallable(const PauseDurableExecutionRequestT& request) const {
+    return SubmitCallable(&LambdaClient::PauseDurableExecution, request);
+  }
+
+  /**
+   * An Async wrapper for PauseDurableExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PauseDurableExecutionRequestT = Model::PauseDurableExecutionRequest>
+  void PauseDurableExecutionAsync(const PauseDurableExecutionRequestT& request, const PauseDurableExecutionResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::PauseDurableExecution, request, handler, context);
+  }
+
+  /**
    * <p>Creates an <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
    * layer</a> from a ZIP archive. Each time you call
@@ -2532,6 +2605,44 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Resumes a paused <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+   * execution</a>. If the pause interrupted an invocation, or an operation completed
+   * while the execution was paused, Lambda invokes your function. Otherwise, the
+   * execution continues to wait for its pending operations.</p> <p>If the execution
+   * status is <code>PAUSING</code>, this operation cancels the pause, and the
+   * in-progress invocation continues. This operation returns a successful response
+   * while the execution status is still <code>PAUSED</code> or <code>PAUSING</code>,
+   * and the status changes to <code>RUNNING</code> when Lambda processes the
+   * request. For more information about resuming executions, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-pause-resume.html">Pausing
+   * and resuming durable executions</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ResumeDurableExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ResumeDurableExecutionOutcome ResumeDurableExecution(const Model::ResumeDurableExecutionRequest& request) const;
+
+  /**
+   * A Callable wrapper for ResumeDurableExecution that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ResumeDurableExecutionRequestT = Model::ResumeDurableExecutionRequest>
+  Model::ResumeDurableExecutionOutcomeCallable ResumeDurableExecutionCallable(const ResumeDurableExecutionRequestT& request) const {
+    return SubmitCallable(&LambdaClient::ResumeDurableExecution, request);
+  }
+
+  /**
+   * An Async wrapper for ResumeDurableExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ResumeDurableExecutionRequestT = Model::ResumeDurableExecutionRequest>
+  void ResumeDurableExecutionAsync(const ResumeDurableExecutionRequestT& request,
+                                   const ResumeDurableExecutionResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaClient::ResumeDurableExecution, request, handler, context);
+  }
+
+  /**
    * <p>Sends a failure response for a callback operation in a durable execution. Use
    * this API when an external system cannot complete a callback operation
    * successfully.</p><p><h3>See Also:</h3>   <a
@@ -2625,7 +2736,7 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Stops a running <a
+   * <p>Stops a running or paused <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
    * execution</a>. The execution transitions to STOPPED status and cannot be
    * resumed. Any in-progress operations are terminated.</p><p><h3>See Also:</h3>

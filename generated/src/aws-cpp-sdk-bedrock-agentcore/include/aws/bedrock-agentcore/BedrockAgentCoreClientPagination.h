@@ -7,7 +7,9 @@
 #include <aws/bedrock-agentcore/BedrockAgentCoreClient.h>
 #include <aws/bedrock-agentcore/model/ListABTestsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListActorsPaginationTraits.h>
+#include <aws/bedrock-agentcore/model/ListAgentInsightsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListBatchEvaluationsPaginationTraits.h>
+#include <aws/bedrock-agentcore/model/ListDatasetGenerationsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListEventsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListMemoryExtractionJobsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsPaginationTraits.h>
@@ -25,9 +27,14 @@ using ListABTestsPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCoreC
                                                                Pagination::ListABTestsPaginationTraits<BedrockAgentCoreClient>>;
 using ListActorsPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCoreClient, Model::ListActorsRequest,
                                                               Pagination::ListActorsPaginationTraits<BedrockAgentCoreClient>>;
+using ListAgentInsightsPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCoreClient, Model::ListAgentInsightsRequest,
+                                                                     Pagination::ListAgentInsightsPaginationTraits<BedrockAgentCoreClient>>;
 using ListBatchEvaluationsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreClient, Model::ListBatchEvaluationsRequest,
                                       Pagination::ListBatchEvaluationsPaginationTraits<BedrockAgentCoreClient>>;
+using ListDatasetGenerationsPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreClient, Model::ListDatasetGenerationsRequest,
+                                      Pagination::ListDatasetGenerationsPaginationTraits<BedrockAgentCoreClient>>;
 using ListEventsPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCoreClient, Model::ListEventsRequest,
                                                               Pagination::ListEventsPaginationTraits<BedrockAgentCoreClient>>;
 using ListMemoryExtractionJobsPaginator =

@@ -194,8 +194,8 @@ class VpcEncryptionControlConfiguration {
 
   ///@{
   /**
-   * <p>Specifies whether to exclude AWS Global Accelerator traffic from encryption
-   * enforcement.</p>
+   * <p>Specifies whether to exclude Amazon Web Services Global Accelerator traffic
+   * from encryption enforcement.</p>
    */
   inline VpcEncryptionControlExclusionStateInput GetGlobalAcceleratorExclusion() const { return m_globalAcceleratorExclusion; }
   inline bool GlobalAcceleratorExclusionHasBeenSet() const { return m_globalAcceleratorExclusionHasBeenSet; }

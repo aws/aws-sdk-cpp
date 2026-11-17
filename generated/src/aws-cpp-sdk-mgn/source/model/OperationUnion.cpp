@@ -34,6 +34,14 @@ OperationUnion& OperationUnion::operator=(JsonView jsonValue) {
     m_update = jsonValue.GetObject("update");
     m_updateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("updateV2")) {
+    m_updateV2 = jsonValue.GetObject("updateV2");
+    m_updateV2HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("create")) {
+    m_create = jsonValue.GetObject("create");
+    m_createHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +62,14 @@ JsonValue OperationUnion::Jsonize() const {
 
   if (m_updateHasBeenSet) {
     payload.WithObject("update", m_update.Jsonize());
+  }
+
+  if (m_updateV2HasBeenSet) {
+    payload.WithObject("updateV2", m_updateV2.Jsonize());
+  }
+
+  if (m_createHasBeenSet) {
+    payload.WithObject("create", m_create.Jsonize());
   }
 
   return payload;

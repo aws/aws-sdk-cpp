@@ -166,6 +166,7 @@
 #include <aws/s3control/model/GranteeType.h>
 #include <aws/s3control/model/Include.h>
 #include <aws/s3control/model/InstanceScope.h>
+#include <aws/s3control/model/IntAccessTiers.h>
 #include <aws/s3control/model/JobDescriptor.h>
 #include <aws/s3control/model/JobFailure.h>
 #include <aws/s3control/model/JobListDescriptor.h>
@@ -362,6 +363,9 @@
 #include <aws/s3control/model/SseKmsEncryptedObjectsStatus.h>
 #include <aws/s3control/model/StorageLensAwsOrg.h>
 #include <aws/s3control/model/StorageLensConfiguration.h>
+#include <aws/s3control/model/StorageLensCostAndUsageReportsPrefixLevel.h>
+#include <aws/s3control/model/StorageLensCostAndUsageReportsPublish.h>
+#include <aws/s3control/model/StorageLensCostAndUsageReportsSelectionCriteria.h>
 #include <aws/s3control/model/StorageLensDataExport.h>
 #include <aws/s3control/model/StorageLensDataExportEncryption.h>
 #include <aws/s3control/model/StorageLensExpandedPrefixesDataExport.h>

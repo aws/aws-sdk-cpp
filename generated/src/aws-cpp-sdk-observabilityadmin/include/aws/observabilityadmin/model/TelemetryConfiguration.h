@@ -60,7 +60,8 @@ class TelemetryConfiguration {
   ///@{
   /**
    * <p> The configuration state for the resource, for example <code>{ Logs:
-   * NotApplicable; Metrics: Enabled; Traces: NotApplicable; }</code>. </p>
+   * NotApplicable; Metrics: Enabled; Traces: NotApplicable; Insights: NotApplicable;
+   * }</code>. </p>
    */
   inline const Aws::Map<TelemetryType, TelemetryState>& GetTelemetryConfigurationState() const { return m_telemetryConfigurationState; }
   inline bool TelemetryConfigurationStateHasBeenSet() const { return m_telemetryConfigurationStateHasBeenSet; }

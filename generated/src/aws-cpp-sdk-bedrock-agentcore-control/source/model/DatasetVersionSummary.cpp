@@ -26,6 +26,10 @@ DatasetVersionSummary& DatasetVersionSummary::operator=(JsonView jsonValue) {
     m_exampleCount = jsonValue.GetInt64("exampleCount");
     m_exampleCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("exampleCountByField")) {
+    m_exampleCountByField = jsonValue.GetObject("exampleCountByField");
+    m_exampleCountByFieldHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
@@ -42,6 +46,10 @@ JsonValue DatasetVersionSummary::Jsonize() const {
 
   if (m_exampleCountHasBeenSet) {
     payload.WithInt64("exampleCount", m_exampleCount);
+  }
+
+  if (m_exampleCountByFieldHasBeenSet) {
+    payload.WithObject("exampleCountByField", m_exampleCountByField.Jsonize());
   }
 
   if (m_createdAtHasBeenSet) {

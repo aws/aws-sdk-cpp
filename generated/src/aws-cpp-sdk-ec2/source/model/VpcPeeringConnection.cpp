@@ -60,6 +60,12 @@ VpcPeeringConnection& VpcPeeringConnection::operator=(const XmlNode& xmlNode) {
       m_vpcPeeringConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcPeeringConnectionIdNode.GetText());
       m_vpcPeeringConnectionIdHasBeenSet = true;
     }
+    XmlNode multipathResilienceStatusNode = resultNode.FirstChild("multipathResilienceStatus");
+    if (!multipathResilienceStatusNode.IsNull()) {
+      m_multipathResilienceStatus = MultipathResilienceStatusMapper::GetMultipathResilienceStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multipathResilienceStatusNode.GetText()).c_str()));
+      m_multipathResilienceStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -102,6 +108,12 @@ void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* loc
     oStream << location << index << locationValue << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str())
             << "&";
   }
+
+  if (m_multipathResilienceStatusHasBeenSet) {
+    oStream << location << index << locationValue << ".MultipathResilienceStatus="
+            << StringUtils::URLEncode(MultipathResilienceStatusMapper::GetNameForMultipathResilienceStatus(m_multipathResilienceStatus))
+            << "&";
+  }
 }
 
 void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -134,6 +146,11 @@ void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if (m_vpcPeeringConnectionIdHasBeenSet) {
     oStream << location << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
+  }
+  if (m_multipathResilienceStatusHasBeenSet) {
+    oStream << location << ".MultipathResilienceStatus="
+            << StringUtils::URLEncode(MultipathResilienceStatusMapper::GetNameForMultipathResilienceStatus(m_multipathResilienceStatus))
+            << "&";
   }
 }
 

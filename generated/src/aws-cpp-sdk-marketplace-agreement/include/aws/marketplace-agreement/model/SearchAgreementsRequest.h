@@ -95,16 +95,18 @@ class SearchAgreementsRequest : public AgreementServiceRequest {
    * agreement in a chain of related agreements. Use this filter to return every
    * agreement in the same chain.</p> </li> <li> <p> <code>LicenseArn</code> – The
    * Amazon Resource Name (ARN) of the AWS License Manager license associated with an
-   * entitlement granted by the agreement.</p> </li> </ul> <p>A proposer can use any
-   * combination of the preceding filters along with <code>AgreementType</code>,
-   * which is required.</p> <p>The following filter combinations are supported when
-   * the <code>PartyType</code> is <code>Acceptor</code>:</p> <ul> <li> <p>
-   * <code>AgreementType</code> </p> </li> <li> <p> <code>AgreementType</code> +
-   * <code>Status</code> </p> </li> <li> <p> <code>AgreementType</code> +
-   * <code>EndTime</code> </p> </li> <li> <p> <code>AgreementType</code> +
-   * <code>Status</code> + <code>EndTime</code> </p> </li> <li> <p>
-   * <code>AgreementType</code> + <code>ResourceIdentifier</code> </p> </li> <li> <p>
-   * <code>AgreementType</code> + <code>ResourceIdentifier</code> +
+   * entitlement granted by the agreement.</p> </li> <li> <p>
+   * <code>IncludesContactOfType</code> – The type of contact information on file for
+   * the agreement. Supported value includes <code>ACCEPTOR</code>.</p> </li> </ul>
+   * <p>A proposer can use any combination of the preceding filters along with
+   * <code>AgreementType</code>, which is required.</p> <p>The following filter
+   * combinations are supported when the <code>PartyType</code> is
+   * <code>Acceptor</code>:</p> <ul> <li> <p> <code>AgreementType</code> </p> </li>
+   * <li> <p> <code>AgreementType</code> + <code>Status</code> </p> </li> <li> <p>
+   * <code>AgreementType</code> + <code>EndTime</code> </p> </li> <li> <p>
+   * <code>AgreementType</code> + <code>Status</code> + <code>EndTime</code> </p>
+   * </li> <li> <p> <code>AgreementType</code> + <code>ResourceIdentifier</code> </p>
+   * </li> <li> <p> <code>AgreementType</code> + <code>ResourceIdentifier</code> +
    * <code>EndTime</code> </p> </li> <li> <p> <code>AgreementType</code> +
    * <code>ResourceIdentifier</code> + <code>Status</code> </p> </li> <li> <p>
    * <code>AgreementType</code> + <code>ResourceIdentifier</code> +

@@ -10,6 +10,7 @@
 #include <aws/mgn/MgnRequest.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/model/CidrMapping.h>
+#include <aws/mgn/model/DefinitionType.h>
 #include <aws/mgn/model/SourceConfiguration.h>
 #include <aws/mgn/model/TargetDeployment.h>
 #include <aws/mgn/model/TargetNetworkUpdate.h>
@@ -233,6 +234,22 @@ class UpdateNetworkMigrationDefinitionRequest : public MgnRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated type of the network migration definition.</p>
+   */
+  inline DefinitionType GetDefinitionType() const { return m_definitionType; }
+  inline bool DefinitionTypeHasBeenSet() const { return m_definitionTypeHasBeenSet; }
+  inline void SetDefinitionType(DefinitionType value) {
+    m_definitionTypeHasBeenSet = true;
+    m_definitionType = value;
+  }
+  inline UpdateNetworkMigrationDefinitionRequest& WithDefinitionType(DefinitionType value) {
+    SetDefinitionType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_networkMigrationDefinitionID;
 
@@ -253,6 +270,8 @@ class UpdateNetworkMigrationDefinitionRequest : public MgnRequest {
   Aws::Vector<CidrMapping> m_cidrMappings;
 
   Aws::Map<Aws::String, Aws::String> m_scopeTags;
+
+  DefinitionType m_definitionType{DefinitionType::NOT_SET};
   bool m_networkMigrationDefinitionIDHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -263,6 +282,7 @@ class UpdateNetworkMigrationDefinitionRequest : public MgnRequest {
   bool m_vpcProvisioningStrategyHasBeenSet = false;
   bool m_cidrMappingsHasBeenSet = false;
   bool m_scopeTagsHasBeenSet = false;
+  bool m_definitionTypeHasBeenSet = false;
 };
 
 }  // namespace Model

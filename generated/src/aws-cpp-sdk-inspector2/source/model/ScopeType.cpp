@@ -17,6 +17,8 @@ namespace ScopeTypeMapper {
 
 static const int TENANT_HASH = HashingUtils::HashString("TENANT");
 static const int SUBSCRIPTION_HASH = HashingUtils::HashString("SUBSCRIPTION");
+static const int ORGANIZATION_HASH = HashingUtils::HashString("ORGANIZATION");
+static const int PROJECT_HASH = HashingUtils::HashString("PROJECT");
 
 ScopeType GetScopeTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ ScopeType GetScopeTypeForName(const Aws::String& name) {
     return ScopeType::TENANT;
   } else if (hashCode == SUBSCRIPTION_HASH) {
     return ScopeType::SUBSCRIPTION;
+  } else if (hashCode == ORGANIZATION_HASH) {
+    return ScopeType::ORGANIZATION;
+  } else if (hashCode == PROJECT_HASH) {
+    return ScopeType::PROJECT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForScopeType(ScopeType enumValue) {
       return "TENANT";
     case ScopeType::SUBSCRIPTION:
       return "SUBSCRIPTION";
+    case ScopeType::ORGANIZATION:
+      return "ORGANIZATION";
+    case ScopeType::PROJECT:
+      return "PROJECT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

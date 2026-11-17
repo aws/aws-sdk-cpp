@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/ActiveVpnTunnelAdditionalKeyExchange.h>
 #include <aws/ec2/model/VpnTunnelProvisioningStatus.h>
 
 #include <utility>
@@ -190,6 +192,58 @@ class ActiveVpnTunnelStatus {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The additional key exchanges negotiated in Phase 1 IKE negotiations.</p>
+   */
+  inline const Aws::Vector<ActiveVpnTunnelAdditionalKeyExchange>& GetPhase1AdditionalKeyExchanges() const {
+    return m_phase1AdditionalKeyExchanges;
+  }
+  inline bool Phase1AdditionalKeyExchangesHasBeenSet() const { return m_phase1AdditionalKeyExchangesHasBeenSet; }
+  template <typename Phase1AdditionalKeyExchangesT = Aws::Vector<ActiveVpnTunnelAdditionalKeyExchange>>
+  void SetPhase1AdditionalKeyExchanges(Phase1AdditionalKeyExchangesT&& value) {
+    m_phase1AdditionalKeyExchangesHasBeenSet = true;
+    m_phase1AdditionalKeyExchanges = std::forward<Phase1AdditionalKeyExchangesT>(value);
+  }
+  template <typename Phase1AdditionalKeyExchangesT = Aws::Vector<ActiveVpnTunnelAdditionalKeyExchange>>
+  ActiveVpnTunnelStatus& WithPhase1AdditionalKeyExchanges(Phase1AdditionalKeyExchangesT&& value) {
+    SetPhase1AdditionalKeyExchanges(std::forward<Phase1AdditionalKeyExchangesT>(value));
+    return *this;
+  }
+  template <typename Phase1AdditionalKeyExchangesT = ActiveVpnTunnelAdditionalKeyExchange>
+  ActiveVpnTunnelStatus& AddPhase1AdditionalKeyExchanges(Phase1AdditionalKeyExchangesT&& value) {
+    m_phase1AdditionalKeyExchangesHasBeenSet = true;
+    m_phase1AdditionalKeyExchanges.emplace_back(std::forward<Phase1AdditionalKeyExchangesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The additional key exchanges negotiated in Phase 2 IKE negotiations.</p>
+   */
+  inline const Aws::Vector<ActiveVpnTunnelAdditionalKeyExchange>& GetPhase2AdditionalKeyExchanges() const {
+    return m_phase2AdditionalKeyExchanges;
+  }
+  inline bool Phase2AdditionalKeyExchangesHasBeenSet() const { return m_phase2AdditionalKeyExchangesHasBeenSet; }
+  template <typename Phase2AdditionalKeyExchangesT = Aws::Vector<ActiveVpnTunnelAdditionalKeyExchange>>
+  void SetPhase2AdditionalKeyExchanges(Phase2AdditionalKeyExchangesT&& value) {
+    m_phase2AdditionalKeyExchangesHasBeenSet = true;
+    m_phase2AdditionalKeyExchanges = std::forward<Phase2AdditionalKeyExchangesT>(value);
+  }
+  template <typename Phase2AdditionalKeyExchangesT = Aws::Vector<ActiveVpnTunnelAdditionalKeyExchange>>
+  ActiveVpnTunnelStatus& WithPhase2AdditionalKeyExchanges(Phase2AdditionalKeyExchangesT&& value) {
+    SetPhase2AdditionalKeyExchanges(std::forward<Phase2AdditionalKeyExchangesT>(value));
+    return *this;
+  }
+  template <typename Phase2AdditionalKeyExchangesT = ActiveVpnTunnelAdditionalKeyExchange>
+  ActiveVpnTunnelStatus& AddPhase2AdditionalKeyExchanges(Phase2AdditionalKeyExchangesT&& value) {
+    m_phase2AdditionalKeyExchangesHasBeenSet = true;
+    m_phase2AdditionalKeyExchanges.emplace_back(std::forward<Phase2AdditionalKeyExchangesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_phase1EncryptionAlgorithm;
 
@@ -208,6 +262,10 @@ class ActiveVpnTunnelStatus {
   VpnTunnelProvisioningStatus m_provisioningStatus{VpnTunnelProvisioningStatus::NOT_SET};
 
   Aws::String m_provisioningStatusReason;
+
+  Aws::Vector<ActiveVpnTunnelAdditionalKeyExchange> m_phase1AdditionalKeyExchanges;
+
+  Aws::Vector<ActiveVpnTunnelAdditionalKeyExchange> m_phase2AdditionalKeyExchanges;
   bool m_phase1EncryptionAlgorithmHasBeenSet = false;
   bool m_phase2EncryptionAlgorithmHasBeenSet = false;
   bool m_phase1IntegrityAlgorithmHasBeenSet = false;
@@ -217,6 +275,8 @@ class ActiveVpnTunnelStatus {
   bool m_ikeVersionHasBeenSet = false;
   bool m_provisioningStatusHasBeenSet = false;
   bool m_provisioningStatusReasonHasBeenSet = false;
+  bool m_phase1AdditionalKeyExchangesHasBeenSet = false;
+  bool m_phase2AdditionalKeyExchangesHasBeenSet = false;
 };
 
 }  // namespace Model

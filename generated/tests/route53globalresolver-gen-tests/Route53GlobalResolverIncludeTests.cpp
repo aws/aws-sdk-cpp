@@ -40,10 +40,15 @@
 #include <aws/route53globalresolver/model/CRResourceStatus.h>
 #include <aws/route53globalresolver/model/ConfidenceThreshold.h>
 #include <aws/route53globalresolver/model/ConflictException.h>
+#include <aws/route53globalresolver/model/CoreNetworkEndpointDnsIpInputItem.h>
+#include <aws/route53globalresolver/model/CoreNetworkEndpointDnsIpItem.h>
+#include <aws/route53globalresolver/model/CoreNetworkEndpointsItem.h>
 #include <aws/route53globalresolver/model/CreateAccessSourceRequest.h>
 #include <aws/route53globalresolver/model/CreateAccessSourceResult.h>
 #include <aws/route53globalresolver/model/CreateAccessTokenRequest.h>
 #include <aws/route53globalresolver/model/CreateAccessTokenResult.h>
+#include <aws/route53globalresolver/model/CreateCoreNetworkEndpointRequest.h>
+#include <aws/route53globalresolver/model/CreateCoreNetworkEndpointResult.h>
 #include <aws/route53globalresolver/model/CreateDNSViewRequest.h>
 #include <aws/route53globalresolver/model/CreateDNSViewResult.h>
 #include <aws/route53globalresolver/model/CreateFirewallDomainListRequest.h>
@@ -57,6 +62,8 @@
 #include <aws/route53globalresolver/model/DeleteAccessSourceResult.h>
 #include <aws/route53globalresolver/model/DeleteAccessTokenRequest.h>
 #include <aws/route53globalresolver/model/DeleteAccessTokenResult.h>
+#include <aws/route53globalresolver/model/DeleteCoreNetworkEndpointRequest.h>
+#include <aws/route53globalresolver/model/DeleteCoreNetworkEndpointResult.h>
 #include <aws/route53globalresolver/model/DeleteDNSViewRequest.h>
 #include <aws/route53globalresolver/model/DeleteDNSViewResult.h>
 #include <aws/route53globalresolver/model/DeleteFirewallDomainListRequest.h>
@@ -84,6 +91,8 @@
 #include <aws/route53globalresolver/model/GetAccessSourceResult.h>
 #include <aws/route53globalresolver/model/GetAccessTokenRequest.h>
 #include <aws/route53globalresolver/model/GetAccessTokenResult.h>
+#include <aws/route53globalresolver/model/GetCoreNetworkEndpointRequest.h>
+#include <aws/route53globalresolver/model/GetCoreNetworkEndpointResult.h>
 #include <aws/route53globalresolver/model/GetDNSViewRequest.h>
 #include <aws/route53globalresolver/model/GetDNSViewResult.h>
 #include <aws/route53globalresolver/model/GetFirewallDomainListRequest.h>
@@ -110,6 +119,9 @@
 #include <aws/route53globalresolver/model/ListAccessTokensPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListAccessTokensRequest.h>
 #include <aws/route53globalresolver/model/ListAccessTokensResult.h>
+#include <aws/route53globalresolver/model/ListCoreNetworkEndpointsPaginationTraits.h>
+#include <aws/route53globalresolver/model/ListCoreNetworkEndpointsRequest.h>
+#include <aws/route53globalresolver/model/ListCoreNetworkEndpointsResult.h>
 #include <aws/route53globalresolver/model/ListDNSViewsPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListDNSViewsRequest.h>
 #include <aws/route53globalresolver/model/ListDNSViewsResult.h>
@@ -138,6 +150,8 @@
 #include <aws/route53globalresolver/model/ListTagsForResourceResult.h>
 #include <aws/route53globalresolver/model/ManagedFirewallDomainListsItem.h>
 #include <aws/route53globalresolver/model/ProfileResourceStatus.h>
+#include <aws/route53globalresolver/model/PublicIpStatus.h>
+#include <aws/route53globalresolver/model/RegionScopeType.h>
 #include <aws/route53globalresolver/model/ResourceNotFoundException.h>
 #include <aws/route53globalresolver/model/ServiceQuotaExceededException.h>
 #include <aws/route53globalresolver/model/SharedDNSViewSummary.h>
@@ -151,6 +165,8 @@
 #include <aws/route53globalresolver/model/UpdateAccessSourceResult.h>
 #include <aws/route53globalresolver/model/UpdateAccessTokenRequest.h>
 #include <aws/route53globalresolver/model/UpdateAccessTokenResult.h>
+#include <aws/route53globalresolver/model/UpdateCoreNetworkEndpointRequest.h>
+#include <aws/route53globalresolver/model/UpdateCoreNetworkEndpointResult.h>
 #include <aws/route53globalresolver/model/UpdateDNSViewRequest.h>
 #include <aws/route53globalresolver/model/UpdateDNSViewResult.h>
 #include <aws/route53globalresolver/model/UpdateFirewallDomainsRequest.h>
@@ -161,6 +177,8 @@
 #include <aws/route53globalresolver/model/UpdateGlobalResolverResult.h>
 #include <aws/route53globalresolver/model/UpdateHostedZoneAssociationRequest.h>
 #include <aws/route53globalresolver/model/UpdateHostedZoneAssociationResult.h>
+#include <aws/route53globalresolver/model/UpdateIpAddressEntry.h>
+#include <aws/route53globalresolver/model/UpdateIpAddressOperation.h>
 #include <aws/route53globalresolver/model/ValidationException.h>
 #include <aws/route53globalresolver/model/ValidationExceptionField.h>
 #include <aws/route53globalresolver/model/ValidationExceptionReason.h>

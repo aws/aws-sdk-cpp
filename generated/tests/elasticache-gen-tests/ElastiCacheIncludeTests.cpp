@@ -187,6 +187,10 @@
 #include <aws/elasticache/model/IncreaseReplicaCountRequest.h>
 #include <aws/elasticache/model/IncreaseReplicaCountResult.h>
 #include <aws/elasticache/model/InputAuthenticationType.h>
+#include <aws/elasticache/model/Integration.h>
+#include <aws/elasticache/model/IntegrationRequest.h>
+#include <aws/elasticache/model/IntegrationStatus.h>
+#include <aws/elasticache/model/IntegrationType.h>
 #include <aws/elasticache/model/IpDiscovery.h>
 #include <aws/elasticache/model/KinesisFirehoseDestinationDetails.h>
 #include <aws/elasticache/model/ListAllowedNodeTypeModificationsRequest.h>

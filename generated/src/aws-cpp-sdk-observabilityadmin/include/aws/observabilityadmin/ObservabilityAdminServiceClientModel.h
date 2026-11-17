@@ -21,13 +21,18 @@
 /* Service model headers required in ObservabilityAdminClient header */
 #include <aws/core/NoResult.h>
 #include <aws/observabilityadmin/model/CreateCentralizationRuleForOrganizationResult.h>
+#include <aws/observabilityadmin/model/CreateConnectorResult.h>
 #include <aws/observabilityadmin/model/CreateDatasetIntegrationResult.h>
 #include <aws/observabilityadmin/model/CreateS3TableIntegrationResult.h>
 #include <aws/observabilityadmin/model/CreateTelemetryPipelineResult.h>
 #include <aws/observabilityadmin/model/CreateTelemetryRuleForOrganizationResult.h>
 #include <aws/observabilityadmin/model/CreateTelemetryRuleResult.h>
+#include <aws/observabilityadmin/model/DeleteConnectorResult.h>
 #include <aws/observabilityadmin/model/DeleteTelemetryPipelineResult.h>
 #include <aws/observabilityadmin/model/GetCentralizationRuleForOrganizationResult.h>
+#include <aws/observabilityadmin/model/GetConnectorResult.h>
+#include <aws/observabilityadmin/model/GetConnectorTelemetryManifestResult.h>
+#include <aws/observabilityadmin/model/GetConnectorTelemetrySetupResult.h>
 #include <aws/observabilityadmin/model/GetDatasetIntegrationResult.h>
 #include <aws/observabilityadmin/model/GetS3TableIntegrationResult.h>
 #include <aws/observabilityadmin/model/GetTelemetryEnrichmentStatusRequest.h>
@@ -39,14 +44,18 @@
 #include <aws/observabilityadmin/model/GetTelemetryPipelineResult.h>
 #include <aws/observabilityadmin/model/GetTelemetryRuleForOrganizationResult.h>
 #include <aws/observabilityadmin/model/GetTelemetryRuleResult.h>
+#include <aws/observabilityadmin/model/GetThirdPartyTelemetryEnrichmentResult.h>
 #include <aws/observabilityadmin/model/ListCentralizationRulesForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/ListCentralizationRulesForOrganizationResult.h>
+#include <aws/observabilityadmin/model/ListConnectorsRequest.h>
+#include <aws/observabilityadmin/model/ListConnectorsResult.h>
 #include <aws/observabilityadmin/model/ListDatasetIntegrationsRequest.h>
 #include <aws/observabilityadmin/model/ListDatasetIntegrationsResult.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryForOrganizationResult.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryRequest.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryResult.h>
+#include <aws/observabilityadmin/model/ListResourcesByConnectorResult.h>
 #include <aws/observabilityadmin/model/ListS3TableIntegrationsRequest.h>
 #include <aws/observabilityadmin/model/ListS3TableIntegrationsResult.h>
 #include <aws/observabilityadmin/model/ListTagsForResourceResult.h>
@@ -56,14 +65,20 @@
 #include <aws/observabilityadmin/model/ListTelemetryRulesForOrganizationResult.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesRequest.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesResult.h>
+#include <aws/observabilityadmin/model/ListThirdPartyTelemetryEnrichmentsRequest.h>
+#include <aws/observabilityadmin/model/ListThirdPartyTelemetryEnrichmentsResult.h>
+#include <aws/observabilityadmin/model/PutConnectorTelemetryManifestResult.h>
 #include <aws/observabilityadmin/model/StartTelemetryEnrichmentRequest.h>
 #include <aws/observabilityadmin/model/StartTelemetryEnrichmentResult.h>
 #include <aws/observabilityadmin/model/StartTelemetryEvaluationForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/StartTelemetryEvaluationRequest.h>
+#include <aws/observabilityadmin/model/StartTelemetryPipelineRefreshResult.h>
+#include <aws/observabilityadmin/model/StartThirdPartyTelemetryEnrichmentResult.h>
 #include <aws/observabilityadmin/model/StopTelemetryEnrichmentRequest.h>
 #include <aws/observabilityadmin/model/StopTelemetryEnrichmentResult.h>
 #include <aws/observabilityadmin/model/StopTelemetryEvaluationForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/StopTelemetryEvaluationRequest.h>
+#include <aws/observabilityadmin/model/StopThirdPartyTelemetryEnrichmentResult.h>
 #include <aws/observabilityadmin/model/TestTelemetryPipelineResult.h>
 #include <aws/observabilityadmin/model/UpdateCentralizationRuleForOrganizationResult.h>
 #include <aws/observabilityadmin/model/UpdateDatasetIntegrationResult.h>
@@ -105,18 +120,23 @@ using ObservabilityAdminEndpointProvider = Aws::ObservabilityAdmin::Endpoint::Ob
 namespace Model {
 /* Service model forward declarations required in ObservabilityAdminClient header */
 class CreateCentralizationRuleForOrganizationRequest;
+class CreateConnectorRequest;
 class CreateDatasetIntegrationRequest;
 class CreateS3TableIntegrationRequest;
 class CreateTelemetryPipelineRequest;
 class CreateTelemetryRuleRequest;
 class CreateTelemetryRuleForOrganizationRequest;
 class DeleteCentralizationRuleForOrganizationRequest;
+class DeleteConnectorRequest;
 class DeleteDatasetIntegrationRequest;
 class DeleteS3TableIntegrationRequest;
 class DeleteTelemetryPipelineRequest;
 class DeleteTelemetryRuleRequest;
 class DeleteTelemetryRuleForOrganizationRequest;
 class GetCentralizationRuleForOrganizationRequest;
+class GetConnectorRequest;
+class GetConnectorTelemetryManifestRequest;
+class GetConnectorTelemetrySetupRequest;
 class GetDatasetIntegrationRequest;
 class GetS3TableIntegrationRequest;
 class GetTelemetryEnrichmentStatusRequest;
@@ -125,21 +145,29 @@ class GetTelemetryEvaluationStatusForOrganizationRequest;
 class GetTelemetryPipelineRequest;
 class GetTelemetryRuleRequest;
 class GetTelemetryRuleForOrganizationRequest;
+class GetThirdPartyTelemetryEnrichmentRequest;
 class ListCentralizationRulesForOrganizationRequest;
+class ListConnectorsRequest;
 class ListDatasetIntegrationsRequest;
 class ListResourceTelemetryRequest;
 class ListResourceTelemetryForOrganizationRequest;
+class ListResourcesByConnectorRequest;
 class ListS3TableIntegrationsRequest;
 class ListTagsForResourceRequest;
 class ListTelemetryPipelinesRequest;
 class ListTelemetryRulesRequest;
 class ListTelemetryRulesForOrganizationRequest;
+class ListThirdPartyTelemetryEnrichmentsRequest;
+class PutConnectorTelemetryManifestRequest;
 class StartTelemetryEnrichmentRequest;
 class StartTelemetryEvaluationRequest;
 class StartTelemetryEvaluationForOrganizationRequest;
+class StartTelemetryPipelineRefreshRequest;
+class StartThirdPartyTelemetryEnrichmentRequest;
 class StopTelemetryEnrichmentRequest;
 class StopTelemetryEvaluationRequest;
 class StopTelemetryEvaluationForOrganizationRequest;
+class StopThirdPartyTelemetryEnrichmentRequest;
 class TagResourceRequest;
 class TestTelemetryPipelineRequest;
 class UntagResourceRequest;
@@ -154,12 +182,14 @@ class ValidateTelemetryPipelineConfigurationRequest;
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<CreateCentralizationRuleForOrganizationResult, ObservabilityAdminError>
     CreateCentralizationRuleForOrganizationOutcome;
+typedef Aws::Utils::Outcome<CreateConnectorResult, ObservabilityAdminError> CreateConnectorOutcome;
 typedef Aws::Utils::Outcome<CreateDatasetIntegrationResult, ObservabilityAdminError> CreateDatasetIntegrationOutcome;
 typedef Aws::Utils::Outcome<CreateS3TableIntegrationResult, ObservabilityAdminError> CreateS3TableIntegrationOutcome;
 typedef Aws::Utils::Outcome<CreateTelemetryPipelineResult, ObservabilityAdminError> CreateTelemetryPipelineOutcome;
 typedef Aws::Utils::Outcome<CreateTelemetryRuleResult, ObservabilityAdminError> CreateTelemetryRuleOutcome;
 typedef Aws::Utils::Outcome<CreateTelemetryRuleForOrganizationResult, ObservabilityAdminError> CreateTelemetryRuleForOrganizationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> DeleteCentralizationRuleForOrganizationOutcome;
+typedef Aws::Utils::Outcome<DeleteConnectorResult, ObservabilityAdminError> DeleteConnectorOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> DeleteDatasetIntegrationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> DeleteS3TableIntegrationOutcome;
 typedef Aws::Utils::Outcome<DeleteTelemetryPipelineResult, ObservabilityAdminError> DeleteTelemetryPipelineOutcome;
@@ -167,6 +197,9 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> DeleteTeleme
 typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> DeleteTelemetryRuleForOrganizationOutcome;
 typedef Aws::Utils::Outcome<GetCentralizationRuleForOrganizationResult, ObservabilityAdminError>
     GetCentralizationRuleForOrganizationOutcome;
+typedef Aws::Utils::Outcome<GetConnectorResult, ObservabilityAdminError> GetConnectorOutcome;
+typedef Aws::Utils::Outcome<GetConnectorTelemetryManifestResult, ObservabilityAdminError> GetConnectorTelemetryManifestOutcome;
+typedef Aws::Utils::Outcome<GetConnectorTelemetrySetupResult, ObservabilityAdminError> GetConnectorTelemetrySetupOutcome;
 typedef Aws::Utils::Outcome<GetDatasetIntegrationResult, ObservabilityAdminError> GetDatasetIntegrationOutcome;
 typedef Aws::Utils::Outcome<GetS3TableIntegrationResult, ObservabilityAdminError> GetS3TableIntegrationOutcome;
 typedef Aws::Utils::Outcome<GetTelemetryEnrichmentStatusResult, ObservabilityAdminError> GetTelemetryEnrichmentStatusOutcome;
@@ -176,23 +209,31 @@ typedef Aws::Utils::Outcome<GetTelemetryEvaluationStatusForOrganizationResult, O
 typedef Aws::Utils::Outcome<GetTelemetryPipelineResult, ObservabilityAdminError> GetTelemetryPipelineOutcome;
 typedef Aws::Utils::Outcome<GetTelemetryRuleResult, ObservabilityAdminError> GetTelemetryRuleOutcome;
 typedef Aws::Utils::Outcome<GetTelemetryRuleForOrganizationResult, ObservabilityAdminError> GetTelemetryRuleForOrganizationOutcome;
+typedef Aws::Utils::Outcome<GetThirdPartyTelemetryEnrichmentResult, ObservabilityAdminError> GetThirdPartyTelemetryEnrichmentOutcome;
 typedef Aws::Utils::Outcome<ListCentralizationRulesForOrganizationResult, ObservabilityAdminError>
     ListCentralizationRulesForOrganizationOutcome;
+typedef Aws::Utils::Outcome<ListConnectorsResult, ObservabilityAdminError> ListConnectorsOutcome;
 typedef Aws::Utils::Outcome<ListDatasetIntegrationsResult, ObservabilityAdminError> ListDatasetIntegrationsOutcome;
 typedef Aws::Utils::Outcome<ListResourceTelemetryResult, ObservabilityAdminError> ListResourceTelemetryOutcome;
 typedef Aws::Utils::Outcome<ListResourceTelemetryForOrganizationResult, ObservabilityAdminError>
     ListResourceTelemetryForOrganizationOutcome;
+typedef Aws::Utils::Outcome<ListResourcesByConnectorResult, ObservabilityAdminError> ListResourcesByConnectorOutcome;
 typedef Aws::Utils::Outcome<ListS3TableIntegrationsResult, ObservabilityAdminError> ListS3TableIntegrationsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, ObservabilityAdminError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListTelemetryPipelinesResult, ObservabilityAdminError> ListTelemetryPipelinesOutcome;
 typedef Aws::Utils::Outcome<ListTelemetryRulesResult, ObservabilityAdminError> ListTelemetryRulesOutcome;
 typedef Aws::Utils::Outcome<ListTelemetryRulesForOrganizationResult, ObservabilityAdminError> ListTelemetryRulesForOrganizationOutcome;
+typedef Aws::Utils::Outcome<ListThirdPartyTelemetryEnrichmentsResult, ObservabilityAdminError> ListThirdPartyTelemetryEnrichmentsOutcome;
+typedef Aws::Utils::Outcome<PutConnectorTelemetryManifestResult, ObservabilityAdminError> PutConnectorTelemetryManifestOutcome;
 typedef Aws::Utils::Outcome<StartTelemetryEnrichmentResult, ObservabilityAdminError> StartTelemetryEnrichmentOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> StartTelemetryEvaluationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> StartTelemetryEvaluationForOrganizationOutcome;
+typedef Aws::Utils::Outcome<StartTelemetryPipelineRefreshResult, ObservabilityAdminError> StartTelemetryPipelineRefreshOutcome;
+typedef Aws::Utils::Outcome<StartThirdPartyTelemetryEnrichmentResult, ObservabilityAdminError> StartThirdPartyTelemetryEnrichmentOutcome;
 typedef Aws::Utils::Outcome<StopTelemetryEnrichmentResult, ObservabilityAdminError> StopTelemetryEnrichmentOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> StopTelemetryEvaluationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> StopTelemetryEvaluationForOrganizationOutcome;
+typedef Aws::Utils::Outcome<StopThirdPartyTelemetryEnrichmentResult, ObservabilityAdminError> StopThirdPartyTelemetryEnrichmentOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<TestTelemetryPipelineResult, ObservabilityAdminError> TestTelemetryPipelineOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ObservabilityAdminError> UntagResourceOutcome;
@@ -208,18 +249,23 @@ typedef Aws::Utils::Outcome<ValidateTelemetryPipelineConfigurationResult, Observ
 
 /* Service model Outcome callable definitions */
 typedef std::future<CreateCentralizationRuleForOrganizationOutcome> CreateCentralizationRuleForOrganizationOutcomeCallable;
+typedef std::future<CreateConnectorOutcome> CreateConnectorOutcomeCallable;
 typedef std::future<CreateDatasetIntegrationOutcome> CreateDatasetIntegrationOutcomeCallable;
 typedef std::future<CreateS3TableIntegrationOutcome> CreateS3TableIntegrationOutcomeCallable;
 typedef std::future<CreateTelemetryPipelineOutcome> CreateTelemetryPipelineOutcomeCallable;
 typedef std::future<CreateTelemetryRuleOutcome> CreateTelemetryRuleOutcomeCallable;
 typedef std::future<CreateTelemetryRuleForOrganizationOutcome> CreateTelemetryRuleForOrganizationOutcomeCallable;
 typedef std::future<DeleteCentralizationRuleForOrganizationOutcome> DeleteCentralizationRuleForOrganizationOutcomeCallable;
+typedef std::future<DeleteConnectorOutcome> DeleteConnectorOutcomeCallable;
 typedef std::future<DeleteDatasetIntegrationOutcome> DeleteDatasetIntegrationOutcomeCallable;
 typedef std::future<DeleteS3TableIntegrationOutcome> DeleteS3TableIntegrationOutcomeCallable;
 typedef std::future<DeleteTelemetryPipelineOutcome> DeleteTelemetryPipelineOutcomeCallable;
 typedef std::future<DeleteTelemetryRuleOutcome> DeleteTelemetryRuleOutcomeCallable;
 typedef std::future<DeleteTelemetryRuleForOrganizationOutcome> DeleteTelemetryRuleForOrganizationOutcomeCallable;
 typedef std::future<GetCentralizationRuleForOrganizationOutcome> GetCentralizationRuleForOrganizationOutcomeCallable;
+typedef std::future<GetConnectorOutcome> GetConnectorOutcomeCallable;
+typedef std::future<GetConnectorTelemetryManifestOutcome> GetConnectorTelemetryManifestOutcomeCallable;
+typedef std::future<GetConnectorTelemetrySetupOutcome> GetConnectorTelemetrySetupOutcomeCallable;
 typedef std::future<GetDatasetIntegrationOutcome> GetDatasetIntegrationOutcomeCallable;
 typedef std::future<GetS3TableIntegrationOutcome> GetS3TableIntegrationOutcomeCallable;
 typedef std::future<GetTelemetryEnrichmentStatusOutcome> GetTelemetryEnrichmentStatusOutcomeCallable;
@@ -228,21 +274,29 @@ typedef std::future<GetTelemetryEvaluationStatusForOrganizationOutcome> GetTelem
 typedef std::future<GetTelemetryPipelineOutcome> GetTelemetryPipelineOutcomeCallable;
 typedef std::future<GetTelemetryRuleOutcome> GetTelemetryRuleOutcomeCallable;
 typedef std::future<GetTelemetryRuleForOrganizationOutcome> GetTelemetryRuleForOrganizationOutcomeCallable;
+typedef std::future<GetThirdPartyTelemetryEnrichmentOutcome> GetThirdPartyTelemetryEnrichmentOutcomeCallable;
 typedef std::future<ListCentralizationRulesForOrganizationOutcome> ListCentralizationRulesForOrganizationOutcomeCallable;
+typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
 typedef std::future<ListDatasetIntegrationsOutcome> ListDatasetIntegrationsOutcomeCallable;
 typedef std::future<ListResourceTelemetryOutcome> ListResourceTelemetryOutcomeCallable;
 typedef std::future<ListResourceTelemetryForOrganizationOutcome> ListResourceTelemetryForOrganizationOutcomeCallable;
+typedef std::future<ListResourcesByConnectorOutcome> ListResourcesByConnectorOutcomeCallable;
 typedef std::future<ListS3TableIntegrationsOutcome> ListS3TableIntegrationsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListTelemetryPipelinesOutcome> ListTelemetryPipelinesOutcomeCallable;
 typedef std::future<ListTelemetryRulesOutcome> ListTelemetryRulesOutcomeCallable;
 typedef std::future<ListTelemetryRulesForOrganizationOutcome> ListTelemetryRulesForOrganizationOutcomeCallable;
+typedef std::future<ListThirdPartyTelemetryEnrichmentsOutcome> ListThirdPartyTelemetryEnrichmentsOutcomeCallable;
+typedef std::future<PutConnectorTelemetryManifestOutcome> PutConnectorTelemetryManifestOutcomeCallable;
 typedef std::future<StartTelemetryEnrichmentOutcome> StartTelemetryEnrichmentOutcomeCallable;
 typedef std::future<StartTelemetryEvaluationOutcome> StartTelemetryEvaluationOutcomeCallable;
 typedef std::future<StartTelemetryEvaluationForOrganizationOutcome> StartTelemetryEvaluationForOrganizationOutcomeCallable;
+typedef std::future<StartTelemetryPipelineRefreshOutcome> StartTelemetryPipelineRefreshOutcomeCallable;
+typedef std::future<StartThirdPartyTelemetryEnrichmentOutcome> StartThirdPartyTelemetryEnrichmentOutcomeCallable;
 typedef std::future<StopTelemetryEnrichmentOutcome> StopTelemetryEnrichmentOutcomeCallable;
 typedef std::future<StopTelemetryEvaluationOutcome> StopTelemetryEvaluationOutcomeCallable;
 typedef std::future<StopTelemetryEvaluationForOrganizationOutcome> StopTelemetryEvaluationForOrganizationOutcomeCallable;
+typedef std::future<StopThirdPartyTelemetryEnrichmentOutcome> StopThirdPartyTelemetryEnrichmentOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<TestTelemetryPipelineOutcome> TestTelemetryPipelineOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -262,6 +316,9 @@ typedef std::function<void(const ObservabilityAdminClient*, const Model::CreateC
                            const Model::CreateCentralizationRuleForOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCentralizationRuleForOrganizationResponseReceivedHandler;
+typedef std::function<void(const ObservabilityAdminClient*, const Model::CreateConnectorRequest&, const Model::CreateConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateConnectorResponseReceivedHandler;
 typedef std::function<void(const ObservabilityAdminClient*, const Model::CreateDatasetIntegrationRequest&,
                            const Model::CreateDatasetIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateDatasetIntegrationResponseReceivedHandler;
@@ -282,6 +339,9 @@ typedef std::function<void(const ObservabilityAdminClient*, const Model::DeleteC
                            const Model::DeleteCentralizationRuleForOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteCentralizationRuleForOrganizationResponseReceivedHandler;
+typedef std::function<void(const ObservabilityAdminClient*, const Model::DeleteConnectorRequest&, const Model::DeleteConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteConnectorResponseReceivedHandler;
 typedef std::function<void(const ObservabilityAdminClient*, const Model::DeleteDatasetIntegrationRequest&,
                            const Model::DeleteDatasetIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteDatasetIntegrationResponseReceivedHandler;
@@ -302,6 +362,16 @@ typedef std::function<void(const ObservabilityAdminClient*, const Model::GetCent
                            const Model::GetCentralizationRuleForOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCentralizationRuleForOrganizationResponseReceivedHandler;
+typedef std::function<void(const ObservabilityAdminClient*, const Model::GetConnectorRequest&, const Model::GetConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetConnectorResponseReceivedHandler;
+typedef std::function<void(const ObservabilityAdminClient*, const Model::GetConnectorTelemetryManifestRequest&,
+                           const Model::GetConnectorTelemetryManifestOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetConnectorTelemetryManifestResponseReceivedHandler;
+typedef std::function<void(const ObservabilityAdminClient*, const Model::GetConnectorTelemetrySetupRequest&,
+                           const Model::GetConnectorTelemetrySetupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetConnectorTelemetrySetupResponseReceivedHandler;
 typedef std::function<void(const ObservabilityAdminClient*, const Model::GetDatasetIntegrationRequest&,
                            const Model::GetDatasetIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDatasetIntegrationResponseReceivedHandler;
@@ -330,10 +400,17 @@ typedef std::function<void(const ObservabilityAdminClient*, const Model::GetTele
                            const Model::GetTelemetryRuleForOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTelemetryRuleForOrganizationResponseReceivedHandler;
+typedef std::function<void(const ObservabilityAdminClient*, const Model::GetThirdPartyTelemetryEnrichmentRequest&,
+                           const Model::GetThirdPartyTelemetryEnrichmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetThirdPartyTelemetryEnrichmentResponseReceivedHandler;
 typedef std::function<void(const ObservabilityAdminClient*, const Model::ListCentralizationRulesForOrganizationRequest&,
                            const Model::ListCentralizationRulesForOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCentralizationRulesForOrganizationResponseReceivedHandler;
+typedef std::function<void(const ObservabilityAdminClient*, const Model::ListConnectorsRequest&, const Model::ListConnectorsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListConnectorsResponseReceivedHandler;
 typedef std::function<void(const ObservabilityAdminClient*, const Model::ListDatasetIntegrationsRequest&,
                            const Model::ListDatasetIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDatasetIntegrationsResponseReceivedHandler;
@@ -344,6 +421,9 @@ typedef std::function<void(const ObservabilityAdminClient*, const Model::ListRes
                            const Model::ListResourceTelemetryForOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListResourceTelemetryForOrganizationResponseReceivedHandler;
+typedef std::function<void(const ObservabilityAdminClient*, const Model::ListResourcesByConnectorRequest&,
+                           const Model::ListResourcesByConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListResourcesByConnectorResponseReceivedHandler;
 typedef std::function<void(const ObservabilityAdminClient*, const Model::ListS3TableIntegrationsRequest&,
                            const Model::ListS3TableIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListS3TableIntegrationsResponseReceivedHandler;
@@ -360,6 +440,14 @@ typedef std::function<void(const ObservabilityAdminClient*, const Model::ListTel
                            const Model::ListTelemetryRulesForOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTelemetryRulesForOrganizationResponseReceivedHandler;
+typedef std::function<void(const ObservabilityAdminClient*, const Model::ListThirdPartyTelemetryEnrichmentsRequest&,
+                           const Model::ListThirdPartyTelemetryEnrichmentsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListThirdPartyTelemetryEnrichmentsResponseReceivedHandler;
+typedef std::function<void(const ObservabilityAdminClient*, const Model::PutConnectorTelemetryManifestRequest&,
+                           const Model::PutConnectorTelemetryManifestOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutConnectorTelemetryManifestResponseReceivedHandler;
 typedef std::function<void(const ObservabilityAdminClient*, const Model::StartTelemetryEnrichmentRequest&,
                            const Model::StartTelemetryEnrichmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartTelemetryEnrichmentResponseReceivedHandler;
@@ -370,6 +458,14 @@ typedef std::function<void(const ObservabilityAdminClient*, const Model::StartTe
                            const Model::StartTelemetryEvaluationForOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartTelemetryEvaluationForOrganizationResponseReceivedHandler;
+typedef std::function<void(const ObservabilityAdminClient*, const Model::StartTelemetryPipelineRefreshRequest&,
+                           const Model::StartTelemetryPipelineRefreshOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartTelemetryPipelineRefreshResponseReceivedHandler;
+typedef std::function<void(const ObservabilityAdminClient*, const Model::StartThirdPartyTelemetryEnrichmentRequest&,
+                           const Model::StartThirdPartyTelemetryEnrichmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartThirdPartyTelemetryEnrichmentResponseReceivedHandler;
 typedef std::function<void(const ObservabilityAdminClient*, const Model::StopTelemetryEnrichmentRequest&,
                            const Model::StopTelemetryEnrichmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopTelemetryEnrichmentResponseReceivedHandler;
@@ -380,6 +476,10 @@ typedef std::function<void(const ObservabilityAdminClient*, const Model::StopTel
                            const Model::StopTelemetryEvaluationForOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopTelemetryEvaluationForOrganizationResponseReceivedHandler;
+typedef std::function<void(const ObservabilityAdminClient*, const Model::StopThirdPartyTelemetryEnrichmentRequest&,
+                           const Model::StopThirdPartyTelemetryEnrichmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopThirdPartyTelemetryEnrichmentResponseReceivedHandler;
 typedef std::function<void(const ObservabilityAdminClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

@@ -67,6 +67,23 @@ class GetAccessSourceResult {
 
   ///@{
   /**
+   * <p>The ID of the core network endpoint associated with this access source.</p>
+   */
+  inline const Aws::String& GetCoreNetworkEndpointId() const { return m_coreNetworkEndpointId; }
+  template <typename CoreNetworkEndpointIdT = Aws::String>
+  void SetCoreNetworkEndpointId(CoreNetworkEndpointIdT&& value) {
+    m_coreNetworkEndpointIdHasBeenSet = true;
+    m_coreNetworkEndpointId = std::forward<CoreNetworkEndpointIdT>(value);
+  }
+  template <typename CoreNetworkEndpointIdT = Aws::String>
+  GetAccessSourceResult& WithCoreNetworkEndpointId(CoreNetworkEndpointIdT&& value) {
+    SetCoreNetworkEndpointId(std::forward<CoreNetworkEndpointIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time and date the rule was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -166,6 +183,23 @@ class GetAccessSourceResult {
 
   ///@{
   /**
+   * <p>The name of the segment associated with this access source.</p>
+   */
+  inline const Aws::String& GetSegment() const { return m_segment; }
+  template <typename SegmentT = Aws::String>
+  void SetSegment(SegmentT&& value) {
+    m_segmentHasBeenSet = true;
+    m_segment = std::forward<SegmentT>(value);
+  }
+  template <typename SegmentT = Aws::String>
+  GetAccessSourceResult& WithSegment(SegmentT&& value) {
+    SetSegment(std::forward<SegmentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Information about the status of the rule.</p>
    */
   inline CRResourceStatus GetStatus() const { return m_status; }
@@ -217,6 +251,8 @@ class GetAccessSourceResult {
 
   Aws::String m_cidr;
 
+  Aws::String m_coreNetworkEndpointId;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_id;
@@ -229,6 +265,8 @@ class GetAccessSourceResult {
 
   DnsProtocol m_protocol{DnsProtocol::NOT_SET};
 
+  Aws::String m_segment;
+
   CRResourceStatus m_status{CRResourceStatus::NOT_SET};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -237,12 +275,14 @@ class GetAccessSourceResult {
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_cidrHasBeenSet = false;
+  bool m_coreNetworkEndpointIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_dnsViewIdHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
+  bool m_segmentHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

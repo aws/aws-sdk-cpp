@@ -29,10 +29,15 @@
 #include <aws/mgn/model/ListNetworkMigrationDeployedStacksPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationDeploymentsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationExecutionsPaginationTraits.h>
+#include <aws/mgn/model/ListNetworkMigrationInsightsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationMapperSegmentConstructsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationMapperSegmentsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationMappingUpdatesPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationMappingsPaginationTraits.h>
+#include <aws/mgn/model/ListRemoteSourceActionInvocationResultsPaginationTraits.h>
+#include <aws/mgn/model/ListRemoteSourceActionInvocationsPaginationTraits.h>
+#include <aws/mgn/model/ListRemoteSourceActionJobsPaginationTraits.h>
+#include <aws/mgn/model/ListRemoteSourceActionsPaginationTraits.h>
 #include <aws/mgn/model/ListSourceServerActionsPaginationTraits.h>
 #include <aws/mgn/model/ListTemplateActionsPaginationTraits.h>
 #include <aws/mgn/model/ListWavesPaginationTraits.h>
@@ -306,6 +311,18 @@ class MgnPaginationBase {
   }
 
   /**
+   * Create a paginator for ListNetworkMigrationInsights operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNetworkMigrationInsightsRequest,
+                                    Pagination::ListNetworkMigrationInsightsPaginationTraits<DerivedClient>>
+  ListNetworkMigrationInsightsPaginator(const Model::ListNetworkMigrationInsightsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNetworkMigrationInsightsRequest,
+                                             Pagination::ListNetworkMigrationInsightsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListNetworkMigrationMapperSegmentConstructs operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNetworkMigrationMapperSegmentConstructsRequest,
@@ -350,6 +367,54 @@ class MgnPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNetworkMigrationMappingUpdatesRequest,
                                              Pagination::ListNetworkMigrationMappingUpdatesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRemoteSourceActionInvocationResults operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRemoteSourceActionInvocationResultsRequest,
+                                    Pagination::ListRemoteSourceActionInvocationResultsPaginationTraits<DerivedClient>>
+  ListRemoteSourceActionInvocationResultsPaginator(const Model::ListRemoteSourceActionInvocationResultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRemoteSourceActionInvocationResultsRequest,
+                                             Pagination::ListRemoteSourceActionInvocationResultsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRemoteSourceActionInvocations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRemoteSourceActionInvocationsRequest,
+                                    Pagination::ListRemoteSourceActionInvocationsPaginationTraits<DerivedClient>>
+  ListRemoteSourceActionInvocationsPaginator(const Model::ListRemoteSourceActionInvocationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRemoteSourceActionInvocationsRequest,
+                                             Pagination::ListRemoteSourceActionInvocationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRemoteSourceActionJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRemoteSourceActionJobsRequest,
+                                    Pagination::ListRemoteSourceActionJobsPaginationTraits<DerivedClient>>
+  ListRemoteSourceActionJobsPaginator(const Model::ListRemoteSourceActionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRemoteSourceActionJobsRequest,
+                                             Pagination::ListRemoteSourceActionJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRemoteSourceActions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRemoteSourceActionsRequest,
+                                    Pagination::ListRemoteSourceActionsPaginationTraits<DerivedClient>>
+  ListRemoteSourceActionsPaginator(const Model::ListRemoteSourceActionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRemoteSourceActionsRequest,
+                                             Pagination::ListRemoteSourceActionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

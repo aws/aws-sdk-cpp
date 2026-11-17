@@ -36,6 +36,10 @@ Aws::String CreateNetworkMigrationDefinitionRequest::SerializePayload() const {
     payload.WithArray("sourceConfigurations", std::move(sourceConfigurationsJsonList));
   }
 
+  if (m_definitionTypeHasBeenSet) {
+    payload.WithString("definitionType", DefinitionTypeMapper::GetNameForDefinitionType(m_definitionType));
+  }
+
   if (m_targetS3ConfigurationHasBeenSet) {
     payload.WithObject("targetS3Configuration", m_targetS3Configuration.Jsonize());
   }

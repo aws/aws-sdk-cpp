@@ -19,7 +19,9 @@ enum class ResourceType {
   PaymentRequest,
   Invoice,
   AgreementCancellationRequest,
-  BillingAdjustmentRequest
+  BillingAdjustmentRequest,
+  AgreementApproval,
+  AgreementRequestApprovalPlan
 };
 
 namespace ResourceTypeMapper {

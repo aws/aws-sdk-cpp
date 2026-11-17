@@ -62,6 +62,10 @@ Authorizer& Authorizer::operator=(JsonView jsonValue) {
     m_authorizerResultTtlInSeconds = jsonValue.GetInteger("authorizerResultTtlInSeconds");
     m_authorizerResultTtlInSecondsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jwtConfiguration")) {
+    m_jwtConfiguration = jsonValue.GetObject("jwtConfiguration");
+    m_jwtConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +114,10 @@ JsonValue Authorizer::Jsonize() const {
 
   if (m_authorizerResultTtlInSecondsHasBeenSet) {
     payload.WithInteger("authorizerResultTtlInSeconds", m_authorizerResultTtlInSeconds);
+  }
+
+  if (m_jwtConfigurationHasBeenSet) {
+    payload.WithObject("jwtConfiguration", m_jwtConfiguration.Jsonize());
   }
 
   return payload;

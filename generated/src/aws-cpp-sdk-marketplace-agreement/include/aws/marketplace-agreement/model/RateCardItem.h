@@ -54,7 +54,7 @@ class RateCardItem {
 
   ///@{
   /**
-   * <p>Per unit price for the product dimension that’s used for calculating the
+   * <p>Per unit price for the product dimension that's used for calculating the
    * amount to be charged.</p>
    */
   inline const Aws::String& GetPrice() const { return m_price; }

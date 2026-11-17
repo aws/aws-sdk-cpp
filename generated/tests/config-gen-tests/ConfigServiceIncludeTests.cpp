@@ -80,8 +80,11 @@
 #include <aws/config/model/ConformancePackEvaluationResult.h>
 #include <aws/config/model/ConformancePackInputParameter.h>
 #include <aws/config/model/ConformancePackRuleCompliance.h>
+#include <aws/config/model/ConformancePackScope.h>
+#include <aws/config/model/ConformancePackSource.h>
 #include <aws/config/model/ConformancePackState.h>
 #include <aws/config/model/ConformancePackStatusDetail.h>
+#include <aws/config/model/ConformancePackType.h>
 #include <aws/config/model/Connector.h>
 #include <aws/config/model/ConnectorConfiguration.h>
 #include <aws/config/model/ConnectorFilter.h>
@@ -153,6 +156,7 @@
 #include <aws/config/model/DescribeConformancePackStatusPaginationTraits.h>
 #include <aws/config/model/DescribeConformancePackStatusRequest.h>
 #include <aws/config/model/DescribeConformancePackStatusResult.h>
+#include <aws/config/model/DescribeConformancePacksFilters.h>
 #include <aws/config/model/DescribeConformancePacksPaginationTraits.h>
 #include <aws/config/model/DescribeConformancePacksRequest.h>
 #include <aws/config/model/DescribeConformancePacksResult.h>

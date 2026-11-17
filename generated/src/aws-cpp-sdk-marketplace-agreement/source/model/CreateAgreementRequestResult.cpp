@@ -71,9 +71,80 @@ CreateAgreementRequestResult& CreateAgreementRequestResult::operator=(
                 m_agreementRequestIdHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "agreementType") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_agreementType = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_agreementType = ss.str();
+                  }
+                }
+                m_agreementTypeHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "chargeSummary") {
                 m_chargeSummary = ChargeSummary(decoder);
                 m_chargeSummaryHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "status") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_status = AgreementRequestStatusMapper::GetAgreementRequestStatusForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_statusHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "approvalRequirement") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_approvalRequirement = ApprovalRequirementMapper::GetApprovalRequirementForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_approvalRequirementHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "createdAt") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_createdAt = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_createdAt = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_createdAtHasBeenSet = true;
               }
 
               else {
@@ -133,9 +204,80 @@ CreateAgreementRequestResult& CreateAgreementRequestResult::operator=(
               m_agreementRequestIdHasBeenSet = true;
             }
 
+            else if (initialKeyStr == "agreementType") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_agreementType = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_agreementType = ss.str();
+                }
+              }
+              m_agreementTypeHasBeenSet = true;
+            }
+
             else if (initialKeyStr == "chargeSummary") {
               m_chargeSummary = ChargeSummary(decoder);
               m_chargeSummaryHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "status") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_status = AgreementRequestStatusMapper::GetAgreementRequestStatusForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_statusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "approvalRequirement") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_approvalRequirement = ApprovalRequirementMapper::GetApprovalRequirementForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_approvalRequirementHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "createdAt") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_createdAt = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_createdAt = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_createdAtHasBeenSet = true;
             }
 
             else {

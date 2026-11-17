@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityHub {
 namespace Model {
-enum class ConnectorProviderName { NOT_SET, JIRA_CLOUD, SERVICENOW, AZURE };
+enum class ConnectorProviderName { NOT_SET, JIRA_CLOUD, SERVICENOW, AZURE, GCP };
 
 namespace ConnectorProviderNameMapper {
 AWS_SECURITYHUB_API ConnectorProviderName GetConnectorProviderNameForName(const Aws::String& name);

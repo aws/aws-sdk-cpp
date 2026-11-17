@@ -20,7 +20,7 @@ namespace APIGateway {
  * deliver robust, secure, and scalable mobile and web application back ends. API
  * Gateway allows developers to securely connect mobile and web applications to
  * APIs that run on Lambda, Amazon EC2, or other publicly addressable web services
- * that are hosted outside of AWS.</p>
+ * that are hosted outside of Amazon Web Services.</p>
  */
 class AWS_APIGATEWAY_API APIGatewayClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<APIGatewayClient>,
@@ -725,11 +725,11 @@ class AWS_APIGATEWAY_API APIGatewayClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Deletes the DomainNameAccessAssociation resource.</p> <p>Only the AWS
-   * account that created the DomainNameAccessAssociation resource can delete it. To
-   * stop an access association source in another AWS account from accessing your
-   * private custom domain name, use the RejectDomainNameAccessAssociation
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * <p> Deletes the DomainNameAccessAssociation resource.</p> <p>Only the Amazon Web
+   * Services account that created the DomainNameAccessAssociation resource can
+   * delete it. To stop an access association source in another Amazon Web Services
+   * account from accessing your private custom domain name, use the
+   * RejectDomainNameAccessAssociation operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainNameAccessAssociation">AWS
    * API Reference</a></p>
    */
@@ -2654,10 +2654,10 @@ class AWS_APIGATEWAY_API APIGatewayClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Rejects a domain name access association with a private custom domain
    * name.</p> <p>To reject a domain name access association with an access
-   * association source in another AWS account, use this operation. To remove a
-   * domain name access association with an access association source in your own
-   * account, use the DeleteDomainNameAccessAssociation operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * association source in another Amazon Web Services account, use this operation.
+   * To remove a domain name access association with an access association source in
+   * your own account, use the DeleteDomainNameAccessAssociation
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RejectDomainNameAccessAssociation">AWS
    * API Reference</a></p>
    */
@@ -2842,7 +2842,13 @@ class AWS_APIGATEWAY_API APIGatewayClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates an existing Authorizer resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates an existing Authorizer resource. For a <code>JWT</code> authorizer,
+   * the only JWT patch operation is <code>replace</code> on the path
+   * <code>/jwtConfiguration</code>. Its value is the complete configuration as a
+   * JSON string in the <code>JwtConfigurationInput</code> shape. This replaces the
+   * entire configuration; nothing from the previous configuration is retained. A
+   * <code>replace</code> operation on the path <code>/type</code> is supported in
+   * both directions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">AWS
    * API Reference</a></p>
    */

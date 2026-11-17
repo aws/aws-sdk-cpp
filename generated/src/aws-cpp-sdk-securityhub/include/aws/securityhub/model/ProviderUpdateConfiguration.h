@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/AzureUpdateConfiguration.h>
+#include <aws/securityhub/model/GcpUpdateConfiguration.h>
 #include <aws/securityhub/model/JiraCloudUpdateConfiguration.h>
 #include <aws/securityhub/model/ServiceNowUpdateConfiguration.h>
 
@@ -90,15 +91,37 @@ class ProviderUpdateConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The parameters required to update the configuration for a Google Cloud
+   * Platform (GCP) CSPM integration.</p>
+   */
+  inline const GcpUpdateConfiguration& GetGCP() const { return m_gCP; }
+  inline bool GCPHasBeenSet() const { return m_gCPHasBeenSet; }
+  template <typename GCPT = GcpUpdateConfiguration>
+  void SetGCP(GCPT&& value) {
+    m_gCPHasBeenSet = true;
+    m_gCP = std::forward<GCPT>(value);
+  }
+  template <typename GCPT = GcpUpdateConfiguration>
+  ProviderUpdateConfiguration& WithGCP(GCPT&& value) {
+    SetGCP(std::forward<GCPT>(value));
+    return *this;
+  }
+  ///@}
  private:
   JiraCloudUpdateConfiguration m_jiraCloud;
 
   ServiceNowUpdateConfiguration m_serviceNow;
 
   AzureUpdateConfiguration m_azure;
+
+  GcpUpdateConfiguration m_gCP;
   bool m_jiraCloudHasBeenSet = false;
   bool m_serviceNowHasBeenSet = false;
   bool m_azureHasBeenSet = false;
+  bool m_gCPHasBeenSet = false;
 };
 
 }  // namespace Model

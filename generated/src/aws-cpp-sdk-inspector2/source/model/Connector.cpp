@@ -80,6 +80,17 @@ Connector& Connector::operator=(JsonView jsonValue) {
     m_autoInstallVMScanner = jsonValue.GetBool("autoInstallVMScanner");
     m_autoInstallVMScannerHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("gcpRegions")) {
+    Aws::Utils::Array<JsonView> gcpRegionsJsonList = jsonValue.GetArray("gcpRegions");
+    for (unsigned gcpRegionsIndex = 0; gcpRegionsIndex < gcpRegionsJsonList.GetLength(); ++gcpRegionsIndex) {
+      m_gcpRegions.push_back(gcpRegionsJsonList[gcpRegionsIndex].AsString());
+    }
+    m_gcpRegionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("gcpScopeConfiguration")) {
+    m_gcpScopeConfiguration = jsonValue.GetObject("gcpScopeConfiguration");
+    m_gcpScopeConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -148,6 +159,18 @@ JsonValue Connector::Jsonize() const {
 
   if (m_autoInstallVMScannerHasBeenSet) {
     payload.WithBool("autoInstallVMScanner", m_autoInstallVMScanner);
+  }
+
+  if (m_gcpRegionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> gcpRegionsJsonList(m_gcpRegions.size());
+    for (unsigned gcpRegionsIndex = 0; gcpRegionsIndex < gcpRegionsJsonList.GetLength(); ++gcpRegionsIndex) {
+      gcpRegionsJsonList[gcpRegionsIndex].AsString(m_gcpRegions[gcpRegionsIndex]);
+    }
+    payload.WithArray("gcpRegions", std::move(gcpRegionsJsonList));
+  }
+
+  if (m_gcpScopeConfigurationHasBeenSet) {
+    payload.WithObject("gcpScopeConfiguration", m_gcpScopeConfiguration.Jsonize());
   }
 
   return payload;

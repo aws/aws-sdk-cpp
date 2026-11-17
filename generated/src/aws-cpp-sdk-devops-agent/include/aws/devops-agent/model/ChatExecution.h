@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/ChatArchiveStatus.h>
 
 #include <utility>
 
@@ -103,6 +104,22 @@ class ChatExecution {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the chat execution is archived or active.</p>
+   */
+  inline ChatArchiveStatus GetArchiveStatus() const { return m_archiveStatus; }
+  inline bool ArchiveStatusHasBeenSet() const { return m_archiveStatusHasBeenSet; }
+  inline void SetArchiveStatus(ChatArchiveStatus value) {
+    m_archiveStatusHasBeenSet = true;
+    m_archiveStatus = value;
+  }
+  inline ChatExecution& WithArchiveStatus(ChatArchiveStatus value) {
+    SetArchiveStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_executionId;
 
@@ -111,10 +128,13 @@ class ChatExecution {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_summary;
+
+  ChatArchiveStatus m_archiveStatus{ChatArchiveStatus::NOT_SET};
   bool m_executionIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_summaryHasBeenSet = false;
+  bool m_archiveStatusHasBeenSet = false;
 };
 
 }  // namespace Model

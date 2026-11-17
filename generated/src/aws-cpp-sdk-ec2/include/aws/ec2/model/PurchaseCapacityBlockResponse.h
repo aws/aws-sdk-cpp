@@ -71,6 +71,31 @@ class PurchaseCapacityBlockResponse {
   ///@}
 
   ///@{
+  /**
+   * <p>The Capacity Reservations created as a result of the Capacity Block purchase.
+   * When a Capacity Block offering contains multiple segments, a separate Capacity
+   * Reservation is created for each segment.</p>
+   */
+  inline const Aws::Vector<CapacityReservation>& GetCapacityReservations() const { return m_capacityReservations; }
+  template <typename CapacityReservationsT = Aws::Vector<CapacityReservation>>
+  void SetCapacityReservations(CapacityReservationsT&& value) {
+    m_capacityReservationsHasBeenSet = true;
+    m_capacityReservations = std::forward<CapacityReservationsT>(value);
+  }
+  template <typename CapacityReservationsT = Aws::Vector<CapacityReservation>>
+  PurchaseCapacityBlockResponse& WithCapacityReservations(CapacityReservationsT&& value) {
+    SetCapacityReservations(std::forward<CapacityReservationsT>(value));
+    return *this;
+  }
+  template <typename CapacityReservationsT = CapacityReservation>
+  PurchaseCapacityBlockResponse& AddCapacityReservations(CapacityReservationsT&& value) {
+    m_capacityReservationsHasBeenSet = true;
+    m_capacityReservations.emplace_back(std::forward<CapacityReservationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
@@ -91,10 +116,13 @@ class PurchaseCapacityBlockResponse {
 
   Aws::Vector<CapacityBlock> m_capacityBlocks;
 
+  Aws::Vector<CapacityReservation> m_capacityReservations;
+
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_capacityReservationHasBeenSet = false;
   bool m_capacityBlocksHasBeenSet = false;
+  bool m_capacityReservationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

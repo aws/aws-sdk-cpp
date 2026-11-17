@@ -228,7 +228,7 @@ class AcceptedTerm {
 
   ///@{
   /**
-   * <p>Defines a short-term free pricing model where the buyers aren’t charged
+   * <p>Defines a short-term free pricing model where the buyers aren't charged
    * anything within a specified limit.</p>
    */
   inline const FreeTrialPricingTerm& GetFreeTrialPricingTerm() const { return m_freeTrialPricingTerm; }

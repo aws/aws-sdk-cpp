@@ -16,11 +16,14 @@ namespace Model {
 namespace CspmConnectorProviderNameMapper {
 
 static const int AZURE_HASH = HashingUtils::HashString("AZURE");
+static const int GCP_HASH = HashingUtils::HashString("GCP");
 
 CspmConnectorProviderName GetCspmConnectorProviderNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == AZURE_HASH) {
     return CspmConnectorProviderName::AZURE;
+  } else if (hashCode == GCP_HASH) {
+    return CspmConnectorProviderName::GCP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForCspmConnectorProviderName(CspmConnectorProviderName enumVa
       return {};
     case CspmConnectorProviderName::AZURE:
       return "AZURE";
+    case CspmConnectorProviderName::GCP:
+      return "GCP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

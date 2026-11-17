@@ -36,8 +36,8 @@ class SecretManagerAuthConfig {
 
   ///@{
   /**
-   * <p>The ARN of the secret in AWS Secrets Manager that contains the credentials
-   * for authenticating with the source.</p>
+   * <p>The ARN of the secret in Secrets Manager that contains the credentials for
+   * authenticating with the source.</p>
    */
   inline const Aws::String& GetSecretArn() const { return m_secretArn; }
   inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }

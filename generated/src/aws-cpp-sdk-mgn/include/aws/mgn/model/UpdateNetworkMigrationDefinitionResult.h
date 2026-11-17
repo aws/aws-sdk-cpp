@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/model/CidrMapping.h>
+#include <aws/mgn/model/DefinitionType.h>
 #include <aws/mgn/model/SourceConfiguration.h>
 #include <aws/mgn/model/TargetDeployment.h>
 #include <aws/mgn/model/TargetNetwork.h>
@@ -123,6 +124,22 @@ class UpdateNetworkMigrationDefinitionResult {
   UpdateNetworkMigrationDefinitionResult& AddSourceConfigurations(SourceConfigurationsT&& value) {
     m_sourceConfigurationsHasBeenSet = true;
     m_sourceConfigurations.emplace_back(std::forward<SourceConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the type of the definition. <code>MIGRATION</code> migrates an
+   * existing network. <code>NEW_NETWORK</code> designs a new network.</p>
+   */
+  inline DefinitionType GetDefinitionType() const { return m_definitionType; }
+  inline void SetDefinitionType(DefinitionType value) {
+    m_definitionTypeHasBeenSet = true;
+    m_definitionType = value;
+  }
+  inline UpdateNetworkMigrationDefinitionResult& WithDefinitionType(DefinitionType value) {
+    SetDefinitionType(value);
     return *this;
   }
   ///@}
@@ -325,6 +342,8 @@ class UpdateNetworkMigrationDefinitionResult {
 
   Aws::Vector<SourceConfiguration> m_sourceConfigurations;
 
+  DefinitionType m_definitionType{DefinitionType::NOT_SET};
+
   TargetS3Configuration m_targetS3Configuration;
 
   TargetNetwork m_targetNetwork;
@@ -350,6 +369,7 @@ class UpdateNetworkMigrationDefinitionResult {
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_sourceConfigurationsHasBeenSet = false;
+  bool m_definitionTypeHasBeenSet = false;
   bool m_targetS3ConfigurationHasBeenSet = false;
   bool m_targetNetworkHasBeenSet = false;
   bool m_targetDeploymentHasBeenSet = false;

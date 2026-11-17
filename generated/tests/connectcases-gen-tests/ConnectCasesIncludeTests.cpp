@@ -23,6 +23,7 @@
 #include <aws/connectcases/model/AuditEventPerformedBy.h>
 #include <aws/connectcases/model/AuditEventType.h>
 #include <aws/connectcases/model/AuditMergeMetadata.h>
+#include <aws/connectcases/model/AutoIncludeFields.h>
 #include <aws/connectcases/model/BasicLayout.h>
 #include <aws/connectcases/model/BatchCreateRelatedItemErrorEntry.h>
 #include <aws/connectcases/model/BatchCreateRelatedItemIdentifier.h>

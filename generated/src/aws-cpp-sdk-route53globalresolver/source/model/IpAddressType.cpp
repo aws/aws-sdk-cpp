@@ -17,6 +17,7 @@ namespace IpAddressTypeMapper {
 
 static const int IPV4_HASH = HashingUtils::HashString("IPV4");
 static const int IPV6_HASH = HashingUtils::HashString("IPV6");
+static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 IpAddressType GetIpAddressTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ IpAddressType GetIpAddressTypeForName(const Aws::String& name) {
     return IpAddressType::IPV4;
   } else if (hashCode == IPV6_HASH) {
     return IpAddressType::IPV6;
+  } else if (hashCode == NONE_HASH) {
+    return IpAddressType::NONE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForIpAddressType(IpAddressType enumValue) {
       return "IPV4";
     case IpAddressType::IPV6:
       return "IPV6";
+    case IpAddressType::NONE:
+      return "NONE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

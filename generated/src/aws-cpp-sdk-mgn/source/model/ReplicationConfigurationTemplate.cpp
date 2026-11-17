@@ -107,6 +107,11 @@ ReplicationConfigurationTemplate& ReplicationConfigurationTemplate::operator=(Js
     m_storeSnapshotOnLocalZone = jsonValue.GetBool("storeSnapshotOnLocalZone");
     m_storeSnapshotOnLocalZoneHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("outpostSnapshotLocation")) {
+    m_outpostSnapshotLocation =
+        OutpostSnapshotLocationMapper::GetOutpostSnapshotLocationForName(jsonValue.GetString("outpostSnapshotLocation"));
+    m_outpostSnapshotLocationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("storageConfiguration")) {
     m_storageConfiguration = jsonValue.GetObject("storageConfiguration");
     m_storageConfigurationHasBeenSet = true;
@@ -208,6 +213,11 @@ JsonValue ReplicationConfigurationTemplate::Jsonize() const {
 
   if (m_storeSnapshotOnLocalZoneHasBeenSet) {
     payload.WithBool("storeSnapshotOnLocalZone", m_storeSnapshotOnLocalZone);
+  }
+
+  if (m_outpostSnapshotLocationHasBeenSet) {
+    payload.WithString("outpostSnapshotLocation",
+                       OutpostSnapshotLocationMapper::GetNameForOutpostSnapshotLocation(m_outpostSnapshotLocation));
   }
 
   if (m_storageConfigurationHasBeenSet) {

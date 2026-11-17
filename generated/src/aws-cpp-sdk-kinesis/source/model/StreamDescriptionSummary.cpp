@@ -87,6 +87,10 @@ StreamDescriptionSummary& StreamDescriptionSummary::operator=(JsonView jsonValue
         RecordDistributionStrategyMapper::GetRecordDistributionStrategyForName(jsonValue.GetString("RecordDistributionStrategy"));
     m_recordDistributionStrategyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("QueueCount")) {
+    m_queueCount = jsonValue.GetInteger("QueueCount");
+    m_queueCountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -161,6 +165,10 @@ JsonValue StreamDescriptionSummary::Jsonize() const {
   if (m_recordDistributionStrategyHasBeenSet) {
     payload.WithString("RecordDistributionStrategy",
                        RecordDistributionStrategyMapper::GetNameForRecordDistributionStrategy(m_recordDistributionStrategy));
+  }
+
+  if (m_queueCountHasBeenSet) {
+    payload.WithInteger("QueueCount", m_queueCount);
   }
 
   return payload;

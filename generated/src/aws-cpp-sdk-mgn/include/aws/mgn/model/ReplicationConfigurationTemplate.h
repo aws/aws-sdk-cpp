@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/model/InternetProtocol.h>
+#include <aws/mgn/model/OutpostSnapshotLocation.h>
 #include <aws/mgn/model/ReplicationConfigurationDataPlaneRouting.h>
 #include <aws/mgn/model/ReplicationConfigurationDefaultLargeStagingDiskType.h>
 #include <aws/mgn/model/ReplicationConfigurationEbsEncryption.h>
@@ -360,6 +361,25 @@ class ReplicationConfigurationTemplate {
 
   ///@{
   /**
+   * <p>Indicates the location of replication snapshots in the Replication
+   * Configuration template when the staging area subnet is on an AWS Outpost.
+   * <code>OUTPOST</code> keeps replication snapshots on the Outpost, and
+   * <code>REGION</code> stores them in the AWS Region.</p>
+   */
+  inline OutpostSnapshotLocation GetOutpostSnapshotLocation() const { return m_outpostSnapshotLocation; }
+  inline bool OutpostSnapshotLocationHasBeenSet() const { return m_outpostSnapshotLocationHasBeenSet; }
+  inline void SetOutpostSnapshotLocation(OutpostSnapshotLocation value) {
+    m_outpostSnapshotLocationHasBeenSet = true;
+    m_outpostSnapshotLocation = value;
+  }
+  inline ReplicationConfigurationTemplate& WithOutpostSnapshotLocation(OutpostSnapshotLocation value) {
+    SetOutpostSnapshotLocation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Replication Configuration template storage configuration.</p>
    */
   inline const StorageConfiguration& GetStorageConfiguration() const { return m_storageConfiguration; }
@@ -429,6 +449,8 @@ class ReplicationConfigurationTemplate {
 
   bool m_storeSnapshotOnLocalZone{false};
 
+  OutpostSnapshotLocation m_outpostSnapshotLocation{OutpostSnapshotLocation::NOT_SET};
+
   StorageConfiguration m_storageConfiguration;
 
   Aws::String m_requestId;
@@ -450,6 +472,7 @@ class ReplicationConfigurationTemplate {
   bool m_tagsHasBeenSet = false;
   bool m_internetProtocolHasBeenSet = false;
   bool m_storeSnapshotOnLocalZoneHasBeenSet = false;
+  bool m_outpostSnapshotLocationHasBeenSet = false;
   bool m_storageConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

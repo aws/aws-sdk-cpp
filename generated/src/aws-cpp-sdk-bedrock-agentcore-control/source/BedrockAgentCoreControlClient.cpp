@@ -67,6 +67,7 @@
 #include <aws/bedrock-agentcore-control/model/DeleteRegistryRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteResourcePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteWorkloadIdentityRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetAgentInsightStoreRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetApiKeyCredentialProviderRequest.h>
@@ -102,6 +103,7 @@
 #include <aws/bedrock-agentcore-control/model/GetResourcePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetTokenVaultRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetWorkloadIdentityRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListAgentInsightStoresRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsByCapacityProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsRequest.h>
@@ -151,6 +153,7 @@
 #include <aws/bedrock-agentcore-control/model/SynchronizeGatewayTargetsRequest.h>
 #include <aws/bedrock-agentcore-control/model/TagResourceRequest.h>
 #include <aws/bedrock-agentcore-control/model/UntagResourceRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateAgentInsightStoreRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateApiKeyCredentialProviderRequest.h>
@@ -1347,6 +1350,24 @@ DeleteWorkloadIdentityOutcome BedrockAgentCoreControlClient::DeleteWorkloadIdent
                             : DeleteWorkloadIdentityOutcome(std::move(result.GetError()));
 }
 
+GetAgentInsightStoreOutcome BedrockAgentCoreControlClient::GetAgentInsightStore(const GetAgentInsightStoreRequest& request) const {
+  if (!request.AgentInsightStoreIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAgentInsightStore", "Required field: AgentInsightStoreId, is not set");
+    return GetAgentInsightStoreOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentInsightStoreId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/agent-insight-stores/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentInsightStoreId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAgentInsightStoreOutcome(result.GetResultWithOwnership())
+                            : GetAgentInsightStoreOutcome(std::move(result.GetError()));
+}
+
 GetAgentRuntimeOutcome BedrockAgentCoreControlClient::GetAgentRuntime(const GetAgentRuntimeRequest& request) const {
   if (!request.AgentRuntimeIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetAgentRuntime", "Required field: AgentRuntimeId, is not set");
@@ -2016,6 +2037,17 @@ GetWorkloadIdentityOutcome BedrockAgentCoreControlClient::GetWorkloadIdentity(co
                             : GetWorkloadIdentityOutcome(std::move(result.GetError()));
 }
 
+ListAgentInsightStoresOutcome BedrockAgentCoreControlClient::ListAgentInsightStores(const ListAgentInsightStoresRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/agent-insight-stores");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAgentInsightStoresOutcome(result.GetResultWithOwnership())
+                            : ListAgentInsightStoresOutcome(std::move(result.GetError()));
+}
+
 ListAgentRuntimeEndpointsOutcome BedrockAgentCoreControlClient::ListAgentRuntimeEndpoints(
     const ListAgentRuntimeEndpointsRequest& request) const {
   if (!request.AgentRuntimeIdHasBeenSet()) {
@@ -2196,10 +2228,10 @@ ListDatasetExamplesOutcome BedrockAgentCoreControlClient::ListDatasetExamples(co
     (void)endpointResolutionOutcome;
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/examples");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/examples/list");
   };
 
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListDatasetExamplesOutcome(result.GetResultWithOwnership())
                             : ListDatasetExamplesOutcome(std::move(result.GetError()));
 }
@@ -2215,10 +2247,10 @@ ListDatasetVersionsOutcome BedrockAgentCoreControlClient::ListDatasetVersions(co
     (void)endpointResolutionOutcome;
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions/list");
   };
 
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListDatasetVersionsOutcome(result.GetResultWithOwnership())
                             : ListDatasetVersionsOutcome(std::move(result.GetError()));
 }
@@ -2226,10 +2258,10 @@ ListDatasetVersionsOutcome BedrockAgentCoreControlClient::ListDatasetVersions(co
 ListDatasetsOutcome BedrockAgentCoreControlClient::ListDatasets(const ListDatasetsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets");
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/list");
   };
 
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListDatasetsOutcome(result.GetResultWithOwnership()) : ListDatasetsOutcome(std::move(result.GetError()));
 }
 
@@ -2789,6 +2821,24 @@ UntagResourceOutcome BedrockAgentCoreControlClient::UntagResource(const UntagRes
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateAgentInsightStoreOutcome BedrockAgentCoreControlClient::UpdateAgentInsightStore(const UpdateAgentInsightStoreRequest& request) const {
+  if (!request.AgentInsightStoreIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAgentInsightStore", "Required field: AgentInsightStoreId, is not set");
+    return UpdateAgentInsightStoreOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentInsightStoreId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/agent-insight-stores/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentInsightStoreId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAgentInsightStoreOutcome(result.GetResultWithOwnership())
+                            : UpdateAgentInsightStoreOutcome(std::move(result.GetError()));
 }
 
 UpdateAgentRuntimeOutcome BedrockAgentCoreControlClient::UpdateAgentRuntime(const UpdateAgentRuntimeRequest& request) const {

@@ -225,6 +225,23 @@ class UpdateLaunchConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Map auto tagging key.</p>
+   */
+  inline const Aws::String& GetMapAutoTaggingKey() const { return m_mapAutoTaggingKey; }
+  template <typename MapAutoTaggingKeyT = Aws::String>
+  void SetMapAutoTaggingKey(MapAutoTaggingKeyT&& value) {
+    m_mapAutoTaggingKeyHasBeenSet = true;
+    m_mapAutoTaggingKey = std::forward<MapAutoTaggingKeyT>(value);
+  }
+  template <typename MapAutoTaggingKeyT = Aws::String>
+  UpdateLaunchConfigurationResult& WithMapAutoTaggingKey(MapAutoTaggingKeyT&& value) {
+    SetMapAutoTaggingKey(std::forward<MapAutoTaggingKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -265,6 +282,8 @@ class UpdateLaunchConfigurationResult {
 
   Aws::String m_mapAutoTaggingMpeID;
 
+  Aws::String m_mapAutoTaggingKey;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sourceServerIDHasBeenSet = false;
@@ -279,6 +298,7 @@ class UpdateLaunchConfigurationResult {
   bool m_postLaunchActionsHasBeenSet = false;
   bool m_enableMapAutoTaggingHasBeenSet = false;
   bool m_mapAutoTaggingMpeIDHasBeenSet = false;
+  bool m_mapAutoTaggingKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

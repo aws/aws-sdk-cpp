@@ -71,8 +71,9 @@ class CreateAccessSourceRequest : public Route53GlobalResolverRequest {
 
   ///@{
   /**
-   * <p>The IP address type for this access source. Valid values are IPv4 and IPv6
-   * (if the Route 53 Global Resolver supports dual-stack).</p>
+   * <p>The IP address type for this access source. Valid values are IPV4, IPV6, and
+   * NONE. If you provide a CIDR range, this defaults to IPV4; otherwise it defaults
+   * to NONE.</p>
    */
   inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
   inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
@@ -100,6 +101,42 @@ class CreateAccessSourceRequest : public Route53GlobalResolverRequest {
   template <typename NameT = Aws::String>
   CreateAccessSourceRequest& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the core network endpoint to associate with this access source.</p>
+   */
+  inline const Aws::String& GetCoreNetworkEndpointId() const { return m_coreNetworkEndpointId; }
+  inline bool CoreNetworkEndpointIdHasBeenSet() const { return m_coreNetworkEndpointIdHasBeenSet; }
+  template <typename CoreNetworkEndpointIdT = Aws::String>
+  void SetCoreNetworkEndpointId(CoreNetworkEndpointIdT&& value) {
+    m_coreNetworkEndpointIdHasBeenSet = true;
+    m_coreNetworkEndpointId = std::forward<CoreNetworkEndpointIdT>(value);
+  }
+  template <typename CoreNetworkEndpointIdT = Aws::String>
+  CreateAccessSourceRequest& WithCoreNetworkEndpointId(CoreNetworkEndpointIdT&& value) {
+    SetCoreNetworkEndpointId(std::forward<CoreNetworkEndpointIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the segment to associate with this access source.</p>
+   */
+  inline const Aws::String& GetSegment() const { return m_segment; }
+  inline bool SegmentHasBeenSet() const { return m_segmentHasBeenSet; }
+  template <typename SegmentT = Aws::String>
+  void SetSegment(SegmentT&& value) {
+    m_segmentHasBeenSet = true;
+    m_segment = std::forward<SegmentT>(value);
+  }
+  template <typename SegmentT = Aws::String>
+  CreateAccessSourceRequest& WithSegment(SegmentT&& value) {
+    SetSegment(std::forward<SegmentT>(value));
     return *this;
   }
   ///@}
@@ -171,6 +208,10 @@ class CreateAccessSourceRequest : public Route53GlobalResolverRequest {
 
   Aws::String m_name;
 
+  Aws::String m_coreNetworkEndpointId;
+
+  Aws::String m_segment;
+
   Aws::String m_dnsViewId;
 
   DnsProtocol m_protocol{DnsProtocol::NOT_SET};
@@ -180,6 +221,8 @@ class CreateAccessSourceRequest : public Route53GlobalResolverRequest {
   bool m_clientTokenHasBeenSet = true;
   bool m_ipAddressTypeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_coreNetworkEndpointIdHasBeenSet = false;
+  bool m_segmentHasBeenSet = false;
   bool m_dnsViewIdHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

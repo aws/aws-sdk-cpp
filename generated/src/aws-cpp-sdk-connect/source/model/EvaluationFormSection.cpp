@@ -52,6 +52,10 @@ EvaluationFormSection& EvaluationFormSection::operator=(JsonView jsonValue) {
     }
     m_scoreThresholdsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Enablement")) {
+    m_enablement = jsonValue.GetObject("Enablement");
+    m_enablementHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -92,6 +96,10 @@ JsonValue EvaluationFormSection::Jsonize() const {
       scoreThresholdsJsonList[scoreThresholdsIndex].AsObject(m_scoreThresholds[scoreThresholdsIndex].Jsonize());
     }
     payload.WithArray("ScoreThresholds", std::move(scoreThresholdsJsonList));
+  }
+
+  if (m_enablementHasBeenSet) {
+    payload.WithObject("Enablement", m_enablement.Jsonize());
   }
 
   return payload;

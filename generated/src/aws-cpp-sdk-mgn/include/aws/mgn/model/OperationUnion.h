@@ -5,10 +5,12 @@
 
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
+#include <aws/mgn/model/CreateOperation.h>
 #include <aws/mgn/model/DeleteOperation.h>
 #include <aws/mgn/model/MergeOperation.h>
 #include <aws/mgn/model/SplitOperation.h>
 #include <aws/mgn/model/UpdateOperation.h>
+#include <aws/mgn/model/UpdateOperationV2.h>
 
 #include <utility>
 
@@ -107,6 +109,45 @@ class OperationUnion {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An update operation that modifies a construct using native property value
+   * types and behavioral configuration, with partial updates and property
+   * removal.</p>
+   */
+  inline const UpdateOperationV2& GetUpdateV2() const { return m_updateV2; }
+  inline bool UpdateV2HasBeenSet() const { return m_updateV2HasBeenSet; }
+  template <typename UpdateV2T = UpdateOperationV2>
+  void SetUpdateV2(UpdateV2T&& value) {
+    m_updateV2HasBeenSet = true;
+    m_updateV2 = std::forward<UpdateV2T>(value);
+  }
+  template <typename UpdateV2T = UpdateOperationV2>
+  OperationUnion& WithUpdateV2(UpdateV2T&& value) {
+    SetUpdateV2(std::forward<UpdateV2T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A create operation that adds a new construct to the segment, identified by
+   * the constructLogicalID on the parent construct entry.</p>
+   */
+  inline const CreateOperation& GetCreate() const { return m_create; }
+  inline bool CreateHasBeenSet() const { return m_createHasBeenSet; }
+  template <typename CreateT = CreateOperation>
+  void SetCreate(CreateT&& value) {
+    m_createHasBeenSet = true;
+    m_create = std::forward<CreateT>(value);
+  }
+  template <typename CreateT = CreateOperation>
+  OperationUnion& WithCreate(CreateT&& value) {
+    SetCreate(std::forward<CreateT>(value));
+    return *this;
+  }
+  ///@}
  private:
   MergeOperation m_merge;
 
@@ -115,10 +156,16 @@ class OperationUnion {
   DeleteOperation m_delete;
 
   UpdateOperation m_update;
+
+  UpdateOperationV2 m_updateV2;
+
+  CreateOperation m_create;
   bool m_mergeHasBeenSet = false;
   bool m_splitHasBeenSet = false;
   bool m_deleteHasBeenSet = false;
   bool m_updateHasBeenSet = false;
+  bool m_updateV2HasBeenSet = false;
+  bool m_createHasBeenSet = false;
 };
 
 }  // namespace Model

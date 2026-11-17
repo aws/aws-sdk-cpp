@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/devops-agent/DevOpsAgentErrors.h>
+#include <aws/devops-agent/model/ConflictException.h>
 #include <aws/devops-agent/model/IdentityCenterServiceException.h>
 #include <aws/devops-agent/model/ValidationException.h>
 
@@ -16,6 +17,12 @@ using namespace Aws::DevOpsAgent::Model;
 
 namespace Aws {
 namespace DevOpsAgent {
+template <>
+AWS_DEVOPSAGENT_API ConflictException DevOpsAgentError::GetModeledError() {
+  assert(this->GetErrorType() == DevOpsAgentErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
 template <>
 AWS_DEVOPSAGENT_API ValidationException DevOpsAgentError::GetModeledError() {
   assert(this->GetErrorType() == DevOpsAgentErrors::VALIDATION);

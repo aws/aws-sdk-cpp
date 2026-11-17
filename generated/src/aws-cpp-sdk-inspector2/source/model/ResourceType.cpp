@@ -25,6 +25,9 @@ static const int Microsoft_ContainerRegistry_registry_containerImage_HASH =
     HashingUtils::HashString("Microsoft.ContainerRegistry/registry/containerImage");
 static const int Microsoft_Web_sites_HASH = HashingUtils::HashString("Microsoft.Web/sites");
 static const int MACHINE_IMAGE_HASH = HashingUtils::HashString("MACHINE_IMAGE");
+static const int cloudfunctions_googleapis_com_Function_HASH = HashingUtils::HashString("cloudfunctions.googleapis.com/Function");
+static const int compute_googleapis_com_Instance_HASH = HashingUtils::HashString("compute.googleapis.com/Instance");
+static const int artifactregistry_googleapis_com_DockerImage_HASH = HashingUtils::HashString("artifactregistry.googleapis.com/DockerImage");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -46,6 +49,12 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::Microsoft_Web_sites;
   } else if (hashCode == MACHINE_IMAGE_HASH) {
     return ResourceType::MACHINE_IMAGE;
+  } else if (hashCode == cloudfunctions_googleapis_com_Function_HASH) {
+    return ResourceType::cloudfunctions_googleapis_com_Function;
+  } else if (hashCode == compute_googleapis_com_Instance_HASH) {
+    return ResourceType::compute_googleapis_com_Instance;
+  } else if (hashCode == artifactregistry_googleapis_com_DockerImage_HASH) {
+    return ResourceType::artifactregistry_googleapis_com_DockerImage;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -78,6 +87,12 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "Microsoft.Web/sites";
     case ResourceType::MACHINE_IMAGE:
       return "MACHINE_IMAGE";
+    case ResourceType::cloudfunctions_googleapis_com_Function:
+      return "cloudfunctions.googleapis.com/Function";
+    case ResourceType::compute_googleapis_com_Instance:
+      return "compute.googleapis.com/Instance";
+    case ResourceType::artifactregistry_googleapis_com_DockerImage:
+      return "artifactregistry.googleapis.com/DockerImage";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

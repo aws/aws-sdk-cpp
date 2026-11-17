@@ -37,9 +37,9 @@ class ScopeConfigurationInput {
 
   ///@{
   /**
-   * <p>The type of scope. Valid values are <code>TENANT</code>, which scans all
-   * resources in the Azure tenant, and <code>SUBSCRIPTION</code>, which scans only
-   * the resources in the specified Azure subscriptions.</p>
+   * <p>The type of scope: <code>TENANT</code>, which scans all resources in the
+   * Azure tenant, or <code>SUBSCRIPTION</code>, which scans only the resources in
+   * the specified Azure subscriptions.</p>
    */
   inline ScopeType GetScopeType() const { return m_scopeType; }
   inline bool ScopeTypeHasBeenSet() const { return m_scopeTypeHasBeenSet; }

@@ -52,7 +52,7 @@ class EvaluationFormItemEnablementConfiguration {
 
   ///@{
   /**
-   * <p>An enablement action that if condition is satisfied. </p>
+   * <p>The enablement action to apply if the condition is satisfied.</p>
    */
   inline EvaluationFormItemEnablementAction GetAction() const { return m_action; }
   inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
@@ -68,7 +68,9 @@ class EvaluationFormItemEnablementConfiguration {
 
   ///@{
   /**
-   * <p>An enablement action that if condition is not satisfied. </p>
+   * <p>The enablement action to apply if the condition is not satisfied. This action
+   * is also applied when the condition depends on an external source that is still
+   * pending or could not be resolved.</p>
    */
   inline EvaluationFormItemEnablementAction GetDefaultAction() const { return m_defaultAction; }
   inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }

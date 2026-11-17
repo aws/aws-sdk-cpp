@@ -60,8 +60,8 @@ class EvaluationFormItemEnablementCondition {
 
   ///@{
   /**
-   * <p>The operator to be used to be applied to operands if more than one provided.
-   * </p>
+   * <p>The operator to apply to the operands when more than one operand is
+   * provided.</p>
    */
   inline EvaluationFormItemEnablementOperator GetOperator() const { return m_operator; }
   inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }

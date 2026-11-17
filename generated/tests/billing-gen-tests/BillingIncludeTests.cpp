@@ -54,6 +54,7 @@
 #include <aws/billing/model/CancelContractualInvestmentAttestationRequest.h>
 #include <aws/billing/model/CancelContractualInvestmentAttestationResult.h>
 #include <aws/billing/model/ChargeAccount.h>
+#include <aws/billing/model/ChildCredit.h>
 #include <aws/billing/model/ConflictException.h>
 #include <aws/billing/model/ContractAccount.h>
 #include <aws/billing/model/ContractDetails.h>
@@ -153,11 +154,16 @@
 #include <aws/billing/model/SearchOption.h>
 #include <aws/billing/model/ServiceLevelAccountUsage.h>
 #include <aws/billing/model/ServiceQuotaExceededException.h>
+#include <aws/billing/model/SplitCreditRequest.h>
+#include <aws/billing/model/SplitCreditResult.h>
+#include <aws/billing/model/SplitPortion.h>
 #include <aws/billing/model/StringSearch.h>
 #include <aws/billing/model/TagResourceRequest.h>
 #include <aws/billing/model/TagResourceResult.h>
 #include <aws/billing/model/TagValues.h>
 #include <aws/billing/model/TimeRange.h>
+#include <aws/billing/model/TransferCreditRequest.h>
+#include <aws/billing/model/TransferCreditResult.h>
 #include <aws/billing/model/UntagResourceRequest.h>
 #include <aws/billing/model/UntagResourceResult.h>
 #include <aws/billing/model/UpdateBillingPreferencesRequest.h>

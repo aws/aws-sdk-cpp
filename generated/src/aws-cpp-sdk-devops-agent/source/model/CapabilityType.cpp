@@ -17,6 +17,8 @@ namespace CapabilityTypeMapper {
 
 static const int RELEASE_READINESS_REVIEW_HASH = HashingUtils::HashString("RELEASE_READINESS_REVIEW");
 static const int RELEASE_READINESS_REVIEW_AUTOMATED_TESTING_HASH = HashingUtils::HashString("RELEASE_READINESS_REVIEW_AUTOMATED_TESTING");
+static const int CODE_CHANGE_RISK_ANALYSIS_HASH = HashingUtils::HashString("CODE_CHANGE_RISK_ANALYSIS");
+static const int CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING_HASH = HashingUtils::HashString("CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING");
 
 CapabilityType GetCapabilityTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ CapabilityType GetCapabilityTypeForName(const Aws::String& name) {
     return CapabilityType::RELEASE_READINESS_REVIEW;
   } else if (hashCode == RELEASE_READINESS_REVIEW_AUTOMATED_TESTING_HASH) {
     return CapabilityType::RELEASE_READINESS_REVIEW_AUTOMATED_TESTING;
+  } else if (hashCode == CODE_CHANGE_RISK_ANALYSIS_HASH) {
+    return CapabilityType::CODE_CHANGE_RISK_ANALYSIS;
+  } else if (hashCode == CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING_HASH) {
+    return CapabilityType::CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForCapabilityType(CapabilityType enumValue) {
       return "RELEASE_READINESS_REVIEW";
     case CapabilityType::RELEASE_READINESS_REVIEW_AUTOMATED_TESTING:
       return "RELEASE_READINESS_REVIEW_AUTOMATED_TESTING";
+    case CapabilityType::CODE_CHANGE_RISK_ANALYSIS:
+      return "CODE_CHANGE_RISK_ANALYSIS";
+    case CapabilityType::CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING:
+      return "CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

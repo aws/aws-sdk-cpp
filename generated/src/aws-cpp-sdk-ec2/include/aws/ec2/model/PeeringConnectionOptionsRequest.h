@@ -6,6 +6,9 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/MultipathResilienceMode.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -82,15 +85,62 @@ class PeeringConnectionOptionsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether you allow multipath resilience for this side of the VPC
+   * peering connection. Multipath resilience is supported only for inter-Region VPC
+   * peering connections between supported Regions. It takes effect only when both
+   * the requester and the accepter allow it. If you don't specify this parameter,
+   * the current setting doesn't change.</p>
+   */
+  inline bool GetAllowMultipathResilience() const { return m_allowMultipathResilience; }
+  inline bool AllowMultipathResilienceHasBeenSet() const { return m_allowMultipathResilienceHasBeenSet; }
+  inline void SetAllowMultipathResilience(bool value) {
+    m_allowMultipathResilienceHasBeenSet = true;
+    m_allowMultipathResilience = value;
+  }
+  inline PeeringConnectionOptionsRequest& WithAllowMultipathResilience(bool value) {
+    SetAllowMultipathResilience(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The multipath resilience mode. You can specify this parameter only if
+   * <code>AllowMultipathResilience</code> is <code>true</code>.</p> <p>The following
+   * value is valid:</p> <ul> <li> <p> <code>always-on</code> – Replicates traffic
+   * across multiple network paths while multipath resilience is in effect.</p> </li>
+   * </ul> <p>If <code>AllowMultipathResilience</code> is <code>true</code> and you
+   * don't specify a mode, the default is <code>always-on</code>.</p>
+   */
+  inline MultipathResilienceMode GetMultipathResilienceMode() const { return m_multipathResilienceMode; }
+  inline bool MultipathResilienceModeHasBeenSet() const { return m_multipathResilienceModeHasBeenSet; }
+  inline void SetMultipathResilienceMode(MultipathResilienceMode value) {
+    m_multipathResilienceModeHasBeenSet = true;
+    m_multipathResilienceMode = value;
+  }
+  inline PeeringConnectionOptionsRequest& WithMultipathResilienceMode(MultipathResilienceMode value) {
+    SetMultipathResilienceMode(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_allowDnsResolutionFromRemoteVpc{false};
 
   bool m_allowEgressFromLocalClassicLinkToRemoteVpc{false};
 
   bool m_allowEgressFromLocalVpcToRemoteClassicLink{false};
+
+  bool m_allowMultipathResilience{false};
+
+  MultipathResilienceMode m_multipathResilienceMode{MultipathResilienceMode::NOT_SET};
   bool m_allowDnsResolutionFromRemoteVpcHasBeenSet = false;
   bool m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet = false;
   bool m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet = false;
+  bool m_allowMultipathResilienceHasBeenSet = false;
+  bool m_multipathResilienceModeHasBeenSet = false;
 };
 
 }  // namespace Model

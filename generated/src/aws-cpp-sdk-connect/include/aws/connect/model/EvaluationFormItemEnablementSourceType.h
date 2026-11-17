@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class EvaluationFormItemEnablementSourceType { NOT_SET, QUESTION_REF_ID };
+enum class EvaluationFormItemEnablementSourceType { NOT_SET, QUESTION_REF_ID, CONTACT, EVALUATION_METADATA, FORM_METADATA, AI_METRICS };
 
 namespace EvaluationFormItemEnablementSourceTypeMapper {
 AWS_CONNECT_API EvaluationFormItemEnablementSourceType GetEvaluationFormItemEnablementSourceTypeForName(const Aws::String& name);

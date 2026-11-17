@@ -73,6 +73,24 @@ SelfservicePermissions& SelfservicePermissions::operator=(const std::shared_ptr<
                       Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
                 }
                 m_rebuildWorkspaceHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NestedVirtualization") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_nestedVirtualization = ReconnectEnumMapper::GetReconnectEnumForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_nestedVirtualizationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "EnableEndUserAdvisor") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_enableEndUserAdvisor = ReconnectEnumMapper::GetReconnectEnumForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_enableEndUserAdvisorHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -143,6 +161,24 @@ SelfservicePermissions& SelfservicePermissions::operator=(const std::shared_ptr<
                     Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
               }
               m_rebuildWorkspaceHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NestedVirtualization") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_nestedVirtualization = ReconnectEnumMapper::GetReconnectEnumForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_nestedVirtualizationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EnableEndUserAdvisor") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_enableEndUserAdvisor = ReconnectEnumMapper::GetReconnectEnumForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_enableEndUserAdvisorHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -174,6 +210,12 @@ void SelfservicePermissions::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) co
   if (m_rebuildWorkspaceHasBeenSet) {
     mapSize++;
   }
+  if (m_nestedVirtualizationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_enableEndUserAdvisorHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -200,6 +242,16 @@ void SelfservicePermissions::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) co
   if (m_rebuildWorkspaceHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("RebuildWorkspace"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(ReconnectEnumMapper::GetNameForReconnectEnum(m_rebuildWorkspace).c_str()));
+  }
+
+  if (m_nestedVirtualizationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NestedVirtualization"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ReconnectEnumMapper::GetNameForReconnectEnum(m_nestedVirtualization).c_str()));
+  }
+
+  if (m_enableEndUserAdvisorHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EnableEndUserAdvisor"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ReconnectEnumMapper::GetNameForReconnectEnum(m_enableEndUserAdvisor).c_str()));
   }
 }
 

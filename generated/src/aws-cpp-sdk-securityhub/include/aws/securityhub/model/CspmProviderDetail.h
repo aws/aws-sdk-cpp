@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/AzureDetail.h>
+#include <aws/securityhub/model/GcpDetail.h>
 
 #include <utility>
 
@@ -21,7 +22,7 @@ namespace Model {
 
 /**
  * <p>The detailed cloud provider configuration for a connector. This is a union
- * type that currently supports Azure.</p><p><h3>See Also:</h3>   <a
+ * type that currently supports Azure and GCP.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CspmProviderDetail">AWS
  * API Reference</a></p>
  */
@@ -49,9 +50,30 @@ class CspmProviderDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The GCP provider detail.</p>
+   */
+  inline const GcpDetail& GetGCP() const { return m_gCP; }
+  inline bool GCPHasBeenSet() const { return m_gCPHasBeenSet; }
+  template <typename GCPT = GcpDetail>
+  void SetGCP(GCPT&& value) {
+    m_gCPHasBeenSet = true;
+    m_gCP = std::forward<GCPT>(value);
+  }
+  template <typename GCPT = GcpDetail>
+  CspmProviderDetail& WithGCP(GCPT&& value) {
+    SetGCP(std::forward<GCPT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AzureDetail m_azure;
+
+  GcpDetail m_gCP;
   bool m_azureHasBeenSet = false;
+  bool m_gCPHasBeenSet = false;
 };
 
 }  // namespace Model

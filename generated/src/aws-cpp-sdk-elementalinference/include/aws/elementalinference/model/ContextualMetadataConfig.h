@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/elementalinference/ElementalInference_EXPORTS.h>
+#include <aws/elementalinference/model/CustomQuestionsConfig.h>
 #include <aws/elementalinference/model/ExtendedAnalysisMode.h>
 #include <aws/elementalinference/model/SummaryGenerationMode.h>
 
@@ -66,7 +67,8 @@ class ContextualMetadataConfig {
    * <li> <p>ENABLED (default) – Elemental Inference populates the people,
    * environments, brands, and on-screen text fields. </p> </li> <li> <p>DISABLED –
    * Elemental Inference doesn't populate the people, environments, brands, and
-   * on-screen text fields. </p> </li> </ul>
+   * on-screen text fields. </p> </li> </ul> <p>If you specify
+   * <code>customQuestions</code>, you must set this property to DISABLED. </p>
    */
   inline ExtendedAnalysisMode GetExtendedAnalysis() const { return m_extendedAnalysis; }
   inline bool ExtendedAnalysisHasBeenSet() const { return m_extendedAnalysisHasBeenSet; }
@@ -79,12 +81,37 @@ class ContextualMetadataConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The question sets that you ask Elemental Inference about each shot, each
+   * scene, or both, in this output. </p> <p>If you specify customQuestions, you must
+   * also set extendedAnalysis to DISABLED. If you omit extendedAnalysis, it defaults
+   * to ENABLED, and the request fails. </p> <p>While a feed references a version of
+   * a question set, you can't delete that version or the question set. </p>
+   */
+  inline const CustomQuestionsConfig& GetCustomQuestions() const { return m_customQuestions; }
+  inline bool CustomQuestionsHasBeenSet() const { return m_customQuestionsHasBeenSet; }
+  template <typename CustomQuestionsT = CustomQuestionsConfig>
+  void SetCustomQuestions(CustomQuestionsT&& value) {
+    m_customQuestionsHasBeenSet = true;
+    m_customQuestions = std::forward<CustomQuestionsT>(value);
+  }
+  template <typename CustomQuestionsT = CustomQuestionsConfig>
+  ContextualMetadataConfig& WithCustomQuestions(CustomQuestionsT&& value) {
+    SetCustomQuestions(std::forward<CustomQuestionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   SummaryGenerationMode m_summaryGeneration{SummaryGenerationMode::NOT_SET};
 
   ExtendedAnalysisMode m_extendedAnalysis{ExtendedAnalysisMode::NOT_SET};
+
+  CustomQuestionsConfig m_customQuestions;
   bool m_summaryGenerationHasBeenSet = false;
   bool m_extendedAnalysisHasBeenSet = false;
+  bool m_customQuestionsHasBeenSet = false;
 };
 
 }  // namespace Model

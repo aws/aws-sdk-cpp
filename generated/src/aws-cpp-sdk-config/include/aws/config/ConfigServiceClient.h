@@ -2883,15 +2883,19 @@ class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonCli
    * these actions.</p>  <p>This API creates a service-linked role
    * <code>AWSServiceRoleForConfigConforms</code> in your account. The service-linked
    * role is created only when the role does not exist in your account. </p>
-   * <p>You must specify only one of the follow parameters:
-   * <code>TemplateS3Uri</code>, <code>TemplateBody</code> or
-   * <code>TemplateSSMDocumentDetails</code>.</p>   <p> <b>Tags are
-   * added at creation and cannot be updated with this operation</b> </p> <p>
-   * <code>PutConformancePack</code> is an idempotent API. Subsequent requests won't
-   * create a duplicate resource if one was already created. If a following request
-   * has different <code>tags</code> values, Config will ignore these differences and
-   * treat it as an idempotent request of the previous. In this case,
-   * <code>tags</code> will not be updated, even if they are different.</p> <p>Use <a
+   * <p>For custom conformance packs, you must specify only one of
+   * <code>TemplateS3Uri</code>, <code>TemplateBody</code>,
+   * <code>TemplateSSMDocumentDetails</code>.</p> <p>For managed conformance packs,
+   * you must specify <code>Source</code>. Do not specify <code>TemplateS3Uri</code>,
+   * <code>TemplateBody</code>, <code>TemplateSSMDocumentDetails</code>,
+   * <code>DeliveryS3Bucket</code>, or <code>DeliveryS3KeyPrefix</code>.</p>
+   *  <p> <b>Tags are added at creation and cannot be updated with this
+   * operation</b> </p> <p> <code>PutConformancePack</code> is an idempotent API.
+   * Subsequent requests won't create a duplicate resource if one was already
+   * created. If a following request has different <code>tags</code> values, Config
+   * will ignore these differences and treat it as an idempotent request of the
+   * previous. In this case, <code>tags</code> will not be updated, even if they are
+   * different.</p> <p>Use <a
    * href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
    * and <a
    * href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>

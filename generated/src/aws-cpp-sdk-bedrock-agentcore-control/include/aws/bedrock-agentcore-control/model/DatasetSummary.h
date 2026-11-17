@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/DatasetSchemaType.h>
 #include <aws/bedrock-agentcore-control/model/DatasetStatus.h>
 #include <aws/bedrock-agentcore-control/model/DraftStatus.h>
+#include <aws/bedrock-agentcore-control/model/ExampleCountByField.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -174,6 +175,25 @@ class DatasetSummary {
 
   ///@{
   /**
+   * <p> The number of examples that have each field, for the DRAFT. Absent when the
+   * counts are unknown. </p>
+   */
+  inline const ExampleCountByField& GetExampleCountByField() const { return m_exampleCountByField; }
+  inline bool ExampleCountByFieldHasBeenSet() const { return m_exampleCountByFieldHasBeenSet; }
+  template <typename ExampleCountByFieldT = ExampleCountByField>
+  void SetExampleCountByField(ExampleCountByFieldT&& value) {
+    m_exampleCountByFieldHasBeenSet = true;
+    m_exampleCountByField = std::forward<ExampleCountByFieldT>(value);
+  }
+  template <typename ExampleCountByFieldT = ExampleCountByField>
+  DatasetSummary& WithExampleCountByField(ExampleCountByFieldT&& value) {
+    SetExampleCountByField(std::forward<ExampleCountByFieldT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The timestamp when the dataset was created. </p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -224,6 +244,8 @@ class DatasetSummary {
 
   long long m_exampleCount{0};
 
+  ExampleCountByField m_exampleCountByField;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -235,6 +257,7 @@ class DatasetSummary {
   bool m_draftStatusHasBeenSet = false;
   bool m_schemaTypeHasBeenSet = false;
   bool m_exampleCountHasBeenSet = false;
+  bool m_exampleCountByFieldHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

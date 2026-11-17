@@ -42,6 +42,14 @@ CreateAccessSourceResult& CreateAccessSourceResult::operator=(const Aws::AmazonW
     m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
     m_ipAddressTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("coreNetworkEndpointId")) {
+    m_coreNetworkEndpointId = jsonValue.GetString("coreNetworkEndpointId");
+    m_coreNetworkEndpointIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("segment")) {
+    m_segment = jsonValue.GetString("segment");
+    m_segmentHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;

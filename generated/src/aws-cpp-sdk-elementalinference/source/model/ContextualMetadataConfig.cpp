@@ -26,6 +26,10 @@ ContextualMetadataConfig& ContextualMetadataConfig::operator=(JsonView jsonValue
     m_extendedAnalysis = ExtendedAnalysisModeMapper::GetExtendedAnalysisModeForName(jsonValue.GetString("extendedAnalysis"));
     m_extendedAnalysisHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("customQuestions")) {
+    m_customQuestions = jsonValue.GetObject("customQuestions");
+    m_customQuestionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ContextualMetadataConfig::Jsonize() const {
 
   if (m_extendedAnalysisHasBeenSet) {
     payload.WithString("extendedAnalysis", ExtendedAnalysisModeMapper::GetNameForExtendedAnalysisMode(m_extendedAnalysis));
+  }
+
+  if (m_customQuestionsHasBeenSet) {
+    payload.WithObject("customQuestions", m_customQuestions.Jsonize());
   }
 
   return payload;

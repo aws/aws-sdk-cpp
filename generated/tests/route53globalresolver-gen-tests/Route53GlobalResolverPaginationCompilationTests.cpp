@@ -17,6 +17,7 @@
 #include <aws/route53globalresolver/model/ListDNSViewsPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListFirewallRulesPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListAccessSourcesPaginationTraits.h>
+#include <aws/route53globalresolver/model/ListCoreNetworkEndpointsPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListHostedZoneAssociationsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

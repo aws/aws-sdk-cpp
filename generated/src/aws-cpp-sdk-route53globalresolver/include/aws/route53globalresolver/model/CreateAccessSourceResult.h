@@ -102,7 +102,8 @@ class CreateAccessSourceResult {
 
   ///@{
   /**
-   * <p>The IP address type for this access source (IPv4 or IPv6).</p>
+   * <p>The IP address type for this access source. Valid values are IPV4, IPV6, and
+   * NONE.</p>
    */
   inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
   inline void SetIpAddressType(IpAddressType value) {
@@ -111,6 +112,40 @@ class CreateAccessSourceResult {
   }
   inline CreateAccessSourceResult& WithIpAddressType(IpAddressType value) {
     SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the core network endpoint associated with this access source.</p>
+   */
+  inline const Aws::String& GetCoreNetworkEndpointId() const { return m_coreNetworkEndpointId; }
+  template <typename CoreNetworkEndpointIdT = Aws::String>
+  void SetCoreNetworkEndpointId(CoreNetworkEndpointIdT&& value) {
+    m_coreNetworkEndpointIdHasBeenSet = true;
+    m_coreNetworkEndpointId = std::forward<CoreNetworkEndpointIdT>(value);
+  }
+  template <typename CoreNetworkEndpointIdT = Aws::String>
+  CreateAccessSourceResult& WithCoreNetworkEndpointId(CoreNetworkEndpointIdT&& value) {
+    SetCoreNetworkEndpointId(std::forward<CoreNetworkEndpointIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the segment associated with this access source.</p>
+   */
+  inline const Aws::String& GetSegment() const { return m_segment; }
+  template <typename SegmentT = Aws::String>
+  void SetSegment(SegmentT&& value) {
+    m_segmentHasBeenSet = true;
+    m_segment = std::forward<SegmentT>(value);
+  }
+  template <typename SegmentT = Aws::String>
+  CreateAccessSourceResult& WithSegment(SegmentT&& value) {
+    SetSegment(std::forward<SegmentT>(value));
     return *this;
   }
   ///@}
@@ -224,6 +259,10 @@ class CreateAccessSourceResult {
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
 
+  Aws::String m_coreNetworkEndpointId;
+
+  Aws::String m_segment;
+
   Aws::String m_name;
 
   Aws::String m_dnsViewId;
@@ -241,6 +280,8 @@ class CreateAccessSourceResult {
   bool m_createdAtHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
+  bool m_coreNetworkEndpointIdHasBeenSet = false;
+  bool m_segmentHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_dnsViewIdHasBeenSet = false;
   bool m_protocolHasBeenSet = false;

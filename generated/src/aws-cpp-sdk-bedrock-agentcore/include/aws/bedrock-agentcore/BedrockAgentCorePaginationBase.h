@@ -7,7 +7,9 @@
 
 #include <aws/bedrock-agentcore/model/ListABTestsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListActorsPaginationTraits.h>
+#include <aws/bedrock-agentcore/model/ListAgentInsightsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListBatchEvaluationsPaginationTraits.h>
+#include <aws/bedrock-agentcore/model/ListDatasetGenerationsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListEventsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListMemoryExtractionJobsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsPaginationTraits.h>
@@ -50,6 +52,18 @@ class BedrockAgentCorePaginationBase {
   }
 
   /**
+   * Create a paginator for ListAgentInsights operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentInsightsRequest,
+                                    Pagination::ListAgentInsightsPaginationTraits<DerivedClient>>
+  ListAgentInsightsPaginator(const Model::ListAgentInsightsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentInsightsRequest,
+                                             Pagination::ListAgentInsightsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListBatchEvaluations operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBatchEvaluationsRequest,
@@ -58,6 +72,18 @@ class BedrockAgentCorePaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBatchEvaluationsRequest,
                                              Pagination::ListBatchEvaluationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListDatasetGenerations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetGenerationsRequest,
+                                    Pagination::ListDatasetGenerationsPaginationTraits<DerivedClient>>
+  ListDatasetGenerationsPaginator(const Model::ListDatasetGenerationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetGenerationsRequest,
+                                             Pagination::ListDatasetGenerationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

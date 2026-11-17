@@ -43,10 +43,10 @@ class DocumentItem {
    * accessible Amazon S3 bucket is required for this document type.</p> </li> <li>
    * <p> <code>StandardEula</code> – The Standard Contract for AWS Marketplace
    * (SCMP). For more information about SCMP, see the AWS Marketplace Seller Guide.
-   * You don’t provide a URL for this type because it’s managed by AWS
+   * You don't provide a URL for this type because it's managed by AWS
    * Marketplace.</p> </li> <li> <p> <code>StandardDsa</code> – DSA for AWS
    * Marketplace. For more information about the DSA, see the AWS Data Exchange User
-   * Guide. You don’t provide a URL for this type because it’s managed by AWS
+   * Guide. You don't provide a URL for this type because it's managed by AWS
    * Marketplace.</p> </li> </ul>
    */
   inline const Aws::String& GetType() const { return m_type; }

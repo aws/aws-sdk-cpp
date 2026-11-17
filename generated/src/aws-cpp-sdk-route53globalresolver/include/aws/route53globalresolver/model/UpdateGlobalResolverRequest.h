@@ -9,6 +9,7 @@
 #include <aws/route53globalresolver/Route53GlobalResolverRequest.h>
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
 #include <aws/route53globalresolver/model/GlobalResolverIpAddressType.h>
+#include <aws/route53globalresolver/model/PublicIpStatus.h>
 
 #include <utility>
 
@@ -122,6 +123,31 @@ class UpdateGlobalResolverRequest : public Route53GlobalResolverRequest {
 
   ///@{
   /**
+   * <p>Specifies the public IP connectivity to configure for the Route 53 Global
+   * Resolver. Public IP addresses let DNS clients send queries to the resolver over
+   * the internet. Valid values are the following:</p> <ul> <li> <p>
+   * <code>ENABLED_RESERVED</code> - Public IP connectivity is enabled, and the
+   * global anycast public IP addresses are reserved for the Route 53 Global
+   * Resolver.</p> </li> <li> <p> <code>DISABLED_RESERVED</code> - Public IP
+   * connectivity is disabled, and the global anycast public IP addresses remain
+   * reserved for the Route 53 Global Resolver.</p> </li> <li> <p>
+   * <code>DISABLED_RELEASED</code> - Public IP connectivity is disabled, and the
+   * global anycast public IP addresses are released.</p> </li> </ul>
+   */
+  inline PublicIpStatus GetPublicIpStatus() const { return m_publicIpStatus; }
+  inline bool PublicIpStatusHasBeenSet() const { return m_publicIpStatusHasBeenSet; }
+  inline void SetPublicIpStatus(PublicIpStatus value) {
+    m_publicIpStatusHasBeenSet = true;
+    m_publicIpStatus = value;
+  }
+  inline UpdateGlobalResolverRequest& WithPublicIpStatus(PublicIpStatus value) {
+    SetPublicIpStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of Amazon Web Services Regions where the Global Resolver will
    * operate. The resolver will be distributed across these Regions to provide global
    * availability and low-latency DNS resolution.</p>
@@ -156,12 +182,15 @@ class UpdateGlobalResolverRequest : public Route53GlobalResolverRequest {
 
   GlobalResolverIpAddressType m_ipAddressType{GlobalResolverIpAddressType::NOT_SET};
 
+  PublicIpStatus m_publicIpStatus{PublicIpStatus::NOT_SET};
+
   Aws::Vector<Aws::String> m_regions;
   bool m_globalResolverIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_observabilityRegionHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
+  bool m_publicIpStatusHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
 };
 

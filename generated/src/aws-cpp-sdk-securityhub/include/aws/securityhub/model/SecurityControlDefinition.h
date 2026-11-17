@@ -214,7 +214,7 @@ class SecurityControlDefinition {
   ///@{
   /**
    * <p>The cloud provider whose resources the security control evaluates. For
-   * example, <code>AWS</code> or <code>Azure</code>.</p>
+   * example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
    */
   inline SecurityControlsProvider GetProvider() const { return m_provider; }
   inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }

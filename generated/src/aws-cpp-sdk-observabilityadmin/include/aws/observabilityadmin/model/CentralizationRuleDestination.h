@@ -8,6 +8,7 @@
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/observabilityadmin/model/DestinationLogsConfiguration.h>
 #include <aws/observabilityadmin/model/DestinationMetricsConfiguration.h>
+#include <aws/observabilityadmin/model/DestinationProfilesConfiguration.h>
 
 #include <utility>
 
@@ -107,6 +108,24 @@ class CentralizationRuleDestination {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Profile-specific configuration for centralization destination profiles.</p>
+   */
+  inline const DestinationProfilesConfiguration& GetDestinationProfilesConfiguration() const { return m_destinationProfilesConfiguration; }
+  inline bool DestinationProfilesConfigurationHasBeenSet() const { return m_destinationProfilesConfigurationHasBeenSet; }
+  template <typename DestinationProfilesConfigurationT = DestinationProfilesConfiguration>
+  void SetDestinationProfilesConfiguration(DestinationProfilesConfigurationT&& value) {
+    m_destinationProfilesConfigurationHasBeenSet = true;
+    m_destinationProfilesConfiguration = std::forward<DestinationProfilesConfigurationT>(value);
+  }
+  template <typename DestinationProfilesConfigurationT = DestinationProfilesConfiguration>
+  CentralizationRuleDestination& WithDestinationProfilesConfiguration(DestinationProfilesConfigurationT&& value) {
+    SetDestinationProfilesConfiguration(std::forward<DestinationProfilesConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_region;
 
@@ -115,10 +134,13 @@ class CentralizationRuleDestination {
   DestinationLogsConfiguration m_destinationLogsConfiguration;
 
   DestinationMetricsConfiguration m_destinationMetricsConfiguration;
+
+  DestinationProfilesConfiguration m_destinationProfilesConfiguration;
   bool m_regionHasBeenSet = false;
   bool m_accountHasBeenSet = false;
   bool m_destinationLogsConfigurationHasBeenSet = false;
   bool m_destinationMetricsConfigurationHasBeenSet = false;
+  bool m_destinationProfilesConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

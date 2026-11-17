@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Inspector2 {
 namespace Model {
-enum class ConnectorCloudProvider { NOT_SET, AZURE };
+enum class ConnectorCloudProvider { NOT_SET, AZURE, GCP };
 
 namespace ConnectorCloudProviderMapper {
 AWS_INSPECTOR2_API ConnectorCloudProvider GetConnectorCloudProviderForName(const Aws::String& name);

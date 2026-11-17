@@ -13,6 +13,7 @@
 #include <aws/inspector2/model/ConnectorCloudProvider.h>
 #include <aws/inspector2/model/ConnectorHealth.h>
 #include <aws/inspector2/model/EnablementStatus.h>
+#include <aws/inspector2/model/GcpScopeConfiguration.h>
 
 #include <utility>
 
@@ -301,6 +302,48 @@ class Connector {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Google Cloud Platform (GCP) locations configured for the connector.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetGcpRegions() const { return m_gcpRegions; }
+  inline bool GcpRegionsHasBeenSet() const { return m_gcpRegionsHasBeenSet; }
+  template <typename GcpRegionsT = Aws::Vector<Aws::String>>
+  void SetGcpRegions(GcpRegionsT&& value) {
+    m_gcpRegionsHasBeenSet = true;
+    m_gcpRegions = std::forward<GcpRegionsT>(value);
+  }
+  template <typename GcpRegionsT = Aws::Vector<Aws::String>>
+  Connector& WithGcpRegions(GcpRegionsT&& value) {
+    SetGcpRegions(std::forward<GcpRegionsT>(value));
+    return *this;
+  }
+  template <typename GcpRegionsT = Aws::String>
+  Connector& AddGcpRegions(GcpRegionsT&& value) {
+    m_gcpRegionsHasBeenSet = true;
+    m_gcpRegions.emplace_back(std::forward<GcpRegionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Google Cloud Platform (GCP) scope configuration for the connector.</p>
+   */
+  inline const GcpScopeConfiguration& GetGcpScopeConfiguration() const { return m_gcpScopeConfiguration; }
+  inline bool GcpScopeConfigurationHasBeenSet() const { return m_gcpScopeConfigurationHasBeenSet; }
+  template <typename GcpScopeConfigurationT = GcpScopeConfiguration>
+  void SetGcpScopeConfiguration(GcpScopeConfigurationT&& value) {
+    m_gcpScopeConfigurationHasBeenSet = true;
+    m_gcpScopeConfiguration = std::forward<GcpScopeConfigurationT>(value);
+  }
+  template <typename GcpScopeConfigurationT = GcpScopeConfiguration>
+  Connector& WithGcpScopeConfiguration(GcpScopeConfigurationT&& value) {
+    SetGcpScopeConfiguration(std::forward<GcpScopeConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_connectorArn;
 
@@ -329,6 +372,10 @@ class Connector {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   bool m_autoInstallVMScanner{false};
+
+  Aws::Vector<Aws::String> m_gcpRegions;
+
+  GcpScopeConfiguration m_gcpScopeConfiguration;
   bool m_connectorArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -343,6 +390,8 @@ class Connector {
   bool m_scopeConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_autoInstallVMScannerHasBeenSet = false;
+  bool m_gcpRegionsHasBeenSet = false;
+  bool m_gcpScopeConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

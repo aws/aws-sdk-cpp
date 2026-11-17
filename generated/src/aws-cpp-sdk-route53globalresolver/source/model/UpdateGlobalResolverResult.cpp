@@ -87,6 +87,10 @@ UpdateGlobalResolverResult& UpdateGlobalResolverResult::operator=(const Aws::Ama
     m_ipAddressType = GlobalResolverIpAddressTypeMapper::GetGlobalResolverIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
     m_ipAddressTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("publicIpStatus")) {
+    m_publicIpStatus = PublicIpStatusMapper::GetPublicIpStatusForName(jsonValue.GetString("publicIpStatus"));
+    m_publicIpStatusHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

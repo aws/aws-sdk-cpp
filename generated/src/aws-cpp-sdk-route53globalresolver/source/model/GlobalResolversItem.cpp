@@ -83,6 +83,10 @@ GlobalResolversItem& GlobalResolversItem::operator=(JsonView jsonValue) {
     m_ipAddressType = GlobalResolverIpAddressTypeMapper::GetGlobalResolverIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
     m_ipAddressTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("publicIpStatus")) {
+    m_publicIpStatus = PublicIpStatusMapper::GetPublicIpStatusForName(jsonValue.GetString("publicIpStatus"));
+    m_publicIpStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -155,6 +159,10 @@ JsonValue GlobalResolversItem::Jsonize() const {
 
   if (m_ipAddressTypeHasBeenSet) {
     payload.WithString("ipAddressType", GlobalResolverIpAddressTypeMapper::GetNameForGlobalResolverIpAddressType(m_ipAddressType));
+  }
+
+  if (m_publicIpStatusHasBeenSet) {
+    payload.WithString("publicIpStatus", PublicIpStatusMapper::GetNameForPublicIpStatus(m_publicIpStatus));
   }
 
   return payload;

@@ -69,5 +69,9 @@ Aws::String UpdateNetworkMigrationDefinitionRequest::SerializePayload() const {
     payload.WithObject("scopeTags", std::move(scopeTagsJsonMap));
   }
 
+  if (m_definitionTypeHasBeenSet) {
+    payload.WithString("definitionType", DefinitionTypeMapper::GetNameForDefinitionType(m_definitionType));
+  }
+
   return payload.View().WriteReadable();
 }

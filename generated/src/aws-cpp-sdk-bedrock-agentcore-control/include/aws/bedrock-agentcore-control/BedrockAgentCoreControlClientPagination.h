@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlClient.h>
+#include <aws/bedrock-agentcore-control/model/ListAgentInsightStoresPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsByCapacityProviderPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsPaginationTraits.h>
@@ -49,6 +50,9 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 
+using ListAgentInsightStoresPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListAgentInsightStoresRequest,
+                                      Pagination::ListAgentInsightStoresPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListAgentRuntimeEndpointsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListAgentRuntimeEndpointsRequest,
                                       Pagination::ListAgentRuntimeEndpointsPaginationTraits<BedrockAgentCoreControlClient>>;

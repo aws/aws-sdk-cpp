@@ -67,6 +67,23 @@ class DeleteAccessSourceResult {
 
   ///@{
   /**
+   * <p>The ID of the core network endpoint associated with this access source.</p>
+   */
+  inline const Aws::String& GetCoreNetworkEndpointId() const { return m_coreNetworkEndpointId; }
+  template <typename CoreNetworkEndpointIdT = Aws::String>
+  void SetCoreNetworkEndpointId(CoreNetworkEndpointIdT&& value) {
+    m_coreNetworkEndpointIdHasBeenSet = true;
+    m_coreNetworkEndpointId = std::forward<CoreNetworkEndpointIdT>(value);
+  }
+  template <typename CoreNetworkEndpointIdT = Aws::String>
+  DeleteAccessSourceResult& WithCoreNetworkEndpointId(CoreNetworkEndpointIdT&& value) {
+    SetCoreNetworkEndpointId(std::forward<CoreNetworkEndpointIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time when the access source was originally created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -101,7 +118,8 @@ class DeleteAccessSourceResult {
 
   ///@{
   /**
-   * <p>The IP address type of the deleted access source (IPv4 or IPv6).</p>
+   * <p>The IP address type of the deleted access source. Valid values are IPV4,
+   * IPV6, and NONE.</p>
    */
   inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
   inline void SetIpAddressType(IpAddressType value) {
@@ -166,6 +184,23 @@ class DeleteAccessSourceResult {
 
   ///@{
   /**
+   * <p>The name of the segment associated with this access source.</p>
+   */
+  inline const Aws::String& GetSegment() const { return m_segment; }
+  template <typename SegmentT = Aws::String>
+  void SetSegment(SegmentT&& value) {
+    m_segmentHasBeenSet = true;
+    m_segment = std::forward<SegmentT>(value);
+  }
+  template <typename SegmentT = Aws::String>
+  DeleteAccessSourceResult& WithSegment(SegmentT&& value) {
+    SetSegment(std::forward<SegmentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The final status of the deleted access source.</p>
    */
   inline CRResourceStatus GetStatus() const { return m_status; }
@@ -218,6 +253,8 @@ class DeleteAccessSourceResult {
 
   Aws::String m_cidr;
 
+  Aws::String m_coreNetworkEndpointId;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_id;
@@ -230,6 +267,8 @@ class DeleteAccessSourceResult {
 
   DnsProtocol m_protocol{DnsProtocol::NOT_SET};
 
+  Aws::String m_segment;
+
   CRResourceStatus m_status{CRResourceStatus::NOT_SET};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -238,12 +277,14 @@ class DeleteAccessSourceResult {
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_cidrHasBeenSet = false;
+  bool m_coreNetworkEndpointIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_dnsViewIdHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
+  bool m_segmentHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -31,6 +31,10 @@ Aws::String UpdateLaunchConfigurationTemplateRequest::SerializePayload() const {
     payload.WithString("mapAutoTaggingMpeID", m_mapAutoTaggingMpeID);
   }
 
+  if (m_mapAutoTaggingKeyHasBeenSet) {
+    payload.WithString("mapAutoTaggingKey", m_mapAutoTaggingKey);
+  }
+
   if (m_launchDispositionHasBeenSet) {
     payload.WithString("launchDisposition", LaunchDispositionMapper::GetNameForLaunchDisposition(m_launchDisposition));
   }

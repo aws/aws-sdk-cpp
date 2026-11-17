@@ -39,6 +39,10 @@ LaunchConfigurationTemplate& LaunchConfigurationTemplate::operator=(JsonView jso
     m_mapAutoTaggingMpeID = jsonValue.GetString("mapAutoTaggingMpeID");
     m_mapAutoTaggingMpeIDHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mapAutoTaggingKey")) {
+    m_mapAutoTaggingKey = jsonValue.GetString("mapAutoTaggingKey");
+    m_mapAutoTaggingKeyHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -123,6 +127,10 @@ JsonValue LaunchConfigurationTemplate::Jsonize() const {
 
   if (m_mapAutoTaggingMpeIDHasBeenSet) {
     payload.WithString("mapAutoTaggingMpeID", m_mapAutoTaggingMpeID);
+  }
+
+  if (m_mapAutoTaggingKeyHasBeenSet) {
+    payload.WithString("mapAutoTaggingKey", m_mapAutoTaggingKey);
   }
 
   if (m_tagsHasBeenSet) {

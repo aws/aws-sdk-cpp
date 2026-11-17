@@ -28,6 +28,10 @@ static const int Microsoft_ContainerRegistry_registry_containerRepository_HASH =
 static const int Microsoft_Web_sites_HASH = HashingUtils::HashString("Microsoft.Web/sites");
 static const int Microsoft_ContainerRegistry_registries_HASH = HashingUtils::HashString("Microsoft.ContainerRegistry/registries");
 static const int MACHINE_IMAGE_HASH = HashingUtils::HashString("MACHINE_IMAGE");
+static const int cloudfunctions_googleapis_com_Function_HASH = HashingUtils::HashString("cloudfunctions.googleapis.com/Function");
+static const int compute_googleapis_com_Instance_HASH = HashingUtils::HashString("compute.googleapis.com/Instance");
+static const int artifactregistry_googleapis_com_Repository_HASH = HashingUtils::HashString("artifactregistry.googleapis.com/Repository");
+static const int artifactregistry_googleapis_com_DockerImage_HASH = HashingUtils::HashString("artifactregistry.googleapis.com/DockerImage");
 
 CoverageResourceType GetCoverageResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -53,6 +57,14 @@ CoverageResourceType GetCoverageResourceTypeForName(const Aws::String& name) {
     return CoverageResourceType::Microsoft_ContainerRegistry_registries;
   } else if (hashCode == MACHINE_IMAGE_HASH) {
     return CoverageResourceType::MACHINE_IMAGE;
+  } else if (hashCode == cloudfunctions_googleapis_com_Function_HASH) {
+    return CoverageResourceType::cloudfunctions_googleapis_com_Function;
+  } else if (hashCode == compute_googleapis_com_Instance_HASH) {
+    return CoverageResourceType::compute_googleapis_com_Instance;
+  } else if (hashCode == artifactregistry_googleapis_com_Repository_HASH) {
+    return CoverageResourceType::artifactregistry_googleapis_com_Repository;
+  } else if (hashCode == artifactregistry_googleapis_com_DockerImage_HASH) {
+    return CoverageResourceType::artifactregistry_googleapis_com_DockerImage;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -89,6 +101,14 @@ Aws::String GetNameForCoverageResourceType(CoverageResourceType enumValue) {
       return "Microsoft.ContainerRegistry/registries";
     case CoverageResourceType::MACHINE_IMAGE:
       return "MACHINE_IMAGE";
+    case CoverageResourceType::cloudfunctions_googleapis_com_Function:
+      return "cloudfunctions.googleapis.com/Function";
+    case CoverageResourceType::compute_googleapis_com_Instance:
+      return "compute.googleapis.com/Instance";
+    case CoverageResourceType::artifactregistry_googleapis_com_Repository:
+      return "artifactregistry.googleapis.com/Repository";
+    case CoverageResourceType::artifactregistry_googleapis_com_DockerImage:
+      return "artifactregistry.googleapis.com/DockerImage";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -936,6 +936,7 @@
 #include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayNetworkFunctionAttachmentResponse.h>
+#include <aws/ec2/model/ModifyTransitGatewayPeeringAttachmentResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayResponse.h>
@@ -1795,6 +1796,7 @@ class ModifyTransitGatewayRequest;
 class ModifyTransitGatewayAttachmentNatConfigurationRequest;
 class ModifyTransitGatewayMeteringPolicyRequest;
 class ModifyTransitGatewayNetworkFunctionAttachmentRequest;
+class ModifyTransitGatewayPeeringAttachmentRequest;
 class ModifyTransitGatewayPolicyTableEntryRequest;
 class ModifyTransitGatewayPrefixListReferenceRequest;
 class ModifyTransitGatewayVpcAttachmentRequest;
@@ -2669,6 +2671,7 @@ typedef Aws::Utils::Outcome<ModifyTransitGatewayAttachmentNatConfigurationRespon
 typedef Aws::Utils::Outcome<ModifyTransitGatewayMeteringPolicyResponse, EC2Error> ModifyTransitGatewayMeteringPolicyOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayNetworkFunctionAttachmentResponse, EC2Error>
     ModifyTransitGatewayNetworkFunctionAttachmentOutcome;
+typedef Aws::Utils::Outcome<ModifyTransitGatewayPeeringAttachmentResponse, EC2Error> ModifyTransitGatewayPeeringAttachmentOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayPolicyTableEntryResponse, EC2Error> ModifyTransitGatewayPolicyTableEntryOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayPrefixListReferenceResponse, EC2Error> ModifyTransitGatewayPrefixListReferenceOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayVpcAttachmentResponse, EC2Error> ModifyTransitGatewayVpcAttachmentOutcome;
@@ -3519,6 +3522,7 @@ typedef std::future<ModifyTransitGatewayOutcome> ModifyTransitGatewayOutcomeCall
 typedef std::future<ModifyTransitGatewayAttachmentNatConfigurationOutcome> ModifyTransitGatewayAttachmentNatConfigurationOutcomeCallable;
 typedef std::future<ModifyTransitGatewayMeteringPolicyOutcome> ModifyTransitGatewayMeteringPolicyOutcomeCallable;
 typedef std::future<ModifyTransitGatewayNetworkFunctionAttachmentOutcome> ModifyTransitGatewayNetworkFunctionAttachmentOutcomeCallable;
+typedef std::future<ModifyTransitGatewayPeeringAttachmentOutcome> ModifyTransitGatewayPeeringAttachmentOutcomeCallable;
 typedef std::future<ModifyTransitGatewayPolicyTableEntryOutcome> ModifyTransitGatewayPolicyTableEntryOutcomeCallable;
 typedef std::future<ModifyTransitGatewayPrefixListReferenceOutcome> ModifyTransitGatewayPrefixListReferenceOutcomeCallable;
 typedef std::future<ModifyTransitGatewayVpcAttachmentOutcome> ModifyTransitGatewayVpcAttachmentOutcomeCallable;
@@ -6129,6 +6133,10 @@ typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayNe
                            const Model::ModifyTransitGatewayNetworkFunctionAttachmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyTransitGatewayNetworkFunctionAttachmentResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayPeeringAttachmentRequest&,
+                           const Model::ModifyTransitGatewayPeeringAttachmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyTransitGatewayPeeringAttachmentResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayPolicyTableEntryRequest&,
                            const Model::ModifyTransitGatewayPolicyTableEntryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

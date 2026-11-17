@@ -285,6 +285,12 @@
 #include <aws/inspector2/model/FreeTrialInfoErrorCode.h>
 #include <aws/inspector2/model/FreeTrialStatus.h>
 #include <aws/inspector2/model/FreeTrialType.h>
+#include <aws/inspector2/model/GcpCapabilityScope.h>
+#include <aws/inspector2/model/GcpCapabilityScopeInput.h>
+#include <aws/inspector2/model/GcpProviderDetailCreate.h>
+#include <aws/inspector2/model/GcpProviderDetailUpdate.h>
+#include <aws/inspector2/model/GcpScopeConfiguration.h>
+#include <aws/inspector2/model/GcpScopeConfigurationInput.h>
 #include <aws/inspector2/model/GetCisScanReportRequest.h>
 #include <aws/inspector2/model/GetCisScanReportResult.h>
 #include <aws/inspector2/model/GetCisScanResultDetailsPaginationTraits.h>

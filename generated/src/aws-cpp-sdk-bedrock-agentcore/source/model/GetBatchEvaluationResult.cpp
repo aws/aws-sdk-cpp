@@ -106,6 +106,10 @@ GetBatchEvaluationResult& GetBatchEvaluationResult::operator=(const Aws::AmazonW
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("datasetExecutionDetails")) {
+    m_datasetExecutionDetails = jsonValue.GetObject("datasetExecutionDetails");
+    m_datasetExecutionDetailsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

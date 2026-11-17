@@ -7,6 +7,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
+#include <aws/observabilityadmin/model/ConfigurationSummary.h>
+#include <aws/observabilityadmin/model/SourceProgress.h>
 #include <aws/observabilityadmin/model/TelemetryPipelineConfiguration.h>
 #include <aws/observabilityadmin/model/TelemetryPipelineStatus.h>
 #include <aws/observabilityadmin/model/TelemetryPipelineStatusReason.h>
@@ -181,6 +183,61 @@ class TelemetryPipeline {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when the most recent refresh of the telemetry pipeline started.
+   * This field is only present for external-cloud pipelines that you have
+   * refreshed.</p>
+   */
+  inline long long GetLastRefreshTimeStamp() const { return m_lastRefreshTimeStamp; }
+  inline bool LastRefreshTimeStampHasBeenSet() const { return m_lastRefreshTimeStampHasBeenSet; }
+  inline void SetLastRefreshTimeStamp(long long value) {
+    m_lastRefreshTimeStampHasBeenSet = true;
+    m_lastRefreshTimeStamp = value;
+  }
+  inline TelemetryPipeline& WithLastRefreshTimeStamp(long long value) {
+    SetLastRefreshTimeStamp(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The progress of source activation for the telemetry pipeline. This field is
+   * only present for external-cloud pipelines.</p>
+   */
+  inline const SourceProgress& GetSourceProgress() const { return m_sourceProgress; }
+  inline bool SourceProgressHasBeenSet() const { return m_sourceProgressHasBeenSet; }
+  template <typename SourceProgressT = SourceProgress>
+  void SetSourceProgress(SourceProgressT&& value) {
+    m_sourceProgressHasBeenSet = true;
+    m_sourceProgress = std::forward<SourceProgressT>(value);
+  }
+  template <typename SourceProgressT = SourceProgress>
+  TelemetryPipeline& WithSourceProgress(SourceProgressT&& value) {
+    SetSourceProgress(std::forward<SourceProgressT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A summary of the pipeline configuration components.</p>
+   */
+  inline const ConfigurationSummary& GetConfigurationSummary() const { return m_configurationSummary; }
+  inline bool ConfigurationSummaryHasBeenSet() const { return m_configurationSummaryHasBeenSet; }
+  template <typename ConfigurationSummaryT = ConfigurationSummary>
+  void SetConfigurationSummary(ConfigurationSummaryT&& value) {
+    m_configurationSummaryHasBeenSet = true;
+    m_configurationSummary = std::forward<ConfigurationSummaryT>(value);
+  }
+  template <typename ConfigurationSummaryT = ConfigurationSummary>
+  TelemetryPipeline& WithConfigurationSummary(ConfigurationSummaryT&& value) {
+    SetConfigurationSummary(std::forward<ConfigurationSummaryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   long long m_createdTimeStamp{0};
 
@@ -197,6 +254,12 @@ class TelemetryPipeline {
   TelemetryPipelineStatusReason m_statusReason;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  long long m_lastRefreshTimeStamp{0};
+
+  SourceProgress m_sourceProgress;
+
+  ConfigurationSummary m_configurationSummary;
   bool m_createdTimeStampHasBeenSet = false;
   bool m_lastUpdateTimeStampHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -205,6 +268,9 @@ class TelemetryPipeline {
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_lastRefreshTimeStampHasBeenSet = false;
+  bool m_sourceProgressHasBeenSet = false;
+  bool m_configurationSummaryHasBeenSet = false;
 };
 
 }  // namespace Model

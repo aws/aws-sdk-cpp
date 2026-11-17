@@ -20,6 +20,7 @@
 #include <aws/marketplace-agreement/AgreementServiceClient.h>
 #include <aws/marketplace-agreement/AgreementServiceEndpointProvider.h>
 #include <aws/marketplace-agreement/AgreementServiceErrorMarshaller.h>
+#include <aws/marketplace-agreement/model/AcceptAgreementApprovalRequest.h>
 #include <aws/marketplace-agreement/model/AcceptAgreementCancellationRequestRequest.h>
 #include <aws/marketplace-agreement/model/AcceptAgreementPaymentRequestRequest.h>
 #include <aws/marketplace-agreement/model/AcceptAgreementRequestRequest.h>
@@ -27,23 +28,33 @@
 #include <aws/marketplace-agreement/model/CancelAgreementCancellationRequestRequest.h>
 #include <aws/marketplace-agreement/model/CancelAgreementPaymentRequestRequest.h>
 #include <aws/marketplace-agreement/model/CancelAgreementRequest.h>
+#include <aws/marketplace-agreement/model/CancelAgreementRequestRequest.h>
 #include <aws/marketplace-agreement/model/CreateAgreementRequestRequest.h>
 #include <aws/marketplace-agreement/model/DescribeAgreementRequest.h>
+#include <aws/marketplace-agreement/model/GetAgreementApprovalRequest.h>
 #include <aws/marketplace-agreement/model/GetAgreementCancellationRequestRequest.h>
+#include <aws/marketplace-agreement/model/GetAgreementContactsRequest.h>
 #include <aws/marketplace-agreement/model/GetAgreementEntitlementsRequest.h>
 #include <aws/marketplace-agreement/model/GetAgreementPaymentRequestRequest.h>
+#include <aws/marketplace-agreement/model/GetAgreementRequestApprovalPlansRequest.h>
+#include <aws/marketplace-agreement/model/GetAgreementRequestRequest.h>
+#include <aws/marketplace-agreement/model/GetAgreementRequestTermsRequest.h>
 #include <aws/marketplace-agreement/model/GetAgreementTermsRequest.h>
 #include <aws/marketplace-agreement/model/GetBillingAdjustmentRequestRequest.h>
+#include <aws/marketplace-agreement/model/ListAgreementApprovalsRequest.h>
 #include <aws/marketplace-agreement/model/ListAgreementCancellationRequestsRequest.h>
 #include <aws/marketplace-agreement/model/ListAgreementChargesRequest.h>
 #include <aws/marketplace-agreement/model/ListAgreementInvoiceLineItemsRequest.h>
 #include <aws/marketplace-agreement/model/ListAgreementPaymentRequestsRequest.h>
+#include <aws/marketplace-agreement/model/ListAgreementRequestsRequest.h>
 #include <aws/marketplace-agreement/model/ListBillingAdjustmentRequestsRequest.h>
+#include <aws/marketplace-agreement/model/RejectAgreementApprovalRequest.h>
 #include <aws/marketplace-agreement/model/RejectAgreementCancellationRequestRequest.h>
 #include <aws/marketplace-agreement/model/RejectAgreementPaymentRequestRequest.h>
 #include <aws/marketplace-agreement/model/SearchAgreementsRequest.h>
 #include <aws/marketplace-agreement/model/SendAgreementCancellationRequestRequest.h>
 #include <aws/marketplace-agreement/model/SendAgreementPaymentRequestRequest.h>
+#include <aws/marketplace-agreement/model/StartAgreementApprovalsRequest.h>
 #include <aws/marketplace-agreement/model/UpdatePurchaseOrdersRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -205,6 +216,12 @@ AgreementServiceClient::InvokeOperationOutcome AgreementServiceClient::InvokeSer
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+AcceptAgreementApprovalOutcome AgreementServiceClient::AcceptAgreementApproval(const AcceptAgreementApprovalRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptAgreementApprovalOutcome(result.GetResultWithOwnership())
+                            : AcceptAgreementApprovalOutcome(std::move(result.GetError()));
+}
+
 AcceptAgreementCancellationRequestOutcome AgreementServiceClient::AcceptAgreementCancellationRequest(
     const AcceptAgreementCancellationRequestRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -232,7 +249,7 @@ BatchCreateBillingAdjustmentRequestOutcome AgreementServiceClient::BatchCreateBi
                             : BatchCreateBillingAdjustmentRequestOutcome(std::move(result.GetError()));
 }
 
-CancelAgreementOutcome AgreementServiceClient::CancelAgreement(const CancelAgreementRequest& request) const {
+CancelAgreementOutcome AgreementServiceClient::CancelAgreement(const Model::CancelAgreementRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CancelAgreementOutcome(result.GetResultWithOwnership())
                             : CancelAgreementOutcome(std::move(result.GetError()));
@@ -252,6 +269,12 @@ CancelAgreementPaymentRequestOutcome AgreementServiceClient::CancelAgreementPaym
                             : CancelAgreementPaymentRequestOutcome(std::move(result.GetError()));
 }
 
+CancelAgreementRequestOutcome AgreementServiceClient::CancelAgreementRequest(const CancelAgreementRequestRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelAgreementRequestOutcome(result.GetResultWithOwnership())
+                            : CancelAgreementRequestOutcome(std::move(result.GetError()));
+}
+
 CreateAgreementRequestOutcome AgreementServiceClient::CreateAgreementRequest(const CreateAgreementRequestRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateAgreementRequestOutcome(result.GetResultWithOwnership())
@@ -264,11 +287,23 @@ DescribeAgreementOutcome AgreementServiceClient::DescribeAgreement(const Describ
                             : DescribeAgreementOutcome(std::move(result.GetError()));
 }
 
+GetAgreementApprovalOutcome AgreementServiceClient::GetAgreementApproval(const GetAgreementApprovalRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAgreementApprovalOutcome(result.GetResultWithOwnership())
+                            : GetAgreementApprovalOutcome(std::move(result.GetError()));
+}
+
 GetAgreementCancellationRequestOutcome AgreementServiceClient::GetAgreementCancellationRequest(
     const GetAgreementCancellationRequestRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetAgreementCancellationRequestOutcome(result.GetResultWithOwnership())
                             : GetAgreementCancellationRequestOutcome(std::move(result.GetError()));
+}
+
+GetAgreementContactsOutcome AgreementServiceClient::GetAgreementContacts(const GetAgreementContactsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAgreementContactsOutcome(result.GetResultWithOwnership())
+                            : GetAgreementContactsOutcome(std::move(result.GetError()));
 }
 
 GetAgreementEntitlementsOutcome AgreementServiceClient::GetAgreementEntitlements(const GetAgreementEntitlementsRequest& request) const {
@@ -284,6 +319,25 @@ GetAgreementPaymentRequestOutcome AgreementServiceClient::GetAgreementPaymentReq
                             : GetAgreementPaymentRequestOutcome(std::move(result.GetError()));
 }
 
+GetAgreementRequestOutcome AgreementServiceClient::GetAgreementRequest(const GetAgreementRequestRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAgreementRequestOutcome(result.GetResultWithOwnership())
+                            : GetAgreementRequestOutcome(std::move(result.GetError()));
+}
+
+GetAgreementRequestApprovalPlansOutcome AgreementServiceClient::GetAgreementRequestApprovalPlans(
+    const GetAgreementRequestApprovalPlansRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAgreementRequestApprovalPlansOutcome(result.GetResultWithOwnership())
+                            : GetAgreementRequestApprovalPlansOutcome(std::move(result.GetError()));
+}
+
+GetAgreementRequestTermsOutcome AgreementServiceClient::GetAgreementRequestTerms(const GetAgreementRequestTermsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAgreementRequestTermsOutcome(result.GetResultWithOwnership())
+                            : GetAgreementRequestTermsOutcome(std::move(result.GetError()));
+}
+
 GetAgreementTermsOutcome AgreementServiceClient::GetAgreementTerms(const GetAgreementTermsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetAgreementTermsOutcome(result.GetResultWithOwnership())
@@ -295,6 +349,12 @@ GetBillingAdjustmentRequestOutcome AgreementServiceClient::GetBillingAdjustmentR
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetBillingAdjustmentRequestOutcome(result.GetResultWithOwnership())
                             : GetBillingAdjustmentRequestOutcome(std::move(result.GetError()));
+}
+
+ListAgreementApprovalsOutcome AgreementServiceClient::ListAgreementApprovals(const ListAgreementApprovalsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAgreementApprovalsOutcome(result.GetResultWithOwnership())
+                            : ListAgreementApprovalsOutcome(std::move(result.GetError()));
 }
 
 ListAgreementCancellationRequestsOutcome AgreementServiceClient::ListAgreementCancellationRequests(
@@ -324,11 +384,23 @@ ListAgreementPaymentRequestsOutcome AgreementServiceClient::ListAgreementPayment
                             : ListAgreementPaymentRequestsOutcome(std::move(result.GetError()));
 }
 
+ListAgreementRequestsOutcome AgreementServiceClient::ListAgreementRequests(const ListAgreementRequestsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAgreementRequestsOutcome(result.GetResultWithOwnership())
+                            : ListAgreementRequestsOutcome(std::move(result.GetError()));
+}
+
 ListBillingAdjustmentRequestsOutcome AgreementServiceClient::ListBillingAdjustmentRequests(
     const ListBillingAdjustmentRequestsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListBillingAdjustmentRequestsOutcome(result.GetResultWithOwnership())
                             : ListBillingAdjustmentRequestsOutcome(std::move(result.GetError()));
+}
+
+RejectAgreementApprovalOutcome AgreementServiceClient::RejectAgreementApproval(const RejectAgreementApprovalRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectAgreementApprovalOutcome(result.GetResultWithOwnership())
+                            : RejectAgreementApprovalOutcome(std::move(result.GetError()));
 }
 
 RejectAgreementCancellationRequestOutcome AgreementServiceClient::RejectAgreementCancellationRequest(
@@ -363,6 +435,12 @@ SendAgreementPaymentRequestOutcome AgreementServiceClient::SendAgreementPaymentR
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SendAgreementPaymentRequestOutcome(result.GetResultWithOwnership())
                             : SendAgreementPaymentRequestOutcome(std::move(result.GetError()));
+}
+
+StartAgreementApprovalsOutcome AgreementServiceClient::StartAgreementApprovals(const StartAgreementApprovalsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAgreementApprovalsOutcome(result.GetResultWithOwnership())
+                            : StartAgreementApprovalsOutcome(std::move(result.GetError()));
 }
 
 UpdatePurchaseOrdersOutcome AgreementServiceClient::UpdatePurchaseOrders(const UpdatePurchaseOrdersRequest& request) const {

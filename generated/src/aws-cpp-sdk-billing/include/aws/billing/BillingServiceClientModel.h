@@ -51,7 +51,9 @@
 #include <aws/billing/model/ListSourceViewsForBillingViewResult.h>
 #include <aws/billing/model/ListTagsForResourceResult.h>
 #include <aws/billing/model/RedeemCreditsResult.h>
+#include <aws/billing/model/SplitCreditResult.h>
 #include <aws/billing/model/TagResourceResult.h>
+#include <aws/billing/model/TransferCreditResult.h>
 #include <aws/billing/model/UntagResourceResult.h>
 #include <aws/billing/model/UpdateBillingPreferencesResult.h>
 #include <aws/billing/model/UpdateBillingViewResult.h>
@@ -116,7 +118,9 @@ class ListEnterpriseSupportLinkedAccountChargesRequest;
 class ListSourceViewsForBillingViewRequest;
 class ListTagsForResourceRequest;
 class RedeemCreditsRequest;
+class SplitCreditRequest;
 class TagResourceRequest;
+class TransferCreditRequest;
 class UntagResourceRequest;
 class UpdateBillingPreferencesRequest;
 class UpdateBillingViewRequest;
@@ -151,7 +155,9 @@ typedef Aws::Utils::Outcome<ListEnterpriseSupportLinkedAccountChargesResult, Bil
 typedef Aws::Utils::Outcome<ListSourceViewsForBillingViewResult, BillingError> ListSourceViewsForBillingViewOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BillingError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<RedeemCreditsResult, BillingError> RedeemCreditsOutcome;
+typedef Aws::Utils::Outcome<SplitCreditResult, BillingError> SplitCreditOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, BillingError> TagResourceOutcome;
+typedef Aws::Utils::Outcome<TransferCreditResult, BillingError> TransferCreditOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, BillingError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateBillingPreferencesResult, BillingError> UpdateBillingPreferencesOutcome;
 typedef Aws::Utils::Outcome<UpdateBillingViewResult, BillingError> UpdateBillingViewOutcome;
@@ -186,7 +192,9 @@ typedef std::future<ListEnterpriseSupportLinkedAccountChargesOutcome> ListEnterp
 typedef std::future<ListSourceViewsForBillingViewOutcome> ListSourceViewsForBillingViewOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<RedeemCreditsOutcome> RedeemCreditsOutcomeCallable;
+typedef std::future<SplitCreditOutcome> SplitCreditOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+typedef std::future<TransferCreditOutcome> TransferCreditOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateBillingPreferencesOutcome> UpdateBillingPreferencesOutcomeCallable;
 typedef std::future<UpdateBillingViewOutcome> UpdateBillingViewOutcomeCallable;
@@ -290,9 +298,15 @@ typedef std::function<void(const BillingClient*, const Model::ListTagsForResourc
 typedef std::function<void(const BillingClient*, const Model::RedeemCreditsRequest&, const Model::RedeemCreditsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RedeemCreditsResponseReceivedHandler;
+typedef std::function<void(const BillingClient*, const Model::SplitCreditRequest&, const Model::SplitCreditOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SplitCreditResponseReceivedHandler;
 typedef std::function<void(const BillingClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;
+typedef std::function<void(const BillingClient*, const Model::TransferCreditRequest&, const Model::TransferCreditOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    TransferCreditResponseReceivedHandler;
 typedef std::function<void(const BillingClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;

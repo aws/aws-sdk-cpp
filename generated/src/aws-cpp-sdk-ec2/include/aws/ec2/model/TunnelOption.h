@@ -15,6 +15,7 @@
 #include <aws/ec2/model/Phase2DHGroupNumbersListValue.h>
 #include <aws/ec2/model/Phase2EncryptionAlgorithmsListValue.h>
 #include <aws/ec2/model/Phase2IntegrityAlgorithmsListValue.h>
+#include <aws/ec2/model/VpnAdditionalKeyExchange.h>
 #include <aws/ec2/model/VpnTunnelLogOptions.h>
 
 #include <utility>
@@ -463,6 +464,56 @@ class TunnelOption {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The permitted additional key exchange rounds for the VPN tunnel for phase 1
+   * IKE negotiations.</p>
+   */
+  inline const Aws::Vector<VpnAdditionalKeyExchange>& GetPhase1AdditionalKeyExchanges() const { return m_phase1AdditionalKeyExchanges; }
+  inline bool Phase1AdditionalKeyExchangesHasBeenSet() const { return m_phase1AdditionalKeyExchangesHasBeenSet; }
+  template <typename Phase1AdditionalKeyExchangesT = Aws::Vector<VpnAdditionalKeyExchange>>
+  void SetPhase1AdditionalKeyExchanges(Phase1AdditionalKeyExchangesT&& value) {
+    m_phase1AdditionalKeyExchangesHasBeenSet = true;
+    m_phase1AdditionalKeyExchanges = std::forward<Phase1AdditionalKeyExchangesT>(value);
+  }
+  template <typename Phase1AdditionalKeyExchangesT = Aws::Vector<VpnAdditionalKeyExchange>>
+  TunnelOption& WithPhase1AdditionalKeyExchanges(Phase1AdditionalKeyExchangesT&& value) {
+    SetPhase1AdditionalKeyExchanges(std::forward<Phase1AdditionalKeyExchangesT>(value));
+    return *this;
+  }
+  template <typename Phase1AdditionalKeyExchangesT = VpnAdditionalKeyExchange>
+  TunnelOption& AddPhase1AdditionalKeyExchanges(Phase1AdditionalKeyExchangesT&& value) {
+    m_phase1AdditionalKeyExchangesHasBeenSet = true;
+    m_phase1AdditionalKeyExchanges.emplace_back(std::forward<Phase1AdditionalKeyExchangesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The permitted additional key exchange rounds for the VPN tunnel for phase 2
+   * IKE negotiations.</p>
+   */
+  inline const Aws::Vector<VpnAdditionalKeyExchange>& GetPhase2AdditionalKeyExchanges() const { return m_phase2AdditionalKeyExchanges; }
+  inline bool Phase2AdditionalKeyExchangesHasBeenSet() const { return m_phase2AdditionalKeyExchangesHasBeenSet; }
+  template <typename Phase2AdditionalKeyExchangesT = Aws::Vector<VpnAdditionalKeyExchange>>
+  void SetPhase2AdditionalKeyExchanges(Phase2AdditionalKeyExchangesT&& value) {
+    m_phase2AdditionalKeyExchangesHasBeenSet = true;
+    m_phase2AdditionalKeyExchanges = std::forward<Phase2AdditionalKeyExchangesT>(value);
+  }
+  template <typename Phase2AdditionalKeyExchangesT = Aws::Vector<VpnAdditionalKeyExchange>>
+  TunnelOption& WithPhase2AdditionalKeyExchanges(Phase2AdditionalKeyExchangesT&& value) {
+    SetPhase2AdditionalKeyExchanges(std::forward<Phase2AdditionalKeyExchangesT>(value));
+    return *this;
+  }
+  template <typename Phase2AdditionalKeyExchangesT = VpnAdditionalKeyExchange>
+  TunnelOption& AddPhase2AdditionalKeyExchanges(Phase2AdditionalKeyExchangesT&& value) {
+    m_phase2AdditionalKeyExchangesHasBeenSet = true;
+    m_phase2AdditionalKeyExchanges.emplace_back(std::forward<Phase2AdditionalKeyExchangesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_outsideIpAddress;
 
@@ -505,6 +556,10 @@ class TunnelOption {
   VpnTunnelLogOptions m_logOptions;
 
   bool m_enableTunnelLifecycleControl{false};
+
+  Aws::Vector<VpnAdditionalKeyExchange> m_phase1AdditionalKeyExchanges;
+
+  Aws::Vector<VpnAdditionalKeyExchange> m_phase2AdditionalKeyExchanges;
   bool m_outsideIpAddressHasBeenSet = false;
   bool m_tunnelInsideCidrHasBeenSet = false;
   bool m_tunnelInsideIpv6CidrHasBeenSet = false;
@@ -526,6 +581,8 @@ class TunnelOption {
   bool m_startupActionHasBeenSet = false;
   bool m_logOptionsHasBeenSet = false;
   bool m_enableTunnelLifecycleControlHasBeenSet = false;
+  bool m_phase1AdditionalKeyExchangesHasBeenSet = false;
+  bool m_phase2AdditionalKeyExchangesHasBeenSet = false;
 };
 
 }  // namespace Model

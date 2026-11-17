@@ -24,6 +24,7 @@ static const int LOGICAL_MODEL_HASH = HashingUtils::HashString("LOGICAL_MODEL");
 static const int MODELIZE_IT_HASH = HashingUtils::HashString("MODELIZE_IT");
 static const int AWS_DISCOVERY_COLLECTOR_HASH = HashingUtils::HashString("AWS_DISCOVERY_COLLECTOR");
 static const int MIGRATION_PLANNING_ARTIFACTS_HASH = HashingUtils::HashString("MIGRATION_PLANNING_ARTIFACTS");
+static const int F5_BIGIP_HASH = HashingUtils::HashString("F5_BIGIP");
 
 SourceEnvironment GetSourceEnvironmentForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +46,8 @@ SourceEnvironment GetSourceEnvironmentForName(const Aws::String& name) {
     return SourceEnvironment::AWS_DISCOVERY_COLLECTOR;
   } else if (hashCode == MIGRATION_PLANNING_ARTIFACTS_HASH) {
     return SourceEnvironment::MIGRATION_PLANNING_ARTIFACTS;
+  } else if (hashCode == F5_BIGIP_HASH) {
+    return SourceEnvironment::F5_BIGIP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +80,8 @@ Aws::String GetNameForSourceEnvironment(SourceEnvironment enumValue) {
       return "AWS_DISCOVERY_COLLECTOR";
     case SourceEnvironment::MIGRATION_PLANNING_ARTIFACTS:
       return "MIGRATION_PLANNING_ARTIFACTS";
+    case SourceEnvironment::F5_BIGIP:
+      return "F5_BIGIP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

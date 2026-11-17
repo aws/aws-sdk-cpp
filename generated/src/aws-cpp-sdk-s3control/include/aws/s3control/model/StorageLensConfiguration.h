@@ -9,7 +9,9 @@
 #include <aws/s3control/model/AccountLevel.h>
 #include <aws/s3control/model/Exclude.h>
 #include <aws/s3control/model/Include.h>
+#include <aws/s3control/model/IntAccessTiers.h>
 #include <aws/s3control/model/StorageLensAwsOrg.h>
+#include <aws/s3control/model/StorageLensCostAndUsageReportsPublish.h>
 #include <aws/s3control/model/StorageLensDataExport.h>
 #include <aws/s3control/model/StorageLensExpandedPrefixesDataExport.h>
 
@@ -155,6 +157,25 @@ class StorageLensConfiguration {
 
   ///@{
   /**
+   * <p>A container for the configuration used to publish S3 Storage Lens cost data
+   * to Amazon Web Services Cost and Usage Reports (Amazon Web Services CUR).</p>
+   */
+  inline const StorageLensCostAndUsageReportsPublish& GetCostAndUsageReportsPublish() const { return m_costAndUsageReportsPublish; }
+  inline bool CostAndUsageReportsPublishHasBeenSet() const { return m_costAndUsageReportsPublishHasBeenSet; }
+  template <typename CostAndUsageReportsPublishT = StorageLensCostAndUsageReportsPublish>
+  void SetCostAndUsageReportsPublish(CostAndUsageReportsPublishT&& value) {
+    m_costAndUsageReportsPublishHasBeenSet = true;
+    m_costAndUsageReportsPublish = std::forward<CostAndUsageReportsPublishT>(value);
+  }
+  template <typename CostAndUsageReportsPublishT = StorageLensCostAndUsageReportsPublish>
+  StorageLensConfiguration& WithCostAndUsageReportsPublish(CostAndUsageReportsPublishT&& value) {
+    SetCostAndUsageReportsPublish(std::forward<CostAndUsageReportsPublishT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
    */
   inline bool GetIsEnabled() const { return m_isEnabled; }
@@ -235,6 +256,25 @@ class StorageLensConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A container element for S3 Storage Lens Intelligent-Tiering access tier
+   * metrics.</p>
+   */
+  inline const IntAccessTiers& GetIntAccessTiers() const { return m_intAccessTiers; }
+  inline bool IntAccessTiersHasBeenSet() const { return m_intAccessTiersHasBeenSet; }
+  template <typename IntAccessTiersT = IntAccessTiers>
+  void SetIntAccessTiers(IntAccessTiersT&& value) {
+    m_intAccessTiersHasBeenSet = true;
+    m_intAccessTiers = std::forward<IntAccessTiersT>(value);
+  }
+  template <typename IntAccessTiersT = IntAccessTiers>
+  StorageLensConfiguration& WithIntAccessTiers(IntAccessTiersT&& value) {
+    SetIntAccessTiers(std::forward<IntAccessTiersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -248,6 +288,8 @@ class StorageLensConfiguration {
 
   StorageLensExpandedPrefixesDataExport m_expandedPrefixesDataExport;
 
+  StorageLensCostAndUsageReportsPublish m_costAndUsageReportsPublish;
+
   bool m_isEnabled{false};
 
   StorageLensAwsOrg m_awsOrg;
@@ -255,16 +297,20 @@ class StorageLensConfiguration {
   Aws::String m_storageLensArn;
 
   Aws::String m_prefixDelimiter;
+
+  IntAccessTiers m_intAccessTiers;
   bool m_idHasBeenSet = false;
   bool m_accountLevelHasBeenSet = false;
   bool m_includeHasBeenSet = false;
   bool m_excludeHasBeenSet = false;
   bool m_dataExportHasBeenSet = false;
   bool m_expandedPrefixesDataExportHasBeenSet = false;
+  bool m_costAndUsageReportsPublishHasBeenSet = false;
   bool m_isEnabledHasBeenSet = false;
   bool m_awsOrgHasBeenSet = false;
   bool m_storageLensArnHasBeenSet = false;
   bool m_prefixDelimiterHasBeenSet = false;
+  bool m_intAccessTiersHasBeenSet = false;
 };
 
 }  // namespace Model

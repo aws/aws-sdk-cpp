@@ -56,6 +56,15 @@ EnabledBaselineFilter& EnabledBaselineFilter::operator=(JsonView jsonValue) {
     }
     m_inheritanceDriftStatusesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sourceDriftStatuses")) {
+    Aws::Utils::Array<JsonView> sourceDriftStatusesJsonList = jsonValue.GetArray("sourceDriftStatuses");
+    for (unsigned sourceDriftStatusesIndex = 0; sourceDriftStatusesIndex < sourceDriftStatusesJsonList.GetLength();
+         ++sourceDriftStatusesIndex) {
+      m_sourceDriftStatuses.push_back(EnabledBaselineDriftStatusMapper::GetEnabledBaselineDriftStatusForName(
+          sourceDriftStatusesJsonList[sourceDriftStatusesIndex].AsString()));
+    }
+    m_sourceDriftStatusesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -104,6 +113,16 @@ JsonValue EnabledBaselineFilter::Jsonize() const {
               m_inheritanceDriftStatuses[inheritanceDriftStatusesIndex]));
     }
     payload.WithArray("inheritanceDriftStatuses", std::move(inheritanceDriftStatusesJsonList));
+  }
+
+  if (m_sourceDriftStatusesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sourceDriftStatusesJsonList(m_sourceDriftStatuses.size());
+    for (unsigned sourceDriftStatusesIndex = 0; sourceDriftStatusesIndex < sourceDriftStatusesJsonList.GetLength();
+         ++sourceDriftStatusesIndex) {
+      sourceDriftStatusesJsonList[sourceDriftStatusesIndex].AsString(
+          EnabledBaselineDriftStatusMapper::GetNameForEnabledBaselineDriftStatus(m_sourceDriftStatuses[sourceDriftStatusesIndex]));
+    }
+    payload.WithArray("sourceDriftStatuses", std::move(sourceDriftStatusesJsonList));
   }
 
   return payload;

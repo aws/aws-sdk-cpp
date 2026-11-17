@@ -69,9 +69,12 @@ class GetCreditAllocationHistoryRequest : public BillingRequest {
 
   ///@{
   /**
-   * <p>Inclusive start date as Unix epoch seconds. Must be on or before
-   * <code>endDate</code>. The range from <code>startDate</code> to
-   * <code>endDate</code> cannot exceed 24 billing months.</p>
+   * <p>The inclusive start date of the range, in Unix epoch seconds. This value must
+   * be earlier than <code>endDate</code>. You get credit allocations for bills whose
+   * billing period starts on or after <code>startDate</code> and before
+   * <code>endDate</code>. If <code>startDate</code> is in the middle of a billing
+   * period, that period isn't included. The range can't exceed 24 calendar
+   * months.</p>
    */
   inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
   inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
@@ -89,7 +92,10 @@ class GetCreditAllocationHistoryRequest : public BillingRequest {
 
   ///@{
   /**
-   * <p>Inclusive end date as Unix epoch seconds.</p>
+   * <p>The exclusive end date of the range, in Unix epoch seconds. To get one
+   * billing month, set <code>startDate</code> to the first day of that month. Then
+   * set <code>endDate</code> to the first day of the next month. Use 00:00 UTC for
+   * both.</p>
    */
   inline const Aws::Utils::DateTime& GetEndDate() const { return m_endDate; }
   inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }

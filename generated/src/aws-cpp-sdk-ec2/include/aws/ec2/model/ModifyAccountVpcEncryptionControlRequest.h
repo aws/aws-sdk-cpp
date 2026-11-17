@@ -206,8 +206,8 @@ class ModifyAccountVpcEncryptionControlRequest : public EC2Request {
 
   ///@{
   /**
-   * <p>Specifies whether to exclude AWS Global Accelerator from account-level
-   * encryption enforcement.</p>
+   * <p>Specifies whether to exclude Amazon Web Services Global Accelerator from
+   * account-level encryption enforcement.</p>
    */
   inline VpcEncryptionControlExclusionStateInput GetGlobalAccelerator() const { return m_globalAccelerator; }
   inline bool GlobalAcceleratorHasBeenSet() const { return m_globalAcceleratorHasBeenSet; }

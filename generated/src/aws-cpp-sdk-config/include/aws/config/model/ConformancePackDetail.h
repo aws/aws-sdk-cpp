@@ -6,6 +6,9 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/ConformancePackInputParameter.h>
+#include <aws/config/model/ConformancePackScope.h>
+#include <aws/config/model/ConformancePackSource.h>
+#include <aws/config/model/ConformancePackType.h>
 #include <aws/config/model/TemplateSSMDocumentDetails.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -210,6 +213,66 @@ class ConformancePackDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the conformance pack. Valid values:</p> <ul> <li> <p>
+   * <code>CUSTOM</code> – A custom conformance pack.</p> </li> <li> <p>
+   * <code>MANAGED</code> – A managed conformance pack.</p> </li> </ul>
+   */
+  inline ConformancePackType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(ConformancePackType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline ConformancePackDetail& WithType(ConformancePackType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains the identifier of the managed conformance pack that Config deploys
+   * in your account.</p>  <p>This field applies only to managed conformance
+   * packs. Custom conformance packs leave it empty.</p>
+   */
+  inline const ConformancePackSource& GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  template <typename SourceT = ConformancePackSource>
+  void SetSource(SourceT&& value) {
+    m_sourceHasBeenSet = true;
+    m_source = std::forward<SourceT>(value);
+  }
+  template <typename SourceT = ConformancePackSource>
+  ConformancePackDetail& WithSource(SourceT&& value) {
+    SetSource(std::forward<SourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An object of type <code>ConformancePackScope</code>, which contains the tag
+   * key and optional tag value that defines which resources trigger an evaluation
+   * for the Config rules in the managed conformance pack.</p>  <p>Managed
+   * conformance packs with a scope populate this field. Custom conformance packs
+   * leave it empty.</p>
+   */
+  inline const ConformancePackScope& GetScope() const { return m_scope; }
+  inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+  template <typename ScopeT = ConformancePackScope>
+  void SetScope(ScopeT&& value) {
+    m_scopeHasBeenSet = true;
+    m_scope = std::forward<ScopeT>(value);
+  }
+  template <typename ScopeT = ConformancePackScope>
+  ConformancePackDetail& WithScope(ScopeT&& value) {
+    SetScope(std::forward<ScopeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_conformancePackName;
 
@@ -228,6 +291,12 @@ class ConformancePackDetail {
   Aws::String m_createdBy;
 
   TemplateSSMDocumentDetails m_templateSSMDocumentDetails;
+
+  ConformancePackType m_type{ConformancePackType::NOT_SET};
+
+  ConformancePackSource m_source;
+
+  ConformancePackScope m_scope;
   bool m_conformancePackNameHasBeenSet = false;
   bool m_conformancePackArnHasBeenSet = false;
   bool m_conformancePackIdHasBeenSet = false;
@@ -237,6 +306,9 @@ class ConformancePackDetail {
   bool m_lastUpdateRequestedTimeHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_templateSSMDocumentDetailsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
 };
 
 }  // namespace Model

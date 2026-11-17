@@ -6,14 +6,18 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EvaluationAnswerOutput.h>
+#include <aws/connect/model/EvaluationEnablementStatus.h>
+#include <aws/connect/model/EvaluationItemResolutionStatus.h>
 #include <aws/connect/model/EvaluationMetadata.h>
 #include <aws/connect/model/EvaluationNote.h>
+#include <aws/connect/model/EvaluationResolvedSource.h>
 #include <aws/connect/model/EvaluationScore.h>
 #include <aws/connect/model/EvaluationStatus.h>
 #include <aws/connect/model/EvaluationType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -257,6 +261,86 @@ class Evaluation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A map of item (section or question) identifiers to their enablement status,
+   * computed by the service from each item's conditional enablement configuration.
+   * Disabled items are excluded from scoring. Valid values: <code>ENABLED</code> |
+   * <code>DISABLED</code>.</p>
+   */
+  inline const Aws::Map<Aws::String, EvaluationEnablementStatus>& GetItemEnablementStatus() const { return m_itemEnablementStatus; }
+  inline bool ItemEnablementStatusHasBeenSet() const { return m_itemEnablementStatusHasBeenSet; }
+  template <typename ItemEnablementStatusT = Aws::Map<Aws::String, EvaluationEnablementStatus>>
+  void SetItemEnablementStatus(ItemEnablementStatusT&& value) {
+    m_itemEnablementStatusHasBeenSet = true;
+    m_itemEnablementStatus = std::forward<ItemEnablementStatusT>(value);
+  }
+  template <typename ItemEnablementStatusT = Aws::Map<Aws::String, EvaluationEnablementStatus>>
+  Evaluation& WithItemEnablementStatus(ItemEnablementStatusT&& value) {
+    SetItemEnablementStatus(std::forward<ItemEnablementStatusT>(value));
+    return *this;
+  }
+  inline Evaluation& AddItemEnablementStatus(Aws::String key, EvaluationEnablementStatus value) {
+    m_itemEnablementStatusHasBeenSet = true;
+    m_itemEnablementStatus.emplace(key, value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The aggregate status of resolving the external source data (such as Contact
+   * Lens analysis and AI metrics) that is used by conditional enablement in the
+   * evaluation. Source data is resolved asynchronously after the evaluation is
+   * started. While a source is pending or after it fails to resolve, conditions that
+   * depend on it evaluate to the item's <code>DefaultAction</code>. Valid
+   * values:</p> <ul> <li> <p> <code>PENDING</code> - One or more sources have not
+   * been resolved yet. Call <code>DescribeContactEvaluation</code> again to get
+   * updated <code>ItemEnablementStatus</code> values.</p> </li> <li> <p>
+   * <code>RESOLVED</code> - All sources have been resolved.</p> </li> <li> <p>
+   * <code>FAILED</code> - One or more sources could not be resolved. Dependent
+   * conditions use the item's <code>DefaultAction</code>.</p> </li> </ul>
+   */
+  inline EvaluationItemResolutionStatus GetSourceResolutionStatus() const { return m_sourceResolutionStatus; }
+  inline bool SourceResolutionStatusHasBeenSet() const { return m_sourceResolutionStatusHasBeenSet; }
+  inline void SetSourceResolutionStatus(EvaluationItemResolutionStatus value) {
+    m_sourceResolutionStatusHasBeenSet = true;
+    m_sourceResolutionStatus = value;
+  }
+  inline Evaluation& WithSourceResolutionStatus(EvaluationItemResolutionStatus value) {
+    SetSourceResolutionStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The resolved values of the external sources (such as contact data, evaluation
+   * metadata, form metadata, and AI metrics) that are used by the conditions in the
+   * evaluation form. You can use these values to evaluate the conditions against the
+   * current answers without calling <code>DescribeContactEvaluation</code>
+   * again.</p>
+   */
+  inline const Aws::Vector<EvaluationResolvedSource>& GetSourceValues() const { return m_sourceValues; }
+  inline bool SourceValuesHasBeenSet() const { return m_sourceValuesHasBeenSet; }
+  template <typename SourceValuesT = Aws::Vector<EvaluationResolvedSource>>
+  void SetSourceValues(SourceValuesT&& value) {
+    m_sourceValuesHasBeenSet = true;
+    m_sourceValues = std::forward<SourceValuesT>(value);
+  }
+  template <typename SourceValuesT = Aws::Vector<EvaluationResolvedSource>>
+  Evaluation& WithSourceValues(SourceValuesT&& value) {
+    SetSourceValues(std::forward<SourceValuesT>(value));
+    return *this;
+  }
+  template <typename SourceValuesT = EvaluationResolvedSource>
+  Evaluation& AddSourceValues(SourceValuesT&& value) {
+    m_sourceValuesHasBeenSet = true;
+    m_sourceValues.emplace_back(std::forward<SourceValuesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_evaluationId;
 
@@ -279,6 +363,12 @@ class Evaluation {
   EvaluationType m_evaluationType{EvaluationType::NOT_SET};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::Map<Aws::String, EvaluationEnablementStatus> m_itemEnablementStatus;
+
+  EvaluationItemResolutionStatus m_sourceResolutionStatus{EvaluationItemResolutionStatus::NOT_SET};
+
+  Aws::Vector<EvaluationResolvedSource> m_sourceValues;
   bool m_evaluationIdHasBeenSet = false;
   bool m_evaluationArnHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
@@ -290,6 +380,9 @@ class Evaluation {
   bool m_lastModifiedTimeHasBeenSet = false;
   bool m_evaluationTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_itemEnablementStatusHasBeenSet = false;
+  bool m_sourceResolutionStatusHasBeenSet = false;
+  bool m_sourceValuesHasBeenSet = false;
 };
 
 }  // namespace Model

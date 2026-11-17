@@ -88,7 +88,9 @@ class EvaluationSuggestedAnswer {
 
   ///@{
   /**
-   * <p>Type of analysis used to provide suggested answer.</p>
+   * <p>Type of analysis used to provide suggested answer. Valid values:
+   * <code>CONTACT_LENS_DATA</code> | <code>GEN_AI</code> |
+   * <code>CONDITION</code>.</p>
    */
   inline EvaluationQuestionAnswerAnalysisType GetAnalysisType() const { return m_analysisType; }
   inline bool AnalysisTypeHasBeenSet() const { return m_analysisTypeHasBeenSet; }

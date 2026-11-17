@@ -289,6 +289,43 @@ class AWS_ROUTE53GLOBALRESOLVER_API Route53GlobalResolverClient
   }
 
   /**
+   * <p>Creates a core network endpoint, which enables DNS resolution for Amazon Web
+   * Services Cloud WAN core network segments. The endpoint connects a Route 53
+   * Global Resolver to an Amazon Web Services Cloud WAN core network so that
+   * resources attached to the core network can send DNS queries to the resolver.</p>
+   *  <p>Route 53 Global Resolver is a global service that supports
+   * resolvers in multiple Amazon Web Services Regions, but you must specify the US
+   * East (Ohio) Region to create, update, or otherwise work with Route 53 Global
+   * Resolver resources. That is, for example, specify <code>--region
+   * us-east-2</code> on Amazon Web Services CLI commands.</p> <p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateCoreNetworkEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCoreNetworkEndpointOutcome CreateCoreNetworkEndpoint(const Model::CreateCoreNetworkEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCoreNetworkEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateCoreNetworkEndpointRequestT = Model::CreateCoreNetworkEndpointRequest>
+  Model::CreateCoreNetworkEndpointOutcomeCallable CreateCoreNetworkEndpointCallable(
+      const CreateCoreNetworkEndpointRequestT& request) const {
+    return SubmitCallable(&Route53GlobalResolverClient::CreateCoreNetworkEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCoreNetworkEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateCoreNetworkEndpointRequestT = Model::CreateCoreNetworkEndpointRequest>
+  void CreateCoreNetworkEndpointAsync(const CreateCoreNetworkEndpointRequestT& request,
+                                      const CreateCoreNetworkEndpointResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53GlobalResolverClient::CreateCoreNetworkEndpoint, request, handler, context);
+  }
+
+  /**
    * <p>Creates a DNS view within a Route 53 Global Resolver. A DNS view models end
    * users, user groups, networks, and devices, and serves as a parent resource that
    * holds configurations controlling access, authorization, DNS firewall rules, and
@@ -482,6 +519,40 @@ class AWS_ROUTE53GLOBALRESOLVER_API Route53GlobalResolverClient
   void DeleteAccessTokenAsync(const DeleteAccessTokenRequestT& request, const DeleteAccessTokenResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&Route53GlobalResolverClient::DeleteAccessToken, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a core network endpoint. This operation cannot be undone.</p>
+   *  <p>Route 53 Global Resolver is a global service that supports
+   * resolvers in multiple Amazon Web Services Regions, but you must specify the US
+   * East (Ohio) Region to create, update, or otherwise work with Route 53 Global
+   * Resolver resources. That is, for example, specify <code>--region
+   * us-east-2</code> on Amazon Web Services CLI commands.</p> <p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteCoreNetworkEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCoreNetworkEndpointOutcome DeleteCoreNetworkEndpoint(const Model::DeleteCoreNetworkEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCoreNetworkEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteCoreNetworkEndpointRequestT = Model::DeleteCoreNetworkEndpointRequest>
+  Model::DeleteCoreNetworkEndpointOutcomeCallable DeleteCoreNetworkEndpointCallable(
+      const DeleteCoreNetworkEndpointRequestT& request) const {
+    return SubmitCallable(&Route53GlobalResolverClient::DeleteCoreNetworkEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCoreNetworkEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteCoreNetworkEndpointRequestT = Model::DeleteCoreNetworkEndpointRequest>
+  void DeleteCoreNetworkEndpointAsync(const DeleteCoreNetworkEndpointRequestT& request,
+                                      const DeleteCoreNetworkEndpointResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53GlobalResolverClient::DeleteCoreNetworkEndpoint, request, handler, context);
   }
 
   /**
@@ -763,6 +834,38 @@ class AWS_ROUTE53GLOBALRESOLVER_API Route53GlobalResolverClient
   void GetAccessTokenAsync(const GetAccessTokenRequestT& request, const GetAccessTokenResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&Route53GlobalResolverClient::GetAccessToken, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a core network endpoint.</p>  <p>Route
+   * 53 Global Resolver is a global service that supports resolvers in multiple
+   * Amazon Web Services Regions, but you must specify the US East (Ohio) Region to
+   * create, update, or otherwise work with Route 53 Global Resolver resources. That
+   * is, for example, specify <code>--region us-east-2</code> on Amazon Web Services
+   * CLI commands.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetCoreNetworkEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCoreNetworkEndpointOutcome GetCoreNetworkEndpoint(const Model::GetCoreNetworkEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCoreNetworkEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetCoreNetworkEndpointRequestT = Model::GetCoreNetworkEndpointRequest>
+  Model::GetCoreNetworkEndpointOutcomeCallable GetCoreNetworkEndpointCallable(const GetCoreNetworkEndpointRequestT& request) const {
+    return SubmitCallable(&Route53GlobalResolverClient::GetCoreNetworkEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for GetCoreNetworkEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetCoreNetworkEndpointRequestT = Model::GetCoreNetworkEndpointRequest>
+  void GetCoreNetworkEndpointAsync(const GetCoreNetworkEndpointRequestT& request,
+                                   const GetCoreNetworkEndpointResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53GlobalResolverClient::GetCoreNetworkEndpoint, request, handler, context);
   }
 
   /**
@@ -1050,6 +1153,40 @@ class AWS_ROUTE53GLOBALRESOLVER_API Route53GlobalResolverClient
   void ListAccessTokensAsync(const ListAccessTokensRequestT& request, const ListAccessTokensResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&Route53GlobalResolverClient::ListAccessTokens, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the core network endpoints in your Amazon Web Services account, with
+   * pagination support.</p>  <p>Route 53 Global Resolver is a global
+   * service that supports resolvers in multiple Amazon Web Services Regions, but you
+   * must specify the US East (Ohio) Region to create, update, or otherwise work with
+   * Route 53 Global Resolver resources. That is, for example, specify <code>--region
+   * us-east-2</code> on Amazon Web Services CLI commands.</p> <p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListCoreNetworkEndpoints">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCoreNetworkEndpointsOutcome ListCoreNetworkEndpoints(const Model::ListCoreNetworkEndpointsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListCoreNetworkEndpoints that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListCoreNetworkEndpointsRequestT = Model::ListCoreNetworkEndpointsRequest>
+  Model::ListCoreNetworkEndpointsOutcomeCallable ListCoreNetworkEndpointsCallable(
+      const ListCoreNetworkEndpointsRequestT& request = {}) const {
+    return SubmitCallable(&Route53GlobalResolverClient::ListCoreNetworkEndpoints, request);
+  }
+
+  /**
+   * An Async wrapper for ListCoreNetworkEndpoints that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListCoreNetworkEndpointsRequestT = Model::ListCoreNetworkEndpointsRequest>
+  void ListCoreNetworkEndpointsAsync(const ListCoreNetworkEndpointsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const ListCoreNetworkEndpointsRequestT& request = {}) const {
+    return SubmitAsync(&Route53GlobalResolverClient::ListCoreNetworkEndpoints, request, handler, context);
   }
 
   /**
@@ -1474,6 +1611,41 @@ class AWS_ROUTE53GLOBALRESOLVER_API Route53GlobalResolverClient
   void UpdateAccessTokenAsync(const UpdateAccessTokenRequestT& request, const UpdateAccessTokenResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&Route53GlobalResolverClient::UpdateAccessToken, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of a core network endpoint. You can change the name
+   * and modify the IP addresses that the endpoint uses for DNS resolution.</p>
+   *  <p>Route 53 Global Resolver is a global service that supports
+   * resolvers in multiple Amazon Web Services Regions, but you must specify the US
+   * East (Ohio) Region to create, update, or otherwise work with Route 53 Global
+   * Resolver resources. That is, for example, specify <code>--region
+   * us-east-2</code> on Amazon Web Services CLI commands.</p> <p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateCoreNetworkEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCoreNetworkEndpointOutcome UpdateCoreNetworkEndpoint(const Model::UpdateCoreNetworkEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCoreNetworkEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateCoreNetworkEndpointRequestT = Model::UpdateCoreNetworkEndpointRequest>
+  Model::UpdateCoreNetworkEndpointOutcomeCallable UpdateCoreNetworkEndpointCallable(
+      const UpdateCoreNetworkEndpointRequestT& request) const {
+    return SubmitCallable(&Route53GlobalResolverClient::UpdateCoreNetworkEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCoreNetworkEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateCoreNetworkEndpointRequestT = Model::UpdateCoreNetworkEndpointRequest>
+  void UpdateCoreNetworkEndpointAsync(const UpdateCoreNetworkEndpointRequestT& request,
+                                      const UpdateCoreNetworkEndpointResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53GlobalResolverClient::UpdateCoreNetworkEndpoint, request, handler, context);
   }
 
   /**

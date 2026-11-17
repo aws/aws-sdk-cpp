@@ -76,7 +76,8 @@ class AmiAggregationResponse {
    * <p>The cloud service provider associated with this Amazon Machine Image (AMI)
    * aggregation. Valid values:</p> <ul> <li> <p> <code>AWS</code> – Findings from
    * Amazon Web Services resources.</p> </li> <li> <p> <code>AZURE</code> – Findings
-   * from Microsoft Azure resources.</p> </li> </ul>
+   * from Microsoft Azure resources.</p> </li> <li> <p> <code>GCP</code> – Findings
+   * from Google Cloud Platform (GCP) resources.</p> </li> </ul>
    */
   inline Provider GetCloudProvider() const { return m_cloudProvider; }
   inline bool CloudProviderHasBeenSet() const { return m_cloudProviderHasBeenSet; }
@@ -94,10 +95,10 @@ class AmiAggregationResponse {
   /**
    * <p>The cloud infrastructure partition associated with this AMI aggregation.
    * Valid values:</p> <ul> <li> <p> <code>aws</code> – Amazon Web Services
-   * commercial Regions.</p> </li> <li> <p> <code>aws-cn</code> �� Amazon Web
-   * Services China Regions.</p> </li> <li> <p> <code>aws-us-gov</code> – Amazon Web
-   * Services GovCloud (US) Regions.</p> </li> <li> <p> <code>AzureCloud</code> –
-   * Azure commercial Regions.</p> </li> </ul>
+   * commercial Regions.</p> </li> <li> <p> <code>aws-cn</code> – Amazon Web Services
+   * China Regions.</p> </li> <li> <p> <code>aws-us-gov</code> – Amazon Web Services
+   * GovCloud (US) Regions.</p> </li> <li> <p> <code>AzureCloud</code> – Azure
+   * commercial Regions.</p> </li> </ul>
    */
   inline const Aws::String& GetCloudPartition() const { return m_cloudPartition; }
   inline bool CloudPartitionHasBeenSet() const { return m_cloudPartitionHasBeenSet; }
@@ -118,7 +119,9 @@ class AmiAggregationResponse {
    * <p>The cloud Region associated with this AMI aggregation. The value format
    * depends on the cloud provider:</p> <ul> <li> <p>An Amazon Web Services Region,
    * such as <code>us-east-1</code>.</p> </li> <li> <p>An Azure region, such as
-   * <code>eastus</code>.</p> </li> </ul>
+   * <code>eastus</code>.</p> </li> <li> <p>A Google Cloud Platform (GCP) location,
+   * such as the region <code>us-central1</code> or the zone
+   * <code>us-central1-a</code>.</p> </li> </ul>
    */
   inline const Aws::String& GetCloudRegion() const { return m_cloudRegion; }
   inline bool CloudRegionHasBeenSet() const { return m_cloudRegionHasBeenSet; }

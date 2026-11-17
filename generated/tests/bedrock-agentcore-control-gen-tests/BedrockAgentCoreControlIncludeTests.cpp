@@ -23,6 +23,11 @@
 #include <aws/bedrock-agentcore-control/model/AddDatasetExamplesRequest.h>
 #include <aws/bedrock-agentcore-control/model/AddDatasetExamplesResult.h>
 #include <aws/bedrock-agentcore-control/model/AgentCardDefinition.h>
+#include <aws/bedrock-agentcore-control/model/AgentInsightStoreEnablementStatus.h>
+#include <aws/bedrock-agentcore-control/model/AgentInsightStoreEncryptionConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/AgentInsightStoreEncryptionMode.h>
+#include <aws/bedrock-agentcore-control/model/AgentInsightStoreStatus.h>
+#include <aws/bedrock-agentcore-control/model/AgentInsightStoreSummary.h>
 #include <aws/bedrock-agentcore-control/model/AgentManagedRuntimeType.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntime.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
@@ -297,6 +302,10 @@
 #include <aws/bedrock-agentcore-control/model/EvaluatorStatus.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorSummary.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorType.h>
+#include <aws/bedrock-agentcore-control/model/ExampleCountByField.h>
+#include <aws/bedrock-agentcore-control/model/ExampleCountByFieldCondition.h>
+#include <aws/bedrock-agentcore-control/model/ExampleField.h>
+#include <aws/bedrock-agentcore-control/model/ExampleFieldCondition.h>
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
 #include <aws/bedrock-agentcore-control/model/ExtractionConfig.h>
 #include <aws/bedrock-agentcore-control/model/ExtractionConfiguration.h>
@@ -325,6 +334,8 @@
 #include <aws/bedrock-agentcore-control/model/GatewayStatus.h>
 #include <aws/bedrock-agentcore-control/model/GatewaySummary.h>
 #include <aws/bedrock-agentcore-control/model/GatewayTarget.h>
+#include <aws/bedrock-agentcore-control/model/GetAgentInsightStoreRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetAgentInsightStoreResult.h>
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeRequest.h>
@@ -500,6 +511,9 @@
 #include <aws/bedrock-agentcore-control/model/LimitEntry.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigOutput.h>
+#include <aws/bedrock-agentcore-control/model/ListAgentInsightStoresPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListAgentInsightStoresRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListAgentInsightStoresResult.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsResult.h>
@@ -536,12 +550,15 @@
 #include <aws/bedrock-agentcore-control/model/ListConsentPortalsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListConsentPortalsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListConsentPortalsResult.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetExamplesFilter.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetExamplesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetExamplesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetExamplesResult.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetVersionsFilter.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetVersionsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetVersionsResult.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetsFilter.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListDatasetsResult.h>
@@ -852,6 +869,8 @@
 #include <aws/bedrock-agentcore-control/model/Unit.h>
 #include <aws/bedrock-agentcore-control/model/UntagResourceRequest.h>
 #include <aws/bedrock-agentcore-control/model/UntagResourceResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdateAgentInsightStoreRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateAgentInsightStoreResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeRequest.h>

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/controltower/model/EnabledBaselineInheritanceDrift.h>
+#include <aws/controltower/model/EnabledBaselineSourceDrift.h>
 
 #include <utility>
 
@@ -68,9 +69,31 @@ class EnabledBaselineDriftTypes {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Source drift occurs when an enabled baseline no longer matches the landing
+   * zone's configuration.</p>
+   */
+  inline const EnabledBaselineSourceDrift& GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  template <typename SourceT = EnabledBaselineSourceDrift>
+  void SetSource(SourceT&& value) {
+    m_sourceHasBeenSet = true;
+    m_source = std::forward<SourceT>(value);
+  }
+  template <typename SourceT = EnabledBaselineSourceDrift>
+  EnabledBaselineDriftTypes& WithSource(SourceT&& value) {
+    SetSource(std::forward<SourceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EnabledBaselineInheritanceDrift m_inheritance;
+
+  EnabledBaselineSourceDrift m_source;
   bool m_inheritanceHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -21,7 +21,7 @@ namespace Model {
 
 /**
  * <p>Information about the property value used in automation of a numeric
- * questions. Label values are associated with minimum and maximum values for the
+ * question. Label values are associated with minimum and maximum values for the
  * numeric question.</p> <ul> <li> <p>Sentiment scores have a minimum value of -5
  * and maximum value of 5.</p> </li> <li> <p> Duration labels, such as
  * <code>NON_TALK_TIME</code>, <code>CONTACT_DURATION</code>,

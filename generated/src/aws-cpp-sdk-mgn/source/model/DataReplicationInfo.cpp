@@ -53,6 +53,10 @@ DataReplicationInfo& DataReplicationInfo::operator=(JsonView jsonValue) {
     m_replicatorId = jsonValue.GetString("replicatorId");
     m_replicatorIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("stagingOutpostArn")) {
+    m_stagingOutpostArn = jsonValue.GetString("stagingOutpostArn");
+    m_stagingOutpostArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +97,10 @@ JsonValue DataReplicationInfo::Jsonize() const {
 
   if (m_replicatorIdHasBeenSet) {
     payload.WithString("replicatorId", m_replicatorId);
+  }
+
+  if (m_stagingOutpostArnHasBeenSet) {
+    payload.WithString("stagingOutpostArn", m_stagingOutpostArn);
   }
 
   return payload;

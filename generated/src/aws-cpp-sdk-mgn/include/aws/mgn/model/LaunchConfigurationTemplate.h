@@ -123,6 +123,24 @@ class LaunchConfigurationTemplate {
 
   ///@{
   /**
+   * <p>Launch configuration template map auto tagging key.</p>
+   */
+  inline const Aws::String& GetMapAutoTaggingKey() const { return m_mapAutoTaggingKey; }
+  inline bool MapAutoTaggingKeyHasBeenSet() const { return m_mapAutoTaggingKeyHasBeenSet; }
+  template <typename MapAutoTaggingKeyT = Aws::String>
+  void SetMapAutoTaggingKey(MapAutoTaggingKeyT&& value) {
+    m_mapAutoTaggingKeyHasBeenSet = true;
+    m_mapAutoTaggingKey = std::forward<MapAutoTaggingKeyT>(value);
+  }
+  template <typename MapAutoTaggingKeyT = Aws::String>
+  LaunchConfigurationTemplate& WithMapAutoTaggingKey(MapAutoTaggingKeyT&& value) {
+    SetMapAutoTaggingKey(std::forward<MapAutoTaggingKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Tags of the Launch Configuration Template.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -389,6 +407,8 @@ class LaunchConfigurationTemplate {
 
   Aws::String m_mapAutoTaggingMpeID;
 
+  Aws::String m_mapAutoTaggingKey;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_ec2LaunchTemplateID;
@@ -423,6 +443,7 @@ class LaunchConfigurationTemplate {
   bool m_postLaunchActionsHasBeenSet = false;
   bool m_enableMapAutoTaggingHasBeenSet = false;
   bool m_mapAutoTaggingMpeIDHasBeenSet = false;
+  bool m_mapAutoTaggingKeyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_ec2LaunchTemplateIDHasBeenSet = false;
   bool m_launchDispositionHasBeenSet = false;

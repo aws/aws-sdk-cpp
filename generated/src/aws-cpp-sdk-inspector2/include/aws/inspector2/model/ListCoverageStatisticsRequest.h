@@ -51,7 +51,11 @@ class ListCoverageStatisticsRequest : public Inspector2Request {
 
   ///@{
   /**
-   * <p>The value to group the results by.</p>
+   * <p>The value to group the results by. For multi-cloud resources, use
+   * <code>PROVIDER</code>, <code>PROVIDER_ACCOUNT_ID</code> (Azure subscription ID
+   * or Google Cloud Platform (GCP) project ID), <code>PROVIDER_ORG_ID</code> (Azure
+   * tenant ID or Google Cloud Platform (GCP) organization ID), or
+   * <code>PROVIDER_REGION</code>.</p>
    */
   inline GroupKey GetGroupBy() const { return m_groupBy; }
   inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }

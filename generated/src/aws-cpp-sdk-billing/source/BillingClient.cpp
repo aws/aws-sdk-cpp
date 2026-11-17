@@ -34,7 +34,9 @@
 #include <aws/billing/model/ListSourceViewsForBillingViewRequest.h>
 #include <aws/billing/model/ListTagsForResourceRequest.h>
 #include <aws/billing/model/RedeemCreditsRequest.h>
+#include <aws/billing/model/SplitCreditRequest.h>
 #include <aws/billing/model/TagResourceRequest.h>
+#include <aws/billing/model/TransferCreditRequest.h>
 #include <aws/billing/model/UntagResourceRequest.h>
 #include <aws/billing/model/UpdateBillingPreferencesRequest.h>
 #include <aws/billing/model/UpdateBillingViewRequest.h>
@@ -378,9 +380,19 @@ RedeemCreditsOutcome BillingClient::RedeemCredits(const RedeemCreditsRequest& re
   return result.IsSuccess() ? RedeemCreditsOutcome(result.GetResultWithOwnership()) : RedeemCreditsOutcome(std::move(result.GetError()));
 }
 
+SplitCreditOutcome BillingClient::SplitCredit(const SplitCreditRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SplitCreditOutcome(result.GetResultWithOwnership()) : SplitCreditOutcome(std::move(result.GetError()));
+}
+
 TagResourceOutcome BillingClient::TagResource(const TagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
+}
+
+TransferCreditOutcome BillingClient::TransferCredit(const TransferCreditRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TransferCreditOutcome(result.GetResultWithOwnership()) : TransferCreditOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome BillingClient::UntagResource(const UntagResourceRequest& request) const {

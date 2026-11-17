@@ -18,7 +18,10 @@ enum class AggregationResourceType {
   CODE_REPOSITORY,
   Microsoft_Compute_virtualMachines,
   Microsoft_ContainerRegistry_registry_containerImage,
-  Microsoft_Web_sites
+  Microsoft_Web_sites,
+  cloudfunctions_googleapis_com_Function,
+  compute_googleapis_com_Instance,
+  artifactregistry_googleapis_com_DockerImage
 };
 
 namespace AggregationResourceTypeMapper {

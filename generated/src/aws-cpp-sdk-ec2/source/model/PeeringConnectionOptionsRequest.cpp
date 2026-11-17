@@ -43,6 +43,18 @@ PeeringConnectionOptionsRequest& PeeringConnectionOptionsRequest::operator=(cons
               .c_str());
       m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet = true;
     }
+    XmlNode allowMultipathResilienceNode = resultNode.FirstChild("AllowMultipathResilience");
+    if (!allowMultipathResilienceNode.IsNull()) {
+      m_allowMultipathResilience = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowMultipathResilienceNode.GetText()).c_str()).c_str());
+      m_allowMultipathResilienceHasBeenSet = true;
+    }
+    XmlNode multipathResilienceModeNode = resultNode.FirstChild("MultipathResilienceMode");
+    if (!multipathResilienceModeNode.IsNull()) {
+      m_multipathResilienceMode = MultipathResilienceModeMapper::GetMultipathResilienceModeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multipathResilienceModeNode.GetText()).c_str()));
+      m_multipathResilienceModeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -64,6 +76,15 @@ void PeeringConnectionOptionsRequest::OutputToStream(Aws::OStream& oStream, cons
     oStream << location << index << locationValue << ".AllowEgressFromLocalVpcToRemoteClassicLink=" << std::boolalpha
             << m_allowEgressFromLocalVpcToRemoteClassicLink << "&";
   }
+
+  if (m_allowMultipathResilienceHasBeenSet) {
+    oStream << location << index << locationValue << ".AllowMultipathResilience=" << std::boolalpha << m_allowMultipathResilience << "&";
+  }
+
+  if (m_multipathResilienceModeHasBeenSet) {
+    oStream << location << index << locationValue << ".MultipathResilienceMode="
+            << StringUtils::URLEncode(MultipathResilienceModeMapper::GetNameForMultipathResilienceMode(m_multipathResilienceMode)) << "&";
+  }
 }
 
 void PeeringConnectionOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -77,6 +98,13 @@ void PeeringConnectionOptionsRequest::OutputToStream(Aws::OStream& oStream, cons
   if (m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet) {
     oStream << location << ".AllowEgressFromLocalVpcToRemoteClassicLink=" << std::boolalpha << m_allowEgressFromLocalVpcToRemoteClassicLink
             << "&";
+  }
+  if (m_allowMultipathResilienceHasBeenSet) {
+    oStream << location << ".AllowMultipathResilience=" << std::boolalpha << m_allowMultipathResilience << "&";
+  }
+  if (m_multipathResilienceModeHasBeenSet) {
+    oStream << location << ".MultipathResilienceMode="
+            << StringUtils::URLEncode(MultipathResilienceModeMapper::GetNameForMultipathResilienceMode(m_multipathResilienceMode)) << "&";
   }
 }
 

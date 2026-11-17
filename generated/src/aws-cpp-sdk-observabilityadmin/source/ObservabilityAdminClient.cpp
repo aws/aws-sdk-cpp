@@ -21,18 +21,23 @@
 #include <aws/observabilityadmin/ObservabilityAdminEndpointProvider.h>
 #include <aws/observabilityadmin/ObservabilityAdminErrorMarshaller.h>
 #include <aws/observabilityadmin/model/CreateCentralizationRuleForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/CreateConnectorRequest.h>
 #include <aws/observabilityadmin/model/CreateDatasetIntegrationRequest.h>
 #include <aws/observabilityadmin/model/CreateS3TableIntegrationRequest.h>
 #include <aws/observabilityadmin/model/CreateTelemetryPipelineRequest.h>
 #include <aws/observabilityadmin/model/CreateTelemetryRuleForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/CreateTelemetryRuleRequest.h>
 #include <aws/observabilityadmin/model/DeleteCentralizationRuleForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/DeleteConnectorRequest.h>
 #include <aws/observabilityadmin/model/DeleteDatasetIntegrationRequest.h>
 #include <aws/observabilityadmin/model/DeleteS3TableIntegrationRequest.h>
 #include <aws/observabilityadmin/model/DeleteTelemetryPipelineRequest.h>
 #include <aws/observabilityadmin/model/DeleteTelemetryRuleForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/DeleteTelemetryRuleRequest.h>
 #include <aws/observabilityadmin/model/GetCentralizationRuleForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/GetConnectorRequest.h>
+#include <aws/observabilityadmin/model/GetConnectorTelemetryManifestRequest.h>
+#include <aws/observabilityadmin/model/GetConnectorTelemetrySetupRequest.h>
 #include <aws/observabilityadmin/model/GetDatasetIntegrationRequest.h>
 #include <aws/observabilityadmin/model/GetS3TableIntegrationRequest.h>
 #include <aws/observabilityadmin/model/GetTelemetryEnrichmentStatusRequest.h>
@@ -41,21 +46,29 @@
 #include <aws/observabilityadmin/model/GetTelemetryPipelineRequest.h>
 #include <aws/observabilityadmin/model/GetTelemetryRuleForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/GetTelemetryRuleRequest.h>
+#include <aws/observabilityadmin/model/GetThirdPartyTelemetryEnrichmentRequest.h>
 #include <aws/observabilityadmin/model/ListCentralizationRulesForOrganizationRequest.h>
+#include <aws/observabilityadmin/model/ListConnectorsRequest.h>
 #include <aws/observabilityadmin/model/ListDatasetIntegrationsRequest.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryRequest.h>
+#include <aws/observabilityadmin/model/ListResourcesByConnectorRequest.h>
 #include <aws/observabilityadmin/model/ListS3TableIntegrationsRequest.h>
 #include <aws/observabilityadmin/model/ListTagsForResourceRequest.h>
 #include <aws/observabilityadmin/model/ListTelemetryPipelinesRequest.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesRequest.h>
+#include <aws/observabilityadmin/model/ListThirdPartyTelemetryEnrichmentsRequest.h>
+#include <aws/observabilityadmin/model/PutConnectorTelemetryManifestRequest.h>
 #include <aws/observabilityadmin/model/StartTelemetryEnrichmentRequest.h>
 #include <aws/observabilityadmin/model/StartTelemetryEvaluationForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/StartTelemetryEvaluationRequest.h>
+#include <aws/observabilityadmin/model/StartTelemetryPipelineRefreshRequest.h>
+#include <aws/observabilityadmin/model/StartThirdPartyTelemetryEnrichmentRequest.h>
 #include <aws/observabilityadmin/model/StopTelemetryEnrichmentRequest.h>
 #include <aws/observabilityadmin/model/StopTelemetryEvaluationForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/StopTelemetryEvaluationRequest.h>
+#include <aws/observabilityadmin/model/StopThirdPartyTelemetryEnrichmentRequest.h>
 #include <aws/observabilityadmin/model/TagResourceRequest.h>
 #include <aws/observabilityadmin/model/TestTelemetryPipelineRequest.h>
 #include <aws/observabilityadmin/model/UntagResourceRequest.h>
@@ -237,6 +250,17 @@ CreateCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::CreateC
                             : CreateCentralizationRuleForOrganizationOutcome(std::move(result.GetError()));
 }
 
+CreateConnectorOutcome ObservabilityAdminClient::CreateConnector(const CreateConnectorRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/CreateConnector");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectorOutcome(result.GetResultWithOwnership())
+                            : CreateConnectorOutcome(std::move(result.GetError()));
+}
+
 CreateDatasetIntegrationOutcome ObservabilityAdminClient::CreateDatasetIntegration(const CreateDatasetIntegrationRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -305,6 +329,17 @@ DeleteCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::DeleteC
                             : DeleteCentralizationRuleForOrganizationOutcome(std::move(result.GetError()));
 }
 
+DeleteConnectorOutcome ObservabilityAdminClient::DeleteConnector(const DeleteConnectorRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteConnector");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectorOutcome(std::move(result.GetError()));
+}
+
 DeleteDatasetIntegrationOutcome ObservabilityAdminClient::DeleteDatasetIntegration(const DeleteDatasetIntegrationRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -371,6 +406,40 @@ GetCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::GetCentral
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetCentralizationRuleForOrganizationOutcome(result.GetResultWithOwnership())
                             : GetCentralizationRuleForOrganizationOutcome(std::move(result.GetError()));
+}
+
+GetConnectorOutcome ObservabilityAdminClient::GetConnector(const GetConnectorRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetConnector");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConnectorOutcome(result.GetResultWithOwnership()) : GetConnectorOutcome(std::move(result.GetError()));
+}
+
+GetConnectorTelemetryManifestOutcome ObservabilityAdminClient::GetConnectorTelemetryManifest(
+    const GetConnectorTelemetryManifestRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetConnectorTelemetryManifest");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConnectorTelemetryManifestOutcome(result.GetResultWithOwnership())
+                            : GetConnectorTelemetryManifestOutcome(std::move(result.GetError()));
+}
+
+GetConnectorTelemetrySetupOutcome ObservabilityAdminClient::GetConnectorTelemetrySetup(
+    const GetConnectorTelemetrySetupRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetConnectorTelemetrySetup");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConnectorTelemetrySetupOutcome(result.GetResultWithOwnership())
+                            : GetConnectorTelemetrySetupOutcome(std::move(result.GetError()));
 }
 
 GetDatasetIntegrationOutcome ObservabilityAdminClient::GetDatasetIntegration(const GetDatasetIntegrationRequest& request) const {
@@ -465,6 +534,18 @@ GetTelemetryRuleForOrganizationOutcome ObservabilityAdminClient::GetTelemetryRul
                             : GetTelemetryRuleForOrganizationOutcome(std::move(result.GetError()));
 }
 
+GetThirdPartyTelemetryEnrichmentOutcome ObservabilityAdminClient::GetThirdPartyTelemetryEnrichment(
+    const GetThirdPartyTelemetryEnrichmentRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetThirdPartyTelemetryEnrichment");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetThirdPartyTelemetryEnrichmentOutcome(result.GetResultWithOwnership())
+                            : GetThirdPartyTelemetryEnrichmentOutcome(std::move(result.GetError()));
+}
+
 ListCentralizationRulesForOrganizationOutcome ObservabilityAdminClient::ListCentralizationRulesForOrganization(
     const ListCentralizationRulesForOrganizationRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -475,6 +556,16 @@ ListCentralizationRulesForOrganizationOutcome ObservabilityAdminClient::ListCent
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListCentralizationRulesForOrganizationOutcome(result.GetResultWithOwnership())
                             : ListCentralizationRulesForOrganizationOutcome(std::move(result.GetError()));
+}
+
+ListConnectorsOutcome ObservabilityAdminClient::ListConnectors(const ListConnectorsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListConnectors");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectorsOutcome(result.GetResultWithOwnership()) : ListConnectorsOutcome(std::move(result.GetError()));
 }
 
 ListDatasetIntegrationsOutcome ObservabilityAdminClient::ListDatasetIntegrations(const ListDatasetIntegrationsRequest& request) const {
@@ -509,6 +600,17 @@ ListResourceTelemetryForOrganizationOutcome ObservabilityAdminClient::ListResour
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListResourceTelemetryForOrganizationOutcome(result.GetResultWithOwnership())
                             : ListResourceTelemetryForOrganizationOutcome(std::move(result.GetError()));
+}
+
+ListResourcesByConnectorOutcome ObservabilityAdminClient::ListResourcesByConnector(const ListResourcesByConnectorRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListResourcesByConnector");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourcesByConnectorOutcome(result.GetResultWithOwnership())
+                            : ListResourcesByConnectorOutcome(std::move(result.GetError()));
 }
 
 ListS3TableIntegrationsOutcome ObservabilityAdminClient::ListS3TableIntegrations(const ListS3TableIntegrationsRequest& request) const {
@@ -567,6 +669,30 @@ ListTelemetryRulesForOrganizationOutcome ObservabilityAdminClient::ListTelemetry
                             : ListTelemetryRulesForOrganizationOutcome(std::move(result.GetError()));
 }
 
+ListThirdPartyTelemetryEnrichmentsOutcome ObservabilityAdminClient::ListThirdPartyTelemetryEnrichments(
+    const ListThirdPartyTelemetryEnrichmentsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListThirdPartyTelemetryEnrichments");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListThirdPartyTelemetryEnrichmentsOutcome(result.GetResultWithOwnership())
+                            : ListThirdPartyTelemetryEnrichmentsOutcome(std::move(result.GetError()));
+}
+
+PutConnectorTelemetryManifestOutcome ObservabilityAdminClient::PutConnectorTelemetryManifest(
+    const PutConnectorTelemetryManifestRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/PutConnectorTelemetryManifest");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutConnectorTelemetryManifestOutcome(result.GetResultWithOwnership())
+                            : PutConnectorTelemetryManifestOutcome(std::move(result.GetError()));
+}
+
 StartTelemetryEnrichmentOutcome ObservabilityAdminClient::StartTelemetryEnrichment(const StartTelemetryEnrichmentRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -601,6 +727,30 @@ StartTelemetryEvaluationForOrganizationOutcome ObservabilityAdminClient::StartTe
                             : StartTelemetryEvaluationForOrganizationOutcome(std::move(result.GetError()));
 }
 
+StartTelemetryPipelineRefreshOutcome ObservabilityAdminClient::StartTelemetryPipelineRefresh(
+    const StartTelemetryPipelineRefreshRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/StartTelemetryPipelineRefresh");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTelemetryPipelineRefreshOutcome(result.GetResultWithOwnership())
+                            : StartTelemetryPipelineRefreshOutcome(std::move(result.GetError()));
+}
+
+StartThirdPartyTelemetryEnrichmentOutcome ObservabilityAdminClient::StartThirdPartyTelemetryEnrichment(
+    const StartThirdPartyTelemetryEnrichmentRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/StartThirdPartyTelemetryEnrichment");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartThirdPartyTelemetryEnrichmentOutcome(result.GetResultWithOwnership())
+                            : StartThirdPartyTelemetryEnrichmentOutcome(std::move(result.GetError()));
+}
+
 StopTelemetryEnrichmentOutcome ObservabilityAdminClient::StopTelemetryEnrichment(const StopTelemetryEnrichmentRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -633,6 +783,18 @@ StopTelemetryEvaluationForOrganizationOutcome ObservabilityAdminClient::StopTele
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StopTelemetryEvaluationForOrganizationOutcome(result.GetResultWithOwnership())
                             : StopTelemetryEvaluationForOrganizationOutcome(std::move(result.GetError()));
+}
+
+StopThirdPartyTelemetryEnrichmentOutcome ObservabilityAdminClient::StopThirdPartyTelemetryEnrichment(
+    const StopThirdPartyTelemetryEnrichmentRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/StopThirdPartyTelemetryEnrichment");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopThirdPartyTelemetryEnrichmentOutcome(result.GetResultWithOwnership())
+                            : StopThirdPartyTelemetryEnrichmentOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ObservabilityAdminClient::TagResource(const TagResourceRequest& request) const {

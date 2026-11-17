@@ -21,17 +21,22 @@
 #include <aws/kinesis/KinesisClient.h>
 #include <aws/kinesis/KinesisEndpointProvider.h>
 #include <aws/kinesis/KinesisErrorMarshaller.h>
+#include <aws/kinesis/model/AcknowledgeDeadLetterQueueRecordsRequest.h>
+#include <aws/kinesis/model/AcknowledgeQueueRecordsRequest.h>
 #include <aws/kinesis/model/AddTagsToStreamRequest.h>
 #include <aws/kinesis/model/CreateChannelRequest.h>
+#include <aws/kinesis/model/CreateQueueRequest.h>
 #include <aws/kinesis/model/CreateStreamRequest.h>
 #include <aws/kinesis/model/DecreaseStreamRetentionPeriodRequest.h>
 #include <aws/kinesis/model/DeleteChannelRequest.h>
+#include <aws/kinesis/model/DeleteQueueRequest.h>
 #include <aws/kinesis/model/DeleteResourcePolicyRequest.h>
 #include <aws/kinesis/model/DeleteStreamRequest.h>
 #include <aws/kinesis/model/DeregisterStreamConsumerRequest.h>
 #include <aws/kinesis/model/DescribeAccountSettingsRequest.h>
 #include <aws/kinesis/model/DescribeChannelRequest.h>
 #include <aws/kinesis/model/DescribeLimitsRequest.h>
+#include <aws/kinesis/model/DescribeQueueRequest.h>
 #include <aws/kinesis/model/DescribeStreamConsumerRequest.h>
 #include <aws/kinesis/model/DescribeStreamRequest.h>
 #include <aws/kinesis/model/DescribeStreamSummaryRequest.h>
@@ -42,6 +47,7 @@
 #include <aws/kinesis/model/GetShardIteratorRequest.h>
 #include <aws/kinesis/model/IncreaseStreamRetentionPeriodRequest.h>
 #include <aws/kinesis/model/ListChannelsRequest.h>
+#include <aws/kinesis/model/ListQueuesRequest.h>
 #include <aws/kinesis/model/ListShardsRequest.h>
 #include <aws/kinesis/model/ListStreamConsumersRequest.h>
 #include <aws/kinesis/model/ListStreamsRequest.h>
@@ -51,8 +57,11 @@
 #include <aws/kinesis/model/PutRecordRequest.h>
 #include <aws/kinesis/model/PutRecordsRequest.h>
 #include <aws/kinesis/model/PutResourcePolicyRequest.h>
+#include <aws/kinesis/model/ReceiveDeadLetterQueueRecordsRequest.h>
+#include <aws/kinesis/model/ReceiveQueueRecordsRequest.h>
 #include <aws/kinesis/model/RegisterStreamConsumerRequest.h>
 #include <aws/kinesis/model/RemoveTagsFromStreamRequest.h>
+#include <aws/kinesis/model/RestoreDeadLetterQueueRecordsRequest.h>
 #include <aws/kinesis/model/SplitShardRequest.h>
 #include <aws/kinesis/model/StartStreamEncryptionRequest.h>
 #include <aws/kinesis/model/StopStreamEncryptionRequest.h>
@@ -61,7 +70,10 @@
 #include <aws/kinesis/model/UntagResourceRequest.h>
 #include <aws/kinesis/model/UpdateAccountSettingsRequest.h>
 #include <aws/kinesis/model/UpdateChannelRequest.h>
+#include <aws/kinesis/model/UpdateDeadLetterQueueRecordsVisibilityRequest.h>
 #include <aws/kinesis/model/UpdateMaxRecordSizeRequest.h>
+#include <aws/kinesis/model/UpdateQueueRecordsVisibilityRequest.h>
+#include <aws/kinesis/model/UpdateQueueRequest.h>
 #include <aws/kinesis/model/UpdateShardCountRequest.h>
 #include <aws/kinesis/model/UpdateStreamModeRequest.h>
 #include <aws/kinesis/model/UpdateStreamRecordDistributionStrategyRequest.h>
@@ -218,6 +230,19 @@ KinesisClient::InvokeOperationOutcome KinesisClient::InvokeServiceOperation(cons
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+AcknowledgeDeadLetterQueueRecordsOutcome KinesisClient::AcknowledgeDeadLetterQueueRecords(
+    const AcknowledgeDeadLetterQueueRecordsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcknowledgeDeadLetterQueueRecordsOutcome(result.GetResultWithOwnership())
+                            : AcknowledgeDeadLetterQueueRecordsOutcome(std::move(result.GetError()));
+}
+
+AcknowledgeQueueRecordsOutcome KinesisClient::AcknowledgeQueueRecords(const AcknowledgeQueueRecordsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcknowledgeQueueRecordsOutcome(result.GetResultWithOwnership())
+                            : AcknowledgeQueueRecordsOutcome(std::move(result.GetError()));
+}
+
 AddTagsToStreamOutcome KinesisClient::AddTagsToStream(const AddTagsToStreamRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AddTagsToStreamOutcome(result.GetResultWithOwnership())
@@ -227,6 +252,11 @@ AddTagsToStreamOutcome KinesisClient::AddTagsToStream(const AddTagsToStreamReque
 CreateChannelOutcome KinesisClient::CreateChannel(const CreateChannelRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateChannelOutcome(result.GetResultWithOwnership()) : CreateChannelOutcome(std::move(result.GetError()));
+}
+
+CreateQueueOutcome KinesisClient::CreateQueue(const CreateQueueRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQueueOutcome(result.GetResultWithOwnership()) : CreateQueueOutcome(std::move(result.GetError()));
 }
 
 CreateStreamOutcome KinesisClient::CreateStream(const CreateStreamRequest& request) const {
@@ -244,6 +274,11 @@ DecreaseStreamRetentionPeriodOutcome KinesisClient::DecreaseStreamRetentionPerio
 DeleteChannelOutcome KinesisClient::DeleteChannel(const DeleteChannelRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteChannelOutcome(result.GetResultWithOwnership()) : DeleteChannelOutcome(std::move(result.GetError()));
+}
+
+DeleteQueueOutcome KinesisClient::DeleteQueue(const DeleteQueueRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteQueueOutcome(result.GetResultWithOwnership()) : DeleteQueueOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome KinesisClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -278,6 +313,11 @@ DescribeChannelOutcome KinesisClient::DescribeChannel(const DescribeChannelReque
 DescribeLimitsOutcome KinesisClient::DescribeLimits(const DescribeLimitsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeLimitsOutcome(result.GetResultWithOwnership()) : DescribeLimitsOutcome(std::move(result.GetError()));
+}
+
+DescribeQueueOutcome KinesisClient::DescribeQueue(const DescribeQueueRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeQueueOutcome(result.GetResultWithOwnership()) : DescribeQueueOutcome(std::move(result.GetError()));
 }
 
 DescribeStreamOutcome KinesisClient::DescribeStream(const DescribeStreamRequest& request) const {
@@ -338,6 +378,11 @@ ListChannelsOutcome KinesisClient::ListChannels(const ListChannelsRequest& reque
   return result.IsSuccess() ? ListChannelsOutcome(result.GetResultWithOwnership()) : ListChannelsOutcome(std::move(result.GetError()));
 }
 
+ListQueuesOutcome KinesisClient::ListQueues(const ListQueuesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListQueuesOutcome(result.GetResultWithOwnership()) : ListQueuesOutcome(std::move(result.GetError()));
+}
+
 ListShardsOutcome KinesisClient::ListShards(const ListShardsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListShardsOutcome(result.GetResultWithOwnership()) : ListShardsOutcome(std::move(result.GetError()));
@@ -387,6 +432,19 @@ PutResourcePolicyOutcome KinesisClient::PutResourcePolicy(const PutResourcePolic
                             : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
+ReceiveDeadLetterQueueRecordsOutcome KinesisClient::ReceiveDeadLetterQueueRecords(
+    const ReceiveDeadLetterQueueRecordsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReceiveDeadLetterQueueRecordsOutcome(result.GetResultWithOwnership())
+                            : ReceiveDeadLetterQueueRecordsOutcome(std::move(result.GetError()));
+}
+
+ReceiveQueueRecordsOutcome KinesisClient::ReceiveQueueRecords(const ReceiveQueueRecordsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReceiveQueueRecordsOutcome(result.GetResultWithOwnership())
+                            : ReceiveQueueRecordsOutcome(std::move(result.GetError()));
+}
+
 RegisterStreamConsumerOutcome KinesisClient::RegisterStreamConsumer(const RegisterStreamConsumerRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RegisterStreamConsumerOutcome(result.GetResultWithOwnership())
@@ -397,6 +455,13 @@ RemoveTagsFromStreamOutcome KinesisClient::RemoveTagsFromStream(const RemoveTags
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RemoveTagsFromStreamOutcome(result.GetResultWithOwnership())
                             : RemoveTagsFromStreamOutcome(std::move(result.GetError()));
+}
+
+RestoreDeadLetterQueueRecordsOutcome KinesisClient::RestoreDeadLetterQueueRecords(
+    const RestoreDeadLetterQueueRecordsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreDeadLetterQueueRecordsOutcome(result.GetResultWithOwnership())
+                            : RestoreDeadLetterQueueRecordsOutcome(std::move(result.GetError()));
 }
 
 SplitShardOutcome KinesisClient::SplitShard(const SplitShardRequest& request) const {
@@ -480,10 +545,28 @@ UpdateChannelOutcome KinesisClient::UpdateChannel(const UpdateChannelRequest& re
   return result.IsSuccess() ? UpdateChannelOutcome(result.GetResultWithOwnership()) : UpdateChannelOutcome(std::move(result.GetError()));
 }
 
+UpdateDeadLetterQueueRecordsVisibilityOutcome KinesisClient::UpdateDeadLetterQueueRecordsVisibility(
+    const UpdateDeadLetterQueueRecordsVisibilityRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDeadLetterQueueRecordsVisibilityOutcome(result.GetResultWithOwnership())
+                            : UpdateDeadLetterQueueRecordsVisibilityOutcome(std::move(result.GetError()));
+}
+
 UpdateMaxRecordSizeOutcome KinesisClient::UpdateMaxRecordSize(const UpdateMaxRecordSizeRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateMaxRecordSizeOutcome(result.GetResultWithOwnership())
                             : UpdateMaxRecordSizeOutcome(std::move(result.GetError()));
+}
+
+UpdateQueueOutcome KinesisClient::UpdateQueue(const UpdateQueueRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQueueOutcome(result.GetResultWithOwnership()) : UpdateQueueOutcome(std::move(result.GetError()));
+}
+
+UpdateQueueRecordsVisibilityOutcome KinesisClient::UpdateQueueRecordsVisibility(const UpdateQueueRecordsVisibilityRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQueueRecordsVisibilityOutcome(result.GetResultWithOwnership())
+                            : UpdateQueueRecordsVisibilityOutcome(std::move(result.GetError()));
 }
 
 UpdateShardCountOutcome KinesisClient::UpdateShardCount(const UpdateShardCountRequest& request) const {

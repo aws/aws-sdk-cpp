@@ -186,7 +186,8 @@ class ContainerImageAggregation {
    * <p>The cloud providers to aggregate findings for. Valid values:</p> <ul> <li>
    * <p> <code>AWS</code> – Findings from Amazon Web Services resources.</p> </li>
    * <li> <p> <code>AZURE</code> – Findings from Microsoft Azure resources.</p> </li>
-   * </ul>
+   * <li> <p> <code>GCP</code> – Findings from Google Cloud Platform (GCP)
+   * resources.</p> </li> </ul>
    */
   inline const Aws::Vector<StringFilter>& GetCloudProviders() const { return m_cloudProviders; }
   inline bool CloudProvidersHasBeenSet() const { return m_cloudProvidersHasBeenSet; }
@@ -241,7 +242,9 @@ class ContainerImageAggregation {
    * <p>The cloud regions to aggregate findings for. The value format depends on the
    * cloud provider:</p> <ul> <li> <p>An Amazon Web Services Region, such as
    * <code>us-east-1</code>.</p> </li> <li> <p>An Azure region, such as
-   * <code>eastus</code>.</p> </li> </ul>
+   * <code>eastus</code>.</p> </li> <li> <p>A Google Cloud Platform (GCP) location,
+   * such as the region <code>us-central1</code> or the zone
+   * <code>us-central1-a</code>.</p> </li> </ul>
    */
   inline const Aws::Vector<StringFilter>& GetCloudRegions() const { return m_cloudRegions; }
   inline bool CloudRegionsHasBeenSet() const { return m_cloudRegionsHasBeenSet; }

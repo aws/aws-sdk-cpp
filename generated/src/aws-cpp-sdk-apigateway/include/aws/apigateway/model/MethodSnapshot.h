@@ -35,9 +35,9 @@ class MethodSnapshot {
   ///@{
   /**
    * <p>The method's authorization type. Valid values are <code>NONE</code> for open
-   * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
-   * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
-   * Cognito user pool.</p>
+   * access, <code>AWS_IAM</code> for using Amazon Web Services IAM permissions,
+   * <code>CUSTOM</code> for using a custom authorizer, or
+   * <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
    */
   inline const Aws::String& GetAuthorizationType() const { return m_authorizationType; }
   inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }

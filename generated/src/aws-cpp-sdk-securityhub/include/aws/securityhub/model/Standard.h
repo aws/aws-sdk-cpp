@@ -112,7 +112,7 @@ class Standard {
   ///@{
   /**
    * <p>The cloud provider whose resources the standard evaluates. For example,
-   * <code>AWS</code> or <code>Azure</code>.</p>
+   * <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
    */
   inline StandardsProvider GetProvider() const { return m_provider; }
   inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }

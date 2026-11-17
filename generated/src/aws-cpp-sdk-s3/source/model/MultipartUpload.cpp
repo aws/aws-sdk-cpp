@@ -67,6 +67,11 @@ MultipartUpload& MultipartUpload::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()));
       m_checksumTypeHasBeenSet = true;
     }
+    XmlNode versionIdNode = resultNode.FirstChild("VersionId");
+    if (!versionIdNode.IsNull()) {
+      m_versionId = Aws::Utils::Xml::DecodeEscapedXmlText(versionIdNode.GetText());
+      m_versionIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -112,6 +117,11 @@ void MultipartUpload::AddToNode(XmlNode& parentNode) const {
   if (m_checksumTypeHasBeenSet) {
     XmlNode checksumTypeNode = parentNode.CreateChildElement("ChecksumType");
     checksumTypeNode.SetText(ChecksumTypeMapper::GetNameForChecksumType(m_checksumType));
+  }
+
+  if (m_versionIdHasBeenSet) {
+    XmlNode versionIdNode = parentNode.CreateChildElement("VersionId");
+    versionIdNode.SetText(m_versionId);
   }
 }
 

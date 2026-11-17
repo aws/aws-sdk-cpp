@@ -304,6 +304,43 @@ AgreementViewSummary& AgreementViewSummary::operator=(const std::shared_ptr<Aws:
                   }
                 }
                 m_freeTrialEndTimeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "includesContactOfType") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto val = decoder->PopNextTextVal();
+                        if (val.has_value()) {
+                          m_includesContactOfType.push_back(ContactTypeMapper::GetContactTypeForName(
+                              Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len)));
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        m_includesContactOfType.push_back(ContactTypeMapper::GetContactTypeForName(
+                            Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len)));
+                      }
+                    }
+                  }
+                }
+                m_includesContactOfTypeHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -605,6 +642,43 @@ AgreementViewSummary& AgreementViewSummary::operator=(const std::shared_ptr<Aws:
                 }
               }
               m_freeTrialEndTimeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "includesContactOfType") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        m_includesContactOfType.push_back(ContactTypeMapper::GetContactTypeForName(
+                            Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len)));
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_includesContactOfType.push_back(ContactTypeMapper::GetContactTypeForName(
+                          Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len)));
+                    }
+                  }
+                }
+              }
+              m_includesContactOfTypeHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -664,6 +738,9 @@ void AgreementViewSummary::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) cons
     mapSize++;
   }
   if (m_freeTrialEndTimeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_includesContactOfTypeHasBeenSet) {
     mapSize++;
   }
 
@@ -752,6 +829,14 @@ void AgreementViewSummary::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) cons
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("freeTrialEndTime"));
     encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
     encoder.WriteUInt(m_freeTrialEndTime.Seconds());
+  }
+
+  if (m_includesContactOfTypeHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("includesContactOfType"));
+    encoder.WriteArrayStart(m_includesContactOfType.size());
+    for (const auto& item_0 : m_includesContactOfType) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(ContactTypeMapper::GetNameForContactType(item_0).c_str()));
+    }
   }
 }
 

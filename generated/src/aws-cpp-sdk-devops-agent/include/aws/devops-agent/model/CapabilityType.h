@@ -10,7 +10,13 @@
 namespace Aws {
 namespace DevOpsAgent {
 namespace Model {
-enum class CapabilityType { NOT_SET, RELEASE_READINESS_REVIEW, RELEASE_READINESS_REVIEW_AUTOMATED_TESTING };
+enum class CapabilityType {
+  NOT_SET,
+  RELEASE_READINESS_REVIEW,
+  RELEASE_READINESS_REVIEW_AUTOMATED_TESTING,
+  CODE_CHANGE_RISK_ANALYSIS,
+  CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING
+};
 
 namespace CapabilityTypeMapper {
 AWS_DEVOPSAGENT_API CapabilityType GetCapabilityTypeForName(const Aws::String& name);

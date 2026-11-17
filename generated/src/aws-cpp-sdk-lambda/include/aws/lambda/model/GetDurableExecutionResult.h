@@ -11,6 +11,7 @@
 #include <aws/lambda/model/DurableConfig.h>
 #include <aws/lambda/model/ErrorObject.h>
 #include <aws/lambda/model/ExecutionStatus.h>
+#include <aws/lambda/model/PauseDetails.h>
 #include <aws/lambda/model/TraceHeader.h>
 
 #include <utility>
@@ -171,9 +172,19 @@ class GetDurableExecutionResult {
 
   ///@{
   /**
-   * <p>The current status of the durable execution. Valid values are
-   * <code>RUNNING</code>, <code>SUCCEEDED</code>, <code>FAILED</code>,
-   * <code>TIMED_OUT</code>, and <code>STOPPED</code>.</p>
+   * <p>The durable execution has one of the following statuses:</p> <ul> <li> <p>
+   * <code>RUNNING</code> – The execution is running or waiting for pending
+   * operations to complete.</p> </li> <li> <p> <code>PAUSING</code> – The execution
+   * is waiting for an in-progress invocation to reach its next checkpoint before it
+   * pauses.</p> </li> <li> <p> <code>PAUSED</code> – The execution is paused, and
+   * Lambda doesn't invoke your function.</p> </li> <li> <p> <code>SUCCEEDED</code> –
+   * The execution completed successfully.</p> </li> <li> <p> <code>FAILED</code> –
+   * The execution completed with an error.</p> </li> <li> <p> <code>TIMED_OUT</code>
+   * – The execution exceeded its execution timeout.</p> </li> <li> <p>
+   * <code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the
+   * execution.</p> </li> <li> <p> <code>DELETING</code> – A
+   * <code>DeleteDurableExecution</code> request is deleting the execution and its
+   * data.</p> </li> </ul>
    */
   inline ExecutionStatus GetStatus() const { return m_status; }
   inline void SetStatus(ExecutionStatus value) {
@@ -281,6 +292,46 @@ class GetDurableExecutionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The details of the pause, including when you requested it and whether it
+   * pauses the execution timeout. This field is only present when the execution
+   * status is <code>PAUSING</code> or <code>PAUSED</code>.</p>
+   */
+  inline const PauseDetails& GetPauseDetails() const { return m_pauseDetails; }
+  template <typename PauseDetailsT = PauseDetails>
+  void SetPauseDetails(PauseDetailsT&& value) {
+    m_pauseDetailsHasBeenSet = true;
+    m_pauseDetails = std::forward<PauseDetailsT>(value);
+  }
+  template <typename PauseDetailsT = PauseDetails>
+  GetDurableExecutionResult& WithPauseDetails(PauseDetailsT&& value) {
+    SetPauseDetails(std::forward<PauseDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time when the durable execution will time out, in Unix timestamp
+   * format. This value includes any extension from time the execution spent paused.
+   * While the execution is paused with its execution timeout paused, this value is
+   * 366 days after the start time. This field isn't present for completed
+   * executions.</p>
+   */
+  inline const Aws::Utils::DateTime& GetExpectedExecutionTimeoutTimestamp() const { return m_expectedExecutionTimeoutTimestamp; }
+  template <typename ExpectedExecutionTimeoutTimestampT = Aws::Utils::DateTime>
+  void SetExpectedExecutionTimeoutTimestamp(ExpectedExecutionTimeoutTimestampT&& value) {
+    m_expectedExecutionTimeoutTimestampHasBeenSet = true;
+    m_expectedExecutionTimeoutTimestamp = std::forward<ExpectedExecutionTimeoutTimestampT>(value);
+  }
+  template <typename ExpectedExecutionTimeoutTimestampT = Aws::Utils::DateTime>
+  GetDurableExecutionResult& WithExpectedExecutionTimeoutTimestamp(ExpectedExecutionTimeoutTimestampT&& value) {
+    SetExpectedExecutionTimeoutTimestamp(std::forward<ExpectedExecutionTimeoutTimestampT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -323,6 +374,10 @@ class GetDurableExecutionResult {
 
   DurableConfig m_durableConfig;
 
+  PauseDetails m_pauseDetails;
+
+  Aws::Utils::DateTime m_expectedExecutionTimeoutTimestamp{};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_durableExecutionArnHasBeenSet = false;
@@ -338,6 +393,8 @@ class GetDurableExecutionResult {
   bool m_traceHeaderHasBeenSet = false;
   bool m_executionDataIncludedHasBeenSet = false;
   bool m_durableConfigHasBeenSet = false;
+  bool m_pauseDetailsHasBeenSet = false;
+  bool m_expectedExecutionTimeoutTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

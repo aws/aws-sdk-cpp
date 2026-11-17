@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityHub {
 namespace Model {
-enum class StandardsProvider { NOT_SET, AWS, Azure };
+enum class StandardsProvider { NOT_SET, AWS, Azure, GCP };
 
 namespace StandardsProviderMapper {
 AWS_SECURITYHUB_API StandardsProvider GetStandardsProviderForName(const Aws::String& name);

@@ -16,11 +16,14 @@ namespace Model {
 namespace ConnectorCloudProviderMapper {
 
 static const int AZURE_HASH = HashingUtils::HashString("AZURE");
+static const int GCP_HASH = HashingUtils::HashString("GCP");
 
 ConnectorCloudProvider GetConnectorCloudProviderForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == AZURE_HASH) {
     return ConnectorCloudProvider::AZURE;
+  } else if (hashCode == GCP_HASH) {
+    return ConnectorCloudProvider::GCP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForConnectorCloudProvider(ConnectorCloudProvider enumValue) {
       return {};
     case ConnectorCloudProvider::AZURE:
       return "AZURE";
+    case ConnectorCloudProvider::GCP:
+      return "GCP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

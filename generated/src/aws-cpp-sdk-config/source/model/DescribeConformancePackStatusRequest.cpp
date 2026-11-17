@@ -24,6 +24,10 @@ Aws::String DescribeConformancePackStatusRequest::SerializePayload() const {
     payload.WithArray("ConformancePackNames", std::move(conformancePackNamesJsonList));
   }
 
+  if (m_filtersHasBeenSet) {
+    payload.WithObject("Filters", m_filters.Jsonize());
+  }
+
   if (m_limitHasBeenSet) {
     payload.WithInteger("Limit", m_limit);
   }

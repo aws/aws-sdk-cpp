@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/DatasetSchemaType.h>
 #include <aws/bedrock-agentcore-control/model/DatasetStatus.h>
 #include <aws/bedrock-agentcore-control/model/DraftStatus.h>
+#include <aws/bedrock-agentcore-control/model/ExampleCountByField.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -218,6 +219,24 @@ class GetDatasetResult {
 
   ///@{
   /**
+   * <p> The number of examples that have each field, for the resolved version.
+   * Absent when the counts are unknown. </p>
+   */
+  inline const ExampleCountByField& GetExampleCountByField() const { return m_exampleCountByField; }
+  template <typename ExampleCountByFieldT = ExampleCountByField>
+  void SetExampleCountByField(ExampleCountByFieldT&& value) {
+    m_exampleCountByFieldHasBeenSet = true;
+    m_exampleCountByField = std::forward<ExampleCountByFieldT>(value);
+  }
+  template <typename ExampleCountByFieldT = ExampleCountByField>
+  GetDatasetResult& WithExampleCountByField(ExampleCountByFieldT&& value) {
+    SetExampleCountByField(std::forward<ExampleCountByFieldT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> Presigned Amazon S3 URL to download the consolidated dataset file for the
    * resolved version. Expires after 5 minutes. Omitted if the file does not yet
    * exist. </p>
@@ -348,6 +367,8 @@ class GetDatasetResult {
 
   long long m_exampleCount{0};
 
+  ExampleCountByField m_exampleCountByField;
+
   Aws::String m_downloadUrl;
 
   Aws::Utils::DateTime m_downloadUrlExpiresAt{};
@@ -371,6 +392,7 @@ class GetDatasetResult {
   bool m_schemaTypeHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_exampleCountHasBeenSet = false;
+  bool m_exampleCountByFieldHasBeenSet = false;
   bool m_downloadUrlHasBeenSet = false;
   bool m_downloadUrlExpiresAtHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

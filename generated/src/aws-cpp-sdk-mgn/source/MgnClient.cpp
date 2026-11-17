@@ -29,6 +29,7 @@
 #include <aws/mgn/model/CreateConnectorRequest.h>
 #include <aws/mgn/model/CreateLaunchConfigurationTemplateRequest.h>
 #include <aws/mgn/model/CreateNetworkMigrationDefinitionRequest.h>
+#include <aws/mgn/model/CreateRemoteSourceActionRequest.h>
 #include <aws/mgn/model/CreateReplicationConfigurationTemplateRequest.h>
 #include <aws/mgn/model/CreateWaveRequest.h>
 #include <aws/mgn/model/DeleteApplicationRequest.h>
@@ -36,6 +37,7 @@
 #include <aws/mgn/model/DeleteJobRequest.h>
 #include <aws/mgn/model/DeleteLaunchConfigurationTemplateRequest.h>
 #include <aws/mgn/model/DeleteNetworkMigrationDefinitionRequest.h>
+#include <aws/mgn/model/DeleteRemoteSourceActionRequest.h>
 #include <aws/mgn/model/DeleteReplicationConfigurationTemplateRequest.h>
 #include <aws/mgn/model/DeleteSourceServerRequest.h>
 #include <aws/mgn/model/DeleteVcenterClientRequest.h>
@@ -50,6 +52,7 @@
 #include <aws/mgn/model/DisassociateSourceServersRequest.h>
 #include <aws/mgn/model/DisconnectFromServiceRequest.h>
 #include <aws/mgn/model/FinalizeCutoverRequest.h>
+#include <aws/mgn/model/GetLaunchConfigurationDefaultsRequest.h>
 #include <aws/mgn/model/GetLaunchConfigurationRequest.h>
 #include <aws/mgn/model/GetNetworkMigrationDefinitionRequest.h>
 #include <aws/mgn/model/GetNetworkMigrationMapperSegmentConstructRequest.h>
@@ -71,10 +74,15 @@
 #include <aws/mgn/model/ListNetworkMigrationDeployedStacksRequest.h>
 #include <aws/mgn/model/ListNetworkMigrationDeploymentsRequest.h>
 #include <aws/mgn/model/ListNetworkMigrationExecutionsRequest.h>
+#include <aws/mgn/model/ListNetworkMigrationInsightsRequest.h>
 #include <aws/mgn/model/ListNetworkMigrationMapperSegmentConstructsRequest.h>
 #include <aws/mgn/model/ListNetworkMigrationMapperSegmentsRequest.h>
 #include <aws/mgn/model/ListNetworkMigrationMappingUpdatesRequest.h>
 #include <aws/mgn/model/ListNetworkMigrationMappingsRequest.h>
+#include <aws/mgn/model/ListRemoteSourceActionInvocationResultsRequest.h>
+#include <aws/mgn/model/ListRemoteSourceActionInvocationsRequest.h>
+#include <aws/mgn/model/ListRemoteSourceActionJobsRequest.h>
+#include <aws/mgn/model/ListRemoteSourceActionsRequest.h>
 #include <aws/mgn/model/ListSourceServerActionsRequest.h>
 #include <aws/mgn/model/ListTagsForResourceRequest.h>
 #include <aws/mgn/model/ListTemplateActionsRequest.h>
@@ -96,6 +104,7 @@
 #include <aws/mgn/model/StartNetworkMigrationDeploymentRequest.h>
 #include <aws/mgn/model/StartNetworkMigrationMappingRequest.h>
 #include <aws/mgn/model/StartNetworkMigrationMappingUpdateRequest.h>
+#include <aws/mgn/model/StartRemoteSourceActionJobRequest.h>
 #include <aws/mgn/model/StartReplicationRequest.h>
 #include <aws/mgn/model/StartTestRequest.h>
 #include <aws/mgn/model/StopReplicationRequest.h>
@@ -106,10 +115,12 @@
 #include <aws/mgn/model/UntagResourceRequest.h>
 #include <aws/mgn/model/UpdateApplicationRequest.h>
 #include <aws/mgn/model/UpdateConnectorRequest.h>
+#include <aws/mgn/model/UpdateLaunchConfigurationDefaultsRequest.h>
 #include <aws/mgn/model/UpdateLaunchConfigurationRequest.h>
 #include <aws/mgn/model/UpdateLaunchConfigurationTemplateRequest.h>
 #include <aws/mgn/model/UpdateNetworkMigrationDefinitionRequest.h>
 #include <aws/mgn/model/UpdateNetworkMigrationMapperSegmentRequest.h>
+#include <aws/mgn/model/UpdateRemoteSourceActionRequest.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationRequest.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationTemplateRequest.h>
 #include <aws/mgn/model/UpdateSourceServerReplicationTypeRequest.h>
@@ -368,6 +379,17 @@ CreateNetworkMigrationDefinitionOutcome MgnClient::CreateNetworkMigrationDefinit
                             : CreateNetworkMigrationDefinitionOutcome(std::move(result.GetError()));
 }
 
+CreateRemoteSourceActionOutcome MgnClient::CreateRemoteSourceAction(const CreateRemoteSourceActionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/CreateRemoteSourceAction");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRemoteSourceActionOutcome(result.GetResultWithOwnership())
+                            : CreateRemoteSourceActionOutcome(std::move(result.GetError()));
+}
+
 CreateReplicationConfigurationTemplateOutcome MgnClient::CreateReplicationConfigurationTemplate(
     const CreateReplicationConfigurationTemplateRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -444,6 +466,17 @@ DeleteNetworkMigrationDefinitionOutcome MgnClient::DeleteNetworkMigrationDefinit
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteNetworkMigrationDefinitionOutcome(result.GetResultWithOwnership())
                             : DeleteNetworkMigrationDefinitionOutcome(std::move(result.GetError()));
+}
+
+DeleteRemoteSourceActionOutcome MgnClient::DeleteRemoteSourceAction(const DeleteRemoteSourceActionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteRemoteSourceAction");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRemoteSourceActionOutcome(result.GetResultWithOwnership())
+                            : DeleteRemoteSourceActionOutcome(std::move(result.GetError()));
 }
 
 DeleteReplicationConfigurationTemplateOutcome MgnClient::DeleteReplicationConfigurationTemplate(
@@ -610,6 +643,18 @@ GetLaunchConfigurationOutcome MgnClient::GetLaunchConfiguration(const GetLaunchC
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetLaunchConfigurationOutcome(result.GetResultWithOwnership())
                             : GetLaunchConfigurationOutcome(std::move(result.GetError()));
+}
+
+GetLaunchConfigurationDefaultsOutcome MgnClient::GetLaunchConfigurationDefaults(
+    const GetLaunchConfigurationDefaultsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetLaunchConfigurationDefaults");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLaunchConfigurationDefaultsOutcome(result.GetResultWithOwnership())
+                            : GetLaunchConfigurationDefaultsOutcome(std::move(result.GetError()));
 }
 
 GetNetworkMigrationDefinitionOutcome MgnClient::GetNetworkMigrationDefinition(const GetNetworkMigrationDefinitionRequest& request) const {
@@ -837,6 +882,17 @@ ListNetworkMigrationExecutionsOutcome MgnClient::ListNetworkMigrationExecutions(
                             : ListNetworkMigrationExecutionsOutcome(std::move(result.GetError()));
 }
 
+ListNetworkMigrationInsightsOutcome MgnClient::ListNetworkMigrationInsights(const ListNetworkMigrationInsightsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/network-migration/ListNetworkMigrationInsights");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNetworkMigrationInsightsOutcome(result.GetResultWithOwnership())
+                            : ListNetworkMigrationInsightsOutcome(std::move(result.GetError()));
+}
+
 ListNetworkMigrationMapperSegmentConstructsOutcome MgnClient::ListNetworkMigrationMapperSegmentConstructs(
     const ListNetworkMigrationMapperSegmentConstructsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -882,6 +938,52 @@ ListNetworkMigrationMappingsOutcome MgnClient::ListNetworkMigrationMappings(cons
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListNetworkMigrationMappingsOutcome(result.GetResultWithOwnership())
                             : ListNetworkMigrationMappingsOutcome(std::move(result.GetError()));
+}
+
+ListRemoteSourceActionInvocationResultsOutcome MgnClient::ListRemoteSourceActionInvocationResults(
+    const ListRemoteSourceActionInvocationResultsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListRemoteSourceActionInvocationResults");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRemoteSourceActionInvocationResultsOutcome(result.GetResultWithOwnership())
+                            : ListRemoteSourceActionInvocationResultsOutcome(std::move(result.GetError()));
+}
+
+ListRemoteSourceActionInvocationsOutcome MgnClient::ListRemoteSourceActionInvocations(
+    const ListRemoteSourceActionInvocationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListRemoteSourceActionInvocations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRemoteSourceActionInvocationsOutcome(result.GetResultWithOwnership())
+                            : ListRemoteSourceActionInvocationsOutcome(std::move(result.GetError()));
+}
+
+ListRemoteSourceActionJobsOutcome MgnClient::ListRemoteSourceActionJobs(const ListRemoteSourceActionJobsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListRemoteSourceActionJobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRemoteSourceActionJobsOutcome(result.GetResultWithOwnership())
+                            : ListRemoteSourceActionJobsOutcome(std::move(result.GetError()));
+}
+
+ListRemoteSourceActionsOutcome MgnClient::ListRemoteSourceActions(const ListRemoteSourceActionsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListRemoteSourceActions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRemoteSourceActionsOutcome(result.GetResultWithOwnership())
+                            : ListRemoteSourceActionsOutcome(std::move(result.GetError()));
 }
 
 ListSourceServerActionsOutcome MgnClient::ListSourceServerActions(const ListSourceServerActionsRequest& request) const {
@@ -1120,6 +1222,17 @@ StartNetworkMigrationMappingUpdateOutcome MgnClient::StartNetworkMigrationMappin
                             : StartNetworkMigrationMappingUpdateOutcome(std::move(result.GetError()));
 }
 
+StartRemoteSourceActionJobOutcome MgnClient::StartRemoteSourceActionJob(const StartRemoteSourceActionJobRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/StartRemoteSourceActionJob");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRemoteSourceActionJobOutcome(result.GetResultWithOwnership())
+                            : StartRemoteSourceActionJobOutcome(std::move(result.GetError()));
+}
+
 StartReplicationOutcome MgnClient::StartReplication(const StartReplicationRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1256,6 +1369,18 @@ UpdateLaunchConfigurationOutcome MgnClient::UpdateLaunchConfiguration(const Upda
                             : UpdateLaunchConfigurationOutcome(std::move(result.GetError()));
 }
 
+UpdateLaunchConfigurationDefaultsOutcome MgnClient::UpdateLaunchConfigurationDefaults(
+    const UpdateLaunchConfigurationDefaultsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateLaunchConfigurationDefaults");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLaunchConfigurationDefaultsOutcome(result.GetResultWithOwnership())
+                            : UpdateLaunchConfigurationDefaultsOutcome(std::move(result.GetError()));
+}
+
 UpdateLaunchConfigurationTemplateOutcome MgnClient::UpdateLaunchConfigurationTemplate(
     const UpdateLaunchConfigurationTemplateRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -1290,6 +1415,17 @@ UpdateNetworkMigrationMapperSegmentOutcome MgnClient::UpdateNetworkMigrationMapp
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateNetworkMigrationMapperSegmentOutcome(result.GetResultWithOwnership())
                             : UpdateNetworkMigrationMapperSegmentOutcome(std::move(result.GetError()));
+}
+
+UpdateRemoteSourceActionOutcome MgnClient::UpdateRemoteSourceAction(const UpdateRemoteSourceActionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateRemoteSourceAction");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRemoteSourceActionOutcome(result.GetResultWithOwnership())
+                            : UpdateRemoteSourceActionOutcome(std::move(result.GetError()));
 }
 
 UpdateReplicationConfigurationOutcome MgnClient::UpdateReplicationConfiguration(

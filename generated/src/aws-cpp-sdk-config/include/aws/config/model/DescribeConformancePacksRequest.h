@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/config/ConfigService_EXPORTS.h>
+#include <aws/config/model/DescribeConformancePacksFilters.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -59,6 +60,26 @@ class DescribeConformancePacksRequest : public ConfigServiceRequest {
 
   ///@{
   /**
+   * <p>Returns a filtered list of custom or managed conformance packs. By default,
+   * if the filter is not defined, Config returns details for all your conformance
+   * packs.</p>
+   */
+  inline const DescribeConformancePacksFilters& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = DescribeConformancePacksFilters>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = DescribeConformancePacksFilters>
+  DescribeConformancePacksRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of conformance packs returned on each page.</p>
    */
   inline int GetLimit() const { return m_limit; }
@@ -94,10 +115,13 @@ class DescribeConformancePacksRequest : public ConfigServiceRequest {
  private:
   Aws::Vector<Aws::String> m_conformancePackNames;
 
+  DescribeConformancePacksFilters m_filters;
+
   int m_limit{0};
 
   Aws::String m_nextToken;
   bool m_conformancePackNamesHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };

@@ -22,6 +22,10 @@ CspmProviderDetail& CspmProviderDetail::operator=(JsonView jsonValue) {
     m_azure = jsonValue.GetObject("Azure");
     m_azureHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GCP")) {
+    m_gCP = jsonValue.GetObject("GCP");
+    m_gCPHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue CspmProviderDetail::Jsonize() const {
 
   if (m_azureHasBeenSet) {
     payload.WithObject("Azure", m_azure.Jsonize());
+  }
+
+  if (m_gCPHasBeenSet) {
+    payload.WithObject("GCP", m_gCP.Jsonize());
   }
 
   return payload;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EvaluationFormItem.h>
+#include <aws/connect/model/EvaluationFormItemEnablementConfiguration.h>
 #include <aws/connect/model/EvaluationFormScoreThreshold.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -171,6 +172,25 @@ class EvaluationFormSection {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The conditional enablement configuration of the section. Sections use the
+   * same enablement model as questions.</p>
+   */
+  inline const EvaluationFormItemEnablementConfiguration& GetEnablement() const { return m_enablement; }
+  inline bool EnablementHasBeenSet() const { return m_enablementHasBeenSet; }
+  template <typename EnablementT = EvaluationFormItemEnablementConfiguration>
+  void SetEnablement(EnablementT&& value) {
+    m_enablementHasBeenSet = true;
+    m_enablement = std::forward<EnablementT>(value);
+  }
+  template <typename EnablementT = EvaluationFormItemEnablementConfiguration>
+  EvaluationFormSection& WithEnablement(EnablementT&& value) {
+    SetEnablement(std::forward<EnablementT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_title;
 
@@ -185,6 +205,8 @@ class EvaluationFormSection {
   bool m_isExcludedFromScoring{false};
 
   Aws::Vector<EvaluationFormScoreThreshold> m_scoreThresholds;
+
+  EvaluationFormItemEnablementConfiguration m_enablement;
   bool m_titleHasBeenSet = false;
   bool m_refIdHasBeenSet = false;
   bool m_instructionsHasBeenSet = false;
@@ -192,6 +214,7 @@ class EvaluationFormSection {
   bool m_weightHasBeenSet = false;
   bool m_isExcludedFromScoringHasBeenSet = false;
   bool m_scoreThresholdsHasBeenSet = false;
+  bool m_enablementHasBeenSet = false;
 };
 
 }  // namespace Model

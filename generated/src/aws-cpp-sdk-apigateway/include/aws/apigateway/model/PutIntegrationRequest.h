@@ -421,7 +421,7 @@ class PutIntegrationRequest : public APIGatewayRequest {
 
   ///@{
   /**
-   * <p> The ALB or NLB listener to send the request to. </p>
+   * <p> The ALB or NLB ARN to send the request to. </p>
    */
   inline const Aws::String& GetIntegrationTarget() const { return m_integrationTarget; }
   inline bool IntegrationTargetHasBeenSet() const { return m_integrationTargetHasBeenSet; }

@@ -31,6 +31,14 @@ Aws::String CreateAccessSourceRequest::SerializePayload() const {
     payload.WithString("name", m_name);
   }
 
+  if (m_coreNetworkEndpointIdHasBeenSet) {
+    payload.WithString("coreNetworkEndpointId", m_coreNetworkEndpointId);
+  }
+
+  if (m_segmentHasBeenSet) {
+    payload.WithString("segment", m_segment);
+  }
+
   if (m_dnsViewIdHasBeenSet) {
     payload.WithString("dnsViewId", m_dnsViewId);
   }

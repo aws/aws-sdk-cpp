@@ -100,6 +100,17 @@ CapacityBlockOffering& CapacityBlockOffering::operator=(const XmlNode& xmlNode) 
       m_zoneType = Aws::Utils::Xml::DecodeEscapedXmlText(zoneTypeNode.GetText());
       m_zoneTypeHasBeenSet = true;
     }
+    XmlNode capacityBlockOfferingSegmentsNode = resultNode.FirstChild("capacityBlockOfferingSegmentSet");
+    if (!capacityBlockOfferingSegmentsNode.IsNull()) {
+      XmlNode capacityBlockOfferingSegmentsMember = capacityBlockOfferingSegmentsNode.FirstChild("item");
+      m_capacityBlockOfferingSegmentsHasBeenSet = !capacityBlockOfferingSegmentsMember.IsNull();
+      while (!capacityBlockOfferingSegmentsMember.IsNull()) {
+        m_capacityBlockOfferingSegments.push_back(capacityBlockOfferingSegmentsMember);
+        capacityBlockOfferingSegmentsMember = capacityBlockOfferingSegmentsMember.NextNode("item");
+      }
+
+      m_capacityBlockOfferingSegmentsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -166,6 +177,16 @@ void CapacityBlockOffering::OutputToStream(Aws::OStream& oStream, const char* lo
   if (m_zoneTypeHasBeenSet) {
     oStream << location << index << locationValue << ".ZoneType=" << StringUtils::URLEncode(m_zoneType.c_str()) << "&";
   }
+
+  if (m_capacityBlockOfferingSegmentsHasBeenSet) {
+    unsigned capacityBlockOfferingSegmentsIdx = 1;
+    for (auto& item : m_capacityBlockOfferingSegments) {
+      Aws::StringStream capacityBlockOfferingSegmentsSs;
+      capacityBlockOfferingSegmentsSs << location << index << locationValue << ".CapacityBlockOfferingSegmentSet."
+                                      << capacityBlockOfferingSegmentsIdx++;
+      item.OutputToStream(oStream, capacityBlockOfferingSegmentsSs.str().c_str());
+    }
+  }
 }
 
 void CapacityBlockOffering::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -213,6 +234,14 @@ void CapacityBlockOffering::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if (m_zoneTypeHasBeenSet) {
     oStream << location << ".ZoneType=" << StringUtils::URLEncode(m_zoneType.c_str()) << "&";
+  }
+  if (m_capacityBlockOfferingSegmentsHasBeenSet) {
+    unsigned capacityBlockOfferingSegmentsIdx = 1;
+    for (auto& item : m_capacityBlockOfferingSegments) {
+      Aws::StringStream capacityBlockOfferingSegmentsSs;
+      capacityBlockOfferingSegmentsSs << location << ".CapacityBlockOfferingSegmentSet." << capacityBlockOfferingSegmentsIdx++;
+      item.OutputToStream(oStream, capacityBlockOfferingSegmentsSs.str().c_str());
+    }
   }
 }
 

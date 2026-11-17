@@ -71,6 +71,28 @@ ActiveVpnTunnelStatus& ActiveVpnTunnelStatus::operator=(const XmlNode& xmlNode) 
       m_provisioningStatusReason = Aws::Utils::Xml::DecodeEscapedXmlText(provisioningStatusReasonNode.GetText());
       m_provisioningStatusReasonHasBeenSet = true;
     }
+    XmlNode phase1AdditionalKeyExchangesNode = resultNode.FirstChild("phase1AdditionalKeyExchangeSet");
+    if (!phase1AdditionalKeyExchangesNode.IsNull()) {
+      XmlNode phase1AdditionalKeyExchangesMember = phase1AdditionalKeyExchangesNode.FirstChild("item");
+      m_phase1AdditionalKeyExchangesHasBeenSet = !phase1AdditionalKeyExchangesMember.IsNull();
+      while (!phase1AdditionalKeyExchangesMember.IsNull()) {
+        m_phase1AdditionalKeyExchanges.push_back(phase1AdditionalKeyExchangesMember);
+        phase1AdditionalKeyExchangesMember = phase1AdditionalKeyExchangesMember.NextNode("item");
+      }
+
+      m_phase1AdditionalKeyExchangesHasBeenSet = true;
+    }
+    XmlNode phase2AdditionalKeyExchangesNode = resultNode.FirstChild("phase2AdditionalKeyExchangeSet");
+    if (!phase2AdditionalKeyExchangesNode.IsNull()) {
+      XmlNode phase2AdditionalKeyExchangesMember = phase2AdditionalKeyExchangesNode.FirstChild("item");
+      m_phase2AdditionalKeyExchangesHasBeenSet = !phase2AdditionalKeyExchangesMember.IsNull();
+      while (!phase2AdditionalKeyExchangesMember.IsNull()) {
+        m_phase2AdditionalKeyExchanges.push_back(phase2AdditionalKeyExchangesMember);
+        phase2AdditionalKeyExchangesMember = phase2AdditionalKeyExchangesMember.NextNode("item");
+      }
+
+      m_phase2AdditionalKeyExchangesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -119,6 +141,26 @@ void ActiveVpnTunnelStatus::OutputToStream(Aws::OStream& oStream, const char* lo
     oStream << location << index << locationValue
             << ".ProvisioningStatusReason=" << StringUtils::URLEncode(m_provisioningStatusReason.c_str()) << "&";
   }
+
+  if (m_phase1AdditionalKeyExchangesHasBeenSet) {
+    unsigned phase1AdditionalKeyExchangesIdx = 1;
+    for (auto& item : m_phase1AdditionalKeyExchanges) {
+      Aws::StringStream phase1AdditionalKeyExchangesSs;
+      phase1AdditionalKeyExchangesSs << location << index << locationValue << ".Phase1AdditionalKeyExchangeSet."
+                                     << phase1AdditionalKeyExchangesIdx++;
+      item.OutputToStream(oStream, phase1AdditionalKeyExchangesSs.str().c_str());
+    }
+  }
+
+  if (m_phase2AdditionalKeyExchangesHasBeenSet) {
+    unsigned phase2AdditionalKeyExchangesIdx = 1;
+    for (auto& item : m_phase2AdditionalKeyExchanges) {
+      Aws::StringStream phase2AdditionalKeyExchangesSs;
+      phase2AdditionalKeyExchangesSs << location << index << locationValue << ".Phase2AdditionalKeyExchangeSet."
+                                     << phase2AdditionalKeyExchangesIdx++;
+      item.OutputToStream(oStream, phase2AdditionalKeyExchangesSs.str().c_str());
+    }
+  }
 }
 
 void ActiveVpnTunnelStatus::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -150,6 +192,22 @@ void ActiveVpnTunnelStatus::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if (m_provisioningStatusReasonHasBeenSet) {
     oStream << location << ".ProvisioningStatusReason=" << StringUtils::URLEncode(m_provisioningStatusReason.c_str()) << "&";
+  }
+  if (m_phase1AdditionalKeyExchangesHasBeenSet) {
+    unsigned phase1AdditionalKeyExchangesIdx = 1;
+    for (auto& item : m_phase1AdditionalKeyExchanges) {
+      Aws::StringStream phase1AdditionalKeyExchangesSs;
+      phase1AdditionalKeyExchangesSs << location << ".Phase1AdditionalKeyExchangeSet." << phase1AdditionalKeyExchangesIdx++;
+      item.OutputToStream(oStream, phase1AdditionalKeyExchangesSs.str().c_str());
+    }
+  }
+  if (m_phase2AdditionalKeyExchangesHasBeenSet) {
+    unsigned phase2AdditionalKeyExchangesIdx = 1;
+    for (auto& item : m_phase2AdditionalKeyExchanges) {
+      Aws::StringStream phase2AdditionalKeyExchangesSs;
+      phase2AdditionalKeyExchangesSs << location << ".Phase2AdditionalKeyExchangeSet." << phase2AdditionalKeyExchangesIdx++;
+      item.OutputToStream(oStream, phase2AdditionalKeyExchangesSs.str().c_str());
+    }
   }
 }
 

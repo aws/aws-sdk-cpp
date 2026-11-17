@@ -54,7 +54,7 @@ class LegalTerm {
 
   ///@{
   /**
-   * <p>The unique identifer for the term.</p>
+   * <p>The unique identifier for the term.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
   inline bool IdHasBeenSet() const { return m_idHasBeenSet; }

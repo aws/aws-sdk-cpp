@@ -152,6 +152,29 @@ class PutRumEventsRequest : public CloudWatchRUMRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A JSON serialization of attributes that apply to every event in this batch,
+   * such as the browser, device, and operating system of the end user. CloudWatch
+   * RUM merges these attributes into each event in the batch, so you send them once
+   * for the batch instead of once for each event. If an attribute appears both here
+   * and in an individual event's <code>metadata</code>, CloudWatch RUM uses the
+   * value in the event's <code>metadata</code>.</p>
+   */
+  inline const Aws::String& GetSessionMetadata() const { return m_sessionMetadata; }
+  inline bool SessionMetadataHasBeenSet() const { return m_sessionMetadataHasBeenSet; }
+  template <typename SessionMetadataT = Aws::String>
+  void SetSessionMetadata(SessionMetadataT&& value) {
+    m_sessionMetadataHasBeenSet = true;
+    m_sessionMetadata = std::forward<SessionMetadataT>(value);
+  }
+  template <typename SessionMetadataT = Aws::String>
+  PutRumEventsRequest& WithSessionMetadata(SessionMetadataT&& value) {
+    SetSessionMetadata(std::forward<SessionMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -164,12 +187,15 @@ class PutRumEventsRequest : public CloudWatchRUMRequest {
   Aws::Vector<RumEvent> m_rumEvents;
 
   Aws::String m_alias;
+
+  Aws::String m_sessionMetadata;
   bool m_idHasBeenSet = false;
   bool m_batchIdHasBeenSet = false;
   bool m_appMonitorDetailsHasBeenSet = false;
   bool m_userDetailsHasBeenSet = false;
   bool m_rumEventsHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
+  bool m_sessionMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

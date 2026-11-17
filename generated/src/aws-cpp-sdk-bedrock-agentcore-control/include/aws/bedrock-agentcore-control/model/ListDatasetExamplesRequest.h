@@ -6,14 +6,12 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetExamplesFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace BedrockAgentCoreControl {
 namespace Model {
 
@@ -30,8 +28,6 @@ class ListDatasetExamplesRequest : public BedrockAgentCoreControlRequest {
   inline virtual const char* GetServiceRequestName() const override { return "ListDatasetExamples"; }
 
   AWS_BEDROCKAGENTCORECONTROL_API Aws::String SerializePayload() const override;
-
-  AWS_BEDROCKAGENTCORECONTROL_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
   /**
@@ -54,8 +50,9 @@ class ListDatasetExamplesRequest : public BedrockAgentCoreControlRequest {
   ///@{
   /**
    * <p> Version to paginate: "DRAFT" or a version number. Defaults to DRAFT if
-   * absent. Only used on the first request; for subsequent pages, the version is
-   * extracted from the pagination token. </p>
+   * absent on the first request. With a pagination token, the version comes from the
+   * token: you can omit this member, and a value that differs from the token's
+   * version is rejected with a <code>ValidationException</code>. </p>
    */
   inline const Aws::String& GetDatasetVersion() const { return m_datasetVersion; }
   inline bool DatasetVersionHasBeenSet() const { return m_datasetVersionHasBeenSet; }
@@ -67,6 +64,24 @@ class ListDatasetExamplesRequest : public BedrockAgentCoreControlRequest {
   template <typename DatasetVersionT = Aws::String>
   ListDatasetExamplesRequest& WithDatasetVersion(DatasetVersionT&& value) {
     SetDatasetVersion(std::forward<DatasetVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> A filter to apply to the examples. </p>
+   */
+  inline const ListDatasetExamplesFilter& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = ListDatasetExamplesFilter>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = ListDatasetExamplesFilter>
+  ListDatasetExamplesRequest& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
     return *this;
   }
   ///@}
@@ -109,11 +124,14 @@ class ListDatasetExamplesRequest : public BedrockAgentCoreControlRequest {
 
   Aws::String m_datasetVersion;
 
+  ListDatasetExamplesFilter m_filter;
+
   int m_maxResults{0};
 
   Aws::String m_nextToken;
   bool m_datasetIdHasBeenSet = false;
   bool m_datasetVersionHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };

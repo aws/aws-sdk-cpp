@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/ConformancePackState.h>
+#include <aws/config/model/ConformancePackType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -94,9 +95,13 @@ class ConformancePackStatusDetail {
    * conformance pack creation is in progress for an account.</p> </li> <li>
    * <p>CREATE_COMPLETE when a conformance pack has been successfully created in your
    * account.</p> </li> <li> <p>CREATE_FAILED when a conformance pack creation failed
-   * in your account.</p> </li> <li> <p>DELETE_IN_PROGRESS when a conformance pack
-   * deletion is in progress. </p> </li> <li> <p>DELETE_FAILED when a conformance
-   * pack deletion failed in your account.</p> </li> </ul>
+   * in your account.</p> </li> <li> <p>UPDATE_IN_PROGRESS when a conformance pack
+   * update is in progress for an account.</p> </li> <li> <p>UPDATE_COMPLETE when a
+   * conformance pack has been successfully updated in your account.</p> </li> <li>
+   * <p>UPDATE_FAILED when a conformance pack update failed in your account.</p>
+   * </li> <li> <p>DELETE_IN_PROGRESS when a conformance pack deletion is in
+   * progress. </p> </li> <li> <p>DELETE_FAILED when a conformance pack deletion
+   * failed in your account.</p> </li> </ul>
    */
   inline ConformancePackState GetConformancePackState() const { return m_conformancePackState; }
   inline bool ConformancePackStateHasBeenSet() const { return m_conformancePackStateHasBeenSet; }
@@ -112,7 +117,9 @@ class ConformancePackStatusDetail {
 
   ///@{
   /**
-   * <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
+   * <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>  <p>Custom
+   * conformance packs populate this field. Managed conformance packs leave it
+   * empty.</p>
    */
   inline const Aws::String& GetStackArn() const { return m_stackArn; }
   inline bool StackArnHasBeenSet() const { return m_stackArnHasBeenSet; }
@@ -181,6 +188,24 @@ class ConformancePackStatusDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the conformance pack. Valid values:</p> <ul> <li> <p>
+   * <code>CUSTOM</code> – A custom conformance pack.</p> </li> <li> <p>
+   * <code>MANAGED</code> – A managed conformance pack.</p> </li> </ul>
+   */
+  inline ConformancePackType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(ConformancePackType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline ConformancePackStatusDetail& WithType(ConformancePackType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_conformancePackName;
 
@@ -197,6 +222,8 @@ class ConformancePackStatusDetail {
   Aws::Utils::DateTime m_lastUpdateRequestedTime{};
 
   Aws::Utils::DateTime m_lastUpdateCompletedTime{};
+
+  ConformancePackType m_type{ConformancePackType::NOT_SET};
   bool m_conformancePackNameHasBeenSet = false;
   bool m_conformancePackIdHasBeenSet = false;
   bool m_conformancePackArnHasBeenSet = false;
@@ -205,6 +232,7 @@ class ConformancePackStatusDetail {
   bool m_conformancePackStatusReasonHasBeenSet = false;
   bool m_lastUpdateRequestedTimeHasBeenSet = false;
   bool m_lastUpdateCompletedTimeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

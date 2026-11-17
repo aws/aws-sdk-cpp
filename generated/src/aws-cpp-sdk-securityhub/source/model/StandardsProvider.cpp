@@ -17,6 +17,7 @@ namespace StandardsProviderMapper {
 
 static const int AWS_HASH = HashingUtils::HashString("AWS");
 static const int Azure_HASH = HashingUtils::HashString("Azure");
+static const int GCP_HASH = HashingUtils::HashString("GCP");
 
 StandardsProvider GetStandardsProviderForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ StandardsProvider GetStandardsProviderForName(const Aws::String& name) {
     return StandardsProvider::AWS;
   } else if (hashCode == Azure_HASH) {
     return StandardsProvider::Azure;
+  } else if (hashCode == GCP_HASH) {
+    return StandardsProvider::GCP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForStandardsProvider(StandardsProvider enumValue) {
       return "AWS";
     case StandardsProvider::Azure:
       return "Azure";
+    case StandardsProvider::GCP:
+      return "GCP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -35,7 +35,9 @@ enum class EventType {
   CallbackSucceeded,
   CallbackFailed,
   CallbackTimedOut,
-  InvocationCompleted
+  InvocationCompleted,
+  ExecutionPaused,
+  ExecutionResumed
 };
 
 namespace EventTypeMapper {

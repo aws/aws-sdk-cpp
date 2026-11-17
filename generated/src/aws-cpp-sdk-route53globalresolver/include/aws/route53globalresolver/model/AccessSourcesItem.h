@@ -73,6 +73,24 @@ class AccessSourcesItem {
 
   ///@{
   /**
+   * <p>The ID of the core network endpoint associated with this access source.</p>
+   */
+  inline const Aws::String& GetCoreNetworkEndpointId() const { return m_coreNetworkEndpointId; }
+  inline bool CoreNetworkEndpointIdHasBeenSet() const { return m_coreNetworkEndpointIdHasBeenSet; }
+  template <typename CoreNetworkEndpointIdT = Aws::String>
+  void SetCoreNetworkEndpointId(CoreNetworkEndpointIdT&& value) {
+    m_coreNetworkEndpointIdHasBeenSet = true;
+    m_coreNetworkEndpointId = std::forward<CoreNetworkEndpointIdT>(value);
+  }
+  template <typename CoreNetworkEndpointIdT = Aws::String>
+  AccessSourcesItem& WithCoreNetworkEndpointId(CoreNetworkEndpointIdT&& value) {
+    SetCoreNetworkEndpointId(std::forward<CoreNetworkEndpointIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time when the access source was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -177,6 +195,24 @@ class AccessSourcesItem {
 
   ///@{
   /**
+   * <p>The name of the segment associated with this access source.</p>
+   */
+  inline const Aws::String& GetSegment() const { return m_segment; }
+  inline bool SegmentHasBeenSet() const { return m_segmentHasBeenSet; }
+  template <typename SegmentT = Aws::String>
+  void SetSegment(SegmentT&& value) {
+    m_segmentHasBeenSet = true;
+    m_segment = std::forward<SegmentT>(value);
+  }
+  template <typename SegmentT = Aws::String>
+  AccessSourcesItem& WithSegment(SegmentT&& value) {
+    SetSegment(std::forward<SegmentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current status of the access source.</p>
    */
   inline CRResourceStatus GetStatus() const { return m_status; }
@@ -213,6 +249,8 @@ class AccessSourcesItem {
 
   Aws::String m_cidr;
 
+  Aws::String m_coreNetworkEndpointId;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_id;
@@ -225,17 +263,21 @@ class AccessSourcesItem {
 
   DnsProtocol m_protocol{DnsProtocol::NOT_SET};
 
+  Aws::String m_segment;
+
   CRResourceStatus m_status{CRResourceStatus::NOT_SET};
 
   Aws::Utils::DateTime m_updatedAt{};
   bool m_arnHasBeenSet = false;
   bool m_cidrHasBeenSet = false;
+  bool m_coreNetworkEndpointIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_dnsViewIdHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
+  bool m_segmentHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

@@ -31,6 +31,10 @@ Aws::String UpdateGlobalResolverRequest::SerializePayload() const {
     payload.WithString("ipAddressType", GlobalResolverIpAddressTypeMapper::GetNameForGlobalResolverIpAddressType(m_ipAddressType));
   }
 
+  if (m_publicIpStatusHasBeenSet) {
+    payload.WithString("publicIpStatus", PublicIpStatusMapper::GetNameForPublicIpStatus(m_publicIpStatus));
+  }
+
   if (m_regionsHasBeenSet) {
     Aws::Utils::Array<JsonValue> regionsJsonList(m_regions.size());
     for (unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex) {

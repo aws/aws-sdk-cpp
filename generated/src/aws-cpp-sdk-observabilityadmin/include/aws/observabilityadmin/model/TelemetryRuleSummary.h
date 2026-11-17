@@ -122,7 +122,8 @@ class TelemetryRuleSummary {
 
   ///@{
   /**
-   * <p> The type of telemetry (Logs, Metrics, or Traces) the rule configures. </p>
+   * <p> The type of telemetry (Logs, Metrics, Traces, or Insights) the rule
+   * configures. </p>
    */
   inline TelemetryType GetTelemetryType() const { return m_telemetryType; }
   inline bool TelemetryTypeHasBeenSet() const { return m_telemetryTypeHasBeenSet; }

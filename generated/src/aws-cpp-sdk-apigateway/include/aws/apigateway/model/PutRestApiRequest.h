@@ -95,7 +95,7 @@ class PutRestApiRequest : public StreamingAPIGatewayRequest {
   /**
    * <p>Custom header parameters as part of the request. For example, to exclude
    * DocumentationParts from an imported API, set <code>ignore=documentation</code>
-   * as a <code>parameters</code> value, as in the AWS CLI command of <code>aws
+   * as a <code>parameters</code> value, as in the CLI command of <code>aws
    * apigateway import-rest-api --parameters ignore=documentation --body
    * 'file:///path/to/imported-api-body.json'</code>.</p>
    */

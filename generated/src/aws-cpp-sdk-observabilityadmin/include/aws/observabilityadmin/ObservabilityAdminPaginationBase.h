@@ -8,6 +8,7 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/observabilityadmin/model/ListCentralizationRulesForOrganizationPaginationTraits.h>
+#include <aws/observabilityadmin/model/ListConnectorsPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListDatasetIntegrationsPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryForOrganizationPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListResourceTelemetryPaginationTraits.h>
@@ -15,6 +16,7 @@
 #include <aws/observabilityadmin/model/ListTelemetryPipelinesPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesForOrganizationPaginationTraits.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesPaginationTraits.h>
+#include <aws/observabilityadmin/model/ListThirdPartyTelemetryEnrichmentsPaginationTraits.h>
 
 #include <memory>
 
@@ -34,6 +36,17 @@ class ObservabilityAdminPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCentralizationRulesForOrganizationRequest,
                                              Pagination::ListCentralizationRulesForOrganizationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListConnectors operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorsRequest, Pagination::ListConnectorsPaginationTraits<DerivedClient>>
+  ListConnectorsPaginator(const Model::ListConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorsRequest,
+                                             Pagination::ListConnectorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
   }
 
   /**
@@ -117,6 +130,18 @@ class ObservabilityAdminPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTelemetryRulesForOrganizationRequest,
                                              Pagination::ListTelemetryRulesForOrganizationPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListThirdPartyTelemetryEnrichments operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThirdPartyTelemetryEnrichmentsRequest,
+                                    Pagination::ListThirdPartyTelemetryEnrichmentsPaginationTraits<DerivedClient>>
+  ListThirdPartyTelemetryEnrichmentsPaginator(const Model::ListThirdPartyTelemetryEnrichmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThirdPartyTelemetryEnrichmentsRequest,
+                                             Pagination::ListThirdPartyTelemetryEnrichmentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 };

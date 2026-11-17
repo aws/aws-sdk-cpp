@@ -107,7 +107,10 @@ class FreeTrialInfo {
 
   ///@{
   /**
-   * <p>The cloud provider associated with the free trial information.</p>
+   * <p>The cloud provider associated with the free trial information. Valid
+   * values:</p> <ul> <li> <p> <code>AWS</code> – Amazon Web Services resources.</p>
+   * </li> <li> <p> <code>AZURE</code> – Microsoft Azure resources.</p> </li> <li>
+   * <p> <code>GCP</code> – Google Cloud Platform (GCP) resources.</p> </li> </ul>
    */
   inline CloudProvider GetCloudProvider() const { return m_cloudProvider; }
   inline bool CloudProviderHasBeenSet() const { return m_cloudProviderHasBeenSet; }

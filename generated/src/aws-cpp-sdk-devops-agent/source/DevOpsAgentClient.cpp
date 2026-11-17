@@ -46,6 +46,7 @@
 #include <aws/devops-agent/model/GetAssetRequest.h>
 #include <aws/devops-agent/model/GetAssociationRequest.h>
 #include <aws/devops-agent/model/GetBacklogTaskRequest.h>
+#include <aws/devops-agent/model/GetChatRequest.h>
 #include <aws/devops-agent/model/GetOperatorAppRequest.h>
 #include <aws/devops-agent/model/GetRecommendationRequest.h>
 #include <aws/devops-agent/model/GetServiceRequest.h>
@@ -78,6 +79,7 @@
 #include <aws/devops-agent/model/UpdateAssetRequest.h>
 #include <aws/devops-agent/model/UpdateAssociationRequest.h>
 #include <aws/devops-agent/model/UpdateBacklogTaskRequest.h>
+#include <aws/devops-agent/model/UpdateChatRequest.h>
 #include <aws/devops-agent/model/UpdateGoalRequest.h>
 #include <aws/devops-agent/model/UpdateOperatorAppIdpConfigRequest.h>
 #include <aws/devops-agent/model/UpdatePrivateConnectionCertificateRequest.h>
@@ -757,6 +759,30 @@ GetBacklogTaskOutcome DevOpsAgentClient::GetBacklogTask(const GetBacklogTaskRequ
   return result.IsSuccess() ? GetBacklogTaskOutcome(result.GetResultWithOwnership()) : GetBacklogTaskOutcome(std::move(result.GetError()));
 }
 
+GetChatOutcome DevOpsAgentClient::GetChat(const GetChatRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetChat", "Required field: AgentSpaceId, is not set");
+    return GetChatOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.ExecutionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetChat", "Required field: ExecutionId, is not set");
+    return GetChatOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [ExecutionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/agents/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/chat/get/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExecutionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChatOutcome(result.GetResultWithOwnership()) : GetChatOutcome(std::move(result.GetError()));
+}
+
 GetOperatorAppOutcome DevOpsAgentClient::GetOperatorApp(const GetOperatorAppRequest& request) const {
   if (!request.AgentSpaceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetOperatorApp", "Required field: AgentSpaceId, is not set");
@@ -1420,6 +1446,30 @@ UpdateBacklogTaskOutcome DevOpsAgentClient::UpdateBacklogTask(const UpdateBacklo
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateBacklogTaskOutcome(result.GetResultWithOwnership())
                             : UpdateBacklogTaskOutcome(std::move(result.GetError()));
+}
+
+UpdateChatOutcome DevOpsAgentClient::UpdateChat(const UpdateChatRequest& request) const {
+  if (!request.AgentSpaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateChat", "Required field: AgentSpaceId, is not set");
+    return UpdateChatOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [AgentSpaceId]", false));
+  }
+  if (!request.ExecutionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateChat", "Required field: ExecutionId, is not set");
+    return UpdateChatOutcome(Aws::Client::AWSError<DevOpsAgentErrors>(DevOpsAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [ExecutionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/agents/agent-space/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentSpaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/chat/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExecutionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateChatOutcome(result.GetResultWithOwnership()) : UpdateChatOutcome(std::move(result.GetError()));
 }
 
 UpdateGoalOutcome DevOpsAgentClient::UpdateGoal(const UpdateGoalRequest& request) const {

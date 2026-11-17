@@ -318,7 +318,8 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
    * <p>Retrieves billing preferences for the specified feature. Each feature
    * controls a distinct billing capability: which accounts can share Reserved
    * Instances or credits, whether billing alerts are enabled, the historical record
-   * of sharing changes, and per-credit options.</p><p><h3>See Also:</h3>   <a
+   * of sharing changes, per-credit options, and which accounts an individual
+   * Reserved Instance or Savings Plan is shared with.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetBillingPreferences">AWS
    * API Reference</a></p>
    */
@@ -914,6 +915,44 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Splits the available balance of a credit into 2 to 99 new credits in the same
+   * account, and cancels the original credit. The new credits keep the original
+   * credit's end date and applicable products.</p> <p>The available balance is the
+   * remaining balance minus any amount reserved for a bill that isn't finalized. The
+   * portions must add up to exactly the available balance. Each portion must be at
+   * least 100.00 in the currency of the credit. For example, if the credit is in
+   * USD, each portion must be at least USD $100.00. A reserved amount stays on the
+   * original credit and still applies to that bill.</p> <p>A credit and every credit
+   * split from it count toward a limit of 100 credits. After a split, you can't
+   * split or transfer the original credit. You can split or transfer its new
+   * credits, and you can split a credit after you transfer it.</p> <p>You must own
+   * the credit or be the payer of the account that owns it. You can't undo a split.
+   * This operation is idempotent and supports a dry run.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/SplitCredit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SplitCreditOutcome SplitCredit(const Model::SplitCreditRequest& request) const;
+
+  /**
+   * A Callable wrapper for SplitCredit that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SplitCreditRequestT = Model::SplitCreditRequest>
+  Model::SplitCreditOutcomeCallable SplitCreditCallable(const SplitCreditRequestT& request) const {
+    return SubmitCallable(&BillingClient::SplitCredit, request);
+  }
+
+  /**
+   * An Async wrapper for SplitCredit that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SplitCreditRequestT = Model::SplitCreditRequest>
+  void SplitCreditAsync(const SplitCreditRequestT& request, const SplitCreditResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BillingClient::SplitCredit, request, handler, context);
+  }
+
+  /**
    * <p> An API operation for adding one or more tags (key-value pairs) to a
    * resource. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/TagResource">AWS
@@ -937,6 +976,40 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
   void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BillingClient::TagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Moves a credit to another account in the same consolidated billing family.
+   * The credit keeps its ID, balance, end date, and applicable products. Only the
+   * account that owns the credit changes.</p> <p>The transfer removes the credit's
+   * sharing settings. The new owner or the payer can set them again. Any amount
+   * reserved for a bill that isn't finalized moves with the credit and still applies
+   * to that bill.</p> <p>You must be the payer of both accounts. You can't transfer
+   * a credit that has ended, has no available balance, or is the original credit of
+   * a split. A transfer creates no credit, so it doesn't count toward the split
+   * limit, and the payer can transfer the credit back. This operation is idempotent
+   * and supports a dry run.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/TransferCredit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TransferCreditOutcome TransferCredit(const Model::TransferCreditRequest& request) const;
+
+  /**
+   * A Callable wrapper for TransferCredit that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename TransferCreditRequestT = Model::TransferCreditRequest>
+  Model::TransferCreditOutcomeCallable TransferCreditCallable(const TransferCreditRequestT& request) const {
+    return SubmitCallable(&BillingClient::TransferCredit, request);
+  }
+
+  /**
+   * An Async wrapper for TransferCredit that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename TransferCreditRequestT = Model::TransferCreditRequest>
+  void TransferCreditAsync(const TransferCreditRequestT& request, const TransferCreditResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BillingClient::TransferCredit, request, handler, context);
   }
 
   /**
@@ -969,12 +1042,12 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
    * <p>Updates billing preferences for the specified feature. Each feature targets a
    * distinct billing capability and has its own set of supported keys. The action
    * sets the value for each provided key; keys not present in the request are
-   * unchanged.</p> <p>Sharing keys (<code>RI_SHARING</code>,
-   * <code>CREDIT_SHARING</code>, <code>CREDIT_LEVEL_SHARING</code>, and sharing keys
-   * under <code>CREDIT_PREFERENCE_OPTIONS</code>) may only be set by the management
-   * account of a consolidated billing family. The
-   * <code>credit/{creditId}/status</code> key may be set by member accounts for
-   * credits they own, or by the management account for any credit in the
+   * unchanged.</p> <p>To set sharing keys (<code>RI_SHARING</code>,
+   * <code>CREDIT_SHARING</code>, <code>CREDIT_LEVEL_SHARING</code>,
+   * <code>BENEFIT_LEVEL_SHARING</code>, and sharing keys under
+   * <code>CREDIT_PREFERENCE_OPTIONS</code>), you must use the management account of
+   * a consolidated billing family. To set the <code>credit/{creditId}/status</code>
+   * key, you must own the credit or use the management account of its
    * family.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/UpdateBillingPreferences">AWS
    * API Reference</a></p>

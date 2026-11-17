@@ -48,6 +48,7 @@
 #include <aws/controltower/model/EnabledBaselineInheritanceDrift.h>
 #include <aws/controltower/model/EnabledBaselineParameter.h>
 #include <aws/controltower/model/EnabledBaselineParameterSummary.h>
+#include <aws/controltower/model/EnabledBaselineSourceDrift.h>
 #include <aws/controltower/model/EnabledBaselineSummary.h>
 #include <aws/controltower/model/EnabledControlDetails.h>
 #include <aws/controltower/model/EnabledControlDriftTypes.h>

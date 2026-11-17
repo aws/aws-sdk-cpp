@@ -50,6 +50,10 @@ ConformancePackStatusDetail& ConformancePackStatusDetail::operator=(JsonView jso
     m_lastUpdateCompletedTime = jsonValue.GetDouble("LastUpdateCompletedTime");
     m_lastUpdateCompletedTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Type")) {
+    m_type = ConformancePackTypeMapper::GetConformancePackTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue ConformancePackStatusDetail::Jsonize() const {
 
   if (m_lastUpdateCompletedTimeHasBeenSet) {
     payload.WithDouble("LastUpdateCompletedTime", m_lastUpdateCompletedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ConformancePackTypeMapper::GetNameForConformancePackType(m_type));
   }
 
   return payload;

@@ -68,6 +68,24 @@ class UpdateAccessSourceRequest : public Route53GlobalResolverRequest {
 
   ///@{
   /**
+   * <p>The ID of the DNS view to associate with this access source.</p>
+   */
+  inline const Aws::String& GetDnsViewId() const { return m_dnsViewId; }
+  inline bool DnsViewIdHasBeenSet() const { return m_dnsViewIdHasBeenSet; }
+  template <typename DnsViewIdT = Aws::String>
+  void SetDnsViewId(DnsViewIdT&& value) {
+    m_dnsViewIdHasBeenSet = true;
+    m_dnsViewId = std::forward<DnsViewIdT>(value);
+  }
+  template <typename DnsViewIdT = Aws::String>
+  UpdateAccessSourceRequest& WithDnsViewId(DnsViewIdT&& value) {
+    SetDnsViewId(std::forward<DnsViewIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The IP address type for the access source.</p>
    */
   inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
@@ -120,6 +138,8 @@ class UpdateAccessSourceRequest : public Route53GlobalResolverRequest {
 
   Aws::String m_cidr;
 
+  Aws::String m_dnsViewId;
+
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
 
   Aws::String m_name;
@@ -127,6 +147,7 @@ class UpdateAccessSourceRequest : public Route53GlobalResolverRequest {
   DnsProtocol m_protocol{DnsProtocol::NOT_SET};
   bool m_accessSourceIdHasBeenSet = false;
   bool m_cidrHasBeenSet = false;
+  bool m_dnsViewIdHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_protocolHasBeenSet = false;

@@ -161,12 +161,12 @@ class Integration {
 
   ///@{
   /**
-   * <p>Specifies the credentials required for the integration, if any. For AWS
-   * integrations, three options are available. To specify an IAM Role for API
-   * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
-   * the caller's identity be passed through from the request, specify the string
-   * <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on
-   * supported Amazon Web Services services, specify null.</p>
+   * <p>Specifies the credentials required for the integration, if any. For Amazon
+   * Web Services integrations, three options are available. To specify an IAM Role
+   * for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require
+   * that the caller's identity be passed through from the request, specify the
+   * string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions
+   * on supported Amazon Web Services services, specify null.</p>
    */
   inline const Aws::String& GetCredentials() const { return m_credentials; }
   inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
@@ -421,7 +421,7 @@ class Integration {
 
   ///@{
   /**
-   * <p> The ALB or NLB listener to send the request to. </p>
+   * <p> The ALB or NLB ARN to send the request to. </p>
    */
   inline const Aws::String& GetIntegrationTarget() const { return m_integrationTarget; }
   inline bool IntegrationTargetHasBeenSet() const { return m_integrationTargetHasBeenSet; }

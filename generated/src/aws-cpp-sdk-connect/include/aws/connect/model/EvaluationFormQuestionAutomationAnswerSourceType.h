@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class EvaluationFormQuestionAutomationAnswerSourceType { NOT_SET, CONTACT_LENS_DATA, GEN_AI };
+enum class EvaluationFormQuestionAutomationAnswerSourceType { NOT_SET, CONTACT_LENS_DATA, GEN_AI, CONDITION };
 
 namespace EvaluationFormQuestionAutomationAnswerSourceTypeMapper {
 AWS_CONNECT_API EvaluationFormQuestionAutomationAnswerSourceType

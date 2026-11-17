@@ -53,6 +53,11 @@ StorageLensConfiguration& StorageLensConfiguration::operator=(const XmlNode& xml
       m_expandedPrefixesDataExport = expandedPrefixesDataExportNode;
       m_expandedPrefixesDataExportHasBeenSet = true;
     }
+    XmlNode costAndUsageReportsPublishNode = resultNode.FirstChild("CostAndUsageReportsPublish");
+    if (!costAndUsageReportsPublishNode.IsNull()) {
+      m_costAndUsageReportsPublish = costAndUsageReportsPublishNode;
+      m_costAndUsageReportsPublishHasBeenSet = true;
+    }
     XmlNode isEnabledNode = resultNode.FirstChild("IsEnabled");
     if (!isEnabledNode.IsNull()) {
       m_isEnabled =
@@ -73,6 +78,11 @@ StorageLensConfiguration& StorageLensConfiguration::operator=(const XmlNode& xml
     if (!prefixDelimiterNode.IsNull()) {
       m_prefixDelimiter = Aws::Utils::Xml::DecodeEscapedXmlText(prefixDelimiterNode.GetText());
       m_prefixDelimiterHasBeenSet = true;
+    }
+    XmlNode intAccessTiersNode = resultNode.FirstChild("IntAccessTiers");
+    if (!intAccessTiersNode.IsNull()) {
+      m_intAccessTiers = intAccessTiersNode;
+      m_intAccessTiersHasBeenSet = true;
     }
   }
 
@@ -111,6 +121,11 @@ void StorageLensConfiguration::AddToNode(XmlNode& parentNode) const {
     m_expandedPrefixesDataExport.AddToNode(expandedPrefixesDataExportNode);
   }
 
+  if (m_costAndUsageReportsPublishHasBeenSet) {
+    XmlNode costAndUsageReportsPublishNode = parentNode.CreateChildElement("CostAndUsageReportsPublish");
+    m_costAndUsageReportsPublish.AddToNode(costAndUsageReportsPublishNode);
+  }
+
   if (m_isEnabledHasBeenSet) {
     XmlNode isEnabledNode = parentNode.CreateChildElement("IsEnabled");
     ss << std::boolalpha << m_isEnabled;
@@ -131,6 +146,11 @@ void StorageLensConfiguration::AddToNode(XmlNode& parentNode) const {
   if (m_prefixDelimiterHasBeenSet) {
     XmlNode prefixDelimiterNode = parentNode.CreateChildElement("PrefixDelimiter");
     prefixDelimiterNode.SetText(m_prefixDelimiter);
+  }
+
+  if (m_intAccessTiersHasBeenSet) {
+    XmlNode intAccessTiersNode = parentNode.CreateChildElement("IntAccessTiers");
+    m_intAccessTiers.AddToNode(intAccessTiersNode);
   }
 }
 

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/bedrock-agentcore-control/model/ListAgentInsightStoresPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsByCapacityProviderPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsPaginationTraits.h>
@@ -55,6 +56,18 @@ namespace BedrockAgentCoreControl {
 template <typename DerivedClient>
 class BedrockAgentCoreControlPaginationBase {
  public:
+  /**
+   * Create a paginator for ListAgentInsightStores operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentInsightStoresRequest,
+                                    Pagination::ListAgentInsightStoresPaginationTraits<DerivedClient>>
+  ListAgentInsightStoresPaginator(const Model::ListAgentInsightStoresRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentInsightStoresRequest,
+                                             Pagination::ListAgentInsightStoresPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListAgentRuntimeEndpoints operation
    */

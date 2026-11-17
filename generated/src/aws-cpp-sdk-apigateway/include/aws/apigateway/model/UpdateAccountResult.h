@@ -24,8 +24,8 @@ class JsonValue;
 namespace APIGateway {
 namespace Model {
 /**
- * <p>Represents an AWS account that is associated with API Gateway.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Represents an Amazon Web Services account that is associated with API
+ * Gateway.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Account">AWS
  * API Reference</a></p>
  */

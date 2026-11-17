@@ -10,6 +10,7 @@
 #include <aws/observabilityadmin/model/SourceContextGraphConfiguration.h>
 #include <aws/observabilityadmin/model/SourceLogsConfiguration.h>
 #include <aws/observabilityadmin/model/SourceMetricsConfiguration.h>
+#include <aws/observabilityadmin/model/SourceProfilesConfiguration.h>
 
 #include <utility>
 
@@ -118,6 +119,24 @@ class CentralizationRuleSource {
 
   ///@{
   /**
+   * <p>Profile-specific configuration for centralization source profiles.</p>
+   */
+  inline const SourceProfilesConfiguration& GetSourceProfilesConfiguration() const { return m_sourceProfilesConfiguration; }
+  inline bool SourceProfilesConfigurationHasBeenSet() const { return m_sourceProfilesConfigurationHasBeenSet; }
+  template <typename SourceProfilesConfigurationT = SourceProfilesConfiguration>
+  void SetSourceProfilesConfiguration(SourceProfilesConfigurationT&& value) {
+    m_sourceProfilesConfigurationHasBeenSet = true;
+    m_sourceProfilesConfiguration = std::forward<SourceProfilesConfigurationT>(value);
+  }
+  template <typename SourceProfilesConfigurationT = SourceProfilesConfiguration>
+  CentralizationRuleSource& WithSourceProfilesConfiguration(SourceProfilesConfigurationT&& value) {
+    SetSourceProfilesConfiguration(std::forward<SourceProfilesConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration that enables centralization of the context graph for the
    * selected sources. Including this configuration in a rule's source opts the rule
    * into centralizing the context graph for the selected sources.</p>
@@ -144,11 +163,14 @@ class CentralizationRuleSource {
 
   SourceMetricsConfiguration m_sourceMetricsConfiguration;
 
+  SourceProfilesConfiguration m_sourceProfilesConfiguration;
+
   SourceContextGraphConfiguration m_sourceContextGraphConfiguration;
   bool m_regionsHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
   bool m_sourceLogsConfigurationHasBeenSet = false;
   bool m_sourceMetricsConfigurationHasBeenSet = false;
+  bool m_sourceProfilesConfigurationHasBeenSet = false;
   bool m_sourceContextGraphConfigurationHasBeenSet = false;
 };
 

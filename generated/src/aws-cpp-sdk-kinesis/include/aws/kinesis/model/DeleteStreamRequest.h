@@ -59,8 +59,13 @@ class DeleteStreamRequest : public KinesisRequest {
   ///@{
   /**
    * <p>If this parameter is unset (<code>null</code>) or if you set it to
-   * <code>false</code>, and the stream has registered consumers, the call to
-   * <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
+   * <code>false</code>, and the stream has registered enhanced fan-out consumers,
+   * the call to <code>DeleteStream</code> fails with a
+   * <code>ResourceInUseException</code>.</p> <p>If you set it to <code>true</code>,
+   * <code>DeleteStream</code> deletes the stream and every consumer registered with
+   * it.</p> <p>This parameter does not apply to queues. A stream that has queues
+   * cannot be deleted until every queue on it is deleted with <a>DeleteQueue</a>,
+   * whatever this parameter is set to.</p>
    */
   inline bool GetEnforceConsumerDeletion() const { return m_enforceConsumerDeletion; }
   inline bool EnforceConsumerDeletionHasBeenSet() const { return m_enforceConsumerDeletionHasBeenSet; }

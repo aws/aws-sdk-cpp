@@ -61,6 +61,10 @@ Aws::String UpdateLaunchConfigurationRequest::SerializePayload() const {
     payload.WithString("mapAutoTaggingMpeID", m_mapAutoTaggingMpeID);
   }
 
+  if (m_mapAutoTaggingKeyHasBeenSet) {
+    payload.WithString("mapAutoTaggingKey", m_mapAutoTaggingKey);
+  }
+
   if (m_accountIDHasBeenSet) {
     payload.WithString("accountID", m_accountID);
   }

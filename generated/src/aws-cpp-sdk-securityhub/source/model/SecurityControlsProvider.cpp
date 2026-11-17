@@ -17,6 +17,7 @@ namespace SecurityControlsProviderMapper {
 
 static const int AWS_HASH = HashingUtils::HashString("AWS");
 static const int Azure_HASH = HashingUtils::HashString("Azure");
+static const int GCP_HASH = HashingUtils::HashString("GCP");
 
 SecurityControlsProvider GetSecurityControlsProviderForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ SecurityControlsProvider GetSecurityControlsProviderForName(const Aws::String& n
     return SecurityControlsProvider::AWS;
   } else if (hashCode == Azure_HASH) {
     return SecurityControlsProvider::Azure;
+  } else if (hashCode == GCP_HASH) {
+    return SecurityControlsProvider::GCP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForSecurityControlsProvider(SecurityControlsProvider enumValu
       return "AWS";
     case SecurityControlsProvider::Azure:
       return "Azure";
+    case SecurityControlsProvider::GCP:
+      return "GCP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

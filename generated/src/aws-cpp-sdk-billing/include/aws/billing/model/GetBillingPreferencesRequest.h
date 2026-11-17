@@ -75,7 +75,7 @@ class GetBillingPreferencesRequest : public BillingRequest {
    * <code>BILLING_ALERTS</code>, <code>RI_SHARING</code>,
    * <code>RI_SHARING_HISTORY</code>, <code>CREDIT_SHARING</code>,
    * <code>CREDIT_SHARING_HISTORY</code>, <code>CREDIT_LEVEL_SHARING</code>,
-   * <code>CREDIT_PREFERENCE_OPTIONS</code>.</p>
+   * <code>CREDIT_PREFERENCE_OPTIONS</code>, <code>BENEFIT_LEVEL_SHARING</code>.</p>
    */
   inline const Aws::Vector<BillingFeature>& GetFeatures() const { return m_features; }
   inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
@@ -100,7 +100,10 @@ class GetBillingPreferencesRequest : public BillingRequest {
   /**
    * <p>Filters to narrow results. Specify exactly one filter when supplied. The
    * supported filter name is <code>PREFERENCE_KEY</code>, which accepts 1 to 10
-   * values to match preference keys.</p>
+   * values to match preference keys.</p> <p>For <code>BENEFIT_LEVEL_SHARING</code>,
+   * this filter is required. Specify exactly one value that identifies the Reserved
+   * Instance (RI) or Savings Plan (SP), in the form
+   * <code>benefit/{ri|sp}/{benefitId}</code>.</p>
    */
   inline const Aws::Vector<BillingFeatureFilter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

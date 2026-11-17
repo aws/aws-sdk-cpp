@@ -12,6 +12,7 @@
 #include <aws/elasticache/model/CacheUsageLimits.h>
 #include <aws/elasticache/model/ConnectionType.h>
 #include <aws/elasticache/model/Endpoint.h>
+#include <aws/elasticache/model/Integration.h>
 #include <aws/elasticache/model/MigrationSummary.h>
 #include <aws/elasticache/model/NetworkType.h>
 #include <aws/elasticache/model/StorageEncryptionType.h>
@@ -437,6 +438,30 @@ class ServerlessCache {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configured integrations and their status.</p>
+   */
+  inline const Aws::Vector<Integration>& GetIntegrations() const { return m_integrations; }
+  inline bool IntegrationsHasBeenSet() const { return m_integrationsHasBeenSet; }
+  template <typename IntegrationsT = Aws::Vector<Integration>>
+  void SetIntegrations(IntegrationsT&& value) {
+    m_integrationsHasBeenSet = true;
+    m_integrations = std::forward<IntegrationsT>(value);
+  }
+  template <typename IntegrationsT = Aws::Vector<Integration>>
+  ServerlessCache& WithIntegrations(IntegrationsT&& value) {
+    SetIntegrations(std::forward<IntegrationsT>(value));
+    return *this;
+  }
+  template <typename IntegrationsT = Integration>
+  ServerlessCache& AddIntegrations(IntegrationsT&& value) {
+    m_integrationsHasBeenSet = true;
+    m_integrations.emplace_back(std::forward<IntegrationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serverlessCacheName;
 
@@ -479,6 +504,8 @@ class ServerlessCache {
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
 
   MigrationSummary m_migration;
+
+  Aws::Vector<Integration> m_integrations;
   bool m_serverlessCacheNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
@@ -500,6 +527,7 @@ class ServerlessCache {
   bool m_networkTypeHasBeenSet = false;
   bool m_connectionTypeHasBeenSet = false;
   bool m_migrationHasBeenSet = false;
+  bool m_integrationsHasBeenSet = false;
 };
 
 }  // namespace Model

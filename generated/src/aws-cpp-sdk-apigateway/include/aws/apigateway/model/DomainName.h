@@ -178,8 +178,8 @@ class DomainName {
   ///@{
   /**
    * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
-   * For more information, see Set up a Regional Custom Domain Name and AWS Regions
-   * and Endpoints for API Gateway. </p>
+   * For more information, see Set up a Regional Custom Domain Name and Amazon Web
+   * Services Regions and Endpoints for API Gateway. </p>
    */
   inline const Aws::String& GetRegionalHostedZoneId() const { return m_regionalHostedZoneId; }
   inline bool RegionalHostedZoneIdHasBeenSet() const { return m_regionalHostedZoneIdHasBeenSet; }
@@ -260,8 +260,8 @@ class DomainName {
   /**
    * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
    * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
-   * For more information, see Set up a Regional Custom Domain Name and AWS Regions
-   * and Endpoints for API Gateway. </p>
+   * For more information, see Set up a Regional Custom Domain Name and Amazon Web
+   * Services Regions and Endpoints for API Gateway. </p>
    */
   inline const Aws::String& GetDistributionHostedZoneId() const { return m_distributionHostedZoneId; }
   inline bool DistributionHostedZoneIdHasBeenSet() const { return m_distributionHostedZoneIdHasBeenSet; }

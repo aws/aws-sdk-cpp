@@ -85,6 +85,38 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSR
   virtual ~AgreementServiceClient();
 
   /**
+   * <p>Allows the management account or a delegated administrator of the buyer's AWS
+   * organization to approve an agreement approval that is in
+   * <code>PENDING_APPROVAL</code> status, as the organization administrator approver
+   * or on behalf of another approver. Once every level is approved, the agreement
+   * approval transitions to <code>APPROVED</code> status. You can optionally provide
+   * purchase order references and a note.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/AcceptAgreementApproval">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AcceptAgreementApprovalOutcome AcceptAgreementApproval(const Model::AcceptAgreementApprovalRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for AcceptAgreementApproval that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AcceptAgreementApprovalRequestT = Model::AcceptAgreementApprovalRequest>
+  Model::AcceptAgreementApprovalOutcomeCallable AcceptAgreementApprovalCallable(const AcceptAgreementApprovalRequestT& request = {}) const {
+    return SubmitCallable(&AgreementServiceClient::AcceptAgreementApproval, request);
+  }
+
+  /**
+   * An Async wrapper for AcceptAgreementApproval that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AcceptAgreementApprovalRequestT = Model::AcceptAgreementApprovalRequest>
+  void AcceptAgreementApprovalAsync(const AcceptAgreementApprovalResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const AcceptAgreementApprovalRequestT& request = {}) const {
+    return SubmitAsync(&AgreementServiceClient::AcceptAgreementApproval, request, handler, context);
+  }
+
+  /**
    * <p>Allows buyers (acceptors) to accept a cancellation request that is in
    * <code>PENDING_APPROVAL</code> status. Once accepted, the cancellation request
    * transitions to <code>APPROVED</code> status and the agreement cancellation will
@@ -315,6 +347,37 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSR
   }
 
   /**
+   * <p>Allows buyers (acceptors) to cancel an agreement request that is in
+   * <code>PENDING_APPROVAL</code> status, or in <code>APPROVED</code> status when no
+   * agreement has been created from it. Once cancelled, the agreement request
+   * transitions to <code>CANCELLED</code> status and its open agreement approvals
+   * are cancelled.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/CancelAgreementRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelAgreementRequestOutcome CancelAgreementRequest(const Model::CancelAgreementRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelAgreementRequest that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CancelAgreementRequestRequestT = Model::CancelAgreementRequestRequest>
+  Model::CancelAgreementRequestOutcomeCallable CancelAgreementRequestCallable(const CancelAgreementRequestRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::CancelAgreementRequest, request);
+  }
+
+  /**
+   * An Async wrapper for CancelAgreementRequest that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CancelAgreementRequestRequestT = Model::CancelAgreementRequestRequest>
+  void CancelAgreementRequestAsync(const CancelAgreementRequestRequestT& request,
+                                   const CancelAgreementRequestResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::CancelAgreementRequest, request, handler, context);
+  }
+
+  /**
    * <p>Creates an agreement request that acts as a quote for the terms you want to
    * accept. The agreement request captures the requested terms, calculates charges,
    * and returns a summary. Use <code>AcceptAgreementRequest</code> with the returned
@@ -373,6 +436,36 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSR
   }
 
   /**
+   * <p>Retrieves detailed information about a specific agreement approval, including
+   * its approval levels, the approvers at each level, and the decision of each
+   * approver. The acceptor, or the management account or a delegated administrator
+   * of the acceptor's AWS organization, can call this operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementApproval">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgreementApprovalOutcome GetAgreementApproval(const Model::GetAgreementApprovalRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgreementApproval that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAgreementApprovalRequestT = Model::GetAgreementApprovalRequest>
+  Model::GetAgreementApprovalOutcomeCallable GetAgreementApprovalCallable(const GetAgreementApprovalRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::GetAgreementApproval, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgreementApproval that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAgreementApprovalRequestT = Model::GetAgreementApprovalRequest>
+  void GetAgreementApprovalAsync(const GetAgreementApprovalRequestT& request, const GetAgreementApprovalResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::GetAgreementApproval, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves detailed information about a specific agreement cancellation
    * request. Both sellers (proposers) and buyers (acceptors) can use this operation
    * to view cancellation requests associated with their agreements.</p><p><h3>See
@@ -402,6 +495,38 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSR
                                             const GetAgreementCancellationRequestResponseReceivedHandler& handler,
                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AgreementServiceClient::GetAgreementCancellationRequest, request, handler, context);
+  }
+
+  /**
+   * <p>Obtains details about the acceptor's contact information for an active
+   * agreement that you participate in as the proposer, acceptor, or
+   * manufacturer.</p>  <p>If the acceptor's contact information isn't
+   * available, the operation succeeds but doesn't return
+   * <code>acceptorContact</code>. This happens when the acceptor didn't provide it,
+   * the information was removed, or the agreement isn't active.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementContacts">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgreementContactsOutcome GetAgreementContacts(const Model::GetAgreementContactsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgreementContacts that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAgreementContactsRequestT = Model::GetAgreementContactsRequest>
+  Model::GetAgreementContactsOutcomeCallable GetAgreementContactsCallable(const GetAgreementContactsRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::GetAgreementContacts, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgreementContacts that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAgreementContactsRequestT = Model::GetAgreementContactsRequest>
+  void GetAgreementContactsAsync(const GetAgreementContactsRequestT& request, const GetAgreementContactsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::GetAgreementContacts, request, handler, context);
   }
 
   /**
@@ -466,6 +591,101 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSR
                                        const GetAgreementPaymentRequestResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AgreementServiceClient::GetAgreementPaymentRequest, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed information about a specific agreement request, including
+   * its status, intent, approval requirement, and charges. The acceptor, or the
+   * management account or a delegated administrator of the acceptor's AWS
+   * organization, can call this operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgreementRequestOutcome GetAgreementRequest(const Model::GetAgreementRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgreementRequest that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAgreementRequestRequestT = Model::GetAgreementRequestRequest>
+  Model::GetAgreementRequestOutcomeCallable GetAgreementRequestCallable(const GetAgreementRequestRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::GetAgreementRequest, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgreementRequest that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetAgreementRequestRequestT = Model::GetAgreementRequestRequest>
+  void GetAgreementRequestAsync(const GetAgreementRequestRequestT& request, const GetAgreementRequestResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::GetAgreementRequest, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the approval plans that apply to an agreement request. Only the
+   * acceptor of the agreement request can call this operation. Each approval plan
+   * lists its approval levels and the approvers at each level. Pass the
+   * <code>planReference</code> of an approval plan to
+   * <code>StartAgreementApprovals</code> to start an agreement approval for
+   * it.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementRequestApprovalPlans">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgreementRequestApprovalPlansOutcome GetAgreementRequestApprovalPlans(
+      const Model::GetAgreementRequestApprovalPlansRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgreementRequestApprovalPlans that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetAgreementRequestApprovalPlansRequestT = Model::GetAgreementRequestApprovalPlansRequest>
+  Model::GetAgreementRequestApprovalPlansOutcomeCallable GetAgreementRequestApprovalPlansCallable(
+      const GetAgreementRequestApprovalPlansRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::GetAgreementRequestApprovalPlans, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgreementRequestApprovalPlans that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetAgreementRequestApprovalPlansRequestT = Model::GetAgreementRequestApprovalPlansRequest>
+  void GetAgreementRequestApprovalPlansAsync(const GetAgreementRequestApprovalPlansRequestT& request,
+                                             const GetAgreementRequestApprovalPlansResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::GetAgreementRequestApprovalPlans, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the terms proposed for an agreement request, such as pricing,
+   * legal, and renewal terms. The acceptor, or the management account or a delegated
+   * administrator of the acceptor's AWS organization, can call this operation. This
+   * operation is similar to <code>GetAgreementTerms</code>, but it takes an
+   * <code>agreementRequestId</code> instead of an
+   * <code>agreementId</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementRequestTerms">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgreementRequestTermsOutcome GetAgreementRequestTerms(const Model::GetAgreementRequestTermsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgreementRequestTerms that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAgreementRequestTermsRequestT = Model::GetAgreementRequestTermsRequest>
+  Model::GetAgreementRequestTermsOutcomeCallable GetAgreementRequestTermsCallable(const GetAgreementRequestTermsRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::GetAgreementRequestTerms, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgreementRequestTerms that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAgreementRequestTermsRequestT = Model::GetAgreementRequestTermsRequest>
+  void GetAgreementRequestTermsAsync(const GetAgreementRequestTermsRequestT& request,
+                                     const GetAgreementRequestTermsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::GetAgreementRequestTerms, request, handler, context);
   }
 
   /**
@@ -536,6 +756,39 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSR
                                         const GetBillingAdjustmentRequestResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AgreementServiceClient::GetBillingAdjustmentRequest, request, handler, context);
+  }
+
+  /**
+   * <p>Lists agreement approvals available to you as a buyer. Use
+   * <code>REQUESTER</code> as the <code>partyType</code> to list the agreement
+   * approvals that your account started. Use <code>AWS_ORGANIZATION_ADMIN</code> to
+   * list the agreement approvals in your AWS organization, if your account is the
+   * management account or a delegated administrator of the organization. You can
+   * filter the results by agreement request, approval type, and
+   * status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementApprovals">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAgreementApprovalsOutcome ListAgreementApprovals(const Model::ListAgreementApprovalsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAgreementApprovals that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAgreementApprovalsRequestT = Model::ListAgreementApprovalsRequest>
+  Model::ListAgreementApprovalsOutcomeCallable ListAgreementApprovalsCallable(const ListAgreementApprovalsRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::ListAgreementApprovals, request);
+  }
+
+  /**
+   * An Async wrapper for ListAgreementApprovals that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAgreementApprovalsRequestT = Model::ListAgreementApprovalsRequest>
+  void ListAgreementApprovalsAsync(const ListAgreementApprovalsRequestT& request,
+                                   const ListAgreementApprovalsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::ListAgreementApprovals, request, handler, context);
   }
 
   /**
@@ -671,6 +924,35 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSR
   }
 
   /**
+   * <p>Lists agreement requests available to you as a buyer (acceptor). You can
+   * filter the results by <code>catalog</code>, <code>status</code>, and
+   * <code>resourceId</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementRequests">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAgreementRequestsOutcome ListAgreementRequests(const Model::ListAgreementRequestsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAgreementRequests that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAgreementRequestsRequestT = Model::ListAgreementRequestsRequest>
+  Model::ListAgreementRequestsOutcomeCallable ListAgreementRequestsCallable(const ListAgreementRequestsRequestT& request = {}) const {
+    return SubmitCallable(&AgreementServiceClient::ListAgreementRequests, request);
+  }
+
+  /**
+   * An Async wrapper for ListAgreementRequests that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAgreementRequestsRequestT = Model::ListAgreementRequestsRequest>
+  void ListAgreementRequestsAsync(const ListAgreementRequestsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                  const ListAgreementRequestsRequestT& request = {}) const {
+    return SubmitAsync(&AgreementServiceClient::ListAgreementRequests, request, handler, context);
+  }
+
+  /**
    * <p>Lists billing adjustment requests for a specific agreement. Sellers
    * (proposers) can use this operation to view all billing adjustment requests
    * associated with an agreement.</p><p><h3>See Also:</h3>   <a
@@ -699,6 +981,38 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSR
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                           const ListBillingAdjustmentRequestsRequestT& request = {}) const {
     return SubmitAsync(&AgreementServiceClient::ListBillingAdjustmentRequests, request, handler, context);
+  }
+
+  /**
+   * <p>Allows the management account or a delegated administrator of the buyer's AWS
+   * organization to reject an agreement approval that is in
+   * <code>PENDING_APPROVAL</code> status, as the organization administrator approver
+   * or on behalf of another approver. Once rejected, the agreement approval and its
+   * agreement request transition to <code>REJECTED</code> status. You must provide a
+   * reason for the rejection.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/RejectAgreementApproval">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RejectAgreementApprovalOutcome RejectAgreementApproval(const Model::RejectAgreementApprovalRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for RejectAgreementApproval that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RejectAgreementApprovalRequestT = Model::RejectAgreementApprovalRequest>
+  Model::RejectAgreementApprovalOutcomeCallable RejectAgreementApprovalCallable(const RejectAgreementApprovalRequestT& request = {}) const {
+    return SubmitCallable(&AgreementServiceClient::RejectAgreementApproval, request);
+  }
+
+  /**
+   * An Async wrapper for RejectAgreementApproval that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RejectAgreementApprovalRequestT = Model::RejectAgreementApprovalRequest>
+  void RejectAgreementApprovalAsync(const RejectAgreementApprovalResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const RejectAgreementApprovalRequestT& request = {}) const {
+    return SubmitAsync(&AgreementServiceClient::RejectAgreementApproval, request, handler, context);
   }
 
   /**
@@ -866,6 +1180,39 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSR
                                         const SendAgreementPaymentRequestResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AgreementServiceClient::SendAgreementPaymentRequest, request, handler, context);
+  }
+
+  /**
+   * <p>Allows buyers (acceptors) to start the approvals that their organization
+   * requires for an agreement request. You start one agreement approval for each
+   * approval plan that you specify. Use
+   * <code>GetAgreementRequestApprovalPlans</code> to retrieve the approval plans of
+   * the agreement request. Once the agreement approvals start, the agreement request
+   * transitions to <code>PENDING_APPROVAL</code> status.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/StartAgreementApprovals">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartAgreementApprovalsOutcome StartAgreementApprovals(const Model::StartAgreementApprovalsRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartAgreementApprovals that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartAgreementApprovalsRequestT = Model::StartAgreementApprovalsRequest>
+  Model::StartAgreementApprovalsOutcomeCallable StartAgreementApprovalsCallable(const StartAgreementApprovalsRequestT& request) const {
+    return SubmitCallable(&AgreementServiceClient::StartAgreementApprovals, request);
+  }
+
+  /**
+   * An Async wrapper for StartAgreementApprovals that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartAgreementApprovalsRequestT = Model::StartAgreementApprovalsRequest>
+  void StartAgreementApprovalsAsync(const StartAgreementApprovalsRequestT& request,
+                                    const StartAgreementApprovalsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgreementServiceClient::StartAgreementApprovals, request, handler, context);
   }
 
   /**

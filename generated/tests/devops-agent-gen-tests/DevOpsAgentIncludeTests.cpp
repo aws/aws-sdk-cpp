@@ -45,7 +45,10 @@
 #include <aws/devops-agent/model/AzureDevOpsConfiguration.h>
 #include <aws/devops-agent/model/CapabilityConfiguration.h>
 #include <aws/devops-agent/model/CapabilityType.h>
+#include <aws/devops-agent/model/ChatArchiveStatus.h>
 #include <aws/devops-agent/model/ChatExecution.h>
+#include <aws/devops-agent/model/ConflictException.h>
+#include <aws/devops-agent/model/ConflictExceptionReason.h>
 #include <aws/devops-agent/model/CreateAgentSpaceRequest.h>
 #include <aws/devops-agent/model/CreateAgentSpaceResult.h>
 #include <aws/devops-agent/model/CreateAssetFileRequest.h>
@@ -108,6 +111,8 @@
 #include <aws/devops-agent/model/GetAssociationResult.h>
 #include <aws/devops-agent/model/GetBacklogTaskRequest.h>
 #include <aws/devops-agent/model/GetBacklogTaskResult.h>
+#include <aws/devops-agent/model/GetChatRequest.h>
+#include <aws/devops-agent/model/GetChatResult.h>
 #include <aws/devops-agent/model/GetOperatorAppRequest.h>
 #include <aws/devops-agent/model/GetOperatorAppResult.h>
 #include <aws/devops-agent/model/GetRecommendationRequest.h>
@@ -327,6 +332,8 @@
 #include <aws/devops-agent/model/UpdateAssociationResult.h>
 #include <aws/devops-agent/model/UpdateBacklogTaskRequest.h>
 #include <aws/devops-agent/model/UpdateBacklogTaskResult.h>
+#include <aws/devops-agent/model/UpdateChatRequest.h>
+#include <aws/devops-agent/model/UpdateChatResult.h>
 #include <aws/devops-agent/model/UpdateGoalRequest.h>
 #include <aws/devops-agent/model/UpdateGoalResult.h>
 #include <aws/devops-agent/model/UpdateOperatorAppIdpConfigRequest.h>

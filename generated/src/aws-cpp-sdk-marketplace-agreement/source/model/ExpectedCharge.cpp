@@ -154,6 +154,36 @@ ExpectedCharge& ExpectedCharge::operator=(const std::shared_ptr<Aws::Crt::Cbor::
               else if (initialKeyStr == "estimatedTaxes") {
                 m_estimatedTaxes = EstimatedTaxes(decoder);
                 m_estimatedTaxesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "purchaseOrderReference") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_purchaseOrderReference = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_purchaseOrderReference = ss.str();
+                  }
+                }
+                m_purchaseOrderReferenceHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -305,6 +335,36 @@ ExpectedCharge& ExpectedCharge::operator=(const std::shared_ptr<Aws::Crt::Cbor::
             else if (initialKeyStr == "estimatedTaxes") {
               m_estimatedTaxes = EstimatedTaxes(decoder);
               m_estimatedTaxesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "purchaseOrderReference") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_purchaseOrderReference = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_purchaseOrderReference = ss.str();
+                }
+              }
+              m_purchaseOrderReferenceHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -339,6 +399,9 @@ void ExpectedCharge::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_estimatedTaxesHasBeenSet) {
     mapSize++;
   }
+  if (m_purchaseOrderReferenceHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -371,6 +434,11 @@ void ExpectedCharge::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_estimatedTaxesHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("estimatedTaxes"));
     m_estimatedTaxes.CborEncode(encoder);
+  }
+
+  if (m_purchaseOrderReferenceHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("purchaseOrderReference"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_purchaseOrderReference.c_str()));
   }
 }
 

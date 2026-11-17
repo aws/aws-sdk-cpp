@@ -24,6 +24,10 @@ EvaluationFormSingleSelectQuestionAutomationOption& EvaluationFormSingleSelectQu
     m_ruleCategory = jsonValue.GetObject("RuleCategory");
     m_ruleCategoryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AutomationRule")) {
+    m_automationRule = jsonValue.GetObject("AutomationRule");
+    m_automationRuleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -32,6 +36,10 @@ JsonValue EvaluationFormSingleSelectQuestionAutomationOption::Jsonize() const {
 
   if (m_ruleCategoryHasBeenSet) {
     payload.WithObject("RuleCategory", m_ruleCategory.Jsonize());
+  }
+
+  if (m_automationRuleHasBeenSet) {
+    payload.WithObject("AutomationRule", m_automationRule.Jsonize());
   }
 
   return payload;

@@ -10,7 +10,17 @@
 namespace Aws {
 namespace ConfigService {
 namespace Model {
-enum class ConformancePackState { NOT_SET, CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, DELETE_IN_PROGRESS, DELETE_FAILED };
+enum class ConformancePackState {
+  NOT_SET,
+  CREATE_IN_PROGRESS,
+  CREATE_COMPLETE,
+  CREATE_FAILED,
+  UPDATE_IN_PROGRESS,
+  UPDATE_COMPLETE,
+  UPDATE_FAILED,
+  DELETE_IN_PROGRESS,
+  DELETE_FAILED
+};
 
 namespace ConformancePackStateMapper {
 AWS_CONFIGSERVICE_API ConformancePackState GetConformancePackStateForName(const Aws::String& name);

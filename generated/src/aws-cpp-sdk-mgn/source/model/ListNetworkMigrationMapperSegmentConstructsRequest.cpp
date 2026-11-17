@@ -39,5 +39,13 @@ Aws::String ListNetworkMigrationMapperSegmentConstructsRequest::SerializePayload
     payload.WithString("nextToken", m_nextToken);
   }
 
+  if (m_includeEnrichedPropertiesHasBeenSet) {
+    payload.WithBool("includeEnrichedProperties", m_includeEnrichedProperties);
+  }
+
+  if (m_includeConfigurationHasBeenSet) {
+    payload.WithBool("includeConfiguration", m_includeConfiguration);
+  }
+
   return payload.View().WriteReadable();
 }

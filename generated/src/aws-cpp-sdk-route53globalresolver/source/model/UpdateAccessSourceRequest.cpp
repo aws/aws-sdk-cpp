@@ -19,6 +19,10 @@ Aws::String UpdateAccessSourceRequest::SerializePayload() const {
     payload.WithString("cidr", m_cidr);
   }
 
+  if (m_dnsViewIdHasBeenSet) {
+    payload.WithString("dnsViewId", m_dnsViewId);
+  }
+
   if (m_ipAddressTypeHasBeenSet) {
     payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }

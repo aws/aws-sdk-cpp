@@ -7,7 +7,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/CapacityBlockOfferingSegment.h>
 #include <aws/ec2/model/CapacityReservationTenancy.h>
 
 #include <utility>
@@ -283,6 +285,34 @@ class CapacityBlockOffering {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The individual segments that compose the Capacity Block offering. Each
+   * segment describes a distinct block of capacity with its own Availability Zone,
+   * instance type, schedule, and pricing.</p>
+   */
+  inline const Aws::Vector<CapacityBlockOfferingSegment>& GetCapacityBlockOfferingSegments() const {
+    return m_capacityBlockOfferingSegments;
+  }
+  inline bool CapacityBlockOfferingSegmentsHasBeenSet() const { return m_capacityBlockOfferingSegmentsHasBeenSet; }
+  template <typename CapacityBlockOfferingSegmentsT = Aws::Vector<CapacityBlockOfferingSegment>>
+  void SetCapacityBlockOfferingSegments(CapacityBlockOfferingSegmentsT&& value) {
+    m_capacityBlockOfferingSegmentsHasBeenSet = true;
+    m_capacityBlockOfferingSegments = std::forward<CapacityBlockOfferingSegmentsT>(value);
+  }
+  template <typename CapacityBlockOfferingSegmentsT = Aws::Vector<CapacityBlockOfferingSegment>>
+  CapacityBlockOffering& WithCapacityBlockOfferingSegments(CapacityBlockOfferingSegmentsT&& value) {
+    SetCapacityBlockOfferingSegments(std::forward<CapacityBlockOfferingSegmentsT>(value));
+    return *this;
+  }
+  template <typename CapacityBlockOfferingSegmentsT = CapacityBlockOfferingSegment>
+  CapacityBlockOffering& AddCapacityBlockOfferingSegments(CapacityBlockOfferingSegmentsT&& value) {
+    m_capacityBlockOfferingSegmentsHasBeenSet = true;
+    m_capacityBlockOfferingSegments.emplace_back(std::forward<CapacityBlockOfferingSegmentsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityBlockOfferingId;
 
@@ -311,6 +341,8 @@ class CapacityBlockOffering {
   int m_capacityBlockDurationMinutes{0};
 
   Aws::String m_zoneType;
+
+  Aws::Vector<CapacityBlockOfferingSegment> m_capacityBlockOfferingSegments;
   bool m_capacityBlockOfferingIdHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
@@ -325,6 +357,7 @@ class CapacityBlockOffering {
   bool m_ultraserverCountHasBeenSet = false;
   bool m_capacityBlockDurationMinutesHasBeenSet = false;
   bool m_zoneTypeHasBeenSet = false;
+  bool m_capacityBlockOfferingSegmentsHasBeenSet = false;
 };
 
 }  // namespace Model

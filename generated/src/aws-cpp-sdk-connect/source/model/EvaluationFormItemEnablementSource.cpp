@@ -26,6 +26,27 @@ EvaluationFormItemEnablementSource& EvaluationFormItemEnablementSource::operator
     m_refId = jsonValue.GetString("RefId");
     m_refIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContactField")) {
+    m_contactField = EvaluationFormContactFieldMapper::GetEvaluationFormContactFieldForName(jsonValue.GetString("ContactField"));
+    m_contactFieldHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ContactAttributeKey")) {
+    m_contactAttributeKey = jsonValue.GetString("ContactAttributeKey");
+    m_contactAttributeKeyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SegmentAttributeKey")) {
+    m_segmentAttributeKey = jsonValue.GetString("SegmentAttributeKey");
+    m_segmentAttributeKeyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EvaluationMetadataField")) {
+    m_evaluationMetadataField = EvaluationFormEvaluationMetadataFieldMapper::GetEvaluationFormEvaluationMetadataFieldForName(
+        jsonValue.GetString("EvaluationMetadataField"));
+    m_evaluationMetadataFieldHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AiMetricsField")) {
+    m_aiMetricsField = EvaluationFormAiMetricsFieldMapper::GetEvaluationFormAiMetricsFieldForName(jsonValue.GetString("AiMetricsField"));
+    m_aiMetricsFieldHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +59,28 @@ JsonValue EvaluationFormItemEnablementSource::Jsonize() const {
 
   if (m_refIdHasBeenSet) {
     payload.WithString("RefId", m_refId);
+  }
+
+  if (m_contactFieldHasBeenSet) {
+    payload.WithString("ContactField", EvaluationFormContactFieldMapper::GetNameForEvaluationFormContactField(m_contactField));
+  }
+
+  if (m_contactAttributeKeyHasBeenSet) {
+    payload.WithString("ContactAttributeKey", m_contactAttributeKey);
+  }
+
+  if (m_segmentAttributeKeyHasBeenSet) {
+    payload.WithString("SegmentAttributeKey", m_segmentAttributeKey);
+  }
+
+  if (m_evaluationMetadataFieldHasBeenSet) {
+    payload.WithString(
+        "EvaluationMetadataField",
+        EvaluationFormEvaluationMetadataFieldMapper::GetNameForEvaluationFormEvaluationMetadataField(m_evaluationMetadataField));
+  }
+
+  if (m_aiMetricsFieldHasBeenSet) {
+    payload.WithString("AiMetricsField", EvaluationFormAiMetricsFieldMapper::GetNameForEvaluationFormAiMetricsField(m_aiMetricsField));
   }
 
   return payload;

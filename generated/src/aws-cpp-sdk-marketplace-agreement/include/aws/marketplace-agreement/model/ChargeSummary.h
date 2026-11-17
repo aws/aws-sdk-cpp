@@ -49,7 +49,7 @@ class ChargeSummary {
 
   ///@{
   /**
-   * <p>The three-letter currency code for all charges (e.g., USD).</p>
+   * <p>The three-letter currency code for all charges (for example, USD).</p>
    */
   inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
   inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }

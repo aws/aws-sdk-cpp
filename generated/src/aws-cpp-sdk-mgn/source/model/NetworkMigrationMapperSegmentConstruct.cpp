@@ -57,6 +57,17 @@ NetworkMigrationMapperSegmentConstruct& NetworkMigrationMapperSegmentConstruct::
     }
     m_propertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("enrichedProperties")) {
+    Aws::Map<Aws::String, JsonView> enrichedPropertiesJsonMap = jsonValue.GetObject("enrichedProperties").GetAllObjects();
+    for (auto& enrichedPropertiesItem : enrichedPropertiesJsonMap) {
+      m_enrichedProperties[enrichedPropertiesItem.first] = enrichedPropertiesItem.second.AsObject();
+    }
+    m_enrichedPropertiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("configuration")) {
+    m_configuration = jsonValue.GetObject("configuration");
+    m_configurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -101,6 +112,18 @@ JsonValue NetworkMigrationMapperSegmentConstruct::Jsonize() const {
       propertiesJsonMap.WithString(propertiesItem.first, propertiesItem.second);
     }
     payload.WithObject("properties", std::move(propertiesJsonMap));
+  }
+
+  if (m_enrichedPropertiesHasBeenSet) {
+    JsonValue enrichedPropertiesJsonMap;
+    for (auto& enrichedPropertiesItem : m_enrichedProperties) {
+      enrichedPropertiesJsonMap.WithObject(enrichedPropertiesItem.first, enrichedPropertiesItem.second.View());
+    }
+    payload.WithObject("enrichedProperties", std::move(enrichedPropertiesJsonMap));
+  }
+
+  if (m_configurationHasBeenSet) {
+    payload.WithObject("configuration", m_configuration.Jsonize());
   }
 
   return payload;

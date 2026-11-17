@@ -39,5 +39,9 @@ Aws::String PutRumEventsRequest::SerializePayload() const {
     payload.WithString("Alias", m_alias);
   }
 
+  if (m_sessionMetadataHasBeenSet) {
+    payload.WithString("SessionMetadata", m_sessionMetadata);
+  }
+
   return payload.View().WriteReadable();
 }

@@ -71,7 +71,7 @@ class PricingCurrencyAmount {
 
   ///@{
   /**
-   * <p>The 3-letter ISO 4217 currency code (e.g., <code>USD</code>,
+   * <p>The 3-letter ISO 4217 currency code (for example, <code>USD</code>,
    * <code>EUR</code>, <code>JPY</code>).</p>
    */
   inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }

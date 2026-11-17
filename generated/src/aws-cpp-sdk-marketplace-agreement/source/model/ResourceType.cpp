@@ -23,6 +23,8 @@ static const int PaymentRequest_HASH = HashingUtils::HashString("PaymentRequest"
 static const int Invoice_HASH = HashingUtils::HashString("Invoice");
 static const int AgreementCancellationRequest_HASH = HashingUtils::HashString("AgreementCancellationRequest");
 static const int BillingAdjustmentRequest_HASH = HashingUtils::HashString("BillingAdjustmentRequest");
+static const int AgreementApproval_HASH = HashingUtils::HashString("AgreementApproval");
+static const int AgreementRequestApprovalPlan_HASH = HashingUtils::HashString("AgreementRequestApprovalPlan");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +44,10 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::AgreementCancellationRequest;
   } else if (hashCode == BillingAdjustmentRequest_HASH) {
     return ResourceType::BillingAdjustmentRequest;
+  } else if (hashCode == AgreementApproval_HASH) {
+    return ResourceType::AgreementApproval;
+  } else if (hashCode == AgreementRequestApprovalPlan_HASH) {
+    return ResourceType::AgreementRequestApprovalPlan;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +78,10 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "AgreementCancellationRequest";
     case ResourceType::BillingAdjustmentRequest:
       return "BillingAdjustmentRequest";
+    case ResourceType::AgreementApproval:
+      return "AgreementApproval";
+    case ResourceType::AgreementRequestApprovalPlan:
+      return "AgreementRequestApprovalPlan";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

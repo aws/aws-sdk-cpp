@@ -7,6 +7,7 @@
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/AuthorizerType.h>
+#include <aws/apigateway/model/JwtConfigurationInput.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -75,7 +76,9 @@ class CreateAuthorizerRequest : public APIGatewayRequest {
    * <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda
    * function using a single authorization token submitted in a custom header,
    * <code>REQUEST</code> for a Lambda function using incoming request parameters,
-   * and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+   * <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool, and
+   * <code>JWT</code> for using a native JWT authorizer with the trusted issuers,
+   * audiences, and signing algorithms that you declare.</p>
    */
   inline AuthorizerType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -95,7 +98,7 @@ class CreateAuthorizerRequest : public APIGatewayRequest {
    * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
    * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
    * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
-   * defined. </p>
+   * defined. This property is not supported for <code>JWT</code> authorizers. </p>
    */
   inline const Aws::Vector<Aws::String>& GetProviderARNs() const { return m_providerARNs; }
   inline bool ProviderARNsHasBeenSet() const { return m_providerARNsHasBeenSet; }
@@ -148,7 +151,8 @@ class CreateAuthorizerRequest : public APIGatewayRequest {
    * <code>path</code> indicates that the remaining substring in the URI should be
    * treated as the path to the resource, including the initial <code>/</code>. For
    * Lambda functions, this is usually of the form
-   * <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
+   * <code>/2015-03-31/functions/[FunctionARN]/invocations</code>. This property is
+   * not supported for <code>JWT</code> authorizers.</p>
    */
   inline const Aws::String& GetAuthorizerUri() const { return m_authorizerUri; }
   inline bool AuthorizerUriHasBeenSet() const { return m_authorizerUriHasBeenSet; }
@@ -169,7 +173,8 @@ class CreateAuthorizerRequest : public APIGatewayRequest {
    * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
    * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
    * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
-   * function, specify null.</p>
+   * function, specify null. This property is not supported for <code>JWT</code>
+   * authorizers.</p>
    */
   inline const Aws::String& GetAuthorizerCredentials() const { return m_authorizerCredentials; }
   inline bool AuthorizerCredentialsHasBeenSet() const { return m_authorizerCredentialsHasBeenSet; }
@@ -206,7 +211,11 @@ class CreateAuthorizerRequest : public APIGatewayRequest {
    * Unauthorized response without calling the Lambda function. The valid value is a
    * string of comma-separated mapping expressions of the specified request
    * parameters. When the authorization caching is not enabled, this property is
-   * optional.</p>
+   * optional. For a <code>JWT</code> authorizer, this is required and must be a
+   * single request-header mapping expression,
+   * <code>method.request.header.&lt;name&gt;</code>, for example,
+   * <code>method.request.header.Authorization</code>. Query string parameters are
+   * not supported, and there is no default.</p>
    */
   inline const Aws::String& GetIdentitySource() const { return m_identitySource; }
   inline bool IdentitySourceHasBeenSet() const { return m_identitySourceHasBeenSet; }
@@ -231,7 +240,7 @@ class CreateAuthorizerRequest : public APIGatewayRequest {
    * specified regular expression. It will invoke the authorizer's Lambda function
    * when there is a match. Otherwise, it will return a 401 Unauthorized response
    * without calling the Lambda function. The validation expression does not apply to
-   * the <code>REQUEST</code> authorizer.</p>
+   * the <code>REQUEST</code> or <code>JWT</code> authorizer.</p>
    */
   inline const Aws::String& GetIdentityValidationExpression() const { return m_identityValidationExpression; }
   inline bool IdentityValidationExpressionHasBeenSet() const { return m_identityValidationExpressionHasBeenSet; }
@@ -252,7 +261,8 @@ class CreateAuthorizerRequest : public APIGatewayRequest {
    * <p>The TTL in seconds of cached authorizer results. If it equals 0,
    * authorization caching is disabled. If it is greater than 0, API Gateway will
    * cache authorizer responses. If this field is not set, the default value is 300.
-   * The maximum value is 3600, or 1 hour.</p>
+   * The maximum value is 3600, or 1 hour. This property is not supported for
+   * <code>JWT</code> authorizers.</p>
    */
   inline int GetAuthorizerResultTtlInSeconds() const { return m_authorizerResultTtlInSeconds; }
   inline bool AuthorizerResultTtlInSecondsHasBeenSet() const { return m_authorizerResultTtlInSecondsHasBeenSet; }
@@ -262,6 +272,24 @@ class CreateAuthorizerRequest : public APIGatewayRequest {
   }
   inline CreateAuthorizerRequest& WithAuthorizerResultTtlInSeconds(int value) {
     SetAuthorizerResultTtlInSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for a JWT authorizer. Required for JWT authorizers.</p>
+   */
+  inline const JwtConfigurationInput& GetJwtConfiguration() const { return m_jwtConfiguration; }
+  inline bool JwtConfigurationHasBeenSet() const { return m_jwtConfigurationHasBeenSet; }
+  template <typename JwtConfigurationT = JwtConfigurationInput>
+  void SetJwtConfiguration(JwtConfigurationT&& value) {
+    m_jwtConfigurationHasBeenSet = true;
+    m_jwtConfiguration = std::forward<JwtConfigurationT>(value);
+  }
+  template <typename JwtConfigurationT = JwtConfigurationInput>
+  CreateAuthorizerRequest& WithJwtConfiguration(JwtConfigurationT&& value) {
+    SetJwtConfiguration(std::forward<JwtConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -285,6 +313,8 @@ class CreateAuthorizerRequest : public APIGatewayRequest {
   Aws::String m_identityValidationExpression;
 
   int m_authorizerResultTtlInSeconds{0};
+
+  JwtConfigurationInput m_jwtConfiguration;
   bool m_restApiIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
@@ -295,6 +325,7 @@ class CreateAuthorizerRequest : public APIGatewayRequest {
   bool m_identitySourceHasBeenSet = false;
   bool m_identityValidationExpressionHasBeenSet = false;
   bool m_authorizerResultTtlInSecondsHasBeenSet = false;
+  bool m_jwtConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

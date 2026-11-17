@@ -134,6 +134,38 @@ class ListNetworkMigrationMapperSegmentConstructsRequest : public MgnRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Whether to return construct properties using their native value types.</p>
+   */
+  inline bool GetIncludeEnrichedProperties() const { return m_includeEnrichedProperties; }
+  inline bool IncludeEnrichedPropertiesHasBeenSet() const { return m_includeEnrichedPropertiesHasBeenSet; }
+  inline void SetIncludeEnrichedProperties(bool value) {
+    m_includeEnrichedPropertiesHasBeenSet = true;
+    m_includeEnrichedProperties = value;
+  }
+  inline ListNetworkMigrationMapperSegmentConstructsRequest& WithIncludeEnrichedProperties(bool value) {
+    SetIncludeEnrichedProperties(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether to return construct-type-specific behavioral configuration.</p>
+   */
+  inline bool GetIncludeConfiguration() const { return m_includeConfiguration; }
+  inline bool IncludeConfigurationHasBeenSet() const { return m_includeConfigurationHasBeenSet; }
+  inline void SetIncludeConfiguration(bool value) {
+    m_includeConfigurationHasBeenSet = true;
+    m_includeConfiguration = value;
+  }
+  inline ListNetworkMigrationMapperSegmentConstructsRequest& WithIncludeConfiguration(bool value) {
+    SetIncludeConfiguration(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_networkMigrationExecutionID;
 
@@ -146,12 +178,18 @@ class ListNetworkMigrationMapperSegmentConstructsRequest : public MgnRequest {
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+
+  bool m_includeEnrichedProperties{false};
+
+  bool m_includeConfiguration{false};
   bool m_networkMigrationExecutionIDHasBeenSet = false;
   bool m_networkMigrationDefinitionIDHasBeenSet = false;
   bool m_segmentIDHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_includeEnrichedPropertiesHasBeenSet = false;
+  bool m_includeConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

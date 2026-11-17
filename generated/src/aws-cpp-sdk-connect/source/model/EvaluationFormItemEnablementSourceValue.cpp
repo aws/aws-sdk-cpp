@@ -27,6 +27,22 @@ EvaluationFormItemEnablementSourceValue& EvaluationFormItemEnablementSourceValue
     m_refId = jsonValue.GetString("RefId");
     m_refIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StringValue")) {
+    m_stringValue = jsonValue.GetString("StringValue");
+    m_stringValueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NumericValue")) {
+    m_numericValue = jsonValue.GetDouble("NumericValue");
+    m_numericValueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BooleanValue")) {
+    m_booleanValue = jsonValue.GetBool("BooleanValue");
+    m_booleanValueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DateTimeValue")) {
+    m_dateTimeValue = jsonValue.GetDouble("DateTimeValue");
+    m_dateTimeValueHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +56,22 @@ JsonValue EvaluationFormItemEnablementSourceValue::Jsonize() const {
 
   if (m_refIdHasBeenSet) {
     payload.WithString("RefId", m_refId);
+  }
+
+  if (m_stringValueHasBeenSet) {
+    payload.WithString("StringValue", m_stringValue);
+  }
+
+  if (m_numericValueHasBeenSet) {
+    payload.WithDouble("NumericValue", m_numericValue);
+  }
+
+  if (m_booleanValueHasBeenSet) {
+    payload.WithBool("BooleanValue", m_booleanValue);
+  }
+
+  if (m_dateTimeValueHasBeenSet) {
+    payload.WithDouble("DateTimeValue", m_dateTimeValue.SecondsWithMSPrecision());
   }
 
   return payload;

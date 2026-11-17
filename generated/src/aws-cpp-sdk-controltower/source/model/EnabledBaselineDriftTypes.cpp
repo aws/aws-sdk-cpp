@@ -22,6 +22,10 @@ EnabledBaselineDriftTypes& EnabledBaselineDriftTypes::operator=(JsonView jsonVal
     m_inheritance = jsonValue.GetObject("inheritance");
     m_inheritanceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("source")) {
+    m_source = jsonValue.GetObject("source");
+    m_sourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue EnabledBaselineDriftTypes::Jsonize() const {
 
   if (m_inheritanceHasBeenSet) {
     payload.WithObject("inheritance", m_inheritance.Jsonize());
+  }
+
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("source", m_source.Jsonize());
   }
 
   return payload;

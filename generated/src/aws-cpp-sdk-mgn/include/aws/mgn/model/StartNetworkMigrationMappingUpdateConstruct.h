@@ -53,6 +53,25 @@ class StartNetworkMigrationMappingUpdateConstruct {
 
   ///@{
   /**
+   * <p>The identifier of a segment created in the same request that this construct
+   * belongs to. Use it instead of <code>segmentID</code> for a new segment.</p>
+   */
+  inline const Aws::String& GetSegmentLogicalID() const { return m_segmentLogicalID; }
+  inline bool SegmentLogicalIDHasBeenSet() const { return m_segmentLogicalIDHasBeenSet; }
+  template <typename SegmentLogicalIDT = Aws::String>
+  void SetSegmentLogicalID(SegmentLogicalIDT&& value) {
+    m_segmentLogicalIDHasBeenSet = true;
+    m_segmentLogicalID = std::forward<SegmentLogicalIDT>(value);
+  }
+  template <typename SegmentLogicalIDT = Aws::String>
+  StartNetworkMigrationMappingUpdateConstruct& WithSegmentLogicalID(SegmentLogicalIDT&& value) {
+    SetSegmentLogicalID(std::forward<SegmentLogicalIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the construct to update.</p>
    */
   inline const Aws::String& GetConstructID() const { return m_constructID; }
@@ -89,6 +108,27 @@ class StartNetworkMigrationMappingUpdateConstruct {
 
   ///@{
   /**
+   * <p>The logical identifier for a construct created by a create operation; other
+   * operations identify the construct by constructID. Other entries in the same
+   * request can reference the new construct as {"Ref":
+   * "&lt;constructLogicalID&gt;"}.</p>
+   */
+  inline const Aws::String& GetConstructLogicalID() const { return m_constructLogicalID; }
+  inline bool ConstructLogicalIDHasBeenSet() const { return m_constructLogicalIDHasBeenSet; }
+  template <typename ConstructLogicalIDT = Aws::String>
+  void SetConstructLogicalID(ConstructLogicalIDT&& value) {
+    m_constructLogicalIDHasBeenSet = true;
+    m_constructLogicalID = std::forward<ConstructLogicalIDT>(value);
+  }
+  template <typename ConstructLogicalIDT = Aws::String>
+  StartNetworkMigrationMappingUpdateConstruct& WithConstructLogicalID(ConstructLogicalIDT&& value) {
+    SetConstructLogicalID(std::forward<ConstructLogicalIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The operation to perform on the construct.</p>
    */
   inline const OperationUnion& GetOperation() const { return m_operation; }
@@ -107,14 +147,20 @@ class StartNetworkMigrationMappingUpdateConstruct {
  private:
   Aws::String m_segmentID;
 
+  Aws::String m_segmentLogicalID;
+
   Aws::String m_constructID;
 
   Aws::String m_constructType;
 
+  Aws::String m_constructLogicalID;
+
   OperationUnion m_operation;
   bool m_segmentIDHasBeenSet = false;
+  bool m_segmentLogicalIDHasBeenSet = false;
   bool m_constructIDHasBeenSet = false;
   bool m_constructTypeHasBeenSet = false;
+  bool m_constructLogicalIDHasBeenSet = false;
   bool m_operationHasBeenSet = false;
 };
 

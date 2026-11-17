@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/CreatePeeringConnectionOptionsRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
 
 #include <utility>
@@ -74,6 +75,26 @@ class CreateVpcPeeringConnectionRequest : public EC2Request {
   CreateVpcPeeringConnectionRequest& AddTagSpecifications(TagSpecificationsT&& value) {
     m_tagSpecificationsHasBeenSet = true;
     m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The VPC peering connection options to apply to the requester VPC.</p>
+   */
+  inline const CreatePeeringConnectionOptionsRequest& GetRequesterPeeringConnectionOptions() const {
+    return m_requesterPeeringConnectionOptions;
+  }
+  inline bool RequesterPeeringConnectionOptionsHasBeenSet() const { return m_requesterPeeringConnectionOptionsHasBeenSet; }
+  template <typename RequesterPeeringConnectionOptionsT = CreatePeeringConnectionOptionsRequest>
+  void SetRequesterPeeringConnectionOptions(RequesterPeeringConnectionOptionsT&& value) {
+    m_requesterPeeringConnectionOptionsHasBeenSet = true;
+    m_requesterPeeringConnectionOptions = std::forward<RequesterPeeringConnectionOptionsT>(value);
+  }
+  template <typename RequesterPeeringConnectionOptionsT = CreatePeeringConnectionOptionsRequest>
+  CreateVpcPeeringConnectionRequest& WithRequesterPeeringConnectionOptions(RequesterPeeringConnectionOptionsT&& value) {
+    SetRequesterPeeringConnectionOptions(std::forward<RequesterPeeringConnectionOptionsT>(value));
     return *this;
   }
   ///@}
@@ -158,6 +179,8 @@ class CreateVpcPeeringConnectionRequest : public EC2Request {
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
 
+  CreatePeeringConnectionOptionsRequest m_requesterPeeringConnectionOptions;
+
   bool m_dryRun{false};
 
   Aws::String m_vpcId;
@@ -167,6 +190,7 @@ class CreateVpcPeeringConnectionRequest : public EC2Request {
   Aws::String m_peerOwnerId;
   bool m_peerRegionHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
+  bool m_requesterPeeringConnectionOptionsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
   bool m_peerVpcIdHasBeenSet = false;

@@ -71,6 +71,10 @@ GetLaunchConfigurationResult& GetLaunchConfigurationResult::operator=(const Aws:
     m_mapAutoTaggingMpeID = jsonValue.GetString("mapAutoTaggingMpeID");
     m_mapAutoTaggingMpeIDHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mapAutoTaggingKey")) {
+    m_mapAutoTaggingKey = jsonValue.GetString("mapAutoTaggingKey");
+    m_mapAutoTaggingKeyHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

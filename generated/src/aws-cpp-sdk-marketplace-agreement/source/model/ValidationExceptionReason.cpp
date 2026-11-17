@@ -15,6 +15,13 @@ namespace AgreementService {
 namespace Model {
 namespace ValidationExceptionReasonMapper {
 
+static const int CLOSED_AGREEMENT_APPROVAL_HASH = HashingUtils::HashString("CLOSED_AGREEMENT_APPROVAL");
+static const int QUEUED_AGREEMENT_APPROVAL_HASH = HashingUtils::HashString("QUEUED_AGREEMENT_APPROVAL");
+static const int INVALID_AGREEMENT_APPROVAL_ID_HASH = HashingUtils::HashString("INVALID_AGREEMENT_APPROVAL_ID");
+static const int MISSING_AGREEMENT_APPROVAL_ID_HASH = HashingUtils::HashString("MISSING_AGREEMENT_APPROVAL_ID");
+static const int DUPLICATE_PLAN_REFERENCE_HASH = HashingUtils::HashString("DUPLICATE_PLAN_REFERENCE");
+static const int INVALID_PLAN_INPUTS_HASH = HashingUtils::HashString("INVALID_PLAN_INPUTS");
+static const int PENDING_APPROVAL_AGREEMENT_REQUEST_HASH = HashingUtils::HashString("PENDING_APPROVAL_AGREEMENT_REQUEST");
 static const int MISSING_BILLING_ADJUSTMENTS_HASH = HashingUtils::HashString("MISSING_BILLING_ADJUSTMENTS");
 static const int BILLING_ADJUSTMENTS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("BILLING_ADJUSTMENTS_LIMIT_EXCEEDED");
 static const int MISSING_INVOICE_ID_HASH = HashingUtils::HashString("MISSING_INVOICE_ID");
@@ -84,6 +91,7 @@ static const int INVALID_PURCHASE_ORDER_REFERENCE_HASH = HashingUtils::HashStrin
 static const int INACTIVE_AGREEMENT_HASH = HashingUtils::HashString("INACTIVE_AGREEMENT");
 static const int SUPERSEDED_AGREEMENT_PROPOSAL_HASH = HashingUtils::HashString("SUPERSEDED_AGREEMENT_PROPOSAL");
 static const int EXPIRED_AGREEMENT_PROPOSAL_HASH = HashingUtils::HashString("EXPIRED_AGREEMENT_PROPOSAL");
+static const int INVALID_ACCEPTOR_CONTACT_HASH = HashingUtils::HashString("INVALID_ACCEPTOR_CONTACT");
 static const int MISSING_MANDATORY_TERMS_HASH = HashingUtils::HashString("MISSING_MANDATORY_TERMS");
 static const int INCOMPATIBLE_TERMS_HASH = HashingUtils::HashString("INCOMPATIBLE_TERMS");
 static const int MISSING_USAGE_AGREEMENT_HASH = HashingUtils::HashString("MISSING_USAGE_AGREEMENT");
@@ -96,11 +104,37 @@ static const int OTHER_HASH = HashingUtils::HashString("OTHER");
 static const int DUPLICATE_CHARGES_HASH = HashingUtils::HashString("DUPLICATE_CHARGES");
 static const int UNSUPPORTED_ACCOUNT_PLAN_HASH = HashingUtils::HashString("UNSUPPORTED_ACCOUNT_PLAN");
 static const int DUPLICATE_AGREEMENT_IN_ORGANIZATION_HASH = HashingUtils::HashString("DUPLICATE_AGREEMENT_IN_ORGANIZATION");
+static const int MISSING_AWS_LICENSE_MANAGER_USER_SUBSCRIPTIONS_SLR_HASH =
+    HashingUtils::HashString("MISSING_AWS_LICENSE_MANAGER_USER_SUBSCRIPTIONS_SLR");
 static const int MISSING_PURCHASE_ORDER_REFERENCE_HASH = HashingUtils::HashString("MISSING_PURCHASE_ORDER_REFERENCE");
+static const int INVALID_RESOURCE_ID_HASH = HashingUtils::HashString("INVALID_RESOURCE_ID");
+static const int CLOSED_AGREEMENT_REQUEST_HASH = HashingUtils::HashString("CLOSED_AGREEMENT_REQUEST");
+static const int INCOMPATIBLE_AGREEMENT_REQUEST_HASH = HashingUtils::HashString("INCOMPATIBLE_AGREEMENT_REQUEST");
+static const int REJECTED_BY_AGREEMENT_APPROVAL_POLICY_HASH = HashingUtils::HashString("REJECTED_BY_AGREEMENT_APPROVAL_POLICY");
+static const int MISSING_PLAN_INPUTS_HASH = HashingUtils::HashString("MISSING_PLAN_INPUTS");
+static const int INVALID_APPROVER_OUTCOME_ID_TO_OVERRIDE_HASH = HashingUtils::HashString("INVALID_APPROVER_OUTCOME_ID_TO_OVERRIDE");
+static const int INVALID_NOTE_HASH = HashingUtils::HashString("INVALID_NOTE");
+static const int MISSING_NOTE_HASH = HashingUtils::HashString("MISSING_NOTE");
+static const int INVALID_APPROVAL_TYPE_HASH = HashingUtils::HashString("INVALID_APPROVAL_TYPE");
+static const int MISSING_SORT_BY_HASH = HashingUtils::HashString("MISSING_SORT_BY");
 
 ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == MISSING_BILLING_ADJUSTMENTS_HASH) {
+  if (hashCode == CLOSED_AGREEMENT_APPROVAL_HASH) {
+    return ValidationExceptionReason::CLOSED_AGREEMENT_APPROVAL;
+  } else if (hashCode == QUEUED_AGREEMENT_APPROVAL_HASH) {
+    return ValidationExceptionReason::QUEUED_AGREEMENT_APPROVAL;
+  } else if (hashCode == INVALID_AGREEMENT_APPROVAL_ID_HASH) {
+    return ValidationExceptionReason::INVALID_AGREEMENT_APPROVAL_ID;
+  } else if (hashCode == MISSING_AGREEMENT_APPROVAL_ID_HASH) {
+    return ValidationExceptionReason::MISSING_AGREEMENT_APPROVAL_ID;
+  } else if (hashCode == DUPLICATE_PLAN_REFERENCE_HASH) {
+    return ValidationExceptionReason::DUPLICATE_PLAN_REFERENCE;
+  } else if (hashCode == INVALID_PLAN_INPUTS_HASH) {
+    return ValidationExceptionReason::INVALID_PLAN_INPUTS;
+  } else if (hashCode == PENDING_APPROVAL_AGREEMENT_REQUEST_HASH) {
+    return ValidationExceptionReason::PENDING_APPROVAL_AGREEMENT_REQUEST;
+  } else if (hashCode == MISSING_BILLING_ADJUSTMENTS_HASH) {
     return ValidationExceptionReason::MISSING_BILLING_ADJUSTMENTS;
   } else if (hashCode == BILLING_ADJUSTMENTS_LIMIT_EXCEEDED_HASH) {
     return ValidationExceptionReason::BILLING_ADJUSTMENTS_LIMIT_EXCEEDED;
@@ -238,6 +272,8 @@ ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String&
     return ValidationExceptionReason::SUPERSEDED_AGREEMENT_PROPOSAL;
   } else if (hashCode == EXPIRED_AGREEMENT_PROPOSAL_HASH) {
     return ValidationExceptionReason::EXPIRED_AGREEMENT_PROPOSAL;
+  } else if (hashCode == INVALID_ACCEPTOR_CONTACT_HASH) {
+    return ValidationExceptionReason::INVALID_ACCEPTOR_CONTACT;
   } else if (hashCode == MISSING_MANDATORY_TERMS_HASH) {
     return ValidationExceptionReason::MISSING_MANDATORY_TERMS;
   } else if (hashCode == INCOMPATIBLE_TERMS_HASH) {
@@ -262,8 +298,30 @@ ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String&
     return ValidationExceptionReason::UNSUPPORTED_ACCOUNT_PLAN;
   } else if (hashCode == DUPLICATE_AGREEMENT_IN_ORGANIZATION_HASH) {
     return ValidationExceptionReason::DUPLICATE_AGREEMENT_IN_ORGANIZATION;
+  } else if (hashCode == MISSING_AWS_LICENSE_MANAGER_USER_SUBSCRIPTIONS_SLR_HASH) {
+    return ValidationExceptionReason::MISSING_AWS_LICENSE_MANAGER_USER_SUBSCRIPTIONS_SLR;
   } else if (hashCode == MISSING_PURCHASE_ORDER_REFERENCE_HASH) {
     return ValidationExceptionReason::MISSING_PURCHASE_ORDER_REFERENCE;
+  } else if (hashCode == INVALID_RESOURCE_ID_HASH) {
+    return ValidationExceptionReason::INVALID_RESOURCE_ID;
+  } else if (hashCode == CLOSED_AGREEMENT_REQUEST_HASH) {
+    return ValidationExceptionReason::CLOSED_AGREEMENT_REQUEST;
+  } else if (hashCode == INCOMPATIBLE_AGREEMENT_REQUEST_HASH) {
+    return ValidationExceptionReason::INCOMPATIBLE_AGREEMENT_REQUEST;
+  } else if (hashCode == REJECTED_BY_AGREEMENT_APPROVAL_POLICY_HASH) {
+    return ValidationExceptionReason::REJECTED_BY_AGREEMENT_APPROVAL_POLICY;
+  } else if (hashCode == MISSING_PLAN_INPUTS_HASH) {
+    return ValidationExceptionReason::MISSING_PLAN_INPUTS;
+  } else if (hashCode == INVALID_APPROVER_OUTCOME_ID_TO_OVERRIDE_HASH) {
+    return ValidationExceptionReason::INVALID_APPROVER_OUTCOME_ID_TO_OVERRIDE;
+  } else if (hashCode == INVALID_NOTE_HASH) {
+    return ValidationExceptionReason::INVALID_NOTE;
+  } else if (hashCode == MISSING_NOTE_HASH) {
+    return ValidationExceptionReason::MISSING_NOTE;
+  } else if (hashCode == INVALID_APPROVAL_TYPE_HASH) {
+    return ValidationExceptionReason::INVALID_APPROVAL_TYPE;
+  } else if (hashCode == MISSING_SORT_BY_HASH) {
+    return ValidationExceptionReason::MISSING_SORT_BY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -278,6 +336,20 @@ Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason enumVa
   switch (enumValue) {
     case ValidationExceptionReason::NOT_SET:
       return {};
+    case ValidationExceptionReason::CLOSED_AGREEMENT_APPROVAL:
+      return "CLOSED_AGREEMENT_APPROVAL";
+    case ValidationExceptionReason::QUEUED_AGREEMENT_APPROVAL:
+      return "QUEUED_AGREEMENT_APPROVAL";
+    case ValidationExceptionReason::INVALID_AGREEMENT_APPROVAL_ID:
+      return "INVALID_AGREEMENT_APPROVAL_ID";
+    case ValidationExceptionReason::MISSING_AGREEMENT_APPROVAL_ID:
+      return "MISSING_AGREEMENT_APPROVAL_ID";
+    case ValidationExceptionReason::DUPLICATE_PLAN_REFERENCE:
+      return "DUPLICATE_PLAN_REFERENCE";
+    case ValidationExceptionReason::INVALID_PLAN_INPUTS:
+      return "INVALID_PLAN_INPUTS";
+    case ValidationExceptionReason::PENDING_APPROVAL_AGREEMENT_REQUEST:
+      return "PENDING_APPROVAL_AGREEMENT_REQUEST";
     case ValidationExceptionReason::MISSING_BILLING_ADJUSTMENTS:
       return "MISSING_BILLING_ADJUSTMENTS";
     case ValidationExceptionReason::BILLING_ADJUSTMENTS_LIMIT_EXCEEDED:
@@ -416,6 +488,8 @@ Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason enumVa
       return "SUPERSEDED_AGREEMENT_PROPOSAL";
     case ValidationExceptionReason::EXPIRED_AGREEMENT_PROPOSAL:
       return "EXPIRED_AGREEMENT_PROPOSAL";
+    case ValidationExceptionReason::INVALID_ACCEPTOR_CONTACT:
+      return "INVALID_ACCEPTOR_CONTACT";
     case ValidationExceptionReason::MISSING_MANDATORY_TERMS:
       return "MISSING_MANDATORY_TERMS";
     case ValidationExceptionReason::INCOMPATIBLE_TERMS:
@@ -440,8 +514,30 @@ Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason enumVa
       return "UNSUPPORTED_ACCOUNT_PLAN";
     case ValidationExceptionReason::DUPLICATE_AGREEMENT_IN_ORGANIZATION:
       return "DUPLICATE_AGREEMENT_IN_ORGANIZATION";
+    case ValidationExceptionReason::MISSING_AWS_LICENSE_MANAGER_USER_SUBSCRIPTIONS_SLR:
+      return "MISSING_AWS_LICENSE_MANAGER_USER_SUBSCRIPTIONS_SLR";
     case ValidationExceptionReason::MISSING_PURCHASE_ORDER_REFERENCE:
       return "MISSING_PURCHASE_ORDER_REFERENCE";
+    case ValidationExceptionReason::INVALID_RESOURCE_ID:
+      return "INVALID_RESOURCE_ID";
+    case ValidationExceptionReason::CLOSED_AGREEMENT_REQUEST:
+      return "CLOSED_AGREEMENT_REQUEST";
+    case ValidationExceptionReason::INCOMPATIBLE_AGREEMENT_REQUEST:
+      return "INCOMPATIBLE_AGREEMENT_REQUEST";
+    case ValidationExceptionReason::REJECTED_BY_AGREEMENT_APPROVAL_POLICY:
+      return "REJECTED_BY_AGREEMENT_APPROVAL_POLICY";
+    case ValidationExceptionReason::MISSING_PLAN_INPUTS:
+      return "MISSING_PLAN_INPUTS";
+    case ValidationExceptionReason::INVALID_APPROVER_OUTCOME_ID_TO_OVERRIDE:
+      return "INVALID_APPROVER_OUTCOME_ID_TO_OVERRIDE";
+    case ValidationExceptionReason::INVALID_NOTE:
+      return "INVALID_NOTE";
+    case ValidationExceptionReason::MISSING_NOTE:
+      return "MISSING_NOTE";
+    case ValidationExceptionReason::INVALID_APPROVAL_TYPE:
+      return "INVALID_APPROVAL_TYPE";
+    case ValidationExceptionReason::MISSING_SORT_BY:
+      return "MISSING_SORT_BY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

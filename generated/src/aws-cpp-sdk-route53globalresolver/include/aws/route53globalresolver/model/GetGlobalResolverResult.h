@@ -11,6 +11,7 @@
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
 #include <aws/route53globalresolver/model/CRResourceStatus.h>
 #include <aws/route53globalresolver/model/GlobalResolverIpAddressType.h>
+#include <aws/route53globalresolver/model/PublicIpStatus.h>
 
 #include <utility>
 
@@ -290,6 +291,30 @@ class GetGlobalResolverResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The public IP connectivity configured for the Route 53 Global Resolver.
+   * Public IP addresses let DNS clients send queries to the resolver over the
+   * internet. Valid values are the following:</p> <ul> <li> <p>
+   * <code>ENABLED_RESERVED</code> - Public IP connectivity is enabled, and the
+   * global anycast public IP addresses are reserved for the Route 53 Global
+   * Resolver.</p> </li> <li> <p> <code>DISABLED_RESERVED</code> - Public IP
+   * connectivity is disabled, and the global anycast public IP addresses remain
+   * reserved for the Route 53 Global Resolver.</p> </li> <li> <p>
+   * <code>DISABLED_RELEASED</code> - Public IP connectivity is disabled, and the
+   * global anycast public IP addresses are released.</p> </li> </ul>
+   */
+  inline PublicIpStatus GetPublicIpStatus() const { return m_publicIpStatus; }
+  inline void SetPublicIpStatus(PublicIpStatus value) {
+    m_publicIpStatusHasBeenSet = true;
+    m_publicIpStatus = value;
+  }
+  inline GetGlobalResolverResult& WithPublicIpStatus(PublicIpStatus value) {
+    SetPublicIpStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -334,6 +359,8 @@ class GetGlobalResolverResult {
 
   GlobalResolverIpAddressType m_ipAddressType{GlobalResolverIpAddressType::NOT_SET};
 
+  PublicIpStatus m_publicIpStatus{PublicIpStatus::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
@@ -350,6 +377,7 @@ class GetGlobalResolverResult {
   bool m_ipv4AddressesHasBeenSet = false;
   bool m_ipv6AddressesHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
+  bool m_publicIpStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

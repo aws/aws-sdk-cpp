@@ -20,6 +20,9 @@ static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
 static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+static const int PAUSING_HASH = HashingUtils::HashString("PAUSING");
+static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
 
 ExecutionStatus GetExecutionStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +36,12 @@ ExecutionStatus GetExecutionStatusForName(const Aws::String& name) {
     return ExecutionStatus::TIMED_OUT;
   } else if (hashCode == STOPPED_HASH) {
     return ExecutionStatus::STOPPED;
+  } else if (hashCode == DELETING_HASH) {
+    return ExecutionStatus::DELETING;
+  } else if (hashCode == PAUSING_HASH) {
+    return ExecutionStatus::PAUSING;
+  } else if (hashCode == PAUSED_HASH) {
+    return ExecutionStatus::PAUSED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +66,12 @@ Aws::String GetNameForExecutionStatus(ExecutionStatus enumValue) {
       return "TIMED_OUT";
     case ExecutionStatus::STOPPED:
       return "STOPPED";
+    case ExecutionStatus::DELETING:
+      return "DELETING";
+    case ExecutionStatus::PAUSING:
+      return "PAUSING";
+    case ExecutionStatus::PAUSED:
+      return "PAUSED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

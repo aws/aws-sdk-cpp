@@ -48,6 +48,10 @@ NetworkMigrationDefinitionSummary& NetworkMigrationDefinitionSummary::operator=(
     }
     m_scopeTagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("definitionType")) {
+    m_definitionType = DefinitionTypeMapper::GetDefinitionTypeForName(jsonValue.GetString("definitionType"));
+    m_definitionTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -84,6 +88,10 @@ JsonValue NetworkMigrationDefinitionSummary::Jsonize() const {
       scopeTagsJsonMap.WithString(scopeTagsItem.first, scopeTagsItem.second);
     }
     payload.WithObject("scopeTags", std::move(scopeTagsJsonMap));
+  }
+
+  if (m_definitionTypeHasBeenSet) {
+    payload.WithString("definitionType", DefinitionTypeMapper::GetNameForDefinitionType(m_definitionType));
   }
 
   return payload;

@@ -18,6 +18,7 @@ namespace AuthorizerTypeMapper {
 static const int TOKEN_HASH = HashingUtils::HashString("TOKEN");
 static const int REQUEST_HASH = HashingUtils::HashString("REQUEST");
 static const int COGNITO_USER_POOLS_HASH = HashingUtils::HashString("COGNITO_USER_POOLS");
+static const int JWT_HASH = HashingUtils::HashString("JWT");
 
 AuthorizerType GetAuthorizerTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ AuthorizerType GetAuthorizerTypeForName(const Aws::String& name) {
     return AuthorizerType::REQUEST;
   } else if (hashCode == COGNITO_USER_POOLS_HASH) {
     return AuthorizerType::COGNITO_USER_POOLS;
+  } else if (hashCode == JWT_HASH) {
+    return AuthorizerType::JWT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForAuthorizerType(AuthorizerType enumValue) {
       return "REQUEST";
     case AuthorizerType::COGNITO_USER_POOLS:
       return "COGNITO_USER_POOLS";
+    case AuthorizerType::JWT:
+      return "JWT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

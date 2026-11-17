@@ -1816,6 +1816,34 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Returns the account's service-defined default Agent Insight Store. The
+   * logical default exists for every enrolled account; its backing state may be
+   * initialized on first access.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetAgentInsightStore">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgentInsightStoreOutcome GetAgentInsightStore(const Model::GetAgentInsightStoreRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgentInsightStore that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAgentInsightStoreRequestT = Model::GetAgentInsightStoreRequest>
+  Model::GetAgentInsightStoreOutcomeCallable GetAgentInsightStoreCallable(const GetAgentInsightStoreRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetAgentInsightStore, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgentInsightStore that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAgentInsightStoreRequestT = Model::GetAgentInsightStoreRequest>
+  void GetAgentInsightStoreAsync(const GetAgentInsightStoreRequestT& request, const GetAgentInsightStoreResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetAgentInsightStore, request, handler, context);
+  }
+
+  /**
    * <p>Gets an Amazon Bedrock AgentCore Runtime.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetAgentRuntime">AWS
    * API Reference</a></p>
@@ -2790,6 +2818,35 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Lists the account's service-defined default Agent Insight Store. The
+   * singleton backing state may be initialized on first access.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListAgentInsightStores">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAgentInsightStoresOutcome ListAgentInsightStores(const Model::ListAgentInsightStoresRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAgentInsightStores that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAgentInsightStoresRequestT = Model::ListAgentInsightStoresRequest>
+  Model::ListAgentInsightStoresOutcomeCallable ListAgentInsightStoresCallable(const ListAgentInsightStoresRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListAgentInsightStores, request);
+  }
+
+  /**
+   * An Async wrapper for ListAgentInsightStores that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAgentInsightStoresRequestT = Model::ListAgentInsightStoresRequest>
+  void ListAgentInsightStoresAsync(const ListAgentInsightStoresResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const ListAgentInsightStoresRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListAgentInsightStores, request, handler, context);
+  }
+
+  /**
    * <p>Lists all endpoints for a specific Amazon Secure Agent.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListAgentRuntimeEndpoints">AWS
@@ -3138,8 +3195,10 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   /**
    * <p> Returns paginated examples from the dataset. The server embeds the resolved
    * version in the pagination token. Once pagination begins, all subsequent pages
-   * are pinned to that version regardless of concurrent mutations. </p><p><h3>See
-   * Also:</h3>   <a
+   * are pinned to that version regardless of concurrent mutations. A request with a
+   * pagination token can omit <code>datasetVersion</code>. If it sets a version that
+   * differs from the token's version, the request fails with a
+   * <code>ValidationException</code>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListDatasetExamples">AWS
    * API Reference</a></p>
    */
@@ -4239,6 +4298,34 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the enablement status or encryption configuration of an Agent Insight
+   * Store.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateAgentInsightStore">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAgentInsightStoreOutcome UpdateAgentInsightStore(const Model::UpdateAgentInsightStoreRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAgentInsightStore that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateAgentInsightStoreRequestT = Model::UpdateAgentInsightStoreRequest>
+  Model::UpdateAgentInsightStoreOutcomeCallable UpdateAgentInsightStoreCallable(const UpdateAgentInsightStoreRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdateAgentInsightStore, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAgentInsightStore that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateAgentInsightStoreRequestT = Model::UpdateAgentInsightStoreRequest>
+  void UpdateAgentInsightStoreAsync(const UpdateAgentInsightStoreRequestT& request,
+                                    const UpdateAgentInsightStoreResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdateAgentInsightStore, request, handler, context);
   }
 
   /**

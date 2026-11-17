@@ -53,6 +53,10 @@ Transcript& Transcript::operator=(JsonView jsonValue) {
     }
     m_issuesDetectedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LanguageCode")) {
+    m_languageCode = jsonValue.GetString("LanguageCode");
+    m_languageCodeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +97,10 @@ JsonValue Transcript::Jsonize() const {
       issuesDetectedJsonList[issuesDetectedIndex].AsObject(m_issuesDetected[issuesDetectedIndex].Jsonize());
     }
     payload.WithArray("IssuesDetected", std::move(issuesDetectedJsonList));
+  }
+
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", m_languageCode);
   }
 
   return payload;

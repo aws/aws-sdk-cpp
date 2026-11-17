@@ -425,6 +425,10 @@ ResourceDetails& ResourceDetails::operator=(JsonView jsonValue) {
     m_azureResource = jsonValue.GetObject("AzureResource");
     m_azureResourceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GcpResource")) {
+    m_gcpResource = jsonValue.GetObject("GcpResource");
+    m_gcpResourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -838,6 +842,12 @@ JsonValue ResourceDetails::Jsonize() const {
   if (m_azureResourceHasBeenSet) {
     if (!m_azureResource.View().IsNull()) {
       payload.WithObject("AzureResource", JsonValue(m_azureResource.View()));
+    }
+  }
+
+  if (m_gcpResourceHasBeenSet) {
+    if (!m_gcpResource.View().IsNull()) {
+      payload.WithObject("GcpResource", JsonValue(m_gcpResource.View()));
     }
   }
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/AzureUpdateConfiguration.h>
+#include <aws/securityhub/model/GcpUpdateConfiguration.h>
 
 #include <utility>
 
@@ -21,7 +22,7 @@ namespace Model {
 
 /**
  * <p>The cloud provider configuration for updating a connector. This is a union
- * type that currently supports Azure.</p><p><h3>See Also:</h3>   <a
+ * type that currently supports Azure and GCP.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CspmProviderUpdateConfiguration">AWS
  * API Reference</a></p>
  */
@@ -49,9 +50,30 @@ class CspmProviderUpdateConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The GCP update configuration.</p>
+   */
+  inline const GcpUpdateConfiguration& GetGCP() const { return m_gCP; }
+  inline bool GCPHasBeenSet() const { return m_gCPHasBeenSet; }
+  template <typename GCPT = GcpUpdateConfiguration>
+  void SetGCP(GCPT&& value) {
+    m_gCPHasBeenSet = true;
+    m_gCP = std::forward<GCPT>(value);
+  }
+  template <typename GCPT = GcpUpdateConfiguration>
+  CspmProviderUpdateConfiguration& WithGCP(GCPT&& value) {
+    SetGCP(std::forward<GCPT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AzureUpdateConfiguration m_azure;
+
+  GcpUpdateConfiguration m_gCP;
   bool m_azureHasBeenSet = false;
+  bool m_gCPHasBeenSet = false;
 };
 
 }  // namespace Model

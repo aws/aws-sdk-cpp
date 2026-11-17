@@ -25,6 +25,10 @@ CaseEventIncludedData& CaseEventIncludedData::operator=(JsonView jsonValue) {
     }
     m_fieldsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("autoIncludeFields")) {
+    m_autoIncludeFields = AutoIncludeFieldsMapper::GetAutoIncludeFieldsForName(jsonValue.GetString("autoIncludeFields"));
+    m_autoIncludeFieldsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +41,10 @@ JsonValue CaseEventIncludedData::Jsonize() const {
       fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
     }
     payload.WithArray("fields", std::move(fieldsJsonList));
+  }
+
+  if (m_autoIncludeFieldsHasBeenSet) {
+    payload.WithString("autoIncludeFields", AutoIncludeFieldsMapper::GetNameForAutoIncludeFields(m_autoIncludeFields));
   }
 
   return payload;

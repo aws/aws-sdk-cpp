@@ -17,6 +17,7 @@ namespace EvaluationQuestionAnswerAnalysisTypeMapper {
 
 static const int CONTACT_LENS_DATA_HASH = HashingUtils::HashString("CONTACT_LENS_DATA");
 static const int GEN_AI_HASH = HashingUtils::HashString("GEN_AI");
+static const int CONDITION_HASH = HashingUtils::HashString("CONDITION");
 
 EvaluationQuestionAnswerAnalysisType GetEvaluationQuestionAnswerAnalysisTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ EvaluationQuestionAnswerAnalysisType GetEvaluationQuestionAnswerAnalysisTypeForN
     return EvaluationQuestionAnswerAnalysisType::CONTACT_LENS_DATA;
   } else if (hashCode == GEN_AI_HASH) {
     return EvaluationQuestionAnswerAnalysisType::GEN_AI;
+  } else if (hashCode == CONDITION_HASH) {
+    return EvaluationQuestionAnswerAnalysisType::CONDITION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForEvaluationQuestionAnswerAnalysisType(EvaluationQuestionAns
       return "CONTACT_LENS_DATA";
     case EvaluationQuestionAnswerAnalysisType::GEN_AI:
       return "GEN_AI";
+    case EvaluationQuestionAnswerAnalysisType::CONDITION:
+      return "CONDITION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -25,6 +25,10 @@ Aws::String CreateVpcPeeringConnectionRequest::SerializePayload() const {
     }
   }
 
+  if (m_requesterPeeringConnectionOptionsHasBeenSet) {
+    m_requesterPeeringConnectionOptions.OutputToStream(ss, "RequesterPeeringConnectionOptions");
+  }
+
   if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }

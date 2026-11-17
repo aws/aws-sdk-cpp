@@ -30,6 +30,10 @@ GetAccessSourceResult& GetAccessSourceResult::operator=(const Aws::AmazonWebServ
     m_cidr = jsonValue.GetString("cidr");
     m_cidrHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("coreNetworkEndpointId")) {
+    m_coreNetworkEndpointId = jsonValue.GetString("coreNetworkEndpointId");
+    m_coreNetworkEndpointIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -53,6 +57,10 @@ GetAccessSourceResult& GetAccessSourceResult::operator=(const Aws::AmazonWebServ
   if (jsonValue.ValueExists("protocol")) {
     m_protocol = DnsProtocolMapper::GetDnsProtocolForName(jsonValue.GetString("protocol"));
     m_protocolHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("segment")) {
+    m_segment = jsonValue.GetString("segment");
+    m_segmentHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = CRResourceStatusMapper::GetCRResourceStatusForName(jsonValue.GetString("status"));

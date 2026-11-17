@@ -12,10 +12,14 @@
 #include <aws/marketplace-agreement/model/ListBillingAdjustmentRequestsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/SearchAgreementsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/ListAgreementPaymentRequestsPaginationTraits.h>
+#include <aws/marketplace-agreement/model/GetAgreementRequestApprovalPlansPaginationTraits.h>
+#include <aws/marketplace-agreement/model/ListAgreementApprovalsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/ListAgreementCancellationRequestsPaginationTraits.h>
+#include <aws/marketplace-agreement/model/GetAgreementRequestTermsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/GetAgreementEntitlementsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/ListAgreementInvoiceLineItemsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/GetAgreementTermsPaginationTraits.h>
+#include <aws/marketplace-agreement/model/ListAgreementRequestsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class EvaluationQuestionAnswerAnalysisType { NOT_SET, CONTACT_LENS_DATA, GEN_AI };
+enum class EvaluationQuestionAnswerAnalysisType { NOT_SET, CONTACT_LENS_DATA, GEN_AI, CONDITION };
 
 namespace EvaluationQuestionAnswerAnalysisTypeMapper {
 AWS_CONNECT_API EvaluationQuestionAnswerAnalysisType GetEvaluationQuestionAnswerAnalysisTypeForName(const Aws::String& name);

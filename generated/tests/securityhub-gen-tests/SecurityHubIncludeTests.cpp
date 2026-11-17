@@ -775,6 +775,11 @@
 #include <aws/securityhub/model/FreeTrialStatus.h>
 #include <aws/securityhub/model/FreeTrialStatusValue.h>
 #include <aws/securityhub/model/FreeTrialType.h>
+#include <aws/securityhub/model/GcpDetail.h>
+#include <aws/securityhub/model/GcpProviderConfiguration.h>
+#include <aws/securityhub/model/GcpScopeConfiguration.h>
+#include <aws/securityhub/model/GcpScopeType.h>
+#include <aws/securityhub/model/GcpUpdateConfiguration.h>
 #include <aws/securityhub/model/GenerateRecommendedPolicyV2Request.h>
 #include <aws/securityhub/model/GenerateRecommendedPolicyV2Result.h>
 #include <aws/securityhub/model/GeneratorDetails.h>

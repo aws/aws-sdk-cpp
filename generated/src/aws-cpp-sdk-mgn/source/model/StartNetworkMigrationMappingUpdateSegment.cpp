@@ -22,6 +22,14 @@ StartNetworkMigrationMappingUpdateSegment& StartNetworkMigrationMappingUpdateSeg
     m_segmentID = jsonValue.GetString("segmentID");
     m_segmentIDHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("segmentLogicalID")) {
+    m_segmentLogicalID = jsonValue.GetString("segmentLogicalID");
+    m_segmentLogicalIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("operation")) {
+    m_operation = jsonValue.GetObject("operation");
+    m_operationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("targetAccount")) {
     m_targetAccount = jsonValue.GetString("targetAccount");
     m_targetAccountHasBeenSet = true;
@@ -41,6 +49,14 @@ JsonValue StartNetworkMigrationMappingUpdateSegment::Jsonize() const {
 
   if (m_segmentIDHasBeenSet) {
     payload.WithString("segmentID", m_segmentID);
+  }
+
+  if (m_segmentLogicalIDHasBeenSet) {
+    payload.WithString("segmentLogicalID", m_segmentLogicalID);
+  }
+
+  if (m_operationHasBeenSet) {
+    payload.WithObject("operation", m_operation.Jsonize());
   }
 
   if (m_targetAccountHasBeenSet) {

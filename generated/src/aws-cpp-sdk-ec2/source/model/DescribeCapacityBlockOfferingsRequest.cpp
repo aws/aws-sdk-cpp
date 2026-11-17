@@ -57,6 +57,14 @@ Aws::String DescribeCapacityBlockOfferingsRequest::SerializePayload() const {
     ss << "AllAvailabilityZones=" << std::boolalpha << m_allAvailabilityZones << "&";
   }
 
+  if (m_instanceTypePreferencesHasBeenSet) {
+    unsigned instanceTypePreferencesCount = 1;
+    for (auto& item : m_instanceTypePreferences) {
+      item.OutputToStream(ss, "InstanceTypePreference.", instanceTypePreferencesCount, "");
+      instanceTypePreferencesCount++;
+    }
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

@@ -37,7 +37,8 @@ class DeleteResourcePolicyRequest : public KinesisRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the data stream or consumer.</p>
+   * <p>The Amazon Resource Name (ARN) of a data stream, a queue, or an enhanced
+   * fan-out consumer.</p>
    */
   inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
   inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }

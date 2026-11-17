@@ -30,4 +30,10 @@ void ListChatsRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
+
+  if (m_archiveStatusHasBeenSet) {
+    ss << ChatArchiveStatusMapper::GetNameForChatArchiveStatus(m_archiveStatus);
+    uri.AddQueryStringParameter("archiveStatus", ss.str());
+    ss.str("");
+  }
 }

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/model/InternetProtocol.h>
+#include <aws/mgn/model/OutpostSnapshotLocation.h>
 #include <aws/mgn/model/ReplicationConfigurationDataPlaneRouting.h>
 #include <aws/mgn/model/ReplicationConfigurationDefaultLargeStagingDiskType.h>
 #include <aws/mgn/model/ReplicationConfigurationEbsEncryption.h>
@@ -344,6 +345,23 @@ class UpdateReplicationConfigurationResult {
 
   ///@{
   /**
+   * <p>Indicates the location of replication snapshots when the staging area subnet
+   * is on an AWS Outpost. <code>OUTPOST</code> keeps replication snapshots on the
+   * Outpost, and <code>REGION</code> stores them in the AWS Region.</p>
+   */
+  inline OutpostSnapshotLocation GetOutpostSnapshotLocation() const { return m_outpostSnapshotLocation; }
+  inline void SetOutpostSnapshotLocation(OutpostSnapshotLocation value) {
+    m_outpostSnapshotLocationHasBeenSet = true;
+    m_outpostSnapshotLocation = value;
+  }
+  inline UpdateReplicationConfigurationResult& WithOutpostSnapshotLocation(OutpostSnapshotLocation value) {
+    SetOutpostSnapshotLocation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Replication Configuration storage configuration.</p>
    */
   inline const StorageConfiguration& GetStorageConfiguration() const { return m_storageConfiguration; }
@@ -413,6 +431,8 @@ class UpdateReplicationConfigurationResult {
 
   bool m_storeSnapshotOnLocalZone{false};
 
+  OutpostSnapshotLocation m_outpostSnapshotLocation{OutpostSnapshotLocation::NOT_SET};
+
   StorageConfiguration m_storageConfiguration;
 
   Aws::String m_requestId;
@@ -435,6 +455,7 @@ class UpdateReplicationConfigurationResult {
   bool m_useFipsEndpointHasBeenSet = false;
   bool m_internetProtocolHasBeenSet = false;
   bool m_storeSnapshotOnLocalZoneHasBeenSet = false;
+  bool m_outpostSnapshotLocationHasBeenSet = false;
   bool m_storageConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

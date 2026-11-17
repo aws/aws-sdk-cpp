@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityHub {
 namespace Model {
-enum class CspmConnectorProviderName { NOT_SET, AZURE };
+enum class CspmConnectorProviderName { NOT_SET, AZURE, GCP };
 
 namespace CspmConnectorProviderNameMapper {
 AWS_SECURITYHUB_API CspmConnectorProviderName GetCspmConnectorProviderNameForName(const Aws::String& name);

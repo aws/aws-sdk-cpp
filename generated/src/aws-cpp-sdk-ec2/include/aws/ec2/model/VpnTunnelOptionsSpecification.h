@@ -15,6 +15,7 @@
 #include <aws/ec2/model/Phase2DHGroupNumbersRequestListValue.h>
 #include <aws/ec2/model/Phase2EncryptionAlgorithmsRequestListValue.h>
 #include <aws/ec2/model/Phase2IntegrityAlgorithmsRequestListValue.h>
+#include <aws/ec2/model/VpnAdditionalKeyExchangeRequest.h>
 #include <aws/ec2/model/VpnTunnelLogOptionsSpecification.h>
 
 #include <utility>
@@ -362,7 +363,7 @@ class VpnTunnelOptionsSpecification {
    * tunnel for phase 1 IKE negotiations.</p> <p>Valid values: <code>2</code> |
    * <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
    * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> |
-   * <code>22</code> | <code>23</code> | <code>24</code> </p>
+   * <code>22</code> | <code>23</code> | <code>24</code> | <code>35</code> </p>
    */
   inline const Aws::Vector<Phase1DHGroupNumbersRequestListValue>& GetPhase1DHGroupNumbers() const { return m_phase1DHGroupNumbers; }
   inline bool Phase1DHGroupNumbersHasBeenSet() const { return m_phase1DHGroupNumbersHasBeenSet; }
@@ -390,7 +391,8 @@ class VpnTunnelOptionsSpecification {
    * tunnel for phase 2 IKE negotiations.</p> <p>Valid values: <code>2</code> |
    * <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
    * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> |
-   * <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
+   * <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> |
+   * <code>35</code> | <code>36</code> | <code>37</code> </p>
    */
   inline const Aws::Vector<Phase2DHGroupNumbersRequestListValue>& GetPhase2DHGroupNumbers() const { return m_phase2DHGroupNumbers; }
   inline bool Phase2DHGroupNumbersHasBeenSet() const { return m_phase2DHGroupNumbersHasBeenSet; }
@@ -492,6 +494,68 @@ class VpnTunnelOptionsSpecification {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>One or more additional key exchange rounds that are permitted for the VPN
+   * tunnel for phase 1 IKE negotiations. Additional key exchanges occur after the
+   * initial Diffie-Hellman exchange. Each round must have a unique round number.</p>
+   * <p>Additional key exchanges are supported only with IKEv2. You can't specify a
+   * <code>required</code> round if <code>IKEVersions</code> contains only
+   * <code>ikev1</code>.</p>
+   */
+  inline const Aws::Vector<VpnAdditionalKeyExchangeRequest>& GetPhase1AdditionalKeyExchanges() const {
+    return m_phase1AdditionalKeyExchanges;
+  }
+  inline bool Phase1AdditionalKeyExchangesHasBeenSet() const { return m_phase1AdditionalKeyExchangesHasBeenSet; }
+  template <typename Phase1AdditionalKeyExchangesT = Aws::Vector<VpnAdditionalKeyExchangeRequest>>
+  void SetPhase1AdditionalKeyExchanges(Phase1AdditionalKeyExchangesT&& value) {
+    m_phase1AdditionalKeyExchangesHasBeenSet = true;
+    m_phase1AdditionalKeyExchanges = std::forward<Phase1AdditionalKeyExchangesT>(value);
+  }
+  template <typename Phase1AdditionalKeyExchangesT = Aws::Vector<VpnAdditionalKeyExchangeRequest>>
+  VpnTunnelOptionsSpecification& WithPhase1AdditionalKeyExchanges(Phase1AdditionalKeyExchangesT&& value) {
+    SetPhase1AdditionalKeyExchanges(std::forward<Phase1AdditionalKeyExchangesT>(value));
+    return *this;
+  }
+  template <typename Phase1AdditionalKeyExchangesT = VpnAdditionalKeyExchangeRequest>
+  VpnTunnelOptionsSpecification& AddPhase1AdditionalKeyExchanges(Phase1AdditionalKeyExchangesT&& value) {
+    m_phase1AdditionalKeyExchangesHasBeenSet = true;
+    m_phase1AdditionalKeyExchanges.emplace_back(std::forward<Phase1AdditionalKeyExchangesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>One or more additional key exchange rounds that are permitted for the VPN
+   * tunnel for phase 2 IKE negotiations. Additional key exchanges occur after the
+   * initial Diffie-Hellman exchange. Each round must have a unique round number.</p>
+   * <p>Additional key exchanges are supported only with IKEv2. You can't specify a
+   * <code>required</code> round if <code>IKEVersions</code> contains only
+   * <code>ikev1</code>.</p>
+   */
+  inline const Aws::Vector<VpnAdditionalKeyExchangeRequest>& GetPhase2AdditionalKeyExchanges() const {
+    return m_phase2AdditionalKeyExchanges;
+  }
+  inline bool Phase2AdditionalKeyExchangesHasBeenSet() const { return m_phase2AdditionalKeyExchangesHasBeenSet; }
+  template <typename Phase2AdditionalKeyExchangesT = Aws::Vector<VpnAdditionalKeyExchangeRequest>>
+  void SetPhase2AdditionalKeyExchanges(Phase2AdditionalKeyExchangesT&& value) {
+    m_phase2AdditionalKeyExchangesHasBeenSet = true;
+    m_phase2AdditionalKeyExchanges = std::forward<Phase2AdditionalKeyExchangesT>(value);
+  }
+  template <typename Phase2AdditionalKeyExchangesT = Aws::Vector<VpnAdditionalKeyExchangeRequest>>
+  VpnTunnelOptionsSpecification& WithPhase2AdditionalKeyExchanges(Phase2AdditionalKeyExchangesT&& value) {
+    SetPhase2AdditionalKeyExchanges(std::forward<Phase2AdditionalKeyExchangesT>(value));
+    return *this;
+  }
+  template <typename Phase2AdditionalKeyExchangesT = VpnAdditionalKeyExchangeRequest>
+  VpnTunnelOptionsSpecification& AddPhase2AdditionalKeyExchanges(Phase2AdditionalKeyExchangesT&& value) {
+    m_phase2AdditionalKeyExchangesHasBeenSet = true;
+    m_phase2AdditionalKeyExchanges.emplace_back(std::forward<Phase2AdditionalKeyExchangesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_tunnelInsideCidr;
 
@@ -532,6 +596,10 @@ class VpnTunnelOptionsSpecification {
   VpnTunnelLogOptionsSpecification m_logOptions;
 
   bool m_enableTunnelLifecycleControl{false};
+
+  Aws::Vector<VpnAdditionalKeyExchangeRequest> m_phase1AdditionalKeyExchanges;
+
+  Aws::Vector<VpnAdditionalKeyExchangeRequest> m_phase2AdditionalKeyExchanges;
   bool m_tunnelInsideCidrHasBeenSet = false;
   bool m_tunnelInsideIpv6CidrHasBeenSet = false;
   bool m_preSharedKeyHasBeenSet = false;
@@ -552,6 +620,8 @@ class VpnTunnelOptionsSpecification {
   bool m_startupActionHasBeenSet = false;
   bool m_logOptionsHasBeenSet = false;
   bool m_enableTunnelLifecycleControlHasBeenSet = false;
+  bool m_phase1AdditionalKeyExchangesHasBeenSet = false;
+  bool m_phase2AdditionalKeyExchangesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
+#include <aws/mgn/model/DefinitionType.h>
 #include <aws/mgn/model/SourceEnvironment.h>
 
 #include <utility>
@@ -150,6 +151,22 @@ class NetworkMigrationDefinitionSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the network migration definition.</p>
+   */
+  inline DefinitionType GetDefinitionType() const { return m_definitionType; }
+  inline bool DefinitionTypeHasBeenSet() const { return m_definitionTypeHasBeenSet; }
+  inline void SetDefinitionType(DefinitionType value) {
+    m_definitionTypeHasBeenSet = true;
+    m_definitionType = value;
+  }
+  inline NetworkMigrationDefinitionSummary& WithDefinitionType(DefinitionType value) {
+    SetDefinitionType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_networkMigrationDefinitionID;
 
@@ -162,12 +179,15 @@ class NetworkMigrationDefinitionSummary {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::Map<Aws::String, Aws::String> m_scopeTags;
+
+  DefinitionType m_definitionType{DefinitionType::NOT_SET};
   bool m_networkMigrationDefinitionIDHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_sourceEnvironmentHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_scopeTagsHasBeenSet = false;
+  bool m_definitionTypeHasBeenSet = false;
 };
 
 }  // namespace Model

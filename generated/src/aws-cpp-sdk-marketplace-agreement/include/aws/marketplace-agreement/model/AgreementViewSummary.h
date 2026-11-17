@@ -11,6 +11,7 @@
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
 #include <aws/marketplace-agreement/model/Acceptor.h>
 #include <aws/marketplace-agreement/model/AgreementStatus.h>
+#include <aws/marketplace-agreement/model/ContactType.h>
 #include <aws/marketplace-agreement/model/EndTimeBehaviorReasonCode.h>
 #include <aws/marketplace-agreement/model/EndTimeBehaviorType.h>
 #include <aws/marketplace-agreement/model/Entitlement.h>
@@ -98,7 +99,7 @@ class AgreementViewSummary {
   ///@{
   /**
    * <p>The date and time when the agreement ends. The field is <code>null</code> for
-   * pay-as-you-go agreements, which don’t have end dates.</p>
+   * pay-as-you-go agreements, which don't have end dates.</p>
    */
   inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
   inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
@@ -349,6 +350,31 @@ class AgreementViewSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The types of contact information on file for the agreement. For example,
+   * <code>ACCEPTOR</code> indicates that the acceptor's contact information is on
+   * file, which you can retrieve with <code>GetAgreementContacts</code>.</p>
+   */
+  inline const Aws::Vector<ContactType>& GetIncludesContactOfType() const { return m_includesContactOfType; }
+  inline bool IncludesContactOfTypeHasBeenSet() const { return m_includesContactOfTypeHasBeenSet; }
+  template <typename IncludesContactOfTypeT = Aws::Vector<ContactType>>
+  void SetIncludesContactOfType(IncludesContactOfTypeT&& value) {
+    m_includesContactOfTypeHasBeenSet = true;
+    m_includesContactOfType = std::forward<IncludesContactOfTypeT>(value);
+  }
+  template <typename IncludesContactOfTypeT = Aws::Vector<ContactType>>
+  AgreementViewSummary& WithIncludesContactOfType(IncludesContactOfTypeT&& value) {
+    SetIncludesContactOfType(std::forward<IncludesContactOfTypeT>(value));
+    return *this;
+  }
+  inline AgreementViewSummary& AddIncludesContactOfType(ContactType value) {
+    m_includesContactOfTypeHasBeenSet = true;
+    m_includesContactOfType.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_agreementId;
 
@@ -379,6 +405,8 @@ class AgreementViewSummary {
   EndTimeBehaviorReasonCode m_endTimeBehaviorReasonCode{EndTimeBehaviorReasonCode::NOT_SET};
 
   Aws::Utils::DateTime m_freeTrialEndTime{};
+
+  Aws::Vector<ContactType> m_includesContactOfType;
   bool m_agreementIdHasBeenSet = false;
   bool m_acceptanceTimeHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
@@ -394,6 +422,7 @@ class AgreementViewSummary {
   bool m_endTimeBehaviorTypeHasBeenSet = false;
   bool m_endTimeBehaviorReasonCodeHasBeenSet = false;
   bool m_freeTrialEndTimeHasBeenSet = false;
+  bool m_includesContactOfTypeHasBeenSet = false;
 };
 
 }  // namespace Model

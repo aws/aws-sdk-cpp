@@ -31,6 +31,7 @@
 #include <aws/lambda/model/CreateFunctionUrlConfigResult.h>
 #include <aws/lambda/model/DeleteCapacityProviderResult.h>
 #include <aws/lambda/model/DeleteCodeSigningConfigResult.h>
+#include <aws/lambda/model/DeleteDurableExecutionResult.h>
 #include <aws/lambda/model/DeleteEventSourceMappingResult.h>
 #include <aws/lambda/model/DeleteFunctionResult.h>
 #include <aws/lambda/model/GetAccountSettingsRequest.h>
@@ -78,6 +79,7 @@
 #include <aws/lambda/model/ListProvisionedConcurrencyConfigsResult.h>
 #include <aws/lambda/model/ListTagsResult.h>
 #include <aws/lambda/model/ListVersionsByFunctionResult.h>
+#include <aws/lambda/model/PauseDurableExecutionResult.h>
 #include <aws/lambda/model/PublishLayerVersionResult.h>
 #include <aws/lambda/model/PublishVersionResult.h>
 #include <aws/lambda/model/PutFunctionCodeSigningConfigResult.h>
@@ -88,6 +90,7 @@
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigResult.h>
 #include <aws/lambda/model/PutResourcePolicyResult.h>
 #include <aws/lambda/model/PutRuntimeManagementConfigResult.h>
+#include <aws/lambda/model/ResumeDurableExecutionResult.h>
 #include <aws/lambda/model/SendDurableExecutionCallbackFailureResult.h>
 #include <aws/lambda/model/SendDurableExecutionCallbackHeartbeatResult.h>
 #include <aws/lambda/model/SendDurableExecutionCallbackSuccessResult.h>
@@ -145,6 +148,7 @@ class CreateFunctionUrlConfigRequest;
 class DeleteAliasRequest;
 class DeleteCapacityProviderRequest;
 class DeleteCodeSigningConfigRequest;
+class DeleteDurableExecutionRequest;
 class DeleteEventSourceMappingRequest;
 class DeleteFunctionRequest;
 class DeleteFunctionCodeSigningConfigRequest;
@@ -194,6 +198,7 @@ class ListLayersRequest;
 class ListProvisionedConcurrencyConfigsRequest;
 class ListTagsRequest;
 class ListVersionsByFunctionRequest;
+class PauseDurableExecutionRequest;
 class PublishLayerVersionRequest;
 class PublishVersionRequest;
 class PutFunctionCodeSigningConfigRequest;
@@ -206,6 +211,7 @@ class PutResourcePolicyRequest;
 class PutRuntimeManagementConfigRequest;
 class RemoveLayerVersionPermissionRequest;
 class RemovePermissionRequest;
+class ResumeDurableExecutionRequest;
 class SendDurableExecutionCallbackFailureRequest;
 class SendDurableExecutionCallbackHeartbeatRequest;
 class SendDurableExecutionCallbackSuccessRequest;
@@ -235,6 +241,7 @@ typedef Aws::Utils::Outcome<CreateFunctionUrlConfigResult, LambdaError> CreateFu
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteAliasOutcome;
 typedef Aws::Utils::Outcome<DeleteCapacityProviderResult, LambdaError> DeleteCapacityProviderOutcome;
 typedef Aws::Utils::Outcome<DeleteCodeSigningConfigResult, LambdaError> DeleteCodeSigningConfigOutcome;
+typedef Aws::Utils::Outcome<DeleteDurableExecutionResult, LambdaError> DeleteDurableExecutionOutcome;
 typedef Aws::Utils::Outcome<DeleteEventSourceMappingResult, LambdaError> DeleteEventSourceMappingOutcome;
 typedef Aws::Utils::Outcome<DeleteFunctionResult, LambdaError> DeleteFunctionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> DeleteFunctionCodeSigningConfigOutcome;
@@ -284,6 +291,7 @@ typedef Aws::Utils::Outcome<ListLayersResult, LambdaError> ListLayersOutcome;
 typedef Aws::Utils::Outcome<ListProvisionedConcurrencyConfigsResult, LambdaError> ListProvisionedConcurrencyConfigsOutcome;
 typedef Aws::Utils::Outcome<ListTagsResult, LambdaError> ListTagsOutcome;
 typedef Aws::Utils::Outcome<ListVersionsByFunctionResult, LambdaError> ListVersionsByFunctionOutcome;
+typedef Aws::Utils::Outcome<PauseDurableExecutionResult, LambdaError> PauseDurableExecutionOutcome;
 typedef Aws::Utils::Outcome<PublishLayerVersionResult, LambdaError> PublishLayerVersionOutcome;
 typedef Aws::Utils::Outcome<PublishVersionResult, LambdaError> PublishVersionOutcome;
 typedef Aws::Utils::Outcome<PutFunctionCodeSigningConfigResult, LambdaError> PutFunctionCodeSigningConfigOutcome;
@@ -296,6 +304,7 @@ typedef Aws::Utils::Outcome<PutResourcePolicyResult, LambdaError> PutResourcePol
 typedef Aws::Utils::Outcome<PutRuntimeManagementConfigResult, LambdaError> PutRuntimeManagementConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> RemoveLayerVersionPermissionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> RemovePermissionOutcome;
+typedef Aws::Utils::Outcome<ResumeDurableExecutionResult, LambdaError> ResumeDurableExecutionOutcome;
 typedef Aws::Utils::Outcome<SendDurableExecutionCallbackFailureResult, LambdaError> SendDurableExecutionCallbackFailureOutcome;
 typedef Aws::Utils::Outcome<SendDurableExecutionCallbackHeartbeatResult, LambdaError> SendDurableExecutionCallbackHeartbeatOutcome;
 typedef Aws::Utils::Outcome<SendDurableExecutionCallbackSuccessResult, LambdaError> SendDurableExecutionCallbackSuccessOutcome;
@@ -325,6 +334,7 @@ typedef std::future<CreateFunctionUrlConfigOutcome> CreateFunctionUrlConfigOutco
 typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
 typedef std::future<DeleteCapacityProviderOutcome> DeleteCapacityProviderOutcomeCallable;
 typedef std::future<DeleteCodeSigningConfigOutcome> DeleteCodeSigningConfigOutcomeCallable;
+typedef std::future<DeleteDurableExecutionOutcome> DeleteDurableExecutionOutcomeCallable;
 typedef std::future<DeleteEventSourceMappingOutcome> DeleteEventSourceMappingOutcomeCallable;
 typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
 typedef std::future<DeleteFunctionCodeSigningConfigOutcome> DeleteFunctionCodeSigningConfigOutcomeCallable;
@@ -374,6 +384,7 @@ typedef std::future<ListLayersOutcome> ListLayersOutcomeCallable;
 typedef std::future<ListProvisionedConcurrencyConfigsOutcome> ListProvisionedConcurrencyConfigsOutcomeCallable;
 typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
 typedef std::future<ListVersionsByFunctionOutcome> ListVersionsByFunctionOutcomeCallable;
+typedef std::future<PauseDurableExecutionOutcome> PauseDurableExecutionOutcomeCallable;
 typedef std::future<PublishLayerVersionOutcome> PublishLayerVersionOutcomeCallable;
 typedef std::future<PublishVersionOutcome> PublishVersionOutcomeCallable;
 typedef std::future<PutFunctionCodeSigningConfigOutcome> PutFunctionCodeSigningConfigOutcomeCallable;
@@ -386,6 +397,7 @@ typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
 typedef std::future<PutRuntimeManagementConfigOutcome> PutRuntimeManagementConfigOutcomeCallable;
 typedef std::future<RemoveLayerVersionPermissionOutcome> RemoveLayerVersionPermissionOutcomeCallable;
 typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
+typedef std::future<ResumeDurableExecutionOutcome> ResumeDurableExecutionOutcomeCallable;
 typedef std::future<SendDurableExecutionCallbackFailureOutcome> SendDurableExecutionCallbackFailureOutcomeCallable;
 typedef std::future<SendDurableExecutionCallbackHeartbeatOutcome> SendDurableExecutionCallbackHeartbeatOutcomeCallable;
 typedef std::future<SendDurableExecutionCallbackSuccessOutcome> SendDurableExecutionCallbackSuccessOutcomeCallable;
@@ -442,6 +454,9 @@ typedef std::function<void(const LambdaClient*, const Model::DeleteCapacityProvi
 typedef std::function<void(const LambdaClient*, const Model::DeleteCodeSigningConfigRequest&, const Model::DeleteCodeSigningConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteCodeSigningConfigResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::DeleteDurableExecutionRequest&, const Model::DeleteDurableExecutionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteDurableExecutionResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::DeleteEventSourceMappingRequest&,
                            const Model::DeleteEventSourceMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteEventSourceMappingResponseReceivedHandler;
@@ -600,6 +615,9 @@ typedef std::function<void(const LambdaClient*, const Model::ListTagsRequest&, c
 typedef std::function<void(const LambdaClient*, const Model::ListVersionsByFunctionRequest&, const Model::ListVersionsByFunctionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListVersionsByFunctionResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::PauseDurableExecutionRequest&, const Model::PauseDurableExecutionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PauseDurableExecutionResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::PublishLayerVersionRequest&, const Model::PublishLayerVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PublishLayerVersionResponseReceivedHandler;
@@ -640,6 +658,9 @@ typedef std::function<void(const LambdaClient*, const Model::RemoveLayerVersionP
 typedef std::function<void(const LambdaClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RemovePermissionResponseReceivedHandler;
+typedef std::function<void(const LambdaClient*, const Model::ResumeDurableExecutionRequest&, const Model::ResumeDurableExecutionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ResumeDurableExecutionResponseReceivedHandler;
 typedef std::function<void(const LambdaClient*, const Model::SendDurableExecutionCallbackFailureRequest&,
                            const Model::SendDurableExecutionCallbackFailureOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

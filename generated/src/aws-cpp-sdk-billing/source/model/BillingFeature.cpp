@@ -22,6 +22,7 @@ static const int CREDIT_SHARING_HISTORY_HASH = HashingUtils::HashString("CREDIT_
 static const int CREDIT_LEVEL_SHARING_HASH = HashingUtils::HashString("CREDIT_LEVEL_SHARING");
 static const int BILLING_ALERTS_HASH = HashingUtils::HashString("BILLING_ALERTS");
 static const int CREDIT_PREFERENCE_OPTIONS_HASH = HashingUtils::HashString("CREDIT_PREFERENCE_OPTIONS");
+static const int BENEFIT_LEVEL_SHARING_HASH = HashingUtils::HashString("BENEFIT_LEVEL_SHARING");
 
 BillingFeature GetBillingFeatureForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ BillingFeature GetBillingFeatureForName(const Aws::String& name) {
     return BillingFeature::BILLING_ALERTS;
   } else if (hashCode == CREDIT_PREFERENCE_OPTIONS_HASH) {
     return BillingFeature::CREDIT_PREFERENCE_OPTIONS;
+  } else if (hashCode == BENEFIT_LEVEL_SHARING_HASH) {
+    return BillingFeature::BENEFIT_LEVEL_SHARING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForBillingFeature(BillingFeature enumValue) {
       return "BILLING_ALERTS";
     case BillingFeature::CREDIT_PREFERENCE_OPTIONS:
       return "CREDIT_PREFERENCE_OPTIONS";
+    case BillingFeature::BENEFIT_LEVEL_SHARING:
+      return "BENEFIT_LEVEL_SHARING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

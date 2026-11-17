@@ -39,6 +39,8 @@ static const int CallbackSucceeded_HASH = HashingUtils::HashString("CallbackSucc
 static const int CallbackFailed_HASH = HashingUtils::HashString("CallbackFailed");
 static const int CallbackTimedOut_HASH = HashingUtils::HashString("CallbackTimedOut");
 static const int InvocationCompleted_HASH = HashingUtils::HashString("InvocationCompleted");
+static const int ExecutionPaused_HASH = HashingUtils::HashString("ExecutionPaused");
+static const int ExecutionResumed_HASH = HashingUtils::HashString("ExecutionResumed");
 
 EventType GetEventTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -90,6 +92,10 @@ EventType GetEventTypeForName(const Aws::String& name) {
     return EventType::CallbackTimedOut;
   } else if (hashCode == InvocationCompleted_HASH) {
     return EventType::InvocationCompleted;
+  } else if (hashCode == ExecutionPaused_HASH) {
+    return EventType::ExecutionPaused;
+  } else if (hashCode == ExecutionResumed_HASH) {
+    return EventType::ExecutionResumed;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -152,6 +158,10 @@ Aws::String GetNameForEventType(EventType enumValue) {
       return "CallbackTimedOut";
     case EventType::InvocationCompleted:
       return "InvocationCompleted";
+    case EventType::ExecutionPaused:
+      return "ExecutionPaused";
+    case EventType::ExecutionResumed:
+      return "ExecutionResumed";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

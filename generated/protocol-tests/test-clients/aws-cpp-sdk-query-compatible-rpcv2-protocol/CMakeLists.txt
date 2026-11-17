@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-query-compatible-rpcv2-protocol "C++ SDK for the AWS query-compatible-rpcv2-protocol service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-query-compatible-rpcv2-protocol "C++ SDK for Query Compatible RpcV2 Protocol Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_QUERY-COMPATIBLE-RPCV2-PROTOCOL_HEADERS
     "include/aws/query-compatible-rpcv2-protocol/*.h"

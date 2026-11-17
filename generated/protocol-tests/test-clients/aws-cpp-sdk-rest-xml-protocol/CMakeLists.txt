@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-rest-xml-protocol "C++ SDK for the AWS rest-xml-protocol service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-rest-xml-protocol "C++ SDK for Sample Rest Xml Protocol Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_REST-XML-PROTOCOL_HEADERS
     "include/aws/rest-xml-protocol/*.h"

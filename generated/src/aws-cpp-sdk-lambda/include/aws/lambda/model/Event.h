@@ -21,6 +21,8 @@
 #include <aws/lambda/model/ContextSucceededDetails.h>
 #include <aws/lambda/model/EventType.h>
 #include <aws/lambda/model/ExecutionFailedDetails.h>
+#include <aws/lambda/model/ExecutionPausedDetails.h>
+#include <aws/lambda/model/ExecutionResumedDetails.h>
 #include <aws/lambda/model/ExecutionStartedDetails.h>
 #include <aws/lambda/model/ExecutionStoppedDetails.h>
 #include <aws/lambda/model/ExecutionSucceededDetails.h>
@@ -602,6 +604,42 @@ class Event {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The details of an <code>ExecutionPaused</code> event.</p>
+   */
+  inline const ExecutionPausedDetails& GetExecutionPausedDetails() const { return m_executionPausedDetails; }
+  inline bool ExecutionPausedDetailsHasBeenSet() const { return m_executionPausedDetailsHasBeenSet; }
+  template <typename ExecutionPausedDetailsT = ExecutionPausedDetails>
+  void SetExecutionPausedDetails(ExecutionPausedDetailsT&& value) {
+    m_executionPausedDetailsHasBeenSet = true;
+    m_executionPausedDetails = std::forward<ExecutionPausedDetailsT>(value);
+  }
+  template <typename ExecutionPausedDetailsT = ExecutionPausedDetails>
+  Event& WithExecutionPausedDetails(ExecutionPausedDetailsT&& value) {
+    SetExecutionPausedDetails(std::forward<ExecutionPausedDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The details of an <code>ExecutionResumed</code> event.</p>
+   */
+  inline const ExecutionResumedDetails& GetExecutionResumedDetails() const { return m_executionResumedDetails; }
+  inline bool ExecutionResumedDetailsHasBeenSet() const { return m_executionResumedDetailsHasBeenSet; }
+  template <typename ExecutionResumedDetailsT = ExecutionResumedDetails>
+  void SetExecutionResumedDetails(ExecutionResumedDetailsT&& value) {
+    m_executionResumedDetailsHasBeenSet = true;
+    m_executionResumedDetails = std::forward<ExecutionResumedDetailsT>(value);
+  }
+  template <typename ExecutionResumedDetailsT = ExecutionResumedDetails>
+  Event& WithExecutionResumedDetails(ExecutionResumedDetailsT&& value) {
+    SetExecutionResumedDetails(std::forward<ExecutionResumedDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EventType m_eventType{EventType::NOT_SET};
 
@@ -664,6 +702,10 @@ class Event {
   CallbackTimedOutDetails m_callbackTimedOutDetails;
 
   InvocationCompletedDetails m_invocationCompletedDetails;
+
+  ExecutionPausedDetails m_executionPausedDetails;
+
+  ExecutionResumedDetails m_executionResumedDetails;
   bool m_eventTypeHasBeenSet = false;
   bool m_subTypeHasBeenSet = false;
   bool m_eventIdHasBeenSet = false;
@@ -695,6 +737,8 @@ class Event {
   bool m_callbackFailedDetailsHasBeenSet = false;
   bool m_callbackTimedOutDetailsHasBeenSet = false;
   bool m_invocationCompletedDetailsHasBeenSet = false;
+  bool m_executionPausedDetailsHasBeenSet = false;
+  bool m_executionResumedDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -145,6 +145,17 @@ ServerlessCache& ServerlessCache::operator=(const XmlNode& xmlNode) {
       m_migration = migrationNode;
       m_migrationHasBeenSet = true;
     }
+    XmlNode integrationsNode = resultNode.FirstChild("Integrations");
+    if (!integrationsNode.IsNull()) {
+      XmlNode integrationsMember = integrationsNode.FirstChild("Integration");
+      m_integrationsHasBeenSet = !integrationsMember.IsNull();
+      while (!integrationsMember.IsNull()) {
+        m_integrations.push_back(integrationsMember);
+        integrationsMember = integrationsMember.NextNode("Integration");
+      }
+
+      m_integrationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -255,6 +266,15 @@ void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location
     migrationLocationAndMemberSs << location << index << locationValue << ".Migration";
     m_migration.OutputToStream(oStream, migrationLocationAndMemberSs.str().c_str());
   }
+
+  if (m_integrationsHasBeenSet) {
+    unsigned integrationsIdx = 1;
+    for (auto& item : m_integrations) {
+      Aws::StringStream integrationsSs;
+      integrationsSs << location << index << locationValue << ".Integrations.Integration." << integrationsIdx++;
+      item.OutputToStream(oStream, integrationsSs.str().c_str());
+    }
+  }
 }
 
 void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -338,6 +358,14 @@ void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location
     Aws::String migrationLocationAndMember(location);
     migrationLocationAndMember += ".Migration";
     m_migration.OutputToStream(oStream, migrationLocationAndMember.c_str());
+  }
+  if (m_integrationsHasBeenSet) {
+    unsigned integrationsIdx = 1;
+    for (auto& item : m_integrations) {
+      Aws::StringStream integrationsSs;
+      integrationsSs << location << ".Integrations.Integration." << integrationsIdx++;
+      item.OutputToStream(oStream, integrationsSs.str().c_str());
+    }
   }
 }
 

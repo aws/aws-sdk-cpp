@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityHub {
 namespace Model {
-enum class SecurityControlsProvider { NOT_SET, AWS, Azure };
+enum class SecurityControlsProvider { NOT_SET, AWS, Azure, GCP };
 
 namespace SecurityControlsProviderMapper {
 AWS_SECURITYHUB_API SecurityControlsProvider GetSecurityControlsProviderForName(const Aws::String& name);

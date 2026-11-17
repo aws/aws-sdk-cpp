@@ -10,12 +10,14 @@
 #include <aws/mgn/MgnPaginationBase.h>
 #include <aws/mgn/model/ListImportFileEnrichmentsPaginationTraits.h>
 #include <aws/mgn/model/DescribeJobLogItemsPaginationTraits.h>
+#include <aws/mgn/model/ListNetworkMigrationInsightsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationMapperSegmentsPaginationTraits.h>
 #include <aws/mgn/model/ListExportErrorsPaginationTraits.h>
 #include <aws/mgn/model/ListManagedAccountsPaginationTraits.h>
 #include <aws/mgn/model/ListWavesPaginationTraits.h>
 #include <aws/mgn/model/DescribeJobsPaginationTraits.h>
 #include <aws/mgn/model/DescribeLaunchConfigurationTemplatesPaginationTraits.h>
+#include <aws/mgn/model/ListRemoteSourceActionsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationCodeGenerationSegmentsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationDeployedStacksPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationExecutionsPaginationTraits.h>
@@ -25,6 +27,7 @@
 #include <aws/mgn/model/ListNetworkMigrationAnalysisResultsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationMapperSegmentConstructsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationCodeGenerationsPaginationTraits.h>
+#include <aws/mgn/model/ListRemoteSourceActionJobsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationMappingUpdatesPaginationTraits.h>
 #include <aws/mgn/model/DescribeReplicationConfigurationTemplatesPaginationTraits.h>
 #include <aws/mgn/model/ListTemplateActionsPaginationTraits.h>
@@ -35,6 +38,8 @@
 #include <aws/mgn/model/ListNetworkMigrationAnalysesPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationMappingsPaginationTraits.h>
 #include <aws/mgn/model/ListApplicationsPaginationTraits.h>
+#include <aws/mgn/model/ListRemoteSourceActionInvocationResultsPaginationTraits.h>
+#include <aws/mgn/model/ListRemoteSourceActionInvocationsPaginationTraits.h>
 #include <aws/mgn/model/ListImportsPaginationTraits.h>
 #include <aws/mgn/model/ListImportErrorsPaginationTraits.h>
 

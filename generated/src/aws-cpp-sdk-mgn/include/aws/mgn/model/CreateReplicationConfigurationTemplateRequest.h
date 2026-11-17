@@ -10,6 +10,7 @@
 #include <aws/mgn/MgnRequest.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/model/InternetProtocol.h>
+#include <aws/mgn/model/OutpostSnapshotLocation.h>
 #include <aws/mgn/model/ReplicationConfigurationDataPlaneRouting.h>
 #include <aws/mgn/model/ReplicationConfigurationDefaultLargeStagingDiskType.h>
 #include <aws/mgn/model/ReplicationConfigurationEbsEncryption.h>
@@ -340,6 +341,26 @@ class CreateReplicationConfigurationTemplateRequest : public MgnRequest {
 
   ///@{
   /**
+   * <p>Request to set the location of replication snapshots when the staging area
+   * subnet is on an AWS Outpost during Replication Settings template creation. Set
+   * to <code>OUTPOST</code> to keep replication snapshots on the Outpost, or
+   * <code>REGION</code> to store them in the AWS Region. Required when the staging
+   * area subnet is on an Outpost, and not allowed otherwise.</p>
+   */
+  inline OutpostSnapshotLocation GetOutpostSnapshotLocation() const { return m_outpostSnapshotLocation; }
+  inline bool OutpostSnapshotLocationHasBeenSet() const { return m_outpostSnapshotLocationHasBeenSet; }
+  inline void SetOutpostSnapshotLocation(OutpostSnapshotLocation value) {
+    m_outpostSnapshotLocationHasBeenSet = true;
+    m_outpostSnapshotLocation = value;
+  }
+  inline CreateReplicationConfigurationTemplateRequest& WithOutpostSnapshotLocation(OutpostSnapshotLocation value) {
+    SetOutpostSnapshotLocation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Request to configure storage during Replication Settings template
    * creation.</p>
    */
@@ -390,6 +411,8 @@ class CreateReplicationConfigurationTemplateRequest : public MgnRequest {
 
   bool m_storeSnapshotOnLocalZone{false};
 
+  OutpostSnapshotLocation m_outpostSnapshotLocation{OutpostSnapshotLocation::NOT_SET};
+
   StorageConfiguration m_storageConfiguration;
   bool m_stagingAreaSubnetIdHasBeenSet = false;
   bool m_associateDefaultSecurityGroupHasBeenSet = false;
@@ -407,6 +430,7 @@ class CreateReplicationConfigurationTemplateRequest : public MgnRequest {
   bool m_tagsHasBeenSet = false;
   bool m_internetProtocolHasBeenSet = false;
   bool m_storeSnapshotOnLocalZoneHasBeenSet = false;
+  bool m_outpostSnapshotLocationHasBeenSet = false;
   bool m_storageConfigurationHasBeenSet = false;
 };
 

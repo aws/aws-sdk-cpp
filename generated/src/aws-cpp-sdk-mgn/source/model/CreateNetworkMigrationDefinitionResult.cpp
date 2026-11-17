@@ -49,6 +49,10 @@ CreateNetworkMigrationDefinitionResult& CreateNetworkMigrationDefinitionResult::
     }
     m_sourceConfigurationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("definitionType")) {
+    m_definitionType = DefinitionTypeMapper::GetDefinitionTypeForName(jsonValue.GetString("definitionType"));
+    m_definitionTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("targetS3Configuration")) {
     m_targetS3Configuration = jsonValue.GetObject("targetS3Configuration");
     m_targetS3ConfigurationHasBeenSet = true;

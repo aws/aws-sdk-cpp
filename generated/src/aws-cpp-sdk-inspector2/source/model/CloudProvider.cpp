@@ -17,6 +17,7 @@ namespace CloudProviderMapper {
 
 static const int AWS_HASH = HashingUtils::HashString("AWS");
 static const int AZURE_HASH = HashingUtils::HashString("AZURE");
+static const int GCP_HASH = HashingUtils::HashString("GCP");
 static const int NOT_APPLICABLE_HASH = HashingUtils::HashString("NOT_APPLICABLE");
 
 CloudProvider GetCloudProviderForName(const Aws::String& name) {
@@ -25,6 +26,8 @@ CloudProvider GetCloudProviderForName(const Aws::String& name) {
     return CloudProvider::AWS;
   } else if (hashCode == AZURE_HASH) {
     return CloudProvider::AZURE;
+  } else if (hashCode == GCP_HASH) {
+    return CloudProvider::GCP;
   } else if (hashCode == NOT_APPLICABLE_HASH) {
     return CloudProvider::NOT_APPLICABLE;
   }
@@ -45,6 +48,8 @@ Aws::String GetNameForCloudProvider(CloudProvider enumValue) {
       return "AWS";
     case CloudProvider::AZURE:
       return "AZURE";
+    case CloudProvider::GCP:
+      return "GCP";
     case CloudProvider::NOT_APPLICABLE:
       return "NOT_APPLICABLE";
     default:

@@ -22,6 +22,10 @@ StartNetworkMigrationMappingUpdateConstruct& StartNetworkMigrationMappingUpdateC
     m_segmentID = jsonValue.GetString("segmentID");
     m_segmentIDHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("segmentLogicalID")) {
+    m_segmentLogicalID = jsonValue.GetString("segmentLogicalID");
+    m_segmentLogicalIDHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("constructID")) {
     m_constructID = jsonValue.GetString("constructID");
     m_constructIDHasBeenSet = true;
@@ -29,6 +33,10 @@ StartNetworkMigrationMappingUpdateConstruct& StartNetworkMigrationMappingUpdateC
   if (jsonValue.ValueExists("constructType")) {
     m_constructType = jsonValue.GetString("constructType");
     m_constructTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("constructLogicalID")) {
+    m_constructLogicalID = jsonValue.GetString("constructLogicalID");
+    m_constructLogicalIDHasBeenSet = true;
   }
   if (jsonValue.ValueExists("operation")) {
     m_operation = jsonValue.GetObject("operation");
@@ -44,12 +52,20 @@ JsonValue StartNetworkMigrationMappingUpdateConstruct::Jsonize() const {
     payload.WithString("segmentID", m_segmentID);
   }
 
+  if (m_segmentLogicalIDHasBeenSet) {
+    payload.WithString("segmentLogicalID", m_segmentLogicalID);
+  }
+
   if (m_constructIDHasBeenSet) {
     payload.WithString("constructID", m_constructID);
   }
 
   if (m_constructTypeHasBeenSet) {
     payload.WithString("constructType", m_constructType);
+  }
+
+  if (m_constructLogicalIDHasBeenSet) {
+    payload.WithString("constructLogicalID", m_constructLogicalID);
   }
 
   if (m_operationHasBeenSet) {

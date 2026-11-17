@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Inspector2 {
 namespace Model {
-enum class ScopeType { NOT_SET, TENANT, SUBSCRIPTION };
+enum class ScopeType { NOT_SET, TENANT, SUBSCRIPTION, ORGANIZATION, PROJECT };
 
 namespace ScopeTypeMapper {
 AWS_INSPECTOR2_API ScopeType GetScopeTypeForName(const Aws::String& name);

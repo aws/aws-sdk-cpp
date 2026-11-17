@@ -41,7 +41,20 @@ class CoveredResource {
 
   ///@{
   /**
-   * <p>The type of the covered resource.</p>
+   * <p>The type of the covered resource. Valid values:</p> <ul> <li> <p>Amazon Web
+   * Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>,
+   * <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code>,
+   * <code>MACHINE_IMAGE</code>, <code>CODE_REPOSITORY</code>, or
+   * <code>AWS_ACCOUNT</code>.</p> </li> <li> <p>Microsoft Azure –
+   * <code>Microsoft.Compute/virtualMachines</code>,
+   * <code>Microsoft.ContainerRegistry/registries</code>,
+   * <code>Microsoft.ContainerRegistry/registry/containerRepository</code>,
+   * <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or
+   * <code>Microsoft.Web/sites</code>.</p> </li> <li> <p>Google Cloud Platform (GCP)
+   * – <code>compute.googleapis.com/Instance</code>,
+   * <code>cloudfunctions.googleapis.com/Function</code>,
+   * <code>artifactregistry.googleapis.com/Repository</code>, or
+   * <code>artifactregistry.googleapis.com/DockerImage</code>.</p> </li> </ul>
    */
   inline CoverageResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -179,7 +192,10 @@ class CoveredResource {
 
   ///@{
   /**
-   * <p>The cloud provider of the covered resource.</p>
+   * <p>The cloud provider of the covered resource. Valid values:</p> <ul> <li> <p>
+   * <code>AWS</code> – Amazon Web Services resources.</p> </li> <li> <p>
+   * <code>AZURE</code> – Microsoft Azure resources.</p> </li> <li> <p>
+   * <code>GCP</code> – Google Cloud Platform (GCP) resources.</p> </li> </ul>
    */
   inline Provider GetProvider() const { return m_provider; }
   inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
@@ -195,7 +211,10 @@ class CoveredResource {
 
   ///@{
   /**
-   * <p>The cloud provider account ID of the covered resource.</p>
+   * <p>The cloud provider account ID of the covered resource. The value format
+   * depends on the cloud provider:</p> <ul> <li> <p>An Amazon Web Services account
+   * ID.</p> </li> <li> <p>An Azure subscription ID.</p> </li> <li> <p>A Google Cloud
+   * Platform (GCP) project ID, such as <code>my-project</code>.</p> </li> </ul>
    */
   inline const Aws::String& GetProviderAccountId() const { return m_providerAccountId; }
   inline bool ProviderAccountIdHasBeenSet() const { return m_providerAccountIdHasBeenSet; }
@@ -213,7 +232,10 @@ class CoveredResource {
 
   ///@{
   /**
-   * <p>The cloud provider organization ID of the covered resource.</p>
+   * <p>The cloud provider organization ID of the covered resource. The value format
+   * depends on the cloud provider:</p> <ul> <li> <p>An Amazon Web Services
+   * Organizations organization ID.</p> </li> <li> <p>An Azure tenant ID.</p> </li>
+   * <li> <p>A numeric Google Cloud Platform (GCP) organization ID.</p> </li> </ul>
    */
   inline const Aws::String& GetProviderOrgId() const { return m_providerOrgId; }
   inline bool ProviderOrgIdHasBeenSet() const { return m_providerOrgIdHasBeenSet; }
@@ -231,7 +253,12 @@ class CoveredResource {
 
   ///@{
   /**
-   * <p>The cloud provider region of the covered resource.</p>
+   * <p>The cloud provider region of the covered resource. The value format depends
+   * on the cloud provider:</p> <ul> <li> <p>An Amazon Web Services Region, such as
+   * <code>us-east-1</code>.</p> </li> <li> <p>An Azure region, such as
+   * <code>eastus</code>.</p> </li> <li> <p>A Google Cloud Platform (GCP) location,
+   * such as the region <code>us-central1</code> or the zone
+   * <code>us-central1-a</code>.</p> </li> </ul>
    */
   inline const Aws::String& GetProviderRegion() const { return m_providerRegion; }
   inline bool ProviderRegionHasBeenSet() const { return m_providerRegionHasBeenSet; }

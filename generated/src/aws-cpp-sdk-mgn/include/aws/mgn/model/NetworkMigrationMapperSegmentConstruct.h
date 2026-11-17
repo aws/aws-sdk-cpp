@@ -5,9 +5,11 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
+#include <aws/mgn/model/OperationConfigurationUnion.h>
 
 #include <utility>
 
@@ -202,6 +204,50 @@ class NetworkMigrationMapperSegmentConstruct {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The construct properties using their native value types. Returned by Get, and
+   * by List when includeEnrichedProperties is true.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetEnrichedProperties() const { return m_enrichedProperties; }
+  inline bool EnrichedPropertiesHasBeenSet() const { return m_enrichedPropertiesHasBeenSet; }
+  template <typename EnrichedPropertiesT = Aws::Map<Aws::String, Aws::Utils::Document>>
+  void SetEnrichedProperties(EnrichedPropertiesT&& value) {
+    m_enrichedPropertiesHasBeenSet = true;
+    m_enrichedProperties = std::forward<EnrichedPropertiesT>(value);
+  }
+  template <typename EnrichedPropertiesT = Aws::Map<Aws::String, Aws::Utils::Document>>
+  NetworkMigrationMapperSegmentConstruct& WithEnrichedProperties(EnrichedPropertiesT&& value) {
+    SetEnrichedProperties(std::forward<EnrichedPropertiesT>(value));
+    return *this;
+  }
+  template <typename EnrichedPropertiesKeyT = Aws::String, typename EnrichedPropertiesValueT = Aws::Utils::Document>
+  NetworkMigrationMapperSegmentConstruct& AddEnrichedProperties(EnrichedPropertiesKeyT&& key, EnrichedPropertiesValueT&& value) {
+    m_enrichedPropertiesHasBeenSet = true;
+    m_enrichedProperties.emplace(std::forward<EnrichedPropertiesKeyT>(key), std::forward<EnrichedPropertiesValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The construct-type-specific behavioral configuration. Returned by Get, and by
+   * List when includeConfiguration is true.</p>
+   */
+  inline const OperationConfigurationUnion& GetConfiguration() const { return m_configuration; }
+  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+  template <typename ConfigurationT = OperationConfigurationUnion>
+  void SetConfiguration(ConfigurationT&& value) {
+    m_configurationHasBeenSet = true;
+    m_configuration = std::forward<ConfigurationT>(value);
+  }
+  template <typename ConfigurationT = OperationConfigurationUnion>
+  NetworkMigrationMapperSegmentConstruct& WithConfiguration(ConfigurationT&& value) {
+    SetConfiguration(std::forward<ConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_constructID;
 
@@ -220,6 +266,10 @@ class NetworkMigrationMapperSegmentConstruct {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::Map<Aws::String, Aws::String> m_properties;
+
+  Aws::Map<Aws::String, Aws::Utils::Document> m_enrichedProperties;
+
+  OperationConfigurationUnion m_configuration;
   bool m_constructIDHasBeenSet = false;
   bool m_constructTypeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -229,6 +279,8 @@ class NetworkMigrationMapperSegmentConstruct {
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
+  bool m_enrichedPropertiesHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
 };
 
 }  // namespace Model

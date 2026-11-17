@@ -157,6 +157,30 @@ class EnabledBaselineFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of <code>EnabledBaselineDriftStatus</code> items for enabled
+   * baselines.</p>
+   */
+  inline const Aws::Vector<EnabledBaselineDriftStatus>& GetSourceDriftStatuses() const { return m_sourceDriftStatuses; }
+  inline bool SourceDriftStatusesHasBeenSet() const { return m_sourceDriftStatusesHasBeenSet; }
+  template <typename SourceDriftStatusesT = Aws::Vector<EnabledBaselineDriftStatus>>
+  void SetSourceDriftStatuses(SourceDriftStatusesT&& value) {
+    m_sourceDriftStatusesHasBeenSet = true;
+    m_sourceDriftStatuses = std::forward<SourceDriftStatusesT>(value);
+  }
+  template <typename SourceDriftStatusesT = Aws::Vector<EnabledBaselineDriftStatus>>
+  EnabledBaselineFilter& WithSourceDriftStatuses(SourceDriftStatusesT&& value) {
+    SetSourceDriftStatuses(std::forward<SourceDriftStatusesT>(value));
+    return *this;
+  }
+  inline EnabledBaselineFilter& AddSourceDriftStatuses(EnabledBaselineDriftStatus value) {
+    m_sourceDriftStatusesHasBeenSet = true;
+    m_sourceDriftStatuses.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_targetIdentifiers;
 
@@ -167,11 +191,14 @@ class EnabledBaselineFilter {
   Aws::Vector<EnablementStatus> m_statuses;
 
   Aws::Vector<EnabledBaselineDriftStatus> m_inheritanceDriftStatuses;
+
+  Aws::Vector<EnabledBaselineDriftStatus> m_sourceDriftStatuses;
   bool m_targetIdentifiersHasBeenSet = false;
   bool m_baselineIdentifiersHasBeenSet = false;
   bool m_parentIdentifiersHasBeenSet = false;
   bool m_statusesHasBeenSet = false;
   bool m_inheritanceDriftStatusesHasBeenSet = false;
+  bool m_sourceDriftStatusesHasBeenSet = false;
 };
 
 }  // namespace Model

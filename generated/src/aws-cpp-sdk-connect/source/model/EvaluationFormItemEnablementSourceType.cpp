@@ -16,11 +16,23 @@ namespace Model {
 namespace EvaluationFormItemEnablementSourceTypeMapper {
 
 static const int QUESTION_REF_ID_HASH = HashingUtils::HashString("QUESTION_REF_ID");
+static const int CONTACT_HASH = HashingUtils::HashString("CONTACT");
+static const int EVALUATION_METADATA_HASH = HashingUtils::HashString("EVALUATION_METADATA");
+static const int FORM_METADATA_HASH = HashingUtils::HashString("FORM_METADATA");
+static const int AI_METRICS_HASH = HashingUtils::HashString("AI_METRICS");
 
 EvaluationFormItemEnablementSourceType GetEvaluationFormItemEnablementSourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == QUESTION_REF_ID_HASH) {
     return EvaluationFormItemEnablementSourceType::QUESTION_REF_ID;
+  } else if (hashCode == CONTACT_HASH) {
+    return EvaluationFormItemEnablementSourceType::CONTACT;
+  } else if (hashCode == EVALUATION_METADATA_HASH) {
+    return EvaluationFormItemEnablementSourceType::EVALUATION_METADATA;
+  } else if (hashCode == FORM_METADATA_HASH) {
+    return EvaluationFormItemEnablementSourceType::FORM_METADATA;
+  } else if (hashCode == AI_METRICS_HASH) {
+    return EvaluationFormItemEnablementSourceType::AI_METRICS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +49,14 @@ Aws::String GetNameForEvaluationFormItemEnablementSourceType(EvaluationFormItemE
       return {};
     case EvaluationFormItemEnablementSourceType::QUESTION_REF_ID:
       return "QUESTION_REF_ID";
+    case EvaluationFormItemEnablementSourceType::CONTACT:
+      return "CONTACT";
+    case EvaluationFormItemEnablementSourceType::EVALUATION_METADATA:
+      return "EVALUATION_METADATA";
+    case EvaluationFormItemEnablementSourceType::FORM_METADATA:
+      return "FORM_METADATA";
+    case EvaluationFormItemEnablementSourceType::AI_METRICS:
+      return "AI_METRICS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

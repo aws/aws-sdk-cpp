@@ -65,9 +65,10 @@ class UpdateMethodResult {
   ///@{
   /**
    * <p>The method's authorization type. Valid values are <code>NONE</code> for open
-   * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
-   * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
-   * Cognito user pool.</p>
+   * access, <code>AWS_IAM</code> for using Amazon Web Services IAM permissions,
+   * <code>CUSTOM</code> for using a custom authorizer,
+   * <code>COGNITO_USER_POOLS</code> for using a Cognito user pool, or
+   * <code>JWT</code> for using a JWT authorizer.</p>
    */
   inline const Aws::String& GetAuthorizationType() const { return m_authorizationType; }
   template <typename AuthorizationTypeT = Aws::String>
@@ -258,7 +259,10 @@ class UpdateMethodResult {
    * invocation is authorized if any method scopes matches a claimed scope in the
    * access token. Otherwise, the invocation is not authorized. When the method scope
    * is configured, the client must provide an access token instead of an identity
-   * token for authorization purposes.</p>
+   * token for authorization purposes. The scopes are also used with a
+   * <code>JWT</code> authorizer. When scopes are configured, the <code>scope</code>
+   * (or <code>scp</code>) claim of the token must contain at least one of the
+   * configured scopes.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAuthorizationScopes() const { return m_authorizationScopes; }
   template <typename AuthorizationScopesT = Aws::Vector<Aws::String>>

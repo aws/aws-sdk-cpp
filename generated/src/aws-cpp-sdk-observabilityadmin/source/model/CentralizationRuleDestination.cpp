@@ -34,6 +34,10 @@ CentralizationRuleDestination& CentralizationRuleDestination::operator=(JsonView
     m_destinationMetricsConfiguration = jsonValue.GetObject("DestinationMetricsConfiguration");
     m_destinationMetricsConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DestinationProfilesConfiguration")) {
+    m_destinationProfilesConfiguration = jsonValue.GetObject("DestinationProfilesConfiguration");
+    m_destinationProfilesConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue CentralizationRuleDestination::Jsonize() const {
 
   if (m_destinationMetricsConfigurationHasBeenSet) {
     payload.WithObject("DestinationMetricsConfiguration", m_destinationMetricsConfiguration.Jsonize());
+  }
+
+  if (m_destinationProfilesConfigurationHasBeenSet) {
+    payload.WithObject("DestinationProfilesConfiguration", m_destinationProfilesConfiguration.Jsonize());
   }
 
   return payload;

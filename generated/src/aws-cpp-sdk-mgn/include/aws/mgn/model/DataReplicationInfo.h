@@ -183,6 +183,25 @@ class DataReplicationInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the AWS Outpost that hosts the staging area, when the staging area
+   * subnet is on an Outpost.</p>
+   */
+  inline const Aws::String& GetStagingOutpostArn() const { return m_stagingOutpostArn; }
+  inline bool StagingOutpostArnHasBeenSet() const { return m_stagingOutpostArnHasBeenSet; }
+  template <typename StagingOutpostArnT = Aws::String>
+  void SetStagingOutpostArn(StagingOutpostArnT&& value) {
+    m_stagingOutpostArnHasBeenSet = true;
+    m_stagingOutpostArn = std::forward<StagingOutpostArnT>(value);
+  }
+  template <typename StagingOutpostArnT = Aws::String>
+  DataReplicationInfo& WithStagingOutpostArn(StagingOutpostArnT&& value) {
+    SetStagingOutpostArn(std::forward<StagingOutpostArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_lagDuration;
 
@@ -199,6 +218,8 @@ class DataReplicationInfo {
   Aws::String m_lastSnapshotDateTime;
 
   Aws::String m_replicatorId;
+
+  Aws::String m_stagingOutpostArn;
   bool m_lagDurationHasBeenSet = false;
   bool m_etaDateTimeHasBeenSet = false;
   bool m_replicatedDisksHasBeenSet = false;
@@ -207,6 +228,7 @@ class DataReplicationInfo {
   bool m_dataReplicationErrorHasBeenSet = false;
   bool m_lastSnapshotDateTimeHasBeenSet = false;
   bool m_replicatorIdHasBeenSet = false;
+  bool m_stagingOutpostArnHasBeenSet = false;
 };
 
 }  // namespace Model

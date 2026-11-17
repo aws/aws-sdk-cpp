@@ -45,6 +45,17 @@ PurchaseCapacityBlockResponse& PurchaseCapacityBlockResponse::operator=(const Aw
 
       m_capacityBlocksHasBeenSet = true;
     }
+    XmlNode capacityReservationsNode = resultNode.FirstChild("capacityReservationSet");
+    if (!capacityReservationsNode.IsNull()) {
+      XmlNode capacityReservationsMember = capacityReservationsNode.FirstChild("item");
+      m_capacityReservationsHasBeenSet = !capacityReservationsMember.IsNull();
+      while (!capacityReservationsMember.IsNull()) {
+        m_capacityReservations.push_back(capacityReservationsMember);
+        capacityReservationsMember = capacityReservationsMember.NextNode("item");
+      }
+
+      m_capacityReservationsHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

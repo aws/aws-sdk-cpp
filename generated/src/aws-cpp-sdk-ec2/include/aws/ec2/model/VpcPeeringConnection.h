@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/MultipathResilienceStatus.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/VpcPeeringConnectionStateReason.h>
 #include <aws/ec2/model/VpcPeeringConnectionVpcInfo.h>
@@ -153,6 +154,27 @@ class VpcPeeringConnection {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The multipath resilience status of the VPC peering connection. The possible
+   * values are:</p> <ul> <li> <p> <code>enabled</code> – Both the requester and the
+   * accepter allow multipath resilience.</p> </li> <li> <p> <code>pending</code> –
+   * Either the requester or the accepter allows multipath resilience, but not
+   * both.</p> </li> <li> <p> <code>disabled</code> – Neither the requester nor the
+   * accepter allows multipath resilience.</p> </li> </ul>
+   */
+  inline MultipathResilienceStatus GetMultipathResilienceStatus() const { return m_multipathResilienceStatus; }
+  inline bool MultipathResilienceStatusHasBeenSet() const { return m_multipathResilienceStatusHasBeenSet; }
+  inline void SetMultipathResilienceStatus(MultipathResilienceStatus value) {
+    m_multipathResilienceStatusHasBeenSet = true;
+    m_multipathResilienceStatus = value;
+  }
+  inline VpcPeeringConnection& WithMultipathResilienceStatus(MultipathResilienceStatus value) {
+    SetMultipathResilienceStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   VpcPeeringConnectionVpcInfo m_accepterVpcInfo;
 
@@ -165,12 +187,15 @@ class VpcPeeringConnection {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_vpcPeeringConnectionId;
+
+  MultipathResilienceStatus m_multipathResilienceStatus{MultipathResilienceStatus::NOT_SET};
   bool m_accepterVpcInfoHasBeenSet = false;
   bool m_expirationTimeHasBeenSet = false;
   bool m_requesterVpcInfoHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_vpcPeeringConnectionIdHasBeenSet = false;
+  bool m_multipathResilienceStatusHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
+#include <aws/mgn/model/SegmentOperation.h>
 
 #include <utility>
 
@@ -47,6 +48,43 @@ class StartNetworkMigrationMappingUpdateSegment {
   template <typename SegmentIDT = Aws::String>
   StartNetworkMigrationMappingUpdateSegment& WithSegmentID(SegmentIDT&& value) {
     SetSegmentID(std::forward<SegmentIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An identifier that you choose for a segment created by this request. You can
+   * use it in other constructs in the same request to refer to the new segment.</p>
+   */
+  inline const Aws::String& GetSegmentLogicalID() const { return m_segmentLogicalID; }
+  inline bool SegmentLogicalIDHasBeenSet() const { return m_segmentLogicalIDHasBeenSet; }
+  template <typename SegmentLogicalIDT = Aws::String>
+  void SetSegmentLogicalID(SegmentLogicalIDT&& value) {
+    m_segmentLogicalIDHasBeenSet = true;
+    m_segmentLogicalID = std::forward<SegmentLogicalIDT>(value);
+  }
+  template <typename SegmentLogicalIDT = Aws::String>
+  StartNetworkMigrationMappingUpdateSegment& WithSegmentLogicalID(SegmentLogicalIDT&& value) {
+    SetSegmentLogicalID(std::forward<SegmentLogicalIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The operation to perform on the segment.</p>
+   */
+  inline const SegmentOperation& GetOperation() const { return m_operation; }
+  inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
+  template <typename OperationT = SegmentOperation>
+  void SetOperation(OperationT&& value) {
+    m_operationHasBeenSet = true;
+    m_operation = std::forward<OperationT>(value);
+  }
+  template <typename OperationT = SegmentOperation>
+  StartNetworkMigrationMappingUpdateSegment& WithOperation(OperationT&& value) {
+    SetOperation(std::forward<OperationT>(value));
     return *this;
   }
   ///@}
@@ -95,10 +133,16 @@ class StartNetworkMigrationMappingUpdateSegment {
  private:
   Aws::String m_segmentID;
 
+  Aws::String m_segmentLogicalID;
+
+  SegmentOperation m_operation;
+
   Aws::String m_targetAccount;
 
   Aws::Map<Aws::String, Aws::String> m_scopeTags;
   bool m_segmentIDHasBeenSet = false;
+  bool m_segmentLogicalIDHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
   bool m_targetAccountHasBeenSet = false;
   bool m_scopeTagsHasBeenSet = false;
 };

@@ -28,6 +28,15 @@ static const int CUSTOMER_HOLD_TIME_HASH = HashingUtils::HashString("CUSTOMER_HO
 static const int LONGEST_HOLD_DURATION_HASH = HashingUtils::HashString("LONGEST_HOLD_DURATION");
 static const int NUMBER_OF_HOLDS_HASH = HashingUtils::HashString("NUMBER_OF_HOLDS");
 static const int AGENT_INTERACTION_AND_HOLD_DURATION_HASH = HashingUtils::HashString("AGENT_INTERACTION_AND_HOLD_DURATION");
+static const int AI_SESSION_SELF_SERVICE_DURATION_HASH = HashingUtils::HashString("AI_SESSION_SELF_SERVICE_DURATION");
+static const int AI_SESSION_GOAL_SUCCESS_RATE_HASH = HashingUtils::HashString("AI_SESSION_GOAL_SUCCESS_RATE");
+static const int AI_SESSION_COMPLETENESS_SCORE_HASH = HashingUtils::HashString("AI_SESSION_COMPLETENESS_SCORE");
+static const int AI_SESSION_FAITHFULNESS_SCORE_HASH = HashingUtils::HashString("AI_SESSION_FAITHFULNESS_SCORE");
+static const int AI_AGENT_MAX_PROMPT_LATENCY_HASH = HashingUtils::HashString("AI_AGENT_MAX_PROMPT_LATENCY");
+static const int AI_TOOL_MAX_LATENCY_HASH = HashingUtils::HashString("AI_TOOL_MAX_LATENCY");
+static const int AI_TOOL_SELECTION_ACCURACY_HASH = HashingUtils::HashString("AI_TOOL_SELECTION_ACCURACY");
+static const int AI_TOOL_PARAMETER_ACCURACY_HASH = HashingUtils::HashString("AI_TOOL_PARAMETER_ACCURACY");
+static const int AI_TOOL_UTILIZATION_ACCURACY_HASH = HashingUtils::HashString("AI_TOOL_UTILIZATION_ACCURACY");
 
 NumericQuestionPropertyAutomationLabel GetNumericQuestionPropertyAutomationLabelForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -57,6 +66,24 @@ NumericQuestionPropertyAutomationLabel GetNumericQuestionPropertyAutomationLabel
     return NumericQuestionPropertyAutomationLabel::NUMBER_OF_HOLDS;
   } else if (hashCode == AGENT_INTERACTION_AND_HOLD_DURATION_HASH) {
     return NumericQuestionPropertyAutomationLabel::AGENT_INTERACTION_AND_HOLD_DURATION;
+  } else if (hashCode == AI_SESSION_SELF_SERVICE_DURATION_HASH) {
+    return NumericQuestionPropertyAutomationLabel::AI_SESSION_SELF_SERVICE_DURATION;
+  } else if (hashCode == AI_SESSION_GOAL_SUCCESS_RATE_HASH) {
+    return NumericQuestionPropertyAutomationLabel::AI_SESSION_GOAL_SUCCESS_RATE;
+  } else if (hashCode == AI_SESSION_COMPLETENESS_SCORE_HASH) {
+    return NumericQuestionPropertyAutomationLabel::AI_SESSION_COMPLETENESS_SCORE;
+  } else if (hashCode == AI_SESSION_FAITHFULNESS_SCORE_HASH) {
+    return NumericQuestionPropertyAutomationLabel::AI_SESSION_FAITHFULNESS_SCORE;
+  } else if (hashCode == AI_AGENT_MAX_PROMPT_LATENCY_HASH) {
+    return NumericQuestionPropertyAutomationLabel::AI_AGENT_MAX_PROMPT_LATENCY;
+  } else if (hashCode == AI_TOOL_MAX_LATENCY_HASH) {
+    return NumericQuestionPropertyAutomationLabel::AI_TOOL_MAX_LATENCY;
+  } else if (hashCode == AI_TOOL_SELECTION_ACCURACY_HASH) {
+    return NumericQuestionPropertyAutomationLabel::AI_TOOL_SELECTION_ACCURACY;
+  } else if (hashCode == AI_TOOL_PARAMETER_ACCURACY_HASH) {
+    return NumericQuestionPropertyAutomationLabel::AI_TOOL_PARAMETER_ACCURACY;
+  } else if (hashCode == AI_TOOL_UTILIZATION_ACCURACY_HASH) {
+    return NumericQuestionPropertyAutomationLabel::AI_TOOL_UTILIZATION_ACCURACY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -97,6 +124,24 @@ Aws::String GetNameForNumericQuestionPropertyAutomationLabel(NumericQuestionProp
       return "NUMBER_OF_HOLDS";
     case NumericQuestionPropertyAutomationLabel::AGENT_INTERACTION_AND_HOLD_DURATION:
       return "AGENT_INTERACTION_AND_HOLD_DURATION";
+    case NumericQuestionPropertyAutomationLabel::AI_SESSION_SELF_SERVICE_DURATION:
+      return "AI_SESSION_SELF_SERVICE_DURATION";
+    case NumericQuestionPropertyAutomationLabel::AI_SESSION_GOAL_SUCCESS_RATE:
+      return "AI_SESSION_GOAL_SUCCESS_RATE";
+    case NumericQuestionPropertyAutomationLabel::AI_SESSION_COMPLETENESS_SCORE:
+      return "AI_SESSION_COMPLETENESS_SCORE";
+    case NumericQuestionPropertyAutomationLabel::AI_SESSION_FAITHFULNESS_SCORE:
+      return "AI_SESSION_FAITHFULNESS_SCORE";
+    case NumericQuestionPropertyAutomationLabel::AI_AGENT_MAX_PROMPT_LATENCY:
+      return "AI_AGENT_MAX_PROMPT_LATENCY";
+    case NumericQuestionPropertyAutomationLabel::AI_TOOL_MAX_LATENCY:
+      return "AI_TOOL_MAX_LATENCY";
+    case NumericQuestionPropertyAutomationLabel::AI_TOOL_SELECTION_ACCURACY:
+      return "AI_TOOL_SELECTION_ACCURACY";
+    case NumericQuestionPropertyAutomationLabel::AI_TOOL_PARAMETER_ACCURACY:
+      return "AI_TOOL_PARAMETER_ACCURACY";
+    case NumericQuestionPropertyAutomationLabel::AI_TOOL_UTILIZATION_ACCURACY:
+      return "AI_TOOL_UTILIZATION_ACCURACY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

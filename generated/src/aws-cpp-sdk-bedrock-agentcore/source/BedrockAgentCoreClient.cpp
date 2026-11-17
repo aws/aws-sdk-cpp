@@ -17,6 +17,7 @@
 #include <aws/bedrock-agentcore/model/DeleteABTestRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteBatchEvaluationRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteCapacityProviderSessionRequest.h>
+#include <aws/bedrock-agentcore/model/DeleteDatasetGenerationRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteEventRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordRequest.h>
 #include <aws/bedrock-agentcore/model/DeletePaymentInstrumentRequest.h>
@@ -25,9 +26,11 @@
 #include <aws/bedrock-agentcore/model/EvaluateRequest.h>
 #include <aws/bedrock-agentcore/model/GetABTestRequest.h>
 #include <aws/bedrock-agentcore/model/GetAgentCardRequest.h>
+#include <aws/bedrock-agentcore/model/GetAgentInsightRequest.h>
 #include <aws/bedrock-agentcore/model/GetBatchEvaluationRequest.h>
 #include <aws/bedrock-agentcore/model/GetBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/GetCodeInterpreterSessionRequest.h>
+#include <aws/bedrock-agentcore/model/GetDatasetGenerationRequest.h>
 #include <aws/bedrock-agentcore/model/GetEventRequest.h>
 #include <aws/bedrock-agentcore/model/GetMemoryRecordRequest.h>
 #include <aws/bedrock-agentcore/model/GetPaymentInstrumentBalanceRequest.h>
@@ -49,9 +52,11 @@
 #include <aws/bedrock-agentcore/model/InvokeWebSearchRequest.h>
 #include <aws/bedrock-agentcore/model/ListABTestsRequest.h>
 #include <aws/bedrock-agentcore/model/ListActorsRequest.h>
+#include <aws/bedrock-agentcore/model/ListAgentInsightsRequest.h>
 #include <aws/bedrock-agentcore/model/ListBatchEvaluationsRequest.h>
 #include <aws/bedrock-agentcore/model/ListBrowserSessionsRequest.h>
 #include <aws/bedrock-agentcore/model/ListCodeInterpreterSessionsRequest.h>
+#include <aws/bedrock-agentcore/model/ListDatasetGenerationsRequest.h>
 #include <aws/bedrock-agentcore/model/ListEventsRequest.h>
 #include <aws/bedrock-agentcore/model/ListMemoryExtractionJobsRequest.h>
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsRequest.h>
@@ -66,6 +71,7 @@
 #include <aws/bedrock-agentcore/model/StartBatchEvaluationRequest.h>
 #include <aws/bedrock-agentcore/model/StartBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StartCodeInterpreterSessionRequest.h>
+#include <aws/bedrock-agentcore/model/StartDatasetGenerationRequest.h>
 #include <aws/bedrock-agentcore/model/StartMemoryExtractionJobRequest.h>
 #include <aws/bedrock-agentcore/model/StartRecommendationRequest.h>
 #include <aws/bedrock-agentcore/model/StopBatchEvaluationRequest.h>
@@ -73,6 +79,7 @@
 #include <aws/bedrock-agentcore/model/StopCodeInterpreterSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StopRuntimeSessionRequest.h>
 #include <aws/bedrock-agentcore/model/UpdateABTestRequest.h>
+#include <aws/bedrock-agentcore/model/UpdateAgentInsightRequest.h>
 #include <aws/bedrock-agentcore/model/UpdateBrowserStreamRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -432,6 +439,31 @@ DeleteCapacityProviderSessionOutcome BedrockAgentCoreClient::DeleteCapacityProvi
                             : DeleteCapacityProviderSessionOutcome(std::move(result.GetError()));
 }
 
+DeleteDatasetGenerationOutcome BedrockAgentCoreClient::DeleteDatasetGeneration(const DeleteDatasetGenerationRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDatasetGeneration", "Required field: DatasetId, is not set");
+    return DeleteDatasetGenerationOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+  if (!request.GenerationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDatasetGeneration", "Required field: GenerationId, is not set");
+    return DeleteDatasetGenerationOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GenerationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/generations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGenerationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDatasetGenerationOutcome(result.GetResultWithOwnership())
+                            : DeleteDatasetGenerationOutcome(std::move(result.GetError()));
+}
+
 DeleteEventOutcome BedrockAgentCoreClient::DeleteEvent(const DeleteEventRequest& request) const {
   if (!request.MemoryIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteEvent", "Required field: MemoryId, is not set");
@@ -587,6 +619,29 @@ GetAgentCardOutcome BedrockAgentCoreClient::GetAgentCard(const GetAgentCardReque
   return result.IsSuccess() ? GetAgentCardOutcome(result.GetResultWithOwnership()) : GetAgentCardOutcome(std::move(result.GetError()));
 }
 
+GetAgentInsightOutcome BedrockAgentCoreClient::GetAgentInsight(const GetAgentInsightRequest& request) const {
+  if (!request.ApplicationNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAgentInsight", "Required field: ApplicationName, is not set");
+    return GetAgentInsightOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationName]", false));
+  }
+  if (!request.AgentInsightIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAgentInsight", "Required field: AgentInsightId, is not set");
+    return GetAgentInsightOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentInsightId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/agentinsights/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentInsightId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAgentInsightOutcome(result.GetResultWithOwnership())
+                            : GetAgentInsightOutcome(std::move(result.GetError()));
+}
+
 GetBatchEvaluationOutcome BedrockAgentCoreClient::GetBatchEvaluation(const GetBatchEvaluationRequest& request) const {
   if (!request.BatchEvaluationIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetBatchEvaluation", "Required field: BatchEvaluationId, is not set");
@@ -651,6 +706,31 @@ GetCodeInterpreterSessionOutcome BedrockAgentCoreClient::GetCodeInterpreterSessi
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetCodeInterpreterSessionOutcome(result.GetResultWithOwnership())
                             : GetCodeInterpreterSessionOutcome(std::move(result.GetError()));
+}
+
+GetDatasetGenerationOutcome BedrockAgentCoreClient::GetDatasetGeneration(const GetDatasetGenerationRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDatasetGeneration", "Required field: DatasetId, is not set");
+    return GetDatasetGenerationOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+  if (!request.GenerationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDatasetGeneration", "Required field: GenerationId, is not set");
+    return GetDatasetGenerationOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GenerationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/generations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGenerationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDatasetGenerationOutcome(result.GetResultWithOwnership())
+                            : GetDatasetGenerationOutcome(std::move(result.GetError()));
 }
 
 GetEventOutcome BedrockAgentCoreClient::GetEvent(const GetEventRequest& request) const {
@@ -1119,6 +1199,17 @@ ListActorsOutcome BedrockAgentCoreClient::ListActors(const ListActorsRequest& re
   return result.IsSuccess() ? ListActorsOutcome(result.GetResultWithOwnership()) : ListActorsOutcome(std::move(result.GetError()));
 }
 
+ListAgentInsightsOutcome BedrockAgentCoreClient::ListAgentInsights(const ListAgentInsightsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/agentinsights");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAgentInsightsOutcome(result.GetResultWithOwnership())
+                            : ListAgentInsightsOutcome(std::move(result.GetError()));
+}
+
 ListBatchEvaluationsOutcome BedrockAgentCoreClient::ListBatchEvaluations(const ListBatchEvaluationsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1167,6 +1258,25 @@ ListCodeInterpreterSessionsOutcome BedrockAgentCoreClient::ListCodeInterpreterSe
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListCodeInterpreterSessionsOutcome(result.GetResultWithOwnership())
                             : ListCodeInterpreterSessionsOutcome(std::move(result.GetError()));
+}
+
+ListDatasetGenerationsOutcome BedrockAgentCoreClient::ListDatasetGenerations(const ListDatasetGenerationsRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDatasetGenerations", "Required field: DatasetId, is not set");
+    return ListDatasetGenerationsOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/generations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDatasetGenerationsOutcome(result.GetResultWithOwnership())
+                            : ListDatasetGenerationsOutcome(std::move(result.GetError()));
 }
 
 ListEventsOutcome BedrockAgentCoreClient::ListEvents(const ListEventsRequest& request) const {
@@ -1405,6 +1515,25 @@ StartCodeInterpreterSessionOutcome BedrockAgentCoreClient::StartCodeInterpreterS
                             : StartCodeInterpreterSessionOutcome(std::move(result.GetError()));
 }
 
+StartDatasetGenerationOutcome BedrockAgentCoreClient::StartDatasetGeneration(const StartDatasetGenerationRequest& request) const {
+  if (!request.DatasetIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartDatasetGeneration", "Required field: DatasetId, is not set");
+    return StartDatasetGenerationOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/generations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDatasetGenerationOutcome(result.GetResultWithOwnership())
+                            : StartDatasetGenerationOutcome(std::move(result.GetError()));
+}
+
 StartMemoryExtractionJobOutcome BedrockAgentCoreClient::StartMemoryExtractionJob(const StartMemoryExtractionJobRequest& request) const {
   if (!request.MemoryIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("StartMemoryExtractionJob", "Required field: MemoryId, is not set");
@@ -1542,6 +1671,29 @@ UpdateABTestOutcome BedrockAgentCoreClient::UpdateABTest(const UpdateABTestReque
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateABTestOutcome(result.GetResultWithOwnership()) : UpdateABTestOutcome(std::move(result.GetError()));
+}
+
+UpdateAgentInsightOutcome BedrockAgentCoreClient::UpdateAgentInsight(const UpdateAgentInsightRequest& request) const {
+  if (!request.ApplicationNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAgentInsight", "Required field: ApplicationName, is not set");
+    return UpdateAgentInsightOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationName]", false));
+  }
+  if (!request.AgentInsightIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAgentInsight", "Required field: AgentInsightId, is not set");
+    return UpdateAgentInsightOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentInsightId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/agentinsights/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentInsightId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAgentInsightOutcome(result.GetResultWithOwnership())
+                            : UpdateAgentInsightOutcome(std::move(result.GetError()));
 }
 
 UpdateBrowserStreamOutcome BedrockAgentCoreClient::UpdateBrowserStream(const UpdateBrowserStreamRequest& request) const {

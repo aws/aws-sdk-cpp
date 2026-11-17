@@ -106,6 +106,24 @@ class UpdateLaunchConfigurationTemplateRequest : public MgnRequest {
 
   ///@{
   /**
+   * <p>Launch configuration template map auto tagging key.</p>
+   */
+  inline const Aws::String& GetMapAutoTaggingKey() const { return m_mapAutoTaggingKey; }
+  inline bool MapAutoTaggingKeyHasBeenSet() const { return m_mapAutoTaggingKeyHasBeenSet; }
+  template <typename MapAutoTaggingKeyT = Aws::String>
+  void SetMapAutoTaggingKey(MapAutoTaggingKeyT&& value) {
+    m_mapAutoTaggingKeyHasBeenSet = true;
+    m_mapAutoTaggingKey = std::forward<MapAutoTaggingKeyT>(value);
+  }
+  template <typename MapAutoTaggingKeyT = Aws::String>
+  UpdateLaunchConfigurationTemplateRequest& WithMapAutoTaggingKey(MapAutoTaggingKeyT&& value) {
+    SetMapAutoTaggingKey(std::forward<MapAutoTaggingKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Launch disposition.</p>
    */
   inline LaunchDisposition GetLaunchDisposition() const { return m_launchDisposition; }
@@ -312,6 +330,8 @@ class UpdateLaunchConfigurationTemplateRequest : public MgnRequest {
 
   Aws::String m_mapAutoTaggingMpeID;
 
+  Aws::String m_mapAutoTaggingKey;
+
   LaunchDisposition m_launchDisposition{LaunchDisposition::NOT_SET};
 
   TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod{TargetInstanceTypeRightSizingMethod::NOT_SET};
@@ -339,6 +359,7 @@ class UpdateLaunchConfigurationTemplateRequest : public MgnRequest {
   bool m_postLaunchActionsHasBeenSet = false;
   bool m_enableMapAutoTaggingHasBeenSet = false;
   bool m_mapAutoTaggingMpeIDHasBeenSet = false;
+  bool m_mapAutoTaggingKeyHasBeenSet = false;
   bool m_launchDispositionHasBeenSet = false;
   bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
   bool m_copyPrivateIpHasBeenSet = false;

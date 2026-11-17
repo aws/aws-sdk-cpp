@@ -146,6 +146,24 @@ class ExpectedCharge {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The purchase order reference associated with the charge, if any.</p>
+   */
+  inline const Aws::String& GetPurchaseOrderReference() const { return m_purchaseOrderReference; }
+  inline bool PurchaseOrderReferenceHasBeenSet() const { return m_purchaseOrderReferenceHasBeenSet; }
+  template <typename PurchaseOrderReferenceT = Aws::String>
+  void SetPurchaseOrderReference(PurchaseOrderReferenceT&& value) {
+    m_purchaseOrderReferenceHasBeenSet = true;
+    m_purchaseOrderReference = std::forward<PurchaseOrderReferenceT>(value);
+  }
+  template <typename PurchaseOrderReferenceT = Aws::String>
+  ExpectedCharge& WithPurchaseOrderReference(PurchaseOrderReferenceT&& value) {
+    SetPurchaseOrderReference(std::forward<PurchaseOrderReferenceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -158,12 +176,15 @@ class ExpectedCharge {
   Timing m_timing{Timing::NOT_SET};
 
   EstimatedTaxes m_estimatedTaxes;
+
+  Aws::String m_purchaseOrderReference;
   bool m_idHasBeenSet = false;
   bool m_timeHasBeenSet = false;
   bool m_amountHasBeenSet = false;
   bool m_amountAfterTaxHasBeenSet = false;
   bool m_timingHasBeenSet = false;
   bool m_estimatedTaxesHasBeenSet = false;
+  bool m_purchaseOrderReferenceHasBeenSet = false;
 };
 
 }  // namespace Model

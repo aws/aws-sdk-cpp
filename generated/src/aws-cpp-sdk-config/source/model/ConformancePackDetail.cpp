@@ -58,6 +58,18 @@ ConformancePackDetail& ConformancePackDetail::operator=(JsonView jsonValue) {
     m_templateSSMDocumentDetails = jsonValue.GetObject("TemplateSSMDocumentDetails");
     m_templateSSMDocumentDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Type")) {
+    m_type = ConformancePackTypeMapper::GetConformancePackTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Source")) {
+    m_source = jsonValue.GetObject("Source");
+    m_sourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Scope")) {
+    m_scope = jsonValue.GetObject("Scope");
+    m_scopeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -104,6 +116,18 @@ JsonValue ConformancePackDetail::Jsonize() const {
 
   if (m_templateSSMDocumentDetailsHasBeenSet) {
     payload.WithObject("TemplateSSMDocumentDetails", m_templateSSMDocumentDetails.Jsonize());
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ConformancePackTypeMapper::GetNameForConformancePackType(m_type));
+  }
+
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("Source", m_source.Jsonize());
+  }
+
+  if (m_scopeHasBeenSet) {
+    payload.WithObject("Scope", m_scope.Jsonize());
   }
 
   return payload;

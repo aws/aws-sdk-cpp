@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ec2-protocol "C++ SDK for the AWS ec2-protocol service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ec2-protocol "C++ SDK for Sample Ec2 Protocol Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_EC2-PROTOCOL_HEADERS
     "include/aws/ec2-protocol/*.h"

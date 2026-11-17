@@ -283,7 +283,11 @@ class FilterCriteria {
 
   ///@{
   /**
-   * <p>Details on the resource types used to filter findings.</p>
+   * <p>Details on the resource types used to filter findings. For Google Cloud
+   * Platform (GCP) resources, the resource type is
+   * <code>compute.googleapis.com/Instance</code>,
+   * <code>cloudfunctions.googleapis.com/Function</code>, or
+   * <code>artifactregistry.googleapis.com/DockerImage</code>.</p>
    */
   inline const Aws::Vector<StringFilter>& GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

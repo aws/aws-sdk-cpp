@@ -10,7 +10,14 @@
 namespace Aws {
 namespace SecurityHub {
 namespace Model {
-enum class CriticalitySourceType { NOT_SET, AutomationRule, ResourceName, TagInference };
+enum class CriticalitySourceType {
+  NOT_SET,
+  AutomationRule,
+  ResourceName,
+  TagInference,
+  CloudWatchTelemetryInference,
+  InstalledSoftwareAndPackageInference
+};
 
 namespace CriticalitySourceTypeMapper {
 AWS_SECURITYHUB_API CriticalitySourceType GetCriticalitySourceTypeForName(const Aws::String& name);

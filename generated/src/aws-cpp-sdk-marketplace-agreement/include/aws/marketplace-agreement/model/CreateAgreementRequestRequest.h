@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-agreement/AgreementServiceRequest.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
+#include <aws/marketplace-agreement/model/AcceptorContact.h>
 #include <aws/marketplace-agreement/model/Intent.h>
 #include <aws/marketplace-agreement/model/RequestedTerm.h>
 #include <aws/marketplace-agreement/model/TaxConfiguration.h>
@@ -160,6 +161,25 @@ class CreateAgreementRequestRequest : public AgreementServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The contact information of the acceptor.</p>  <p>Don't provide
+   * this parameter if the intent is <code>AMEND</code>.</p>
+   */
+  inline const AcceptorContact& GetAcceptorContact() const { return m_acceptorContact; }
+  inline bool AcceptorContactHasBeenSet() const { return m_acceptorContactHasBeenSet; }
+  template <typename AcceptorContactT = AcceptorContact>
+  void SetAcceptorContact(AcceptorContactT&& value) {
+    m_acceptorContactHasBeenSet = true;
+    m_acceptorContact = std::forward<AcceptorContactT>(value);
+  }
+  template <typename AcceptorContactT = AcceptorContact>
+  CreateAgreementRequestRequest& WithAcceptorContact(AcceptorContactT&& value) {
+    SetAcceptorContact(std::forward<AcceptorContactT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
@@ -172,12 +192,15 @@ class CreateAgreementRequestRequest : public AgreementServiceRequest {
   Aws::String m_agreementProposalIdentifier;
 
   TaxConfiguration m_taxConfiguration;
+
+  AcceptorContact m_acceptorContact;
   bool m_clientTokenHasBeenSet = true;
   bool m_intentHasBeenSet = false;
   bool m_requestedTermsHasBeenSet = false;
   bool m_sourceAgreementIdentifierHasBeenSet = false;
   bool m_agreementProposalIdentifierHasBeenSet = false;
   bool m_taxConfigurationHasBeenSet = false;
+  bool m_acceptorContactHasBeenSet = false;
 };
 
 }  // namespace Model

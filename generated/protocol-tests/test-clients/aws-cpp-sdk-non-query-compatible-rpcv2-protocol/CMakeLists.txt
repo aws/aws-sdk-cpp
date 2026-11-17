@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-non-query-compatible-rpcv2-protocol "C++ SDK for the AWS non-query-compatible-rpcv2-protocol service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-non-query-compatible-rpcv2-protocol "C++ SDK for Non Query Compatible RpcV2 Protocol Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_NON-QUERY-COMPATIBLE-RPCV2-PROTOCOL_HEADERS
     "include/aws/non-query-compatible-rpcv2-protocol/*.h"

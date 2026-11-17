@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Inspector2 {
 namespace Model {
-enum class CloudProvider { NOT_SET, AWS, AZURE, NOT_APPLICABLE };
+enum class CloudProvider { NOT_SET, AWS, AZURE, GCP, NOT_APPLICABLE };
 
 namespace CloudProviderMapper {
 AWS_INSPECTOR2_API CloudProvider GetCloudProviderForName(const Aws::String& name);

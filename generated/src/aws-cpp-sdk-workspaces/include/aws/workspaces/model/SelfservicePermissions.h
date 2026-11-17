@@ -117,6 +117,45 @@ class SelfservicePermissions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether users can enable or disable nested virtualization on their
+   * WorkSpace. The default value is <code>DISABLED</code>. For more information, see
+   * <a
+   * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested
+   * virtualization for Amazon WorkSpaces</a>.</p>
+   */
+  inline ReconnectEnum GetNestedVirtualization() const { return m_nestedVirtualization; }
+  inline bool NestedVirtualizationHasBeenSet() const { return m_nestedVirtualizationHasBeenSet; }
+  inline void SetNestedVirtualization(ReconnectEnum value) {
+    m_nestedVirtualizationHasBeenSet = true;
+    m_nestedVirtualization = value;
+  }
+  inline SelfservicePermissions& WithNestedVirtualization(ReconnectEnum value) {
+    SetNestedVirtualization(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether users can use End User Advisor in the WorkSpaces client for
+   * Windows to see their session health and get recommended actions for common
+   * issues. The default value is <code>ENABLED</code>. For more information, see
+   * Proactive troubleshooting for your WorkSpaces users.</p>
+   */
+  inline ReconnectEnum GetEnableEndUserAdvisor() const { return m_enableEndUserAdvisor; }
+  inline bool EnableEndUserAdvisorHasBeenSet() const { return m_enableEndUserAdvisorHasBeenSet; }
+  inline void SetEnableEndUserAdvisor(ReconnectEnum value) {
+    m_enableEndUserAdvisorHasBeenSet = true;
+    m_enableEndUserAdvisor = value;
+  }
+  inline SelfservicePermissions& WithEnableEndUserAdvisor(ReconnectEnum value) {
+    SetEnableEndUserAdvisor(value);
+    return *this;
+  }
+  ///@}
  private:
   ReconnectEnum m_restartWorkspace{ReconnectEnum::NOT_SET};
 
@@ -127,11 +166,17 @@ class SelfservicePermissions {
   ReconnectEnum m_switchRunningMode{ReconnectEnum::NOT_SET};
 
   ReconnectEnum m_rebuildWorkspace{ReconnectEnum::NOT_SET};
+
+  ReconnectEnum m_nestedVirtualization{ReconnectEnum::NOT_SET};
+
+  ReconnectEnum m_enableEndUserAdvisor{ReconnectEnum::NOT_SET};
   bool m_restartWorkspaceHasBeenSet = false;
   bool m_increaseVolumeSizeHasBeenSet = false;
   bool m_changeComputeTypeHasBeenSet = false;
   bool m_switchRunningModeHasBeenSet = false;
   bool m_rebuildWorkspaceHasBeenSet = false;
+  bool m_nestedVirtualizationHasBeenSet = false;
+  bool m_enableEndUserAdvisorHasBeenSet = false;
 };
 
 }  // namespace Model

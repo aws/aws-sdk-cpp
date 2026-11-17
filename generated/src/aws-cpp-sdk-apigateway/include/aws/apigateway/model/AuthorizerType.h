@@ -10,7 +10,7 @@
 namespace Aws {
 namespace APIGateway {
 namespace Model {
-enum class AuthorizerType { NOT_SET, TOKEN, REQUEST, COGNITO_USER_POOLS };
+enum class AuthorizerType { NOT_SET, TOKEN, REQUEST, COGNITO_USER_POOLS, JWT };
 
 namespace AuthorizerTypeMapper {
 AWS_APIGATEWAY_API AuthorizerType GetAuthorizerTypeForName(const Aws::String& name);

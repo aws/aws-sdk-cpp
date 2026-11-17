@@ -53,6 +53,18 @@ TelemetryPipeline& TelemetryPipeline::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LastRefreshTimeStamp")) {
+    m_lastRefreshTimeStamp = jsonValue.GetInt64("LastRefreshTimeStamp");
+    m_lastRefreshTimeStampHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SourceProgress")) {
+    m_sourceProgress = jsonValue.GetObject("SourceProgress");
+    m_sourceProgressHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ConfigurationSummary")) {
+    m_configurationSummary = jsonValue.GetObject("ConfigurationSummary");
+    m_configurationSummaryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +105,18 @@ JsonValue TelemetryPipeline::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("Tags", std::move(tagsJsonMap));
+  }
+
+  if (m_lastRefreshTimeStampHasBeenSet) {
+    payload.WithInt64("LastRefreshTimeStamp", m_lastRefreshTimeStamp);
+  }
+
+  if (m_sourceProgressHasBeenSet) {
+    payload.WithObject("SourceProgress", m_sourceProgress.Jsonize());
+  }
+
+  if (m_configurationSummaryHasBeenSet) {
+    payload.WithObject("ConfigurationSummary", m_configurationSummary.Jsonize());
   }
 
   return payload;

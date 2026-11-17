@@ -17,8 +17,9 @@ namespace Aws {
 namespace Kinesis {
 /**
  * <fullname>Amazon Kinesis Data Streams Service API Reference</fullname> <p>Amazon
- * Kinesis Data Streams is a managed service that scales elastically for real-time
- * processing of streaming big data.</p>
+ * Kinesis Data Streams is a serverless data streaming service that ingests data
+ * once and fans it out to multiple consumer applications for real-time
+ * processing.</p>
  */
 class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<KinesisClient>,
@@ -76,6 +77,79 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
 
   /* End of legacy constructors due deprecation */
   virtual ~KinesisClient();
+
+  /**
+   * <p>Acknowledges up to 10 dead-letter records in the specified queue, so the
+   * queue doesn't return them again. The result for each entry is reported
+   * individually in the response.</p> <p>Acknowledging a record does not affect the
+   * record in the data stream. That record remains available to stream consumers and
+   * to other queues on the same stream for the rest of its retention period.</p>
+   * <p>Because the request can result in a combination of successful and
+   * unsuccessful entries, check the <code>Failed</code> list even when the call
+   * returns an HTTP status code of <code>200</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AcknowledgeDeadLetterQueueRecords">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AcknowledgeDeadLetterQueueRecordsOutcome AcknowledgeDeadLetterQueueRecords(
+      const Model::AcknowledgeDeadLetterQueueRecordsRequest& request) const;
+
+  /**
+   * A Callable wrapper for AcknowledgeDeadLetterQueueRecords that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename AcknowledgeDeadLetterQueueRecordsRequestT = Model::AcknowledgeDeadLetterQueueRecordsRequest>
+  Model::AcknowledgeDeadLetterQueueRecordsOutcomeCallable AcknowledgeDeadLetterQueueRecordsCallable(
+      const AcknowledgeDeadLetterQueueRecordsRequestT& request) const {
+    return SubmitCallable(&KinesisClient::AcknowledgeDeadLetterQueueRecords, request);
+  }
+
+  /**
+   * An Async wrapper for AcknowledgeDeadLetterQueueRecords that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename AcknowledgeDeadLetterQueueRecordsRequestT = Model::AcknowledgeDeadLetterQueueRecordsRequest>
+  void AcknowledgeDeadLetterQueueRecordsAsync(const AcknowledgeDeadLetterQueueRecordsRequestT& request,
+                                              const AcknowledgeDeadLetterQueueRecordsResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::AcknowledgeDeadLetterQueueRecords, request, handler, context);
+  }
+
+  /**
+   * <p>Acknowledges up to 10 records from the specified queue. After a record is
+   * acknowledged, the queue does not deliver it again. The result for each entry is
+   * reported individually in the response.</p> <p>Acknowledging a record does not
+   * affect the record in the data stream. That record remains available to stream
+   * consumers and to other queues on the same stream for the rest of its retention
+   * period.</p> <p>Because the request can result in a combination of successful and
+   * unsuccessful entries, check the <code>Failed</code> list even when the call
+   * returns an HTTP status code of <code>200</code>.</p> <p>On rare occasions, you
+   * can receive a record again after you acknowledge it. Design your queue consumer
+   * to be idempotent, so that processing the same record more than once is
+   * safe.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AcknowledgeQueueRecords">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AcknowledgeQueueRecordsOutcome AcknowledgeQueueRecords(const Model::AcknowledgeQueueRecordsRequest& request) const;
+
+  /**
+   * A Callable wrapper for AcknowledgeQueueRecords that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AcknowledgeQueueRecordsRequestT = Model::AcknowledgeQueueRecordsRequest>
+  Model::AcknowledgeQueueRecordsOutcomeCallable AcknowledgeQueueRecordsCallable(const AcknowledgeQueueRecordsRequestT& request) const {
+    return SubmitCallable(&KinesisClient::AcknowledgeQueueRecords, request);
+  }
+
+  /**
+   * An Async wrapper for AcknowledgeQueueRecords that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AcknowledgeQueueRecordsRequestT = Model::AcknowledgeQueueRecordsRequest>
+  void AcknowledgeQueueRecordsAsync(const AcknowledgeQueueRecordsRequestT& request,
+                                    const AcknowledgeQueueRecordsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::AcknowledgeQueueRecords, request, handler, context);
+  }
 
   /**
    * <p>Adds or updates tags for the specified Kinesis data stream. You can assign up
@@ -148,6 +222,63 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   void CreateChannelAsync(const CreateChannelRequestT& request, const CreateChannelResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KinesisClient::CreateChannel, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a queue on the specified data stream. A queue delivers records from
+   * the stream to a queue consumer, tracks the delivery state of each record, and
+   * redelivers any record that is not acknowledged before its visibility timeout
+   * expires.</p> <p>A queue does not extend how long the stream keeps a record. When
+   * a record reaches the end of the data stream's retention period, the queue stops
+   * delivering it.</p> <p>Your queue consumer calls <a>ReceiveQueueRecords</a> to
+   * receive up to 10 records at a time. After it processes records, it calls
+   * <a>AcknowledgeQueueRecords</a> so the queue does not deliver them again.</p>
+   * <p>Queues are supported only on data streams in on-demand capacity mode.</p>
+   * <p>Creating a queue does not change how producers write to the stream, and it
+   * does not change how existing stream consumers read from it. A queue counts as a
+   * registered consumer on the stream and shares the stream's registered consumer
+   * limit with enhanced fan-out consumers: 20 on On-demand Standard and 50 on
+   * On-demand Advantage.</p> <p>Use <code>StartingPosition</code> to set the
+   * position in the stream where delivery begins. The default is
+   * <code>LATEST</code>.</p> <p> <code>CreateQueue</code> is an asynchronous
+   * operation. Upon receiving a <code>CreateQueue</code> request, Amazon Kinesis
+   * Data Streams immediately returns a queue description with a
+   * <code>QueueStatus</code> of <code>CREATING</code>. After the queue is created,
+   * Kinesis Data Streams sets the <code>QueueStatus</code> to <code>ACTIVE</code>.
+   * You can begin receiving records after the queue is <code>ACTIVE</code>. Use
+   * <a>DescribeQueue</a> to check the status of the queue.</p> <p>Each queue has
+   * built-in dead-letter handling. When a record has been received
+   * <code>MaxReceiveCount</code> times without being acknowledged, it becomes a
+   * dead-letter record, and <a>ReceiveQueueRecords</a> no longer returns it. You
+   * work with dead-letter records through a separate set of operations that use the
+   * same queue ARN: <a>ReceiveDeadLetterQueueRecords</a>,
+   * <a>AcknowledgeDeadLetterQueueRecords</a>,
+   * <a>UpdateDeadLetterQueueRecordsVisibility</a>, and
+   * <a>RestoreDeadLetterQueueRecords</a>.</p> <p>Dead-letter handling is enabled by
+   * default, with a <code>MaxReceiveCount</code> of 6. To use a different value, or
+   * to turn dead-letter handling off, specify <code>DeadLetterConfiguration</code>
+   * in <code>QueueAttributes</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateQueue">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateQueueOutcome CreateQueue(const Model::CreateQueueRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateQueue that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateQueueRequestT = Model::CreateQueueRequest>
+  Model::CreateQueueOutcomeCallable CreateQueueCallable(const CreateQueueRequestT& request) const {
+    return SubmitCallable(&KinesisClient::CreateQueue, request);
+  }
+
+  /**
+   * An Async wrapper for CreateQueue that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateQueueRequestT = Model::CreateQueueRequest>
+  void CreateQueueAsync(const CreateQueueRequestT& request, const CreateQueueResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::CreateQueue, request, handler, context);
   }
 
   /**
@@ -296,12 +427,51 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Delete a policy for the specified data stream or consumer. Request patterns
-   * can be one of the following:</p> <ul> <li> <p>Data stream pattern:
+   * <p>Deletes the specified queue. Records that are in flight when you delete the
+   * queue are not delivered again, and receipt handles issued by the queue stop
+   * being valid.</p> <p>Deleting a queue does not delete the data stream the queue
+   * was created on, and does not delete any records in that stream. Those records
+   * remain available to stream consumers and to other queues on the same stream for
+   * the rest of their retention period.</p> <p> <code>DeleteQueue</code> is an
+   * asynchronous operation. Upon receiving a <code>DeleteQueue</code> request,
+   * Amazon Kinesis Data Streams sets the <code>QueueStatus</code> to
+   * <code>DELETING</code>. The queue is deleted when the operation completes. A
+   * queue in the <code>DELETING</code> state does not deliver records.</p> <p>You
+   * must delete every queue on a data stream before you can delete the stream, or
+   * switch it from on-demand to provisioned capacity mode.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteQueue">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteQueueOutcome DeleteQueue(const Model::DeleteQueueRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteQueue that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteQueueRequestT = Model::DeleteQueueRequest>
+  Model::DeleteQueueOutcomeCallable DeleteQueueCallable(const DeleteQueueRequestT& request) const {
+    return SubmitCallable(&KinesisClient::DeleteQueue, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteQueue that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteQueueRequestT = Model::DeleteQueueRequest>
+  void DeleteQueueAsync(const DeleteQueueRequestT& request, const DeleteQueueResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::DeleteQueue, request, handler, context);
+  }
+
+  /**
+   * <p>Delete a policy for the specified data stream, consumer, or queue. Request
+   * patterns can be one of the following:</p> <ul> <li> <p>Data stream pattern:
    * <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> </p> </li> <li>
    * <p>Consumer pattern:
    * <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> <li> <p>Queue pattern:
+   * <code>arn:aws.*:kinesis:.*:\d{12}:queue/\S+</code> </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteResourcePolicy">AWS
    * API Reference</a></p>
    */
@@ -342,10 +512,11 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
    * <a>GetRecords</a>, on a stream in the <code>DELETING</code> state until the
    * stream deletion is complete.</p> <p>When you delete a stream, any shards in that
    * stream are also deleted, and any tags are dissociated from the stream.</p>
-   * <p>You can use the <a>DescribeStreamSummary</a> operation to check the state of
-   * the stream, which is returned in <code>StreamStatus</code>.</p> <p>
-   * <a>DeleteStream</a> has a limit of five transactions per second per
-   * account.</p><p><h3>See Also:</h3>   <a
+   * <p>Before you can delete a data stream that has queues, you must delete every
+   * queue on the stream with <a>DeleteQueue</a>.</p> <p>You can use the
+   * <a>DescribeStreamSummary</a> operation to check the state of the stream, which
+   * is returned in <code>StreamStatus</code>.</p> <p> <a>DeleteStream</a> has a
+   * limit of five transactions per second per account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream">AWS
    * API Reference</a></p>
    */
@@ -496,6 +667,33 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                            const DescribeLimitsRequestT& request = {}) const {
     return SubmitAsync(&KinesisClient::DescribeLimits, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a description of the specified queue, including its status, the data
+   * stream it delivers records from, and its configuration attributes.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeQueue">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeQueueOutcome DescribeQueue(const Model::DescribeQueueRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeQueue that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeQueueRequestT = Model::DescribeQueueRequest>
+  Model::DescribeQueueOutcomeCallable DescribeQueueCallable(const DescribeQueueRequestT& request) const {
+    return SubmitCallable(&KinesisClient::DescribeQueue, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeQueue that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeQueueRequestT = Model::DescribeQueueRequest>
+  void DescribeQueueAsync(const DescribeQueueRequestT& request, const DescribeQueueResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::DescribeQueue, request, handler, context);
   }
 
   /**
@@ -767,12 +965,14 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns a policy attached to the specified data stream or consumer. Request
-   * patterns can be one of the following:</p> <ul> <li> <p>Data stream pattern:
-   * <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> </p> </li> <li> <p>
-   * Consumer pattern:
+   * <p>Returns a policy attached to the specified data stream, consumer, or queue.
+   * Request patterns can be one of the following:</p> <ul> <li> <p>Data stream
+   * pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> </p> </li> <li>
+   * <p> Consumer pattern:
    * <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> <li> <p>Queue pattern:
+   * <code>arn:aws.*:kinesis:.*:\d{12}:queue/\S+</code> </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetResourcePolicy">AWS
    * API Reference</a></p>
    */
@@ -935,6 +1135,36 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns a summary of each queue in the Amazon Web Services account and Region
+   * used by the request. Use <code>StreamFilter</code> to list only the queues on a
+   * particular data stream.</p> <p>If the response contains a
+   * <code>NextToken</code>, more queues are available. Call <code>ListQueues</code>
+   * again with that value to retrieve the next page.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListQueues">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListQueuesOutcome ListQueues(const Model::ListQueuesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListQueues that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListQueuesRequestT = Model::ListQueuesRequest>
+  Model::ListQueuesOutcomeCallable ListQueuesCallable(const ListQueuesRequestT& request = {}) const {
+    return SubmitCallable(&KinesisClient::ListQueues, request);
+  }
+
+  /**
+   * An Async wrapper for ListQueues that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListQueuesRequestT = Model::ListQueuesRequest>
+  void ListQueuesAsync(const ListQueuesResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                       const ListQueuesRequestT& request = {}) const {
+    return SubmitAsync(&KinesisClient::ListQueues, request, handler, context);
+  }
+
+  /**
    * <p>Lists the shards in a stream and provides information about each shard. This
    * operation has a limit of 1000 transactions per second per data stream.</p>
    *  <p>When invoking this API, you must use either the <code>StreamARN</code>
@@ -1045,8 +1275,9 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>List all tags added to the specified Kinesis resource. Each tag is a label
    * consisting of a user-defined key and value. Tags can help you manage, identify,
-   * organize, search for, and filter resources.</p> <p>For more information about
-   * tagging Kinesis resources, see <a
+   * organize, search for, and filter resources.</p> <p>The Kinesis resource can be a
+   * data stream, a queue, or an enhanced fan-out consumer.</p> <p>For more
+   * information about tagging Kinesis resources, see <a
    * href="https://docs.aws.amazon.com/streams/latest/dev/tagging.html">Tag your
    * Amazon Kinesis Data Streams resources</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForResource">AWS
@@ -1319,20 +1550,22 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Attaches a resource-based policy to a data stream or registered consumer. If
-   * you are using an identity other than the root user of the Amazon Web Services
-   * account that owns the resource, the calling identity must have the
-   * <code>PutResourcePolicy</code> permissions on the specified Kinesis Data Streams
-   * resource and belong to the owner's account in order to use this operation. If
-   * you don't have <code>PutResourcePolicy</code> permissions, Amazon Kinesis Data
-   * Streams returns a <code>403 Access Denied error</code>. If you receive a
-   * <code>ResourceNotFoundException</code>, check to see if you passed a valid
-   * stream or consumer resource. </p> <p> Request patterns can be one of the
+   * <p>Attaches a resource-based policy to a data stream, a queue, or an enhanced
+   * fan-out consumer. If you are using an identity other than the root user of the
+   * Amazon Web Services account that owns the resource, the calling identity must
+   * have the <code>PutResourcePolicy</code> permissions on the specified Kinesis
+   * Data Streams resource and belong to the owner's account in order to use this
+   * operation. If you don't have <code>PutResourcePolicy</code> permissions, Amazon
+   * Kinesis Data Streams returns a <code>403 Access Denied error</code>. If you
+   * receive a <code>ResourceNotFoundException</code>, check to see if you passed a
+   * valid stream or consumer resource. </p> <p> Request patterns can be one of the
    * following:</p> <ul> <li> <p>Data stream pattern:
    * <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> </p> </li> <li>
    * <p>Consumer pattern:
    * <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
-   * </p> </li> </ul> <p>For more information, see <a
+   * </p> </li> <li> <p>Queue pattern:
+   * <code>arn:aws.*:kinesis:.*:\d{12}:queue/\S+</code> </p> </li> </ul> <p>For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling
    * Access to Amazon Kinesis Data Streams Resources Using IAM</a>.</p><p><h3>See
    * Also:</h3>   <a
@@ -1361,6 +1594,93 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Receives up to 10 dead-letter records from the specified queue. Each queue
+   * has built-in dead-letter handling: when a record has been received
+   * <code>MaxReceiveCount</code> times without being acknowledged, it becomes a
+   * dead-letter record, which usually means your queue consumer could not process
+   * it. The dead-letter record stays in the same queue, and
+   * <a>ReceiveQueueRecords</a> no longer returns it.</p> <p>Dead-letter records
+   * carry the same data and partition key as when they were first delivered, and are
+   * returned with a receipt handle. Use the receipt handle to acknowledge the record
+   * with <a>AcknowledgeDeadLetterQueueRecords</a>, which discards it, to change its
+   * visibility with <a>UpdateDeadLetterQueueRecordsVisibility</a>, or to restore it
+   * with <a>RestoreDeadLetterQueueRecords</a>, which returns it to the normal
+   * receive path so that <a>ReceiveQueueRecords</a> can return it again.</p> <p>Use
+   * this operation to inspect the records your queue consumer could not process, so
+   * you can correct the cause and then either acknowledge or restore them.</p> <p>A
+   * queue delivers dead-letter records while it is in the <code>ACTIVE</code>
+   * state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ReceiveDeadLetterQueueRecords">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ReceiveDeadLetterQueueRecordsOutcome ReceiveDeadLetterQueueRecords(
+      const Model::ReceiveDeadLetterQueueRecordsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ReceiveDeadLetterQueueRecords that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ReceiveDeadLetterQueueRecordsRequestT = Model::ReceiveDeadLetterQueueRecordsRequest>
+  Model::ReceiveDeadLetterQueueRecordsOutcomeCallable ReceiveDeadLetterQueueRecordsCallable(
+      const ReceiveDeadLetterQueueRecordsRequestT& request) const {
+    return SubmitCallable(&KinesisClient::ReceiveDeadLetterQueueRecords, request);
+  }
+
+  /**
+   * An Async wrapper for ReceiveDeadLetterQueueRecords that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ReceiveDeadLetterQueueRecordsRequestT = Model::ReceiveDeadLetterQueueRecordsRequest>
+  void ReceiveDeadLetterQueueRecordsAsync(const ReceiveDeadLetterQueueRecordsRequestT& request,
+                                          const ReceiveDeadLetterQueueRecordsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::ReceiveDeadLetterQueueRecords, request, handler, context);
+  }
+
+  /**
+   * <p>Receives up to 10 records from the specified queue. Each record is returned
+   * with a receipt handle, which is the identifier you use to acknowledge the record
+   * or change its visibility.</p> <p>A record returned by
+   * <code>ReceiveQueueRecords</code> becomes in flight: it is not visible to any
+   * consumer instance for the duration of its visibility timeout, so subsequent
+   * receive requests do not return it while your queue consumer processes it.
+   * Acknowledge the record with <a>AcknowledgeQueueRecords</a> when you finish
+   * processing it. A record that is not acknowledged before its visibility timeout
+   * expires becomes visible in the queue again and can be received by any consumer
+   * instance.</p> <p>Use <code>WaitTimeSeconds</code> to control how long the call
+   * waits for a record to become visible before returning. If a record becomes
+   * visible sooner, the call returns sooner. If the wait time expires and no records
+   * are visible, the call returns an empty list of records.</p> <p>Records are not
+   * necessarily received in the order they were written to the data stream.</p> <p>A
+   * queue delivers records while it is in the <code>ACTIVE</code> state.</p> <p>On
+   * rare occasions, a queue can deliver a record more than once. Design your queue
+   * consumer to be idempotent, so that processing the same record more than once is
+   * safe.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ReceiveQueueRecords">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ReceiveQueueRecordsOutcome ReceiveQueueRecords(const Model::ReceiveQueueRecordsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ReceiveQueueRecords that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ReceiveQueueRecordsRequestT = Model::ReceiveQueueRecordsRequest>
+  Model::ReceiveQueueRecordsOutcomeCallable ReceiveQueueRecordsCallable(const ReceiveQueueRecordsRequestT& request) const {
+    return SubmitCallable(&KinesisClient::ReceiveQueueRecords, request);
+  }
+
+  /**
+   * An Async wrapper for ReceiveQueueRecords that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ReceiveQueueRecordsRequestT = Model::ReceiveQueueRecordsRequest>
+  void ReceiveQueueRecordsAsync(const ReceiveQueueRecordsRequestT& request, const ReceiveQueueRecordsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::ReceiveQueueRecords, request, handler, context);
+  }
+
+  /**
    * <p>Registers a consumer with a Kinesis data stream. When you use this operation,
    * the consumer you register can then call <a>SubscribeToShard</a> to receive data
    * from the stream using enhanced fan-out, at a rate of up to 2 MiB per second for
@@ -1372,17 +1692,19 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
    * permission, you must also have the <code>kinesis:TagResource</code> permission
    * for the consumer that will be registered. Tags will take effect from the
    * <code>CREATING</code> status of the consumer.</p> <p>With On-demand Advantage
-   * streams, you can register up to 50 consumers per stream to use Enhanced Fan-out.
+   * streams, you can register up to 50 consumers per stream to use enhanced fan-out.
    * With On-demand Standard and Provisioned streams, you can register up to 20
-   * consumers per stream to use Enhanced Fan-out. A given consumer can only be
-   * registered with one stream at a time.</p> <p>For an example of how to use this
-   * operation, see <a
-   * href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
-   * Fan-Out Using the Kinesis Data Streams API</a>.</p> <p>The use of this operation
-   * has a limit of five transactions per second per account. Also, only 5 consumers
-   * can be created simultaneously. In other words, you cannot have more than 5
-   * consumers in a <code>CREATING</code> status at the same time. Registering a 6th
-   * consumer while there are 5 in a <code>CREATING</code> status results in a
+   * consumers per stream to use enhanced fan-out. Queues share this limit with
+   * enhanced fan-out consumers: both count as registered consumers on the stream. A
+   * given consumer can only be registered with one stream at a time.</p> <p>For an
+   * example of how to use this operation, see <a
+   * href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Develop
+   * enhanced fan-out consumers with the Amazon Web Services SDK for Java</a>.</p>
+   * <p>The use of this operation has a limit of five transactions per second per
+   * account. Also, only 5 consumers can be created simultaneously. In other words,
+   * you cannot have more than 5 consumers in a <code>CREATING</code> status at the
+   * same time. Registering a 6th consumer while there are 5 in a
+   * <code>CREATING</code> status results in a
    * <code>LimitExceededException</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RegisterStreamConsumer">AWS
    * API Reference</a></p>
@@ -1440,6 +1762,44 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   void RemoveTagsFromStreamAsync(const RemoveTagsFromStreamRequestT& request, const RemoveTagsFromStreamResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KinesisClient::RemoveTagsFromStream, request, handler, context);
+  }
+
+  /**
+   * <p>Restores up to 10 dead-letter records in the specified queue. Restoring a
+   * record clears its dead-letter state and resets its receive count, so
+   * <a>ReceiveQueueRecords</a> can return it again, up to
+   * <code>MaxReceiveCount</code> times before it becomes a dead-letter record again.
+   * The result for each entry is reported individually in the response.</p>
+   * <p>Restore records after you have corrected the condition that prevented your
+   * queue consumer from processing them.</p> <p>Because the request can result in a
+   * combination of successful and unsuccessful entries, check the
+   * <code>Failed</code> list even when the call returns an HTTP status code of
+   * <code>200</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RestoreDeadLetterQueueRecords">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RestoreDeadLetterQueueRecordsOutcome RestoreDeadLetterQueueRecords(
+      const Model::RestoreDeadLetterQueueRecordsRequest& request) const;
+
+  /**
+   * A Callable wrapper for RestoreDeadLetterQueueRecords that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename RestoreDeadLetterQueueRecordsRequestT = Model::RestoreDeadLetterQueueRecordsRequest>
+  Model::RestoreDeadLetterQueueRecordsOutcomeCallable RestoreDeadLetterQueueRecordsCallable(
+      const RestoreDeadLetterQueueRecordsRequestT& request) const {
+    return SubmitCallable(&KinesisClient::RestoreDeadLetterQueueRecords, request);
+  }
+
+  /**
+   * An Async wrapper for RestoreDeadLetterQueueRecords that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RestoreDeadLetterQueueRecordsRequestT = Model::RestoreDeadLetterQueueRecordsRequest>
+  void RestoreDeadLetterQueueRecordsAsync(const RestoreDeadLetterQueueRecordsRequestT& request,
+                                          const RestoreDeadLetterQueueRecordsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::RestoreDeadLetterQueueRecords, request, handler, context);
   }
 
   /**
@@ -1623,8 +1983,9 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
    * subscription and the previous connection expires or fails with a
    * <code>ResourceInUseException</code>.</p> <p>For an example of how to use this
    * operation, see <a
-   * href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
-   * Fan-Out Using the Kinesis Data Streams API</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Develop
+   * enhanced fan-out consumers with the Amazon Web Services SDK for
+   * Java</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShard">AWS
    * API Reference</a></p>
    */
@@ -1653,7 +2014,8 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
    * <p>Adds or updates tags for the specified Kinesis resource. Each tag is a label
    * consisting of a user-defined key and value. Tags can help you manage, identify,
    * organize, search for, and filter resources. You can assign up to 50 tags to a
-   * Kinesis resource.</p><p><h3>See Also:</h3>   <a
+   * Kinesis resource.</p> <p>The Kinesis resource can be a data stream, a queue, or
+   * an enhanced fan-out consumer.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/TagResource">AWS
    * API Reference</a></p>
    */
@@ -1679,8 +2041,9 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Removes tags from the specified Kinesis resource. Removed tags are deleted
-   * and can't be recovered after this operation completes
-   * successfully.</p><p><h3>See Also:</h3>   <a
+   * and can't be recovered after this operation completes successfully.</p> <p>The
+   * Kinesis resource can be a data stream, a queue, or an enhanced fan-out
+   * consumer.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UntagResource">AWS
    * API Reference</a></p>
    */
@@ -1775,6 +2138,40 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Changes the visibility timeout of up to 10 dead-letter records that you have
+   * received from the specified queue but not yet acknowledged. The result for each
+   * entry is reported individually in the response.</p> <p>Because the request can
+   * result in a combination of successful and unsuccessful entries, check the
+   * <code>Failed</code> list even when the call returns an HTTP status code of
+   * <code>200</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateDeadLetterQueueRecordsVisibility">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDeadLetterQueueRecordsVisibilityOutcome UpdateDeadLetterQueueRecordsVisibility(
+      const Model::UpdateDeadLetterQueueRecordsVisibilityRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDeadLetterQueueRecordsVisibility that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename UpdateDeadLetterQueueRecordsVisibilityRequestT = Model::UpdateDeadLetterQueueRecordsVisibilityRequest>
+  Model::UpdateDeadLetterQueueRecordsVisibilityOutcomeCallable UpdateDeadLetterQueueRecordsVisibilityCallable(
+      const UpdateDeadLetterQueueRecordsVisibilityRequestT& request) const {
+    return SubmitCallable(&KinesisClient::UpdateDeadLetterQueueRecordsVisibility, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDeadLetterQueueRecordsVisibility that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename UpdateDeadLetterQueueRecordsVisibilityRequestT = Model::UpdateDeadLetterQueueRecordsVisibilityRequest>
+  void UpdateDeadLetterQueueRecordsVisibilityAsync(const UpdateDeadLetterQueueRecordsVisibilityRequestT& request,
+                                                   const UpdateDeadLetterQueueRecordsVisibilityResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::UpdateDeadLetterQueueRecordsVisibility, request, handler, context);
+  }
+
+  /**
    * <p>This allows you to update the <code>MaxRecordSize</code> of a single record
    * that you can write to, and read from a stream. You can ingest and digest single
    * records up to 10240 KiB.</p><p><h3>See Also:</h3>   <a
@@ -1800,6 +2197,83 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   void UpdateMaxRecordSizeAsync(const UpdateMaxRecordSizeRequestT& request, const UpdateMaxRecordSizeResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KinesisClient::UpdateMaxRecordSize, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration attributes of the specified queue. You can change
+   * the queue's visibility timeout, its dead-letter handling configuration, or
+   * both.</p> <p>A new visibility timeout applies to records received after the
+   * update completes. Records that are already in flight keep the visibility timeout
+   * they were received with. To change the visibility timeout of a record that is
+   * already in flight, use <a>UpdateQueueRecordsVisibility</a>.</p> <p>
+   * <code>UpdateQueue</code> is an asynchronous operation. Upon receiving an
+   * <code>UpdateQueue</code> request, Amazon Kinesis Data Streams sets the
+   * <code>QueueStatus</code> to <code>UPDATING</code>, and sets it back to
+   * <code>ACTIVE</code> when the update is complete. You can continue to receive and
+   * acknowledge records while the queue is <code>UPDATING</code>.</p> <p>You can't
+   * change the data stream or the starting position of a queue after you create it.
+   * To read from a different stream or position, create a new queue.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateQueue">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateQueueOutcome UpdateQueue(const Model::UpdateQueueRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateQueue that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateQueueRequestT = Model::UpdateQueueRequest>
+  Model::UpdateQueueOutcomeCallable UpdateQueueCallable(const UpdateQueueRequestT& request) const {
+    return SubmitCallable(&KinesisClient::UpdateQueue, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateQueue that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateQueueRequestT = Model::UpdateQueueRequest>
+  void UpdateQueueAsync(const UpdateQueueRequestT& request, const UpdateQueueResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::UpdateQueue, request, handler, context);
+  }
+
+  /**
+   * <p>Changes the visibility timeout of up to 10 records that you have received
+   * from the specified queue but not yet acknowledged. The result for each entry is
+   * reported individually in the response.</p> <p>Extend the visibility timeout of a
+   * record when your queue consumer needs more time to finish processing it, so the
+   * record does not become visible and get redelivered while it is still being
+   * processed. Set the visibility timeout to <code>0</code> to make a record visible
+   * in the queue immediately, so that it can be received again without waiting for
+   * its current timeout to expire.</p> <p>Because the request can result in a
+   * combination of successful and unsuccessful entries, check the
+   * <code>Failed</code> list even when the call returns an HTTP status code of
+   * <code>200</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateQueueRecordsVisibility">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateQueueRecordsVisibilityOutcome UpdateQueueRecordsVisibility(
+      const Model::UpdateQueueRecordsVisibilityRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateQueueRecordsVisibility that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateQueueRecordsVisibilityRequestT = Model::UpdateQueueRecordsVisibilityRequest>
+  Model::UpdateQueueRecordsVisibilityOutcomeCallable UpdateQueueRecordsVisibilityCallable(
+      const UpdateQueueRecordsVisibilityRequestT& request) const {
+    return SubmitCallable(&KinesisClient::UpdateQueueRecordsVisibility, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateQueueRecordsVisibility that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateQueueRecordsVisibilityRequestT = Model::UpdateQueueRecordsVisibilityRequest>
+  void UpdateQueueRecordsVisibilityAsync(const UpdateQueueRecordsVisibilityRequestT& request,
+                                         const UpdateQueueRecordsVisibilityResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisClient::UpdateQueueRecordsVisibility, request, handler, context);
   }
 
   /**
@@ -1871,7 +2345,10 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
    * <code>MinimumThroughputBillingCommitment</code> for your account. Once your
    * account has <code>MinimumThroughputBillingCommitment</code> enabled, you can
    * specify the warm throughput in MiB per second that your stream can support in
-   * writes.</p><p><h3>See Also:</h3>   <a
+   * writes.</p> <p>You can't switch a data stream from on-demand to provisioned
+   * capacity mode while the stream has one or more queues. Delete the queues with
+   * <a>DeleteQueue</a> before you change the capacity mode.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamMode">AWS
    * API Reference</a></p>
    */

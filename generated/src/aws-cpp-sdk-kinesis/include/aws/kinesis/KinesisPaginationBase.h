@@ -8,6 +8,7 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/kinesis/model/ListChannelsPaginationTraits.h>
+#include <aws/kinesis/model/ListQueuesPaginationTraits.h>
 #include <aws/kinesis/model/ListStreamConsumersPaginationTraits.h>
 #include <aws/kinesis/model/ListStreamsPaginationTraits.h>
 
@@ -28,6 +29,17 @@ class KinesisPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest,
                                              Pagination::ListChannelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
+  }
+
+  /**
+   * Create a paginator for ListQueues operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueuesRequest, Pagination::ListQueuesPaginationTraits<DerivedClient>>
+  ListQueuesPaginator(const Model::ListQueuesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueuesRequest,
+                                             Pagination::ListQueuesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                    request};
   }
 
   /**

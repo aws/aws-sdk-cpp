@@ -172,6 +172,25 @@ class UploadPartCopyResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Version ID of the object.</p> <p>Returns the Version ID of the object for the
+   * copied part, if bucket versioning is enabled.</p>  <p>This functionality
+   * is not supported for directory buckets.</p>
+   */
+  inline const Aws::String& GetVersionId() const { return m_versionId; }
+  template <typename VersionIdT = Aws::String>
+  void SetVersionId(VersionIdT&& value) {
+    m_versionIdHasBeenSet = true;
+    m_versionId = std::forward<VersionIdT>(value);
+  }
+  template <typename VersionIdT = Aws::String>
+  UploadPartCopyResult& WithVersionId(VersionIdT&& value) {
+    SetVersionId(std::forward<VersionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -204,6 +223,8 @@ class UploadPartCopyResult {
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
 
+  Aws::String m_versionId;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_copySourceVersionIdHasBeenSet = false;
@@ -214,6 +235,7 @@ class UploadPartCopyResult {
   bool m_sSEKMSKeyIdHasBeenSet = false;
   bool m_bucketKeyEnabledHasBeenSet = false;
   bool m_requestChargedHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

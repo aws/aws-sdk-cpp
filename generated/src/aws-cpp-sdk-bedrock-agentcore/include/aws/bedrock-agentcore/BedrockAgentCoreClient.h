@@ -392,6 +392,36 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Deletes the record of a dataset generation. The examples the generation added
+   * stay in the dataset's draft. To remove them, find them with the
+   * <code>generationIds</code> filter of <code>ListDatasetExamples</code>, then call
+   * <code>DeleteDatasetExamples</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteDatasetGeneration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDatasetGenerationOutcome DeleteDatasetGeneration(const Model::DeleteDatasetGenerationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDatasetGeneration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteDatasetGenerationRequestT = Model::DeleteDatasetGenerationRequest>
+  Model::DeleteDatasetGenerationOutcomeCallable DeleteDatasetGenerationCallable(const DeleteDatasetGenerationRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::DeleteDatasetGeneration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDatasetGeneration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteDatasetGenerationRequestT = Model::DeleteDatasetGenerationRequest>
+  void DeleteDatasetGenerationAsync(const DeleteDatasetGenerationRequestT& request,
+                                    const DeleteDatasetGenerationResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::DeleteDatasetGeneration, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an event from an AgentCore Memory resource. When you delete an event,
    * it is permanently removed.</p> <p>To use this operation, you must have the
    * <code>bedrock-agentcore:DeleteEvent</code> permission.</p><p><h3>See Also:</h3>
@@ -611,6 +641,36 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Amazon Bedrock AgentCore Agent Insights identifies patterns detected across
+   * your agent sessions. Use Agent Insights to identify recurring issues and
+   * prioritize fixes.</p> <p>Retrieves detailed information about an Amazon Bedrock
+   * AgentCore Agent Insight, including its archive status, affected sessions, and,
+   * when applicable, the batch evaluation that produced it.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetAgentInsight">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAgentInsightOutcome GetAgentInsight(const Model::GetAgentInsightRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAgentInsight that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetAgentInsightRequestT = Model::GetAgentInsightRequest>
+  Model::GetAgentInsightOutcomeCallable GetAgentInsightCallable(const GetAgentInsightRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::GetAgentInsight, request);
+  }
+
+  /**
+   * An Async wrapper for GetAgentInsight that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetAgentInsightRequestT = Model::GetAgentInsightRequest>
+  void GetAgentInsightAsync(const GetAgentInsightRequestT& request, const GetAgentInsightResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::GetAgentInsight, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves detailed information about a batch evaluation, including its
    * status, configuration, results, and any error details.</p><p><h3>See Also:</h3>
    * <a
@@ -714,6 +774,35 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
                                       const GetCodeInterpreterSessionResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreClient::GetCodeInterpreterSession, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a dataset generation, including its status, the request it was started
+   * with, its progress counts, its redaction summary and its errors. Call this
+   * operation to track a generation that you started with
+   * <code>StartDatasetGeneration</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetDatasetGeneration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDatasetGenerationOutcome GetDatasetGeneration(const Model::GetDatasetGenerationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDatasetGeneration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetDatasetGenerationRequestT = Model::GetDatasetGenerationRequest>
+  Model::GetDatasetGenerationOutcomeCallable GetDatasetGenerationCallable(const GetDatasetGenerationRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::GetDatasetGeneration, request);
+  }
+
+  /**
+   * An Async wrapper for GetDatasetGeneration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDatasetGenerationRequestT = Model::GetDatasetGenerationRequest>
+  void GetDatasetGenerationAsync(const GetDatasetGenerationRequestT& request, const GetDatasetGenerationResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::GetDatasetGeneration, request, handler, context);
   }
 
   /**
@@ -1353,6 +1442,37 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Lists Amazon Bedrock AgentCore Agent Insight summaries in your account and
+   * Region. Use this operation to review patterns across sessions before you
+   * investigate or archive an insight. The response paginates the results. Use the
+   * <code>nextToken</code> parameter to retrieve additional results.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListAgentInsights">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAgentInsightsOutcome ListAgentInsights(const Model::ListAgentInsightsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAgentInsights that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAgentInsightsRequestT = Model::ListAgentInsightsRequest>
+  Model::ListAgentInsightsOutcomeCallable ListAgentInsightsCallable(const ListAgentInsightsRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreClient::ListAgentInsights, request);
+  }
+
+  /**
+   * An Async wrapper for ListAgentInsights that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListAgentInsightsRequestT = Model::ListAgentInsightsRequest>
+  void ListAgentInsightsAsync(const ListAgentInsightsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const ListAgentInsightsRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreClient::ListAgentInsights, request, handler, context);
+  }
+
+  /**
    * <p>Lists all batch evaluations in the account, providing summary information
    * about each evaluation's status and configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListBatchEvaluations">AWS
@@ -1456,6 +1576,36 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
                                         const ListCodeInterpreterSessionsResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreClient::ListCodeInterpreterSessions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the generations for a dataset. AgentCore keeps a generation until you
+   * delete it with <code>DeleteDatasetGeneration</code> or delete the dataset. To
+   * get a generation's counts and the request it was started with, call
+   * <code>GetDatasetGeneration</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListDatasetGenerations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDatasetGenerationsOutcome ListDatasetGenerations(const Model::ListDatasetGenerationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDatasetGenerations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDatasetGenerationsRequestT = Model::ListDatasetGenerationsRequest>
+  Model::ListDatasetGenerationsOutcomeCallable ListDatasetGenerationsCallable(const ListDatasetGenerationsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::ListDatasetGenerations, request);
+  }
+
+  /**
+   * An Async wrapper for ListDatasetGenerations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDatasetGenerationsRequestT = Model::ListDatasetGenerationsRequest>
+  void ListDatasetGenerationsAsync(const ListDatasetGenerationsRequestT& request,
+                                   const ListDatasetGenerationsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::ListDatasetGenerations, request, handler, context);
   }
 
   /**
@@ -1902,6 +2052,46 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Starts a dataset generation, which creates examples for an existing dataset
+   * from your agent's traces. The dataset must be <code>ACTIVE</code>. Each
+   * generation produces one scenario type, set by <code>scenarioType</code>. When
+   * the generation finishes, AgentCore adds the examples to the dataset's draft.
+   * Examples that duplicate each other, or that duplicate examples already in the
+   * draft, are left out.</p> <p>A dataset can have only one generation in progress
+   * at a time. While it runs, requests that change the dataset's draft or publish a
+   * version are rejected with a <code>ConflictException</code>.</p> <p>AgentCore
+   * reads the traces with your credentials, so you need read access to the trace log
+   * groups, and to the dataset's KMS key if the dataset uses a customer managed key.
+   * The draft can hold at most 1,000 examples, including the examples this
+   * generation can add (<code>maxScenarios</code>).</p> <p>The operation returns
+   * immediately. To track progress, call
+   * <code>GetDatasetGeneration</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartDatasetGeneration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartDatasetGenerationOutcome StartDatasetGeneration(const Model::StartDatasetGenerationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartDatasetGeneration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartDatasetGenerationRequestT = Model::StartDatasetGenerationRequest>
+  Model::StartDatasetGenerationOutcomeCallable StartDatasetGenerationCallable(const StartDatasetGenerationRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::StartDatasetGeneration, request);
+  }
+
+  /**
+   * An Async wrapper for StartDatasetGeneration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartDatasetGenerationRequestT = Model::StartDatasetGenerationRequest>
+  void StartDatasetGenerationAsync(const StartDatasetGenerationRequestT& request,
+                                   const StartDatasetGenerationResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::StartDatasetGeneration, request, handler, context);
+  }
+
+  /**
    * <p> Starts a memory extraction job that processes events that failed extraction
    * previously in an AgentCore Memory resource and produces structured memory
    * records. When earlier extraction attempts have left events unprocessed, this job
@@ -2114,6 +2304,33 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   void UpdateABTestAsync(const UpdateABTestRequestT& request, const UpdateABTestResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreClient::UpdateABTest, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the archive status of an Amazon Bedrock AgentCore Agent
+   * Insight.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/UpdateAgentInsight">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAgentInsightOutcome UpdateAgentInsight(const Model::UpdateAgentInsightRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAgentInsight that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateAgentInsightRequestT = Model::UpdateAgentInsightRequest>
+  Model::UpdateAgentInsightOutcomeCallable UpdateAgentInsightCallable(const UpdateAgentInsightRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::UpdateAgentInsight, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAgentInsight that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateAgentInsightRequestT = Model::UpdateAgentInsightRequest>
+  void UpdateAgentInsightAsync(const UpdateAgentInsightRequestT& request, const UpdateAgentInsightResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::UpdateAgentInsight, request, handler, context);
   }
 
   /**

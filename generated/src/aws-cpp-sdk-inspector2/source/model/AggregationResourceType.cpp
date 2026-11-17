@@ -23,6 +23,9 @@ static const int Microsoft_Compute_virtualMachines_HASH = HashingUtils::HashStri
 static const int Microsoft_ContainerRegistry_registry_containerImage_HASH =
     HashingUtils::HashString("Microsoft.ContainerRegistry/registry/containerImage");
 static const int Microsoft_Web_sites_HASH = HashingUtils::HashString("Microsoft.Web/sites");
+static const int cloudfunctions_googleapis_com_Function_HASH = HashingUtils::HashString("cloudfunctions.googleapis.com/Function");
+static const int compute_googleapis_com_Instance_HASH = HashingUtils::HashString("compute.googleapis.com/Instance");
+static const int artifactregistry_googleapis_com_DockerImage_HASH = HashingUtils::HashString("artifactregistry.googleapis.com/DockerImage");
 
 AggregationResourceType GetAggregationResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -40,6 +43,12 @@ AggregationResourceType GetAggregationResourceTypeForName(const Aws::String& nam
     return AggregationResourceType::Microsoft_ContainerRegistry_registry_containerImage;
   } else if (hashCode == Microsoft_Web_sites_HASH) {
     return AggregationResourceType::Microsoft_Web_sites;
+  } else if (hashCode == cloudfunctions_googleapis_com_Function_HASH) {
+    return AggregationResourceType::cloudfunctions_googleapis_com_Function;
+  } else if (hashCode == compute_googleapis_com_Instance_HASH) {
+    return AggregationResourceType::compute_googleapis_com_Instance;
+  } else if (hashCode == artifactregistry_googleapis_com_DockerImage_HASH) {
+    return AggregationResourceType::artifactregistry_googleapis_com_DockerImage;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -68,6 +77,12 @@ Aws::String GetNameForAggregationResourceType(AggregationResourceType enumValue)
       return "Microsoft.ContainerRegistry/registry/containerImage";
     case AggregationResourceType::Microsoft_Web_sites:
       return "Microsoft.Web/sites";
+    case AggregationResourceType::cloudfunctions_googleapis_com_Function:
+      return "cloudfunctions.googleapis.com/Function";
+    case AggregationResourceType::compute_googleapis_com_Instance:
+      return "compute.googleapis.com/Instance";
+    case AggregationResourceType::artifactregistry_googleapis_com_DockerImage:
+      return "artifactregistry.googleapis.com/DockerImage";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

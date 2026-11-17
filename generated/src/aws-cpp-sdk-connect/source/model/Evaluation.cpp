@@ -74,6 +74,26 @@ Evaluation& Evaluation::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ItemEnablementStatus")) {
+    Aws::Map<Aws::String, JsonView> itemEnablementStatusJsonMap = jsonValue.GetObject("ItemEnablementStatus").GetAllObjects();
+    for (auto& itemEnablementStatusItem : itemEnablementStatusJsonMap) {
+      m_itemEnablementStatus[itemEnablementStatusItem.first] =
+          EvaluationEnablementStatusMapper::GetEvaluationEnablementStatusForName(itemEnablementStatusItem.second.AsString());
+    }
+    m_itemEnablementStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SourceResolutionStatus")) {
+    m_sourceResolutionStatus =
+        EvaluationItemResolutionStatusMapper::GetEvaluationItemResolutionStatusForName(jsonValue.GetString("SourceResolutionStatus"));
+    m_sourceResolutionStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SourceValues")) {
+    Aws::Utils::Array<JsonView> sourceValuesJsonList = jsonValue.GetArray("SourceValues");
+    for (unsigned sourceValuesIndex = 0; sourceValuesIndex < sourceValuesJsonList.GetLength(); ++sourceValuesIndex) {
+      m_sourceValues.push_back(sourceValuesJsonList[sourceValuesIndex].AsObject());
+    }
+    m_sourceValuesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -138,6 +158,29 @@ JsonValue Evaluation::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("Tags", std::move(tagsJsonMap));
+  }
+
+  if (m_itemEnablementStatusHasBeenSet) {
+    JsonValue itemEnablementStatusJsonMap;
+    for (auto& itemEnablementStatusItem : m_itemEnablementStatus) {
+      itemEnablementStatusJsonMap.WithString(
+          itemEnablementStatusItem.first,
+          EvaluationEnablementStatusMapper::GetNameForEvaluationEnablementStatus(itemEnablementStatusItem.second));
+    }
+    payload.WithObject("ItemEnablementStatus", std::move(itemEnablementStatusJsonMap));
+  }
+
+  if (m_sourceResolutionStatusHasBeenSet) {
+    payload.WithString("SourceResolutionStatus",
+                       EvaluationItemResolutionStatusMapper::GetNameForEvaluationItemResolutionStatus(m_sourceResolutionStatus));
+  }
+
+  if (m_sourceValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sourceValuesJsonList(m_sourceValues.size());
+    for (unsigned sourceValuesIndex = 0; sourceValuesIndex < sourceValuesJsonList.GetLength(); ++sourceValuesIndex) {
+      sourceValuesJsonList[sourceValuesIndex].AsObject(m_sourceValues[sourceValuesIndex].Jsonize());
+    }
+    payload.WithArray("SourceValues", std::move(sourceValuesJsonList));
   }
 
   return payload;

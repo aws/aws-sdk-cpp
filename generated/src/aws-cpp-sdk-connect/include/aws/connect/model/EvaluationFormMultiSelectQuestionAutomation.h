@@ -84,7 +84,9 @@ class EvaluationFormMultiSelectQuestionAutomation {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Automation answer source.</p>
+   */
   inline const EvaluationFormQuestionAutomationAnswerSource& GetAnswerSource() const { return m_answerSource; }
   inline bool AnswerSourceHasBeenSet() const { return m_answerSourceHasBeenSet; }
   template <typename AnswerSourceT = EvaluationFormQuestionAutomationAnswerSource>

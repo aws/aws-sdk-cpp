@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Lambda {
 namespace Model {
-enum class ExecutionStatus { NOT_SET, RUNNING, SUCCEEDED, FAILED, TIMED_OUT, STOPPED };
+enum class ExecutionStatus { NOT_SET, RUNNING, SUCCEEDED, FAILED, TIMED_OUT, STOPPED, DELETING, PAUSING, PAUSED };
 
 namespace ExecutionStatusMapper {
 AWS_LAMBDA_API ExecutionStatus GetExecutionStatusForName(const Aws::String& name);

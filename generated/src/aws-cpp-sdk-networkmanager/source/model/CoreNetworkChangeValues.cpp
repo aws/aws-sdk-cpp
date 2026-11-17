@@ -108,6 +108,10 @@ CoreNetworkChangeValues& CoreNetworkChangeValues::operator=(JsonView jsonValue) 
     }
     m_routingPolicyAssociationDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MultipathResilience")) {
+    m_multipathResilience = jsonValue.GetObject("MultipathResilience");
+    m_multipathResilienceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -209,6 +213,10 @@ JsonValue CoreNetworkChangeValues::Jsonize() const {
           m_routingPolicyAssociationDetails[routingPolicyAssociationDetailsIndex].Jsonize());
     }
     payload.WithArray("RoutingPolicyAssociationDetails", std::move(routingPolicyAssociationDetailsJsonList));
+  }
+
+  if (m_multipathResilienceHasBeenSet) {
+    payload.WithObject("MultipathResilience", m_multipathResilience.Jsonize());
   }
 
   return payload;

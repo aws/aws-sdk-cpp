@@ -125,8 +125,7 @@ class StreamDescriptionSummary {
   /**
    * <p> Specifies the capacity mode to which you want to set your data stream.
    * Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b>
-   * ycapacity mode and a <b>provisioned</b> capacity mode for your data streams.
-   * </p>
+   * capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
    */
   inline const StreamModeDetails& GetStreamModeDetails() const { return m_streamModeDetails; }
   inline bool StreamModeDetailsHasBeenSet() const { return m_streamModeDetailsHasBeenSet; }
@@ -264,7 +263,10 @@ class StreamDescriptionSummary {
 
   ///@{
   /**
-   * <p>The number of enhanced fan-out consumers registered with the stream.</p>
+   * <p>The number of enhanced fan-out consumers registered with the stream. Queues
+   * are not included in this count, even though they share the stream's registered
+   * consumer limit with enhanced fan-out consumers. <code>QueueCount</code> reports
+   * the number of queues.</p>
    */
   inline int GetConsumerCount() const { return m_consumerCount; }
   inline bool ConsumerCountHasBeenSet() const { return m_consumerCountHasBeenSet; }
@@ -350,6 +352,22 @@ class StreamDescriptionSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of queues created on the data stream.</p>
+   */
+  inline int GetQueueCount() const { return m_queueCount; }
+  inline bool QueueCountHasBeenSet() const { return m_queueCountHasBeenSet; }
+  inline void SetQueueCount(int value) {
+    m_queueCountHasBeenSet = true;
+    m_queueCount = value;
+  }
+  inline StreamDescriptionSummary& WithQueueCount(int value) {
+    SetQueueCount(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_streamName;
 
@@ -382,6 +400,8 @@ class StreamDescriptionSummary {
   int m_channelCount{0};
 
   RecordDistributionStrategy m_recordDistributionStrategy{RecordDistributionStrategy::NOT_SET};
+
+  int m_queueCount{0};
   bool m_streamNameHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
   bool m_streamIdHasBeenSet = false;
@@ -398,6 +418,7 @@ class StreamDescriptionSummary {
   bool m_maxRecordSizeInKiBHasBeenSet = false;
   bool m_channelCountHasBeenSet = false;
   bool m_recordDistributionStrategyHasBeenSet = false;
+  bool m_queueCountHasBeenSet = false;
 };
 
 }  // namespace Model

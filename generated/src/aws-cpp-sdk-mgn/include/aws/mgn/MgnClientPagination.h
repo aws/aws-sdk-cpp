@@ -28,10 +28,15 @@
 #include <aws/mgn/model/ListNetworkMigrationDeployedStacksPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationDeploymentsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationExecutionsPaginationTraits.h>
+#include <aws/mgn/model/ListNetworkMigrationInsightsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationMapperSegmentConstructsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationMapperSegmentsPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationMappingUpdatesPaginationTraits.h>
 #include <aws/mgn/model/ListNetworkMigrationMappingsPaginationTraits.h>
+#include <aws/mgn/model/ListRemoteSourceActionInvocationResultsPaginationTraits.h>
+#include <aws/mgn/model/ListRemoteSourceActionInvocationsPaginationTraits.h>
+#include <aws/mgn/model/ListRemoteSourceActionJobsPaginationTraits.h>
+#include <aws/mgn/model/ListRemoteSourceActionsPaginationTraits.h>
 #include <aws/mgn/model/ListSourceServerActionsPaginationTraits.h>
 #include <aws/mgn/model/ListTemplateActionsPaginationTraits.h>
 #include <aws/mgn/model/ListWavesPaginationTraits.h>
@@ -94,6 +99,9 @@ using ListNetworkMigrationDeploymentsPaginator =
 using ListNetworkMigrationExecutionsPaginator =
     Aws::Utils::Pagination::Paginator<MgnClient, Model::ListNetworkMigrationExecutionsRequest,
                                       Pagination::ListNetworkMigrationExecutionsPaginationTraits<MgnClient>>;
+using ListNetworkMigrationInsightsPaginator =
+    Aws::Utils::Pagination::Paginator<MgnClient, Model::ListNetworkMigrationInsightsRequest,
+                                      Pagination::ListNetworkMigrationInsightsPaginationTraits<MgnClient>>;
 using ListNetworkMigrationMapperSegmentConstructsPaginator =
     Aws::Utils::Pagination::Paginator<MgnClient, Model::ListNetworkMigrationMapperSegmentConstructsRequest,
                                       Pagination::ListNetworkMigrationMapperSegmentConstructsPaginationTraits<MgnClient>>;
@@ -106,6 +114,17 @@ using ListNetworkMigrationMappingsPaginator =
 using ListNetworkMigrationMappingUpdatesPaginator =
     Aws::Utils::Pagination::Paginator<MgnClient, Model::ListNetworkMigrationMappingUpdatesRequest,
                                       Pagination::ListNetworkMigrationMappingUpdatesPaginationTraits<MgnClient>>;
+using ListRemoteSourceActionInvocationResultsPaginator =
+    Aws::Utils::Pagination::Paginator<MgnClient, Model::ListRemoteSourceActionInvocationResultsRequest,
+                                      Pagination::ListRemoteSourceActionInvocationResultsPaginationTraits<MgnClient>>;
+using ListRemoteSourceActionInvocationsPaginator =
+    Aws::Utils::Pagination::Paginator<MgnClient, Model::ListRemoteSourceActionInvocationsRequest,
+                                      Pagination::ListRemoteSourceActionInvocationsPaginationTraits<MgnClient>>;
+using ListRemoteSourceActionJobsPaginator =
+    Aws::Utils::Pagination::Paginator<MgnClient, Model::ListRemoteSourceActionJobsRequest,
+                                      Pagination::ListRemoteSourceActionJobsPaginationTraits<MgnClient>>;
+using ListRemoteSourceActionsPaginator = Aws::Utils::Pagination::Paginator<MgnClient, Model::ListRemoteSourceActionsRequest,
+                                                                           Pagination::ListRemoteSourceActionsPaginationTraits<MgnClient>>;
 using ListSourceServerActionsPaginator = Aws::Utils::Pagination::Paginator<MgnClient, Model::ListSourceServerActionsRequest,
                                                                            Pagination::ListSourceServerActionsPaginationTraits<MgnClient>>;
 using ListTemplateActionsPaginator = Aws::Utils::Pagination::Paginator<MgnClient, Model::ListTemplateActionsRequest,

@@ -20,7 +20,8 @@ enum class SourceEnvironment {
   LOGICAL_MODEL,
   MODELIZE_IT,
   AWS_DISCOVERY_COLLECTOR,
-  MIGRATION_PLANNING_ARTIFACTS
+  MIGRATION_PLANNING_ARTIFACTS,
+  F5_BIGIP
 };
 
 namespace SourceEnvironmentMapper {

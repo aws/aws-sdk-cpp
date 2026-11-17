@@ -18,6 +18,7 @@ namespace TimingMapper {
 static const int ON_ACCEPTANCE_HASH = HashingUtils::HashString("ON_ACCEPTANCE");
 static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
 static const int BILLING_PERIOD_HASH = HashingUtils::HashString("BILLING_PERIOD");
+static const int NOT_APPLICABLE_HASH = HashingUtils::HashString("NOT_APPLICABLE");
 
 Timing GetTimingForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ Timing GetTimingForName(const Aws::String& name) {
     return Timing::SCHEDULED;
   } else if (hashCode == BILLING_PERIOD_HASH) {
     return Timing::BILLING_PERIOD;
+  } else if (hashCode == NOT_APPLICABLE_HASH) {
+    return Timing::NOT_APPLICABLE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForTiming(Timing enumValue) {
       return "SCHEDULED";
     case Timing::BILLING_PERIOD:
       return "BILLING_PERIOD";
+    case Timing::NOT_APPLICABLE:
+      return "NOT_APPLICABLE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

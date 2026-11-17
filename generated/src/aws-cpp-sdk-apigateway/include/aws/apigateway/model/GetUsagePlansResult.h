@@ -24,8 +24,8 @@ class JsonValue;
 namespace APIGateway {
 namespace Model {
 /**
- * <p>Represents a collection of usage plans for an AWS account.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Represents a collection of usage plans for an Amazon Web Services
+ * account.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UsagePlans">AWS
  * API Reference</a></p>
  */

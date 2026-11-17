@@ -8,11 +8,15 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/marketplace-agreement/model/GetAgreementEntitlementsPaginationTraits.h>
+#include <aws/marketplace-agreement/model/GetAgreementRequestApprovalPlansPaginationTraits.h>
+#include <aws/marketplace-agreement/model/GetAgreementRequestTermsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/GetAgreementTermsPaginationTraits.h>
+#include <aws/marketplace-agreement/model/ListAgreementApprovalsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/ListAgreementCancellationRequestsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/ListAgreementChargesPaginationTraits.h>
 #include <aws/marketplace-agreement/model/ListAgreementInvoiceLineItemsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/ListAgreementPaymentRequestsPaginationTraits.h>
+#include <aws/marketplace-agreement/model/ListAgreementRequestsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/ListBillingAdjustmentRequestsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/SearchAgreementsPaginationTraits.h>
 
@@ -37,6 +41,30 @@ class AgreementServicePaginationBase {
   }
 
   /**
+   * Create a paginator for GetAgreementRequestApprovalPlans operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAgreementRequestApprovalPlansRequest,
+                                    Pagination::GetAgreementRequestApprovalPlansPaginationTraits<DerivedClient>>
+  GetAgreementRequestApprovalPlansPaginator(const Model::GetAgreementRequestApprovalPlansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAgreementRequestApprovalPlansRequest,
+                                             Pagination::GetAgreementRequestApprovalPlansPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for GetAgreementRequestTerms operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAgreementRequestTermsRequest,
+                                    Pagination::GetAgreementRequestTermsPaginationTraits<DerivedClient>>
+  GetAgreementRequestTermsPaginator(const Model::GetAgreementRequestTermsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAgreementRequestTermsRequest,
+                                             Pagination::GetAgreementRequestTermsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for GetAgreementTerms operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAgreementTermsRequest,
@@ -45,6 +73,18 @@ class AgreementServicePaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAgreementTermsRequest,
                                              Pagination::GetAgreementTermsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAgreementApprovals operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgreementApprovalsRequest,
+                                    Pagination::ListAgreementApprovalsPaginationTraits<DerivedClient>>
+  ListAgreementApprovalsPaginator(const Model::ListAgreementApprovalsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgreementApprovalsRequest,
+                                             Pagination::ListAgreementApprovalsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 
@@ -93,6 +133,18 @@ class AgreementServicePaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgreementPaymentRequestsRequest,
                                              Pagination::ListAgreementPaymentRequestsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAgreementRequests operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgreementRequestsRequest,
+                                    Pagination::ListAgreementRequestsPaginationTraits<DerivedClient>>
+  ListAgreementRequestsPaginator(const Model::ListAgreementRequestsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgreementRequestsRequest,
+                                             Pagination::ListAgreementRequestsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

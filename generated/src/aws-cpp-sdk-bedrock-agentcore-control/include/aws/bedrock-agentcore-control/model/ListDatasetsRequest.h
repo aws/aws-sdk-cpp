@@ -6,14 +6,12 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/ListDatasetsFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace BedrockAgentCoreControl {
 namespace Model {
 
@@ -31,7 +29,23 @@ class ListDatasetsRequest : public BedrockAgentCoreControlRequest {
 
   AWS_BEDROCKAGENTCORECONTROL_API Aws::String SerializePayload() const override;
 
-  AWS_BEDROCKAGENTCORECONTROL_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+  ///@{
+  /**
+   * <p> A filter to apply to the datasets. </p>
+   */
+  inline const ListDatasetsFilter& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = ListDatasetsFilter>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = ListDatasetsFilter>
+  ListDatasetsRequest& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -67,9 +81,12 @@ class ListDatasetsRequest : public BedrockAgentCoreControlRequest {
   }
   ///@}
  private:
+  ListDatasetsFilter m_filter;
+
   Aws::String m_nextToken;
 
   int m_maxResults{0};
+  bool m_filterHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };

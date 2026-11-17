@@ -292,6 +292,8 @@
 #include <aws/networkmanager/model/ListTagsForResourceRequest.h>
 #include <aws/networkmanager/model/ListTagsForResourceResult.h>
 #include <aws/networkmanager/model/Location.h>
+#include <aws/networkmanager/model/MultipathResilienceChangeValues.h>
+#include <aws/networkmanager/model/MultipathResilienceMode.h>
 #include <aws/networkmanager/model/NatGatewaySupportState.h>
 #include <aws/networkmanager/model/NatGatewaySupportValue.h>
 #include <aws/networkmanager/model/NatRule.h>

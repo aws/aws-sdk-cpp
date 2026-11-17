@@ -25,12 +25,14 @@
 #include <aws/route53globalresolver/model/BatchUpdateFirewallRuleSdkResult.h>
 #include <aws/route53globalresolver/model/CreateAccessSourceResult.h>
 #include <aws/route53globalresolver/model/CreateAccessTokenResult.h>
+#include <aws/route53globalresolver/model/CreateCoreNetworkEndpointResult.h>
 #include <aws/route53globalresolver/model/CreateDNSViewResult.h>
 #include <aws/route53globalresolver/model/CreateFirewallDomainListResult.h>
 #include <aws/route53globalresolver/model/CreateFirewallRuleResult.h>
 #include <aws/route53globalresolver/model/CreateGlobalResolverResult.h>
 #include <aws/route53globalresolver/model/DeleteAccessSourceResult.h>
 #include <aws/route53globalresolver/model/DeleteAccessTokenResult.h>
+#include <aws/route53globalresolver/model/DeleteCoreNetworkEndpointResult.h>
 #include <aws/route53globalresolver/model/DeleteDNSViewResult.h>
 #include <aws/route53globalresolver/model/DeleteFirewallDomainListResult.h>
 #include <aws/route53globalresolver/model/DeleteFirewallRuleResult.h>
@@ -40,6 +42,7 @@
 #include <aws/route53globalresolver/model/EnableDNSViewResult.h>
 #include <aws/route53globalresolver/model/GetAccessSourceResult.h>
 #include <aws/route53globalresolver/model/GetAccessTokenResult.h>
+#include <aws/route53globalresolver/model/GetCoreNetworkEndpointResult.h>
 #include <aws/route53globalresolver/model/GetDNSViewResult.h>
 #include <aws/route53globalresolver/model/GetFirewallDomainListResult.h>
 #include <aws/route53globalresolver/model/GetFirewallRuleResult.h>
@@ -50,6 +53,8 @@
 #include <aws/route53globalresolver/model/ListAccessSourcesRequest.h>
 #include <aws/route53globalresolver/model/ListAccessSourcesResult.h>
 #include <aws/route53globalresolver/model/ListAccessTokensResult.h>
+#include <aws/route53globalresolver/model/ListCoreNetworkEndpointsRequest.h>
+#include <aws/route53globalresolver/model/ListCoreNetworkEndpointsResult.h>
 #include <aws/route53globalresolver/model/ListDNSViewsResult.h>
 #include <aws/route53globalresolver/model/ListFirewallDomainListsRequest.h>
 #include <aws/route53globalresolver/model/ListFirewallDomainListsResult.h>
@@ -67,6 +72,7 @@
 #include <aws/route53globalresolver/model/UntagResourceResult.h>
 #include <aws/route53globalresolver/model/UpdateAccessSourceResult.h>
 #include <aws/route53globalresolver/model/UpdateAccessTokenResult.h>
+#include <aws/route53globalresolver/model/UpdateCoreNetworkEndpointResult.h>
 #include <aws/route53globalresolver/model/UpdateDNSViewResult.h>
 #include <aws/route53globalresolver/model/UpdateFirewallDomainsResult.h>
 #include <aws/route53globalresolver/model/UpdateFirewallRuleResult.h>
@@ -111,12 +117,14 @@ class BatchDeleteFirewallRuleRequest;
 class BatchUpdateFirewallRuleRequest;
 class CreateAccessSourceRequest;
 class CreateAccessTokenRequest;
+class CreateCoreNetworkEndpointRequest;
 class CreateDNSViewRequest;
 class CreateFirewallDomainListRequest;
 class CreateFirewallRuleRequest;
 class CreateGlobalResolverRequest;
 class DeleteAccessSourceRequest;
 class DeleteAccessTokenRequest;
+class DeleteCoreNetworkEndpointRequest;
 class DeleteDNSViewRequest;
 class DeleteFirewallDomainListRequest;
 class DeleteFirewallRuleRequest;
@@ -126,6 +134,7 @@ class DisassociateHostedZoneRequest;
 class EnableDNSViewRequest;
 class GetAccessSourceRequest;
 class GetAccessTokenRequest;
+class GetCoreNetworkEndpointRequest;
 class GetDNSViewRequest;
 class GetFirewallDomainListRequest;
 class GetFirewallRuleRequest;
@@ -135,6 +144,7 @@ class GetManagedFirewallDomainListRequest;
 class ImportFirewallDomainsRequest;
 class ListAccessSourcesRequest;
 class ListAccessTokensRequest;
+class ListCoreNetworkEndpointsRequest;
 class ListDNSViewsRequest;
 class ListFirewallDomainListsRequest;
 class ListFirewallDomainsRequest;
@@ -148,6 +158,7 @@ class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAccessSourceRequest;
 class UpdateAccessTokenRequest;
+class UpdateCoreNetworkEndpointRequest;
 class UpdateDNSViewRequest;
 class UpdateFirewallDomainsRequest;
 class UpdateFirewallRuleRequest;
@@ -162,12 +173,14 @@ typedef Aws::Utils::Outcome<BatchDeleteFirewallRuleSdkResult, Route53GlobalResol
 typedef Aws::Utils::Outcome<BatchUpdateFirewallRuleSdkResult, Route53GlobalResolverError> BatchUpdateFirewallRuleOutcome;
 typedef Aws::Utils::Outcome<CreateAccessSourceResult, Route53GlobalResolverError> CreateAccessSourceOutcome;
 typedef Aws::Utils::Outcome<CreateAccessTokenResult, Route53GlobalResolverError> CreateAccessTokenOutcome;
+typedef Aws::Utils::Outcome<CreateCoreNetworkEndpointResult, Route53GlobalResolverError> CreateCoreNetworkEndpointOutcome;
 typedef Aws::Utils::Outcome<CreateDNSViewResult, Route53GlobalResolverError> CreateDNSViewOutcome;
 typedef Aws::Utils::Outcome<CreateFirewallDomainListResult, Route53GlobalResolverError> CreateFirewallDomainListOutcome;
 typedef Aws::Utils::Outcome<CreateFirewallRuleResult, Route53GlobalResolverError> CreateFirewallRuleOutcome;
 typedef Aws::Utils::Outcome<CreateGlobalResolverResult, Route53GlobalResolverError> CreateGlobalResolverOutcome;
 typedef Aws::Utils::Outcome<DeleteAccessSourceResult, Route53GlobalResolverError> DeleteAccessSourceOutcome;
 typedef Aws::Utils::Outcome<DeleteAccessTokenResult, Route53GlobalResolverError> DeleteAccessTokenOutcome;
+typedef Aws::Utils::Outcome<DeleteCoreNetworkEndpointResult, Route53GlobalResolverError> DeleteCoreNetworkEndpointOutcome;
 typedef Aws::Utils::Outcome<DeleteDNSViewResult, Route53GlobalResolverError> DeleteDNSViewOutcome;
 typedef Aws::Utils::Outcome<DeleteFirewallDomainListResult, Route53GlobalResolverError> DeleteFirewallDomainListOutcome;
 typedef Aws::Utils::Outcome<DeleteFirewallRuleResult, Route53GlobalResolverError> DeleteFirewallRuleOutcome;
@@ -177,6 +190,7 @@ typedef Aws::Utils::Outcome<DisassociateHostedZoneResult, Route53GlobalResolverE
 typedef Aws::Utils::Outcome<EnableDNSViewResult, Route53GlobalResolverError> EnableDNSViewOutcome;
 typedef Aws::Utils::Outcome<GetAccessSourceResult, Route53GlobalResolverError> GetAccessSourceOutcome;
 typedef Aws::Utils::Outcome<GetAccessTokenResult, Route53GlobalResolverError> GetAccessTokenOutcome;
+typedef Aws::Utils::Outcome<GetCoreNetworkEndpointResult, Route53GlobalResolverError> GetCoreNetworkEndpointOutcome;
 typedef Aws::Utils::Outcome<GetDNSViewResult, Route53GlobalResolverError> GetDNSViewOutcome;
 typedef Aws::Utils::Outcome<GetFirewallDomainListResult, Route53GlobalResolverError> GetFirewallDomainListOutcome;
 typedef Aws::Utils::Outcome<GetFirewallRuleResult, Route53GlobalResolverError> GetFirewallRuleOutcome;
@@ -186,6 +200,7 @@ typedef Aws::Utils::Outcome<GetManagedFirewallDomainListResult, Route53GlobalRes
 typedef Aws::Utils::Outcome<ImportFirewallDomainsResult, Route53GlobalResolverError> ImportFirewallDomainsOutcome;
 typedef Aws::Utils::Outcome<ListAccessSourcesResult, Route53GlobalResolverError> ListAccessSourcesOutcome;
 typedef Aws::Utils::Outcome<ListAccessTokensResult, Route53GlobalResolverError> ListAccessTokensOutcome;
+typedef Aws::Utils::Outcome<ListCoreNetworkEndpointsResult, Route53GlobalResolverError> ListCoreNetworkEndpointsOutcome;
 typedef Aws::Utils::Outcome<ListDNSViewsResult, Route53GlobalResolverError> ListDNSViewsOutcome;
 typedef Aws::Utils::Outcome<ListFirewallDomainListsResult, Route53GlobalResolverError> ListFirewallDomainListsOutcome;
 typedef Aws::Utils::Outcome<ListFirewallDomainsResult, Route53GlobalResolverError> ListFirewallDomainsOutcome;
@@ -199,6 +214,7 @@ typedef Aws::Utils::Outcome<TagResourceResult, Route53GlobalResolverError> TagRe
 typedef Aws::Utils::Outcome<UntagResourceResult, Route53GlobalResolverError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAccessSourceResult, Route53GlobalResolverError> UpdateAccessSourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAccessTokenResult, Route53GlobalResolverError> UpdateAccessTokenOutcome;
+typedef Aws::Utils::Outcome<UpdateCoreNetworkEndpointResult, Route53GlobalResolverError> UpdateCoreNetworkEndpointOutcome;
 typedef Aws::Utils::Outcome<UpdateDNSViewResult, Route53GlobalResolverError> UpdateDNSViewOutcome;
 typedef Aws::Utils::Outcome<UpdateFirewallDomainsResult, Route53GlobalResolverError> UpdateFirewallDomainsOutcome;
 typedef Aws::Utils::Outcome<UpdateFirewallRuleResult, Route53GlobalResolverError> UpdateFirewallRuleOutcome;
@@ -213,12 +229,14 @@ typedef std::future<BatchDeleteFirewallRuleOutcome> BatchDeleteFirewallRuleOutco
 typedef std::future<BatchUpdateFirewallRuleOutcome> BatchUpdateFirewallRuleOutcomeCallable;
 typedef std::future<CreateAccessSourceOutcome> CreateAccessSourceOutcomeCallable;
 typedef std::future<CreateAccessTokenOutcome> CreateAccessTokenOutcomeCallable;
+typedef std::future<CreateCoreNetworkEndpointOutcome> CreateCoreNetworkEndpointOutcomeCallable;
 typedef std::future<CreateDNSViewOutcome> CreateDNSViewOutcomeCallable;
 typedef std::future<CreateFirewallDomainListOutcome> CreateFirewallDomainListOutcomeCallable;
 typedef std::future<CreateFirewallRuleOutcome> CreateFirewallRuleOutcomeCallable;
 typedef std::future<CreateGlobalResolverOutcome> CreateGlobalResolverOutcomeCallable;
 typedef std::future<DeleteAccessSourceOutcome> DeleteAccessSourceOutcomeCallable;
 typedef std::future<DeleteAccessTokenOutcome> DeleteAccessTokenOutcomeCallable;
+typedef std::future<DeleteCoreNetworkEndpointOutcome> DeleteCoreNetworkEndpointOutcomeCallable;
 typedef std::future<DeleteDNSViewOutcome> DeleteDNSViewOutcomeCallable;
 typedef std::future<DeleteFirewallDomainListOutcome> DeleteFirewallDomainListOutcomeCallable;
 typedef std::future<DeleteFirewallRuleOutcome> DeleteFirewallRuleOutcomeCallable;
@@ -228,6 +246,7 @@ typedef std::future<DisassociateHostedZoneOutcome> DisassociateHostedZoneOutcome
 typedef std::future<EnableDNSViewOutcome> EnableDNSViewOutcomeCallable;
 typedef std::future<GetAccessSourceOutcome> GetAccessSourceOutcomeCallable;
 typedef std::future<GetAccessTokenOutcome> GetAccessTokenOutcomeCallable;
+typedef std::future<GetCoreNetworkEndpointOutcome> GetCoreNetworkEndpointOutcomeCallable;
 typedef std::future<GetDNSViewOutcome> GetDNSViewOutcomeCallable;
 typedef std::future<GetFirewallDomainListOutcome> GetFirewallDomainListOutcomeCallable;
 typedef std::future<GetFirewallRuleOutcome> GetFirewallRuleOutcomeCallable;
@@ -237,6 +256,7 @@ typedef std::future<GetManagedFirewallDomainListOutcome> GetManagedFirewallDomai
 typedef std::future<ImportFirewallDomainsOutcome> ImportFirewallDomainsOutcomeCallable;
 typedef std::future<ListAccessSourcesOutcome> ListAccessSourcesOutcomeCallable;
 typedef std::future<ListAccessTokensOutcome> ListAccessTokensOutcomeCallable;
+typedef std::future<ListCoreNetworkEndpointsOutcome> ListCoreNetworkEndpointsOutcomeCallable;
 typedef std::future<ListDNSViewsOutcome> ListDNSViewsOutcomeCallable;
 typedef std::future<ListFirewallDomainListsOutcome> ListFirewallDomainListsOutcomeCallable;
 typedef std::future<ListFirewallDomainsOutcome> ListFirewallDomainsOutcomeCallable;
@@ -250,6 +270,7 @@ typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAccessSourceOutcome> UpdateAccessSourceOutcomeCallable;
 typedef std::future<UpdateAccessTokenOutcome> UpdateAccessTokenOutcomeCallable;
+typedef std::future<UpdateCoreNetworkEndpointOutcome> UpdateCoreNetworkEndpointOutcomeCallable;
 typedef std::future<UpdateDNSViewOutcome> UpdateDNSViewOutcomeCallable;
 typedef std::future<UpdateFirewallDomainsOutcome> UpdateFirewallDomainsOutcomeCallable;
 typedef std::future<UpdateFirewallRuleOutcome> UpdateFirewallRuleOutcomeCallable;
@@ -279,6 +300,9 @@ typedef std::function<void(const Route53GlobalResolverClient*, const Model::Crea
 typedef std::function<void(const Route53GlobalResolverClient*, const Model::CreateAccessTokenRequest&,
                            const Model::CreateAccessTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAccessTokenResponseReceivedHandler;
+typedef std::function<void(const Route53GlobalResolverClient*, const Model::CreateCoreNetworkEndpointRequest&,
+                           const Model::CreateCoreNetworkEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateCoreNetworkEndpointResponseReceivedHandler;
 typedef std::function<void(const Route53GlobalResolverClient*, const Model::CreateDNSViewRequest&, const Model::CreateDNSViewOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateDNSViewResponseReceivedHandler;
@@ -297,6 +321,9 @@ typedef std::function<void(const Route53GlobalResolverClient*, const Model::Dele
 typedef std::function<void(const Route53GlobalResolverClient*, const Model::DeleteAccessTokenRequest&,
                            const Model::DeleteAccessTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAccessTokenResponseReceivedHandler;
+typedef std::function<void(const Route53GlobalResolverClient*, const Model::DeleteCoreNetworkEndpointRequest&,
+                           const Model::DeleteCoreNetworkEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteCoreNetworkEndpointResponseReceivedHandler;
 typedef std::function<void(const Route53GlobalResolverClient*, const Model::DeleteDNSViewRequest&, const Model::DeleteDNSViewOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteDNSViewResponseReceivedHandler;
@@ -324,6 +351,9 @@ typedef std::function<void(const Route53GlobalResolverClient*, const Model::GetA
 typedef std::function<void(const Route53GlobalResolverClient*, const Model::GetAccessTokenRequest&, const Model::GetAccessTokenOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAccessTokenResponseReceivedHandler;
+typedef std::function<void(const Route53GlobalResolverClient*, const Model::GetCoreNetworkEndpointRequest&,
+                           const Model::GetCoreNetworkEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetCoreNetworkEndpointResponseReceivedHandler;
 typedef std::function<void(const Route53GlobalResolverClient*, const Model::GetDNSViewRequest&, const Model::GetDNSViewOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDNSViewResponseReceivedHandler;
@@ -352,6 +382,9 @@ typedef std::function<void(const Route53GlobalResolverClient*, const Model::List
 typedef std::function<void(const Route53GlobalResolverClient*, const Model::ListAccessTokensRequest&, const Model::ListAccessTokensOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAccessTokensResponseReceivedHandler;
+typedef std::function<void(const Route53GlobalResolverClient*, const Model::ListCoreNetworkEndpointsRequest&,
+                           const Model::ListCoreNetworkEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCoreNetworkEndpointsResponseReceivedHandler;
 typedef std::function<void(const Route53GlobalResolverClient*, const Model::ListDNSViewsRequest&, const Model::ListDNSViewsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDNSViewsResponseReceivedHandler;
@@ -392,6 +425,9 @@ typedef std::function<void(const Route53GlobalResolverClient*, const Model::Upda
 typedef std::function<void(const Route53GlobalResolverClient*, const Model::UpdateAccessTokenRequest&,
                            const Model::UpdateAccessTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAccessTokenResponseReceivedHandler;
+typedef std::function<void(const Route53GlobalResolverClient*, const Model::UpdateCoreNetworkEndpointRequest&,
+                           const Model::UpdateCoreNetworkEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateCoreNetworkEndpointResponseReceivedHandler;
 typedef std::function<void(const Route53GlobalResolverClient*, const Model::UpdateDNSViewRequest&, const Model::UpdateDNSViewOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateDNSViewResponseReceivedHandler;

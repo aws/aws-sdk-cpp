@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/AzureProviderDetailCreate.h>
+#include <aws/inspector2/model/GcpProviderDetailCreate.h>
 
 #include <utility>
 
@@ -49,9 +50,31 @@ class ProviderDetailCreate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The details specific to Google Cloud Platform (GCP) for creating a
+   * connector.</p>
+   */
+  inline const GcpProviderDetailCreate& GetGcp() const { return m_gcp; }
+  inline bool GcpHasBeenSet() const { return m_gcpHasBeenSet; }
+  template <typename GcpT = GcpProviderDetailCreate>
+  void SetGcp(GcpT&& value) {
+    m_gcpHasBeenSet = true;
+    m_gcp = std::forward<GcpT>(value);
+  }
+  template <typename GcpT = GcpProviderDetailCreate>
+  ProviderDetailCreate& WithGcp(GcpT&& value) {
+    SetGcp(std::forward<GcpT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AzureProviderDetailCreate m_azure;
+
+  GcpProviderDetailCreate m_gcp;
   bool m_azureHasBeenSet = false;
+  bool m_gcpHasBeenSet = false;
 };
 
 }  // namespace Model

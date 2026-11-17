@@ -74,7 +74,8 @@ class GetDomainNameAccessAssociationsRequest : public APIGatewayRequest {
    * <p> The owner of the domain name access association. Use <code>SELF</code> to
    * only list the domain name access associations owned by your own account. Use
    * <code>OTHER_ACCOUNTS</code> to list the domain name access associations with
-   * your private custom domain names that are owned by other AWS accounts.</p>
+   * your private custom domain names that are owned by other Amazon Web Services
+   * accounts.</p>
    */
   inline ResourceOwner GetResourceOwner() const { return m_resourceOwner; }
   inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }

@@ -53,6 +53,7 @@
 #include <aws/ec2/model/AccountVpcEncryptionControlMode.h>
 #include <aws/ec2/model/AccountVpcEncryptionControlState.h>
 #include <aws/ec2/model/ActiveInstance.h>
+#include <aws/ec2/model/ActiveVpnTunnelAdditionalKeyExchange.h>
 #include <aws/ec2/model/ActiveVpnTunnelStatus.h>
 #include <aws/ec2/model/ActivityStatus.h>
 #include <aws/ec2/model/AddIpamOperatingRegion.h>
@@ -60,6 +61,9 @@
 #include <aws/ec2/model/AddPrefixListEntry.h>
 #include <aws/ec2/model/AddedPrincipal.h>
 #include <aws/ec2/model/AdditionalDetail.h>
+#include <aws/ec2/model/AdditionalKeyExchangeMethodsListValue.h>
+#include <aws/ec2/model/AdditionalKeyExchangeMethodsRequestListValue.h>
+#include <aws/ec2/model/AdditionalKeyExchangeRequirement.h>
 #include <aws/ec2/model/Address.h>
 #include <aws/ec2/model/AddressAttribute.h>
 #include <aws/ec2/model/AddressAttributeName.h>
@@ -274,8 +278,10 @@
 #include <aws/ec2/model/CapacityBlockExtension.h>
 #include <aws/ec2/model/CapacityBlockExtensionOffering.h>
 #include <aws/ec2/model/CapacityBlockExtensionStatus.h>
+#include <aws/ec2/model/CapacityBlockInstanceTypePreference.h>
 #include <aws/ec2/model/CapacityBlockInterconnectStatus.h>
 #include <aws/ec2/model/CapacityBlockOffering.h>
+#include <aws/ec2/model/CapacityBlockOfferingSegment.h>
 #include <aws/ec2/model/CapacityBlockResourceState.h>
 #include <aws/ec2/model/CapacityBlockStatus.h>
 #include <aws/ec2/model/CapacityManagerCondition.h>
@@ -513,6 +519,7 @@
 #include <aws/ec2/model/CreateNetworkInterfaceResponse.h>
 #include <aws/ec2/model/CreateNetworkingFlexCostAllocationPolicyRequest.h>
 #include <aws/ec2/model/CreateNetworkingFlexCostAllocationPolicyResponse.h>
+#include <aws/ec2/model/CreatePeeringConnectionOptionsRequest.h>
 #include <aws/ec2/model/CreatePlacementGroupRequest.h>
 #include <aws/ec2/model/CreatePlacementGroupResponse.h>
 #include <aws/ec2/model/CreatePublicIpv4PoolRequest.h>
@@ -2456,6 +2463,9 @@
 #include <aws/ec2/model/ModifyTransitGatewayNetworkFunctionAttachmentRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayNetworkFunctionAttachmentResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayOptions.h>
+#include <aws/ec2/model/ModifyTransitGatewayPeeringAttachmentRequest.h>
+#include <aws/ec2/model/ModifyTransitGatewayPeeringAttachmentRequestOptions.h>
+#include <aws/ec2/model/ModifyTransitGatewayPeeringAttachmentResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceRequest.h>
@@ -2535,6 +2545,8 @@
 #include <aws/ec2/model/MoveStatus.h>
 #include <aws/ec2/model/MovingAddressStatus.h>
 #include <aws/ec2/model/MulticastSupportValue.h>
+#include <aws/ec2/model/MultipathResilienceMode.h>
+#include <aws/ec2/model/MultipathResilienceStatus.h>
 #include <aws/ec2/model/NatFlexCostAllocationPolicyDocument.h>
 #include <aws/ec2/model/NatGateway.h>
 #include <aws/ec2/model/NatGatewayAddress.h>
@@ -3107,6 +3119,8 @@
 #include <aws/ec2/model/TransitGatewayNetworkFunctionAttachment.h>
 #include <aws/ec2/model/TransitGatewayOptions.h>
 #include <aws/ec2/model/TransitGatewayPeeringAttachment.h>
+#include <aws/ec2/model/TransitGatewayPeeringAttachmentMultipathResilienceMode.h>
+#include <aws/ec2/model/TransitGatewayPeeringAttachmentMultipathResilienceStatus.h>
 #include <aws/ec2/model/TransitGatewayPeeringAttachmentOptions.h>
 #include <aws/ec2/model/TransitGatewayPolicyRule.h>
 #include <aws/ec2/model/TransitGatewayPolicyRuleMetaData.h>
@@ -3270,6 +3284,8 @@
 #include <aws/ec2/model/VpcPeeringConnectionVpcInfo.h>
 #include <aws/ec2/model/VpcState.h>
 #include <aws/ec2/model/VpcTenancy.h>
+#include <aws/ec2/model/VpnAdditionalKeyExchange.h>
+#include <aws/ec2/model/VpnAdditionalKeyExchangeRequest.h>
 #include <aws/ec2/model/VpnConcentrator.h>
 #include <aws/ec2/model/VpnConcentratorType.h>
 #include <aws/ec2/model/VpnConnection.h>

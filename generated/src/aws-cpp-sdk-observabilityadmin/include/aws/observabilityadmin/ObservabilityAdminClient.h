@@ -124,6 +124,33 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
+   * <p>Creates a connector to a third-party cloud provider. With a connector, you
+   * can discover resources in the provider and collect their telemetry. Currently,
+   * Microsoft Azure is the only supported provider.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateConnectorOutcome CreateConnector(const Model::CreateConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateConnectorRequestT = Model::CreateConnectorRequest>
+  Model::CreateConnectorOutcomeCallable CreateConnectorCallable(const CreateConnectorRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::CreateConnector, request);
+  }
+
+  /**
+   * An Async wrapper for CreateConnector that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateConnectorRequestT = Model::CreateConnectorRequest>
+  void CreateConnectorAsync(const CreateConnectorRequestT& request, const CreateConnectorResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::CreateConnector, request, handler, context);
+  }
+
+  /**
    * <p>Creates a dataset integration for the caller's account in the current region
    * and returns its ARN.</p> <p>To use this operation, you must have permission to
    * access the dataset integration resources through the IAM role specified in the
@@ -308,6 +335,31 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
+   * <p>Deletes a connector and its telemetry manifest.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteConnectorOutcome DeleteConnector(const Model::DeleteConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteConnectorRequestT = Model::DeleteConnectorRequest>
+  Model::DeleteConnectorOutcomeCallable DeleteConnectorCallable(const DeleteConnectorRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::DeleteConnector, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteConnector that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteConnectorRequestT = Model::DeleteConnectorRequest>
+  void DeleteConnectorAsync(const DeleteConnectorRequestT& request, const DeleteConnectorResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::DeleteConnector, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a dataset integration for the caller's account in the current region.
    * This operation is idempotent; if you submit the same delete more than once, each
    * call succeeds.</p><p><h3>See Also:</h3>   <a
@@ -482,6 +534,94 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
                                                  const GetCentralizationRuleForOrganizationResponseReceivedHandler& handler,
                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ObservabilityAdminClient::GetCentralizationRuleForOrganization, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the details of a connector.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetConnectorOutcome GetConnector(const Model::GetConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetConnectorRequestT = Model::GetConnectorRequest>
+  Model::GetConnectorOutcomeCallable GetConnectorCallable(const GetConnectorRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::GetConnector, request);
+  }
+
+  /**
+   * An Async wrapper for GetConnector that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetConnectorRequestT = Model::GetConnectorRequest>
+  void GetConnectorAsync(const GetConnectorRequestT& request, const GetConnectorResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::GetConnector, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the telemetry manifest of a connector and its current version. If
+   * the connector has no telemetry manifest, this operation returns a
+   * <code>ResourceNotFoundException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetConnectorTelemetryManifest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetConnectorTelemetryManifestOutcome GetConnectorTelemetryManifest(
+      const Model::GetConnectorTelemetryManifestRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetConnectorTelemetryManifest that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetConnectorTelemetryManifestRequestT = Model::GetConnectorTelemetryManifestRequest>
+  Model::GetConnectorTelemetryManifestOutcomeCallable GetConnectorTelemetryManifestCallable(
+      const GetConnectorTelemetryManifestRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::GetConnectorTelemetryManifest, request);
+  }
+
+  /**
+   * An Async wrapper for GetConnectorTelemetryManifest that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetConnectorTelemetryManifestRequestT = Model::GetConnectorTelemetryManifestRequest>
+  void GetConnectorTelemetryManifestAsync(const GetConnectorTelemetryManifestRequestT& request,
+                                          const GetConnectorTelemetryManifestResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::GetConnectorTelemetryManifest, request, handler, context);
+  }
+
+  /**
+   * <p>Generates the artifacts that you use to create the infrastructure in your
+   * cloud provider that delivers the telemetry declared in the connector's telemetry
+   * manifest. This operation doesn't change any resources in your cloud provider or
+   * in Amazon Web Services.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetConnectorTelemetrySetup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetConnectorTelemetrySetupOutcome GetConnectorTelemetrySetup(
+      const Model::GetConnectorTelemetrySetupRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetConnectorTelemetrySetup that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetConnectorTelemetrySetupRequestT = Model::GetConnectorTelemetrySetupRequest>
+  Model::GetConnectorTelemetrySetupOutcomeCallable GetConnectorTelemetrySetupCallable(
+      const GetConnectorTelemetrySetupRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::GetConnectorTelemetrySetup, request);
+  }
+
+  /**
+   * An Async wrapper for GetConnectorTelemetrySetup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetConnectorTelemetrySetupRequestT = Model::GetConnectorTelemetrySetupRequest>
+  void GetConnectorTelemetrySetupAsync(const GetConnectorTelemetrySetupRequestT& request,
+                                       const GetConnectorTelemetrySetupResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::GetConnectorTelemetrySetup, request, handler, context);
   }
 
   /**
@@ -718,6 +858,36 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
+   * <p>Returns the details of a third-party telemetry enrichment, including its
+   * status and source configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetThirdPartyTelemetryEnrichment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetThirdPartyTelemetryEnrichmentOutcome GetThirdPartyTelemetryEnrichment(
+      const Model::GetThirdPartyTelemetryEnrichmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetThirdPartyTelemetryEnrichment that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetThirdPartyTelemetryEnrichmentRequestT = Model::GetThirdPartyTelemetryEnrichmentRequest>
+  Model::GetThirdPartyTelemetryEnrichmentOutcomeCallable GetThirdPartyTelemetryEnrichmentCallable(
+      const GetThirdPartyTelemetryEnrichmentRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::GetThirdPartyTelemetryEnrichment, request);
+  }
+
+  /**
+   * An Async wrapper for GetThirdPartyTelemetryEnrichment that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetThirdPartyTelemetryEnrichmentRequestT = Model::GetThirdPartyTelemetryEnrichmentRequest>
+  void GetThirdPartyTelemetryEnrichmentAsync(const GetThirdPartyTelemetryEnrichmentRequestT& request,
+                                             const GetThirdPartyTelemetryEnrichmentResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::GetThirdPartyTelemetryEnrichment, request, handler, context);
+  }
+
+  /**
    * <p>Lists all centralization rules in your organization. This operation can only
    * be called by the organization's management account or a delegated administrator
    * account.</p><p><h3>See Also:</h3>   <a
@@ -746,6 +916,35 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                                    const ListCentralizationRulesForOrganizationRequestT& request = {}) const {
     return SubmitAsync(&ObservabilityAdminClient::ListCentralizationRulesForOrganization, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the connectors in the account and Region. This operation returns
+   * results in pages. To get the next page, pass the returned <code>NextToken</code>
+   * in the next call. We recommend that you use pagination to ensure that the
+   * operation returns quickly and successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListConnectors">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListConnectorsRequestT = Model::ListConnectorsRequest>
+  Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const ListConnectorsRequestT& request = {}) const {
+    return SubmitCallable(&ObservabilityAdminClient::ListConnectors, request);
+  }
+
+  /**
+   * An Async wrapper for ListConnectors that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListConnectorsRequestT = Model::ListConnectorsRequest>
+  void ListConnectorsAsync(const ListConnectorsResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const ListConnectorsRequestT& request = {}) const {
+    return SubmitAsync(&ObservabilityAdminClient::ListConnectors, request, handler, context);
   }
 
   /**
@@ -838,6 +1037,38 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
+   * <p>Lists resources in your cloud provider that the connector can access, such as
+   * management groups, subscriptions, resource types, Regions, resources, and Event
+   * Hubs. Use the results to build a telemetry manifest. This operation returns
+   * results in pages. To get the next page, pass the returned <code>NextToken</code>
+   * in the next call. We recommend that you use pagination to ensure that the
+   * operation returns quickly and successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListResourcesByConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListResourcesByConnectorOutcome ListResourcesByConnector(const Model::ListResourcesByConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListResourcesByConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListResourcesByConnectorRequestT = Model::ListResourcesByConnectorRequest>
+  Model::ListResourcesByConnectorOutcomeCallable ListResourcesByConnectorCallable(const ListResourcesByConnectorRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::ListResourcesByConnector, request);
+  }
+
+  /**
+   * An Async wrapper for ListResourcesByConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListResourcesByConnectorRequestT = Model::ListResourcesByConnectorRequest>
+  void ListResourcesByConnectorAsync(const ListResourcesByConnectorRequestT& request,
+                                     const ListResourcesByConnectorResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::ListResourcesByConnector, request, handler, context);
+  }
+
+  /**
    * <p>Lists all S3 Table integrations in your account. We recommend using
    * pagination to ensure that the operation returns quickly and
    * successfully.</p><p><h3>See Also:</h3>   <a
@@ -868,7 +1099,8 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
 
   /**
    * <p> Lists all tags attached to the specified resource. Supports telemetry rule
-   * resources and telemetry pipeline resources. </p><p><h3>See Also:</h3>   <a
+   * resources, telemetry pipeline resources, and third-party telemetry enrichment
+   * resources. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTagsForResource">AWS
    * API Reference</a></p>
    */
@@ -983,6 +1215,72 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
+   * <p>Returns a summary of each third-party telemetry enrichment in your account
+   * and Region. To get the full configuration of an enrichment, use
+   * <code>GetThirdPartyTelemetryEnrichment</code>. The results are paginated. To get
+   * the next page of results, use <code>NextToken</code>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListThirdPartyTelemetryEnrichments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListThirdPartyTelemetryEnrichmentsOutcome ListThirdPartyTelemetryEnrichments(
+      const Model::ListThirdPartyTelemetryEnrichmentsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListThirdPartyTelemetryEnrichments that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListThirdPartyTelemetryEnrichmentsRequestT = Model::ListThirdPartyTelemetryEnrichmentsRequest>
+  Model::ListThirdPartyTelemetryEnrichmentsOutcomeCallable ListThirdPartyTelemetryEnrichmentsCallable(
+      const ListThirdPartyTelemetryEnrichmentsRequestT& request = {}) const {
+    return SubmitCallable(&ObservabilityAdminClient::ListThirdPartyTelemetryEnrichments, request);
+  }
+
+  /**
+   * An Async wrapper for ListThirdPartyTelemetryEnrichments that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListThirdPartyTelemetryEnrichmentsRequestT = Model::ListThirdPartyTelemetryEnrichmentsRequest>
+  void ListThirdPartyTelemetryEnrichmentsAsync(const ListThirdPartyTelemetryEnrichmentsResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                               const ListThirdPartyTelemetryEnrichmentsRequestT& request = {}) const {
+    return SubmitAsync(&ObservabilityAdminClient::ListThirdPartyTelemetryEnrichments, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or replaces the telemetry manifest of a connector. The telemetry
+   * manifest declares which resources in your cloud provider to collect telemetry
+   * from and which telemetry types to collect. To avoid overwriting changes made by
+   * another caller, specify <code>ExpectedVersion</code>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/PutConnectorTelemetryManifest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutConnectorTelemetryManifestOutcome PutConnectorTelemetryManifest(
+      const Model::PutConnectorTelemetryManifestRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutConnectorTelemetryManifest that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutConnectorTelemetryManifestRequestT = Model::PutConnectorTelemetryManifestRequest>
+  Model::PutConnectorTelemetryManifestOutcomeCallable PutConnectorTelemetryManifestCallable(
+      const PutConnectorTelemetryManifestRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::PutConnectorTelemetryManifest, request);
+  }
+
+  /**
+   * An Async wrapper for PutConnectorTelemetryManifest that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutConnectorTelemetryManifestRequestT = Model::PutConnectorTelemetryManifestRequest>
+  void PutConnectorTelemetryManifestAsync(const PutConnectorTelemetryManifestRequestT& request,
+                                          const PutConnectorTelemetryManifestResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::PutConnectorTelemetryManifest, request, handler, context);
+  }
+
+  /**
    * <p> Enables the resource tags for telemetry feature for your account, which
    * enhances telemetry data with additional resource metadata from Resource Explorer
    * to provide richer context for monitoring and observability. </p><p><h3>See
@@ -1073,6 +1371,78 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
+   * <p>Starts a refresh of an external-cloud telemetry pipeline. The refresh
+   * re-reads the connector's telemetry manifest and re-discovers the sources in
+   * scope.</p> <p>The pipeline must be in the <code>ACTIVE</code> or
+   * <code>UPDATE_FAILED</code> state, with no refresh already running. You can use
+   * <code>GetTelemetryPipeline</code> to track the refresh.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryPipelineRefresh">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartTelemetryPipelineRefreshOutcome StartTelemetryPipelineRefresh(
+      const Model::StartTelemetryPipelineRefreshRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartTelemetryPipelineRefresh that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartTelemetryPipelineRefreshRequestT = Model::StartTelemetryPipelineRefreshRequest>
+  Model::StartTelemetryPipelineRefreshOutcomeCallable StartTelemetryPipelineRefreshCallable(
+      const StartTelemetryPipelineRefreshRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::StartTelemetryPipelineRefresh, request);
+  }
+
+  /**
+   * An Async wrapper for StartTelemetryPipelineRefresh that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartTelemetryPipelineRefreshRequestT = Model::StartTelemetryPipelineRefreshRequest>
+  void StartTelemetryPipelineRefreshAsync(const StartTelemetryPipelineRefreshRequestT& request,
+                                          const StartTelemetryPipelineRefreshResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::StartTelemetryPipelineRefresh, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a third-party telemetry enrichment. An enrichment adds resource
+   * metadata, such as tags, from a third-party telemetry source to the telemetry
+   * that CloudWatch receives from the resources of that source.</p> <p>You specify
+   * an Amazon Web Services Config connector for your third-party environment, such
+   * as a Microsoft Azure tenant. You can use each connector for only one
+   * enrichment.</p> <p>To use this operation, you must have the
+   * <code>config:PutThirdPartyServiceLinkedConfigurationRecorder</code> permission.
+   * If the Amazon Web Services Config service-linked role does not exist in your
+   * account, you must also have the <code>iam:CreateServiceLinkedRole</code>
+   * permission.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartThirdPartyTelemetryEnrichment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartThirdPartyTelemetryEnrichmentOutcome StartThirdPartyTelemetryEnrichment(
+      const Model::StartThirdPartyTelemetryEnrichmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartThirdPartyTelemetryEnrichment that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename StartThirdPartyTelemetryEnrichmentRequestT = Model::StartThirdPartyTelemetryEnrichmentRequest>
+  Model::StartThirdPartyTelemetryEnrichmentOutcomeCallable StartThirdPartyTelemetryEnrichmentCallable(
+      const StartThirdPartyTelemetryEnrichmentRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::StartThirdPartyTelemetryEnrichment, request);
+  }
+
+  /**
+   * An Async wrapper for StartThirdPartyTelemetryEnrichment that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename StartThirdPartyTelemetryEnrichmentRequestT = Model::StartThirdPartyTelemetryEnrichmentRequest>
+  void StartThirdPartyTelemetryEnrichmentAsync(const StartThirdPartyTelemetryEnrichmentRequestT& request,
+                                               const StartThirdPartyTelemetryEnrichmentResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::StartThirdPartyTelemetryEnrichment, request, handler, context);
+  }
+
+  /**
    * <p> Disables the resource tags for telemetry feature for your account, stopping
    * the enhancement of telemetry data with additional resource metadata.
    * </p><p><h3>See Also:</h3>   <a
@@ -1160,8 +1530,42 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
-   * <p> Adds or updates tags for a resource. Supports telemetry rule resources and
-   * telemetry pipeline resources. </p><p><h3>See Also:</h3>   <a
+   * <p>Stops a third-party telemetry enrichment. CloudWatch stops adding resource
+   * metadata from the third-party telemetry source to your telemetry.</p> <p>To use
+   * this operation, you must have the
+   * <code>config:DeleteServiceLinkedConfigurationRecorder</code>
+   * permission.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StopThirdPartyTelemetryEnrichment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopThirdPartyTelemetryEnrichmentOutcome StopThirdPartyTelemetryEnrichment(
+      const Model::StopThirdPartyTelemetryEnrichmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopThirdPartyTelemetryEnrichment that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename StopThirdPartyTelemetryEnrichmentRequestT = Model::StopThirdPartyTelemetryEnrichmentRequest>
+  Model::StopThirdPartyTelemetryEnrichmentOutcomeCallable StopThirdPartyTelemetryEnrichmentCallable(
+      const StopThirdPartyTelemetryEnrichmentRequestT& request) const {
+    return SubmitCallable(&ObservabilityAdminClient::StopThirdPartyTelemetryEnrichment, request);
+  }
+
+  /**
+   * An Async wrapper for StopThirdPartyTelemetryEnrichment that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename StopThirdPartyTelemetryEnrichmentRequestT = Model::StopThirdPartyTelemetryEnrichmentRequest>
+  void StopThirdPartyTelemetryEnrichmentAsync(const StopThirdPartyTelemetryEnrichmentRequestT& request,
+                                              const StopThirdPartyTelemetryEnrichmentResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ObservabilityAdminClient::StopThirdPartyTelemetryEnrichment, request, handler, context);
+  }
+
+  /**
+   * <p> Adds or updates tags for a resource. Supports telemetry rule resources,
+   * telemetry pipeline resources, and third-party telemetry enrichment resources.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/TagResource">AWS
    * API Reference</a></p>
    */
@@ -1214,8 +1618,9 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   }
 
   /**
-   * <p> Removes tags from a resource. Supports telemetry rule resources and
-   * telemetry pipeline resources. </p><p><h3>See Also:</h3>   <a
+   * <p> Removes tags from a resource. Supports telemetry rule resources, telemetry
+   * pipeline resources, and third-party telemetry enrichment resources.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UntagResource">AWS
    * API Reference</a></p>
    */

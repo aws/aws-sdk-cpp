@@ -33,6 +33,12 @@ AbortMultipartUploadResult& AbortMultipartUploadResult::operator=(const Aws::Ama
     m_requestChargedHasBeenSet = true;
   }
 
+  const auto& versionIdIter = headers.find("x-amz-version-id");
+  if (versionIdIter != headers.end()) {
+    m_versionId = versionIdIter->second;
+    m_versionIdHasBeenSet = true;
+  }
+
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;

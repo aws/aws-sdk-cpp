@@ -142,6 +142,14 @@ Event& Event::operator=(JsonView jsonValue) {
     m_invocationCompletedDetails = jsonValue.GetObject("InvocationCompletedDetails");
     m_invocationCompletedDetailsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ExecutionPausedDetails")) {
+    m_executionPausedDetails = jsonValue.GetObject("ExecutionPausedDetails");
+    m_executionPausedDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExecutionResumedDetails")) {
+    m_executionResumedDetails = jsonValue.GetObject("ExecutionResumedDetails");
+    m_executionResumedDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -270,6 +278,14 @@ JsonValue Event::Jsonize() const {
 
   if (m_invocationCompletedDetailsHasBeenSet) {
     payload.WithObject("InvocationCompletedDetails", m_invocationCompletedDetails.Jsonize());
+  }
+
+  if (m_executionPausedDetailsHasBeenSet) {
+    payload.WithObject("ExecutionPausedDetails", m_executionPausedDetails.Jsonize());
+  }
+
+  if (m_executionResumedDetailsHasBeenSet) {
+    payload.WithObject("ExecutionResumedDetails", m_executionResumedDetails.Jsonize());
   }
 
   return payload;

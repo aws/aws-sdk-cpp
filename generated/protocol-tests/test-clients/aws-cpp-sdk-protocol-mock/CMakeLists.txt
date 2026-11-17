@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-protocol-mock "C++ SDK for the AWS protocol-mock service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-protocol-mock "C++ SDK for API definition for Protocol Mock" aws-cpp-sdk-core)
 
 file(GLOB AWS_PROTOCOL-MOCK_HEADERS
     "include/aws/protocol-mock/*.h"

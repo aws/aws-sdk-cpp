@@ -11,6 +11,7 @@
 #include <aws/route53globalresolver/Route53GlobalResolverRequest.h>
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
 #include <aws/route53globalresolver/model/GlobalResolverIpAddressType.h>
+#include <aws/route53globalresolver/model/PublicIpStatus.h>
 
 #include <utility>
 
@@ -84,6 +85,31 @@ class CreateGlobalResolverRequest : public Route53GlobalResolverRequest {
   }
   inline CreateGlobalResolverRequest& WithIpAddressType(GlobalResolverIpAddressType value) {
     SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the public IP connectivity to configure for the Route 53 Global
+   * Resolver. Public IP addresses let DNS clients send queries to the resolver over
+   * the internet. Valid values are the following:</p> <ul> <li> <p>
+   * <code>ENABLED_RESERVED</code> - Public IP connectivity is enabled, and the
+   * global anycast public IP addresses are reserved for the Route 53 Global
+   * Resolver.</p> </li> <li> <p> <code>DISABLED_RESERVED</code> - Public IP
+   * connectivity is disabled, and the global anycast public IP addresses remain
+   * reserved for the Route 53 Global Resolver.</p> </li> <li> <p>
+   * <code>DISABLED_RELEASED</code> - Public IP connectivity is disabled, and the
+   * global anycast public IP addresses are released.</p> </li> </ul>
+   */
+  inline PublicIpStatus GetPublicIpStatus() const { return m_publicIpStatus; }
+  inline bool PublicIpStatusHasBeenSet() const { return m_publicIpStatusHasBeenSet; }
+  inline void SetPublicIpStatus(PublicIpStatus value) {
+    m_publicIpStatusHasBeenSet = true;
+    m_publicIpStatus = value;
+  }
+  inline CreateGlobalResolverRequest& WithPublicIpStatus(PublicIpStatus value) {
+    SetPublicIpStatus(value);
     return *this;
   }
   ///@}
@@ -183,6 +209,8 @@ class CreateGlobalResolverRequest : public Route53GlobalResolverRequest {
 
   GlobalResolverIpAddressType m_ipAddressType{GlobalResolverIpAddressType::NOT_SET};
 
+  PublicIpStatus m_publicIpStatus{PublicIpStatus::NOT_SET};
+
   Aws::String m_name;
 
   Aws::String m_observabilityRegion;
@@ -193,6 +221,7 @@ class CreateGlobalResolverRequest : public Route53GlobalResolverRequest {
   bool m_clientTokenHasBeenSet = true;
   bool m_descriptionHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
+  bool m_publicIpStatusHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_observabilityRegionHasBeenSet = false;
   bool m_regionsHasBeenSet = false;

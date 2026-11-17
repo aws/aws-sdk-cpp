@@ -66,6 +66,10 @@ GetDatasetResult& GetDatasetResult::operator=(const Aws::AmazonWebServiceResult<
     m_exampleCount = jsonValue.GetInt64("exampleCount");
     m_exampleCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("exampleCountByField")) {
+    m_exampleCountByField = jsonValue.GetObject("exampleCountByField");
+    m_exampleCountByFieldHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("downloadUrl")) {
     m_downloadUrl = jsonValue.GetString("downloadUrl");
     m_downloadUrlHasBeenSet = true;

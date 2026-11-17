@@ -99,7 +99,7 @@ class BaseConfigurationItem {
    * <p>ResourceDiscovered – The resource was newly discovered.</p> </li> <li>
    * <p>ResourceNotRecorded – The resource was discovered, but its configuration was
    * not recorded since the recorder doesn't record resources of this type.</p> </li>
-   * <li> <p>ResourceDeleted – The resource was deleted</p> </li> <li>
+   * <li> <p>ResourceDeleted ��� The resource was deleted</p> </li> <li>
    * <p>ResourceDeletedNotRecorded – The resource was deleted, but its configuration
    * was not recorded since the recorder doesn't record resources of this type.</p>
    * </li> </ul>

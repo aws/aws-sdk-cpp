@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-json-protocol "C++ SDK for the AWS json-protocol service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-json-protocol "C++ SDK for Sample Json 1.1 Protocol Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_JSON-PROTOCOL_HEADERS
     "include/aws/json-protocol/*.h"

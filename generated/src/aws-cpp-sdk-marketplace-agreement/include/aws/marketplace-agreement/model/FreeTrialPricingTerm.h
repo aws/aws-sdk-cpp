@@ -22,7 +22,7 @@ namespace AgreementService {
 namespace Model {
 
 /**
- * <p>Defines a short-term free pricing model where the buyers aren’t charged
+ * <p>Defines a short-term free pricing model where the buyers aren't charged
  * anything within a specified limit.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/FreeTrialPricingTerm">AWS
  * API Reference</a></p>

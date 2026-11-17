@@ -184,6 +184,26 @@ class MultipartUpload {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Version ID of the object.</p> <p>Returns the Version ID of the object for the
+   * multipart upload, if bucket versioning is enabled.</p>  <p>This
+   * functionality is not supported for directory buckets.</p>
+   */
+  inline const Aws::String& GetVersionId() const { return m_versionId; }
+  inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
+  template <typename VersionIdT = Aws::String>
+  void SetVersionId(VersionIdT&& value) {
+    m_versionIdHasBeenSet = true;
+    m_versionId = std::forward<VersionIdT>(value);
+  }
+  template <typename VersionIdT = Aws::String>
+  MultipartUpload& WithVersionId(VersionIdT&& value) {
+    SetVersionId(std::forward<VersionIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_uploadId;
 
@@ -200,6 +220,8 @@ class MultipartUpload {
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
 
   ChecksumType m_checksumType{ChecksumType::NOT_SET};
+
+  Aws::String m_versionId;
   bool m_uploadIdHasBeenSet = false;
   bool m_keyHasBeenSet = false;
   bool m_initiatedHasBeenSet = false;
@@ -208,6 +230,7 @@ class MultipartUpload {
   bool m_initiatorHasBeenSet = false;
   bool m_checksumAlgorithmHasBeenSet = false;
   bool m_checksumTypeHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
 };
 
 }  // namespace Model

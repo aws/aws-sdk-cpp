@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/SingleSelectQuestionAutomationRule.h>
 #include <aws/connect/model/SingleSelectQuestionRuleCategoryAutomation.h>
 
 #include <utility>
@@ -50,9 +51,31 @@ class EvaluationFormSingleSelectQuestionAutomationOption {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The automation option based on a condition for the single select question.
+   * Use with the <code>CONDITION</code> answer source type.</p>
+   */
+  inline const SingleSelectQuestionAutomationRule& GetAutomationRule() const { return m_automationRule; }
+  inline bool AutomationRuleHasBeenSet() const { return m_automationRuleHasBeenSet; }
+  template <typename AutomationRuleT = SingleSelectQuestionAutomationRule>
+  void SetAutomationRule(AutomationRuleT&& value) {
+    m_automationRuleHasBeenSet = true;
+    m_automationRule = std::forward<AutomationRuleT>(value);
+  }
+  template <typename AutomationRuleT = SingleSelectQuestionAutomationRule>
+  EvaluationFormSingleSelectQuestionAutomationOption& WithAutomationRule(AutomationRuleT&& value) {
+    SetAutomationRule(std::forward<AutomationRuleT>(value));
+    return *this;
+  }
+  ///@}
  private:
   SingleSelectQuestionRuleCategoryAutomation m_ruleCategory;
+
+  SingleSelectQuestionAutomationRule m_automationRule;
   bool m_ruleCategoryHasBeenSet = false;
+  bool m_automationRuleHasBeenSet = false;
 };
 
 }  // namespace Model

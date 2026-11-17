@@ -50,6 +50,10 @@ CreateGlobalResolverResult& CreateGlobalResolverResult::operator=(const Aws::Ama
     m_ipAddressType = GlobalResolverIpAddressTypeMapper::GetGlobalResolverIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
     m_ipAddressTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("publicIpStatus")) {
+    m_publicIpStatus = PublicIpStatusMapper::GetPublicIpStatusForName(jsonValue.GetString("publicIpStatus"));
+    m_publicIpStatusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ipv4Addresses")) {
     Aws::Utils::Array<JsonView> ipv4AddressesJsonList = jsonValue.GetArray("ipv4Addresses");
     for (unsigned ipv4AddressesIndex = 0; ipv4AddressesIndex < ipv4AddressesJsonList.GetLength(); ++ipv4AddressesIndex) {

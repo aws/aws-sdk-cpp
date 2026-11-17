@@ -50,8 +50,8 @@ class ListAccessSourcesResult {
 
   ///@{
   /**
-   * <p>An array containing information about the access sources, such as the ID,
-   * CIDR etc.</p>
+   * <p>An array containing information about the access sources, such as the ID and
+   * CIDR.</p>
    */
   inline const Aws::Vector<AccessSourcesItem>& GetAccessSources() const { return m_accessSources; }
   template <typename AccessSourcesT = Aws::Vector<AccessSourcesItem>>

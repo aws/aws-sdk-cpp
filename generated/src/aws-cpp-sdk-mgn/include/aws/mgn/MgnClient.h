@@ -322,6 +322,35 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a source action, which references a script in AWS Systems Manager
+   * Parameter Store that Application Migration Service runs on source
+   * environment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateRemoteSourceAction">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRemoteSourceActionOutcome CreateRemoteSourceAction(const Model::CreateRemoteSourceActionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRemoteSourceAction that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateRemoteSourceActionRequestT = Model::CreateRemoteSourceActionRequest>
+  Model::CreateRemoteSourceActionOutcomeCallable CreateRemoteSourceActionCallable(const CreateRemoteSourceActionRequestT& request) const {
+    return SubmitCallable(&MgnClient::CreateRemoteSourceAction, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRemoteSourceAction that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateRemoteSourceActionRequestT = Model::CreateRemoteSourceActionRequest>
+  void CreateRemoteSourceActionAsync(const CreateRemoteSourceActionRequestT& request,
+                                     const CreateRemoteSourceActionResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::CreateRemoteSourceAction, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new ReplicationConfigurationTemplate.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateReplicationConfigurationTemplate">AWS
    * API Reference</a></p>
@@ -509,6 +538,34 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
                                              const DeleteNetworkMigrationDefinitionResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&MgnClient::DeleteNetworkMigrationDefinition, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a source action. This operation also deletes the invocation results
+   * of the source action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteRemoteSourceAction">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRemoteSourceActionOutcome DeleteRemoteSourceAction(const Model::DeleteRemoteSourceActionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRemoteSourceAction that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteRemoteSourceActionRequestT = Model::DeleteRemoteSourceActionRequest>
+  Model::DeleteRemoteSourceActionOutcomeCallable DeleteRemoteSourceActionCallable(const DeleteRemoteSourceActionRequestT& request) const {
+    return SubmitCallable(&MgnClient::DeleteRemoteSourceAction, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRemoteSourceAction that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteRemoteSourceActionRequestT = Model::DeleteRemoteSourceActionRequest>
+  void DeleteRemoteSourceActionAsync(const DeleteRemoteSourceActionRequestT& request,
+                                     const DeleteRemoteSourceActionResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::DeleteRemoteSourceAction, request, handler, context);
   }
 
   /**
@@ -944,6 +1001,38 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
                                    const GetLaunchConfigurationResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&MgnClient::GetLaunchConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the launch configuration defaults of a source server: the Amazon Elastic
+   * Block Store (Amazon EBS) volume configuration used for the disk mappings created
+   * later in the source server's Amazon Elastic Compute Cloud (Amazon EC2) launch
+   * template.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetLaunchConfigurationDefaults">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetLaunchConfigurationDefaultsOutcome GetLaunchConfigurationDefaults(
+      const Model::GetLaunchConfigurationDefaultsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetLaunchConfigurationDefaults that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetLaunchConfigurationDefaultsRequestT = Model::GetLaunchConfigurationDefaultsRequest>
+  Model::GetLaunchConfigurationDefaultsOutcomeCallable GetLaunchConfigurationDefaultsCallable(
+      const GetLaunchConfigurationDefaultsRequestT& request) const {
+    return SubmitCallable(&MgnClient::GetLaunchConfigurationDefaults, request);
+  }
+
+  /**
+   * An Async wrapper for GetLaunchConfigurationDefaults that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetLaunchConfigurationDefaultsRequestT = Model::GetLaunchConfigurationDefaultsRequest>
+  void GetLaunchConfigurationDefaultsAsync(const GetLaunchConfigurationDefaultsRequestT& request,
+                                           const GetLaunchConfigurationDefaultsResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::GetLaunchConfigurationDefaults, request, handler, context);
   }
 
   /**
@@ -1522,6 +1611,36 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists network migration insights for a network migration
+   * definition.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationInsights">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkMigrationInsightsOutcome ListNetworkMigrationInsights(
+      const Model::ListNetworkMigrationInsightsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNetworkMigrationInsights that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListNetworkMigrationInsightsRequestT = Model::ListNetworkMigrationInsightsRequest>
+  Model::ListNetworkMigrationInsightsOutcomeCallable ListNetworkMigrationInsightsCallable(
+      const ListNetworkMigrationInsightsRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListNetworkMigrationInsights, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkMigrationInsights that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListNetworkMigrationInsightsRequestT = Model::ListNetworkMigrationInsightsRequest>
+  void ListNetworkMigrationInsightsAsync(const ListNetworkMigrationInsightsRequestT& request,
+                                         const ListNetworkMigrationInsightsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListNetworkMigrationInsights, request, handler, context);
+  }
+
+  /**
    * <p>Lists constructs within a mapper segment, representing individual
    * infrastructure components like VPCs, subnets, or security groups.</p><p><h3>See
    * Also:</h3>   <a
@@ -1641,6 +1760,124 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
                                          const ListNetworkMigrationMappingsResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&MgnClient::ListNetworkMigrationMappings, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the latest invocation result of each source action that ran on a source
+   * server.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListRemoteSourceActionInvocationResults">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRemoteSourceActionInvocationResultsOutcome ListRemoteSourceActionInvocationResults(
+      const Model::ListRemoteSourceActionInvocationResultsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRemoteSourceActionInvocationResults that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListRemoteSourceActionInvocationResultsRequestT = Model::ListRemoteSourceActionInvocationResultsRequest>
+  Model::ListRemoteSourceActionInvocationResultsOutcomeCallable ListRemoteSourceActionInvocationResultsCallable(
+      const ListRemoteSourceActionInvocationResultsRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListRemoteSourceActionInvocationResults, request);
+  }
+
+  /**
+   * An Async wrapper for ListRemoteSourceActionInvocationResults that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListRemoteSourceActionInvocationResultsRequestT = Model::ListRemoteSourceActionInvocationResultsRequest>
+  void ListRemoteSourceActionInvocationResultsAsync(const ListRemoteSourceActionInvocationResultsRequestT& request,
+                                                    const ListRemoteSourceActionInvocationResultsResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListRemoteSourceActionInvocationResults, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the invocations of a source action job, one for each source server and
+   * source action, with optional filtering.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListRemoteSourceActionInvocations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRemoteSourceActionInvocationsOutcome ListRemoteSourceActionInvocations(
+      const Model::ListRemoteSourceActionInvocationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRemoteSourceActionInvocations that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListRemoteSourceActionInvocationsRequestT = Model::ListRemoteSourceActionInvocationsRequest>
+  Model::ListRemoteSourceActionInvocationsOutcomeCallable ListRemoteSourceActionInvocationsCallable(
+      const ListRemoteSourceActionInvocationsRequestT& request) const {
+    return SubmitCallable(&MgnClient::ListRemoteSourceActionInvocations, request);
+  }
+
+  /**
+   * An Async wrapper for ListRemoteSourceActionInvocations that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListRemoteSourceActionInvocationsRequestT = Model::ListRemoteSourceActionInvocationsRequest>
+  void ListRemoteSourceActionInvocationsAsync(const ListRemoteSourceActionInvocationsRequestT& request,
+                                              const ListRemoteSourceActionInvocationsResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::ListRemoteSourceActionInvocations, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the source action jobs in the account, with optional
+   * filtering.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListRemoteSourceActionJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRemoteSourceActionJobsOutcome ListRemoteSourceActionJobs(
+      const Model::ListRemoteSourceActionJobsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRemoteSourceActionJobs that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListRemoteSourceActionJobsRequestT = Model::ListRemoteSourceActionJobsRequest>
+  Model::ListRemoteSourceActionJobsOutcomeCallable ListRemoteSourceActionJobsCallable(
+      const ListRemoteSourceActionJobsRequestT& request = {}) const {
+    return SubmitCallable(&MgnClient::ListRemoteSourceActionJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListRemoteSourceActionJobs that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListRemoteSourceActionJobsRequestT = Model::ListRemoteSourceActionJobsRequest>
+  void ListRemoteSourceActionJobsAsync(const ListRemoteSourceActionJobsResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                       const ListRemoteSourceActionJobsRequestT& request = {}) const {
+    return SubmitAsync(&MgnClient::ListRemoteSourceActionJobs, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the source actions in the account, with optional
+   * filtering.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListRemoteSourceActions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRemoteSourceActionsOutcome ListRemoteSourceActions(const Model::ListRemoteSourceActionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRemoteSourceActions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRemoteSourceActionsRequestT = Model::ListRemoteSourceActionsRequest>
+  Model::ListRemoteSourceActionsOutcomeCallable ListRemoteSourceActionsCallable(const ListRemoteSourceActionsRequestT& request = {}) const {
+    return SubmitCallable(&MgnClient::ListRemoteSourceActions, request);
+  }
+
+  /**
+   * An Async wrapper for ListRemoteSourceActions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListRemoteSourceActionsRequestT = Model::ListRemoteSourceActionsRequest>
+  void ListRemoteSourceActionsAsync(const ListRemoteSourceActionsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const ListRemoteSourceActionsRequestT& request = {}) const {
+    return SubmitAsync(&MgnClient::ListRemoteSourceActions, request, handler, context);
   }
 
   /**
@@ -2223,6 +2460,36 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Starts a job that runs a source action on source servers through a
+   * connector.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartRemoteSourceActionJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartRemoteSourceActionJobOutcome StartRemoteSourceActionJob(
+      const Model::StartRemoteSourceActionJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartRemoteSourceActionJob that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartRemoteSourceActionJobRequestT = Model::StartRemoteSourceActionJobRequest>
+  Model::StartRemoteSourceActionJobOutcomeCallable StartRemoteSourceActionJobCallable(
+      const StartRemoteSourceActionJobRequestT& request) const {
+    return SubmitCallable(&MgnClient::StartRemoteSourceActionJob, request);
+  }
+
+  /**
+   * An Async wrapper for StartRemoteSourceActionJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartRemoteSourceActionJobRequestT = Model::StartRemoteSourceActionJobRequest>
+  void StartRemoteSourceActionJobAsync(const StartRemoteSourceActionJobRequestT& request,
+                                       const StartRemoteSourceActionJobResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::StartRemoteSourceActionJob, request, handler, context);
+  }
+
+  /**
    * <p>Start replication for source server irrespective of its replication
    * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartReplication">AWS
@@ -2518,6 +2785,38 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Updates the launch configuration defaults of a source server. They apply only
+   * to disk mappings created later in the source server's Amazon Elastic Compute
+   * Cloud (Amazon EC2) launch template, and members you omit keep their current
+   * values.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationDefaults">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateLaunchConfigurationDefaultsOutcome UpdateLaunchConfigurationDefaults(
+      const Model::UpdateLaunchConfigurationDefaultsRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateLaunchConfigurationDefaults that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdateLaunchConfigurationDefaultsRequestT = Model::UpdateLaunchConfigurationDefaultsRequest>
+  Model::UpdateLaunchConfigurationDefaultsOutcomeCallable UpdateLaunchConfigurationDefaultsCallable(
+      const UpdateLaunchConfigurationDefaultsRequestT& request) const {
+    return SubmitCallable(&MgnClient::UpdateLaunchConfigurationDefaults, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateLaunchConfigurationDefaults that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateLaunchConfigurationDefaultsRequestT = Model::UpdateLaunchConfigurationDefaultsRequest>
+  void UpdateLaunchConfigurationDefaultsAsync(const UpdateLaunchConfigurationDefaultsRequestT& request,
+                                              const UpdateLaunchConfigurationDefaultsResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::UpdateLaunchConfigurationDefaults, request, handler, context);
+  }
+
+  /**
    * <p>Updates an existing Launch Configuration Template by ID.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationTemplate">AWS
@@ -2605,6 +2904,33 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
                                                 const UpdateNetworkMigrationMapperSegmentResponseReceivedHandler& handler,
                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&MgnClient::UpdateNetworkMigrationMapperSegment, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a source action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateRemoteSourceAction">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRemoteSourceActionOutcome UpdateRemoteSourceAction(const Model::UpdateRemoteSourceActionRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRemoteSourceAction that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateRemoteSourceActionRequestT = Model::UpdateRemoteSourceActionRequest>
+  Model::UpdateRemoteSourceActionOutcomeCallable UpdateRemoteSourceActionCallable(const UpdateRemoteSourceActionRequestT& request) const {
+    return SubmitCallable(&MgnClient::UpdateRemoteSourceAction, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRemoteSourceAction that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateRemoteSourceActionRequestT = Model::UpdateRemoteSourceActionRequest>
+  void UpdateRemoteSourceActionAsync(const UpdateRemoteSourceActionRequestT& request,
+                                     const UpdateRemoteSourceActionResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MgnClient::UpdateRemoteSourceAction, request, handler, context);
   }
 
   /**

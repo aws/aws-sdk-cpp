@@ -10,6 +10,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/CacheUsageLimits.h>
 #include <aws/elasticache/model/ConnectionType.h>
+#include <aws/elasticache/model/IntegrationRequest.h>
 #include <aws/elasticache/model/NetworkType.h>
 #include <aws/elasticache/model/Tag.h>
 
@@ -354,6 +355,33 @@ class CreateServerlessCacheRequest : public ElastiCacheRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Which serverless cache integrations to enable. Valid values are:</p> <ul>
+   * <li> <p> <code>dynamodb</code> – DynamoDB integration.</p> </li> </ul>
+   * <p>DynamoDB integration requires the Valkey engine with a major engine version
+   * of 9 or above. If not specified, no integrations are enabled.</p>
+   */
+  inline const Aws::Vector<IntegrationRequest>& GetIntegrations() const { return m_integrations; }
+  inline bool IntegrationsHasBeenSet() const { return m_integrationsHasBeenSet; }
+  template <typename IntegrationsT = Aws::Vector<IntegrationRequest>>
+  void SetIntegrations(IntegrationsT&& value) {
+    m_integrationsHasBeenSet = true;
+    m_integrations = std::forward<IntegrationsT>(value);
+  }
+  template <typename IntegrationsT = Aws::Vector<IntegrationRequest>>
+  CreateServerlessCacheRequest& WithIntegrations(IntegrationsT&& value) {
+    SetIntegrations(std::forward<IntegrationsT>(value));
+    return *this;
+  }
+  template <typename IntegrationsT = IntegrationRequest>
+  CreateServerlessCacheRequest& AddIntegrations(IntegrationsT&& value) {
+    m_integrationsHasBeenSet = true;
+    m_integrations.emplace_back(std::forward<IntegrationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serverlessCacheName;
 
@@ -384,6 +412,8 @@ class CreateServerlessCacheRequest : public ElastiCacheRequest {
   NetworkType m_networkType{NetworkType::NOT_SET};
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
+
+  Aws::Vector<IntegrationRequest> m_integrations;
   bool m_serverlessCacheNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_engineHasBeenSet = false;
@@ -399,6 +429,7 @@ class CreateServerlessCacheRequest : public ElastiCacheRequest {
   bool m_dailySnapshotTimeHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
   bool m_connectionTypeHasBeenSet = false;
+  bool m_integrationsHasBeenSet = false;
 };
 
 }  // namespace Model

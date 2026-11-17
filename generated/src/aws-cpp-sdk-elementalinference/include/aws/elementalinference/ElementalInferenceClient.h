@@ -184,6 +184,121 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   }
 
   /**
+   * <p>Creates a function. A function analyzes a feed by building a request from the
+   * feed's media and metadata, optionally sending that request to an Amazon Bedrock
+   * model in your account, and publishing the result to the feed's metadata
+   * timeline. </p> <p>A function runs only after you attach it to a feed as a
+   * function output. For more information, see <a
+   * href="https://docs.aws.amazon.com/elemental-inference/latest/userguide/functions.html">Using
+   * functions</a> in the <i>AWS Elemental Inference User Guide</i>. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateFunction">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateFunctionOutcome CreateFunction(const Model::CreateFunctionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateFunction that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateFunctionRequestT = Model::CreateFunctionRequest>
+  Model::CreateFunctionOutcomeCallable CreateFunctionCallable(const CreateFunctionRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::CreateFunction, request);
+  }
+
+  /**
+   * An Async wrapper for CreateFunction that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateFunctionRequestT = Model::CreateFunctionRequest>
+  void CreateFunctionAsync(const CreateFunctionRequestT& request, const CreateFunctionResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::CreateFunction, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a question set. Use a question set to get answers about content
+   * that's specific to your business, in addition to the built-in contextual
+   * metadata classifications. A question set contains your own questions. You ask
+   * Elemental Inference these questions about each shot or scene of the media in a
+   * contextual metadata output, and Elemental Inference answers each question with
+   * scores. To use a question set, reference it in the customQuestions property of
+   * the contextual metadata configuration of a feed output. </p>
+   * <p>CreateQuestionSet creates the question set with a DRAFT version that contains
+   * the questions in the request. To change DRAFT, use UpdateQuestionSet. To publish
+   * DRAFT as a numbered version, use CreateQuestionSetVersion. You can't change a
+   * published version. </p> <p>A question set can contain the following types of
+   * questions. You must specify at least one question. </p> <ul> <li> <p>yesNo –
+   * Elemental Inference answers yes or no.</p> </li> <li> <p>yesNoPerOption –
+   * Elemental Inference answers yes or no for each option.</p> </li> <li>
+   * <p>chooseOne – Elemental Inference chooses one of the options.</p> </li> </ul>
+   * <p>A version can contain up to 100 scored items, where each yesNo question, each
+   * option of a yesNoPerOption question, and each chooseOne question counts as one
+   * item. The name of each question must be unique across all three types.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateQuestionSet">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateQuestionSetOutcome CreateQuestionSet(const Model::CreateQuestionSetRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateQuestionSet that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateQuestionSetRequestT = Model::CreateQuestionSetRequest>
+  Model::CreateQuestionSetOutcomeCallable CreateQuestionSetCallable(const CreateQuestionSetRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::CreateQuestionSet, request);
+  }
+
+  /**
+   * An Async wrapper for CreateQuestionSet that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateQuestionSetRequestT = Model::CreateQuestionSetRequest>
+  void CreateQuestionSetAsync(const CreateQuestionSetRequestT& request, const CreateQuestionSetResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::CreateQuestionSet, request, handler, context);
+  }
+
+  /**
+   * <p>Publishes the DRAFT version of the specified question set as a new version.
+   * The new version has the same name and questions as DRAFT, and you can't change
+   * it. DRAFT doesn't change, so you can continue to update it. </p> <p>Version
+   * numbers start at 1, and each new version has the next number. Elemental
+   * Inference never reuses a version number, even after you delete that version.
+   * </p> <p>If DRAFT hasn't changed since the latest published version, Elemental
+   * Inference doesn't create a version. Instead, it returns the latest version. A
+   * change to the name of the question set counts as a change to DRAFT. </p> <p>A
+   * question set can have a limited number of versions. If the question set already
+   * has the maximum number of versions, Elemental Inference returns
+   * ServiceQuotaExceededException. To free space for a new version, delete a version
+   * that you no longer need, or create a new question set. </p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateQuestionSetVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateQuestionSetVersionOutcome CreateQuestionSetVersion(const Model::CreateQuestionSetVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateQuestionSetVersion that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateQuestionSetVersionRequestT = Model::CreateQuestionSetVersionRequest>
+  Model::CreateQuestionSetVersionOutcomeCallable CreateQuestionSetVersionCallable(const CreateQuestionSetVersionRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::CreateQuestionSetVersion, request);
+  }
+
+  /**
+   * An Async wrapper for CreateQuestionSetVersion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateQuestionSetVersionRequestT = Model::CreateQuestionSetVersionRequest>
+  void CreateQuestionSetVersionAsync(const CreateQuestionSetVersionRequestT& request,
+                                     const CreateQuestionSetVersionResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::CreateQuestionSetVersion, request, handler, context);
+  }
+
+  /**
    * <p>Creates a schedule action on a feed. A schedule action applies configuration
    * changes to the feed at a time that you specify, in the same way as an UpdateFeed
    * request. </p> <p>Elemental Inference validates the targets of the action when
@@ -295,6 +410,99 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   void DeleteFeedPolicyAsync(const DeleteFeedPolicyRequestT& request, const DeleteFeedPolicyResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ElementalInferenceClient::DeleteFeedPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a function. If any feed still references the function, the operation
+   * returns a ConflictException. A disabled function output still references the
+   * function. Use GetFunction to find those feeds, then remove the function output
+   * from each one with UpdateFeed, or delete the feed, before retrying. </p>
+   * <p>Deleting a function doesn't delete the metadata that it has already
+   * produced.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteFunction">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteFunctionOutcome DeleteFunction(const Model::DeleteFunctionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteFunction that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteFunctionRequestT = Model::DeleteFunctionRequest>
+  Model::DeleteFunctionOutcomeCallable DeleteFunctionCallable(const DeleteFunctionRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::DeleteFunction, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteFunction that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteFunctionRequestT = Model::DeleteFunctionRequest>
+  void DeleteFunctionAsync(const DeleteFunctionRequestT& request, const DeleteFunctionResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::DeleteFunction, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified question set, including its DRAFT version and all its
+   * published versions. You can't delete a question set while any feed references
+   * any of its versions, including an archived feed. You must first remove the
+   * question set from the customQuestions configuration of each feed output that
+   * references it, or delete those feeds. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteQuestionSet">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteQuestionSetOutcome DeleteQuestionSet(const Model::DeleteQuestionSetRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteQuestionSet that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteQuestionSetRequestT = Model::DeleteQuestionSetRequest>
+  Model::DeleteQuestionSetOutcomeCallable DeleteQuestionSetCallable(const DeleteQuestionSetRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::DeleteQuestionSet, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteQuestionSet that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteQuestionSetRequestT = Model::DeleteQuestionSetRequest>
+  void DeleteQuestionSetAsync(const DeleteQuestionSetRequestT& request, const DeleteQuestionSetResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::DeleteQuestionSet, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a published version of the specified question set. You can't delete a
+   * version while a feed references it, including an archived feed. You can't
+   * restore a deleted version, and Elemental Inference doesn't reuse its number.
+   * </p> <p>You can't delete the DRAFT version on its own. To delete DRAFT, delete
+   * the question set by using DeleteQuestionSet. </p> <p>Deleting a version doesn't
+   * change the latestVersion of the question set, even if you delete the highest
+   * version. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteQuestionSetVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteQuestionSetVersionOutcome DeleteQuestionSetVersion(const Model::DeleteQuestionSetVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteQuestionSetVersion that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteQuestionSetVersionRequestT = Model::DeleteQuestionSetVersionRequest>
+  Model::DeleteQuestionSetVersionOutcomeCallable DeleteQuestionSetVersionCallable(const DeleteQuestionSetVersionRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::DeleteQuestionSetVersion, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteQuestionSetVersion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteQuestionSetVersionRequestT = Model::DeleteQuestionSetVersionRequest>
+  void DeleteQuestionSetVersionAsync(const DeleteQuestionSetVersionRequestT& request,
+                                     const DeleteQuestionSetVersionResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::DeleteQuestionSetVersion, request, handler, context);
   }
 
   /**
@@ -487,6 +695,60 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   }
 
   /**
+   * <p>Retrieves the details of a function, including its expressions, the media
+   * context that Elemental Inference derived from the request expression, and the
+   * feeds that currently reference it. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetFunction">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetFunctionOutcome GetFunction(const Model::GetFunctionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetFunction that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetFunctionRequestT = Model::GetFunctionRequest>
+  Model::GetFunctionOutcomeCallable GetFunctionCallable(const GetFunctionRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::GetFunction, request);
+  }
+
+  /**
+   * An Async wrapper for GetFunction that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetFunctionRequestT = Model::GetFunctionRequest>
+  void GetFunctionAsync(const GetFunctionRequestT& request, const GetFunctionResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::GetFunction, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about the specified question set at one version. By
+   * default, GetQuestionSet returns the DRAFT version. To retrieve a published
+   * version, specify questionSetVersion. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetQuestionSet">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetQuestionSetOutcome GetQuestionSet(const Model::GetQuestionSetRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetQuestionSet that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetQuestionSetRequestT = Model::GetQuestionSetRequest>
+  Model::GetQuestionSetOutcomeCallable GetQuestionSetCallable(const GetQuestionSetRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::GetQuestionSet, request);
+  }
+
+  /**
+   * An Async wrapper for GetQuestionSet that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetQuestionSetRequestT = Model::GetQuestionSetRequest>
+  void GetQuestionSetAsync(const GetQuestionSetRequestT& request, const GetQuestionSetResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::GetQuestionSet, request, handler, context);
+  }
+
+  /**
    * <p>Lists the dictionaries in your account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListDictionaries">AWS
    * API Reference</a></p>
@@ -538,6 +800,94 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                       const ListFeedsRequestT& request = {}) const {
     return SubmitAsync(&ElementalInferenceClient::ListFeeds, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the functions in this account, in this Region. Each entry is a summary.
+   * To get the expressions of a function, use GetFunction. </p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListFunctions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListFunctionsOutcome ListFunctions(const Model::ListFunctionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListFunctions that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListFunctionsRequestT = Model::ListFunctionsRequest>
+  Model::ListFunctionsOutcomeCallable ListFunctionsCallable(const ListFunctionsRequestT& request = {}) const {
+    return SubmitCallable(&ElementalInferenceClient::ListFunctions, request);
+  }
+
+  /**
+   * An Async wrapper for ListFunctions that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListFunctionsRequestT = Model::ListFunctionsRequest>
+  void ListFunctionsAsync(const ListFunctionsResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                          const ListFunctionsRequestT& request = {}) const {
+    return SubmitAsync(&ElementalInferenceClient::ListFunctions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the versions of the specified question set. The list starts with the
+   * DRAFT version, followed by the published versions from the highest version
+   * number to the lowest. The list doesn't include deleted versions. </p> <p>The
+   * response doesn't include the questions in each version. To retrieve them, use
+   * GetQuestionSet and specify questionSetVersion. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListQuestionSetVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListQuestionSetVersionsOutcome ListQuestionSetVersions(const Model::ListQuestionSetVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListQuestionSetVersions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListQuestionSetVersionsRequestT = Model::ListQuestionSetVersionsRequest>
+  Model::ListQuestionSetVersionsOutcomeCallable ListQuestionSetVersionsCallable(const ListQuestionSetVersionsRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::ListQuestionSetVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListQuestionSetVersions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListQuestionSetVersionsRequestT = Model::ListQuestionSetVersionsRequest>
+  void ListQuestionSetVersionsAsync(const ListQuestionSetVersionsRequestT& request,
+                                    const ListQuestionSetVersionsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::ListQuestionSetVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the question sets in your account. The response doesn't include the
+   * questions in each question set. To retrieve them, use GetQuestionSet.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListQuestionSets">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListQuestionSetsOutcome ListQuestionSets(const Model::ListQuestionSetsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListQuestionSets that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListQuestionSetsRequestT = Model::ListQuestionSetsRequest>
+  Model::ListQuestionSetsOutcomeCallable ListQuestionSetsCallable(const ListQuestionSetsRequestT& request = {}) const {
+    return SubmitCallable(&ElementalInferenceClient::ListQuestionSets, request);
+  }
+
+  /**
+   * An Async wrapper for ListQuestionSets that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListQuestionSetsRequestT = Model::ListQuestionSetsRequest>
+  void ListQuestionSetsAsync(const ListQuestionSetsResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                             const ListQuestionSetsRequestT& request = {}) const {
+    return SubmitAsync(&ElementalInferenceClient::ListQuestionSets, request, handler, context);
   }
 
   /**
@@ -765,6 +1115,76 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   void UpdateFeedAsync(const UpdateFeedRequestT& request, const UpdateFeedResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ElementalInferenceClient::UpdateFeed, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a function. Include only the parameters that you want to change;
+   * parameters that you don't include aren't affected. Elemental Inference validates
+   * the updated expressions in the same way as CreateFunction. </p> <p>While a feed
+   * references the function, you can change only its expressions and its
+   * description, and you can set eventBridgeDelivery to DISABLED but not to ENABLED.
+   * The request expression must keep referencing the same media context, as reported
+   * in contextTypes. Changing an expression changes the behavior of every feed that
+   * references the function. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/UpdateFunction">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateFunctionOutcome UpdateFunction(const Model::UpdateFunctionRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateFunction that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateFunctionRequestT = Model::UpdateFunctionRequest>
+  Model::UpdateFunctionOutcomeCallable UpdateFunctionCallable(const UpdateFunctionRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::UpdateFunction, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateFunction that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateFunctionRequestT = Model::UpdateFunctionRequest>
+  void UpdateFunctionAsync(const UpdateFunctionRequestT& request, const UpdateFunctionResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::UpdateFunction, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the DRAFT version of the specified question set. UpdateQuestionSet
+   * doesn't create a version and doesn't change published versions. To publish the
+   * updated DRAFT as a new version, use CreateQuestionSetVersion. </p>
+   * <p>UpdateQuestionSet replaces questions one type at a time. For each of yesNo,
+   * yesNoPerOption, and chooseOne: if you omit the array, DRAFT keeps its questions
+   * of that type. If you include the array, it replaces all the questions of that
+   * type in DRAFT. If you include an empty array, DRAFT no longer has questions of
+   * that type. The updated DRAFT must follow the same rules as in CreateQuestionSet,
+   * and Elemental Inference applies those rules to the questions that DRAFT keeps as
+   * well as to the questions in the request. </p> <p>Feeds that reference the DRAFT
+   * version use the updated questions. To make sure that the questions for a feed
+   * don't change, reference a published version instead. </p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/UpdateQuestionSet">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateQuestionSetOutcome UpdateQuestionSet(const Model::UpdateQuestionSetRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateQuestionSet that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateQuestionSetRequestT = Model::UpdateQuestionSetRequest>
+  Model::UpdateQuestionSetOutcomeCallable UpdateQuestionSetCallable(const UpdateQuestionSetRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::UpdateQuestionSet, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateQuestionSet that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateQuestionSetRequestT = Model::UpdateQuestionSetRequest>
+  void UpdateQuestionSetAsync(const UpdateQuestionSetRequestT& request, const UpdateQuestionSetResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::UpdateQuestionSet, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

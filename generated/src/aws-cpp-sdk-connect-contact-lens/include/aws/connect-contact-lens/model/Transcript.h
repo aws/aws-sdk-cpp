@@ -177,6 +177,25 @@ class Transcript {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The language code detected for this piece of transcript, for example,
+   * <code>en-US</code>.</p>
+   */
+  inline const Aws::String& GetLanguageCode() const { return m_languageCode; }
+  inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+  template <typename LanguageCodeT = Aws::String>
+  void SetLanguageCode(LanguageCodeT&& value) {
+    m_languageCodeHasBeenSet = true;
+    m_languageCode = std::forward<LanguageCodeT>(value);
+  }
+  template <typename LanguageCodeT = Aws::String>
+  Transcript& WithLanguageCode(LanguageCodeT&& value) {
+    SetLanguageCode(std::forward<LanguageCodeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -193,6 +212,8 @@ class Transcript {
   SentimentValue m_sentiment{SentimentValue::NOT_SET};
 
   Aws::Vector<IssueDetected> m_issuesDetected;
+
+  Aws::String m_languageCode;
   bool m_idHasBeenSet = false;
   bool m_participantIdHasBeenSet = false;
   bool m_participantRoleHasBeenSet = false;
@@ -201,6 +222,7 @@ class Transcript {
   bool m_endOffsetMillisHasBeenSet = false;
   bool m_sentimentHasBeenSet = false;
   bool m_issuesDetectedHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -100,6 +100,11 @@ Aws::String UpdateReplicationConfigurationTemplateRequest::SerializePayload() co
     payload.WithBool("storeSnapshotOnLocalZone", m_storeSnapshotOnLocalZone);
   }
 
+  if (m_outpostSnapshotLocationHasBeenSet) {
+    payload.WithString("outpostSnapshotLocation",
+                       OutpostSnapshotLocationMapper::GetNameForOutpostSnapshotLocation(m_outpostSnapshotLocation));
+  }
+
   if (m_storageConfigurationHasBeenSet) {
     payload.WithObject("storageConfiguration", m_storageConfiguration.Jsonize());
   }

@@ -82,9 +82,9 @@ class PatchOperation {
   ///@{
   /**
    * <p>The new target value of the update operation. It is applicable for the add or
-   * replace operation. When using AWS CLI to update a property of a JSON value,
-   * enclose the JSON object with a pair of single quotes in a Linux shell, e.g.,
-   * '{"a": ...}'.</p>
+   * replace operation. When using CLI to update a property of a JSON value, enclose
+   * the JSON object with a pair of single quotes in a Linux shell, e.g., '{"a":
+   * ...}'.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

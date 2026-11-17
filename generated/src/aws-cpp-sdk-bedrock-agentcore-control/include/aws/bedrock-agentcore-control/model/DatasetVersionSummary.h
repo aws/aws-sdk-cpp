@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/ExampleCountByField.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -69,6 +70,25 @@ class DatasetVersionSummary {
 
   ///@{
   /**
+   * <p> The number of examples that have each field, for this version. Absent when
+   * the counts are unknown. </p>
+   */
+  inline const ExampleCountByField& GetExampleCountByField() const { return m_exampleCountByField; }
+  inline bool ExampleCountByFieldHasBeenSet() const { return m_exampleCountByFieldHasBeenSet; }
+  template <typename ExampleCountByFieldT = ExampleCountByField>
+  void SetExampleCountByField(ExampleCountByFieldT&& value) {
+    m_exampleCountByFieldHasBeenSet = true;
+    m_exampleCountByField = std::forward<ExampleCountByFieldT>(value);
+  }
+  template <typename ExampleCountByFieldT = ExampleCountByField>
+  DatasetVersionSummary& WithExampleCountByField(ExampleCountByFieldT&& value) {
+    SetExampleCountByField(std::forward<ExampleCountByFieldT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The timestamp when this version was published. </p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -89,9 +109,12 @@ class DatasetVersionSummary {
 
   long long m_exampleCount{0};
 
+  ExampleCountByField m_exampleCountByField;
+
   Aws::Utils::DateTime m_createdAt{};
   bool m_datasetVersionHasBeenSet = false;
   bool m_exampleCountHasBeenSet = false;
+  bool m_exampleCountByFieldHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

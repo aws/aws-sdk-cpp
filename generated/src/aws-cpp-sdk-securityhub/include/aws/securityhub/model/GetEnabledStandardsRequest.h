@@ -97,7 +97,8 @@ class GetEnabledStandardsRequest : public SecurityHubRequest {
   /**
    * <p>A list of cloud providers to filter the enabled standards by. For example,
    * specify <code>Azure</code> to return only enabled standards that evaluate Azure
-   * resources.</p>
+   * resources, or <code>GCP</code> to return only enabled standards that evaluate
+   * GCP resources.</p>
    */
   inline const Aws::Vector<StandardsProvider>& GetProviders() const { return m_providers; }
   inline bool ProvidersHasBeenSet() const { return m_providersHasBeenSet; }

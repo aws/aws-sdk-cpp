@@ -8,6 +8,7 @@
 #include <aws/route53globalresolver/Route53GlobalResolverClient.h>
 #include <aws/route53globalresolver/model/ListAccessSourcesPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListAccessTokensPaginationTraits.h>
+#include <aws/route53globalresolver/model/ListCoreNetworkEndpointsPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListDNSViewsPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListFirewallDomainListsPaginationTraits.h>
 #include <aws/route53globalresolver/model/ListFirewallDomainsPaginationTraits.h>
@@ -26,6 +27,9 @@ using ListAccessSourcesPaginator =
 using ListAccessTokensPaginator =
     Aws::Utils::Pagination::Paginator<Route53GlobalResolverClient, Model::ListAccessTokensRequest,
                                       Pagination::ListAccessTokensPaginationTraits<Route53GlobalResolverClient>>;
+using ListCoreNetworkEndpointsPaginator =
+    Aws::Utils::Pagination::Paginator<Route53GlobalResolverClient, Model::ListCoreNetworkEndpointsRequest,
+                                      Pagination::ListCoreNetworkEndpointsPaginationTraits<Route53GlobalResolverClient>>;
 using ListDNSViewsPaginator = Aws::Utils::Pagination::Paginator<Route53GlobalResolverClient, Model::ListDNSViewsRequest,
                                                                 Pagination::ListDNSViewsPaginationTraits<Route53GlobalResolverClient>>;
 using ListFirewallDomainListsPaginator =

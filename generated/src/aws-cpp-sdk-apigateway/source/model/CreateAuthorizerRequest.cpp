@@ -55,5 +55,9 @@ Aws::String CreateAuthorizerRequest::SerializePayload() const {
     payload.WithInteger("authorizerResultTtlInSeconds", m_authorizerResultTtlInSeconds);
   }
 
+  if (m_jwtConfigurationHasBeenSet) {
+    payload.WithObject("jwtConfiguration", m_jwtConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

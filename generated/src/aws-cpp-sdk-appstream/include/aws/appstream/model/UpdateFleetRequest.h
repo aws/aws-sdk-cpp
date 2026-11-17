@@ -127,7 +127,11 @@ class UpdateFleetRequest : public AppStreamRequest {
    * </li> <li> <p>stream.graphics.g6f.large</p> </li> <li>
    * <p>stream.graphics.g6f.xlarge</p> </li> <li> <p>stream.graphics.g6f.2xlarge</p>
    * </li> <li> <p>stream.graphics.g6f.4xlarge</p> </li> <li>
-   * <p>stream.graphics.gr6f.4xlarge</p> </li> </ul> <p>The following instance types
+   * <p>stream.graphics.gr6f.4xlarge</p> </li> <li> <p>stream.graphics.g7.2xlarge</p>
+   * </li> <li> <p>stream.graphics.g7.4xlarge</p> </li> <li>
+   * <p>stream.graphics.g7.8xlarge</p> </li> <li> <p>stream.graphics.g7.12xlarge</p>
+   * </li> <li> <p>stream.graphics.g7.24xlarge</p> </li> <li>
+   * <p>stream.graphics.g7.48xlarge</p> </li> </ul> <p>The following instance types
    * are available for Elastic fleets:</p> <ul> <li> <p>stream.standard.small</p>
    * </li> <li> <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p>
    * </li> <li> <p>stream.standard.xlarge</p> </li> <li>

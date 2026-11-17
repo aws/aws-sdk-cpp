@@ -32,6 +32,19 @@ CreateTransitGatewayPeeringAttachmentRequestOptions& CreateTransitGatewayPeering
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dynamicRoutingNode.GetText()).c_str()));
       m_dynamicRoutingHasBeenSet = true;
     }
+    XmlNode allowMultipathResilienceNode = resultNode.FirstChild("AllowMultipathResilience");
+    if (!allowMultipathResilienceNode.IsNull()) {
+      m_allowMultipathResilience = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowMultipathResilienceNode.GetText()).c_str()).c_str());
+      m_allowMultipathResilienceHasBeenSet = true;
+    }
+    XmlNode multipathResilienceModeNode = resultNode.FirstChild("MultipathResilienceMode");
+    if (!multipathResilienceModeNode.IsNull()) {
+      m_multipathResilienceMode =
+          TransitGatewayPeeringAttachmentMultipathResilienceModeMapper::GetTransitGatewayPeeringAttachmentMultipathResilienceModeForName(
+              StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multipathResilienceModeNode.GetText()).c_str()));
+      m_multipathResilienceModeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -44,12 +57,32 @@ void CreateTransitGatewayPeeringAttachmentRequestOptions::OutputToStream(Aws::OS
             << ".DynamicRouting=" << StringUtils::URLEncode(DynamicRoutingValueMapper::GetNameForDynamicRoutingValue(m_dynamicRouting))
             << "&";
   }
+
+  if (m_allowMultipathResilienceHasBeenSet) {
+    oStream << location << index << locationValue << ".AllowMultipathResilience=" << std::boolalpha << m_allowMultipathResilience << "&";
+  }
+
+  if (m_multipathResilienceModeHasBeenSet) {
+    oStream << location << index << locationValue << ".MultipathResilienceMode="
+            << StringUtils::URLEncode(TransitGatewayPeeringAttachmentMultipathResilienceModeMapper::
+                                          GetNameForTransitGatewayPeeringAttachmentMultipathResilienceMode(m_multipathResilienceMode))
+            << "&";
+  }
 }
 
 void CreateTransitGatewayPeeringAttachmentRequestOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
   if (m_dynamicRoutingHasBeenSet) {
     oStream << location
             << ".DynamicRouting=" << StringUtils::URLEncode(DynamicRoutingValueMapper::GetNameForDynamicRoutingValue(m_dynamicRouting))
+            << "&";
+  }
+  if (m_allowMultipathResilienceHasBeenSet) {
+    oStream << location << ".AllowMultipathResilience=" << std::boolalpha << m_allowMultipathResilience << "&";
+  }
+  if (m_multipathResilienceModeHasBeenSet) {
+    oStream << location << ".MultipathResilienceMode="
+            << StringUtils::URLEncode(TransitGatewayPeeringAttachmentMultipathResilienceModeMapper::
+                                          GetNameForTransitGatewayPeeringAttachmentMultipathResilienceMode(m_multipathResilienceMode))
             << "&";
   }
 }
