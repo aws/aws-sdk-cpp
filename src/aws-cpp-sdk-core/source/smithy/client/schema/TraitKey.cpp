@@ -2,6 +2,7 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+#include <smithy/client/schema/HttpTraits.h>
 #include <smithy/client/schema/JsonTraits.h>
 #include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/TraitKey.h>
@@ -31,6 +32,7 @@ const TraitKey<T>& TraitKey<T>::Instance() {
 template class SMITHY_TEMPLATE_EXPORT TraitKey<JsonNameTrait>;
 template class SMITHY_TEMPLATE_EXPORT TraitKey<TimestampFormatTrait>;
 template class SMITHY_TEMPLATE_EXPORT TraitKey<Ec2QueryNameTrait>;
+template class SMITHY_TEMPLATE_EXPORT TraitKey<SparseTrait>;
 template class SMITHY_TEMPLATE_EXPORT TraitKey<XmlNameTrait>;
 template class SMITHY_TEMPLATE_EXPORT TraitKey<XmlFlattenedTrait>;
 template class SMITHY_TEMPLATE_EXPORT TraitKey<XmlAttributeTrait>;
@@ -39,6 +41,15 @@ template class SMITHY_TEMPLATE_EXPORT TraitKey<XmlListItemNameTrait>;
 template class SMITHY_TEMPLATE_EXPORT TraitKey<XmlMapEntryNameTrait>;
 template class SMITHY_TEMPLATE_EXPORT TraitKey<XmlMapKeyNameTrait>;
 template class SMITHY_TEMPLATE_EXPORT TraitKey<XmlMapValueNameTrait>;
+template class SMITHY_TEMPLATE_EXPORT TraitKey<HttpHeaderTrait>;
+template class SMITHY_TEMPLATE_EXPORT TraitKey<HttpPrefixHeadersTrait>;
+template class SMITHY_TEMPLATE_EXPORT TraitKey<HttpQueryTrait>;
+template class SMITHY_TEMPLATE_EXPORT TraitKey<HttpQueryParamsTrait>;
+template class SMITHY_TEMPLATE_EXPORT TraitKey<HttpLabelTrait>;
+template class SMITHY_TEMPLATE_EXPORT TraitKey<HttpPayloadTrait>;
+template class SMITHY_TEMPLATE_EXPORT TraitKey<HttpResponseCodeTrait>;
+template class SMITHY_TEMPLATE_EXPORT TraitKey<HostLabelTrait>;
+template class SMITHY_TEMPLATE_EXPORT TraitKey<MediaTypeTrait>;
 
 }  // namespace schema
 }  // namespace smithy

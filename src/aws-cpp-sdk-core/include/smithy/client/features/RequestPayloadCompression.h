@@ -27,10 +27,21 @@ namespace smithy
                                                           const Aws::Client::CompressionAlgorithm& compressionAlgorithm,
                                                           const std::shared_ptr<Aws::Http::HttpClient>& httpClient)
             {
+                AddCompressedContentBodyToRequest(pRequest, pRequest->GetBody(), httpRequest, compressionAlgorithm, httpClient);
+            }
+
+            // Compresses an already-built body (e.g. one produced by a schema-serde ClientProtocol)
+            // instead of the request's own GetBody().
+            static void AddCompressedContentBodyToRequest(const Aws::AmazonWebServiceRequest* pRequest,
+                                                          const std::shared_ptr<Aws::IOStream>& body,
+                                                          const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
+                                                          const Aws::Client::CompressionAlgorithm& compressionAlgorithm,
+                                                          const std::shared_ptr<Aws::Http::HttpClient>& httpClient)
+            {
                 if (Aws::Client::CompressionAlgorithm::NONE != compressionAlgorithm)
                 {
                     Aws::Client::RequestCompression rc;
-                    auto compressOutcome = rc.compress(pRequest->GetBody(), compressionAlgorithm);
+                    auto compressOutcome = rc.compress(body, compressionAlgorithm);
 
                     if (compressOutcome.IsSuccess())
                     {
@@ -50,7 +61,7 @@ namespace smithy
                         AWS_LOGSTREAM_ERROR(AWS_CLIENT_REQUEST_COMPRESSION_LOG_TAG,
                                             "Failed to compress request, submitting uncompressed");
                         Utils::AddContentBodyToRequest(httpRequest,
-                                                       pRequest->GetBody(),
+                                                       body,
                                                        httpClient,
                                                        pRequest->ShouldComputeContentMd5(),
                                                        pRequest->IsStreaming() && pRequest->IsChunked() && httpClient->

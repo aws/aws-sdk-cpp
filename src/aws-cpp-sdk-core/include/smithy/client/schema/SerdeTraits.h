@@ -38,8 +38,18 @@ class Ec2QueryNameTrait : public Trait {
   Aws::String m_value;
 };
 
+/**
+ * {@code @sparse} on a list / map member: null elements / values are delivered to the consumer (which
+ * stores an empty {@code Aws::Crt::Optional}) instead of being skipped.
+ */
+class SparseTrait : public Trait {
+ public:
+  static const TraitKey<SparseTrait>& KEY() { return TraitKey<SparseTrait>::Instance(); }
+};
+
 extern template class TraitKey<TimestampFormatTrait>;
 extern template class TraitKey<Ec2QueryNameTrait>;
+extern template class TraitKey<SparseTrait>;
 
 inline TimestampFormatTrait::Format ResolveTimestampFormat(const Schema& schema,
                                                            TimestampFormatTrait::Format protocolDefault) {
