@@ -23,12 +23,5 @@ Aws::Http::HeaderValueCollection HttpPayloadTraitsRequest::GetRequestSpecificHea
     headers.emplace("x-foo", ss.str());
     ss.str("");
   }
-
-  if (m_requestIdHasBeenSet) {
-    ss << m_requestId;
-    headers.emplace("x-amzn-requestid", ss.str());
-    ss.str("");
-  }
-
   return headers;
 }

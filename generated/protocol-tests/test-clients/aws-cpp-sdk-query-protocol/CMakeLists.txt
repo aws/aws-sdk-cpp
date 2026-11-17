@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-query-protocol "C++ SDK for the AWS query-protocol service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-query-protocol "C++ SDK for Sample Query Protocol Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_QUERY-PROTOCOL_HEADERS
     "include/aws/query-protocol/*.h"

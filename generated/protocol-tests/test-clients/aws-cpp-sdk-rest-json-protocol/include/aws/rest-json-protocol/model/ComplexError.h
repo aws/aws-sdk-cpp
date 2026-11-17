@@ -21,7 +21,7 @@ namespace RestJsonProtocol {
 namespace Model {
 
 /**
- * <p>This error is thrown when a request is invalid.</p><p><h3>See Also:</h3>   <a
+ * This error is thrown when a request is invalid.<p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/ComplexError">AWS
  * API Reference</a></p>
  */

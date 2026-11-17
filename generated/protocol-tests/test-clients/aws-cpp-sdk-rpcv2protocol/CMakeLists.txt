@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-rpcv2protocol "C++ SDK for the AWS rpcv2protocol service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-rpcv2protocol "C++ SDK for RpcV2 Protocol Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_RPCV2PROTOCOL_HEADERS
     "include/aws/rpcv2protocol/*.h"

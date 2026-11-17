@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/GreetingStruct.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 GreetingStruct::GreetingStruct(JsonView jsonValue) { *this = jsonValue; }
 
-GreetingStruct& GreetingStruct::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("hi")) {
-    m_hi = jsonValue.GetString("hi");
-    m_hiHasBeenSet = true;
-  }
-  return *this;
-}
+GreetingStruct& GreetingStruct::operator=(JsonView) { return *this; }
 
 JsonValue GreetingStruct::Jsonize() const {
   JsonValue payload;
-
-  if (m_hiHasBeenSet) {
-    payload.WithString("hi", m_hi);
-  }
-
   return payload;
 }
 

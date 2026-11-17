@@ -19,6 +19,8 @@ class JsonView;
 namespace JSONRPC10 {
 namespace Model {
 
+/**
+ */
 class GreetingStruct {
  public:
   AWS_JSONRPC10_API GreetingStruct() = default;

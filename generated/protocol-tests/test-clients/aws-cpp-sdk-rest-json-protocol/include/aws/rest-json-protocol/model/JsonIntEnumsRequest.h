@@ -29,8 +29,8 @@ class JsonIntEnumsRequest : public RestJsonProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "JsonIntEnums"; }
 
   AWS_RESTJSONPROTOCOL_API Aws::String SerializePayload() const override;
-
-  AWS_RESTJSONPROTOCOL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  AWS_RESTJSONPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   ///@{
 
@@ -136,22 +136,6 @@ class JsonIntEnumsRequest : public RestJsonProtocolRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  JsonIntEnumsRequest& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   int m_integerEnum1{0};
 
@@ -164,15 +148,12 @@ class JsonIntEnumsRequest : public RestJsonProtocolRequest {
   Aws::Vector<int> m_integerEnumSet;
 
   Aws::Map<Aws::String, int> m_integerEnumMap;
-
-  Aws::String m_requestId;
   bool m_integerEnum1HasBeenSet = false;
   bool m_integerEnum2HasBeenSet = false;
   bool m_integerEnum3HasBeenSet = false;
   bool m_integerEnumListHasBeenSet = false;
   bool m_integerEnumSetHasBeenSet = false;
   bool m_integerEnumMapHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

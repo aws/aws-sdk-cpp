@@ -26,6 +26,8 @@ class JsonView;
 namespace JsonProtocol {
 namespace Model {
 
+/**
+ */
 class KitchenSink {
  public:
   AWS_JSONPROTOCOL_API KitchenSink() = default;

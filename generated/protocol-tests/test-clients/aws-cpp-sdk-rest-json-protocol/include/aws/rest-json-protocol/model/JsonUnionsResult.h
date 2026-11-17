@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
 #include <aws/rest-json-protocol/model/MyUnion.h>
@@ -20,11 +21,18 @@ namespace Json {
 class JsonValue;
 }  // namespace Json
 }  // namespace Utils
+}  // namespace Aws
+namespace smithy {
+namespace schema {
+class SerializableStruct;
+}
+}  // namespace smithy
+namespace Aws {
 namespace RestJsonProtocol {
 namespace Model {
 /**
- * <p>A shared structure that contains a single union member.</p><p><h3>See
- * Also:</h3>   <a
+ * A shared structure that contains a single union member.<p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/UnionInputOutput">AWS
  * API Reference</a></p>
  */
@@ -33,6 +41,7 @@ class JsonUnionsResult {
   AWS_RESTJSONPROTOCOL_API JsonUnionsResult() = default;
   AWS_RESTJSONPROTOCOL_API JsonUnionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_RESTJSONPROTOCOL_API JsonUnionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{
 

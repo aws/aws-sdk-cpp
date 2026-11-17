@@ -19,6 +19,8 @@ class JsonView;
 namespace RestJsonProtocol {
 namespace Model {
 
+/**
+ */
 class NestedPayload {
  public:
   AWS_RESTJSONPROTOCOL_API NestedPayload() = default;

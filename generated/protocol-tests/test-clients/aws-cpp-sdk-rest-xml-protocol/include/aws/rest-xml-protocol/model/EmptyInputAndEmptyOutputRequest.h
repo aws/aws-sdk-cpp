@@ -24,6 +24,8 @@ class EmptyInputAndEmptyOutputRequest : public RestXmlProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "EmptyInputAndEmptyOutput"; }
 
   AWS_RESTXMLPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_RESTXMLPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 };
 
 }  // namespace Model

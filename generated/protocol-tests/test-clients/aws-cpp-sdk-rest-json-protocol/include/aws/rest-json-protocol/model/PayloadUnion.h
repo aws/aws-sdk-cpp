@@ -19,6 +19,8 @@ class JsonView;
 namespace RestJsonProtocol {
 namespace Model {
 
+/**
+ */
 class PayloadUnion {
  public:
   AWS_RESTJSONPROTOCOL_API PayloadUnion() = default;

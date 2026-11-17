@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/query-protocol/model/ResponseMetadata.h>
@@ -19,31 +22,11 @@ namespace Model {
 
 ResponseMetadata::ResponseMetadata(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ResponseMetadata& ResponseMetadata::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ResponseMetadata& ResponseMetadata::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode requestIdNode = resultNode.FirstChild("RequestId");
-    if (!requestIdNode.IsNull()) {
-      m_requestId = Aws::Utils::Xml::DecodeEscapedXmlText(requestIdNode.GetText());
-      m_requestIdHasBeenSet = true;
-    }
-  }
+void ResponseMetadata::OutputToStream(Aws::OStream&, const char*, unsigned, const char*) const {}
 
-  return *this;
-}
-
-void ResponseMetadata::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
-  if (m_requestIdHasBeenSet) {
-    oStream << location << index << locationValue << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
-  }
-}
-
-void ResponseMetadata::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_requestIdHasBeenSet) {
-    oStream << location << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
-  }
-}
+void ResponseMetadata::OutputToStream(Aws::OStream&, const char*) const {}
 
 }  // namespace Model
 }  // namespace QueryProtocol

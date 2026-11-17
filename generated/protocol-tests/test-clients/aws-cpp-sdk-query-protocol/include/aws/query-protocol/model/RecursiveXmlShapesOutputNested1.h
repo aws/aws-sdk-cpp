@@ -21,14 +21,15 @@ namespace QueryProtocol {
 namespace Model {
 class RecursiveXmlShapesOutputNested2;
 
+/**
+ */
 class RecursiveXmlShapesOutputNested1 {
  public:
   AWS_QUERYPROTOCOL_API RecursiveXmlShapesOutputNested1() = default;
   AWS_QUERYPROTOCOL_API RecursiveXmlShapesOutputNested1(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_QUERYPROTOCOL_API RecursiveXmlShapesOutputNested1& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location) const;
 
   ///@{
 

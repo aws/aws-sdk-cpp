@@ -19,6 +19,8 @@ class JsonView;
 namespace RestJsonProtocol {
 namespace Model {
 
+/**
+ */
 class RenamedGreeting {
  public:
   AWS_RESTJSONPROTOCOL_API RenamedGreeting() = default;

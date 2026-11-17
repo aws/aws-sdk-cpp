@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/TestConfig.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 TestConfig::TestConfig(JsonView jsonValue) { *this = jsonValue; }
 
-TestConfig& TestConfig::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("timeout")) {
-    m_timeout = jsonValue.GetInteger("timeout");
-    m_timeoutHasBeenSet = true;
-  }
-  return *this;
-}
+TestConfig& TestConfig::operator=(JsonView) { return *this; }
 
 JsonValue TestConfig::Jsonize() const {
   JsonValue payload;
-
-  if (m_timeoutHasBeenSet) {
-    payload.WithInteger("timeout", m_timeout);
-  }
-
   return payload;
 }
 

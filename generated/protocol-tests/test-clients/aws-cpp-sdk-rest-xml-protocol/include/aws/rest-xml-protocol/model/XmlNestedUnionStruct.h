@@ -18,12 +18,13 @@ class XmlNode;
 namespace RestXmlProtocol {
 namespace Model {
 
+/**
+ */
 class XmlNestedUnionStruct {
  public:
   AWS_RESTXMLPROTOCOL_API XmlNestedUnionStruct() = default;
   AWS_RESTXMLPROTOCOL_API XmlNestedUnionStruct(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_RESTXMLPROTOCOL_API XmlNestedUnionStruct& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_RESTXMLPROTOCOL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

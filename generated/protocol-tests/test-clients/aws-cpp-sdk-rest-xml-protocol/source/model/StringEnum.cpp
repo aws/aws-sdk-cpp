@@ -27,7 +27,6 @@ StringEnum GetStringEnumForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<StringEnum>(hashCode);
   }
-
   return StringEnum::NOT_SET;
 }
 
@@ -42,7 +41,6 @@ Aws::String GetNameForStringEnum(StringEnum enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

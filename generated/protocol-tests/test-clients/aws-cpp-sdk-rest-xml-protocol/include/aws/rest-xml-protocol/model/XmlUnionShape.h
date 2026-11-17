@@ -19,12 +19,13 @@ class XmlNode;
 namespace RestXmlProtocol {
 namespace Model {
 
+/**
+ */
 class XmlUnionShape {
  public:
   AWS_RESTXMLPROTOCOL_API XmlUnionShape() = default;
   AWS_RESTXMLPROTOCOL_API XmlUnionShape(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_RESTXMLPROTOCOL_API XmlUnionShape& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_RESTXMLPROTOCOL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

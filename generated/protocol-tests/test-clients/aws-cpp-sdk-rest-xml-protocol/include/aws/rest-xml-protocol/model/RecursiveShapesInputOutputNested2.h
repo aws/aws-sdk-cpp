@@ -20,12 +20,13 @@ namespace RestXmlProtocol {
 namespace Model {
 class RecursiveShapesInputOutputNested1;
 
+/**
+ */
 class RecursiveShapesInputOutputNested2 {
  public:
   AWS_RESTXMLPROTOCOL_API RecursiveShapesInputOutputNested2() = default;
   AWS_RESTXMLPROTOCOL_API RecursiveShapesInputOutputNested2(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_RESTXMLPROTOCOL_API RecursiveShapesInputOutputNested2& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_RESTXMLPROTOCOL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

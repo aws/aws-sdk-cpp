@@ -29,6 +29,8 @@ class JsonIntEnumsRequest : public JsonProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "JsonIntEnums"; }
 
   AWS_JSONPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_JSONPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_JSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   AWS_JSONPROTOCOL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
@@ -136,22 +138,6 @@ class JsonIntEnumsRequest : public JsonProtocolRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  JsonIntEnumsRequest& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   int m_intEnum1{0};
 
@@ -164,15 +150,12 @@ class JsonIntEnumsRequest : public JsonProtocolRequest {
   Aws::Vector<int> m_intEnumSet;
 
   Aws::Map<Aws::String, int> m_intEnumMap;
-
-  Aws::String m_requestId;
   bool m_intEnum1HasBeenSet = false;
   bool m_intEnum2HasBeenSet = false;
   bool m_intEnum3HasBeenSet = false;
   bool m_intEnumListHasBeenSet = false;
   bool m_intEnumSetHasBeenSet = false;
   bool m_intEnumMapHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

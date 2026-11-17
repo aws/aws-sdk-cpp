@@ -27,6 +27,8 @@ class JsonUnionsRequest : public JSONRPC10Request {
   inline virtual const char* GetServiceRequestName() const override { return "JsonUnions"; }
 
   AWS_JSONRPC10_API Aws::String SerializePayload() const override;
+  AWS_JSONRPC10_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_JSONRPC10_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   AWS_JSONRPC10_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 

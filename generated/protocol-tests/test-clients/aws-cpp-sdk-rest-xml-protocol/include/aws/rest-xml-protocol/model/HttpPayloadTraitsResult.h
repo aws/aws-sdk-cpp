@@ -32,6 +32,10 @@ class HttpPayloadTraitsResult {
   AWS_RESTXMLPROTOCOL_API HttpPayloadTraitsResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
   ///@{
+  inline Aws::IOStream& GetBlob() const { return m_blob.GetUnderlyingStream(); }
+  inline void ReplaceBody(Aws::IOStream* body) { m_blob = Aws::Utils::Stream::ResponseStream(body); }
+  ///@}
+  ///@{
 
   inline const Aws::String& GetFoo() const { return m_foo; }
   template <typename FooT = Aws::String>
@@ -44,13 +48,6 @@ class HttpPayloadTraitsResult {
     SetFoo(std::forward<FooT>(value));
     return *this;
   }
-  ///@}
-
-  ///@{
-
-  inline Aws::IOStream& GetBlob() const { return m_blob.GetUnderlyingStream(); }
-  inline void ReplaceBody(Aws::IOStream* body) { m_blob = Aws::Utils::Stream::ResponseStream(body); }
-
   ///@}
 
   ///@{
@@ -70,14 +67,13 @@ class HttpPayloadTraitsResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::String m_foo;
-
   Aws::Utils::Stream::ResponseStream m_blob{};
+  Aws::String m_foo;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_fooHasBeenSet = false;
   bool m_blobHasBeenSet = false;
+  bool m_fooHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

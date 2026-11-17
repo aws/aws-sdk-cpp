@@ -4,30 +4,75 @@
  */
 
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/OmitsNullSerializesEmptyStringRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/MapSerializer.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeSerializer.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
-using namespace Aws::Http;
 
-Aws::String OmitsNullSerializesEmptyStringRequest::SerializePayload() const { return {}; }
+namespace {
+class OmitsNullSerializesEmptyStringRequestSerializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit OmitsNullSerializesEmptyStringRequestSerializable(const OmitsNullSerializesEmptyStringRequest& obj)
+      : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
+  void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
 
-void OmitsNullSerializesEmptyStringRequest::AddQueryStringParameters(URI& uri) const {
-  Aws::StringStream ss;
-  if (m_nullValueHasBeenSet) {
-    ss << m_nullValue;
-    uri.AddQueryStringParameter("Null", ss.str());
-    ss.str("");
+ private:
+  const OmitsNullSerializesEmptyStringRequest& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void OmitsNullSerializesEmptyStringRequestSerializable::SerializeMembers(smithy::schema::ShapeSerializer& serializer) const {
+  if (m_obj.NullValueHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("nullValue").value();
+    serializer.WriteString(memberSchema, m_obj.GetNullValue());
   }
-
-  if (m_emptyStringHasBeenSet) {
-    ss << m_emptyString;
-    uri.AddQueryStringParameter("Empty", ss.str());
-    ss.str("");
+  if (m_obj.EmptyStringHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("emptyString").value();
+    serializer.WriteString(memberSchema, m_obj.GetEmptyString());
   }
 }
+
+std::shared_ptr<const smithy::schema::Schema> OmitsNullSerializesEmptyStringRequestSerializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("OmitsNullSerializesEmptyStringRequest")
+      .PutMember("nullValue", smithy::schema::Schema::CreateString("nullValue"),
+                 {{smithy::schema::HttpQueryTrait::KEY(), Aws::MakeShared<smithy::schema::HttpQueryTrait>("SchemaSerdeTrait", "Null")}})
+      .PutMember("emptyString", smithy::schema::Schema::CreateString("emptyString"),
+                 {{smithy::schema::HttpQueryTrait::KEY(), Aws::MakeShared<smithy::schema::HttpQueryTrait>("SchemaSerdeTrait", "Empty")}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> OmitsNullSerializesEmptyStringRequest::GetSchemaSerdeInput() const {
+  return Aws::MakeUnique<OmitsNullSerializesEmptyStringRequestSerializable>("OmitsNullSerializesEmptyStringRequestSerializable", *this);
+}
+
+Aws::String OmitsNullSerializesEmptyStringRequest::SerializePayload() const { return {}; }
+smithy::schema::OperationRequestContext OmitsNullSerializesEmptyStringRequest::GetSchemaSerdeContext() const {
+  return {"OmitsNullSerializesEmptyString", "2019-12-16", "/OmitsNullSerializesEmptyString", ""};
+}
+
+void OmitsNullSerializesEmptyStringRequest::AddQueryStringParameters(Aws::Http::URI&) const {}

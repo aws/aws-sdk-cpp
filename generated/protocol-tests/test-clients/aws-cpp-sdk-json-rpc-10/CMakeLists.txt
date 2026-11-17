@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-json-rpc-10 "C++ SDK for the AWS json-rpc-10 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-json-rpc-10 "C++ SDK for Sample Json 1.0 Protocol Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_JSON-RPC-10_HEADERS
     "include/aws/json-rpc-10/*.h"

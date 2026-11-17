@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/HeadersAndExplicitPayloadEvent.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 HeadersAndExplicitPayloadEvent::HeadersAndExplicitPayloadEvent(JsonView jsonValue) { *this = jsonValue; }
 
-HeadersAndExplicitPayloadEvent& HeadersAndExplicitPayloadEvent::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("header")) {
-    m_header = jsonValue.GetString("header");
-    m_headerHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("payload")) {
-    m_payload = jsonValue.GetObject("payload");
-    m_payloadHasBeenSet = true;
-  }
-  return *this;
-}
+HeadersAndExplicitPayloadEvent& HeadersAndExplicitPayloadEvent::operator=(JsonView) { return *this; }
 
 JsonValue HeadersAndExplicitPayloadEvent::Jsonize() const {
   JsonValue payload;
-
-  if (m_headerHasBeenSet) {
-    payload.WithString("header", m_header);
-  }
-
-  if (m_payloadHasBeenSet) {
-    payload.WithObject("payload", m_payload.Jsonize());
-  }
-
   return payload;
 }
 

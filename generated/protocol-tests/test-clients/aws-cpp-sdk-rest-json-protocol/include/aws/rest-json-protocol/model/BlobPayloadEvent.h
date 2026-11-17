@@ -12,6 +12,8 @@
 namespace Aws {
 namespace RestJsonProtocol {
 namespace Model {
+/**
+ */
 class BlobPayloadEvent {
  public:
   AWS_RESTJSONPROTOCOL_API BlobPayloadEvent() = default;
@@ -19,7 +21,7 @@ class BlobPayloadEvent {
 
   ///@{
   /**
-   * ${blobMember.value.documentation}
+   *
    */
   inline const Aws::Vector<unsigned char>& GetPayload() const { return m_payload; }
   inline Aws::Vector<unsigned char>&& GetPayloadWithOwnership() { return std::move(m_payload); }

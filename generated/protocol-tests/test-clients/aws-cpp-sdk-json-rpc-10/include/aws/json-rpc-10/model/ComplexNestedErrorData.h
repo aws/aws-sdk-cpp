@@ -19,6 +19,8 @@ class JsonView;
 namespace JSONRPC10 {
 namespace Model {
 
+/**
+ */
 class ComplexNestedErrorData {
  public:
   AWS_JSONRPC10_API ComplexNestedErrorData() = default;

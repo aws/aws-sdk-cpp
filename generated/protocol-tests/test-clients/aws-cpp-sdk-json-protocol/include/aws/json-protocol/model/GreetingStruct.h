@@ -19,6 +19,8 @@ class JsonView;
 namespace JsonProtocol {
 namespace Model {
 
+/**
+ */
 class GreetingStruct {
  public:
   AWS_JSONPROTOCOL_API GreetingStruct() = default;

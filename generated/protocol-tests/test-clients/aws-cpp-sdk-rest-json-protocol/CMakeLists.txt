@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-rest-json-protocol "C++ SDK for the AWS rest-json-protocol service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-rest-json-protocol "C++ SDK for Sample Rest Json Protocol Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_REST-JSON-PROTOCOL_HEADERS
     "include/aws/rest-json-protocol/*.h"

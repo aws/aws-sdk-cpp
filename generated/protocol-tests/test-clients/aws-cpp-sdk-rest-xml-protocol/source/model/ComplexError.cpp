@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/rest-xml-protocol/model/ComplexError.h>
@@ -19,37 +20,9 @@ namespace Model {
 
 ComplexError::ComplexError(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ComplexError& ComplexError::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ComplexError& ComplexError::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode topLevelNode = resultNode.FirstChild("TopLevel");
-    if (!topLevelNode.IsNull()) {
-      m_topLevel = Aws::Utils::Xml::DecodeEscapedXmlText(topLevelNode.GetText());
-      m_topLevelHasBeenSet = true;
-    }
-    XmlNode nestedNode = resultNode.FirstChild("Nested");
-    if (!nestedNode.IsNull()) {
-      m_nested = nestedNode;
-      m_nestedHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void ComplexError::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_topLevelHasBeenSet) {
-    XmlNode topLevelNode = parentNode.CreateChildElement("TopLevel");
-    topLevelNode.SetText(m_topLevel);
-  }
-
-  if (m_nestedHasBeenSet) {
-    XmlNode nestedNode = parentNode.CreateChildElement("Nested");
-    m_nested.AddToNode(nestedNode);
-  }
-}
+void ComplexError::AddToNode(XmlNode&) const {}
 
 }  // namespace Model
 }  // namespace RestXmlProtocol

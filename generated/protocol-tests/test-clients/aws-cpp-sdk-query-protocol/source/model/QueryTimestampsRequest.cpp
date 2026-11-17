@@ -3,30 +3,81 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/query-protocol/model/QueryTimestampsRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/MapSerializer.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeSerializer.h>
+#include <smithy/client/schema/XmlTraits.h>
+
+#include <numeric>
 
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-Aws::String QueryTimestampsRequest::SerializePayload() const {
-  Aws::StringStream ss;
-  ss << "Action=QueryTimestamps&";
-  if (m_normalFormatHasBeenSet) {
-    ss << "normalFormat=" << StringUtils::URLEncode(m_normalFormat.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
+namespace {
+class QueryTimestampsRequestSerializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit QueryTimestampsRequestSerializable(const QueryTimestampsRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
+  void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
 
-  if (m_epochMemberHasBeenSet) {
-    ss << "epochMember=" << StringUtils::to_string(m_epochMember.Seconds()) << "&";
-  }
+ private:
+  const QueryTimestampsRequest& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
 
-  if (m_epochTargetHasBeenSet) {
-    ss << "epochTarget=" << StringUtils::to_string(m_epochTarget.Seconds()) << "&";
+void QueryTimestampsRequestSerializable::SerializeMembers(smithy::schema::ShapeSerializer& serializer) const {
+  if (m_obj.NormalFormatHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("normalFormat").value();
+    serializer.WriteTimestamp(memberSchema, m_obj.GetNormalFormat());
   }
-
-  ss << "Version=2020-01-08";
-  return ss.str();
+  if (m_obj.EpochMemberHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("epochMember").value();
+    serializer.WriteTimestamp(memberSchema, m_obj.GetEpochMember());
+  }
+  if (m_obj.EpochTargetHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("epochTarget").value();
+    serializer.WriteTimestamp(memberSchema, m_obj.GetEpochTarget());
+  }
 }
+
+std::shared_ptr<const smithy::schema::Schema> QueryTimestampsRequestSerializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("QueryTimestampsRequest")
+      .PutMember("normalFormat", smithy::schema::Schema::CreateTimestamp("normalFormat"))
+      .PutMember("epochMember", smithy::schema::Schema::CreateTimestamp("epochMember"),
+                 {{smithy::schema::TimestampFormatTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::TimestampFormatTrait>("SchemaSerdeTrait",
+                                                                         smithy::schema::TimestampFormatTrait::Format::EPOCH_SECONDS)}})
+      .PutMember("epochTarget", smithy::schema::Schema::CreateTimestamp("epochTarget"),
+                 {{smithy::schema::TimestampFormatTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::TimestampFormatTrait>("SchemaSerdeTrait",
+                                                                         smithy::schema::TimestampFormatTrait::Format::EPOCH_SECONDS)}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> QueryTimestampsRequest::GetSchemaSerdeInput() const {
+  return Aws::MakeUnique<QueryTimestampsRequestSerializable>("QueryTimestampsRequestSerializable", *this);
+}
+
+Aws::String QueryTimestampsRequest::SerializePayload() const { return {}; }
+smithy::schema::OperationRequestContext QueryTimestampsRequest::GetSchemaSerdeContext() const { return {"QueryTimestamps", "2020-01-08"}; }
 
 void QueryTimestampsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

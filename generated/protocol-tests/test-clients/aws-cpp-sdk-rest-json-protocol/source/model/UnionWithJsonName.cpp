@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/UnionWithJsonName.h>
 
 #include <utility>
@@ -17,37 +20,10 @@ namespace Model {
 
 UnionWithJsonName::UnionWithJsonName(JsonView jsonValue) { *this = jsonValue; }
 
-UnionWithJsonName& UnionWithJsonName::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("FOO")) {
-    m_foo = jsonValue.GetString("FOO");
-    m_fooHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("bar")) {
-    m_bar = jsonValue.GetString("bar");
-    m_barHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("_baz")) {
-    m_baz = jsonValue.GetString("_baz");
-    m_bazHasBeenSet = true;
-  }
-  return *this;
-}
+UnionWithJsonName& UnionWithJsonName::operator=(JsonView) { return *this; }
 
 JsonValue UnionWithJsonName::Jsonize() const {
   JsonValue payload;
-
-  if (m_fooHasBeenSet) {
-    payload.WithString("FOO", m_foo);
-  }
-
-  if (m_barHasBeenSet) {
-    payload.WithString("bar", m_bar);
-  }
-
-  if (m_bazHasBeenSet) {
-    payload.WithString("_baz", m_baz);
-  }
-
   return payload;
 }
 

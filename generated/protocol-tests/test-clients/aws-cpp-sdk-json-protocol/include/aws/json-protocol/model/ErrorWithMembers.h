@@ -22,6 +22,8 @@ class JsonView;
 namespace JsonProtocol {
 namespace Model {
 
+/**
+ */
 class ErrorWithMembers {
  public:
   AWS_JSONPROTOCOL_API ErrorWithMembers() = default;
@@ -137,7 +139,7 @@ class ErrorWithMembers {
 
   ///@{
   /**
-   * <p>abc</p>
+   * abc
    */
   inline const Aws::String& GetStringField() const { return m_stringField; }
   inline bool StringFieldHasBeenSet() const { return m_stringFieldHasBeenSet; }

@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/rest-xml-protocol/model/XmlAttributesPayloadRequest.h>
@@ -19,36 +20,9 @@ namespace Model {
 
 XmlAttributesPayloadRequest::XmlAttributesPayloadRequest(const XmlNode& xmlNode) { *this = xmlNode; }
 
-XmlAttributesPayloadRequest& XmlAttributesPayloadRequest::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+XmlAttributesPayloadRequest& XmlAttributesPayloadRequest::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode fooNode = resultNode.FirstChild("foo");
-    if (!fooNode.IsNull()) {
-      m_foo = Aws::Utils::Xml::DecodeEscapedXmlText(fooNode.GetText());
-      m_fooHasBeenSet = true;
-    }
-    auto attr = resultNode.GetAttributeValue("test");
-    if (!attr.empty()) {
-      m_attr = Aws::Utils::Xml::DecodeEscapedXmlText(attr);
-      m_attrHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void XmlAttributesPayloadRequest::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_fooHasBeenSet) {
-    XmlNode fooNode = parentNode.CreateChildElement("foo");
-    fooNode.SetText(m_foo);
-  }
-
-  if (m_attrHasBeenSet) {
-    parentNode.SetAttributeValue("test", m_attr);
-  }
-}
+void XmlAttributesPayloadRequest::AddToNode(XmlNode&) const {}
 
 }  // namespace Model
 }  // namespace RestXmlProtocol

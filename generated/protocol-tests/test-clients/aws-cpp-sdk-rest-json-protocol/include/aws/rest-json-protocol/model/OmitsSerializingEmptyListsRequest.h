@@ -14,9 +14,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace RestJsonProtocol {
 namespace Model {
 
@@ -33,6 +30,8 @@ class OmitsSerializingEmptyListsRequest : public RestJsonProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "OmitsSerializingEmptyLists"; }
 
   AWS_RESTJSONPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_RESTJSONPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   AWS_RESTJSONPROTOCOL_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 

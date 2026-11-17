@@ -12,9 +12,6 @@
 #include <utility>
 
 namespace Aws {
-namespace Http {
-class URI;
-}  // namespace Http
 namespace RestXmlProtocol {
 namespace Model {
 
@@ -31,6 +28,8 @@ class QueryPrecedenceRequest : public RestXmlProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "QueryPrecedence"; }
 
   AWS_RESTXMLPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_RESTXMLPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   AWS_RESTXMLPROTOCOL_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 

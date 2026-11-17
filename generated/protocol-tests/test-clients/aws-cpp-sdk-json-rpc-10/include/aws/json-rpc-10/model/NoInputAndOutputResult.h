@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/json-rpc-10/JSONRPC10_EXPORTS.h>
 
@@ -19,6 +20,13 @@ namespace Json {
 class JsonValue;
 }  // namespace Json
 }  // namespace Utils
+}  // namespace Aws
+namespace smithy {
+namespace schema {
+class SerializableStruct;
+}
+}  // namespace smithy
+namespace Aws {
 namespace JSONRPC10 {
 namespace Model {
 class NoInputAndOutputResult {

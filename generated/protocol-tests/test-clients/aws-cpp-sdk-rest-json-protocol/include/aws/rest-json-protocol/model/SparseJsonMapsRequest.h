@@ -31,8 +31,8 @@ class SparseJsonMapsRequest : public RestJsonProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "SparseJsonMaps"; }
 
   AWS_RESTJSONPROTOCOL_API Aws::String SerializePayload() const override;
-
-  AWS_RESTJSONPROTOCOL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  AWS_RESTJSONPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   ///@{
 
@@ -166,22 +166,6 @@ class SparseJsonMapsRequest : public RestJsonProtocolRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  SparseJsonMapsRequest& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::Map<Aws::String, Aws::Crt::Optional<GreetingStruct>> m_sparseStructMap;
 
@@ -192,14 +176,11 @@ class SparseJsonMapsRequest : public RestJsonProtocolRequest {
   Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>> m_sparseStringMap;
 
   Aws::Map<Aws::String, Aws::Crt::Optional<Aws::Vector<Aws::String>>> m_sparseSetMap;
-
-  Aws::String m_requestId;
   bool m_sparseStructMapHasBeenSet = false;
   bool m_sparseNumberMapHasBeenSet = false;
   bool m_sparseBooleanMapHasBeenSet = false;
   bool m_sparseStringMapHasBeenSet = false;
   bool m_sparseSetMapHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,12 +18,13 @@ class XmlNode;
 namespace RestXmlProtocol {
 namespace Model {
 
+/**
+ */
 class PayloadWithXmlName {
  public:
   AWS_RESTXMLPROTOCOL_API PayloadWithXmlName() = default;
   AWS_RESTXMLPROTOCOL_API PayloadWithXmlName(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_RESTXMLPROTOCOL_API PayloadWithXmlName& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_RESTXMLPROTOCOL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

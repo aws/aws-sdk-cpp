@@ -4,10 +4,22 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/ec2-protocol/model/SimpleScalarXmlPropertiesResponse.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
+#include <smithy/client/schema/XmlTraits.h>
 
 #include <utility>
 
@@ -25,80 +37,126 @@ SimpleScalarXmlPropertiesResponse& SimpleScalarXmlPropertiesResponse::operator=(
   m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "SimpleScalarXmlPropertiesResponse")) {
-    resultNode = rootNode.FirstChild("SimpleScalarXmlPropertiesResponse");
-  }
-
-  if (!resultNode.IsNull()) {
-    XmlNode stringValueNode = resultNode.FirstChild("stringValue");
-    if (!stringValueNode.IsNull()) {
-      m_stringValue = Aws::Utils::Xml::DecodeEscapedXmlText(stringValueNode.GetText());
-      m_stringValueHasBeenSet = true;
-    }
-    XmlNode emptyStringValueNode = resultNode.FirstChild("emptyStringValue");
-    if (!emptyStringValueNode.IsNull()) {
-      m_emptyStringValue = Aws::Utils::Xml::DecodeEscapedXmlText(emptyStringValueNode.GetText());
-      m_emptyStringValueHasBeenSet = true;
-    }
-    XmlNode trueBooleanValueNode = resultNode.FirstChild("trueBooleanValue");
-    if (!trueBooleanValueNode.IsNull()) {
-      m_trueBooleanValue = StringUtils::ConvertToBool(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trueBooleanValueNode.GetText()).c_str()).c_str());
-      m_trueBooleanValueHasBeenSet = true;
-    }
-    XmlNode falseBooleanValueNode = resultNode.FirstChild("falseBooleanValue");
-    if (!falseBooleanValueNode.IsNull()) {
-      m_falseBooleanValue = StringUtils::ConvertToBool(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(falseBooleanValueNode.GetText()).c_str()).c_str());
-      m_falseBooleanValueHasBeenSet = true;
-    }
-    XmlNode byteValueNode = resultNode.FirstChild("byteValue");
-    if (!byteValueNode.IsNull()) {
-      m_byteValue =
-          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(byteValueNode.GetText()).c_str()).c_str());
-      m_byteValueHasBeenSet = true;
-    }
-    XmlNode shortValueNode = resultNode.FirstChild("shortValue");
-    if (!shortValueNode.IsNull()) {
-      m_shortValue =
-          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(shortValueNode.GetText()).c_str()).c_str());
-      m_shortValueHasBeenSet = true;
-    }
-    XmlNode integerValueNode = resultNode.FirstChild("integerValue");
-    if (!integerValueNode.IsNull()) {
-      m_integerValue =
-          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(integerValueNode.GetText()).c_str()).c_str());
-      m_integerValueHasBeenSet = true;
-    }
-    XmlNode longValueNode = resultNode.FirstChild("longValue");
-    if (!longValueNode.IsNull()) {
-      m_longValue =
-          StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(longValueNode.GetText()).c_str()).c_str());
-      m_longValueHasBeenSet = true;
-    }
-    XmlNode floatValueNode = resultNode.FirstChild("floatValue");
-    if (!floatValueNode.IsNull()) {
-      m_floatValue =
-          StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(floatValueNode.GetText()).c_str()).c_str());
-      m_floatValueHasBeenSet = true;
-    }
-    XmlNode doubleValueNode = resultNode.FirstChild("DoubleDribble");
-    if (!doubleValueNode.IsNull()) {
-      m_doubleValue =
-          StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(doubleValueNode.GetText()).c_str()).c_str());
-      m_doubleValueHasBeenSet = true;
-    }
-  }
-
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
     if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2Protocol::Model::SimpleScalarXmlPropertiesResponse",
-                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
+}
+
+namespace {
+class SimpleScalarXmlPropertiesResponseDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit SimpleScalarXmlPropertiesResponseDeserializable(SimpleScalarXmlPropertiesResponse& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  SimpleScalarXmlPropertiesResponse& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void SimpleScalarXmlPropertiesResponseDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                                           smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "stringValue") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetStringValue(*value0);
+    }
+    return;
+  }
+  if (memberName == "emptyStringValue") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetEmptyStringValue(*value0);
+    }
+    return;
+  }
+  if (memberName == "trueBooleanValue") {
+    auto value0 = deserializer.ReadBoolean(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetTrueBooleanValue(*value0);
+    }
+    return;
+  }
+  if (memberName == "falseBooleanValue") {
+    auto value0 = deserializer.ReadBoolean(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetFalseBooleanValue(*value0);
+    }
+    return;
+  }
+  if (memberName == "byteValue") {
+    auto value0 = deserializer.ReadInteger(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetByteValue(*value0);
+    }
+    return;
+  }
+  if (memberName == "shortValue") {
+    auto value0 = deserializer.ReadInteger(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetShortValue(*value0);
+    }
+    return;
+  }
+  if (memberName == "integerValue") {
+    auto value0 = deserializer.ReadInteger(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetIntegerValue(*value0);
+    }
+    return;
+  }
+  if (memberName == "longValue") {
+    auto value0 = deserializer.ReadLong(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetLongValue(*value0);
+    }
+    return;
+  }
+  if (memberName == "floatValue") {
+    auto value0 = deserializer.ReadDouble(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetFloatValue(*value0);
+    }
+    return;
+  }
+  if (memberName == "doubleValue") {
+    auto value0 = deserializer.ReadDouble(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetDoubleValue(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> SimpleScalarXmlPropertiesResponseDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("SimpleScalarXmlPropertiesResponse")
+      .PutMember(
+          "stringValue", smithy::schema::Schema::CreateString("stringValue"),
+          {{smithy::schema::Ec2QueryNameTrait::KEY(), Aws::MakeShared<smithy::schema::Ec2QueryNameTrait>("SchemaSerdeTrait", "IgnoreMe")}})
+      .PutMember("emptyStringValue", smithy::schema::Schema::CreateString("emptyStringValue"))
+      .PutMember("trueBooleanValue", smithy::schema::Schema::CreateBoolean("trueBooleanValue"))
+      .PutMember("falseBooleanValue", smithy::schema::Schema::CreateBoolean("falseBooleanValue"))
+      .PutMember("byteValue", smithy::schema::Schema::CreateInteger("byteValue"))
+      .PutMember("shortValue", smithy::schema::Schema::CreateInteger("shortValue"))
+      .PutMember("integerValue", smithy::schema::Schema::CreateInteger("integerValue"))
+      .PutMember("longValue", smithy::schema::Schema::CreateLong("longValue"))
+      .PutMember("floatValue", smithy::schema::Schema::CreateDouble("floatValue"))
+      .PutMember(
+          "doubleValue", smithy::schema::Schema::CreateDouble("doubleValue"),
+          {{smithy::schema::XmlNameTrait::KEY(), Aws::MakeShared<smithy::schema::XmlNameTrait>("SchemaSerdeTrait", "DoubleDribble")}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> SimpleScalarXmlPropertiesResponse::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<SimpleScalarXmlPropertiesResponseDeserializable>("SimpleScalarXmlPropertiesResponseDeserializable", *this);
 }
