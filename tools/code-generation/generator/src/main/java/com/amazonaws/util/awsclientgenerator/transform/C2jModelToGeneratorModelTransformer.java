@@ -574,7 +574,8 @@ public class C2jModelToGeneratorModelTransformer {
     private static final Map<String, Set<String>> LONG_POLLING_OPERATIONS = ImmutableMap.of(
         "SQS", ImmutableSet.of("ReceiveMessage"),
         "SFN", ImmutableSet.of("GetActivityTask"),
-        "SWF", ImmutableSet.of("PollForActivityTask", "PollForDecisionTask")
+        "SWF", ImmutableSet.of("PollForActivityTask", "PollForDecisionTask"),
+        "Kinesis", ImmutableSet.of("ReceiveQueueRecords", "ReceiveDeadLetterQueueRecords")
     );
 
     void applyLongPollingTrait() {

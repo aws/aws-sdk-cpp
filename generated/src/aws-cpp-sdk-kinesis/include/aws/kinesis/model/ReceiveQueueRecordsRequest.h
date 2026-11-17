@@ -26,6 +26,7 @@ class ReceiveQueueRecordsRequest : public KinesisRequest {
   // so we can not get operation's name from response.
   inline virtual const char* GetServiceRequestName() const override { return "ReceiveQueueRecords"; }
 
+  inline virtual bool IsLongPollingOperation() const override { return true; }
   AWS_KINESIS_API Aws::String SerializePayload() const override;
 
   AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
