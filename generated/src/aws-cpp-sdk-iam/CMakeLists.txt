@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-iam "C++ SDK for the AWS iam service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-iam "C++ SDK for AWS Identity and Access Management" aws-cpp-sdk-core)
 
 file(GLOB AWS_IAM_HEADERS
     "include/aws/iam/*.h"

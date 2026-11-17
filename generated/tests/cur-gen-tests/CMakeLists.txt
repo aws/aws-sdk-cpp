@@ -1,5 +1,5 @@
 add_project(cur-gen-tests
-    "Tests for the AWS CUR C++ SDK"
+    "Tests for the AWS Cost and Usage Report Service C++ SDK"
     testing-resources
     aws-cpp-sdk-cur
     aws-cpp-sdk-core)

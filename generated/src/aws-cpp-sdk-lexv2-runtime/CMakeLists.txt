@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-lexv2-runtime "C++ SDK for the AWS lexv2-runtime service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-lexv2-runtime "C++ SDK for Amazon Lex Runtime V2" aws-cpp-sdk-core)
 
 file(GLOB AWS_LEXV2-RUNTIME_HEADERS
     "include/aws/lexv2-runtime/*.h"

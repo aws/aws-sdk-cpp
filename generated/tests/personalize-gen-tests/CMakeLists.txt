@@ -1,5 +1,5 @@
 add_project(personalize-gen-tests
-    "Tests for the AWS PERSONALIZE C++ SDK"
+    "Tests for the Amazon Personalize C++ SDK"
     testing-resources
     aws-cpp-sdk-personalize
     aws-cpp-sdk-core)

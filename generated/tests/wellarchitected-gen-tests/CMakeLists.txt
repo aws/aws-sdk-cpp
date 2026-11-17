@@ -1,5 +1,5 @@
 add_project(wellarchitected-gen-tests
-    "Tests for the AWS WELLARCHITECTED C++ SDK"
+    "Tests for the AWS Well-Architected Tool C++ SDK"
     testing-resources
     aws-cpp-sdk-wellarchitected
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-artifact "C++ SDK for the AWS artifact service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-artifact "C++ SDK for AWS Artifact" aws-cpp-sdk-core)
 
 file(GLOB AWS_ARTIFACT_HEADERS
     "include/aws/artifact/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-redshift-serverless "C++ SDK for the AWS redshift-serverless service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-redshift-serverless "C++ SDK for Redshift Serverless" aws-cpp-sdk-core)
 
 file(GLOB AWS_REDSHIFT-SERVERLESS_HEADERS
     "include/aws/redshift-serverless/*.h"

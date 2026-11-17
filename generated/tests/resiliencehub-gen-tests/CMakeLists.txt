@@ -1,5 +1,5 @@
 add_project(resiliencehub-gen-tests
-    "Tests for the AWS RESILIENCEHUB C++ SDK"
+    "Tests for the AWS Resilience Hub C++ SDK"
     testing-resources
     aws-cpp-sdk-resiliencehub
     aws-cpp-sdk-core)

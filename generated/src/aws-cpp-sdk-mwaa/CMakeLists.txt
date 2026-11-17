@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mwaa "C++ SDK for the AWS mwaa service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mwaa "C++ SDK for AmazonMWAA" aws-cpp-sdk-core)
 
 file(GLOB AWS_MWAA_HEADERS
     "include/aws/mwaa/*.h"

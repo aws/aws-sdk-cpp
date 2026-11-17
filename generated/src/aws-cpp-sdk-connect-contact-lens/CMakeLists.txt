@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-connect-contact-lens "C++ SDK for the AWS connect-contact-lens service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-connect-contact-lens "C++ SDK for Amazon Connect Contact Lens" aws-cpp-sdk-core)
 
 file(GLOB AWS_CONNECT-CONTACT-LENS_HEADERS
     "include/aws/connect-contact-lens/*.h"

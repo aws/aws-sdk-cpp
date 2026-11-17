@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-servicecatalog-appregistry "C++ SDK for the AWS servicecatalog-appregistry service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-servicecatalog-appregistry "C++ SDK for AWS Service Catalog App Registry" aws-cpp-sdk-core)
 
 file(GLOB AWS_SERVICECATALOG-APPREGISTRY_HEADERS
     "include/aws/servicecatalog-appregistry/*.h"

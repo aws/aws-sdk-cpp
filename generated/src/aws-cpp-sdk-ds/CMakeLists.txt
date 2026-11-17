@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ds "C++ SDK for the AWS ds service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ds "C++ SDK for AWS Directory Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_DS_HEADERS
     "include/aws/ds/*.h"

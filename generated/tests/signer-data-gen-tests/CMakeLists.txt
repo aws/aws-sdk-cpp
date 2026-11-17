@@ -1,5 +1,5 @@
 add_project(signer-data-gen-tests
-    "Tests for the AWS SIGNER-DATA C++ SDK"
+    "Tests for the AWS Signer Data Plane C++ SDK"
     testing-resources
     aws-cpp-sdk-signer-data
     aws-cpp-sdk-core)

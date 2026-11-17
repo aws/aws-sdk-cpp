@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mwaa-serverless "C++ SDK for the AWS mwaa-serverless service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mwaa-serverless "C++ SDK for AmazonMWAAServerless" aws-cpp-sdk-core)
 
 file(GLOB AWS_MWAA-SERVERLESS_HEADERS
     "include/aws/mwaa-serverless/*.h"

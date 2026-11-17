@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-iotfleetwise "C++ SDK for the AWS iotfleetwise service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-iotfleetwise "C++ SDK for AWS IoT FleetWise" aws-cpp-sdk-core)
 
 file(GLOB AWS_IOTFLEETWISE_HEADERS
     "include/aws/iotfleetwise/*.h"

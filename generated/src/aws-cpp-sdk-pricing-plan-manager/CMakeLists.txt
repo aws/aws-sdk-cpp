@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-pricing-plan-manager "C++ SDK for the AWS pricing-plan-manager service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-pricing-plan-manager "C++ SDK for PricingPlanManager" aws-cpp-sdk-core)
 
 file(GLOB AWS_PRICING-PLAN-MANAGER_HEADERS
     "include/aws/pricing-plan-manager/*.h"

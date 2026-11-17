@@ -1,5 +1,5 @@
 add_project(awstransfer-gen-tests
-    "Tests for the AWS AWSTRANSFER C++ SDK"
+    "Tests for the AWS Transfer Family C++ SDK"
     testing-resources
     aws-cpp-sdk-awstransfer
     aws-cpp-sdk-core)

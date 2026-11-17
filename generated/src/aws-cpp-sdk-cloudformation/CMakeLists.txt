@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cloudformation "C++ SDK for the AWS cloudformation service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cloudformation "C++ SDK for AWS CloudFormation" aws-cpp-sdk-core)
 
 file(GLOB AWS_CLOUDFORMATION_HEADERS
     "include/aws/cloudformation/*.h"

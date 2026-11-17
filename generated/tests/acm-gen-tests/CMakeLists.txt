@@ -1,5 +1,5 @@
 add_project(acm-gen-tests
-    "Tests for the AWS ACM C++ SDK"
+    "Tests for the AWS Certificate Manager C++ SDK"
     testing-resources
     aws-cpp-sdk-acm
     aws-cpp-sdk-core)

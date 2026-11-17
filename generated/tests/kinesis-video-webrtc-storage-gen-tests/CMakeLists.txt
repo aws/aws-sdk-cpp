@@ -1,5 +1,5 @@
 add_project(kinesis-video-webrtc-storage-gen-tests
-    "Tests for the AWS KINESIS-VIDEO-WEBRTC-STORAGE C++ SDK"
+    "Tests for the Amazon Kinesis Video WebRTC Storage C++ SDK"
     testing-resources
     aws-cpp-sdk-kinesis-video-webrtc-storage
     aws-cpp-sdk-core)

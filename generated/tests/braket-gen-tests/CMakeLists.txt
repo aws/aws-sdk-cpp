@@ -1,5 +1,5 @@
 add_project(braket-gen-tests
-    "Tests for the AWS BRAKET C++ SDK"
+    "Tests for the Braket C++ SDK"
     testing-resources
     aws-cpp-sdk-braket
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(appconfigdata-gen-tests
-    "Tests for the AWS APPCONFIGDATA C++ SDK"
+    "Tests for the AWS AppConfig Data C++ SDK"
     testing-resources
     aws-cpp-sdk-appconfigdata
     aws-cpp-sdk-core)

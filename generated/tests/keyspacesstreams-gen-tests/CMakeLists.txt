@@ -1,5 +1,5 @@
 add_project(keyspacesstreams-gen-tests
-    "Tests for the AWS KEYSPACESSTREAMS C++ SDK"
+    "Tests for the Amazon Keyspaces Streams C++ SDK"
     testing-resources
     aws-cpp-sdk-keyspacesstreams
     aws-cpp-sdk-core)

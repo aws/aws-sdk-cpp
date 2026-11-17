@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-rolesanywhere "C++ SDK for the AWS rolesanywhere service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-rolesanywhere "C++ SDK for IAM Roles Anywhere" aws-cpp-sdk-core)
 
 file(GLOB AWS_ROLESANYWHERE_HEADERS
     "include/aws/rolesanywhere/*.h"

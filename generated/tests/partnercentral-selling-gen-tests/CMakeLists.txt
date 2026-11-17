@@ -1,5 +1,5 @@
 add_project(partnercentral-selling-gen-tests
-    "Tests for the AWS PARTNERCENTRAL-SELLING C++ SDK"
+    "Tests for the Partner Central Selling API C++ SDK"
     testing-resources
     aws-cpp-sdk-partnercentral-selling
     aws-cpp-sdk-core)

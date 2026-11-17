@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cloudhsm "C++ SDK for the AWS cloudhsm service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cloudhsm "C++ SDK for Amazon CloudHSM" aws-cpp-sdk-core)
 
 file(GLOB AWS_CLOUDHSM_HEADERS
     "include/aws/cloudhsm/*.h"

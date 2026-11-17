@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sagemaker "C++ SDK for the AWS sagemaker service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sagemaker "C++ SDK for Amazon SageMaker Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_SAGEMAKER_HEADERS
     "include/aws/sagemaker/*.h"

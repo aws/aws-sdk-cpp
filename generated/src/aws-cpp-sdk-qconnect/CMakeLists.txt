@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-qconnect "C++ SDK for the AWS qconnect service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-qconnect "C++ SDK for Amazon Q Connect" aws-cpp-sdk-core)
 
 file(GLOB AWS_QCONNECT_HEADERS
     "include/aws/qconnect/*.h"

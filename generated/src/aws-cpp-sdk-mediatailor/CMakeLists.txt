@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mediatailor "C++ SDK for the AWS mediatailor service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mediatailor "C++ SDK for AWS MediaTailor" aws-cpp-sdk-core)
 
 file(GLOB AWS_MEDIATAILOR_HEADERS
     "include/aws/mediatailor/*.h"

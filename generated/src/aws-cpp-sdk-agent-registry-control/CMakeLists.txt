@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-agent-registry-control "C++ SDK for the AWS agent-registry-control service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-agent-registry-control "C++ SDK for Agent Registry Control" aws-cpp-sdk-core)
 
 file(GLOB AWS_AGENT-REGISTRY-CONTROL_HEADERS
     "include/aws/agent-registry-control/*.h"

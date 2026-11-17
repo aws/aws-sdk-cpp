@@ -1,5 +1,5 @@
 add_project(codeguru-security-gen-tests
-    "Tests for the AWS CODEGURU-SECURITY C++ SDK"
+    "Tests for the Amazon CodeGuru Security C++ SDK"
     testing-resources
     aws-cpp-sdk-codeguru-security
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(controlcatalog-gen-tests
-    "Tests for the AWS CONTROLCATALOG C++ SDK"
+    "Tests for the AWS Control Catalog C++ SDK"
     testing-resources
     aws-cpp-sdk-controlcatalog
     aws-cpp-sdk-core)

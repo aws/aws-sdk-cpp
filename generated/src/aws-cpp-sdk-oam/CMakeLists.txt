@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-oam "C++ SDK for the AWS oam service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-oam "C++ SDK for CloudWatch Observability Access Manager" aws-cpp-sdk-core)
 
 file(GLOB AWS_OAM_HEADERS
     "include/aws/oam/*.h"

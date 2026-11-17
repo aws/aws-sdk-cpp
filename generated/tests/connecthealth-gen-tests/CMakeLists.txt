@@ -1,5 +1,5 @@
 add_project(connecthealth-gen-tests
-    "Tests for the AWS CONNECTHEALTH C++ SDK"
+    "Tests for the Connect Health C++ SDK"
     testing-resources
     aws-cpp-sdk-connecthealth
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-pricing "C++ SDK for the AWS pricing service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-pricing "C++ SDK for AWS Price List Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_PRICING_HEADERS
     "include/aws/pricing/*.h"

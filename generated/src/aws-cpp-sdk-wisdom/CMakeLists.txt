@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-wisdom "C++ SDK for the AWS wisdom service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-wisdom "C++ SDK for Amazon Connect Wisdom Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_WISDOM_HEADERS
     "include/aws/wisdom/*.h"

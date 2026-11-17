@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sustainability "C++ SDK for the AWS sustainability service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sustainability "C++ SDK for AWS Sustainability" aws-cpp-sdk-core)
 
 file(GLOB AWS_SUSTAINABILITY_HEADERS
     "include/aws/sustainability/*.h"

@@ -1,5 +1,5 @@
 add_project(workmail-gen-tests
-    "Tests for the AWS WORKMAIL C++ SDK"
+    "Tests for the Amazon WorkMail C++ SDK"
     testing-resources
     aws-cpp-sdk-workmail
     aws-cpp-sdk-core)

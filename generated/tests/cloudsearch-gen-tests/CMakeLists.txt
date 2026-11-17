@@ -1,5 +1,5 @@
 add_project(cloudsearch-gen-tests
-    "Tests for the AWS CLOUDSEARCH C++ SDK"
+    "Tests for the Amazon CloudSearch C++ SDK"
     testing-resources
     aws-cpp-sdk-cloudsearch
     aws-cpp-sdk-core)

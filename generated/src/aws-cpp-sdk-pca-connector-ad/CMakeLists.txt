@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-pca-connector-ad "C++ SDK for the AWS pca-connector-ad service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-pca-connector-ad "C++ SDK for PcaConnectorAd" aws-cpp-sdk-core)
 
 file(GLOB AWS_PCA-CONNECTOR-AD_HEADERS
     "include/aws/pca-connector-ad/*.h"

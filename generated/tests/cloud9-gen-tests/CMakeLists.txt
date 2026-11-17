@@ -1,5 +1,5 @@
 add_project(cloud9-gen-tests
-    "Tests for the AWS CLOUD9 C++ SDK"
+    "Tests for the AWS Cloud9 C++ SDK"
     testing-resources
     aws-cpp-sdk-cloud9
     aws-cpp-sdk-core)

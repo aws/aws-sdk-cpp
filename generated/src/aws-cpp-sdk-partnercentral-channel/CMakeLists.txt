@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-partnercentral-channel "C++ SDK for the AWS partnercentral-channel service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-partnercentral-channel "C++ SDK for Partner Central Channel API" aws-cpp-sdk-core)
 
 file(GLOB AWS_PARTNERCENTRAL-CHANNEL_HEADERS
     "include/aws/partnercentral-channel/*.h"

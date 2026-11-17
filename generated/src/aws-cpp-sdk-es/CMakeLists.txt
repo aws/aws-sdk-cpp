@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-es "C++ SDK for the AWS es service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-es "C++ SDK for Amazon Elasticsearch Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_ES_HEADERS
     "include/aws/es/*.h"

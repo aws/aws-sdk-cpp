@@ -1,5 +1,5 @@
 add_project(kms-gen-tests
-    "Tests for the AWS KMS C++ SDK"
+    "Tests for the AWS Key Management Service C++ SDK"
     testing-resources
     aws-cpp-sdk-kms
     aws-cpp-sdk-core)

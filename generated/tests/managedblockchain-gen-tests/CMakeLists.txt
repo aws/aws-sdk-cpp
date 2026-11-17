@@ -1,5 +1,5 @@
 add_project(managedblockchain-gen-tests
-    "Tests for the AWS MANAGEDBLOCKCHAIN C++ SDK"
+    "Tests for the Amazon Managed Blockchain C++ SDK"
     testing-resources
     aws-cpp-sdk-managedblockchain
     aws-cpp-sdk-core)

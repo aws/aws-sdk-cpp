@@ -1,5 +1,5 @@
 add_project(neptune-gen-tests
-    "Tests for the AWS NEPTUNE C++ SDK"
+    "Tests for the Amazon Neptune C++ SDK"
     testing-resources
     aws-cpp-sdk-neptune
     aws-cpp-sdk-core)

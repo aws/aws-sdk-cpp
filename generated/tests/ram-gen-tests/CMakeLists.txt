@@ -1,5 +1,5 @@
 add_project(ram-gen-tests
-    "Tests for the AWS RAM C++ SDK"
+    "Tests for the AWS Resource Access Manager C++ SDK"
     testing-resources
     aws-cpp-sdk-ram
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(connectscheduling-gen-tests
-    "Tests for the AWS CONNECTSCHEDULING C++ SDK"
+    "Tests for the Amazon Connect Scheduling C++ SDK"
     testing-resources
     aws-cpp-sdk-connectscheduling
     aws-cpp-sdk-core)

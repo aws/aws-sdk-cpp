@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-networkmanager "C++ SDK for the AWS networkmanager service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-networkmanager "C++ SDK for AWS Network Manager" aws-cpp-sdk-core)
 
 file(GLOB AWS_NETWORKMANAGER_HEADERS
     "include/aws/networkmanager/*.h"

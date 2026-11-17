@@ -1,5 +1,5 @@
 add_project(appsync-gen-tests
-    "Tests for the AWS APPSYNC C++ SDK"
+    "Tests for the AWS AppSync C++ SDK"
     testing-resources
     aws-cpp-sdk-appsync
     aws-cpp-sdk-core)

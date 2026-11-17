@@ -1,5 +1,5 @@
 add_project(migrationhub-config-gen-tests
-    "Tests for the AWS MIGRATIONHUB-CONFIG C++ SDK"
+    "Tests for the AWS Migration Hub Config C++ SDK"
     testing-resources
     aws-cpp-sdk-migrationhub-config
     aws-cpp-sdk-core)

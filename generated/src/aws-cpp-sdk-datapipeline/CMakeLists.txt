@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-datapipeline "C++ SDK for the AWS datapipeline service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-datapipeline "C++ SDK for AWS Data Pipeline" aws-cpp-sdk-core)
 
 file(GLOB AWS_DATAPIPELINE_HEADERS
     "include/aws/datapipeline/*.h"

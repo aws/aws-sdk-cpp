@@ -1,5 +1,5 @@
 add_project(servicecatalog-gen-tests
-    "Tests for the AWS SERVICECATALOG C++ SDK"
+    "Tests for the AWS Service Catalog C++ SDK"
     testing-resources
     aws-cpp-sdk-servicecatalog
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(workspaces-thin-client-gen-tests
-    "Tests for the AWS WORKSPACES-THIN-CLIENT C++ SDK"
+    "Tests for the Amazon WorkSpaces Thin Client C++ SDK"
     testing-resources
     aws-cpp-sdk-workspaces-thin-client
     aws-cpp-sdk-core)

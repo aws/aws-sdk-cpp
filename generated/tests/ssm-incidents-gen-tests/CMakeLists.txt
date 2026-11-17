@@ -1,5 +1,5 @@
 add_project(ssm-incidents-gen-tests
-    "Tests for the AWS SSM-INCIDENTS C++ SDK"
+    "Tests for the AWS Systems Manager Incident Manager C++ SDK"
     testing-resources
     aws-cpp-sdk-ssm-incidents
     aws-cpp-sdk-core)

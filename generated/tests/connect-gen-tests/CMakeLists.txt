@@ -1,5 +1,5 @@
 add_project(connect-gen-tests
-    "Tests for the AWS CONNECT C++ SDK"
+    "Tests for the Amazon Connect Service C++ SDK"
     testing-resources
     aws-cpp-sdk-connect
     aws-cpp-sdk-core)

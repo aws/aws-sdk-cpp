@@ -1,5 +1,5 @@
 add_project(appconfig-gen-tests
-    "Tests for the AWS APPCONFIG C++ SDK"
+    "Tests for the Amazon AppConfig C++ SDK"
     testing-resources
     aws-cpp-sdk-appconfig
     aws-cpp-sdk-core)

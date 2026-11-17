@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-pinpoint-email "C++ SDK for the AWS pinpoint-email service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-pinpoint-email "C++ SDK for Amazon Pinpoint Email Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_PINPOINT-EMAIL_HEADERS
     "include/aws/pinpoint-email/*.h"

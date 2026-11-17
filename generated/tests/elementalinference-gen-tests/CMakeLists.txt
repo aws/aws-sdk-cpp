@@ -1,5 +1,5 @@
 add_project(elementalinference-gen-tests
-    "Tests for the AWS ELEMENTALINFERENCE C++ SDK"
+    "Tests for the AWS Elemental Inference C++ SDK"
     testing-resources
     aws-cpp-sdk-elementalinference
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-backup "C++ SDK for the AWS backup service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-backup "C++ SDK for AWS Backup" aws-cpp-sdk-core)
 
 file(GLOB AWS_BACKUP_HEADERS
     "include/aws/backup/*.h"

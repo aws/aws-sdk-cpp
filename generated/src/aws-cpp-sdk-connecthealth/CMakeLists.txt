@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-connecthealth "C++ SDK for the AWS connecthealth service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-connecthealth "C++ SDK for Connect Health" aws-cpp-sdk-core)
 
 file(GLOB AWS_CONNECTHEALTH_HEADERS
     "include/aws/connecthealth/*.h"

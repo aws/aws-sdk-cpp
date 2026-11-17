@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-repostspace "C++ SDK for the AWS repostspace service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-repostspace "C++ SDK for AWS re:Post Private" aws-cpp-sdk-core)
 
 file(GLOB AWS_REPOSTSPACE_HEADERS
     "include/aws/repostspace/*.h"

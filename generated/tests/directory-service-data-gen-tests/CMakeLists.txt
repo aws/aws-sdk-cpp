@@ -1,5 +1,5 @@
 add_project(directory-service-data-gen-tests
-    "Tests for the AWS DIRECTORY-SERVICE-DATA C++ SDK"
+    "Tests for the AWS Directory Service Data C++ SDK"
     testing-resources
     aws-cpp-sdk-directory-service-data
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(codecatalyst-gen-tests
-    "Tests for the AWS CODECATALYST C++ SDK"
+    "Tests for the Amazon CodeCatalyst C++ SDK"
     testing-resources
     aws-cpp-sdk-codecatalyst
     aws-cpp-sdk-core)

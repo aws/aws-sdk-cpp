@@ -1,5 +1,5 @@
 add_project(savingsplans-gen-tests
-    "Tests for the AWS SAVINGSPLANS C++ SDK"
+    "Tests for the AWS Savings Plans C++ SDK"
     testing-resources
     aws-cpp-sdk-savingsplans
     aws-cpp-sdk-core)

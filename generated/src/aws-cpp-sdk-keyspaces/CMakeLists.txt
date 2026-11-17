@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-keyspaces "C++ SDK for the AWS keyspaces service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-keyspaces "C++ SDK for Amazon Keyspaces" aws-cpp-sdk-core)
 
 file(GLOB AWS_KEYSPACES_HEADERS
     "include/aws/keyspaces/*.h"

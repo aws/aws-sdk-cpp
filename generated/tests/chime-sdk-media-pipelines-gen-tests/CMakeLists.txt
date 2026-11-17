@@ -1,5 +1,5 @@
 add_project(chime-sdk-media-pipelines-gen-tests
-    "Tests for the AWS CHIME-SDK-MEDIA-PIPELINES C++ SDK"
+    "Tests for the Amazon Chime SDK Media Pipelines C++ SDK"
     testing-resources
     aws-cpp-sdk-chime-sdk-media-pipelines
     aws-cpp-sdk-core)

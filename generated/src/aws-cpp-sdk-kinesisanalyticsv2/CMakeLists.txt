@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-kinesisanalyticsv2 "C++ SDK for the AWS kinesisanalyticsv2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-kinesisanalyticsv2 "C++ SDK for Amazon Kinesis Analytics" aws-cpp-sdk-core)
 
 file(GLOB AWS_KINESISANALYTICSV2_HEADERS
     "include/aws/kinesisanalyticsv2/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-s3tables "C++ SDK for the AWS s3tables service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-s3tables "C++ SDK for Amazon S3 Tables" aws-cpp-sdk-core)
 
 file(GLOB AWS_S3TABLES_HEADERS
     "include/aws/s3tables/*.h"

@@ -1,5 +1,5 @@
 add_project(glue-gen-tests
-    "Tests for the AWS GLUE C++ SDK"
+    "Tests for the AWS Glue C++ SDK"
     testing-resources
     aws-cpp-sdk-glue
     aws-cpp-sdk-core)

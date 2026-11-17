@@ -1,5 +1,5 @@
 add_project(dlm-gen-tests
-    "Tests for the AWS DLM C++ SDK"
+    "Tests for the Amazon Data Lifecycle Manager C++ SDK"
     testing-resources
     aws-cpp-sdk-dlm
     aws-cpp-sdk-core)

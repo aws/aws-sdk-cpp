@@ -1,5 +1,5 @@
 add_project(resource-groups-gen-tests
-    "Tests for the AWS RESOURCE-GROUPS C++ SDK"
+    "Tests for the AWS Resource Groups C++ SDK"
     testing-resources
     aws-cpp-sdk-resource-groups
     aws-cpp-sdk-core)

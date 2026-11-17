@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-applicationcostprofiler "C++ SDK for the AWS applicationcostprofiler service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-applicationcostprofiler "C++ SDK for AWS Application Cost Profiler" aws-cpp-sdk-core)
 
 file(GLOB AWS_APPLICATIONCOSTPROFILER_HEADERS
     "include/aws/applicationcostprofiler/*.h"

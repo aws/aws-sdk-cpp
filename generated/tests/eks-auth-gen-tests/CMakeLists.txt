@@ -1,5 +1,5 @@
 add_project(eks-auth-gen-tests
-    "Tests for the AWS EKS-AUTH C++ SDK"
+    "Tests for the Amazon EKS Auth C++ SDK"
     testing-resources
     aws-cpp-sdk-eks-auth
     aws-cpp-sdk-core)

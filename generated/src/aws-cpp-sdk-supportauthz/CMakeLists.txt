@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-supportauthz "C++ SDK for the AWS supportauthz service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-supportauthz "C++ SDK for SupportAuthZ" aws-cpp-sdk-core)
 
 file(GLOB AWS_SUPPORTAUTHZ_HEADERS
     "include/aws/supportauthz/*.h"

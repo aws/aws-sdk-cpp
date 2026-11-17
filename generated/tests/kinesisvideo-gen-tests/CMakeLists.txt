@@ -1,5 +1,5 @@
 add_project(kinesisvideo-gen-tests
-    "Tests for the AWS KINESISVIDEO C++ SDK"
+    "Tests for the Amazon Kinesis Video Streams C++ SDK"
     testing-resources
     aws-cpp-sdk-kinesisvideo
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(s3vectors-gen-tests
-    "Tests for the AWS S3VECTORS C++ SDK"
+    "Tests for the Amazon S3 Vectors C++ SDK"
     testing-resources
     aws-cpp-sdk-s3vectors
     aws-cpp-sdk-core)

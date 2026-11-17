@@ -1,5 +1,5 @@
 add_project(location-gen-tests
-    "Tests for the AWS LOCATION C++ SDK"
+    "Tests for the Amazon Location Service C++ SDK"
     testing-resources
     aws-cpp-sdk-location
     aws-cpp-sdk-core)

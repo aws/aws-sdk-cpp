@@ -1,5 +1,5 @@
 add_project(mediaconnect-gen-tests
-    "Tests for the AWS MEDIACONNECT C++ SDK"
+    "Tests for the AWS MediaConnect C++ SDK"
     testing-resources
     aws-cpp-sdk-mediaconnect
     aws-cpp-sdk-core)

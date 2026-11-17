@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-pinpoint-sms-voice-v2 "C++ SDK for the AWS pinpoint-sms-voice-v2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-pinpoint-sms-voice-v2 "C++ SDK for Amazon Pinpoint SMS Voice V2" aws-cpp-sdk-core)
 
 file(GLOB AWS_PINPOINT-SMS-VOICE-V2_HEADERS
     "include/aws/pinpoint-sms-voice-v2/*.h"

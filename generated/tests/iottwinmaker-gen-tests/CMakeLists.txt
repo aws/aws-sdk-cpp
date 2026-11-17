@@ -1,5 +1,5 @@
 add_project(iottwinmaker-gen-tests
-    "Tests for the AWS IOTTWINMAKER C++ SDK"
+    "Tests for the AWS IoT TwinMaker C++ SDK"
     testing-resources
     aws-cpp-sdk-iottwinmaker
     aws-cpp-sdk-core)

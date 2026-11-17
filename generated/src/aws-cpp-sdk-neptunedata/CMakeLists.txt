@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-neptunedata "C++ SDK for the AWS neptunedata service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-neptunedata "C++ SDK for Amazon NeptuneData" aws-cpp-sdk-core)
 
 file(GLOB AWS_NEPTUNEDATA_HEADERS
     "include/aws/neptunedata/*.h"

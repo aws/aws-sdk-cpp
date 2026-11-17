@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-accessanalyzer "C++ SDK for the AWS accessanalyzer service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-accessanalyzer "C++ SDK for Access Analyzer" aws-cpp-sdk-core)
 
 file(GLOB AWS_ACCESSANALYZER_HEADERS
     "include/aws/accessanalyzer/*.h"

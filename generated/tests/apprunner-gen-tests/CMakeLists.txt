@@ -1,5 +1,5 @@
 add_project(apprunner-gen-tests
-    "Tests for the AWS APPRUNNER C++ SDK"
+    "Tests for the AWS App Runner C++ SDK"
     testing-resources
     aws-cpp-sdk-apprunner
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-amplifyuibuilder "C++ SDK for the AWS amplifyuibuilder service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-amplifyuibuilder "C++ SDK for AWS Amplify UI Builder" aws-cpp-sdk-core)
 
 file(GLOB AWS_AMPLIFYUIBUILDER_HEADERS
     "include/aws/amplifyuibuilder/*.h"

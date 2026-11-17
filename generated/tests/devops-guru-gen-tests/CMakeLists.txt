@@ -1,5 +1,5 @@
 add_project(devops-guru-gen-tests
-    "Tests for the AWS DEVOPS-GURU C++ SDK"
+    "Tests for the Amazon DevOps Guru C++ SDK"
     testing-resources
     aws-cpp-sdk-devops-guru
     aws-cpp-sdk-core)

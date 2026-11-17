@@ -1,5 +1,5 @@
 add_project(migration-hub-refactor-spaces-gen-tests
-    "Tests for the AWS MIGRATION-HUB-REFACTOR-SPACES C++ SDK"
+    "Tests for the AWS Migration Hub Refactor Spaces C++ SDK"
     testing-resources
     aws-cpp-sdk-migration-hub-refactor-spaces
     aws-cpp-sdk-core)

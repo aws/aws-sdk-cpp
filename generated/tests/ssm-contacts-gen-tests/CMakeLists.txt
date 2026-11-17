@@ -1,5 +1,5 @@
 add_project(ssm-contacts-gen-tests
-    "Tests for the AWS SSM-CONTACTS C++ SDK"
+    "Tests for the AWS Systems Manager Incident Manager Contacts C++ SDK"
     testing-resources
     aws-cpp-sdk-ssm-contacts
     aws-cpp-sdk-core)

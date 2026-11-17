@@ -1,5 +1,5 @@
 add_project(networkmonitor-gen-tests
-    "Tests for the AWS NETWORKMONITOR C++ SDK"
+    "Tests for the Amazon CloudWatch Network Monitor C++ SDK"
     testing-resources
     aws-cpp-sdk-networkmonitor
     aws-cpp-sdk-core)

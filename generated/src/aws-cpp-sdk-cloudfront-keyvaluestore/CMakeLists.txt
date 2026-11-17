@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cloudfront-keyvaluestore "C++ SDK for the AWS cloudfront-keyvaluestore service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cloudfront-keyvaluestore "C++ SDK for Amazon CloudFront KeyValueStore" aws-cpp-sdk-core)
 
 file(GLOB AWS_CLOUDFRONT-KEYVALUESTORE_HEADERS
     "include/aws/cloudfront-keyvaluestore/*.h"

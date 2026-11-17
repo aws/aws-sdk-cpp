@@ -1,5 +1,5 @@
 add_project(monitoring-gen-tests
-    "Tests for the AWS MONITORING C++ SDK"
+    "Tests for the Amazon CloudWatch C++ SDK"
     testing-resources
     aws-cpp-sdk-monitoring
     aws-cpp-sdk-core)

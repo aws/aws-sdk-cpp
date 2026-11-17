@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-directconnect "C++ SDK for the AWS directconnect service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-directconnect "C++ SDK for AWS Direct Connect" aws-cpp-sdk-core)
 
 file(GLOB AWS_DIRECTCONNECT_HEADERS
     "include/aws/directconnect/*.h"

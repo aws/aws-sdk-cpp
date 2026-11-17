@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-medical-imaging "C++ SDK for the AWS medical-imaging service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-medical-imaging "C++ SDK for AWS Health Imaging" aws-cpp-sdk-core)
 
 file(GLOB AWS_MEDICAL-IMAGING_HEADERS
     "include/aws/medical-imaging/*.h"

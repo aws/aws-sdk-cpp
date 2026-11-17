@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-rbin "C++ SDK for the AWS rbin service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-rbin "C++ SDK for Amazon Recycle Bin" aws-cpp-sdk-core)
 
 file(GLOB AWS_RBIN_HEADERS
     "include/aws/rbin/*.h"

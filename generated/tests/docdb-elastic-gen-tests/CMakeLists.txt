@@ -1,5 +1,5 @@
 add_project(docdb-elastic-gen-tests
-    "Tests for the AWS DOCDB-ELASTIC C++ SDK"
+    "Tests for the Amazon DocumentDB Elastic Clusters C++ SDK"
     testing-resources
     aws-cpp-sdk-docdb-elastic
     aws-cpp-sdk-core)

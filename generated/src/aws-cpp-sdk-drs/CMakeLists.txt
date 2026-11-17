@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-drs "C++ SDK for the AWS drs service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-drs "C++ SDK for Elastic Disaster Recovery Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_DRS_HEADERS
     "include/aws/drs/*.h"

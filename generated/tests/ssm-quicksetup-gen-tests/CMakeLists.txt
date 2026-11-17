@@ -1,5 +1,5 @@
 add_project(ssm-quicksetup-gen-tests
-    "Tests for the AWS SSM-QUICKSETUP C++ SDK"
+    "Tests for the AWS Systems Manager QuickSetup C++ SDK"
     testing-resources
     aws-cpp-sdk-ssm-quicksetup
     aws-cpp-sdk-core)

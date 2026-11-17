@@ -1,5 +1,5 @@
 add_project(proton-gen-tests
-    "Tests for the AWS PROTON C++ SDK"
+    "Tests for the AWS Proton C++ SDK"
     testing-resources
     aws-cpp-sdk-proton
     aws-cpp-sdk-core)

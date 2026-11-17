@@ -1,5 +1,5 @@
 add_project(mwaa-gen-tests
-    "Tests for the AWS MWAA C++ SDK"
+    "Tests for the AmazonMWAA C++ SDK"
     testing-resources
     aws-cpp-sdk-mwaa
     aws-cpp-sdk-core)

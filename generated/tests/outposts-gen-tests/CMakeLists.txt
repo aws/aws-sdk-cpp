@@ -1,5 +1,5 @@
 add_project(outposts-gen-tests
-    "Tests for the AWS OUTPOSTS C++ SDK"
+    "Tests for the AWS Outposts C++ SDK"
     testing-resources
     aws-cpp-sdk-outposts
     aws-cpp-sdk-core)

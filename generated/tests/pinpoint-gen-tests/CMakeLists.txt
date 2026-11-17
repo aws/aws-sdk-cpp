@@ -1,5 +1,5 @@
 add_project(pinpoint-gen-tests
-    "Tests for the AWS PINPOINT C++ SDK"
+    "Tests for the Amazon Pinpoint C++ SDK"
     testing-resources
     aws-cpp-sdk-pinpoint
     aws-cpp-sdk-core)

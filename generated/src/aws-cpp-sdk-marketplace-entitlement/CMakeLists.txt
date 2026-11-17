@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-marketplace-entitlement "C++ SDK for the AWS marketplace-entitlement service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-marketplace-entitlement "C++ SDK for AWS Marketplace Entitlement Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_MARKETPLACE-ENTITLEMENT_HEADERS
     "include/aws/marketplace-entitlement/*.h"

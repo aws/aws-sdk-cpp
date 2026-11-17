@@ -1,5 +1,5 @@
 add_project(application-insights-gen-tests
-    "Tests for the AWS APPLICATION-INSIGHTS C++ SDK"
+    "Tests for the Amazon CloudWatch Application Insights C++ SDK"
     testing-resources
     aws-cpp-sdk-application-insights
     aws-cpp-sdk-core)

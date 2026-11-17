@@ -22,7 +22,7 @@ endif()
 
 set(PROJECT_VERSION 1.0)
 #else
-add_project(aws-cpp-sdk-${metadata.projectName} "C++ SDK for the AWS ${metadata.projectName} service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-${metadata.projectName} "C++ SDK for ${metadata.serviceFullName}" aws-cpp-sdk-core)
 #end
 
 #set($projectNameCaps = $metadata.projectName.toUpperCase())

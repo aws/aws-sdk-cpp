@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-network-firewall "C++ SDK for the AWS network-firewall service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-network-firewall "C++ SDK for AWS Network Firewall" aws-cpp-sdk-core)
 
 file(GLOB AWS_NETWORK-FIREWALL_HEADERS
     "include/aws/network-firewall/*.h"

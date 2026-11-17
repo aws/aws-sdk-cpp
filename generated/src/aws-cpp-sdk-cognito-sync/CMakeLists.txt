@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cognito-sync "C++ SDK for the AWS cognito-sync service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cognito-sync "C++ SDK for Amazon Cognito Sync" aws-cpp-sdk-core)
 
 file(GLOB AWS_COGNITO-SYNC_HEADERS
     "include/aws/cognito-sync/*.h"

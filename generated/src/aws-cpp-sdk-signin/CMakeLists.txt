@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-signin "C++ SDK for the AWS signin service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-signin "C++ SDK for AWS Sign-In Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_SIGNIN_HEADERS
     "include/aws/signin/*.h"

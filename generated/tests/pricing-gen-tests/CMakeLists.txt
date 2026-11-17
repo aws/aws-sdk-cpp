@@ -1,5 +1,5 @@
 add_project(pricing-gen-tests
-    "Tests for the AWS PRICING C++ SDK"
+    "Tests for the AWS Price List Service C++ SDK"
     testing-resources
     aws-cpp-sdk-pricing
     aws-cpp-sdk-core)

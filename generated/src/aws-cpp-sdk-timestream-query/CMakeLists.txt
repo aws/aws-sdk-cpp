@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-timestream-query "C++ SDK for the AWS timestream-query service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-timestream-query "C++ SDK for Amazon Timestream Query" aws-cpp-sdk-core)
 
 file(GLOB AWS_TIMESTREAM-QUERY_HEADERS
     "include/aws/timestream-query/*.h"

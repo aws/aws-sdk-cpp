@@ -1,5 +1,5 @@
 add_project(iot-managed-integrations-gen-tests
-    "Tests for the AWS IOT-MANAGED-INTEGRATIONS C++ SDK"
+    "Tests for the Managed integrations for AWS IoT Device Management C++ SDK"
     testing-resources
     aws-cpp-sdk-iot-managed-integrations
     aws-cpp-sdk-core)

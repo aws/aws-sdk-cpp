@@ -11,14 +11,6 @@ import json
 import os
 import re
 
-# Legacy table of service model remaps/name correction during the code generation
-SERVICE_NAME_REMAPS = {"runtime.lex": "lex",
-                       "runtime.lex.v2": "lexv2-runtime",
-                       "models.lex.v2": "lexv2-models",
-                       "transfer": "awstransfer",
-                       "transcribe-streaming": "transcribestreaming",
-                       "streams.dynamodb": "dynamodbstreams"}
-
 SMITHY_EXCLUSION_CLIENTS = {
     # multi auth
     "eventbridge"
@@ -104,37 +96,32 @@ class ModelUtils(object):
             return dict((k, self.models_available[k]) for k in clients_to_build if k in clients_to_build)
 
     @staticmethod
-    def _resolve_service_key(raw_key: str, model_filename: str, models_dir: str, legacy_services: set) -> str:
-        """Resolve the package directory name for a service.
+    def _resolve_service_key(raw_key: str, model_filename: str, models_dir: str, service_map: dict) -> str:
+        """Resolve the package directory name for a service from its serviceId.
 
-        For legacy services (in the frozen set), use the filename-based key.
-        For new services, use the normalized serviceId from the model
-        so it naturally aligns with what Smithy codegen expects.
+        1. Edge services whose model has no serviceId (importexport, sdb): keep the
+           model-file-based name (their already-released folder).
+        2. Divergent services (released folder != serviceId-derived path): use the
+           frozen folder from the serviceId-keyed map.
+        3. Everything else: derive directly from the serviceId.
+
+        The model file name is NOT used to derive the key except as the fallback for
+        the serviceId-less edge services above.
         """
-        key = SERVICE_NAME_REMAPS.get(raw_key, raw_key)
-        if "." in key:
-            key = "-".join(reversed(key.split(".")))
-        if ";" in key:
-            key = key.replace(";", "-")
-
-        # Legacy service: keep filename-based name
-        if key in legacy_services:
-            return key
-
-        # New service: use normalized serviceId if it differs from filename-based key
-        full_model_path = os.path.join(models_dir, model_filename)
+        service_id = ""
         try:
-            with open(full_model_path, 'r') as f:
-                model = json.load(f)
-            service_id = model.get("metadata", {}).get("serviceId", "")
-            if service_id:
-                sdk_id_key = service_id.lower().replace(" ", "-").replace("_", "-")
-                if sdk_id_key != key:
-                    return sdk_id_key
+            with open(os.path.join(models_dir, model_filename), 'r') as f:
+                service_id = json.load(f).get("metadata", {}).get("serviceId", "")
         except (json.JSONDecodeError, IOError):
             pass
 
-        return key
+        # 1. serviceId-less edge models -> preserved filename-based folder.
+        if not service_id:
+            return raw_key
+
+        # 2./3. serviceId-derived path; frozen folder from the map for divergent services.
+        sid_path = service_id.lower().replace(" ", "-").replace("_", "-")
+        return service_map.get(sid_path, sid_path)
 
     @staticmethod
     def _collect_available_models(models_dir: str, endpoint_rules_dir: str) -> dict:
@@ -144,17 +131,15 @@ class ModelUtils(object):
         :param endpoint_rules_dir: path to the directory with endpoints dir models
         :return: dict<service_name, model_file_name> in models dir
         """
-        # Load the smithy2c2j service map to determine which services are legacy
-        # (any service whose sdkId-derived name appears as a KEY in this map has a known
-        # mismatch and uses the filename-based value)
+        # Load the smithy2c2j service map: serviceId-derived path (key) -> released
+        # folder name (value), for services whose folder diverges from the derived path.
         service_map_path = os.path.normpath(
             os.path.join(models_dir, "../smithy/cpp-codegen/smithy2c2j_service_map.json"))
-        legacy_services = set()
+        service_map = {}
         if os.path.exists(service_map_path):
             try:
                 with open(service_map_path, 'r') as f:
                     service_map = json.load(f)
-                legacy_services = set(service_map.values())
             except (json.JSONDecodeError, IOError):
                 pass
 
@@ -180,7 +165,7 @@ class ModelUtils(object):
         service_name_to_model_filename = dict()
         missing = set()
         for raw_key, model_file_date in service_name_to_model_filename_date.items():
-            key = ModelUtils._resolve_service_key(raw_key, model_file_date[0], models_dir, legacy_services)
+            key = ModelUtils._resolve_service_key(raw_key, model_file_date[0], models_dir, service_map)
 
             # fetch endpoint-rules filename which is based on ServiceId in c2j models:
             try:

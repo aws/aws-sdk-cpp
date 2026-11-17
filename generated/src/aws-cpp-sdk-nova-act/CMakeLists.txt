@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-nova-act "C++ SDK for the AWS nova-act service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-nova-act "C++ SDK for Nova Act Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_NOVA-ACT_HEADERS
     "include/aws/nova-act/*.h"

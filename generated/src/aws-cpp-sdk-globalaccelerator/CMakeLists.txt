@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-globalaccelerator "C++ SDK for the AWS globalaccelerator service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-globalaccelerator "C++ SDK for AWS Global Accelerator" aws-cpp-sdk-core)
 
 file(GLOB AWS_GLOBALACCELERATOR_HEADERS
     "include/aws/globalaccelerator/*.h"

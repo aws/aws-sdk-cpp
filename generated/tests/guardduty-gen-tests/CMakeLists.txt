@@ -1,5 +1,5 @@
 add_project(guardduty-gen-tests
-    "Tests for the AWS GUARDDUTY C++ SDK"
+    "Tests for the Amazon GuardDuty C++ SDK"
     testing-resources
     aws-cpp-sdk-guardduty
     aws-cpp-sdk-core)

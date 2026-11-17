@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-freetier "C++ SDK for the AWS freetier service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-freetier "C++ SDK for AWS Free Tier" aws-cpp-sdk-core)
 
 file(GLOB AWS_FREETIER_HEADERS
     "include/aws/freetier/*.h"

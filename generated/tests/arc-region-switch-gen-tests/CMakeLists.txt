@@ -1,5 +1,5 @@
 add_project(arc-region-switch-gen-tests
-    "Tests for the AWS ARC-REGION-SWITCH C++ SDK"
+    "Tests for the ARC - Region switch C++ SDK"
     testing-resources
     aws-cpp-sdk-arc-region-switch
     aws-cpp-sdk-core)

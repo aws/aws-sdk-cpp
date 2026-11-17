@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-waf-regional "C++ SDK for the AWS waf-regional service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-waf-regional "C++ SDK for AWS WAF Regional" aws-cpp-sdk-core)
 
 file(GLOB AWS_WAF-REGIONAL_HEADERS
     "include/aws/waf-regional/*.h"

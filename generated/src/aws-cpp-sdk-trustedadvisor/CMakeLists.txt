@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-trustedadvisor "C++ SDK for the AWS trustedadvisor service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-trustedadvisor "C++ SDK for TrustedAdvisor Public API" aws-cpp-sdk-core)
 
 file(GLOB AWS_TRUSTEDADVISOR_HEADERS
     "include/aws/trustedadvisor/*.h"

@@ -1,5 +1,5 @@
 add_project(health-gen-tests
-    "Tests for the AWS HEALTH C++ SDK"
+    "Tests for the AWS Health APIs and Notifications C++ SDK"
     testing-resources
     aws-cpp-sdk-health
     aws-cpp-sdk-core)

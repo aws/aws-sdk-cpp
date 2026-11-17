@@ -1,5 +1,5 @@
 add_project(kendra-ranking-gen-tests
-    "Tests for the AWS KENDRA-RANKING C++ SDK"
+    "Tests for the Amazon Kendra Intelligent Ranking C++ SDK"
     testing-resources
     aws-cpp-sdk-kendra-ranking
     aws-cpp-sdk-core)

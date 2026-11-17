@@ -1,5 +1,5 @@
 add_project(sagemakertrainingsessionruntime-gen-tests
-    "Tests for the AWS SAGEMAKERTRAININGSESSIONRUNTIME C++ SDK"
+    "Tests for the SageMaker Training Session Runtime C++ SDK"
     testing-resources
     aws-cpp-sdk-sagemakertrainingsessionruntime
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(ecs-gen-tests
-    "Tests for the AWS ECS C++ SDK"
+    "Tests for the Amazon EC2 Container Service C++ SDK"
     testing-resources
     aws-cpp-sdk-ecs
     aws-cpp-sdk-core)

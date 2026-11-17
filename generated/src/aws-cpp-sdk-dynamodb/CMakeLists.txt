@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-dynamodb "C++ SDK for the AWS dynamodb service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-dynamodb "C++ SDK for Amazon DynamoDB" aws-cpp-sdk-core)
 
 file(GLOB AWS_DYNAMODB_HEADERS
     "include/aws/dynamodb/*.h"

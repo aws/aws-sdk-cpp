@@ -1,5 +1,5 @@
 add_project(license-manager-gen-tests
-    "Tests for the AWS LICENSE-MANAGER C++ SDK"
+    "Tests for the AWS License Manager C++ SDK"
     testing-resources
     aws-cpp-sdk-license-manager
     aws-cpp-sdk-core)

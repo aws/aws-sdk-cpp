@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ram "C++ SDK for the AWS ram service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ram "C++ SDK for AWS Resource Access Manager" aws-cpp-sdk-core)
 
 file(GLOB AWS_RAM_HEADERS
     "include/aws/ram/*.h"

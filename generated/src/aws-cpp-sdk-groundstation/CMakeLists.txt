@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-groundstation "C++ SDK for the AWS groundstation service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-groundstation "C++ SDK for AWS Ground Station" aws-cpp-sdk-core)
 
 file(GLOB AWS_GROUNDSTATION_HEADERS
     "include/aws/groundstation/*.h"

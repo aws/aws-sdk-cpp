@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sagemaker-geospatial "C++ SDK for the AWS sagemaker-geospatial service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sagemaker-geospatial "C++ SDK for Amazon SageMaker geospatial capabilities" aws-cpp-sdk-core)
 
 file(GLOB AWS_SAGEMAKER-GEOSPATIAL_HEADERS
     "include/aws/sagemaker-geospatial/*.h"

@@ -1,5 +1,5 @@
 add_project(macie2-gen-tests
-    "Tests for the AWS MACIE2 C++ SDK"
+    "Tests for the Amazon Macie 2 C++ SDK"
     testing-resources
     aws-cpp-sdk-macie2
     aws-cpp-sdk-core)

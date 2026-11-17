@@ -1,5 +1,5 @@
 add_project(repostspace-gen-tests
-    "Tests for the AWS REPOSTSPACE C++ SDK"
+    "Tests for the AWS re:Post Private C++ SDK"
     testing-resources
     aws-cpp-sdk-repostspace
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(marketplace-discovery-gen-tests
-    "Tests for the AWS MARKETPLACE-DISCOVERY C++ SDK"
+    "Tests for the AWS Marketplace Discovery C++ SDK"
     testing-resources
     aws-cpp-sdk-marketplace-discovery
     aws-cpp-sdk-core)

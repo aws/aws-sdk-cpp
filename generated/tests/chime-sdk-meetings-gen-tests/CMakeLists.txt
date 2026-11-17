@@ -1,5 +1,5 @@
 add_project(chime-sdk-meetings-gen-tests
-    "Tests for the AWS CHIME-SDK-MEETINGS C++ SDK"
+    "Tests for the Amazon Chime SDK Meetings C++ SDK"
     testing-resources
     aws-cpp-sdk-chime-sdk-meetings
     aws-cpp-sdk-core)

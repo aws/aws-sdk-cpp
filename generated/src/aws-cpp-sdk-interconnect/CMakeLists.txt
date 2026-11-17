@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-interconnect "C++ SDK for the AWS interconnect service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-interconnect "C++ SDK for Interconnect" aws-cpp-sdk-core)
 
 file(GLOB AWS_INTERCONNECT_HEADERS
     "include/aws/interconnect/*.h"

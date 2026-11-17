@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-s3outposts "C++ SDK for the AWS s3outposts service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-s3outposts "C++ SDK for Amazon S3 on Outposts" aws-cpp-sdk-core)
 
 file(GLOB AWS_S3OUTPOSTS_HEADERS
     "include/aws/s3outposts/*.h"

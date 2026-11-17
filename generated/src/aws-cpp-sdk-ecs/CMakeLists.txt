@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ecs "C++ SDK for the AWS ecs service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ecs "C++ SDK for Amazon EC2 Container Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_ECS_HEADERS
     "include/aws/ecs/*.h"

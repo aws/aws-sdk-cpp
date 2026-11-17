@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-braket "C++ SDK for the AWS braket service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-braket "C++ SDK for Braket" aws-cpp-sdk-core)
 
 file(GLOB AWS_BRAKET_HEADERS
     "include/aws/braket/*.h"

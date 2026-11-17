@@ -1,5 +1,5 @@
 add_project(sso-oidc-gen-tests
-    "Tests for the AWS SSO-OIDC C++ SDK"
+    "Tests for the AWS SSO OIDC C++ SDK"
     testing-resources
     aws-cpp-sdk-sso-oidc
     aws-cpp-sdk-core)

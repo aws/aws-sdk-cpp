@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "tools",
+  "contributor": "",
+  "description": "Derive generated service folder and CMake project/paths from the service id rather than the model file name, derive source CMake project descriptions from the service full name and remove AWS brand prefix"
+}

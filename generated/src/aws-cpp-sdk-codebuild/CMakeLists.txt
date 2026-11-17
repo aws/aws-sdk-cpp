@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-codebuild "C++ SDK for the AWS codebuild service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-codebuild "C++ SDK for AWS CodeBuild" aws-cpp-sdk-core)
 
 file(GLOB AWS_CODEBUILD_HEADERS
     "include/aws/codebuild/*.h"

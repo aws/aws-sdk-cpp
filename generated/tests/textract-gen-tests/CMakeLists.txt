@@ -1,5 +1,5 @@
 add_project(textract-gen-tests
-    "Tests for the AWS TEXTRACT C++ SDK"
+    "Tests for the Amazon Textract C++ SDK"
     testing-resources
     aws-cpp-sdk-textract
     aws-cpp-sdk-core)

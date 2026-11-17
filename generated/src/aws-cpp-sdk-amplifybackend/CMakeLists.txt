@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-amplifybackend "C++ SDK for the AWS amplifybackend service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-amplifybackend "C++ SDK for AmplifyBackend" aws-cpp-sdk-core)
 
 file(GLOB AWS_AMPLIFYBACKEND_HEADERS
     "include/aws/amplifybackend/*.h"

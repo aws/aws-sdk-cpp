@@ -1,5 +1,5 @@
 add_project(geo-routes-gen-tests
-    "Tests for the AWS GEO-ROUTES C++ SDK"
+    "Tests for the Amazon Location Service Routes V2 C++ SDK"
     testing-resources
     aws-cpp-sdk-geo-routes
     aws-cpp-sdk-core)

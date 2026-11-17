@@ -1,5 +1,5 @@
 add_project(uxc-gen-tests
-    "Tests for the AWS UXC C++ SDK"
+    "Tests for the AWS User Experience Customization C++ SDK"
     testing-resources
     aws-cpp-sdk-uxc
     aws-cpp-sdk-core)

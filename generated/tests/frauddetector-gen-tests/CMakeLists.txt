@@ -1,5 +1,5 @@
 add_project(frauddetector-gen-tests
-    "Tests for the AWS FRAUDDETECTOR C++ SDK"
+    "Tests for the Amazon Fraud Detector C++ SDK"
     testing-resources
     aws-cpp-sdk-frauddetector
     aws-cpp-sdk-core)

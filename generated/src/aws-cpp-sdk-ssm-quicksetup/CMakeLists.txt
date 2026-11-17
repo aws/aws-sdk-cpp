@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ssm-quicksetup "C++ SDK for the AWS ssm-quicksetup service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ssm-quicksetup "C++ SDK for AWS Systems Manager QuickSetup" aws-cpp-sdk-core)
 
 file(GLOB AWS_SSM-QUICKSETUP_HEADERS
     "include/aws/ssm-quicksetup/*.h"

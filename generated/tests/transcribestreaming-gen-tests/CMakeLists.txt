@@ -1,5 +1,5 @@
 add_project(transcribestreaming-gen-tests
-    "Tests for the AWS TRANSCRIBESTREAMING C++ SDK"
+    "Tests for the Amazon Transcribe Streaming Service C++ SDK"
     testing-resources
     aws-cpp-sdk-transcribestreaming
     aws-cpp-sdk-core)

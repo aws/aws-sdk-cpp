@@ -1,5 +1,5 @@
 add_project(sns-gen-tests
-    "Tests for the AWS SNS C++ SDK"
+    "Tests for the Amazon Simple Notification Service C++ SDK"
     testing-resources
     aws-cpp-sdk-sns
     aws-cpp-sdk-core)

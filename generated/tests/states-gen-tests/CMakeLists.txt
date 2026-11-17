@@ -1,5 +1,5 @@
 add_project(states-gen-tests
-    "Tests for the AWS STATES C++ SDK"
+    "Tests for the AWS Step Functions C++ SDK"
     testing-resources
     aws-cpp-sdk-states
     aws-cpp-sdk-core)

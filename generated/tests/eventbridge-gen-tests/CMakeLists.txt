@@ -1,5 +1,5 @@
 add_project(eventbridge-gen-tests
-    "Tests for the AWS EVENTBRIDGE C++ SDK"
+    "Tests for the Amazon EventBridge C++ SDK"
     testing-resources
     aws-cpp-sdk-eventbridge
     aws-cpp-sdk-core)

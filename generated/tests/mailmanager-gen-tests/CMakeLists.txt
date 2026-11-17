@@ -1,5 +1,5 @@
 add_project(mailmanager-gen-tests
-    "Tests for the AWS MAILMANAGER C++ SDK"
+    "Tests for the MailManager C++ SDK"
     testing-resources
     aws-cpp-sdk-mailmanager
     aws-cpp-sdk-core)

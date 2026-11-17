@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-payment-cryptography-data "C++ SDK for the AWS payment-cryptography-data service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-payment-cryptography-data "C++ SDK for Payment Cryptography Data Plane" aws-cpp-sdk-core)
 
 file(GLOB AWS_PAYMENT-CRYPTOGRAPHY-DATA_HEADERS
     "include/aws/payment-cryptography-data/*.h"

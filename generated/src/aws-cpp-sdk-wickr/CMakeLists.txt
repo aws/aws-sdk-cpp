@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-wickr "C++ SDK for the AWS wickr service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-wickr "C++ SDK for AWS Wickr Admin API" aws-cpp-sdk-core)
 
 file(GLOB AWS_WICKR_HEADERS
     "include/aws/wickr/*.h"

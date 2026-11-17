@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ec2 "C++ SDK for the AWS ec2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ec2 "C++ SDK for Amazon Elastic Compute Cloud" aws-cpp-sdk-core)
 
 file(GLOB AWS_EC2_HEADERS
     "include/aws/ec2/*.h"

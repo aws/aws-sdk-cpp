@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-marketplace-discovery "C++ SDK for the AWS marketplace-discovery service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-marketplace-discovery "C++ SDK for AWS Marketplace Discovery" aws-cpp-sdk-core)
 
 file(GLOB AWS_MARKETPLACE-DISCOVERY_HEADERS
     "include/aws/marketplace-discovery/*.h"

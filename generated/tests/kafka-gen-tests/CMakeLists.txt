@@ -1,5 +1,5 @@
 add_project(kafka-gen-tests
-    "Tests for the AWS KAFKA C++ SDK"
+    "Tests for the Managed Streaming for Kafka C++ SDK"
     testing-resources
     aws-cpp-sdk-kafka
     aws-cpp-sdk-core)

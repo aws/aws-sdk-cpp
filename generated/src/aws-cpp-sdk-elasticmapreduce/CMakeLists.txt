@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-elasticmapreduce "C++ SDK for the AWS elasticmapreduce service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-elasticmapreduce "C++ SDK for Amazon EMR" aws-cpp-sdk-core)
 
 file(GLOB AWS_ELASTICMAPREDUCE_HEADERS
     "include/aws/elasticmapreduce/*.h"

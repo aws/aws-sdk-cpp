@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-route53-recovery-readiness "C++ SDK for the AWS route53-recovery-readiness service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-route53-recovery-readiness "C++ SDK for AWS Route53 Recovery Readiness" aws-cpp-sdk-core)
 
 file(GLOB AWS_ROUTE53-RECOVERY-READINESS_HEADERS
     "include/aws/route53-recovery-readiness/*.h"

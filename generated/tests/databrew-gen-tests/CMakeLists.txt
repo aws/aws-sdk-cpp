@@ -1,5 +1,5 @@
 add_project(databrew-gen-tests
-    "Tests for the AWS DATABREW C++ SDK"
+    "Tests for the AWS Glue DataBrew C++ SDK"
     testing-resources
     aws-cpp-sdk-databrew
     aws-cpp-sdk-core)

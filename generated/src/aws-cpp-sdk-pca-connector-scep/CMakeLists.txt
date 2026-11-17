@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-pca-connector-scep "C++ SDK for the AWS pca-connector-scep service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-pca-connector-scep "C++ SDK for Private CA Connector for SCEP" aws-cpp-sdk-core)
 
 file(GLOB AWS_PCA-CONNECTOR-SCEP_HEADERS
     "include/aws/pca-connector-scep/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-batch "C++ SDK for the AWS batch service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-batch "C++ SDK for AWS Batch" aws-cpp-sdk-core)
 
 file(GLOB AWS_BATCH_HEADERS
     "include/aws/batch/*.h"

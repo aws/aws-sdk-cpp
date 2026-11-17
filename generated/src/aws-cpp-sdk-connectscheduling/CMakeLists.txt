@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-connectscheduling "C++ SDK for the AWS connectscheduling service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-connectscheduling "C++ SDK for Amazon Connect Scheduling" aws-cpp-sdk-core)
 
 file(GLOB AWS_CONNECTSCHEDULING_HEADERS
     "include/aws/connectscheduling/*.h"

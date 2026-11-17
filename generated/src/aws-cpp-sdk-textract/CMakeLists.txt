@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-textract "C++ SDK for the AWS textract service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-textract "C++ SDK for Amazon Textract" aws-cpp-sdk-core)
 
 file(GLOB AWS_TEXTRACT_HEADERS
     "include/aws/textract/*.h"

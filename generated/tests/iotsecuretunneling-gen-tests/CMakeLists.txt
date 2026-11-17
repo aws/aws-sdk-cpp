@@ -1,5 +1,5 @@
 add_project(iotsecuretunneling-gen-tests
-    "Tests for the AWS IOTSECURETUNNELING C++ SDK"
+    "Tests for the AWS IoT Secure Tunneling C++ SDK"
     testing-resources
     aws-cpp-sdk-iotsecuretunneling
     aws-cpp-sdk-core)

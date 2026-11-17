@@ -1,5 +1,5 @@
 add_project(glacier-gen-tests
-    "Tests for the AWS GLACIER C++ SDK"
+    "Tests for the Amazon Glacier C++ SDK"
     testing-resources
     aws-cpp-sdk-glacier
     aws-cpp-sdk-core)

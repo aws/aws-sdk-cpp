@@ -1,5 +1,5 @@
 add_project(bedrock-runtime-gen-tests
-    "Tests for the AWS BEDROCK-RUNTIME C++ SDK"
+    "Tests for the Amazon Bedrock Runtime C++ SDK"
     testing-resources
     aws-cpp-sdk-bedrock-runtime
     aws-cpp-sdk-core)

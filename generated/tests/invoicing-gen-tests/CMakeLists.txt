@@ -1,5 +1,5 @@
 add_project(invoicing-gen-tests
-    "Tests for the AWS INVOICING C++ SDK"
+    "Tests for the AWS Invoicing C++ SDK"
     testing-resources
     aws-cpp-sdk-invoicing
     aws-cpp-sdk-core)

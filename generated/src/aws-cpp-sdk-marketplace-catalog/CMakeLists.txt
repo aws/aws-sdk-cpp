@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-marketplace-catalog "C++ SDK for the AWS marketplace-catalog service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-marketplace-catalog "C++ SDK for AWS Marketplace Catalog Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_MARKETPLACE-CATALOG_HEADERS
     "include/aws/marketplace-catalog/*.h"

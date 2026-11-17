@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-iotsecuretunneling "C++ SDK for the AWS iotsecuretunneling service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-iotsecuretunneling "C++ SDK for AWS IoT Secure Tunneling" aws-cpp-sdk-core)
 
 file(GLOB AWS_IOTSECURETUNNELING_HEADERS
     "include/aws/iotsecuretunneling/*.h"

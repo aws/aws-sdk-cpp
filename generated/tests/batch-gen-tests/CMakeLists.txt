@@ -1,5 +1,5 @@
 add_project(batch-gen-tests
-    "Tests for the AWS BATCH C++ SDK"
+    "Tests for the AWS Batch C++ SDK"
     testing-resources
     aws-cpp-sdk-batch
     aws-cpp-sdk-core)

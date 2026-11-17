@@ -1,5 +1,5 @@
 add_project(networkflowmonitor-gen-tests
-    "Tests for the AWS NETWORKFLOWMONITOR C++ SDK"
+    "Tests for the Network Flow Monitor C++ SDK"
     testing-resources
     aws-cpp-sdk-networkflowmonitor
     aws-cpp-sdk-core)

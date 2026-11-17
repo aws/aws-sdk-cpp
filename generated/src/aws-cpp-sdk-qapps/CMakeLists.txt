@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-qapps "C++ SDK for the AWS qapps service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-qapps "C++ SDK for QApps" aws-cpp-sdk-core)
 
 file(GLOB AWS_QAPPS_HEADERS
     "include/aws/qapps/*.h"

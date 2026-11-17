@@ -1,5 +1,5 @@
 add_project(iotfleetwise-gen-tests
-    "Tests for the AWS IOTFLEETWISE C++ SDK"
+    "Tests for the AWS IoT FleetWise C++ SDK"
     testing-resources
     aws-cpp-sdk-iotfleetwise
     aws-cpp-sdk-core)

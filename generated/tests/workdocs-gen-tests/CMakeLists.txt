@@ -1,5 +1,5 @@
 add_project(workdocs-gen-tests
-    "Tests for the AWS WORKDOCS C++ SDK"
+    "Tests for the Amazon WorkDocs C++ SDK"
     testing-resources
     aws-cpp-sdk-workdocs
     aws-cpp-sdk-core)

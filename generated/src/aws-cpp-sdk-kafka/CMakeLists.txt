@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-kafka "C++ SDK for the AWS kafka service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-kafka "C++ SDK for Managed Streaming for Kafka" aws-cpp-sdk-core)
 
 file(GLOB AWS_KAFKA_HEADERS
     "include/aws/kafka/*.h"

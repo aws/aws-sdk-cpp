@@ -1,5 +1,5 @@
 add_project(ssm-gen-tests
-    "Tests for the AWS SSM C++ SDK"
+    "Tests for the Amazon Simple Systems Manager (SSM) C++ SDK"
     testing-resources
     aws-cpp-sdk-ssm
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-appmesh "C++ SDK for the AWS appmesh service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-appmesh "C++ SDK for AWS App Mesh" aws-cpp-sdk-core)
 
 file(GLOB AWS_APPMESH_HEADERS
     "include/aws/appmesh/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sesv2 "C++ SDK for the AWS sesv2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sesv2 "C++ SDK for Amazon Simple Email Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_SESV2_HEADERS
     "include/aws/sesv2/*.h"

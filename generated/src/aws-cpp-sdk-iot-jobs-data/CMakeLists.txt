@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-iot-jobs-data "C++ SDK for the AWS iot-jobs-data service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-iot-jobs-data "C++ SDK for AWS IoT Jobs Data Plane" aws-cpp-sdk-core)
 
 file(GLOB AWS_IOT-JOBS-DATA_HEADERS
     "include/aws/iot-jobs-data/*.h"

@@ -1,5 +1,5 @@
 add_project(personalize-events-gen-tests
-    "Tests for the AWS PERSONALIZE-EVENTS C++ SDK"
+    "Tests for the Amazon Personalize Events C++ SDK"
     testing-resources
     aws-cpp-sdk-personalize-events
     aws-cpp-sdk-core)

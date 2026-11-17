@@ -1,5 +1,5 @@
 add_project(eks-gen-tests
-    "Tests for the AWS EKS C++ SDK"
+    "Tests for the Amazon Elastic Kubernetes Service C++ SDK"
     testing-resources
     aws-cpp-sdk-eks
     aws-cpp-sdk-core)

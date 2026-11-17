@@ -1,5 +1,5 @@
 add_project(events-gen-tests
-    "Tests for the AWS EVENTS C++ SDK"
+    "Tests for the Amazon CloudWatch Events C++ SDK"
     testing-resources
     aws-cpp-sdk-events
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(mediaconvert-gen-tests
-    "Tests for the AWS MEDIACONVERT C++ SDK"
+    "Tests for the AWS Elemental MediaConvert C++ SDK"
     testing-resources
     aws-cpp-sdk-mediaconvert
     aws-cpp-sdk-core)

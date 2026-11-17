@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-geo-places "C++ SDK for the AWS geo-places service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-geo-places "C++ SDK for Amazon Location Service Places V2" aws-cpp-sdk-core)
 
 file(GLOB AWS_GEO-PLACES_HEADERS
     "include/aws/geo-places/*.h"

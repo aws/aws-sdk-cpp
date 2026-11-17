@@ -1,5 +1,5 @@
 add_project(rum-gen-tests
-    "Tests for the AWS RUM C++ SDK"
+    "Tests for the CloudWatch RUM C++ SDK"
     testing-resources
     aws-cpp-sdk-rum
     aws-cpp-sdk-core)

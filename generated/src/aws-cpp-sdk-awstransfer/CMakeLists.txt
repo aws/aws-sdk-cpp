@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-awstransfer "C++ SDK for the AWS awstransfer service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-awstransfer "C++ SDK for AWS Transfer Family" aws-cpp-sdk-core)
 
 file(GLOB AWS_AWSTRANSFER_HEADERS
     "include/aws/awstransfer/*.h"

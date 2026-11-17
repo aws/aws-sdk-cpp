@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-storagegateway "C++ SDK for the AWS storagegateway service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-storagegateway "C++ SDK for AWS Storage Gateway" aws-cpp-sdk-core)
 
 file(GLOB AWS_STORAGEGATEWAY_HEADERS
     "include/aws/storagegateway/*.h"

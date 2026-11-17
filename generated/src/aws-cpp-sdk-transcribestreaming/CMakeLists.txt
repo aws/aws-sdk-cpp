@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-transcribestreaming "C++ SDK for the AWS transcribestreaming service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-transcribestreaming "C++ SDK for Amazon Transcribe Streaming Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_TRANSCRIBESTREAMING_HEADERS
     "include/aws/transcribestreaming/*.h"
