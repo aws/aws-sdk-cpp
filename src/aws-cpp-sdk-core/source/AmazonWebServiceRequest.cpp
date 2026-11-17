@@ -5,6 +5,7 @@
 
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <smithy/client/schema/SerializableStruct.h>
 
 using namespace Aws;
 
@@ -39,4 +40,10 @@ const char* AmazonWebServiceRequest::GetServiceRequestName() const
 {
   AWS_LOGSTREAM_ERROR(AWS_REQUEST_TAG, "GetServiceRequestName has been called on a base abstract request class!");
   return "AmazonWebServiceRequest";
+}
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> AmazonWebServiceRequest::GetSchemaSerdeInput() const
+{
+  // Default: not a schema-serde shape. Smithy schema-serde request shapes override this.
+  return nullptr;
 }

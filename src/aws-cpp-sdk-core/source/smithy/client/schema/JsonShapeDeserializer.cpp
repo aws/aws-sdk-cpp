@@ -58,7 +58,8 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     }
   }
 
-  void ReadList(const Schema&, const ListElementConsumer& consumer) override {
+  void ReadList(const Schema& schema, const ListElementConsumer& consumer) override {
+    const bool sparse = IsSparse(schema);
     if (PeekNonWs() != '[') {
       SkipValue();
       return;
@@ -70,7 +71,7 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     }
     while (true) {
       PeekNonWs();
-      if (IsNull()) {
+      if (IsNull() && !sparse) {
         SkipValue();
       } else {
         ConsumeOne([&] { consumer(*this); });
@@ -82,7 +83,8 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     }
   }
 
-  void ReadMap(const Schema&, const MapEntryConsumer& consumer) override {
+  void ReadMap(const Schema& schema, const MapEntryConsumer& consumer) override {
+    const bool sparse = IsSparse(schema);
     if (PeekNonWs() != '{') {
       SkipValue();
       return;
@@ -101,7 +103,7 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
         ++m_pos;
       }
       PeekNonWs();
-      if (IsNull()) {
+      if (IsNull() && !sparse) {
         SkipValue();
       } else {
         ConsumeOne([&] { consumer(*key, *this); });
@@ -252,6 +254,15 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
   // Below the serializer's MAX_DEPTH so a document that parses can always be written back, and far
   // enough below cJSON's 1000 to keep the recursive descent inside a 1 MB stack.
   static constexpr int MAX_DOCUMENT_DEPTH = 256;
+
+  // A @sparse list / map keeps its null elements: they are handed to the consumer, which reads the null.
+  static bool IsSparse(const Schema& schema) {
+    if (schema.HasTrait(SparseTrait::KEY())) {
+      return true;
+    }
+    const auto target = schema.GetMemberTarget();
+    return target && (*target)->HasTrait(SparseTrait::KEY());
+  }
 
   // JSON-flavored document nodes: carries this deserializer's timestamp format so AsBlob/AsTimestamp
   // on the resulting Document apply JSON coercion (base64 strings, epoch/ISO-8601 timestamps).
