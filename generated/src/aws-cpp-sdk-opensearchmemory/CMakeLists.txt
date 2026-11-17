@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-opensearchmemory "C++ SDK for the AWS opensearchmemory service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-opensearchmemory "C++ SDK for Amazon OpenSearch Memory" aws-cpp-sdk-core)
 
 file(GLOB AWS_OPENSEARCHMEMORY_HEADERS
     "include/aws/opensearchmemory/*.h"

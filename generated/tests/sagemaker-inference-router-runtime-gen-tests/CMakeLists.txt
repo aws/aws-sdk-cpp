@@ -1,5 +1,5 @@
 add_project(sagemaker-inference-router-runtime-gen-tests
-    "Tests for the AWS SAGEMAKER-INFERENCE-ROUTER-RUNTIME C++ SDK"
+    "Tests for the Amazon SageMaker Inference Router Runtime C++ SDK"
     testing-resources
     aws-cpp-sdk-sagemaker-inference-router-runtime
     aws-cpp-sdk-core)

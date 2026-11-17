@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sagemaker-inference-router-runtime "C++ SDK for the AWS sagemaker-inference-router-runtime service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sagemaker-inference-router-runtime "C++ SDK for Amazon SageMaker Inference Router Runtime" aws-cpp-sdk-core)
 
 file(GLOB AWS_SAGEMAKER-INFERENCE-ROUTER-RUNTIME_HEADERS
     "include/aws/sagemaker-inference-router-runtime/*.h"

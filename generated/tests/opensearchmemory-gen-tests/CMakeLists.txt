@@ -1,5 +1,5 @@
 add_project(opensearchmemory-gen-tests
-    "Tests for the AWS OPENSEARCHMEMORY C++ SDK"
+    "Tests for the Amazon OpenSearch Memory C++ SDK"
     testing-resources
     aws-cpp-sdk-opensearchmemory
     aws-cpp-sdk-core)
