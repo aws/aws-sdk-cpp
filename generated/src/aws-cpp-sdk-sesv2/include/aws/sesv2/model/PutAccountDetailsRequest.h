@@ -71,7 +71,8 @@ class PutAccountDetailsRequest : public SESV2Request {
 
   ///@{
   /**
-   * <p>The language you would prefer to be contacted with.</p>
+   * <p>The language you would prefer to be contacted with. The contact language can
+   * be one of <code>EN</code> or <code>JA</code>.</p>
    */
   inline ContactLanguage GetContactLanguage() const { return m_contactLanguage; }
   inline bool ContactLanguageHasBeenSet() const { return m_contactLanguageHasBeenSet; }

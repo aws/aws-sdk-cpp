@@ -103,6 +103,8 @@
 #include <aws/cognito-idp/model/AuthFactorType.h>
 #include <aws/cognito-idp/model/AuthFlowType.h>
 #include <aws/cognito-idp/model/AuthenticationResultType.h>
+#include <aws/cognito-idp/model/CancelPointInTimeRecoveryRequest.h>
+#include <aws/cognito-idp/model/CancelPointInTimeRecoveryResult.h>
 #include <aws/cognito-idp/model/ChallengeName.h>
 #include <aws/cognito-idp/model/ChallengeNameType.h>
 #include <aws/cognito-idp/model/ChallengeResponse.h>
@@ -181,6 +183,8 @@
 #include <aws/cognito-idp/model/DescribeManagedLoginBrandingByClientResult.h>
 #include <aws/cognito-idp/model/DescribeManagedLoginBrandingRequest.h>
 #include <aws/cognito-idp/model/DescribeManagedLoginBrandingResult.h>
+#include <aws/cognito-idp/model/DescribePointInTimeRecoveryRequest.h>
+#include <aws/cognito-idp/model/DescribePointInTimeRecoveryResult.h>
 #include <aws/cognito-idp/model/DescribeResourceServerRequest.h>
 #include <aws/cognito-idp/model/DescribeResourceServerResult.h>
 #include <aws/cognito-idp/model/DescribeRiskConfigurationRequest.h>
@@ -268,6 +272,8 @@
 #include <aws/cognito-idp/model/InboundFederationLambdaVersionType.h>
 #include <aws/cognito-idp/model/InitiateAuthRequest.h>
 #include <aws/cognito-idp/model/InitiateAuthResult.h>
+#include <aws/cognito-idp/model/InitiatePointInTimeRecoveryRequest.h>
+#include <aws/cognito-idp/model/InitiatePointInTimeRecoveryResult.h>
 #include <aws/cognito-idp/model/InvalidParameterException.h>
 #include <aws/cognito-idp/model/IssuedTokenTypeIdentifierType.h>
 #include <aws/cognito-idp/model/IssuerConfigurationType.h>
@@ -285,6 +291,8 @@
 #include <aws/cognito-idp/model/ListIdentityProvidersPaginationTraits.h>
 #include <aws/cognito-idp/model/ListIdentityProvidersRequest.h>
 #include <aws/cognito-idp/model/ListIdentityProvidersResult.h>
+#include <aws/cognito-idp/model/ListPointInTimeRecoveriesRequest.h>
+#include <aws/cognito-idp/model/ListPointInTimeRecoveriesResult.h>
 #include <aws/cognito-idp/model/ListResourceServersPaginationTraits.h>
 #include <aws/cognito-idp/model/ListResourceServersRequest.h>
 #include <aws/cognito-idp/model/ListResourceServersResult.h>
@@ -346,6 +354,10 @@
 #include <aws/cognito-idp/model/ResourceServerType.h>
 #include <aws/cognito-idp/model/RespondToAuthChallengeRequest.h>
 #include <aws/cognito-idp/model/RespondToAuthChallengeResult.h>
+#include <aws/cognito-idp/model/RestorationDescriptionType.h>
+#include <aws/cognito-idp/model/RestorationType.h>
+#include <aws/cognito-idp/model/RestorePreviewType.h>
+#include <aws/cognito-idp/model/RestoreStatusType.h>
 #include <aws/cognito-idp/model/RevokeAssociatedSessionsType.h>
 #include <aws/cognito-idp/model/RevokeTokenRequest.h>
 #include <aws/cognito-idp/model/RevokeTokenResult.h>
@@ -386,6 +398,8 @@
 #include <aws/cognito-idp/model/SmsMfaConfigType.h>
 #include <aws/cognito-idp/model/SoftwareTokenMfaConfigType.h>
 #include <aws/cognito-idp/model/SoftwareTokenMfaSettingsType.h>
+#include <aws/cognito-idp/model/StartPointInTimeRecoveryRequest.h>
+#include <aws/cognito-idp/model/StartPointInTimeRecoveryResult.h>
 #include <aws/cognito-idp/model/StartUserImportJobRequest.h>
 #include <aws/cognito-idp/model/StartUserImportJobResult.h>
 #include <aws/cognito-idp/model/StartWebAuthnRegistrationRequest.h>

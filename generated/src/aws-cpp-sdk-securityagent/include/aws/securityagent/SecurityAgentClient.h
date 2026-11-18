@@ -2139,6 +2139,36 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Resumes a stopped or paused pentest job from its last saved checkpoint. The
+   * job keeps its pentest job identifier and continues as a new version, keeping the
+   * findings and progress from earlier runs. You can resume a job within 7 days of
+   * when it was created.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ResumePentestJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ResumePentestJobOutcome ResumePentestJob(const Model::ResumePentestJobRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ResumePentestJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ResumePentestJobRequestT = Model::ResumePentestJobRequest>
+  Model::ResumePentestJobOutcomeCallable ResumePentestJobCallable(const ResumePentestJobRequestT& request = {}) const {
+    return SubmitCallable(&SecurityAgentClient::ResumePentestJob, request);
+  }
+
+  /**
+   * An Async wrapper for ResumePentestJob that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ResumePentestJobRequestT = Model::ResumePentestJobRequest>
+  void ResumePentestJobAsync(const ResumePentestJobResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                             const ResumePentestJobRequestT& request = {}) const {
+    return SubmitAsync(&SecurityAgentClient::ResumePentestJob, request, handler, context);
+  }
+
+  /**
    * <p>Initiates code remediation for one or more security findings. This creates
    * pull requests in integrated repositories to fix the identified
    * vulnerabilities.</p><p><h3>See Also:</h3>   <a

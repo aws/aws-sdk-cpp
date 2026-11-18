@@ -29,6 +29,7 @@
 #include <aws/resiliencehubv2/model/ListTestRunSourcesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestRunsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestSourcesPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListTestTemplatesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListUserJourneysPaginationTraits.h>
 
@@ -305,6 +306,18 @@ class Resiliencehubv2PaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestSourcesRequest,
                                              Pagination::ListTestSourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
+  }
+
+  /**
+   * Create a paginator for ListTestTemplates operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestTemplatesRequest,
+                                    Pagination::ListTestTemplatesPaginationTraits<DerivedClient>>
+  ListTestTemplatesPaginator(const Model::ListTestTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestTemplatesRequest,
+                                             Pagination::ListTestTemplatesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

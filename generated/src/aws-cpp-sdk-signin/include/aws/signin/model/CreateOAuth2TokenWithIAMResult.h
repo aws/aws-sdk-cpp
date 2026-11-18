@@ -36,7 +36,7 @@ class CreateOAuth2TokenWithIAMResult {
 
   ///@{
   /**
-   * <p>Access token containing principal identity, resource scope, and session
+   * <p>The access token containing principal identity, resource scope, and session
    * metadata.</p>
    */
   inline const Aws::String& GetAccessToken() const { return m_accessToken; }
@@ -71,7 +71,7 @@ class CreateOAuth2TokenWithIAMResult {
 
   ///@{
   /**
-   * <p>Token lifetime in seconds. Value is the minimum of the caller's session
+   * <p>The token lifetime in seconds. Value is the minimum of the caller's session
    * validity and 1 hour (3600 seconds).</p>
    */
   inline int GetExpiresIn() const { return m_expiresIn; }

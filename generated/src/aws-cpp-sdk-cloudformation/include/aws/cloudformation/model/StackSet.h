@@ -164,8 +164,8 @@ class StackSet {
   /**
    * <p>The capabilities that are allowed in the StackSet. Some StackSet templates
    * might include resources that can affect permissions in your Amazon Web Services
-   * account—for example, by creating new Identity and Access Management (IAM) users.
-   * For more information, see <a
+   * account���for example, by creating new Identity and Access Management (IAM)
+   * users. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging
    * IAM resources in CloudFormation templates</a>.</p>
    */

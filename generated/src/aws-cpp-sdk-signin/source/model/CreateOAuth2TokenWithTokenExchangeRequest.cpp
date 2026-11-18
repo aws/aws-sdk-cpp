@@ -27,6 +27,14 @@ Aws::String CreateOAuth2TokenWithTokenExchangeRequest::SerializePayload() const 
     payload.WithString("subject_token_type", m_subjectTokenType);
   }
 
+  if (m_assertionHasBeenSet) {
+    payload.WithString("assertion", m_assertion);
+  }
+
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("client_id", m_clientId);
+  }
+
   if (m_resourceHasBeenSet) {
     payload.WithString("resource", m_resource);
   }

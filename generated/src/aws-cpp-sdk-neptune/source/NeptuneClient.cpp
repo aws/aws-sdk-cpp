@@ -64,6 +64,7 @@
 #include <aws/neptune/model/DescribeGlobalClustersRequest.h>
 #include <aws/neptune/model/DescribeOrderableDBInstanceOptionsRequest.h>
 #include <aws/neptune/model/DescribePendingMaintenanceActionsRequest.h>
+#include <aws/neptune/model/DescribeServerlessV2PlatformVersionsRequest.h>
 #include <aws/neptune/model/DescribeValidDBInstanceModificationsRequest.h>
 #include <aws/neptune/model/FailoverDBClusterRequest.h>
 #include <aws/neptune/model/FailoverGlobalClusterRequest.h>
@@ -565,6 +566,13 @@ DescribePendingMaintenanceActionsOutcome NeptuneClient::DescribePendingMaintenan
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribePendingMaintenanceActionsOutcome(result.GetResultWithOwnership())
                             : DescribePendingMaintenanceActionsOutcome(std::move(result.GetError()));
+}
+
+DescribeServerlessV2PlatformVersionsOutcome NeptuneClient::DescribeServerlessV2PlatformVersions(
+    const DescribeServerlessV2PlatformVersionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServerlessV2PlatformVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeServerlessV2PlatformVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeValidDBInstanceModificationsOutcome NeptuneClient::DescribeValidDBInstanceModifications(

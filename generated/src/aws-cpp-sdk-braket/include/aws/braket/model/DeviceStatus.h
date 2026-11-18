@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Braket {
 namespace Model {
-enum class DeviceStatus { NOT_SET, ONLINE, OFFLINE, RETIRED };
+enum class DeviceStatus { NOT_SET, ONLINE, OFFLINE, RETIRED, PAUSED };
 
 namespace DeviceStatusMapper {
 AWS_BRAKET_API DeviceStatus GetDeviceStatusForName(const Aws::String& name);

@@ -27,7 +27,7 @@ Aws::String ConfigureTagsRequest::SerializePayload() const {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("tagKeys"));
     encoder.WriteArrayStart(m_tagKeys.size());
     for (const auto& item_0 : m_tagKeys) {
-      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
+      item_0.CborEncode(encoder);
     }
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);

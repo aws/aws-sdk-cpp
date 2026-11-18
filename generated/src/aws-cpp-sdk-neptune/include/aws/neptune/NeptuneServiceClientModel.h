@@ -72,6 +72,8 @@
 #include <aws/neptune/model/DescribeOrderableDBInstanceOptionsResult.h>
 #include <aws/neptune/model/DescribePendingMaintenanceActionsRequest.h>
 #include <aws/neptune/model/DescribePendingMaintenanceActionsResult.h>
+#include <aws/neptune/model/DescribeServerlessV2PlatformVersionsRequest.h>
+#include <aws/neptune/model/DescribeServerlessV2PlatformVersionsResult.h>
 #include <aws/neptune/model/DescribeValidDBInstanceModificationsResult.h>
 #include <aws/neptune/model/FailoverDBClusterRequest.h>
 #include <aws/neptune/model/FailoverDBClusterResult.h>
@@ -174,6 +176,7 @@ class DescribeEventsRequest;
 class DescribeGlobalClustersRequest;
 class DescribeOrderableDBInstanceOptionsRequest;
 class DescribePendingMaintenanceActionsRequest;
+class DescribeServerlessV2PlatformVersionsRequest;
 class DescribeValidDBInstanceModificationsRequest;
 class FailoverDBClusterRequest;
 class FailoverGlobalClusterRequest;
@@ -247,6 +250,7 @@ typedef Aws::Utils::Outcome<DescribeEventsResult, NeptuneError> DescribeEventsOu
 typedef Aws::Utils::Outcome<DescribeGlobalClustersResult, NeptuneError> DescribeGlobalClustersOutcome;
 typedef Aws::Utils::Outcome<DescribeOrderableDBInstanceOptionsResult, NeptuneError> DescribeOrderableDBInstanceOptionsOutcome;
 typedef Aws::Utils::Outcome<DescribePendingMaintenanceActionsResult, NeptuneError> DescribePendingMaintenanceActionsOutcome;
+typedef Aws::Utils::Outcome<DescribeServerlessV2PlatformVersionsResult, NeptuneError> DescribeServerlessV2PlatformVersionsOutcome;
 typedef Aws::Utils::Outcome<DescribeValidDBInstanceModificationsResult, NeptuneError> DescribeValidDBInstanceModificationsOutcome;
 typedef Aws::Utils::Outcome<FailoverDBClusterResult, NeptuneError> FailoverDBClusterOutcome;
 typedef Aws::Utils::Outcome<FailoverGlobalClusterResult, NeptuneError> FailoverGlobalClusterOutcome;
@@ -320,6 +324,7 @@ typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
 typedef std::future<DescribeGlobalClustersOutcome> DescribeGlobalClustersOutcomeCallable;
 typedef std::future<DescribeOrderableDBInstanceOptionsOutcome> DescribeOrderableDBInstanceOptionsOutcomeCallable;
 typedef std::future<DescribePendingMaintenanceActionsOutcome> DescribePendingMaintenanceActionsOutcomeCallable;
+typedef std::future<DescribeServerlessV2PlatformVersionsOutcome> DescribeServerlessV2PlatformVersionsOutcomeCallable;
 typedef std::future<DescribeValidDBInstanceModificationsOutcome> DescribeValidDBInstanceModificationsOutcomeCallable;
 typedef std::future<FailoverDBClusterOutcome> FailoverDBClusterOutcomeCallable;
 typedef std::future<FailoverGlobalClusterOutcome> FailoverGlobalClusterOutcomeCallable;
@@ -494,6 +499,10 @@ typedef std::function<void(const NeptuneClient*, const Model::DescribePendingMai
                            const Model::DescribePendingMaintenanceActionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribePendingMaintenanceActionsResponseReceivedHandler;
+typedef std::function<void(const NeptuneClient*, const Model::DescribeServerlessV2PlatformVersionsRequest&,
+                           const Model::DescribeServerlessV2PlatformVersionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeServerlessV2PlatformVersionsResponseReceivedHandler;
 typedef std::function<void(const NeptuneClient*, const Model::DescribeValidDBInstanceModificationsRequest&,
                            const Model::DescribeValidDBInstanceModificationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

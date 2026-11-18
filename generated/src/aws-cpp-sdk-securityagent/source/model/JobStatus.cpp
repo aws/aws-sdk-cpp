@@ -18,6 +18,8 @@ namespace JobStatusMapper {
 static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
 static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
 static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+static const int PAUSING_HASH = HashingUtils::HashString("PAUSING");
+static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
 
@@ -29,6 +31,10 @@ JobStatus GetJobStatusForName(const Aws::String& name) {
     return JobStatus::STOPPING;
   } else if (hashCode == STOPPED_HASH) {
     return JobStatus::STOPPED;
+  } else if (hashCode == PAUSING_HASH) {
+    return JobStatus::PAUSING;
+  } else if (hashCode == PAUSED_HASH) {
+    return JobStatus::PAUSED;
   } else if (hashCode == FAILED_HASH) {
     return JobStatus::FAILED;
   } else if (hashCode == COMPLETED_HASH) {
@@ -53,6 +59,10 @@ Aws::String GetNameForJobStatus(JobStatus enumValue) {
       return "STOPPING";
     case JobStatus::STOPPED:
       return "STOPPED";
+    case JobStatus::PAUSING:
+      return "PAUSING";
+    case JobStatus::PAUSED:
+      return "PAUSED";
     case JobStatus::FAILED:
       return "FAILED";
     case JobStatus::COMPLETED:

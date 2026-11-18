@@ -33,6 +33,10 @@ Aws::String CreateRoleRequest::SerializePayload() const {
     ss << "MaxSessionDuration=" << m_maxSessionDuration << "&";
   }
 
+  if (m_maxSigninSessionDurationHasBeenSet) {
+    ss << "MaxSigninSessionDuration=" << m_maxSigninSessionDuration << "&";
+  }
+
   if (m_permissionsBoundaryHasBeenSet) {
     ss << "PermissionsBoundary=" << StringUtils::URLEncode(m_permissionsBoundary.c_str()) << "&";
   }

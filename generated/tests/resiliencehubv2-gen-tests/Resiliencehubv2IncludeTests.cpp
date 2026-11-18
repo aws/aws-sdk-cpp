@@ -204,6 +204,7 @@
 #include <aws/resiliencehubv2/model/ListTestSourcesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestSourcesRequest.h>
 #include <aws/resiliencehubv2/model/ListTestSourcesResult.h>
+#include <aws/resiliencehubv2/model/ListTestTemplatesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestTemplatesRequest.h>
 #include <aws/resiliencehubv2/model/ListTestTemplatesResult.h>
 #include <aws/resiliencehubv2/model/ListTestsPaginationTraits.h>
@@ -324,6 +325,7 @@
 #include <aws/resiliencehubv2/model/TestRun.h>
 #include <aws/resiliencehubv2/model/TestRunDependencySource.h>
 #include <aws/resiliencehubv2/model/TestRunDependencySummary.h>
+#include <aws/resiliencehubv2/model/TestRunEffectivePolicyValues.h>
 #include <aws/resiliencehubv2/model/TestRunEvent.h>
 #include <aws/resiliencehubv2/model/TestRunObservabilityAlarmSummary.h>
 #include <aws/resiliencehubv2/model/TestRunPolicySnapshot.h>

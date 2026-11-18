@@ -40,6 +40,8 @@
 #include <aws/braket/model/DeviceConfig.h>
 #include <aws/braket/model/DeviceQueueInfo.h>
 #include <aws/braket/model/DeviceStatus.h>
+#include <aws/braket/model/DeviceStatusReason.h>
+#include <aws/braket/model/DeviceStatusReasonCode.h>
 #include <aws/braket/model/DeviceSummary.h>
 #include <aws/braket/model/DeviceType.h>
 #include <aws/braket/model/ExperimentalCapabilities.h>

@@ -6,12 +6,14 @@
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/model/DeploymentTargets.h>
+#include <aws/cloudformation/model/RegionalStatusDetail.h>
 #include <aws/cloudformation/model/StackSetDriftDetectionDetails.h>
 #include <aws/cloudformation/model/StackSetOperationAction.h>
 #include <aws/cloudformation/model/StackSetOperationPreferences.h>
 #include <aws/cloudformation/model/StackSetOperationStatus.h>
 #include <aws/cloudformation/model/StackSetOperationStatusDetails.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -331,6 +333,33 @@ class StackSetOperation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The progress detail for each Region of the operation, keyed by Region. Each
+   * entry reports the stack instances deployment progress for that Region. This
+   * field is returned only by <a>DescribeStackSetOperation</a>. It is not included
+   * in the <a>ListStackSetOperations</a> summary.</p>
+   */
+  inline const Aws::Map<Aws::String, RegionalStatusDetail>& GetRegionalStatusDetails() const { return m_regionalStatusDetails; }
+  inline bool RegionalStatusDetailsHasBeenSet() const { return m_regionalStatusDetailsHasBeenSet; }
+  template <typename RegionalStatusDetailsT = Aws::Map<Aws::String, RegionalStatusDetail>>
+  void SetRegionalStatusDetails(RegionalStatusDetailsT&& value) {
+    m_regionalStatusDetailsHasBeenSet = true;
+    m_regionalStatusDetails = std::forward<RegionalStatusDetailsT>(value);
+  }
+  template <typename RegionalStatusDetailsT = Aws::Map<Aws::String, RegionalStatusDetail>>
+  StackSetOperation& WithRegionalStatusDetails(RegionalStatusDetailsT&& value) {
+    SetRegionalStatusDetails(std::forward<RegionalStatusDetailsT>(value));
+    return *this;
+  }
+  template <typename RegionalStatusDetailsKeyT = Aws::String, typename RegionalStatusDetailsValueT = RegionalStatusDetail>
+  StackSetOperation& AddRegionalStatusDetails(RegionalStatusDetailsKeyT&& key, RegionalStatusDetailsValueT&& value) {
+    m_regionalStatusDetailsHasBeenSet = true;
+    m_regionalStatusDetails.emplace(std::forward<RegionalStatusDetailsKeyT>(key), std::forward<RegionalStatusDetailsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_operationId;
 
@@ -359,6 +388,8 @@ class StackSetOperation {
   Aws::String m_statusReason;
 
   StackSetOperationStatusDetails m_statusDetails;
+
+  Aws::Map<Aws::String, RegionalStatusDetail> m_regionalStatusDetails;
   bool m_operationIdHasBeenSet = false;
   bool m_stackSetIdHasBeenSet = false;
   bool m_actionHasBeenSet = false;
@@ -373,6 +404,7 @@ class StackSetOperation {
   bool m_stackSetDriftDetectionDetailsHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_statusDetailsHasBeenSet = false;
+  bool m_regionalStatusDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

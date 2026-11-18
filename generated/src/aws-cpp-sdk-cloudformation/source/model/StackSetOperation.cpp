@@ -99,6 +99,20 @@ StackSetOperation& StackSetOperation::operator=(const XmlNode& xmlNode) {
       m_statusDetails = statusDetailsNode;
       m_statusDetailsHasBeenSet = true;
     }
+    XmlNode regionalStatusDetailsNode = resultNode.FirstChild("RegionalStatusDetails");
+
+    if (!regionalStatusDetailsNode.IsNull()) {
+      XmlNode regionalStatusDetailsEntry = regionalStatusDetailsNode.FirstChild("entry");
+      m_regionalStatusDetailsHasBeenSet = !regionalStatusDetailsEntry.IsNull();
+      while (!regionalStatusDetailsEntry.IsNull()) {
+        XmlNode keyNode = regionalStatusDetailsEntry.FirstChild("key");
+        XmlNode valueNode = regionalStatusDetailsEntry.FirstChild("value");
+        m_regionalStatusDetails[keyNode.GetText()] = valueNode;
+        regionalStatusDetailsEntry = regionalStatusDetailsEntry.NextNode("entry");
+      }
+
+      m_regionalStatusDetailsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -174,6 +188,19 @@ void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* locati
     statusDetailsLocationAndMemberSs << location << index << locationValue << ".StatusDetails";
     m_statusDetails.OutputToStream(oStream, statusDetailsLocationAndMemberSs.str().c_str());
   }
+
+  if (m_regionalStatusDetailsHasBeenSet) {
+    unsigned regionalStatusDetailsIdx = 1;
+    for (auto& item : m_regionalStatusDetails) {
+      oStream << location << index << locationValue << ".RegionalStatusDetails.entry." << regionalStatusDetailsIdx
+              << ".key=" << StringUtils::URLEncode(item.first.c_str()) << "&";
+      Aws::StringStream regionalStatusDetailsSs;
+      regionalStatusDetailsSs << location << index << locationValue << ".RegionalStatusDetails.entry." << regionalStatusDetailsIdx
+                              << ".value";
+      item.second.OutputToStream(oStream, regionalStatusDetailsSs.str().c_str());
+      regionalStatusDetailsIdx++;
+    }
+  }
 }
 
 void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -231,6 +258,17 @@ void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* locati
     Aws::String statusDetailsLocationAndMember(location);
     statusDetailsLocationAndMember += ".StatusDetails";
     m_statusDetails.OutputToStream(oStream, statusDetailsLocationAndMember.c_str());
+  }
+  if (m_regionalStatusDetailsHasBeenSet) {
+    unsigned regionalStatusDetailsIdx = 1;
+    for (auto& item : m_regionalStatusDetails) {
+      oStream << location << ".RegionalStatusDetails.entry." << regionalStatusDetailsIdx
+              << ".key=" << StringUtils::URLEncode(item.first.c_str()) << "&";
+      Aws::StringStream regionalStatusDetailsSs;
+      regionalStatusDetailsSs << location << ".RegionalStatusDetails.entry." << regionalStatusDetailsIdx << ".value";
+      item.second.OutputToStream(oStream, regionalStatusDetailsSs.str().c_str());
+      regionalStatusDetailsIdx++;
+    }
   }
 }
 

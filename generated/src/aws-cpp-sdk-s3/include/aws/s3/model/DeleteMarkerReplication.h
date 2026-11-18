@@ -22,7 +22,8 @@ namespace Model {
  * <p>Specifies whether Amazon S3 replicates delete markers. If you specify a
  * <code>Filter</code> in your replication configuration, you must also include a
  * <code>DeleteMarkerReplication</code> element. If your <code>Filter</code>
- * includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code>
+ * includes a <code>Tag</code> element, including within a <code>Not</code> or
+ * <code>Or</code> element, the <code>DeleteMarkerReplication</code>
  * <code>Status</code> must be set to Disabled, because Amazon S3 does not support
  * replicating delete markers for tag-based rules. For an example configuration,
  * see <a

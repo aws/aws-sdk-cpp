@@ -107,16 +107,29 @@ class TargetGroupAttribute {
    * seconds, during which requests from a client should be routed to the same
    * target. After this time period expires, the load balancer-generated cookie is
    * considered stale. The range is 1 second to 1 week (604800 seconds). The default
-   * value is 1 day (86400 seconds). </p> </li> </ul> <p>The following attribute is
-   * supported only if the load balancer is an Application Load Balancer and the
-   * target is a Lambda function:</p> <ul> <li> <p>
-   * <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request
-   * and response headers that are exchanged between the load balancer and the Lambda
-   * function include arrays of values or strings. The value is <code>true</code> or
-   * <code>false</code>. The default is <code>false</code>. If the value is
-   * <code>false</code> and the request contains a duplicate header field name or
-   * query parameter key, the load balancer uses the last value sent by the
-   * client.</p> </li> </ul> <p>The following attributes are supported only by
+   * value is 1 day (86400 seconds). </p> </li> <li> <p>
+   * <code>waf.http2.traffic_inspection_behavior</code> – Specifies when Amazon Web
+   * Services WAF inspects HTTP/2 requests. This attribute applies only to target
+   * groups that use the <code>HTTP2</code> protocol version. The possible values
+   * are:</p> <ul> <li> <p> <code>inspect_immediately</code> – Inspects each request
+   * as soon as data is available. This is the default.</p> </li> <li> <p>
+   * <code>inspect_after_sufficient_data</code> – Accumulates HTTP/2 data frames
+   * before inspection.</p> </li> </ul> </li> <li> <p>
+   * <code>routing.http2.rst_stream_error_forwarding.enabled</code> – Specifies
+   * whether the load balancer forwards an HTTP/2 or gRPC target's
+   * <code>RST_STREAM</code> error code to the client, instead of returning an HTTP
+   * 502 (Bad Gateway) response. This attribute applies only to target groups that
+   * use the <code>HTTP2</code> or <code>GRPC</code> protocol version. The value is
+   * <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>
+   * </li> </ul> <p>The following attribute is supported only if the load balancer is
+   * an Application Load Balancer and the target is a Lambda function:</p> <ul> <li>
+   * <p> <code>lambda.multi_value_headers.enabled</code> - Indicates whether the
+   * request and response headers that are exchanged between the load balancer and
+   * the Lambda function include arrays of values or strings. The value is
+   * <code>true</code> or <code>false</code>. The default is <code>false</code>. If
+   * the value is <code>false</code> and the request contains a duplicate header
+   * field name or query parameter key, the load balancer uses the last value sent by
+   * the client.</p> </li> </ul> <p>The following attributes are supported only by
    * Network Load Balancers:</p> <ul> <li> <p>
    * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
    * whether the load balancer terminates connections at the end of the

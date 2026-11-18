@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/ProtectedJobComputeConfiguration.h>
 #include <aws/cleanrooms/model/WorkerComputeConfiguration.h>
 
 #include <utility>
@@ -47,9 +48,31 @@ class IntermediateTableComputeConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the compute configuration for the PySpark job that populates the
+   * intermediate table.</p>
+   */
+  inline const ProtectedJobComputeConfiguration& GetJobComputeConfiguration() const { return m_jobComputeConfiguration; }
+  inline bool JobComputeConfigurationHasBeenSet() const { return m_jobComputeConfigurationHasBeenSet; }
+  template <typename JobComputeConfigurationT = ProtectedJobComputeConfiguration>
+  void SetJobComputeConfiguration(JobComputeConfigurationT&& value) {
+    m_jobComputeConfigurationHasBeenSet = true;
+    m_jobComputeConfiguration = std::forward<JobComputeConfigurationT>(value);
+  }
+  template <typename JobComputeConfigurationT = ProtectedJobComputeConfiguration>
+  IntermediateTableComputeConfiguration& WithJobComputeConfiguration(JobComputeConfigurationT&& value) {
+    SetJobComputeConfiguration(std::forward<JobComputeConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   WorkerComputeConfiguration m_queryComputeConfiguration;
+
+  ProtectedJobComputeConfiguration m_jobComputeConfiguration;
   bool m_queryComputeConfigurationHasBeenSet = false;
+  bool m_jobComputeConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -4,10 +4,16 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resiliencehubv2/Resiliencehubv2Request.h>
 #include <aws/resiliencehubv2/Resiliencehubv2_EXPORTS.h>
 
+#include <utility>
+
 namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
 namespace resiliencehubv2 {
 namespace Model {
 
@@ -24,6 +30,44 @@ class ListTestTemplatesRequest : public Resiliencehubv2Request {
   inline virtual const char* GetServiceRequestName() const override { return "ListTestTemplates"; }
 
   AWS_RESILIENCEHUBV2_API Aws::String SerializePayload() const override;
+
+  AWS_RESILIENCEHUBV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
+
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListTestTemplatesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListTestTemplatesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  int m_maxResults{0};
+
+  Aws::String m_nextToken;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

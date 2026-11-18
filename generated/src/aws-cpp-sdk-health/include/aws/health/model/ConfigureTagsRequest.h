@@ -4,10 +4,10 @@
  */
 
 #pragma once
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/health/HealthRequest.h>
 #include <aws/health/Health_EXPORTS.h>
+#include <aws/health/model/ConfigureTagsTagKey.h>
 
 #include <utility>
 
@@ -35,19 +35,19 @@ class ConfigureTagsRequest : public HealthRequest {
   /**
    * <p>The list of resource tag keys to configure for Health event tracking.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetTagKeys() const { return m_tagKeys; }
+  inline const Aws::Vector<ConfigureTagsTagKey>& GetTagKeys() const { return m_tagKeys; }
   inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
-  template <typename TagKeysT = Aws::Vector<Aws::String>>
+  template <typename TagKeysT = Aws::Vector<ConfigureTagsTagKey>>
   void SetTagKeys(TagKeysT&& value) {
     m_tagKeysHasBeenSet = true;
     m_tagKeys = std::forward<TagKeysT>(value);
   }
-  template <typename TagKeysT = Aws::Vector<Aws::String>>
+  template <typename TagKeysT = Aws::Vector<ConfigureTagsTagKey>>
   ConfigureTagsRequest& WithTagKeys(TagKeysT&& value) {
     SetTagKeys(std::forward<TagKeysT>(value));
     return *this;
   }
-  template <typename TagKeysT = Aws::String>
+  template <typename TagKeysT = ConfigureTagsTagKey>
   ConfigureTagsRequest& AddTagKeys(TagKeysT&& value) {
     m_tagKeysHasBeenSet = true;
     m_tagKeys.emplace_back(std::forward<TagKeysT>(value));
@@ -55,7 +55,7 @@ class ConfigureTagsRequest : public HealthRequest {
   }
   ///@}
  private:
-  Aws::Vector<Aws::String> m_tagKeys;
+  Aws::Vector<ConfigureTagsTagKey> m_tagKeys;
   bool m_tagKeysHasBeenSet = false;
 };
 

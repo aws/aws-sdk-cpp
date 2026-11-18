@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/IntermediateTableOutputConfiguration.h>
 #include <aws/cleanrooms/model/ProtectedJobReceiverConfiguration.h>
 #include <aws/cleanrooms/model/ProtectedJobStatus.h>
 #include <aws/core/utils/DateTime.h>
@@ -165,6 +166,26 @@ class ProtectedJobSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The intermediate table that the protected job populated. This field is
+   * present when the protected job was triggered by a
+   * <code>PopulateIntermediateTable</code> operation.</p>
+   */
+  inline const IntermediateTableOutputConfiguration& GetIntermediateTableConfiguration() const { return m_intermediateTableConfiguration; }
+  inline bool IntermediateTableConfigurationHasBeenSet() const { return m_intermediateTableConfigurationHasBeenSet; }
+  template <typename IntermediateTableConfigurationT = IntermediateTableOutputConfiguration>
+  void SetIntermediateTableConfiguration(IntermediateTableConfigurationT&& value) {
+    m_intermediateTableConfigurationHasBeenSet = true;
+    m_intermediateTableConfiguration = std::forward<IntermediateTableConfigurationT>(value);
+  }
+  template <typename IntermediateTableConfigurationT = IntermediateTableOutputConfiguration>
+  ProtectedJobSummary& WithIntermediateTableConfiguration(IntermediateTableConfigurationT&& value) {
+    SetIntermediateTableConfiguration(std::forward<IntermediateTableConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -179,6 +200,8 @@ class ProtectedJobSummary {
   Aws::Vector<ProtectedJobReceiverConfiguration> m_receiverConfigurations;
 
   Aws::String m_jobComputePayerAccountId;
+
+  IntermediateTableOutputConfiguration m_intermediateTableConfiguration;
   bool m_idHasBeenSet = false;
   bool m_membershipIdHasBeenSet = false;
   bool m_membershipArnHasBeenSet = false;
@@ -186,6 +209,7 @@ class ProtectedJobSummary {
   bool m_statusHasBeenSet = false;
   bool m_receiverConfigurationsHasBeenSet = false;
   bool m_jobComputePayerAccountIdHasBeenSet = false;
+  bool m_intermediateTableConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityAgent {
 namespace Model {
-enum class JobStatus { NOT_SET, IN_PROGRESS, STOPPING, STOPPED, FAILED, COMPLETED };
+enum class JobStatus { NOT_SET, IN_PROGRESS, STOPPING, STOPPED, PAUSING, PAUSED, FAILED, COMPLETED };
 
 namespace JobStatusMapper {
 AWS_SECURITYAGENT_API JobStatus GetJobStatusForName(const Aws::String& name);

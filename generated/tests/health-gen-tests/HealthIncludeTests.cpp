@@ -27,6 +27,7 @@
 #include <aws/health/model/ConfigureTagsForOrganizationResult.h>
 #include <aws/health/model/ConfigureTagsRequest.h>
 #include <aws/health/model/ConfigureTagsResult.h>
+#include <aws/health/model/ConfigureTagsTagKey.h>
 #include <aws/health/model/DateTimeRange.h>
 #include <aws/health/model/DescribeAffectedAccountsForOrganizationPaginationTraits.h>
 #include <aws/health/model/DescribeAffectedAccountsForOrganizationRequest.h>

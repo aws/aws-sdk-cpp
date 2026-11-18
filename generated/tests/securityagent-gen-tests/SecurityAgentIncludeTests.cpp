@@ -317,6 +317,8 @@
 #include <aws/securityagent/model/ReportFilters.h>
 #include <aws/securityagent/model/ResourceConfigDnsResolution.h>
 #include <aws/securityagent/model/ResourceType.h>
+#include <aws/securityagent/model/ResumePentestJobRequest.h>
+#include <aws/securityagent/model/ResumePentestJobResult.h>
 #include <aws/securityagent/model/RiskLevel.h>
 #include <aws/securityagent/model/RiskType.h>
 #include <aws/securityagent/model/ScopeChange.h>

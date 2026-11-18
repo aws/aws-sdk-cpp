@@ -26,6 +26,7 @@ enum class OAuth2ErrorCode {
   invalid_grant,
   invalid_scope,
   invalid_target,
+  invalid_client,
   rate_exceeded,
   service_unavailable
 };

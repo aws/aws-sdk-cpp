@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityAgent {
 namespace Model {
-enum class ErrorCode { NOT_SET, CLIENT_ERROR, INTERNAL_ERROR, STOPPED_BY_USER };
+enum class ErrorCode { NOT_SET, CLIENT_ERROR, INTERNAL_ERROR, STOPPED_BY_USER, PAUSED_BY_USER };
 
 namespace ErrorCodeMapper {
 AWS_SECURITYAGENT_API ErrorCode GetErrorCodeForName(const Aws::String& name);

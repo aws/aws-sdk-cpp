@@ -27,6 +27,8 @@
 #include <aws/wafv2/model/All.h>
 #include <aws/wafv2/model/AllQueryArguments.h>
 #include <aws/wafv2/model/AllowAction.h>
+#include <aws/wafv2/model/AnalyticsConfig.h>
+#include <aws/wafv2/model/AnalyticsMode.h>
 #include <aws/wafv2/model/AndStatement.h>
 #include <aws/wafv2/model/ApplicationAttribute.h>
 #include <aws/wafv2/model/ApplicationConfig.h>

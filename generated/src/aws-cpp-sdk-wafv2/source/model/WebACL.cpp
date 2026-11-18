@@ -127,6 +127,10 @@ WebACL& WebACL::operator=(JsonView jsonValue) {
     m_monetizationConfig = jsonValue.GetObject("MonetizationConfig");
     m_monetizationConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AnalyticsConfig")) {
+    m_analyticsConfig = jsonValue.GetObject("AnalyticsConfig");
+    m_analyticsConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -245,6 +249,10 @@ JsonValue WebACL::Jsonize() const {
 
   if (m_monetizationConfigHasBeenSet) {
     payload.WithObject("MonetizationConfig", m_monetizationConfig.Jsonize());
+  }
+
+  if (m_analyticsConfigHasBeenSet) {
+    payload.WithObject("AnalyticsConfig", m_analyticsConfig.Jsonize());
   }
 
   return payload;

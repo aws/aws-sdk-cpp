@@ -256,8 +256,8 @@ class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLCl
    * information for troubleshooting a failed update rollback, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">Update
    * rollback failed</a>.</p> <p> <code>ForceRollback</code> and
-   * <code>ResourcesToSkip</code> are mutually exclusive. For details, see
-   * <a>ContinueUpdateRollbackInput$ForceRollback</a>.</p><p><h3>See Also:</h3>   <a
+   * <code>ResourcesToSkip</code> are mutually exclusive. For details, see the
+   * <code>ForceRollback</code> parameter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">AWS
    * API Reference</a></p>
    */
@@ -1271,9 +1271,12 @@ class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLCl
   }
 
   /**
-   * <p>Returns the description of the specified StackSet operation.</p>
-   * <p>This API provides <i>strongly consistent</i> reads meaning it will always
-   * return the most up-to-date data.</p> <p><h3>See Also:</h3>   <a
+   * <p>Returns the description of the specified StackSet operation.</p> <p>Reports
+   * role provisioning and stack instances deployment progress in
+   * <code>StatusDetails.Stages</code>. A breakdown for each Amazon Web Services
+   * Region is available in <code>RegionalStatusDetails</code>.</p>  <p>This
+   * API provides <i>strongly consistent</i> reads meaning it will always return the
+   * most up-to-date data.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">AWS
    * API Reference</a></p>
    */
@@ -2269,9 +2272,12 @@ class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLCl
 
   /**
    * <p>Returns summary information about operations performed on a StackSet.</p>
-   *  <p>This API provides <i>eventually consistent</i> reads meaning it may
-   * take some time but will eventually return the most up-to-date data.</p>
-   * <p><h3>See Also:</h3>   <a
+   * <p>Reports role provisioning and stack instances deployment progress in
+   * <code>StatusDetails.Stages</code>. The breakdown for each Amazon Web Services
+   * Region is available only from <a>DescribeStackSetOperation</a>.</p>
+   * <p>This API provides <i>eventually consistent</i> reads meaning it may take some
+   * time but will eventually return the most up-to-date data.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">AWS
    * API Reference</a></p>
    */

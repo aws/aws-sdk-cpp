@@ -22,6 +22,7 @@
 #include <aws/neptune/model/DescribeGlobalClustersPaginationTraits.h>
 #include <aws/neptune/model/DescribeOrderableDBInstanceOptionsPaginationTraits.h>
 #include <aws/neptune/model/DescribePendingMaintenanceActionsPaginationTraits.h>
+#include <aws/neptune/model/DescribeServerlessV2PlatformVersionsPaginationTraits.h>
 
 namespace Aws {
 namespace Neptune {
@@ -70,6 +71,9 @@ using DescribeOrderableDBInstanceOptionsPaginator =
 using DescribePendingMaintenanceActionsPaginator =
     Aws::Utils::Pagination::Paginator<NeptuneClient, Model::DescribePendingMaintenanceActionsRequest,
                                       Pagination::DescribePendingMaintenanceActionsPaginationTraits<NeptuneClient>>;
+using DescribeServerlessV2PlatformVersionsPaginator =
+    Aws::Utils::Pagination::Paginator<NeptuneClient, Model::DescribeServerlessV2PlatformVersionsRequest,
+                                      Pagination::DescribeServerlessV2PlatformVersionsPaginationTraits<NeptuneClient>>;
 
 }  // namespace Neptune
 }  // namespace Aws

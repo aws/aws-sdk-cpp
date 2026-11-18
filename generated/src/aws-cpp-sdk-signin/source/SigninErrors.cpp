@@ -61,15 +61,15 @@ AWS_SIGNIN_API TooManyRequestsError SigninError::GetModeledError() {
 }
 
 template <>
-AWS_SIGNIN_API InternalServerException SigninError::GetModeledError() {
-  assert(this->GetErrorType() == SigninErrors::INTERNAL_SERVER);
-  return InternalServerException(this->GetJsonPayload().View());
-}
-
-template <>
 AWS_SIGNIN_API ResourceNotFoundException SigninError::GetModeledError() {
   assert(this->GetErrorType() == SigninErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_SIGNIN_API InternalServerException SigninError::GetModeledError() {
+  assert(this->GetErrorType() == SigninErrors::INTERNAL_SERVER);
+  return InternalServerException(this->GetJsonPayload().View());
 }
 
 template <>

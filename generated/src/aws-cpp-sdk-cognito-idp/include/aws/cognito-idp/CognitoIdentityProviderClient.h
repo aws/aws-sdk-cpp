@@ -1578,6 +1578,49 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Cancels a point-in-time recovery of a user pool before Amazon Cognito applies
+   * any changes. You can cancel a recovery when its status is
+   * <code>PREVIEW_GENERATING</code> or <code>PREVIEW_GENERATED</code>. When you
+   * cancel a recovery, Amazon Cognito discards the recovery preview, resumes write
+   * operations in the user pool, and sets the status of the recovery to
+   * <code>PREVIEW_CANCELLED</code>. Your user pool data doesn't change.</p> <p>You
+   * can't cancel a recovery after you start it with a request.</p>  <p>Amazon
+   * Cognito evaluates Identity and Access Management (IAM) policies in requests for
+   * this API operation. For this operation, you must use IAM credentials to
+   * authorize requests, and you must grant yourself the corresponding IAM permission
+   * in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CancelPointInTimeRecovery">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelPointInTimeRecoveryOutcome CancelPointInTimeRecovery(const Model::CancelPointInTimeRecoveryRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelPointInTimeRecovery that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CancelPointInTimeRecoveryRequestT = Model::CancelPointInTimeRecoveryRequest>
+  Model::CancelPointInTimeRecoveryOutcomeCallable CancelPointInTimeRecoveryCallable(
+      const CancelPointInTimeRecoveryRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::CancelPointInTimeRecovery, request);
+  }
+
+  /**
+   * An Async wrapper for CancelPointInTimeRecovery that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CancelPointInTimeRecoveryRequestT = Model::CancelPointInTimeRecoveryRequest>
+  void CancelPointInTimeRecoveryAsync(const CancelPointInTimeRecoveryRequestT& request,
+                                      const CancelPointInTimeRecoveryResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::CancelPointInTimeRecovery, request, handler, context);
+  }
+
+  /**
    * <p>Changes the password for the currently signed-in user.</p> <p>Authorize this
    * action with a signed-in user's access token. It must include the scope
    * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
@@ -2741,6 +2784,49 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Returns details about a point-in-time recovery of a user pool, including its
+   * status and the point in time that it restores the user pool to. After Amazon
+   * Cognito generates the recovery preview, the response also includes the number of
+   * entities that the recovery creates, updates, and deletes. Review the preview
+   * before you apply the recovery with a request or discard it with a request.</p>
+   *  <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies
+   * in requests for this API operation. For this operation, you must use IAM
+   * credentials to authorize requests, and you must grant yourself the corresponding
+   * IAM permission in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribePointInTimeRecovery">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribePointInTimeRecoveryOutcome DescribePointInTimeRecovery(
+      const Model::DescribePointInTimeRecoveryRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribePointInTimeRecovery that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribePointInTimeRecoveryRequestT = Model::DescribePointInTimeRecoveryRequest>
+  Model::DescribePointInTimeRecoveryOutcomeCallable DescribePointInTimeRecoveryCallable(
+      const DescribePointInTimeRecoveryRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::DescribePointInTimeRecovery, request);
+  }
+
+  /**
+   * An Async wrapper for DescribePointInTimeRecovery that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribePointInTimeRecoveryRequestT = Model::DescribePointInTimeRecoveryRequest>
+  void DescribePointInTimeRecoveryAsync(const DescribePointInTimeRecoveryRequestT& request,
+                                        const DescribePointInTimeRecoveryResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::DescribePointInTimeRecovery, request, handler, context);
+  }
+
+  /**
    * <p>Describes a resource server. For more information about resource servers, see
    * <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">Access
@@ -3889,6 +3975,111 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Initiates a point-in-time recovery of a user pool to a time in the past that
+   * you specify. This operation is the first step of a recovery and doesn't change
+   * your user pool data. Amazon Cognito pauses write operations in the user pool and
+   * generates a recovery preview when capacity is available in the Amazon Web
+   * Services Region, so the preview might not be available immediately. The preview
+   * shows the number of entities that the recovery creates, updates, and deletes. To
+   * check the status of the recovery and review the preview, make a request. When
+   * the status is <code>PREVIEW_GENERATED</code>, apply the recovery with a request
+   * or discard it with a request. The time that it takes to generate the recovery
+   * preview doesn't depend on the size of your user pool.</p>
+   * <p>Point-in-time recovery is a disaster recovery feature. Use it to recover from
+   * accidental or unauthorized changes that affect your user data, for example the
+   * deletion or corruption of many users. Don't use point-in-time recovery to remove
+   * users that were created recently or to revert changes to individual users. To
+   * delete or update individual users, use operations like and .</p>
+   * <p>While a recovery is in progress, Amazon Cognito blocks operations that write
+   * to the user pool, for example user sign-up, user creation, and attribute
+   * updates. Sign-in and read operations continue to work, with the following
+   * exceptions.</p> <ul> <li> <p>Users who must set a new password, set up MFA, or
+   * respond to a TOTP MFA challenge can't complete sign-in. Sign-in with the
+   * <code>NEW_PASSWORD_REQUIRED</code>, <code>MFA_SETUP</code>, and
+   * <code>SOFTWARE_TOKEN_MFA</code> challenges fails until the recovery ends.</p>
+   * </li> <li> <p>Federated users can sign in only if they have previously signed in
+   * to the user pool and their attributes from the external identity provider
+   * haven't changed.</p> </li> <li> <p>You can't create or start user import jobs.
+   * Start your import jobs after the recovery ends.</p> </li> </ul> <p>If you don't
+   * start or cancel the recovery within 24 hours after you initiate it, the recovery
+   * preview expires. Amazon Cognito then resumes write operations and doesn't change
+   * your user pool data. The 24-hour period includes the time that Amazon Cognito
+   * waits for available capacity.</p> <p>A point-in-time recovery restores user
+   * data, including user profiles and attributes, group memberships, passwords, MFA
+   * settings, and passkeys. It doesn't restore user pool configuration, for example
+   * app clients, the attribute schema, encryption settings, or multi-Region
+   * replication settings. Users who changed their password after the recovery point
+   * keep their current password.</p> <p>The following requirements and limits apply
+   * to point-in-time recovery.</p> <ul> <li> <p>Your user pool must be on the
+   * Essentials or Plus <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature
+   * plan</a>. With the Essentials feature plan, you can recover your user pool to a
+   * point in time up to 1 day in the past. With the Plus feature plan, you can
+   * recover up to 14 days in the past. Your user pool must have been on the required
+   * feature plan at the recovery point. For example, to recover to a point in time
+   * 14 days ago, your user pool must have been on the Plus feature plan for the past
+   * 14 days.</p> </li> <li> <p>The recovery point must be at least 15 minutes in the
+   * past and can't be earlier than the creation time of the user pool.</p> </li>
+   * <li> <p>A user pool can have only one active recovery at a time.</p> </li> <li>
+   * <p>An Amazon Web Services account can have up to five active recoveries at a
+   * time across all of its user pools. An organization in Amazon Web Services
+   * Organizations can have up to ten active recoveries at a time across all of its
+   * accounts.</p> </li> <li> <p>You can complete one recovery of a user pool in a
+   * 24-hour period.</p> </li> <li> <p>You can create up to three recovery previews
+   * of a user pool, ten recovery previews in an Amazon Web Services account, and 15
+   * recovery previews in an organization in Amazon Web Services Organizations in a
+   * 24-hour period. You can create up to ten recovery previews of a user pool in a
+   * 30-day period.</p> </li> <li> <p>You can't initiate a recovery while a user
+   * import job is in progress in your user pool. Wait for the import job to
+   * complete, or stop it with a request, and then initiate the recovery.</p> </li>
+   * <li> <p>In a user pool with multi-Region replication, you can initiate a
+   * recovery only in the primary Amazon Web Services Region, and only after
+   * replication is complete.</p> </li> <li> <p>If your user pool uses a customer
+   * managed key in KMS for encryption, the key must remain enabled and accessible to
+   * Amazon Cognito for the duration of the recovery.</p> </li> <li> <p>Some user
+   * pools don't support point-in-time recovery, for example some older user pools
+   * and user pools that contain user data with characters or formats that
+   * point-in-time recovery doesn't support. If your user pool doesn't support it,
+   * Amazon Cognito returns an error when you initiate a recovery. To get help with
+   * this limitation, contact Amazon Web Services Support.</p> </li> </ul>
+   * <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in
+   * requests for this API operation. For this operation, you must use IAM
+   * credentials to authorize requests, and you must grant yourself the corresponding
+   * IAM permission in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiatePointInTimeRecovery">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::InitiatePointInTimeRecoveryOutcome InitiatePointInTimeRecovery(
+      const Model::InitiatePointInTimeRecoveryRequest& request) const;
+
+  /**
+   * A Callable wrapper for InitiatePointInTimeRecovery that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename InitiatePointInTimeRecoveryRequestT = Model::InitiatePointInTimeRecoveryRequest>
+  Model::InitiatePointInTimeRecoveryOutcomeCallable InitiatePointInTimeRecoveryCallable(
+      const InitiatePointInTimeRecoveryRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::InitiatePointInTimeRecovery, request);
+  }
+
+  /**
+   * An Async wrapper for InitiatePointInTimeRecovery that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename InitiatePointInTimeRecoveryRequestT = Model::InitiatePointInTimeRecoveryRequest>
+  void InitiatePointInTimeRecoveryAsync(const InitiatePointInTimeRecoveryRequestT& request,
+                                        const InitiatePointInTimeRecoveryResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::InitiatePointInTimeRecovery, request, handler, context);
+  }
+
+  /**
    * <p>Lists the devices that Amazon Cognito has registered to the currently
    * signed-in user. For more information about device authentication, see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
@@ -3996,6 +4187,46 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   void ListIdentityProvidersAsync(const ListIdentityProvidersRequestT& request, const ListIdentityProvidersResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CognitoIdentityProviderClient::ListIdentityProviders, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the point-in-time recoveries of a user pool, including the active
+   * recovery and past recoveries. The response lists the most recent recoveries
+   * first and doesn't include recovery previews. To get the recovery preview of a
+   * recovery, make a request.</p>  <p>Amazon Cognito evaluates Identity and
+   * Access Management (IAM) policies in requests for this API operation. For this
+   * operation, you must use IAM credentials to authorize requests, and you must
+   * grant yourself the corresponding IAM permission in a policy.</p> <p
+   * class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListPointInTimeRecoveries">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPointInTimeRecoveriesOutcome ListPointInTimeRecoveries(const Model::ListPointInTimeRecoveriesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListPointInTimeRecoveries that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPointInTimeRecoveriesRequestT = Model::ListPointInTimeRecoveriesRequest>
+  Model::ListPointInTimeRecoveriesOutcomeCallable ListPointInTimeRecoveriesCallable(
+      const ListPointInTimeRecoveriesRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::ListPointInTimeRecoveries, request);
+  }
+
+  /**
+   * An Async wrapper for ListPointInTimeRecoveries that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListPointInTimeRecoveriesRequestT = Model::ListPointInTimeRecoveriesRequest>
+  void ListPointInTimeRecoveriesAsync(const ListPointInTimeRecoveriesRequestT& request,
+                                      const ListPointInTimeRecoveriesResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::ListPointInTimeRecoveries, request, handler, context);
   }
 
   /**
@@ -4970,6 +5201,51 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   void SignUpAsync(const SignUpRequestT& request, const SignUpResponseReceivedHandler& handler,
                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CognitoIdentityProviderClient::SignUp, request, handler, context);
+  }
+
+  /**
+   * <p>Applies a point-in-time recovery to a user pool. Before you start a recovery,
+   * review the recovery preview in the response to a request. You can start a
+   * recovery when its status is <code>PREVIEW_GENERATED</code>.</p> <p>When you
+   * start a recovery, Amazon Cognito sets its status to <code>RESTORING</code> and
+   * restores user data in the user pool to its state at the recovery point. Write
+   * operations in the user pool remain paused until the recovery is complete.
+   * Sign-in and read operations continue to work. When the status of the recovery
+   * changes to <code>RESTORE_COMPLETED</code>, Amazon Cognito resumes write
+   * operations.</p> <p>You can't cancel a recovery after you start it.</p>
+   * <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in
+   * requests for this API operation. For this operation, you must use IAM
+   * credentials to authorize requests, and you must grant yourself the corresponding
+   * IAM permission in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartPointInTimeRecovery">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartPointInTimeRecoveryOutcome StartPointInTimeRecovery(const Model::StartPointInTimeRecoveryRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartPointInTimeRecovery that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartPointInTimeRecoveryRequestT = Model::StartPointInTimeRecoveryRequest>
+  Model::StartPointInTimeRecoveryOutcomeCallable StartPointInTimeRecoveryCallable(const StartPointInTimeRecoveryRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::StartPointInTimeRecovery, request);
+  }
+
+  /**
+   * An Async wrapper for StartPointInTimeRecovery that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartPointInTimeRecoveryRequestT = Model::StartPointInTimeRecoveryRequest>
+  void StartPointInTimeRecoveryAsync(const StartPointInTimeRecoveryRequestT& request,
+                                     const StartPointInTimeRecoveryResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::StartPointInTimeRecovery, request, handler, context);
   }
 
   /**

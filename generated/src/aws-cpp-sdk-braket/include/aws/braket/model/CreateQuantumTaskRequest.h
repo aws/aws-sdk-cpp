@@ -124,7 +124,19 @@ class CreateQuantumTaskRequest : public BraketRequest {
   ///@{
   /**
    * <p>The key prefix for the location in the S3 bucket to store quantum task
-   * results in.</p>
+   * results in. For example, <code>results/</code>. Must not contain path traversal
+   * sequences such as <code>../</code> or <code>./</code>. The following characters
+   * are not valid in the key prefix:</p> <ul> <li> <p>Braces (<code>{</code> or
+   * <code>}</code>)</p> </li> <li> <p>Brackets (<code>[</code> or
+   * <code>]</code>)</p> </li> <li> <p>Less than or greater than sign
+   * (<code>&lt;</code> or <code>&gt;</code>)</p> </li> <li> <p>Backslash
+   * (<code>\</code>)</p> </li> <li> <p>Vertical bar or pipe (<code>|</code>)</p>
+   * </li> <li> <p>Caret or circumflex (<code>^</code>)</p> </li> <li> <p>Tilde
+   * (<code>~</code>)</p> </li> <li> <p>Grave accent or backtick (<code>`</code>)</p>
+   * </li> <li> <p>Percent character (<code>%</code>)</p> </li> <li> <p>Pound sign
+   * (<code>#</code>)</p> </li> <li> <p>Quotation mark (<code>"</code>)</p> </li>
+   * <li> <p>Non-printable ASCII characters (128–255 decimal characters)</p> </li>
+   * </ul>
    */
   inline const Aws::String& GetOutputS3KeyPrefix() const { return m_outputS3KeyPrefix; }
   inline bool OutputS3KeyPrefixHasBeenSet() const { return m_outputS3KeyPrefixHasBeenSet; }

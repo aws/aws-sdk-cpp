@@ -19,6 +19,10 @@
 #include <aws/signin/internal/SigninEndpointRules.h>
 #include <aws/signin/model/AccessDeniedException.h>
 #include <aws/signin/model/AccessToken.h>
+#include <aws/signin/model/BatchRevokeSessionError.h>
+#include <aws/signin/model/BatchRevokeSessionsRequest.h>
+#include <aws/signin/model/BatchRevokeSessionsResult.h>
+#include <aws/signin/model/ClientType.h>
 #include <aws/signin/model/ConflictException.h>
 #include <aws/signin/model/CreateBearerTokenRequest.h>
 #include <aws/signin/model/CreateBearerTokenResult.h>
@@ -38,6 +42,8 @@
 #include <aws/signin/model/GetConsoleAuthorizationConfigurationResult.h>
 #include <aws/signin/model/GetResourcePolicyRequest.h>
 #include <aws/signin/model/GetResourcePolicyResult.h>
+#include <aws/signin/model/GetSessionRequest.h>
+#include <aws/signin/model/GetSessionResult.h>
 #include <aws/signin/model/InternalServerException.h>
 #include <aws/signin/model/IntrospectOAuth2TokenWithIAMRequest.h>
 #include <aws/signin/model/IntrospectOAuth2TokenWithIAMResult.h>
@@ -46,6 +52,9 @@
 #include <aws/signin/model/ListResourcePermissionStatementsPaginationTraits.h>
 #include <aws/signin/model/ListResourcePermissionStatementsRequest.h>
 #include <aws/signin/model/ListResourcePermissionStatementsResult.h>
+#include <aws/signin/model/ListSessionsPaginationTraits.h>
+#include <aws/signin/model/ListSessionsRequest.h>
+#include <aws/signin/model/ListSessionsResult.h>
 #include <aws/signin/model/OAuth2ErrorCode.h>
 #include <aws/signin/model/PermissionStatementSummary.h>
 #include <aws/signin/model/PolicyStatement.h>
@@ -56,8 +65,11 @@
 #include <aws/signin/model/ResourceNotFoundException.h>
 #include <aws/signin/model/RevokeOAuth2TokenWithIAMRequest.h>
 #include <aws/signin/model/RevokeOAuth2TokenWithIAMResult.h>
+#include <aws/signin/model/RevokedSession.h>
 #include <aws/signin/model/ServiceQuotaExceededException.h>
 #include <aws/signin/model/ServiceUnavailableException.h>
+#include <aws/signin/model/Session.h>
+#include <aws/signin/model/SessionStatus.h>
 #include <aws/signin/model/SigninResourceBasedPolicy.h>
 #include <aws/signin/model/TooManyRequestsError.h>
 #include <aws/signin/model/ValidationException.h>

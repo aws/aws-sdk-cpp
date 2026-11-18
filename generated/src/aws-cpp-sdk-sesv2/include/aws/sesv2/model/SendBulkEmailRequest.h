@@ -169,7 +169,7 @@ class SendBulkEmailRequest : public SESV2Request {
   ///@{
   /**
    * <p>A list of tags, in the form of name/value pairs, to apply to an email that
-   * you send using the <code>SendEmail</code> operation. Tags correspond to
+   * you send using the <code>SendBulkEmail</code> operation. Tags correspond to
    * characteristics of the email that you define, so that you can publish email
    * sending events.</p>
    */

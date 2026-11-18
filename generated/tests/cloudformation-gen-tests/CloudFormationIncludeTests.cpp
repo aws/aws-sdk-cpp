@@ -265,6 +265,9 @@
 #include <aws/cloudformation/model/RecordHandlerProgressRequest.h>
 #include <aws/cloudformation/model/RecordHandlerProgressResult.h>
 #include <aws/cloudformation/model/RegionConcurrencyType.h>
+#include <aws/cloudformation/model/RegionalStackInstancesDeployment.h>
+#include <aws/cloudformation/model/RegionalStages.h>
+#include <aws/cloudformation/model/RegionalStatusDetail.h>
 #include <aws/cloudformation/model/RegisterPublisherRequest.h>
 #include <aws/cloudformation/model/RegisterPublisherResult.h>
 #include <aws/cloudformation/model/RegisterTypeRequest.h>
@@ -291,6 +294,7 @@
 #include <aws/cloudformation/model/ResourceTargetDefinition.h>
 #include <aws/cloudformation/model/ResourceToImport.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
+#include <aws/cloudformation/model/RoleProvisioning.h>
 #include <aws/cloudformation/model/RollbackConfiguration.h>
 #include <aws/cloudformation/model/RollbackStackRequest.h>
 #include <aws/cloudformation/model/RollbackStackResult.h>
@@ -321,6 +325,7 @@
 #include <aws/cloudformation/model/StackInstanceResourceDriftsSummary.h>
 #include <aws/cloudformation/model/StackInstanceStatus.h>
 #include <aws/cloudformation/model/StackInstanceSummary.h>
+#include <aws/cloudformation/model/StackInstancesDeployment.h>
 #include <aws/cloudformation/model/StackRefactorAction.h>
 #include <aws/cloudformation/model/StackRefactorActionEntity.h>
 #include <aws/cloudformation/model/StackRefactorActionType.h>
@@ -352,6 +357,8 @@
 #include <aws/cloudformation/model/StackSetSummary.h>
 #include <aws/cloudformation/model/StackStatus.h>
 #include <aws/cloudformation/model/StackSummary.h>
+#include <aws/cloudformation/model/StageStatus.h>
+#include <aws/cloudformation/model/Stages.h>
 #include <aws/cloudformation/model/StartResourceScanRequest.h>
 #include <aws/cloudformation/model/StartResourceScanResult.h>
 #include <aws/cloudformation/model/StopStackSetOperationRequest.h>

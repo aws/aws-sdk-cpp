@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/S3_EXPORTS.h>
+#include <aws/s3/model/UseSourceMultiRegionKey.h>
 
 #include <utility>
 
@@ -61,9 +62,31 @@ class EncryptionConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether Amazon S3 uses the related multi-Region KMS key in the
+   * destination Amazon Web Services Region to encrypt the replica.</p>
+   */
+  inline const UseSourceMultiRegionKey& GetUseSourceMultiRegionKey() const { return m_useSourceMultiRegionKey; }
+  inline bool UseSourceMultiRegionKeyHasBeenSet() const { return m_useSourceMultiRegionKeyHasBeenSet; }
+  template <typename UseSourceMultiRegionKeyT = UseSourceMultiRegionKey>
+  void SetUseSourceMultiRegionKey(UseSourceMultiRegionKeyT&& value) {
+    m_useSourceMultiRegionKeyHasBeenSet = true;
+    m_useSourceMultiRegionKey = std::forward<UseSourceMultiRegionKeyT>(value);
+  }
+  template <typename UseSourceMultiRegionKeyT = UseSourceMultiRegionKey>
+  EncryptionConfiguration& WithUseSourceMultiRegionKey(UseSourceMultiRegionKeyT&& value) {
+    SetUseSourceMultiRegionKey(std::forward<UseSourceMultiRegionKeyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_replicaKmsKeyID;
+
+  UseSourceMultiRegionKey m_useSourceMultiRegionKey;
   bool m_replicaKmsKeyIDHasBeenSet = false;
+  bool m_useSourceMultiRegionKeyHasBeenSet = false;
 };
 
 }  // namespace Model

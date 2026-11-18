@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CapacityProviderVolumeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/EfsAccessPointConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/S3BucketMountConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/S3FilesAccessPointConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/SessionStorageConfiguration.h>
 
@@ -111,6 +112,24 @@ class FilesystemConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Mounts an Amazon S3 bucket as a file system in the AgentCore Runtime.</p>
+   */
+  inline const S3BucketMountConfiguration& GetS3BucketMount() const { return m_s3BucketMount; }
+  inline bool S3BucketMountHasBeenSet() const { return m_s3BucketMountHasBeenSet; }
+  template <typename S3BucketMountT = S3BucketMountConfiguration>
+  void SetS3BucketMount(S3BucketMountT&& value) {
+    m_s3BucketMountHasBeenSet = true;
+    m_s3BucketMount = std::forward<S3BucketMountT>(value);
+  }
+  template <typename S3BucketMountT = S3BucketMountConfiguration>
+  FilesystemConfiguration& WithS3BucketMount(S3BucketMountT&& value) {
+    SetS3BucketMount(std::forward<S3BucketMountT>(value));
+    return *this;
+  }
+  ///@}
  private:
   SessionStorageConfiguration m_sessionStorage;
 
@@ -119,10 +138,13 @@ class FilesystemConfiguration {
   EfsAccessPointConfiguration m_efsAccessPoint;
 
   CapacityProviderVolumeConfiguration m_capacityProviderVolume;
+
+  S3BucketMountConfiguration m_s3BucketMount;
   bool m_sessionStorageHasBeenSet = false;
   bool m_s3FilesAccessPointHasBeenSet = false;
   bool m_efsAccessPointHasBeenSet = false;
   bool m_capacityProviderVolumeHasBeenSet = false;
+  bool m_s3BucketMountHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/OperatingSystemConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -52,9 +53,31 @@ class CapacityProviderConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The operating system configuration of the agents that Amazon Bedrock
+   * AgentCore Runtime runs on the capacity provider.</p>
+   */
+  inline const OperatingSystemConfiguration& GetOperatingSystemConfiguration() const { return m_operatingSystemConfiguration; }
+  inline bool OperatingSystemConfigurationHasBeenSet() const { return m_operatingSystemConfigurationHasBeenSet; }
+  template <typename OperatingSystemConfigurationT = OperatingSystemConfiguration>
+  void SetOperatingSystemConfiguration(OperatingSystemConfigurationT&& value) {
+    m_operatingSystemConfigurationHasBeenSet = true;
+    m_operatingSystemConfiguration = std::forward<OperatingSystemConfigurationT>(value);
+  }
+  template <typename OperatingSystemConfigurationT = OperatingSystemConfiguration>
+  CapacityProviderConfiguration& WithOperatingSystemConfiguration(OperatingSystemConfigurationT&& value) {
+    SetOperatingSystemConfiguration(std::forward<OperatingSystemConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityProviderArn;
+
+  OperatingSystemConfiguration m_operatingSystemConfiguration;
   bool m_capacityProviderArnHasBeenSet = false;
+  bool m_operatingSystemConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -20,6 +20,7 @@
 #include <aws/signin/SigninClient.h>
 #include <aws/signin/SigninEndpointProvider.h>
 #include <aws/signin/SigninErrorMarshaller.h>
+#include <aws/signin/model/BatchRevokeSessionsRequest.h>
 #include <aws/signin/model/CreateBearerTokenRequest.h>
 #include <aws/signin/model/CreateOAuth2TokenRequest.h>
 #include <aws/signin/model/CreateOAuth2TokenWithIAMRequest.h>
@@ -28,8 +29,10 @@
 #include <aws/signin/model/DeleteResourcePermissionStatementRequest.h>
 #include <aws/signin/model/GetConsoleAuthorizationConfigurationRequest.h>
 #include <aws/signin/model/GetResourcePolicyRequest.h>
+#include <aws/signin/model/GetSessionRequest.h>
 #include <aws/signin/model/IntrospectOAuth2TokenWithIAMRequest.h>
 #include <aws/signin/model/ListResourcePermissionStatementsRequest.h>
+#include <aws/signin/model/ListSessionsRequest.h>
 #include <aws/signin/model/PutConsoleAuthorizationConfigurationRequest.h>
 #include <aws/signin/model/PutResourcePermissionStatementRequest.h>
 #include <aws/signin/model/RevokeOAuth2TokenWithIAMRequest.h>
@@ -188,6 +191,17 @@ SigninClient::InvokeOperationOutcome SigninClient::InvokeServiceOperation(
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+BatchRevokeSessionsOutcome SigninClient::BatchRevokeSessions(const BatchRevokeSessionsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/batch-revoke-sessions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchRevokeSessionsOutcome(result.GetResultWithOwnership())
+                            : BatchRevokeSessionsOutcome(std::move(result.GetError()));
+}
+
 CreateBearerTokenOutcome SigninClient::CreateBearerToken(const CreateBearerTokenRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -289,6 +303,16 @@ GetResourcePolicyOutcome SigninClient::GetResourcePolicy(const GetResourcePolicy
                             : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
+GetSessionOutcome SigninClient::GetSession(const GetSessionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/get-session");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSessionOutcome(result.GetResultWithOwnership()) : GetSessionOutcome(std::move(result.GetError()));
+}
+
 IntrospectOAuth2TokenWithIAMOutcome SigninClient::IntrospectOAuth2TokenWithIAM(const IntrospectOAuth2TokenWithIAMRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -313,6 +337,16 @@ ListResourcePermissionStatementsOutcome SigninClient::ListResourcePermissionStat
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListResourcePermissionStatementsOutcome(result.GetResultWithOwnership())
                             : ListResourcePermissionStatementsOutcome(std::move(result.GetError()));
+}
+
+ListSessionsOutcome SigninClient::ListSessions(const ListSessionsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/list-sessions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSessionsOutcome(result.GetResultWithOwnership()) : ListSessionsOutcome(std::move(result.GetError()));
 }
 
 PutConsoleAuthorizationConfigurationOutcome SigninClient::PutConsoleAuthorizationConfiguration(

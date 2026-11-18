@@ -28,6 +28,11 @@ EncryptionConfiguration& EncryptionConfiguration::operator=(const XmlNode& xmlNo
       m_replicaKmsKeyID = Aws::Utils::Xml::DecodeEscapedXmlText(replicaKmsKeyIDNode.GetText());
       m_replicaKmsKeyIDHasBeenSet = true;
     }
+    XmlNode useSourceMultiRegionKeyNode = resultNode.FirstChild("UseSourceMultiRegionKey");
+    if (!useSourceMultiRegionKeyNode.IsNull()) {
+      m_useSourceMultiRegionKey = useSourceMultiRegionKeyNode;
+      m_useSourceMultiRegionKeyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -38,6 +43,11 @@ void EncryptionConfiguration::AddToNode(XmlNode& parentNode) const {
   if (m_replicaKmsKeyIDHasBeenSet) {
     XmlNode replicaKmsKeyIDNode = parentNode.CreateChildElement("ReplicaKmsKeyID");
     replicaKmsKeyIDNode.SetText(m_replicaKmsKeyID);
+  }
+
+  if (m_useSourceMultiRegionKeyHasBeenSet) {
+    XmlNode useSourceMultiRegionKeyNode = parentNode.CreateChildElement("UseSourceMultiRegionKey");
+    m_useSourceMultiRegionKey.AddToNode(useSourceMultiRegionKeyNode);
   }
 }
 

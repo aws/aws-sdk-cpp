@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/s3-crt/model/ReplicationRuleAndOperator.h>
+#include <aws/s3-crt/model/ReplicationRuleNotOperator.h>
 #include <aws/s3-crt/model/Tag.h>
 
 #include <utility>
@@ -23,8 +24,8 @@ namespace Model {
 /**
  * <p>A filter that identifies the subset of objects to which the replication rule
  * applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>,
- * <code>Tag</code>, or an <code>And</code> child element.</p><p><h3>See Also:</h3>
- * <a
+ * <code>Tag</code>, <code>And</code>, or <code>Not</code> child
+ * element.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ReplicationRuleFilter">AWS
  * API Reference</a></p>
  */
@@ -101,15 +102,37 @@ class ReplicationRuleFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A container for specifying filters that exclude matching objects from the
+   * replication rule.</p>
+   */
+  inline const ReplicationRuleNotOperator& GetNot() const { return m_not; }
+  inline bool NotHasBeenSet() const { return m_notHasBeenSet; }
+  template <typename NotT = ReplicationRuleNotOperator>
+  void SetNot(NotT&& value) {
+    m_notHasBeenSet = true;
+    m_not = std::forward<NotT>(value);
+  }
+  template <typename NotT = ReplicationRuleNotOperator>
+  ReplicationRuleFilter& WithNot(NotT&& value) {
+    SetNot(std::forward<NotT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_prefix;
 
   Tag m_tag;
 
   ReplicationRuleAndOperator m_and;
+
+  ReplicationRuleNotOperator m_not;
   bool m_prefixHasBeenSet = false;
   bool m_tagHasBeenSet = false;
   bool m_andHasBeenSet = false;
+  bool m_notHasBeenSet = false;
 };
 
 }  // namespace Model

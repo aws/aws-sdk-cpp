@@ -137,6 +137,9 @@
 #include <aws/neptune/model/DescribePendingMaintenanceActionsPaginationTraits.h>
 #include <aws/neptune/model/DescribePendingMaintenanceActionsRequest.h>
 #include <aws/neptune/model/DescribePendingMaintenanceActionsResult.h>
+#include <aws/neptune/model/DescribeServerlessV2PlatformVersionsPaginationTraits.h>
+#include <aws/neptune/model/DescribeServerlessV2PlatformVersionsRequest.h>
+#include <aws/neptune/model/DescribeServerlessV2PlatformVersionsResult.h>
 #include <aws/neptune/model/DescribeValidDBInstanceModificationsRequest.h>
 #include <aws/neptune/model/DescribeValidDBInstanceModificationsResult.h>
 #include <aws/neptune/model/DomainMembership.h>
@@ -202,6 +205,8 @@
 #include <aws/neptune/model/RestoreDBClusterFromSnapshotResult.h>
 #include <aws/neptune/model/RestoreDBClusterToPointInTimeRequest.h>
 #include <aws/neptune/model/RestoreDBClusterToPointInTimeResult.h>
+#include <aws/neptune/model/ServerlessV2FeaturesSupport.h>
+#include <aws/neptune/model/ServerlessV2PlatformVersionInfo.h>
 #include <aws/neptune/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/neptune/model/ServerlessV2ScalingConfigurationInfo.h>
 #include <aws/neptune/model/SourceType.h>

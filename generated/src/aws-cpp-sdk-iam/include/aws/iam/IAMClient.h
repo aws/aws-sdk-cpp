@@ -6446,9 +6446,10 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   * <p>Changes the password for the specified IAM user. You can use the CLI, the
-   * Amazon Web Services API, or the <b>Users</b> page in the IAM console to change
-   * the password for any IAM user. Use <a
+   * <p>Changes the password or the maximum sign-in session duration for the
+   * specified IAM user. You can use the CLI, the Amazon Web Services API, or the
+   * <b>Users</b> page in the IAM console to change the password for any IAM user.
+   * Use <a
    * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html">ChangePassword</a>
    * to change your own password in the <b>My Security Credentials</b> page in the
    * Amazon Web Services Management Console.</p> <p>For more information about
@@ -6525,8 +6526,9 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   * <p>Updates the description or maximum session duration setting of a
-   * role.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the description, maximum session duration, or maximum sign-in session
+   * duration of a role. You cannot change the maximum sign-in session duration of a
+   * service-linked role.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRole">AWS API
    * Reference</a></p>
    */

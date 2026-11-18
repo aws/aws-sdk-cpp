@@ -42,6 +42,10 @@ GetDeviceResult& GetDeviceResult::operator=(const Aws::AmazonWebServiceResult<Js
     m_deviceStatus = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("deviceStatus"));
     m_deviceStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("deviceStatusReason")) {
+    m_deviceStatusReason = jsonValue.GetObject("deviceStatusReason");
+    m_deviceStatusReasonHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("deviceCapabilities")) {
     m_deviceCapabilities = jsonValue.GetString("deviceCapabilities");
     m_deviceCapabilitiesHasBeenSet = true;

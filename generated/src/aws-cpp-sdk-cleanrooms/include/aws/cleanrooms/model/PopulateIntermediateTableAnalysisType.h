@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CleanRooms {
 namespace Model {
-enum class PopulateIntermediateTableAnalysisType { NOT_SET, QUERY };
+enum class PopulateIntermediateTableAnalysisType { NOT_SET, QUERY, JOB };
 
 namespace PopulateIntermediateTableAnalysisTypeMapper {
 AWS_CLEANROOMS_API PopulateIntermediateTableAnalysisType GetPopulateIntermediateTableAnalysisTypeForName(const Aws::String& name);

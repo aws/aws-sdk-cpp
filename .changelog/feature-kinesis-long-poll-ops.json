@@ -1,6 +1,0 @@
-{
-  "type": "feature",
-  "category": "aws-cpp-sdk-kinesis",
-  "contributor": "sbiscigl",
-  "description": "Treat Kinesis ReceiveQueueRecords and ReceiveDeadLetterQueueRecords as long-polling operations, so they back off when the retry quota is exhausted."
-}

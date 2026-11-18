@@ -9,7 +9,6 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/health/Health_EXPORTS.h>
-#include <aws/health/model/TagKeyForOrganization.h>
 
 #include <utility>
 namespace Aws {
@@ -31,21 +30,21 @@ class ConfigureTagsForOrganizationResult {
 
   ///@{
   /**
-   * <p>The list of tag keys that were successfully configured for the
-   * organization.</p>
+   * <p>The list of tag keys that were successfully configured for the organization,
+   * with the current status of each tag key.</p>
    */
-  inline const Aws::Vector<TagKeyForOrganization>& GetConfiguredTagKeys() const { return m_configuredTagKeys; }
-  template <typename ConfiguredTagKeysT = Aws::Vector<TagKeyForOrganization>>
+  inline const Aws::Vector<Aws::String>& GetConfiguredTagKeys() const { return m_configuredTagKeys; }
+  template <typename ConfiguredTagKeysT = Aws::Vector<Aws::String>>
   void SetConfiguredTagKeys(ConfiguredTagKeysT&& value) {
     m_configuredTagKeysHasBeenSet = true;
     m_configuredTagKeys = std::forward<ConfiguredTagKeysT>(value);
   }
-  template <typename ConfiguredTagKeysT = Aws::Vector<TagKeyForOrganization>>
+  template <typename ConfiguredTagKeysT = Aws::Vector<Aws::String>>
   ConfigureTagsForOrganizationResult& WithConfiguredTagKeys(ConfiguredTagKeysT&& value) {
     SetConfiguredTagKeys(std::forward<ConfiguredTagKeysT>(value));
     return *this;
   }
-  template <typename ConfiguredTagKeysT = TagKeyForOrganization>
+  template <typename ConfiguredTagKeysT = Aws::String>
   ConfigureTagsForOrganizationResult& AddConfiguredTagKeys(ConfiguredTagKeysT&& value) {
     m_configuredTagKeysHasBeenSet = true;
     m_configuredTagKeys.emplace_back(std::forward<ConfiguredTagKeysT>(value));
@@ -70,7 +69,7 @@ class ConfigureTagsForOrganizationResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::Vector<TagKeyForOrganization> m_configuredTagKeys;
+  Aws::Vector<Aws::String> m_configuredTagKeys;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;

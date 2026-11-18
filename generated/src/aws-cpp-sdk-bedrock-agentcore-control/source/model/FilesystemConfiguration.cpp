@@ -34,6 +34,10 @@ FilesystemConfiguration& FilesystemConfiguration::operator=(JsonView jsonValue) 
     m_capacityProviderVolume = jsonValue.GetObject("capacityProviderVolume");
     m_capacityProviderVolumeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("s3BucketMount")) {
+    m_s3BucketMount = jsonValue.GetObject("s3BucketMount");
+    m_s3BucketMountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue FilesystemConfiguration::Jsonize() const {
 
   if (m_capacityProviderVolumeHasBeenSet) {
     payload.WithObject("capacityProviderVolume", m_capacityProviderVolume.Jsonize());
+  }
+
+  if (m_s3BucketMountHasBeenSet) {
+    payload.WithObject("s3BucketMount", m_s3BucketMount.Jsonize());
   }
 
   return payload;

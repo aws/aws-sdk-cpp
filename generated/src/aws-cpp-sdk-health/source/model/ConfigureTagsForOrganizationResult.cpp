@@ -50,7 +50,33 @@ ConfigureTagsForOrganizationResult& ConfigureTagsForOrganizationResult::operator
                     auto listSize_0 = decoder->PopNextArrayStart();
                     if (listSize_0.has_value()) {
                       for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                        m_configuredTagKeys.push_back(TagKeyForOrganization(decoder));
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1.has_value()) {
+                          if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              m_configuredTagKeys.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                            }
+                          } else {
+                            decoder->ConsumeNextSingleElement();
+                            Aws::StringStream ss_1;
+                            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                              auto nextType_1 = decoder->PeekType();
+                              if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                if (nextType_1.has_value()) {
+                                  decoder->ConsumeNextSingleElement();  // consume the Break
+                                }
+                                break;
+                              }
+                              auto val = decoder->PopNextTextVal();
+                              if (val.has_value()) {
+                                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                              }
+                            }
+                            m_configuredTagKeys.push_back(ss_1.str());
+                            ss_1.clear();
+                          }
+                        }
                       }
                     }
                   } else  // IndefArrayStart
@@ -64,7 +90,33 @@ ConfigureTagsForOrganizationResult& ConfigureTagsForOrganizationResult::operator
                         }
                         break;
                       }
-                      m_configuredTagKeys.push_back(TagKeyForOrganization(decoder));
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_configuredTagKeys.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_configuredTagKeys.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
                     }
                   }
                 }
@@ -106,7 +158,33 @@ ConfigureTagsForOrganizationResult& ConfigureTagsForOrganizationResult::operator
                   auto listSize_0 = decoder->PopNextArrayStart();
                   if (listSize_0.has_value()) {
                     for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                      m_configuredTagKeys.push_back(TagKeyForOrganization(decoder));
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_configuredTagKeys.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_configuredTagKeys.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
                     }
                   }
                 } else  // IndefArrayStart
@@ -120,7 +198,33 @@ ConfigureTagsForOrganizationResult& ConfigureTagsForOrganizationResult::operator
                       }
                       break;
                     }
-                    m_configuredTagKeys.push_back(TagKeyForOrganization(decoder));
+                    auto peekType_1 = decoder->PeekType();
+                    if (peekType_1.has_value()) {
+                      if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                        auto val = decoder->PopNextTextVal();
+                        if (val.has_value()) {
+                          m_configuredTagKeys.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                        }
+                      } else {
+                        decoder->ConsumeNextSingleElement();
+                        Aws::StringStream ss_1;
+                        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                          auto nextType_1 = decoder->PeekType();
+                          if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                            if (nextType_1.has_value()) {
+                              decoder->ConsumeNextSingleElement();  // consume the Break
+                            }
+                            break;
+                          }
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                          }
+                        }
+                        m_configuredTagKeys.push_back(ss_1.str());
+                        ss_1.clear();
+                      }
+                    }
                   }
                 }
               }

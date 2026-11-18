@@ -26,6 +26,10 @@ ProtectedJobOutputConfigurationOutput& ProtectedJobOutputConfigurationOutput::op
     m_member = jsonValue.GetObject("member");
     m_memberHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("intermediateTable")) {
+    m_intermediateTable = jsonValue.GetObject("intermediateTable");
+    m_intermediateTableHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ProtectedJobOutputConfigurationOutput::Jsonize() const {
 
   if (m_memberHasBeenSet) {
     payload.WithObject("member", m_member.Jsonize());
+  }
+
+  if (m_intermediateTableHasBeenSet) {
+    payload.WithObject("intermediateTable", m_intermediateTable.Jsonize());
   }
 
   return payload;

@@ -99,15 +99,71 @@ class UpdateLoginProfileRequest : public IAMRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session
+   * for the specified IAM user. This setting can have a value from 1 hour (3600
+   * seconds) to 90 days (7776000 seconds), inclusive, and replaces any value
+   * currently configured for the user.</p> <p>If you omit both this parameter and
+   * <code>ResetMaxSigninSessionDuration</code>, the current setting is unchanged.
+   * You cannot specify this parameter and set
+   * <code>ResetMaxSigninSessionDuration</code> to <code>true</code> in the same
+   * request. If you update only the sign-in session duration, the user's password
+   * and <code>PasswordResetRequired</code> setting do not change.</p> <p>Changes to
+   * this setting apply to new sign-in sessions. Sessions that are already
+   * established are not affected.</p>  <p>This setting is not supported for
+   * the root user.</p>
+   */
+  inline int GetMaxSigninSessionDuration() const { return m_maxSigninSessionDuration; }
+  inline bool MaxSigninSessionDurationHasBeenSet() const { return m_maxSigninSessionDurationHasBeenSet; }
+  inline void SetMaxSigninSessionDuration(int value) {
+    m_maxSigninSessionDurationHasBeenSet = true;
+    m_maxSigninSessionDuration = value;
+  }
+  inline UpdateLoginProfileRequest& WithMaxSigninSessionDuration(int value) {
+    SetMaxSigninSessionDuration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to clear the maximum sign-in session duration for the
+   * specified IAM user. Set this value to <code>true</code> to return the setting to
+   * its unset state, so that the existing sign-in session behavior applies. When the
+   * setting is unset, the user's <code>MaxSigninSessionDuration</code> is omitted
+   * from responses.</p> <p>If you set this value to <code>false</code> or omit it,
+   * the current setting is not cleared. You cannot set this value to
+   * <code>true</code> and specify <code>MaxSigninSessionDuration</code> in the same
+   * request. Clearing a setting that is already unset has no effect.</p>
+   */
+  inline bool GetResetMaxSigninSessionDuration() const { return m_resetMaxSigninSessionDuration; }
+  inline bool ResetMaxSigninSessionDurationHasBeenSet() const { return m_resetMaxSigninSessionDurationHasBeenSet; }
+  inline void SetResetMaxSigninSessionDuration(bool value) {
+    m_resetMaxSigninSessionDurationHasBeenSet = true;
+    m_resetMaxSigninSessionDuration = value;
+  }
+  inline UpdateLoginProfileRequest& WithResetMaxSigninSessionDuration(bool value) {
+    SetResetMaxSigninSessionDuration(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userName;
 
   Aws::String m_password;
 
   bool m_passwordResetRequired{false};
+
+  int m_maxSigninSessionDuration{0};
+
+  bool m_resetMaxSigninSessionDuration{false};
   bool m_userNameHasBeenSet = false;
   bool m_passwordHasBeenSet = false;
   bool m_passwordResetRequiredHasBeenSet = false;
+  bool m_maxSigninSessionDurationHasBeenSet = false;
+  bool m_resetMaxSigninSessionDurationHasBeenSet = false;
 };
 
 }  // namespace Model

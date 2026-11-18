@@ -39,6 +39,11 @@ ReplicationRuleAndOperator& ReplicationRuleAndOperator::operator=(const XmlNode&
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode notNode = resultNode.FirstChild("Not");
+    if (!notNode.IsNull()) {
+      m_not = notNode;
+      m_notHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -56,6 +61,11 @@ void ReplicationRuleAndOperator::AddToNode(XmlNode& parentNode) const {
       XmlNode tagsNode = parentNode.CreateChildElement("Tag");
       item.AddToNode(tagsNode);
     }
+  }
+
+  if (m_notHasBeenSet) {
+    XmlNode notNode = parentNode.CreateChildElement("Not");
+    m_not.AddToNode(notNode);
   }
 }
 

@@ -23,6 +23,7 @@
 #include <aws/neptune/model/DescribeGlobalClustersPaginationTraits.h>
 #include <aws/neptune/model/DescribeOrderableDBInstanceOptionsPaginationTraits.h>
 #include <aws/neptune/model/DescribePendingMaintenanceActionsPaginationTraits.h>
+#include <aws/neptune/model/DescribeServerlessV2PlatformVersionsPaginationTraits.h>
 
 #include <memory>
 
@@ -220,6 +221,18 @@ class NeptunePaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePendingMaintenanceActionsRequest,
                                              Pagination::DescribePendingMaintenanceActionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeServerlessV2PlatformVersions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServerlessV2PlatformVersionsRequest,
+                                    Pagination::DescribeServerlessV2PlatformVersionsPaginationTraits<DerivedClient>>
+  DescribeServerlessV2PlatformVersionsPaginator(const Model::DescribeServerlessV2PlatformVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServerlessV2PlatformVersionsRequest,
+                                             Pagination::DescribeServerlessV2PlatformVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 };

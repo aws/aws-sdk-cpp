@@ -342,8 +342,9 @@ class EventFilter {
 
   ///@{
   /**
-   * <p>A map of resource tag key-value pairs to filter affected entities.</p>
-   * <p>Currently, the <code>tags</code> property isn't supported.</p>
+   * <p>A map of tag keys to lists of tag values. A tag matches when its key is in
+   * the map and its value is one of the values listed for that key. The filter
+   * matches when at least one key in the map matches.</p>
    */
   inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

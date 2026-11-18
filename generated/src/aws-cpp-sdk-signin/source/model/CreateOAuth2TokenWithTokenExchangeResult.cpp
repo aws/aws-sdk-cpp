@@ -41,6 +41,14 @@ CreateOAuth2TokenWithTokenExchangeResult& CreateOAuth2TokenWithTokenExchangeResu
     m_expiresIn = jsonValue.GetInteger("expires_in");
     m_expiresInHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("resource")) {
+    m_resource = jsonValue.GetString("resource");
+    m_resourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("scope")) {
+    m_scope = jsonValue.GetString("scope");
+    m_scopeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

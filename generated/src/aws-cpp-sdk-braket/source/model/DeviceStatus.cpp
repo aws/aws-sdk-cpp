@@ -18,6 +18,7 @@ namespace DeviceStatusMapper {
 static const int ONLINE_HASH = HashingUtils::HashString("ONLINE");
 static const int OFFLINE_HASH = HashingUtils::HashString("OFFLINE");
 static const int RETIRED_HASH = HashingUtils::HashString("RETIRED");
+static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
 
 DeviceStatus GetDeviceStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ DeviceStatus GetDeviceStatusForName(const Aws::String& name) {
     return DeviceStatus::OFFLINE;
   } else if (hashCode == RETIRED_HASH) {
     return DeviceStatus::RETIRED;
+  } else if (hashCode == PAUSED_HASH) {
+    return DeviceStatus::PAUSED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForDeviceStatus(DeviceStatus enumValue) {
       return "OFFLINE";
     case DeviceStatus::RETIRED:
       return "RETIRED";
+    case DeviceStatus::PAUSED:
+      return "PAUSED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

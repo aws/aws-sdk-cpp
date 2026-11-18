@@ -20,7 +20,7 @@ namespace SESV2 {
 namespace Model {
 
 /**
- * <p>The <code>ReplaceEmailContent</code> object to be used for a specific
+ * <p>The <code>ReplacementEmailContent</code> object to be used for a specific
  * <code>BulkEmailEntry</code>. The <code>ReplacementTemplate</code> can be
  * specified within this object.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ReplacementEmailContent">AWS

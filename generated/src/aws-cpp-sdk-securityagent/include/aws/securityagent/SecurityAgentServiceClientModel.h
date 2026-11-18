@@ -100,6 +100,8 @@
 #include <aws/securityagent/model/ListThreatModelJobsResult.h>
 #include <aws/securityagent/model/ListThreatModelsResult.h>
 #include <aws/securityagent/model/ListThreatsResult.h>
+#include <aws/securityagent/model/ResumePentestJobRequest.h>
+#include <aws/securityagent/model/ResumePentestJobResult.h>
 #include <aws/securityagent/model/StartCodeRemediationResult.h>
 #include <aws/securityagent/model/StartCodeReviewJobResult.h>
 #include <aws/securityagent/model/StartPentestJobResult.h>
@@ -229,6 +231,7 @@ class ListThreatModelJobTasksRequest;
 class ListThreatModelJobsRequest;
 class ListThreatModelsRequest;
 class ListThreatsRequest;
+class ResumePentestJobRequest;
 class StartCodeRemediationRequest;
 class StartCodeReviewJobRequest;
 class StartPentestJobRequest;
@@ -328,6 +331,7 @@ typedef Aws::Utils::Outcome<ListThreatModelJobTasksResult, SecurityAgentError> L
 typedef Aws::Utils::Outcome<ListThreatModelJobsResult, SecurityAgentError> ListThreatModelJobsOutcome;
 typedef Aws::Utils::Outcome<ListThreatModelsResult, SecurityAgentError> ListThreatModelsOutcome;
 typedef Aws::Utils::Outcome<ListThreatsResult, SecurityAgentError> ListThreatsOutcome;
+typedef Aws::Utils::Outcome<ResumePentestJobResult, SecurityAgentError> ResumePentestJobOutcome;
 typedef Aws::Utils::Outcome<StartCodeRemediationResult, SecurityAgentError> StartCodeRemediationOutcome;
 typedef Aws::Utils::Outcome<StartCodeReviewJobResult, SecurityAgentError> StartCodeReviewJobOutcome;
 typedef Aws::Utils::Outcome<StartPentestJobResult, SecurityAgentError> StartPentestJobOutcome;
@@ -427,6 +431,7 @@ typedef std::future<ListThreatModelJobTasksOutcome> ListThreatModelJobTasksOutco
 typedef std::future<ListThreatModelJobsOutcome> ListThreatModelJobsOutcomeCallable;
 typedef std::future<ListThreatModelsOutcome> ListThreatModelsOutcomeCallable;
 typedef std::future<ListThreatsOutcome> ListThreatsOutcomeCallable;
+typedef std::future<ResumePentestJobOutcome> ResumePentestJobOutcomeCallable;
 typedef std::future<StartCodeRemediationOutcome> StartCodeRemediationOutcomeCallable;
 typedef std::future<StartCodeReviewJobOutcome> StartCodeReviewJobOutcomeCallable;
 typedef std::future<StartPentestJobOutcome> StartPentestJobOutcomeCallable;
@@ -687,6 +692,9 @@ typedef std::function<void(const SecurityAgentClient*, const Model::ListThreatMo
 typedef std::function<void(const SecurityAgentClient*, const Model::ListThreatsRequest&, const Model::ListThreatsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListThreatsResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::ResumePentestJobRequest&, const Model::ResumePentestJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ResumePentestJobResponseReceivedHandler;
 typedef std::function<void(const SecurityAgentClient*, const Model::StartCodeRemediationRequest&, const Model::StartCodeRemediationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartCodeRemediationResponseReceivedHandler;

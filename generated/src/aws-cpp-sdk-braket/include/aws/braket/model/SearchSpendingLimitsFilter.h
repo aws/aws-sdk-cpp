@@ -36,8 +36,8 @@ class SearchSpendingLimitsFilter {
 
   ///@{
   /**
-   * <p>The name of the field to filter on. Currently only supports
-   * <code>deviceArn</code>.</p>
+   * <p>The name of the field to filter on. Currently supports <code>deviceArn</code>
+   * and <code>spendingLimitArn</code>.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

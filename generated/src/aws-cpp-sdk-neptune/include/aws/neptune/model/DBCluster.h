@@ -873,6 +873,27 @@ class DBCluster {
 
   ///@{
   /**
+   * <p>The serverless platform version used by the Neptune Serverless DB
+   * cluster.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+   * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+   */
+  inline const Aws::String& GetServerlessV2PlatformVersion() const { return m_serverlessV2PlatformVersion; }
+  inline bool ServerlessV2PlatformVersionHasBeenSet() const { return m_serverlessV2PlatformVersionHasBeenSet; }
+  template <typename ServerlessV2PlatformVersionT = Aws::String>
+  void SetServerlessV2PlatformVersion(ServerlessV2PlatformVersionT&& value) {
+    m_serverlessV2PlatformVersionHasBeenSet = true;
+    m_serverlessV2PlatformVersion = std::forward<ServerlessV2PlatformVersionT>(value);
+  }
+  template <typename ServerlessV2PlatformVersionT = Aws::String>
+  DBCluster& WithServerlessV2PlatformVersion(ServerlessV2PlatformVersionT&& value) {
+    SetServerlessV2PlatformVersion(std::forward<ServerlessV2PlatformVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains a user-supplied global database cluster identifier. This identifier
    * is the unique key that identifies a global database.</p>
    */
@@ -1040,6 +1061,8 @@ class DBCluster {
 
   ServerlessV2ScalingConfigurationInfo m_serverlessV2ScalingConfiguration;
 
+  Aws::String m_serverlessV2PlatformVersion;
+
   Aws::String m_globalClusterIdentifier;
 
   Aws::Utils::DateTime m_iOOptimizedNextAllowedModificationTime{};
@@ -1089,6 +1112,7 @@ class DBCluster {
   bool m_crossAccountCloneHasBeenSet = false;
   bool m_automaticRestartTimeHasBeenSet = false;
   bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+  bool m_serverlessV2PlatformVersionHasBeenSet = false;
   bool m_globalClusterIdentifierHasBeenSet = false;
   bool m_iOOptimizedNextAllowedModificationTimeHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;

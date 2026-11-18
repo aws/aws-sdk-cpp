@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
+#include <aws/s3-crt/model/ReplicationRuleNotOperator.h>
 #include <aws/s3-crt/model/Tag.h>
 
 #include <utility>
@@ -81,12 +82,34 @@ class ReplicationRuleAndOperator {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A container for specifying filters that exclude matching objects from the
+   * replication rule.</p>
+   */
+  inline const ReplicationRuleNotOperator& GetNot() const { return m_not; }
+  inline bool NotHasBeenSet() const { return m_notHasBeenSet; }
+  template <typename NotT = ReplicationRuleNotOperator>
+  void SetNot(NotT&& value) {
+    m_notHasBeenSet = true;
+    m_not = std::forward<NotT>(value);
+  }
+  template <typename NotT = ReplicationRuleNotOperator>
+  ReplicationRuleAndOperator& WithNot(NotT&& value) {
+    SetNot(std::forward<NotT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_prefix;
 
   Aws::Vector<Tag> m_tags;
+
+  ReplicationRuleNotOperator m_not;
   bool m_prefixHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_notHasBeenSet = false;
 };
 
 }  // namespace Model

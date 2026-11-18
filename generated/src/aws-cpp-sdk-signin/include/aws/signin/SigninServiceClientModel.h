@@ -19,6 +19,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in SigninClient header */
+#include <aws/signin/model/BatchRevokeSessionsResult.h>
 #include <aws/signin/model/CreateBearerTokenResult.h>
 #include <aws/signin/model/CreateOAuth2TokenResult.h>
 #include <aws/signin/model/CreateOAuth2TokenWithIAMResult.h>
@@ -30,9 +31,12 @@
 #include <aws/signin/model/GetConsoleAuthorizationConfigurationResult.h>
 #include <aws/signin/model/GetResourcePolicyRequest.h>
 #include <aws/signin/model/GetResourcePolicyResult.h>
+#include <aws/signin/model/GetSessionResult.h>
 #include <aws/signin/model/IntrospectOAuth2TokenWithIAMResult.h>
 #include <aws/signin/model/ListResourcePermissionStatementsRequest.h>
 #include <aws/signin/model/ListResourcePermissionStatementsResult.h>
+#include <aws/signin/model/ListSessionsRequest.h>
+#include <aws/signin/model/ListSessionsResult.h>
 #include <aws/signin/model/PutConsoleAuthorizationConfigurationRequest.h>
 #include <aws/signin/model/PutConsoleAuthorizationConfigurationResult.h>
 #include <aws/signin/model/PutResourcePermissionStatementRequest.h>
@@ -71,6 +75,7 @@ using SigninEndpointProvider = Aws::Signin::Endpoint::SigninEndpointProvider;
 
 namespace Model {
 /* Service model forward declarations required in SigninClient header */
+class BatchRevokeSessionsRequest;
 class CreateBearerTokenRequest;
 class CreateOAuth2TokenRequest;
 class CreateOAuth2TokenWithIAMRequest;
@@ -79,14 +84,17 @@ class DeleteConsoleAuthorizationConfigurationRequest;
 class DeleteResourcePermissionStatementRequest;
 class GetConsoleAuthorizationConfigurationRequest;
 class GetResourcePolicyRequest;
+class GetSessionRequest;
 class IntrospectOAuth2TokenWithIAMRequest;
 class ListResourcePermissionStatementsRequest;
+class ListSessionsRequest;
 class PutConsoleAuthorizationConfigurationRequest;
 class PutResourcePermissionStatementRequest;
 class RevokeOAuth2TokenWithIAMRequest;
 /* End of service model forward declarations required in SigninClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<BatchRevokeSessionsResult, SigninError> BatchRevokeSessionsOutcome;
 typedef Aws::Utils::Outcome<CreateBearerTokenResult, SigninError> CreateBearerTokenOutcome;
 typedef Aws::Utils::Outcome<CreateOAuth2TokenResult, SigninError> CreateOAuth2TokenOutcome;
 typedef Aws::Utils::Outcome<CreateOAuth2TokenWithIAMResult, SigninError> CreateOAuth2TokenWithIAMOutcome;
@@ -95,14 +103,17 @@ typedef Aws::Utils::Outcome<DeleteConsoleAuthorizationConfigurationResult, Signi
 typedef Aws::Utils::Outcome<DeleteResourcePermissionStatementResult, SigninError> DeleteResourcePermissionStatementOutcome;
 typedef Aws::Utils::Outcome<GetConsoleAuthorizationConfigurationResult, SigninError> GetConsoleAuthorizationConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetResourcePolicyResult, SigninError> GetResourcePolicyOutcome;
+typedef Aws::Utils::Outcome<GetSessionResult, SigninError> GetSessionOutcome;
 typedef Aws::Utils::Outcome<IntrospectOAuth2TokenWithIAMResult, SigninError> IntrospectOAuth2TokenWithIAMOutcome;
 typedef Aws::Utils::Outcome<ListResourcePermissionStatementsResult, SigninError> ListResourcePermissionStatementsOutcome;
+typedef Aws::Utils::Outcome<ListSessionsResult, SigninError> ListSessionsOutcome;
 typedef Aws::Utils::Outcome<PutConsoleAuthorizationConfigurationResult, SigninError> PutConsoleAuthorizationConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutResourcePermissionStatementResult, SigninError> PutResourcePermissionStatementOutcome;
 typedef Aws::Utils::Outcome<RevokeOAuth2TokenWithIAMResult, SigninError> RevokeOAuth2TokenWithIAMOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<BatchRevokeSessionsOutcome> BatchRevokeSessionsOutcomeCallable;
 typedef std::future<CreateBearerTokenOutcome> CreateBearerTokenOutcomeCallable;
 typedef std::future<CreateOAuth2TokenOutcome> CreateOAuth2TokenOutcomeCallable;
 typedef std::future<CreateOAuth2TokenWithIAMOutcome> CreateOAuth2TokenWithIAMOutcomeCallable;
@@ -111,8 +122,10 @@ typedef std::future<DeleteConsoleAuthorizationConfigurationOutcome> DeleteConsol
 typedef std::future<DeleteResourcePermissionStatementOutcome> DeleteResourcePermissionStatementOutcomeCallable;
 typedef std::future<GetConsoleAuthorizationConfigurationOutcome> GetConsoleAuthorizationConfigurationOutcomeCallable;
 typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
+typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
 typedef std::future<IntrospectOAuth2TokenWithIAMOutcome> IntrospectOAuth2TokenWithIAMOutcomeCallable;
 typedef std::future<ListResourcePermissionStatementsOutcome> ListResourcePermissionStatementsOutcomeCallable;
+typedef std::future<ListSessionsOutcome> ListSessionsOutcomeCallable;
 typedef std::future<PutConsoleAuthorizationConfigurationOutcome> PutConsoleAuthorizationConfigurationOutcomeCallable;
 typedef std::future<PutResourcePermissionStatementOutcome> PutResourcePermissionStatementOutcomeCallable;
 typedef std::future<RevokeOAuth2TokenWithIAMOutcome> RevokeOAuth2TokenWithIAMOutcomeCallable;
@@ -122,6 +135,9 @@ typedef std::future<RevokeOAuth2TokenWithIAMOutcome> RevokeOAuth2TokenWithIAMOut
 class SigninClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const SigninClient*, const Model::BatchRevokeSessionsRequest&, const Model::BatchRevokeSessionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchRevokeSessionsResponseReceivedHandler;
 typedef std::function<void(const SigninClient*, const Model::CreateBearerTokenRequest&, const Model::CreateBearerTokenOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateBearerTokenResponseReceivedHandler;
@@ -150,6 +166,9 @@ typedef std::function<void(const SigninClient*, const Model::GetConsoleAuthoriza
 typedef std::function<void(const SigninClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetResourcePolicyResponseReceivedHandler;
+typedef std::function<void(const SigninClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSessionResponseReceivedHandler;
 typedef std::function<void(const SigninClient*, const Model::IntrospectOAuth2TokenWithIAMRequest&,
                            const Model::IntrospectOAuth2TokenWithIAMOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -158,6 +177,9 @@ typedef std::function<void(const SigninClient*, const Model::ListResourcePermiss
                            const Model::ListResourcePermissionStatementsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListResourcePermissionStatementsResponseReceivedHandler;
+typedef std::function<void(const SigninClient*, const Model::ListSessionsRequest&, const Model::ListSessionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSessionsResponseReceivedHandler;
 typedef std::function<void(const SigninClient*, const Model::PutConsoleAuthorizationConfigurationRequest&,
                            const Model::PutConsoleAuthorizationConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

@@ -78,7 +78,7 @@ class AccountDetails {
   ///@{
   /**
    * <p>The language you would prefer for the case. The contact language can be one
-   * of <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
+   * of <code>EN</code> or <code>JA</code>.</p>
    */
   inline ContactLanguage GetContactLanguage() const { return m_contactLanguage; }
   inline bool ContactLanguageHasBeenSet() const { return m_contactLanguageHasBeenSet; }

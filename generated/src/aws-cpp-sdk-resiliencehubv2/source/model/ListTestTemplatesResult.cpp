@@ -29,6 +29,10 @@ ListTestTemplatesResult& ListTestTemplatesResult::operator=(const Aws::AmazonWeb
     }
     m_testTemplatesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

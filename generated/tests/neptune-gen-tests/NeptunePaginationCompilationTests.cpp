@@ -23,6 +23,7 @@
 #include <aws/neptune/model/DescribeDBClusterSnapshotsPaginationTraits.h>
 #include <aws/neptune/model/DescribeEventSubscriptionsPaginationTraits.h>
 #include <aws/neptune/model/DescribeGlobalClustersPaginationTraits.h>
+#include <aws/neptune/model/DescribeServerlessV2PlatformVersionsPaginationTraits.h>
 #include <aws/neptune/model/DescribeOrderableDBInstanceOptionsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

@@ -97,6 +97,10 @@ TestRun& TestRun::operator=(JsonView jsonValue) {
     m_policy = jsonValue.GetObject("policy");
     m_policyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("effectivePolicyValues")) {
+    m_effectivePolicyValues = jsonValue.GetObject("effectivePolicyValues");
+    m_effectivePolicyValuesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("reportOutput")) {
     m_reportOutput = jsonValue.GetObject("reportOutput");
     m_reportOutputHasBeenSet = true;
@@ -212,6 +216,10 @@ JsonValue TestRun::Jsonize() const {
 
   if (m_policyHasBeenSet) {
     payload.WithObject("policy", m_policy.Jsonize());
+  }
+
+  if (m_effectivePolicyValuesHasBeenSet) {
+    payload.WithObject("effectivePolicyValues", m_effectivePolicyValues.Jsonize());
   }
 
   if (m_reportOutputHasBeenSet) {

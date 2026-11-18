@@ -59,9 +59,9 @@ class BulkEmailEntry {
   ///@{
   /**
    * <p>A list of tags, in the form of name/value pairs, to apply to an email that
-   * you send using the <code>SendBulkTemplatedEmail</code> operation. Tags
-   * correspond to characteristics of the email that you define, so that you can
-   * publish email sending events.</p>
+   * you send using the <code>SendBulkEmail</code> operation. Tags correspond to
+   * characteristics of the email that you define, so that you can publish email
+   * sending events.</p>
    */
   inline const Aws::Vector<MessageTag>& GetReplacementTags() const { return m_replacementTags; }
   inline bool ReplacementTagsHasBeenSet() const { return m_replacementTagsHasBeenSet; }

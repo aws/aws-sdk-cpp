@@ -18,6 +18,7 @@ namespace ErrorCodeMapper {
 static const int CLIENT_ERROR_HASH = HashingUtils::HashString("CLIENT_ERROR");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
 static const int STOPPED_BY_USER_HASH = HashingUtils::HashString("STOPPED_BY_USER");
+static const int PAUSED_BY_USER_HASH = HashingUtils::HashString("PAUSED_BY_USER");
 
 ErrorCode GetErrorCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ErrorCode GetErrorCodeForName(const Aws::String& name) {
     return ErrorCode::INTERNAL_ERROR;
   } else if (hashCode == STOPPED_BY_USER_HASH) {
     return ErrorCode::STOPPED_BY_USER;
+  } else if (hashCode == PAUSED_BY_USER_HASH) {
+    return ErrorCode::PAUSED_BY_USER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForErrorCode(ErrorCode enumValue) {
       return "INTERNAL_ERROR";
     case ErrorCode::STOPPED_BY_USER:
       return "STOPPED_BY_USER";
+    case ErrorCode::PAUSED_BY_USER:
+      return "PAUSED_BY_USER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

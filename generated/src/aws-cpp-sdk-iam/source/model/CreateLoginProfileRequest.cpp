@@ -25,6 +25,10 @@ Aws::String CreateLoginProfileRequest::SerializePayload() const {
     ss << "PasswordResetRequired=" << std::boolalpha << m_passwordResetRequired << "&";
   }
 
+  if (m_maxSigninSessionDurationHasBeenSet) {
+    ss << "MaxSigninSessionDuration=" << m_maxSigninSessionDuration << "&";
+  }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

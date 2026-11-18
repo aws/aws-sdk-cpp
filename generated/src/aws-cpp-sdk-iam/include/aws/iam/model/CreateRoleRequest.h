@@ -166,6 +166,27 @@ class CreateRoleRequest : public IAMRequest {
 
   ///@{
   /**
+   * <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session
+   * for users who sign in with this role. This setting can have a value from 1 hour
+   * (3600 seconds) to 90 days (7776000 seconds), inclusive. If you do not specify a
+   * value, the setting remains unset and the existing sign-in session behavior
+   * applies.</p> <p>This setting is independent of
+   * <code>MaxSessionDuration</code>.</p>
+   */
+  inline int GetMaxSigninSessionDuration() const { return m_maxSigninSessionDuration; }
+  inline bool MaxSigninSessionDurationHasBeenSet() const { return m_maxSigninSessionDurationHasBeenSet; }
+  inline void SetMaxSigninSessionDuration(int value) {
+    m_maxSigninSessionDurationHasBeenSet = true;
+    m_maxSigninSessionDuration = value;
+  }
+  inline CreateRoleRequest& WithMaxSigninSessionDuration(int value) {
+    SetMaxSigninSessionDuration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ARN of the managed policy that is used to set the permissions boundary
    * for the role.</p> <p>A permissions boundary policy defines the maximum
    * permissions that identity-based policies can grant to an entity, but does not
@@ -230,6 +251,8 @@ class CreateRoleRequest : public IAMRequest {
 
   int m_maxSessionDuration{0};
 
+  int m_maxSigninSessionDuration{0};
+
   Aws::String m_permissionsBoundary;
 
   Aws::Vector<Tag> m_tags;
@@ -238,6 +261,7 @@ class CreateRoleRequest : public IAMRequest {
   bool m_assumeRolePolicyDocumentHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_maxSessionDurationHasBeenSet = false;
+  bool m_maxSigninSessionDurationHasBeenSet = false;
   bool m_permissionsBoundaryHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };

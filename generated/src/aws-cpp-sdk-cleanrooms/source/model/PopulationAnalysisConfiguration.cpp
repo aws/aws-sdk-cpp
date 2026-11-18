@@ -22,6 +22,10 @@ PopulationAnalysisConfiguration& PopulationAnalysisConfiguration::operator=(Json
     m_sqlParameters = jsonValue.GetObject("sqlParameters");
     m_sqlParametersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jobParameters")) {
+    m_jobParameters = jsonValue.GetObject("jobParameters");
+    m_jobParametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue PopulationAnalysisConfiguration::Jsonize() const {
 
   if (m_sqlParametersHasBeenSet) {
     payload.WithObject("sqlParameters", m_sqlParameters.Jsonize());
+  }
+
+  if (m_jobParametersHasBeenSet) {
+    payload.WithObject("jobParameters", m_jobParameters.Jsonize());
   }
 
   return payload;

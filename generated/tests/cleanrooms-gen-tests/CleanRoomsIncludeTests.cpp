@@ -418,6 +418,7 @@
 #include <aws/cleanrooms/model/PopulateIntermediateTableRequest.h>
 #include <aws/cleanrooms/model/PopulateIntermediateTableResult.h>
 #include <aws/cleanrooms/model/PopulationAnalysisConfiguration.h>
+#include <aws/cleanrooms/model/PopulationAnalysisJobParameters.h>
 #include <aws/cleanrooms/model/PopulationAnalysisSqlParameters.h>
 #include <aws/cleanrooms/model/PreviewPrivacyImpactParametersInput.h>
 #include <aws/cleanrooms/model/PreviewPrivacyImpactRequest.h>

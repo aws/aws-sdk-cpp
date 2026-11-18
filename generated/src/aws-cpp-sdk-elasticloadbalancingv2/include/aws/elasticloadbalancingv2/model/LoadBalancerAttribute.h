@@ -108,9 +108,15 @@ class LoadBalancerAttribute {
    * suite negotiated with the client. Both headers are in OpenSSL format. The
    * possible values for the attribute are <code>true</code> and <code>false</code>.
    * The default is <code>false</code>.</p> </li> <li> <p>
-   * <code>routing.http.xff_client_port.enabled</code> - Indicates whether the
-   * <code>X-Forwarded-For</code> header should preserve the source port that the
-   * client used to connect to the load balancer. The possible values are
+   * <code>routing.http.x_amzn_tls_kx.enabled</code> - Indicates whether the
+   * <code>x-amzn-tls-kx</code> header, which contains information about the
+   * negotiated key exchange group, is added to the client request before sending it
+   * to the target. The <code>x-amzn-tls-kx</code> header uses IANA TLS Supported
+   * Groups registry naming. The possible values for the attribute are
+   * <code>true</code> and <code>false</code>. The default is <code>false</code>.</p>
+   * </li> <li> <p> <code>routing.http.xff_client_port.enabled</code> - Indicates
+   * whether the <code>X-Forwarded-For</code> header should preserve the source port
+   * that the client used to connect to the load balancer. The possible values are
    * <code>true</code> and <code>false</code>. The default is <code>false</code>.</p>
    * </li> <li> <p> <code>routing.http.xff_header_processing.mode</code> - Enables
    * you to modify, preserve, or remove the <code>X-Forwarded-For</code> header in

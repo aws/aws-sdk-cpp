@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/AccountDetails.h>
+#include <aws/sesv2/model/DeliveryAttributes.h>
 #include <aws/sesv2/model/PricingAttributes.h>
 #include <aws/sesv2/model/SendQuota.h>
 #include <aws/sesv2/model/SuppressionAttributes.h>
@@ -206,6 +207,24 @@ class GetAccountResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The delivery attributes that apply to your Amazon SES account in the current
+   * Amazon Web Services Region.</p>
+   */
+  inline const DeliveryAttributes& GetDeliveryAttributes() const { return m_deliveryAttributes; }
+  template <typename DeliveryAttributesT = DeliveryAttributes>
+  void SetDeliveryAttributes(DeliveryAttributesT&& value) {
+    m_deliveryAttributesHasBeenSet = true;
+    m_deliveryAttributes = std::forward<DeliveryAttributesT>(value);
+  }
+  template <typename DeliveryAttributesT = DeliveryAttributes>
+  GetAccountResult& WithDeliveryAttributes(DeliveryAttributesT&& value) {
+    SetDeliveryAttributes(std::forward<DeliveryAttributesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -240,6 +259,8 @@ class GetAccountResult {
 
   PricingAttributes m_pricingAttributes;
 
+  DeliveryAttributes m_deliveryAttributes;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dedicatedIpAutoWarmupEnabledHasBeenSet = false;
@@ -251,6 +272,7 @@ class GetAccountResult {
   bool m_detailsHasBeenSet = false;
   bool m_vdmAttributesHasBeenSet = false;
   bool m_pricingAttributesHasBeenSet = false;
+  bool m_deliveryAttributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

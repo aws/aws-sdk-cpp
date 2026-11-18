@@ -104,15 +104,38 @@ class CreateLoginProfileRequest : public IAMRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session
+   * for this IAM user. This setting can have a value from 1 hour (3600 seconds) to
+   * 90 days (7776000 seconds), inclusive. If you do not specify a value, the setting
+   * remains unset and the existing sign-in session behavior applies.</p>
+   * <p>This setting is not supported for the root user.</p>
+   */
+  inline int GetMaxSigninSessionDuration() const { return m_maxSigninSessionDuration; }
+  inline bool MaxSigninSessionDurationHasBeenSet() const { return m_maxSigninSessionDurationHasBeenSet; }
+  inline void SetMaxSigninSessionDuration(int value) {
+    m_maxSigninSessionDurationHasBeenSet = true;
+    m_maxSigninSessionDuration = value;
+  }
+  inline CreateLoginProfileRequest& WithMaxSigninSessionDuration(int value) {
+    SetMaxSigninSessionDuration(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userName;
 
   Aws::String m_password;
 
   bool m_passwordResetRequired{false};
+
+  int m_maxSigninSessionDuration{0};
   bool m_userNameHasBeenSet = false;
   bool m_passwordHasBeenSet = false;
   bool m_passwordResetRequiredHasBeenSet = false;
+  bool m_maxSigninSessionDurationHasBeenSet = false;
 };
 
 }  // namespace Model

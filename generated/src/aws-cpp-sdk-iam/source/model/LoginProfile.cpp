@@ -40,6 +40,12 @@ LoginProfile& LoginProfile::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(passwordResetRequiredNode.GetText()).c_str()).c_str());
       m_passwordResetRequiredHasBeenSet = true;
     }
+    XmlNode maxSigninSessionDurationNode = resultNode.FirstChild("MaxSigninSessionDuration");
+    if (!maxSigninSessionDurationNode.IsNull()) {
+      m_maxSigninSessionDuration = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxSigninSessionDurationNode.GetText()).c_str()).c_str());
+      m_maxSigninSessionDurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -58,6 +64,10 @@ void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location, u
   if (m_passwordResetRequiredHasBeenSet) {
     oStream << location << index << locationValue << ".PasswordResetRequired=" << std::boolalpha << m_passwordResetRequired << "&";
   }
+
+  if (m_maxSigninSessionDurationHasBeenSet) {
+    oStream << location << index << locationValue << ".MaxSigninSessionDuration=" << m_maxSigninSessionDuration << "&";
+  }
 }
 
 void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -70,6 +80,9 @@ void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if (m_passwordResetRequiredHasBeenSet) {
     oStream << location << ".PasswordResetRequired=" << std::boolalpha << m_passwordResetRequired << "&";
+  }
+  if (m_maxSigninSessionDurationHasBeenSet) {
+    oStream << location << ".MaxSigninSessionDuration=" << m_maxSigninSessionDuration << "&";
   }
 }
 

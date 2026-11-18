@@ -9,6 +9,7 @@
 #include <aws/signin/SigninClientPagination.h>
 #include <aws/signin/SigninPaginationBase.h>
 #include <aws/signin/model/ListResourcePermissionStatementsPaginationTraits.h>
+#include <aws/signin/model/ListSessionsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

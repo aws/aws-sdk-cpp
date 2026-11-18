@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/IntermediateTableOutputConfiguration.h>
 #include <aws/cleanrooms/model/ProtectedJobMemberOutputConfigurationOutput.h>
 #include <aws/cleanrooms/model/ProtectedJobS3OutputConfigurationOutput.h>
 
@@ -67,12 +68,36 @@ class ProtectedJobOutputConfigurationOutput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the intermediate table that the protected job populated, identified
+   * by its ID, Amazon Resource Name (ARN), and name. This field is present when the
+   * protected job was triggered by a <code>PopulateIntermediateTable</code>
+   * operation.</p>
+   */
+  inline const IntermediateTableOutputConfiguration& GetIntermediateTable() const { return m_intermediateTable; }
+  inline bool IntermediateTableHasBeenSet() const { return m_intermediateTableHasBeenSet; }
+  template <typename IntermediateTableT = IntermediateTableOutputConfiguration>
+  void SetIntermediateTable(IntermediateTableT&& value) {
+    m_intermediateTableHasBeenSet = true;
+    m_intermediateTable = std::forward<IntermediateTableT>(value);
+  }
+  template <typename IntermediateTableT = IntermediateTableOutputConfiguration>
+  ProtectedJobOutputConfigurationOutput& WithIntermediateTable(IntermediateTableT&& value) {
+    SetIntermediateTable(std::forward<IntermediateTableT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ProtectedJobS3OutputConfigurationOutput m_s3;
 
   ProtectedJobMemberOutputConfigurationOutput m_member;
+
+  IntermediateTableOutputConfiguration m_intermediateTable;
   bool m_s3HasBeenSet = false;
   bool m_memberHasBeenSet = false;
+  bool m_intermediateTableHasBeenSet = false;
 };
 
 }  // namespace Model

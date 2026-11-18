@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/WAFV2Request.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
+#include <aws/wafv2/model/AnalyticsConfig.h>
 #include <aws/wafv2/model/ApplicationConfig.h>
 #include <aws/wafv2/model/AssociationConfig.h>
 #include <aws/wafv2/model/CaptchaConfig.h>
@@ -413,6 +414,25 @@ class CreateWebACLRequest : public WAFV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the security analytics configuration for the web ACL. For more
+   * information, see <a>AnalyticsConfig</a>. </p>
+   */
+  inline const AnalyticsConfig& GetAnalyticsConfig() const { return m_analyticsConfig; }
+  inline bool AnalyticsConfigHasBeenSet() const { return m_analyticsConfigHasBeenSet; }
+  template <typename AnalyticsConfigT = AnalyticsConfig>
+  void SetAnalyticsConfig(AnalyticsConfigT&& value) {
+    m_analyticsConfigHasBeenSet = true;
+    m_analyticsConfig = std::forward<AnalyticsConfigT>(value);
+  }
+  template <typename AnalyticsConfigT = AnalyticsConfig>
+  CreateWebACLRequest& WithAnalyticsConfig(AnalyticsConfigT&& value) {
+    SetAnalyticsConfig(std::forward<AnalyticsConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -445,6 +465,8 @@ class CreateWebACLRequest : public WAFV2Request {
   ApplicationConfig m_applicationConfig;
 
   MonetizationConfig m_monetizationConfig;
+
+  AnalyticsConfig m_analyticsConfig;
   bool m_nameHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
   bool m_defaultActionHasBeenSet = false;
@@ -461,6 +483,7 @@ class CreateWebACLRequest : public WAFV2Request {
   bool m_onSourceDDoSProtectionConfigHasBeenSet = false;
   bool m_applicationConfigHasBeenSet = false;
   bool m_monetizationConfigHasBeenSet = false;
+  bool m_analyticsConfigHasBeenSet = false;
 };
 
 }  // namespace Model

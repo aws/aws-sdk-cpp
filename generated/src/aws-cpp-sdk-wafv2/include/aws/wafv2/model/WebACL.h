@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
+#include <aws/wafv2/model/AnalyticsConfig.h>
 #include <aws/wafv2/model/ApplicationConfig.h>
 #include <aws/wafv2/model/AssociationConfig.h>
 #include <aws/wafv2/model/CaptchaConfig.h>
@@ -569,6 +570,25 @@ class WebACL {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The security analytics configuration for the web ACL. For more information,
+   * see <a>AnalyticsConfig</a>. </p>
+   */
+  inline const AnalyticsConfig& GetAnalyticsConfig() const { return m_analyticsConfig; }
+  inline bool AnalyticsConfigHasBeenSet() const { return m_analyticsConfigHasBeenSet; }
+  template <typename AnalyticsConfigT = AnalyticsConfig>
+  void SetAnalyticsConfig(AnalyticsConfigT&& value) {
+    m_analyticsConfigHasBeenSet = true;
+    m_analyticsConfig = std::forward<AnalyticsConfigT>(value);
+  }
+  template <typename AnalyticsConfigT = AnalyticsConfig>
+  WebACL& WithAnalyticsConfig(AnalyticsConfigT&& value) {
+    SetAnalyticsConfig(std::forward<AnalyticsConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -613,6 +633,8 @@ class WebACL {
   ApplicationConfig m_applicationConfig;
 
   MonetizationConfig m_monetizationConfig;
+
+  AnalyticsConfig m_analyticsConfig;
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
@@ -635,6 +657,7 @@ class WebACL {
   bool m_onSourceDDoSProtectionConfigHasBeenSet = false;
   bool m_applicationConfigHasBeenSet = false;
   bool m_monetizationConfigHasBeenSet = false;
+  bool m_analyticsConfigHasBeenSet = false;
 };
 
 }  // namespace Model

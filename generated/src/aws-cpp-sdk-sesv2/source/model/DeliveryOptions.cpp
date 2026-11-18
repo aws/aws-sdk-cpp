@@ -30,6 +30,11 @@ DeliveryOptions& DeliveryOptions::operator=(JsonView jsonValue) {
     m_maxDeliverySeconds = jsonValue.GetInt64("MaxDeliverySeconds");
     m_maxDeliverySecondsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SharedPoolDeliveryMode")) {
+    m_sharedPoolDeliveryMode =
+        SharedPoolDeliveryModeMapper::GetSharedPoolDeliveryModeForName(jsonValue.GetString("SharedPoolDeliveryMode"));
+    m_sharedPoolDeliveryModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +51,10 @@ JsonValue DeliveryOptions::Jsonize() const {
 
   if (m_maxDeliverySecondsHasBeenSet) {
     payload.WithInt64("MaxDeliverySeconds", m_maxDeliverySeconds);
+  }
+
+  if (m_sharedPoolDeliveryModeHasBeenSet) {
+    payload.WithString("SharedPoolDeliveryMode", SharedPoolDeliveryModeMapper::GetNameForSharedPoolDeliveryMode(m_sharedPoolDeliveryMode));
   }
 
   return payload;

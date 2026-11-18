@@ -331,16 +331,19 @@ class FieldToMatch {
    * fingerprint serves as a unique identifier for the client's TLS configuration.
    * WAF calculates and logs this fingerprint for each request that has enough TLS
    * Client Hello information for the calculation. Almost all web requests include
-   * this information.</p>  <p>You can use this choice only with a string match
-   * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
-   * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA3 fingerprint for
-   * client requests from the web ACL logs. If WAF is able to calculate the
-   * fingerprint, it includes it in the logs. For information about the logging
-   * fields, see <a
+   * this information.</p>  <p>You can use this choice with a
+   * <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>,
+   * <code>RegexPatternSetReferenceStatement</code>, or
+   * <code>SizeConstraintStatement</code>. You can't use it with
+   * <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>. </p>
+   * <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs.
+   * If WAF is able to calculate the fingerprint, it includes it in the logs. For
+   * information about the logging fields, see <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
    * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA3
    * fingerprint string from the logs in your string match statement specification,
-   * to match with any future requests that have the same TLS configuration.</p>
+   * to match with any future requests that have the same TLS configuration. To match
+   * a group of TLS configurations with a single pattern, use a regex statement.</p>
    */
   inline const JA3Fingerprint& GetJA3Fingerprint() const { return m_jA3Fingerprint; }
   inline bool JA3FingerprintHasBeenSet() const { return m_jA3FingerprintHasBeenSet; }
@@ -364,16 +367,19 @@ class FieldToMatch {
    * fingerprint serves as a unique identifier for the client's TLS configuration.
    * WAF calculates and logs this fingerprint for each request that has enough TLS
    * Client Hello information for the calculation. Almost all web requests include
-   * this information.</p>  <p>You can use this choice only with a string match
-   * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
-   * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA4 fingerprint for
-   * client requests from the web ACL logs. If WAF is able to calculate the
-   * fingerprint, it includes it in the logs. For information about the logging
-   * fields, see <a
+   * this information.</p>  <p>You can use this choice with a
+   * <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>,
+   * <code>RegexPatternSetReferenceStatement</code>, or
+   * <code>SizeConstraintStatement</code>. You can't use it with
+   * <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>. </p>
+   * <p>You can obtain the JA4 fingerprint for client requests from the web ACL logs.
+   * If WAF is able to calculate the fingerprint, it includes it in the logs. For
+   * information about the logging fields, see <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
    * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA4
    * fingerprint string from the logs in your string match statement specification,
-   * to match with any future requests that have the same TLS configuration.</p>
+   * to match with any future requests that have the same TLS configuration. To match
+   * a group of TLS configurations with a single pattern, use a regex statement.</p>
    */
   inline const JA4Fingerprint& GetJA4Fingerprint() const { return m_jA4Fingerprint; }
   inline bool JA4FingerprintHasBeenSet() const { return m_jA4FingerprintHasBeenSet; }

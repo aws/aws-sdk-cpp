@@ -20,7 +20,7 @@ namespace Model {
 
 /**
  *  <p>For information about using the Amazon S3 API—including error
- * handling—see the <a
+ * handling��see the <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/developerguide/Welcome.html">Amazon
  * S3 Developer Guide</a>.</p>  <p>Container for all error
  * elements.</p><p><h3>See Also:</h3>   <a

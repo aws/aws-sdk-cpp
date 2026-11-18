@@ -41,7 +41,8 @@ class DependencyInsight {
    * </li> <li> <p>THIRD_PARTY - The insight relates to a third-party dependency.</p>
    * </li> <li> <p>UNEVEN_USAGE - The insight relates to a dependency with uneven
    * usage across the service.</p> </li> <li> <p>AWS_SERVICE - The insight relates to
-   * a dependency on an Amazon Web Services service.</p> </li> </ul>
+   * a dependency on an Amazon Web Services service. Resilience Hub doesn't currently
+   * return this value.</p> </li> </ul>
    */
   inline InsightsCategory GetCategory() const { return m_category; }
   inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }

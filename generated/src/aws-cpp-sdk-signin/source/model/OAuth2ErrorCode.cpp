@@ -29,6 +29,7 @@ static const int invalid_request_HASH = HashingUtils::HashString("invalid_reques
 static const int invalid_grant_HASH = HashingUtils::HashString("invalid_grant");
 static const int invalid_scope_HASH = HashingUtils::HashString("invalid_scope");
 static const int invalid_target_HASH = HashingUtils::HashString("invalid_target");
+static const int invalid_client_HASH = HashingUtils::HashString("invalid_client");
 static const int rate_exceeded_HASH = HashingUtils::HashString("rate_exceeded");
 static const int service_unavailable_HASH = HashingUtils::HashString("service_unavailable");
 
@@ -62,6 +63,8 @@ OAuth2ErrorCode GetOAuth2ErrorCodeForName(const Aws::String& name) {
     return OAuth2ErrorCode::invalid_scope;
   } else if (hashCode == invalid_target_HASH) {
     return OAuth2ErrorCode::invalid_target;
+  } else if (hashCode == invalid_client_HASH) {
+    return OAuth2ErrorCode::invalid_client;
   } else if (hashCode == rate_exceeded_HASH) {
     return OAuth2ErrorCode::rate_exceeded;
   } else if (hashCode == service_unavailable_HASH) {
@@ -108,6 +111,8 @@ Aws::String GetNameForOAuth2ErrorCode(OAuth2ErrorCode enumValue) {
       return "invalid_scope";
     case OAuth2ErrorCode::invalid_target:
       return "invalid_target";
+    case OAuth2ErrorCode::invalid_client:
+      return "invalid_client";
     case OAuth2ErrorCode::rate_exceeded:
       return "rate_exceeded";
     case OAuth2ErrorCode::service_unavailable:

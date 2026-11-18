@@ -98,6 +98,7 @@
 #include <aws/sesv2/model/ListTenantResourcesRequest.h>
 #include <aws/sesv2/model/ListTenantsRequest.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
+#include <aws/sesv2/model/PutAccountDeliveryAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountDetailsRequest.h>
 #include <aws/sesv2/model/PutAccountPricingAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountSendingAttributesRequest.h>
@@ -1485,6 +1486,17 @@ PutAccountDedicatedIpWarmupAttributesOutcome SESV2Client::PutAccountDedicatedIpW
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutAccountDedicatedIpWarmupAttributesOutcome(result.GetResultWithOwnership())
                             : PutAccountDedicatedIpWarmupAttributesOutcome(std::move(result.GetError()));
+}
+
+PutAccountDeliveryAttributesOutcome SESV2Client::PutAccountDeliveryAttributes(const PutAccountDeliveryAttributesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/account/delivery");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAccountDeliveryAttributesOutcome(result.GetResultWithOwnership())
+                            : PutAccountDeliveryAttributesOutcome(std::move(result.GetError()));
 }
 
 PutAccountDetailsOutcome SESV2Client::PutAccountDetails(const PutAccountDetailsRequest& request) const {

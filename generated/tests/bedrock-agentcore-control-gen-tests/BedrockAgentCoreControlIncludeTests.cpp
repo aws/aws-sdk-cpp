@@ -511,6 +511,7 @@
 #include <aws/bedrock-agentcore-control/model/LimitEntry.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigOutput.h>
+#include <aws/bedrock-agentcore-control/model/LinuxOperatingSystemConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentInsightStoresPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentInsightStoresRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentInsightStoresResult.h>
@@ -703,6 +704,7 @@
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationExecutionStatus.h>
 #include <aws/bedrock-agentcore-control/model/OpenResponsesEvaluatorModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/OperatingSystem.h>
+#include <aws/bedrock-agentcore-control/model/OperatingSystemConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/OutputConfig.h>
 #include <aws/bedrock-agentcore-control/model/OverrideType.h>
 #include <aws/bedrock-agentcore-control/model/PassthroughProtocolType.h>
@@ -741,6 +743,7 @@
 #include <aws/bedrock-agentcore-control/model/PrivateEndpointOverride.h>
 #include <aws/bedrock-agentcore-control/model/PrivateKeyJwtConfig.h>
 #include <aws/bedrock-agentcore-control/model/PrivateKeySource.h>
+#include <aws/bedrock-agentcore-control/model/PrivilegeMode.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Provider.h>
 #include <aws/bedrock-agentcore-control/model/ProviderPrefix.h>
@@ -781,6 +784,7 @@
 #include <aws/bedrock-agentcore-control/model/RuntimeHooksConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RuntimeMetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RuntimeTargetConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/S3BucketMountConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/S3CertificateConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/S3Configuration.h>
 #include <aws/bedrock-agentcore-control/model/S3FilesAccessPointConfiguration.h>

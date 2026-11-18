@@ -94,6 +94,7 @@
 #include <aws/securityagent/model/ListThreatModelJobsRequest.h>
 #include <aws/securityagent/model/ListThreatModelsRequest.h>
 #include <aws/securityagent/model/ListThreatsRequest.h>
+#include <aws/securityagent/model/ResumePentestJobRequest.h>
 #include <aws/securityagent/model/StartCodeRemediationRequest.h>
 #include <aws/securityagent/model/StartCodeReviewJobRequest.h>
 #include <aws/securityagent/model/StartPentestJobRequest.h>
@@ -1091,6 +1092,17 @@ ListThreatsOutcome SecurityAgentClient::ListThreats(const ListThreatsRequest& re
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListThreatsOutcome(result.GetResultWithOwnership()) : ListThreatsOutcome(std::move(result.GetError()));
+}
+
+ResumePentestJobOutcome SecurityAgentClient::ResumePentestJob(const ResumePentestJobRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ResumePentestJob");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResumePentestJobOutcome(result.GetResultWithOwnership())
+                            : ResumePentestJobOutcome(std::move(result.GetError()));
 }
 
 StartCodeRemediationOutcome SecurityAgentClient::StartCodeRemediation(const StartCodeRemediationRequest& request) const {

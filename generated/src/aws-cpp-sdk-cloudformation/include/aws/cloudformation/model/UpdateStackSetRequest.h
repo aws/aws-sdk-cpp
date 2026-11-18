@@ -128,7 +128,7 @@ class UpdateStackSetRequest : public CloudFormationRequest {
   /**
    * <p>Use the existing template that's associated with the StackSet that you're
    * updating.</p> <p>Conditional: You must specify only one of the following
-   * parameters: <code>TemplateBody</code> or <code>TemplateURL</code>—or set
+   * parameters: <code>TemplateBody</code> or <code>TemplateURL</code>��or set
    * <code>UsePreviousTemplate</code> to true.</p>
    */
   inline bool GetUsePreviousTemplate() const { return m_usePreviousTemplate; }

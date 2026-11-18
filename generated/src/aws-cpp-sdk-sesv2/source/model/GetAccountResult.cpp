@@ -58,6 +58,10 @@ GetAccountResult& GetAccountResult::operator=(const Aws::AmazonWebServiceResult<
     m_pricingAttributes = jsonValue.GetObject("PricingAttributes");
     m_pricingAttributesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DeliveryAttributes")) {
+    m_deliveryAttributes = jsonValue.GetObject("DeliveryAttributes");
+    m_deliveryAttributesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

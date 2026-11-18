@@ -50,6 +50,10 @@ ProtectedJobSummary& ProtectedJobSummary::operator=(JsonView jsonValue) {
     m_jobComputePayerAccountId = jsonValue.GetString("jobComputePayerAccountId");
     m_jobComputePayerAccountIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("intermediateTableConfiguration")) {
+    m_intermediateTableConfiguration = jsonValue.GetObject("intermediateTableConfiguration");
+    m_intermediateTableConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -87,6 +91,10 @@ JsonValue ProtectedJobSummary::Jsonize() const {
 
   if (m_jobComputePayerAccountIdHasBeenSet) {
     payload.WithString("jobComputePayerAccountId", m_jobComputePayerAccountId);
+  }
+
+  if (m_intermediateTableConfigurationHasBeenSet) {
+    payload.WithObject("intermediateTableConfiguration", m_intermediateTableConfiguration.Jsonize());
   }
 
   return payload;

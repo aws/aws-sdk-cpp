@@ -43,13 +43,6 @@ static const int ml_c5n_2xlarge_HASH = HashingUtils::HashString("ml.c5n.2xlarge"
 static const int ml_c5n_4xlarge_HASH = HashingUtils::HashString("ml.c5n.4xlarge");
 static const int ml_c5n_9xlarge_HASH = HashingUtils::HashString("ml.c5n.9xlarge");
 static const int ml_c5n_18xlarge_HASH = HashingUtils::HashString("ml.c5n.18xlarge");
-static const int ml_p2_xlarge_HASH = HashingUtils::HashString("ml.p2.xlarge");
-static const int ml_p2_8xlarge_HASH = HashingUtils::HashString("ml.p2.8xlarge");
-static const int ml_p2_16xlarge_HASH = HashingUtils::HashString("ml.p2.16xlarge");
-static const int ml_p3_2xlarge_HASH = HashingUtils::HashString("ml.p3.2xlarge");
-static const int ml_p3_8xlarge_HASH = HashingUtils::HashString("ml.p3.8xlarge");
-static const int ml_p3_16xlarge_HASH = HashingUtils::HashString("ml.p3.16xlarge");
-static const int ml_p3dn_24xlarge_HASH = HashingUtils::HashString("ml.p3dn.24xlarge");
 static const int ml_p4d_24xlarge_HASH = HashingUtils::HashString("ml.p4d.24xlarge");
 static const int ml_g4dn_xlarge_HASH = HashingUtils::HashString("ml.g4dn.xlarge");
 static const int ml_g4dn_2xlarge_HASH = HashingUtils::HashString("ml.g4dn.2xlarge");
@@ -132,20 +125,6 @@ InstanceType GetInstanceTypeForName(const Aws::String& name) {
     return InstanceType::ml_c5n_9xlarge;
   } else if (hashCode == ml_c5n_18xlarge_HASH) {
     return InstanceType::ml_c5n_18xlarge;
-  } else if (hashCode == ml_p2_xlarge_HASH) {
-    return InstanceType::ml_p2_xlarge;
-  } else if (hashCode == ml_p2_8xlarge_HASH) {
-    return InstanceType::ml_p2_8xlarge;
-  } else if (hashCode == ml_p2_16xlarge_HASH) {
-    return InstanceType::ml_p2_16xlarge;
-  } else if (hashCode == ml_p3_2xlarge_HASH) {
-    return InstanceType::ml_p3_2xlarge;
-  } else if (hashCode == ml_p3_8xlarge_HASH) {
-    return InstanceType::ml_p3_8xlarge;
-  } else if (hashCode == ml_p3_16xlarge_HASH) {
-    return InstanceType::ml_p3_16xlarge;
-  } else if (hashCode == ml_p3dn_24xlarge_HASH) {
-    return InstanceType::ml_p3dn_24xlarge;
   } else if (hashCode == ml_p4d_24xlarge_HASH) {
     return InstanceType::ml_p4d_24xlarge;
   } else if (hashCode == ml_g4dn_xlarge_HASH) {
@@ -262,20 +241,6 @@ Aws::String GetNameForInstanceType(InstanceType enumValue) {
       return "ml.c5n.9xlarge";
     case InstanceType::ml_c5n_18xlarge:
       return "ml.c5n.18xlarge";
-    case InstanceType::ml_p2_xlarge:
-      return "ml.p2.xlarge";
-    case InstanceType::ml_p2_8xlarge:
-      return "ml.p2.8xlarge";
-    case InstanceType::ml_p2_16xlarge:
-      return "ml.p2.16xlarge";
-    case InstanceType::ml_p3_2xlarge:
-      return "ml.p3.2xlarge";
-    case InstanceType::ml_p3_8xlarge:
-      return "ml.p3.8xlarge";
-    case InstanceType::ml_p3_16xlarge:
-      return "ml.p3.16xlarge";
-    case InstanceType::ml_p3dn_24xlarge:
-      return "ml.p3dn.24xlarge";
     case InstanceType::ml_p4d_24xlarge:
       return "ml.p4d.24xlarge";
     case InstanceType::ml_g4dn_xlarge:

@@ -39,6 +39,7 @@
 #include <aws/cognito-idp/model/AdminUpdateUserAttributesRequest.h>
 #include <aws/cognito-idp/model/AdminUserGlobalSignOutRequest.h>
 #include <aws/cognito-idp/model/AssociateSoftwareTokenRequest.h>
+#include <aws/cognito-idp/model/CancelPointInTimeRecoveryRequest.h>
 #include <aws/cognito-idp/model/ChangePasswordRequest.h>
 #include <aws/cognito-idp/model/CompleteWebAuthnRegistrationRequest.h>
 #include <aws/cognito-idp/model/ConfirmDeviceRequest.h>
@@ -70,6 +71,7 @@
 #include <aws/cognito-idp/model/DescribeIdentityProviderRequest.h>
 #include <aws/cognito-idp/model/DescribeManagedLoginBrandingByClientRequest.h>
 #include <aws/cognito-idp/model/DescribeManagedLoginBrandingRequest.h>
+#include <aws/cognito-idp/model/DescribePointInTimeRecoveryRequest.h>
 #include <aws/cognito-idp/model/DescribeResourceServerRequest.h>
 #include <aws/cognito-idp/model/DescribeRiskConfigurationRequest.h>
 #include <aws/cognito-idp/model/DescribeTermsByClientRequest.h>
@@ -99,9 +101,11 @@
 #include <aws/cognito-idp/model/GetUserRequest.h>
 #include <aws/cognito-idp/model/GlobalSignOutRequest.h>
 #include <aws/cognito-idp/model/InitiateAuthRequest.h>
+#include <aws/cognito-idp/model/InitiatePointInTimeRecoveryRequest.h>
 #include <aws/cognito-idp/model/ListDevicesRequest.h>
 #include <aws/cognito-idp/model/ListGroupsRequest.h>
 #include <aws/cognito-idp/model/ListIdentityProvidersRequest.h>
+#include <aws/cognito-idp/model/ListPointInTimeRecoveriesRequest.h>
 #include <aws/cognito-idp/model/ListResourceServersRequest.h>
 #include <aws/cognito-idp/model/ListTagsForResourceRequest.h>
 #include <aws/cognito-idp/model/ListTermsRequest.h>
@@ -127,6 +131,7 @@
 #include <aws/cognito-idp/model/SetUserPoolSessionConfigurationRequest.h>
 #include <aws/cognito-idp/model/SetUserSettingsRequest.h>
 #include <aws/cognito-idp/model/SignUpRequest.h>
+#include <aws/cognito-idp/model/StartPointInTimeRecoveryRequest.h>
 #include <aws/cognito-idp/model/StartUserImportJobRequest.h>
 #include <aws/cognito-idp/model/StartWebAuthnRegistrationRequest.h>
 #include <aws/cognito-idp/model/StopUserImportJobRequest.h>
@@ -527,6 +532,13 @@ AssociateSoftwareTokenOutcome CognitoIdentityProviderClient::AssociateSoftwareTo
                             : AssociateSoftwareTokenOutcome(std::move(result.GetError()));
 }
 
+CancelPointInTimeRecoveryOutcome CognitoIdentityProviderClient::CancelPointInTimeRecovery(
+    const CancelPointInTimeRecoveryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelPointInTimeRecoveryOutcome(result.GetResultWithOwnership())
+                            : CancelPointInTimeRecoveryOutcome(std::move(result.GetError()));
+}
+
 ChangePasswordOutcome CognitoIdentityProviderClient::ChangePassword(const ChangePasswordRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? ChangePasswordOutcome(result.GetResultWithOwnership()) : ChangePasswordOutcome(std::move(result.GetError()));
@@ -711,6 +723,13 @@ DescribeManagedLoginBrandingByClientOutcome CognitoIdentityProviderClient::Descr
                             : DescribeManagedLoginBrandingByClientOutcome(std::move(result.GetError()));
 }
 
+DescribePointInTimeRecoveryOutcome CognitoIdentityProviderClient::DescribePointInTimeRecovery(
+    const DescribePointInTimeRecoveryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePointInTimeRecoveryOutcome(result.GetResultWithOwnership())
+                            : DescribePointInTimeRecoveryOutcome(std::move(result.GetError()));
+}
+
 DescribeResourceServerOutcome CognitoIdentityProviderClient::DescribeResourceServer(const DescribeResourceServerRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeResourceServerOutcome(result.GetResultWithOwnership())
@@ -882,6 +901,13 @@ InitiateAuthOutcome CognitoIdentityProviderClient::InitiateAuth(const InitiateAu
   return result.IsSuccess() ? InitiateAuthOutcome(result.GetResultWithOwnership()) : InitiateAuthOutcome(std::move(result.GetError()));
 }
 
+InitiatePointInTimeRecoveryOutcome CognitoIdentityProviderClient::InitiatePointInTimeRecovery(
+    const InitiatePointInTimeRecoveryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InitiatePointInTimeRecoveryOutcome(result.GetResultWithOwnership())
+                            : InitiatePointInTimeRecoveryOutcome(std::move(result.GetError()));
+}
+
 ListDevicesOutcome CognitoIdentityProviderClient::ListDevices(const ListDevicesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? ListDevicesOutcome(result.GetResultWithOwnership()) : ListDevicesOutcome(std::move(result.GetError()));
@@ -896,6 +922,13 @@ ListIdentityProvidersOutcome CognitoIdentityProviderClient::ListIdentityProvider
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListIdentityProvidersOutcome(result.GetResultWithOwnership())
                             : ListIdentityProvidersOutcome(std::move(result.GetError()));
+}
+
+ListPointInTimeRecoveriesOutcome CognitoIdentityProviderClient::ListPointInTimeRecoveries(
+    const ListPointInTimeRecoveriesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPointInTimeRecoveriesOutcome(result.GetResultWithOwnership())
+                            : ListPointInTimeRecoveriesOutcome(std::move(result.GetError()));
 }
 
 ListResourceServersOutcome CognitoIdentityProviderClient::ListResourceServers(const ListResourceServersRequest& request) const {
@@ -1045,6 +1078,13 @@ SetUserSettingsOutcome CognitoIdentityProviderClient::SetUserSettings(const SetU
 SignUpOutcome CognitoIdentityProviderClient::SignUp(const SignUpRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? SignUpOutcome(result.GetResultWithOwnership()) : SignUpOutcome(std::move(result.GetError()));
+}
+
+StartPointInTimeRecoveryOutcome CognitoIdentityProviderClient::StartPointInTimeRecovery(
+    const StartPointInTimeRecoveryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartPointInTimeRecoveryOutcome(result.GetResultWithOwnership())
+                            : StartPointInTimeRecoveryOutcome(std::move(result.GetError()));
 }
 
 StartUserImportJobOutcome CognitoIdentityProviderClient::StartUserImportJob(const StartUserImportJobRequest& request) const {

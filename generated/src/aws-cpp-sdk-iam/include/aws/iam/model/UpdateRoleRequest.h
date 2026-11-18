@@ -99,15 +99,71 @@ class UpdateRoleRequest : public IAMRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session
+   * for users who sign in with the specified role. This setting can have a value
+   * from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive, and replaces
+   * any value currently configured for the role. This setting is independent of
+   * <code>MaxSessionDuration</code>.</p> <p>If you omit both this parameter and
+   * <code>ResetMaxSigninSessionDuration</code>, the current setting is unchanged.
+   * You cannot specify this parameter and set
+   * <code>ResetMaxSigninSessionDuration</code> to <code>true</code> in the same
+   * request.</p> <p>Changes to this setting apply to new sign-in sessions. Sessions
+   * that are already established are not affected.</p>  <p>You cannot set this
+   * value on a service-linked role.</p>
+   */
+  inline int GetMaxSigninSessionDuration() const { return m_maxSigninSessionDuration; }
+  inline bool MaxSigninSessionDurationHasBeenSet() const { return m_maxSigninSessionDurationHasBeenSet; }
+  inline void SetMaxSigninSessionDuration(int value) {
+    m_maxSigninSessionDurationHasBeenSet = true;
+    m_maxSigninSessionDuration = value;
+  }
+  inline UpdateRoleRequest& WithMaxSigninSessionDuration(int value) {
+    SetMaxSigninSessionDuration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to clear the role's maximum sign-in session duration. Set
+   * this value to <code>true</code> to return the setting to its unset state, so
+   * that the existing sign-in session behavior applies. When the setting is unset,
+   * the role's <code>MaxSigninSessionDuration</code> is omitted from responses.</p>
+   * <p>If you set this value to <code>false</code> or omit it, the current setting
+   * is not cleared. You cannot set this value to <code>true</code> and specify
+   * <code>MaxSigninSessionDuration</code> in the same request. Clearing a setting
+   * that is already unset has no effect.</p>  <p>You cannot reset this value
+   * on a service-linked role.</p>
+   */
+  inline bool GetResetMaxSigninSessionDuration() const { return m_resetMaxSigninSessionDuration; }
+  inline bool ResetMaxSigninSessionDurationHasBeenSet() const { return m_resetMaxSigninSessionDurationHasBeenSet; }
+  inline void SetResetMaxSigninSessionDuration(bool value) {
+    m_resetMaxSigninSessionDurationHasBeenSet = true;
+    m_resetMaxSigninSessionDuration = value;
+  }
+  inline UpdateRoleRequest& WithResetMaxSigninSessionDuration(bool value) {
+    SetResetMaxSigninSessionDuration(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_roleName;
 
   Aws::String m_description;
 
   int m_maxSessionDuration{0};
+
+  int m_maxSigninSessionDuration{0};
+
+  bool m_resetMaxSigninSessionDuration{false};
   bool m_roleNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_maxSessionDurationHasBeenSet = false;
+  bool m_maxSigninSessionDurationHasBeenSet = false;
+  bool m_resetMaxSigninSessionDurationHasBeenSet = false;
 };
 
 }  // namespace Model

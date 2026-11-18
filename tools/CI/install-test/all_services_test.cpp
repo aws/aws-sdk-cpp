@@ -4,6 +4,7 @@
 #include <iostream>
 #include <aws/core/Aws.h>
 #include <aws/AWSMigrationHub/MigrationHubClient.h>
+#include <aws/abuse-signal/AbuseSignalClient.h>
 #include <aws/accessanalyzer/AccessAnalyzerClient.h>
 #include <aws/account-access-runtime/AccountAccessRuntimeClient.h>
 #include <aws/account-access/AccountAccessClient.h>

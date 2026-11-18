@@ -92,15 +92,37 @@ class LoginProfile {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session
+   * for the user.</p> <p>This member is omitted when the setting is unset. In that
+   * case, no default value is returned and the existing sign-in session behavior
+   * applies.</p>
+   */
+  inline int GetMaxSigninSessionDuration() const { return m_maxSigninSessionDuration; }
+  inline bool MaxSigninSessionDurationHasBeenSet() const { return m_maxSigninSessionDurationHasBeenSet; }
+  inline void SetMaxSigninSessionDuration(int value) {
+    m_maxSigninSessionDurationHasBeenSet = true;
+    m_maxSigninSessionDuration = value;
+  }
+  inline LoginProfile& WithMaxSigninSessionDuration(int value) {
+    SetMaxSigninSessionDuration(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userName;
 
   Aws::Utils::DateTime m_createDate{};
 
   bool m_passwordResetRequired{false};
+
+  int m_maxSigninSessionDuration{0};
   bool m_userNameHasBeenSet = false;
   bool m_createDateHasBeenSet = false;
   bool m_passwordResetRequiredHasBeenSet = false;
+  bool m_maxSigninSessionDurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -22,6 +22,10 @@ CapacityProviderConfiguration& CapacityProviderConfiguration::operator=(JsonView
     m_capacityProviderArn = jsonValue.GetString("capacityProviderArn");
     m_capacityProviderArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("operatingSystemConfiguration")) {
+    m_operatingSystemConfiguration = jsonValue.GetObject("operatingSystemConfiguration");
+    m_operatingSystemConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue CapacityProviderConfiguration::Jsonize() const {
 
   if (m_capacityProviderArnHasBeenSet) {
     payload.WithString("capacityProviderArn", m_capacityProviderArn);
+  }
+
+  if (m_operatingSystemConfigurationHasBeenSet) {
+    payload.WithObject("operatingSystemConfiguration", m_operatingSystemConfiguration.Jsonize());
   }
 
   return payload;

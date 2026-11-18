@@ -77,6 +77,36 @@ class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
   virtual ~SigninClient();
 
   /**
+   * <p>Revokes up to five sign-in sessions. A revoked session can no longer be
+   * refreshed. Revoking a session that is already revoked succeeds. Each session
+   * must belong to the identity specified by principalArn, or to the caller if
+   * principalArn is omitted. Failures for individual sessions are returned in the
+   * errors list and do not fail the whole request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/BatchRevokeSessions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchRevokeSessionsOutcome BatchRevokeSessions(const Model::BatchRevokeSessionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchRevokeSessions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchRevokeSessionsRequestT = Model::BatchRevokeSessionsRequest>
+  Model::BatchRevokeSessionsOutcomeCallable BatchRevokeSessionsCallable(const BatchRevokeSessionsRequestT& request) const {
+    return SubmitCallable(&SigninClient::BatchRevokeSessions, request);
+  }
+
+  /**
+   * An Async wrapper for BatchRevokeSessions that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename BatchRevokeSessionsRequestT = Model::BatchRevokeSessionsRequest>
+  void BatchRevokeSessionsAsync(const BatchRevokeSessionsRequestT& request, const BatchRevokeSessionsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SigninClient::BatchRevokeSessions, request, handler, context);
+  }
+
+  /**
    * <p>Creates a bearer token that represents your IAM credentials and can be used
    * to access a supported AWS service. By default, the token is valid for 12
    * hours.</p><p><h3>See Also:</h3>   <a
@@ -310,6 +340,34 @@ class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns the details of a single sign-in session. The session must belong to
+   * the identity specified by principalArn, or to the caller if principalArn is
+   * omitted. A session that belongs to a different identity or account is reported
+   * as not found.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/GetSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSessionOutcome GetSession(const Model::GetSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSession that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetSessionRequestT = Model::GetSessionRequest>
+  Model::GetSessionOutcomeCallable GetSessionCallable(const GetSessionRequestT& request) const {
+    return SubmitCallable(&SigninClient::GetSession, request);
+  }
+
+  /**
+   * An Async wrapper for GetSession that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetSessionRequestT = Model::GetSessionRequest>
+  void GetSessionAsync(const GetSessionRequestT& request, const GetSessionResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SigninClient::GetSession, request, handler, context);
+  }
+
+  /**
    * <p>Inspects the metadata and active state of an OAuth 2.0 access token or
    * refresh token.</p> <p>Implements RFC 7662 OAuth 2.0 Token Introspection over a
    * SigV4-authenticated endpoint. Returns the claims associated with a token issued
@@ -369,6 +427,36 @@ class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                              const ListResourcePermissionStatementsRequestT& request = {}) const {
     return SubmitAsync(&SigninClient::ListResourcePermissionStatements, request, handler, context);
+  }
+
+  /**
+   * <p>Lists sign-in sessions for an IAM identity in your account. If you omit
+   * principalArn, the operation lists the caller's own sessions. Specify a user or
+   * role ARN to list that identity's sessions, or specify
+   * arn:aws:iam::{account-id}:* to list all sessions in the account. Filters are
+   * combined with a logical AND.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/ListSessions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSessionsOutcome ListSessions(const Model::ListSessionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListSessions that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListSessionsRequestT = Model::ListSessionsRequest>
+  Model::ListSessionsOutcomeCallable ListSessionsCallable(const ListSessionsRequestT& request = {}) const {
+    return SubmitCallable(&SigninClient::ListSessions, request);
+  }
+
+  /**
+   * An Async wrapper for ListSessions that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListSessionsRequestT = Model::ListSessionsRequest>
+  void ListSessionsAsync(const ListSessionsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                         const ListSessionsRequestT& request = {}) const {
+    return SubmitAsync(&SigninClient::ListSessions, request, handler, context);
   }
 
   /**

@@ -16,11 +16,14 @@ namespace Model {
 namespace PopulateIntermediateTableAnalysisTypeMapper {
 
 static const int QUERY_HASH = HashingUtils::HashString("QUERY");
+static const int JOB_HASH = HashingUtils::HashString("JOB");
 
 PopulateIntermediateTableAnalysisType GetPopulateIntermediateTableAnalysisTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == QUERY_HASH) {
     return PopulateIntermediateTableAnalysisType::QUERY;
+  } else if (hashCode == JOB_HASH) {
+    return PopulateIntermediateTableAnalysisType::JOB;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForPopulateIntermediateTableAnalysisType(PopulateIntermediate
       return {};
     case PopulateIntermediateTableAnalysisType::QUERY:
       return "QUERY";
+    case PopulateIntermediateTableAnalysisType::JOB:
+      return "JOB";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

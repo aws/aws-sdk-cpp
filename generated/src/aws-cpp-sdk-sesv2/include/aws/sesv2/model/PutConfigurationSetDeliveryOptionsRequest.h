@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/SESV2Request.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
+#include <aws/sesv2/model/SharedPoolDeliveryMode.h>
 #include <aws/sesv2/model/TlsPolicy.h>
 
 #include <utility>
@@ -54,9 +55,9 @@ class PutConfigurationSetDeliveryOptionsRequest : public SESV2Request {
   ///@{
   /**
    * <p>Specifies whether messages that use the configuration set are required to use
-   * Transport Layer Security (TLS). If the value is <code>Require</code>, messages
+   * Transport Layer Security (TLS). If the value is <code>REQUIRE</code>, messages
    * are only delivered if a TLS connection can be established. If the value is
-   * <code>Optional</code>, messages can be delivered in plain text if a TLS
+   * <code>OPTIONAL</code>, messages can be delivered in plain text if a TLS
    * connection can't be established.</p>
    */
   inline TlsPolicy GetTlsPolicy() const { return m_tlsPolicy; }
@@ -107,6 +108,32 @@ class PutConfigurationSetDeliveryOptionsRequest : public SESV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The shared pool delivery mode for email that you send with the configuration
+   * set from shared IP addresses. This setting overrides the shared pool delivery
+   * mode of your account. Can be one of the following:</p> <ul> <li> <p>
+   * <code>GLOBAL</code> – Amazon SES delivers from your sending Region first and,
+   * when it improves your deliverability, also uses Amazon SES shared IP addresses
+   * with established sending history in other Amazon Web Services Regions within the
+   * same Amazon Web Services partition.</p> </li> <li> <p> <code>REGIONAL</code> –
+   * Amazon SES delivers your email only from shared IP addresses in your sending
+   * Region.</p> </li> <li> <p> <code>ACCOUNT</code> – The configuration set uses the
+   * shared pool delivery mode of your account.</p> </li> </ul> <p>If you don't
+   * specify a value, the current value doesn't change.</p>
+   */
+  inline SharedPoolDeliveryMode GetSharedPoolDeliveryMode() const { return m_sharedPoolDeliveryMode; }
+  inline bool SharedPoolDeliveryModeHasBeenSet() const { return m_sharedPoolDeliveryModeHasBeenSet; }
+  inline void SetSharedPoolDeliveryMode(SharedPoolDeliveryMode value) {
+    m_sharedPoolDeliveryModeHasBeenSet = true;
+    m_sharedPoolDeliveryMode = value;
+  }
+  inline PutConfigurationSetDeliveryOptionsRequest& WithSharedPoolDeliveryMode(SharedPoolDeliveryMode value) {
+    SetSharedPoolDeliveryMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_configurationSetName;
 
@@ -115,10 +142,13 @@ class PutConfigurationSetDeliveryOptionsRequest : public SESV2Request {
   Aws::String m_sendingPoolName;
 
   long long m_maxDeliverySeconds{0};
+
+  SharedPoolDeliveryMode m_sharedPoolDeliveryMode{SharedPoolDeliveryMode::NOT_SET};
   bool m_configurationSetNameHasBeenSet = false;
   bool m_tlsPolicyHasBeenSet = false;
   bool m_sendingPoolNameHasBeenSet = false;
   bool m_maxDeliverySecondsHasBeenSet = false;
+  bool m_sharedPoolDeliveryModeHasBeenSet = false;
 };
 
 }  // namespace Model

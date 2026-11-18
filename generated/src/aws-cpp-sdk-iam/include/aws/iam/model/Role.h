@@ -197,6 +197,26 @@ class Role {
 
   ///@{
   /**
+   * <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session
+   * for users who sign in with this role. This value is independent of
+   * <code>MaxSessionDuration</code>.</p> <p>This member is omitted when the setting
+   * is unset. In that case, no default value is returned and the existing sign-in
+   * session behavior applies.</p>
+   */
+  inline int GetMaxSigninSessionDuration() const { return m_maxSigninSessionDuration; }
+  inline bool MaxSigninSessionDurationHasBeenSet() const { return m_maxSigninSessionDurationHasBeenSet; }
+  inline void SetMaxSigninSessionDuration(int value) {
+    m_maxSigninSessionDurationHasBeenSet = true;
+    m_maxSigninSessionDuration = value;
+  }
+  inline Role& WithMaxSigninSessionDuration(int value) {
+    SetMaxSigninSessionDuration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
    * <p>For more information about permissions boundaries, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
@@ -303,6 +323,8 @@ class Role {
 
   int m_maxSessionDuration{0};
 
+  int m_maxSigninSessionDuration{0};
+
   AttachedPermissionsBoundary m_permissionsBoundary;
 
   Aws::Vector<Tag> m_tags;
@@ -318,6 +340,7 @@ class Role {
   bool m_assumeRolePolicyDocumentHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_maxSessionDurationHasBeenSet = false;
+  bool m_maxSigninSessionDurationHasBeenSet = false;
   bool m_permissionsBoundaryHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_roleLastUsedHasBeenSet = false;

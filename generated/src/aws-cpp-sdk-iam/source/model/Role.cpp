@@ -65,6 +65,12 @@ Role& Role::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxSessionDurationNode.GetText()).c_str()).c_str());
       m_maxSessionDurationHasBeenSet = true;
     }
+    XmlNode maxSigninSessionDurationNode = resultNode.FirstChild("MaxSigninSessionDuration");
+    if (!maxSigninSessionDurationNode.IsNull()) {
+      m_maxSigninSessionDuration = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxSigninSessionDurationNode.GetText()).c_str()).c_str());
+      m_maxSigninSessionDurationHasBeenSet = true;
+    }
     XmlNode permissionsBoundaryNode = resultNode.FirstChild("PermissionsBoundary");
     if (!permissionsBoundaryNode.IsNull()) {
       m_permissionsBoundary = permissionsBoundaryNode;
@@ -131,6 +137,10 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
     oStream << location << index << locationValue << ".MaxSessionDuration=" << m_maxSessionDuration << "&";
   }
 
+  if (m_maxSigninSessionDurationHasBeenSet) {
+    oStream << location << index << locationValue << ".MaxSigninSessionDuration=" << m_maxSigninSessionDuration << "&";
+  }
+
   if (m_permissionsBoundaryHasBeenSet) {
     Aws::StringStream permissionsBoundaryLocationAndMemberSs;
     permissionsBoundaryLocationAndMemberSs << location << index << locationValue << ".PermissionsBoundary";
@@ -184,6 +194,9 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location) const {
   }
   if (m_maxSessionDurationHasBeenSet) {
     oStream << location << ".MaxSessionDuration=" << m_maxSessionDuration << "&";
+  }
+  if (m_maxSigninSessionDurationHasBeenSet) {
+    oStream << location << ".MaxSigninSessionDuration=" << m_maxSigninSessionDuration << "&";
   }
   if (m_permissionsBoundaryHasBeenSet) {
     Aws::String permissionsBoundaryLocationAndMember(location);

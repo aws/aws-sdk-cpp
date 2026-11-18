@@ -2485,6 +2485,40 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Set the shared pool delivery mode for your Amazon SES account in the current
+   * Amazon Web Services Region. The mode controls whether Amazon SES can deliver
+   * your email from shared IP addresses in other Amazon Web Services Regions within
+   * the same Amazon Web Services partition.</p> <p>A change may take a few minutes
+   * to take effect. Messages that are already queued for delivery keep the mode that
+   * they were sent with.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountDeliveryAttributes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAccountDeliveryAttributesOutcome PutAccountDeliveryAttributes(
+      const Model::PutAccountDeliveryAttributesRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAccountDeliveryAttributes that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutAccountDeliveryAttributesRequestT = Model::PutAccountDeliveryAttributesRequest>
+  Model::PutAccountDeliveryAttributesOutcomeCallable PutAccountDeliveryAttributesCallable(
+      const PutAccountDeliveryAttributesRequestT& request) const {
+    return SubmitCallable(&SESV2Client::PutAccountDeliveryAttributes, request);
+  }
+
+  /**
+   * An Async wrapper for PutAccountDeliveryAttributes that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutAccountDeliveryAttributesRequestT = Model::PutAccountDeliveryAttributesRequest>
+  void PutAccountDeliveryAttributesAsync(const PutAccountDeliveryAttributesRequestT& request,
+                                         const PutAccountDeliveryAttributesResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SESV2Client::PutAccountDeliveryAttributes, request, handler, context);
+  }
+
+  /**
    * <p>Update your Amazon SES account details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountDetails">AWS
    * API Reference</a></p>

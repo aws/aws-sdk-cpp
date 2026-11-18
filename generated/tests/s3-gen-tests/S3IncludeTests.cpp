@@ -385,6 +385,8 @@
 #include <aws/s3/model/ReplicationRule.h>
 #include <aws/s3/model/ReplicationRuleAndOperator.h>
 #include <aws/s3/model/ReplicationRuleFilter.h>
+#include <aws/s3/model/ReplicationRuleNotOperator.h>
+#include <aws/s3/model/ReplicationRuleOrOperator.h>
 #include <aws/s3/model/ReplicationRuleStatus.h>
 #include <aws/s3/model/ReplicationStatus.h>
 #include <aws/s3/model/ReplicationTime.h>
@@ -453,6 +455,8 @@
 #include <aws/s3/model/UploadPartCopyResult.h>
 #include <aws/s3/model/UploadPartRequest.h>
 #include <aws/s3/model/UploadPartResult.h>
+#include <aws/s3/model/UseSourceMultiRegionKey.h>
+#include <aws/s3/model/UseSourceMultiRegionKeyStatus.h>
 #include <aws/s3/model/VersioningConfiguration.h>
 #include <aws/s3/model/WebsiteConfiguration.h>
 #include <aws/s3/model/WriteGetObjectResponseRequest.h>

@@ -16,6 +16,7 @@
 #include <aws/resiliencehubv2/model/PermissionModel.h>
 #include <aws/resiliencehubv2/model/ReportGenerationResult.h>
 #include <aws/resiliencehubv2/model/StopCondition.h>
+#include <aws/resiliencehubv2/model/TestRunEffectivePolicyValues.h>
 #include <aws/resiliencehubv2/model/TestRunPolicySnapshot.h>
 #include <aws/resiliencehubv2/model/TestRunReportConfiguration.h>
 #include <aws/resiliencehubv2/model/TestRunStatus.h>
@@ -357,6 +358,25 @@ class TestRun {
 
   ///@{
   /**
+   * <p>The effective resilience policy values snapshotted from the service when the
+   * run was started. The test run is evaluated against these values.</p>
+   */
+  inline const TestRunEffectivePolicyValues& GetEffectivePolicyValues() const { return m_effectivePolicyValues; }
+  inline bool EffectivePolicyValuesHasBeenSet() const { return m_effectivePolicyValuesHasBeenSet; }
+  template <typename EffectivePolicyValuesT = TestRunEffectivePolicyValues>
+  void SetEffectivePolicyValues(EffectivePolicyValuesT&& value) {
+    m_effectivePolicyValuesHasBeenSet = true;
+    m_effectivePolicyValues = std::forward<EffectivePolicyValuesT>(value);
+  }
+  template <typename EffectivePolicyValuesT = TestRunEffectivePolicyValues>
+  TestRun& WithEffectivePolicyValues(EffectivePolicyValuesT&& value) {
+    SetEffectivePolicyValues(std::forward<EffectivePolicyValuesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The report generation result for the test run. Present after report
    * generation completes or fails.</p>
    */
@@ -522,6 +542,8 @@ class TestRun {
 
   TestRunPolicySnapshot m_policy;
 
+  TestRunEffectivePolicyValues m_effectivePolicyValues;
+
   ReportGenerationResult m_reportOutput;
 
   Aws::String m_regionSwitchPlanArn;
@@ -551,6 +573,7 @@ class TestRun {
   bool m_testTemplateArnHasBeenSet = false;
   bool m_reportConfigurationHasBeenSet = false;
   bool m_policyHasBeenSet = false;
+  bool m_effectivePolicyValuesHasBeenSet = false;
   bool m_reportOutputHasBeenSet = false;
   bool m_regionSwitchPlanArnHasBeenSet = false;
   bool m_regionSwitchExecutionIdHasBeenSet = false;

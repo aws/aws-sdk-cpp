@@ -27,5 +27,9 @@ Aws::String PutConfigurationSetDeliveryOptionsRequest::SerializePayload() const 
     payload.WithInt64("MaxDeliverySeconds", m_maxDeliverySeconds);
   }
 
+  if (m_sharedPoolDeliveryModeHasBeenSet) {
+    payload.WithString("SharedPoolDeliveryMode", SharedPoolDeliveryModeMapper::GetNameForSharedPoolDeliveryMode(m_sharedPoolDeliveryMode));
+  }
+
   return payload.View().WriteReadable();
 }

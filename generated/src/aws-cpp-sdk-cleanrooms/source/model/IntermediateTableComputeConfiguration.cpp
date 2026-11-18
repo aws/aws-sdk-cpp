@@ -22,6 +22,10 @@ IntermediateTableComputeConfiguration& IntermediateTableComputeConfiguration::op
     m_queryComputeConfiguration = jsonValue.GetObject("queryComputeConfiguration");
     m_queryComputeConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jobComputeConfiguration")) {
+    m_jobComputeConfiguration = jsonValue.GetObject("jobComputeConfiguration");
+    m_jobComputeConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue IntermediateTableComputeConfiguration::Jsonize() const {
 
   if (m_queryComputeConfigurationHasBeenSet) {
     payload.WithObject("queryComputeConfiguration", m_queryComputeConfiguration.Jsonize());
+  }
+
+  if (m_jobComputeConfigurationHasBeenSet) {
+    payload.WithObject("jobComputeConfiguration", m_jobComputeConfiguration.Jsonize());
   }
 
   return payload;

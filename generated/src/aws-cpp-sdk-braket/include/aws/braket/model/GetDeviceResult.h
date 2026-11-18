@@ -7,6 +7,7 @@
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/braket/model/DeviceQueueInfo.h>
 #include <aws/braket/model/DeviceStatus.h>
+#include <aws/braket/model/DeviceStatusReason.h>
 #include <aws/braket/model/DeviceType.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -114,6 +115,24 @@ class GetDeviceResult {
 
   ///@{
   /**
+   * <p>The reason for the current status of the device, including status reason
+   * codes and timestamps.</p>
+   */
+  inline const DeviceStatusReason& GetDeviceStatusReason() const { return m_deviceStatusReason; }
+  template <typename DeviceStatusReasonT = DeviceStatusReason>
+  void SetDeviceStatusReason(DeviceStatusReasonT&& value) {
+    m_deviceStatusReasonHasBeenSet = true;
+    m_deviceStatusReason = std::forward<DeviceStatusReasonT>(value);
+  }
+  template <typename DeviceStatusReasonT = DeviceStatusReason>
+  GetDeviceResult& WithDeviceStatusReason(DeviceStatusReasonT&& value) {
+    SetDeviceStatusReason(std::forward<DeviceStatusReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Details about the capabilities of the device.</p>
    */
   inline const Aws::String& GetDeviceCapabilities() const { return m_deviceCapabilities; }
@@ -180,6 +199,8 @@ class GetDeviceResult {
 
   DeviceStatus m_deviceStatus{DeviceStatus::NOT_SET};
 
+  DeviceStatusReason m_deviceStatusReason;
+
   Aws::String m_deviceCapabilities;
 
   Aws::Vector<DeviceQueueInfo> m_deviceQueueInfo;
@@ -191,6 +212,7 @@ class GetDeviceResult {
   bool m_providerNameHasBeenSet = false;
   bool m_deviceTypeHasBeenSet = false;
   bool m_deviceStatusHasBeenSet = false;
+  bool m_deviceStatusReasonHasBeenSet = false;
   bool m_deviceCapabilitiesHasBeenSet = false;
   bool m_deviceQueueInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

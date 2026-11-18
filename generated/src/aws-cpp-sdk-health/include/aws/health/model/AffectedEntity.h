@@ -197,7 +197,9 @@ class AffectedEntity {
 
   ///@{
   /**
-   * <p>A map of account tag key-value pairs attached to the affected entity.</p>
+   * <p>A map of account tag key-value pairs for the account that owns the affected
+   * entity. This field is returned only by DescribeAffectedEntitiesForOrganization
+   * and is not populated by DescribeAffectedEntities.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetAccountTags() const { return m_accountTags; }
   inline bool AccountTagsHasBeenSet() const { return m_accountTagsHasBeenSet; }
@@ -215,31 +217,6 @@ class AffectedEntity {
   AffectedEntity& AddAccountTags(AccountTagsKeyT&& key, AccountTagsValueT&& value) {
     m_accountTagsHasBeenSet = true;
     m_accountTags.emplace(std::forward<AccountTagsKeyT>(key), std::forward<AccountTagsValueT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A map of resource tag key-value pairs attached to the affected entity.</p>
-   *  <p>Currently, the <code>tags</code> property isn't supported.</p>
-   */
-  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  void SetTags(TagsT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags = std::forward<TagsT>(value);
-  }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  AffectedEntity& WithTags(TagsT&& value) {
-    SetTags(std::forward<TagsT>(value));
-    return *this;
-  }
-  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-  AffectedEntity& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
     return *this;
   }
   ///@}
@@ -286,8 +263,6 @@ class AffectedEntity {
 
   Aws::Map<Aws::String, Aws::String> m_accountTags;
 
-  Aws::Map<Aws::String, Aws::String> m_tags;
-
   Aws::Map<Aws::String, Aws::String> m_entityMetadata;
   bool m_entityArnHasBeenSet = false;
   bool m_eventArnHasBeenSet = false;
@@ -298,7 +273,6 @@ class AffectedEntity {
   bool m_statusCodeHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
   bool m_accountTagsHasBeenSet = false;
-  bool m_tagsHasBeenSet = false;
   bool m_entityMetadataHasBeenSet = false;
 };
 

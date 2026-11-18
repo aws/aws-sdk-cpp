@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/PopulationAnalysisJobParameters.h>
 #include <aws/cleanrooms/model/PopulationAnalysisSqlParameters.h>
 
 #include <utility>
@@ -50,9 +51,32 @@ class PopulationAnalysisConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the PySpark job parameters for the population analysis. Use
+   * <code>jobParameters</code> instead of <code>sqlParameters</code> when you
+   * populate the intermediate table with results from a PySpark job.</p>
+   */
+  inline const PopulationAnalysisJobParameters& GetJobParameters() const { return m_jobParameters; }
+  inline bool JobParametersHasBeenSet() const { return m_jobParametersHasBeenSet; }
+  template <typename JobParametersT = PopulationAnalysisJobParameters>
+  void SetJobParameters(JobParametersT&& value) {
+    m_jobParametersHasBeenSet = true;
+    m_jobParameters = std::forward<JobParametersT>(value);
+  }
+  template <typename JobParametersT = PopulationAnalysisJobParameters>
+  PopulationAnalysisConfiguration& WithJobParameters(JobParametersT&& value) {
+    SetJobParameters(std::forward<JobParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   PopulationAnalysisSqlParameters m_sqlParameters;
+
+  PopulationAnalysisJobParameters m_jobParameters;
   bool m_sqlParametersHasBeenSet = false;
+  bool m_jobParametersHasBeenSet = false;
 };
 
 }  // namespace Model

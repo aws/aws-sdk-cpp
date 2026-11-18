@@ -28,6 +28,7 @@
 #include <aws/resiliencehubv2/model/ListTestRunSourcesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestRunsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestSourcesPaginationTraits.h>
+#include <aws/resiliencehubv2/model/ListTestTemplatesPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListTestsPaginationTraits.h>
 #include <aws/resiliencehubv2/model/ListUserJourneysPaginationTraits.h>
 
@@ -88,6 +89,8 @@ using ListTestsPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Clie
                                                              Pagination::ListTestsPaginationTraits<Resiliencehubv2Client>>;
 using ListTestSourcesPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListTestSourcesRequest,
                                                                    Pagination::ListTestSourcesPaginationTraits<Resiliencehubv2Client>>;
+using ListTestTemplatesPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListTestTemplatesRequest,
+                                                                     Pagination::ListTestTemplatesPaginationTraits<Resiliencehubv2Client>>;
 using ListUserJourneysPaginator = Aws::Utils::Pagination::Paginator<Resiliencehubv2Client, Model::ListUserJourneysRequest,
                                                                     Pagination::ListUserJourneysPaginationTraits<Resiliencehubv2Client>>;
 

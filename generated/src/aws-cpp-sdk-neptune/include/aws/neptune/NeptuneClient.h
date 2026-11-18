@@ -370,18 +370,7 @@ class AWS_NEPTUNE_API NeptuneClient : public Aws::Client::AWSXMLClient,
    * <a>ModifyDBCluster</a>. When you associate a new DB cluster parameter group with
    * a running DB cluster, you need to reboot the DB instances in the DB cluster
    * without failover for the new DB cluster parameter group and associated settings
-   * to take effect.</p>  <p>After you create a DB cluster parameter
-   * group, you should wait at least 5 minutes before creating your first DB cluster
-   * that uses that DB cluster parameter group as the default parameter group. This
-   * allows Amazon Neptune to fully complete the create action before the DB cluster
-   * parameter group is used as the default for a new DB cluster. This is especially
-   * important for parameters that are critical when creating the default database
-   * for a DB cluster, such as the character set for the default database defined by
-   * the <code>character_set_database</code> parameter. You can use the <i>Parameter
-   * Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-   * Neptune console</a> or the <a>DescribeDBClusterParameters</a> command to verify
-   * that your DB cluster parameter group has been created or modified.</p>
-   * <p><h3>See Also:</h3>   <a
+   * to take effect.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterParameterGroup">AWS
    * API Reference</a></p>
    */
@@ -1453,6 +1442,36 @@ class AWS_NEPTUNE_API NeptuneClient : public Aws::Client::AWSXMLClient,
                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                               const DescribePendingMaintenanceActionsRequestT& request = {}) const {
     return SubmitAsync(&NeptuneClient::DescribePendingMaintenanceActions, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the properties of specific platform versions for Neptune
+   * Serverless.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeServerlessV2PlatformVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeServerlessV2PlatformVersionsOutcome DescribeServerlessV2PlatformVersions(
+      const Model::DescribeServerlessV2PlatformVersionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeServerlessV2PlatformVersions that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DescribeServerlessV2PlatformVersionsRequestT = Model::DescribeServerlessV2PlatformVersionsRequest>
+  Model::DescribeServerlessV2PlatformVersionsOutcomeCallable DescribeServerlessV2PlatformVersionsCallable(
+      const DescribeServerlessV2PlatformVersionsRequestT& request = {}) const {
+    return SubmitCallable(&NeptuneClient::DescribeServerlessV2PlatformVersions, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeServerlessV2PlatformVersions that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DescribeServerlessV2PlatformVersionsRequestT = Model::DescribeServerlessV2PlatformVersionsRequest>
+  void DescribeServerlessV2PlatformVersionsAsync(const DescribeServerlessV2PlatformVersionsResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                 const DescribeServerlessV2PlatformVersionsRequestT& request = {}) const {
+    return SubmitAsync(&NeptuneClient::DescribeServerlessV2PlatformVersions, request, handler, context);
   }
 
   /**

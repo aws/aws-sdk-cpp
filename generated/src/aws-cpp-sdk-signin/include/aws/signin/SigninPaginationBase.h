@@ -8,6 +8,7 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/signin/model/ListResourcePermissionStatementsPaginationTraits.h>
+#include <aws/signin/model/ListSessionsPaginationTraits.h>
 
 #include <memory>
 
@@ -27,6 +28,17 @@ class SigninPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcePermissionStatementsRequest,
                                              Pagination::ListResourcePermissionStatementsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListSessions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest, Pagination::ListSessionsPaginationTraits<DerivedClient>>
+  ListSessionsPaginator(const Model::ListSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest,
+                                             Pagination::ListSessionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                      request};
   }
 };
 }  // namespace Signin

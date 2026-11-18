@@ -38,6 +38,11 @@ ReplicationRuleFilter& ReplicationRuleFilter::operator=(const XmlNode& xmlNode) 
       m_and = andNode;
       m_andHasBeenSet = true;
     }
+    XmlNode notNode = resultNode.FirstChild("Not");
+    if (!notNode.IsNull()) {
+      m_not = notNode;
+      m_notHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -58,6 +63,11 @@ void ReplicationRuleFilter::AddToNode(XmlNode& parentNode) const {
   if (m_andHasBeenSet) {
     XmlNode andNode = parentNode.CreateChildElement("And");
     m_and.AddToNode(andNode);
+  }
+
+  if (m_notHasBeenSet) {
+    XmlNode notNode = parentNode.CreateChildElement("Not");
+    m_not.AddToNode(notNode);
   }
 }
 

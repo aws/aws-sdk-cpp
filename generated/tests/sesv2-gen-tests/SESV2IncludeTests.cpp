@@ -18,6 +18,7 @@
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/internal/SESV2EndpointRules.h>
 #include <aws/sesv2/model/AccountDetails.h>
+#include <aws/sesv2/model/AccountSharedPoolDeliveryMode.h>
 #include <aws/sesv2/model/ArchivingOptions.h>
 #include <aws/sesv2/model/AssociateEmailIdentityCertificateRequest.h>
 #include <aws/sesv2/model/AssociateEmailIdentityCertificateResult.h>
@@ -116,6 +117,7 @@
 #include <aws/sesv2/model/DeliverabilityDashboardAccountStatus.h>
 #include <aws/sesv2/model/DeliverabilityTestReport.h>
 #include <aws/sesv2/model/DeliverabilityTestStatus.h>
+#include <aws/sesv2/model/DeliveryAttributes.h>
 #include <aws/sesv2/model/DeliveryEventType.h>
 #include <aws/sesv2/model/DeliveryOptions.h>
 #include <aws/sesv2/model/Destination.h>
@@ -309,6 +311,8 @@
 #include <aws/sesv2/model/PricingPlan.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesResult.h>
+#include <aws/sesv2/model/PutAccountDeliveryAttributesRequest.h>
+#include <aws/sesv2/model/PutAccountDeliveryAttributesResult.h>
 #include <aws/sesv2/model/PutAccountDetailsRequest.h>
 #include <aws/sesv2/model/PutAccountDetailsResult.h>
 #include <aws/sesv2/model/PutAccountPricingAttributesRequest.h>
@@ -384,6 +388,7 @@
 #include <aws/sesv2/model/SendQuota.h>
 #include <aws/sesv2/model/SendingOptions.h>
 #include <aws/sesv2/model/SendingStatus.h>
+#include <aws/sesv2/model/SharedPoolDeliveryMode.h>
 #include <aws/sesv2/model/SignatureFormat.h>
 #include <aws/sesv2/model/SigningScheme.h>
 #include <aws/sesv2/model/SmimeSigningScheme.h>

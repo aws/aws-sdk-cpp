@@ -25,6 +25,14 @@ Aws::String UpdateRoleRequest::SerializePayload() const {
     ss << "MaxSessionDuration=" << m_maxSessionDuration << "&";
   }
 
+  if (m_maxSigninSessionDurationHasBeenSet) {
+    ss << "MaxSigninSessionDuration=" << m_maxSigninSessionDuration << "&";
+  }
+
+  if (m_resetMaxSigninSessionDurationHasBeenSet) {
+    ss << "ResetMaxSigninSessionDuration=" << std::boolalpha << m_resetMaxSigninSessionDuration << "&";
+  }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }
