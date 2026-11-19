@@ -38,6 +38,12 @@ void KinesisBuiltInParameters::SetFromClientConfiguration(const KinesisClientCon
 }
 
 void KinesisBuiltInParameters::SetServiceSpecificParameters(const KinesisClientConfiguration& config) {
+  if (config.useFIPS) {
+    SetBooleanParameter("UseFIPS", true);
+  }
+  if (config.useDualStack) {
+    SetBooleanParameter("UseDualStack", true);
+  }
   if (!config.accountId.empty()) {
     SetStringParameter("AccountId", config.accountId);
   }

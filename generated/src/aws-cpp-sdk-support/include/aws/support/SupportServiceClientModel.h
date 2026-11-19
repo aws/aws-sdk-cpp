@@ -70,7 +70,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Support {
-using SupportClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SupportEndpointProviderBase = Aws::Support::Endpoint::SupportEndpointProviderBase;
 using SupportEndpointProvider = Aws::Support::Endpoint::SupportEndpointProvider;
 

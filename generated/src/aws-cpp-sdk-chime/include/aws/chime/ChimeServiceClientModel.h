@@ -109,7 +109,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Chime {
-using ChimeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ChimeEndpointProviderBase = Aws::Chime::Endpoint::ChimeEndpointProviderBase;
 using ChimeEndpointProvider = Aws::Chime::Endpoint::ChimeEndpointProvider;
 

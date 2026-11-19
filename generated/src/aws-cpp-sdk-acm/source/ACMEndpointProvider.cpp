@@ -31,6 +31,24 @@ void ACMClientContextParameters::SetServiceType(Aws::String value) {
 const ACMClientContextParameters::ClientContextParameters::EndpointParameter& ACMClientContextParameters::GetServiceType() const {
   return GetParameter("ServiceType");
 }
+void ACMBuiltInParameters::SetFromClientConfiguration(const ACMClientConfiguration& config) {
+  SetFromClientConfiguration(static_cast<const ACMClientConfiguration::BaseClientConfigClass&>(config));
+  SetServiceSpecificParameters(config);
+}
+
+void ACMBuiltInParameters::SetFromClientConfiguration(const ACMClientConfiguration& config, const Aws::String& serviceName) {
+  SetFromClientConfiguration(static_cast<const ACMClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+  SetServiceSpecificParameters(config);
+}
+
+void ACMBuiltInParameters::SetServiceSpecificParameters(const ACMClientConfiguration& config) {
+  if (config.useFIPS) {
+    SetBooleanParameter("UseFIPS", true);
+  }
+  if (config.useDualStack) {
+    SetBooleanParameter("UseDualStack", true);
+  }
+}
 }  // namespace Endpoint
 }  // namespace ACM
 }  // namespace Aws

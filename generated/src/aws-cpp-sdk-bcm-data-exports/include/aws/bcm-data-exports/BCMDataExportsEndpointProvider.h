@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/bcm-data-exports/BCMDataExportsClientConfiguration.h>
 #include <aws/bcm-data-exports/BCMDataExports_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace BCMDataExports {
 namespace Endpoint {
+using BCMDataExportsClientConfiguration = Aws::BCMDataExports::BCMDataExportsClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using BCMDataExportsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using BCMDataExportsClientConfiguration = Aws::Client::GenericClientConfiguration;
-using BCMDataExportsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_BCMDATAEXPORTS_API BCMDataExportsBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~BCMDataExportsBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const BCMDataExportsClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const BCMDataExportsClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const BCMDataExportsClientConfiguration& config);
+};
 
 /**
  * The type for the BCMDataExports Client Endpoint Provider.
@@ -34,6 +43,24 @@ using BCMDataExportsEndpointProviderBase =
 using BCMDataExportsDefaultEpProviderBase =
     BDDEndpointProvider<BCMDataExportsClientConfiguration, BCMDataExportsBuiltInParameters, BCMDataExportsClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace BCMDataExports
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_BCMDATAEXPORTS_EXTERN template class AWS_BCMDATAEXPORTS_API Aws::Endpoint::EndpointProviderBase<
+    BCMDataExports::Endpoint::BCMDataExportsClientConfiguration, BCMDataExports::Endpoint::BCMDataExportsBuiltInParameters,
+    BCMDataExports::Endpoint::BCMDataExportsClientContextParameters>;
+
+AWS_BCMDATAEXPORTS_EXTERN template class AWS_BCMDATAEXPORTS_API Aws::Endpoint::BDDEndpointProvider<
+    BCMDataExports::Endpoint::BCMDataExportsClientConfiguration, BCMDataExports::Endpoint::BCMDataExportsBuiltInParameters,
+    BCMDataExports::Endpoint::BCMDataExportsClientContextParameters>;
+}  // namespace Endpoint
+
+namespace BCMDataExports {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

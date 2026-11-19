@@ -73,7 +73,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace TimestreamInfluxDB {
-using TimestreamInfluxDBClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TimestreamInfluxDBEndpointProviderBase = Aws::TimestreamInfluxDB::Endpoint::TimestreamInfluxDBEndpointProviderBase;
 using TimestreamInfluxDBEndpointProvider = Aws::TimestreamInfluxDB::Endpoint::TimestreamInfluxDBEndpointProvider;
 

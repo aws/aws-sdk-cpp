@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/braket/BraketClientConfiguration.h>
 #include <aws/braket/Braket_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace Braket {
 namespace Endpoint {
+using BraketClientConfiguration = Aws::Braket::BraketClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using BraketClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using BraketClientConfiguration = Aws::Client::GenericClientConfiguration;
-using BraketBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_BRAKET_API BraketBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~BraketBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const BraketClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const BraketClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const BraketClientConfiguration& config);
+};
 
 /**
  * The type for the Braket Client Endpoint Provider.
@@ -32,6 +41,24 @@ using BraketEndpointProviderBase = EndpointProviderBase<BraketClientConfiguratio
 
 using BraketDefaultEpProviderBase = BDDEndpointProvider<BraketClientConfiguration, BraketBuiltInParameters, BraketClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace Braket
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_BRAKET_EXTERN template class AWS_BRAKET_API
+    Aws::Endpoint::EndpointProviderBase<Braket::Endpoint::BraketClientConfiguration, Braket::Endpoint::BraketBuiltInParameters,
+                                        Braket::Endpoint::BraketClientContextParameters>;
+
+AWS_BRAKET_EXTERN template class AWS_BRAKET_API
+    Aws::Endpoint::BDDEndpointProvider<Braket::Endpoint::BraketClientConfiguration, Braket::Endpoint::BraketBuiltInParameters,
+                                       Braket::Endpoint::BraketClientContextParameters>;
+}  // namespace Endpoint
+
+namespace Braket {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

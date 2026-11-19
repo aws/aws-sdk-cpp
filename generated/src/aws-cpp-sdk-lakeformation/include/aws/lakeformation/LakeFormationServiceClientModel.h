@@ -134,7 +134,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace LakeFormation {
-using LakeFormationClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LakeFormationEndpointProviderBase = Aws::LakeFormation::Endpoint::LakeFormationEndpointProviderBase;
 using LakeFormationEndpointProvider = Aws::LakeFormation::Endpoint::LakeFormationEndpointProvider;
 

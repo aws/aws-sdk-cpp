@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/states/SFNClientConfiguration.h>
 #include <aws/states/SFN_EXPORTS.h>
 
 namespace Aws {
 namespace SFN {
 namespace Endpoint {
+using SFNClientConfiguration = Aws::SFN::SFNClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using SFNClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SFNClientConfiguration = Aws::Client::GenericClientConfiguration;
-using SFNBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_SFN_API SFNBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~SFNBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const SFNClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const SFNClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const SFNClientConfiguration& config);
+};
 
 /**
  * The type for the SFN Client Endpoint Provider.
@@ -32,6 +41,22 @@ using SFNEndpointProviderBase = EndpointProviderBase<SFNClientConfiguration, SFN
 
 using SFNDefaultEpProviderBase = BDDEndpointProvider<SFNClientConfiguration, SFNBuiltInParameters, SFNClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace SFN
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_SFN_EXTERN template class AWS_SFN_API Aws::Endpoint::EndpointProviderBase<
+    SFN::Endpoint::SFNClientConfiguration, SFN::Endpoint::SFNBuiltInParameters, SFN::Endpoint::SFNClientContextParameters>;
+
+AWS_SFN_EXTERN template class AWS_SFN_API Aws::Endpoint::BDDEndpointProvider<
+    SFN::Endpoint::SFNClientConfiguration, SFN::Endpoint::SFNBuiltInParameters, SFN::Endpoint::SFNClientContextParameters>;
+}  // namespace Endpoint
+
+namespace SFN {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

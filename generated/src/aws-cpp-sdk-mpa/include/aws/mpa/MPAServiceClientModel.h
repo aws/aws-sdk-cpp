@@ -71,7 +71,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MPA {
-using MPAClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MPAEndpointProviderBase = Aws::MPA::Endpoint::MPAEndpointProviderBase;
 using MPAEndpointProvider = Aws::MPA::Endpoint::MPAEndpointProvider;
 

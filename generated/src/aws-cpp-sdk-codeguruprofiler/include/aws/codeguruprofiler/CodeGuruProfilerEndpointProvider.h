@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/codeguruprofiler/CodeGuruProfilerClientConfiguration.h>
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace CodeGuruProfiler {
 namespace Endpoint {
+using CodeGuruProfilerClientConfiguration = Aws::CodeGuruProfiler::CodeGuruProfilerClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using CodeGuruProfilerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodeGuruProfilerClientConfiguration = Aws::Client::GenericClientConfiguration;
-using CodeGuruProfilerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CODEGURUPROFILER_API CodeGuruProfilerBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~CodeGuruProfilerBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const CodeGuruProfilerClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const CodeGuruProfilerClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const CodeGuruProfilerClientConfiguration& config);
+};
 
 /**
  * The type for the CodeGuruProfiler Client Endpoint Provider.
@@ -34,6 +43,24 @@ using CodeGuruProfilerEndpointProviderBase =
 using CodeGuruProfilerDefaultEpProviderBase =
     BDDEndpointProvider<CodeGuruProfilerClientConfiguration, CodeGuruProfilerBuiltInParameters, CodeGuruProfilerClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace CodeGuruProfiler
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CODEGURUPROFILER_EXTERN template class AWS_CODEGURUPROFILER_API Aws::Endpoint::EndpointProviderBase<
+    CodeGuruProfiler::Endpoint::CodeGuruProfilerClientConfiguration, CodeGuruProfiler::Endpoint::CodeGuruProfilerBuiltInParameters,
+    CodeGuruProfiler::Endpoint::CodeGuruProfilerClientContextParameters>;
+
+AWS_CODEGURUPROFILER_EXTERN template class AWS_CODEGURUPROFILER_API Aws::Endpoint::BDDEndpointProvider<
+    CodeGuruProfiler::Endpoint::CodeGuruProfilerClientConfiguration, CodeGuruProfiler::Endpoint::CodeGuruProfilerBuiltInParameters,
+    CodeGuruProfiler::Endpoint::CodeGuruProfilerClientContextParameters>;
+}  // namespace Endpoint
+
+namespace CodeGuruProfiler {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

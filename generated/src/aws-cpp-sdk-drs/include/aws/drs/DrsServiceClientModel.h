@@ -121,7 +121,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace drs {
-using DrsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DrsEndpointProviderBase = Aws::drs::Endpoint::DrsEndpointProviderBase;
 using DrsEndpointProvider = Aws::drs::Endpoint::DrsEndpointProvider;
 

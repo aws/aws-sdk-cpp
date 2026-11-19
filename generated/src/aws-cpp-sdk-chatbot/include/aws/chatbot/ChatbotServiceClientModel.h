@@ -90,7 +90,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace chatbot {
-using ChatbotClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ChatbotEndpointProviderBase = Aws::chatbot::Endpoint::ChatbotEndpointProviderBase;
 using ChatbotEndpointProvider = Aws::chatbot::Endpoint::ChatbotEndpointProvider;
 

@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/cleanrooms/CleanRoomsClientConfiguration.h>
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace CleanRooms {
 namespace Endpoint {
+using CleanRoomsClientConfiguration = Aws::CleanRooms::CleanRoomsClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using CleanRoomsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CleanRoomsClientConfiguration = Aws::Client::GenericClientConfiguration;
-using CleanRoomsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CLEANROOMS_API CleanRoomsBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~CleanRoomsBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const CleanRoomsClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const CleanRoomsClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const CleanRoomsClientConfiguration& config);
+};
 
 /**
  * The type for the CleanRooms Client Endpoint Provider.
@@ -34,6 +43,24 @@ using CleanRoomsEndpointProviderBase =
 using CleanRoomsDefaultEpProviderBase =
     BDDEndpointProvider<CleanRoomsClientConfiguration, CleanRoomsBuiltInParameters, CleanRoomsClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace CleanRooms
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CLEANROOMS_EXTERN template class AWS_CLEANROOMS_API Aws::Endpoint::EndpointProviderBase<
+    CleanRooms::Endpoint::CleanRoomsClientConfiguration, CleanRooms::Endpoint::CleanRoomsBuiltInParameters,
+    CleanRooms::Endpoint::CleanRoomsClientContextParameters>;
+
+AWS_CLEANROOMS_EXTERN template class AWS_CLEANROOMS_API Aws::Endpoint::BDDEndpointProvider<
+    CleanRooms::Endpoint::CleanRoomsClientConfiguration, CleanRooms::Endpoint::CleanRoomsBuiltInParameters,
+    CleanRooms::Endpoint::CleanRoomsClientContextParameters>;
+}  // namespace Endpoint
+
+namespace CleanRooms {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

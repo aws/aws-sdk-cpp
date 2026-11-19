@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/appfabric/AppFabricClientConfiguration.h>
 #include <aws/appfabric/AppFabric_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace AppFabric {
 namespace Endpoint {
+using AppFabricClientConfiguration = Aws::AppFabric::AppFabricClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using AppFabricClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppFabricClientConfiguration = Aws::Client::GenericClientConfiguration;
-using AppFabricBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_APPFABRIC_API AppFabricBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~AppFabricBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const AppFabricClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const AppFabricClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const AppFabricClientConfiguration& config);
+};
 
 /**
  * The type for the AppFabric Client Endpoint Provider.
@@ -34,6 +43,24 @@ using AppFabricEndpointProviderBase =
 using AppFabricDefaultEpProviderBase =
     BDDEndpointProvider<AppFabricClientConfiguration, AppFabricBuiltInParameters, AppFabricClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace AppFabric
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_APPFABRIC_EXTERN template class AWS_APPFABRIC_API
+    Aws::Endpoint::EndpointProviderBase<AppFabric::Endpoint::AppFabricClientConfiguration, AppFabric::Endpoint::AppFabricBuiltInParameters,
+                                        AppFabric::Endpoint::AppFabricClientContextParameters>;
+
+AWS_APPFABRIC_EXTERN template class AWS_APPFABRIC_API
+    Aws::Endpoint::BDDEndpointProvider<AppFabric::Endpoint::AppFabricClientConfiguration, AppFabric::Endpoint::AppFabricBuiltInParameters,
+                                       AppFabric::Endpoint::AppFabricClientContextParameters>;
+}  // namespace Endpoint
+
+namespace AppFabric {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

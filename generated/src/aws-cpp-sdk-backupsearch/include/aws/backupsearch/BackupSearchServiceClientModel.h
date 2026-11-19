@@ -60,7 +60,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace BackupSearch {
-using BackupSearchClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BackupSearchEndpointProviderBase = Aws::BackupSearch::Endpoint::BackupSearchEndpointProviderBase;
 using BackupSearchEndpointProvider = Aws::BackupSearch::Endpoint::BackupSearchEndpointProvider;
 

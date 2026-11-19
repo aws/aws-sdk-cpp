@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/b2bi/B2BIClientConfiguration.h>
 #include <aws/b2bi/B2BI_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace B2BI {
 namespace Endpoint {
+using B2BIClientConfiguration = Aws::B2BI::B2BIClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using B2BIClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using B2BIClientConfiguration = Aws::Client::GenericClientConfiguration;
-using B2BIBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_B2BI_API B2BIBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~B2BIBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const B2BIClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const B2BIClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const B2BIClientConfiguration& config);
+};
 
 /**
  * The type for the B2BI Client Endpoint Provider.
@@ -32,6 +41,22 @@ using B2BIEndpointProviderBase = EndpointProviderBase<B2BIClientConfiguration, B
 
 using B2BIDefaultEpProviderBase = BDDEndpointProvider<B2BIClientConfiguration, B2BIBuiltInParameters, B2BIClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace B2BI
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_B2BI_EXTERN template class AWS_B2BI_API Aws::Endpoint::EndpointProviderBase<
+    B2BI::Endpoint::B2BIClientConfiguration, B2BI::Endpoint::B2BIBuiltInParameters, B2BI::Endpoint::B2BIClientContextParameters>;
+
+AWS_B2BI_EXTERN template class AWS_B2BI_API Aws::Endpoint::BDDEndpointProvider<
+    B2BI::Endpoint::B2BIClientConfiguration, B2BI::Endpoint::B2BIBuiltInParameters, B2BI::Endpoint::B2BIClientContextParameters>;
+}  // namespace Endpoint
+
+namespace B2BI {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

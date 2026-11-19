@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/endusermessaging/EndUserMessagingClientConfiguration.h>
 #include <aws/endusermessaging/EndUserMessaging_EXPORTS.h>
 
 namespace Aws {
 namespace EndUserMessaging {
 namespace Endpoint {
+using EndUserMessagingClientConfiguration = Aws::EndUserMessaging::EndUserMessagingClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using EndUserMessagingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using EndUserMessagingClientConfiguration = Aws::Client::GenericClientConfiguration;
-using EndUserMessagingBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_ENDUSERMESSAGING_API EndUserMessagingBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~EndUserMessagingBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const EndUserMessagingClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const EndUserMessagingClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const EndUserMessagingClientConfiguration& config);
+};
 
 /**
  * The type for the EndUserMessaging Client Endpoint Provider.
@@ -34,6 +43,24 @@ using EndUserMessagingEndpointProviderBase =
 using EndUserMessagingDefaultEpProviderBase =
     BDDEndpointProvider<EndUserMessagingClientConfiguration, EndUserMessagingBuiltInParameters, EndUserMessagingClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace EndUserMessaging
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_ENDUSERMESSAGING_EXTERN template class AWS_ENDUSERMESSAGING_API Aws::Endpoint::EndpointProviderBase<
+    EndUserMessaging::Endpoint::EndUserMessagingClientConfiguration, EndUserMessaging::Endpoint::EndUserMessagingBuiltInParameters,
+    EndUserMessaging::Endpoint::EndUserMessagingClientContextParameters>;
+
+AWS_ENDUSERMESSAGING_EXTERN template class AWS_ENDUSERMESSAGING_API Aws::Endpoint::BDDEndpointProvider<
+    EndUserMessaging::Endpoint::EndUserMessagingClientConfiguration, EndUserMessaging::Endpoint::EndUserMessagingBuiltInParameters,
+    EndUserMessaging::Endpoint::EndUserMessagingClientContextParameters>;
+}  // namespace Endpoint
+
+namespace EndUserMessaging {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

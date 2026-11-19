@@ -47,7 +47,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace inspectorscan {
-using InspectorscanClientConfiguration = Aws::Client::GenericClientConfiguration;
 using InspectorscanEndpointProviderBase = Aws::inspectorscan::Endpoint::InspectorscanEndpointProviderBase;
 using InspectorscanEndpointProvider = Aws::inspectorscan::Endpoint::InspectorscanEndpointProvider;
 

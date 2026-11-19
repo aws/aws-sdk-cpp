@@ -99,7 +99,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Route53GlobalResolver {
-using Route53GlobalResolverClientConfiguration = Aws::Client::GenericClientConfiguration;
 using Route53GlobalResolverEndpointProviderBase = Aws::Route53GlobalResolver::Endpoint::Route53GlobalResolverEndpointProviderBase;
 using Route53GlobalResolverEndpointProvider = Aws::Route53GlobalResolver::Endpoint::Route53GlobalResolverEndpointProvider;
 

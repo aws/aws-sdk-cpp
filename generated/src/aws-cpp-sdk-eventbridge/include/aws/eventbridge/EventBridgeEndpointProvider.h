@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/eventbridge/EventBridgeClientConfiguration.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
 
 namespace Aws {
 namespace EventBridge {
 namespace Endpoint {
+using EventBridgeClientConfiguration = Aws::EventBridge::EventBridgeClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using EventBridgeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using EventBridgeClientConfiguration = Aws::Client::GenericClientConfiguration;
-using EventBridgeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_EVENTBRIDGE_API EventBridgeBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~EventBridgeBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const EventBridgeClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const EventBridgeClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const EventBridgeClientConfiguration& config);
+};
 
 /**
  * The type for the EventBridge Client Endpoint Provider.
@@ -34,6 +43,24 @@ using EventBridgeEndpointProviderBase =
 using EventBridgeDefaultEpProviderBase =
     BDDEndpointProvider<EventBridgeClientConfiguration, EventBridgeBuiltInParameters, EventBridgeClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace EventBridge
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_EVENTBRIDGE_EXTERN template class AWS_EVENTBRIDGE_API Aws::Endpoint::EndpointProviderBase<
+    EventBridge::Endpoint::EventBridgeClientConfiguration, EventBridge::Endpoint::EventBridgeBuiltInParameters,
+    EventBridge::Endpoint::EventBridgeClientContextParameters>;
+
+AWS_EVENTBRIDGE_EXTERN template class AWS_EVENTBRIDGE_API Aws::Endpoint::BDDEndpointProvider<
+    EventBridge::Endpoint::EventBridgeClientConfiguration, EventBridge::Endpoint::EventBridgeBuiltInParameters,
+    EventBridge::Endpoint::EventBridgeClientContextParameters>;
+}  // namespace Endpoint
+
+namespace EventBridge {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

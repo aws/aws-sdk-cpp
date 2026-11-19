@@ -60,27 +60,6 @@ class AWS_IOTTWINMAKER_API IoTTwinMakerClient : public Aws::Client::AWSJsonClien
       std::shared_ptr<IoTTwinMakerEndpointProviderBase> endpointProvider = nullptr,
       const Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration& clientConfiguration = Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  IoTTwinMakerClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  IoTTwinMakerClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  IoTTwinMakerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~IoTTwinMakerClient();
 
   /**
@@ -1122,7 +1101,6 @@ class AWS_IOTTWINMAKER_API IoTTwinMakerClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&IoTTwinMakerClient::UpdateWorkspace, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<IoTTwinMakerEndpointProviderBase>& accessEndpointProvider();
 
  private:

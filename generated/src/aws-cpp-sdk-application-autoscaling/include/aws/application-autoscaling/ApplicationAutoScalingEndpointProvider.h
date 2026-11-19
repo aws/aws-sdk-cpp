@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/application-autoscaling/ApplicationAutoScalingClientConfiguration.h>
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace ApplicationAutoScaling {
 namespace Endpoint {
+using ApplicationAutoScalingClientConfiguration = Aws::ApplicationAutoScaling::ApplicationAutoScalingClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ApplicationAutoScalingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ApplicationAutoScalingClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ApplicationAutoScalingBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ApplicationAutoScalingBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ApplicationAutoScalingClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ApplicationAutoScalingClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ApplicationAutoScalingClientConfiguration& config);
+};
 
 /**
  * The type for the ApplicationAutoScaling Client Endpoint Provider.
@@ -36,6 +45,26 @@ using ApplicationAutoScalingDefaultEpProviderBase =
     BDDEndpointProvider<ApplicationAutoScalingClientConfiguration, ApplicationAutoScalingBuiltInParameters,
                         ApplicationAutoScalingClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace ApplicationAutoScaling
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_APPLICATIONAUTOSCALING_EXTERN template class AWS_APPLICATIONAUTOSCALING_API
+    Aws::Endpoint::EndpointProviderBase<ApplicationAutoScaling::Endpoint::ApplicationAutoScalingClientConfiguration,
+                                        ApplicationAutoScaling::Endpoint::ApplicationAutoScalingBuiltInParameters,
+                                        ApplicationAutoScaling::Endpoint::ApplicationAutoScalingClientContextParameters>;
+
+AWS_APPLICATIONAUTOSCALING_EXTERN template class AWS_APPLICATIONAUTOSCALING_API
+    Aws::Endpoint::BDDEndpointProvider<ApplicationAutoScaling::Endpoint::ApplicationAutoScalingClientConfiguration,
+                                       ApplicationAutoScaling::Endpoint::ApplicationAutoScalingBuiltInParameters,
+                                       ApplicationAutoScaling::Endpoint::ApplicationAutoScalingClientContextParameters>;
+}  // namespace Endpoint
+
+namespace ApplicationAutoScaling {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

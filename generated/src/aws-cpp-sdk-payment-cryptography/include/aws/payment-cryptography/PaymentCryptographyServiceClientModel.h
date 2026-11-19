@@ -81,7 +81,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace PaymentCryptography {
-using PaymentCryptographyClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PaymentCryptographyEndpointProviderBase = Aws::PaymentCryptography::Endpoint::PaymentCryptographyEndpointProviderBase;
 using PaymentCryptographyEndpointProvider = Aws::PaymentCryptography::Endpoint::PaymentCryptographyEndpointProvider;
 

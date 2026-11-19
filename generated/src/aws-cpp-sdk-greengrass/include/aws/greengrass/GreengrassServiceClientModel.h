@@ -155,7 +155,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Greengrass {
-using GreengrassClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GreengrassEndpointProviderBase = Aws::Greengrass::Endpoint::GreengrassEndpointProviderBase;
 using GreengrassEndpointProvider = Aws::Greengrass::Endpoint::GreengrassEndpointProvider;
 

@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/networkmanager/NetworkManagerClientConfiguration.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
 namespace Aws {
 namespace NetworkManager {
 namespace Endpoint {
+using NetworkManagerClientConfiguration = Aws::NetworkManager::NetworkManagerClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using NetworkManagerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using NetworkManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
-using NetworkManagerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_NETWORKMANAGER_API NetworkManagerBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~NetworkManagerBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const NetworkManagerClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const NetworkManagerClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const NetworkManagerClientConfiguration& config);
+};
 
 /**
  * The type for the NetworkManager Client Endpoint Provider.
@@ -34,6 +43,24 @@ using NetworkManagerEndpointProviderBase =
 using NetworkManagerDefaultEpProviderBase =
     BDDEndpointProvider<NetworkManagerClientConfiguration, NetworkManagerBuiltInParameters, NetworkManagerClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace NetworkManager
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_NETWORKMANAGER_EXTERN template class AWS_NETWORKMANAGER_API Aws::Endpoint::EndpointProviderBase<
+    NetworkManager::Endpoint::NetworkManagerClientConfiguration, NetworkManager::Endpoint::NetworkManagerBuiltInParameters,
+    NetworkManager::Endpoint::NetworkManagerClientContextParameters>;
+
+AWS_NETWORKMANAGER_EXTERN template class AWS_NETWORKMANAGER_API Aws::Endpoint::BDDEndpointProvider<
+    NetworkManager::Endpoint::NetworkManagerClientConfiguration, NetworkManager::Endpoint::NetworkManagerBuiltInParameters,
+    NetworkManager::Endpoint::NetworkManagerClientContextParameters>;
+}  // namespace Endpoint
+
+namespace NetworkManager {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

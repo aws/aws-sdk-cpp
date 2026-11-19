@@ -159,7 +159,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ConfigService {
-using ConfigServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ConfigServiceEndpointProviderBase = Aws::ConfigService::Endpoint::ConfigServiceEndpointProviderBase;
 using ConfigServiceEndpointProvider = Aws::ConfigService::Endpoint::ConfigServiceEndpointProvider;
 

@@ -164,7 +164,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CustomerProfiles {
-using CustomerProfilesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CustomerProfilesEndpointProviderBase = Aws::CustomerProfiles::Endpoint::CustomerProfilesEndpointProviderBase;
 using CustomerProfilesEndpointProvider = Aws::CustomerProfiles::Endpoint::CustomerProfilesEndpointProvider;
 

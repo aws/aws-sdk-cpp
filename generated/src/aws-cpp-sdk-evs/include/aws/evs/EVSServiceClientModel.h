@@ -73,7 +73,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace EVS {
-using EVSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EVSEndpointProviderBase = Aws::EVS::Endpoint::EVSEndpointProviderBase;
 using EVSEndpointProvider = Aws::EVS::Endpoint::EVSEndpointProvider;
 

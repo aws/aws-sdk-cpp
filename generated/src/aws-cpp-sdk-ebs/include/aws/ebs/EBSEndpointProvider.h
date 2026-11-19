@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ebs/EBSClientConfiguration.h>
 #include <aws/ebs/EBS_EXPORTS.h>
 
 namespace Aws {
 namespace EBS {
 namespace Endpoint {
+using EBSClientConfiguration = Aws::EBS::EBSClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using EBSClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using EBSClientConfiguration = Aws::Client::GenericClientConfiguration;
-using EBSBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_EBS_API EBSBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~EBSBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const EBSClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const EBSClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const EBSClientConfiguration& config);
+};
 
 /**
  * The type for the EBS Client Endpoint Provider.
@@ -32,6 +41,22 @@ using EBSEndpointProviderBase = EndpointProviderBase<EBSClientConfiguration, EBS
 
 using EBSDefaultEpProviderBase = BDDEndpointProvider<EBSClientConfiguration, EBSBuiltInParameters, EBSClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace EBS
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_EBS_EXTERN template class AWS_EBS_API Aws::Endpoint::EndpointProviderBase<
+    EBS::Endpoint::EBSClientConfiguration, EBS::Endpoint::EBSBuiltInParameters, EBS::Endpoint::EBSClientContextParameters>;
+
+AWS_EBS_EXTERN template class AWS_EBS_API Aws::Endpoint::BDDEndpointProvider<
+    EBS::Endpoint::EBSClientConfiguration, EBS::Endpoint::EBSBuiltInParameters, EBS::Endpoint::EBSClientContextParameters>;
+}  // namespace Endpoint
+
+namespace EBS {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

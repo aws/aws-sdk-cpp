@@ -156,7 +156,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace LexModelsV2 {
-using LexModelsV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LexModelsV2EndpointProviderBase = Aws::LexModelsV2::Endpoint::LexModelsV2EndpointProviderBase;
 using LexModelsV2EndpointProvider = Aws::LexModelsV2::Endpoint::LexModelsV2EndpointProvider;
 

@@ -27,6 +27,9 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationBuiltInParameters : pub
   using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
   virtual void SetFromClientConfiguration(const BedrockDataAutomationClientConfiguration& config);
   virtual void SetFromClientConfiguration(const BedrockDataAutomationClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const BedrockDataAutomationClientConfiguration& config);
 };
 
 /**

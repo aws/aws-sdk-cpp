@@ -60,7 +60,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace BCMDataExports {
-using BCMDataExportsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BCMDataExportsEndpointProviderBase = Aws::BCMDataExports::Endpoint::BCMDataExportsEndpointProviderBase;
 using BCMDataExportsEndpointProvider = Aws::BCMDataExports::Endpoint::BCMDataExportsEndpointProvider;
 

@@ -76,27 +76,6 @@ class AWS_QCONNECT_API QConnectClient : public Aws::Client::AWSJsonClient,
                  std::shared_ptr<QConnectEndpointProviderBase> endpointProvider = nullptr,
                  const Aws::QConnect::QConnectClientConfiguration& clientConfiguration = Aws::QConnect::QConnectClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  QConnectClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  QConnectClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  QConnectClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                 const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~QConnectClient();
 
   /**
@@ -2673,7 +2652,6 @@ class AWS_QCONNECT_API QConnectClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&QConnectClient::UpdateSessionData, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<QConnectEndpointProviderBase>& accessEndpointProvider();
 
  private:

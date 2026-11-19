@@ -59,7 +59,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Firehose {
-using FirehoseClientConfiguration = Aws::Client::GenericClientConfiguration;
 using FirehoseEndpointProviderBase = Aws::Firehose::Endpoint::FirehoseEndpointProviderBase;
 using FirehoseEndpointProvider = Aws::Firehose::Endpoint::FirehoseEndpointProvider;
 

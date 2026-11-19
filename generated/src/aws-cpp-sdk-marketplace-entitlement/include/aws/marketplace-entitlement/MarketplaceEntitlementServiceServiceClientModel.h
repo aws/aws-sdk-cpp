@@ -47,7 +47,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MarketplaceEntitlementService {
-using MarketplaceEntitlementServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MarketplaceEntitlementServiceEndpointProviderBase =
     Aws::MarketplaceEntitlementService::Endpoint::MarketplaceEntitlementServiceEndpointProviderBase;
 using MarketplaceEntitlementServiceEndpointProvider =

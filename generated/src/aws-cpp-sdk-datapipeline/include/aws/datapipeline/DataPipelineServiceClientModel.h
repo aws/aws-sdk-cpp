@@ -65,7 +65,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DataPipeline {
-using DataPipelineClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DataPipelineEndpointProviderBase = Aws::DataPipeline::Endpoint::DataPipelineEndpointProviderBase;
 using DataPipelineEndpointProvider = Aws::DataPipeline::Endpoint::DataPipelineEndpointProvider;
 

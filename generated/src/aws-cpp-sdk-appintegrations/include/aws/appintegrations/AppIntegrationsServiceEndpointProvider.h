@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/appintegrations/AppIntegrationsServiceClientConfiguration.h>
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace AppIntegrationsService {
 namespace Endpoint {
+using AppIntegrationsServiceClientConfiguration = Aws::AppIntegrationsService::AppIntegrationsServiceClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using AppIntegrationsServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppIntegrationsServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
-using AppIntegrationsServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~AppIntegrationsServiceBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const AppIntegrationsServiceClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const AppIntegrationsServiceClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const AppIntegrationsServiceClientConfiguration& config);
+};
 
 /**
  * The type for the AppIntegrationsService Client Endpoint Provider.
@@ -36,6 +45,26 @@ using AppIntegrationsServiceDefaultEpProviderBase =
     BDDEndpointProvider<AppIntegrationsServiceClientConfiguration, AppIntegrationsServiceBuiltInParameters,
                         AppIntegrationsServiceClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace AppIntegrationsService
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_APPINTEGRATIONSSERVICE_EXTERN template class AWS_APPINTEGRATIONSSERVICE_API
+    Aws::Endpoint::EndpointProviderBase<AppIntegrationsService::Endpoint::AppIntegrationsServiceClientConfiguration,
+                                        AppIntegrationsService::Endpoint::AppIntegrationsServiceBuiltInParameters,
+                                        AppIntegrationsService::Endpoint::AppIntegrationsServiceClientContextParameters>;
+
+AWS_APPINTEGRATIONSSERVICE_EXTERN template class AWS_APPINTEGRATIONSSERVICE_API
+    Aws::Endpoint::BDDEndpointProvider<AppIntegrationsService::Endpoint::AppIntegrationsServiceClientConfiguration,
+                                       AppIntegrationsService::Endpoint::AppIntegrationsServiceBuiltInParameters,
+                                       AppIntegrationsService::Endpoint::AppIntegrationsServiceClientContextParameters>;
+}  // namespace Endpoint
+
+namespace AppIntegrationsService {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

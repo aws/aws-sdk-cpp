@@ -61,7 +61,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ConnectCampaignsV2 {
-using ConnectCampaignsV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ConnectCampaignsV2EndpointProviderBase = Aws::ConnectCampaignsV2::Endpoint::ConnectCampaignsV2EndpointProviderBase;
 using ConnectCampaignsV2EndpointProvider = Aws::ConnectCampaignsV2::Endpoint::ConnectCampaignsV2EndpointProvider;
 

@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/bcm-recommended-actions/BCMRecommendedActionsClientConfiguration.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActions_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace BCMRecommendedActions {
 namespace Endpoint {
+using BCMRecommendedActionsClientConfiguration = Aws::BCMRecommendedActions::BCMRecommendedActionsClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using BCMRecommendedActionsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using BCMRecommendedActionsClientConfiguration = Aws::Client::GenericClientConfiguration;
-using BCMRecommendedActionsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_BCMRECOMMENDEDACTIONS_API BCMRecommendedActionsBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~BCMRecommendedActionsBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const BCMRecommendedActionsClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const BCMRecommendedActionsClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const BCMRecommendedActionsClientConfiguration& config);
+};
 
 /**
  * The type for the BCMRecommendedActions Client Endpoint Provider.
@@ -36,6 +45,26 @@ using BCMRecommendedActionsDefaultEpProviderBase =
     BDDEndpointProvider<BCMRecommendedActionsClientConfiguration, BCMRecommendedActionsBuiltInParameters,
                         BCMRecommendedActionsClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace BCMRecommendedActions
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_BCMRECOMMENDEDACTIONS_EXTERN template class AWS_BCMRECOMMENDEDACTIONS_API
+    Aws::Endpoint::EndpointProviderBase<BCMRecommendedActions::Endpoint::BCMRecommendedActionsClientConfiguration,
+                                        BCMRecommendedActions::Endpoint::BCMRecommendedActionsBuiltInParameters,
+                                        BCMRecommendedActions::Endpoint::BCMRecommendedActionsClientContextParameters>;
+
+AWS_BCMRECOMMENDEDACTIONS_EXTERN template class AWS_BCMRECOMMENDEDACTIONS_API
+    Aws::Endpoint::BDDEndpointProvider<BCMRecommendedActions::Endpoint::BCMRecommendedActionsClientConfiguration,
+                                       BCMRecommendedActions::Endpoint::BCMRecommendedActionsBuiltInParameters,
+                                       BCMRecommendedActions::Endpoint::BCMRecommendedActionsClientContextParameters>;
+}  // namespace Endpoint
+
+namespace BCMRecommendedActions {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

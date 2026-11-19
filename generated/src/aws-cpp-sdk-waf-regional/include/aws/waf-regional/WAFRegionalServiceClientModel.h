@@ -143,7 +143,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace WAFRegional {
-using WAFRegionalClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WAFRegionalEndpointProviderBase = Aws::WAFRegional::Endpoint::WAFRegionalEndpointProviderBase;
 using WAFRegionalEndpointProvider = Aws::WAFRegional::Endpoint::WAFRegionalEndpointProvider;
 

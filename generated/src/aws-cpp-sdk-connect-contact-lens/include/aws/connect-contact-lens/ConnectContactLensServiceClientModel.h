@@ -47,7 +47,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ConnectContactLens {
-using ConnectContactLensClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ConnectContactLensEndpointProviderBase = Aws::ConnectContactLens::Endpoint::ConnectContactLensEndpointProviderBase;
 using ConnectContactLensEndpointProvider = Aws::ConnectContactLens::Endpoint::ConnectContactLensEndpointProvider;
 

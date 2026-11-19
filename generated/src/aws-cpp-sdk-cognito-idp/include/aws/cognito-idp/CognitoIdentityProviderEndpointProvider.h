@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/cognito-idp/CognitoIdentityProviderClientConfiguration.h>
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace CognitoIdentityProvider {
 namespace Endpoint {
+using CognitoIdentityProviderClientConfiguration = Aws::CognitoIdentityProvider::CognitoIdentityProviderClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using CognitoIdentityProviderClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CognitoIdentityProviderClientConfiguration = Aws::Client::GenericClientConfiguration;
-using CognitoIdentityProviderBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~CognitoIdentityProviderBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const CognitoIdentityProviderClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const CognitoIdentityProviderClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const CognitoIdentityProviderClientConfiguration& config);
+};
 
 /**
  * The type for the CognitoIdentityProvider Client Endpoint Provider.
@@ -36,6 +45,26 @@ using CognitoIdentityProviderDefaultEpProviderBase =
     BDDEndpointProvider<CognitoIdentityProviderClientConfiguration, CognitoIdentityProviderBuiltInParameters,
                         CognitoIdentityProviderClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace CognitoIdentityProvider
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_COGNITOIDENTITYPROVIDER_EXTERN template class AWS_COGNITOIDENTITYPROVIDER_API
+    Aws::Endpoint::EndpointProviderBase<CognitoIdentityProvider::Endpoint::CognitoIdentityProviderClientConfiguration,
+                                        CognitoIdentityProvider::Endpoint::CognitoIdentityProviderBuiltInParameters,
+                                        CognitoIdentityProvider::Endpoint::CognitoIdentityProviderClientContextParameters>;
+
+AWS_COGNITOIDENTITYPROVIDER_EXTERN template class AWS_COGNITOIDENTITYPROVIDER_API
+    Aws::Endpoint::BDDEndpointProvider<CognitoIdentityProvider::Endpoint::CognitoIdentityProviderClientConfiguration,
+                                       CognitoIdentityProvider::Endpoint::CognitoIdentityProviderBuiltInParameters,
+                                       CognitoIdentityProvider::Endpoint::CognitoIdentityProviderClientContextParameters>;
+}  // namespace Endpoint
+
+namespace CognitoIdentityProvider {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

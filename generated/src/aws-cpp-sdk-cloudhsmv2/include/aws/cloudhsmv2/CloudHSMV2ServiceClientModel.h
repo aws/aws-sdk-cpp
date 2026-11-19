@@ -69,7 +69,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CloudHSMV2 {
-using CloudHSMV2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudHSMV2EndpointProviderBase = Aws::CloudHSMV2::Endpoint::CloudHSMV2EndpointProviderBase;
 using CloudHSMV2EndpointProvider = Aws::CloudHSMV2::Endpoint::CloudHSMV2EndpointProvider;
 

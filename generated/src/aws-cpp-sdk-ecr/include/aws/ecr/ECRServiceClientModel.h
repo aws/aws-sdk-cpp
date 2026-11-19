@@ -121,7 +121,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ECR {
-using ECRClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ECREndpointProviderBase = Aws::ECR::Endpoint::ECREndpointProviderBase;
 using ECREndpointProvider = Aws::ECR::Endpoint::ECREndpointProvider;
 

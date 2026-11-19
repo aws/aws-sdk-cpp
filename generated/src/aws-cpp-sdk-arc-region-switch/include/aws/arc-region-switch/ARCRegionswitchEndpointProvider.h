@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/arc-region-switch/ARCRegionswitchClientConfiguration.h>
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace ARCRegionswitch {
 namespace Endpoint {
+using ARCRegionswitchClientConfiguration = Aws::ARCRegionswitch::ARCRegionswitchClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ARCRegionswitchClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ARCRegionswitchClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ARCRegionswitchBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_ARCREGIONSWITCH_API ARCRegionswitchBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ARCRegionswitchBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ARCRegionswitchClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ARCRegionswitchClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ARCRegionswitchClientConfiguration& config);
+};
 
 /**
  * The type for the ARCRegionswitch Client Endpoint Provider.
@@ -34,6 +43,24 @@ using ARCRegionswitchEndpointProviderBase =
 using ARCRegionswitchDefaultEpProviderBase =
     BDDEndpointProvider<ARCRegionswitchClientConfiguration, ARCRegionswitchBuiltInParameters, ARCRegionswitchClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace ARCRegionswitch
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_ARCREGIONSWITCH_EXTERN template class AWS_ARCREGIONSWITCH_API Aws::Endpoint::EndpointProviderBase<
+    ARCRegionswitch::Endpoint::ARCRegionswitchClientConfiguration, ARCRegionswitch::Endpoint::ARCRegionswitchBuiltInParameters,
+    ARCRegionswitch::Endpoint::ARCRegionswitchClientContextParameters>;
+
+AWS_ARCREGIONSWITCH_EXTERN template class AWS_ARCREGIONSWITCH_API Aws::Endpoint::BDDEndpointProvider<
+    ARCRegionswitch::Endpoint::ARCRegionswitchClientConfiguration, ARCRegionswitch::Endpoint::ARCRegionswitchBuiltInParameters,
+    ARCRegionswitch::Endpoint::ARCRegionswitchClientContextParameters>;
+}  // namespace Endpoint
+
+namespace ARCRegionswitch {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

@@ -58,7 +58,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MarketplaceDiscovery {
-using MarketplaceDiscoveryClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MarketplaceDiscoveryEndpointProviderBase = Aws::MarketplaceDiscovery::Endpoint::MarketplaceDiscoveryEndpointProviderBase;
 using MarketplaceDiscoveryEndpointProvider = Aws::MarketplaceDiscovery::Endpoint::MarketplaceDiscoveryEndpointProvider;
 

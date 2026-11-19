@@ -4,24 +4,34 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemakertrainingsessionruntime/SageMakerTrainingSessionRuntimeClientConfiguration.h>
 #include <aws/sagemakertrainingsessionruntime/SageMakerTrainingSessionRuntime_EXPORTS.h>
 
 namespace Aws {
 namespace SageMakerTrainingSessionRuntime {
 namespace Endpoint {
+using SageMakerTrainingSessionRuntimeClientConfiguration =
+    Aws::SageMakerTrainingSessionRuntime::SageMakerTrainingSessionRuntimeClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using SageMakerTrainingSessionRuntimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SageMakerTrainingSessionRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
-using SageMakerTrainingSessionRuntimeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_SAGEMAKERTRAININGSESSIONRUNTIME_API SageMakerTrainingSessionRuntimeBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~SageMakerTrainingSessionRuntimeBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const SageMakerTrainingSessionRuntimeClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const SageMakerTrainingSessionRuntimeClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const SageMakerTrainingSessionRuntimeClientConfiguration& config);
+};
 
 /**
  * The type for the SageMakerTrainingSessionRuntime Client Endpoint Provider.
@@ -36,6 +46,26 @@ using SageMakerTrainingSessionRuntimeDefaultEpProviderBase =
     BDDEndpointProvider<SageMakerTrainingSessionRuntimeClientConfiguration, SageMakerTrainingSessionRuntimeBuiltInParameters,
                         SageMakerTrainingSessionRuntimeClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace SageMakerTrainingSessionRuntime
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_SAGEMAKERTRAININGSESSIONRUNTIME_EXTERN template class AWS_SAGEMAKERTRAININGSESSIONRUNTIME_API
+    Aws::Endpoint::EndpointProviderBase<SageMakerTrainingSessionRuntime::Endpoint::SageMakerTrainingSessionRuntimeClientConfiguration,
+                                        SageMakerTrainingSessionRuntime::Endpoint::SageMakerTrainingSessionRuntimeBuiltInParameters,
+                                        SageMakerTrainingSessionRuntime::Endpoint::SageMakerTrainingSessionRuntimeClientContextParameters>;
+
+AWS_SAGEMAKERTRAININGSESSIONRUNTIME_EXTERN template class AWS_SAGEMAKERTRAININGSESSIONRUNTIME_API
+    Aws::Endpoint::BDDEndpointProvider<SageMakerTrainingSessionRuntime::Endpoint::SageMakerTrainingSessionRuntimeClientConfiguration,
+                                       SageMakerTrainingSessionRuntime::Endpoint::SageMakerTrainingSessionRuntimeBuiltInParameters,
+                                       SageMakerTrainingSessionRuntime::Endpoint::SageMakerTrainingSessionRuntimeClientContextParameters>;
+}  // namespace Endpoint
+
+namespace SageMakerTrainingSessionRuntime {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

@@ -97,7 +97,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MediaTailor {
-using MediaTailorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MediaTailorEndpointProviderBase = Aws::MediaTailor::Endpoint::MediaTailorEndpointProviderBase;
 using MediaTailorEndpointProvider = Aws::MediaTailor::Endpoint::MediaTailorEndpointProvider;
 

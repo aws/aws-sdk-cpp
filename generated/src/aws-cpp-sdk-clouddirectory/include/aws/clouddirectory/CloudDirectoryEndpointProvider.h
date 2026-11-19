@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/clouddirectory/CloudDirectoryClientConfiguration.h>
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace CloudDirectory {
 namespace Endpoint {
+using CloudDirectoryClientConfiguration = Aws::CloudDirectory::CloudDirectoryClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using CloudDirectoryClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudDirectoryClientConfiguration = Aws::Client::GenericClientConfiguration;
-using CloudDirectoryBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CLOUDDIRECTORY_API CloudDirectoryBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~CloudDirectoryBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const CloudDirectoryClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const CloudDirectoryClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const CloudDirectoryClientConfiguration& config);
+};
 
 /**
  * The type for the CloudDirectory Client Endpoint Provider.
@@ -34,6 +43,24 @@ using CloudDirectoryEndpointProviderBase =
 using CloudDirectoryDefaultEpProviderBase =
     BDDEndpointProvider<CloudDirectoryClientConfiguration, CloudDirectoryBuiltInParameters, CloudDirectoryClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace CloudDirectory
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CLOUDDIRECTORY_EXTERN template class AWS_CLOUDDIRECTORY_API Aws::Endpoint::EndpointProviderBase<
+    CloudDirectory::Endpoint::CloudDirectoryClientConfiguration, CloudDirectory::Endpoint::CloudDirectoryBuiltInParameters,
+    CloudDirectory::Endpoint::CloudDirectoryClientContextParameters>;
+
+AWS_CLOUDDIRECTORY_EXTERN template class AWS_CLOUDDIRECTORY_API Aws::Endpoint::BDDEndpointProvider<
+    CloudDirectory::Endpoint::CloudDirectoryClientConfiguration, CloudDirectory::Endpoint::CloudDirectoryBuiltInParameters,
+    CloudDirectory::Endpoint::CloudDirectoryClientContextParameters>;
+}  // namespace Endpoint
+
+namespace CloudDirectory {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

@@ -86,7 +86,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ComputeOptimizer {
-using ComputeOptimizerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ComputeOptimizerEndpointProviderBase = Aws::ComputeOptimizer::Endpoint::ComputeOptimizerEndpointProviderBase;
 using ComputeOptimizerEndpointProvider = Aws::ComputeOptimizer::Endpoint::ComputeOptimizerEndpointProvider;
 

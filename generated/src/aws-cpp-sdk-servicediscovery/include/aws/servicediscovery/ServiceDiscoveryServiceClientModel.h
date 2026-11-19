@@ -79,7 +79,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ServiceDiscovery {
-using ServiceDiscoveryClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ServiceDiscoveryEndpointProviderBase = Aws::ServiceDiscovery::Endpoint::ServiceDiscoveryEndpointProviderBase;
 using ServiceDiscoveryEndpointProvider = Aws::ServiceDiscovery::Endpoint::ServiceDiscoveryEndpointProvider;
 

@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mq/MQClientConfiguration.h>
 #include <aws/mq/MQ_EXPORTS.h>
 
 namespace Aws {
 namespace MQ {
 namespace Endpoint {
+using MQClientConfiguration = Aws::MQ::MQClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using MQClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MQClientConfiguration = Aws::Client::GenericClientConfiguration;
-using MQBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_MQ_API MQBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~MQBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const MQClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const MQClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const MQClientConfiguration& config);
+};
 
 /**
  * The type for the MQ Client Endpoint Provider.
@@ -32,6 +41,22 @@ using MQEndpointProviderBase = EndpointProviderBase<MQClientConfiguration, MQBui
 
 using MQDefaultEpProviderBase = BDDEndpointProvider<MQClientConfiguration, MQBuiltInParameters, MQClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace MQ
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_MQ_EXTERN template class AWS_MQ_API Aws::Endpoint::EndpointProviderBase<
+    MQ::Endpoint::MQClientConfiguration, MQ::Endpoint::MQBuiltInParameters, MQ::Endpoint::MQClientContextParameters>;
+
+AWS_MQ_EXTERN template class AWS_MQ_API Aws::Endpoint::BDDEndpointProvider<
+    MQ::Endpoint::MQClientConfiguration, MQ::Endpoint::MQBuiltInParameters, MQ::Endpoint::MQClientContextParameters>;
+}  // namespace Endpoint
+
+namespace MQ {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

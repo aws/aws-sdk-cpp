@@ -58,7 +58,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace AIOps {
-using AIOpsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AIOpsEndpointProviderBase = Aws::AIOps::Endpoint::AIOpsEndpointProviderBase;
 using AIOpsEndpointProvider = Aws::AIOps::Endpoint::AIOpsEndpointProvider;
 

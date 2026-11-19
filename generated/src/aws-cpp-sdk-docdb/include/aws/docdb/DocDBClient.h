@@ -56,27 +56,6 @@ class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient,
               std::shared_ptr<DocDBEndpointProviderBase> endpointProvider = nullptr,
               const Aws::DocDB::DocDBClientConfiguration& clientConfiguration = Aws::DocDB::DocDBClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  DocDBClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  DocDBClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  DocDBClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-              const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~DocDBClient();
 
   /**
@@ -1813,7 +1792,6 @@ class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient,
     return SubmitAsync(&DocDBClient::SwitchoverGlobalCluster, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<DocDBEndpointProviderBase>& accessEndpointProvider();
 
  private:

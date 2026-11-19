@@ -144,7 +144,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace odb {
-using OdbClientConfiguration = Aws::Client::GenericClientConfiguration;
 using OdbEndpointProviderBase = Aws::odb::Endpoint::OdbEndpointProviderBase;
 using OdbEndpointProvider = Aws::odb::Endpoint::OdbEndpointProvider;
 

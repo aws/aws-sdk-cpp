@@ -72,7 +72,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Budgets {
-using BudgetsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BudgetsEndpointProviderBase = Aws::Budgets::Endpoint::BudgetsEndpointProviderBase;
 using BudgetsEndpointProvider = Aws::Budgets::Endpoint::BudgetsEndpointProvider;
 

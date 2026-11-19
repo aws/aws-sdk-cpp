@@ -94,7 +94,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ivsrealtime {
-using IvsrealtimeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IvsrealtimeEndpointProviderBase = Aws::ivsrealtime::Endpoint::IvsrealtimeEndpointProviderBase;
 using IvsrealtimeEndpointProvider = Aws::ivsrealtime::Endpoint::IvsrealtimeEndpointProvider;
 

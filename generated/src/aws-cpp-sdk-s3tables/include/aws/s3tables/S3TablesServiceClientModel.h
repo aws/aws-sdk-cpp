@@ -80,7 +80,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace S3Tables {
-using S3TablesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using S3TablesEndpointProviderBase = Aws::S3Tables::Endpoint::S3TablesEndpointProviderBase;
 using S3TablesEndpointProvider = Aws::S3Tables::Endpoint::S3TablesEndpointProvider;
 

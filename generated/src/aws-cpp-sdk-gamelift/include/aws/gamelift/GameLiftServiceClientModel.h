@@ -185,7 +185,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace GameLift {
-using GameLiftClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GameLiftEndpointProviderBase = Aws::GameLift::Endpoint::GameLiftEndpointProviderBase;
 using GameLiftEndpointProvider = Aws::GameLift::Endpoint::GameLiftEndpointProvider;
 

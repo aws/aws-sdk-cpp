@@ -151,7 +151,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace StorageGateway {
-using StorageGatewayClientConfiguration = Aws::Client::GenericClientConfiguration;
 using StorageGatewayEndpointProviderBase = Aws::StorageGateway::Endpoint::StorageGatewayEndpointProviderBase;
 using StorageGatewayEndpointProvider = Aws::StorageGateway::Endpoint::StorageGatewayEndpointProvider;
 

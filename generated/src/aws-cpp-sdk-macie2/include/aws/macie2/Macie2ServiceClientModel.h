@@ -162,7 +162,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Macie2 {
-using Macie2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using Macie2EndpointProviderBase = Aws::Macie2::Endpoint::Macie2EndpointProviderBase;
 using Macie2EndpointProvider = Aws::Macie2::Endpoint::Macie2EndpointProvider;
 

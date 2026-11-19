@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/outposts/OutpostsClientConfiguration.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
 
 namespace Aws {
 namespace Outposts {
 namespace Endpoint {
+using OutpostsClientConfiguration = Aws::Outposts::OutpostsClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using OutpostsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using OutpostsClientConfiguration = Aws::Client::GenericClientConfiguration;
-using OutpostsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_OUTPOSTS_API OutpostsBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~OutpostsBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const OutpostsClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const OutpostsClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const OutpostsClientConfiguration& config);
+};
 
 /**
  * The type for the Outposts Client Endpoint Provider.
@@ -34,6 +43,24 @@ using OutpostsEndpointProviderBase =
 using OutpostsDefaultEpProviderBase =
     BDDEndpointProvider<OutpostsClientConfiguration, OutpostsBuiltInParameters, OutpostsClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace Outposts
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_OUTPOSTS_EXTERN template class AWS_OUTPOSTS_API
+    Aws::Endpoint::EndpointProviderBase<Outposts::Endpoint::OutpostsClientConfiguration, Outposts::Endpoint::OutpostsBuiltInParameters,
+                                        Outposts::Endpoint::OutpostsClientContextParameters>;
+
+AWS_OUTPOSTS_EXTERN template class AWS_OUTPOSTS_API
+    Aws::Endpoint::BDDEndpointProvider<Outposts::Endpoint::OutpostsClientConfiguration, Outposts::Endpoint::OutpostsBuiltInParameters,
+                                       Outposts::Endpoint::OutpostsClientContextParameters>;
+}  // namespace Endpoint
+
+namespace Outposts {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

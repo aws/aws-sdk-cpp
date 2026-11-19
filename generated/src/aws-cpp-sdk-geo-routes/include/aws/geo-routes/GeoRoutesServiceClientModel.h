@@ -51,7 +51,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace GeoRoutes {
-using GeoRoutesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GeoRoutesEndpointProviderBase = Aws::GeoRoutes::Endpoint::GeoRoutesEndpointProviderBase;
 using GeoRoutesEndpointProvider = Aws::GeoRoutes::Endpoint::GeoRoutesEndpointProvider;
 

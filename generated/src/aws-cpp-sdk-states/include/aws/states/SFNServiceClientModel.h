@@ -86,7 +86,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SFN {
-using SFNClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SFNEndpointProviderBase = Aws::SFN::Endpoint::SFNEndpointProviderBase;
 using SFNEndpointProvider = Aws::SFN::Endpoint::SFNEndpointProvider;
 

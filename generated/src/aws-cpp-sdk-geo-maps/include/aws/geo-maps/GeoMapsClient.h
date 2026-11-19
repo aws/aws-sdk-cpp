@@ -66,27 +66,6 @@ class AWS_GEOMAPS_API GeoMapsClient : public Aws::Client::AWSJsonClient,
                 std::shared_ptr<GeoMapsEndpointProviderBase> endpointProvider = nullptr,
                 const Aws::GeoMaps::GeoMapsClientConfiguration& clientConfiguration = Aws::GeoMaps::GeoMapsClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  GeoMapsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  GeoMapsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  GeoMapsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~GeoMapsClient();
 
   /**
@@ -244,7 +223,6 @@ class AWS_GEOMAPS_API GeoMapsClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&GeoMapsClient::GetTile, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<GeoMapsEndpointProviderBase>& accessEndpointProvider();
 
  private:

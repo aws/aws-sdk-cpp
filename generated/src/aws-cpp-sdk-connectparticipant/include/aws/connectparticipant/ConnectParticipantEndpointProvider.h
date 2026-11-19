@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/connectparticipant/ConnectParticipantClientConfiguration.h>
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace ConnectParticipant {
 namespace Endpoint {
+using ConnectParticipantClientConfiguration = Aws::ConnectParticipant::ConnectParticipantClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ConnectParticipantClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ConnectParticipantClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ConnectParticipantBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CONNECTPARTICIPANT_API ConnectParticipantBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ConnectParticipantBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ConnectParticipantClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ConnectParticipantClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ConnectParticipantClientConfiguration& config);
+};
 
 /**
  * The type for the ConnectParticipant Client Endpoint Provider.
@@ -36,6 +45,24 @@ using ConnectParticipantDefaultEpProviderBase =
     BDDEndpointProvider<ConnectParticipantClientConfiguration, ConnectParticipantBuiltInParameters,
                         ConnectParticipantClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace ConnectParticipant
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CONNECTPARTICIPANT_EXTERN template class AWS_CONNECTPARTICIPANT_API Aws::Endpoint::EndpointProviderBase<
+    ConnectParticipant::Endpoint::ConnectParticipantClientConfiguration, ConnectParticipant::Endpoint::ConnectParticipantBuiltInParameters,
+    ConnectParticipant::Endpoint::ConnectParticipantClientContextParameters>;
+
+AWS_CONNECTPARTICIPANT_EXTERN template class AWS_CONNECTPARTICIPANT_API Aws::Endpoint::BDDEndpointProvider<
+    ConnectParticipant::Endpoint::ConnectParticipantClientConfiguration, ConnectParticipant::Endpoint::ConnectParticipantBuiltInParameters,
+    ConnectParticipant::Endpoint::ConnectParticipantClientContextParameters>;
+}  // namespace Endpoint
+
+namespace ConnectParticipant {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

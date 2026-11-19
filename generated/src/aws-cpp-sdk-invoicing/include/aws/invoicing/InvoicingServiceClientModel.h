@@ -70,7 +70,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Invoicing {
-using InvoicingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using InvoicingEndpointProviderBase = Aws::Invoicing::Endpoint::InvoicingEndpointProviderBase;
 using InvoicingEndpointProvider = Aws::Invoicing::Endpoint::InvoicingEndpointProvider;
 

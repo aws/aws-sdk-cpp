@@ -58,7 +58,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CostOptimizationHub {
-using CostOptimizationHubClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CostOptimizationHubEndpointProviderBase = Aws::CostOptimizationHub::Endpoint::CostOptimizationHubEndpointProviderBase;
 using CostOptimizationHubEndpointProvider = Aws::CostOptimizationHub::Endpoint::CostOptimizationHubEndpointProvider;
 

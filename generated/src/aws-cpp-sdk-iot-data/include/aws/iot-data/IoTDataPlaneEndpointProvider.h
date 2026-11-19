@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iot-data/IoTDataPlaneClientConfiguration.h>
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
 
 namespace Aws {
 namespace IoTDataPlane {
 namespace Endpoint {
+using IoTDataPlaneClientConfiguration = Aws::IoTDataPlane::IoTDataPlaneClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using IoTDataPlaneClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTDataPlaneClientConfiguration = Aws::Client::GenericClientConfiguration;
-using IoTDataPlaneBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_IOTDATAPLANE_API IoTDataPlaneBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~IoTDataPlaneBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const IoTDataPlaneClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const IoTDataPlaneClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const IoTDataPlaneClientConfiguration& config);
+};
 
 /**
  * The type for the IoTDataPlane Client Endpoint Provider.
@@ -34,6 +43,24 @@ using IoTDataPlaneEndpointProviderBase =
 using IoTDataPlaneDefaultEpProviderBase =
     BDDEndpointProvider<IoTDataPlaneClientConfiguration, IoTDataPlaneBuiltInParameters, IoTDataPlaneClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace IoTDataPlane
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_IOTDATAPLANE_EXTERN template class AWS_IOTDATAPLANE_API Aws::Endpoint::EndpointProviderBase<
+    IoTDataPlane::Endpoint::IoTDataPlaneClientConfiguration, IoTDataPlane::Endpoint::IoTDataPlaneBuiltInParameters,
+    IoTDataPlane::Endpoint::IoTDataPlaneClientContextParameters>;
+
+AWS_IOTDATAPLANE_EXTERN template class AWS_IOTDATAPLANE_API Aws::Endpoint::BDDEndpointProvider<
+    IoTDataPlane::Endpoint::IoTDataPlaneClientConfiguration, IoTDataPlane::Endpoint::IoTDataPlaneBuiltInParameters,
+    IoTDataPlane::Endpoint::IoTDataPlaneClientContextParameters>;
+}  // namespace Endpoint
+
+namespace IoTDataPlane {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

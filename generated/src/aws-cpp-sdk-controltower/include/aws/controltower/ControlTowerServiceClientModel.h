@@ -81,7 +81,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ControlTower {
-using ControlTowerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ControlTowerEndpointProviderBase = Aws::ControlTower::Endpoint::ControlTowerEndpointProviderBase;
 using ControlTowerEndpointProvider = Aws::ControlTower::Endpoint::ControlTowerEndpointProvider;
 

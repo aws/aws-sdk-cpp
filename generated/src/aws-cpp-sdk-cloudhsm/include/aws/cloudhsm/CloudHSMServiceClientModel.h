@@ -46,7 +46,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CloudHSM {
-using CloudHSMClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudHSMEndpointProviderBase = Aws::CloudHSM::Endpoint::CloudHSMEndpointProviderBase;
 using CloudHSMEndpointProvider = Aws::CloudHSM::Endpoint::CloudHSMEndpointProvider;
 

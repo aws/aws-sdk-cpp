@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/config/ConfigServiceClientConfiguration.h>
 #include <aws/config/ConfigService_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace ConfigService {
 namespace Endpoint {
+using ConfigServiceClientConfiguration = Aws::ConfigService::ConfigServiceClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ConfigServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ConfigServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ConfigServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CONFIGSERVICE_API ConfigServiceBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ConfigServiceBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ConfigServiceClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ConfigServiceClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ConfigServiceClientConfiguration& config);
+};
 
 /**
  * The type for the ConfigService Client Endpoint Provider.
@@ -34,6 +43,24 @@ using ConfigServiceEndpointProviderBase =
 using ConfigServiceDefaultEpProviderBase =
     BDDEndpointProvider<ConfigServiceClientConfiguration, ConfigServiceBuiltInParameters, ConfigServiceClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace ConfigService
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CONFIGSERVICE_EXTERN template class AWS_CONFIGSERVICE_API Aws::Endpoint::EndpointProviderBase<
+    ConfigService::Endpoint::ConfigServiceClientConfiguration, ConfigService::Endpoint::ConfigServiceBuiltInParameters,
+    ConfigService::Endpoint::ConfigServiceClientContextParameters>;
+
+AWS_CONFIGSERVICE_EXTERN template class AWS_CONFIGSERVICE_API Aws::Endpoint::BDDEndpointProvider<
+    ConfigService::Endpoint::ConfigServiceClientConfiguration, ConfigService::Endpoint::ConfigServiceBuiltInParameters,
+    ConfigService::Endpoint::ConfigServiceClientContextParameters>;
+}  // namespace Endpoint
+
+namespace ConfigService {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

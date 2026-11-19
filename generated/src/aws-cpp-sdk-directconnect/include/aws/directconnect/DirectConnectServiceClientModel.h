@@ -134,7 +134,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DirectConnect {
-using DirectConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DirectConnectEndpointProviderBase = Aws::DirectConnect::Endpoint::DirectConnectEndpointProviderBase;
 using DirectConnectEndpointProvider = Aws::DirectConnect::Endpoint::DirectConnectEndpointProvider;
 

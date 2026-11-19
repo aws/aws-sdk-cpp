@@ -75,7 +75,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ChimeSDKMediaPipelines {
-using ChimeSDKMediaPipelinesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ChimeSDKMediaPipelinesEndpointProviderBase = Aws::ChimeSDKMediaPipelines::Endpoint::ChimeSDKMediaPipelinesEndpointProviderBase;
 using ChimeSDKMediaPipelinesEndpointProvider = Aws::ChimeSDKMediaPipelines::Endpoint::ChimeSDKMediaPipelinesEndpointProvider;
 

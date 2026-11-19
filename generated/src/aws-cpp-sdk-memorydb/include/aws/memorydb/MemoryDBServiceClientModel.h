@@ -104,7 +104,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MemoryDB {
-using MemoryDBClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MemoryDBEndpointProviderBase = Aws::MemoryDB::Endpoint::MemoryDBEndpointProviderBase;
 using MemoryDBEndpointProvider = Aws::MemoryDB::Endpoint::MemoryDBEndpointProvider;
 

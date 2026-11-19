@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/budgets/BudgetsClientConfiguration.h>
 #include <aws/budgets/Budgets_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace Budgets {
 namespace Endpoint {
+using BudgetsClientConfiguration = Aws::Budgets::BudgetsClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using BudgetsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using BudgetsClientConfiguration = Aws::Client::GenericClientConfiguration;
-using BudgetsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_BUDGETS_API BudgetsBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~BudgetsBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const BudgetsClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const BudgetsClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const BudgetsClientConfiguration& config);
+};
 
 /**
  * The type for the Budgets Client Endpoint Provider.
@@ -34,6 +43,24 @@ using BudgetsEndpointProviderBase =
 using BudgetsDefaultEpProviderBase =
     BDDEndpointProvider<BudgetsClientConfiguration, BudgetsBuiltInParameters, BudgetsClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace Budgets
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_BUDGETS_EXTERN template class AWS_BUDGETS_API
+    Aws::Endpoint::EndpointProviderBase<Budgets::Endpoint::BudgetsClientConfiguration, Budgets::Endpoint::BudgetsBuiltInParameters,
+                                        Budgets::Endpoint::BudgetsClientContextParameters>;
+
+AWS_BUDGETS_EXTERN template class AWS_BUDGETS_API
+    Aws::Endpoint::BDDEndpointProvider<Budgets::Endpoint::BudgetsClientConfiguration, Budgets::Endpoint::BudgetsBuiltInParameters,
+                                       Budgets::Endpoint::BudgetsClientContextParameters>;
+}  // namespace Endpoint
+
+namespace Budgets {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

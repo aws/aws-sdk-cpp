@@ -72,7 +72,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace AppIntegrationsService {
-using AppIntegrationsServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppIntegrationsServiceEndpointProviderBase = Aws::AppIntegrationsService::Endpoint::AppIntegrationsServiceEndpointProviderBase;
 using AppIntegrationsServiceEndpointProvider = Aws::AppIntegrationsService::Endpoint::AppIntegrationsServiceEndpointProvider;
 

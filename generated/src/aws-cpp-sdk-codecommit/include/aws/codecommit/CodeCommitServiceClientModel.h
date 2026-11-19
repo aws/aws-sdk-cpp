@@ -119,7 +119,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CodeCommit {
-using CodeCommitClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeCommitEndpointProviderBase = Aws::CodeCommit::Endpoint::CodeCommitEndpointProviderBase;
 using CodeCommitEndpointProvider = Aws::CodeCommit::Endpoint::CodeCommitEndpointProvider;
 

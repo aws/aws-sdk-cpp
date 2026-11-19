@@ -30,13 +30,23 @@ DynamoDBStreamsEndpointProvider::DynamoDBStreamsEndpointProvider()
 
 void DynamoDBStreamsBuiltInParameters::SetFromClientConfiguration(const DynamoDBStreamsClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const DynamoDBStreamsClientConfiguration::BaseClientConfigClass&>(config));
+  SetServiceSpecificParameters(config);
 }
 
 void DynamoDBStreamsBuiltInParameters::SetFromClientConfiguration(const DynamoDBStreamsClientConfiguration& config,
                                                                   const Aws::String& serviceName) {
   SetFromClientConfiguration(static_cast<const DynamoDBStreamsClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+  SetServiceSpecificParameters(config);
 }
 
+void DynamoDBStreamsBuiltInParameters::SetServiceSpecificParameters(const DynamoDBStreamsClientConfiguration& config) {
+  if (config.useFIPS) {
+    SetBooleanParameter("UseFIPS", true);
+  }
+  if (config.useDualStack) {
+    SetBooleanParameter("UseDualStack", true);
+  }
+}
 }  // namespace Endpoint
 }  // namespace DynamoDBStreams
 }  // namespace Aws

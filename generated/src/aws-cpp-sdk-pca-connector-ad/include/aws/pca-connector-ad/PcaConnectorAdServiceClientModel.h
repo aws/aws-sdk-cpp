@@ -63,7 +63,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace PcaConnectorAd {
-using PcaConnectorAdClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PcaConnectorAdEndpointProviderBase = Aws::PcaConnectorAd::Endpoint::PcaConnectorAdEndpointProviderBase;
 using PcaConnectorAdEndpointProvider = Aws::PcaConnectorAd::Endpoint::PcaConnectorAdEndpointProvider;
 

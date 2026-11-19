@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/chime-sdk-identity/ChimeSDKIdentityClientConfiguration.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace ChimeSDKIdentity {
 namespace Endpoint {
+using ChimeSDKIdentityClientConfiguration = Aws::ChimeSDKIdentity::ChimeSDKIdentityClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ChimeSDKIdentityClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ChimeSDKIdentityClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ChimeSDKIdentityBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ChimeSDKIdentityBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ChimeSDKIdentityClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ChimeSDKIdentityClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ChimeSDKIdentityClientConfiguration& config);
+};
 
 /**
  * The type for the ChimeSDKIdentity Client Endpoint Provider.
@@ -34,6 +43,24 @@ using ChimeSDKIdentityEndpointProviderBase =
 using ChimeSDKIdentityDefaultEpProviderBase =
     BDDEndpointProvider<ChimeSDKIdentityClientConfiguration, ChimeSDKIdentityBuiltInParameters, ChimeSDKIdentityClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace ChimeSDKIdentity
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CHIMESDKIDENTITY_EXTERN template class AWS_CHIMESDKIDENTITY_API Aws::Endpoint::EndpointProviderBase<
+    ChimeSDKIdentity::Endpoint::ChimeSDKIdentityClientConfiguration, ChimeSDKIdentity::Endpoint::ChimeSDKIdentityBuiltInParameters,
+    ChimeSDKIdentity::Endpoint::ChimeSDKIdentityClientContextParameters>;
+
+AWS_CHIMESDKIDENTITY_EXTERN template class AWS_CHIMESDKIDENTITY_API Aws::Endpoint::BDDEndpointProvider<
+    ChimeSDKIdentity::Endpoint::ChimeSDKIdentityClientConfiguration, ChimeSDKIdentity::Endpoint::ChimeSDKIdentityBuiltInParameters,
+    ChimeSDKIdentity::Endpoint::ChimeSDKIdentityClientContextParameters>;
+}  // namespace Endpoint
+
+namespace ChimeSDKIdentity {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

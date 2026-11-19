@@ -140,7 +140,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace QConnect {
-using QConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
 using QConnectEndpointProviderBase = Aws::QConnect::Endpoint::QConnectEndpointProviderBase;
 using QConnectEndpointProvider = Aws::QConnect::Endpoint::QConnectEndpointProvider;
 

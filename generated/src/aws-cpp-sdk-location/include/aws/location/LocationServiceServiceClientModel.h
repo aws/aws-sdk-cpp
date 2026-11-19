@@ -117,7 +117,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace LocationService {
-using LocationServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LocationServiceEndpointProviderBase = Aws::LocationService::Endpoint::LocationServiceEndpointProviderBase;
 using LocationServiceEndpointProvider = Aws::LocationService::Endpoint::LocationServiceEndpointProvider;
 

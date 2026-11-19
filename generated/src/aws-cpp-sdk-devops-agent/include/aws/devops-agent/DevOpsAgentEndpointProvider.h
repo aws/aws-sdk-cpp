@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/devops-agent/DevOpsAgentClientConfiguration.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
 
 namespace Aws {
 namespace DevOpsAgent {
 namespace Endpoint {
+using DevOpsAgentClientConfiguration = Aws::DevOpsAgent::DevOpsAgentClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using DevOpsAgentClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DevOpsAgentClientConfiguration = Aws::Client::GenericClientConfiguration;
-using DevOpsAgentBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_DEVOPSAGENT_API DevOpsAgentBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~DevOpsAgentBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const DevOpsAgentClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const DevOpsAgentClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const DevOpsAgentClientConfiguration& config);
+};
 
 /**
  * The type for the DevOpsAgent Client Endpoint Provider.
@@ -34,6 +43,24 @@ using DevOpsAgentEndpointProviderBase =
 using DevOpsAgentDefaultEpProviderBase =
     BDDEndpointProvider<DevOpsAgentClientConfiguration, DevOpsAgentBuiltInParameters, DevOpsAgentClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace DevOpsAgent
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_DEVOPSAGENT_EXTERN template class AWS_DEVOPSAGENT_API Aws::Endpoint::EndpointProviderBase<
+    DevOpsAgent::Endpoint::DevOpsAgentClientConfiguration, DevOpsAgent::Endpoint::DevOpsAgentBuiltInParameters,
+    DevOpsAgent::Endpoint::DevOpsAgentClientContextParameters>;
+
+AWS_DEVOPSAGENT_EXTERN template class AWS_DEVOPSAGENT_API Aws::Endpoint::BDDEndpointProvider<
+    DevOpsAgent::Endpoint::DevOpsAgentClientConfiguration, DevOpsAgent::Endpoint::DevOpsAgentBuiltInParameters,
+    DevOpsAgent::Endpoint::DevOpsAgentClientContextParameters>;
+}  // namespace Endpoint
+
+namespace DevOpsAgent {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

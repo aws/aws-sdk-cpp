@@ -63,7 +63,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace LambdaWeb {
-using LambdaWebClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LambdaWebEndpointProviderBase = Aws::LambdaWeb::Endpoint::LambdaWebEndpointProviderBase;
 using LambdaWebEndpointProvider = Aws::LambdaWeb::Endpoint::LambdaWebEndpointProvider;
 

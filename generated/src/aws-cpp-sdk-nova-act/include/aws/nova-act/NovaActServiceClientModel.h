@@ -63,7 +63,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace NovaAct {
-using NovaActClientConfiguration = Aws::Client::GenericClientConfiguration;
 using NovaActEndpointProviderBase = Aws::NovaAct::Endpoint::NovaActEndpointProviderBase;
 using NovaActEndpointProvider = Aws::NovaAct::Endpoint::NovaActEndpointProvider;
 

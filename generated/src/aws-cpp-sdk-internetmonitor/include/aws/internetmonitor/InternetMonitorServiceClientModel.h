@@ -64,7 +64,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace InternetMonitor {
-using InternetMonitorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using InternetMonitorEndpointProviderBase = Aws::InternetMonitor::Endpoint::InternetMonitorEndpointProviderBase;
 using InternetMonitorEndpointProvider = Aws::InternetMonitor::Endpoint::InternetMonitorEndpointProvider;
 

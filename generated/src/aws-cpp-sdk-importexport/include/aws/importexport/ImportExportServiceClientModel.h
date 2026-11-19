@@ -53,7 +53,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ImportExport {
-using ImportExportClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ImportExportEndpointProviderBase = Aws::ImportExport::Endpoint::ImportExportEndpointProviderBase;
 using ImportExportEndpointProvider = Aws::ImportExport::Endpoint::ImportExportEndpointProvider;
 

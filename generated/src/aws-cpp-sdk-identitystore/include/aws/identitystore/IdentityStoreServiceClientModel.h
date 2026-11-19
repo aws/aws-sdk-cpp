@@ -69,7 +69,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace IdentityStore {
-using IdentityStoreClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IdentityStoreEndpointProviderBase = Aws::IdentityStore::Endpoint::IdentityStoreEndpointProviderBase;
 using IdentityStoreEndpointProvider = Aws::IdentityStore::Endpoint::IdentityStoreEndpointProvider;
 

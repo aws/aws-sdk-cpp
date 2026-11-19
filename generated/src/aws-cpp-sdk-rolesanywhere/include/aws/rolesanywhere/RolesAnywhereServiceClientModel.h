@@ -80,7 +80,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace RolesAnywhere {
-using RolesAnywhereClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RolesAnywhereEndpointProviderBase = Aws::RolesAnywhere::Endpoint::RolesAnywhereEndpointProviderBase;
 using RolesAnywhereEndpointProvider = Aws::RolesAnywhere::Endpoint::RolesAnywhereEndpointProvider;
 

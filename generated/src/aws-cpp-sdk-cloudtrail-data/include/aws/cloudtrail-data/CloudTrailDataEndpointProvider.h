@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/cloudtrail-data/CloudTrailDataClientConfiguration.h>
 #include <aws/cloudtrail-data/CloudTrailData_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace CloudTrailData {
 namespace Endpoint {
+using CloudTrailDataClientConfiguration = Aws::CloudTrailData::CloudTrailDataClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using CloudTrailDataClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudTrailDataClientConfiguration = Aws::Client::GenericClientConfiguration;
-using CloudTrailDataBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CLOUDTRAILDATA_API CloudTrailDataBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~CloudTrailDataBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const CloudTrailDataClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const CloudTrailDataClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const CloudTrailDataClientConfiguration& config);
+};
 
 /**
  * The type for the CloudTrailData Client Endpoint Provider.
@@ -34,6 +43,24 @@ using CloudTrailDataEndpointProviderBase =
 using CloudTrailDataDefaultEpProviderBase =
     BDDEndpointProvider<CloudTrailDataClientConfiguration, CloudTrailDataBuiltInParameters, CloudTrailDataClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace CloudTrailData
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CLOUDTRAILDATA_EXTERN template class AWS_CLOUDTRAILDATA_API Aws::Endpoint::EndpointProviderBase<
+    CloudTrailData::Endpoint::CloudTrailDataClientConfiguration, CloudTrailData::Endpoint::CloudTrailDataBuiltInParameters,
+    CloudTrailData::Endpoint::CloudTrailDataClientContextParameters>;
+
+AWS_CLOUDTRAILDATA_EXTERN template class AWS_CLOUDTRAILDATA_API Aws::Endpoint::BDDEndpointProvider<
+    CloudTrailData::Endpoint::CloudTrailDataClientConfiguration, CloudTrailData::Endpoint::CloudTrailDataBuiltInParameters,
+    CloudTrailData::Endpoint::CloudTrailDataClientContextParameters>;
+}  // namespace Endpoint
+
+namespace CloudTrailData {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

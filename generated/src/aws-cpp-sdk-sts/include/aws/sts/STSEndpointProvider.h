@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sts/STSClientConfiguration.h>
 #include <aws/sts/STS_EXPORTS.h>
 
 namespace Aws {
 namespace STS {
 namespace Endpoint {
+using STSClientConfiguration = Aws::STS::STSClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using STSClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using STSClientConfiguration = Aws::Client::GenericClientConfiguration;
-using STSBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_STS_API STSBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~STSBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const STSClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const STSClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const STSClientConfiguration& config);
+};
 
 /**
  * The type for the STS Client Endpoint Provider.
@@ -32,6 +41,22 @@ using STSEndpointProviderBase = EndpointProviderBase<STSClientConfiguration, STS
 
 using STSDefaultEpProviderBase = BDDEndpointProvider<STSClientConfiguration, STSBuiltInParameters, STSClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace STS
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_STS_EXTERN template class AWS_STS_API Aws::Endpoint::EndpointProviderBase<
+    STS::Endpoint::STSClientConfiguration, STS::Endpoint::STSBuiltInParameters, STS::Endpoint::STSClientContextParameters>;
+
+AWS_STS_EXTERN template class AWS_STS_API Aws::Endpoint::BDDEndpointProvider<
+    STS::Endpoint::STSClientConfiguration, STS::Endpoint::STSBuiltInParameters, STS::Endpoint::STSClientContextParameters>;
+}  // namespace Endpoint
+
+namespace STS {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

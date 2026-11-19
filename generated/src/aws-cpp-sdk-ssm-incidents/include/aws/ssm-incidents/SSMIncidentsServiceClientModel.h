@@ -80,7 +80,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SSMIncidents {
-using SSMIncidentsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SSMIncidentsEndpointProviderBase = Aws::SSMIncidents::Endpoint::SSMIncidentsEndpointProviderBase;
 using SSMIncidentsEndpointProvider = Aws::SSMIncidents::Endpoint::SSMIncidentsEndpointProvider;
 

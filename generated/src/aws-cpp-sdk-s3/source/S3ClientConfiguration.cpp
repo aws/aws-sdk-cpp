@@ -3,7 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/HttpClient.h>
 #include <aws/s3/S3ClientConfiguration.h>
+#include <smithy/client/features/ChecksumInterceptor.h>
+#include <smithy/client/features/ChunkingInterceptor.h>
+#include <smithy/client/features/ExpectHeaderInterceptor.h>
+#include <smithy/identity/signer/built-in/SigV4aSigningRegionSet.h>
 
 namespace Aws {
 namespace S3 {
@@ -16,6 +21,10 @@ static const char S3_DISABLE_EXPRESS_SESSION_ENVIRONMENT_VARIABLE[] = "AWS_S3_DI
 static const char S3_DISABLE_EXPRESS_SESSION_CONFIG_FILE_OPTION[] = "s3_disable_s3_express_auth";
 static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
 static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
+namespace {
+// Default aws-chunked buffer size used to content encode streaming request bodies.
+const size_t DEFAULT_AWS_CHUNKED_BUFFER_SIZE = 64UL * 1024;
+}  // namespace
 
 void S3ClientConfiguration::LoadS3SpecificConfig(const Aws::String& inputProfileName) {
   if (Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET == this->useUSEast1RegionalEndPointOption) {
@@ -47,6 +56,13 @@ void S3ClientConfiguration::LoadS3SpecificConfig(const Aws::String& inputProfile
   if (useArnRegionCfg == "true") {
     useArnRegion = true;
   }
+  awsChunkedBufferSize = DEFAULT_AWS_CHUNKED_BUFFER_SIZE;
+  useFIPS = Aws::Client::ClientConfiguration::LoadConfigFromEnvOrProfile("AWS_USE_FIPS_ENDPOINT", this->profileName, "use_fips_endpoint",
+                                                                         {"true", "false"}, "false") == "true";
+  useDualStack = Aws::Client::ClientConfiguration::LoadConfigFromEnvOrProfile(
+                     "AWS_USE_DUALSTACK_ENDPOINT", this->profileName, "use_dualstack_endpoint", {"true", "false"}, "false") == "true";
+  checksumConfig = Aws::Client::LoadChecksumConfigFromEnvOrProfile(this->profileName);
+  sigV4aSigningRegionSet = Aws::Client::LoadSigV4aSigningRegionSetFromEnvOrProfile(this->profileName);
 }
 
 S3ClientConfiguration::S3ClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
@@ -64,15 +80,22 @@ S3ClientConfiguration::S3ClientConfiguration(bool useSmartDefaults, const char* 
   LoadS3SpecificConfig(this->profileName);
 }
 
-S3ClientConfiguration::S3ClientConfiguration(const Aws::Client::ClientConfiguration& config,
-                                             Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy,
-                                             bool iUseVirtualAddressing,
-                                             US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption)
-    : BaseClientConfigClass(config),
-      useVirtualAddressing(iUseVirtualAddressing),
-      useUSEast1RegionalEndPointOption(iUseUSEast1RegionalEndPointOption),
-      payloadSigningPolicy(iPayloadSigningPolicy) {
+S3ClientConfiguration::S3ClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig) : BaseClientConfigClass(sharedConfig) {
   LoadS3SpecificConfig(this->profileName);
+}
+
+Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> S3ClientConfiguration::CreateInterceptors(
+    const Aws::Client::CreateInterceptorsRequest& request) const {
+  static const char TAG[] = "S3ClientConfiguration";
+  Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> interceptors;
+  interceptors.push_back(Aws::MakeShared<smithy::client::ChecksumInterceptor>(TAG, checksumConfig));
+  interceptors.push_back(Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(
+      TAG, request.httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : httpClientChunkedMode,
+      awsChunkedBufferSize));
+  if (!disableExpectHeader) {
+    interceptors.push_back(Aws::MakeShared<smithy::client::features::ExpectHeaderInterceptor>(TAG));
+  }
+  return interceptors;
 }
 
 }  // namespace S3

@@ -63,7 +63,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DSQL {
-using DSQLClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DSQLEndpointProviderBase = Aws::DSQL::Endpoint::DSQLEndpointProviderBase;
 using DSQLEndpointProvider = Aws::DSQL::Endpoint::DSQLEndpointProvider;
 

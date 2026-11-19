@@ -56,7 +56,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace IoTSecureTunneling {
-using IoTSecureTunnelingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTSecureTunnelingEndpointProviderBase = Aws::IoTSecureTunneling::Endpoint::IoTSecureTunnelingEndpointProviderBase;
 using IoTSecureTunnelingEndpointProvider = Aws::IoTSecureTunneling::Endpoint::IoTSecureTunnelingEndpointProvider;
 

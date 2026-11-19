@@ -97,7 +97,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace KMS {
-using KMSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KMSEndpointProviderBase = Aws::KMS::Endpoint::KMSEndpointProviderBase;
 using KMSEndpointProvider = Aws::KMS::Endpoint::KMSEndpointProvider;
 

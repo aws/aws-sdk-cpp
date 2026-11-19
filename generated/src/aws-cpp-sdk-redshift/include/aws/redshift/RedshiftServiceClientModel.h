@@ -215,7 +215,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Redshift {
-using RedshiftClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RedshiftEndpointProviderBase = Aws::Redshift::Endpoint::RedshiftEndpointProviderBase;
 using RedshiftEndpointProvider = Aws::Redshift::Endpoint::RedshiftEndpointProvider;
 

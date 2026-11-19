@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/MediaConvertClientConfiguration.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
 namespace Aws {
 namespace MediaConvert {
 namespace Endpoint {
+using MediaConvertClientConfiguration = Aws::MediaConvert::MediaConvertClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using MediaConvertClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MediaConvertClientConfiguration = Aws::Client::GenericClientConfiguration;
-using MediaConvertBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_MEDIACONVERT_API MediaConvertBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~MediaConvertBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const MediaConvertClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const MediaConvertClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const MediaConvertClientConfiguration& config);
+};
 
 /**
  * The type for the MediaConvert Client Endpoint Provider.
@@ -34,6 +43,24 @@ using MediaConvertEndpointProviderBase =
 using MediaConvertDefaultEpProviderBase =
     BDDEndpointProvider<MediaConvertClientConfiguration, MediaConvertBuiltInParameters, MediaConvertClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace MediaConvert
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_MEDIACONVERT_EXTERN template class AWS_MEDIACONVERT_API Aws::Endpoint::EndpointProviderBase<
+    MediaConvert::Endpoint::MediaConvertClientConfiguration, MediaConvert::Endpoint::MediaConvertBuiltInParameters,
+    MediaConvert::Endpoint::MediaConvertClientContextParameters>;
+
+AWS_MEDIACONVERT_EXTERN template class AWS_MEDIACONVERT_API Aws::Endpoint::BDDEndpointProvider<
+    MediaConvert::Endpoint::MediaConvertClientConfiguration, MediaConvert::Endpoint::MediaConvertBuiltInParameters,
+    MediaConvert::Endpoint::MediaConvertClientContextParameters>;
+}  // namespace Endpoint
+
+namespace MediaConvert {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

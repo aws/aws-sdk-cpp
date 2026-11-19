@@ -55,7 +55,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace GeoPlaces {
-using GeoPlacesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GeoPlacesEndpointProviderBase = Aws::GeoPlaces::Endpoint::GeoPlacesEndpointProviderBase;
 using GeoPlacesEndpointProvider = Aws::GeoPlaces::Endpoint::GeoPlacesEndpointProvider;
 

@@ -104,14 +104,6 @@ class AWS_CODECATALYST_API CodeCatalystClient : public Aws::Client::AWSJsonClien
       std::shared_ptr<CodeCatalystEndpointProviderBase> endpointProvider = nullptr,
       const Aws::CodeCatalyst::CodeCatalystClientConfiguration& clientConfiguration = Aws::CodeCatalyst::CodeCatalystClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
-   */
-  CodeCatalystClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
-                     const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~CodeCatalystClient();
 
   /**
@@ -1168,7 +1160,6 @@ class AWS_CODECATALYST_API CodeCatalystClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&CodeCatalystClient::VerifySession, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<CodeCatalystEndpointProviderBase>& accessEndpointProvider();
 
  private:

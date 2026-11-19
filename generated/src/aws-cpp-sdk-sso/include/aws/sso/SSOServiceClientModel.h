@@ -50,7 +50,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SSO {
-using SSOClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SSOEndpointProviderBase = Aws::SSO::Endpoint::SSOEndpointProviderBase;
 using SSOEndpointProvider = Aws::SSO::Endpoint::SSOEndpointProvider;
 

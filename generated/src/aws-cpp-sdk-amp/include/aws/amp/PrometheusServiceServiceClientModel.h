@@ -86,7 +86,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace PrometheusService {
-using PrometheusServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PrometheusServiceEndpointProviderBase = Aws::PrometheusService::Endpoint::PrometheusServiceEndpointProviderBase;
 using PrometheusServiceEndpointProvider = Aws::PrometheusService::Endpoint::PrometheusServiceEndpointProvider;
 

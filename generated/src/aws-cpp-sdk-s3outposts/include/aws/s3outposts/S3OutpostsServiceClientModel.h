@@ -53,7 +53,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace S3Outposts {
-using S3OutpostsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using S3OutpostsEndpointProviderBase = Aws::S3Outposts::Endpoint::S3OutpostsEndpointProviderBase;
 using S3OutpostsEndpointProvider = Aws::S3Outposts::Endpoint::S3OutpostsEndpointProvider;
 

@@ -34,30 +34,33 @@ bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::
 }
 
 void TimestreamQueryClientConfiguration::LoadTimestreamQuerySpecificConfig(const Aws::String& inputProfileName) {
+  useFIPS = Aws::Client::ClientConfiguration::LoadConfigFromEnvOrProfile("AWS_USE_FIPS_ENDPOINT", this->profileName, "use_fips_endpoint",
+                                                                         {"true", "false"}, "false") == "true";
+  useDualStack = Aws::Client::ClientConfiguration::LoadConfigFromEnvOrProfile(
+                     "AWS_USE_DUALSTACK_ENDPOINT", this->profileName, "use_dualstack_endpoint", {"true", "false"}, "false") == "true";
   if (!enableEndpointDiscovery) {
     enableEndpointDiscovery = IsEndpointDiscoveryEnabled(this->endpointOverride, inputProfileName);
   }
 }
 
 TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
-    : BaseClientConfigClass(configuration), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
+    : BaseClientConfigClass(configuration) {
   LoadTimestreamQuerySpecificConfig(this->profileName);
 }
 
 TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS)
-    : BaseClientConfigClass(inputProfileName, shouldDisableIMDS), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
+    : BaseClientConfigClass(inputProfileName, shouldDisableIMDS) {
   LoadTimestreamQuerySpecificConfig(Aws::String(inputProfileName));
 }
 
 TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(bool useSmartDefaults, const char* defaultMode,
                                                                        bool shouldDisableIMDS)
-    : BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS),
-      enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
+    : BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS) {
   LoadTimestreamQuerySpecificConfig(this->profileName);
 }
 
-TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(const Aws::Client::ClientConfiguration& config)
-    : BaseClientConfigClass(config), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
+TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig)
+    : BaseClientConfigClass(sharedConfig) {
   LoadTimestreamQuerySpecificConfig(this->profileName);
 }
 

@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/application-signals/ApplicationSignalsClientConfiguration.h>
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace ApplicationSignals {
 namespace Endpoint {
+using ApplicationSignalsClientConfiguration = Aws::ApplicationSignals::ApplicationSignalsClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ApplicationSignalsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ApplicationSignalsClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ApplicationSignalsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_APPLICATIONSIGNALS_API ApplicationSignalsBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ApplicationSignalsBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ApplicationSignalsClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ApplicationSignalsClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ApplicationSignalsClientConfiguration& config);
+};
 
 /**
  * The type for the ApplicationSignals Client Endpoint Provider.
@@ -36,6 +45,24 @@ using ApplicationSignalsDefaultEpProviderBase =
     BDDEndpointProvider<ApplicationSignalsClientConfiguration, ApplicationSignalsBuiltInParameters,
                         ApplicationSignalsClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace ApplicationSignals
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_APPLICATIONSIGNALS_EXTERN template class AWS_APPLICATIONSIGNALS_API Aws::Endpoint::EndpointProviderBase<
+    ApplicationSignals::Endpoint::ApplicationSignalsClientConfiguration, ApplicationSignals::Endpoint::ApplicationSignalsBuiltInParameters,
+    ApplicationSignals::Endpoint::ApplicationSignalsClientContextParameters>;
+
+AWS_APPLICATIONSIGNALS_EXTERN template class AWS_APPLICATIONSIGNALS_API Aws::Endpoint::BDDEndpointProvider<
+    ApplicationSignals::Endpoint::ApplicationSignalsClientConfiguration, ApplicationSignals::Endpoint::ApplicationSignalsBuiltInParameters,
+    ApplicationSignals::Endpoint::ApplicationSignalsClientContextParameters>;
+}  // namespace Endpoint
+
+namespace ApplicationSignals {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

@@ -87,7 +87,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace BCMPricingCalculator {
-using BCMPricingCalculatorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BCMPricingCalculatorEndpointProviderBase = Aws::BCMPricingCalculator::Endpoint::BCMPricingCalculatorEndpointProviderBase;
 using BCMPricingCalculatorEndpointProvider = Aws::BCMPricingCalculator::Endpoint::BCMPricingCalculatorEndpointProvider;
 

@@ -155,7 +155,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ServiceCatalog {
-using ServiceCatalogClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ServiceCatalogEndpointProviderBase = Aws::ServiceCatalog::Endpoint::ServiceCatalogEndpointProviderBase;
 using ServiceCatalogEndpointProvider = Aws::ServiceCatalog::Endpoint::ServiceCatalogEndpointProvider;
 

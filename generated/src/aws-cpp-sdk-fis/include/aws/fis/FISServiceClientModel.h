@@ -76,7 +76,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace FIS {
-using FISClientConfiguration = Aws::Client::GenericClientConfiguration;
 using FISEndpointProviderBase = Aws::FIS::Endpoint::FISEndpointProviderBase;
 using FISEndpointProvider = Aws::FIS::Endpoint::FISEndpointProvider;
 

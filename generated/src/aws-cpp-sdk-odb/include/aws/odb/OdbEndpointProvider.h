@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/odb/OdbClientConfiguration.h>
 #include <aws/odb/Odb_EXPORTS.h>
 
 namespace Aws {
 namespace odb {
 namespace Endpoint {
+using OdbClientConfiguration = Aws::odb::OdbClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using OdbClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using OdbClientConfiguration = Aws::Client::GenericClientConfiguration;
-using OdbBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_ODB_API OdbBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~OdbBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const OdbClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const OdbClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const OdbClientConfiguration& config);
+};
 
 /**
  * The type for the odb Client Endpoint Provider.
@@ -32,6 +41,22 @@ using OdbEndpointProviderBase = EndpointProviderBase<OdbClientConfiguration, Odb
 
 using OdbDefaultEpProviderBase = BDDEndpointProvider<OdbClientConfiguration, OdbBuiltInParameters, OdbClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace odb
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_ODB_EXTERN template class AWS_ODB_API Aws::Endpoint::EndpointProviderBase<
+    odb::Endpoint::OdbClientConfiguration, odb::Endpoint::OdbBuiltInParameters, odb::Endpoint::OdbClientContextParameters>;
+
+AWS_ODB_EXTERN template class AWS_ODB_API Aws::Endpoint::BDDEndpointProvider<
+    odb::Endpoint::OdbClientConfiguration, odb::Endpoint::OdbBuiltInParameters, odb::Endpoint::OdbClientContextParameters>;
+}  // namespace Endpoint
+
+namespace odb {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

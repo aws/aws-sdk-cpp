@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/inspector-scan/InspectorscanClientConfiguration.h>
 #include <aws/inspector-scan/Inspectorscan_EXPORTS.h>
 
 namespace Aws {
 namespace inspectorscan {
 namespace Endpoint {
+using InspectorscanClientConfiguration = Aws::inspectorscan::InspectorscanClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using InspectorscanClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using InspectorscanClientConfiguration = Aws::Client::GenericClientConfiguration;
-using InspectorscanBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_INSPECTORSCAN_API InspectorscanBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~InspectorscanBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const InspectorscanClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const InspectorscanClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const InspectorscanClientConfiguration& config);
+};
 
 /**
  * The type for the inspectorscan Client Endpoint Provider.
@@ -34,6 +43,24 @@ using InspectorscanEndpointProviderBase =
 using InspectorscanDefaultEpProviderBase =
     BDDEndpointProvider<InspectorscanClientConfiguration, InspectorscanBuiltInParameters, InspectorscanClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace inspectorscan
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_INSPECTORSCAN_EXTERN template class AWS_INSPECTORSCAN_API Aws::Endpoint::EndpointProviderBase<
+    inspectorscan::Endpoint::InspectorscanClientConfiguration, inspectorscan::Endpoint::InspectorscanBuiltInParameters,
+    inspectorscan::Endpoint::InspectorscanClientContextParameters>;
+
+AWS_INSPECTORSCAN_EXTERN template class AWS_INSPECTORSCAN_API Aws::Endpoint::BDDEndpointProvider<
+    inspectorscan::Endpoint::InspectorscanClientConfiguration, inspectorscan::Endpoint::InspectorscanBuiltInParameters,
+    inspectorscan::Endpoint::InspectorscanClientContextParameters>;
+}  // namespace Endpoint
+
+namespace inspectorscan {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

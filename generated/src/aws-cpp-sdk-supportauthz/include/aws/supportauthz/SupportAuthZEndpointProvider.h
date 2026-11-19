@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/supportauthz/SupportAuthZClientConfiguration.h>
 #include <aws/supportauthz/SupportAuthZ_EXPORTS.h>
 
 namespace Aws {
 namespace SupportAuthZ {
 namespace Endpoint {
+using SupportAuthZClientConfiguration = Aws::SupportAuthZ::SupportAuthZClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using SupportAuthZClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SupportAuthZClientConfiguration = Aws::Client::GenericClientConfiguration;
-using SupportAuthZBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_SUPPORTAUTHZ_API SupportAuthZBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~SupportAuthZBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const SupportAuthZClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const SupportAuthZClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const SupportAuthZClientConfiguration& config);
+};
 
 /**
  * The type for the SupportAuthZ Client Endpoint Provider.
@@ -34,6 +43,24 @@ using SupportAuthZEndpointProviderBase =
 using SupportAuthZDefaultEpProviderBase =
     BDDEndpointProvider<SupportAuthZClientConfiguration, SupportAuthZBuiltInParameters, SupportAuthZClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace SupportAuthZ
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_SUPPORTAUTHZ_EXTERN template class AWS_SUPPORTAUTHZ_API Aws::Endpoint::EndpointProviderBase<
+    SupportAuthZ::Endpoint::SupportAuthZClientConfiguration, SupportAuthZ::Endpoint::SupportAuthZBuiltInParameters,
+    SupportAuthZ::Endpoint::SupportAuthZClientContextParameters>;
+
+AWS_SUPPORTAUTHZ_EXTERN template class AWS_SUPPORTAUTHZ_API Aws::Endpoint::BDDEndpointProvider<
+    SupportAuthZ::Endpoint::SupportAuthZClientConfiguration, SupportAuthZ::Endpoint::SupportAuthZBuiltInParameters,
+    SupportAuthZ::Endpoint::SupportAuthZClientContextParameters>;
+}  // namespace Endpoint
+
+namespace SupportAuthZ {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

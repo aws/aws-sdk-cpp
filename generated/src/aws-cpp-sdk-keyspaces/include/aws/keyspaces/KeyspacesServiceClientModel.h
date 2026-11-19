@@ -66,7 +66,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Keyspaces {
-using KeyspacesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KeyspacesEndpointProviderBase = Aws::Keyspaces::Endpoint::KeyspacesEndpointProviderBase;
 using KeyspacesEndpointProvider = Aws::Keyspaces::Endpoint::KeyspacesEndpointProvider;
 
