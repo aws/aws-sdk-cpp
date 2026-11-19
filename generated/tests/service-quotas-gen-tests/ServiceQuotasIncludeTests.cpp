@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/service-quotas/ServiceQuotasClient.h>
+#include <aws/service-quotas/ServiceQuotasClientConfiguration.h>
 #include <aws/service-quotas/ServiceQuotasClientPagination.h>
 #include <aws/service-quotas/ServiceQuotasEndpointProvider.h>
 #include <aws/service-quotas/ServiceQuotasErrorMarshaller.h>

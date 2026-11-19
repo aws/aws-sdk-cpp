@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/docdb-elastic/DocDBElasticClient.h>
+#include <aws/docdb-elastic/DocDBElasticClientConfiguration.h>
 #include <aws/docdb-elastic/DocDBElasticClientPagination.h>
 #include <aws/docdb-elastic/DocDBElasticEndpointProvider.h>
 #include <aws/docdb-elastic/DocDBElasticErrorMarshaller.h>

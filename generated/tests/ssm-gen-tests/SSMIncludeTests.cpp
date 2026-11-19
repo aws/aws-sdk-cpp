@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ssm/SSMClient.h>
+#include <aws/ssm/SSMClientConfiguration.h>
 #include <aws/ssm/SSMClientPagination.h>
 #include <aws/ssm/SSMEndpointProvider.h>
 #include <aws/ssm/SSMErrorMarshaller.h>

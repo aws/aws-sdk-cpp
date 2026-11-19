@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/polly/PollyClient.h>
+#include <aws/polly/PollyClientConfiguration.h>
 #include <aws/polly/PollyClientPagination.h>
 #include <aws/polly/PollyEndpointProvider.h>
 #include <aws/polly/PollyErrorMarshaller.h>

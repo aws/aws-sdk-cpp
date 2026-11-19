@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/osis/OSISClient.h>
+#include <aws/osis/OSISClientConfiguration.h>
 #include <aws/osis/OSISClientPagination.h>
 #include <aws/osis/OSISEndpointProvider.h>
 #include <aws/osis/OSISErrorMarshaller.h>

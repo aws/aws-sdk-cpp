@@ -12,7 +12,7 @@ using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
 using namespace Aws::RpcV2Protocol::Model;
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, RpcV2CborComplexError) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 400;
@@ -27,7 +27,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RpcV2CborComplexError) {
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, RpcV2CborEmptyComplexError) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 400;

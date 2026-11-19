@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIClient.h>
+#include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIClientConfiguration.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIClientPagination.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIEndpointProvider.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIErrorMarshaller.h>

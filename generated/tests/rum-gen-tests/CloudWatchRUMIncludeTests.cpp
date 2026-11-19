@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/rum/CloudWatchRUMClient.h>
+#include <aws/rum/CloudWatchRUMClientConfiguration.h>
 #include <aws/rum/CloudWatchRUMClientPagination.h>
 #include <aws/rum/CloudWatchRUMEndpointProvider.h>
 #include <aws/rum/CloudWatchRUMErrorMarshaller.h>

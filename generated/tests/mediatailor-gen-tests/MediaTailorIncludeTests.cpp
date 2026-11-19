@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mediatailor/MediaTailorClient.h>
+#include <aws/mediatailor/MediaTailorClientConfiguration.h>
 #include <aws/mediatailor/MediaTailorClientPagination.h>
 #include <aws/mediatailor/MediaTailorEndpointProvider.h>
 #include <aws/mediatailor/MediaTailorErrorMarshaller.h>

@@ -12,7 +12,7 @@ using JSONRPC10Client = Aws::JSONRPC10::JSONRPC10Client;
 using namespace Aws::JSONRPC10::Model;
 
 AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10HandlesEmptyOutputShape) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -30,7 +30,7 @@ AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10HandlesEmptyOutputShape) {
 }
 
 AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10HandlesUnexpectedJsonOutput) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -48,7 +48,7 @@ AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10HandlesUnexpectedJsonOutput) {
 }
 
 AWS_PROTOCOL_TEST(NoInputAndNoOutput, AwsJson10ServiceRespondsWithNoPayload) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

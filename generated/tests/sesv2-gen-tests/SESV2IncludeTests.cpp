@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sesv2/SESV2Client.h>
+#include <aws/sesv2/SESV2ClientConfiguration.h>
 #include <aws/sesv2/SESV2ClientPagination.h>
 #include <aws/sesv2/SESV2EndpointProvider.h>
 #include <aws/sesv2/SESV2ErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cloudsearch/CloudSearchClient.h>
+#include <aws/cloudsearch/CloudSearchClientConfiguration.h>
 #include <aws/cloudsearch/CloudSearchEndpointProvider.h>
 #include <aws/cloudsearch/CloudSearchErrorMarshaller.h>
 #include <aws/cloudsearch/CloudSearchErrors.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/omics/OmicsClient.h>
+#include <aws/omics/OmicsClientConfiguration.h>
 #include <aws/omics/OmicsClientPagination.h>
 #include <aws/omics/OmicsEndpointProvider.h>
 #include <aws/omics/OmicsErrorMarshaller.h>

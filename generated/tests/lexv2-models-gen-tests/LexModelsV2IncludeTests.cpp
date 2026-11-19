@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/lexv2-models/LexModelsV2Client.h>
+#include <aws/lexv2-models/LexModelsV2ClientConfiguration.h>
 #include <aws/lexv2-models/LexModelsV2ClientPagination.h>
 #include <aws/lexv2-models/LexModelsV2EndpointProvider.h>
 #include <aws/lexv2-models/LexModelsV2ErrorMarshaller.h>

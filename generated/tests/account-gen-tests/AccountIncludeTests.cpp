@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/account/AccountClient.h>
+#include <aws/account/AccountClientConfiguration.h>
 #include <aws/account/AccountClientPagination.h>
 #include <aws/account/AccountEndpointProvider.h>
 #include <aws/account/AccountErrorMarshaller.h>

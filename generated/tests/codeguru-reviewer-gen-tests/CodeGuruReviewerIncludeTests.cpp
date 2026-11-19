@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codeguru-reviewer/CodeGuruReviewerClient.h>
+#include <aws/codeguru-reviewer/CodeGuruReviewerClientConfiguration.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerClientPagination.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerEndpointProvider.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/deadline/DeadlineClient.h>
+#include <aws/deadline/DeadlineClientConfiguration.h>
 #include <aws/deadline/DeadlineClientPagination.h>
 #include <aws/deadline/DeadlineEndpointProvider.h>
 #include <aws/deadline/DeadlineErrorMarshaller.h>

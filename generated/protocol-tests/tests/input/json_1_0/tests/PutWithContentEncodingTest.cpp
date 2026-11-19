@@ -12,7 +12,7 @@ using JSONRPC10Client = Aws::JSONRPC10::JSONRPC10Client;
 using namespace Aws::JSONRPC10::Model;
 
 AWS_PROTOCOL_TEST(PutWithContentEncoding, SDKAppliedContentEncoding_awsJson1_0) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -157,7 +157,7 @@ EcffzjixWU9FpAyGp2rVl4ETRgqljOGw4UgK31r0ZIEGnH0xGz1FtbW1OcQM008JVujRqulCucEMmntr
 }
 
 AWS_PROTOCOL_TEST(PutWithContentEncoding, SDKAppendsGzipAndIgnoresHttpProvidedEncoding_awsJson1_0) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   SetMockResponse();
 

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/connect-contact-lens/ConnectContactLensClient.h>
+#include <aws/connect-contact-lens/ConnectContactLensClientConfiguration.h>
 #include <aws/connect-contact-lens/ConnectContactLensClientPagination.h>
 #include <aws/connect-contact-lens/ConnectContactLensEndpointProvider.h>
 #include <aws/connect-contact-lens/ConnectContactLensErrorMarshaller.h>

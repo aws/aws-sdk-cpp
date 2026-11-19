@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/network-firewall/NetworkFirewallClient.h>
+#include <aws/network-firewall/NetworkFirewallClientConfiguration.h>
 #include <aws/network-firewall/NetworkFirewallClientPagination.h>
 #include <aws/network-firewall/NetworkFirewallEndpointProvider.h>
 #include <aws/network-firewall/NetworkFirewallErrorMarshaller.h>

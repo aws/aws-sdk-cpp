@@ -12,7 +12,7 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(XmlTimestamps, QueryXmlTimestamps) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -35,7 +35,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, QueryXmlTimestamps) {
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, QueryXmlTimestampsWithDateTimeFormat) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -58,7 +58,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, QueryXmlTimestampsWithDateTimeFormat) {
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, QueryXmlTimestampsWithDateTimeOnTargetFormat) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -81,7 +81,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, QueryXmlTimestampsWithDateTimeOnTargetFormat) {
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, QueryXmlTimestampsWithEpochSecondsFormat) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -104,7 +104,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, QueryXmlTimestampsWithEpochSecondsFormat) {
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, QueryXmlTimestampsWithEpochSecondsOnTargetFormat) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -127,7 +127,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, QueryXmlTimestampsWithEpochSecondsOnTargetForma
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, QueryXmlTimestampsWithHttpDateFormat) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -150,7 +150,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, QueryXmlTimestampsWithHttpDateFormat) {
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, QueryXmlTimestampsWithHttpDateOnTargetFormat) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iotthingsgraph/IoTThingsGraphClient.h>
+#include <aws/iotthingsgraph/IoTThingsGraphClientConfiguration.h>
 #include <aws/iotthingsgraph/IoTThingsGraphEndpointProvider.h>
 #include <aws/iotthingsgraph/IoTThingsGraphErrorMarshaller.h>
 #include <aws/iotthingsgraph/IoTThingsGraphErrors.h>

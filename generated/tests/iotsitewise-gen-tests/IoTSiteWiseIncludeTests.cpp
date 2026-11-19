@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iotsitewise/IoTSiteWiseClient.h>
+#include <aws/iotsitewise/IoTSiteWiseClientConfiguration.h>
 #include <aws/iotsitewise/IoTSiteWiseClientPagination.h>
 #include <aws/iotsitewise/IoTSiteWiseEndpointProvider.h>
 #include <aws/iotsitewise/IoTSiteWiseErrorMarshaller.h>

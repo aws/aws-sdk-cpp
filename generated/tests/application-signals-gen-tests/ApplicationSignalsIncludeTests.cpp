@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/application-signals/ApplicationSignalsClient.h>
+#include <aws/application-signals/ApplicationSignalsClientConfiguration.h>
 #include <aws/application-signals/ApplicationSignalsClientPagination.h>
 #include <aws/application-signals/ApplicationSignalsEndpointProvider.h>
 #include <aws/application-signals/ApplicationSignalsErrorMarshaller.h>

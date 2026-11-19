@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/artifact/ArtifactClient.h>
+#include <aws/artifact/ArtifactClientConfiguration.h>
 #include <aws/artifact/ArtifactClientPagination.h>
 #include <aws/artifact/ArtifactEndpointProvider.h>
 #include <aws/artifact/ArtifactErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/entityresolution/EntityResolutionClient.h>
+#include <aws/entityresolution/EntityResolutionClientConfiguration.h>
 #include <aws/entityresolution/EntityResolutionClientPagination.h>
 #include <aws/entityresolution/EntityResolutionEndpointProvider.h>
 #include <aws/entityresolution/EntityResolutionErrorMarshaller.h>

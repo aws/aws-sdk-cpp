@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Client.h>
+#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2ClientConfiguration.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2ClientPagination.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2EndpointProvider.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2ErrorMarshaller.h>

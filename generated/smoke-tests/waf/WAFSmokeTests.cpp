@@ -34,8 +34,6 @@ TEST_F(WAFSmokeTestSuite, ListRulesSuccess )
 {
     Aws::WAF::WAFClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<WAFClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

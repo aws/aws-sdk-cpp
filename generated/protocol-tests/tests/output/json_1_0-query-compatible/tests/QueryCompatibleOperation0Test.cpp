@@ -12,7 +12,8 @@ using QueryCompatibleJSONRPC10Client = Aws::QueryCompatibleJSONRPC10::QueryCompa
 using namespace Aws::QueryCompatibleJSONRPC10::Model;
 
 AWS_PROTOCOL_TEST(QueryCompatibleOperation0, QueryCompatibleAwsJson10CustomCodeError) {
-  QueryCompatibleJSONRPC10Client client(mockCredentials, mockConfig);
+  QueryCompatibleJSONRPC10Client client(mockCredentials, nullptr,
+                                        Aws::QueryCompatibleJSONRPC10::QueryCompatibleJSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 400;

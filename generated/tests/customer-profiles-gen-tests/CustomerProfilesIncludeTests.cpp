@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/customer-profiles/CustomerProfilesClient.h>
+#include <aws/customer-profiles/CustomerProfilesClientConfiguration.h>
 #include <aws/customer-profiles/CustomerProfilesClientPagination.h>
 #include <aws/customer-profiles/CustomerProfilesEndpointProvider.h>
 #include <aws/customer-profiles/CustomerProfilesErrorMarshaller.h>

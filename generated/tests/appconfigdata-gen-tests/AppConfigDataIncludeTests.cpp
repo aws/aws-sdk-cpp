@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/appconfigdata/AppConfigDataClient.h>
+#include <aws/appconfigdata/AppConfigDataClientConfiguration.h>
 #include <aws/appconfigdata/AppConfigDataEndpointProvider.h>
 #include <aws/appconfigdata/AppConfigDataErrorMarshaller.h>
 #include <aws/appconfigdata/AppConfigDataErrors.h>

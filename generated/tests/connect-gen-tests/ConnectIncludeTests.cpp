@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/connect/ConnectClient.h>
+#include <aws/connect/ConnectClientConfiguration.h>
 #include <aws/connect/ConnectClientPagination.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>

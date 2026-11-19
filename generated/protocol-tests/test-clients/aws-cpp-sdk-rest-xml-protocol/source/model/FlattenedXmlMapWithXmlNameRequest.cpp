@@ -31,5 +31,5 @@ Aws::String FlattenedXmlMapWithXmlNameRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }

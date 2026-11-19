@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codeconnections/CodeConnectionsClient.h>
+#include <aws/codeconnections/CodeConnectionsClientConfiguration.h>
 #include <aws/codeconnections/CodeConnectionsClientPagination.h>
 #include <aws/codeconnections/CodeConnectionsEndpointProvider.h>
 #include <aws/codeconnections/CodeConnectionsErrorMarshaller.h>

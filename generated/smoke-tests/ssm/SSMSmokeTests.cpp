@@ -34,8 +34,6 @@ TEST_F(SSMSmokeTestSuite, ListDocumentsSuccess )
 {
     Aws::SSM::SSMClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<SSMClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

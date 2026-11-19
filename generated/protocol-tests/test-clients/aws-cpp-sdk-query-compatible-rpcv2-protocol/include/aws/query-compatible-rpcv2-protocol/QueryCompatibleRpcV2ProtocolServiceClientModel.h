@@ -48,7 +48,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace QueryCompatibleRpcV2Protocol {
-using QueryCompatibleRpcV2ProtocolClientConfiguration = Aws::Client::GenericClientConfiguration;
 using QueryCompatibleRpcV2ProtocolEndpointProviderBase =
     Aws::QueryCompatibleRpcV2Protocol::Endpoint::QueryCompatibleRpcV2ProtocolEndpointProviderBase;
 using QueryCompatibleRpcV2ProtocolEndpointProvider =

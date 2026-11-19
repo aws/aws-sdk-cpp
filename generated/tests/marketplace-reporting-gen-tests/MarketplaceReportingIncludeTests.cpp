@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/marketplace-reporting/MarketplaceReportingClient.h>
+#include <aws/marketplace-reporting/MarketplaceReportingClientConfiguration.h>
 #include <aws/marketplace-reporting/MarketplaceReportingEndpointProvider.h>
 #include <aws/marketplace-reporting/MarketplaceReportingErrorMarshaller.h>
 #include <aws/marketplace-reporting/MarketplaceReportingErrors.h>

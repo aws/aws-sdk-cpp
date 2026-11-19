@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ivschat/IvschatClient.h>
+#include <aws/ivschat/IvschatClientConfiguration.h>
 #include <aws/ivschat/IvschatClientPagination.h>
 #include <aws/ivschat/IvschatEndpointProvider.h>
 #include <aws/ivschat/IvschatErrorMarshaller.h>

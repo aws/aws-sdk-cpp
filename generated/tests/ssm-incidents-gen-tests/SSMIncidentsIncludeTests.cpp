@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ssm-incidents/SSMIncidentsClient.h>
+#include <aws/ssm-incidents/SSMIncidentsClientConfiguration.h>
 #include <aws/ssm-incidents/SSMIncidentsClientPagination.h>
 #include <aws/ssm-incidents/SSMIncidentsEndpointProvider.h>
 #include <aws/ssm-incidents/SSMIncidentsErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sagemakerjobruntime/SagemakerJobRuntimeClient.h>
+#include <aws/sagemakerjobruntime/SagemakerJobRuntimeClientConfiguration.h>
 #include <aws/sagemakerjobruntime/SagemakerJobRuntimeEndpointProvider.h>
 #include <aws/sagemakerjobruntime/SagemakerJobRuntimeErrorMarshaller.h>
 #include <aws/sagemakerjobruntime/SagemakerJobRuntimeErrors.h>

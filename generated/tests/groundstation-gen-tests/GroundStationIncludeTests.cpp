@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/groundstation/GroundStationClient.h>
+#include <aws/groundstation/GroundStationClientConfiguration.h>
 #include <aws/groundstation/GroundStationClientPagination.h>
 #include <aws/groundstation/GroundStationEndpointProvider.h>
 #include <aws/groundstation/GroundStationErrorMarshaller.h>

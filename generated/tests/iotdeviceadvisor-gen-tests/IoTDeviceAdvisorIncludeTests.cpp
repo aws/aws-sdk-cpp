@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorClient.h>
+#include <aws/iotdeviceadvisor/IoTDeviceAdvisorClientConfiguration.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorClientPagination.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorEndpointProvider.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorErrorMarshaller.h>

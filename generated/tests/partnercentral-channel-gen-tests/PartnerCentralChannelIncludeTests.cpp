@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/partnercentral-channel/PartnerCentralChannelClient.h>
+#include <aws/partnercentral-channel/PartnerCentralChannelClientConfiguration.h>
 #include <aws/partnercentral-channel/PartnerCentralChannelClientPagination.h>
 #include <aws/partnercentral-channel/PartnerCentralChannelEndpointProvider.h>
 #include <aws/partnercentral-channel/PartnerCentralChannelErrorMarshaller.h>

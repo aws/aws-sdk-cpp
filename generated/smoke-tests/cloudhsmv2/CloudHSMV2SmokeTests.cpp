@@ -34,8 +34,6 @@ TEST_F(CloudHSMV2SmokeTestSuite, DescribeClustersSuccess )
 {
     Aws::CloudHSMV2::CloudHSMV2ClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<CloudHSMV2Client>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

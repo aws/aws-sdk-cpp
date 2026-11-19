@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/internetmonitor/InternetMonitorClient.h>
+#include <aws/internetmonitor/InternetMonitorClientConfiguration.h>
 #include <aws/internetmonitor/InternetMonitorClientPagination.h>
 #include <aws/internetmonitor/InternetMonitorEndpointProvider.h>
 #include <aws/internetmonitor/InternetMonitorErrorMarshaller.h>

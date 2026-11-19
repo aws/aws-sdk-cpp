@@ -81,7 +81,7 @@ Aws::String SimpleScalarPropertiesRequest::SerializePayload() const {
     ss.str("");
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 Aws::Http::HeaderValueCollection SimpleScalarPropertiesRequest::GetRequestSpecificHeaders() const {

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sagemaker-edge/SagemakerEdgeManagerClient.h>
+#include <aws/sagemaker-edge/SagemakerEdgeManagerClientConfiguration.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerEndpointProvider.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerErrorMarshaller.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerErrors.h>

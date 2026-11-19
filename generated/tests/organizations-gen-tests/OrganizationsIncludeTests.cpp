@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/organizations/OrganizationsClient.h>
+#include <aws/organizations/OrganizationsClientConfiguration.h>
 #include <aws/organizations/OrganizationsClientPagination.h>
 #include <aws/organizations/OrganizationsEndpointProvider.h>
 #include <aws/organizations/OrganizationsErrorMarshaller.h>

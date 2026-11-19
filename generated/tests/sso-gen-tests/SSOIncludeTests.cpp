@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sso/SSOClient.h>
+#include <aws/sso/SSOClientConfiguration.h>
 #include <aws/sso/SSOClientPagination.h>
 #include <aws/sso/SSOEndpointProvider.h>
 #include <aws/sso/SSOErrorMarshaller.h>

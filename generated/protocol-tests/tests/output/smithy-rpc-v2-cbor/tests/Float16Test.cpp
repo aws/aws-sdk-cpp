@@ -15,7 +15,7 @@ using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
 using namespace Aws::RpcV2Protocol::Model;
 
 AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16Inf) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -35,7 +35,7 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16Inf) {
 }
 
 AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16NegInf) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -55,7 +55,7 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16NegInf) {
 }
 
 AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16LSBNaN) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -75,7 +75,7 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16LSBNaN) {
 }
 
 AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16MSBNaN) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -95,7 +95,7 @@ AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16MSBNaN) {
 }
 
 AWS_PROTOCOL_TEST(Float16, RpcV2CborFloat16Subnormal) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

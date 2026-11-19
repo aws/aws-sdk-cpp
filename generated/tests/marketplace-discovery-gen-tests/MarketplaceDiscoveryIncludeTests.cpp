@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/marketplace-discovery/MarketplaceDiscoveryClient.h>
+#include <aws/marketplace-discovery/MarketplaceDiscoveryClientConfiguration.h>
 #include <aws/marketplace-discovery/MarketplaceDiscoveryClientPagination.h>
 #include <aws/marketplace-discovery/MarketplaceDiscoveryEndpointProvider.h>
 #include <aws/marketplace-discovery/MarketplaceDiscoveryErrorMarshaller.h>

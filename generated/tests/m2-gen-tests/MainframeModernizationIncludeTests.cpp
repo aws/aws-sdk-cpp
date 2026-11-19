@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/m2/MainframeModernizationClient.h>
+#include <aws/m2/MainframeModernizationClientConfiguration.h>
 #include <aws/m2/MainframeModernizationClientPagination.h>
 #include <aws/m2/MainframeModernizationEndpointProvider.h>
 #include <aws/m2/MainframeModernizationErrorMarshaller.h>

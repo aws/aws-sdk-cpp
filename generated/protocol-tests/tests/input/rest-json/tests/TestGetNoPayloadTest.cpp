@@ -12,7 +12,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(TestGetNoPayload, RestJsonHttpGetWithNoModeledBody) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -28,7 +28,7 @@ AWS_PROTOCOL_TEST(TestGetNoPayload, RestJsonHttpGetWithNoModeledBody) {
 }
 
 AWS_PROTOCOL_TEST(TestGetNoPayload, RestJsonHttpGetWithHeaderMemberNoModeledBody) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

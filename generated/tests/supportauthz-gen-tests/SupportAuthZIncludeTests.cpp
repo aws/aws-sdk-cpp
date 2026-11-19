@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/supportauthz/SupportAuthZClient.h>
+#include <aws/supportauthz/SupportAuthZClientConfiguration.h>
 #include <aws/supportauthz/SupportAuthZClientPagination.h>
 #include <aws/supportauthz/SupportAuthZEndpointProvider.h>
 #include <aws/supportauthz/SupportAuthZErrorMarshaller.h>

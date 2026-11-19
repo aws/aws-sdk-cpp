@@ -34,8 +34,6 @@ TEST_F(ConfigServiceSmokeTestSuite, DescribeConfigurationRecordersSuccess )
 {
     Aws::ConfigService::ConfigServiceClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<ConfigServiceClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

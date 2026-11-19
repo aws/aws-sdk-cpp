@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/appsync/AppSyncClient.h>
+#include <aws/appsync/AppSyncClientConfiguration.h>
 #include <aws/appsync/AppSyncClientPagination.h>
 #include <aws/appsync/AppSyncEndpointProvider.h>
 #include <aws/appsync/AppSyncErrorMarshaller.h>

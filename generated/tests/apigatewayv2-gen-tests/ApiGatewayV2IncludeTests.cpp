@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/apigatewayv2/ApiGatewayV2Client.h>
+#include <aws/apigatewayv2/ApiGatewayV2ClientConfiguration.h>
 #include <aws/apigatewayv2/ApiGatewayV2ClientPagination.h>
 #include <aws/apigatewayv2/ApiGatewayV2EndpointProvider.h>
 #include <aws/apigatewayv2/ApiGatewayV2ErrorMarshaller.h>

@@ -34,8 +34,6 @@ TEST_F(CloudTrailSmokeTestSuite, DescribeTrailsSuccess )
 {
     Aws::CloudTrail::CloudTrailClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<CloudTrailClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

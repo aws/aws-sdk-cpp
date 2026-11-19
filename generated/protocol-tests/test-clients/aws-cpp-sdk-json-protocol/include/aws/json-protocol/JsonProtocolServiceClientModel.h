@@ -77,7 +77,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace JsonProtocol {
-using JsonProtocolClientConfiguration = Aws::Client::GenericClientConfiguration;
 using JsonProtocolEndpointProviderBase = Aws::JsonProtocol::Endpoint::JsonProtocolEndpointProviderBase;
 using JsonProtocolEndpointProvider = Aws::JsonProtocol::Endpoint::JsonProtocolEndpointProvider;
 

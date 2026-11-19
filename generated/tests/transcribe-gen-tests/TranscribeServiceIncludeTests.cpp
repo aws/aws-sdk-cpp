@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/transcribe/TranscribeServiceClient.h>
+#include <aws/transcribe/TranscribeServiceClientConfiguration.h>
 #include <aws/transcribe/TranscribeServiceClientPagination.h>
 #include <aws/transcribe/TranscribeServiceEndpointProvider.h>
 #include <aws/transcribe/TranscribeServiceErrorMarshaller.h>

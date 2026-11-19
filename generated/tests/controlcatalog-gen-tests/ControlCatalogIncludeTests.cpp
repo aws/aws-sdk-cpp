@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/controlcatalog/ControlCatalogClient.h>
+#include <aws/controlcatalog/ControlCatalogClientConfiguration.h>
 #include <aws/controlcatalog/ControlCatalogClientPagination.h>
 #include <aws/controlcatalog/ControlCatalogEndpointProvider.h>
 #include <aws/controlcatalog/ControlCatalogErrorMarshaller.h>

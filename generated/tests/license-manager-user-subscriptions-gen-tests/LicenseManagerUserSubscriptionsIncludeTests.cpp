@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsClient.h>
+#include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsClientConfiguration.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsClientPagination.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsEndpointProvider.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsErrorMarshaller.h>

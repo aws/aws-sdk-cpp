@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/grafana/ManagedGrafanaClient.h>
+#include <aws/grafana/ManagedGrafanaClientConfiguration.h>
 #include <aws/grafana/ManagedGrafanaClientPagination.h>
 #include <aws/grafana/ManagedGrafanaEndpointProvider.h>
 #include <aws/grafana/ManagedGrafanaErrorMarshaller.h>

@@ -34,8 +34,6 @@ TEST_F(DynamoDBSmokeTestSuite, ListTablesSuccess )
 {
     Aws::DynamoDB::DynamoDBClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

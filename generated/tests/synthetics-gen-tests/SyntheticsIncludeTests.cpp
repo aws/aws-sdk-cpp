@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/synthetics/SyntheticsClient.h>
+#include <aws/synthetics/SyntheticsClientConfiguration.h>
 #include <aws/synthetics/SyntheticsClientPagination.h>
 #include <aws/synthetics/SyntheticsEndpointProvider.h>
 #include <aws/synthetics/SyntheticsErrorMarshaller.h>

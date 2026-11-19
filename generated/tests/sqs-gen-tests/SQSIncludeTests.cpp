@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sqs/SQSClient.h>
+#include <aws/sqs/SQSClientConfiguration.h>
 #include <aws/sqs/SQSClientPagination.h>
 #include <aws/sqs/SQSEndpointProvider.h>
 #include <aws/sqs/SQSErrorMarshaller.h>

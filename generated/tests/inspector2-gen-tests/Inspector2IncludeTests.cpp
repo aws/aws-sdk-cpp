@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/inspector2/Inspector2Client.h>
+#include <aws/inspector2/Inspector2ClientConfiguration.h>
 #include <aws/inspector2/Inspector2ClientPagination.h>
 #include <aws/inspector2/Inspector2EndpointProvider.h>
 #include <aws/inspector2/Inspector2ErrorMarshaller.h>

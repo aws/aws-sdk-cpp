@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/datasync/DataSyncClient.h>
+#include <aws/datasync/DataSyncClientConfiguration.h>
 #include <aws/datasync/DataSyncClientPagination.h>
 #include <aws/datasync/DataSyncEndpointProvider.h>
 #include <aws/datasync/DataSyncErrorMarshaller.h>

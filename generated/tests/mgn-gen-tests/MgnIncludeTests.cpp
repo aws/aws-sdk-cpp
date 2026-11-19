@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mgn/MgnClient.h>
+#include <aws/mgn/MgnClientConfiguration.h>
 #include <aws/mgn/MgnClientPagination.h>
 #include <aws/mgn/MgnEndpointProvider.h>
 #include <aws/mgn/MgnErrorMarshaller.h>

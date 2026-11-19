@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iotwireless/IoTWirelessClient.h>
+#include <aws/iotwireless/IoTWirelessClientConfiguration.h>
 #include <aws/iotwireless/IoTWirelessClientPagination.h>
 #include <aws/iotwireless/IoTWirelessEndpointProvider.h>
 #include <aws/iotwireless/IoTWirelessErrorMarshaller.h>

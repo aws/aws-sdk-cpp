@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/budgets/BudgetsClient.h>
+#include <aws/budgets/BudgetsClientConfiguration.h>
 #include <aws/budgets/BudgetsClientPagination.h>
 #include <aws/budgets/BudgetsEndpointProvider.h>
 #include <aws/budgets/BudgetsErrorMarshaller.h>

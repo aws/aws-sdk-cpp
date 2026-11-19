@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsClient.h>
+#include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsClientConfiguration.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsEndpointProvider.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsErrorMarshaller.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsErrors.h>

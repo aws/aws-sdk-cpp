@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/s3tables/S3TablesClient.h>
+#include <aws/s3tables/S3TablesClientConfiguration.h>
 #include <aws/s3tables/S3TablesClientPagination.h>
 #include <aws/s3tables/S3TablesEndpointProvider.h>
 #include <aws/s3tables/S3TablesErrorMarshaller.h>

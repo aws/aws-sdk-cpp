@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/wellarchitected/WellArchitectedClient.h>
+#include <aws/wellarchitected/WellArchitectedClientConfiguration.h>
 #include <aws/wellarchitected/WellArchitectedClientPagination.h>
 #include <aws/wellarchitected/WellArchitectedEndpointProvider.h>
 #include <aws/wellarchitected/WellArchitectedErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/notificationscontacts/NotificationsContactsClient.h>
+#include <aws/notificationscontacts/NotificationsContactsClientConfiguration.h>
 #include <aws/notificationscontacts/NotificationsContactsClientPagination.h>
 #include <aws/notificationscontacts/NotificationsContactsEndpointProvider.h>
 #include <aws/notificationscontacts/NotificationsContactsErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/s3outposts/S3OutpostsClient.h>
+#include <aws/s3outposts/S3OutpostsClientConfiguration.h>
 #include <aws/s3outposts/S3OutpostsClientPagination.h>
 #include <aws/s3outposts/S3OutpostsEndpointProvider.h>
 #include <aws/s3outposts/S3OutpostsErrorMarshaller.h>

@@ -12,7 +12,7 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_string_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -31,7 +31,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_string_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_string_shapes_with_jsonvalue_trait) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -53,7 +53,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_string_shapes_with_jsonvalue_
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_integer_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -72,7 +72,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_integer_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_long_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -91,7 +91,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_long_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_float_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -110,7 +110,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_float_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_double_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -129,7 +129,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_double_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_blob_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -148,7 +148,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_blob_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_boolean_shapes_true) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -167,7 +167,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_boolean_shapes_true) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_boolean_shapes_false) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -186,7 +186,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_boolean_shapes_false) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -205,7 +205,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_iso8601_timestampformat) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -224,7 +224,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_iso8601
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_httpdate_timestampformat) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -243,7 +243,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_httpdat
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_unixtimestamp_timestampformat) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -262,7 +262,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_timestamp_shapes_with_unixtim
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -281,7 +281,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_list_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -300,7 +300,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_list_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_map_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -333,7 +333,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_map_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_structure_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -366,7 +366,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_structure_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_recursive_structure_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -397,7 +397,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_list_of_recursive_structure_s
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -416,7 +416,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_map_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -435,7 +435,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_map_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_list_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -454,7 +454,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_list_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_structure_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -482,7 +482,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_structure_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_recursive_structure_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -514,7 +514,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_map_of_recursive_structure_sh
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -537,7 +537,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_members_with_locationname_traits) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -560,7 +560,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_members_with_locati
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_structure_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -582,7 +582,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_empty_structure_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_which_have_no_members) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -604,7 +604,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_structure_which_have_no_membe
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, serializes_recursive_structure_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

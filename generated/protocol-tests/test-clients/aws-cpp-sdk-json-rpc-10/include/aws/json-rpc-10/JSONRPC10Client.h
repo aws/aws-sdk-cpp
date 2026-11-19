@@ -45,27 +45,6 @@ class AWS_JSONRPC10_API JSONRPC10Client : public Aws::Client::AWSJsonClient,
                   std::shared_ptr<JSONRPC10EndpointProviderBase> endpointProvider = nullptr,
                   const Aws::JSONRPC10::JSONRPC10ClientConfiguration& clientConfiguration = Aws::JSONRPC10::JSONRPC10ClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  JSONRPC10Client(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  JSONRPC10Client(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  JSONRPC10Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~JSONRPC10Client();
 
   /**
@@ -399,7 +378,6 @@ class AWS_JSONRPC10_API JSONRPC10Client : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&JSONRPC10Client::SimpleScalarProperties, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<JSONRPC10EndpointProviderBase>& accessEndpointProvider();
 
  private:

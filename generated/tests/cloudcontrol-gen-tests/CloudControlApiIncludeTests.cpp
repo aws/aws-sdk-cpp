@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cloudcontrol/CloudControlApiClient.h>
+#include <aws/cloudcontrol/CloudControlApiClientConfiguration.h>
 #include <aws/cloudcontrol/CloudControlApiClientPagination.h>
 #include <aws/cloudcontrol/CloudControlApiEndpointProvider.h>
 #include <aws/cloudcontrol/CloudControlApiErrorMarshaller.h>

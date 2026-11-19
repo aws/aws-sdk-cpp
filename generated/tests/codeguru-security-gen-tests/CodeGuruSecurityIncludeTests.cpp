@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codeguru-security/CodeGuruSecurityClient.h>
+#include <aws/codeguru-security/CodeGuruSecurityClientConfiguration.h>
 #include <aws/codeguru-security/CodeGuruSecurityClientPagination.h>
 #include <aws/codeguru-security/CodeGuruSecurityEndpointProvider.h>
 #include <aws/codeguru-security/CodeGuruSecurityErrorMarshaller.h>

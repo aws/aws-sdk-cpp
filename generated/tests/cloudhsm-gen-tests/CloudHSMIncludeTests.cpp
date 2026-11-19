@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cloudhsm/CloudHSMClient.h>
+#include <aws/cloudhsm/CloudHSMClientConfiguration.h>
 #include <aws/cloudhsm/CloudHSMEndpointProvider.h>
 #include <aws/cloudhsm/CloudHSMErrorMarshaller.h>
 #include <aws/cloudhsm/CloudHSMErrors.h>

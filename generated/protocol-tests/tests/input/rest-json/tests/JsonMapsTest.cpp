@@ -12,7 +12,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonMaps, RestJsonJsonMaps) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -41,7 +41,7 @@ AWS_PROTOCOL_TEST(JsonMaps, RestJsonJsonMaps) {
 }
 
 AWS_PROTOCOL_TEST(JsonMaps, RestJsonSerializesZeroValuesInMaps) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -62,7 +62,7 @@ AWS_PROTOCOL_TEST(JsonMaps, RestJsonSerializesZeroValuesInMaps) {
 }
 
 AWS_PROTOCOL_TEST(JsonMaps, RestJsonSerializesDenseSetMap) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

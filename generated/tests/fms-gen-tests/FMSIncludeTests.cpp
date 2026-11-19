@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/fms/FMSClient.h>
+#include <aws/fms/FMSClientConfiguration.h>
 #include <aws/fms/FMSClientPagination.h>
 #include <aws/fms/FMSEndpointProvider.h>
 #include <aws/fms/FMSErrorMarshaller.h>

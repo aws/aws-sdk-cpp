@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/verifiedpermissions/VerifiedPermissionsClient.h>
+#include <aws/verifiedpermissions/VerifiedPermissionsClientConfiguration.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsClientPagination.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsEndpointProvider.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/lambda-microvms/LambdaMicrovmsClient.h>
+#include <aws/lambda-microvms/LambdaMicrovmsClientConfiguration.h>
 #include <aws/lambda-microvms/LambdaMicrovmsClientPagination.h>
 #include <aws/lambda-microvms/LambdaMicrovmsEndpointProvider.h>
 #include <aws/lambda-microvms/LambdaMicrovmsErrorMarshaller.h>

@@ -12,7 +12,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest1) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -34,7 +34,7 @@ AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest1) {
 }
 
 AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest2) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -56,7 +56,7 @@ AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest2) {
 }
 
 AWS_PROTOCOL_TEST(PostUnionWithJsonName, PostUnionWithJsonNameRequest3) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

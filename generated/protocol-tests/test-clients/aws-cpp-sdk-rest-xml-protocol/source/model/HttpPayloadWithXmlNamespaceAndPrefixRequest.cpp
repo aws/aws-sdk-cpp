@@ -21,7 +21,7 @@ Aws::String HttpPayloadWithXmlNamespaceAndPrefixRequest::SerializePayload() cons
 
   m_nested.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToCompactString();
   }
 
   return {};

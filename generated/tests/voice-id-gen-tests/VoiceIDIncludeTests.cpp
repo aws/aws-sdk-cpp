@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/voice-id/VoiceIDClient.h>
+#include <aws/voice-id/VoiceIDClientConfiguration.h>
 #include <aws/voice-id/VoiceIDClientPagination.h>
 #include <aws/voice-id/VoiceIDEndpointProvider.h>
 #include <aws/voice-id/VoiceIDErrorMarshaller.h>

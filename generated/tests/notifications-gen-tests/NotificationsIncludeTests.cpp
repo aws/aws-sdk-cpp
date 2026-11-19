@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/notifications/NotificationsClient.h>
+#include <aws/notifications/NotificationsClientConfiguration.h>
 #include <aws/notifications/NotificationsClientPagination.h>
 #include <aws/notifications/NotificationsEndpointProvider.h>
 #include <aws/notifications/NotificationsErrorMarshaller.h>

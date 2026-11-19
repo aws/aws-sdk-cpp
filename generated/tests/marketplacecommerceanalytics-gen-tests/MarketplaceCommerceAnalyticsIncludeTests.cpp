@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsClient.h>
+#include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsClientConfiguration.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsEndpointProvider.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsErrorMarshaller.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsErrors.h>

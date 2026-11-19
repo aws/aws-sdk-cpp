@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/imagebuilder/ImagebuilderClient.h>
+#include <aws/imagebuilder/ImagebuilderClientConfiguration.h>
 #include <aws/imagebuilder/ImagebuilderClientPagination.h>
 #include <aws/imagebuilder/ImagebuilderEndpointProvider.h>
 #include <aws/imagebuilder/ImagebuilderErrorMarshaller.h>

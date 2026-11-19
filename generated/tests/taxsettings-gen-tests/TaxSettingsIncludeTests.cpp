@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/taxsettings/TaxSettingsClient.h>
+#include <aws/taxsettings/TaxSettingsClientConfiguration.h>
 #include <aws/taxsettings/TaxSettingsClientPagination.h>
 #include <aws/taxsettings/TaxSettingsEndpointProvider.h>
 #include <aws/taxsettings/TaxSettingsErrorMarshaller.h>

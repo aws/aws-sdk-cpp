@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cloudfront/CloudFrontClient.h>
+#include <aws/cloudfront/CloudFrontClientConfiguration.h>
 #include <aws/cloudfront/CloudFrontClientPagination.h>
 #include <aws/cloudfront/CloudFrontEndpointProvider.h>
 #include <aws/cloudfront/CloudFrontErrorMarshaller.h>

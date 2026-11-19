@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/network-security-manager/NetworkSecurityManagerClient.h>
+#include <aws/network-security-manager/NetworkSecurityManagerClientConfiguration.h>
 #include <aws/network-security-manager/NetworkSecurityManagerClientPagination.h>
 #include <aws/network-security-manager/NetworkSecurityManagerEndpointProvider.h>
 #include <aws/network-security-manager/NetworkSecurityManagerErrorMarshaller.h>

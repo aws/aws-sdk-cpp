@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/resource-explorer-2/ResourceExplorer2Client.h>
+#include <aws/resource-explorer-2/ResourceExplorer2ClientConfiguration.h>
 #include <aws/resource-explorer-2/ResourceExplorer2ClientPagination.h>
 #include <aws/resource-explorer-2/ResourceExplorer2EndpointProvider.h>
 #include <aws/resource-explorer-2/ResourceExplorer2ErrorMarshaller.h>

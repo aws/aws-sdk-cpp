@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/controltower/ControlTowerClient.h>
+#include <aws/controltower/ControlTowerClientConfiguration.h>
 #include <aws/controltower/ControlTowerClientPagination.h>
 #include <aws/controltower/ControlTowerEndpointProvider.h>
 #include <aws/controltower/ControlTowerErrorMarshaller.h>

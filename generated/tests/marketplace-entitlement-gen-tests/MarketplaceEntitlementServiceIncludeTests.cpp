@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceClient.h>
+#include <aws/marketplace-entitlement/MarketplaceEntitlementServiceClientConfiguration.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceClientPagination.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceEndpointProvider.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kinesisanalytics/KinesisAnalyticsClient.h>
+#include <aws/kinesisanalytics/KinesisAnalyticsClientConfiguration.h>
 #include <aws/kinesisanalytics/KinesisAnalyticsEndpointProvider.h>
 #include <aws/kinesisanalytics/KinesisAnalyticsErrorMarshaller.h>
 #include <aws/kinesisanalytics/KinesisAnalyticsErrors.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/health/HealthClient.h>
+#include <aws/health/HealthClientConfiguration.h>
 #include <aws/health/HealthClientPagination.h>
 #include <aws/health/HealthEndpointProvider.h>
 #include <aws/health/HealthErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mq/MQClient.h>
+#include <aws/mq/MQClientConfiguration.h>
 #include <aws/mq/MQClientPagination.h>
 #include <aws/mq/MQEndpointProvider.h>
 #include <aws/mq/MQErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/shield/ShieldClient.h>
+#include <aws/shield/ShieldClientConfiguration.h>
 #include <aws/shield/ShieldClientPagination.h>
 #include <aws/shield/ShieldEndpointProvider.h>
 #include <aws/shield/ShieldErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/config/ConfigServiceClient.h>
+#include <aws/config/ConfigServiceClientConfiguration.h>
 #include <aws/config/ConfigServiceClientPagination.h>
 #include <aws/config/ConfigServiceEndpointProvider.h>
 #include <aws/config/ConfigServiceErrorMarshaller.h>

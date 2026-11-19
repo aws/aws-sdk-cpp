@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/wafv2/WAFV2Client.h>
+#include <aws/wafv2/WAFV2ClientConfiguration.h>
 #include <aws/wafv2/WAFV2EndpointProvider.h>
 #include <aws/wafv2/WAFV2ErrorMarshaller.h>
 #include <aws/wafv2/WAFV2Errors.h>

@@ -4,24 +4,31 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/non-query-compatible-rpcv2-protocol/NonQueryCompatibleRpcV2ProtocolClientConfiguration.h>
 #include <aws/non-query-compatible-rpcv2-protocol/NonQueryCompatibleRpcV2Protocol_EXPORTS.h>
 
 namespace Aws {
 namespace NonQueryCompatibleRpcV2Protocol {
 namespace Endpoint {
+using NonQueryCompatibleRpcV2ProtocolClientConfiguration =
+    Aws::NonQueryCompatibleRpcV2Protocol::NonQueryCompatibleRpcV2ProtocolClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::DefaultEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using NonQueryCompatibleRpcV2ProtocolClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using NonQueryCompatibleRpcV2ProtocolClientConfiguration = Aws::Client::GenericClientConfiguration;
-using NonQueryCompatibleRpcV2ProtocolBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_NONQUERYCOMPATIBLERPCV2PROTOCOL_API NonQueryCompatibleRpcV2ProtocolBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~NonQueryCompatibleRpcV2ProtocolBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const NonQueryCompatibleRpcV2ProtocolClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const NonQueryCompatibleRpcV2ProtocolClientConfiguration& config, const Aws::String& serviceName);
+};
 
 /**
  * The type for the NonQueryCompatibleRpcV2Protocol Client Endpoint Provider.
@@ -36,6 +43,26 @@ using NonQueryCompatibleRpcV2ProtocolDefaultEpProviderBase =
     DefaultEndpointProvider<NonQueryCompatibleRpcV2ProtocolClientConfiguration, NonQueryCompatibleRpcV2ProtocolBuiltInParameters,
                             NonQueryCompatibleRpcV2ProtocolClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace NonQueryCompatibleRpcV2Protocol
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_NONQUERYCOMPATIBLERPCV2PROTOCOL_EXTERN template class AWS_NONQUERYCOMPATIBLERPCV2PROTOCOL_API
+    Aws::Endpoint::EndpointProviderBase<NonQueryCompatibleRpcV2Protocol::Endpoint::NonQueryCompatibleRpcV2ProtocolClientConfiguration,
+                                        NonQueryCompatibleRpcV2Protocol::Endpoint::NonQueryCompatibleRpcV2ProtocolBuiltInParameters,
+                                        NonQueryCompatibleRpcV2Protocol::Endpoint::NonQueryCompatibleRpcV2ProtocolClientContextParameters>;
+
+AWS_NONQUERYCOMPATIBLERPCV2PROTOCOL_EXTERN template class AWS_NONQUERYCOMPATIBLERPCV2PROTOCOL_API Aws::Endpoint::DefaultEndpointProvider<
+    NonQueryCompatibleRpcV2Protocol::Endpoint::NonQueryCompatibleRpcV2ProtocolClientConfiguration,
+    NonQueryCompatibleRpcV2Protocol::Endpoint::NonQueryCompatibleRpcV2ProtocolBuiltInParameters,
+    NonQueryCompatibleRpcV2Protocol::Endpoint::NonQueryCompatibleRpcV2ProtocolClientContextParameters>;
+}  // namespace Endpoint
+
+namespace NonQueryCompatibleRpcV2Protocol {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

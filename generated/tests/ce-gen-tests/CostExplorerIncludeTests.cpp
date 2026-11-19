@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ce/CostExplorerClient.h>
+#include <aws/ce/CostExplorerClientConfiguration.h>
 #include <aws/ce/CostExplorerClientPagination.h>
 #include <aws/ce/CostExplorerEndpointProvider.h>
 #include <aws/ce/CostExplorerErrorMarshaller.h>

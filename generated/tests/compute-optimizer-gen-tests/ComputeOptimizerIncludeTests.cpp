@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/compute-optimizer/ComputeOptimizerClient.h>
+#include <aws/compute-optimizer/ComputeOptimizerClientConfiguration.h>
 #include <aws/compute-optimizer/ComputeOptimizerClientPagination.h>
 #include <aws/compute-optimizer/ComputeOptimizerEndpointProvider.h>
 #include <aws/compute-optimizer/ComputeOptimizerErrorMarshaller.h>

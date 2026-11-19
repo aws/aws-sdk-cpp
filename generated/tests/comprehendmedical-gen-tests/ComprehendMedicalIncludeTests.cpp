@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/comprehendmedical/ComprehendMedicalClient.h>
+#include <aws/comprehendmedical/ComprehendMedicalClientConfiguration.h>
 #include <aws/comprehendmedical/ComprehendMedicalEndpointProvider.h>
 #include <aws/comprehendmedical/ComprehendMedicalErrorMarshaller.h>
 #include <aws/comprehendmedical/ComprehendMedicalErrors.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/trustedadvisor/TrustedAdvisorClient.h>
+#include <aws/trustedadvisor/TrustedAdvisorClientConfiguration.h>
 #include <aws/trustedadvisor/TrustedAdvisorClientPagination.h>
 #include <aws/trustedadvisor/TrustedAdvisorEndpointProvider.h>
 #include <aws/trustedadvisor/TrustedAdvisorErrorMarshaller.h>

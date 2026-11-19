@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mpa/MPAClient.h>
+#include <aws/mpa/MPAClientConfiguration.h>
 #include <aws/mpa/MPAClientPagination.h>
 #include <aws/mpa/MPAEndpointProvider.h>
 #include <aws/mpa/MPAErrorMarshaller.h>

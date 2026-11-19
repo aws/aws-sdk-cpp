@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/rbin/RecycleBinClient.h>
+#include <aws/rbin/RecycleBinClientConfiguration.h>
 #include <aws/rbin/RecycleBinClientPagination.h>
 #include <aws/rbin/RecycleBinEndpointProvider.h>
 #include <aws/rbin/RecycleBinErrorMarshaller.h>

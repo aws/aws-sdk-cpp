@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/securitylake/SecurityLakeClient.h>
+#include <aws/securitylake/SecurityLakeClientConfiguration.h>
 #include <aws/securitylake/SecurityLakeClientPagination.h>
 #include <aws/securitylake/SecurityLakeEndpointProvider.h>
 #include <aws/securitylake/SecurityLakeErrorMarshaller.h>

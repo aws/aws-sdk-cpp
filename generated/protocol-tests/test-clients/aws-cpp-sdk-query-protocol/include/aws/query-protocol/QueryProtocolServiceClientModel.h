@@ -101,7 +101,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace QueryProtocol {
-using QueryProtocolClientConfiguration = Aws::Client::GenericClientConfiguration;
 using QueryProtocolEndpointProviderBase = Aws::QueryProtocol::Endpoint::QueryProtocolEndpointProviderBase;
 using QueryProtocolEndpointProvider = Aws::QueryProtocol::Endpoint::QueryProtocolEndpointProvider;
 

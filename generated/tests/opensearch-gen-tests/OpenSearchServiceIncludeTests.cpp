@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/opensearch/OpenSearchServiceClient.h>
+#include <aws/opensearch/OpenSearchServiceClientConfiguration.h>
 #include <aws/opensearch/OpenSearchServiceClientPagination.h>
 #include <aws/opensearch/OpenSearchServiceEndpointProvider.h>
 #include <aws/opensearch/OpenSearchServiceErrorMarshaller.h>

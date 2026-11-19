@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/translate/TranslateClient.h>
+#include <aws/translate/TranslateClientConfiguration.h>
 #include <aws/translate/TranslateClientPagination.h>
 #include <aws/translate/TranslateEndpointProvider.h>
 #include <aws/translate/TranslateErrorMarshaller.h>

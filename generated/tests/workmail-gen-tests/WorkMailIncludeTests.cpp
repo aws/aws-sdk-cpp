@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/workmail/WorkMailClient.h>
+#include <aws/workmail/WorkMailClientConfiguration.h>
 #include <aws/workmail/WorkMailClientPagination.h>
 #include <aws/workmail/WorkMailEndpointProvider.h>
 #include <aws/workmail/WorkMailErrorMarshaller.h>

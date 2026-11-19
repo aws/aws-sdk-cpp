@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/elasticbeanstalk/ElasticBeanstalkClient.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalkClientConfiguration.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkClientPagination.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkEndpointProvider.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkErrorMarshaller.h>

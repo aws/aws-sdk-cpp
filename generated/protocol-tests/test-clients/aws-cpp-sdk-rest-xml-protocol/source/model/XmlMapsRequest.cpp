@@ -31,5 +31,5 @@ Aws::String XmlMapsRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kendra/KendraClient.h>
+#include <aws/kendra/KendraClientConfiguration.h>
 #include <aws/kendra/KendraClientPagination.h>
 #include <aws/kendra/KendraEndpointProvider.h>
 #include <aws/kendra/KendraErrorMarshaller.h>

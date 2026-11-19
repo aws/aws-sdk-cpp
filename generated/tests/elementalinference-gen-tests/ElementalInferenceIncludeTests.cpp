@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/elementalinference/ElementalInferenceClient.h>
+#include <aws/elementalinference/ElementalInferenceClientConfiguration.h>
 #include <aws/elementalinference/ElementalInferenceClientPagination.h>
 #include <aws/elementalinference/ElementalInferenceEndpointProvider.h>
 #include <aws/elementalinference/ElementalInferenceErrorMarshaller.h>

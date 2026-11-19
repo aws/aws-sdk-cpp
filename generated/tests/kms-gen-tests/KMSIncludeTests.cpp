@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kms/KMSClient.h>
+#include <aws/kms/KMSClientConfiguration.h>
 #include <aws/kms/KMSClientPagination.h>
 #include <aws/kms/KMSEndpointProvider.h>
 #include <aws/kms/KMSErrorMarshaller.h>

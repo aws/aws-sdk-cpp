@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/marketplace-deployment/MarketplaceDeploymentClient.h>
+#include <aws/marketplace-deployment/MarketplaceDeploymentClientConfiguration.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentEndpointProvider.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentErrorMarshaller.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentErrors.h>

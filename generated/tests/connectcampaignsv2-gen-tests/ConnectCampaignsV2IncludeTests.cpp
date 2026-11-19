@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/connectcampaignsv2/ConnectCampaignsV2Client.h>
+#include <aws/connectcampaignsv2/ConnectCampaignsV2ClientConfiguration.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2ClientPagination.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2EndpointProvider.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2ErrorMarshaller.h>

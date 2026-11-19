@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/neptune-graph/NeptuneGraphClient.h>
+#include <aws/neptune-graph/NeptuneGraphClientConfiguration.h>
 #include <aws/neptune-graph/NeptuneGraphClientPagination.h>
 #include <aws/neptune-graph/NeptuneGraphEndpointProvider.h>
 #include <aws/neptune-graph/NeptuneGraphErrorMarshaller.h>

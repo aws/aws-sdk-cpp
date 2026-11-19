@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/workmailmessageflow/WorkMailMessageFlowClient.h>
+#include <aws/workmailmessageflow/WorkMailMessageFlowClientConfiguration.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowEndpointProvider.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowErrorMarshaller.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowErrors.h>

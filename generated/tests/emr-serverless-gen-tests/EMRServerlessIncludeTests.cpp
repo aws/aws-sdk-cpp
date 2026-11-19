@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/emr-serverless/EMRServerlessClient.h>
+#include <aws/emr-serverless/EMRServerlessClientConfiguration.h>
 #include <aws/emr-serverless/EMRServerlessClientPagination.h>
 #include <aws/emr-serverless/EMRServerlessEndpointProvider.h>
 #include <aws/emr-serverless/EMRServerlessErrorMarshaller.h>

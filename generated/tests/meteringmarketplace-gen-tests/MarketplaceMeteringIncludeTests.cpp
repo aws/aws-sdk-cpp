@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/meteringmarketplace/MarketplaceMeteringClient.h>
+#include <aws/meteringmarketplace/MarketplaceMeteringClientConfiguration.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringEndpointProvider.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringErrorMarshaller.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringErrors.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/xray/XRayClient.h>
+#include <aws/xray/XRayClientConfiguration.h>
 #include <aws/xray/XRayClientPagination.h>
 #include <aws/xray/XRayEndpointProvider.h>
 #include <aws/xray/XRayErrorMarshaller.h>

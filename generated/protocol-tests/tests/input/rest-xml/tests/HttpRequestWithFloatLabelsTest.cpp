@@ -15,7 +15,7 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestXmlSupportsNaNFloatLabels) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -32,7 +32,7 @@ AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestXmlSupportsNaNFloatLabels) {
 }
 
 AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestXmlSupportsInfinityFloatLabels) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -49,7 +49,7 @@ AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestXmlSupportsInfinityFloatLabels
 }
 
 AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestXmlSupportsNegativeInfinityFloatLabels) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

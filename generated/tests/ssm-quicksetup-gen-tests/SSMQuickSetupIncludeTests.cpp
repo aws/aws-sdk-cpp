@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ssm-quicksetup/SSMQuickSetupClient.h>
+#include <aws/ssm-quicksetup/SSMQuickSetupClientConfiguration.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupClientPagination.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupEndpointProvider.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupErrorMarshaller.h>

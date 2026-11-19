@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mwaa-serverless/MWAAServerlessClient.h>
+#include <aws/mwaa-serverless/MWAAServerlessClientConfiguration.h>
 #include <aws/mwaa-serverless/MWAAServerlessClientPagination.h>
 #include <aws/mwaa-serverless/MWAAServerlessEndpointProvider.h>
 #include <aws/mwaa-serverless/MWAAServerlessErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/backupsearch/BackupSearchClient.h>
+#include <aws/backupsearch/BackupSearchClientConfiguration.h>
 #include <aws/backupsearch/BackupSearchClientPagination.h>
 #include <aws/backupsearch/BackupSearchEndpointProvider.h>
 #include <aws/backupsearch/BackupSearchErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/personalize/PersonalizeClient.h>
+#include <aws/personalize/PersonalizeClientConfiguration.h>
 #include <aws/personalize/PersonalizeClientPagination.h>
 #include <aws/personalize/PersonalizeEndpointProvider.h>
 #include <aws/personalize/PersonalizeErrorMarshaller.h>

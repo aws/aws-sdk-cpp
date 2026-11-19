@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/route53profiles/Route53ProfilesClient.h>
+#include <aws/route53profiles/Route53ProfilesClientConfiguration.h>
 #include <aws/route53profiles/Route53ProfilesClientPagination.h>
 #include <aws/route53profiles/Route53ProfilesEndpointProvider.h>
 #include <aws/route53profiles/Route53ProfilesErrorMarshaller.h>

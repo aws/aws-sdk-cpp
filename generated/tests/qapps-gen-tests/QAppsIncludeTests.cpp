@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/qapps/QAppsClient.h>
+#include <aws/qapps/QAppsClientConfiguration.h>
 #include <aws/qapps/QAppsClientPagination.h>
 #include <aws/qapps/QAppsEndpointProvider.h>
 #include <aws/qapps/QAppsErrorMarshaller.h>

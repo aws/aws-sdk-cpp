@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/forecastquery/ForecastQueryServiceClient.h>
+#include <aws/forecastquery/ForecastQueryServiceClientConfiguration.h>
 #include <aws/forecastquery/ForecastQueryServiceEndpointProvider.h>
 #include <aws/forecastquery/ForecastQueryServiceErrorMarshaller.h>
 #include <aws/forecastquery/ForecastQueryServiceErrors.h>

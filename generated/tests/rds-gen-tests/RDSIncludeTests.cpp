@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/rds/RDSClient.h>
+#include <aws/rds/RDSClientConfiguration.h>
 #include <aws/rds/RDSClientPagination.h>
 #include <aws/rds/RDSEndpointProvider.h>
 #include <aws/rds/RDSErrorMarshaller.h>

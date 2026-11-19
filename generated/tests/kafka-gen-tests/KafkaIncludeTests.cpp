@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kafka/KafkaClient.h>
+#include <aws/kafka/KafkaClientConfiguration.h>
 #include <aws/kafka/KafkaClientPagination.h>
 #include <aws/kafka/KafkaEndpointProvider.h>
 #include <aws/kafka/KafkaErrorMarshaller.h>

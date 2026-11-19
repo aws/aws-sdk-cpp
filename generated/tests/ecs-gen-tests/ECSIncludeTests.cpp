@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ecs/ECSClient.h>
+#include <aws/ecs/ECSClientConfiguration.h>
 #include <aws/ecs/ECSClientPagination.h>
 #include <aws/ecs/ECSEndpointProvider.h>
 #include <aws/ecs/ECSErrorMarshaller.h>

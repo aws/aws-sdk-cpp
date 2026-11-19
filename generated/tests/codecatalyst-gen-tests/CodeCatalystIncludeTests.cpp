@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codecatalyst/CodeCatalystClient.h>
+#include <aws/codecatalyst/CodeCatalystClientConfiguration.h>
 #include <aws/codecatalyst/CodeCatalystClientPagination.h>
 #include <aws/codecatalyst/CodeCatalystEndpointProvider.h>
 #include <aws/codecatalyst/CodeCatalystErrorMarshaller.h>

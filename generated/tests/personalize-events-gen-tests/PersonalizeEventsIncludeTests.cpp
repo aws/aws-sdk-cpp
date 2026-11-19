@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/personalize-events/PersonalizeEventsClient.h>
+#include <aws/personalize-events/PersonalizeEventsClientConfiguration.h>
 #include <aws/personalize-events/PersonalizeEventsEndpointProvider.h>
 #include <aws/personalize-events/PersonalizeEventsErrorMarshaller.h>
 #include <aws/personalize-events/PersonalizeEventsErrors.h>

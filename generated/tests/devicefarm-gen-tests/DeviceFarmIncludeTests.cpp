@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/devicefarm/DeviceFarmClient.h>
+#include <aws/devicefarm/DeviceFarmClientConfiguration.h>
 #include <aws/devicefarm/DeviceFarmClientPagination.h>
 #include <aws/devicefarm/DeviceFarmEndpointProvider.h>
 #include <aws/devicefarm/DeviceFarmErrorMarshaller.h>

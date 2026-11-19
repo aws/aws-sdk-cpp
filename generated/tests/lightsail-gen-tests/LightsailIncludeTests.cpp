@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/lightsail/LightsailClient.h>
+#include <aws/lightsail/LightsailClientConfiguration.h>
 #include <aws/lightsail/LightsailEndpointProvider.h>
 #include <aws/lightsail/LightsailErrorMarshaller.h>
 #include <aws/lightsail/LightsailErrors.h>

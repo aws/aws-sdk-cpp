@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/proton/ProtonClient.h>
+#include <aws/proton/ProtonClientConfiguration.h>
 #include <aws/proton/ProtonEndpointProvider.h>
 #include <aws/proton/ProtonErrorMarshaller.h>
 #include <aws/proton/ProtonErrors.h>

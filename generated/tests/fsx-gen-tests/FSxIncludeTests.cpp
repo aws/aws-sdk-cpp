@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/fsx/FSxClient.h>
+#include <aws/fsx/FSxClientConfiguration.h>
 #include <aws/fsx/FSxClientPagination.h>
 #include <aws/fsx/FSxEndpointProvider.h>
 #include <aws/fsx/FSxErrorMarshaller.h>

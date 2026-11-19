@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/security-ir/SecurityIRClient.h>
+#include <aws/security-ir/SecurityIRClientConfiguration.h>
 #include <aws/security-ir/SecurityIRClientPagination.h>
 #include <aws/security-ir/SecurityIREndpointProvider.h>
 #include <aws/security-ir/SecurityIRErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sustainability/SustainabilityClient.h>
+#include <aws/sustainability/SustainabilityClientConfiguration.h>
 #include <aws/sustainability/SustainabilityClientPagination.h>
 #include <aws/sustainability/SustainabilityEndpointProvider.h>
 #include <aws/sustainability/SustainabilityErrorMarshaller.h>

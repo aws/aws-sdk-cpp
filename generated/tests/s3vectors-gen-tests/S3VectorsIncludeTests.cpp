@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/s3vectors/S3VectorsClient.h>
+#include <aws/s3vectors/S3VectorsClientConfiguration.h>
 #include <aws/s3vectors/S3VectorsClientPagination.h>
 #include <aws/s3vectors/S3VectorsEndpointProvider.h>
 #include <aws/s3vectors/S3VectorsErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/quicksight/QuickSightClient.h>
+#include <aws/quicksight/QuickSightClientConfiguration.h>
 #include <aws/quicksight/QuickSightClientPagination.h>
 #include <aws/quicksight/QuickSightEndpointProvider.h>
 #include <aws/quicksight/QuickSightErrorMarshaller.h>

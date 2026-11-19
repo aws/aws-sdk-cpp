@@ -12,7 +12,7 @@ using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
 using namespace Aws::RpcV2Protocol::Model;
 
 AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborSparseJsonMaps) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -45,7 +45,7 @@ AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborSparseJsonMaps) {
 }
 
 AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborDeserializesNullMapValues) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -83,7 +83,7 @@ AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborDeserializesNullMapValues) {
 }
 
 AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborDeserializesSparseSetMap) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -110,7 +110,7 @@ AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborDeserializesSparseSetMap) {
 }
 
 AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborDeserializesSparseSetMapAndRetainsNull) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -139,7 +139,7 @@ AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborDeserializesSparseSetMapAndRetai
 }
 
 AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborDeserializesZeroValuesInSparseMaps) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

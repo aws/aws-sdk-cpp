@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/support-app/SupportAppClient.h>
+#include <aws/support-app/SupportAppClientConfiguration.h>
 #include <aws/support-app/SupportAppClientPagination.h>
 #include <aws/support-app/SupportAppEndpointProvider.h>
 #include <aws/support-app/SupportAppErrorMarshaller.h>

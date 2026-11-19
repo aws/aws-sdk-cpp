@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ec2-instance-connect/EC2InstanceConnectClient.h>
+#include <aws/ec2-instance-connect/EC2InstanceConnectClientConfiguration.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnectEndpointProvider.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnectErrorMarshaller.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnectErrors.h>

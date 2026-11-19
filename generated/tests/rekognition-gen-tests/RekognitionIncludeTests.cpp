@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/rekognition/RekognitionClient.h>
+#include <aws/rekognition/RekognitionClientConfiguration.h>
 #include <aws/rekognition/RekognitionClientPagination.h>
 #include <aws/rekognition/RekognitionEndpointProvider.h>
 #include <aws/rekognition/RekognitionErrorMarshaller.h>

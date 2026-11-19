@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/applicationcostprofiler/ApplicationCostProfilerClient.h>
+#include <aws/applicationcostprofiler/ApplicationCostProfilerClientConfiguration.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerClientPagination.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerEndpointProvider.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerErrorMarshaller.h>

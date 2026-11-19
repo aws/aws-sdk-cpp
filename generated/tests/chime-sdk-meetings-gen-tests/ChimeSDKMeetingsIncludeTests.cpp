@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsClient.h>
+#include <aws/chime-sdk-meetings/ChimeSDKMeetingsClientConfiguration.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsClientPagination.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsEndpointProvider.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsErrorMarshaller.h>

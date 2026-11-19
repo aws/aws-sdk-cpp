@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/lookoutequipment/LookoutEquipmentClient.h>
+#include <aws/lookoutequipment/LookoutEquipmentClientConfiguration.h>
 #include <aws/lookoutequipment/LookoutEquipmentClientPagination.h>
 #include <aws/lookoutequipment/LookoutEquipmentEndpointProvider.h>
 #include <aws/lookoutequipment/LookoutEquipmentErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mediastore/MediaStoreClient.h>
+#include <aws/mediastore/MediaStoreClientConfiguration.h>
 #include <aws/mediastore/MediaStoreClientPagination.h>
 #include <aws/mediastore/MediaStoreEndpointProvider.h>
 #include <aws/mediastore/MediaStoreErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageClient.h>
+#include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageClientConfiguration.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageEndpointProvider.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageErrorMarshaller.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageErrors.h>

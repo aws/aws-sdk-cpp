@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/acm/ACMClient.h>
+#include <aws/acm/ACMClientConfiguration.h>
 #include <aws/acm/ACMClientPagination.h>
 #include <aws/acm/ACMEndpointProvider.h>
 #include <aws/acm/ACMErrorMarshaller.h>

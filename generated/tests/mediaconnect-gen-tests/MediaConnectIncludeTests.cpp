@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mediaconnect/MediaConnectClient.h>
+#include <aws/mediaconnect/MediaConnectClientConfiguration.h>
 #include <aws/mediaconnect/MediaConnectClientPagination.h>
 #include <aws/mediaconnect/MediaConnectEndpointProvider.h>
 #include <aws/mediaconnect/MediaConnectErrorMarshaller.h>

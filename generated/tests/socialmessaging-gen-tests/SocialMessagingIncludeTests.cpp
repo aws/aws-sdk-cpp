@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/socialmessaging/SocialMessagingClient.h>
+#include <aws/socialmessaging/SocialMessagingClientConfiguration.h>
 #include <aws/socialmessaging/SocialMessagingClientPagination.h>
 #include <aws/socialmessaging/SocialMessagingEndpointProvider.h>
 #include <aws/socialmessaging/SocialMessagingErrorMarshaller.h>

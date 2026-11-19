@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/discovery/ApplicationDiscoveryServiceClient.h>
+#include <aws/discovery/ApplicationDiscoveryServiceClientConfiguration.h>
 #include <aws/discovery/ApplicationDiscoveryServiceClientPagination.h>
 #include <aws/discovery/ApplicationDiscoveryServiceEndpointProvider.h>
 #include <aws/discovery/ApplicationDiscoveryServiceErrorMarshaller.h>

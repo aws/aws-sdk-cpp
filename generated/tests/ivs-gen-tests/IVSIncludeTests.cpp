@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ivs/IVSClient.h>
+#include <aws/ivs/IVSClientConfiguration.h>
 #include <aws/ivs/IVSClientPagination.h>
 #include <aws/ivs/IVSEndpointProvider.h>
 #include <aws/ivs/IVSErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/snow-device-management/SnowDeviceManagementClient.h>
+#include <aws/snow-device-management/SnowDeviceManagementClientConfiguration.h>
 #include <aws/snow-device-management/SnowDeviceManagementClientPagination.h>
 #include <aws/snow-device-management/SnowDeviceManagementEndpointProvider.h>
 #include <aws/snow-device-management/SnowDeviceManagementErrorMarshaller.h>

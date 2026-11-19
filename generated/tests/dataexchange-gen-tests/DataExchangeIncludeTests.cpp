@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/dataexchange/DataExchangeClient.h>
+#include <aws/dataexchange/DataExchangeClientConfiguration.h>
 #include <aws/dataexchange/DataExchangeClientPagination.h>
 #include <aws/dataexchange/DataExchangeEndpointProvider.h>
 #include <aws/dataexchange/DataExchangeErrorMarshaller.h>

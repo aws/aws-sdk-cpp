@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cloudwatchomni/CloudWatchOmniClient.h>
+#include <aws/cloudwatchomni/CloudWatchOmniClientConfiguration.h>
 #include <aws/cloudwatchomni/CloudWatchOmniClientPagination.h>
 #include <aws/cloudwatchomni/CloudWatchOmniEndpointProvider.h>
 #include <aws/cloudwatchomni/CloudWatchOmniErrorMarshaller.h>

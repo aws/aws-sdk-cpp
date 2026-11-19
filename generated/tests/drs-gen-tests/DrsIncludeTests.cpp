@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/drs/DrsClient.h>
+#include <aws/drs/DrsClientConfiguration.h>
 #include <aws/drs/DrsClientPagination.h>
 #include <aws/drs/DrsEndpointProvider.h>
 #include <aws/drs/DrsErrorMarshaller.h>

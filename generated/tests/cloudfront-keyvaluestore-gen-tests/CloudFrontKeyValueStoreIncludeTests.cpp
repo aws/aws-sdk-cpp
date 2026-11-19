@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreClient.h>
+#include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreClientConfiguration.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreClientPagination.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreEndpointProvider.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreErrorMarshaller.h>

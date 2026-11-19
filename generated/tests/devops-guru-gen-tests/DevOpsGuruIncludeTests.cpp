@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/devops-guru/DevOpsGuruClient.h>
+#include <aws/devops-guru/DevOpsGuruClientConfiguration.h>
 #include <aws/devops-guru/DevOpsGuruClientPagination.h>
 #include <aws/devops-guru/DevOpsGuruEndpointProvider.h>
 #include <aws/devops-guru/DevOpsGuruErrorMarshaller.h>

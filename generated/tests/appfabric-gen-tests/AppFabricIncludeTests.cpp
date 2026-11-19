@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/appfabric/AppFabricClient.h>
+#include <aws/appfabric/AppFabricClientConfiguration.h>
 #include <aws/appfabric/AppFabricClientPagination.h>
 #include <aws/appfabric/AppFabricEndpointProvider.h>
 #include <aws/appfabric/AppFabricErrorMarshaller.h>

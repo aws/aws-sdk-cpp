@@ -25,7 +25,7 @@ Aws::String BodyWithXmlNameRequest::SerializePayload() const {
     m_nested.AddToNode(nestedNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 Aws::Http::HeaderValueCollection BodyWithXmlNameRequest::GetRequestSpecificHeaders() const {

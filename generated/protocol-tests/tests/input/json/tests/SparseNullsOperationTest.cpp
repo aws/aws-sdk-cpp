@@ -12,7 +12,7 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(SparseNullsOperation, AwsJson11SparseMapsSerializeNullValues) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -30,7 +30,7 @@ AWS_PROTOCOL_TEST(SparseNullsOperation, AwsJson11SparseMapsSerializeNullValues) 
 }
 
 AWS_PROTOCOL_TEST(SparseNullsOperation, AwsJson11SparseListsSerializeNull) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

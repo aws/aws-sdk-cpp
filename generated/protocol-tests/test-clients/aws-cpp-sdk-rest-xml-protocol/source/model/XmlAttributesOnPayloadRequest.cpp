@@ -21,7 +21,7 @@ Aws::String XmlAttributesOnPayloadRequest::SerializePayload() const {
 
   m_payload.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToCompactString();
   }
 
   return {};

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/forecast/ForecastServiceClient.h>
+#include <aws/forecast/ForecastServiceClientConfiguration.h>
 #include <aws/forecast/ForecastServiceClientPagination.h>
 #include <aws/forecast/ForecastServiceEndpointProvider.h>
 #include <aws/forecast/ForecastServiceErrorMarshaller.h>

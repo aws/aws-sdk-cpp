@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iotfleetwise/IoTFleetWiseClient.h>
+#include <aws/iotfleetwise/IoTFleetWiseClientConfiguration.h>
 #include <aws/iotfleetwise/IoTFleetWiseClientPagination.h>
 #include <aws/iotfleetwise/IoTFleetWiseEndpointProvider.h>
 #include <aws/iotfleetwise/IoTFleetWiseErrorMarshaller.h>

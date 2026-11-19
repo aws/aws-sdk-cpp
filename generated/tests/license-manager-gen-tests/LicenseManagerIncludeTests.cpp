@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/license-manager/LicenseManagerClient.h>
+#include <aws/license-manager/LicenseManagerClientConfiguration.h>
 #include <aws/license-manager/LicenseManagerEndpointProvider.h>
 #include <aws/license-manager/LicenseManagerErrorMarshaller.h>
 #include <aws/license-manager/LicenseManagerErrors.h>

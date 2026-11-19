@@ -12,7 +12,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, RestJsonQueryIdempotencyTokenAutoFill) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -27,7 +27,7 @@ AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, RestJsonQueryIdempotencyTokenAu
 }
 
 AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, RestJsonQueryIdempotencyTokenAutoFillIsSet) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

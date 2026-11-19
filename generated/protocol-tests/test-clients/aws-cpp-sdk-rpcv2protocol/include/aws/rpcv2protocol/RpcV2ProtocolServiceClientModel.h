@@ -72,7 +72,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace RpcV2Protocol {
-using RpcV2ProtocolClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RpcV2ProtocolEndpointProviderBase = Aws::RpcV2Protocol::Endpoint::RpcV2ProtocolEndpointProviderBase;
 using RpcV2ProtocolEndpointProvider = Aws::RpcV2Protocol::Endpoint::RpcV2ProtocolEndpointProvider;
 

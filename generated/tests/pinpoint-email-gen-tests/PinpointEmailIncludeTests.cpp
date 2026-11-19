@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pinpoint-email/PinpointEmailClient.h>
+#include <aws/pinpoint-email/PinpointEmailClientConfiguration.h>
 #include <aws/pinpoint-email/PinpointEmailClientPagination.h>
 #include <aws/pinpoint-email/PinpointEmailEndpointProvider.h>
 #include <aws/pinpoint-email/PinpointEmailErrorMarshaller.h>

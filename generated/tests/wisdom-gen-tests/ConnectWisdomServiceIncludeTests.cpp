@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/wisdom/ConnectWisdomServiceClient.h>
+#include <aws/wisdom/ConnectWisdomServiceClientConfiguration.h>
 #include <aws/wisdom/ConnectWisdomServiceClientPagination.h>
 #include <aws/wisdom/ConnectWisdomServiceEndpointProvider.h>
 #include <aws/wisdom/ConnectWisdomServiceErrorMarshaller.h>

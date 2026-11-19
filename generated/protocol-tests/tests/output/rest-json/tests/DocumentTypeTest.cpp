@@ -12,7 +12,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentOutput) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -36,7 +36,7 @@ AWS_PROTOCOL_TEST(DocumentType, DocumentOutput) {
 }
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentOutputString) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -60,7 +60,7 @@ AWS_PROTOCOL_TEST(DocumentType, DocumentOutputString) {
 }
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentOutputNumber) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -84,7 +84,7 @@ AWS_PROTOCOL_TEST(DocumentType, DocumentOutputNumber) {
 }
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentOutputBoolean) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -108,7 +108,7 @@ AWS_PROTOCOL_TEST(DocumentType, DocumentOutputBoolean) {
 }
 
 AWS_PROTOCOL_TEST(DocumentType, DocumentOutputArray) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

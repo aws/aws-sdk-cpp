@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sso-oidc/SSOOIDCClient.h>
+#include <aws/sso-oidc/SSOOIDCClientConfiguration.h>
 #include <aws/sso-oidc/SSOOIDCEndpointProvider.h>
 #include <aws/sso-oidc/SSOOIDCErrorMarshaller.h>
 #include <aws/sso-oidc/SSOOIDCErrors.h>

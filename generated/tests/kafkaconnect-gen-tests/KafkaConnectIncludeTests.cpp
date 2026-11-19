@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kafkaconnect/KafkaConnectClient.h>
+#include <aws/kafkaconnect/KafkaConnectClientConfiguration.h>
 #include <aws/kafkaconnect/KafkaConnectClientPagination.h>
 #include <aws/kafkaconnect/KafkaConnectEndpointProvider.h>
 #include <aws/kafkaconnect/KafkaConnectErrorMarshaller.h>

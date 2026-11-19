@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ds/DirectoryServiceClient.h>
+#include <aws/ds/DirectoryServiceClientConfiguration.h>
 #include <aws/ds/DirectoryServiceClientPagination.h>
 #include <aws/ds/DirectoryServiceEndpointProvider.h>
 #include <aws/ds/DirectoryServiceErrorMarshaller.h>

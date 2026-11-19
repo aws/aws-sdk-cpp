@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cognito-identity/CognitoIdentityClient.h>
+#include <aws/cognito-identity/CognitoIdentityClientConfiguration.h>
 #include <aws/cognito-identity/CognitoIdentityClientPagination.h>
 #include <aws/cognito-identity/CognitoIdentityEndpointProvider.h>
 #include <aws/cognito-identity/CognitoIdentityErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/securityhub/SecurityHubClient.h>
+#include <aws/securityhub/SecurityHubClientConfiguration.h>
 #include <aws/securityhub/SecurityHubClientPagination.h>
 #include <aws/securityhub/SecurityHubEndpointProvider.h>
 #include <aws/securityhub/SecurityHubErrorMarshaller.h>

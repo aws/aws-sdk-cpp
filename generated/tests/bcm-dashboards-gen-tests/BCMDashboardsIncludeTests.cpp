@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/bcm-dashboards/BCMDashboardsClient.h>
+#include <aws/bcm-dashboards/BCMDashboardsClientConfiguration.h>
 #include <aws/bcm-dashboards/BCMDashboardsClientPagination.h>
 #include <aws/bcm-dashboards/BCMDashboardsEndpointProvider.h>
 #include <aws/bcm-dashboards/BCMDashboardsErrorMarshaller.h>

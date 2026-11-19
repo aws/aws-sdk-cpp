@@ -25,5 +25,5 @@ Aws::String EndpointWithHostLabelOperationRequest::SerializePayload() const {
     labelNode.SetText(m_label);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }

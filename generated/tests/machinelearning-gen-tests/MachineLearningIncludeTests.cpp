@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/machinelearning/MachineLearningClient.h>
+#include <aws/machinelearning/MachineLearningClientConfiguration.h>
 #include <aws/machinelearning/MachineLearningClientPagination.h>
 #include <aws/machinelearning/MachineLearningEndpointProvider.h>
 #include <aws/machinelearning/MachineLearningErrorMarshaller.h>

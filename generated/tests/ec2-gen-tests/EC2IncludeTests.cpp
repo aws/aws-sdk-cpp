@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ec2/EC2Client.h>
+#include <aws/ec2/EC2ClientConfiguration.h>
 #include <aws/ec2/EC2ClientPagination.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>

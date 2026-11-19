@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/aiops/AIOpsClient.h>
+#include <aws/aiops/AIOpsClientConfiguration.h>
 #include <aws/aiops/AIOpsClientPagination.h>
 #include <aws/aiops/AIOpsEndpointProvider.h>
 #include <aws/aiops/AIOpsErrorMarshaller.h>

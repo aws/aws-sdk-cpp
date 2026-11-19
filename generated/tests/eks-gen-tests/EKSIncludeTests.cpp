@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/eks/EKSClient.h>
+#include <aws/eks/EKSClientConfiguration.h>
 #include <aws/eks/EKSClientPagination.h>
 #include <aws/eks/EKSEndpointProvider.h>
 #include <aws/eks/EKSErrorMarshaller.h>

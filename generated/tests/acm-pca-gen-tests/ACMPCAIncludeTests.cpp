@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/acm-pca/ACMPCAClient.h>
+#include <aws/acm-pca/ACMPCAClientConfiguration.h>
 #include <aws/acm-pca/ACMPCAClientPagination.h>
 #include <aws/acm-pca/ACMPCAEndpointProvider.h>
 #include <aws/acm-pca/ACMPCAErrorMarshaller.h>

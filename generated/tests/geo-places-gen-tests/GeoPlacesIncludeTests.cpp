@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/geo-places/GeoPlacesClient.h>
+#include <aws/geo-places/GeoPlacesClientConfiguration.h>
 #include <aws/geo-places/GeoPlacesEndpointProvider.h>
 #include <aws/geo-places/GeoPlacesErrorMarshaller.h>
 #include <aws/geo-places/GeoPlacesErrors.h>

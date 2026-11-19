@@ -35,8 +35,6 @@ TEST_F(SecretsManagerSmokeTestSuite, DescribeSecretFailure )
 {
     Aws::SecretsManager::SecretsManagerClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<SecretsManagerClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -49,8 +47,6 @@ TEST_F(SecretsManagerSmokeTestSuite, ListSecretsSuccess )
 {
     Aws::SecretsManager::SecretsManagerClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<SecretsManagerClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

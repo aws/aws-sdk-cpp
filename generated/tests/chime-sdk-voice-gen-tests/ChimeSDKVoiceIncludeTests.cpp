@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/chime-sdk-voice/ChimeSDKVoiceClient.h>
+#include <aws/chime-sdk-voice/ChimeSDKVoiceClientConfiguration.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceClientPagination.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceEndpointProvider.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/macie2/Macie2Client.h>
+#include <aws/macie2/Macie2ClientConfiguration.h>
 #include <aws/macie2/Macie2ClientPagination.h>
 #include <aws/macie2/Macie2EndpointProvider.h>
 #include <aws/macie2/Macie2ErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/amplify/AmplifyClient.h>
+#include <aws/amplify/AmplifyClientConfiguration.h>
 #include <aws/amplify/AmplifyClientPagination.h>
 #include <aws/amplify/AmplifyEndpointProvider.h>
 #include <aws/amplify/AmplifyErrorMarshaller.h>

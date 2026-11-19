@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/workspaces/WorkSpacesClient.h>
+#include <aws/workspaces/WorkSpacesClientConfiguration.h>
 #include <aws/workspaces/WorkSpacesClientPagination.h>
 #include <aws/workspaces/WorkSpacesEndpointProvider.h>
 #include <aws/workspaces/WorkSpacesErrorMarshaller.h>

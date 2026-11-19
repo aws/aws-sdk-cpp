@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2Client.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2ClientConfiguration.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2ClientPagination.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2EndpointProvider.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2ErrorMarshaller.h>

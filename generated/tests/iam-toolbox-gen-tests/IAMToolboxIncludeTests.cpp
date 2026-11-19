@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iam-toolbox/IAMToolboxClient.h>
+#include <aws/iam-toolbox/IAMToolboxClientConfiguration.h>
 #include <aws/iam-toolbox/IAMToolboxClientPagination.h>
 #include <aws/iam-toolbox/IAMToolboxEndpointProvider.h>
 #include <aws/iam-toolbox/IAMToolboxErrorMarshaller.h>

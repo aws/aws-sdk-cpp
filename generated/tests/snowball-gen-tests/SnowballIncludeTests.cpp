@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/snowball/SnowballClient.h>
+#include <aws/snowball/SnowballClientConfiguration.h>
 #include <aws/snowball/SnowballClientPagination.h>
 #include <aws/snowball/SnowballEndpointProvider.h>
 #include <aws/snowball/SnowballErrorMarshaller.h>

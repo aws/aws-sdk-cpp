@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cognito-sync/CognitoSyncClient.h>
+#include <aws/cognito-sync/CognitoSyncClientConfiguration.h>
 #include <aws/cognito-sync/CognitoSyncEndpointProvider.h>
 #include <aws/cognito-sync/CognitoSyncErrorMarshaller.h>
 #include <aws/cognito-sync/CognitoSyncErrors.h>

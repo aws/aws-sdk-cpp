@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/guardduty/GuardDutyClient.h>
+#include <aws/guardduty/GuardDutyClientConfiguration.h>
 #include <aws/guardduty/GuardDutyClientPagination.h>
 #include <aws/guardduty/GuardDutyEndpointProvider.h>
 #include <aws/guardduty/GuardDutyErrorMarshaller.h>

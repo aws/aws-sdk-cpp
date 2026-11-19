@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/chime-sdk-identity/ChimeSDKIdentityClient.h>
+#include <aws/chime-sdk-identity/ChimeSDKIdentityClientConfiguration.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityClientPagination.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityEndpointProvider.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityErrorMarshaller.h>

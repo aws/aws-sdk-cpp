@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/monitoring/CloudWatchClient.h>
+#include <aws/monitoring/CloudWatchClientConfiguration.h>
 #include <aws/monitoring/CloudWatchClientPagination.h>
 #include <aws/monitoring/CloudWatchEndpointProvider.h>
 #include <aws/monitoring/CloudWatchErrorMarshaller.h>

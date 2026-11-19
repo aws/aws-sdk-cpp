@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/qbusiness/QBusinessClient.h>
+#include <aws/qbusiness/QBusinessClientConfiguration.h>
 #include <aws/qbusiness/QBusinessClientPagination.h>
 #include <aws/qbusiness/QBusinessEndpointProvider.h>
 #include <aws/qbusiness/QBusinessErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsClient.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsClientConfiguration.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsClientPagination.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsEndpointProvider.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsErrorMarshaller.h>

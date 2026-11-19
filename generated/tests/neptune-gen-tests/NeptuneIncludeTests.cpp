@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/neptune/NeptuneClient.h>
+#include <aws/neptune/NeptuneClientConfiguration.h>
 #include <aws/neptune/NeptuneClientPagination.h>
 #include <aws/neptune/NeptuneEndpointProvider.h>
 #include <aws/neptune/NeptuneErrorMarshaller.h>
