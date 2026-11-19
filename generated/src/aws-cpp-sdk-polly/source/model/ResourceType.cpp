@@ -16,11 +16,14 @@ namespace Model {
 namespace ResourceTypeMapper {
 
 static const int lexicon_HASH = HashingUtils::HashString("lexicon");
+static const int voice_HASH = HashingUtils::HashString("voice");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == lexicon_HASH) {
     return ResourceType::lexicon;
+  } else if (hashCode == voice_HASH) {
+    return ResourceType::voice;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return {};
     case ResourceType::lexicon:
       return "lexicon";
+    case ResourceType::voice:
+      return "voice";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

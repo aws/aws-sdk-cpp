@@ -18,6 +18,11 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the
+ * <code>ListOpportunityFromEngagementTasks</code> operation.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunityFromEngagementTasksRequest">AWS
+ * API Reference</a></p>
  */
 class ListOpportunityFromEngagementTasksRequest : public PartnerCentralSellingRequest {
  public:
@@ -73,7 +78,10 @@ class ListOpportunityFromEngagementTasksRequest : public PartnerCentralSellingRe
   ///@}
 
   ///@{
-
+  /**
+   * <p>Specifies how to sort the returned tasks. You can sort by the time that the
+   * tasks started.</p>
+   */
   inline const ListTasksSortBase& GetSort() const { return m_sort; }
   inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
   template <typename SortT = ListTasksSortBase>

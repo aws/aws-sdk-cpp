@@ -8,6 +8,8 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/kafka/model/DescribeTopicPartitionsPaginationTraits.h>
+#include <aws/kafka/model/ListAssessmentFindingsPaginationTraits.h>
+#include <aws/kafka/model/ListAssessmentsPaginationTraits.h>
 #include <aws/kafka/model/ListClientVpcConnectionsPaginationTraits.h>
 #include <aws/kafka/model/ListClusterOperationsPaginationTraits.h>
 #include <aws/kafka/model/ListClusterOperationsV2PaginationTraits.h>
@@ -19,6 +21,7 @@
 #include <aws/kafka/model/ListNodesPaginationTraits.h>
 #include <aws/kafka/model/ListReplicatorsPaginationTraits.h>
 #include <aws/kafka/model/ListScramSecretsPaginationTraits.h>
+#include <aws/kafka/model/ListTopicReassignmentsPaginationTraits.h>
 #include <aws/kafka/model/ListTopicsPaginationTraits.h>
 #include <aws/kafka/model/ListVpcConnectionsPaginationTraits.h>
 
@@ -40,6 +43,30 @@ class KafkaPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTopicPartitionsRequest,
                                              Pagination::DescribeTopicPartitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAssessmentFindings operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentFindingsRequest,
+                                    Pagination::ListAssessmentFindingsPaginationTraits<DerivedClient>>
+  ListAssessmentFindingsPaginator(const Model::ListAssessmentFindingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentFindingsRequest,
+                                             Pagination::ListAssessmentFindingsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAssessments operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentsRequest,
+                                    Pagination::ListAssessmentsPaginationTraits<DerivedClient>>
+  ListAssessmentsPaginator(const Model::ListAssessmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentsRequest,
+                                             Pagination::ListAssessmentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                         request};
   }
 
   /**
@@ -168,6 +195,18 @@ class KafkaPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScramSecretsRequest,
                                              Pagination::ListScramSecretsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
+  }
+
+  /**
+   * Create a paginator for ListTopicReassignments operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTopicReassignmentsRequest,
+                                    Pagination::ListTopicReassignmentsPaginationTraits<DerivedClient>>
+  ListTopicReassignmentsPaginator(const Model::ListTopicReassignmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTopicReassignmentsRequest,
+                                             Pagination::ListTopicReassignmentsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

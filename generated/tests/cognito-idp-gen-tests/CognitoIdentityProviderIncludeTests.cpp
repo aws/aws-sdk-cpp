@@ -103,6 +103,9 @@
 #include <aws/cognito-idp/model/AuthFactorType.h>
 #include <aws/cognito-idp/model/AuthFlowType.h>
 #include <aws/cognito-idp/model/AuthenticationResultType.h>
+#include <aws/cognito-idp/model/CIMDCacheActionType.h>
+#include <aws/cognito-idp/model/CIMDPolicySummaryType.h>
+#include <aws/cognito-idp/model/CIMDPolicyType.h>
 #include <aws/cognito-idp/model/CancelPointInTimeRecoveryRequest.h>
 #include <aws/cognito-idp/model/CancelPointInTimeRecoveryResult.h>
 #include <aws/cognito-idp/model/ChallengeName.h>
@@ -112,6 +115,7 @@
 #include <aws/cognito-idp/model/ChangePasswordRequest.h>
 #include <aws/cognito-idp/model/ChangePasswordResult.h>
 #include <aws/cognito-idp/model/ClientAuthenticationResultType.h>
+#include <aws/cognito-idp/model/ClientMetadataURLType.h>
 #include <aws/cognito-idp/model/ClientSSOSessionConfigType.h>
 #include <aws/cognito-idp/model/ClientSecretDescriptorType.h>
 #include <aws/cognito-idp/model/ClientTypeType.h>
@@ -130,6 +134,8 @@
 #include <aws/cognito-idp/model/ConfirmSignUpRequest.h>
 #include <aws/cognito-idp/model/ConfirmSignUpResult.h>
 #include <aws/cognito-idp/model/ContextDataType.h>
+#include <aws/cognito-idp/model/CreateCIMDPolicyRequest.h>
+#include <aws/cognito-idp/model/CreateCIMDPolicyResult.h>
 #include <aws/cognito-idp/model/CreateGroupRequest.h>
 #include <aws/cognito-idp/model/CreateGroupResult.h>
 #include <aws/cognito-idp/model/CreateIdentityProviderRequest.h>
@@ -157,6 +163,8 @@
 #include <aws/cognito-idp/model/CustomSMSSenderLambdaVersionType.h>
 #include <aws/cognito-idp/model/DcrConfigurationType.h>
 #include <aws/cognito-idp/model/DefaultEmailOptionType.h>
+#include <aws/cognito-idp/model/DeleteCIMDPolicyRequest.h>
+#include <aws/cognito-idp/model/DeleteCIMDPolicyResult.h>
 #include <aws/cognito-idp/model/DeleteGroupRequest.h>
 #include <aws/cognito-idp/model/DeleteIdentityProviderRequest.h>
 #include <aws/cognito-idp/model/DeleteManagedLoginBrandingRequest.h>
@@ -177,6 +185,8 @@
 #include <aws/cognito-idp/model/DeleteWebAuthnCredentialResult.h>
 #include <aws/cognito-idp/model/DeletionProtectionType.h>
 #include <aws/cognito-idp/model/DeliveryMediumType.h>
+#include <aws/cognito-idp/model/DescribeCIMDPolicyRequest.h>
+#include <aws/cognito-idp/model/DescribeCIMDPolicyResult.h>
 #include <aws/cognito-idp/model/DescribeIdentityProviderRequest.h>
 #include <aws/cognito-idp/model/DescribeIdentityProviderResult.h>
 #include <aws/cognito-idp/model/DescribeManagedLoginBrandingByClientRequest.h>
@@ -283,6 +293,12 @@
 #include <aws/cognito-idp/model/LimitClass.h>
 #include <aws/cognito-idp/model/LimitDefinitionType.h>
 #include <aws/cognito-idp/model/LimitType.h>
+#include <aws/cognito-idp/model/ListCIMDPoliciesPaginationTraits.h>
+#include <aws/cognito-idp/model/ListCIMDPoliciesRequest.h>
+#include <aws/cognito-idp/model/ListCIMDPoliciesResult.h>
+#include <aws/cognito-idp/model/ListClientMetadataURLsPaginationTraits.h>
+#include <aws/cognito-idp/model/ListClientMetadataURLsRequest.h>
+#include <aws/cognito-idp/model/ListClientMetadataURLsResult.h>
 #include <aws/cognito-idp/model/ListDevicesRequest.h>
 #include <aws/cognito-idp/model/ListDevicesResult.h>
 #include <aws/cognito-idp/model/ListGroupsPaginationTraits.h>
@@ -422,6 +438,10 @@
 #include <aws/cognito-idp/model/UntagResourceResult.h>
 #include <aws/cognito-idp/model/UpdateAuthEventFeedbackRequest.h>
 #include <aws/cognito-idp/model/UpdateAuthEventFeedbackResult.h>
+#include <aws/cognito-idp/model/UpdateCIMDPolicyRequest.h>
+#include <aws/cognito-idp/model/UpdateCIMDPolicyResult.h>
+#include <aws/cognito-idp/model/UpdateClientMetadataURLStateRequest.h>
+#include <aws/cognito-idp/model/UpdateClientMetadataURLStateResult.h>
 #include <aws/cognito-idp/model/UpdateDeviceStatusRequest.h>
 #include <aws/cognito-idp/model/UpdateDeviceStatusResult.h>
 #include <aws/cognito-idp/model/UpdateGroupRequest.h>

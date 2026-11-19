@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/inspector2/model/CodeSecurityIntegrationVpcConfiguration.h>
 
 #include <utility>
 
@@ -68,12 +69,34 @@ class CreateGitLabSelfManagedIntegrationDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The VPC configuration used to connect to the self-managed GitLab instance in
+   * a private network. For publicly accessible instances, omit this field.</p>
+   */
+  inline const CodeSecurityIntegrationVpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
+  inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+  template <typename VpcConfigurationT = CodeSecurityIntegrationVpcConfiguration>
+  void SetVpcConfiguration(VpcConfigurationT&& value) {
+    m_vpcConfigurationHasBeenSet = true;
+    m_vpcConfiguration = std::forward<VpcConfigurationT>(value);
+  }
+  template <typename VpcConfigurationT = CodeSecurityIntegrationVpcConfiguration>
+  CreateGitLabSelfManagedIntegrationDetail& WithVpcConfiguration(VpcConfigurationT&& value) {
+    SetVpcConfiguration(std::forward<VpcConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceUrl;
 
   Aws::String m_accessToken;
+
+  CodeSecurityIntegrationVpcConfiguration m_vpcConfiguration;
   bool m_instanceUrlHasBeenSet = false;
   bool m_accessTokenHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

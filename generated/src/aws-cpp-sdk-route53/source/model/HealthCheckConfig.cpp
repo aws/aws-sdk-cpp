@@ -134,6 +134,17 @@ HealthCheckConfig& HealthCheckConfig::operator=(const XmlNode& xmlNode) {
       m_routingControlArn = Aws::Utils::Xml::DecodeEscapedXmlText(routingControlArnNode.GetText());
       m_routingControlArnHasBeenSet = true;
     }
+    XmlNode endpointTypeNode = resultNode.FirstChild("EndpointType");
+    if (!endpointTypeNode.IsNull()) {
+      m_endpointType = EndpointTypeMapper::GetEndpointTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endpointTypeNode.GetText()).c_str()));
+      m_endpointTypeHasBeenSet = true;
+    }
+    XmlNode healthCheckSourceIdNode = resultNode.FirstChild("HealthCheckSourceId");
+    if (!healthCheckSourceIdNode.IsNull()) {
+      m_healthCheckSourceId = Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckSourceIdNode.GetText());
+      m_healthCheckSourceIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -252,6 +263,16 @@ void HealthCheckConfig::AddToNode(XmlNode& parentNode) const {
   if (m_routingControlArnHasBeenSet) {
     XmlNode routingControlArnNode = parentNode.CreateChildElement("RoutingControlArn");
     routingControlArnNode.SetText(m_routingControlArn);
+  }
+
+  if (m_endpointTypeHasBeenSet) {
+    XmlNode endpointTypeNode = parentNode.CreateChildElement("EndpointType");
+    endpointTypeNode.SetText(EndpointTypeMapper::GetNameForEndpointType(m_endpointType));
+  }
+
+  if (m_healthCheckSourceIdHasBeenSet) {
+    XmlNode healthCheckSourceIdNode = parentNode.CreateChildElement("HealthCheckSourceId");
+    healthCheckSourceIdNode.SetText(m_healthCheckSourceId);
   }
 }
 

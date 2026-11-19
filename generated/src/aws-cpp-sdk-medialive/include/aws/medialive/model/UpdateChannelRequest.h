@@ -15,6 +15,7 @@
 #include <aws/medialive/model/InferenceSettings.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <aws/medialive/model/InputSpecification.h>
+#include <aws/medialive/model/JpegXsInputSpecification.h>
 #include <aws/medialive/model/LinkedChannelSettings.h>
 #include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/MaintenanceUpdateSettings.h>
@@ -366,6 +367,24 @@ setting object can only by used by that service.
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Specification of JPEG XS inputs for this channel
+   */
+  inline const JpegXsInputSpecification& GetJpegXsInputSpecification() const { return m_jpegXsInputSpecification; }
+  inline bool JpegXsInputSpecificationHasBeenSet() const { return m_jpegXsInputSpecificationHasBeenSet; }
+  template <typename JpegXsInputSpecificationT = JpegXsInputSpecification>
+  void SetJpegXsInputSpecification(JpegXsInputSpecificationT&& value) {
+    m_jpegXsInputSpecificationHasBeenSet = true;
+    m_jpegXsInputSpecification = std::forward<JpegXsInputSpecificationT>(value);
+  }
+  template <typename JpegXsInputSpecificationT = JpegXsInputSpecification>
+  UpdateChannelRequest& WithJpegXsInputSpecification(JpegXsInputSpecificationT&& value) {
+    SetJpegXsInputSpecification(std::forward<JpegXsInputSpecificationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CdiInputSpecification m_cdiInputSpecification;
 
@@ -400,6 +419,8 @@ setting object can only by used by that service.
   InferenceSettings m_inferenceSettings;
 
   SpecialRouterSettings m_specialRouterSettings;
+
+  JpegXsInputSpecification m_jpegXsInputSpecification;
   bool m_cdiInputSpecificationHasBeenSet = false;
   bool m_channelIdHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
@@ -417,6 +438,7 @@ setting object can only by used by that service.
   bool m_channelSecurityGroupsHasBeenSet = false;
   bool m_inferenceSettingsHasBeenSet = false;
   bool m_specialRouterSettingsHasBeenSet = false;
+  bool m_jpegXsInputSpecificationHasBeenSet = false;
 };
 
 }  // namespace Model

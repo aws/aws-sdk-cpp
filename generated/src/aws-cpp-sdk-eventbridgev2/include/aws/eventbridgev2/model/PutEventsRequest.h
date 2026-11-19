@@ -39,7 +39,9 @@ class PutEventsRequest : public EventBridgeV2Request {
   AWS_EVENTBRIDGEV2_API EndpointParameters GetEndpointContextParams() const override;
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
+   */
   inline const Aws::String& GetEventBusArn() const { return m_eventBusArn; }
   inline bool EventBusArnHasBeenSet() const { return m_eventBusArnHasBeenSet; }
   template <typename EventBusArnT = Aws::String>
@@ -55,7 +57,9 @@ class PutEventsRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>List of event entries to publish. Must contain at least one entry.</p>
+   */
   inline const Aws::Vector<PutEventsRequestEntry>& GetEntries() const { return m_entries; }
   inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
   template <typename EntriesT = Aws::Vector<PutEventsRequestEntry>>

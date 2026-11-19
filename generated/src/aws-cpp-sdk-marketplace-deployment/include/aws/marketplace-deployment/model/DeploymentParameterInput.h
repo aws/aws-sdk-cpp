@@ -23,8 +23,8 @@ namespace Model {
  * <p>The shape containing the requested deployment parameter name and
  * secretString.</p>  <p>To support AWS CloudFormation dynamic references to
  * this resource using Quick Launch, this value must match a parameter defined in
- * the CloudFormation templated provided to buyers.</p> <p><h3>See
- * Also:</h3>   <a
+ * the CloudFormation template provided to buyers.</p> <p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-deployment-2023-01-25/DeploymentParameterInput">AWS
  * API Reference</a></p>
  */

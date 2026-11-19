@@ -21,7 +21,8 @@ namespace EventBridgeV2 {
 namespace Model {
 
 /**
- * <p>Log configuration for a subscriber.</p><p><h3>See Also:</h3>   <a
+ * <p>Log configuration for a resource that delivers vended logs: a subscriber or a
+ * webhook EventSource.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/LogConfiguration">AWS
  * API Reference</a></p>
  */

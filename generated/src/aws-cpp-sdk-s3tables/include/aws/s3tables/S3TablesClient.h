@@ -524,6 +524,52 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Disassociates a replica table from replication, making it a standalone
+   * writable table. Any in-progress replication to the table stops, and in-flight
+   * commits fail without being committed to the table. Disassociating a table from
+   * replication is permanent and can't be reversed.</p> <p>You can only disassociate
+   * a replica table. If you call this operation on a table that isn't a replica
+   * table, including a table that you have already disassociated, the request
+   * fails.</p> <p>After you disassociate a table from replication, you can write to
+   * the table as you do any other table. <code>GetTable</code> no longer returns
+   * <code>managedByService</code> and <code>managedTableInformation</code> for the
+   * table, and <code>ListTables</code> no longer returns
+   * <code>managedByService</code> for it. On the source table,
+   * <code>GetTableReplicationStatus</code> reports a failure for this destination
+   * the next time replication to it is attempted.</p> <p>Disassociating a table from
+   * replication doesn't change its maintenance configuration. Review the maintenance
+   * settings of the table, such as compaction, after you disassociate it.</p> <dl>
+   * <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3tables:DisassociateTableReplication</code> permission to use this
+   * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DisassociateTableReplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateTableReplicationOutcome DisassociateTableReplication(
+      const Model::DisassociateTableReplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateTableReplication that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DisassociateTableReplicationRequestT = Model::DisassociateTableReplicationRequest>
+  Model::DisassociateTableReplicationOutcomeCallable DisassociateTableReplicationCallable(
+      const DisassociateTableReplicationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::DisassociateTableReplication, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateTableReplication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisassociateTableReplicationRequestT = Model::DisassociateTableReplicationRequest>
+  void DisassociateTableReplicationAsync(const DisassociateTableReplicationRequestT& request,
+                                         const DisassociateTableReplicationResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::DisassociateTableReplication, request, handler, context);
+  }
+
+  /**
    * <p>Gets details about a namespace. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html">Table
    * namespaces</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <dl>

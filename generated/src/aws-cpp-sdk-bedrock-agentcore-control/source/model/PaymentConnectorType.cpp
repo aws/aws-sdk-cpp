@@ -17,6 +17,7 @@ namespace PaymentConnectorTypeMapper {
 
 static const int CoinbaseCDP_HASH = HashingUtils::HashString("CoinbaseCDP");
 static const int StripePrivy_HASH = HashingUtils::HashString("StripePrivy");
+static const int AwsBilling_HASH = HashingUtils::HashString("AwsBilling");
 
 PaymentConnectorType GetPaymentConnectorTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ PaymentConnectorType GetPaymentConnectorTypeForName(const Aws::String& name) {
     return PaymentConnectorType::CoinbaseCDP;
   } else if (hashCode == StripePrivy_HASH) {
     return PaymentConnectorType::StripePrivy;
+  } else if (hashCode == AwsBilling_HASH) {
+    return PaymentConnectorType::AwsBilling;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForPaymentConnectorType(PaymentConnectorType enumValue) {
       return "CoinbaseCDP";
     case PaymentConnectorType::StripePrivy:
       return "StripePrivy";
+    case PaymentConnectorType::AwsBilling:
+      return "AwsBilling";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

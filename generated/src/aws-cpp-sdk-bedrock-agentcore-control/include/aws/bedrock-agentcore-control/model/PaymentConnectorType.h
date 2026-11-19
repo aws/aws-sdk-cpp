@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class PaymentConnectorType { NOT_SET, CoinbaseCDP, StripePrivy };
+enum class PaymentConnectorType { NOT_SET, CoinbaseCDP, StripePrivy, AwsBilling };
 
 namespace PaymentConnectorTypeMapper {
 AWS_BEDROCKAGENTCORECONTROL_API PaymentConnectorType GetPaymentConnectorTypeForName(const Aws::String& name);

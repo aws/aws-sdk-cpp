@@ -74,5 +74,10 @@ Aws::String CreateDistributionTenant2020_05_31Request::SerializePayload() const 
     ss.str("");
   }
 
+  if (m_onDomainTakeoverHasBeenSet) {
+    XmlNode onDomainTakeoverNode = parentNode.CreateChildElement("OnDomainTakeover");
+    onDomainTakeoverNode.SetText(OnDomainTakeoverMapper::GetNameForOnDomainTakeover(m_onDomainTakeover));
+  }
+
   return payloadDoc.ConvertToCompactString();
 }

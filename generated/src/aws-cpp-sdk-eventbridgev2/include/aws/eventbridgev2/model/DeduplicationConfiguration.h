@@ -32,7 +32,11 @@ class DeduplicationConfiguration {
   AWS_EVENTBRIDGEV2_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
-
+  /**
+   * <p>How duplicate events are detected: by a hash of the event content
+   * (CONTENT_BASED). To deduplicate by a caller-supplied token instead, omit
+   * DeduplicationConfiguration and set DeduplicationId on each entry.</p>
+   */
   inline DeduplicationType GetDeduplicationType() const { return m_deduplicationType; }
   inline bool DeduplicationTypeHasBeenSet() const { return m_deduplicationTypeHasBeenSet; }
   inline void SetDeduplicationType(DeduplicationType value) {

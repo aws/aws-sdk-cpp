@@ -56,7 +56,15 @@ class RegistryRecordOAuthCredentialProvider {
 
   ///@{
   /**
-   * <p>The OAuth 2.0 grant type used to obtain access tokens.</p>
+   * <p>The OAuth 2.0 grant type used to obtain access tokens. A GitHub skill source
+   * requires <code>AUTHORIZATION_CODE</code>. Other sources, such as MCP server and
+   * A2A agent card sources, use <code>CLIENT_CREDENTIALS</code>. A GitHub source
+   * takes exactly one OAuth credential provider, in the registry's Amazon Web
+   * Services account and Region. Only an IAM role or IAM user in the account that
+   * owns the registry can set, synchronize, or reauthorize it, and the caller needs
+   * <code>bedrock-agentcore:GetWorkloadAccessTokenForUserId</code> and
+   * <code>bedrock-agentcore:GetResourceOauth2Token</code> on the registry's workload
+   * identity, <code>registry-</code> followed by the registry ID.</p>
    */
   inline RegistryRecordOAuthGrantType GetGrantType() const { return m_grantType; }
   inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
@@ -117,6 +125,32 @@ class RegistryRecordOAuthCredentialProvider {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The URL that the user's browser returns to after the user approves access on
+   * GitHub, for the <code>AUTHORIZATION_CODE</code> grant. There, your application
+   * completes the authorization by calling the Amazon Bedrock AgentCore Identity
+   * <code>CompleteResourceTokenAuth</code> operation with the <code>userId</code>
+   * from <code>authorizationData</code>. If you omit it, the user returns to the
+   * Amazon Web Services Agent Registry console, which completes the authorization
+   * when the user is signed in as the IAM principal that made the request. A request
+   * that joins an authorization already in progress uses the return URL of the
+   * request that started it.</p>
+   */
+  inline const Aws::String& GetReturnUrl() const { return m_returnUrl; }
+  inline bool ReturnUrlHasBeenSet() const { return m_returnUrlHasBeenSet; }
+  template <typename ReturnUrlT = Aws::String>
+  void SetReturnUrl(ReturnUrlT&& value) {
+    m_returnUrlHasBeenSet = true;
+    m_returnUrl = std::forward<ReturnUrlT>(value);
+  }
+  template <typename ReturnUrlT = Aws::String>
+  RegistryRecordOAuthCredentialProvider& WithReturnUrl(ReturnUrlT&& value) {
+    SetReturnUrl(std::forward<ReturnUrlT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_providerArn;
 
@@ -125,10 +159,13 @@ class RegistryRecordOAuthCredentialProvider {
   Aws::Vector<Aws::String> m_scopes;
 
   Aws::Map<Aws::String, Aws::String> m_customParameters;
+
+  Aws::String m_returnUrl;
   bool m_providerArnHasBeenSet = false;
   bool m_grantTypeHasBeenSet = false;
   bool m_scopesHasBeenSet = false;
   bool m_customParametersHasBeenSet = false;
+  bool m_returnUrlHasBeenSet = false;
 };
 
 }  // namespace Model

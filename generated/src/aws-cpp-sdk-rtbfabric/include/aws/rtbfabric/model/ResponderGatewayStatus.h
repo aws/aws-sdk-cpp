@@ -20,7 +20,9 @@ enum class ResponderGatewayStatus {
   PENDING_UPDATE,
   ISOLATED,
   PENDING_ISOLATION,
-  PENDING_RESTORATION
+  PENDING_RESTORATION,
+  CREATE_FAILED,
+  DELETE_FAILED
 };
 
 namespace ResponderGatewayStatusMapper {

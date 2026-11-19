@@ -28,6 +28,12 @@ OpenIDConnectProviderListEntry& OpenIDConnectProviderListEntry::operator=(const 
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
     }
+    XmlNode isTrustedIdentityPropagationEnabledNode = resultNode.FirstChild("IsTrustedIdentityPropagationEnabled");
+    if (!isTrustedIdentityPropagationEnabledNode.IsNull()) {
+      m_isTrustedIdentityPropagationEnabled = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTrustedIdentityPropagationEnabledNode.GetText()).c_str()).c_str());
+      m_isTrustedIdentityPropagationEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -38,11 +44,19 @@ void OpenIDConnectProviderListEntry::OutputToStream(Aws::OStream& oStream, const
   if (m_arnHasBeenSet) {
     oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
+
+  if (m_isTrustedIdentityPropagationEnabledHasBeenSet) {
+    oStream << location << index << locationValue << ".IsTrustedIdentityPropagationEnabled=" << std::boolalpha
+            << m_isTrustedIdentityPropagationEnabled << "&";
+  }
 }
 
 void OpenIDConnectProviderListEntry::OutputToStream(Aws::OStream& oStream, const char* location) const {
   if (m_arnHasBeenSet) {
     oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
+  if (m_isTrustedIdentityPropagationEnabledHasBeenSet) {
+    oStream << location << ".IsTrustedIdentityPropagationEnabled=" << std::boolalpha << m_isTrustedIdentityPropagationEnabled << "&";
   }
 }
 

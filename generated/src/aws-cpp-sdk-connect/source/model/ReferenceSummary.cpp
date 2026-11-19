@@ -62,6 +62,22 @@ ReferenceSummary& ReferenceSummary::operator=(JsonView jsonValue) {
     m_contactAnalysis = jsonValue.GetObject("ContactAnalysis");
     m_contactAnalysisHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VoicemailRecording")) {
+    m_voicemailRecording = jsonValue.GetObject("VoicemailRecording");
+    m_voicemailRecordingHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("VoicemailRecordingRedacted")) {
+    m_voicemailRecordingRedacted = jsonValue.GetObject("VoicemailRecordingRedacted");
+    m_voicemailRecordingRedactedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("VoicemailAnalysis")) {
+    m_voicemailAnalysis = jsonValue.GetObject("VoicemailAnalysis");
+    m_voicemailAnalysisHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("VoicemailAnalysisRedacted")) {
+    m_voicemailAnalysisRedacted = jsonValue.GetObject("VoicemailAnalysisRedacted");
+    m_voicemailAnalysisRedactedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +126,22 @@ JsonValue ReferenceSummary::Jsonize() const {
 
   if (m_contactAnalysisHasBeenSet) {
     payload.WithObject("ContactAnalysis", m_contactAnalysis.Jsonize());
+  }
+
+  if (m_voicemailRecordingHasBeenSet) {
+    payload.WithObject("VoicemailRecording", m_voicemailRecording.Jsonize());
+  }
+
+  if (m_voicemailRecordingRedactedHasBeenSet) {
+    payload.WithObject("VoicemailRecordingRedacted", m_voicemailRecordingRedacted.Jsonize());
+  }
+
+  if (m_voicemailAnalysisHasBeenSet) {
+    payload.WithObject("VoicemailAnalysis", m_voicemailAnalysis.Jsonize());
+  }
+
+  if (m_voicemailAnalysisRedactedHasBeenSet) {
+    payload.WithObject("VoicemailAnalysisRedacted", m_voicemailAnalysisRedacted.Jsonize());
   }
 
   return payload;

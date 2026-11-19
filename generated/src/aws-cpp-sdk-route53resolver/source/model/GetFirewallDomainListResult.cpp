@@ -26,6 +26,14 @@ GetFirewallDomainListResult& GetFirewallDomainListResult::operator=(const Aws::A
     m_firewallDomainList = jsonValue.GetObject("FirewallDomainList");
     m_firewallDomainListHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FirewallRuleGroupId")) {
+    m_firewallRuleGroupId = jsonValue.GetString("FirewallRuleGroupId");
+    m_firewallRuleGroupIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FirewallThreatProtectionId")) {
+    m_firewallThreatProtectionId = jsonValue.GetString("FirewallThreatProtectionId");
+    m_firewallThreatProtectionIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -85,12 +85,6 @@ class GetFederationTokenRequest : public STSRequest {
    * characters can be any ASCII character from the space character to the end of the
    * valid character list (\u0020 through \u00FF). It can also include the tab
    * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p>
-   * <p>An Amazon Web Services conversion compresses the passed inline session
-   * policy, managed policy ARNs, and session tags into a packed binary format that
-   * has a separate limit. Your request can fail for this limit even if your
-   * plaintext meets the other requirements. The <code>PackedPolicySize</code>
-   * response element indicates by percentage how close the policies and tags for
-   * your request are to the upper size limit.</p>
    */
   inline const Aws::String& GetPolicy() const { return m_policy; }
   inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
@@ -135,12 +129,7 @@ class GetFederationTokenRequest : public STSRequest {
    * specifically references the federated user session in the <code>Principal</code>
    * element of the policy, the session has the permissions allowed by the policy.
    * These permissions are granted in addition to the permissions that are granted by
-   * the session policies.</p>  <p>An Amazon Web Services conversion compresses
-   * the passed inline session policy, managed policy ARNs, and session tags into a
-   * packed binary format that has a separate limit. Your request can fail for this
-   * limit even if your plaintext meets the other requirements. The
-   * <code>PackedPolicySize</code> response element indicates by percentage how close
-   * the policies and tags for your request are to the upper size limit.</p>
+   * the session policies.</p>
    */
   inline const Aws::Vector<PolicyDescriptorType>& GetPolicyArns() const { return m_policyArns; }
   inline bool PolicyArnsHasBeenSet() const { return m_policyArnsHasBeenSet; }
@@ -193,19 +182,14 @@ class GetFederationTokenRequest : public STSRequest {
    * can’t exceed 128 characters and the values can’t exceed 256 characters. For
    * these and additional limits, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-   * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
-   * Amazon Web Services conversion compresses the passed inline session policy,
-   * managed policy ARNs, and session tags into a packed binary format that has a
-   * separate limit. Your request can fail for this limit even if your plaintext
-   * meets the other requirements. The <code>PackedPolicySize</code> response element
-   * indicates by percentage how close the policies and tags for your request are to
-   * the upper size limit.</p>  <p>You can pass a session tag with the same
-   * key as a tag that is already attached to the user you are federating. When you
-   * do, session tags override a user tag with the same key. </p> <p>Tag key–value
-   * pairs are not case sensitive, but case is preserved. This means that you cannot
-   * have separate <code>Department</code> and <code>department</code> tag keys.
-   * Assume that the role has the <code>Department</code>=<code>Marketing</code> tag
-   * and you pass the <code>department</code>=<code>engineering</code> session tag.
+   * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <p>You can pass a
+   * session tag with the same key as a tag that is already attached to the user you
+   * are federating. When you do, session tags override a user tag with the same key.
+   * </p> <p>Tag key–value pairs are not case sensitive, but case is preserved. This
+   * means that you cannot have separate <code>Department</code> and
+   * <code>department</code> tag keys. Assume that the role has the
+   * <code>Department</code>=<code>Marketing</code> tag and you pass the
+   * <code>department</code>=<code>engineering</code> session tag.
    * <code>Department</code> and <code>department</code> are not saved as separate
    * tags, and the session tag passed in the request takes precedence over the role
    * tag.</p>

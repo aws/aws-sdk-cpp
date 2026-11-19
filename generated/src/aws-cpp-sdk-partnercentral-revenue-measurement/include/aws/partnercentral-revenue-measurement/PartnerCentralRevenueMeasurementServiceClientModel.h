@@ -35,6 +35,7 @@
 #include <aws/partnercentral-revenue-measurement/model/ListTagsForResourceResult.h>
 #include <aws/partnercentral-revenue-measurement/model/StartRevenueAttributionAllocationsTaskResult.h>
 #include <aws/partnercentral-revenue-measurement/model/UpdateMarketplaceRevenueShareAllocationResult.h>
+#include <aws/partnercentral-revenue-measurement/model/UpdateMarketplaceRevenueShareResult.h>
 #include <aws/partnercentral-revenue-measurement/model/UpdateRevenueAttributionResult.h>
 /* End of service model headers required in PartnerCentralRevenueMeasurementClient header */
 
@@ -87,6 +88,7 @@ class ListTagsForResourceRequest;
 class StartRevenueAttributionAllocationsTaskRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateMarketplaceRevenueShareRequest;
 class UpdateMarketplaceRevenueShareAllocationRequest;
 class UpdateRevenueAttributionRequest;
 /* End of service model forward declarations required in PartnerCentralRevenueMeasurementClient header */
@@ -116,6 +118,8 @@ typedef Aws::Utils::Outcome<StartRevenueAttributionAllocationsTaskResult, Partne
     StartRevenueAttributionAllocationsTaskOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, PartnerCentralRevenueMeasurementError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, PartnerCentralRevenueMeasurementError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateMarketplaceRevenueShareResult, PartnerCentralRevenueMeasurementError>
+    UpdateMarketplaceRevenueShareOutcome;
 typedef Aws::Utils::Outcome<UpdateMarketplaceRevenueShareAllocationResult, PartnerCentralRevenueMeasurementError>
     UpdateMarketplaceRevenueShareAllocationOutcome;
 typedef Aws::Utils::Outcome<UpdateRevenueAttributionResult, PartnerCentralRevenueMeasurementError> UpdateRevenueAttributionOutcome;
@@ -138,6 +142,7 @@ typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallab
 typedef std::future<StartRevenueAttributionAllocationsTaskOutcome> StartRevenueAttributionAllocationsTaskOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateMarketplaceRevenueShareOutcome> UpdateMarketplaceRevenueShareOutcomeCallable;
 typedef std::future<UpdateMarketplaceRevenueShareAllocationOutcome> UpdateMarketplaceRevenueShareAllocationOutcomeCallable;
 typedef std::future<UpdateRevenueAttributionOutcome> UpdateRevenueAttributionOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -203,6 +208,10 @@ typedef std::function<void(const PartnerCentralRevenueMeasurementClient*, const 
 typedef std::function<void(const PartnerCentralRevenueMeasurementClient*, const Model::UntagResourceRequest&,
                            const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const PartnerCentralRevenueMeasurementClient*, const Model::UpdateMarketplaceRevenueShareRequest&,
+                           const Model::UpdateMarketplaceRevenueShareOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateMarketplaceRevenueShareResponseReceivedHandler;
 typedef std::function<void(const PartnerCentralRevenueMeasurementClient*, const Model::UpdateMarketplaceRevenueShareAllocationRequest&,
                            const Model::UpdateMarketplaceRevenueShareAllocationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

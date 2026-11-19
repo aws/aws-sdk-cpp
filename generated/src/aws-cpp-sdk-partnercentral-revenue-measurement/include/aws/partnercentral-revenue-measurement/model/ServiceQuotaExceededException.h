@@ -34,7 +34,10 @@ class ServiceQuotaExceededException {
   AWS_PARTNERCENTRALREVENUEMEASUREMENT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
-
+  /**
+   * <p>A human-readable message describing which service quota would be
+   * exceeded.</p>
+   */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
   template <typename MessageT = Aws::String>

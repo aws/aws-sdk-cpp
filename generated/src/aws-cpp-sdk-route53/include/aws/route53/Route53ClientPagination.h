@@ -9,6 +9,8 @@
 #include <aws/route53/model/ListCidrBlocksPaginationTraits.h>
 #include <aws/route53/model/ListCidrCollectionsPaginationTraits.h>
 #include <aws/route53/model/ListCidrLocationsPaginationTraits.h>
+#include <aws/route53/model/ListHealthCheckSourcesPaginationTraits.h>
+#include <aws/route53/model/ListHealthChecksBySourcePaginationTraits.h>
 #include <aws/route53/model/ListHealthChecksPaginationTraits.h>
 #include <aws/route53/model/ListHostedZonesPaginationTraits.h>
 #include <aws/route53/model/ListQueryLoggingConfigsPaginationTraits.h>
@@ -25,6 +27,12 @@ using ListCidrLocationsPaginator = Aws::Utils::Pagination::Paginator<Route53Clie
                                                                      Pagination::ListCidrLocationsPaginationTraits<Route53Client>>;
 using ListHealthChecksPaginator = Aws::Utils::Pagination::Paginator<Route53Client, Model::ListHealthChecksRequest,
                                                                     Pagination::ListHealthChecksPaginationTraits<Route53Client>>;
+using ListHealthChecksBySourcePaginator =
+    Aws::Utils::Pagination::Paginator<Route53Client, Model::ListHealthChecksBySourceRequest,
+                                      Pagination::ListHealthChecksBySourcePaginationTraits<Route53Client>>;
+using ListHealthCheckSourcesPaginator =
+    Aws::Utils::Pagination::Paginator<Route53Client, Model::ListHealthCheckSourcesRequest,
+                                      Pagination::ListHealthCheckSourcesPaginationTraits<Route53Client>>;
 using ListHostedZonesPaginator = Aws::Utils::Pagination::Paginator<Route53Client, Model::ListHostedZonesRequest,
                                                                    Pagination::ListHostedZonesPaginationTraits<Route53Client>>;
 using ListQueryLoggingConfigsPaginator =

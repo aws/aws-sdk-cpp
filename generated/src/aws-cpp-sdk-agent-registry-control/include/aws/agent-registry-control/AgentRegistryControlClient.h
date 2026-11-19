@@ -117,8 +117,13 @@ class AWS_AGENTREGISTRYCONTROL_API AgentRegistryControlClient
   /**
    * <p>Creates a registry record within a registry. A registry record describes a
    * discoverable resource, such as an MCP server, an agent, an agent skill, or a
-   * custom resource. Creation is asynchronous: the record is returned with the
-   * CREATING status while it is processed.</p><p><h3>See Also:</h3>   <a
+   * custom resource. For an agent skill, you can upload a skill package in
+   * <code>artifact</code>, or synchronize the skill from an Amazon S3 or GitHub
+   * source. Creation is asynchronous: the operation returns the record with the
+   * <code>CREATING</code> status while the registry processes it. If a GitHub user
+   * must first authorize access to the source, the operation returns the record with
+   * the <code>CREATE_PENDING_AUTH</code> status instead.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/CreateRegistryRecord">AWS
    * API Reference</a></p>
    */
@@ -222,7 +227,11 @@ class AWS_AGENTREGISTRYCONTROL_API AgentRegistryControlClient
   }
 
   /**
-   * <p>Retrieves the details of a registry record</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves the details of a registry record. The response describes the
+   * record's latest revision, including a revision that isn't approved yet. For a
+   * skill record, the operation also returns the skill package in
+   * <code>artifact</code> and the source that the registry last synchronized the
+   * skill from in <code>synchronizedSource</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/GetRegistryRecord">AWS
    * API Reference</a></p>
    */
@@ -446,10 +455,12 @@ class AWS_AGENTREGISTRYCONTROL_API AgentRegistryControlClient
   }
 
   /**
-   * <p>Updates a registry record. The update is asynchronous: the record is returned
-   * with the UPDATING status while it is processed. Fields that use update wrappers
-   * follow PATCH semantics: omit the field to leave it unchanged.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Updates a registry record. The update is asynchronous: the operation returns
+   * the record with the <code>UPDATING</code> status while the registry processes
+   * it. If a GitHub user must first authorize access to the record's skill source,
+   * the operation returns the record with the <code>UPDATE_PENDING_AUTH</code>
+   * status instead. Fields that use update wrappers follow PATCH semantics: omit the
+   * field to leave it unchanged.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/UpdateRegistryRecord">AWS
    * API Reference</a></p>
    */

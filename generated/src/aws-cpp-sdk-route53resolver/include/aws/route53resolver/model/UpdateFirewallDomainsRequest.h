@@ -54,10 +54,19 @@ class UpdateFirewallDomainsRequest : public Route53ResolverRequest {
   /**
    * <p>What you want DNS Firewall to do with the domains that you are providing:
    * </p> <ul> <li> <p> <code>ADD</code> - Add the domains to the ones that are
-   * already in the domain list. </p> </li> <li> <p> <code>REMOVE</code> - Search the
-   * domain list for the domains and remove them from the list.</p> </li> <li> <p>
-   * <code>REPLACE</code> - Update the domain list to exactly match the list that you
-   * are providing. </p> </li> </ul>
+   * already in the domain list. For an AutoAllowlist rule's managed domain list,
+   * this also marks the observed domains as allowed.</p> </li> <li> <p>
+   * <code>REMOVE</code> - Search the domain list for the domains and remove them
+   * from the list. For an AutoAllowlist rule's managed domain list, the rule no
+   * longer allows the removed domains, unless a wildcard entry that's still on the
+   * list matches them.</p> </li> <li> <p> <code>REPLACE</code> - Update the domain
+   * list to exactly match the list that you are providing. Not supported for an
+   * AutoAllowlist rule's managed domain list.</p> </li> <li> <p> <code>DENY</code> -
+   * For an AutoAllowlist rule's managed domain list only, mark the specified
+   * observed domains as denied so that they're no longer listed for review. If a
+   * domain is on the managed domain list, <code>DENY</code> also removes it from the
+   * list. Specify fully qualified domain names. Wildcards aren't accepted.</p> </li>
+   * </ul>
    */
   inline FirewallDomainUpdateOperation GetOperation() const { return m_operation; }
   inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }

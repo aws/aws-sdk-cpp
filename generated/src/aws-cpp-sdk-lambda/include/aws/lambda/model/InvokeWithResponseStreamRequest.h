@@ -110,7 +110,8 @@ class InvokeWithResponseStreamRequest : public StreamingLambdaRequest {
   ///@{
   /**
    * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
-   * the function in the context object.</p>
+   * the function in the context object.</p> <p> <code>ClientContext</code> is logged
+   * to CloudTrail if you turn on data events.</p>
    */
   inline const Aws::String& GetClientContext() const { return m_clientContext; }
   inline bool ClientContextHasBeenSet() const { return m_clientContextHasBeenSet; }

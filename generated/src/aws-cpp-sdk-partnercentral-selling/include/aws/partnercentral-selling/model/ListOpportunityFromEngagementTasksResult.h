@@ -23,6 +23,13 @@ class JsonValue;
 }  // namespace Utils
 namespace PartnerCentralSelling {
 namespace Model {
+/**
+ * <p>Contains the response that the
+ * <code>ListOpportunityFromEngagementTasks</code> action returns.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunityFromEngagementTasksResponse">AWS
+ * API Reference</a></p>
+ */
 class ListOpportunityFromEngagementTasksResult {
  public:
   AWS_PARTNERCENTRALSELLING_API ListOpportunityFromEngagementTasksResult() = default;

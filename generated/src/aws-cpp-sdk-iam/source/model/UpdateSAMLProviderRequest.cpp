@@ -35,6 +35,22 @@ Aws::String UpdateSAMLProviderRequest::SerializePayload() const {
     ss << "RemovePrivateKey=" << StringUtils::URLEncode(m_removePrivateKey.c_str()) << "&";
   }
 
+  if (m_contextProviderHasBeenSet) {
+    m_contextProvider.OutputToStream(ss, "ContextProvider");
+  }
+
+  if (m_identityCenterInstanceArnHasBeenSet) {
+    ss << "IdentityCenterInstanceArn=" << StringUtils::URLEncode(m_identityCenterInstanceArn.c_str()) << "&";
+  }
+
+  if (m_removeContextProviderHasBeenSet) {
+    ss << "RemoveContextProvider=" << std::boolalpha << m_removeContextProvider << "&";
+  }
+
+  if (m_removeIdentityCenterInstanceHasBeenSet) {
+    ss << "RemoveIdentityCenterInstance=" << std::boolalpha << m_removeIdentityCenterInstance << "&";
+  }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

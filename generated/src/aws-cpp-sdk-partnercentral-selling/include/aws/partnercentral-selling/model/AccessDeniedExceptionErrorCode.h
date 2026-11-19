@@ -10,7 +10,13 @@
 namespace Aws {
 namespace PartnerCentralSelling {
 namespace Model {
-enum class AccessDeniedExceptionErrorCode { NOT_SET, INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE };
+enum class AccessDeniedExceptionErrorCode {
+  NOT_SET,
+  INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE,
+  SEARCH_OPPORTUNITIES_NOT_ENABLED,
+  SEARCH_OPPORTUNITIES_DATA_NOT_ROUTED_TO_DDB,
+  OPPORTUNITY_BULK_JOB_NOT_ENABLED
+};
 
 namespace AccessDeniedExceptionErrorCodeMapper {
 AWS_PARTNERCENTRALSELLING_API AccessDeniedExceptionErrorCode GetAccessDeniedExceptionErrorCodeForName(const Aws::String& name);

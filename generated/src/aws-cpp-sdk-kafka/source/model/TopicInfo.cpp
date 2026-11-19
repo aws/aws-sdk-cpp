@@ -38,6 +38,13 @@ TopicInfo& TopicInfo::operator=(JsonView jsonValue) {
     m_outOfSyncReplicaCount = jsonValue.GetInteger("outOfSyncReplicaCount");
     m_outOfSyncReplicaCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("replicaIds")) {
+    Aws::Utils::Array<JsonView> replicaIdsJsonList = jsonValue.GetArray("replicaIds");
+    for (unsigned replicaIdsIndex = 0; replicaIdsIndex < replicaIdsJsonList.GetLength(); ++replicaIdsIndex) {
+      m_replicaIds.push_back(replicaIdsJsonList[replicaIdsIndex].AsInteger());
+    }
+    m_replicaIdsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +69,14 @@ JsonValue TopicInfo::Jsonize() const {
 
   if (m_outOfSyncReplicaCountHasBeenSet) {
     payload.WithInteger("outOfSyncReplicaCount", m_outOfSyncReplicaCount);
+  }
+
+  if (m_replicaIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> replicaIdsJsonList(m_replicaIds.size());
+    for (unsigned replicaIdsIndex = 0; replicaIdsIndex < replicaIdsJsonList.GetLength(); ++replicaIdsIndex) {
+      replicaIdsJsonList[replicaIdsIndex].AsInteger(m_replicaIds[replicaIdsIndex]);
+    }
+    payload.WithArray("replicaIds", std::move(replicaIdsJsonList));
   }
 
   return payload;

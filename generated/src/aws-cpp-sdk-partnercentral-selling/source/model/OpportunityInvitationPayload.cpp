@@ -42,6 +42,10 @@ OpportunityInvitationPayload& OpportunityInvitationPayload::operator=(JsonView j
     m_project = jsonValue.GetObject("Project");
     m_projectHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OpportunityType")) {
+    m_opportunityType = OpportunityTypeMapper::GetOpportunityTypeForName(jsonValue.GetString("OpportunityType"));
+    m_opportunityTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -72,6 +76,10 @@ JsonValue OpportunityInvitationPayload::Jsonize() const {
 
   if (m_projectHasBeenSet) {
     payload.WithObject("Project", m_project.Jsonize());
+  }
+
+  if (m_opportunityTypeHasBeenSet) {
+    payload.WithString("OpportunityType", OpportunityTypeMapper::GetNameForOpportunityType(m_opportunityType));
   }
 
   return payload;

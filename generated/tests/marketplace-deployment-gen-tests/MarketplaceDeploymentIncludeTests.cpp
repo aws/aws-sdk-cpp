@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/marketplace-deployment/MarketplaceDeploymentClient.h>
+#include <aws/marketplace-deployment/MarketplaceDeploymentClientPagination.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentEndpointProvider.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentErrorMarshaller.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentErrors.h>
@@ -17,11 +18,26 @@
 #include <aws/marketplace-deployment/MarketplaceDeployment_EXPORTS.h>
 #include <aws/marketplace-deployment/internal/MarketplaceDeploymentEndpointRules.h>
 #include <aws/marketplace-deployment/model/ConflictException.h>
+#include <aws/marketplace-deployment/model/DataAsAServiceConfigurationDetail.h>
+#include <aws/marketplace-deployment/model/DeliveryOptionType.h>
+#include <aws/marketplace-deployment/model/DeploymentConfigurationDetail.h>
+#include <aws/marketplace-deployment/model/DeploymentConfigurationJobErrorCode.h>
+#include <aws/marketplace-deployment/model/DeploymentConfigurationJobStatus.h>
+#include <aws/marketplace-deployment/model/DeploymentConfigurationJobSummary.h>
 #include <aws/marketplace-deployment/model/DeploymentParameterInput.h>
+#include <aws/marketplace-deployment/model/GetDeploymentConfigurationJobRequest.h>
+#include <aws/marketplace-deployment/model/GetDeploymentConfigurationJobResult.h>
+#include <aws/marketplace-deployment/model/GetDeploymentConfigurationRequest.h>
+#include <aws/marketplace-deployment/model/GetDeploymentConfigurationResult.h>
+#include <aws/marketplace-deployment/model/ListDeploymentConfigurationJobsPaginationTraits.h>
+#include <aws/marketplace-deployment/model/ListDeploymentConfigurationJobsRequest.h>
+#include <aws/marketplace-deployment/model/ListDeploymentConfigurationJobsResult.h>
 #include <aws/marketplace-deployment/model/ListTagsForResourceRequest.h>
 #include <aws/marketplace-deployment/model/ListTagsForResourceResult.h>
 #include <aws/marketplace-deployment/model/PutDeploymentParameterRequest.h>
 #include <aws/marketplace-deployment/model/PutDeploymentParameterResult.h>
+#include <aws/marketplace-deployment/model/StartDeploymentConfigurationJobRequest.h>
+#include <aws/marketplace-deployment/model/StartDeploymentConfigurationJobResult.h>
 #include <aws/marketplace-deployment/model/TagResourceRequest.h>
 #include <aws/marketplace-deployment/model/TagResourceResult.h>
 #include <aws/marketplace-deployment/model/UntagResourceRequest.h>

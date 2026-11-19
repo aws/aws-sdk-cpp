@@ -23,7 +23,7 @@ namespace Model {
 /**
  * <p>Lambda invocation parameters for subscribers. Values are forwarded to the
  * Lambda Invoke API. Every string member accepts a literal or a JSONata expression
- * (e.g. &quot;{% $events.Data.qualifier %}&quot;).</p><p><h3>See Also:</h3>   <a
+ * (e.g. "{% $events.Data.qualifier %}").</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/LambdaParameters">AWS
  * API Reference</a></p>
  */

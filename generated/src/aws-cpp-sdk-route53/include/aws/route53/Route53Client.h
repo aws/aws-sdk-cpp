@@ -297,8 +297,8 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   * <p>Adds, edits, or deletes tags for a health check or a hosted zone.</p> <p>For
-   * information about using tags for cost allocation, see <a
+   * <p>Adds, edits, or deletes tags for a health check, a health check source, or a
+   * hosted zone.</p> <p>For information about using tags for cost allocation, see <a
    * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
    * Cost Allocation Tags</a> in the <i>Billing and Cost Management User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -365,18 +365,22 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
    * load balancer, you configure settings for an ELB health check, which performs a
    * similar function to a Route 53 health check.</p> <p> <b>Private Hosted Zones</b>
    * </p> <p>You can associate health checks with failover resource record sets in a
-   * private hosted zone. Note the following:</p> <ul> <li> <p>Route 53 health
-   * checkers are outside the VPC. To check the health of an endpoint within a VPC by
-   * IP address, you must assign a public IP address to the instance in the VPC.</p>
-   * </li> <li> <p>You can configure a health checker to check the health of an
-   * external resource that the instance relies on, such as a database server.</p>
-   * </li> <li> <p>You can create a CloudWatch metric, associate an alarm with the
-   * metric, and then create a health check that is based on the state of the alarm.
-   * For example, you might create a CloudWatch metric that checks the status of the
-   * Amazon EC2 <code>StatusCheckFailed</code> metric, add an alarm to the metric,
-   * and then create a health check that is based on the state of the alarm. For
-   * information about creating CloudWatch metrics and alarms by using the CloudWatch
-   * console, see the <a
+   * private hosted zone. Note the following:</p> <ul> <li> <p>For a public health
+   * check, Route 53 health checkers are outside the VPC. To check the health of an
+   * endpoint within a VPC by IP address, you must assign a public IP address to the
+   * instance in the VPC.</p> </li> <li> <p>To check the health of an endpoint within
+   * a VPC by using a private IP address, use a private endpoint health check
+   * (<code>EndpointType</code> of <code>PRIVATE</code>). For more information, see
+   * <code>CreateHealthCheckSource</code>.</p> </li> <li> <p>You can configure a
+   * health checker to check the health of an external resource that the instance
+   * relies on, such as a database server.</p> </li> <li> <p>You can create a
+   * CloudWatch metric, associate an alarm with the metric, and then create a health
+   * check that is based on the state of the alarm. For example, you might create a
+   * CloudWatch metric that checks the status of the Amazon EC2
+   * <code>StatusCheckFailed</code> metric, add an alarm to the metric, and then
+   * create a health check that is based on the state of the alarm. For information
+   * about creating CloudWatch metrics and alarms by using the CloudWatch console,
+   * see the <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
    * CloudWatch User Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">AWS
@@ -401,6 +405,49 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
   void CreateHealthCheckAsync(const CreateHealthCheckRequestT& request, const CreateHealthCheckResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&Route53Client::CreateHealthCheck, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a health check source, which defines the virtual private cloud (VPC),
+   * subnets, and security groups from which Route 53 sends private endpoint health
+   * check requests. To use this operation, you must have the
+   * <code>route53:CreateHealthCheckSource</code> permission. You must also have
+   * permission to create a service-linked role.</p> <p>Specify a VPC, one subnet in
+   * each Availability Zone that Route 53 uses for private endpoint health checks in
+   * the Amazon Web Services Region, and one or more security groups for each subnet.
+   * The security groups must allow outbound traffic to the endpoints that you want
+   * to check.</p> <p>Route 53 creates a health check source asynchronously, and the
+   * initial <code>HealthCheckSourceStatus</code> is <code>CREATE_PENDING</code>.
+   * Call <code>GetHealthCheckSource</code> until the status is
+   * <code>CREATE_COMPLETED</code> before you create health checks that use the
+   * source. You can't change the configuration of a health check source after you
+   * create it.</p> <p>If AWS Identity and Access Management (IAM) is still deleting
+   * the Route 53 service-linked role for your account, the request fails with
+   * <code>InvalidInput</code>. Retry after the deletion completes.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheckSource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateHealthCheckSourceOutcome CreateHealthCheckSource(const Model::CreateHealthCheckSourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateHealthCheckSource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateHealthCheckSourceRequestT = Model::CreateHealthCheckSourceRequest>
+  Model::CreateHealthCheckSourceOutcomeCallable CreateHealthCheckSourceCallable(const CreateHealthCheckSourceRequestT& request) const {
+    return SubmitCallable(&Route53Client::CreateHealthCheckSource, request);
+  }
+
+  /**
+   * An Async wrapper for CreateHealthCheckSource that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateHealthCheckSourceRequestT = Model::CreateHealthCheckSourceRequest>
+  void CreateHealthCheckSourceAsync(const CreateHealthCheckSourceRequestT& request,
+                                    const CreateHealthCheckSourceResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53Client::CreateHealthCheckSource, request, handler, context);
   }
 
   /**
@@ -960,6 +1007,48 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
   void DeleteHealthCheckAsync(const DeleteHealthCheckRequestT& request, const DeleteHealthCheckResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&Route53Client::DeleteHealthCheck, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a health check source. Before you delete a health check source,
+   * delete or update any health checks that reference it. Otherwise, the request
+   * fails with <code>InvalidInput</code>. The request also fails with
+   * <code>InvalidInput</code> if the status of the health check source is
+   * <code>CREATE_PENDING</code> or <code>CREATE_IN_PROGRESS</code>. Wait until the
+   * status is <code>CREATE_COMPLETED</code> or <code>CREATE_FAILED</code>, and then
+   * try again.</p> <p>Route 53 deletes a health check source asynchronously, and the
+   * initial <code>HealthCheckSourceStatus</code> is <code>DELETE_PENDING</code>.
+   * Call <code>GetHealthCheckSource</code> to track progress. After the deletion
+   * completes, <code>GetHealthCheckSource</code> returns
+   * <code>NoSuchHealthCheckSource</code> and the health check source no longer
+   * appears in the results of <code>ListHealthCheckSources</code>. If you delete a
+   * health check source that is already deleted, the request fails with
+   * <code>NoSuchHealthCheckSource</code>.</p> <p>To use this operation, you must
+   * have the <code>route53:DeleteHealthCheckSource</code> permission. You must also
+   * have permission to create a service-linked role.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheckSource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteHealthCheckSourceOutcome DeleteHealthCheckSource(const Model::DeleteHealthCheckSourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteHealthCheckSource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteHealthCheckSourceRequestT = Model::DeleteHealthCheckSourceRequest>
+  Model::DeleteHealthCheckSourceOutcomeCallable DeleteHealthCheckSourceCallable(const DeleteHealthCheckSourceRequestT& request) const {
+    return SubmitCallable(&Route53Client::DeleteHealthCheckSource, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteHealthCheckSource that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteHealthCheckSourceRequestT = Model::DeleteHealthCheckSourceRequest>
+  void DeleteHealthCheckSourceAsync(const DeleteHealthCheckSourceRequestT& request,
+                                    const DeleteHealthCheckSourceResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53Client::DeleteHealthCheckSource, request, handler, context);
   }
 
   /**
@@ -1634,6 +1723,34 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Gets information about a specified health check source, including its status
+   * and the virtual private cloud (VPC), subnets, and security groups that it
+   * uses.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckSource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetHealthCheckSourceOutcome GetHealthCheckSource(const Model::GetHealthCheckSourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetHealthCheckSource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetHealthCheckSourceRequestT = Model::GetHealthCheckSourceRequest>
+  Model::GetHealthCheckSourceOutcomeCallable GetHealthCheckSourceCallable(const GetHealthCheckSourceRequestT& request) const {
+    return SubmitCallable(&Route53Client::GetHealthCheckSource, request);
+  }
+
+  /**
+   * An Async wrapper for GetHealthCheckSource that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetHealthCheckSourceRequestT = Model::GetHealthCheckSourceRequest>
+  void GetHealthCheckSourceAsync(const GetHealthCheckSourceRequestT& request, const GetHealthCheckSourceResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53Client::GetHealthCheckSource, request, handler, context);
+  }
+
+  /**
    * <p>Gets status of a specified health check. </p>  <p>This API is
    * intended for use during development to diagnose behavior. It doesn’t support
    * production use-cases with high query rates that require immediate and actionable
@@ -2057,6 +2174,36 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Retrieves a list of the health check sources that are associated with the
+   * current Amazon Web Services account.</p> <p>Results are paginated. To get more
+   * results, specify the <code>NextToken</code> value from the previous response for
+   * <code>NextToken</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthCheckSources">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListHealthCheckSourcesOutcome ListHealthCheckSources(const Model::ListHealthCheckSourcesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListHealthCheckSources that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListHealthCheckSourcesRequestT = Model::ListHealthCheckSourcesRequest>
+  Model::ListHealthCheckSourcesOutcomeCallable ListHealthCheckSourcesCallable(const ListHealthCheckSourcesRequestT& request = {}) const {
+    return SubmitCallable(&Route53Client::ListHealthCheckSources, request);
+  }
+
+  /**
+   * An Async wrapper for ListHealthCheckSources that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListHealthCheckSourcesRequestT = Model::ListHealthCheckSourcesRequest>
+  void ListHealthCheckSourcesAsync(const ListHealthCheckSourcesResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const ListHealthCheckSourcesRequestT& request = {}) const {
+    return SubmitAsync(&Route53Client::ListHealthCheckSources, request, handler, context);
+  }
+
+  /**
    * <p>Retrieve a list of the health checks that are associated with the current
    * Amazon Web Services account. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">AWS
@@ -2082,6 +2229,36 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                              const ListHealthChecksRequestT& request = {}) const {
     return SubmitAsync(&Route53Client::ListHealthChecks, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a list of the health checks that use a specified health check
+   * source.</p> <p>Results are paginated. If <code>IsTruncated</code> is
+   * <code>true</code>, specify the <code>NextMarker</code> value for
+   * <code>marker</code> to get more results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecksBySource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListHealthChecksBySourceOutcome ListHealthChecksBySource(const Model::ListHealthChecksBySourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListHealthChecksBySource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListHealthChecksBySourceRequestT = Model::ListHealthChecksBySourceRequest>
+  Model::ListHealthChecksBySourceOutcomeCallable ListHealthChecksBySourceCallable(const ListHealthChecksBySourceRequestT& request) const {
+    return SubmitCallable(&Route53Client::ListHealthChecksBySource, request);
+  }
+
+  /**
+   * An Async wrapper for ListHealthChecksBySource that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListHealthChecksBySourceRequestT = Model::ListHealthChecksBySourceRequest>
+  void ListHealthChecksBySourceAsync(const ListHealthChecksBySourceRequestT& request,
+                                     const ListHealthChecksBySourceResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53Client::ListHealthChecksBySource, request, handler, context);
   }
 
   /**

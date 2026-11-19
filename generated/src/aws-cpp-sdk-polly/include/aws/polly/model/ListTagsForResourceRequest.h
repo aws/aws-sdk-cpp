@@ -35,8 +35,8 @@ class ListTagsForResourceRequest : public PollyRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) that identifies the resource for which to list
-   * the tags. Currently, the only supported resource is an Amazon Polly lexicon.</p>
+   * <p>The Amazon Resource Name (ARN) of the resource to list the tags for. You can
+   * tag Amazon Polly lexicons and custom voices.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

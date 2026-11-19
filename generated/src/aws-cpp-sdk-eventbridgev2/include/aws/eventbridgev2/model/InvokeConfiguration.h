@@ -11,6 +11,7 @@
 #include <aws/eventbridgev2/model/HttpParameters.h>
 #include <aws/eventbridgev2/model/KinesisParameters.h>
 #include <aws/eventbridgev2/model/LambdaParameters.h>
+#include <aws/eventbridgev2/model/MskParameters.h>
 #include <aws/eventbridgev2/model/SnsParameters.h>
 #include <aws/eventbridgev2/model/SqsParameters.h>
 #include <aws/eventbridgev2/model/StepFunctionsParameters.h>
@@ -60,7 +61,11 @@ class InvokeConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Lambda invocation parameters for subscribers. Values are forwarded to the
+   * Lambda Invoke API. Every string member accepts a literal or a JSONata expression
+   * (e.g. "{% $events.Data.qualifier %}").</p>
+   */
   inline const LambdaParameters& GetLambdaParameters() const { return m_lambdaParameters; }
   inline bool LambdaParametersHasBeenSet() const { return m_lambdaParametersHasBeenSet; }
   template <typename LambdaParametersT = LambdaParameters>
@@ -76,7 +81,11 @@ class InvokeConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>SQS invocation parameters for subscribers. Values are forwarded to the SQS
+   * SendMessageBatch API. All scalar values accept a literal or a JSONata expression
+   * (e.g. "{% $events.Data.groupId %}").</p>
+   */
   inline const SqsParameters& GetSqsParameters() const { return m_sqsParameters; }
   inline bool SqsParametersHasBeenSet() const { return m_sqsParametersHasBeenSet; }
   template <typename SqsParametersT = SqsParameters>
@@ -92,7 +101,11 @@ class InvokeConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>SNS invocation parameters for subscribers. Values are forwarded to the SNS
+   * PublishBatch API. All scalar values accept a literal or a JSONata expression
+   * (e.g. "{% $events.Data.groupId %}").</p>
+   */
   inline const SnsParameters& GetSnsParameters() const { return m_snsParameters; }
   inline bool SnsParametersHasBeenSet() const { return m_snsParametersHasBeenSet; }
   template <typename SnsParametersT = SnsParameters>
@@ -108,7 +121,11 @@ class InvokeConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Kinesis Data Streams invocation parameters for subscribers. Values are
+   * forwarded to the Kinesis PutRecords API. All scalar values accept a literal or a
+   * JSONata expression (e.g. "{% $events.Data.partitionKey %}").</p>
+   */
   inline const KinesisParameters& GetKinesisParameters() const { return m_kinesisParameters; }
   inline bool KinesisParametersHasBeenSet() const { return m_kinesisParametersHasBeenSet; }
   template <typename KinesisParametersT = KinesisParameters>
@@ -124,7 +141,12 @@ class InvokeConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Step Functions invocation parameters for subscribers. Values are forwarded to
+   * the Step Functions StartExecution or StartSyncExecution API. Every string member
+   * accepts a literal or a JSONata expression (e.g. "{% $events.Data.executionName
+   * %}").</p>
+   */
   inline const StepFunctionsParameters& GetStepFunctionsParameters() const { return m_stepFunctionsParameters; }
   inline bool StepFunctionsParametersHasBeenSet() const { return m_stepFunctionsParametersHasBeenSet; }
   template <typename StepFunctionsParametersT = StepFunctionsParameters>
@@ -140,7 +162,10 @@ class InvokeConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>HTTP invocation parameters for subscribers (API Gateway / API Destination).
+   * Values are forwarded to the HTTP endpoint.</p>
+   */
   inline const HttpParameters& GetHttpParameters() const { return m_httpParameters; }
   inline bool HttpParametersHasBeenSet() const { return m_httpParametersHasBeenSet; }
   template <typename HttpParametersT = HttpParameters>
@@ -156,7 +181,10 @@ class InvokeConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Parameters for USI (Universal Service Integration) targets. Used when
+   * TargetArn is in the format arn:aws:events:::aws-sdk:{service}:{apiAction}</p>
+   */
   inline const UniversalTargetParameters& GetUniversalTargetParameters() const { return m_universalTargetParameters; }
   inline bool UniversalTargetParametersHasBeenSet() const { return m_universalTargetParametersHasBeenSet; }
   template <typename UniversalTargetParametersT = UniversalTargetParameters>
@@ -172,7 +200,9 @@ class InvokeConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Parameters for forwarding events to another EventBridge event bus.</p>
+   */
   inline const EventBusV2Parameters& GetEventBusV2Parameters() const { return m_eventBusV2Parameters; }
   inline bool EventBusV2ParametersHasBeenSet() const { return m_eventBusV2ParametersHasBeenSet; }
   template <typename EventBusV2ParametersT = EventBusV2Parameters>
@@ -188,7 +218,30 @@ class InvokeConfiguration {
   ///@}
 
   ///@{
+  /**
+   * <p>MSK (Apache Kafka) invocation parameters for subscribers targeting an Amazon
+   * MSK cluster.</p>
+   */
+  inline const MskParameters& GetMskParameters() const { return m_mskParameters; }
+  inline bool MskParametersHasBeenSet() const { return m_mskParametersHasBeenSet; }
+  template <typename MskParametersT = MskParameters>
+  void SetMskParameters(MskParametersT&& value) {
+    m_mskParametersHasBeenSet = true;
+    m_mskParameters = std::forward<MskParametersT>(value);
+  }
+  template <typename MskParametersT = MskParameters>
+  InvokeConfiguration& WithMskParameters(MskParametersT&& value) {
+    SetMskParameters(std::forward<MskParametersT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>ARN of the target a subscriber invokes. The resource grammar is
+   * service-neutral because target services use different separators and the USI
+   * form omits region and account.</p>
+   */
   inline const Aws::String& GetTargetArn() const { return m_targetArn; }
   inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
   template <typename TargetArnT = Aws::String>
@@ -221,6 +274,8 @@ class InvokeConfiguration {
 
   EventBusV2Parameters m_eventBusV2Parameters;
 
+  MskParameters m_mskParameters;
+
   Aws::String m_targetArn;
   bool m_roleArnHasBeenSet = false;
   bool m_lambdaParametersHasBeenSet = false;
@@ -231,6 +286,7 @@ class InvokeConfiguration {
   bool m_httpParametersHasBeenSet = false;
   bool m_universalTargetParametersHasBeenSet = false;
   bool m_eventBusV2ParametersHasBeenSet = false;
+  bool m_mskParametersHasBeenSet = false;
   bool m_targetArnHasBeenSet = false;
 };
 

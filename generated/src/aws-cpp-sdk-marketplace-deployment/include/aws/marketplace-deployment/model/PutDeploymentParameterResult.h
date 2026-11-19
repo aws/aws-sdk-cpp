@@ -31,6 +31,24 @@ class PutDeploymentParameterResult {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) associated with the deployment parameter
+   * resource you want to create or update.</p>
+   */
+  inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+  template <typename ResourceArnT = Aws::String>
+  void SetResourceArn(ResourceArnT&& value) {
+    m_resourceArnHasBeenSet = true;
+    m_resourceArn = std::forward<ResourceArnT>(value);
+  }
+  template <typename ResourceArnT = Aws::String>
+  PutDeploymentParameterResult& WithResourceArn(ResourceArnT&& value) {
+    SetResourceArn(std::forward<ResourceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique identifier of the agreement.</p>
    */
   inline const Aws::String& GetAgreementId() const { return m_agreementId; }
@@ -59,24 +77,6 @@ class PutDeploymentParameterResult {
   template <typename DeploymentParameterIdT = Aws::String>
   PutDeploymentParameterResult& WithDeploymentParameterId(DeploymentParameterIdT&& value) {
     SetDeploymentParameterId(std::forward<DeploymentParameterIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) associated with the deployment parameter
-   * resource you want to create or update.</p>
-   */
-  inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
-  template <typename ResourceArnT = Aws::String>
-  void SetResourceArn(ResourceArnT&& value) {
-    m_resourceArnHasBeenSet = true;
-    m_resourceArn = std::forward<ResourceArnT>(value);
-  }
-  template <typename ResourceArnT = Aws::String>
-  PutDeploymentParameterResult& WithResourceArn(ResourceArnT&& value) {
-    SetResourceArn(std::forward<ResourceArnT>(value));
     return *this;
   }
   ///@}
@@ -123,19 +123,19 @@ class PutDeploymentParameterResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_resourceArn;
+
   Aws::String m_agreementId;
 
   Aws::String m_deploymentParameterId;
-
-  Aws::String m_resourceArn;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_resourceArnHasBeenSet = false;
   bool m_agreementIdHasBeenSet = false;
   bool m_deploymentParameterIdHasBeenSet = false;
-  bool m_resourceArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

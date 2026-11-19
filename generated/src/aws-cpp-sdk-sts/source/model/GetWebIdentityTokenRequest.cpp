@@ -33,6 +33,15 @@ Aws::String GetWebIdentityTokenRequest::SerializePayload() const {
     ss << "SigningAlgorithm=" << StringUtils::URLEncode(m_signingAlgorithm.c_str()) << "&";
   }
 
+  if (m_scopeHasBeenSet) {
+    ss << "Scope=" << StringUtils::URLEncode(m_scope.c_str()) << "&";
+  }
+
+  if (m_subjectModeHasBeenSet) {
+    ss << "SubjectMode="
+       << StringUtils::URLEncode(WebIdentityTokenSubjectModeTypeMapper::GetNameForWebIdentityTokenSubjectModeType(m_subjectMode)) << "&";
+  }
+
   if (m_tagsHasBeenSet) {
     if (m_tags.empty()) {
       ss << "Tags=&";

@@ -216,6 +216,18 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const {
     ss << "EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 
+  if (m_enableInternetAccessGatewayHasBeenSet) {
+    ss << "EnableInternetAccessGateway=" << std::boolalpha << m_enableInternetAccessGateway << "&";
+  }
+
+  if (m_enableVPCNetworkingHasBeenSet) {
+    ss << "EnableVPCNetworking=" << std::boolalpha << m_enableVPCNetworking << "&";
+  }
+
+  if (m_dBSubnetGroupNameHasBeenSet) {
+    ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

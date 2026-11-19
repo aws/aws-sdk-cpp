@@ -38,7 +38,9 @@ class UpdateEventBusRequest : public EventBridgeV2Request {
   AWS_EVENTBRIDGEV2_API EndpointParameters GetEndpointContextParams() const override;
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
+   */
   inline const Aws::String& GetEventBusArn() const { return m_eventBusArn; }
   inline bool EventBusArnHasBeenSet() const { return m_eventBusArnHasBeenSet; }
   template <typename EventBusArnT = Aws::String>
@@ -54,7 +56,10 @@ class UpdateEventBusRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Free-text description. Used by every resource type that has one: event buses,
+   * subscribers, and event sources.</p>
+   */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
   template <typename DescriptionT = Aws::String>
@@ -70,7 +75,9 @@ class UpdateEventBusRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Encryption configuration for an event bus.</p>
+   */
   inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
   inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
   template <typename EncryptionConfigurationT = EncryptionConfiguration>
@@ -86,7 +93,9 @@ class UpdateEventBusRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Event storage configuration for an event bus.</p>
+   */
   inline const StorageConfiguration& GetStorageConfiguration() const { return m_storageConfiguration; }
   inline bool StorageConfigurationHasBeenSet() const { return m_storageConfigurationHasBeenSet; }
   template <typename StorageConfigurationT = StorageConfiguration>

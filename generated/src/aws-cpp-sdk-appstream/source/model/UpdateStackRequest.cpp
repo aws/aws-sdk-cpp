@@ -56,6 +56,9 @@ Aws::String UpdateStackRequest::SerializePayload() const {
   if (m_contentRedirectionHasBeenSet) {
     mapSize++;
   }
+  if (m_webAuthnRedirectionHasBeenSet) {
+    mapSize++;
+  }
   if (m_agentAccessConfigHasBeenSet) {
     mapSize++;
   }
@@ -143,6 +146,11 @@ Aws::String UpdateStackRequest::SerializePayload() const {
   if (m_contentRedirectionHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("ContentRedirection"));
     m_contentRedirection.CborEncode(encoder);
+  }
+
+  if (m_webAuthnRedirectionHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("WebAuthnRedirection"));
+    m_webAuthnRedirection.CborEncode(encoder);
   }
 
   if (m_agentAccessConfigHasBeenSet) {

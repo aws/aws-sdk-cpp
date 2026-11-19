@@ -42,6 +42,13 @@ LinkRoutingRuleSummary& LinkRoutingRuleSummary::operator=(JsonView jsonValue) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("errorDetails")) {
+    Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("errorDetails");
+    for (unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex) {
+      m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsObject());
+    }
+    m_errorDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +77,14 @@ JsonValue LinkRoutingRuleSummary::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_errorDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> errorDetailsJsonList(m_errorDetails.size());
+    for (unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex) {
+      errorDetailsJsonList[errorDetailsIndex].AsObject(m_errorDetails[errorDetailsIndex].Jsonize());
+    }
+    payload.WithArray("errorDetails", std::move(errorDetailsJsonList));
   }
 
   return payload;

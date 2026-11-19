@@ -27,7 +27,7 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
- * <p> Provides a comprehensive view of an opportunity summary, including lifecycle
+ * <p>Provides a comprehensive view of an opportunity summary, including lifecycle
  * information, team details, opportunity type, primary needs from AWS, and
  * associated project information. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/OpportunitySummaryView">AWS
@@ -58,9 +58,9 @@ class OpportunitySummaryView {
 
   ///@{
   /**
-   * <p> Contains information about the opportunity's lifecycle, including its
-   * current stage, status, and important dates such as creation and last
-   * modification times. </p>
+   * <p>Contains information about the opportunity's lifecycle, including its current
+   * stage, status, and important dates such as creation and last modification times.
+   * </p>
    */
   inline const LifeCycleForView& GetLifecycle() const { return m_lifecycle; }
   inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
@@ -126,7 +126,9 @@ class OpportunitySummaryView {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Contains details about the customer that the opportunity belongs to.</p>
+   */
   inline const Customer& GetCustomer() const { return m_customer; }
   inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
   template <typename CustomerT = Customer>
@@ -143,7 +145,7 @@ class OpportunitySummaryView {
 
   ///@{
   /**
-   * <p> Contains summary information about the project associated with the
+   * <p>Contains summary information about the project associated with the
    * opportunity, including project name, description, timeline, and other relevant
    * details. </p>
    */
@@ -162,7 +164,10 @@ class OpportunitySummaryView {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Lists the identifiers of entities that relate to the opportunity, such as AWS
+   * products, partner solutions, and AWS Marketplace offers.</p>
+   */
   inline const RelatedEntityIdentifiers& GetRelatedEntityIdentifiers() const { return m_relatedEntityIdentifiers; }
   inline bool RelatedEntityIdentifiersHasBeenSet() const { return m_relatedEntityIdentifiersHasBeenSet; }
   template <typename RelatedEntityIdentifiersT = RelatedEntityIdentifiers>

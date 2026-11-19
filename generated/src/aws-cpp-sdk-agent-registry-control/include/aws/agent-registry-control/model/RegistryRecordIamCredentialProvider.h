@@ -21,8 +21,10 @@ namespace Model {
 
 /**
  * <p>The configuration for an IAM role credential provider that signs requests to
- * a registry record's source with Amazon Web Services Signature Version 4
- * (SigV4).</p><p><h3>See Also:</h3>   <a
+ * a registry record's source with Amazon Web Services Signature Version 4 (SigV4).
+ * For an Amazon S3 skill source (an <code>s3://</code> URL), Amazon Web Services
+ * Agent Registry assumes the role to read the object. The role must be in your
+ * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/RegistryRecordIamCredentialProvider">AWS
  * API Reference</a></p>
  */
@@ -54,7 +56,8 @@ class RegistryRecordIamCredentialProvider {
 
   ///@{
   /**
-   * <p>The service name to use for request signing, such as execute-api.</p>
+   * <p>The service name to use for request signing, such as execute-api. For an
+   * Amazon S3 skill source, omit it or set it to <code>s3</code>.</p>
    */
   inline const Aws::String& GetService() const { return m_service; }
   inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
@@ -74,6 +77,7 @@ class RegistryRecordIamCredentialProvider {
   /**
    * <p>The Amazon Web Services Region to use for request signing. If not specified,
    * the Region is derived from the source URL hostname, falling back to the Region
+   * of the registry. For an Amazon S3 skill source, omit it or set it to the Region
    * of the registry.</p>
    */
   inline const Aws::String& GetRegion() const { return m_region; }

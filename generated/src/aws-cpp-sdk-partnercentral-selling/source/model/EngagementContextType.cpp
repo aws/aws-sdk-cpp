@@ -18,6 +18,7 @@ namespace EngagementContextTypeMapper {
 static const int CustomerProject_HASH = HashingUtils::HashString("CustomerProject");
 static const int Lead_HASH = HashingUtils::HashString("Lead");
 static const int ProspectingResult_HASH = HashingUtils::HashString("ProspectingResult");
+static const int CustomerAccount_HASH = HashingUtils::HashString("CustomerAccount");
 
 EngagementContextType GetEngagementContextTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ EngagementContextType GetEngagementContextTypeForName(const Aws::String& name) {
     return EngagementContextType::Lead;
   } else if (hashCode == ProspectingResult_HASH) {
     return EngagementContextType::ProspectingResult;
+  } else if (hashCode == CustomerAccount_HASH) {
+    return EngagementContextType::CustomerAccount;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForEngagementContextType(EngagementContextType enumValue) {
       return "Lead";
     case EngagementContextType::ProspectingResult:
       return "ProspectingResult";
+    case EngagementContextType::CustomerAccount:
+      return "CustomerAccount";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -9,8 +9,10 @@
 #include <aws/cognito-idp/CognitoIdentityProviderClientPagination.h>
 #include <aws/cognito-idp/CognitoIdentityProviderPaginationBase.h>
 #include <aws/cognito-idp/model/AdminListUserAuthEventsPaginationTraits.h>
+#include <aws/cognito-idp/model/ListClientMetadataURLsPaginationTraits.h>
 #include <aws/cognito-idp/model/ListUserPoolsPaginationTraits.h>
 #include <aws/cognito-idp/model/AdminListGroupsForUserPaginationTraits.h>
+#include <aws/cognito-idp/model/ListCIMDPoliciesPaginationTraits.h>
 #include <aws/cognito-idp/model/ListUsersInGroupPaginationTraits.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsPaginationTraits.h>
 #include <aws/cognito-idp/model/ListResourceServersPaginationTraits.h>

@@ -360,8 +360,12 @@ class CreateFirewallRuleEntry {
    * <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p> </li> <li> <p>
    * <code>PartnerThreatProtection</code> — match a third-party threat feed delivered
    * through Amazon Web Services Marketplace. The selected partner must be an active
-   * subscription on the calling account.</p> </li> </ul> <p>To enumerate the values
-   * supported in your account, call <a>ListFirewallRuleTypes</a>.</p>
+   * subscription on the calling account.</p> </li> <li> <p>
+   * <code>AutoAllowlist</code> — automatically observe the domains that the VPCs
+   * associated with the rule group resolve, and allow the ones that you approve. See
+   * <a>AutoAllowlistConfig</a>.</p> </li> </ul> <p>To enumerate the values supported
+   * in your account, call <a>ListFirewallRuleTypes</a>. It doesn't return
+   * <code>AutoAllowlist</code>.</p>
    */
   inline const FirewallRuleType& GetFirewallRuleType() const { return m_firewallRuleType; }
   inline bool FirewallRuleTypeHasBeenSet() const { return m_firewallRuleTypeHasBeenSet; }

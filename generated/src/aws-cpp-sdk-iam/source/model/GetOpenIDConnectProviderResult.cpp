@@ -73,6 +73,21 @@ GetOpenIDConnectProviderResult& GetOpenIDConnectProviderResult::operator=(const 
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode contextProviderNode = resultNode.FirstChild("ContextProvider");
+    if (!contextProviderNode.IsNull()) {
+      m_contextProvider = contextProviderNode;
+      m_contextProviderHasBeenSet = true;
+    }
+    XmlNode identityCenterInstanceArnNode = resultNode.FirstChild("IdentityCenterInstanceArn");
+    if (!identityCenterInstanceArnNode.IsNull()) {
+      m_identityCenterInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterInstanceArnNode.GetText());
+      m_identityCenterInstanceArnHasBeenSet = true;
+    }
+    XmlNode identityStoreArnNode = resultNode.FirstChild("IdentityStoreArn");
+    if (!identityStoreArnNode.IsNull()) {
+      m_identityStoreArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityStoreArnNode.GetText());
+      m_identityStoreArnHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

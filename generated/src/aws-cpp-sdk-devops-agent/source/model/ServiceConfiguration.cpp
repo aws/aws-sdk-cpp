@@ -22,6 +22,10 @@ ServiceConfiguration& ServiceConfiguration::operator=(JsonView jsonValue) {
     m_sourceAws = jsonValue.GetObject("sourceAws");
     m_sourceAwsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sourceAwsOrg")) {
+    m_sourceAwsOrg = jsonValue.GetObject("sourceAwsOrg");
+    m_sourceAwsOrgHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("aws")) {
     m_aws = jsonValue.GetObject("aws");
     m_awsHasBeenSet = true;
@@ -110,6 +114,10 @@ JsonValue ServiceConfiguration::Jsonize() const {
 
   if (m_sourceAwsHasBeenSet) {
     payload.WithObject("sourceAws", m_sourceAws.Jsonize());
+  }
+
+  if (m_sourceAwsOrgHasBeenSet) {
+    payload.WithObject("sourceAwsOrg", m_sourceAwsOrg.Jsonize());
   }
 
   if (m_awsHasBeenSet) {

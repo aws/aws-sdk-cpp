@@ -18,6 +18,7 @@
 #include <aws/eventbridgev2/model/PointInTimeConfiguration.h>
 #include <aws/eventbridgev2/model/RetryPolicy.h>
 #include <aws/eventbridgev2/model/StartingPosition.h>
+#include <aws/eventbridgev2/model/SubscriberDetails.h>
 #include <aws/eventbridgev2/model/SubscriberState.h>
 #include <aws/eventbridgev2/model/Transformer.h>
 
@@ -40,7 +41,9 @@ class DescribeSubscriberResult {
   AWS_EVENTBRIDGEV2_API DescribeSubscriberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
+   */
   inline const Aws::String& GetSubscriberArn() const { return m_subscriberArn; }
   template <typename SubscriberArnT = Aws::String>
   void SetSubscriberArn(SubscriberArnT&& value) {
@@ -55,7 +58,10 @@ class DescribeSubscriberResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Name of a subscriber. The first character must be alphanumeric; the remaining
+   * characters may also include '.', '-', and '_'.</p>
+   */
   inline const Aws::String& GetName() const { return m_name; }
   template <typename NameT = Aws::String>
   void SetName(NameT&& value) {
@@ -70,7 +76,9 @@ class DescribeSubscriberResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
+   */
   inline const Aws::String& GetEventBusArn() const { return m_eventBusArn; }
   template <typename EventBusArnT = Aws::String>
   void SetEventBusArn(EventBusArnT&& value) {
@@ -85,7 +93,9 @@ class DescribeSubscriberResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Configuration for how the subscriber invokes its target.</p>
+   */
   inline const InvokeConfiguration& GetInvokeConfiguration() const { return m_invokeConfiguration; }
   template <typename InvokeConfigurationT = InvokeConfiguration>
   void SetInvokeConfiguration(InvokeConfigurationT&& value) {
@@ -100,7 +110,10 @@ class DescribeSubscriberResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Free-text description. Used by every resource type that has one: event buses,
+   * subscribers, and event sources.</p>
+   */
   inline const Aws::String& GetDescription() const { return m_description; }
   template <typename DescriptionT = Aws::String>
   void SetDescription(DescriptionT&& value) {
@@ -115,7 +128,16 @@ class DescribeSubscriberResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Configuration for filtering events delivered to a subscriber. On
+   * CreateSubscriber, Filters is required and must contain at least one Filter with
+   * a non-empty Pattern. On UpdateSubscriber, an empty
+   * <code>FilterConfiguration:{}</code> clears the existing filter. Any non-empty
+   * shape (including <code>{Language:X}</code> without Filters) must contain a valid
+   * Filters list — same contract as CreateSubscriber. A non-empty Filters list
+   * overwrites; an omitted FilterConfiguration preserves existing state. All Filters
+   * are implicitly ANDed — an event must match every Filter to be delivered.</p>
+   */
   inline const FilterConfiguration& GetFilterConfiguration() const { return m_filterConfiguration; }
   template <typename FilterConfigurationT = FilterConfiguration>
   void SetFilterConfiguration(FilterConfigurationT&& value) {
@@ -130,7 +152,10 @@ class DescribeSubscriberResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Delivery ordering mode of a subscriber: FIFO delivers events in order within
+   * an event group; UNORDERED delivers without an ordering guarantee.</p>
+   */
   inline OrderingType GetType() const { return m_type; }
   inline void SetType(OrderingType value) {
     m_typeHasBeenSet = true;
@@ -143,7 +168,9 @@ class DescribeSubscriberResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Starting position for a subscriber.</p>
+   */
   inline StartingPosition GetStartingPosition() const { return m_startingPosition; }
   inline void SetStartingPosition(StartingPosition value) {
     m_startingPositionHasBeenSet = true;
@@ -156,7 +183,10 @@ class DescribeSubscriberResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Point-in-time configuration for a subscriber. Only applicable when
+   * StartingPosition is POINT_IN_TIME.</p>
+   */
   inline const PointInTimeConfiguration& GetPointInTimeConfiguration() const { return m_pointInTimeConfiguration; }
   template <typename PointInTimeConfigurationT = PointInTimeConfiguration>
   void SetPointInTimeConfiguration(PointInTimeConfigurationT&& value) {
@@ -171,7 +201,9 @@ class DescribeSubscriberResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Batching configuration for a subscriber.</p>
+   */
   inline const BatchConfiguration& GetBatchConfiguration() const { return m_batchConfiguration; }
   template <typename BatchConfigurationT = BatchConfiguration>
   void SetBatchConfiguration(BatchConfigurationT&& value) {
@@ -187,8 +219,7 @@ class DescribeSubscriberResult {
 
   ///@{
   /**
-   * <p>Absent for universal (aws-sdk) targets, whose input transformation is
-   * UniversalTargetParameters.Input.</p>
+   * <p>Transformer configuration for a subscriber.</p>
    */
   inline const Transformer& GetTransformer() const { return m_transformer; }
   template <typename TransformerT = Transformer>
@@ -204,7 +235,9 @@ class DescribeSubscriberResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Retry policy for a subscriber.</p>
+   */
   inline const RetryPolicy& GetRetryPolicy() const { return m_retryPolicy; }
   template <typename RetryPolicyT = RetryPolicy>
   void SetRetryPolicy(RetryPolicyT&& value) {
@@ -219,7 +252,10 @@ class DescribeSubscriberResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>On-failure configuration: where a failed delivery is sent. Shared by the
+   * subscriber and the EventSource.</p>
+   */
   inline const OnFailureConfiguration& GetOnFailureConfiguration() const { return m_onFailureConfiguration; }
   template <typename OnFailureConfigurationT = OnFailureConfiguration>
   void SetOnFailureConfiguration(OnFailureConfigurationT&& value) {
@@ -234,7 +270,9 @@ class DescribeSubscriberResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Log configuration for a subscriber.</p>
+   */
   inline const LogConfiguration& GetLogConfiguration() const { return m_logConfiguration; }
   template <typename LogConfigurationT = LogConfiguration>
   void SetLogConfiguration(LogConfigurationT&& value) {
@@ -249,7 +287,12 @@ class DescribeSubscriberResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Customer-controlled run state of a subscriber, set on create or update.
+   * Distinct from the bus lifecycle vocabulary, where ACTIVE means "provisioned and
+   * healthy". Delivery requires State RUNNING on a subscriber that is not
+   * revoked.</p>
+   */
   inline SubscriberState GetState() const { return m_state; }
   inline void SetState(SubscriberState value) {
     m_stateHasBeenSet = true;
@@ -316,6 +359,21 @@ class DescribeSubscriberResult {
 
   ///@{
 
+  inline const SubscriberDetails& GetSubscriberDetails() const { return m_subscriberDetails; }
+  template <typename SubscriberDetailsT = SubscriberDetails>
+  void SetSubscriberDetails(SubscriberDetailsT&& value) {
+    m_subscriberDetailsHasBeenSet = true;
+    m_subscriberDetails = std::forward<SubscriberDetailsT>(value);
+  }
+  template <typename SubscriberDetailsT = SubscriberDetails>
+  DescribeSubscriberResult& WithSubscriberDetails(SubscriberDetailsT&& value) {
+    SetSubscriberDetails(std::forward<SubscriberDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
   void SetRequestId(RequestIdT&& value) {
@@ -367,6 +425,8 @@ class DescribeSubscriberResult {
 
   Aws::Utils::DateTime m_lastModifiedTime{};
 
+  SubscriberDetails m_subscriberDetails;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_subscriberArnHasBeenSet = false;
@@ -387,6 +447,7 @@ class DescribeSubscriberResult {
   bool m_revokedHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_subscriberDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

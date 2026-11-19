@@ -26,6 +26,13 @@ AssessmentTargetFilter& AssessmentTargetFilter::operator=(JsonView jsonValue) {
     m_changeSetId = jsonValue.GetString("ChangeSetId");
     m_changeSetIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EntityIds")) {
+    Aws::Utils::Array<JsonView> entityIdsJsonList = jsonValue.GetArray("EntityIds");
+    for (unsigned entityIdsIndex = 0; entityIdsIndex < entityIdsJsonList.GetLength(); ++entityIdsIndex) {
+      m_entityIds.push_back(entityIdsJsonList[entityIdsIndex].AsString());
+    }
+    m_entityIdsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +45,14 @@ JsonValue AssessmentTargetFilter::Jsonize() const {
 
   if (m_changeSetIdHasBeenSet) {
     payload.WithString("ChangeSetId", m_changeSetId);
+  }
+
+  if (m_entityIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> entityIdsJsonList(m_entityIds.size());
+    for (unsigned entityIdsIndex = 0; entityIdsIndex < entityIdsJsonList.GetLength(); ++entityIdsIndex) {
+      entityIdsJsonList[entityIdsIndex].AsString(m_entityIds[entityIdsIndex]);
+    }
+    payload.WithArray("EntityIds", std::move(entityIdsJsonList));
   }
 
   return payload;

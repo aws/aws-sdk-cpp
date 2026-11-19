@@ -30,8 +30,7 @@ class ListTagsForResourceRequest : public MarketplaceDeploymentRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) associated with the deployment parameter
-   * resource you want to list tags on.</p>
+   * <p>The Amazon Resource Name (ARN) of the resource you want to list tags on.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

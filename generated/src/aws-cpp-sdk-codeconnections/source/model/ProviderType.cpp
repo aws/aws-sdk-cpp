@@ -21,6 +21,7 @@ static const int GitHubEnterpriseServer_HASH = HashingUtils::HashString("GitHubE
 static const int GitLab_HASH = HashingUtils::HashString("GitLab");
 static const int GitLabSelfManaged_HASH = HashingUtils::HashString("GitLabSelfManaged");
 static const int AzureDevOps_HASH = HashingUtils::HashString("AzureDevOps");
+static const int GitHubEnterpriseCloudDataResidency_HASH = HashingUtils::HashString("GitHubEnterpriseCloudDataResidency");
 
 ProviderType GetProviderTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ ProviderType GetProviderTypeForName(const Aws::String& name) {
     return ProviderType::GitLabSelfManaged;
   } else if (hashCode == AzureDevOps_HASH) {
     return ProviderType::AzureDevOps;
+  } else if (hashCode == GitHubEnterpriseCloudDataResidency_HASH) {
+    return ProviderType::GitHubEnterpriseCloudDataResidency;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForProviderType(ProviderType enumValue) {
       return "GitLabSelfManaged";
     case ProviderType::AzureDevOps:
       return "AzureDevOps";
+    case ProviderType::GitHubEnterpriseCloudDataResidency:
+      return "GitHubEnterpriseCloudDataResidency";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

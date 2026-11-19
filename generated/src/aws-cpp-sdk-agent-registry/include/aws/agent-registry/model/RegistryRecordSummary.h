@@ -7,6 +7,7 @@
 #include <aws/agent-registry/AgentRegistry_EXPORTS.h>
 #include <aws/agent-registry/model/Descriptors.h>
 #include <aws/agent-registry/model/RecordType.h>
+#include <aws/agent-registry/model/RegistryRecordArtifactDownload.h>
 #include <aws/agent-registry/model/RegistryRecordStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Document.h>
@@ -281,6 +282,28 @@ class RegistryRecordSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The skill package of the record's latest approved revision, as the package's
+   * SHA-256 checksum and a download URL that is valid for up to 5 minutes. Only
+   * <code>BatchGetDiscoverableRegistryRecord</code> returns this member, not
+   * <code>SearchDiscoverableRegistryRecords</code>. Absent when the record has no
+   * skill package.</p>
+   */
+  inline const RegistryRecordArtifactDownload& GetArtifact() const { return m_artifact; }
+  inline bool ArtifactHasBeenSet() const { return m_artifactHasBeenSet; }
+  template <typename ArtifactT = RegistryRecordArtifactDownload>
+  void SetArtifact(ArtifactT&& value) {
+    m_artifactHasBeenSet = true;
+    m_artifact = std::forward<ArtifactT>(value);
+  }
+  template <typename ArtifactT = RegistryRecordArtifactDownload>
+  RegistryRecordSummary& WithArtifact(ArtifactT&& value) {
+    SetArtifact(std::forward<ArtifactT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_registryArn;
 
@@ -307,6 +330,8 @@ class RegistryRecordSummary {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::Utils::Document m_customMetadata;
+
+  RegistryRecordArtifactDownload m_artifact;
   bool m_registryArnHasBeenSet = false;
   bool m_recordArnHasBeenSet = false;
   bool m_recordIdHasBeenSet = false;
@@ -320,6 +345,7 @@ class RegistryRecordSummary {
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_customMetadataHasBeenSet = false;
+  bool m_artifactHasBeenSet = false;
 };
 
 }  // namespace Model

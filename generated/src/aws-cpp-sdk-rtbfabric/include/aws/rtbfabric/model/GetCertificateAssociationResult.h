@@ -7,8 +7,10 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
 #include <aws/rtbfabric/model/CertificateAssociationStatus.h>
+#include <aws/rtbfabric/model/ErrorDetail.h>
 
 #include <utility>
 
@@ -113,6 +115,30 @@ class GetCertificateAssociationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The causes of the failure, such as a deleted subnet. Present only when the
+   * resource has failed.</p>
+   */
+  inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const { return m_errorDetails; }
+  template <typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+  void SetErrorDetails(ErrorDetailsT&& value) {
+    m_errorDetailsHasBeenSet = true;
+    m_errorDetails = std::forward<ErrorDetailsT>(value);
+  }
+  template <typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+  GetCertificateAssociationResult& WithErrorDetails(ErrorDetailsT&& value) {
+    SetErrorDetails(std::forward<ErrorDetailsT>(value));
+    return *this;
+  }
+  template <typename ErrorDetailsT = ErrorDetail>
+  GetCertificateAssociationResult& AddErrorDetails(ErrorDetailsT&& value) {
+    m_errorDetailsHasBeenSet = true;
+    m_errorDetails.emplace_back(std::forward<ErrorDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -139,6 +165,8 @@ class GetCertificateAssociationResult {
 
   Aws::Utils::DateTime m_updatedAt{};
 
+  Aws::Vector<ErrorDetail> m_errorDetails;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayIdHasBeenSet = false;
@@ -146,6 +174,7 @@ class GetCertificateAssociationResult {
   bool m_statusHasBeenSet = false;
   bool m_associatedAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

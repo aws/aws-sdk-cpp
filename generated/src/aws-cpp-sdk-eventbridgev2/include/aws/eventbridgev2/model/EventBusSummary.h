@@ -35,7 +35,13 @@ class EventBusSummary {
   AWS_EVENTBRIDGEV2_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
-
+  /**
+   * <p>Name of an event bus. The first character must be alphanumeric; the remaining
+   * characters may also include '.', '-', and '_'. The grammar matches the name
+   * segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid
+   * name can be represented in the bus's ARN. The same type is used everywhere a bus
+   * name appears.</p>
+   */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
   template <typename NameT = Aws::String>
@@ -51,7 +57,9 @@ class EventBusSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
+   */
   inline const Aws::String& GetEventBusArn() const { return m_eventBusArn; }
   inline bool EventBusArnHasBeenSet() const { return m_eventBusArnHasBeenSet; }
   template <typename EventBusArnT = Aws::String>
@@ -67,7 +75,10 @@ class EventBusSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Free-text description. Used by every resource type that has one: event buses,
+   * subscribers, and event sources.</p>
+   */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
   template <typename DescriptionT = Aws::String>
@@ -119,7 +130,18 @@ class EventBusSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Lifecycle state of an event bus.</p> <ul> <li> <p>CREATING: Bus creation is
+   * in progress.</p> </li> <li> <p>CREATE_FAILED: Bus creation failed; see
+   * StateReason. The bus cannot be recovered or recreated in place: delete it with
+   * DeleteEventBus, then create a new bus.</p> </li> <li> <p>ACTIVE: Bus is fully
+   * operational and can accept events.</p> </li> <li> <p>UPDATING: Bus update is in
+   * progress.</p> </li> <li> <p>UPDATE_FAILED: Bus update failed; the bus remains
+   * operational with its previous configuration.</p> </li> <li> <p>DELETING: Bus
+   * deletion is actively in progress.</p> </li> <li> <p>DELETE_FAILED: Bus deletion
+   * failed; see StateReason. Retry DeleteEventBus after removing subscribers and
+   * event sources.</p> </li> </ul>
+   */
   inline BusState GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
   inline void SetState(BusState value) {
@@ -133,7 +155,14 @@ class EventBusSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Human-readable explanation of why an event bus is in its current State.
+   * Omitted when the bus is in a normal operational state (ACTIVE). It stands in for
+   * the error response an asynchronous failure cannot return, so it applies only to
+   * resources with an asynchronous lifecycle: event buses. EventSources and
+   * subscribers are provisioned synchronously and report failures directly on the
+   * request.</p>
+   */
   inline const Aws::String& GetStateReason() const { return m_stateReason; }
   inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
   template <typename StateReasonT = Aws::String>
@@ -149,7 +178,9 @@ class EventBusSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>AWS Account Id.</p>
+   */
   inline const Aws::String& GetEventBusAccountId() const { return m_eventBusAccountId; }
   inline bool EventBusAccountIdHasBeenSet() const { return m_eventBusAccountIdHasBeenSet; }
   template <typename EventBusAccountIdT = Aws::String>

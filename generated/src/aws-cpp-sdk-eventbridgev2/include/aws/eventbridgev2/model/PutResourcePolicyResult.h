@@ -28,7 +28,9 @@ class PutResourcePolicyResult {
   AWS_EVENTBRIDGEV2_API PutResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
+   */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   template <typename ResourceArnT = Aws::String>
   void SetResourceArn(ResourceArnT&& value) {
@@ -43,7 +45,11 @@ class PutResourcePolicyResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Name of a policy attached to a resource. Valid values: "default" (the
+   * customer-managed policy) and "AWS_RAM" (managed exclusively by AWS Resource
+   * Access Manager). Any other value is rejected.</p>
+   */
   inline const Aws::String& GetPolicyName() const { return m_policyName; }
   template <typename PolicyNameT = Aws::String>
   void SetPolicyName(PolicyNameT&& value) {

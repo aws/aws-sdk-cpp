@@ -11,6 +11,7 @@
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/CertificateType.h>
 #include <aws/acm/model/RenewalStatus.h>
+#include <aws/acm/model/RootHierarchyType.h>
 #include <aws/acm/model/ValidationMethod.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -217,6 +218,23 @@ class AcmCertificateMetadataFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filter by root hierarchy type. Specify <code>N2_AMAZON_MANAGED</code> or
+   * <code>N2_SFG2_AMAZON_MANAGED</code> to return Amazon N2 certificates.</p>
+   */
+  inline RootHierarchyType GetRootHierarchyType() const { return m_rootHierarchyType; }
+  inline bool RootHierarchyTypeHasBeenSet() const { return m_rootHierarchyTypeHasBeenSet; }
+  inline void SetRootHierarchyType(RootHierarchyType value) {
+    m_rootHierarchyTypeHasBeenSet = true;
+    m_rootHierarchyType = value;
+  }
+  inline AcmCertificateMetadataFilter& WithRootHierarchyType(RootHierarchyType value) {
+    SetRootHierarchyType(value);
+    return *this;
+  }
+  ///@}
  private:
   CertificateStatus m_status{CertificateStatus::NOT_SET};
 
@@ -239,6 +257,8 @@ class AcmCertificateMetadataFilter {
   Aws::String m_acmeEndpointArn;
 
   Aws::String m_acmeAccountId;
+
+  RootHierarchyType m_rootHierarchyType{RootHierarchyType::NOT_SET};
   bool m_statusHasBeenSet = false;
   bool m_renewalStatusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
@@ -250,6 +270,7 @@ class AcmCertificateMetadataFilter {
   bool m_certificateKeyPairOriginHasBeenSet = false;
   bool m_acmeEndpointArnHasBeenSet = false;
   bool m_acmeAccountIdHasBeenSet = false;
+  bool m_rootHierarchyTypeHasBeenSet = false;
 };
 
 }  // namespace Model

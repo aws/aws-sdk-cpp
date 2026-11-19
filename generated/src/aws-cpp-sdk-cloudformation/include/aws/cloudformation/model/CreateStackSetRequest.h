@@ -210,15 +210,20 @@ class CreateStackSetRequest : public CloudFormationRequest {
    * acknowledge this capability. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform
    * custom processing on CloudFormation templates with template macros</a>.</p>
-   *  <p>StackSets with service-managed permissions don't currently
-   * support the use of macros in templates. (This includes the <a
+   *  <p>With service-managed permissions, CloudFormation can process
+   * macros, nested stacks, and transforms in your StackSet template only when you
+   * provide a custom execution role template. (Macros include the <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a>
    * and <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-   * transforms, which are macros hosted by CloudFormation.) Even if you specify this
-   * capability for a StackSet with service-managed permissions, if you reference a
-   * macro in your template the StackSet operation will fail.</p>  </li>
-   * </ul>
+   * transforms, which are macros hosted by CloudFormation.) The default
+   * service-managed execution role can't provision them: if you reference a macro in
+   * your template, the StackSet operation fails even when you specify this
+   * capability.</p> <p>To use macros, nested stacks, or transforms with
+   * service-managed permissions, specify a custom execution role template in
+   * <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>,
+   * and specify both <code>CAPABILITY_NAMED_IAM</code> and
+   * <code>CAPABILITY_AUTO_EXPAND</code>.</p>  </li> </ul>
    */
   inline const Aws::Vector<Capability>& GetCapabilities() const { return m_capabilities; }
   inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
@@ -295,13 +300,16 @@ class CreateStackSetRequest : public CloudFormationRequest {
 
   ///@{
   /**
-   * <p>The name of the IAM execution role to use to create the StackSet. If you do
+   * <p>The name of the IAM execution role that CloudFormation uses for StackSet
+   * operations in your target accounts.</p> <p>[Self-managed permissions] If you do
    * not specify an execution role, CloudFormation uses the
    * <code>AWSCloudFormationStackSetExecutionRole</code> role for the StackSet
-   * operation.</p> <p>Specify an IAM role only if you are using customized execution
-   * roles to control which stack resources users and groups can include in their
-   * StackSets.</p> <p>Valid only if the permissions model is
-   * <code>SELF_MANAGED</code>.</p>
+   * operation. Specify an IAM role only if you are using customized execution roles
+   * to control which stack resources users and groups can include in their
+   * StackSets.</p> <p>[Service-managed permissions] Set this name when you use
+   * custom execution roles. The role that your custom execution role template
+   * provisions in your target accounts must have this same name, and the name must
+   * begin with <code>stacksets-exec-custom-</code>.</p>
    */
   inline const Aws::String& GetExecutionRoleName() const { return m_executionRoleName; }
   inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
@@ -440,6 +448,73 @@ class CreateStackSetRequest : public CloudFormationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The body of the template that creates a custom execution role in target
+   * accounts. This parameter applies only when the permissions model is
+   * <code>SERVICE_MANAGED</code>.</p> <p>Conditional: Specify either
+   * <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>,
+   * but not both. If you don't specify either, CloudFormation uses the default
+   * service-managed execution role in target accounts.</p>
+   */
+  inline const Aws::String& GetExecutionRoleTemplateBody() const { return m_executionRoleTemplateBody; }
+  inline bool ExecutionRoleTemplateBodyHasBeenSet() const { return m_executionRoleTemplateBodyHasBeenSet; }
+  template <typename ExecutionRoleTemplateBodyT = Aws::String>
+  void SetExecutionRoleTemplateBody(ExecutionRoleTemplateBodyT&& value) {
+    m_executionRoleTemplateBodyHasBeenSet = true;
+    m_executionRoleTemplateBody = std::forward<ExecutionRoleTemplateBodyT>(value);
+  }
+  template <typename ExecutionRoleTemplateBodyT = Aws::String>
+  CreateStackSetRequest& WithExecutionRoleTemplateBody(ExecutionRoleTemplateBodyT&& value) {
+    SetExecutionRoleTemplateBody(std::forward<ExecutionRoleTemplateBodyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The URL of an Amazon S3 object that contains the template that creates a
+   * custom execution role in target accounts. This parameter applies only when the
+   * permissions model is <code>SERVICE_MANAGED</code>.</p> <p>Conditional: Specify
+   * either <code>ExecutionRoleTemplateBody</code> or
+   * <code>ExecutionRoleTemplateUrl</code>, but not both. If you don't specify
+   * either, CloudFormation uses the default service-managed execution role in target
+   * accounts.</p>
+   */
+  inline const Aws::String& GetExecutionRoleTemplateUrl() const { return m_executionRoleTemplateUrl; }
+  inline bool ExecutionRoleTemplateUrlHasBeenSet() const { return m_executionRoleTemplateUrlHasBeenSet; }
+  template <typename ExecutionRoleTemplateUrlT = Aws::String>
+  void SetExecutionRoleTemplateUrl(ExecutionRoleTemplateUrlT&& value) {
+    m_executionRoleTemplateUrlHasBeenSet = true;
+    m_executionRoleTemplateUrl = std::forward<ExecutionRoleTemplateUrlT>(value);
+  }
+  template <typename ExecutionRoleTemplateUrlT = Aws::String>
+  CreateStackSetRequest& WithExecutionRoleTemplateUrl(ExecutionRoleTemplateUrlT&& value) {
+    SetExecutionRoleTemplateUrl(std::forward<ExecutionRoleTemplateUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Amazon S3 bucket that stores the execution role stack
+   * template body. CloudFormation uses this bucket only when you specify a custom
+   * execution role template.</p>
+   */
+  inline const Aws::String& GetStackSetOutputBucket() const { return m_stackSetOutputBucket; }
+  inline bool StackSetOutputBucketHasBeenSet() const { return m_stackSetOutputBucketHasBeenSet; }
+  template <typename StackSetOutputBucketT = Aws::String>
+  void SetStackSetOutputBucket(StackSetOutputBucketT&& value) {
+    m_stackSetOutputBucketHasBeenSet = true;
+    m_stackSetOutputBucket = std::forward<StackSetOutputBucketT>(value);
+  }
+  template <typename StackSetOutputBucketT = Aws::String>
+  CreateStackSetRequest& WithStackSetOutputBucket(StackSetOutputBucketT&& value) {
+    SetStackSetOutputBucket(std::forward<StackSetOutputBucketT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_stackSetName;
 
@@ -470,6 +545,12 @@ class CreateStackSetRequest : public CloudFormationRequest {
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   ManagedExecution m_managedExecution;
+
+  Aws::String m_executionRoleTemplateBody;
+
+  Aws::String m_executionRoleTemplateUrl;
+
+  Aws::String m_stackSetOutputBucket;
   bool m_stackSetNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_templateBodyHasBeenSet = false;
@@ -485,6 +566,9 @@ class CreateStackSetRequest : public CloudFormationRequest {
   bool m_callAsHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
   bool m_managedExecutionHasBeenSet = false;
+  bool m_executionRoleTemplateBodyHasBeenSet = false;
+  bool m_executionRoleTemplateUrlHasBeenSet = false;
+  bool m_stackSetOutputBucketHasBeenSet = false;
 };
 
 }  // namespace Model

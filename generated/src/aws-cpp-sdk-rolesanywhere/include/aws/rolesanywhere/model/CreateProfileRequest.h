@@ -9,6 +9,7 @@
 #include <aws/rolesanywhere/RolesAnywhereRequest.h>
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
 #include <aws/rolesanywhere/model/Tag.h>
+#include <aws/rolesanywhere/model/TipConfiguration.h>
 
 #include <utility>
 
@@ -241,6 +242,27 @@ class CreateProfileRequest : public RolesAnywhereRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The trusted identity propagation (TIP) settings for the profile. When you
+   * enable TIP, sessions from the profile include the identity from the certificate
+   * in <code>aws:OriginIdentity</code> condition keys.</p> <p>If you omit this
+   * parameter, the profile doesn't use TIP.</p>
+   */
+  inline const TipConfiguration& GetTipConfiguration() const { return m_tipConfiguration; }
+  inline bool TipConfigurationHasBeenSet() const { return m_tipConfigurationHasBeenSet; }
+  template <typename TipConfigurationT = TipConfiguration>
+  void SetTipConfiguration(TipConfigurationT&& value) {
+    m_tipConfigurationHasBeenSet = true;
+    m_tipConfiguration = std::forward<TipConfigurationT>(value);
+  }
+  template <typename TipConfigurationT = TipConfiguration>
+  CreateProfileRequest& WithTipConfiguration(TipConfigurationT&& value) {
+    SetTipConfiguration(std::forward<TipConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -261,6 +283,8 @@ class CreateProfileRequest : public RolesAnywhereRequest {
   bool m_acceptRoleSessionName{false};
 
   Aws::String m_aliasName;
+
+  TipConfiguration m_tipConfiguration;
   bool m_nameHasBeenSet = false;
   bool m_requireInstancePropertiesHasBeenSet = false;
   bool m_sessionPolicyHasBeenSet = false;
@@ -271,6 +295,7 @@ class CreateProfileRequest : public RolesAnywhereRequest {
   bool m_tagsHasBeenSet = false;
   bool m_acceptRoleSessionNameHasBeenSet = false;
   bool m_aliasNameHasBeenSet = false;
+  bool m_tipConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

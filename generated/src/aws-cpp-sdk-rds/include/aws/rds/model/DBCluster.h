@@ -1777,9 +1777,10 @@ class DBCluster {
 
   ///@{
   /**
-   * <p>Indicates whether the DB cluster uses VPC-based networking.</p> <p>This
-   * setting is applicable only for Aurora PostgreSQL clusters created through
-   * express configuration.</p>
+   * <p>Indicates whether the DB cluster uses VPC-based networking. The value is
+   * <code>false</code> only for an Aurora PostgreSQL DB cluster without VPC
+   * networking.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
+   * clusters</p>
    */
   inline bool GetVPCNetworkingEnabled() const { return m_vPCNetworkingEnabled; }
   inline bool VPCNetworkingEnabledHasBeenSet() const { return m_vPCNetworkingEnabledHasBeenSet; }
@@ -1796,8 +1797,8 @@ class DBCluster {
   ///@{
   /**
    * <p>Indicates whether the DB cluster has internet-based connectivity enabled
-   * through an internet access gateway.</p> <p>This setting is applicable only for
-   * Aurora PostgreSQL clusters created through express configuration.</p>
+   * through an internet access gateway.</p> <p>Valid for Cluster Type: Aurora
+   * PostgreSQL DB clusters only</p>
    */
   inline bool GetInternetAccessGatewayEnabled() const { return m_internetAccessGatewayEnabled; }
   inline bool InternetAccessGatewayEnabledHasBeenSet() const { return m_internetAccessGatewayEnabledHasBeenSet; }

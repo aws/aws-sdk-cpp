@@ -20,6 +20,10 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the
+ * <code>ListEngagementInvitations</code> operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementInvitationsRequest">AWS
+ * API Reference</a></p>
  */
 class ListEngagementInvitationsRequest : public PartnerCentralSellingRequest {
  public:
@@ -180,7 +184,7 @@ class ListEngagementInvitationsRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> Retrieves a list of engagement invitation summaries based on specified
+   * <p>Retrieves a list of engagement invitation summaries based on specified
    * filters. The ListEngagementInvitations operation allows you to view all
    * invitations that you have sent or received. You must specify the ParticipantType
    * to filter invitations where you are either the SENDER or the RECEIVER.
@@ -208,7 +212,7 @@ class ListEngagementInvitationsRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> List of sender AWS account IDs to filter the invitations. </p>
+   * <p>List of sender AWS account IDs to filter the invitations.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSenderAwsAccountId() const { return m_senderAwsAccountId; }
   inline bool SenderAwsAccountIdHasBeenSet() const { return m_senderAwsAccountIdHasBeenSet; }

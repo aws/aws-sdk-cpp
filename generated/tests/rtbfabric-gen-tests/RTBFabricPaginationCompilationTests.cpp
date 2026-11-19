@@ -13,6 +13,9 @@
 #include <aws/rtbfabric/model/ListResponderGatewaysPaginationTraits.h>
 #include <aws/rtbfabric/model/ListCertificateAssociationsPaginationTraits.h>
 #include <aws/rtbfabric/model/ListLinksPaginationTraits.h>
+#include <aws/rtbfabric/model/ListAvailableModulesPaginationTraits.h>
+#include <aws/rtbfabric/model/ListUpdatesPaginationTraits.h>
+#include <aws/rtbfabric/model/ListAvailableModuleVersionsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

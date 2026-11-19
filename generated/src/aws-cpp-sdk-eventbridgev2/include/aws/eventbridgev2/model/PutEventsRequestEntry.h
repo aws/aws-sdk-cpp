@@ -54,7 +54,9 @@ class PutEventsRequestEntry {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Free-form detail-type classifying an event within its source.</p>
+   */
   inline const Aws::String& GetDetailType() const { return m_detailType; }
   inline bool DetailTypeHasBeenSet() const { return m_detailTypeHasBeenSet; }
   template <typename DetailTypeT = Aws::String>
@@ -132,7 +134,10 @@ class PutEventsRequestEntry {
   ///@}
 
   ///@{
-
+  /**
+   * <p>System metadata for PutEvents entries. ContentType is not applicable (always
+   * application/eventbridge+json, set server-side).</p>
+   */
   inline const PutEventsSystemMetadata& GetSystemMetadata() const { return m_systemMetadata; }
   inline bool SystemMetadataHasBeenSet() const { return m_systemMetadataHasBeenSet; }
   template <typename SystemMetadataT = PutEventsSystemMetadata>

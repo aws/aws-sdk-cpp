@@ -69,6 +69,13 @@ ListLinksResponseStructure& ListLinksResponseStructure::operator=(JsonView jsonV
     m_connectivityType = ConnectivityTypeMapper::GetConnectivityTypeForName(jsonValue.GetString("connectivityType"));
     m_connectivityTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("errorDetails")) {
+    Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("errorDetails");
+    for (unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex) {
+      m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsObject());
+    }
+    m_errorDetailsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("linkId")) {
     m_linkId = jsonValue.GetString("linkId");
     m_linkIdHasBeenSet = true;
@@ -141,6 +148,14 @@ JsonValue ListLinksResponseStructure::Jsonize() const {
 
   if (m_connectivityTypeHasBeenSet) {
     payload.WithString("connectivityType", ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType));
+  }
+
+  if (m_errorDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> errorDetailsJsonList(m_errorDetails.size());
+    for (unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex) {
+      errorDetailsJsonList[errorDetailsIndex].AsObject(m_errorDetails[errorDetailsIndex].Jsonize());
+    }
+    payload.WithArray("errorDetails", std::move(errorDetailsJsonList));
   }
 
   if (m_linkIdHasBeenSet) {

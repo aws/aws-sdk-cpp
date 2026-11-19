@@ -49,18 +49,18 @@ class GetMarketplaceRevenueShareAllocationRequest : public PartnerCentralRevenue
 
   ///@{
   /**
-   * <p>The AWS Marketplace product identifier of the parent revenue share.</p>
+   * <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
    */
-  inline const Aws::String& GetProductId() const { return m_productId; }
-  inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-  template <typename ProductIdT = Aws::String>
-  void SetProductId(ProductIdT&& value) {
-    m_productIdHasBeenSet = true;
-    m_productId = std::forward<ProductIdT>(value);
+  inline const Aws::String& GetMarketplaceRevenueShareIdentifier() const { return m_marketplaceRevenueShareIdentifier; }
+  inline bool MarketplaceRevenueShareIdentifierHasBeenSet() const { return m_marketplaceRevenueShareIdentifierHasBeenSet; }
+  template <typename MarketplaceRevenueShareIdentifierT = Aws::String>
+  void SetMarketplaceRevenueShareIdentifier(MarketplaceRevenueShareIdentifierT&& value) {
+    m_marketplaceRevenueShareIdentifierHasBeenSet = true;
+    m_marketplaceRevenueShareIdentifier = std::forward<MarketplaceRevenueShareIdentifierT>(value);
   }
-  template <typename ProductIdT = Aws::String>
-  GetMarketplaceRevenueShareAllocationRequest& WithProductId(ProductIdT&& value) {
-    SetProductId(std::forward<ProductIdT>(value));
+  template <typename MarketplaceRevenueShareIdentifierT = Aws::String>
+  GetMarketplaceRevenueShareAllocationRequest& WithMarketplaceRevenueShareIdentifier(MarketplaceRevenueShareIdentifierT&& value) {
+    SetMarketplaceRevenueShareIdentifier(std::forward<MarketplaceRevenueShareIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -104,13 +104,13 @@ class GetMarketplaceRevenueShareAllocationRequest : public PartnerCentralRevenue
  private:
   CatalogName m_catalog{CatalogName::NOT_SET};
 
-  Aws::String m_productId;
+  Aws::String m_marketplaceRevenueShareIdentifier;
 
   Aws::String m_marketplaceRevenueShareAllocationId;
 
   Aws::String m_marketplaceRevenueShareRevision;
   bool m_catalogHasBeenSet = false;
-  bool m_productIdHasBeenSet = false;
+  bool m_marketplaceRevenueShareIdentifierHasBeenSet = false;
   bool m_marketplaceRevenueShareAllocationIdHasBeenSet = false;
   bool m_marketplaceRevenueShareRevisionHasBeenSet = false;
 };

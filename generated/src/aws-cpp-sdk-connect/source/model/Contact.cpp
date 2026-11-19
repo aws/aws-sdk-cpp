@@ -240,6 +240,10 @@ Contact& Contact::operator=(JsonView jsonValue) {
     m_contactLens = jsonValue.GetObject("ContactLens");
     m_contactLensHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VoicemailInfo")) {
+    m_voicemailInfo = jsonValue.GetObject("VoicemailInfo");
+    m_voicemailInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -473,6 +477,10 @@ JsonValue Contact::Jsonize() const {
 
   if (m_contactLensHasBeenSet) {
     payload.WithObject("ContactLens", m_contactLens.Jsonize());
+  }
+
+  if (m_voicemailInfoHasBeenSet) {
+    payload.WithObject("VoicemailInfo", m_voicemailInfo.Jsonize());
   }
 
   return payload;

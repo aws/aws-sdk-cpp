@@ -19,16 +19,8 @@ Aws::String PutDeploymentParameterRequest::SerializePayload() const {
     payload.WithString("agreementId", m_agreementId);
   }
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
-  }
-
   if (m_deploymentParameterHasBeenSet) {
     payload.WithObject("deploymentParameter", m_deploymentParameter.Jsonize());
-  }
-
-  if (m_expirationDateHasBeenSet) {
-    payload.WithString("expirationDate", m_expirationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if (m_tagsHasBeenSet) {
@@ -37,6 +29,14 @@ Aws::String PutDeploymentParameterRequest::SerializePayload() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_expirationDateHasBeenSet) {
+    payload.WithString("expirationDate", m_expirationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CapacityReservationSpecification.h>
+#include <aws/bedrock-agentcore-control/model/CpuOptions.h>
 #include <aws/bedrock-agentcore-control/model/EphemeralBlockDeviceMapping.h>
 #include <aws/bedrock-agentcore-control/model/InstanceRequirements.h>
 #include <aws/bedrock-agentcore-control/model/LicenseSpecification.h>
@@ -221,6 +222,25 @@ class LaunchParameters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The central processing unit (CPU) options for the instances that the capacity
+   * provider launches.</p>
+   */
+  inline const CpuOptions& GetCpuOptions() const { return m_cpuOptions; }
+  inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
+  template <typename CpuOptionsT = CpuOptions>
+  void SetCpuOptions(CpuOptionsT&& value) {
+    m_cpuOptionsHasBeenSet = true;
+    m_cpuOptions = std::forward<CpuOptionsT>(value);
+  }
+  template <typename CpuOptionsT = CpuOptions>
+  LaunchParameters& WithCpuOptions(CpuOptionsT&& value) {
+    SetCpuOptions(std::forward<CpuOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
 
@@ -239,6 +259,8 @@ class LaunchParameters {
   Aws::String m_instanceProfileArn;
 
   Aws::Map<Aws::String, Aws::String> m_propagatedTags;
+
+  CpuOptions m_cpuOptions;
   bool m_operatingSystemHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
   bool m_ephemeralVolumesHasBeenSet = false;
@@ -248,6 +270,7 @@ class LaunchParameters {
   bool m_sshKeyNameHasBeenSet = false;
   bool m_instanceProfileArnHasBeenSet = false;
   bool m_propagatedTagsHasBeenSet = false;
+  bool m_cpuOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -194,6 +194,8 @@
 #include <aws/lakeformation/model/RLSPolicy.h>
 #include <aws/lakeformation/model/RLSPolicyAttachment.h>
 #include <aws/lakeformation/model/RLSPolicyResource.h>
+#include <aws/lakeformation/model/RLSPolicyStatus.h>
+#include <aws/lakeformation/model/RLSPolicyStatusReason.h>
 #include <aws/lakeformation/model/RedshiftConnect.h>
 #include <aws/lakeformation/model/RedshiftScopeUnion.h>
 #include <aws/lakeformation/model/RegisterResourceRequest.h>

@@ -208,6 +208,8 @@
 #include <aws/connectcases/model/SlaInputContent.h>
 #include <aws/connectcases/model/SlaStatus.h>
 #include <aws/connectcases/model/SlaType.h>
+#include <aws/connectcases/model/SlaUpdateConfiguration.h>
+#include <aws/connectcases/model/SlaUpdateContent.h>
 #include <aws/connectcases/model/Sort.h>
 #include <aws/connectcases/model/StartMergeCasesRequest.h>
 #include <aws/connectcases/model/StartMergeCasesResult.h>

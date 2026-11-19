@@ -46,6 +46,46 @@ class GetFirewallDomainListResult {
   ///@}
 
   ///@{
+  /**
+   * <p>For an AutoAllowlist domain list, the ID of the firewall rule group that
+   * contains the AutoAllowlist rule that owns this domain list. Present only when
+   * <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+   */
+  inline const Aws::String& GetFirewallRuleGroupId() const { return m_firewallRuleGroupId; }
+  template <typename FirewallRuleGroupIdT = Aws::String>
+  void SetFirewallRuleGroupId(FirewallRuleGroupIdT&& value) {
+    m_firewallRuleGroupIdHasBeenSet = true;
+    m_firewallRuleGroupId = std::forward<FirewallRuleGroupIdT>(value);
+  }
+  template <typename FirewallRuleGroupIdT = Aws::String>
+  GetFirewallDomainListResult& WithFirewallRuleGroupId(FirewallRuleGroupIdT&& value) {
+    SetFirewallRuleGroupId(std::forward<FirewallRuleGroupIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>For an AutoAllowlist domain list, the threat protection ID of the
+   * auto-allowlist rule that owns this domain list. Provide it to
+   * <a>ListFirewallRuleDomains</a> to review the observed, allowed, and denied
+   * domains. Present only when <code>ManagedListType</code> is
+   * <code>AUTOALLOWLIST</code>.</p>
+   */
+  inline const Aws::String& GetFirewallThreatProtectionId() const { return m_firewallThreatProtectionId; }
+  template <typename FirewallThreatProtectionIdT = Aws::String>
+  void SetFirewallThreatProtectionId(FirewallThreatProtectionIdT&& value) {
+    m_firewallThreatProtectionIdHasBeenSet = true;
+    m_firewallThreatProtectionId = std::forward<FirewallThreatProtectionIdT>(value);
+  }
+  template <typename FirewallThreatProtectionIdT = Aws::String>
+  GetFirewallDomainListResult& WithFirewallThreatProtectionId(FirewallThreatProtectionIdT&& value) {
+    SetFirewallThreatProtectionId(std::forward<FirewallThreatProtectionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -64,9 +104,15 @@ class GetFirewallDomainListResult {
  private:
   FirewallDomainList m_firewallDomainList;
 
+  Aws::String m_firewallRuleGroupId;
+
+  Aws::String m_firewallThreatProtectionId;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_firewallDomainListHasBeenSet = false;
+  bool m_firewallRuleGroupIdHasBeenSet = false;
+  bool m_firewallThreatProtectionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

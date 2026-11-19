@@ -31,7 +31,10 @@ class ListTagsForResourceRequest : public EventBridgeV2Request {
   AWS_EVENTBRIDGEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
   ///@{
-
+  /**
+   * <p>ARN for an EventBridge resource that supports tagging: event buses,
+   * subscribers, and event sources.</p>
+   */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
   template <typename ResourceArnT = Aws::String>

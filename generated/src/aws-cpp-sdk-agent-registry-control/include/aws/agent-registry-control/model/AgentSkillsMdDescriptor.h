@@ -71,8 +71,12 @@ class AgentSkillsMdDescriptor {
 
   ///@{
   /**
-   * <p>The optional source configuration used to synchronize the agent skills
-   * markdown content.</p>
+   * <p>The optional source of the skill's SKILL.md only. The registry synchronizes
+   * the SKILL.md from this source into <code>data</code>. Specify an
+   * <code>s3://</code> URL of a SKILL.md object, or a GitHub folder URL together
+   * with <code>repositoryProvider</code> set to <code>GITHUB</code>. The registry
+   * rejects a new <code>https://</code> URL without <code>repositoryProvider</code>,
+   * and you can't set both this source and <code>skillPackage.source</code>.</p>
    */
   inline const DescriptorSource& GetSource() const { return m_source; }
   inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }

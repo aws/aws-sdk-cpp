@@ -18,9 +18,17 @@
 #include <aws/polly/Polly_EXPORTS.h>
 #include <aws/polly/internal/PollyEndpointRules.h>
 #include <aws/polly/model/AudioEvent.h>
+#include <aws/polly/model/AudioFormat.h>
 #include <aws/polly/model/CloseStreamEvent.h>
+#include <aws/polly/model/ConflictException.h>
+#include <aws/polly/model/CreateVoiceRequest.h>
+#include <aws/polly/model/CreateVoiceResult.h>
+#include <aws/polly/model/CustomVoiceLanguageCode.h>
+#include <aws/polly/model/CustomerManagedEncryption.h>
 #include <aws/polly/model/DeleteLexiconRequest.h>
 #include <aws/polly/model/DeleteLexiconResult.h>
+#include <aws/polly/model/DeleteVoiceRequest.h>
+#include <aws/polly/model/DeleteVoiceResult.h>
 #include <aws/polly/model/DescribeVoicesRequest.h>
 #include <aws/polly/model/DescribeVoicesResult.h>
 #include <aws/polly/model/Engine.h>
@@ -30,6 +38,8 @@
 #include <aws/polly/model/GetLexiconResult.h>
 #include <aws/polly/model/GetSpeechSynthesisTaskRequest.h>
 #include <aws/polly/model/GetSpeechSynthesisTaskResult.h>
+#include <aws/polly/model/GetVoiceRequest.h>
+#include <aws/polly/model/GetVoiceResult.h>
 #include <aws/polly/model/LanguageCode.h>
 #include <aws/polly/model/Lexicon.h>
 #include <aws/polly/model/LexiconAttributes.h>
@@ -45,6 +55,8 @@
 #include <aws/polly/model/PutLexiconRequest.h>
 #include <aws/polly/model/PutLexiconResult.h>
 #include <aws/polly/model/QuotaCode.h>
+#include <aws/polly/model/Recording.h>
+#include <aws/polly/model/RecordingData.h>
 #include <aws/polly/model/ResourceNotFoundException.h>
 #include <aws/polly/model/ResourceType.h>
 #include <aws/polly/model/ServiceCode.h>
@@ -74,7 +86,10 @@
 #include <aws/polly/model/ValidationExceptionField.h>
 #include <aws/polly/model/ValidationExceptionReason.h>
 #include <aws/polly/model/Voice.h>
+#include <aws/polly/model/VoiceCreationData.h>
 #include <aws/polly/model/VoiceId.h>
+#include <aws/polly/model/VoiceOrigin.h>
+#include <aws/polly/model/VoiceStatus.h>
 
 using PollyIncludeTest = ::testing::Test;
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurement_EXPORTS.h>
@@ -116,6 +117,29 @@ class UpdateRevenueAttributionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The context stored on the revenue attribution after the update.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetContext() const { return m_context; }
+  template <typename ContextT = Aws::Map<Aws::String, Aws::String>>
+  void SetContext(ContextT&& value) {
+    m_contextHasBeenSet = true;
+    m_context = std::forward<ContextT>(value);
+  }
+  template <typename ContextT = Aws::Map<Aws::String, Aws::String>>
+  UpdateRevenueAttributionResult& WithContext(ContextT&& value) {
+    SetContext(std::forward<ContextT>(value));
+    return *this;
+  }
+  template <typename ContextKeyT = Aws::String, typename ContextValueT = Aws::String>
+  UpdateRevenueAttributionResult& AddContext(ContextKeyT&& key, ContextValueT&& value) {
+    m_contextHasBeenSet = true;
+    m_context.emplace(std::forward<ContextKeyT>(key), std::forward<ContextValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -142,6 +166,8 @@ class UpdateRevenueAttributionResult {
 
   Aws::String m_latestRevision;
 
+  Aws::Map<Aws::String, Aws::String> m_context;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
@@ -149,6 +175,7 @@ class UpdateRevenueAttributionResult {
   bool m_descriptionHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
   bool m_latestRevisionHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

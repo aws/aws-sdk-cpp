@@ -17,10 +17,10 @@ Aws::String ListConnectionsRequest::SerializePayload() const {
 
   // Calculate map size
   size_t mapSize = 0;
-  if (m_providerTypeFilterHasBeenSet) {
+  if (m_hostArnFilterHasBeenSet) {
     mapSize++;
   }
-  if (m_hostArnFilterHasBeenSet) {
+  if (m_providerTypeFilterHasBeenSet) {
     mapSize++;
   }
   if (m_maxResultsHasBeenSet) {
@@ -32,14 +32,14 @@ Aws::String ListConnectionsRequest::SerializePayload() const {
 
   encoder.WriteMapStart(mapSize);
 
-  if (m_providerTypeFilterHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProviderTypeFilter"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ProviderTypeMapper::GetNameForProviderType(m_providerTypeFilter).c_str()));
-  }
-
   if (m_hostArnFilterHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("HostArnFilter"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_hostArnFilter.c_str()));
+  }
+
+  if (m_providerTypeFilterHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProviderTypeFilter"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ProviderTypeMapper::GetNameForProviderType(m_providerTypeFilter).c_str()));
   }
 
   if (m_maxResultsHasBeenSet) {

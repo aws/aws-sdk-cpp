@@ -18,6 +18,7 @@ namespace FirewallDomainUpdateOperationMapper {
 static const int ADD_HASH = HashingUtils::HashString("ADD");
 static const int REMOVE_HASH = HashingUtils::HashString("REMOVE");
 static const int REPLACE_HASH = HashingUtils::HashString("REPLACE");
+static const int DENY_HASH = HashingUtils::HashString("DENY");
 
 FirewallDomainUpdateOperation GetFirewallDomainUpdateOperationForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ FirewallDomainUpdateOperation GetFirewallDomainUpdateOperationForName(const Aws:
     return FirewallDomainUpdateOperation::REMOVE;
   } else if (hashCode == REPLACE_HASH) {
     return FirewallDomainUpdateOperation::REPLACE;
+  } else if (hashCode == DENY_HASH) {
+    return FirewallDomainUpdateOperation::DENY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForFirewallDomainUpdateOperation(FirewallDomainUpdateOperatio
       return "REMOVE";
     case FirewallDomainUpdateOperation::REPLACE:
       return "REPLACE";
+    case FirewallDomainUpdateOperation::DENY:
+      return "DENY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

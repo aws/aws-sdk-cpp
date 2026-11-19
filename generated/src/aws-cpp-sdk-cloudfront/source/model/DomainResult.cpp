@@ -34,6 +34,11 @@ DomainResult& DomainResult::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
+    XmlNode serveOnNode = resultNode.FirstChild("ServeOn");
+    if (!serveOnNode.IsNull()) {
+      m_serveOn = ServeOnMapper::GetServeOnForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serveOnNode.GetText()).c_str()));
+      m_serveOnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -49,6 +54,11 @@ void DomainResult::AddToNode(XmlNode& parentNode) const {
   if (m_statusHasBeenSet) {
     XmlNode statusNode = parentNode.CreateChildElement("Status");
     statusNode.SetText(DomainStatusMapper::GetNameForDomainStatus(m_status));
+  }
+
+  if (m_serveOnHasBeenSet) {
+    XmlNode serveOnNode = parentNode.CreateChildElement("ServeOn");
+    serveOnNode.SetText(ServeOnMapper::GetNameForServeOn(m_serveOn));
   }
 }
 

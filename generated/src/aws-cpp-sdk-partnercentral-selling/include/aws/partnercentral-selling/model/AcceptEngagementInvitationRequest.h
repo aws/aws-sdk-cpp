@@ -15,6 +15,10 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the
+ * <code>AcceptEngagementInvitation</code> operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AcceptEngagementInvitationRequest">AWS
+ * API Reference</a></p>
  */
 class AcceptEngagementInvitationRequest : public PartnerCentralSellingRequest {
  public:
@@ -53,10 +57,10 @@ class AcceptEngagementInvitationRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> The <code>Identifier</code> parameter in the
+   * <p>The <code>Identifier</code> parameter in the
    * <code>AcceptEngagementInvitationRequest</code> specifies the unique identifier
    * of the <code>EngagementInvitation</code> to be accepted. Providing the correct
-   * identifier ensures that the intended invitation is accepted. </p>
+   * identifier ensures that the intended invitation is accepted.</p>
    */
   inline const Aws::String& GetIdentifier() const { return m_identifier; }
   inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

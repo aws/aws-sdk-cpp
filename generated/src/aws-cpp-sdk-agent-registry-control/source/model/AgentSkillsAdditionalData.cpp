@@ -22,6 +22,19 @@ AgentSkillsAdditionalData& AgentSkillsAdditionalData::operator=(JsonView jsonVal
     m_skillMd = jsonValue.GetObject("skillMd");
     m_skillMdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("skillPackage")) {
+    m_skillPackage = jsonValue.GetObject("skillPackage");
+    m_skillPackageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("repositoryProvider")) {
+    m_repositoryProvider =
+        AgentSkillsRepositoryProviderMapper::GetAgentSkillsRepositoryProviderForName(jsonValue.GetString("repositoryProvider"));
+    m_repositoryProviderHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sourceConfiguration")) {
+    m_sourceConfiguration = jsonValue.GetObject("sourceConfiguration");
+    m_sourceConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +43,19 @@ JsonValue AgentSkillsAdditionalData::Jsonize() const {
 
   if (m_skillMdHasBeenSet) {
     payload.WithObject("skillMd", m_skillMd.Jsonize());
+  }
+
+  if (m_skillPackageHasBeenSet) {
+    payload.WithObject("skillPackage", m_skillPackage.Jsonize());
+  }
+
+  if (m_repositoryProviderHasBeenSet) {
+    payload.WithString("repositoryProvider",
+                       AgentSkillsRepositoryProviderMapper::GetNameForAgentSkillsRepositoryProvider(m_repositoryProvider));
+  }
+
+  if (m_sourceConfigurationHasBeenSet) {
+    payload.WithObject("sourceConfiguration", m_sourceConfiguration.Jsonize());
   }
 
   return payload;

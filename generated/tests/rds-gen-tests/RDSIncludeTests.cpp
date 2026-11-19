@@ -448,6 +448,7 @@
 #include <aws/rds/model/PerformanceInsightsMetricDimensionGroup.h>
 #include <aws/rds/model/PerformanceInsightsMetricQuery.h>
 #include <aws/rds/model/PerformanceIssueDetails.h>
+#include <aws/rds/model/PrimaryEndpoint.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <aws/rds/model/PromoteReadReplicaDBClusterRequest.h>
 #include <aws/rds/model/PromoteReadReplicaDBClusterResult.h>

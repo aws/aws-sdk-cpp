@@ -554,6 +554,9 @@
 #include <aws/medialive/model/IpPool.h>
 #include <aws/medialive/model/IpPoolCreateRequest.h>
 #include <aws/medialive/model/IpPoolUpdateRequest.h>
+#include <aws/medialive/model/JpegXsInputMaximumBitrate.h>
+#include <aws/medialive/model/JpegXsInputResolution.h>
+#include <aws/medialive/model/JpegXsInputSpecification.h>
 #include <aws/medialive/model/KeyProviderSettings.h>
 #include <aws/medialive/model/LastFrameClippingBehavior.h>
 #include <aws/medialive/model/LinkedChannelSettings.h>

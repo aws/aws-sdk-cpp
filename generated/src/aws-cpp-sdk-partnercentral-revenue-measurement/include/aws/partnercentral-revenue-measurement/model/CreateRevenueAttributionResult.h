@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurement_EXPORTS.h>
@@ -149,6 +150,29 @@ class CreateRevenueAttributionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Program-defined key-value attributes for the revenue attribution.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetContext() const { return m_context; }
+  template <typename ContextT = Aws::Map<Aws::String, Aws::String>>
+  void SetContext(ContextT&& value) {
+    m_contextHasBeenSet = true;
+    m_context = std::forward<ContextT>(value);
+  }
+  template <typename ContextT = Aws::Map<Aws::String, Aws::String>>
+  CreateRevenueAttributionResult& WithContext(ContextT&& value) {
+    SetContext(std::forward<ContextT>(value));
+    return *this;
+  }
+  template <typename ContextKeyT = Aws::String, typename ContextValueT = Aws::String>
+  CreateRevenueAttributionResult& AddContext(ContextKeyT&& key, ContextValueT&& value) {
+    m_contextHasBeenSet = true;
+    m_context.emplace(std::forward<ContextKeyT>(key), std::forward<ContextValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -179,6 +203,8 @@ class CreateRevenueAttributionResult {
 
   Aws::String m_revision;
 
+  Aws::Map<Aws::String, Aws::String> m_context;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
@@ -188,6 +214,7 @@ class CreateRevenueAttributionResult {
   bool m_tenancyModelHasBeenSet = false;
   bool m_marketplaceProductHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

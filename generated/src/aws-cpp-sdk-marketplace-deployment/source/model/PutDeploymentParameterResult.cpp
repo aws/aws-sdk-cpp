@@ -22,6 +22,10 @@ PutDeploymentParameterResult::PutDeploymentParameterResult(const Aws::AmazonWebS
 PutDeploymentParameterResult& PutDeploymentParameterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("resourceArn")) {
+    m_resourceArn = jsonValue.GetString("resourceArn");
+    m_resourceArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("agreementId")) {
     m_agreementId = jsonValue.GetString("agreementId");
     m_agreementIdHasBeenSet = true;
@@ -29,10 +33,6 @@ PutDeploymentParameterResult& PutDeploymentParameterResult::operator=(const Aws:
   if (jsonValue.ValueExists("deploymentParameterId")) {
     m_deploymentParameterId = jsonValue.GetString("deploymentParameterId");
     m_deploymentParameterIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("resourceArn")) {
-    m_resourceArn = jsonValue.GetString("resourceArn");
-    m_resourceArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();

@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/elasticloadbalancingv2/model/AdvertiseTrustStoreCaNamesEnum.h>
+#include <aws/elasticloadbalancingv2/model/ClientCertificateIdentityFilter.h>
 #include <aws/elasticloadbalancingv2/model/TrustStoreAssociationStatusEnum.h>
 
 #include <utility>
@@ -39,9 +41,11 @@ class MutualAuthenticationAttributes {
 
   ///@{
   /**
-   * <p>The client certificate handling method. Options are <code>off</code>,
-   * <code>passthrough</code> or <code>verify</code>. The default value is
-   * <code>off</code>.</p>
+   * <p>The client certificate handling method. The default value is
+   * <code>off</code>.</p> <p>[Application Load Balancers] The possible values are
+   * <code>off</code>, <code>passthrough</code>, and <code>verify</code>.</p>
+   * <p>[Network Load Balancers] The possible values are <code>off</code> and
+   * <code>verify</code>.</p>
    */
   inline const Aws::String& GetMode() const { return m_mode; }
   inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
@@ -122,6 +126,37 @@ class MutualAuthenticationAttributes {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>[Network Load Balancers] The client certificate identity filters. The load
+   * balancer admits a connection only if the client certificate matches at least one
+   * filter. If you don't specify any filters, the load balancer admits every client
+   * certificate that passes trust store validation and revocation checks.</p> <p>You
+   * can specify filters only when the mode is <code>verify</code>. You can specify
+   * up to 100 filters per listener.</p>
+   */
+  inline const Aws::Vector<ClientCertificateIdentityFilter>& GetClientCertificateIdentityFilters() const {
+    return m_clientCertificateIdentityFilters;
+  }
+  inline bool ClientCertificateIdentityFiltersHasBeenSet() const { return m_clientCertificateIdentityFiltersHasBeenSet; }
+  template <typename ClientCertificateIdentityFiltersT = Aws::Vector<ClientCertificateIdentityFilter>>
+  void SetClientCertificateIdentityFilters(ClientCertificateIdentityFiltersT&& value) {
+    m_clientCertificateIdentityFiltersHasBeenSet = true;
+    m_clientCertificateIdentityFilters = std::forward<ClientCertificateIdentityFiltersT>(value);
+  }
+  template <typename ClientCertificateIdentityFiltersT = Aws::Vector<ClientCertificateIdentityFilter>>
+  MutualAuthenticationAttributes& WithClientCertificateIdentityFilters(ClientCertificateIdentityFiltersT&& value) {
+    SetClientCertificateIdentityFilters(std::forward<ClientCertificateIdentityFiltersT>(value));
+    return *this;
+  }
+  template <typename ClientCertificateIdentityFiltersT = ClientCertificateIdentityFilter>
+  MutualAuthenticationAttributes& AddClientCertificateIdentityFilters(ClientCertificateIdentityFiltersT&& value) {
+    m_clientCertificateIdentityFiltersHasBeenSet = true;
+    m_clientCertificateIdentityFilters.emplace_back(std::forward<ClientCertificateIdentityFiltersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_mode;
 
@@ -132,11 +167,14 @@ class MutualAuthenticationAttributes {
   TrustStoreAssociationStatusEnum m_trustStoreAssociationStatus{TrustStoreAssociationStatusEnum::NOT_SET};
 
   AdvertiseTrustStoreCaNamesEnum m_advertiseTrustStoreCaNames{AdvertiseTrustStoreCaNamesEnum::NOT_SET};
+
+  Aws::Vector<ClientCertificateIdentityFilter> m_clientCertificateIdentityFilters;
   bool m_modeHasBeenSet = false;
   bool m_trustStoreArnHasBeenSet = false;
   bool m_ignoreClientCertificateExpiryHasBeenSet = false;
   bool m_trustStoreAssociationStatusHasBeenSet = false;
   bool m_advertiseTrustStoreCaNamesHasBeenSet = false;
+  bool m_clientCertificateIdentityFiltersHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -20,8 +20,12 @@
 #include <aws/marketplace-deployment/MarketplaceDeploymentClient.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentEndpointProvider.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentErrorMarshaller.h>
+#include <aws/marketplace-deployment/model/GetDeploymentConfigurationJobRequest.h>
+#include <aws/marketplace-deployment/model/GetDeploymentConfigurationRequest.h>
+#include <aws/marketplace-deployment/model/ListDeploymentConfigurationJobsRequest.h>
 #include <aws/marketplace-deployment/model/ListTagsForResourceRequest.h>
 #include <aws/marketplace-deployment/model/PutDeploymentParameterRequest.h>
+#include <aws/marketplace-deployment/model/StartDeploymentConfigurationJobRequest.h>
 #include <aws/marketplace-deployment/model/TagResourceRequest.h>
 #include <aws/marketplace-deployment/model/UntagResourceRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -188,6 +192,117 @@ MarketplaceDeploymentClient::InvokeOperationOutcome MarketplaceDeploymentClient:
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+GetDeploymentConfigurationOutcome MarketplaceDeploymentClient::GetDeploymentConfiguration(
+    const GetDeploymentConfigurationRequest& request) const {
+  if (!request.CatalogHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDeploymentConfiguration", "Required field: Catalog, is not set");
+    return GetDeploymentConfigurationOutcome(Aws::Client::AWSError<MarketplaceDeploymentErrors>(
+        MarketplaceDeploymentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Catalog]", false));
+  }
+  if (!request.ProductIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDeploymentConfiguration", "Required field: ProductId, is not set");
+    return GetDeploymentConfigurationOutcome(Aws::Client::AWSError<MarketplaceDeploymentErrors>(
+        MarketplaceDeploymentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProductId]", false));
+  }
+  if (!request.DeliveryOptionTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDeploymentConfiguration", "Required field: DeliveryOptionType, is not set");
+    return GetDeploymentConfigurationOutcome(Aws::Client::AWSError<MarketplaceDeploymentErrors>(
+        MarketplaceDeploymentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeliveryOptionType]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/catalogs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCatalog());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/products/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProductId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/delivery-options/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(
+        DeliveryOptionTypeMapper::GetNameForDeliveryOptionType(request.GetDeliveryOptionType()));
+    endpointResolutionOutcome.GetResult().AddPathSegments("/deployment-configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeploymentConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetDeploymentConfigurationOutcome(std::move(result.GetError()));
+}
+
+GetDeploymentConfigurationJobOutcome MarketplaceDeploymentClient::GetDeploymentConfigurationJob(
+    const GetDeploymentConfigurationJobRequest& request) const {
+  if (!request.CatalogHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDeploymentConfigurationJob", "Required field: Catalog, is not set");
+    return GetDeploymentConfigurationJobOutcome(Aws::Client::AWSError<MarketplaceDeploymentErrors>(
+        MarketplaceDeploymentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Catalog]", false));
+  }
+  if (!request.ProductIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDeploymentConfigurationJob", "Required field: ProductId, is not set");
+    return GetDeploymentConfigurationJobOutcome(Aws::Client::AWSError<MarketplaceDeploymentErrors>(
+        MarketplaceDeploymentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProductId]", false));
+  }
+  if (!request.DeliveryOptionTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDeploymentConfigurationJob", "Required field: DeliveryOptionType, is not set");
+    return GetDeploymentConfigurationJobOutcome(Aws::Client::AWSError<MarketplaceDeploymentErrors>(
+        MarketplaceDeploymentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeliveryOptionType]", false));
+  }
+  if (!request.JobIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDeploymentConfigurationJob", "Required field: JobId, is not set");
+    return GetDeploymentConfigurationJobOutcome(Aws::Client::AWSError<MarketplaceDeploymentErrors>(
+        MarketplaceDeploymentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/catalogs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCatalog());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/products/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProductId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/delivery-options/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(
+        DeliveryOptionTypeMapper::GetNameForDeliveryOptionType(request.GetDeliveryOptionType()));
+    endpointResolutionOutcome.GetResult().AddPathSegments("/deployment-configuration/jobs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeploymentConfigurationJobOutcome(result.GetResultWithOwnership())
+                            : GetDeploymentConfigurationJobOutcome(std::move(result.GetError()));
+}
+
+ListDeploymentConfigurationJobsOutcome MarketplaceDeploymentClient::ListDeploymentConfigurationJobs(
+    const ListDeploymentConfigurationJobsRequest& request) const {
+  if (!request.CatalogHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDeploymentConfigurationJobs", "Required field: Catalog, is not set");
+    return ListDeploymentConfigurationJobsOutcome(Aws::Client::AWSError<MarketplaceDeploymentErrors>(
+        MarketplaceDeploymentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Catalog]", false));
+  }
+  if (!request.ProductIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDeploymentConfigurationJobs", "Required field: ProductId, is not set");
+    return ListDeploymentConfigurationJobsOutcome(Aws::Client::AWSError<MarketplaceDeploymentErrors>(
+        MarketplaceDeploymentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProductId]", false));
+  }
+  if (!request.DeliveryOptionTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDeploymentConfigurationJobs", "Required field: DeliveryOptionType, is not set");
+    return ListDeploymentConfigurationJobsOutcome(Aws::Client::AWSError<MarketplaceDeploymentErrors>(
+        MarketplaceDeploymentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeliveryOptionType]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/catalogs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCatalog());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/products/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProductId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/delivery-options/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(
+        DeliveryOptionTypeMapper::GetNameForDeliveryOptionType(request.GetDeliveryOptionType()));
+    endpointResolutionOutcome.GetResult().AddPathSegments("/deployment-configuration/jobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDeploymentConfigurationJobsOutcome(result.GetResultWithOwnership())
+                            : ListDeploymentConfigurationJobsOutcome(std::move(result.GetError()));
+}
+
 ListTagsForResourceOutcome MarketplaceDeploymentClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
   if (!request.ResourceArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
@@ -230,6 +345,41 @@ PutDeploymentParameterOutcome MarketplaceDeploymentClient::PutDeploymentParamete
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutDeploymentParameterOutcome(result.GetResultWithOwnership())
                             : PutDeploymentParameterOutcome(std::move(result.GetError()));
+}
+
+StartDeploymentConfigurationJobOutcome MarketplaceDeploymentClient::StartDeploymentConfigurationJob(
+    const StartDeploymentConfigurationJobRequest& request) const {
+  if (!request.CatalogHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartDeploymentConfigurationJob", "Required field: Catalog, is not set");
+    return StartDeploymentConfigurationJobOutcome(Aws::Client::AWSError<MarketplaceDeploymentErrors>(
+        MarketplaceDeploymentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Catalog]", false));
+  }
+  if (!request.ProductIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartDeploymentConfigurationJob", "Required field: ProductId, is not set");
+    return StartDeploymentConfigurationJobOutcome(Aws::Client::AWSError<MarketplaceDeploymentErrors>(
+        MarketplaceDeploymentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProductId]", false));
+  }
+  if (!request.DeliveryOptionTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartDeploymentConfigurationJob", "Required field: DeliveryOptionType, is not set");
+    return StartDeploymentConfigurationJobOutcome(Aws::Client::AWSError<MarketplaceDeploymentErrors>(
+        MarketplaceDeploymentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeliveryOptionType]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/catalogs/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCatalog());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/products/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProductId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/delivery-options/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(
+        DeliveryOptionTypeMapper::GetNameForDeliveryOptionType(request.GetDeliveryOptionType()));
+    endpointResolutionOutcome.GetResult().AddPathSegments("/deployment-configuration/jobs");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDeploymentConfigurationJobOutcome(result.GetResultWithOwnership())
+                            : StartDeploymentConfigurationJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MarketplaceDeploymentClient::TagResource(const TagResourceRequest& request) const {

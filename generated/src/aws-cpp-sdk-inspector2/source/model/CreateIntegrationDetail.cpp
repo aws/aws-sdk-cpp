@@ -22,6 +22,10 @@ CreateIntegrationDetail& CreateIntegrationDetail::operator=(JsonView jsonValue) 
     m_gitlabSelfManaged = jsonValue.GetObject("gitlabSelfManaged");
     m_gitlabSelfManagedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("githubEnterprise")) {
+    m_githubEnterprise = jsonValue.GetObject("githubEnterprise");
+    m_githubEnterpriseHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue CreateIntegrationDetail::Jsonize() const {
 
   if (m_gitlabSelfManagedHasBeenSet) {
     payload.WithObject("gitlabSelfManaged", m_gitlabSelfManaged.Jsonize());
+  }
+
+  if (m_githubEnterpriseHasBeenSet) {
+    payload.WithObject("githubEnterprise", m_githubEnterprise.Jsonize());
   }
 
   return payload;

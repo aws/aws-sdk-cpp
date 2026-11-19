@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/inspector2/model/CodeSecurityIntegrationVpcConfiguration.h>
 #include <aws/inspector2/model/IntegrationStatus.h>
 #include <aws/inspector2/model/IntegrationType.h>
 
@@ -167,6 +168,42 @@ class GetCodeSecurityIntegrationResult {
 
   ///@{
   /**
+   * <p>The VPC configuration associated with the integration, if it connects to a
+   * repository provider in a private network.</p>
+   */
+  inline const CodeSecurityIntegrationVpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
+  template <typename VpcConfigurationT = CodeSecurityIntegrationVpcConfiguration>
+  void SetVpcConfiguration(VpcConfigurationT&& value) {
+    m_vpcConfigurationHasBeenSet = true;
+    m_vpcConfiguration = std::forward<VpcConfigurationT>(value);
+  }
+  template <typename VpcConfigurationT = CodeSecurityIntegrationVpcConfiguration>
+  GetCodeSecurityIntegrationResult& WithVpcConfiguration(VpcConfigurationT&& value) {
+    SetVpcConfiguration(std::forward<VpcConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The URL of the self-managed GitLab or GitHub Enterprise Server instance
+   * associated with the integration.</p>
+   */
+  inline const Aws::String& GetInstanceUrl() const { return m_instanceUrl; }
+  template <typename InstanceUrlT = Aws::String>
+  void SetInstanceUrl(InstanceUrlT&& value) {
+    m_instanceUrlHasBeenSet = true;
+    m_instanceUrl = std::forward<InstanceUrlT>(value);
+  }
+  template <typename InstanceUrlT = Aws::String>
+  GetCodeSecurityIntegrationResult& WithInstanceUrl(InstanceUrlT&& value) {
+    SetInstanceUrl(std::forward<InstanceUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags associated with the code security integration.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -221,6 +258,10 @@ class GetCodeSecurityIntegrationResult {
 
   Aws::String m_authorizationUrl;
 
+  CodeSecurityIntegrationVpcConfiguration m_vpcConfiguration;
+
+  Aws::String m_instanceUrl;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
@@ -233,6 +274,8 @@ class GetCodeSecurityIntegrationResult {
   bool m_createdOnHasBeenSet = false;
   bool m_lastUpdateOnHasBeenSet = false;
   bool m_authorizationUrlHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_instanceUrlHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

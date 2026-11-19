@@ -33,6 +33,7 @@
 #include <aws/s3tables/model/DeleteTablePolicyRequest.h>
 #include <aws/s3tables/model/DeleteTableReplicationRequest.h>
 #include <aws/s3tables/model/DeleteTableRequest.h>
+#include <aws/s3tables/model/DisassociateTableReplicationRequest.h>
 #include <aws/s3tables/model/GetNamespaceRequest.h>
 #include <aws/s3tables/model/GetTableBucketEncryptionRequest.h>
 #include <aws/s3tables/model/GetTableBucketLoggingRequest.h>
@@ -498,6 +499,23 @@ DeleteTableReplicationOutcome S3TablesClient::DeleteTableReplication(const Delet
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteTableReplicationOutcome(result.GetResultWithOwnership())
                             : DeleteTableReplicationOutcome(std::move(result.GetError()));
+}
+
+DisassociateTableReplicationOutcome S3TablesClient::DisassociateTableReplication(const DisassociateTableReplicationRequest& request) const {
+  if (!request.TableArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DisassociateTableReplication", "Required field: TableArn, is not set");
+    return DisassociateTableReplicationOutcome(Aws::Client::AWSError<S3TablesErrors>(S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                     "Missing required field [TableArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/table-replication/disassociate");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DisassociateTableReplicationOutcome(result.GetResultWithOwnership())
+                            : DisassociateTableReplicationOutcome(std::move(result.GetError()));
 }
 
 GetNamespaceOutcome S3TablesClient::GetNamespace(const GetNamespaceRequest& request) const {

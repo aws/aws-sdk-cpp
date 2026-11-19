@@ -84,6 +84,45 @@ class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient,
   virtual ~PollyClient();
 
   /**
+   * <p>Creates a custom voice from recordings of a speaker and returns it in
+   * <code>pending</code> status. Use <code>GetVoice</code> to check the status. When
+   * the status is <code>active</code>, you can use the voice ID in
+   * <code>SynthesizeSpeech</code>, <code>StartSpeechSynthesisTask</code>, and
+   * <code>StartSpeechSynthesisStream</code>.</p> <p>The
+   * <code>custom-voice-max-count</code> service quota limits the number of custom
+   * voices in your account in each Region. If you reach the quota, the request fails
+   * with <code>ServiceQuotaExceededException</code>.</p> <p>This operation requires
+   * permissions to perform the <code>polly:CreateVoice</code> action. You also need
+   * <code>s3:GetObject</code> permission on each recording that you specify by
+   * <code>S3Url</code>. If you specify a customer managed key, you also need
+   * <code>kms:DescribeKey</code>, <code>kms:GenerateDataKey</code>, and
+   * <code>kms:Decrypt</code> permissions on the key. If you specify
+   * <code>Tags</code>, you also need the <code>polly:TagResource</code>
+   * permission.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/CreateVoice">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateVoiceOutcome CreateVoice(const Model::CreateVoiceRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateVoice that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateVoiceRequestT = Model::CreateVoiceRequest>
+  Model::CreateVoiceOutcomeCallable CreateVoiceCallable(const CreateVoiceRequestT& request) const {
+    return SubmitCallable(&PollyClient::CreateVoice, request);
+  }
+
+  /**
+   * An Async wrapper for CreateVoice that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateVoiceRequestT = Model::CreateVoiceRequest>
+  void CreateVoiceAsync(const CreateVoiceRequestT& request, const CreateVoiceResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PollyClient::CreateVoice, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the specified pronunciation lexicon stored in an Amazon Web Services
    * Region. A lexicon which has been deleted is not available for speech synthesis,
    * nor is it possible to retrieve it using either the <code>GetLexicon</code> or
@@ -114,19 +153,67 @@ class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns the list of voices that are available for use when requesting speech
-   * synthesis. Each voice speaks a specified language, is either male or female, and
-   * is identified by an ID, which is the ASCII version of the voice name. </p>
-   * <p>When synthesizing speech ( <code>SynthesizeSpeech</code> ), you provide the
-   * voice ID for the voice you want from the list of voices returned by
-   * <code>DescribeVoices</code>.</p> <p>For example, you want your news reader
-   * application to read news in a specific language, but giving a user the option to
-   * choose the voice. Using the <code>DescribeVoices</code> operation you can
-   * provide the user with a list of available voices to select from.</p> <p> You can
+   * <p>Deletes a custom voice. <code>DescribeVoices</code> and <code>GetVoice</code>
+   * stop returning the voice immediately. You can't restore a deleted voice.</p>
+   * <p>You can delete a voice in <code>active</code> or <code>failed</code> status.
+   * If the voice is in <code>pending</code> status, the request fails with
+   * <code>ConflictException</code>. If no custom voice with the specified ID exists
+   * in your account and Region, the request fails with
+   * <code>ResourceNotFoundException</code>. You can delete the voice even if you
+   * disabled its Amazon Web Services KMS key or scheduled it for deletion.</p>
+   * <p>This operation requires permissions to perform the
+   * <code>polly:DeleteVoice</code> action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteVoice">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteVoiceOutcome DeleteVoice(const Model::DeleteVoiceRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteVoice that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteVoiceRequestT = Model::DeleteVoiceRequest>
+  Model::DeleteVoiceOutcomeCallable DeleteVoiceCallable(const DeleteVoiceRequestT& request) const {
+    return SubmitCallable(&PollyClient::DeleteVoice, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteVoice that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteVoiceRequestT = Model::DeleteVoiceRequest>
+  void DeleteVoiceAsync(const DeleteVoiceRequestT& request, const DeleteVoiceResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PollyClient::DeleteVoice, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the list of voices: the voices that Amazon Polly provides and the
+   * custom voices in your account. Each voice speaks a specified language and is
+   * identified by an ID. A voice that Amazon Polly provides is either male or
+   * female, and its ID is the ASCII version of the voice name.</p> <p>When
+   * synthesizing speech (<code>SynthesizeSpeech</code>), you provide the voice ID
+   * for the voice you want from the list of voices returned by
+   * <code>DescribeVoices</code>.</p> <p>For example, your news reader application
+   * reads news in a specific language, and you want to give users the option to
+   * choose the voice. With the <code>DescribeVoices</code> operation, you can
+   * provide a list of available voices for users to choose from.</p> <p> You can
    * optionally specify a language code to filter the available voices. For example,
    * if you specify <code>en-US</code>, the operation returns a list of all available
-   * US English voices. </p> <p>This operation requires permissions to perform the
-   * <code>polly:DescribeVoices</code> action.</p><p><h3>See Also:</h3>   <a
+   * US English voices. </p> <p>The list includes custom voices in every status. For
+   * each voice, <code>Origin</code> indicates whether Amazon Polly provides the
+   * voice or you created it. You can use a custom voice for synthesis only when its
+   * status is <code>active</code>. A voice in <code>failed</code> status stays in
+   * the list until you delete it.</p> <p>For a custom voice,
+   * <code>DescribeVoices</code> returns <code>Origin</code>, <code>Id</code>,
+   * <code>Name</code>, <code>Status</code>, <code>LanguageCode</code>,
+   * <code>LanguageName</code>, <code>SupportedEngines</code>, and
+   * <code>CreationTime</code>. To get <code>Arn</code>, <code>StatusReason</code>,
+   * <code>VoiceCreationData</code>, and <code>CustomerManagedEncryption</code>, use
+   * <code>GetVoice</code>.</p> <p>The <code>LanguageCode</code> and
+   * <code>Engine</code> filters apply to custom voices in the same way as to voices
+   * that Amazon Polly provides.</p> <p>This operation requires permissions to
+   * perform the <code>polly:DescribeVoices</code> action.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">AWS
    * API Reference</a></p>
    */
@@ -207,6 +294,40 @@ class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient,
                                    const GetSpeechSynthesisTaskResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PollyClient::GetSpeechSynthesisTask, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the status and properties of a custom voice. Use this operation after
+   * <code>CreateVoice</code> to check whether the status of the voice is
+   * <code>active</code> or <code>failed</code>. Unlike <code>DescribeVoices</code>,
+   * <code>GetVoice</code> also returns <code>Arn</code>,
+   * <code>VoiceCreationData</code>, <code>CustomerManagedEncryption</code>, and
+   * <code>StatusReason</code>. If no custom voice with the specified ID exists in
+   * your account and Region, the request fails with
+   * <code>ResourceNotFoundException</code>.</p> <p>This operation requires
+   * permissions to perform the <code>polly:GetVoice</code> action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetVoice">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::GetVoiceOutcome GetVoice(const Model::GetVoiceRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetVoice that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetVoiceRequestT = Model::GetVoiceRequest>
+  Model::GetVoiceOutcomeCallable GetVoiceCallable(const GetVoiceRequestT& request) const {
+    return SubmitCallable(&PollyClient::GetVoice, request);
+  }
+
+  /**
+   * An Async wrapper for GetVoice that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetVoiceRequestT = Model::GetVoiceRequest>
+  void GetVoiceAsync(const GetVoiceRequestT& request, const GetVoiceResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PollyClient::GetVoice, request, handler, context);
   }
 
   /**
@@ -336,7 +457,18 @@ class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient,
    * becomes available.</p> <p>This operation serves as a bidirectional counterpart
    * to <code>SynthesizeSpeech</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html">SynthesizeSpeech</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> </ul> <p>To use a custom voice, specify its ID in
+   * <code>VoiceId</code>. The voice must be in <code>active</code> status. If the
+   * voice is in <code>pending</code> or <code>failed</code> status, the request
+   * fails with <code>ConflictException</code>. If no custom voice with the specified
+   * ID exists in your account and Region, the request fails with
+   * <code>ResourceNotFoundException</code>. If the custom voice uses a customer
+   * managed key, you need <code>kms:Decrypt</code> permission on the key. If you
+   * disabled the key or scheduled it for deletion, the request fails with
+   * <code>ValidationException</code>. If you don't have permission to use the key,
+   * the request fails with <code>AccessDeniedException</code>. If Amazon Web
+   * Services KMS throttles Amazon Polly's request to use the key, the request fails
+   * with <code>ThrottlingException</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisStream">AWS
    * API Reference</a></p>
    *
@@ -350,16 +482,25 @@ class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
 
   /**
-   * <p>Allows the creation of an asynchronous synthesis task, by starting a new
+   * <p>Starts an asynchronous synthesis task by creating a new
    * <code>SpeechSynthesisTask</code>. This operation requires all the standard
    * information needed for speech synthesis, plus the name of an Amazon S3 bucket
    * for the service to store the output of the synthesis task and two optional
-   * parameters (<code>OutputS3KeyPrefix</code> and <code>SnsTopicArn</code>). Once
-   * the synthesis task is created, this operation will return a
-   * <code>SpeechSynthesisTask</code> object, which will include an identifier of
-   * this task as well as the current status. The <code>SpeechSynthesisTask</code>
-   * object is available for 72 hours after starting the asynchronous synthesis
-   * task.</p><p><h3>See Also:</h3>   <a
+   * parameters (<code>OutputS3KeyPrefix</code> and <code>SnsTopicArn</code>). After
+   * Amazon Polly creates the synthesis task, the operation returns a
+   * <code>SpeechSynthesisTask</code> object that includes an identifier for the task
+   * and its current status. The <code>SpeechSynthesisTask</code> object is available
+   * for 72 hours after you start the asynchronous synthesis task.</p> <p>To use a
+   * custom voice, specify its ID in <code>VoiceId</code>. The voice must be in
+   * <code>active</code> status. If the voice is in <code>pending</code> or
+   * <code>failed</code> status, the request fails with
+   * <code>ConflictException</code>. If no custom voice with the specified ID exists
+   * in your account and Region, the request fails with
+   * <code>ResourceNotFoundException</code>. If the custom voice uses a customer
+   * managed key, you need <code>kms:Decrypt</code> permission on the key. If you
+   * disable the key or schedule it for deletion before the task runs, the task fails
+   * and <code>TaskStatusReason</code> describes the cause.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">AWS
    * API Reference</a></p>
    */
@@ -391,7 +532,18 @@ class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient,
    * the voices (for example, Cyrillic might not be read at all by English voices)
    * unless phoneme mapping is used. For more information, see <a
    * href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
-   * it Works</a>.</p><p><h3>See Also:</h3>   <a
+   * it Works</a>.</p> <p>To use a custom voice, specify its ID in
+   * <code>VoiceId</code>. The voice must be in <code>active</code> status. If the
+   * voice is in <code>pending</code> or <code>failed</code> status, the request
+   * fails with <code>ConflictException</code>. If no custom voice with the specified
+   * ID exists in your account and Region, the request fails with
+   * <code>ResourceNotFoundException</code>.</p> <p>If the custom voice uses a
+   * customer managed key, you need <code>kms:Decrypt</code> permission on the key.
+   * If you disabled the key or scheduled it for deletion, the request fails with
+   * <code>ValidationException</code>. If you don't have permission to use the key,
+   * the request fails with <code>AccessDeniedException</code>. If Amazon Web
+   * Services KMS throttles Amazon Polly's request to use the key, the request fails
+   * with <code>ThrottlingException</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">AWS
    * API Reference</a></p>
    */

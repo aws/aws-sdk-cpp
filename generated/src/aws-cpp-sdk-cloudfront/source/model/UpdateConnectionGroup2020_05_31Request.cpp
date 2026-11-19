@@ -40,6 +40,11 @@ Aws::String UpdateConnectionGroup2020_05_31Request::SerializePayload() const {
     ss.str("");
   }
 
+  if (m_viewerFallbackHasBeenSet) {
+    XmlNode viewerFallbackNode = parentNode.CreateChildElement("ViewerFallback");
+    m_viewerFallback.AddToNode(viewerFallbackNode);
+  }
+
   return payloadDoc.ConvertToCompactString();
 }
 

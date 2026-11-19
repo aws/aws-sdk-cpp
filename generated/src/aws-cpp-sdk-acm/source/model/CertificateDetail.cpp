@@ -160,6 +160,14 @@ CertificateDetail& CertificateDetail::operator=(JsonView jsonValue) {
     m_acmeAccountId = jsonValue.GetString("AcmeAccountId");
     m_acmeAccountIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CertificateUsage")) {
+    m_certificateUsage = CertificateUsageMapper::GetCertificateUsageForName(jsonValue.GetString("CertificateUsage"));
+    m_certificateUsageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RootHierarchyType")) {
+    m_rootHierarchyType = RootHierarchyTypeMapper::GetRootHierarchyTypeForName(jsonValue.GetString("RootHierarchyType"));
+    m_rootHierarchyTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -312,6 +320,14 @@ JsonValue CertificateDetail::Jsonize() const {
 
   if (m_acmeAccountIdHasBeenSet) {
     payload.WithString("AcmeAccountId", m_acmeAccountId);
+  }
+
+  if (m_certificateUsageHasBeenSet) {
+    payload.WithString("CertificateUsage", CertificateUsageMapper::GetNameForCertificateUsage(m_certificateUsage));
+  }
+
+  if (m_rootHierarchyTypeHasBeenSet) {
+    payload.WithString("RootHierarchyType", RootHierarchyTypeMapper::GetNameForRootHierarchyType(m_rootHierarchyType));
   }
 
   return payload;

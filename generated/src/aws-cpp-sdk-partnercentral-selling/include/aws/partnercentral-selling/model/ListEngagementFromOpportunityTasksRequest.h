@@ -18,6 +18,11 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the
+ * <code>ListEngagementFromOpportunityTasks</code> operation.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementFromOpportunityTasksRequest">AWS
+ * API Reference</a></p>
  */
 class ListEngagementFromOpportunityTasksRequest : public PartnerCentralSellingRequest {
  public:
@@ -35,7 +40,7 @@ class ListEngagementFromOpportunityTasksRequest : public PartnerCentralSellingRe
 
   ///@{
   /**
-   * <p> Specifies the maximum number of results to return in a single page of the
+   * <p>Specifies the maximum number of results to return in a single page of the
    * response.Use this parameter to control the number of items returned in each
    * request, which can be useful for performance tuning and managing large result
    * sets. </p>
@@ -54,7 +59,7 @@ class ListEngagementFromOpportunityTasksRequest : public PartnerCentralSellingRe
 
   ///@{
   /**
-   * <p> The token for requesting the next page of results. This value is obtained
+   * <p>The token for requesting the next page of results. This value is obtained
    * from the NextToken field in the response of a previous call to this API. Use
    * this parameter for pagination when the result set spans multiple pages. </p>
    */
@@ -93,10 +98,10 @@ class ListEngagementFromOpportunityTasksRequest : public PartnerCentralSellingRe
 
   ///@{
   /**
-   * <p> Specifies the catalog related to the request. Valid values are: </p> <ul>
-   * <li> <p> AWS: Retrieves the request from the production AWS environment. </p>
-   * </li> <li> <p> Sandbox: Retrieves the request from a sandbox environment used
-   * for testing or development purposes. </p> </li> </ul>
+   * <p>Specifies the catalog related to the request. Valid values are:</p> <ul> <li>
+   * <p> AWS: Retrieves the request from the production AWS environment. </p> </li>
+   * <li> <p> Sandbox: Retrieves the request from a sandbox environment used for
+   * testing or development purposes. </p> </li> </ul>
    */
   inline const Aws::String& GetCatalog() const { return m_catalog; }
   inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -138,8 +143,8 @@ class ListEngagementFromOpportunityTasksRequest : public PartnerCentralSellingRe
 
   ///@{
   /**
-   * <p> Filters tasks by their unique identifiers. Use this when you want to
-   * retrieve information about specific tasks. </p>
+   * <p>Filters tasks by their unique identifiers. Use this when you want to retrieve
+   * information about specific tasks. </p>
    */
   inline const Aws::Vector<Aws::String>& GetTaskIdentifier() const { return m_taskIdentifier; }
   inline bool TaskIdentifierHasBeenSet() const { return m_taskIdentifierHasBeenSet; }
@@ -187,8 +192,8 @@ class ListEngagementFromOpportunityTasksRequest : public PartnerCentralSellingRe
 
   ///@{
   /**
-   * <p> Filters tasks by the identifiers of the engagements they created or are
-   * associated with. </p>
+   * <p>Filters tasks by the identifiers of the engagements they created or are
+   * associated with.</p>
    */
   inline const Aws::Vector<Aws::String>& GetEngagementIdentifier() const { return m_engagementIdentifier; }
   inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }

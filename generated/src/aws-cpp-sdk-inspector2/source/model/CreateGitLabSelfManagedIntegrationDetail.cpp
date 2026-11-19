@@ -26,6 +26,10 @@ CreateGitLabSelfManagedIntegrationDetail& CreateGitLabSelfManagedIntegrationDeta
     m_accessToken = jsonValue.GetString("accessToken");
     m_accessTokenHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vpcConfiguration")) {
+    m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
+    m_vpcConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue CreateGitLabSelfManagedIntegrationDetail::Jsonize() const {
 
   if (m_accessTokenHasBeenSet) {
     payload.WithString("accessToken", m_accessToken);
+  }
+
+  if (m_vpcConfigurationHasBeenSet) {
+    payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
   }
 
   return payload;

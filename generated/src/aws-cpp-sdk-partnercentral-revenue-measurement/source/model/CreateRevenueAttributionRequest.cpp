@@ -38,6 +38,9 @@ Aws::String CreateRevenueAttributionRequest::SerializePayload() const {
   if (m_tagsHasBeenSet) {
     mapSize++;
   }
+  if (m_contextHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -76,6 +79,15 @@ Aws::String CreateRevenueAttributionRequest::SerializePayload() const {
     encoder.WriteArrayStart(m_tags.size());
     for (const auto& item_0 : m_tags) {
       item_0.CborEncode(encoder);
+    }
+  }
+
+  if (m_contextHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Context"));
+    encoder.WriteMapStart(m_context.size());
+    for (const auto& item_0 : m_context) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.second.c_str()));
     }
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);

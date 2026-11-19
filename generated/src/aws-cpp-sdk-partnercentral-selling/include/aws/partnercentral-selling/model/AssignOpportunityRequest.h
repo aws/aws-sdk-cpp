@@ -16,6 +16,10 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the <code>AssignOpportunity</code>
+ * operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AssignOpportunityRequest">AWS
+ * API Reference</a></p>
  */
 class AssignOpportunityRequest : public PartnerCentralSellingRequest {
  public:

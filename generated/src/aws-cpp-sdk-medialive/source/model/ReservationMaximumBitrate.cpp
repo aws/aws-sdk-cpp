@@ -18,6 +18,7 @@ namespace ReservationMaximumBitrateMapper {
 static const int MAX_10_MBPS_HASH = HashingUtils::HashString("MAX_10_MBPS");
 static const int MAX_20_MBPS_HASH = HashingUtils::HashString("MAX_20_MBPS");
 static const int MAX_50_MBPS_HASH = HashingUtils::HashString("MAX_50_MBPS");
+static const int MAX_500_MBPS_HASH = HashingUtils::HashString("MAX_500_MBPS");
 
 ReservationMaximumBitrate GetReservationMaximumBitrateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ReservationMaximumBitrate GetReservationMaximumBitrateForName(const Aws::String&
     return ReservationMaximumBitrate::MAX_20_MBPS;
   } else if (hashCode == MAX_50_MBPS_HASH) {
     return ReservationMaximumBitrate::MAX_50_MBPS;
+  } else if (hashCode == MAX_500_MBPS_HASH) {
+    return ReservationMaximumBitrate::MAX_500_MBPS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForReservationMaximumBitrate(ReservationMaximumBitrate enumVa
       return "MAX_20_MBPS";
     case ReservationMaximumBitrate::MAX_50_MBPS:
       return "MAX_50_MBPS";
+    case ReservationMaximumBitrate::MAX_500_MBPS:
+      return "MAX_500_MBPS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

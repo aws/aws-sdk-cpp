@@ -32,7 +32,11 @@ class EncryptionConfiguration {
   AWS_EVENTBRIDGEV2_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
-
+  /**
+   * <p>Identifier of the AWS KMS customer managed key used to encrypt events: a key
+   * ID, key ARN, alias name, or alias ARN. When absent, events are encrypted with an
+   * AWS owned key.</p>
+   */
   inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
   inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
   template <typename KmsKeyIdentifierT = Aws::String>

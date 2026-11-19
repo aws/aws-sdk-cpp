@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/AlarmIdentifier.h>
+#include <aws/route53/model/EndpointType.h>
 #include <aws/route53/model/HealthCheckRegion.h>
 #include <aws/route53/model/HealthCheckType.h>
 #include <aws/route53/model/InsufficientDataHealthStatus.h>
@@ -51,22 +52,27 @@ class HealthCheckConfig {
    * eight groups of four hexadecimal values, separated by colons (:), for example,
    * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6
    * addresses as described in RFC 5952, for example,
-   * <code>2001:db8:85a3::abcd:1:2345</code>.</p> </li> </ul> <p>If the endpoint is
-   * an EC2 instance, we recommend that you create an Elastic IP address, associate
-   * it with your EC2 instance, and specify the Elastic IP address for
-   * <code>IPAddress</code>. This ensures that the IP address of your instance will
-   * never change.</p> <p>For more information, see <a
+   * <code>2001:db8:85a3::abcd:1:2345</code>.</p> </li> </ul> <p>For a public health
+   * check, if the endpoint is an EC2 instance, we recommend that you create an
+   * Elastic IP address, associate it with your EC2 instance, and specify the Elastic
+   * IP address for <code>IPAddress</code>. This ensures that the IP address of your
+   * instance will never change.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.
-   * </p> <p>Constraints: Route 53 can't check the health of endpoints for which the
-   * IP address is in local, private, non-routable, or multicast ranges. For more
-   * information about IP addresses for which you can't create health checks, see the
-   * following documents:</p> <ul> <li> <p> <a
+   * </p> <p>Constraints: For a public health check (<code>EndpointType</code> of
+   * <code>PUBLIC</code>, the default), Route 53 can't check the health of endpoints
+   * for which the IP address is in local, private, non-routable, or multicast
+   * ranges. For more information about IP addresses for which you can't create
+   * public health checks, see the following documents:</p> <ul> <li> <p> <a
    * href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
    * Addresses</a> </p> </li> <li> <p> <a
    * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix
    * for Shared Address Space</a> </p> </li> <li> <p> <a
    * href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6
-   * Addresses</a> </p> </li> </ul> <p>When the value of <code>Type</code> is
+   * Addresses</a> </p> </li> </ul> <p>For a private endpoint health check
+   * (<code>EndpointType</code> of <code>PRIVATE</code>), if you specify
+   * <code>IPAddress</code>, it must be a private IPv4 or IPv6 address. Route 53
+   * sends health checks to it from the health check source that you specify in
+   * <code>HealthCheckSourceId</code>.</p> <p>When the value of <code>Type</code> is
    * <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit
    * <code>IPAddress</code>.</p>
    */
@@ -567,6 +573,54 @@ class HealthCheckConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the health check targets a public endpoint or a private
+   * endpoint in a virtual private cloud (VPC). Valid values:</p> <ul> <li> <p>
+   * <code>PUBLIC</code>: The health check targets an endpoint that is reachable over
+   * the internet. This is the default.</p> </li> <li> <p> <code>PRIVATE</code>: The
+   * health check targets a private endpoint in your virtual private cloud. You must
+   * also specify <code>HealthCheckSourceId</code>. <code>PRIVATE</code> isn't
+   * supported for health checks with a <code>Type</code> of <code>CALCULATED</code>,
+   * <code>CLOUDWATCH_METRIC</code>, or <code>RECOVERY_CONTROL</code>.</p> </li>
+   * </ul>  <p>You can't change the value of <code>EndpointType</code>
+   * after you create a health check.</p>
+   */
+  inline EndpointType GetEndpointType() const { return m_endpointType; }
+  inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
+  inline void SetEndpointType(EndpointType value) {
+    m_endpointTypeHasBeenSet = true;
+    m_endpointType = value;
+  }
+  inline HealthCheckConfig& WithEndpointType(EndpointType value) {
+    SetEndpointType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the health check source that Route 53 uses to send health checks to
+   * a private endpoint. Required when <code>EndpointType</code> is
+   * <code>PRIVATE</code>.</p> <p>You can change <code>HealthCheckSourceId</code> on
+   * an existing private health check. You can't add it to a public health check.</p>
+   * <p>Each health check source supports a limited number of active health checks.
+   * If you reach that limit, specify a different health check source.</p>
+   */
+  inline const Aws::String& GetHealthCheckSourceId() const { return m_healthCheckSourceId; }
+  inline bool HealthCheckSourceIdHasBeenSet() const { return m_healthCheckSourceIdHasBeenSet; }
+  template <typename HealthCheckSourceIdT = Aws::String>
+  void SetHealthCheckSourceId(HealthCheckSourceIdT&& value) {
+    m_healthCheckSourceIdHasBeenSet = true;
+    m_healthCheckSourceId = std::forward<HealthCheckSourceIdT>(value);
+  }
+  template <typename HealthCheckSourceIdT = Aws::String>
+  HealthCheckConfig& WithHealthCheckSourceId(HealthCheckSourceIdT&& value) {
+    SetHealthCheckSourceId(std::forward<HealthCheckSourceIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_iPAddress;
 
@@ -603,6 +657,10 @@ class HealthCheckConfig {
   InsufficientDataHealthStatus m_insufficientDataHealthStatus{InsufficientDataHealthStatus::NOT_SET};
 
   Aws::String m_routingControlArn;
+
+  EndpointType m_endpointType{EndpointType::NOT_SET};
+
+  Aws::String m_healthCheckSourceId;
   bool m_iPAddressHasBeenSet = false;
   bool m_portHasBeenSet = false;
   bool m_typeHasBeenSet = false;
@@ -621,6 +679,8 @@ class HealthCheckConfig {
   bool m_alarmIdentifierHasBeenSet = false;
   bool m_insufficientDataHealthStatusHasBeenSet = false;
   bool m_routingControlArnHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_healthCheckSourceIdHasBeenSet = false;
 };
 
 }  // namespace Model

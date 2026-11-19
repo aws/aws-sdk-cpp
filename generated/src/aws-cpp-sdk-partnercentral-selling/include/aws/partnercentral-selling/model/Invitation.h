@@ -22,7 +22,7 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
- * <p> The Invitation structure represents an invitation exchanged between partners
+ * <p>The Invitation structure represents an invitation exchanged between partners
  * and AWS. It includes a message, receiver information, and a payload providing
  * context for the invitation. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/Invitation">AWS
@@ -37,7 +37,7 @@ class Invitation {
 
   ///@{
   /**
-   * <p> A message accompanying the invitation. </p>
+   * <p>A message accompanying the invitation.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -54,7 +54,9 @@ class Invitation {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Specifies the partner that receives the invitation.</p>
+   */
   inline const Receiver& GetReceiver() const { return m_receiver; }
   inline bool ReceiverHasBeenSet() const { return m_receiverHasBeenSet; }
   template <typename ReceiverT = Receiver>
@@ -70,7 +72,10 @@ class Invitation {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Contains the details that the invitation carries, such as the opportunity or
+   * the account planning details that the partner receives.</p>
+   */
   inline const Payload& GetPayload() const { return m_payload; }
   inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
   template <typename PayloadT = Payload>

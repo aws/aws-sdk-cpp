@@ -19,6 +19,8 @@
 #include <aws/marketplace-catalog/internal/MarketplaceCatalogEndpointRules.h>
 #include <aws/marketplace-catalog/model/AMISecurityFilters.h>
 #include <aws/marketplace-catalog/model/AMISecuritySummary.h>
+#include <aws/marketplace-catalog/model/AdditionalResource.h>
+#include <aws/marketplace-catalog/model/AdditionalResourcesAlternative.h>
 #include <aws/marketplace-catalog/model/AmiProductEntityIdFilter.h>
 #include <aws/marketplace-catalog/model/AmiProductFilters.h>
 #include <aws/marketplace-catalog/model/AmiProductLastModifiedDateFilter.h>
@@ -38,6 +40,7 @@
 #include <aws/marketplace-catalog/model/BatchDescribeErrorDetail.h>
 #include <aws/marketplace-catalog/model/CancelChangeSetRequest.h>
 #include <aws/marketplace-catalog/model/CancelChangeSetResult.h>
+#include <aws/marketplace-catalog/model/CaseStudiesAlternative.h>
 #include <aws/marketplace-catalog/model/Change.h>
 #include <aws/marketplace-catalog/model/ChangeSetSummaryListItem.h>
 #include <aws/marketplace-catalog/model/ChangeStatus.h>
@@ -54,9 +57,14 @@
 #include <aws/marketplace-catalog/model/ContainerProductVisibilityString.h>
 #include <aws/marketplace-catalog/model/ContainerSecurityFilters.h>
 #include <aws/marketplace-catalog/model/ContainerSecuritySummary.h>
+#include <aws/marketplace-catalog/model/ContentAlternatives.h>
+#include <aws/marketplace-catalog/model/ContentRecommendation.h>
+#include <aws/marketplace-catalog/model/ContentRecommendationStatus.h>
 #include <aws/marketplace-catalog/model/ControlAssessment.h>
 #include <aws/marketplace-catalog/model/ControlAssessmentResult.h>
 #include <aws/marketplace-catalog/model/ControlError.h>
+#include <aws/marketplace-catalog/model/ControlInput.h>
+#include <aws/marketplace-catalog/model/ControlSummary.h>
 #include <aws/marketplace-catalog/model/DataProductEntityIdFilter.h>
 #include <aws/marketplace-catalog/model/DataProductFilters.h>
 #include <aws/marketplace-catalog/model/DataProductLastModifiedDateFilter.h>
@@ -93,7 +101,10 @@
 #include <aws/marketplace-catalog/model/ExpressPrivateOfferConfigurationStateString.h>
 #include <aws/marketplace-catalog/model/ExpressPrivateOfferConfigurationSummary.h>
 #include <aws/marketplace-catalog/model/FailureCode.h>
+#include <aws/marketplace-catalog/model/FeatureRecommendation.h>
+#include <aws/marketplace-catalog/model/FeatureRecommendations.h>
 #include <aws/marketplace-catalog/model/Filter.h>
+#include <aws/marketplace-catalog/model/FollowUpQuestion.h>
 #include <aws/marketplace-catalog/model/FrameworkFilters.h>
 #include <aws/marketplace-catalog/model/FrameworkSummary.h>
 #include <aws/marketplace-catalog/model/GetResourcePolicyRequest.h>
@@ -110,6 +121,14 @@
 #include <aws/marketplace-catalog/model/ListEntitiesResult.h>
 #include <aws/marketplace-catalog/model/ListTagsForResourceRequest.h>
 #include <aws/marketplace-catalog/model/ListTagsForResourceResult.h>
+#include <aws/marketplace-catalog/model/ListingCaseStudy.h>
+#include <aws/marketplace-catalog/model/ListingFinding.h>
+#include <aws/marketplace-catalog/model/ListingFindingStatus.h>
+#include <aws/marketplace-catalog/model/ListingQualitySummary.h>
+#include <aws/marketplace-catalog/model/ListingQualityTier.h>
+#include <aws/marketplace-catalog/model/ListingRecommendations.h>
+#include <aws/marketplace-catalog/model/ListingRecommendationsSummary.h>
+#include <aws/marketplace-catalog/model/ListingUseCase.h>
 #include <aws/marketplace-catalog/model/MachineLearningProductEntityIdFilter.h>
 #include <aws/marketplace-catalog/model/MachineLearningProductFilters.h>
 #include <aws/marketplace-catalog/model/MachineLearningProductLastModifiedDateFilter.h>
@@ -153,6 +172,7 @@
 #include <aws/marketplace-catalog/model/OfferSortBy.h>
 #include <aws/marketplace-catalog/model/OfferStateFilter.h>
 #include <aws/marketplace-catalog/model/OfferStateString.h>
+#include <aws/marketplace-catalog/model/OfferSubsidiaryAuthorizationIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferSummary.h>
 #include <aws/marketplace-catalog/model/OfferTargetAgreementIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferTargetAgreementIntentFilter.h>
@@ -160,8 +180,13 @@
 #include <aws/marketplace-catalog/model/OfferTargetingFilter.h>
 #include <aws/marketplace-catalog/model/OfferTargetingString.h>
 #include <aws/marketplace-catalog/model/OwnershipType.h>
+#include <aws/marketplace-catalog/model/ProductContentRecommendations.h>
 #include <aws/marketplace-catalog/model/PutResourcePolicyRequest.h>
 #include <aws/marketplace-catalog/model/PutResourcePolicyResult.h>
+#include <aws/marketplace-catalog/model/RecommendationCitation.h>
+#include <aws/marketplace-catalog/model/RecommendationSeverity.h>
+#include <aws/marketplace-catalog/model/RecommendedFeatureId.h>
+#include <aws/marketplace-catalog/model/RecommendedFeatureStatus.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationAvailabilityEndDateFilter.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationAvailabilityEndDateFilterDateRange.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationCreatedDateFilter.h>
@@ -197,8 +222,11 @@
 #include <aws/marketplace-catalog/model/SaaSProductTitleFilter.h>
 #include <aws/marketplace-catalog/model/SaaSProductVisibilityFilter.h>
 #include <aws/marketplace-catalog/model/SaaSProductVisibilityString.h>
+#include <aws/marketplace-catalog/model/SolutionContentRecommendations.h>
 #include <aws/marketplace-catalog/model/Sort.h>
 #include <aws/marketplace-catalog/model/SortOrder.h>
+#include <aws/marketplace-catalog/model/StartAssessmentRequest.h>
+#include <aws/marketplace-catalog/model/StartAssessmentResult.h>
 #include <aws/marketplace-catalog/model/StartChangeSetRequest.h>
 #include <aws/marketplace-catalog/model/StartChangeSetResult.h>
 #include <aws/marketplace-catalog/model/SubsidiaryAuthorizationCreatedDateFilter.h>
@@ -219,11 +247,15 @@
 #include <aws/marketplace-catalog/model/Tag.h>
 #include <aws/marketplace-catalog/model/TagResourceRequest.h>
 #include <aws/marketplace-catalog/model/TagResourceResult.h>
+#include <aws/marketplace-catalog/model/TextAlternative.h>
+#include <aws/marketplace-catalog/model/TextListAlternative.h>
 #include <aws/marketplace-catalog/model/UntagResourceRequest.h>
 #include <aws/marketplace-catalog/model/UntagResourceResult.h>
+#include <aws/marketplace-catalog/model/UseCasesAlternative.h>
 #include <aws/marketplace-catalog/model/ValidationException.h>
 #include <aws/marketplace-catalog/model/ValidationExceptionField.h>
 #include <aws/marketplace-catalog/model/ValidationExceptionReason.h>
+#include <aws/marketplace-catalog/model/VerificationSource.h>
 
 using MarketplaceCatalogIncludeTest = ::testing::Test;
 

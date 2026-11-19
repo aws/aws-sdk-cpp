@@ -501,6 +501,65 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns a module that you can attach. If you can't attach the module, the
+   * operation returns ResourceNotFoundException, the same as for a missing
+   * one.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetAvailableModule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAvailableModuleOutcome GetAvailableModule(const Model::GetAvailableModuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAvailableModule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAvailableModuleRequestT = Model::GetAvailableModuleRequest>
+  Model::GetAvailableModuleOutcomeCallable GetAvailableModuleCallable(const GetAvailableModuleRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::GetAvailableModule, request);
+  }
+
+  /**
+   * An Async wrapper for GetAvailableModule that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetAvailableModuleRequestT = Model::GetAvailableModuleRequest>
+  void GetAvailableModuleAsync(const GetAvailableModuleRequestT& request, const GetAvailableModuleResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::GetAvailableModule, request, handler, context);
+  }
+
+  /**
+   * <p>Returns an ACTIVE or DEPRECATED version of a module that you can attach. If
+   * you can't attach the module, or the version is in another status, the operation
+   * returns ResourceNotFoundException, the same as for a missing one.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetAvailableModuleVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAvailableModuleVersionOutcome GetAvailableModuleVersion(const Model::GetAvailableModuleVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAvailableModuleVersion that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAvailableModuleVersionRequestT = Model::GetAvailableModuleVersionRequest>
+  Model::GetAvailableModuleVersionOutcomeCallable GetAvailableModuleVersionCallable(
+      const GetAvailableModuleVersionRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::GetAvailableModuleVersion, request);
+  }
+
+  /**
+   * An Async wrapper for GetAvailableModuleVersion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetAvailableModuleVersionRequestT = Model::GetAvailableModuleVersionRequest>
+  void GetAvailableModuleVersionAsync(const GetAvailableModuleVersionRequestT& request,
+                                      const GetAvailableModuleVersionResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::GetAvailableModuleVersion, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the details of a certificate association with a responder
    * gateway.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetCertificateAssociation">AWS
@@ -694,6 +753,98 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns ResourceNotFoundException for an updateId past the 90-day retention
+   * window, indistinguishable in the response from an id that never
+   * existed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetUpdate">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetUpdateOutcome GetUpdate(const Model::GetUpdateRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetUpdateRequestT = Model::GetUpdateRequest>
+  Model::GetUpdateOutcomeCallable GetUpdateCallable(const GetUpdateRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::GetUpdate, request);
+  }
+
+  /**
+   * An Async wrapper for GetUpdate that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetUpdateRequestT = Model::GetUpdateRequest>
+  void GetUpdateAsync(const GetUpdateRequestT& request, const GetUpdateResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::GetUpdate, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the ACTIVE and DEPRECATED versions of a module that you can attach,
+   * highest version first (numerically by MAJOR, then MINOR, then PATCH). If you
+   * can't attach the module, the operation returns ResourceNotFoundException, the
+   * same as for a missing one. If the module has no ACTIVE or DEPRECATED versions,
+   * the operation returns an empty list. The operation lists DEPRECATED versions so
+   * that you can inspect one that you've attached, but you can't attach them.
+   * Results are paginated. Use <code>nextToken</code> to get the next
+   * page.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListAvailableModuleVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAvailableModuleVersionsOutcome ListAvailableModuleVersions(
+      const Model::ListAvailableModuleVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAvailableModuleVersions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAvailableModuleVersionsRequestT = Model::ListAvailableModuleVersionsRequest>
+  Model::ListAvailableModuleVersionsOutcomeCallable ListAvailableModuleVersionsCallable(
+      const ListAvailableModuleVersionsRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::ListAvailableModuleVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListAvailableModuleVersions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAvailableModuleVersionsRequestT = Model::ListAvailableModuleVersionsRequest>
+  void ListAvailableModuleVersionsAsync(const ListAvailableModuleVersionsRequestT& request,
+                                        const ListAvailableModuleVersionsResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::ListAvailableModuleVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the modules that you can attach, newest first by
+   * <code>createdAt</code>. Results are paginated. Use <code>nextToken</code> to get
+   * the next page.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListAvailableModules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAvailableModulesOutcome ListAvailableModules(const Model::ListAvailableModulesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAvailableModules that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAvailableModulesRequestT = Model::ListAvailableModulesRequest>
+  Model::ListAvailableModulesOutcomeCallable ListAvailableModulesCallable(const ListAvailableModulesRequestT& request = {}) const {
+    return SubmitCallable(&RTBFabricClient::ListAvailableModules, request);
+  }
+
+  /**
+   * An Async wrapper for ListAvailableModules that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAvailableModulesRequestT = Model::ListAvailableModulesRequest>
+  void ListAvailableModulesAsync(const ListAvailableModulesResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const ListAvailableModulesRequestT& request = {}) const {
+    return SubmitAsync(&RTBFabricClient::ListAvailableModules, request, handler, context);
+  }
+
+  /**
    * <p>Lists the certificate associations for a responder gateway.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListCertificateAssociations">AWS
@@ -854,6 +1005,62 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
   void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&RTBFabricClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the updates on a gateway. Results are paginated. Use
+   * <code>nextToken</code> to get the next page.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListUpdates">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListUpdatesOutcome ListUpdates(const Model::ListUpdatesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListUpdates that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListUpdatesRequestT = Model::ListUpdatesRequest>
+  Model::ListUpdatesOutcomeCallable ListUpdatesCallable(const ListUpdatesRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::ListUpdates, request);
+  }
+
+  /**
+   * An Async wrapper for ListUpdates that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListUpdatesRequestT = Model::ListUpdatesRequest>
+  void ListUpdatesAsync(const ListUpdatesRequestT& request, const ListUpdatesResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::ListUpdates, request, handler, context);
+  }
+
+  /**
+   * <p>Replaces a link's flow configuration. The change applies asynchronously. The
+   * call returns once the change is accepted, and the link serves its prior flows
+   * until the update commits atomically. RTB Fabric validates the request before
+   * accepting it, and a request that fails validation changes nothing. After the
+   * call, use GetLink. Once the change completes, the link's status is ACTIVE again
+   * and its flows show the change.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/PutLinkFlows">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutLinkFlowsOutcome PutLinkFlows(const Model::PutLinkFlowsRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutLinkFlows that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename PutLinkFlowsRequestT = Model::PutLinkFlowsRequest>
+  Model::PutLinkFlowsOutcomeCallable PutLinkFlowsCallable(const PutLinkFlowsRequestT& request) const {
+    return SubmitCallable(&RTBFabricClient::PutLinkFlows, request);
+  }
+
+  /**
+   * An Async wrapper for PutLinkFlows that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename PutLinkFlowsRequestT = Model::PutLinkFlowsRequest>
+  void PutLinkFlowsAsync(const PutLinkFlowsRequestT& request, const PutLinkFlowsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RTBFabricClient::PutLinkFlows, request, handler, context);
   }
 
   /**

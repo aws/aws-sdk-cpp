@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/route53resolver/model/DomainListType.h>
+#include <aws/route53resolver/model/FirewallDomainListStatus.h>
 
 #include <utility>
 
@@ -163,6 +164,75 @@ class FirewallDomainListMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>For an AutoAllowlist domain list, the ID of the firewall rule group that
+   * contains the auto-allowlist rule that owns this domain list. Use it to navigate
+   * to the rule group and its VPC associations. Present only when
+   * <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+   */
+  inline const Aws::String& GetFirewallRuleGroupId() const { return m_firewallRuleGroupId; }
+  inline bool FirewallRuleGroupIdHasBeenSet() const { return m_firewallRuleGroupIdHasBeenSet; }
+  template <typename FirewallRuleGroupIdT = Aws::String>
+  void SetFirewallRuleGroupId(FirewallRuleGroupIdT&& value) {
+    m_firewallRuleGroupIdHasBeenSet = true;
+    m_firewallRuleGroupId = std::forward<FirewallRuleGroupIdT>(value);
+  }
+  template <typename FirewallRuleGroupIdT = Aws::String>
+  FirewallDomainListMetadata& WithFirewallRuleGroupId(FirewallRuleGroupIdT&& value) {
+    SetFirewallRuleGroupId(std::forward<FirewallRuleGroupIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>For an AutoAllowlist domain list, the threat protection ID of the
+   * auto-allowlist rule that owns this domain list. Provide it to
+   * <a>ListFirewallRuleDomains</a> to review the observed, allowed, and denied
+   * domains. Present only when <code>ManagedListType</code> is
+   * <code>AUTOALLOWLIST</code>.</p>
+   */
+  inline const Aws::String& GetFirewallThreatProtectionId() const { return m_firewallThreatProtectionId; }
+  inline bool FirewallThreatProtectionIdHasBeenSet() const { return m_firewallThreatProtectionIdHasBeenSet; }
+  template <typename FirewallThreatProtectionIdT = Aws::String>
+  void SetFirewallThreatProtectionId(FirewallThreatProtectionIdT&& value) {
+    m_firewallThreatProtectionIdHasBeenSet = true;
+    m_firewallThreatProtectionId = std::forward<FirewallThreatProtectionIdT>(value);
+  }
+  template <typename FirewallThreatProtectionIdT = Aws::String>
+  FirewallDomainListMetadata& WithFirewallThreatProtectionId(FirewallThreatProtectionIdT&& value) {
+    SetFirewallThreatProtectionId(std::forward<FirewallThreatProtectionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>For an AutoAllowlist domain list, the status of the list:
+   * <code>IMPORTING</code> while domains are being copied from the source domain
+   * list specified at rule creation, <code>COMPLETE_IMPORT_FAILED</code> if that
+   * copy failed, <code>UPDATING</code> while a change made with
+   * <a>UpdateFirewallDomains</a> is being applied, <code>COMPLETE</code> otherwise,
+   * and <code>DELETING</code> while the owning rule is being deleted. The first
+   * change that you make after a failed copy replaces
+   * <code>COMPLETE_IMPORT_FAILED</code> with <code>UPDATING</code> and then
+   * <code>COMPLETE</code>. Present only when <code>ManagedListType</code> is
+   * <code>AUTOALLOWLIST</code>. Use <a>GetFirewallDomainList</a> for the status of
+   * other domain lists.</p>
+   */
+  inline FirewallDomainListStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(FirewallDomainListStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline FirewallDomainListMetadata& WithStatus(FirewallDomainListStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -177,6 +247,12 @@ class FirewallDomainListMetadata {
   DomainListType m_managedListType{DomainListType::NOT_SET};
 
   Aws::String m_category;
+
+  Aws::String m_firewallRuleGroupId;
+
+  Aws::String m_firewallThreatProtectionId;
+
+  FirewallDomainListStatus m_status{FirewallDomainListStatus::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -184,6 +260,9 @@ class FirewallDomainListMetadata {
   bool m_managedOwnerNameHasBeenSet = false;
   bool m_managedListTypeHasBeenSet = false;
   bool m_categoryHasBeenSet = false;
+  bool m_firewallRuleGroupIdHasBeenSet = false;
+  bool m_firewallThreatProtectionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
 };
 
 }  // namespace Model

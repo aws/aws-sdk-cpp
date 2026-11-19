@@ -21,7 +21,7 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
- * <p> Defines the sorting parameters for listing resource snapshot jobs. This
+ * <p>Defines the sorting parameters for listing resource snapshot jobs. This
  * structure allows you to specify the field to sort by and the order of sorting.
  * </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SortObject">AWS
@@ -36,7 +36,7 @@ class SortObject {
 
   ///@{
   /**
-   * <p> Specifies the field by which to sort the resource snapshot jobs. </p>
+   * <p>Specifies the field by which to sort the resource snapshot jobs.</p>
    */
   inline SortBy GetSortBy() const { return m_sortBy; }
   inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
@@ -52,7 +52,7 @@ class SortObject {
 
   ///@{
   /**
-   * <p> Determines the order in which the sorted results are presented. </p>
+   * <p>Determines the order in which the sorted results are presented.</p>
    */
   inline SortOrder GetSortOrder() const { return m_sortOrder; }
   inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }

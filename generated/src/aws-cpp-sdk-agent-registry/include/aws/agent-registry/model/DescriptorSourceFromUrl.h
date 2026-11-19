@@ -34,7 +34,9 @@ class DescriptorSourceFromUrl {
 
   ///@{
   /**
-   * <p> The URL from which the descriptor content is retrieved.</p>
+   * <p> The URL from which the descriptor content is retrieved. For an agent skill
+   * that synchronizes its SKILL.md from GitHub, this is the GitHub folder URL. The
+   * data plane doesn't return Amazon S3 (<code>s3://</code>) source URLs.</p>
    */
   inline const Aws::String& GetUrl() const { return m_url; }
   inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }

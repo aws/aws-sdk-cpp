@@ -65,6 +65,7 @@
 #include <aws/route53resolver/model/ListFirewallDomainListsRequest.h>
 #include <aws/route53resolver/model/ListFirewallDomainListsResult.h>
 #include <aws/route53resolver/model/ListFirewallDomainsResult.h>
+#include <aws/route53resolver/model/ListFirewallRuleDomainsResult.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsRequest.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsResult.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupsRequest.h>
@@ -181,6 +182,7 @@ class ImportFirewallDomainsRequest;
 class ListFirewallConfigsRequest;
 class ListFirewallDomainListsRequest;
 class ListFirewallDomainsRequest;
+class ListFirewallRuleDomainsRequest;
 class ListFirewallRuleGroupAssociationsRequest;
 class ListFirewallRuleGroupsRequest;
 class ListFirewallRuleTypesRequest;
@@ -256,6 +258,7 @@ typedef Aws::Utils::Outcome<ImportFirewallDomainsResult, Route53ResolverError> I
 typedef Aws::Utils::Outcome<ListFirewallConfigsResult, Route53ResolverError> ListFirewallConfigsOutcome;
 typedef Aws::Utils::Outcome<ListFirewallDomainListsResult, Route53ResolverError> ListFirewallDomainListsOutcome;
 typedef Aws::Utils::Outcome<ListFirewallDomainsResult, Route53ResolverError> ListFirewallDomainsOutcome;
+typedef Aws::Utils::Outcome<ListFirewallRuleDomainsResult, Route53ResolverError> ListFirewallRuleDomainsOutcome;
 typedef Aws::Utils::Outcome<ListFirewallRuleGroupAssociationsResult, Route53ResolverError> ListFirewallRuleGroupAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListFirewallRuleGroupsResult, Route53ResolverError> ListFirewallRuleGroupsOutcome;
 typedef Aws::Utils::Outcome<ListFirewallRuleTypesResult, Route53ResolverError> ListFirewallRuleTypesOutcome;
@@ -332,6 +335,7 @@ typedef std::future<ImportFirewallDomainsOutcome> ImportFirewallDomainsOutcomeCa
 typedef std::future<ListFirewallConfigsOutcome> ListFirewallConfigsOutcomeCallable;
 typedef std::future<ListFirewallDomainListsOutcome> ListFirewallDomainListsOutcomeCallable;
 typedef std::future<ListFirewallDomainsOutcome> ListFirewallDomainsOutcomeCallable;
+typedef std::future<ListFirewallRuleDomainsOutcome> ListFirewallRuleDomainsOutcomeCallable;
 typedef std::future<ListFirewallRuleGroupAssociationsOutcome> ListFirewallRuleGroupAssociationsOutcomeCallable;
 typedef std::future<ListFirewallRuleGroupsOutcome> ListFirewallRuleGroupsOutcomeCallable;
 typedef std::future<ListFirewallRuleTypesOutcome> ListFirewallRuleTypesOutcomeCallable;
@@ -508,6 +512,9 @@ typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewa
 typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewallDomainsRequest&, const Model::ListFirewallDomainsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFirewallDomainsResponseReceivedHandler;
+typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewallRuleDomainsRequest&,
+                           const Model::ListFirewallRuleDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListFirewallRuleDomainsResponseReceivedHandler;
 typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewallRuleGroupAssociationsRequest&,
                            const Model::ListFirewallRuleGroupAssociationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

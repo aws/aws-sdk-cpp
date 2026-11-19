@@ -24,6 +24,7 @@
 #include <aws/bcm-pricing-calculator/model/GetBillEstimateRequest.h>
 #include <aws/bcm-pricing-calculator/model/GetBillScenarioRequest.h>
 #include <aws/bcm-pricing-calculator/model/GetPreferencesRequest.h>
+#include <aws/bcm-pricing-calculator/model/GetUsageLinesEstimatedCostRequest.h>
 #include <aws/bcm-pricing-calculator/model/GetWorkloadEstimateRequest.h>
 #include <aws/bcm-pricing-calculator/model/ListBillEstimateCommitmentsRequest.h>
 #include <aws/bcm-pricing-calculator/model/ListBillEstimateInputCommitmentModificationsRequest.h>
@@ -331,6 +332,13 @@ GetBillScenarioOutcome BCMPricingCalculatorClient::GetBillScenario(const GetBill
 GetPreferencesOutcome BCMPricingCalculatorClient::GetPreferences(const GetPreferencesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetPreferencesOutcome(result.GetResultWithOwnership()) : GetPreferencesOutcome(std::move(result.GetError()));
+}
+
+GetUsageLinesEstimatedCostOutcome BCMPricingCalculatorClient::GetUsageLinesEstimatedCost(
+    const GetUsageLinesEstimatedCostRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetUsageLinesEstimatedCostOutcome(result.GetResultWithOwnership())
+                            : GetUsageLinesEstimatedCostOutcome(std::move(result.GetError()));
 }
 
 GetWorkloadEstimateOutcome BCMPricingCalculatorClient::GetWorkloadEstimate(const GetWorkloadEstimateRequest& request) const {

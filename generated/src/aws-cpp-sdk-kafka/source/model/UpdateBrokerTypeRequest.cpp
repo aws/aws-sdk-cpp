@@ -23,5 +23,9 @@ Aws::String UpdateBrokerTypeRequest::SerializePayload() const {
     payload.WithString("targetInstanceType", m_targetInstanceType);
   }
 
+  if (m_topicReassignmentHasBeenSet) {
+    payload.WithString("topicReassignment", TopicReassignmentMapper::GetNameForTopicReassignment(m_topicReassignment));
+  }
+
   return payload.View().WriteReadable();
 }

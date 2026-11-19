@@ -228,6 +228,43 @@ class ClusterPendingModifiedValues {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the DB cluster will use VPC networking after a pending
+   * networking change completes. For a pending move to a different DB subnet group,
+   * the value is <code>true</code>.</p> <p>Valid for Cluster Type: Aurora DB
+   * clusters only</p>
+   */
+  inline bool GetVPCNetworkingEnabled() const { return m_vPCNetworkingEnabled; }
+  inline bool VPCNetworkingEnabledHasBeenSet() const { return m_vPCNetworkingEnabledHasBeenSet; }
+  inline void SetVPCNetworkingEnabled(bool value) {
+    m_vPCNetworkingEnabledHasBeenSet = true;
+    m_vPCNetworkingEnabled = value;
+  }
+  inline ClusterPendingModifiedValues& WithVPCNetworkingEnabled(bool value) {
+    SetVPCNetworkingEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the DB cluster will use an internet access gateway after a
+   * pending networking change completes.</p> <p>Valid for Cluster Type: Aurora
+   * PostgreSQL DB clusters only</p>
+   */
+  inline bool GetInternetAccessGatewayEnabled() const { return m_internetAccessGatewayEnabled; }
+  inline bool InternetAccessGatewayEnabledHasBeenSet() const { return m_internetAccessGatewayEnabledHasBeenSet; }
+  inline void SetInternetAccessGatewayEnabled(bool value) {
+    m_internetAccessGatewayEnabledHasBeenSet = true;
+    m_internetAccessGatewayEnabled = value;
+  }
+  inline ClusterPendingModifiedValues& WithInternetAccessGatewayEnabled(bool value) {
+    SetInternetAccessGatewayEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   PendingCloudwatchLogsExports m_pendingCloudwatchLogsExports;
 
@@ -250,6 +287,10 @@ class ClusterPendingModifiedValues {
   int m_iops{0};
 
   CertificateDetails m_certificateDetails;
+
+  bool m_vPCNetworkingEnabled{false};
+
+  bool m_internetAccessGatewayEnabled{false};
   bool m_pendingCloudwatchLogsExportsHasBeenSet = false;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_masterUserPasswordHasBeenSet = false;
@@ -261,6 +302,8 @@ class ClusterPendingModifiedValues {
   bool m_rdsCustomClusterConfigurationHasBeenSet = false;
   bool m_iopsHasBeenSet = false;
   bool m_certificateDetailsHasBeenSet = false;
+  bool m_vPCNetworkingEnabledHasBeenSet = false;
+  bool m_internetAccessGatewayEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/AwsBillingX402PaymentOutput.h>
 #include <aws/bedrock-agentcore/model/CryptoX402PaymentOutput.h>
 #include <aws/bedrock-agentcore/model/MppPaymentOutput.h>
 
@@ -66,12 +67,33 @@ class PaymentOutput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Output from an AWS Billing x402 payment.</p>
+   */
+  inline const AwsBillingX402PaymentOutput& GetAwsBillingX402() const { return m_awsBillingX402; }
+  inline bool AwsBillingX402HasBeenSet() const { return m_awsBillingX402HasBeenSet; }
+  template <typename AwsBillingX402T = AwsBillingX402PaymentOutput>
+  void SetAwsBillingX402(AwsBillingX402T&& value) {
+    m_awsBillingX402HasBeenSet = true;
+    m_awsBillingX402 = std::forward<AwsBillingX402T>(value);
+  }
+  template <typename AwsBillingX402T = AwsBillingX402PaymentOutput>
+  PaymentOutput& WithAwsBillingX402(AwsBillingX402T&& value) {
+    SetAwsBillingX402(std::forward<AwsBillingX402T>(value));
+    return *this;
+  }
+  ///@}
  private:
   CryptoX402PaymentOutput m_cryptoX402;
 
   MppPaymentOutput m_mpp;
+
+  AwsBillingX402PaymentOutput m_awsBillingX402;
   bool m_cryptoX402HasBeenSet = false;
   bool m_mppHasBeenSet = false;
+  bool m_awsBillingX402HasBeenSet = false;
 };
 
 }  // namespace Model

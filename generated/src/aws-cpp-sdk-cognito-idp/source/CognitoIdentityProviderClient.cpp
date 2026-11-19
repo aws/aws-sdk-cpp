@@ -45,6 +45,7 @@
 #include <aws/cognito-idp/model/ConfirmDeviceRequest.h>
 #include <aws/cognito-idp/model/ConfirmForgotPasswordRequest.h>
 #include <aws/cognito-idp/model/ConfirmSignUpRequest.h>
+#include <aws/cognito-idp/model/CreateCIMDPolicyRequest.h>
 #include <aws/cognito-idp/model/CreateGroupRequest.h>
 #include <aws/cognito-idp/model/CreateIdentityProviderRequest.h>
 #include <aws/cognito-idp/model/CreateManagedLoginBrandingRequest.h>
@@ -55,6 +56,7 @@
 #include <aws/cognito-idp/model/CreateUserPoolDomainRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolReplicaRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolRequest.h>
+#include <aws/cognito-idp/model/DeleteCIMDPolicyRequest.h>
 #include <aws/cognito-idp/model/DeleteGroupRequest.h>
 #include <aws/cognito-idp/model/DeleteIdentityProviderRequest.h>
 #include <aws/cognito-idp/model/DeleteManagedLoginBrandingRequest.h>
@@ -68,6 +70,7 @@
 #include <aws/cognito-idp/model/DeleteUserPoolRequest.h>
 #include <aws/cognito-idp/model/DeleteUserRequest.h>
 #include <aws/cognito-idp/model/DeleteWebAuthnCredentialRequest.h>
+#include <aws/cognito-idp/model/DescribeCIMDPolicyRequest.h>
 #include <aws/cognito-idp/model/DescribeIdentityProviderRequest.h>
 #include <aws/cognito-idp/model/DescribeManagedLoginBrandingByClientRequest.h>
 #include <aws/cognito-idp/model/DescribeManagedLoginBrandingRequest.h>
@@ -102,6 +105,8 @@
 #include <aws/cognito-idp/model/GlobalSignOutRequest.h>
 #include <aws/cognito-idp/model/InitiateAuthRequest.h>
 #include <aws/cognito-idp/model/InitiatePointInTimeRecoveryRequest.h>
+#include <aws/cognito-idp/model/ListCIMDPoliciesRequest.h>
+#include <aws/cognito-idp/model/ListClientMetadataURLsRequest.h>
 #include <aws/cognito-idp/model/ListDevicesRequest.h>
 #include <aws/cognito-idp/model/ListGroupsRequest.h>
 #include <aws/cognito-idp/model/ListIdentityProvidersRequest.h>
@@ -138,6 +143,8 @@
 #include <aws/cognito-idp/model/TagResourceRequest.h>
 #include <aws/cognito-idp/model/UntagResourceRequest.h>
 #include <aws/cognito-idp/model/UpdateAuthEventFeedbackRequest.h>
+#include <aws/cognito-idp/model/UpdateCIMDPolicyRequest.h>
+#include <aws/cognito-idp/model/UpdateClientMetadataURLStateRequest.h>
 #include <aws/cognito-idp/model/UpdateDeviceStatusRequest.h>
 #include <aws/cognito-idp/model/UpdateGroupRequest.h>
 #include <aws/cognito-idp/model/UpdateIdentityProviderRequest.h>
@@ -567,6 +574,12 @@ ConfirmSignUpOutcome CognitoIdentityProviderClient::ConfirmSignUp(const ConfirmS
   return result.IsSuccess() ? ConfirmSignUpOutcome(result.GetResultWithOwnership()) : ConfirmSignUpOutcome(std::move(result.GetError()));
 }
 
+CreateCIMDPolicyOutcome CognitoIdentityProviderClient::CreateCIMDPolicy(const CreateCIMDPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCIMDPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateCIMDPolicyOutcome(std::move(result.GetError()));
+}
+
 CreateGroupOutcome CognitoIdentityProviderClient::CreateGroup(const CreateGroupRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateGroupOutcome(result.GetResultWithOwnership()) : CreateGroupOutcome(std::move(result.GetError()));
@@ -623,6 +636,12 @@ CreateUserPoolReplicaOutcome CognitoIdentityProviderClient::CreateUserPoolReplic
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateUserPoolReplicaOutcome(result.GetResultWithOwnership())
                             : CreateUserPoolReplicaOutcome(std::move(result.GetError()));
+}
+
+DeleteCIMDPolicyOutcome CognitoIdentityProviderClient::DeleteCIMDPolicy(const DeleteCIMDPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCIMDPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteCIMDPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupOutcome CognitoIdentityProviderClient::DeleteGroup(const DeleteGroupRequest& request) const {
@@ -700,6 +719,12 @@ DeleteWebAuthnCredentialOutcome CognitoIdentityProviderClient::DeleteWebAuthnCre
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? DeleteWebAuthnCredentialOutcome(result.GetResultWithOwnership())
                             : DeleteWebAuthnCredentialOutcome(std::move(result.GetError()));
+}
+
+DescribeCIMDPolicyOutcome CognitoIdentityProviderClient::DescribeCIMDPolicy(const DescribeCIMDPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCIMDPolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeCIMDPolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeIdentityProviderOutcome CognitoIdentityProviderClient::DescribeIdentityProvider(
@@ -906,6 +931,18 @@ InitiatePointInTimeRecoveryOutcome CognitoIdentityProviderClient::InitiatePointI
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? InitiatePointInTimeRecoveryOutcome(result.GetResultWithOwnership())
                             : InitiatePointInTimeRecoveryOutcome(std::move(result.GetError()));
+}
+
+ListCIMDPoliciesOutcome CognitoIdentityProviderClient::ListCIMDPolicies(const ListCIMDPoliciesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCIMDPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListCIMDPoliciesOutcome(std::move(result.GetError()));
+}
+
+ListClientMetadataURLsOutcome CognitoIdentityProviderClient::ListClientMetadataURLs(const ListClientMetadataURLsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListClientMetadataURLsOutcome(result.GetResultWithOwnership())
+                            : ListClientMetadataURLsOutcome(std::move(result.GetError()));
 }
 
 ListDevicesOutcome CognitoIdentityProviderClient::ListDevices(const ListDevicesRequest& request) const {
@@ -1120,6 +1157,19 @@ UpdateAuthEventFeedbackOutcome CognitoIdentityProviderClient::UpdateAuthEventFee
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   return result.IsSuccess() ? UpdateAuthEventFeedbackOutcome(result.GetResultWithOwnership())
                             : UpdateAuthEventFeedbackOutcome(std::move(result.GetError()));
+}
+
+UpdateCIMDPolicyOutcome CognitoIdentityProviderClient::UpdateCIMDPolicy(const UpdateCIMDPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCIMDPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateCIMDPolicyOutcome(std::move(result.GetError()));
+}
+
+UpdateClientMetadataURLStateOutcome CognitoIdentityProviderClient::UpdateClientMetadataURLState(
+    const UpdateClientMetadataURLStateRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateClientMetadataURLStateOutcome(result.GetResultWithOwnership())
+                            : UpdateClientMetadataURLStateOutcome(std::move(result.GetError()));
 }
 
 UpdateDeviceStatusOutcome CognitoIdentityProviderClient::UpdateDeviceStatus(const UpdateDeviceStatusRequest& request) const {

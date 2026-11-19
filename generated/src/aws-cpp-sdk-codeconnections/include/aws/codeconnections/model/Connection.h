@@ -148,6 +148,27 @@ class Connection {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The endpoint of the ghe.com tenant where your organization resides. This
+   * value is populated only for a connection with a <code>ProviderType</code> of
+   * <code>GitHubEnterpriseCloudDataResidency</code>. It is empty for all other
+   * provider types.</p>
+   */
+  inline const Aws::String& GetProviderEndpoint() const { return m_providerEndpoint; }
+  inline bool ProviderEndpointHasBeenSet() const { return m_providerEndpointHasBeenSet; }
+  template <typename ProviderEndpointT = Aws::String>
+  void SetProviderEndpoint(ProviderEndpointT&& value) {
+    m_providerEndpointHasBeenSet = true;
+    m_providerEndpoint = std::forward<ProviderEndpointT>(value);
+  }
+  template <typename ProviderEndpointT = Aws::String>
+  Connection& WithProviderEndpoint(ProviderEndpointT&& value) {
+    SetProviderEndpoint(std::forward<ProviderEndpointT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_connectionName;
 
@@ -160,12 +181,15 @@ class Connection {
   ConnectionStatus m_connectionStatus{ConnectionStatus::NOT_SET};
 
   Aws::String m_hostArn;
+
+  Aws::String m_providerEndpoint;
   bool m_connectionNameHasBeenSet = false;
   bool m_connectionArnHasBeenSet = false;
   bool m_providerTypeHasBeenSet = false;
   bool m_ownerAccountIdHasBeenSet = false;
   bool m_connectionStatusHasBeenSet = false;
   bool m_hostArnHasBeenSet = false;
+  bool m_providerEndpointHasBeenSet = false;
 };
 
 }  // namespace Model

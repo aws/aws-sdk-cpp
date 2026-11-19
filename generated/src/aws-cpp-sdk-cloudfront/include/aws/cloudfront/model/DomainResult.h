@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/DomainStatus.h>
+#include <aws/cloudfront/model/ServeOn.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -65,12 +66,39 @@ class DomainResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies which requests for this domain CloudFront routes to the
+   * distribution tenant. Valid values are:</p> <ul> <li> <p> <code>any</code> –
+   * CloudFront routes requests for this domain to the distribution tenant regardless
+   * of the IP address that they arrive on. This is the default if you don't specify
+   * a value.</p> </li> <li> <p> <code>anycast-ip-list-only</code> – CloudFront
+   * routes requests for this domain to the distribution tenant only when they arrive
+   * on the Anycast static IPs of the distribution tenant's connection group.
+   * CloudFront treats requests that arrive on other IP addresses as requests for an
+   * unknown domain.</p> </li> </ul>
+   */
+  inline ServeOn GetServeOn() const { return m_serveOn; }
+  inline bool ServeOnHasBeenSet() const { return m_serveOnHasBeenSet; }
+  inline void SetServeOn(ServeOn value) {
+    m_serveOnHasBeenSet = true;
+    m_serveOn = value;
+  }
+  inline DomainResult& WithServeOn(ServeOn value) {
+    SetServeOn(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domain;
 
   DomainStatus m_status{DomainStatus::NOT_SET};
+
+  ServeOn m_serveOn{ServeOn::NOT_SET};
   bool m_domainHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_serveOnHasBeenSet = false;
 };
 
 }  // namespace Model

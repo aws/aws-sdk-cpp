@@ -33,8 +33,8 @@ class BatchDeleteBillScenarioCommitmentModificationResult {
 
   ///@{
   /**
-   * <p> Returns the list of errors reason and the commitment item keys that cannot
-   * be deleted from the Bill Scenario. </p>
+   * <p> Returns the list of errors reason and the commitment item keys that can't be
+   * deleted from the Bill Scenario. </p>
    */
   inline const Aws::Vector<BatchDeleteBillScenarioCommitmentModificationError>& GetErrors() const { return m_errors; }
   template <typename ErrorsT = Aws::Vector<BatchDeleteBillScenarioCommitmentModificationError>>

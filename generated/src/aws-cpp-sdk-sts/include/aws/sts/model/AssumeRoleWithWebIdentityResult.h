@@ -10,6 +10,7 @@
 #include <aws/sts/model/AssumedRoleUser.h>
 #include <aws/sts/model/Credentials.h>
 #include <aws/sts/model/ResponseMetadata.h>
+#include <aws/sts/model/TrustedIdentityPropagationContext.h>
 
 #include <utility>
 
@@ -206,6 +207,38 @@ class AssumeRoleWithWebIdentityResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The trusted identity propagation context that Amazon Web Services STS set in
+   * the session from the web identity token, through the context provider attached
+   * to the OpenID Connect identity provider. It is present only when Amazon Web
+   * Services STS set such context in the session. It contains the
+   * <code>aws:OriginIdentity/Subject</code>,
+   * <code>aws:OriginIdentity/SubjectType</code>,
+   * <code>aws:OriginIdentity/Issuer</code> and
+   * <code>aws:OriginIdentity/FederatedProviderArn</code> keys and the
+   * <code>aws:TransactionContext/IdentityProvider/ *</code> keys that Amazon Web
+   * Services STS set in the session. Other keys in the session, such as
+   * <code>aws:IdentityCenterInstanceArn</code> and <code>aws:IdentityStoreArn</code>
+   * for an identity provider with an Identity Center instance attached, are not
+   * returned.</p> <p>This element contains information about the end user. Do not
+   * log it.</p>
+   */
+  inline const TrustedIdentityPropagationContext& GetTrustedIdentityPropagationContext() const {
+    return m_trustedIdentityPropagationContext;
+  }
+  template <typename TrustedIdentityPropagationContextT = TrustedIdentityPropagationContext>
+  void SetTrustedIdentityPropagationContext(TrustedIdentityPropagationContextT&& value) {
+    m_trustedIdentityPropagationContextHasBeenSet = true;
+    m_trustedIdentityPropagationContext = std::forward<TrustedIdentityPropagationContextT>(value);
+  }
+  template <typename TrustedIdentityPropagationContextT = TrustedIdentityPropagationContext>
+  AssumeRoleWithWebIdentityResult& WithTrustedIdentityPropagationContext(TrustedIdentityPropagationContextT&& value) {
+    SetTrustedIdentityPropagationContext(std::forward<TrustedIdentityPropagationContextT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
@@ -238,6 +271,8 @@ class AssumeRoleWithWebIdentityResult {
 
   int m_sessionTokenSize{0};
 
+  TrustedIdentityPropagationContext m_trustedIdentityPropagationContext;
+
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_credentialsHasBeenSet = false;
@@ -248,6 +283,7 @@ class AssumeRoleWithWebIdentityResult {
   bool m_sourceIdentityHasBeenSet = false;
   bool m_sessionTokenUtilizationHasBeenSet = false;
   bool m_sessionTokenSizeHasBeenSet = false;
+  bool m_trustedIdentityPropagationContextHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

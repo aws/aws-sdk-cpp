@@ -32,6 +32,7 @@
 #include <aws/marketplace-catalog/model/ListEntitiesRequest.h>
 #include <aws/marketplace-catalog/model/ListTagsForResourceRequest.h>
 #include <aws/marketplace-catalog/model/PutResourcePolicyRequest.h>
+#include <aws/marketplace-catalog/model/StartAssessmentRequest.h>
 #include <aws/marketplace-catalog/model/StartChangeSetRequest.h>
 #include <aws/marketplace-catalog/model/TagResourceRequest.h>
 #include <aws/marketplace-catalog/model/UntagResourceRequest.h>
@@ -367,6 +368,17 @@ PutResourcePolicyOutcome MarketplaceCatalogClient::PutResourcePolicy(const PutRe
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
                             : PutResourcePolicyOutcome(std::move(result.GetError()));
+}
+
+StartAssessmentOutcome MarketplaceCatalogClient::StartAssessment(const StartAssessmentRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/StartAssessment");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAssessmentOutcome(result.GetResultWithOwnership())
+                            : StartAssessmentOutcome(std::move(result.GetError()));
 }
 
 StartChangeSetOutcome MarketplaceCatalogClient::StartChangeSet(const StartChangeSetRequest& request) const {

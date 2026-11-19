@@ -108,16 +108,16 @@ class GetReservationUtilizationRequest : public CostExplorerRequest {
   ///@{
   /**
    * <p>Filters utilization data by dimensions. You can filter by the following
-   * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li>
-   * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-   * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
+   * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
+   * <p>INSTANCE_TYPE_FAMILY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
    * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p>  <p>If
    * not specified, the <code>SERVICE</code> filter defaults to Amazon Elastic
    * Compute Cloud - Compute. Supported values for <code>SERVICE</code> are Amazon
    * Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon
-   * ElastiCache, Amazon Redshift, and Amazon Elasticsearch Service. The value for
-   * the <code>SERVICE</code> filter should not exceed "1".</p>  </li> <li>
-   * <p>SCOPE</p> </li> <li> <p>TENANCY</p> </li> </ul> <p>
+   * ElastiCache, Amazon MemoryDB, Amazon Redshift, Amazon Elasticsearch Service, and
+   * Amazon OpenSearch Service.</p>  </li> <li> <p>SCOPE</p> </li> <li>
+   * <p>SUBSCRIPTION_ID</p>  <p>Values for <code>SUBSCRIPTION_ID</code> must
+   * contain only digits.</p>  </li> <li> <p>TENANCY</p> </li> </ul> <p>
    * <code>GetReservationUtilization</code> uses the same <a
    * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
    * object as the other operations, but only <code>AND</code> is supported among

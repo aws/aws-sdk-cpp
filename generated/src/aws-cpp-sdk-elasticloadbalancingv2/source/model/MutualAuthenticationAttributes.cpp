@@ -51,6 +51,17 @@ MutualAuthenticationAttributes& MutualAuthenticationAttributes::operator=(const 
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(advertiseTrustStoreCaNamesNode.GetText()).c_str()));
       m_advertiseTrustStoreCaNamesHasBeenSet = true;
     }
+    XmlNode clientCertificateIdentityFiltersNode = resultNode.FirstChild("ClientCertificateIdentityFilters");
+    if (!clientCertificateIdentityFiltersNode.IsNull()) {
+      XmlNode clientCertificateIdentityFiltersMember = clientCertificateIdentityFiltersNode.FirstChild("member");
+      m_clientCertificateIdentityFiltersHasBeenSet = !clientCertificateIdentityFiltersMember.IsNull();
+      while (!clientCertificateIdentityFiltersMember.IsNull()) {
+        m_clientCertificateIdentityFilters.push_back(clientCertificateIdentityFiltersMember);
+        clientCertificateIdentityFiltersMember = clientCertificateIdentityFiltersMember.NextNode("member");
+      }
+
+      m_clientCertificateIdentityFiltersHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -84,6 +95,16 @@ void MutualAuthenticationAttributes::OutputToStream(Aws::OStream& oStream, const
                    AdvertiseTrustStoreCaNamesEnumMapper::GetNameForAdvertiseTrustStoreCaNamesEnum(m_advertiseTrustStoreCaNames))
             << "&";
   }
+
+  if (m_clientCertificateIdentityFiltersHasBeenSet) {
+    unsigned clientCertificateIdentityFiltersIdx = 1;
+    for (auto& item : m_clientCertificateIdentityFilters) {
+      Aws::StringStream clientCertificateIdentityFiltersSs;
+      clientCertificateIdentityFiltersSs << location << index << locationValue << ".ClientCertificateIdentityFilters.member."
+                                         << clientCertificateIdentityFiltersIdx++;
+      item.OutputToStream(oStream, clientCertificateIdentityFiltersSs.str().c_str());
+    }
+  }
 }
 
 void MutualAuthenticationAttributes::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -107,6 +128,15 @@ void MutualAuthenticationAttributes::OutputToStream(Aws::OStream& oStream, const
             << StringUtils::URLEncode(
                    AdvertiseTrustStoreCaNamesEnumMapper::GetNameForAdvertiseTrustStoreCaNamesEnum(m_advertiseTrustStoreCaNames))
             << "&";
+  }
+  if (m_clientCertificateIdentityFiltersHasBeenSet) {
+    unsigned clientCertificateIdentityFiltersIdx = 1;
+    for (auto& item : m_clientCertificateIdentityFilters) {
+      Aws::StringStream clientCertificateIdentityFiltersSs;
+      clientCertificateIdentityFiltersSs << location << ".ClientCertificateIdentityFilters.member."
+                                         << clientCertificateIdentityFiltersIdx++;
+      item.OutputToStream(oStream, clientCertificateIdentityFiltersSs.str().c_str());
+    }
   }
 }
 

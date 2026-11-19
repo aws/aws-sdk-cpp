@@ -14,6 +14,7 @@
 #include <aws/appstream/model/StorageConnectorAuthentication.h>
 #include <aws/appstream/model/StreamingExperienceSettings.h>
 #include <aws/appstream/model/UserSetting.h>
+#include <aws/appstream/model/WebAuthnRedirection.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -353,6 +354,26 @@ class Stack {
 
   ///@{
   /**
+   * <p>Configuration for WebAuthn redirection between the streaming session and the
+   * user's local device. Use ProcessCompatibilityList to specify which processes can
+   * use WebAuthn redirection on Windows fleets.</p>
+   */
+  inline const WebAuthnRedirection& GetWebAuthnRedirection() const { return m_webAuthnRedirection; }
+  inline bool WebAuthnRedirectionHasBeenSet() const { return m_webAuthnRedirectionHasBeenSet; }
+  template <typename WebAuthnRedirectionT = WebAuthnRedirection>
+  void SetWebAuthnRedirection(WebAuthnRedirectionT&& value) {
+    m_webAuthnRedirectionHasBeenSet = true;
+    m_webAuthnRedirection = std::forward<WebAuthnRedirectionT>(value);
+  }
+  template <typename WebAuthnRedirectionT = WebAuthnRedirection>
+  Stack& WithWebAuthnRedirection(WebAuthnRedirectionT&& value) {
+    SetWebAuthnRedirection(std::forward<WebAuthnRedirectionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The agent access configuration of the stack, if agent access is enabled.</p>
    */
   inline const AgentAccessConfig& GetAgentAccessConfig() const { return m_agentAccessConfig; }
@@ -419,6 +440,8 @@ class Stack {
 
   ContentRedirection m_contentRedirection;
 
+  WebAuthnRedirection m_webAuthnRedirection;
+
   AgentAccessConfig m_agentAccessConfig;
 
   StorageConnectorAuthentication m_storageConnectorAuthentication{StorageConnectorAuthentication::NOT_SET};
@@ -437,6 +460,7 @@ class Stack {
   bool m_embedHostDomainsHasBeenSet = false;
   bool m_streamingExperienceSettingsHasBeenSet = false;
   bool m_contentRedirectionHasBeenSet = false;
+  bool m_webAuthnRedirectionHasBeenSet = false;
   bool m_agentAccessConfigHasBeenSet = false;
   bool m_storageConnectorAuthenticationHasBeenSet = false;
 };

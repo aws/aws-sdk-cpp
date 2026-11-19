@@ -34,6 +34,10 @@ UserPoolClientType& UserPoolClientType::operator=(JsonView jsonValue) {
     m_clientSecret = jsonValue.GetString("ClientSecret");
     m_clientSecretHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ClientSecretArn")) {
+    m_clientSecretArn = jsonValue.GetString("ClientSecretArn");
+    m_clientSecretArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("LastModifiedDate")) {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
     m_lastModifiedDateHasBeenSet = true;
@@ -175,6 +179,10 @@ JsonValue UserPoolClientType::Jsonize() const {
 
   if (m_clientSecretHasBeenSet) {
     payload.WithString("ClientSecret", m_clientSecret);
+  }
+
+  if (m_clientSecretArnHasBeenSet) {
+    payload.WithString("ClientSecretArn", m_clientSecretArn);
   }
 
   if (m_lastModifiedDateHasBeenSet) {

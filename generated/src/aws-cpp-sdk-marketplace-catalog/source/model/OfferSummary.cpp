@@ -30,6 +30,10 @@ OfferSummary& OfferSummary::operator=(JsonView jsonValue) {
     m_resaleAuthorizationId = jsonValue.GetString("ResaleAuthorizationId");
     m_resaleAuthorizationIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SubsidiaryAuthorizationId")) {
+    m_subsidiaryAuthorizationId = jsonValue.GetString("SubsidiaryAuthorizationId");
+    m_subsidiaryAuthorizationIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ReleaseDate")) {
     m_releaseDate = jsonValue.GetString("ReleaseDate");
     m_releaseDateHasBeenSet = true;
@@ -89,6 +93,10 @@ JsonValue OfferSummary::Jsonize() const {
 
   if (m_resaleAuthorizationIdHasBeenSet) {
     payload.WithString("ResaleAuthorizationId", m_resaleAuthorizationId);
+  }
+
+  if (m_subsidiaryAuthorizationIdHasBeenSet) {
+    payload.WithString("SubsidiaryAuthorizationId", m_subsidiaryAuthorizationId);
   }
 
   if (m_releaseDateHasBeenSet) {

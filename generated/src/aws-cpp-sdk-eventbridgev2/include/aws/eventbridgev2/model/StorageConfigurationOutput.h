@@ -33,7 +33,9 @@ class StorageConfigurationOutput {
   AWS_EVENTBRIDGEV2_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
-
+  /**
+   * <p>Number of days events are retained on the event bus.</p>
+   */
   inline int64_t GetRetentionPeriodInDays() const { return m_retentionPeriodInDays; }
   inline bool RetentionPeriodInDaysHasBeenSet() const { return m_retentionPeriodInDaysHasBeenSet; }
   inline void SetRetentionPeriodInDays(int64_t value) {

@@ -89,7 +89,9 @@ class ProcessPaymentResult {
 
   ///@{
   /**
-   * <p>The ID of the payment instrument used.</p>
+   * <p>The ID of the payment instrument used. For the <code>AWS_BILLING_X402</code>
+   * payment type, this is the service-managed instrument ID
+   * <code>aws.agentcorepayments.awsbilling.v1</code>.</p>
    */
   inline const Aws::String& GetPaymentInstrumentId() const { return m_paymentInstrumentId; }
   template <typename PaymentInstrumentIdT = Aws::String>

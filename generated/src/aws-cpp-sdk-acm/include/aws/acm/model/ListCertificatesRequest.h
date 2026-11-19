@@ -9,6 +9,7 @@
 #include <aws/acm/model/CertificateKeyPairOrigin.h>
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/Filters.h>
+#include <aws/acm/model/RootHierarchyType.h>
 #include <aws/acm/model/SortBy.h>
 #include <aws/acm/model/SortOrder.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -86,6 +87,34 @@ class ListCertificatesRequest : public ACMRequest {
   inline ListCertificatesRequest& AddCertificateKeyPairOrigins(CertificateKeyPairOrigin value) {
     m_certificateKeyPairOriginsHasBeenSet = true;
     m_certificateKeyPairOrigins.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter the certificate list by root hierarchy type. Specify one or more
+   * <code>RootHierarchyType</code> values. By default, this action does not return
+   * certificates with a <code>RootHierarchyType</code> of
+   * <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. To list
+   * only Amazon N2 certificates, specify one or both of these values in the
+   * <code>RootHierarchyTypes</code> filter.</p>
+   */
+  inline const Aws::Vector<RootHierarchyType>& GetRootHierarchyTypes() const { return m_rootHierarchyTypes; }
+  inline bool RootHierarchyTypesHasBeenSet() const { return m_rootHierarchyTypesHasBeenSet; }
+  template <typename RootHierarchyTypesT = Aws::Vector<RootHierarchyType>>
+  void SetRootHierarchyTypes(RootHierarchyTypesT&& value) {
+    m_rootHierarchyTypesHasBeenSet = true;
+    m_rootHierarchyTypes = std::forward<RootHierarchyTypesT>(value);
+  }
+  template <typename RootHierarchyTypesT = Aws::Vector<RootHierarchyType>>
+  ListCertificatesRequest& WithRootHierarchyTypes(RootHierarchyTypesT&& value) {
+    SetRootHierarchyTypes(std::forward<RootHierarchyTypesT>(value));
+    return *this;
+  }
+  inline ListCertificatesRequest& AddRootHierarchyTypes(RootHierarchyType value) {
+    m_rootHierarchyTypesHasBeenSet = true;
+    m_rootHierarchyTypes.push_back(value);
     return *this;
   }
   ///@}
@@ -187,6 +216,8 @@ class ListCertificatesRequest : public ACMRequest {
 
   Aws::Vector<CertificateKeyPairOrigin> m_certificateKeyPairOrigins;
 
+  Aws::Vector<RootHierarchyType> m_rootHierarchyTypes;
+
   Filters m_includes;
 
   Aws::String m_nextToken;
@@ -198,6 +229,7 @@ class ListCertificatesRequest : public ACMRequest {
   SortOrder m_sortOrder{SortOrder::NOT_SET};
   bool m_certificateStatusesHasBeenSet = false;
   bool m_certificateKeyPairOriginsHasBeenSet = false;
+  bool m_rootHierarchyTypesHasBeenSet = false;
   bool m_includesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;

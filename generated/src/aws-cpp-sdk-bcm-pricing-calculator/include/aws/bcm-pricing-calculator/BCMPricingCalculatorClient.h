@@ -194,7 +194,7 @@ class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorClient
 
   /**
    * <p> Delete commitment that you have created in a Bill Scenario. You can only
-   * delete a commitment that you had added and cannot model deletion (or removal) of
+   * delete a commitment that you had added and can't model deletion (or removal) of
    * a existing commitment. If you want model deletion of an existing commitment, see
    * the negate <a
    * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BillScenarioCommitmentModificationAction.html">
@@ -236,7 +236,7 @@ class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorClient
 
   /**
    * <p> Delete usage that you have created in a Bill Scenario. You can only delete
-   * usage that you had added and cannot model deletion (or removal) of a existing
+   * usage that you had added and can't model deletion (or removal) of a existing
    * usage. If you want model removal of an existing usage, see <a
    * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateBillScenarioUsageModification.html">
    * BatchUpdateBillScenarioUsageModification</a>. </p>  <p>The
@@ -275,7 +275,7 @@ class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorClient
 
   /**
    * <p> Delete usage that you have created in a Workload estimate. You can only
-   * delete usage that you had added and cannot model deletion (or removal) of a
+   * delete usage that you had added and can't model deletion (or removal) of a
    * existing usage. If you want model removal of an existing usage, see <a
    * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateWorkloadEstimateUsage.html">
    * BatchUpdateWorkloadEstimateUsage</a>. </p>  <p>The
@@ -663,6 +663,42 @@ class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorClient
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                            const GetPreferencesRequestT& request = {}) const {
     return SubmitAsync(&BCMPricingCalculatorClient::GetPreferences, request, handler, context);
+  }
+
+  /**
+   * <p> Retrieves the estimated cost of a list of usage lines. Each usage line
+   * identifies a billing line by its service code, usage type, and operation, and
+   * includes the usage amount to price. The estimate is based on Amazon Web Services
+   * pricing data and the rate type you choose. It doesn't include taxes, and your
+   * actual charges depend on your usage. </p> <p> The response includes the
+   * estimated cost of each usage line that was priced. It also includes each usage
+   * line that couldn't be priced, and the reason it couldn't be priced.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/GetUsageLinesEstimatedCost">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetUsageLinesEstimatedCostOutcome GetUsageLinesEstimatedCost(
+      const Model::GetUsageLinesEstimatedCostRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetUsageLinesEstimatedCost that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetUsageLinesEstimatedCostRequestT = Model::GetUsageLinesEstimatedCostRequest>
+  Model::GetUsageLinesEstimatedCostOutcomeCallable GetUsageLinesEstimatedCostCallable(
+      const GetUsageLinesEstimatedCostRequestT& request) const {
+    return SubmitCallable(&BCMPricingCalculatorClient::GetUsageLinesEstimatedCost, request);
+  }
+
+  /**
+   * An Async wrapper for GetUsageLinesEstimatedCost that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetUsageLinesEstimatedCostRequestT = Model::GetUsageLinesEstimatedCostRequest>
+  void GetUsageLinesEstimatedCostAsync(const GetUsageLinesEstimatedCostRequestT& request,
+                                       const GetUsageLinesEstimatedCostResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BCMPricingCalculatorClient::GetUsageLinesEstimatedCost, request, handler, context);
   }
 
   /**

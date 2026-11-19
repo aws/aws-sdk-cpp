@@ -47,6 +47,7 @@
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/CertificateSummary.h>
 #include <aws/acm/model/CertificateType.h>
+#include <aws/acm/model/CertificateUsage.h>
 #include <aws/acm/model/CommonNameFilter.h>
 #include <aws/acm/model/ComparisonOperator.h>
 #include <aws/acm/model/CreateAcmeDomainValidationRequest.h>
@@ -149,6 +150,7 @@
 #include <aws/acm/model/RevokeAcmeExternalAccountBindingRequest.h>
 #include <aws/acm/model/RevokeCertificateRequest.h>
 #include <aws/acm/model/RevokeCertificateResult.h>
+#include <aws/acm/model/RootHierarchyType.h>
 #include <aws/acm/model/SearchCertificatesPaginationTraits.h>
 #include <aws/acm/model/SearchCertificatesRequest.h>
 #include <aws/acm/model/SearchCertificatesResult.h>

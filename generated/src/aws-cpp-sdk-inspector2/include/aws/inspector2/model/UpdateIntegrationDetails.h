@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/inspector2/model/UpdateGitHubEnterpriseServerIntegrationDetail.h>
 #include <aws/inspector2/model/UpdateGitHubIntegrationDetail.h>
 #include <aws/inspector2/model/UpdateGitLabSelfManagedIntegrationDetail.h>
 
@@ -69,12 +70,34 @@ class UpdateIntegrationDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Details specific to updating an integration with a GitHub Enterprise Server
+   * instance.</p>
+   */
+  inline const UpdateGitHubEnterpriseServerIntegrationDetail& GetGithubEnterpriseServer() const { return m_githubEnterpriseServer; }
+  inline bool GithubEnterpriseServerHasBeenSet() const { return m_githubEnterpriseServerHasBeenSet; }
+  template <typename GithubEnterpriseServerT = UpdateGitHubEnterpriseServerIntegrationDetail>
+  void SetGithubEnterpriseServer(GithubEnterpriseServerT&& value) {
+    m_githubEnterpriseServerHasBeenSet = true;
+    m_githubEnterpriseServer = std::forward<GithubEnterpriseServerT>(value);
+  }
+  template <typename GithubEnterpriseServerT = UpdateGitHubEnterpriseServerIntegrationDetail>
+  UpdateIntegrationDetails& WithGithubEnterpriseServer(GithubEnterpriseServerT&& value) {
+    SetGithubEnterpriseServer(std::forward<GithubEnterpriseServerT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UpdateGitLabSelfManagedIntegrationDetail m_gitlabSelfManaged;
 
   UpdateGitHubIntegrationDetail m_github;
+
+  UpdateGitHubEnterpriseServerIntegrationDetail m_githubEnterpriseServer;
   bool m_gitlabSelfManagedHasBeenSet = false;
   bool m_githubHasBeenSet = false;
+  bool m_githubEnterpriseServerHasBeenSet = false;
 };
 
 }  // namespace Model

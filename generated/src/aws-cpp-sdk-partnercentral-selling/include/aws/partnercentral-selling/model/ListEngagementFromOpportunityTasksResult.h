@@ -23,6 +23,13 @@ class JsonValue;
 }  // namespace Utils
 namespace PartnerCentralSelling {
 namespace Model {
+/**
+ * <p>Contains the response that the
+ * <code>ListEngagementFromOpportunityTasks</code> action returns.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementFromOpportunityTasksResponse">AWS
+ * API Reference</a></p>
+ */
 class ListEngagementFromOpportunityTasksResult {
  public:
   AWS_PARTNERCENTRALSELLING_API ListEngagementFromOpportunityTasksResult() = default;
@@ -57,7 +64,7 @@ class ListEngagementFromOpportunityTasksResult {
 
   ///@{
   /**
-   * <p> A token used for pagination to retrieve the next page of results. If there
+   * <p>A token used for pagination to retrieve the next page of results. If there
    * are more results available, this field will contain a token that can be used in
    * a subsequent API call to retrieve the next page. If there are no more results,
    * this field will be null or an empty string. </p>

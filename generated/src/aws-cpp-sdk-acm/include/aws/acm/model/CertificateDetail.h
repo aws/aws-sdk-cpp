@@ -10,6 +10,7 @@
 #include <aws/acm/model/CertificateOptions.h>
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/CertificateType.h>
+#include <aws/acm/model/CertificateUsage.h>
 #include <aws/acm/model/DomainValidation.h>
 #include <aws/acm/model/ExtendedKeyUsage.h>
 #include <aws/acm/model/FailureReason.h>
@@ -18,6 +19,7 @@
 #include <aws/acm/model/RenewalEligibility.h>
 #include <aws/acm/model/RenewalSummary.h>
 #include <aws/acm/model/RevocationReason.h>
+#include <aws/acm/model/RootHierarchyType.h>
 #include <aws/acm/model/UpdateSummary.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -591,8 +593,8 @@ class CertificateDetail {
   ///@{
   /**
    * <p>Contains the certificate options. Certificate transparency logging opt-out is
-   * no longer available. All public certificates are recorded in a certificate
-   * transparency log.</p>
+   * no longer available. ACM records all public certificates other than Amazon N2
+   * certificates in a certificate transparency log.</p>
    */
   inline const CertificateOptions& GetOptions() const { return m_options; }
   inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
@@ -679,6 +681,42 @@ class CertificateDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Extended Key Usage profile of the certificate. This value exists only for
+   * Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the
+   * request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+   */
+  inline CertificateUsage GetCertificateUsage() const { return m_certificateUsage; }
+  inline bool CertificateUsageHasBeenSet() const { return m_certificateUsageHasBeenSet; }
+  inline void SetCertificateUsage(CertificateUsage value) {
+    m_certificateUsageHasBeenSet = true;
+    m_certificateUsage = value;
+  }
+  inline CertificateDetail& WithCertificateUsage(CertificateUsage value) {
+    SetCertificateUsage(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The root hierarchy from which the certificate was issued. This value exists
+   * only for Amazon N2 certificates, which have a <code>Type</code> of
+   * <code>AMAZON_ISSUED</code>.</p>
+   */
+  inline RootHierarchyType GetRootHierarchyType() const { return m_rootHierarchyType; }
+  inline bool RootHierarchyTypeHasBeenSet() const { return m_rootHierarchyTypeHasBeenSet; }
+  inline void SetRootHierarchyType(RootHierarchyType value) {
+    m_rootHierarchyTypeHasBeenSet = true;
+    m_rootHierarchyType = value;
+  }
+  inline CertificateDetail& WithRootHierarchyType(RootHierarchyType value) {
+    SetRootHierarchyType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_certificateArn;
 
@@ -741,6 +779,10 @@ class CertificateDetail {
   Aws::String m_acmeEndpointArn;
 
   Aws::String m_acmeAccountId;
+
+  CertificateUsage m_certificateUsage{CertificateUsage::NOT_SET};
+
+  RootHierarchyType m_rootHierarchyType{RootHierarchyType::NOT_SET};
   bool m_certificateArnHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
   bool m_subjectAlternativeNamesHasBeenSet = false;
@@ -772,6 +814,8 @@ class CertificateDetail {
   bool m_certificateKeyPairOriginHasBeenSet = false;
   bool m_acmeEndpointArnHasBeenSet = false;
   bool m_acmeAccountIdHasBeenSet = false;
+  bool m_certificateUsageHasBeenSet = false;
+  bool m_rootHierarchyTypeHasBeenSet = false;
 };
 
 }  // namespace Model

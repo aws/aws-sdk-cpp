@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pcs/PCS_EXPORTS.h>
 #include <aws/pcs/model/CgroupCustomSetting.h>
+#include <aws/pcs/model/JobSubmitPlugin.h>
 #include <aws/pcs/model/SlurmCustomSetting.h>
 #include <aws/pcs/model/SlurmdbdCustomSetting.h>
 #include <aws/pcs/model/UpdateAccountingRequest.h>
@@ -131,6 +132,34 @@ class UpdateClusterSlurmConfigurationRequest {
 
   ///@{
   /**
+   * <p>The job submit plugins to run on the cluster controller. Use job submit
+   * plugins to execute custom scripts during job submission and job modification to
+   * validate or modify the job's configuration. Custom scripts can accept or reject
+   * jobs based on their configuration or modify the configuration before job
+   * execution.</p>
+   */
+  inline const Aws::Vector<JobSubmitPlugin>& GetJobSubmitPlugins() const { return m_jobSubmitPlugins; }
+  inline bool JobSubmitPluginsHasBeenSet() const { return m_jobSubmitPluginsHasBeenSet; }
+  template <typename JobSubmitPluginsT = Aws::Vector<JobSubmitPlugin>>
+  void SetJobSubmitPlugins(JobSubmitPluginsT&& value) {
+    m_jobSubmitPluginsHasBeenSet = true;
+    m_jobSubmitPlugins = std::forward<JobSubmitPluginsT>(value);
+  }
+  template <typename JobSubmitPluginsT = Aws::Vector<JobSubmitPlugin>>
+  UpdateClusterSlurmConfigurationRequest& WithJobSubmitPlugins(JobSubmitPluginsT&& value) {
+    SetJobSubmitPlugins(std::forward<JobSubmitPluginsT>(value));
+    return *this;
+  }
+  template <typename JobSubmitPluginsT = JobSubmitPlugin>
+  UpdateClusterSlurmConfigurationRequest& AddJobSubmitPlugins(JobSubmitPluginsT&& value) {
+    m_jobSubmitPluginsHasBeenSet = true;
+    m_jobSubmitPlugins.emplace_back(std::forward<JobSubmitPluginsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The accounting configuration includes configurable settings for Slurm
    * accounting.</p>
    */
@@ -174,6 +203,8 @@ class UpdateClusterSlurmConfigurationRequest {
 
   Aws::Vector<CgroupCustomSetting> m_cgroupCustomSettings;
 
+  Aws::Vector<JobSubmitPlugin> m_jobSubmitPlugins;
+
   UpdateAccountingRequest m_accounting;
 
   UpdateSlurmRestRequest m_slurmRest;
@@ -181,6 +212,7 @@ class UpdateClusterSlurmConfigurationRequest {
   bool m_slurmCustomSettingsHasBeenSet = false;
   bool m_slurmdbdCustomSettingsHasBeenSet = false;
   bool m_cgroupCustomSettingsHasBeenSet = false;
+  bool m_jobSubmitPluginsHasBeenSet = false;
   bool m_accountingHasBeenSet = false;
   bool m_slurmRestHasBeenSet = false;
 };

@@ -21,7 +21,7 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
- * <p> An object that contains a <code>Resource Snapshot Job</code>'s subset of
+ * <p>An object that contains a <code>Resource Snapshot Job</code>'s subset of
  * fields. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ResourceSnapshotJobSummary">AWS
  * API Reference</a></p>
@@ -35,7 +35,7 @@ class ResourceSnapshotJobSummary {
 
   ///@{
   /**
-   * <p> The unique identifier for the resource snapshot job within the AWS Partner
+   * <p>The unique identifier for the resource snapshot job within the AWS Partner
    * Central system. This ID is used for direct references to the job within the
    * service. </p>
    */
@@ -55,7 +55,7 @@ class ResourceSnapshotJobSummary {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) for the resource snapshot job. </p>
+   * <p>The Amazon Resource Name (ARN) for the resource snapshot job.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

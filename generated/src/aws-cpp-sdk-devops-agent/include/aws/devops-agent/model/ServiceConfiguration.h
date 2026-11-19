@@ -26,6 +26,7 @@
 #include <aws/devops-agent/model/ServiceNowConfiguration.h>
 #include <aws/devops-agent/model/SlackConfiguration.h>
 #include <aws/devops-agent/model/SourceAwsConfiguration.h>
+#include <aws/devops-agent/model/SourceAwsOrgConfiguration.h>
 
 #include <utility>
 
@@ -66,6 +67,26 @@ class ServiceConfiguration {
   template <typename SourceAwsT = SourceAwsConfiguration>
   ServiceConfiguration& WithSourceAws(SourceAwsT&& value) {
     SetSourceAws(std::forward<SourceAwsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Organization source configuration used to monitor
+   * resources across an entire Amazon Web Services Organization or specified
+   * organizational units.</p>
+   */
+  inline const SourceAwsOrgConfiguration& GetSourceAwsOrg() const { return m_sourceAwsOrg; }
+  inline bool SourceAwsOrgHasBeenSet() const { return m_sourceAwsOrgHasBeenSet; }
+  template <typename SourceAwsOrgT = SourceAwsOrgConfiguration>
+  void SetSourceAwsOrg(SourceAwsOrgT&& value) {
+    m_sourceAwsOrgHasBeenSet = true;
+    m_sourceAwsOrg = std::forward<SourceAwsOrgT>(value);
+  }
+  template <typename SourceAwsOrgT = SourceAwsOrgConfiguration>
+  ServiceConfiguration& WithSourceAwsOrg(SourceAwsOrgT&& value) {
+    SetSourceAwsOrg(std::forward<SourceAwsOrgT>(value));
     return *this;
   }
   ///@}
@@ -433,6 +454,8 @@ class ServiceConfiguration {
  private:
   SourceAwsConfiguration m_sourceAws;
 
+  SourceAwsOrgConfiguration m_sourceAwsOrg;
+
   AWSConfiguration m_aws;
 
   GitHubConfiguration m_github;
@@ -473,6 +496,7 @@ class ServiceConfiguration {
 
   ReleaseManagementConfiguration m_releaseManagement;
   bool m_sourceAwsHasBeenSet = false;
+  bool m_sourceAwsOrgHasBeenSet = false;
   bool m_awsHasBeenSet = false;
   bool m_githubHasBeenSet = false;
   bool m_slackHasBeenSet = false;

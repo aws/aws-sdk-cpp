@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
+#include <aws/agent-registry-control/model/AuthorizationData.h>
 #include <aws/agent-registry-control/model/CustomMetadataSchemaComplianceStatus.h>
 #include <aws/agent-registry-control/model/Descriptors.h>
 #include <aws/agent-registry-control/model/Provenance.h>
@@ -196,7 +197,10 @@ class UpdateRegistryRecordResult {
 
   ///@{
   /**
-   * <p>The lifecycle status of the registry record.</p>
+   * <p>The lifecycle status of the registry record. <code>UPDATE_PENDING_AUTH</code>
+   * means that the update waits for a GitHub user to authorize access before the
+   * record synchronizes from its GitHub source. For the authorization link, see
+   * <code>authorizationData</code>.</p>
    */
   inline RegistryRecordStatus GetStatus() const { return m_status; }
   inline void SetStatus(RegistryRecordStatus value) {
@@ -360,6 +364,28 @@ class UpdateRegistryRecordResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The authorization that a GitHub user must complete before the record's
+   * synchronization starts. Present only in this response, and only while the status
+   * is <code>UPDATE_PENDING_AUTH</code>. If the status is
+   * <code>UPDATE_PENDING_AUTH</code> but this member is absent, call
+   * <code>UpdateRegistryRecord</code> again with <code>triggerSynchronization</code>
+   * to get a new authorization link.</p>
+   */
+  inline const AuthorizationData& GetAuthorizationData() const { return m_authorizationData; }
+  template <typename AuthorizationDataT = AuthorizationData>
+  void SetAuthorizationData(AuthorizationDataT&& value) {
+    m_authorizationDataHasBeenSet = true;
+    m_authorizationData = std::forward<AuthorizationDataT>(value);
+  }
+  template <typename AuthorizationDataT = AuthorizationData>
+  UpdateRegistryRecordResult& WithAuthorizationData(AuthorizationDataT&& value) {
+    SetAuthorizationData(std::forward<AuthorizationDataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -412,6 +438,8 @@ class UpdateRegistryRecordResult {
 
   CustomMetadataSchemaComplianceStatus m_customMetadataSchemaComplianceStatus{CustomMetadataSchemaComplianceStatus::NOT_SET};
 
+  AuthorizationData m_authorizationData;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_registryArnHasBeenSet = false;
@@ -432,6 +460,7 @@ class UpdateRegistryRecordResult {
   bool m_createdByHasBeenSet = false;
   bool m_customMetadataHasBeenSet = false;
   bool m_customMetadataSchemaComplianceStatusHasBeenSet = false;
+  bool m_authorizationDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

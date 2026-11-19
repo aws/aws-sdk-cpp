@@ -252,7 +252,8 @@ class CreateFirewallRuleRequest : public Route53ResolverRequest {
    * in the redirection chain must be added to the domain list.</p> <p>
    * <code>TRUST_REDIRECTION_DOMAIN</code>: Inspects only the first domain in the
    * redirection chain. You don't need to add the subsequent domains in the domain in
-   * the redirection list to the domain list.</p>
+   * the redirection list to the domain list.</p> <p>You can't set this value on an
+   * AutoAllowlist rule, which always inspects the redirection chain.</p>
    */
   inline FirewallDomainRedirectionAction GetFirewallDomainRedirectionAction() const { return m_firewallDomainRedirectionAction; }
   inline bool FirewallDomainRedirectionActionHasBeenSet() const { return m_firewallDomainRedirectionActionHasBeenSet; }
@@ -284,7 +285,8 @@ class CreateFirewallRuleRequest : public Route53ResolverRequest {
    * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
    * can be 1-65534, for example, TYPE28. For more information, see <a
    * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
-   * types</a>.</p> </li> </ul>
+   * types</a>.</p> </li> </ul> <p>You can't set <code>Qtype</code> on an
+   * AutoAllowlist rule, because the rule applies to all query types.</p>
    */
   inline const Aws::String& GetQtype() const { return m_qtype; }
   inline bool QtypeHasBeenSet() const { return m_qtypeHasBeenSet; }
@@ -364,8 +366,12 @@ class CreateFirewallRuleRequest : public Route53ResolverRequest {
    * <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p> </li> <li> <p>
    * <code>PartnerThreatProtection</code> — match a third-party threat feed delivered
    * through Amazon Web Services Marketplace. The selected partner must be an active
-   * subscription on the calling account.</p> </li> </ul> <p>To enumerate the values
-   * supported in your account, call <a>ListFirewallRuleTypes</a>.</p>
+   * subscription on the calling account.</p> </li> <li> <p>
+   * <code>AutoAllowlist</code> — automatically observe the domains that the VPCs
+   * associated with the rule group resolve, and allow the ones that you approve. See
+   * <a>AutoAllowlistConfig</a>.</p> </li> </ul> <p>To enumerate the values supported
+   * in your account, call <a>ListFirewallRuleTypes</a>. It doesn't return
+   * <code>AutoAllowlist</code>.</p>
    */
   inline const FirewallRuleType& GetFirewallRuleType() const { return m_firewallRuleType; }
   inline bool FirewallRuleTypeHasBeenSet() const { return m_firewallRuleTypeHasBeenSet; }

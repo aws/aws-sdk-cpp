@@ -20,6 +20,9 @@ Aws::String ListMarketplaceRevenueSharesRequest::SerializePayload() const {
   if (m_catalogHasBeenSet) {
     mapSize++;
   }
+  if (m_identifiersHasBeenSet) {
+    mapSize++;
+  }
   if (m_productIdsHasBeenSet) {
     mapSize++;
   }
@@ -50,6 +53,14 @@ Aws::String ListMarketplaceRevenueSharesRequest::SerializePayload() const {
   if (m_catalogHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("Catalog"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(CatalogNameMapper::GetNameForCatalogName(m_catalog).c_str()));
+  }
+
+  if (m_identifiersHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Identifiers"));
+    encoder.WriteArrayStart(m_identifiers.size());
+    for (const auto& item_0 : m_identifiers) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
+    }
   }
 
   if (m_productIdsHasBeenSet) {

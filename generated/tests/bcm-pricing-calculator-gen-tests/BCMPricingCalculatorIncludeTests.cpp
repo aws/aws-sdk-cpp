@@ -100,6 +100,13 @@
 #include <aws/bcm-pricing-calculator/model/GetBillScenarioResult.h>
 #include <aws/bcm-pricing-calculator/model/GetPreferencesRequest.h>
 #include <aws/bcm-pricing-calculator/model/GetPreferencesResult.h>
+#include <aws/bcm-pricing-calculator/model/GetUsageLinesEstimatedCostError.h>
+#include <aws/bcm-pricing-calculator/model/GetUsageLinesEstimatedCostErrorCode.h>
+#include <aws/bcm-pricing-calculator/model/GetUsageLinesEstimatedCostEstimatedCost.h>
+#include <aws/bcm-pricing-calculator/model/GetUsageLinesEstimatedCostInput.h>
+#include <aws/bcm-pricing-calculator/model/GetUsageLinesEstimatedCostLineItem.h>
+#include <aws/bcm-pricing-calculator/model/GetUsageLinesEstimatedCostRequest.h>
+#include <aws/bcm-pricing-calculator/model/GetUsageLinesEstimatedCostResult.h>
 #include <aws/bcm-pricing-calculator/model/GetWorkloadEstimateRequest.h>
 #include <aws/bcm-pricing-calculator/model/GetWorkloadEstimateResult.h>
 #include <aws/bcm-pricing-calculator/model/GroupSharingPreferenceEnum.h>

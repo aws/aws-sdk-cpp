@@ -26,6 +26,10 @@ UpdateGitHubIntegrationDetail& UpdateGitHubIntegrationDetail::operator=(JsonView
     m_installationId = jsonValue.GetString("installationId");
     m_installationIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("stateToken")) {
+    m_stateToken = jsonValue.GetString("stateToken");
+    m_stateTokenHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue UpdateGitHubIntegrationDetail::Jsonize() const {
 
   if (m_installationIdHasBeenSet) {
     payload.WithString("installationId", m_installationId);
+  }
+
+  if (m_stateTokenHasBeenSet) {
+    payload.WithString("stateToken", m_stateToken);
   }
 
   return payload;

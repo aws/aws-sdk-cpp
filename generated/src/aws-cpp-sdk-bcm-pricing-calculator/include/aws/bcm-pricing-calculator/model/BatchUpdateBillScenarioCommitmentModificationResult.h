@@ -58,8 +58,8 @@ class BatchUpdateBillScenarioCommitmentModificationResult {
 
   ///@{
   /**
-   * <p> Returns the list of error reasons and commitment line item IDs that could
-   * not be updated for the Bill Scenario. </p>
+   * <p> Returns the list of error reasons and commitment line item IDs that couldn't
+   * be updated for the Bill Scenario. </p>
    */
   inline const Aws::Vector<BatchUpdateBillScenarioCommitmentModificationError>& GetErrors() const { return m_errors; }
   template <typename ErrorsT = Aws::Vector<BatchUpdateBillScenarioCommitmentModificationError>>

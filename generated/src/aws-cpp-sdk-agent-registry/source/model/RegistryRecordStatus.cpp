@@ -24,6 +24,8 @@ static const int CREATING_HASH = HashingUtils::HashString("CREATING");
 static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
 static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
+static const int CREATE_PENDING_AUTH_HASH = HashingUtils::HashString("CREATE_PENDING_AUTH");
+static const int UPDATE_PENDING_AUTH_HASH = HashingUtils::HashString("UPDATE_PENDING_AUTH");
 
 RegistryRecordStatus GetRegistryRecordStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +47,10 @@ RegistryRecordStatus GetRegistryRecordStatusForName(const Aws::String& name) {
     return RegistryRecordStatus::CREATE_FAILED;
   } else if (hashCode == UPDATE_FAILED_HASH) {
     return RegistryRecordStatus::UPDATE_FAILED;
+  } else if (hashCode == CREATE_PENDING_AUTH_HASH) {
+    return RegistryRecordStatus::CREATE_PENDING_AUTH;
+  } else if (hashCode == UPDATE_PENDING_AUTH_HASH) {
+    return RegistryRecordStatus::UPDATE_PENDING_AUTH;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +83,10 @@ Aws::String GetNameForRegistryRecordStatus(RegistryRecordStatus enumValue) {
       return "CREATE_FAILED";
     case RegistryRecordStatus::UPDATE_FAILED:
       return "UPDATE_FAILED";
+    case RegistryRecordStatus::CREATE_PENDING_AUTH:
+      return "CREATE_PENDING_AUTH";
+    case RegistryRecordStatus::UPDATE_PENDING_AUTH:
+      return "UPDATE_PENDING_AUTH";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

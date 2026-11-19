@@ -40,6 +40,7 @@
 #include <aws/eventbridgev2/model/PutRawEventsRequest.h>
 #include <aws/eventbridgev2/model/PutResourcePolicyRequest.h>
 #include <aws/eventbridgev2/model/RevokeResourceRequest.h>
+#include <aws/eventbridgev2/model/RotateWebhookCredentialsRequest.h>
 #include <aws/eventbridgev2/model/TagResourceRequest.h>
 #include <aws/eventbridgev2/model/UntagResourceRequest.h>
 #include <aws/eventbridgev2/model/UpdateEventBusRequest.h>
@@ -313,6 +314,12 @@ PutResourcePolicyOutcome EventBridgeV2Client::PutResourcePolicy(const PutResourc
 RevokeResourceOutcome EventBridgeV2Client::RevokeResource(const RevokeResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RevokeResourceOutcome(result.GetResultWithOwnership()) : RevokeResourceOutcome(std::move(result.GetError()));
+}
+
+RotateWebhookCredentialsOutcome EventBridgeV2Client::RotateWebhookCredentials(const RotateWebhookCredentialsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RotateWebhookCredentialsOutcome(result.GetResultWithOwnership())
+                            : RotateWebhookCredentialsOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome EventBridgeV2Client::TagResource(const TagResourceRequest& request) const {

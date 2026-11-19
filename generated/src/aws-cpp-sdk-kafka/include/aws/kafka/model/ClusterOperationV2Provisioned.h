@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/model/BrokerTypeUpgradeInfo.h>
 #include <aws/kafka/model/ClusterOperationStep.h>
 #include <aws/kafka/model/MutableClusterInfo.h>
 #include <aws/kafka/model/VpcConnectionInfo.h>
@@ -35,6 +36,26 @@ class ClusterOperationV2Provisioned {
   AWS_KAFKA_API ClusterOperationV2Provisioned(Aws::Utils::Json::JsonView jsonValue);
   AWS_KAFKA_API ClusterOperationV2Provisioned& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   *
+          <p>Topic reassignment details of the UpdateBrokerType operation
+   * that started an upgrade from Standard brokers to Express brokers.</p>
+   */
+  inline const BrokerTypeUpgradeInfo& GetBrokerTypeUpgradeInfo() const { return m_brokerTypeUpgradeInfo; }
+  inline bool BrokerTypeUpgradeInfoHasBeenSet() const { return m_brokerTypeUpgradeInfoHasBeenSet; }
+  template <typename BrokerTypeUpgradeInfoT = BrokerTypeUpgradeInfo>
+  void SetBrokerTypeUpgradeInfo(BrokerTypeUpgradeInfoT&& value) {
+    m_brokerTypeUpgradeInfoHasBeenSet = true;
+    m_brokerTypeUpgradeInfo = std::forward<BrokerTypeUpgradeInfoT>(value);
+  }
+  template <typename BrokerTypeUpgradeInfoT = BrokerTypeUpgradeInfo>
+  ClusterOperationV2Provisioned& WithBrokerTypeUpgradeInfo(BrokerTypeUpgradeInfoT&& value) {
+    SetBrokerTypeUpgradeInfo(std::forward<BrokerTypeUpgradeInfoT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -121,6 +142,8 @@ class ClusterOperationV2Provisioned {
   }
   ///@}
  private:
+  BrokerTypeUpgradeInfo m_brokerTypeUpgradeInfo;
+
   Aws::Vector<ClusterOperationStep> m_operationSteps;
 
   MutableClusterInfo m_sourceClusterInfo;
@@ -128,6 +151,7 @@ class ClusterOperationV2Provisioned {
   MutableClusterInfo m_targetClusterInfo;
 
   VpcConnectionInfo m_vpcConnectionInfo;
+  bool m_brokerTypeUpgradeInfoHasBeenSet = false;
   bool m_operationStepsHasBeenSet = false;
   bool m_sourceClusterInfoHasBeenSet = false;
   bool m_targetClusterInfoHasBeenSet = false;

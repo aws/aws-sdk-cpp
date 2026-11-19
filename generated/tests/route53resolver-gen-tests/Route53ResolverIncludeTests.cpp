@@ -26,6 +26,7 @@
 #include <aws/route53resolver/model/AssociateResolverQueryLogConfigResult.h>
 #include <aws/route53resolver/model/AssociateResolverRuleRequest.h>
 #include <aws/route53resolver/model/AssociateResolverRuleResult.h>
+#include <aws/route53resolver/model/AutoAllowlistConfig.h>
 #include <aws/route53resolver/model/AutodefinedReverseFlag.h>
 #include <aws/route53resolver/model/BatchCreateFirewallRuleError.h>
 #include <aws/route53resolver/model/BatchCreateFirewallRuleRequest.h>
@@ -89,9 +90,14 @@
 #include <aws/route53resolver/model/FirewallDomainListMetadata.h>
 #include <aws/route53resolver/model/FirewallDomainListStatus.h>
 #include <aws/route53resolver/model/FirewallDomainRedirectionAction.h>
+#include <aws/route53resolver/model/FirewallDomainStatus.h>
+#include <aws/route53resolver/model/FirewallDomainStatusFilter.h>
 #include <aws/route53resolver/model/FirewallDomainUpdateOperation.h>
 #include <aws/route53resolver/model/FirewallFailOpenStatus.h>
 #include <aws/route53resolver/model/FirewallRule.h>
+#include <aws/route53resolver/model/FirewallRuleDomain.h>
+#include <aws/route53resolver/model/FirewallRuleDomainSortBy.h>
+#include <aws/route53resolver/model/FirewallRuleDomainSortOrder.h>
 #include <aws/route53resolver/model/FirewallRuleGroup.h>
 #include <aws/route53resolver/model/FirewallRuleGroupAssociation.h>
 #include <aws/route53resolver/model/FirewallRuleGroupAssociationStatus.h>
@@ -146,6 +152,10 @@
 #include <aws/route53resolver/model/ListFirewallDomainsPaginationTraits.h>
 #include <aws/route53resolver/model/ListFirewallDomainsRequest.h>
 #include <aws/route53resolver/model/ListFirewallDomainsResult.h>
+#include <aws/route53resolver/model/ListFirewallRuleDomainsPaginationTraits.h>
+#include <aws/route53resolver/model/ListFirewallRuleDomainsQueryOptions.h>
+#include <aws/route53resolver/model/ListFirewallRuleDomainsRequest.h>
+#include <aws/route53resolver/model/ListFirewallRuleDomainsResult.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsPaginationTraits.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsRequest.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsResult.h>

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Route53Resolver {
 namespace Model {
-enum class FirewallDomainUpdateOperation { NOT_SET, ADD, REMOVE, REPLACE };
+enum class FirewallDomainUpdateOperation { NOT_SET, ADD, REMOVE, REPLACE, DENY };
 
 namespace FirewallDomainUpdateOperationMapper {
 AWS_ROUTE53RESOLVER_API FirewallDomainUpdateOperation GetFirewallDomainUpdateOperationForName(const Aws::String& name);

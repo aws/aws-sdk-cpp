@@ -7,6 +7,8 @@
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/marketplace-catalog/model/AMISecuritySummary.h>
 #include <aws/marketplace-catalog/model/ContainerSecuritySummary.h>
+#include <aws/marketplace-catalog/model/ListingQualitySummary.h>
+#include <aws/marketplace-catalog/model/ListingRecommendationsSummary.h>
 
 #include <utility>
 
@@ -70,12 +72,55 @@ class FrameworkSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The details of the resource assessed under the Listing Quality framework.</p>
+   */
+  inline const ListingQualitySummary& GetListingQualitySummary() const { return m_listingQualitySummary; }
+  inline bool ListingQualitySummaryHasBeenSet() const { return m_listingQualitySummaryHasBeenSet; }
+  template <typename ListingQualitySummaryT = ListingQualitySummary>
+  void SetListingQualitySummary(ListingQualitySummaryT&& value) {
+    m_listingQualitySummaryHasBeenSet = true;
+    m_listingQualitySummary = std::forward<ListingQualitySummaryT>(value);
+  }
+  template <typename ListingQualitySummaryT = ListingQualitySummary>
+  FrameworkSummary& WithListingQualitySummary(ListingQualitySummaryT&& value) {
+    SetListingQualitySummary(std::forward<ListingQualitySummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The details of the resource assessed under the Listing Recommendations
+   * framework.</p>
+   */
+  inline const ListingRecommendationsSummary& GetListingRecommendationsSummary() const { return m_listingRecommendationsSummary; }
+  inline bool ListingRecommendationsSummaryHasBeenSet() const { return m_listingRecommendationsSummaryHasBeenSet; }
+  template <typename ListingRecommendationsSummaryT = ListingRecommendationsSummary>
+  void SetListingRecommendationsSummary(ListingRecommendationsSummaryT&& value) {
+    m_listingRecommendationsSummaryHasBeenSet = true;
+    m_listingRecommendationsSummary = std::forward<ListingRecommendationsSummaryT>(value);
+  }
+  template <typename ListingRecommendationsSummaryT = ListingRecommendationsSummary>
+  FrameworkSummary& WithListingRecommendationsSummary(ListingRecommendationsSummaryT&& value) {
+    SetListingRecommendationsSummary(std::forward<ListingRecommendationsSummaryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AMISecuritySummary m_aMISecuritySummary;
 
   ContainerSecuritySummary m_containerSecuritySummary;
+
+  ListingQualitySummary m_listingQualitySummary;
+
+  ListingRecommendationsSummary m_listingRecommendationsSummary;
   bool m_aMISecuritySummaryHasBeenSet = false;
   bool m_containerSecuritySummaryHasBeenSet = false;
+  bool m_listingQualitySummaryHasBeenSet = false;
+  bool m_listingRecommendationsSummaryHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -347,7 +347,9 @@ class AWS_ELASTICLOADBALANCINGV2_API ElasticLoadBalancingv2Client
   /**
    * <p>Creates a trust store.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/mutual-authentication.html">Mutual
-   * TLS for Application Load Balancers</a>.</p><p><h3>See Also:</h3>   <a
+   * TLS for Application Load Balancers</a> or <a
+   * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/mutual-authentication.html">Mutual
+   * TLS for Network Load Balancers</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTrustStore">AWS
    * API Reference</a></p>
    */

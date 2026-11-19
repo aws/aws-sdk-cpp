@@ -152,7 +152,18 @@ class ModifyDBClusterRequest : public RDSRequest {
   ///@{
   /**
    * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
-   * <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+   * <p>Valid only for DB clusters inside a VPC. For a DB cluster that uses an
+   * internet access gateway, specify this parameter only when you re-enable VPC
+   * networking. Set <code>EnableVPCNetworking</code> to <code>true</code> and
+   * <code>EnableInternetAccessGateway</code> to <code>false</code>.</p> <p>When you
+   * move the DB cluster to a different DB subnet group with
+   * <code>DBSubnetGroupName</code>, or re-enable VPC networking, the security groups
+   * must belong to the VPC of the DB subnet group. If you leave out this parameter
+   * in those requests, the DB cluster uses the default security group of that VPC,
+   * even for a move within the same VPC. To keep the current security groups,
+   * specify their IDs. If the VPC is a shared VPC, you must specify this
+   * parameter.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
+   * clusters</p>
    */
   inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
   inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
@@ -731,7 +742,15 @@ class ModifyDBClusterRequest : public RDSRequest {
    * <p>The network type of the DB cluster.</p> <p>The network type is determined by
    * the <code>DBSubnetGroup</code> specified for the DB cluster. A
    * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
-   * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
+   * the IPv6 protocols (<code>DUAL</code>).</p> <p>If the subnets in the DB subnet
+   * group support only the IPv4 protocol, you can't set this parameter to
+   * <code>DUAL</code>.</p> <p>If you don't specify this parameter when you move the
+   * DB cluster to a different DB subnet group with <code>DBSubnetGroupName</code>,
+   * the DB cluster uses <code>IPV4</code>, even if it currently uses
+   * <code>DUAL</code>. To keep dual-stack mode, specify <code>DUAL</code>. The new
+   * DB subnet group must support the network type.</p> <p>Don't specify it when you
+   * set <code>EnableVPCNetworking</code> to <code>false</code>.</p> <p>For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
    * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
    * </p> <p>Valid for Cluster Type: Aurora DB clusters only</p> <p>Valid Values:
@@ -1179,6 +1198,121 @@ class ModifyDBClusterRequest : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the DB cluster uses an internet access gateway. With an
+   * internet access gateway, you connect to the DB cluster over the internet without
+   * a VPC.</p> <p>Set to <code>true</code> together with
+   * <code>EnableVPCNetworking</code> set to <code>false</code> to move the DB
+   * cluster out of its VPC. Set to <code>false</code> together with
+   * <code>EnableVPCNetworking</code> set to <code>true</code> to move the DB cluster
+   * into a VPC. A DB cluster can't use VPC networking and an internet access gateway
+   * at the same time.</p> <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters
+   * only</p>
+   */
+  inline bool GetEnableInternetAccessGateway() const { return m_enableInternetAccessGateway; }
+  inline bool EnableInternetAccessGatewayHasBeenSet() const { return m_enableInternetAccessGatewayHasBeenSet; }
+  inline void SetEnableInternetAccessGateway(bool value) {
+    m_enableInternetAccessGatewayHasBeenSet = true;
+    m_enableInternetAccessGateway = value;
+  }
+  inline ModifyDBClusterRequest& WithEnableInternetAccessGateway(bool value) {
+    SetEnableInternetAccessGateway(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether VPC networking is enabled for the DB cluster. Set to
+   * <code>false</code> to disable VPC networking for the DB cluster.</p> <p>A DB
+   * cluster without VPC networking needs an internet access gateway and IAM database
+   * authentication. Set <code>EnableInternetAccessGateway</code> and
+   * <code>EnableIAMDatabaseAuthentication</code> to <code>true</code>, and set
+   * <code>MasterUserAuthenticationType</code> to <code>iam-db-auth</code>.</p>
+   * <p>Set to <code>true</code> to re-enable VPC networking for a DB cluster that
+   * uses an internet access gateway. You can also specify
+   * <code>DBSubnetGroupName</code>, <code>VpcSecurityGroupIds</code>, and
+   * <code>NetworkType</code>.</p> <p>The change is applied during the next
+   * maintenance window unless <code>ApplyImmediately</code> is enabled.</p> <p>To
+   * move a DB cluster that already uses VPC networking to a different DB subnet
+   * group, you don't need to set this parameter. Specify
+   * <code>DBSubnetGroupName</code> instead.</p> <p>Valid for Cluster Type: Aurora
+   * PostgreSQL DB clusters only</p>
+   */
+  inline bool GetEnableVPCNetworking() const { return m_enableVPCNetworking; }
+  inline bool EnableVPCNetworkingHasBeenSet() const { return m_enableVPCNetworkingHasBeenSet; }
+  inline void SetEnableVPCNetworking(bool value) {
+    m_enableVPCNetworkingHasBeenSet = true;
+    m_enableVPCNetworking = value;
+  }
+  inline ModifyDBClusterRequest& WithEnableVPCNetworking(bool value) {
+    SetEnableVPCNetworking(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The DB subnet group for the DB cluster.</p> <p>Specify this parameter for one
+   * of these purposes:</p> <ul> <li> <p>To move an Aurora MySQL or Aurora PostgreSQL
+   * DB cluster that uses VPC networking to a different DB subnet group. The new DB
+   * subnet group can be in the same VPC or in a different VPC.</p> </li> <li> <p>To
+   * enable VPC networking for an Aurora PostgreSQL DB cluster that uses an internet
+   * access gateway. Set <code>EnableVPCNetworking</code> to <code>true</code> and
+   * <code>EnableInternetAccessGateway</code> to <code>false</code>.</p> </li> </ul>
+   * <p>When you move a DB cluster to a different DB subnet group, you don't need to
+   * set <code>EnableVPCNetworking</code>. If you set it to <code>false</code>,
+   * Aurora rejects the request. Security groups in <code>VpcSecurityGroupIds</code>
+   * must belong to the VPC of the new DB subnet group. If you don't specify
+   * <code>VpcSecurityGroupIds</code>, the DB cluster uses the default security group
+   * of that VPC. If you don't specify <code>NetworkType</code>, the DB cluster uses
+   * <code>IPV4</code>. Both defaults apply even if the DB cluster stays in the same
+   * VPC.</p> <p>An outage occurs during the move. The DB cluster uses VPC networking
+   * before, during, and after the move, and the move doesn't turn on an internet
+   * access gateway. If you specify the DB subnet group that the DB cluster already
+   * uses, the DB cluster isn't moved. The change is applied during the next
+   * maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+   * <p>Aurora rejects the move if the DB cluster:</p> <ul> <li> <p>Is a member of an
+   * Aurora global database.</p> </li> <li> <p>Uses Aurora Limitless Database.</p>
+   * </li> <li> <p>Is a cross-Region or in-Region read replica, or is the source of
+   * one. Aurora Replicas in the DB cluster don't block the move.</p> </li> <li>
+   * <p>Has enhanced binlog (Aurora MySQL), enhanced logical replication (Aurora
+   * PostgreSQL), or Babelfish turned on.</p> </li> <li> <p>Is a target of an RDS
+   * Proxy.</p> </li> <li> <p>Is part of a blue/green deployment.</p> </li> <li>
+   * <p>Is the source of a zero-ETL integration.</p> </li> <li> <p>Has a database
+   * activity stream that isn't stopped.</p> </li> </ul> <p>The move also fails if
+   * the DB cluster is switching to a different DB cluster parameter group, or if a
+   * change to enhanced binlog, enhanced logical replication, or Babelfish is pending
+   * in its DB cluster parameter group. Apply the change, and reboot if required,
+   * before you move the DB cluster.</p> <p>If the move fails, Aurora returns the DB
+   * cluster to its original DB subnet group and cancels the change. To try again,
+   * call <code>ModifyDBCluster</code> again.</p> <p>Aurora can't always return the
+   * DB cluster. If the move fails after Aurora starts to update the DB cluster
+   * endpoints, or if the rollback fails, the change doesn't complete. If Aurora
+   * can't restore the original network configuration, the DB instances in the DB
+   * cluster enter the <code>incompatible-network</code> state. In these cases,
+   * contact Amazon Web Services Support.</p> <p>Valid for Cluster Type: Aurora DB
+   * clusters only</p> <p>Default: If you don't specify this parameter when you
+   * enable VPC networking, the DB cluster uses the default DB subnet group for your
+   * Amazon Web Services account.</p> <p>Constraints: The DB subnet group must
+   * contain a subnet in each Availability Zone that the DB instances in the DB
+   * cluster are located in.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
+   */
+  inline const Aws::String& GetDBSubnetGroupName() const { return m_dBSubnetGroupName; }
+  inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
+  template <typename DBSubnetGroupNameT = Aws::String>
+  void SetDBSubnetGroupName(DBSubnetGroupNameT&& value) {
+    m_dBSubnetGroupNameHasBeenSet = true;
+    m_dBSubnetGroupName = std::forward<DBSubnetGroupNameT>(value);
+  }
+  template <typename DBSubnetGroupNameT = Aws::String>
+  ModifyDBClusterRequest& WithDBSubnetGroupName(DBSubnetGroupNameT&& value) {
+    SetDBSubnetGroupName(std::forward<DBSubnetGroupNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBClusterIdentifier;
 
@@ -1275,6 +1409,12 @@ class ModifyDBClusterRequest : public RDSRequest {
   MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
 
   Aws::String m_engineLifecycleSupport;
+
+  bool m_enableInternetAccessGateway{false};
+
+  bool m_enableVPCNetworking{false};
+
+  Aws::String m_dBSubnetGroupName;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_newDBClusterIdentifierHasBeenSet = false;
   bool m_applyImmediatelyHasBeenSet = false;
@@ -1323,6 +1463,9 @@ class ModifyDBClusterRequest : public RDSRequest {
   bool m_cACertificateIdentifierHasBeenSet = false;
   bool m_masterUserAuthenticationTypeHasBeenSet = false;
   bool m_engineLifecycleSupportHasBeenSet = false;
+  bool m_enableInternetAccessGatewayHasBeenSet = false;
+  bool m_enableVPCNetworkingHasBeenSet = false;
+  bool m_dBSubnetGroupNameHasBeenSet = false;
 };
 
 }  // namespace Model

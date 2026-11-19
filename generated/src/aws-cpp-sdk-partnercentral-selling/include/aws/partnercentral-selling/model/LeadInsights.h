@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/model/ChannelRecommendation.h>
 
 #include <utility>
 
@@ -52,9 +53,35 @@ class LeadInsights {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The outreach channel most commonly recommended for leads that share this
+   * lead's country, geography, region, and company segment. It includes the days and
+   * the Coordinated Universal Time (UTC) hours when that channel is best used. This
+   * is guidance for the group of similar leads. It doesn't describe this lead's own
+   * contact history. Present only when a recommendation is available for the
+   * lead.</p>
+   */
+  inline const ChannelRecommendation& GetChannelRecommendation() const { return m_channelRecommendation; }
+  inline bool ChannelRecommendationHasBeenSet() const { return m_channelRecommendationHasBeenSet; }
+  template <typename ChannelRecommendationT = ChannelRecommendation>
+  void SetChannelRecommendation(ChannelRecommendationT&& value) {
+    m_channelRecommendationHasBeenSet = true;
+    m_channelRecommendation = std::forward<ChannelRecommendationT>(value);
+  }
+  template <typename ChannelRecommendationT = ChannelRecommendation>
+  LeadInsights& WithChannelRecommendation(ChannelRecommendationT&& value) {
+    SetChannelRecommendation(std::forward<ChannelRecommendationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_leadReadinessScore;
+
+  ChannelRecommendation m_channelRecommendation;
   bool m_leadReadinessScoreHasBeenSet = false;
+  bool m_channelRecommendationHasBeenSet = false;
 };
 
 }  // namespace Model

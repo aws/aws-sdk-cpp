@@ -26,6 +26,10 @@ BrokerNodeInfo& BrokerNodeInfo::operator=(JsonView jsonValue) {
     m_brokerId = jsonValue.GetDouble("brokerId");
     m_brokerIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("brokerNodeType")) {
+    m_brokerNodeType = BrokerNodeTypeMapper::GetBrokerNodeTypeForName(jsonValue.GetString("brokerNodeType"));
+    m_brokerNodeTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("clientSubnet")) {
     m_clientSubnet = jsonValue.GetString("clientSubnet");
     m_clientSubnetHasBeenSet = true;
@@ -57,6 +61,10 @@ JsonValue BrokerNodeInfo::Jsonize() const {
 
   if (m_brokerIdHasBeenSet) {
     payload.WithDouble("brokerId", m_brokerId);
+  }
+
+  if (m_brokerNodeTypeHasBeenSet) {
+    payload.WithString("brokerNodeType", BrokerNodeTypeMapper::GetNameForBrokerNodeType(m_brokerNodeType));
   }
 
   if (m_clientSubnetHasBeenSet) {

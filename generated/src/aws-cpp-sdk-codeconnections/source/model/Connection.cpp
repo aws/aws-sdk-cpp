@@ -166,6 +166,36 @@ Connection& Connection::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDeco
                   }
                 }
                 m_hostArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ProviderEndpoint") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_providerEndpoint = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_providerEndpoint = ss.str();
+                  }
+                }
+                m_providerEndpointHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -329,6 +359,36 @@ Connection& Connection::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDeco
                 }
               }
               m_hostArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ProviderEndpoint") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_providerEndpoint = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_providerEndpoint = ss.str();
+                }
+              }
+              m_providerEndpointHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -363,6 +423,9 @@ void Connection::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_hostArnHasBeenSet) {
     mapSize++;
   }
+  if (m_providerEndpointHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -394,6 +457,11 @@ void Connection::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_hostArnHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("HostArn"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_hostArn.c_str()));
+  }
+
+  if (m_providerEndpointHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProviderEndpoint"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_providerEndpoint.c_str()));
   }
 }
 

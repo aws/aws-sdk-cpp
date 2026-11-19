@@ -7,6 +7,8 @@
 #include <aws/cognito-idp/CognitoIdentityProviderClient.h>
 #include <aws/cognito-idp/model/AdminListGroupsForUserPaginationTraits.h>
 #include <aws/cognito-idp/model/AdminListUserAuthEventsPaginationTraits.h>
+#include <aws/cognito-idp/model/ListCIMDPoliciesPaginationTraits.h>
+#include <aws/cognito-idp/model/ListClientMetadataURLsPaginationTraits.h>
 #include <aws/cognito-idp/model/ListGroupsPaginationTraits.h>
 #include <aws/cognito-idp/model/ListIdentityProvidersPaginationTraits.h>
 #include <aws/cognito-idp/model/ListResourceServersPaginationTraits.h>
@@ -25,6 +27,12 @@ using AdminListGroupsForUserPaginator =
 using AdminListUserAuthEventsPaginator =
     Aws::Utils::Pagination::Paginator<CognitoIdentityProviderClient, Model::AdminListUserAuthEventsRequest,
                                       Pagination::AdminListUserAuthEventsPaginationTraits<CognitoIdentityProviderClient>>;
+using ListCIMDPoliciesPaginator =
+    Aws::Utils::Pagination::Paginator<CognitoIdentityProviderClient, Model::ListCIMDPoliciesRequest,
+                                      Pagination::ListCIMDPoliciesPaginationTraits<CognitoIdentityProviderClient>>;
+using ListClientMetadataURLsPaginator =
+    Aws::Utils::Pagination::Paginator<CognitoIdentityProviderClient, Model::ListClientMetadataURLsRequest,
+                                      Pagination::ListClientMetadataURLsPaginationTraits<CognitoIdentityProviderClient>>;
 using ListGroupsPaginator = Aws::Utils::Pagination::Paginator<CognitoIdentityProviderClient, Model::ListGroupsRequest,
                                                               Pagination::ListGroupsPaginationTraits<CognitoIdentityProviderClient>>;
 using ListIdentityProvidersPaginator =

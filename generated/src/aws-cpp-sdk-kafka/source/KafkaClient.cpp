@@ -22,6 +22,7 @@
 #include <aws/kafka/KafkaErrorMarshaller.h>
 #include <aws/kafka/model/BatchAssociateScramSecretRequest.h>
 #include <aws/kafka/model/BatchDisassociateScramSecretRequest.h>
+#include <aws/kafka/model/CreateAssessmentRequest.h>
 #include <aws/kafka/model/CreateChannelRequest.h>
 #include <aws/kafka/model/CreateClusterRequest.h>
 #include <aws/kafka/model/CreateClusterV2Request.h>
@@ -29,6 +30,7 @@
 #include <aws/kafka/model/CreateReplicatorRequest.h>
 #include <aws/kafka/model/CreateTopicRequest.h>
 #include <aws/kafka/model/CreateVpcConnectionRequest.h>
+#include <aws/kafka/model/DeleteAssessmentRequest.h>
 #include <aws/kafka/model/DeleteChannelRequest.h>
 #include <aws/kafka/model/DeleteClusterPolicyRequest.h>
 #include <aws/kafka/model/DeleteClusterRequest.h>
@@ -36,6 +38,7 @@
 #include <aws/kafka/model/DeleteReplicatorRequest.h>
 #include <aws/kafka/model/DeleteTopicRequest.h>
 #include <aws/kafka/model/DeleteVpcConnectionRequest.h>
+#include <aws/kafka/model/DescribeAssessmentRequest.h>
 #include <aws/kafka/model/DescribeChannelRequest.h>
 #include <aws/kafka/model/DescribeClusterOperationRequest.h>
 #include <aws/kafka/model/DescribeClusterOperationV2Request.h>
@@ -45,11 +48,14 @@
 #include <aws/kafka/model/DescribeConfigurationRevisionRequest.h>
 #include <aws/kafka/model/DescribeReplicatorRequest.h>
 #include <aws/kafka/model/DescribeTopicPartitionsRequest.h>
+#include <aws/kafka/model/DescribeTopicReassignmentRequest.h>
 #include <aws/kafka/model/DescribeTopicRequest.h>
 #include <aws/kafka/model/DescribeVpcConnectionRequest.h>
 #include <aws/kafka/model/GetBootstrapBrokersRequest.h>
 #include <aws/kafka/model/GetClusterPolicyRequest.h>
 #include <aws/kafka/model/GetCompatibleKafkaVersionsRequest.h>
+#include <aws/kafka/model/ListAssessmentFindingsRequest.h>
+#include <aws/kafka/model/ListAssessmentsRequest.h>
 #include <aws/kafka/model/ListChannelsRequest.h>
 #include <aws/kafka/model/ListClientVpcConnectionsRequest.h>
 #include <aws/kafka/model/ListClusterOperationsRequest.h>
@@ -63,11 +69,14 @@
 #include <aws/kafka/model/ListReplicatorsRequest.h>
 #include <aws/kafka/model/ListScramSecretsRequest.h>
 #include <aws/kafka/model/ListTagsForResourceRequest.h>
+#include <aws/kafka/model/ListTopicReassignmentsRequest.h>
 #include <aws/kafka/model/ListTopicsRequest.h>
 #include <aws/kafka/model/ListVpcConnectionsRequest.h>
 #include <aws/kafka/model/PutClusterPolicyRequest.h>
 #include <aws/kafka/model/RebootBrokerRequest.h>
 #include <aws/kafka/model/RejectClientVpcConnectionRequest.h>
+#include <aws/kafka/model/StartTopicReassignmentRequest.h>
+#include <aws/kafka/model/StopTopicReassignmentRequest.h>
 #include <aws/kafka/model/TagResourceRequest.h>
 #include <aws/kafka/model/UntagResourceRequest.h>
 #include <aws/kafka/model/UpdateBrokerCountRequest.h>
@@ -277,6 +286,25 @@ BatchDisassociateScramSecretOutcome KafkaClient::BatchDisassociateScramSecret(co
                             : BatchDisassociateScramSecretOutcome(std::move(result.GetError()));
 }
 
+CreateAssessmentOutcome KafkaClient::CreateAssessment(const CreateAssessmentRequest& request) const {
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateAssessment", "Required field: ClusterArn, is not set");
+    return CreateAssessmentOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [ClusterArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assessments");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssessmentOutcome(result.GetResultWithOwnership())
+                            : CreateAssessmentOutcome(std::move(result.GetError()));
+}
+
 CreateChannelOutcome KafkaClient::CreateChannel(const CreateChannelRequest& request) const {
   if (!request.ClusterArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateChannel", "Required field: ClusterArn, is not set");
@@ -365,6 +393,31 @@ CreateVpcConnectionOutcome KafkaClient::CreateVpcConnection(const CreateVpcConne
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateVpcConnectionOutcome(result.GetResultWithOwnership())
                             : CreateVpcConnectionOutcome(std::move(result.GetError()));
+}
+
+DeleteAssessmentOutcome KafkaClient::DeleteAssessment(const DeleteAssessmentRequest& request) const {
+  if (!request.AssessmentArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAssessment", "Required field: AssessmentArn, is not set");
+    return DeleteAssessmentOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [AssessmentArn]", false));
+  }
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAssessment", "Required field: ClusterArn, is not set");
+    return DeleteAssessmentOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [ClusterArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assessments/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssessmentArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssessmentOutcome(result.GetResultWithOwnership())
+                            : DeleteAssessmentOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelOutcome KafkaClient::DeleteChannel(const DeleteChannelRequest& request) const {
@@ -503,6 +556,31 @@ DeleteVpcConnectionOutcome KafkaClient::DeleteVpcConnection(const DeleteVpcConne
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteVpcConnectionOutcome(result.GetResultWithOwnership())
                             : DeleteVpcConnectionOutcome(std::move(result.GetError()));
+}
+
+DescribeAssessmentOutcome KafkaClient::DescribeAssessment(const DescribeAssessmentRequest& request) const {
+  if (!request.AssessmentArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAssessment", "Required field: AssessmentArn, is not set");
+    return DescribeAssessmentOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [AssessmentArn]", false));
+  }
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAssessment", "Required field: ClusterArn, is not set");
+    return DescribeAssessmentOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [ClusterArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assessments/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssessmentArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAssessmentOutcome(result.GetResultWithOwnership())
+                            : DescribeAssessmentOutcome(std::move(result.GetError()));
 }
 
 DescribeChannelOutcome KafkaClient::DescribeChannel(const DescribeChannelRequest& request) const {
@@ -713,6 +791,31 @@ DescribeTopicPartitionsOutcome KafkaClient::DescribeTopicPartitions(const Descri
                             : DescribeTopicPartitionsOutcome(std::move(result.GetError()));
 }
 
+DescribeTopicReassignmentOutcome KafkaClient::DescribeTopicReassignment(const DescribeTopicReassignmentRequest& request) const {
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeTopicReassignment", "Required field: ClusterArn, is not set");
+    return DescribeTopicReassignmentOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [ClusterArn]", false));
+  }
+  if (!request.TopicReassignmentOperationArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeTopicReassignment", "Required field: TopicReassignmentOperationArn, is not set");
+    return DescribeTopicReassignmentOutcome(Aws::Client::AWSError<KafkaErrors>(
+        KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TopicReassignmentOperationArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/topic-reassignments/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTopicReassignmentOperationArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeTopicReassignmentOutcome(result.GetResultWithOwnership())
+                            : DescribeTopicReassignmentOutcome(std::move(result.GetError()));
+}
+
 DescribeVpcConnectionOutcome KafkaClient::DescribeVpcConnection(const DescribeVpcConnectionRequest& request) const {
   if (!request.ArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DescribeVpcConnection", "Required field: Arn, is not set");
@@ -778,6 +881,51 @@ GetCompatibleKafkaVersionsOutcome KafkaClient::GetCompatibleKafkaVersions(const 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetCompatibleKafkaVersionsOutcome(result.GetResultWithOwnership())
                             : GetCompatibleKafkaVersionsOutcome(std::move(result.GetError()));
+}
+
+ListAssessmentFindingsOutcome KafkaClient::ListAssessmentFindings(const ListAssessmentFindingsRequest& request) const {
+  if (!request.AssessmentArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAssessmentFindings", "Required field: AssessmentArn, is not set");
+    return ListAssessmentFindingsOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [AssessmentArn]", false));
+  }
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAssessmentFindings", "Required field: ClusterArn, is not set");
+    return ListAssessmentFindingsOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [ClusterArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assessments/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssessmentArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/findings");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssessmentFindingsOutcome(result.GetResultWithOwnership())
+                            : ListAssessmentFindingsOutcome(std::move(result.GetError()));
+}
+
+ListAssessmentsOutcome KafkaClient::ListAssessments(const ListAssessmentsRequest& request) const {
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAssessments", "Required field: ClusterArn, is not set");
+    return ListAssessmentsOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                     "Missing required field [ClusterArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assessments");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssessmentsOutcome(result.GetResultWithOwnership())
+                            : ListAssessmentsOutcome(std::move(result.GetError()));
 }
 
 ListChannelsOutcome KafkaClient::ListChannels(const ListChannelsRequest& request) const {
@@ -982,6 +1130,25 @@ ListTagsForResourceOutcome KafkaClient::ListTagsForResource(const ListTagsForRes
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
+ListTopicReassignmentsOutcome KafkaClient::ListTopicReassignments(const ListTopicReassignmentsRequest& request) const {
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListTopicReassignments", "Required field: ClusterArn, is not set");
+    return ListTopicReassignmentsOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [ClusterArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/topic-reassignments");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTopicReassignmentsOutcome(result.GetResultWithOwnership())
+                            : ListTopicReassignmentsOutcome(std::move(result.GetError()));
+}
+
 ListTopicsOutcome KafkaClient::ListTopics(const ListTopicsRequest& request) const {
   if (!request.ClusterArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListTopics", "Required field: ClusterArn, is not set");
@@ -1065,6 +1232,51 @@ RejectClientVpcConnectionOutcome KafkaClient::RejectClientVpcConnection(const Re
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? RejectClientVpcConnectionOutcome(result.GetResultWithOwnership())
                             : RejectClientVpcConnectionOutcome(std::move(result.GetError()));
+}
+
+StartTopicReassignmentOutcome KafkaClient::StartTopicReassignment(const StartTopicReassignmentRequest& request) const {
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartTopicReassignment", "Required field: ClusterArn, is not set");
+    return StartTopicReassignmentOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [ClusterArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/topic-reassignments");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTopicReassignmentOutcome(result.GetResultWithOwnership())
+                            : StartTopicReassignmentOutcome(std::move(result.GetError()));
+}
+
+StopTopicReassignmentOutcome KafkaClient::StopTopicReassignment(const StopTopicReassignmentRequest& request) const {
+  if (!request.ClusterArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopTopicReassignment", "Required field: ClusterArn, is not set");
+    return StopTopicReassignmentOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [ClusterArn]", false));
+  }
+  if (!request.TopicReassignmentOperationArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopTopicReassignment", "Required field: TopicReassignmentOperationArn, is not set");
+    return StopTopicReassignmentOutcome(Aws::Client::AWSError<KafkaErrors>(
+        KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TopicReassignmentOperationArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/topic-reassignments/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTopicReassignmentOperationArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopTopicReassignmentOutcome(result.GetResultWithOwnership())
+                            : StopTopicReassignmentOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome KafkaClient::TagResource(const TagResourceRequest& request) const {

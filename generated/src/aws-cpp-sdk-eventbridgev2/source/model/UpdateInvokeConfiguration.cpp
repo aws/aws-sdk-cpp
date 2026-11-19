@@ -98,6 +98,11 @@ UpdateInvokeConfiguration& UpdateInvokeConfiguration::operator=(const std::share
               else if (initialKeyStr == "EventBusV2Parameters") {
                 m_eventBusV2Parameters = EventBusV2Parameters(decoder);
                 m_eventBusV2ParametersHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "MskParameters") {
+                m_mskParameters = MskParameters(decoder);
+                m_mskParametersHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -193,6 +198,11 @@ UpdateInvokeConfiguration& UpdateInvokeConfiguration::operator=(const std::share
             else if (initialKeyStr == "EventBusV2Parameters") {
               m_eventBusV2Parameters = EventBusV2Parameters(decoder);
               m_eventBusV2ParametersHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "MskParameters") {
+              m_mskParameters = MskParameters(decoder);
+              m_mskParametersHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -234,6 +244,9 @@ void UpdateInvokeConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder)
     mapSize++;
   }
   if (m_eventBusV2ParametersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_mskParametersHasBeenSet) {
     mapSize++;
   }
 
@@ -282,6 +295,11 @@ void UpdateInvokeConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder)
   if (m_eventBusV2ParametersHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("EventBusV2Parameters"));
     m_eventBusV2Parameters.CborEncode(encoder);
+  }
+
+  if (m_mskParametersHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MskParameters"));
+    m_mskParameters.CborEncode(encoder);
   }
 }
 

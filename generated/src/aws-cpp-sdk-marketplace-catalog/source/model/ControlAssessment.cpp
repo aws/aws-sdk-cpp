@@ -27,12 +27,20 @@ ControlAssessment& ControlAssessment::operator=(JsonView jsonValue) {
         ControlAssessmentResultMapper::GetControlAssessmentResultForName(jsonValue.GetString("ControlAssessmentResult"));
     m_controlAssessmentResultHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VerificationSource")) {
+    m_verificationSource = VerificationSourceMapper::GetVerificationSourceForName(jsonValue.GetString("VerificationSource"));
+    m_verificationSourceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Errors")) {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
     for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
     m_errorsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ControlSummary")) {
+    m_controlSummary = jsonValue.GetObject("ControlSummary");
+    m_controlSummaryHasBeenSet = true;
   }
   return *this;
 }
@@ -49,12 +57,20 @@ JsonValue ControlAssessment::Jsonize() const {
                        ControlAssessmentResultMapper::GetNameForControlAssessmentResult(m_controlAssessmentResult));
   }
 
+  if (m_verificationSourceHasBeenSet) {
+    payload.WithString("VerificationSource", VerificationSourceMapper::GetNameForVerificationSource(m_verificationSource));
+  }
+
   if (m_errorsHasBeenSet) {
     Aws::Utils::Array<JsonValue> errorsJsonList(m_errors.size());
     for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
       errorsJsonList[errorsIndex].AsObject(m_errors[errorsIndex].Jsonize());
     }
     payload.WithArray("Errors", std::move(errorsJsonList));
+  }
+
+  if (m_controlSummaryHasBeenSet) {
+    payload.WithObject("ControlSummary", m_controlSummary.Jsonize());
   }
 
   return payload;

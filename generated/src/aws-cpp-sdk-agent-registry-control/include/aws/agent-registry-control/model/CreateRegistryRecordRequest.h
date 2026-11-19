@@ -9,6 +9,7 @@
 #include <aws/agent-registry-control/model/Descriptors.h>
 #include <aws/agent-registry-control/model/Provenance.h>
 #include <aws/agent-registry-control/model/RecordType.h>
+#include <aws/agent-registry-control/model/RegistryRecordArtifactUpload.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -143,6 +144,28 @@ class CreateRegistryRecordRequest : public AgentRegistryControlRequest {
 
   ///@{
   /**
+   * <p>The skill package to store with the record, for a record of type
+   * <code>SKILL</code> with an <code>agentSkillsDefinition</code> descriptor. The
+   * registry validates the package after the operation returns and sets
+   * <code>skillMd.data</code> from the package's SKILL.md. A request that uploads a
+   * package can't also set a skill source or send new <code>skillMd.data</code>.</p>
+   */
+  inline const RegistryRecordArtifactUpload& GetArtifact() const { return m_artifact; }
+  inline bool ArtifactHasBeenSet() const { return m_artifactHasBeenSet; }
+  template <typename ArtifactT = RegistryRecordArtifactUpload>
+  void SetArtifact(ArtifactT&& value) {
+    m_artifactHasBeenSet = true;
+    m_artifact = std::forward<ArtifactT>(value);
+  }
+  template <typename ArtifactT = RegistryRecordArtifactUpload>
+  CreateRegistryRecordRequest& WithArtifact(ArtifactT&& value) {
+    SetArtifact(std::forward<ArtifactT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The version of the registry record</p>
    */
   inline const Aws::String& GetRecordVersion() const { return m_recordVersion; }
@@ -257,6 +280,8 @@ class CreateRegistryRecordRequest : public AgentRegistryControlRequest {
 
   Descriptors m_descriptors;
 
+  RegistryRecordArtifactUpload m_artifact;
+
   Aws::String m_recordVersion;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -272,6 +297,7 @@ class CreateRegistryRecordRequest : public AgentRegistryControlRequest {
   bool m_descriptionHasBeenSet = false;
   bool m_recordTypeHasBeenSet = false;
   bool m_descriptorsHasBeenSet = false;
+  bool m_artifactHasBeenSet = false;
   bool m_recordVersionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_provenanceHasBeenSet = false;

@@ -36,7 +36,9 @@ class ListSubscribersRequest : public EventBridgeV2Request {
   AWS_EVENTBRIDGEV2_API EndpointParameters GetEndpointContextParams() const override;
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
+   */
   inline const Aws::String& GetEventBusArn() const { return m_eventBusArn; }
   inline bool EventBusArnHasBeenSet() const { return m_eventBusArnHasBeenSet; }
   template <typename EventBusArnT = Aws::String>
@@ -52,7 +54,10 @@ class ListSubscribersRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Name of a subscriber. The first character must be alphanumeric; the remaining
+   * characters may also include '.', '-', and '_'.</p>
+   */
   inline const Aws::String& GetNamePrefix() const { return m_namePrefix; }
   inline bool NamePrefixHasBeenSet() const { return m_namePrefixHasBeenSet; }
   template <typename NamePrefixT = Aws::String>
@@ -68,7 +73,10 @@ class ListSubscribersRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Opaque pagination token returned by a List operation. Pass it back in the
+   * next request to retrieve the next page of results.</p>
+   */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
   template <typename NextTokenT = Aws::String>
@@ -84,7 +92,9 @@ class ListSubscribersRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Maximum number of results to return in one page of a List operation.</p>
+   */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
   inline void SetMaxResults(int value) {

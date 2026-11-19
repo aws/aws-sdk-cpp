@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EventBridgeV2 {
 namespace Model {
-enum class EventSourceType { NOT_SET, AWS_SERVICE_EVENTS, PARTNER_EVENTS };
+enum class EventSourceType { NOT_SET, AWS_SERVICE_EVENTS, PARTNER_EVENTS, WEBHOOK_EVENTS };
 
 namespace EventSourceTypeMapper {
 AWS_EVENTBRIDGEV2_API EventSourceType GetEventSourceTypeForName(const Aws::String& name);

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/agent-registry/AgentRegistryRequest.h>
 #include <aws/agent-registry/AgentRegistry_EXPORTS.h>
+#include <aws/agent-registry/model/SearchType.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -32,7 +33,10 @@ class SearchDiscoverableRegistryRecordsRequest : public AgentRegistryRequest {
 
   ///@{
   /**
-   * <p> The natural language query to search for matching registry records.</p>
+   * <p> The natural language query to search for matching registry records. If you
+   * specify an empty string, the operation returns the records that match the
+   * <code>filters</code>, most recently updated first, up to the result limit for
+   * the <code>searchType</code>.</p>
    */
   inline const Aws::String& GetSearchQuery() const { return m_searchQuery; }
   inline bool SearchQueryHasBeenSet() const { return m_searchQueryHasBeenSet; }
@@ -76,8 +80,10 @@ class SearchDiscoverableRegistryRecordsRequest : public AgentRegistryRequest {
 
   ///@{
   /**
-   * <p> The maximum number of results to return. Valid values are 1 through 20. The
-   * default value is 10.</p>
+   * <p> The maximum number of results to return in one page. Valid values are 1
+   * through 50 when <code>searchType</code> is <code>KEYWORD</code>, and 1 through
+   * 20 when it is <code>HYBRID</code> or <code>SEMANTIC</code>. The default value is
+   * 10.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -116,6 +122,60 @@ class SearchDiscoverableRegistryRecordsRequest : public AgentRegistryRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Specifies how the service ranks registry records against the search query.
+   * If you omit this parameter, the service uses <code>HYBRID</code> in Amazon Web
+   * Services Regions that support semantic search and <code>KEYWORD</code> in
+   * Regions that do not. The response reports the search type that the service used.
+   * Valid values are the following:</p> <ul> <li> <p> <code>KEYWORD</code> – Ranks
+   * records by keyword match between the query terms and the record name,
+   * description, descriptors, and custom metadata text values. Available in every
+   * Amazon Web Services Region.</p> </li> <li> <p> <code>SEMANTIC</code> – Ranks
+   * records by semantic similarity to the query and returns the most similar
+   * records, up to <code>maxResults</code>, even when none of them closely matches
+   * the query.</p> </li> <li> <p> <code>HYBRID</code> – Combines keyword ranking and
+   * semantic ranking.</p> </li> </ul> <p> <code>HYBRID</code> and
+   * <code>SEMANTIC</code> are available in a limited number of Regions. If you
+   * specify either one in a Region that does not support semantic search, the
+   * request fails with a <code>ValidationException</code> that has the reason
+   * <code>UnsupportedInRegion</code>.</p>
+   */
+  inline SearchType GetSearchType() const { return m_searchType; }
+  inline bool SearchTypeHasBeenSet() const { return m_searchTypeHasBeenSet; }
+  inline void SetSearchType(SearchType value) {
+    m_searchTypeHasBeenSet = true;
+    m_searchType = value;
+  }
+  inline SearchDiscoverableRegistryRecordsRequest& WithSearchType(SearchType value) {
+    SetSearchType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The pagination token from a previous response. Use it to retrieve the next
+   * page of results, and send the same <code>searchQuery</code>,
+   * <code>registryIds</code>, <code>filters</code>, and <code>searchType</code> that
+   * you used for the first page. If any of them differ, the request fails with a
+   * <code>ValidationException</code>. A pagination token expires 15 minutes after
+   * the service returns the first page.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  SearchDiscoverableRegistryRecordsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_searchQuery;
 
@@ -124,10 +184,16 @@ class SearchDiscoverableRegistryRecordsRequest : public AgentRegistryRequest {
   int m_maxResults{0};
 
   Aws::Utils::Document m_filters;
+
+  SearchType m_searchType{SearchType::NOT_SET};
+
+  Aws::String m_nextToken;
   bool m_searchQueryHasBeenSet = false;
   bool m_registryIdsHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
+  bool m_searchTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -36,5 +36,9 @@ Aws::String UpdateAgentSpaceRequest::SerializePayload() const {
     payload.WithObject("preferences", std::move(preferencesJsonMap));
   }
 
+  if (m_awsSourceModeHasBeenSet) {
+    payload.WithString("awsSourceMode", AwsSourceModeMapper::GetNameForAwsSourceMode(m_awsSourceMode));
+  }
+
   return payload.View().WriteReadable();
 }

@@ -9,6 +9,8 @@
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/marketplace-catalog/model/ControlAssessmentResult.h>
 #include <aws/marketplace-catalog/model/ControlError.h>
+#include <aws/marketplace-catalog/model/ControlSummary.h>
+#include <aws/marketplace-catalog/model/VerificationSource.h>
 
 #include <utility>
 
@@ -71,6 +73,26 @@ class ControlAssessment {
 
   ///@{
   /**
+   * <p>Where the result of the control came from. This value doesn't say whether the
+   * control passed. A control that you attested to can still have a result of
+   * <code>PASS</code>. Valid values are:</p> <ul> <li> <p> <code>AWS_VERIFIED</code>
+   * - AWS evaluated the control.</p> </li> <li> <p> <code>SELF_ATTESTED</code> - You
+   * attested to the result of the control.</p> </li> </ul>
+   */
+  inline VerificationSource GetVerificationSource() const { return m_verificationSource; }
+  inline bool VerificationSourceHasBeenSet() const { return m_verificationSourceHasBeenSet; }
+  inline void SetVerificationSource(VerificationSource value) {
+    m_verificationSourceHasBeenSet = true;
+    m_verificationSource = value;
+  }
+  inline ControlAssessment& WithVerificationSource(VerificationSource value) {
+    SetVerificationSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An array of <code>ControlError</code> objects associated with the control
    * evaluation.</p>
    */
@@ -93,15 +115,40 @@ class ControlAssessment {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A summary of what the control produced, such as recommendations for the
+   * listing.</p>
+   */
+  inline const ControlSummary& GetControlSummary() const { return m_controlSummary; }
+  inline bool ControlSummaryHasBeenSet() const { return m_controlSummaryHasBeenSet; }
+  template <typename ControlSummaryT = ControlSummary>
+  void SetControlSummary(ControlSummaryT&& value) {
+    m_controlSummaryHasBeenSet = true;
+    m_controlSummary = std::forward<ControlSummaryT>(value);
+  }
+  template <typename ControlSummaryT = ControlSummary>
+  ControlAssessment& WithControlSummary(ControlSummaryT&& value) {
+    SetControlSummary(std::forward<ControlSummaryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_controlId;
 
   ControlAssessmentResult m_controlAssessmentResult{ControlAssessmentResult::NOT_SET};
 
+  VerificationSource m_verificationSource{VerificationSource::NOT_SET};
+
   Aws::Vector<ControlError> m_errors;
+
+  ControlSummary m_controlSummary;
   bool m_controlIdHasBeenSet = false;
   bool m_controlAssessmentResultHasBeenSet = false;
+  bool m_verificationSourceHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
+  bool m_controlSummaryHasBeenSet = false;
 };
 
 }  // namespace Model

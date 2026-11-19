@@ -20,16 +20,22 @@ Aws::String ListMarketplaceRevenueShareAllocationsRequest::SerializePayload() co
   if (m_catalogHasBeenSet) {
     mapSize++;
   }
-  if (m_productIdHasBeenSet) {
+  if (m_marketplaceRevenueShareIdentifierHasBeenSet) {
     mapSize++;
   }
-  if (m_statusHasBeenSet) {
+  if (m_statusFilterHasBeenSet) {
     mapSize++;
   }
   if (m_afterEffectiveFromHasBeenSet) {
     mapSize++;
   }
   if (m_beforeEffectiveFromHasBeenSet) {
+    mapSize++;
+  }
+  if (m_afterEffectiveUntilHasBeenSet) {
+    mapSize++;
+  }
+  if (m_beforeEffectiveUntilHasBeenSet) {
     mapSize++;
   }
   if (m_sortByHasBeenSet) {
@@ -55,14 +61,14 @@ Aws::String ListMarketplaceRevenueShareAllocationsRequest::SerializePayload() co
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(CatalogNameMapper::GetNameForCatalogName(m_catalog).c_str()));
   }
 
-  if (m_productIdHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProductId"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_productId.c_str()));
+  if (m_marketplaceRevenueShareIdentifierHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MarketplaceRevenueShareIdentifier"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_marketplaceRevenueShareIdentifier.c_str()));
   }
 
-  if (m_statusHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Status"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(AllocationStatusMapper::GetNameForAllocationStatus(m_status).c_str()));
+  if (m_statusFilterHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StatusFilter"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(AllocationStatusMapper::GetNameForAllocationStatus(m_statusFilter).c_str()));
   }
 
   if (m_afterEffectiveFromHasBeenSet) {
@@ -73,6 +79,16 @@ Aws::String ListMarketplaceRevenueShareAllocationsRequest::SerializePayload() co
   if (m_beforeEffectiveFromHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("BeforeEffectiveFrom"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_beforeEffectiveFrom.c_str()));
+  }
+
+  if (m_afterEffectiveUntilHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AfterEffectiveUntil"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_afterEffectiveUntil.c_str()));
+  }
+
+  if (m_beforeEffectiveUntilHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("BeforeEffectiveUntil"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_beforeEffectiveUntil.c_str()));
   }
 
   if (m_sortByHasBeenSet) {

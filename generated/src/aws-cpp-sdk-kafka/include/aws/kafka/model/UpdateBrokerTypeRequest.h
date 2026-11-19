@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/KafkaRequest.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/model/TopicReassignment.h>
 
 #include <utility>
 
@@ -74,8 +75,10 @@ class UpdateBrokerTypeRequest : public KafkaRequest {
   ///@{
   /**
    *
-          <p>The Amazon MSK broker type that you want all of the brokers in
-   * this cluster to be.</p>
+          <p>The type of Amazon EC2 instances to use for Kafka brokers. For
+   * in-place upgrades to Express, use the composite format to initiate mixed mode,
+   * the Express instance type to complete the upgrade, or the Standard instance type
+   * to rollback.</p>
 
    */
   inline const Aws::String& GetTargetInstanceType() const { return m_targetInstanceType; }
@@ -91,15 +94,41 @@ class UpdateBrokerTypeRequest : public KafkaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   *
+          <p>Controls automatic topic reassignment when entering mixed broker
+   * mode. When set to AUTO, MSK automatically reassigns all topics to the target
+   * broker type after adding new brokers. When set to MANUAL (default), customers
+   * manage topic reassignment using the StartTopicReassignment API. Only valid when
+   * targetInstanceType is a composite mixed-mode value. Must be set to MANUAL before
+   * completing the upgrade or rolling back.</p>
+
+   */
+  inline TopicReassignment GetTopicReassignment() const { return m_topicReassignment; }
+  inline bool TopicReassignmentHasBeenSet() const { return m_topicReassignmentHasBeenSet; }
+  inline void SetTopicReassignment(TopicReassignment value) {
+    m_topicReassignmentHasBeenSet = true;
+    m_topicReassignment = value;
+  }
+  inline UpdateBrokerTypeRequest& WithTopicReassignment(TopicReassignment value) {
+    SetTopicReassignment(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterArn;
 
   Aws::String m_currentVersion;
 
   Aws::String m_targetInstanceType;
+
+  TopicReassignment m_topicReassignment{TopicReassignment::NOT_SET};
   bool m_clusterArnHasBeenSet = false;
   bool m_currentVersionHasBeenSet = false;
   bool m_targetInstanceTypeHasBeenSet = false;
+  bool m_topicReassignmentHasBeenSet = false;
 };
 
 }  // namespace Model

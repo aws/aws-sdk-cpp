@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementRequest.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurement_EXPORTS.h>
@@ -121,6 +122,31 @@ class UpdateRevenueAttributionRequest : public PartnerCentralRevenueMeasurementR
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Full-replacement context map. Omit to leave the stored context unchanged;
+   * pass an empty map to clear it.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetContext() const { return m_context; }
+  inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+  template <typename ContextT = Aws::Map<Aws::String, Aws::String>>
+  void SetContext(ContextT&& value) {
+    m_contextHasBeenSet = true;
+    m_context = std::forward<ContextT>(value);
+  }
+  template <typename ContextT = Aws::Map<Aws::String, Aws::String>>
+  UpdateRevenueAttributionRequest& WithContext(ContextT&& value) {
+    SetContext(std::forward<ContextT>(value));
+    return *this;
+  }
+  template <typename ContextKeyT = Aws::String, typename ContextValueT = Aws::String>
+  UpdateRevenueAttributionRequest& AddContext(ContextKeyT&& key, ContextValueT&& value) {
+    m_contextHasBeenSet = true;
+    m_context.emplace(std::forward<ContextKeyT>(key), std::forward<ContextValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CatalogName m_catalog{CatalogName::NOT_SET};
 
@@ -131,11 +157,14 @@ class UpdateRevenueAttributionRequest : public PartnerCentralRevenueMeasurementR
   Aws::String m_description;
 
   Aws::String m_revision;
+
+  Aws::Map<Aws::String, Aws::String> m_context;
   bool m_catalogHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_descriptionHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
 };
 
 }  // namespace Model

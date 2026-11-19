@@ -20,6 +20,12 @@ static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
 static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
 static const int DISABLING_HASH = HashingUtils::HashString("DISABLING");
+static const int ESTABLISHING_CONNECTION_IN_PROGRESS_HASH = HashingUtils::HashString("ESTABLISHING_CONNECTION_IN_PROGRESS");
+static const int ESTABLISHING_CONNECTION_COMPLETED_HASH = HashingUtils::HashString("ESTABLISHING_CONNECTION_COMPLETED");
+static const int ESTABLISHING_CONNECTION_FAILED_HASH = HashingUtils::HashString("ESTABLISHING_CONNECTION_FAILED");
+static const int PENDING_MANIFEST_CODE_HASH = HashingUtils::HashString("PENDING_MANIFEST_CODE");
+static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
+static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
 
 IntegrationStatus GetIntegrationStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +39,18 @@ IntegrationStatus GetIntegrationStatusForName(const Aws::String& name) {
     return IntegrationStatus::INACTIVE;
   } else if (hashCode == DISABLING_HASH) {
     return IntegrationStatus::DISABLING;
+  } else if (hashCode == ESTABLISHING_CONNECTION_IN_PROGRESS_HASH) {
+    return IntegrationStatus::ESTABLISHING_CONNECTION_IN_PROGRESS;
+  } else if (hashCode == ESTABLISHING_CONNECTION_COMPLETED_HASH) {
+    return IntegrationStatus::ESTABLISHING_CONNECTION_COMPLETED;
+  } else if (hashCode == ESTABLISHING_CONNECTION_FAILED_HASH) {
+    return IntegrationStatus::ESTABLISHING_CONNECTION_FAILED;
+  } else if (hashCode == PENDING_MANIFEST_CODE_HASH) {
+    return IntegrationStatus::PENDING_MANIFEST_CODE;
+  } else if (hashCode == DELETE_IN_PROGRESS_HASH) {
+    return IntegrationStatus::DELETE_IN_PROGRESS;
+  } else if (hashCode == DELETE_FAILED_HASH) {
+    return IntegrationStatus::DELETE_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +75,18 @@ Aws::String GetNameForIntegrationStatus(IntegrationStatus enumValue) {
       return "INACTIVE";
     case IntegrationStatus::DISABLING:
       return "DISABLING";
+    case IntegrationStatus::ESTABLISHING_CONNECTION_IN_PROGRESS:
+      return "ESTABLISHING_CONNECTION_IN_PROGRESS";
+    case IntegrationStatus::ESTABLISHING_CONNECTION_COMPLETED:
+      return "ESTABLISHING_CONNECTION_COMPLETED";
+    case IntegrationStatus::ESTABLISHING_CONNECTION_FAILED:
+      return "ESTABLISHING_CONNECTION_FAILED";
+    case IntegrationStatus::PENDING_MANIFEST_CODE:
+      return "PENDING_MANIFEST_CODE";
+    case IntegrationStatus::DELETE_IN_PROGRESS:
+      return "DELETE_IN_PROGRESS";
+    case IntegrationStatus::DELETE_FAILED:
+      return "DELETE_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

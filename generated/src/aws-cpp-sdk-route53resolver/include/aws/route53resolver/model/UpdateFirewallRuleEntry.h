@@ -357,7 +357,13 @@ class UpdateFirewallRuleEntry {
    * <code>PartnerThreatProtection</code> — match a third-party threat feed delivered
    * through Amazon Web Services Marketplace. The selected partner must be an active
    * subscription on the calling account.</p> </li> </ul> <p>To enumerate the values
-   * supported in your account, call <a>ListFirewallRuleTypes</a>.</p>
+   * supported in your account, call <a>ListFirewallRuleTypes</a>. It doesn't return
+   * <code>AutoAllowlist</code>.</p> <p>You can't specify
+   * <code>FirewallRuleType</code> when you update an AutoAllowlist rule, even with
+   * its current values. <code>InitialDataTimeframeHours</code> and
+   * <code>ImportFromFirewallDomainListId</code> can't be changed. To change them,
+   * delete the rule and create a new one. Deleting an AutoAllowlist rule also
+   * deletes its managed domain list and the domains that you allowed.</p>
    */
   inline const FirewallRuleType& GetFirewallRuleType() const { return m_firewallRuleType; }
   inline bool FirewallRuleTypeHasBeenSet() const { return m_firewallRuleTypeHasBeenSet; }

@@ -45,6 +45,7 @@ enum class CognitoIdentityProviderErrors {
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ALIAS_EXISTS = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CACHED_C_I_M_D_U_R_L_DOES_NOT_EXIST,
   CODE_DELIVERY_FAILURE,
   CODE_MISMATCH,
   CONCURRENT_MODIFICATION,

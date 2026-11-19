@@ -34,7 +34,9 @@ class AwsSoftwareRevenue {
   AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The committed value and currency for the procurement terms.</p>
+   */
   inline const MonetaryValue& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
   template <typename ValueT = MonetaryValue>

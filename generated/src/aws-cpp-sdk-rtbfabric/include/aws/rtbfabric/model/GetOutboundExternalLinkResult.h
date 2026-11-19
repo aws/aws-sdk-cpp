@@ -11,6 +11,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
 #include <aws/rtbfabric/model/ConnectivityType.h>
+#include <aws/rtbfabric/model/ErrorDetail.h>
+#include <aws/rtbfabric/model/Flow.h>
 #include <aws/rtbfabric/model/LinkAttributes.h>
 #include <aws/rtbfabric/model/LinkLogSettings.h>
 #include <aws/rtbfabric/model/LinkStatus.h>
@@ -253,6 +255,73 @@ class GetOutboundExternalLinkResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The causes of the failure, such as a deleted subnet. Present only when the
+   * resource has failed.</p>
+   */
+  inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const { return m_errorDetails; }
+  template <typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+  void SetErrorDetails(ErrorDetailsT&& value) {
+    m_errorDetailsHasBeenSet = true;
+    m_errorDetails = std::forward<ErrorDetailsT>(value);
+  }
+  template <typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+  GetOutboundExternalLinkResult& WithErrorDetails(ErrorDetailsT&& value) {
+    SetErrorDetails(std::forward<ErrorDetailsT>(value));
+    return *this;
+  }
+  template <typename ErrorDetailsT = ErrorDetail>
+  GetOutboundExternalLinkResult& AddErrorDetails(ErrorDetailsT&& value) {
+    m_errorDetailsHasBeenSet = true;
+    m_errorDetails.emplace_back(std::forward<ErrorDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The link's concurrency token. Pass it to PutLinkFlows unchanged; it changes
+   * whenever the link does.</p>
+   */
+  inline const Aws::String& GetLockToken() const { return m_lockToken; }
+  template <typename LockTokenT = Aws::String>
+  void SetLockToken(LockTokenT&& value) {
+    m_lockTokenHasBeenSet = true;
+    m_lockToken = std::forward<LockTokenT>(value);
+  }
+  template <typename LockTokenT = Aws::String>
+  GetOutboundExternalLinkResult& WithLockToken(LockTokenT&& value) {
+    SetLockToken(std::forward<LockTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The link's active flows, in the form PutLinkFlows takes. Empty when the link
+   * has no modules, and absent when its modules were set with
+   * UpdateLinkModuleFlow.</p>
+   */
+  inline const Aws::Vector<Flow>& GetFlows() const { return m_flows; }
+  template <typename FlowsT = Aws::Vector<Flow>>
+  void SetFlows(FlowsT&& value) {
+    m_flowsHasBeenSet = true;
+    m_flows = std::forward<FlowsT>(value);
+  }
+  template <typename FlowsT = Aws::Vector<Flow>>
+  GetOutboundExternalLinkResult& WithFlows(FlowsT&& value) {
+    SetFlows(std::forward<FlowsT>(value));
+    return *this;
+  }
+  template <typename FlowsT = Flow>
+  GetOutboundExternalLinkResult& AddFlows(FlowsT&& value) {
+    m_flowsHasBeenSet = true;
+    m_flows.emplace_back(std::forward<FlowsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -293,6 +362,12 @@ class GetOutboundExternalLinkResult {
 
   ConnectivityType m_connectivityType{ConnectivityType::NOT_SET};
 
+  Aws::Vector<ErrorDetail> m_errorDetails;
+
+  Aws::String m_lockToken;
+
+  Aws::Vector<Flow> m_flows;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayIdHasBeenSet = false;
@@ -307,6 +382,9 @@ class GetOutboundExternalLinkResult {
   bool m_tagsHasBeenSet = false;
   bool m_logSettingsHasBeenSet = false;
   bool m_connectivityTypeHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
+  bool m_lockTokenHasBeenSet = false;
+  bool m_flowsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -137,6 +137,11 @@ CreateEventSourceResult& CreateEventSourceResult::operator=(const Aws::AmazonWeb
                 m_stateHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "EventSourceDetails") {
+                m_eventSourceDetails = EventSourceDetails(decoder);
+                m_eventSourceDetailsHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "CreationTime") {
                 auto tag = decoder->PopNextTagVal();
                 if (tag.has_value() &&
@@ -284,6 +289,11 @@ CreateEventSourceResult& CreateEventSourceResult::operator=(const Aws::AmazonWeb
                     Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
               }
               m_stateHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EventSourceDetails") {
+              m_eventSourceDetails = EventSourceDetails(decoder);
+              m_eventSourceDetailsHasBeenSet = true;
             }
 
             else if (initialKeyStr == "CreationTime") {

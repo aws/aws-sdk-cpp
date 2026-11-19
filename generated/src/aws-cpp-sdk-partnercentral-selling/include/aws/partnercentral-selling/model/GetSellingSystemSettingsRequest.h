@@ -15,6 +15,10 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the <code>GetSellingSystemSettings</code>
+ * operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetSellingSystemSettingsRequest">AWS
+ * API Reference</a></p>
  */
 class GetSellingSystemSettingsRequest : public PartnerCentralSellingRequest {
  public:

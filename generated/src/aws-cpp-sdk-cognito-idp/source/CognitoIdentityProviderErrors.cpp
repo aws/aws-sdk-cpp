@@ -47,6 +47,7 @@ static const int UNSUPPORTED_TOKEN_TYPE_HASH = HashingUtils::HashString("Unsuppo
 static const int INVALID_USER_POOL_CONFIGURATION_HASH = HashingUtils::HashString("InvalidUserPoolConfigurationException");
 static const int INVALID_EMAIL_ROLE_ACCESS_POLICY_HASH = HashingUtils::HashString("InvalidEmailRoleAccessPolicyException");
 static const int SCOPE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ScopeDoesNotExistException");
+static const int CACHED_C_I_M_D_U_R_L_DOES_NOT_EXIST_HASH = HashingUtils::HashString("CachedCIMDURLDoesNotExistException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
 static const int SOFTWARE_TOKEN_M_F_A_NOT_FOUND_HASH = HashingUtils::HashString("SoftwareTokenMFANotFoundException");
@@ -144,6 +145,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SCOPE_DOES_NOT_EXIST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::SCOPE_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CACHED_C_I_M_D_U_R_L_DOES_NOT_EXIST_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::CACHED_C_I_M_D_U_R_L_DOES_NOT_EXIST),
+                                RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::TOO_MANY_REQUESTS),
                                 RetryableType::RETRYABLE_THROTTLING);

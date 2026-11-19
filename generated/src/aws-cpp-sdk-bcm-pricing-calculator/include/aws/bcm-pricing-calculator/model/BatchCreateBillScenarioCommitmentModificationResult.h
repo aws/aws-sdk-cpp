@@ -58,8 +58,8 @@ class BatchCreateBillScenarioCommitmentModificationResult {
 
   ///@{
   /**
-   * <p> Returns the list of errors reason and the commitment item keys that cannot
-   * be created in the Bill Scenario. </p>
+   * <p> Returns the list of errors reason and the commitment item keys that can't be
+   * created in the Bill Scenario. </p>
    */
   inline const Aws::Vector<BatchCreateBillScenarioCommitmentModificationError>& GetErrors() const { return m_errors; }
   template <typename ErrorsT = Aws::Vector<BatchCreateBillScenarioCommitmentModificationError>>

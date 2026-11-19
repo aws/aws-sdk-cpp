@@ -108,7 +108,9 @@ class InvokeRequest : public StreamingLambdaRequest {
   /**
    * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
    * the function in the context object. Lambda passes the <code>ClientContext</code>
-   * object to your function for synchronous invocations only.</p>
+   * object to your function for synchronous invocations only.</p> <p>
+   * <code>ClientContext</code> is logged to CloudTrail if you turn on data
+   * events.</p>
    */
   inline const Aws::String& GetClientContext() const { return m_clientContext; }
   inline bool ClientContextHasBeenSet() const { return m_clientContextHasBeenSet; }

@@ -20,7 +20,7 @@ Aws::String GetMarketplaceRevenueShareAllocationRequest::SerializePayload() cons
   if (m_catalogHasBeenSet) {
     mapSize++;
   }
-  if (m_productIdHasBeenSet) {
+  if (m_marketplaceRevenueShareIdentifierHasBeenSet) {
     mapSize++;
   }
   if (m_marketplaceRevenueShareAllocationIdHasBeenSet) {
@@ -37,9 +37,9 @@ Aws::String GetMarketplaceRevenueShareAllocationRequest::SerializePayload() cons
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(CatalogNameMapper::GetNameForCatalogName(m_catalog).c_str()));
   }
 
-  if (m_productIdHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProductId"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_productId.c_str()));
+  if (m_marketplaceRevenueShareIdentifierHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MarketplaceRevenueShareIdentifier"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_marketplaceRevenueShareIdentifier.c_str()));
   }
 
   if (m_marketplaceRevenueShareAllocationIdHasBeenSet) {

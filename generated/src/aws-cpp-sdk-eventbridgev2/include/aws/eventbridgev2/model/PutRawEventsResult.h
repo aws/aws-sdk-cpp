@@ -45,7 +45,10 @@ class PutRawEventsResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>List of per-entry publish results, in the same order as the request
+   * entries.</p>
+   */
   inline const Aws::Vector<PutRawEventsResultEntry>& GetEntries() const { return m_entries; }
   template <typename EntriesT = Aws::Vector<PutRawEventsResultEntry>>
   void SetEntries(EntriesT&& value) {

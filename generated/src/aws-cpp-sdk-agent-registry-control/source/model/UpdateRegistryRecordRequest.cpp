@@ -35,6 +35,10 @@ Aws::String UpdateRegistryRecordRequest::SerializePayload() const {
     payload.WithObject("descriptors", m_descriptors.Jsonize());
   }
 
+  if (m_artifactHasBeenSet) {
+    payload.WithObject("artifact", m_artifact.Jsonize());
+  }
+
   if (m_recordVersionHasBeenSet) {
     payload.WithString("recordVersion", m_recordVersion);
   }
@@ -45,6 +49,10 @@ Aws::String UpdateRegistryRecordRequest::SerializePayload() const {
 
   if (m_triggerSynchronizationHasBeenSet) {
     payload.WithBool("triggerSynchronization", m_triggerSynchronization);
+  }
+
+  if (m_forceAuthenticationHasBeenSet) {
+    payload.WithBool("forceAuthentication", m_forceAuthentication);
   }
 
   if (m_provenanceHasBeenSet) {

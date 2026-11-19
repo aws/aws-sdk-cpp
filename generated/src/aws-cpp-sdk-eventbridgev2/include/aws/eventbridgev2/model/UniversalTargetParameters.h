@@ -54,11 +54,10 @@ class UniversalTargetParameters {
 
   ///@{
   /**
-   * <p>Timeout in seconds for each invocation of the target (1-30, default 30).
-   * Accepts a literal integer or a {% ... %} JSONata expression evaluated against
-   * the event at invocation time. A JSONata expression is syntax-checked at create
-   * time. Resolved values outside of the range [1, 30] will be constrained to the
-   * nearest bound at delivery time. Defaults to 30 seconds when unset.</p>
+   * <p>Timeout in seconds for each invocation of the target (1-30, default 30). Must
+   * be a literal integer; JSONata expressions are not supported for this field.
+   * String-typed to match the other targets' timeout fields. Defaults to 30s when
+   * unset.</p>
    */
   inline const Aws::String& GetInvocationTimeoutSeconds() const { return m_invocationTimeoutSeconds; }
   inline bool InvocationTimeoutSecondsHasBeenSet() const { return m_invocationTimeoutSecondsHasBeenSet; }

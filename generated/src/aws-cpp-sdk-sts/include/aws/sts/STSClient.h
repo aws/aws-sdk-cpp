@@ -304,18 +304,12 @@ class AWS_STS_API STSClient
    * 50 session tags. The plaintext session tag keys can’t exceed 128 characters and
    * the values can’t exceed 256 characters. For these and additional limits, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-   * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
-   * Amazon Web Services conversion compresses the passed inline session policy,
-   * managed policy ARNs, and session tags into a packed binary format that has a
-   * separate limit. Your request can fail for this limit even if your plaintext
-   * meets the other requirements. The <code>PackedPolicySize</code> response element
-   * indicates by percentage how close the policies and tags for your request are to
-   * the upper size limit.</p>  <p>You can pass a session tag with the same
-   * key as a tag that is attached to the role. When you do, session tags override
-   * the role's tags with the same key.</p> <p>An administrator must grant you the
-   * permissions necessary to pass session tags. The administrator can also create
-   * granular permissions to allow you to pass only specific session tags. For more
-   * information, see <a
+   * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <p>You can pass a
+   * session tag with the same key as a tag that is attached to the role. When you
+   * do, session tags override the role's tags with the same key.</p> <p>An
+   * administrator must grant you the permissions necessary to pass session tags. The
+   * administrator can also create granular permissions to allow you to pass only
+   * specific session tags. For more information, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
    * Using Tags for Attribute-Based Access Control</a> in the <i>IAM User
    * Guide</i>.</p> <p>You can set the session tags as transitive. Transitive tags
@@ -441,18 +435,12 @@ class AWS_STS_API STSClient
    * keys can’t exceed 128 characters and the values can’t exceed 256 characters. For
    * these and additional limits, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-   * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
-   * Amazon Web Services conversion compresses the passed inline session policy,
-   * managed policy ARNs, and session tags into a packed binary format that has a
-   * separate limit. Your request can fail for this limit even if your plaintext
-   * meets the other requirements. The <code>PackedPolicySize</code> response element
-   * indicates by percentage how close the policies and tags for your request are to
-   * the upper size limit.</p>  <p>You can pass a session tag with the same
-   * key as a tag that is attached to the role. When you do, the session tag
-   * overrides the role tag with the same key.</p> <p>An administrator must grant you
-   * the permissions necessary to pass session tags. The administrator can also
-   * create granular permissions to allow you to pass only specific session tags. For
-   * more information, see <a
+   * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <p>You can pass a
+   * session tag with the same key as a tag that is attached to the role. When you
+   * do, the session tag overrides the role tag with the same key.</p> <p>An
+   * administrator must grant you the permissions necessary to pass session tags. The
+   * administrator can also create granular permissions to allow you to pass only
+   * specific session tags. For more information, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
    * Using Tags for Attribute-Based Access Control</a> in the <i>IAM User
    * Guide</i>.</p> <p>You can set the session tags as transitive. Transitive tags
@@ -769,7 +757,8 @@ class AWS_STS_API STSClient
    * following exceptions:</p> <ul> <li> <p>You cannot call any IAM operations using
    * the CLI or the Amazon Web Services API. This limitation does not apply to
    * console sessions.</p> </li> <li> <p>You cannot call any STS operations except
-   * <code>GetCallerIdentity</code>.</p> </li> </ul> <p>You can use temporary
+   * <code>GetCallerIdentity</code>, <code>GetScopedCredentials</code>, or
+   * <code>GetDelegatedAccessToken</code>.</p> </li> </ul> <p>You can use temporary
    * credentials for single sign-on (SSO) to the console.</p> <p>You must pass an
    * inline or managed <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
@@ -843,6 +832,50 @@ class AWS_STS_API STSClient
   }
 
   /**
+   * <p>Returns a set of temporary security credentials that are scoped down from the
+   * caller's existing temporary security credentials.
+   * <code>GetScopedCredentials</code> preserves the caller's identity while
+   * narrowing the permissions and optionally shortening the session lifetime.</p>
+   * <p>For a comparison of <code>GetScopedCredentials</code> with the other API
+   * operations that produce temporary security credentials, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+   * Temporary Security Credentials</a> and <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+   * STS credentials</a> in the IAM User Guide.</p> <p> <b>Credential
+   * requirements</b> </p> <p>You can only call <code>GetScopedCredentials</code>
+   * with temporary security credentials, for example, credentials from an assumed
+   * role or a federated session. You cannot call it with IAM user credentials or
+   * root credentials. If you want to scope down IAM user credentials, first call
+   * <code>GetSessionToken</code> to get temporary security credentials, and then
+   * call <code>GetScopedCredentials</code> with those credentials.</p>  <p>The
+   * <code>GetScopedCredentials</code> API is not available on the STS Global
+   * endpoint.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetScopedCredentials">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetScopedCredentialsOutcome GetScopedCredentials(const Model::GetScopedCredentialsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetScopedCredentials that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetScopedCredentialsRequestT = Model::GetScopedCredentialsRequest>
+  Model::GetScopedCredentialsOutcomeCallable GetScopedCredentialsCallable(const GetScopedCredentialsRequestT& request = {}) const {
+    return SubmitCallable(&STSClient::GetScopedCredentials, request);
+  }
+
+  /**
+   * An Async wrapper for GetScopedCredentials that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetScopedCredentialsRequestT = Model::GetScopedCredentialsRequest>
+  void GetScopedCredentialsAsync(const GetScopedCredentialsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const GetScopedCredentialsRequestT& request = {}) const {
+    return SubmitAsync(&STSClient::GetScopedCredentials, request, handler, context);
+  }
+
+  /**
    * <p>Returns a set of temporary credentials for an Amazon Web Services account or
    * IAM user. The credentials consist of an access key ID, a secret access key, and
    * a security token. Typically, you use <code>GetSessionToken</code> if you want to
@@ -876,15 +909,17 @@ class AWS_STS_API STSClient
    * Services service with the following exceptions:</p> <ul> <li> <p>You cannot call
    * any IAM API operations unless MFA authentication information is included in the
    * request.</p> </li> <li> <p>You cannot call any STS API <i>except</i>
-   * <code>AssumeRole</code> or <code>GetCallerIdentity</code>.</p> </li> </ul>
-   * <p>The credentials that <code>GetSessionToken</code> returns are based on
-   * permissions associated with the IAM user whose credentials were used to call the
-   * operation. The temporary credentials have the same permissions as the IAM
-   * user.</p>  <p>Although it is possible to call <code>GetSessionToken</code>
-   * using the security credentials of an Amazon Web Services account root user
-   * rather than an IAM user, we do not recommend it. If <code>GetSessionToken</code>
-   * is called using root user credentials, the temporary credentials have root user
-   * permissions. For more information, see <a
+   * <code>AssumeRole</code>, <code>GetCallerIdentity</code>,
+   * <code>GetScopedCredentials</code>, <code>GetWebIdentityToken</code>, or
+   * <code>GetDelegatedAccessToken</code>.</p> </li> </ul> <p>The credentials that
+   * <code>GetSessionToken</code> returns are based on permissions associated with
+   * the IAM user whose credentials were used to call the operation. The temporary
+   * credentials have the same permissions as the IAM user.</p>  <p>Although it
+   * is possible to call <code>GetSessionToken</code> using the security credentials
+   * of an Amazon Web Services account root user rather than an IAM user, we do not
+   * recommend it. If <code>GetSessionToken</code> is called using root user
+   * credentials, the temporary credentials have root user permissions. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials">Safeguard
    * your root user credentials and don't use them for everyday tasks</a> in the
    * <i>IAM User Guide</i> </p>  <p>For more information about using
@@ -918,12 +953,19 @@ class AWS_STS_API STSClient
 
   /**
    * <p>Returns a signed JSON Web Token (JWT) that represents the calling Amazon Web
-   * Services identity. The returned JWT can be used to authenticate with external
+   * Services identity or, if you set <code>SubjectMode</code> to
+   * <code>OriginIdentity</code>, the human user or workload on whose behalf the
+   * calling session acts. The returned JWT can be used to authenticate with external
    * services that support OIDC discovery. The token is signed by Amazon Web Services
    * STS and can be publicly verified using the verification keys published at the
-   * issuer's JWKS endpoint.</p>  <p>The <code>GetWebIdentityToken</code> API
-   * is not available on the STS Global endpoint.</p> <p><h3>See Also:</h3>
-   * <a
+   * issuer's JWKS endpoint.</p> <p>The <code>sub</code> (subject) claim contains the
+   * identity that <code>SubjectMode</code> selects. Whichever subject mode you use,
+   * the <code>principal_id</code> claim under the
+   * <code>https://sts.amazonaws.com/</code> namespace contains the ARN of the
+   * principal that requested the token, when that principal has an ARN. For a role
+   * session, this is the ARN of the role.</p>  <p>The
+   * <code>GetWebIdentityToken</code> API is not available on the STS Global
+   * endpoint.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetWebIdentityToken">AWS
    * API Reference</a></p>
    */

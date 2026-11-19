@@ -51,6 +51,8 @@
 #include <aws/route53/model/CreateCidrCollectionResult.h>
 #include <aws/route53/model/CreateHealthCheckRequest.h>
 #include <aws/route53/model/CreateHealthCheckResult.h>
+#include <aws/route53/model/CreateHealthCheckSourceRequest.h>
+#include <aws/route53/model/CreateHealthCheckSourceResult.h>
 #include <aws/route53/model/CreateHostedZoneRequest.h>
 #include <aws/route53/model/CreateHostedZoneResult.h>
 #include <aws/route53/model/CreateKeySigningKeyRequest.h>
@@ -77,6 +79,8 @@
 #include <aws/route53/model/DeleteCidrCollectionResult.h>
 #include <aws/route53/model/DeleteHealthCheckRequest.h>
 #include <aws/route53/model/DeleteHealthCheckResult.h>
+#include <aws/route53/model/DeleteHealthCheckSourceRequest.h>
+#include <aws/route53/model/DeleteHealthCheckSourceResult.h>
 #include <aws/route53/model/DeleteHostedZoneRequest.h>
 #include <aws/route53/model/DeleteHostedZoneResult.h>
 #include <aws/route53/model/DeleteKeySigningKeyRequest.h>
@@ -100,6 +104,7 @@
 #include <aws/route53/model/DisassociateVPCFromHostedZoneResult.h>
 #include <aws/route53/model/EnableHostedZoneDNSSECRequest.h>
 #include <aws/route53/model/EnableHostedZoneDNSSECResult.h>
+#include <aws/route53/model/EndpointType.h>
 #include <aws/route53/model/GeoLocation.h>
 #include <aws/route53/model/GeoLocationDetails.h>
 #include <aws/route53/model/GeoProximityLocation.h>
@@ -119,6 +124,8 @@
 #include <aws/route53/model/GetHealthCheckLastFailureReasonResult.h>
 #include <aws/route53/model/GetHealthCheckRequest.h>
 #include <aws/route53/model/GetHealthCheckResult.h>
+#include <aws/route53/model/GetHealthCheckSourceRequest.h>
+#include <aws/route53/model/GetHealthCheckSourceResult.h>
 #include <aws/route53/model/GetHealthCheckStatusRequest.h>
 #include <aws/route53/model/GetHealthCheckStatusResult.h>
 #include <aws/route53/model/GetHostedZoneCountRequest.h>
@@ -143,6 +150,10 @@
 #include <aws/route53/model/HealthCheckConfig.h>
 #include <aws/route53/model/HealthCheckObservation.h>
 #include <aws/route53/model/HealthCheckRegion.h>
+#include <aws/route53/model/HealthCheckSource.h>
+#include <aws/route53/model/HealthCheckSourceConfig.h>
+#include <aws/route53/model/HealthCheckSourceStatus.h>
+#include <aws/route53/model/HealthCheckSourceStatusReasonCode.h>
 #include <aws/route53/model/HealthCheckType.h>
 #include <aws/route53/model/HostedZone.h>
 #include <aws/route53/model/HostedZoneConfig.h>
@@ -169,6 +180,12 @@
 #include <aws/route53/model/ListCidrLocationsResult.h>
 #include <aws/route53/model/ListGeoLocationsRequest.h>
 #include <aws/route53/model/ListGeoLocationsResult.h>
+#include <aws/route53/model/ListHealthCheckSourcesPaginationTraits.h>
+#include <aws/route53/model/ListHealthCheckSourcesRequest.h>
+#include <aws/route53/model/ListHealthCheckSourcesResult.h>
+#include <aws/route53/model/ListHealthChecksBySourcePaginationTraits.h>
+#include <aws/route53/model/ListHealthChecksBySourceRequest.h>
+#include <aws/route53/model/ListHealthChecksBySourceResult.h>
 #include <aws/route53/model/ListHealthChecksPaginationTraits.h>
 #include <aws/route53/model/ListHealthChecksRequest.h>
 #include <aws/route53/model/ListHealthChecksResult.h>
@@ -223,6 +240,7 @@
 #include <aws/route53/model/ReusableDelegationSetLimitType.h>
 #include <aws/route53/model/Statistic.h>
 #include <aws/route53/model/StatusReport.h>
+#include <aws/route53/model/SubnetConfiguration.h>
 #include <aws/route53/model/Tag.h>
 #include <aws/route53/model/TagResourceType.h>
 #include <aws/route53/model/TestDNSAnswerRequest.h>

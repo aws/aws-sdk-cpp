@@ -53,7 +53,13 @@ class ValidationException {
 
   ///@{
   /**
-   * <p>The reason the request failed validation.</p>
+   * <p>The reason the request failed validation. If Amazon Polly can't use the
+   * Amazon Web Services KMS key that you specified in <code>CreateVoice</code>,
+   * <code>fields</code> names <code>CustomerManagedEncryption.KmsKeyArn</code> and
+   * the reason is one of the following:</p> <dl> <dt>kmsKeyNotFound</dt> <dd> <p>No
+   * key with the specified ARN exists.</p> </dd> <dt>kmsKeyUnusable</dt> <dd> <p>The
+   * key is disabled, scheduled for deletion, or missing its key material, or it
+   * isn't a symmetric encryption key.</p> </dd> </dl>
    */
   inline ValidationExceptionReason GetReason() const { return m_reason; }
   inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }

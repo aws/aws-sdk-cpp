@@ -9,7 +9,9 @@
 #include <aws/agent-registry-control/model/Descriptors.h>
 #include <aws/agent-registry-control/model/Provenance.h>
 #include <aws/agent-registry-control/model/RecordType.h>
+#include <aws/agent-registry-control/model/RegistryRecordArtifactDownload.h>
 #include <aws/agent-registry-control/model/RegistryRecordStatus.h>
+#include <aws/agent-registry-control/model/RegistryRecordSynchronizedSource.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Document.h>
@@ -161,7 +163,10 @@ class GetRegistryRecordResult {
 
   ///@{
   /**
-   * <p>The typed descriptors that define the content of the registry record.</p>
+   * <p>The typed descriptors that define the content of the registry record. For a
+   * skill record with a skill package or a synchronized source,
+   * <code>skillMd.data</code> contains the SKILL.md that the registry took from the
+   * package or the source.</p>
    */
   inline const Descriptors& GetDescriptors() const { return m_descriptors; }
   template <typename DescriptorsT = Descriptors>
@@ -359,6 +364,53 @@ class GetRegistryRecordResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The skill package of the record's latest revision, including a revision in
+   * <code>DRAFT</code> or <code>PENDING_APPROVAL</code> status, as a download URL
+   * and a SHA-256 checksum. While an update of the record is in progress or after it
+   * fails, this is the last package that passed validation, unless the update
+   * switches between an uploaded package and a synchronized one: then it is absent
+   * until the update succeeds. Absent while the record is being created or after its
+   * creation fails, and when the record has no package, for example when its content
+   * is inline or it synchronizes only SKILL.md.</p>
+   */
+  inline const RegistryRecordArtifactDownload& GetArtifact() const { return m_artifact; }
+  template <typename ArtifactT = RegistryRecordArtifactDownload>
+  void SetArtifact(ArtifactT&& value) {
+    m_artifactHasBeenSet = true;
+    m_artifact = std::forward<ArtifactT>(value);
+  }
+  template <typename ArtifactT = RegistryRecordArtifactDownload>
+  GetRegistryRecordResult& WithArtifact(ArtifactT&& value) {
+    SetArtifact(std::forward<ArtifactT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The source that the registry last synchronized the record's skill content
+   * from, including when the registry read the source and which version it read.
+   * Absent until the first successful synchronization, and after an update replaces
+   * the synchronized content, for example with an uploaded package. A failed
+   * synchronization leaves this member unchanged. After you change the source, this
+   * member shows the previous source until the registry successfully synchronizes
+   * from the new source.</p>
+   */
+  inline const RegistryRecordSynchronizedSource& GetSynchronizedSource() const { return m_synchronizedSource; }
+  template <typename SynchronizedSourceT = RegistryRecordSynchronizedSource>
+  void SetSynchronizedSource(SynchronizedSourceT&& value) {
+    m_synchronizedSourceHasBeenSet = true;
+    m_synchronizedSource = std::forward<SynchronizedSourceT>(value);
+  }
+  template <typename SynchronizedSourceT = RegistryRecordSynchronizedSource>
+  GetRegistryRecordResult& WithSynchronizedSource(SynchronizedSourceT&& value) {
+    SetSynchronizedSource(std::forward<SynchronizedSourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -411,6 +463,10 @@ class GetRegistryRecordResult {
 
   CustomMetadataSchemaComplianceStatus m_customMetadataSchemaComplianceStatus{CustomMetadataSchemaComplianceStatus::NOT_SET};
 
+  RegistryRecordArtifactDownload m_artifact;
+
+  RegistryRecordSynchronizedSource m_synchronizedSource;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_registryArnHasBeenSet = false;
@@ -431,6 +487,8 @@ class GetRegistryRecordResult {
   bool m_createdByHasBeenSet = false;
   bool m_customMetadataHasBeenSet = false;
   bool m_customMetadataSchemaComplianceStatusHasBeenSet = false;
+  bool m_artifactHasBeenSet = false;
+  bool m_synchronizedSourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

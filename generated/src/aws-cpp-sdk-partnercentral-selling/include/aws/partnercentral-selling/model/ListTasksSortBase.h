@@ -21,7 +21,7 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
- * <p> Defines the sorting parameters for listing tasks. This structure allows for
+ * <p>Defines the sorting parameters for listing tasks. This structure allows for
  * specifying the field to sort by and the order of sorting. </p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListTasksSortBase">AWS
@@ -36,7 +36,7 @@ class ListTasksSortBase {
 
   ///@{
   /**
-   * <p> Determines the order in which the sorted results are presented. </p>
+   * <p>Determines the order in which the sorted results are presented.</p>
    */
   inline SortOrder GetSortOrder() const { return m_sortOrder; }
   inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
@@ -52,7 +52,7 @@ class ListTasksSortBase {
 
   ///@{
   /**
-   * <p> Specifies the field by which the task list should be sorted. </p>
+   * <p>Specifies the field by which the task list should be sorted.</p>
    */
   inline ListTasksSortName GetSortBy() const { return m_sortBy; }
   inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }

@@ -20,6 +20,7 @@
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <aws/medialive/model/InputSpecification.h>
+#include <aws/medialive/model/JpegXsInputSpecification.h>
 #include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/MaintenanceStatus.h>
 #include <aws/medialive/model/OutputDestination.h>
@@ -471,6 +472,23 @@ one destination per
   ///@}
 
   ///@{
+  /**
+   * Specification of JPEG XS inputs for this channel
+   */
+  inline const JpegXsInputSpecification& GetJpegXsInputSpecification() const { return m_jpegXsInputSpecification; }
+  template <typename JpegXsInputSpecificationT = JpegXsInputSpecification>
+  void SetJpegXsInputSpecification(JpegXsInputSpecificationT&& value) {
+    m_jpegXsInputSpecificationHasBeenSet = true;
+    m_jpegXsInputSpecification = std::forward<JpegXsInputSpecificationT>(value);
+  }
+  template <typename JpegXsInputSpecificationT = JpegXsInputSpecification>
+  DeleteChannelResult& WithJpegXsInputSpecification(JpegXsInputSpecificationT&& value) {
+    SetJpegXsInputSpecification(std::forward<JpegXsInputSpecificationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -533,6 +551,8 @@ one destination per
 
   DescribeInferenceSettings m_inferenceSettings;
 
+  JpegXsInputSpecification m_jpegXsInputSpecification;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -558,6 +578,7 @@ one destination per
   bool m_linkedChannelSettingsHasBeenSet = false;
   bool m_channelSecurityGroupsHasBeenSet = false;
   bool m_inferenceSettingsHasBeenSet = false;
+  bool m_jpegXsInputSpecificationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

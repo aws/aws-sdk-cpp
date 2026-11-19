@@ -28,6 +28,7 @@ static const int IAM_ROLE_ARN_HASH = HashingUtils::HashString("IAM_ROLE_ARN");
 static const int ACCESS_ENDPOINTS_HASH = HashingUtils::HashString("ACCESS_ENDPOINTS");
 static const int STREAMING_EXPERIENCE_SETTINGS_HASH = HashingUtils::HashString("STREAMING_EXPERIENCE_SETTINGS");
 static const int CONTENT_REDIRECTION_HASH = HashingUtils::HashString("CONTENT_REDIRECTION");
+static const int WEB_AUTHN_REDIRECTION_HASH = HashingUtils::HashString("WEB_AUTHN_REDIRECTION");
 static const int AGENT_ACCESS_CONFIG_HASH = HashingUtils::HashString("AGENT_ACCESS_CONFIG");
 static const int STORAGE_CONNECTOR_AUTHENTICATION_HASH = HashingUtils::HashString("STORAGE_CONNECTOR_AUTHENTICATION");
 static const int AGENT_ACCESS_CONFIG_KMS_KEY_ARN_HASH = HashingUtils::HashString("AGENT_ACCESS_CONFIG_KMS_KEY_ARN");
@@ -60,6 +61,8 @@ StackAttribute GetStackAttributeForName(const Aws::String& name) {
     return StackAttribute::STREAMING_EXPERIENCE_SETTINGS;
   } else if (hashCode == CONTENT_REDIRECTION_HASH) {
     return StackAttribute::CONTENT_REDIRECTION;
+  } else if (hashCode == WEB_AUTHN_REDIRECTION_HASH) {
+    return StackAttribute::WEB_AUTHN_REDIRECTION;
   } else if (hashCode == AGENT_ACCESS_CONFIG_HASH) {
     return StackAttribute::AGENT_ACCESS_CONFIG;
   } else if (hashCode == STORAGE_CONNECTOR_AUTHENTICATION_HASH) {
@@ -106,6 +109,8 @@ Aws::String GetNameForStackAttribute(StackAttribute enumValue) {
       return "STREAMING_EXPERIENCE_SETTINGS";
     case StackAttribute::CONTENT_REDIRECTION:
       return "CONTENT_REDIRECTION";
+    case StackAttribute::WEB_AUTHN_REDIRECTION:
+      return "WEB_AUTHN_REDIRECTION";
     case StackAttribute::AGENT_ACCESS_CONFIG:
       return "AGENT_ACCESS_CONFIG";
     case StackAttribute::STORAGE_CONNECTOR_AUTHENTICATION:

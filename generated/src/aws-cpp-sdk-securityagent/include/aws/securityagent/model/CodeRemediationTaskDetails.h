@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityagent/SecurityAgent_EXPORTS.h>
+#include <aws/securityagent/model/CodeRemediationJobStatus.h>
 
 #include <utility>
 
@@ -34,7 +35,7 @@ class CodeRemediationTaskDetails {
 
   ///@{
   /**
-   * <p>The name of the repository where the remediation was applied.</p>
+   * <p>The name of an associated repository where the remediation was applied.</p>
    */
   inline const Aws::String& GetRepoName() const { return m_repoName; }
   inline bool RepoNameHasBeenSet() const { return m_repoNameHasBeenSet; }
@@ -85,15 +86,77 @@ class CodeRemediationTaskDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The current status of the code remediation task for the particular
+   * repository.</p>
+   */
+  inline CodeRemediationJobStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(CodeRemediationJobStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline CodeRemediationTaskDetails& WithStatus(CodeRemediationJobStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A category classifier if a repository's code remediation fails.</p>
+   */
+  inline const Aws::String& GetStatusCode() const { return m_statusCode; }
+  inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
+  template <typename StatusCodeT = Aws::String>
+  void SetStatusCode(StatusCodeT&& value) {
+    m_statusCodeHasBeenSet = true;
+    m_statusCode = std::forward<StatusCodeT>(value);
+  }
+  template <typename StatusCodeT = Aws::String>
+  CodeRemediationTaskDetails& WithStatusCode(StatusCodeT&& value) {
+    SetStatusCode(std::forward<StatusCodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A descriptive reason when a repository's code remediation fails.</p>
+   */
+  inline const Aws::String& GetStatusReason() const { return m_statusReason; }
+  inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+  template <typename StatusReasonT = Aws::String>
+  void SetStatusReason(StatusReasonT&& value) {
+    m_statusReasonHasBeenSet = true;
+    m_statusReason = std::forward<StatusReasonT>(value);
+  }
+  template <typename StatusReasonT = Aws::String>
+  CodeRemediationTaskDetails& WithStatusReason(StatusReasonT&& value) {
+    SetStatusReason(std::forward<StatusReasonT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_repoName;
 
   Aws::String m_codeDiffLink;
 
   Aws::String m_pullRequestLink;
+
+  CodeRemediationJobStatus m_status{CodeRemediationJobStatus::NOT_SET};
+
+  Aws::String m_statusCode;
+
+  Aws::String m_statusReason;
   bool m_repoNameHasBeenSet = false;
   bool m_codeDiffLinkHasBeenSet = false;
   bool m_pullRequestLinkHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
 };
 
 }  // namespace Model

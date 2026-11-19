@@ -22,6 +22,10 @@ static const int EMAIL_MESSAGE_REDACTED_HASH = HashingUtils::HashString("EMAIL_M
 static const int EMAIL_MESSAGE_PLAIN_TEXT_REDACTED_HASH = HashingUtils::HashString("EMAIL_MESSAGE_PLAIN_TEXT_REDACTED");
 static const int ATTACHMENT_HASH = HashingUtils::HashString("ATTACHMENT");
 static const int VOICE_RECORDING_HASH = HashingUtils::HashString("VOICE_RECORDING");
+static const int VOICEMAIL_RECORDING_HASH = HashingUtils::HashString("VOICEMAIL_RECORDING");
+static const int VOICEMAIL_RECORDING_REDACTED_HASH = HashingUtils::HashString("VOICEMAIL_RECORDING_REDACTED");
+static const int VOICEMAIL_ANALYSIS_HASH = HashingUtils::HashString("VOICEMAIL_ANALYSIS");
+static const int VOICEMAIL_ANALYSIS_REDACTED_HASH = HashingUtils::HashString("VOICEMAIL_ANALYSIS_REDACTED");
 
 FileUseCaseType GetFileUseCaseTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +43,14 @@ FileUseCaseType GetFileUseCaseTypeForName(const Aws::String& name) {
     return FileUseCaseType::ATTACHMENT;
   } else if (hashCode == VOICE_RECORDING_HASH) {
     return FileUseCaseType::VOICE_RECORDING;
+  } else if (hashCode == VOICEMAIL_RECORDING_HASH) {
+    return FileUseCaseType::VOICEMAIL_RECORDING;
+  } else if (hashCode == VOICEMAIL_RECORDING_REDACTED_HASH) {
+    return FileUseCaseType::VOICEMAIL_RECORDING_REDACTED;
+  } else if (hashCode == VOICEMAIL_ANALYSIS_HASH) {
+    return FileUseCaseType::VOICEMAIL_ANALYSIS;
+  } else if (hashCode == VOICEMAIL_ANALYSIS_REDACTED_HASH) {
+    return FileUseCaseType::VOICEMAIL_ANALYSIS_REDACTED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +79,14 @@ Aws::String GetNameForFileUseCaseType(FileUseCaseType enumValue) {
       return "ATTACHMENT";
     case FileUseCaseType::VOICE_RECORDING:
       return "VOICE_RECORDING";
+    case FileUseCaseType::VOICEMAIL_RECORDING:
+      return "VOICEMAIL_RECORDING";
+    case FileUseCaseType::VOICEMAIL_RECORDING_REDACTED:
+      return "VOICEMAIL_RECORDING_REDACTED";
+    case FileUseCaseType::VOICEMAIL_ANALYSIS:
+      return "VOICEMAIL_ANALYSIS";
+    case FileUseCaseType::VOICEMAIL_ANALYSIS_REDACTED:
+      return "VOICEMAIL_ANALYSIS_REDACTED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

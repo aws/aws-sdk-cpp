@@ -35,7 +35,13 @@ class CreateEventBusRequest : public EventBridgeV2Request {
   AWS_EVENTBRIDGEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
   ///@{
-
+  /**
+   * <p>Name of an event bus. The first character must be alphanumeric; the remaining
+   * characters may also include '.', '-', and '_'. The grammar matches the name
+   * segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid
+   * name can be represented in the bus's ARN. The same type is used everywhere a bus
+   * name appears.</p>
+   */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
   template <typename NameT = Aws::String>
@@ -51,7 +57,10 @@ class CreateEventBusRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Free-text description. Used by every resource type that has one: event buses,
+   * subscribers, and event sources.</p>
+   */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
   template <typename DescriptionT = Aws::String>
@@ -67,7 +76,9 @@ class CreateEventBusRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Encryption configuration for an event bus.</p>
+   */
   inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
   inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
   template <typename EncryptionConfigurationT = EncryptionConfiguration>
@@ -83,7 +94,9 @@ class CreateEventBusRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Event storage configuration for an event bus.</p>
+   */
   inline const StorageConfiguration& GetStorageConfiguration() const { return m_storageConfiguration; }
   inline bool StorageConfigurationHasBeenSet() const { return m_storageConfigurationHasBeenSet; }
   template <typename StorageConfigurationT = StorageConfiguration>
@@ -99,7 +112,9 @@ class CreateEventBusRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Tags attached to a resource, as key-value pairs.</p>
+   */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
   template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
@@ -121,7 +136,10 @@ class CreateEventBusRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Unique, case-sensitive identifier that ensures the idempotency of the
+   * request. The SDK generates one automatically when the field is omitted.</p>
+   */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
   template <typename ClientTokenT = Aws::String>

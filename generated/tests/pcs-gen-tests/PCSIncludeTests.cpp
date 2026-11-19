@@ -57,6 +57,9 @@
 #include <aws/pcs/model/GetQueueRequest.h>
 #include <aws/pcs/model/GetQueueResult.h>
 #include <aws/pcs/model/InstanceConfig.h>
+#include <aws/pcs/model/JobSubmitPlugin.h>
+#include <aws/pcs/model/JobSubmitPluginType.h>
+#include <aws/pcs/model/JobSubmitScriptSource.h>
 #include <aws/pcs/model/JwtAuth.h>
 #include <aws/pcs/model/JwtKey.h>
 #include <aws/pcs/model/LaunchTemplateMode.h>

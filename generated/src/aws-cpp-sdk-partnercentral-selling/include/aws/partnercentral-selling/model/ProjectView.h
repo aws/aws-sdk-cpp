@@ -25,8 +25,8 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
- * <p> Provides the project view of an opportunity resource shared through a
- * snapshot. </p><p><h3>See Also:</h3>   <a
+ * <p>Provides the project view of an opportunity resource shared through a
+ * snapshot.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ProjectView">AWS
  * API Reference</a></p>
  */
@@ -39,7 +39,7 @@ class ProjectView {
 
   ///@{
   /**
-   * <p> Describes the deployment or consumption model for the partner solution or
+   * <p>Describes the deployment or consumption model for the partner solution or
    * offering. This field indicates how the project's solution will be delivered or
    * implemented for the customer. </p>
    */
@@ -64,7 +64,7 @@ class ProjectView {
 
   ///@{
   /**
-   * <p> Provides information about the anticipated customer spend related to this
+   * <p>Provides information about the anticipated customer spend related to this
    * project. This may include details such as amount, frequency, and currency of
    * expected expenditure. </p>
    */
@@ -110,8 +110,8 @@ class ProjectView {
 
   ///@{
   /**
-   * <p> Specifies the proposed solution focus or type of workload for the project.
-   * </p>
+   * <p>Specifies the proposed solution focus or type of workload for the
+   * project.</p>
    */
   inline const Aws::String& GetCustomerUseCase() const { return m_customerUseCase; }
   inline bool CustomerUseCaseHasBeenSet() const { return m_customerUseCaseHasBeenSet; }
@@ -129,7 +129,7 @@ class ProjectView {
 
   ///@{
   /**
-   * <p> Lists the pre-sales activities that have occurred with the end-customer
+   * <p>Lists the pre-sales activities that have occurred with the end-customer
    * related to the opportunity. This field is conditionally mandatory when the
    * project is qualified for Co-Sell and helps drive assignment priority on the AWS
    * side. It provides insight into the engagement level with the customer. </p>
@@ -155,7 +155,7 @@ class ProjectView {
 
   ///@{
   /**
-   * <p> Offers a description of other solutions if the standard solutions do not
+   * <p>Offers a description of other solutions if the standard solutions do not
    * adequately cover the project's scope. </p>
    */
   inline const Aws::String& GetOtherSolutionDescription() const { return m_otherSolutionDescription; }

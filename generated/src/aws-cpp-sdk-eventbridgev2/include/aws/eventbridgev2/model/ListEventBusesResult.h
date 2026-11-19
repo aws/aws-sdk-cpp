@@ -30,7 +30,9 @@ class ListEventBusesResult {
   AWS_EVENTBRIDGEV2_API ListEventBusesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
-
+  /**
+   * <p>List of event bus summaries.</p>
+   */
   inline const Aws::Vector<EventBusSummary>& GetEventBuses() const { return m_eventBuses; }
   template <typename EventBusesT = Aws::Vector<EventBusSummary>>
   void SetEventBuses(EventBusesT&& value) {
@@ -51,7 +53,10 @@ class ListEventBusesResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Opaque pagination token returned by a List operation. Pass it back in the
+   * next request to retrieve the next page of results.</p>
+   */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>
   void SetNextToken(NextTokenT&& value) {

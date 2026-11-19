@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PartnerCentralSelling {
 namespace Model {
-enum class EngagementInvitationPayloadType { NOT_SET, OpportunityInvitation, LeadInvitation };
+enum class EngagementInvitationPayloadType { NOT_SET, OpportunityInvitation, LeadInvitation, AccountPlanningInvitation };
 
 namespace EngagementInvitationPayloadTypeMapper {
 AWS_PARTNERCENTRALSELLING_API EngagementInvitationPayloadType GetEngagementInvitationPayloadTypeForName(const Aws::String& name);

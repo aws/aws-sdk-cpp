@@ -30,7 +30,9 @@ class ListSubscribersResult {
   AWS_EVENTBRIDGEV2_API ListSubscribersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
-
+  /**
+   * <p>List of subscriber summaries.</p>
+   */
   inline const Aws::Vector<SubscriberSummary>& GetSubscribers() const { return m_subscribers; }
   template <typename SubscribersT = Aws::Vector<SubscriberSummary>>
   void SetSubscribers(SubscribersT&& value) {
@@ -51,7 +53,10 @@ class ListSubscribersResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Opaque pagination token returned by a List operation. Pass it back in the
+   * next request to retrieve the next page of results.</p>
+   */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>
   void SetNextToken(NextTokenT&& value) {

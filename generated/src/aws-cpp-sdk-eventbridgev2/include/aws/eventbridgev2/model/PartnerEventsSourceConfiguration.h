@@ -34,7 +34,11 @@ class PartnerEventsSourceConfiguration {
   AWS_EVENTBRIDGEV2_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
-
+  /**
+   * <p>ARN of the partner event source to forward. It is a partner-owned resource,
+   * so the account segment is empty:
+   * arn:aws:events:&lt;region&gt;::event-source/aws.partner/&lt;name&gt;.</p>
+   */
   inline const Aws::String& GetPartnerEventSourceArn() const { return m_partnerEventSourceArn; }
   inline bool PartnerEventSourceArnHasBeenSet() const { return m_partnerEventSourceArnHasBeenSet; }
   template <typename PartnerEventSourceArnT = Aws::String>
@@ -70,7 +74,11 @@ class PartnerEventsSourceConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Identifier of the AWS KMS customer managed key used to encrypt events: a key
+   * ID, key ARN, alias name, or alias ARN. When absent, events are encrypted with an
+   * AWS owned key.</p>
+   */
   inline const Aws::String& GetPartnerBusKmsKeyIdentifier() const { return m_partnerBusKmsKeyIdentifier; }
   inline bool PartnerBusKmsKeyIdentifierHasBeenSet() const { return m_partnerBusKmsKeyIdentifierHasBeenSet; }
   template <typename PartnerBusKmsKeyIdentifierT = Aws::String>

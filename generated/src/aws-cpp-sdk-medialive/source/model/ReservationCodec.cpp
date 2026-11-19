@@ -21,6 +21,7 @@ static const int HEVC_HASH = HashingUtils::HashString("HEVC");
 static const int AUDIO_HASH = HashingUtils::HashString("AUDIO");
 static const int LINK_HASH = HashingUtils::HashString("LINK");
 static const int AV1_HASH = HashingUtils::HashString("AV1");
+static const int JPEGXS_HASH = HashingUtils::HashString("JPEGXS");
 
 ReservationCodec GetReservationCodecForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ ReservationCodec GetReservationCodecForName(const Aws::String& name) {
     return ReservationCodec::LINK;
   } else if (hashCode == AV1_HASH) {
     return ReservationCodec::AV1;
+  } else if (hashCode == JPEGXS_HASH) {
+    return ReservationCodec::JPEGXS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForReservationCodec(ReservationCodec enumValue) {
       return "LINK";
     case ReservationCodec::AV1:
       return "AV1";
+    case ReservationCodec::JPEGXS:
+      return "JPEGXS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -20,10 +20,13 @@ Aws::String CreateMarketplaceRevenueShareAllocationRequest::SerializePayload() c
   if (m_catalogHasBeenSet) {
     mapSize++;
   }
-  if (m_productIdHasBeenSet) {
+  if (m_marketplaceRevenueShareIdentifierHasBeenSet) {
     mapSize++;
   }
   if (m_clientTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_marketplaceRevenueShareRevisionHasBeenSet) {
     mapSize++;
   }
   if (m_effectiveFromHasBeenSet) {
@@ -43,14 +46,19 @@ Aws::String CreateMarketplaceRevenueShareAllocationRequest::SerializePayload() c
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(CatalogNameMapper::GetNameForCatalogName(m_catalog).c_str()));
   }
 
-  if (m_productIdHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProductId"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_productId.c_str()));
+  if (m_marketplaceRevenueShareIdentifierHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MarketplaceRevenueShareIdentifier"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_marketplaceRevenueShareIdentifier.c_str()));
   }
 
   if (m_clientTokenHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("ClientToken"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clientToken.c_str()));
+  }
+
+  if (m_marketplaceRevenueShareRevisionHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MarketplaceRevenueShareRevision"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_marketplaceRevenueShareRevision.c_str()));
   }
 
   if (m_effectiveFromHasBeenSet) {

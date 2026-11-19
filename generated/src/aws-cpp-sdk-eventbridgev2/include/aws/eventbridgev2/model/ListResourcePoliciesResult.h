@@ -36,7 +36,9 @@ class ListResourcePoliciesResult {
   AWS_EVENTBRIDGEV2_API ListResourcePoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
-
+  /**
+   * <p>List of resource policy summaries.</p>
+   */
   inline const Aws::Vector<ResourcePolicySummary>& GetPolicySummaries() const { return m_policySummaries; }
   template <typename PolicySummariesT = Aws::Vector<ResourcePolicySummary>>
   void SetPolicySummaries(PolicySummariesT&& value) {
@@ -57,7 +59,10 @@ class ListResourcePoliciesResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Opaque pagination token returned by a List operation. Pass it back in the
+   * next request to retrieve the next page of results.</p>
+   */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>
   void SetNextToken(NextTokenT&& value) {

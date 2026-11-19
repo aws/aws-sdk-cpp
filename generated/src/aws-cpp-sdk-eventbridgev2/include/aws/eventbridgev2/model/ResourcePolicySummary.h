@@ -33,7 +33,11 @@ class ResourcePolicySummary {
   AWS_EVENTBRIDGEV2_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
-
+  /**
+   * <p>Name of a policy attached to a resource. Valid values: "default" (the
+   * customer-managed policy) and "AWS_RAM" (managed exclusively by AWS Resource
+   * Access Manager). Any other value is rejected.</p>
+   */
   inline const Aws::String& GetPolicyName() const { return m_policyName; }
   inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
   template <typename PolicyNameT = Aws::String>
@@ -49,7 +53,10 @@ class ResourcePolicySummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Revision ID of a resource policy. A new revision ID is generated on every
+   * successful write.</p>
+   */
   inline const Aws::String& GetRevisionId() const { return m_revisionId; }
   inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
   template <typename RevisionIdT = Aws::String>

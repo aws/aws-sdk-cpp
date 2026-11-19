@@ -39,13 +39,16 @@
 #include <aws/agent-registry/model/McpServerDescriptor.h>
 #include <aws/agent-registry/model/McpToolsDescriptor.h>
 #include <aws/agent-registry/model/RecordType.h>
+#include <aws/agent-registry/model/RegistryRecordArtifactDownload.h>
 #include <aws/agent-registry/model/RegistryRecordFilter.h>
 #include <aws/agent-registry/model/RegistryRecordFilterName.h>
 #include <aws/agent-registry/model/RegistryRecordStatus.h>
 #include <aws/agent-registry/model/RegistryRecordSummary.h>
 #include <aws/agent-registry/model/RegistryRecordsEntry.h>
+#include <aws/agent-registry/model/SearchDiscoverableRegistryRecordsPaginationTraits.h>
 #include <aws/agent-registry/model/SearchDiscoverableRegistryRecordsRequest.h>
 #include <aws/agent-registry/model/SearchDiscoverableRegistryRecordsResult.h>
+#include <aws/agent-registry/model/SearchType.h>
 #include <aws/agent-registry/model/ValidationException.h>
 #include <aws/agent-registry/model/ValidationExceptionField.h>
 #include <aws/agent-registry/model/ValidationExceptionReason.h>

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/model/AccountPlanningInvitationPayload.h>
 #include <aws/partnercentral-selling/model/LeadInvitationPayload.h>
 #include <aws/partnercentral-selling/model/OpportunityInvitationPayload.h>
 
@@ -74,12 +75,34 @@ class Payload {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The content of an account-planning invitation. This field is present when the
+   * invitation is for account planning.</p>
+   */
+  inline const AccountPlanningInvitationPayload& GetAccountPlanningInvitation() const { return m_accountPlanningInvitation; }
+  inline bool AccountPlanningInvitationHasBeenSet() const { return m_accountPlanningInvitationHasBeenSet; }
+  template <typename AccountPlanningInvitationT = AccountPlanningInvitationPayload>
+  void SetAccountPlanningInvitation(AccountPlanningInvitationT&& value) {
+    m_accountPlanningInvitationHasBeenSet = true;
+    m_accountPlanningInvitation = std::forward<AccountPlanningInvitationT>(value);
+  }
+  template <typename AccountPlanningInvitationT = AccountPlanningInvitationPayload>
+  Payload& WithAccountPlanningInvitation(AccountPlanningInvitationT&& value) {
+    SetAccountPlanningInvitation(std::forward<AccountPlanningInvitationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   OpportunityInvitationPayload m_opportunityInvitation;
 
   LeadInvitationPayload m_leadInvitation;
+
+  AccountPlanningInvitationPayload m_accountPlanningInvitation;
   bool m_opportunityInvitationHasBeenSet = false;
   bool m_leadInvitationHasBeenSet = false;
+  bool m_accountPlanningInvitationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -38,7 +38,7 @@ class ListEngagementFromOpportunityTaskSummary {
 
   ///@{
   /**
-   * <p> A unique identifier for a specific task. </p>
+   * <p>A unique identifier for a specific task.</p>
    */
   inline const Aws::String& GetTaskId() const { return m_taskId; }
   inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
@@ -56,7 +56,7 @@ class ListEngagementFromOpportunityTaskSummary {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) uniquely identifying this task within AWS.
+   * <p>The Amazon Resource Name (ARN) uniquely identifying this task within AWS.
    * This ARN can be used for referencing the task in other AWS services or APIs.
    * </p>
    */
@@ -76,8 +76,8 @@ class ListEngagementFromOpportunityTaskSummary {
 
   ///@{
   /**
-   * <p> The timestamp indicating when the task was initiated, in RFC 3339 5.6
-   * date-time format. </p>
+   * <p>The timestamp indicating when the task was initiated, in RFC 3339 5.6
+   * date-time format.</p>
    */
   inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
   inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -131,7 +131,7 @@ class ListEngagementFromOpportunityTaskSummary {
 
   ///@{
   /**
-   * <p> A code indicating the specific reason for a task failure. This field is
+   * <p>A code indicating the specific reason for a task failure. This field is
    * populated when the task status is FAILED and provides a categorized reason for
    * the failure. </p>
    */
@@ -149,7 +149,7 @@ class ListEngagementFromOpportunityTaskSummary {
 
   ///@{
   /**
-   * <p> The unique identifier of the original Opportunity from which the Engagement
+   * <p>The unique identifier of the original Opportunity from which the Engagement
    * is being created. This field helps track the source of the Engagement creation
    * task. </p>
    */
@@ -169,7 +169,7 @@ class ListEngagementFromOpportunityTaskSummary {
 
   ///@{
   /**
-   * <p> The identifier of the resource snapshot job associated with this task, if a
+   * <p>The identifier of the resource snapshot job associated with this task, if a
    * snapshot was created as part of the Engagement creation process. </p>
    */
   inline const Aws::String& GetResourceSnapshotJobId() const { return m_resourceSnapshotJobId; }

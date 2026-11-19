@@ -111,7 +111,10 @@ class AwsOpportunitySummaryFullView {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Contains lifecycle details of the AWS opportunity, such as its stage, review
+   * status, and target close date.</p>
+   */
   inline const AwsOpportunityLifeCycle& GetLifeCycle() const { return m_lifeCycle; }
   inline bool LifeCycleHasBeenSet() const { return m_lifeCycleHasBeenSet; }
   template <typename LifeCycleT = AwsOpportunityLifeCycle>
@@ -151,7 +154,10 @@ class AwsOpportunitySummaryFullView {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Contains the insights that AWS provides for the opportunity, such as the
+   * engagement score and the recommended next actions.</p>
+   */
   inline const AwsOpportunityInsights& GetInsights() const { return m_insights; }
   inline bool InsightsHasBeenSet() const { return m_insightsHasBeenSet; }
   template <typename InsightsT = AwsOpportunityInsights>
@@ -183,7 +189,10 @@ class AwsOpportunitySummaryFullView {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Lists the identifiers of entities that relate to the AWS opportunity, such as
+   * AWS products and partner solutions.</p>
+   */
   inline const AwsOpportunityRelatedEntities& GetRelatedEntityIds() const { return m_relatedEntityIds; }
   inline bool RelatedEntityIdsHasBeenSet() const { return m_relatedEntityIdsHasBeenSet; }
   template <typename RelatedEntityIdsT = AwsOpportunityRelatedEntities>
@@ -199,7 +208,9 @@ class AwsOpportunitySummaryFullView {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Contains details about the customer that the AWS opportunity belongs to.</p>
+   */
   inline const AwsOpportunityCustomer& GetCustomer() const { return m_customer; }
   inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
   template <typename CustomerT = AwsOpportunityCustomer>
@@ -215,7 +226,9 @@ class AwsOpportunitySummaryFullView {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Contains details about the project that the AWS opportunity covers.</p>
+   */
   inline const AwsOpportunityProject& GetProject() const { return m_project; }
   inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
   template <typename ProjectT = AwsOpportunityProject>
@@ -246,6 +259,25 @@ class AwsOpportunitySummaryFullView {
   template <typename CosellMotionT = Aws::String>
   AwsOpportunitySummaryFullView& WithCosellMotion(CosellMotionT&& value) {
     SetCosellMotion(std::forward<CosellMotionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The plain-language reason for the current <code>CosellMotion</code> value.
+   * Read-only. Null when <code>CosellMotion</code> is null.</p>
+   */
+  inline const Aws::String& GetCosellMotionReason() const { return m_cosellMotionReason; }
+  inline bool CosellMotionReasonHasBeenSet() const { return m_cosellMotionReasonHasBeenSet; }
+  template <typename CosellMotionReasonT = Aws::String>
+  void SetCosellMotionReason(CosellMotionReasonT&& value) {
+    m_cosellMotionReasonHasBeenSet = true;
+    m_cosellMotionReason = std::forward<CosellMotionReasonT>(value);
+  }
+  template <typename CosellMotionReasonT = Aws::String>
+  AwsOpportunitySummaryFullView& WithCosellMotionReason(CosellMotionReasonT&& value) {
+    SetCosellMotionReason(std::forward<CosellMotionReasonT>(value));
     return *this;
   }
   ///@}
@@ -293,6 +325,8 @@ class AwsOpportunitySummaryFullView {
 
   Aws::String m_cosellMotion;
 
+  Aws::String m_cosellMotionReason;
+
   AwsSoftwareRevenue m_softwareRevenue;
   bool m_relatedOpportunityIdHasBeenSet = false;
   bool m_originHasBeenSet = false;
@@ -306,6 +340,7 @@ class AwsOpportunitySummaryFullView {
   bool m_customerHasBeenSet = false;
   bool m_projectHasBeenSet = false;
   bool m_cosellMotionHasBeenSet = false;
+  bool m_cosellMotionReasonHasBeenSet = false;
   bool m_softwareRevenueHasBeenSet = false;
 };
 

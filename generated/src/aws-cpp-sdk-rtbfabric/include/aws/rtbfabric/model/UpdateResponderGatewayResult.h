@@ -82,6 +82,23 @@ class UpdateResponderGatewayResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The ID of the update this call started.</p>
+   */
+  inline const Aws::String& GetUpdateId() const { return m_updateId; }
+  template <typename UpdateIdT = Aws::String>
+  void SetUpdateId(UpdateIdT&& value) {
+    m_updateIdHasBeenSet = true;
+    m_updateId = std::forward<UpdateIdT>(value);
+  }
+  template <typename UpdateIdT = Aws::String>
+  UpdateResponderGatewayResult& WithUpdateId(UpdateIdT&& value) {
+    SetUpdateId(std::forward<UpdateIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -104,11 +121,14 @@ class UpdateResponderGatewayResult {
 
   ClientRoutingPolicy m_clientRoutingPolicy{ClientRoutingPolicy::NOT_SET};
 
+  Aws::String m_updateId;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_clientRoutingPolicyHasBeenSet = false;
+  bool m_updateIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

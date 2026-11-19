@@ -312,6 +312,7 @@
 #include <aws/appstream/model/VisibilityType.h>
 #include <aws/appstream/model/VolumeConfig.h>
 #include <aws/appstream/model/VpcConfig.h>
+#include <aws/appstream/model/WebAuthnRedirection.h>
 
 using AppStreamIncludeTest = ::testing::Test;
 

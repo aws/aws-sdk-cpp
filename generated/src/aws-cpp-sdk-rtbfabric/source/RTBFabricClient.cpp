@@ -35,6 +35,8 @@
 #include <aws/rtbfabric/model/DeleteRequesterGatewayRequest.h>
 #include <aws/rtbfabric/model/DeleteResponderGatewayRequest.h>
 #include <aws/rtbfabric/model/DisassociateCertificateRequest.h>
+#include <aws/rtbfabric/model/GetAvailableModuleRequest.h>
+#include <aws/rtbfabric/model/GetAvailableModuleVersionRequest.h>
 #include <aws/rtbfabric/model/GetCertificateAssociationRequest.h>
 #include <aws/rtbfabric/model/GetInboundExternalLinkRequest.h>
 #include <aws/rtbfabric/model/GetLinkRequest.h>
@@ -42,12 +44,17 @@
 #include <aws/rtbfabric/model/GetOutboundExternalLinkRequest.h>
 #include <aws/rtbfabric/model/GetRequesterGatewayRequest.h>
 #include <aws/rtbfabric/model/GetResponderGatewayRequest.h>
+#include <aws/rtbfabric/model/GetUpdateRequest.h>
+#include <aws/rtbfabric/model/ListAvailableModuleVersionsRequest.h>
+#include <aws/rtbfabric/model/ListAvailableModulesRequest.h>
 #include <aws/rtbfabric/model/ListCertificateAssociationsRequest.h>
 #include <aws/rtbfabric/model/ListLinkRoutingRulesRequest.h>
 #include <aws/rtbfabric/model/ListLinksRequest.h>
 #include <aws/rtbfabric/model/ListRequesterGatewaysRequest.h>
 #include <aws/rtbfabric/model/ListResponderGatewaysRequest.h>
 #include <aws/rtbfabric/model/ListTagsForResourceRequest.h>
+#include <aws/rtbfabric/model/ListUpdatesRequest.h>
+#include <aws/rtbfabric/model/PutLinkFlowsRequest.h>
 #include <aws/rtbfabric/model/RejectLinkRequest.h>
 #include <aws/rtbfabric/model/TagResourceRequest.h>
 #include <aws/rtbfabric/model/UntagResourceRequest.h>
@@ -525,6 +532,49 @@ DisassociateCertificateOutcome RTBFabricClient::DisassociateCertificate(const Di
                             : DisassociateCertificateOutcome(std::move(result.GetError()));
 }
 
+GetAvailableModuleOutcome RTBFabricClient::GetAvailableModule(const GetAvailableModuleRequest& request) const {
+  if (!request.ModuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAvailableModule", "Required field: ModuleId, is not set");
+    return GetAvailableModuleOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [ModuleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/available-modules/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetModuleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAvailableModuleOutcome(result.GetResultWithOwnership())
+                            : GetAvailableModuleOutcome(std::move(result.GetError()));
+}
+
+GetAvailableModuleVersionOutcome RTBFabricClient::GetAvailableModuleVersion(const GetAvailableModuleVersionRequest& request) const {
+  if (!request.ModuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAvailableModuleVersion", "Required field: ModuleId, is not set");
+    return GetAvailableModuleVersionOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [ModuleId]", false));
+  }
+  if (!request.VersionHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAvailableModuleVersion", "Required field: Version, is not set");
+    return GetAvailableModuleVersionOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [Version]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/available-modules/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetModuleId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAvailableModuleVersionOutcome(result.GetResultWithOwnership())
+                            : GetAvailableModuleVersionOutcome(std::move(result.GetError()));
+}
+
 GetCertificateAssociationOutcome RTBFabricClient::GetCertificateAssociation(const GetCertificateAssociationRequest& request) const {
   if (!request.GatewayIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetCertificateAssociation", "Required field: GatewayId, is not set");
@@ -691,6 +741,60 @@ GetResponderGatewayOutcome RTBFabricClient::GetResponderGateway(const GetRespond
                             : GetResponderGatewayOutcome(std::move(result.GetError()));
 }
 
+GetUpdateOutcome RTBFabricClient::GetUpdate(const GetUpdateRequest& request) const {
+  if (!request.GatewayIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetUpdate", "Required field: GatewayId, is not set");
+    return GetUpdateOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [GatewayId]", false));
+  }
+  if (!request.UpdateIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetUpdate", "Required field: UpdateId, is not set");
+    return GetUpdateOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [UpdateId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/gateway/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/updates/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUpdateId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUpdateOutcome(result.GetResultWithOwnership()) : GetUpdateOutcome(std::move(result.GetError()));
+}
+
+ListAvailableModuleVersionsOutcome RTBFabricClient::ListAvailableModuleVersions(const ListAvailableModuleVersionsRequest& request) const {
+  if (!request.ModuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAvailableModuleVersions", "Required field: ModuleId, is not set");
+    return ListAvailableModuleVersionsOutcome(Aws::Client::AWSError<RTBFabricErrors>(
+        RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModuleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/available-modules/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetModuleId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAvailableModuleVersionsOutcome(result.GetResultWithOwnership())
+                            : ListAvailableModuleVersionsOutcome(std::move(result.GetError()));
+}
+
+ListAvailableModulesOutcome RTBFabricClient::ListAvailableModules(const ListAvailableModulesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/available-modules");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAvailableModulesOutcome(result.GetResultWithOwnership())
+                            : ListAvailableModulesOutcome(std::move(result.GetError()));
+}
+
 ListCertificateAssociationsOutcome RTBFabricClient::ListCertificateAssociations(const ListCertificateAssociationsRequest& request) const {
   if (!request.GatewayIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListCertificateAssociations", "Required field: GatewayId, is not set");
@@ -792,6 +896,49 @@ ListTagsForResourceOutcome RTBFabricClient::ListTagsForResource(const ListTagsFo
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
+}
+
+ListUpdatesOutcome RTBFabricClient::ListUpdates(const ListUpdatesRequest& request) const {
+  if (!request.GatewayIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListUpdates", "Required field: GatewayId, is not set");
+    return ListUpdatesOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                     "Missing required field [GatewayId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/gateway/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/updates");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListUpdatesOutcome(result.GetResultWithOwnership()) : ListUpdatesOutcome(std::move(result.GetError()));
+}
+
+PutLinkFlowsOutcome RTBFabricClient::PutLinkFlows(const PutLinkFlowsRequest& request) const {
+  if (!request.GatewayIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutLinkFlows", "Required field: GatewayId, is not set");
+    return PutLinkFlowsOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [GatewayId]", false));
+  }
+  if (!request.LinkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutLinkFlows", "Required field: LinkId, is not set");
+    return PutLinkFlowsOutcome(Aws::Client::AWSError<RTBFabricErrors>(RTBFabricErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [LinkId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/gateway/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/link/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/flows");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutLinkFlowsOutcome(result.GetResultWithOwnership()) : PutLinkFlowsOutcome(std::move(result.GetError()));
 }
 
 RejectLinkOutcome RTBFabricClient::RejectLink(const RejectLinkRequest& request) const {

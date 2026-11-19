@@ -23,5 +23,9 @@ Aws::String UpdateLinkRoutingRuleRequest::SerializePayload() const {
     payload.WithObject("conditions", m_conditions.Jsonize());
   }
 
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
+  }
+
   return payload.View().WriteReadable();
 }

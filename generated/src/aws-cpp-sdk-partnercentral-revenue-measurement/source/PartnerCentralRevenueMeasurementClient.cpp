@@ -37,6 +37,7 @@
 #include <aws/partnercentral-revenue-measurement/model/TagResourceRequest.h>
 #include <aws/partnercentral-revenue-measurement/model/UntagResourceRequest.h>
 #include <aws/partnercentral-revenue-measurement/model/UpdateMarketplaceRevenueShareAllocationRequest.h>
+#include <aws/partnercentral-revenue-measurement/model/UpdateMarketplaceRevenueShareRequest.h>
 #include <aws/partnercentral-revenue-measurement/model/UpdateRevenueAttributionRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -312,6 +313,13 @@ TagResourceOutcome PartnerCentralRevenueMeasurementClient::TagResource(const Tag
 UntagResourceOutcome PartnerCentralRevenueMeasurementClient::UntagResource(const UntagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateMarketplaceRevenueShareOutcome PartnerCentralRevenueMeasurementClient::UpdateMarketplaceRevenueShare(
+    const UpdateMarketplaceRevenueShareRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMarketplaceRevenueShareOutcome(result.GetResultWithOwnership())
+                            : UpdateMarketplaceRevenueShareOutcome(std::move(result.GetError()));
 }
 
 UpdateMarketplaceRevenueShareAllocationOutcome PartnerCentralRevenueMeasurementClient::UpdateMarketplaceRevenueShareAllocation(

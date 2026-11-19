@@ -17,6 +17,7 @@ namespace DomainListTypeMapper {
 
 static const int THREAT_HASH = HashingUtils::HashString("THREAT");
 static const int CONTENT_HASH = HashingUtils::HashString("CONTENT");
+static const int AUTOALLOWLIST_HASH = HashingUtils::HashString("AUTOALLOWLIST");
 
 DomainListType GetDomainListTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ DomainListType GetDomainListTypeForName(const Aws::String& name) {
     return DomainListType::THREAT;
   } else if (hashCode == CONTENT_HASH) {
     return DomainListType::CONTENT;
+  } else if (hashCode == AUTOALLOWLIST_HASH) {
+    return DomainListType::AUTOALLOWLIST;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForDomainListType(DomainListType enumValue) {
       return "THREAT";
     case DomainListType::CONTENT:
       return "CONTENT";
+    case DomainListType::AUTOALLOWLIST:
+      return "AUTOALLOWLIST";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

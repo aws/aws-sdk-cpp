@@ -17,6 +17,7 @@ namespace EngagementInvitationPayloadTypeMapper {
 
 static const int OpportunityInvitation_HASH = HashingUtils::HashString("OpportunityInvitation");
 static const int LeadInvitation_HASH = HashingUtils::HashString("LeadInvitation");
+static const int AccountPlanningInvitation_HASH = HashingUtils::HashString("AccountPlanningInvitation");
 
 EngagementInvitationPayloadType GetEngagementInvitationPayloadTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ EngagementInvitationPayloadType GetEngagementInvitationPayloadTypeForName(const 
     return EngagementInvitationPayloadType::OpportunityInvitation;
   } else if (hashCode == LeadInvitation_HASH) {
     return EngagementInvitationPayloadType::LeadInvitation;
+  } else if (hashCode == AccountPlanningInvitation_HASH) {
+    return EngagementInvitationPayloadType::AccountPlanningInvitation;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForEngagementInvitationPayloadType(EngagementInvitationPayloa
       return "OpportunityInvitation";
     case EngagementInvitationPayloadType::LeadInvitation:
       return "LeadInvitation";
+    case EngagementInvitationPayloadType::AccountPlanningInvitation:
+      return "AccountPlanningInvitation";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

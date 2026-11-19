@@ -437,6 +437,9 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * a case.</p> <p>There's a quota for the number of fields allowed in a Custom type
    * related item. See <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+   * Customer Cases quotas</a>.</p> <p>There's a quota for the number of SLAs that
+   * can be attached to a case. See <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
    * Customer Cases quotas</a>.</p> <p> <b>Use cases</b> </p> <p>Following are
    * examples of related items that you may want to associate with a case:</p> <ul>
    * <li> <p>Related contacts, such as calls, chats, emails tasks</p> </li> <li>
@@ -1564,11 +1567,15 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * a custom related item. There's a quota for the number of fields allowed in a
    * Custom type related item. See <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
-   * Customer Cases quotas</a>.</p> </li> </ul> <p> <b>Important things to know</b>
-   * </p> <ul> <li> <p>When updating a Custom related item, all existing and new
-   * fields, and their associated values should be included in the request. Fields
-   * not included as part of this request will be removed.</p> </li> <li> <p>If you
-   * provide a value for <code>performedBy.userArn</code>, you must also have <a
+   * Customer Cases quotas</a>.</p> </li> <li> <p> <b>Sla</b> - Update the target
+   * duration (<code>targetSlaMinutes</code>) of an SLA. The new deadline is counted
+   * from when the SLA was created. The SLA status is recalculated against the new
+   * deadline: an open SLA becomes Active or Overdue, and a completed SLA becomes Met
+   * or NotMet.</p> </li> </ul> <p> <b>Important things to know</b> </p> <ul> <li>
+   * <p>When updating a Custom related item, all existing and new fields, and their
+   * associated values should be included in the request. Fields not included as part
+   * of this request will be removed.</p> </li> <li> <p>If you provide a value for
+   * <code>performedBy.userArn</code>, you must also have <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
    * permission on the ARN of the user that you provide.</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html#system-case-fields">System

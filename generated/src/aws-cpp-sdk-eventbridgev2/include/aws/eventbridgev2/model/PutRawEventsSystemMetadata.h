@@ -34,8 +34,9 @@ class PutRawEventsSystemMetadata {
 
   ///@{
   /**
-   * <p>Content type of the event data (e.g.,
-   * &quot;application/cloudevents+json&quot;).</p>
+   * <p>Content type of the event data. Valid values: <code>application/json</code>,
+   * <code>application/avro</code>, <code>application/protobuf</code>,
+   * <code>application/octet-stream</code>.</p>
    */
   inline const Aws::String& GetContentType() const { return m_contentType; }
   inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }

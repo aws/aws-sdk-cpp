@@ -98,7 +98,7 @@ class EngagementInvitationSummary {
 
   ///@{
   /**
-   * <p> The identifier of the Engagement associated with this invitation. This links
+   * <p>The identifier of the Engagement associated with this invitation. This links
    * the invitation to its parent Engagement. </p>
    */
   inline const Aws::String& GetEngagementId() const { return m_engagementId; }

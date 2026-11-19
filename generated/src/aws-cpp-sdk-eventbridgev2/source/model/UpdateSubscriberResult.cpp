@@ -183,6 +183,11 @@ UpdateSubscriberResult& UpdateSubscriberResult::operator=(const Aws::AmazonWebSe
                 m_lastModifiedTimeHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "SubscriberDetails") {
+                m_subscriberDetails = SubscriberDetails(decoder);
+                m_subscriberDetailsHasBeenSet = true;
+              }
+
               else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -353,6 +358,11 @@ UpdateSubscriberResult& UpdateSubscriberResult::operator=(const Aws::AmazonWebSe
                 }
               }
               m_lastModifiedTimeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SubscriberDetails") {
+              m_subscriberDetails = SubscriberDetails(decoder);
+              m_subscriberDetailsHasBeenSet = true;
             }
 
             else {

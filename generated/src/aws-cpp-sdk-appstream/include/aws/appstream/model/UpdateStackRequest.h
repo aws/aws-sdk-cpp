@@ -15,6 +15,7 @@
 #include <aws/appstream/model/StorageConnectorAuthentication.h>
 #include <aws/appstream/model/StreamingExperienceSettings.h>
 #include <aws/appstream/model/UserSetting.h>
+#include <aws/appstream/model/WebAuthnRedirection.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -312,6 +313,27 @@ class UpdateStackRequest : public AppStreamRequest {
 
   ///@{
   /**
+   * <p>Configuration for WebAuthn redirection between the streaming session and the
+   * user's local device. Use ProcessCompatibilityList to specify which processes can
+   * use WebAuthn redirection on Windows fleets. To remove WebAuthn redirection, use
+   * AttributesToDelete with the WEB_AUTHN_REDIRECTION value.</p>
+   */
+  inline const WebAuthnRedirection& GetWebAuthnRedirection() const { return m_webAuthnRedirection; }
+  inline bool WebAuthnRedirectionHasBeenSet() const { return m_webAuthnRedirectionHasBeenSet; }
+  template <typename WebAuthnRedirectionT = WebAuthnRedirection>
+  void SetWebAuthnRedirection(WebAuthnRedirectionT&& value) {
+    m_webAuthnRedirectionHasBeenSet = true;
+    m_webAuthnRedirection = std::forward<WebAuthnRedirectionT>(value);
+  }
+  template <typename WebAuthnRedirectionT = WebAuthnRedirection>
+  UpdateStackRequest& WithWebAuthnRedirection(WebAuthnRedirectionT&& value) {
+    SetWebAuthnRedirection(std::forward<WebAuthnRedirectionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The configuration for agent access on the stack. Specify this to update agent
    * access settings. To remove agent access, use AttributesToDelete with the
    * AGENT_ACCESS_CONFIG value.</p>
@@ -377,6 +399,8 @@ class UpdateStackRequest : public AppStreamRequest {
 
   ContentRedirection m_contentRedirection;
 
+  WebAuthnRedirection m_webAuthnRedirection;
+
   AgentAccessConfigForUpdate m_agentAccessConfig;
 
   StorageConnectorAuthentication m_storageConnectorAuthentication{StorageConnectorAuthentication::NOT_SET};
@@ -393,6 +417,7 @@ class UpdateStackRequest : public AppStreamRequest {
   bool m_embedHostDomainsHasBeenSet = false;
   bool m_streamingExperienceSettingsHasBeenSet = false;
   bool m_contentRedirectionHasBeenSet = false;
+  bool m_webAuthnRedirectionHasBeenSet = false;
   bool m_agentAccessConfigHasBeenSet = false;
   bool m_storageConnectorAuthenticationHasBeenSet = false;
 };

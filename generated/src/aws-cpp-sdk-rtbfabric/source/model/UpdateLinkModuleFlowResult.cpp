@@ -34,6 +34,10 @@ UpdateLinkModuleFlowResult& UpdateLinkModuleFlowResult::operator=(const Aws::Ama
     m_status = LinkStatusMapper::GetLinkStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("updateId")) {
+    m_updateId = jsonValue.GetString("updateId");
+    m_updateIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

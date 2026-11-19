@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/model/BrokerNodeType.h>
 #include <aws/kafka/model/BrokerSoftwareInfo.h>
 
 #include <utility>
@@ -70,6 +71,27 @@ class BrokerNodeInfo {
   }
   inline BrokerNodeInfo& WithBrokerId(double value) {
     SetBrokerId(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   *
+          <p>Whether this broker is a Standard broker or an Express broker.
+   * While an UpdateBrokerType operation upgrades a cluster in place from Standard
+   * brokers to Express brokers, the cluster contains brokers of both types and this
+   * field tells them apart.</p>
+
+   */
+  inline BrokerNodeType GetBrokerNodeType() const { return m_brokerNodeType; }
+  inline bool BrokerNodeTypeHasBeenSet() const { return m_brokerNodeTypeHasBeenSet; }
+  inline void SetBrokerNodeType(BrokerNodeType value) {
+    m_brokerNodeTypeHasBeenSet = true;
+    m_brokerNodeType = value;
+  }
+  inline BrokerNodeInfo& WithBrokerNodeType(BrokerNodeType value) {
+    SetBrokerNodeType(value);
     return *this;
   }
   ///@}
@@ -166,6 +188,8 @@ class BrokerNodeInfo {
 
   double m_brokerId{0.0};
 
+  BrokerNodeType m_brokerNodeType{BrokerNodeType::NOT_SET};
+
   Aws::String m_clientSubnet;
 
   Aws::String m_clientVpcIpAddress;
@@ -175,6 +199,7 @@ class BrokerNodeInfo {
   Aws::Vector<Aws::String> m_endpoints;
   bool m_attachedENIIdHasBeenSet = false;
   bool m_brokerIdHasBeenSet = false;
+  bool m_brokerNodeTypeHasBeenSet = false;
   bool m_clientSubnetHasBeenSet = false;
   bool m_clientVpcIpAddressHasBeenSet = false;
   bool m_currentBrokerSoftwareInfoHasBeenSet = false;

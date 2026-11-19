@@ -56,7 +56,7 @@ class AddSavingsPlanAction {
   /**
    * <p> The hourly commitment, in the same currency of the
    * <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million.
-   * You cannot specify more than five digits after the decimal point. </p>
+   * You can't specify more than five digits after the decimal point. </p>
    */
   inline double GetCommitment() const { return m_commitment; }
   inline bool CommitmentHasBeenSet() const { return m_commitmentHasBeenSet; }

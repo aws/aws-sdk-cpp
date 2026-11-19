@@ -71,6 +71,7 @@ static const int CIDR_COLLECTION_IN_USE_HASH = HashingUtils::HashString("CidrCol
 static const int NO_SUCH_TRAFFIC_POLICY_INSTANCE_HASH = HashingUtils::HashString("NoSuchTrafficPolicyInstance");
 static const int NO_SUCH_QUERY_LOGGING_CONFIG_HASH = HashingUtils::HashString("NoSuchQueryLoggingConfig");
 static const int HEALTH_CHECK_VERSION_MISMATCH_HASH = HashingUtils::HashString("HealthCheckVersionMismatch");
+static const int HEALTH_CHECK_SOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("HealthCheckSourceAlreadyExists");
 static const int CONFLICTING_DOMAIN_EXISTS_HASH = HashingUtils::HashString("ConflictingDomainExists");
 static const int INVALID_K_M_S_ARN_HASH = HashingUtils::HashString("InvalidKMSArn");
 static const int DELEGATION_SET_NOT_REUSABLE_HASH = HashingUtils::HashString("DelegationSetNotReusable");
@@ -79,7 +80,9 @@ static const int TOO_MANY_HEALTH_CHECKS_HASH = HashingUtils::HashString("TooMany
 static const int PROTECTION_ALREADY_EXISTS_HASH = HashingUtils::HashString("ProtectionAlreadyExists");
 static const int DELEGATION_SET_IN_USE_HASH = HashingUtils::HashString("DelegationSetInUse");
 static const int INVALID_SIGNING_STATUS_HASH = HashingUtils::HashString("InvalidSigningStatus");
+static const int NO_SUCH_HEALTH_CHECK_SOURCE_HASH = HashingUtils::HashString("NoSuchHealthCheckSource");
 static const int HEALTH_CHECK_IN_USE_HASH = HashingUtils::HashString("HealthCheckInUse");
+static const int TOO_MANY_HEALTH_CHECK_SOURCES_HASH = HashingUtils::HashString("TooManyHealthCheckSources");
 static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationToken");
 static const int INSUFFICIENT_CLOUD_WATCH_LOGS_RESOURCE_POLICY_HASH = HashingUtils::HashString("InsufficientCloudWatchLogsResourcePolicy");
 static const int HEALTH_CHECK_ALREADY_EXISTS_HASH = HashingUtils::HashString("HealthCheckAlreadyExists");
@@ -181,6 +184,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::NO_SUCH_QUERY_LOGGING_CONFIG), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == HEALTH_CHECK_VERSION_MISMATCH_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::HEALTH_CHECK_VERSION_MISMATCH), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == HEALTH_CHECK_SOURCE_ALREADY_EXISTS_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::HEALTH_CHECK_SOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CONFLICTING_DOMAIN_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::CONFLICTING_DOMAIN_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_K_M_S_ARN_HASH) {
@@ -197,8 +202,12 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::DELEGATION_SET_IN_USE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_SIGNING_STATUS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::INVALID_SIGNING_STATUS), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == NO_SUCH_HEALTH_CHECK_SOURCE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::NO_SUCH_HEALTH_CHECK_SOURCE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == HEALTH_CHECK_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::HEALTH_CHECK_IN_USE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == TOO_MANY_HEALTH_CHECK_SOURCES_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::TOO_MANY_HEALTH_CHECK_SOURCES), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_PAGINATION_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::INVALID_PAGINATION_TOKEN), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INSUFFICIENT_CLOUD_WATCH_LOGS_RESOURCE_POLICY_HASH) {

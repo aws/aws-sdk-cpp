@@ -7,9 +7,11 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurement_EXPORTS.h>
 #include <aws/partnercentral-revenue-measurement/model/CatalogName.h>
+#include <aws/partnercentral-revenue-measurement/model/MarketplaceRevenueShareProductSummary.h>
 
 #include <utility>
 namespace Aws {
@@ -33,18 +35,18 @@ class CreateMarketplaceRevenueShareResult {
 
   ///@{
   /**
-   * <p>The AWS Marketplace product identifier of the newly created revenue
-   * share.</p>
+   * <p>The unique identifier of the newly created marketplace revenue share, short
+   * ID form (mrs-...).</p>
    */
-  inline const Aws::String& GetProductId() const { return m_productId; }
-  template <typename ProductIdT = Aws::String>
-  void SetProductId(ProductIdT&& value) {
-    m_productIdHasBeenSet = true;
-    m_productId = std::forward<ProductIdT>(value);
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
   }
-  template <typename ProductIdT = Aws::String>
-  CreateMarketplaceRevenueShareResult& WithProductId(ProductIdT&& value) {
-    SetProductId(std::forward<ProductIdT>(value));
+  template <typename IdT = Aws::String>
+  CreateMarketplaceRevenueShareResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
     return *this;
   }
   ///@}
@@ -84,34 +86,24 @@ class CreateMarketplaceRevenueShareResult {
 
   ///@{
   /**
-   * <p>The AWS Marketplace product code.</p>
+   * <p>The products in the newly created marketplace revenue share, each with
+   * per-type account counts.</p>
    */
-  inline const Aws::String& GetProductCode() const { return m_productCode; }
-  template <typename ProductCodeT = Aws::String>
-  void SetProductCode(ProductCodeT&& value) {
-    m_productCodeHasBeenSet = true;
-    m_productCode = std::forward<ProductCodeT>(value);
+  inline const Aws::Vector<MarketplaceRevenueShareProductSummary>& GetProducts() const { return m_products; }
+  template <typename ProductsT = Aws::Vector<MarketplaceRevenueShareProductSummary>>
+  void SetProducts(ProductsT&& value) {
+    m_productsHasBeenSet = true;
+    m_products = std::forward<ProductsT>(value);
   }
-  template <typename ProductCodeT = Aws::String>
-  CreateMarketplaceRevenueShareResult& WithProductCode(ProductCodeT&& value) {
-    SetProductCode(std::forward<ProductCodeT>(value));
+  template <typename ProductsT = Aws::Vector<MarketplaceRevenueShareProductSummary>>
+  CreateMarketplaceRevenueShareResult& WithProducts(ProductsT&& value) {
+    SetProducts(std::forward<ProductsT>(value));
     return *this;
   }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The display name of the AWS Marketplace product.</p>
-   */
-  inline const Aws::String& GetProductName() const { return m_productName; }
-  template <typename ProductNameT = Aws::String>
-  void SetProductName(ProductNameT&& value) {
-    m_productNameHasBeenSet = true;
-    m_productName = std::forward<ProductNameT>(value);
-  }
-  template <typename ProductNameT = Aws::String>
-  CreateMarketplaceRevenueShareResult& WithProductName(ProductNameT&& value) {
-    SetProductName(std::forward<ProductNameT>(value));
+  template <typename ProductsT = MarketplaceRevenueShareProductSummary>
+  CreateMarketplaceRevenueShareResult& AddProducts(ProductsT&& value) {
+    m_productsHasBeenSet = true;
+    m_products.emplace_back(std::forward<ProductsT>(value));
     return *this;
   }
   ///@}
@@ -152,15 +144,17 @@ class CreateMarketplaceRevenueShareResult {
 
   ///@{
   /**
-   * <p>The revision number of the newly created marketplace revenue share.</p>
+   * <p>The revision of the newly created marketplace revenue share.</p>
    */
-  inline int64_t GetRevision() const { return m_revision; }
-  inline void SetRevision(int64_t value) {
+  inline const Aws::String& GetRevision() const { return m_revision; }
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
     m_revisionHasBeenSet = true;
-    m_revision = value;
+    m_revision = std::forward<RevisionT>(value);
   }
-  inline CreateMarketplaceRevenueShareResult& WithRevision(int64_t value) {
-    SetRevision(value);
+  template <typename RevisionT = Aws::String>
+  CreateMarketplaceRevenueShareResult& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
     return *this;
   }
   ///@}
@@ -182,29 +176,26 @@ class CreateMarketplaceRevenueShareResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::String m_productId;
+  Aws::String m_id;
 
   Aws::String m_arn;
 
   CatalogName m_catalog{CatalogName::NOT_SET};
 
-  Aws::String m_productCode;
-
-  Aws::String m_productName;
+  Aws::Vector<MarketplaceRevenueShareProductSummary> m_products;
 
   Aws::Utils::DateTime m_createdDate{};
 
   Aws::Utils::DateTime m_lastModifiedDate{};
 
-  int64_t m_revision{0};
+  Aws::String m_revision;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_productIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_catalogHasBeenSet = false;
-  bool m_productCodeHasBeenSet = false;
-  bool m_productNameHasBeenSet = false;
+  bool m_productsHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
   bool m_revisionHasBeenSet = false;

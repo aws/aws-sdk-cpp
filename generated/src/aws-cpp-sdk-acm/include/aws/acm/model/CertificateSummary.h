@@ -10,10 +10,12 @@
 #include <aws/acm/model/CertificateManagedBy.h>
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/CertificateType.h>
+#include <aws/acm/model/CertificateUsage.h>
 #include <aws/acm/model/ExtendedKeyUsageName.h>
 #include <aws/acm/model/KeyAlgorithm.h>
 #include <aws/acm/model/KeyUsageName.h>
 #include <aws/acm/model/RenewalEligibility.h>
+#include <aws/acm/model/RootHierarchyType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -469,6 +471,42 @@ class CertificateSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Extended Key Usage profile of the certificate. This value exists only for
+   * Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the
+   * request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+   */
+  inline CertificateUsage GetCertificateUsage() const { return m_certificateUsage; }
+  inline bool CertificateUsageHasBeenSet() const { return m_certificateUsageHasBeenSet; }
+  inline void SetCertificateUsage(CertificateUsage value) {
+    m_certificateUsageHasBeenSet = true;
+    m_certificateUsage = value;
+  }
+  inline CertificateSummary& WithCertificateUsage(CertificateUsage value) {
+    SetCertificateUsage(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The root hierarchy from which the certificate was issued. This value exists
+   * only for Amazon N2 certificates, which have a <code>Type</code> of
+   * <code>AMAZON_ISSUED</code>.</p>
+   */
+  inline RootHierarchyType GetRootHierarchyType() const { return m_rootHierarchyType; }
+  inline bool RootHierarchyTypeHasBeenSet() const { return m_rootHierarchyTypeHasBeenSet; }
+  inline void SetRootHierarchyType(RootHierarchyType value) {
+    m_rootHierarchyTypeHasBeenSet = true;
+    m_rootHierarchyType = value;
+  }
+  inline CertificateSummary& WithRootHierarchyType(RootHierarchyType value) {
+    SetRootHierarchyType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_certificateArn;
 
@@ -511,6 +549,10 @@ class CertificateSummary {
   CertificateManagedBy m_managedBy{CertificateManagedBy::NOT_SET};
 
   CertificateKeyPairOrigin m_certificateKeyPairOrigin{CertificateKeyPairOrigin::NOT_SET};
+
+  CertificateUsage m_certificateUsage{CertificateUsage::NOT_SET};
+
+  RootHierarchyType m_rootHierarchyType{RootHierarchyType::NOT_SET};
   bool m_certificateArnHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
   bool m_subjectAlternativeNameSummariesHasBeenSet = false;
@@ -532,6 +574,8 @@ class CertificateSummary {
   bool m_revokedAtHasBeenSet = false;
   bool m_managedByHasBeenSet = false;
   bool m_certificateKeyPairOriginHasBeenSet = false;
+  bool m_certificateUsageHasBeenSet = false;
+  bool m_rootHierarchyTypeHasBeenSet = false;
 };
 
 }  // namespace Model

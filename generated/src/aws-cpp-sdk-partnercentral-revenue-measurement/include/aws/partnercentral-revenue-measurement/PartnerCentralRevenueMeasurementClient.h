@@ -117,8 +117,8 @@ class AWS_PARTNERCENTRALREVENUEMEASUREMENT_API PartnerCentralRevenueMeasurementC
   }
 
   /**
-   * <p>Creates a new marketplace revenue share allocation for the specified
-   * product.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a new allocation under the specified marketplace revenue
+   * share.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-revenue-measurement-2022-07-26/CreateMarketplaceRevenueShareAllocation">AWS
    * API Reference</a></p>
    */
@@ -552,8 +552,41 @@ class AWS_PARTNERCENTRALREVENUEMEASUREMENT_API PartnerCentralRevenueMeasurementC
   }
 
   /**
+   * <p>Replaces the products of a marketplace revenue share. The request carries the
+   * complete desired set of products and their typed account lists; a product not
+   * listed is removed and its account lists cleared, and an empty Products list
+   * closes the marketplace revenue share. Closing is one-way.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-revenue-measurement-2022-07-26/UpdateMarketplaceRevenueShare">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateMarketplaceRevenueShareOutcome UpdateMarketplaceRevenueShare(
+      const Model::UpdateMarketplaceRevenueShareRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateMarketplaceRevenueShare that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateMarketplaceRevenueShareRequestT = Model::UpdateMarketplaceRevenueShareRequest>
+  Model::UpdateMarketplaceRevenueShareOutcomeCallable UpdateMarketplaceRevenueShareCallable(
+      const UpdateMarketplaceRevenueShareRequestT& request) const {
+    return SubmitCallable(&PartnerCentralRevenueMeasurementClient::UpdateMarketplaceRevenueShare, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateMarketplaceRevenueShare that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateMarketplaceRevenueShareRequestT = Model::UpdateMarketplaceRevenueShareRequest>
+  void UpdateMarketplaceRevenueShareAsync(const UpdateMarketplaceRevenueShareRequestT& request,
+                                          const UpdateMarketplaceRevenueShareResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralRevenueMeasurementClient::UpdateMarketplaceRevenueShare, request, handler, context);
+  }
+
+  /**
    * <p>Updates an existing marketplace revenue share allocation. Supports modifying
-   * effective dates, revenue share percentage, and status with time-based mutability
+   * the revenue share percentage and status only, with time-based mutability
    * rules.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-revenue-measurement-2022-07-26/UpdateMarketplaceRevenueShareAllocation">AWS
    * API Reference</a></p>

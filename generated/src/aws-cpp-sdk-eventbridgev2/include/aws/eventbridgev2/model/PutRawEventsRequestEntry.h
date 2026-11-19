@@ -55,7 +55,7 @@ class PutRawEventsRequestEntry {
   ///@{
   /**
    * <p>Metadata key-value pairs you define. Keys must be 1-128 characters and must
-   * not contain &quot;/&quot;.</p>
+   * not contain "/".</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
   inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }

@@ -20,7 +20,7 @@ namespace BCMPricingCalculator {
 namespace Model {
 
 /**
- * <p> The specified resource was not found. </p><p><h3>See Also:</h3>   <a
+ * <p> The specified resource wasn't found. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ResourceNotFoundException">AWS
  * API Reference</a></p>
  */
@@ -49,7 +49,7 @@ class ResourceNotFoundException {
 
   ///@{
   /**
-   * <p> The identifier of the resource that was not found. </p>
+   * <p> The identifier of the resource that wasn't found. </p>
    */
   inline const Aws::String& GetResourceId() const { return m_resourceId; }
   inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
@@ -67,7 +67,7 @@ class ResourceNotFoundException {
 
   ///@{
   /**
-   * <p> The type of the resource that was not found. </p>
+   * <p> The type of the resource that wasn't found. </p>
    */
   inline const Aws::String& GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

@@ -64,6 +64,7 @@
 #include <aws/route53resolver/model/ListFirewallConfigsRequest.h>
 #include <aws/route53resolver/model/ListFirewallDomainListsRequest.h>
 #include <aws/route53resolver/model/ListFirewallDomainsRequest.h>
+#include <aws/route53resolver/model/ListFirewallRuleDomainsRequest.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsRequest.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupsRequest.h>
 #include <aws/route53resolver/model/ListFirewallRuleTypesRequest.h>
@@ -523,6 +524,12 @@ ListFirewallDomainsOutcome Route53ResolverClient::ListFirewallDomains(const List
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListFirewallDomainsOutcome(result.GetResultWithOwnership())
                             : ListFirewallDomainsOutcome(std::move(result.GetError()));
+}
+
+ListFirewallRuleDomainsOutcome Route53ResolverClient::ListFirewallRuleDomains(const ListFirewallRuleDomainsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFirewallRuleDomainsOutcome(result.GetResultWithOwnership())
+                            : ListFirewallRuleDomainsOutcome(std::move(result.GetError()));
 }
 
 ListFirewallRuleGroupAssociationsOutcome Route53ResolverClient::ListFirewallRuleGroupAssociations(

@@ -34,7 +34,9 @@ class Filter {
   AWS_EVENTBRIDGEV2_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
-
+  /**
+   * <p>An event pattern, as a JSON string, that selects which events match.</p>
+   */
   inline const Aws::String& GetPattern() const { return m_pattern; }
   inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
   template <typename PatternT = Aws::String>
@@ -50,7 +52,9 @@ class Filter {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Scope of a filter pattern within a FilterConfiguration.</p>
+   */
   inline FilterScope GetScope() const { return m_scope; }
   inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
   inline void SetScope(FilterScope value) {

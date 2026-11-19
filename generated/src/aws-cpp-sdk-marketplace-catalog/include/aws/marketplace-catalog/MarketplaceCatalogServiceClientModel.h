@@ -31,6 +31,7 @@
 #include <aws/marketplace-catalog/model/ListEntitiesResult.h>
 #include <aws/marketplace-catalog/model/ListTagsForResourceResult.h>
 #include <aws/marketplace-catalog/model/PutResourcePolicyResult.h>
+#include <aws/marketplace-catalog/model/StartAssessmentResult.h>
 #include <aws/marketplace-catalog/model/StartChangeSetResult.h>
 #include <aws/marketplace-catalog/model/TagResourceResult.h>
 #include <aws/marketplace-catalog/model/UntagResourceResult.h>
@@ -79,6 +80,7 @@ class ListChangeSetsRequest;
 class ListEntitiesRequest;
 class ListTagsForResourceRequest;
 class PutResourcePolicyRequest;
+class StartAssessmentRequest;
 class StartChangeSetRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
@@ -97,6 +99,7 @@ typedef Aws::Utils::Outcome<ListChangeSetsResult, MarketplaceCatalogError> ListC
 typedef Aws::Utils::Outcome<ListEntitiesResult, MarketplaceCatalogError> ListEntitiesOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, MarketplaceCatalogError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, MarketplaceCatalogError> PutResourcePolicyOutcome;
+typedef Aws::Utils::Outcome<StartAssessmentResult, MarketplaceCatalogError> StartAssessmentOutcome;
 typedef Aws::Utils::Outcome<StartChangeSetResult, MarketplaceCatalogError> StartChangeSetOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, MarketplaceCatalogError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, MarketplaceCatalogError> UntagResourceOutcome;
@@ -115,6 +118,7 @@ typedef std::future<ListChangeSetsOutcome> ListChangeSetsOutcomeCallable;
 typedef std::future<ListEntitiesOutcome> ListEntitiesOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
+typedef std::future<StartAssessmentOutcome> StartAssessmentOutcomeCallable;
 typedef std::future<StartChangeSetOutcome> StartChangeSetOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -160,6 +164,9 @@ typedef std::function<void(const MarketplaceCatalogClient*, const Model::ListTag
 typedef std::function<void(const MarketplaceCatalogClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutResourcePolicyResponseReceivedHandler;
+typedef std::function<void(const MarketplaceCatalogClient*, const Model::StartAssessmentRequest&, const Model::StartAssessmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartAssessmentResponseReceivedHandler;
 typedef std::function<void(const MarketplaceCatalogClient*, const Model::StartChangeSetRequest&, const Model::StartChangeSetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartChangeSetResponseReceivedHandler;

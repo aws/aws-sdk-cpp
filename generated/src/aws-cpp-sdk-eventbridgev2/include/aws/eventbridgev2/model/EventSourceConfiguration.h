@@ -8,6 +8,7 @@
 #include <aws/eventbridgev2/EventBridgeV2_EXPORTS.h>
 #include <aws/eventbridgev2/model/AwsServiceEventsSourceConfiguration.h>
 #include <aws/eventbridgev2/model/PartnerEventsSourceConfiguration.h>
+#include <aws/eventbridgev2/model/WebhookEventsSourceConfiguration.h>
 
 #include <utility>
 
@@ -34,7 +35,10 @@ class EventSourceConfiguration {
   AWS_EVENTBRIDGEV2_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
-
+  /**
+   * <p>Configuration for forwarding a single AWS service's events from the account's
+   * default event bus.</p>
+   */
   inline const AwsServiceEventsSourceConfiguration& GetAwsServiceEventsConfiguration() const { return m_awsServiceEventsConfiguration; }
   inline bool AwsServiceEventsConfigurationHasBeenSet() const { return m_awsServiceEventsConfigurationHasBeenSet; }
   template <typename AwsServiceEventsConfigurationT = AwsServiceEventsSourceConfiguration>
@@ -50,7 +54,10 @@ class EventSourceConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Configuration for forwarding a partner event source's events through a
+   * managed partner event bus.</p>
+   */
   inline const PartnerEventsSourceConfiguration& GetPartnerEventsConfiguration() const { return m_partnerEventsConfiguration; }
   inline bool PartnerEventsConfigurationHasBeenSet() const { return m_partnerEventsConfigurationHasBeenSet; }
   template <typename PartnerEventsConfigurationT = PartnerEventsSourceConfiguration>
@@ -64,12 +71,34 @@ class EventSourceConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for receiving events that a third-party provider sends to an
+   * HTTPS webhook URL.</p>
+   */
+  inline const WebhookEventsSourceConfiguration& GetWebhookEventsConfiguration() const { return m_webhookEventsConfiguration; }
+  inline bool WebhookEventsConfigurationHasBeenSet() const { return m_webhookEventsConfigurationHasBeenSet; }
+  template <typename WebhookEventsConfigurationT = WebhookEventsSourceConfiguration>
+  void SetWebhookEventsConfiguration(WebhookEventsConfigurationT&& value) {
+    m_webhookEventsConfigurationHasBeenSet = true;
+    m_webhookEventsConfiguration = std::forward<WebhookEventsConfigurationT>(value);
+  }
+  template <typename WebhookEventsConfigurationT = WebhookEventsSourceConfiguration>
+  EventSourceConfiguration& WithWebhookEventsConfiguration(WebhookEventsConfigurationT&& value) {
+    SetWebhookEventsConfiguration(std::forward<WebhookEventsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AwsServiceEventsSourceConfiguration m_awsServiceEventsConfiguration;
 
   PartnerEventsSourceConfiguration m_partnerEventsConfiguration;
+
+  WebhookEventsSourceConfiguration m_webhookEventsConfiguration;
   bool m_awsServiceEventsConfigurationHasBeenSet = false;
   bool m_partnerEventsConfigurationHasBeenSet = false;
+  bool m_webhookEventsConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

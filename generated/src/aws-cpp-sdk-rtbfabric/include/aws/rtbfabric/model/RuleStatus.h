@@ -10,7 +10,17 @@
 namespace Aws {
 namespace RTBFabric {
 namespace Model {
-enum class RuleStatus { NOT_SET, CREATION_IN_PROGRESS, ACTIVE, UPDATE_IN_PROGRESS, DELETION_IN_PROGRESS, DELETED, FAILED };
+enum class RuleStatus {
+  NOT_SET,
+  CREATION_IN_PROGRESS,
+  ACTIVE,
+  UPDATE_IN_PROGRESS,
+  DELETION_IN_PROGRESS,
+  DELETED,
+  FAILED,
+  CREATE_FAILED,
+  DELETE_FAILED
+};
 
 namespace RuleStatusMapper {
 AWS_RTBFABRIC_API RuleStatus GetRuleStatusForName(const Aws::String& name);

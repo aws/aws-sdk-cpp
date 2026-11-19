@@ -37,7 +37,7 @@ class CodeRemediationTask {
 
   ///@{
   /**
-   * <p>The current status of the code remediation task.</p>
+   * <p>The current status of the overall code remediation task.</p>
    */
   inline CodeRemediationTaskStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -53,7 +53,7 @@ class CodeRemediationTask {
 
   ///@{
   /**
-   * <p>The reason for the current status of the code remediation task.</p>
+   * <p>The reason for the current status of the overall code remediation task.</p>
    */
   inline const Aws::String& GetStatusReason() const { return m_statusReason; }
   inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
@@ -71,8 +71,9 @@ class CodeRemediationTask {
 
   ///@{
   /**
-   * <p>The list of details for the code remediation task, including repository name,
-   * code diff link, and pull request link.</p>
+   * <p>The list of details for a code remediation task, including repository names,
+   * status of code remediation for each associated repository, and generated code
+   * diff or pull request links.</p>
    */
   inline const Aws::Vector<CodeRemediationTaskDetails>& GetTaskDetails() const { return m_taskDetails; }
   inline bool TaskDetailsHasBeenSet() const { return m_taskDetailsHasBeenSet; }

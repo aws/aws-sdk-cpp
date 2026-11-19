@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/inspector2/model/CreateGitHubEnterpriseIntegrationDetail.h>
 #include <aws/inspector2/model/CreateGitLabSelfManagedIntegrationDetail.h>
 
 #include <utility>
@@ -50,9 +51,31 @@ class CreateIntegrationDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Details specific to creating an integration with a GitHub Enterprise Server
+   * instance.</p>
+   */
+  inline const CreateGitHubEnterpriseIntegrationDetail& GetGithubEnterprise() const { return m_githubEnterprise; }
+  inline bool GithubEnterpriseHasBeenSet() const { return m_githubEnterpriseHasBeenSet; }
+  template <typename GithubEnterpriseT = CreateGitHubEnterpriseIntegrationDetail>
+  void SetGithubEnterprise(GithubEnterpriseT&& value) {
+    m_githubEnterpriseHasBeenSet = true;
+    m_githubEnterprise = std::forward<GithubEnterpriseT>(value);
+  }
+  template <typename GithubEnterpriseT = CreateGitHubEnterpriseIntegrationDetail>
+  CreateIntegrationDetail& WithGithubEnterprise(GithubEnterpriseT&& value) {
+    SetGithubEnterprise(std::forward<GithubEnterpriseT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CreateGitLabSelfManagedIntegrationDetail m_gitlabSelfManaged;
+
+  CreateGitHubEnterpriseIntegrationDetail m_githubEnterprise;
   bool m_gitlabSelfManagedHasBeenSet = false;
+  bool m_githubEnterpriseHasBeenSet = false;
 };
 
 }  // namespace Model

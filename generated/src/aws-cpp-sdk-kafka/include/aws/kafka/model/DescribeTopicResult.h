@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/TopicState.h>
 
@@ -133,6 +134,31 @@ class DescribeTopicResult {
   ///@}
 
   ///@{
+  /**
+   *
+          <p>The broker IDs hosting replicas of this topic's partitions.</p>
+
+   *
+   */
+  inline const Aws::Vector<int>& GetReplicaIds() const { return m_replicaIds; }
+  template <typename ReplicaIdsT = Aws::Vector<int>>
+  void SetReplicaIds(ReplicaIdsT&& value) {
+    m_replicaIdsHasBeenSet = true;
+    m_replicaIds = std::forward<ReplicaIdsT>(value);
+  }
+  template <typename ReplicaIdsT = Aws::Vector<int>>
+  DescribeTopicResult& WithReplicaIds(ReplicaIdsT&& value) {
+    SetReplicaIds(std::forward<ReplicaIdsT>(value));
+    return *this;
+  }
+  inline DescribeTopicResult& AddReplicaIds(int value) {
+    m_replicaIdsHasBeenSet = true;
+    m_replicaIds.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -161,6 +187,8 @@ class DescribeTopicResult {
 
   TopicState m_status{TopicState::NOT_SET};
 
+  Aws::Vector<int> m_replicaIds;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_topicArnHasBeenSet = false;
@@ -169,6 +197,7 @@ class DescribeTopicResult {
   bool m_partitionCountHasBeenSet = false;
   bool m_configsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_replicaIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

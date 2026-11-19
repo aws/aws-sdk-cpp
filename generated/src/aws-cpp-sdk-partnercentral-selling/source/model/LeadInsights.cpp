@@ -22,6 +22,10 @@ LeadInsights& LeadInsights::operator=(JsonView jsonValue) {
     m_leadReadinessScore = jsonValue.GetString("LeadReadinessScore");
     m_leadReadinessScoreHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ChannelRecommendation")) {
+    m_channelRecommendation = jsonValue.GetObject("ChannelRecommendation");
+    m_channelRecommendationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue LeadInsights::Jsonize() const {
 
   if (m_leadReadinessScoreHasBeenSet) {
     payload.WithString("LeadReadinessScore", m_leadReadinessScore);
+  }
+
+  if (m_channelRecommendationHasBeenSet) {
+    payload.WithObject("ChannelRecommendation", m_channelRecommendation.Jsonize());
   }
 
   return payload;

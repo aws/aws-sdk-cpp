@@ -58,7 +58,9 @@ class FilterConfiguration {
   ///@}
 
   ///@{
-
+  /**
+   * <p>List of filters. An event must match every filter to be delivered.</p>
+   */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
   template <typename FiltersT = Aws::Vector<Filter>>

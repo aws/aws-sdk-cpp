@@ -26,6 +26,10 @@ UpdateIntegrationDetails& UpdateIntegrationDetails::operator=(JsonView jsonValue
     m_github = jsonValue.GetObject("github");
     m_githubHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("githubEnterpriseServer")) {
+    m_githubEnterpriseServer = jsonValue.GetObject("githubEnterpriseServer");
+    m_githubEnterpriseServerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue UpdateIntegrationDetails::Jsonize() const {
 
   if (m_githubHasBeenSet) {
     payload.WithObject("github", m_github.Jsonize());
+  }
+
+  if (m_githubEnterpriseServerHasBeenSet) {
+    payload.WithObject("githubEnterpriseServer", m_githubEnterpriseServer.Jsonize());
   }
 
   return payload;

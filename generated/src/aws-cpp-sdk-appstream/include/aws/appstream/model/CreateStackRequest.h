@@ -14,6 +14,7 @@
 #include <aws/appstream/model/StorageConnectorAuthentication.h>
 #include <aws/appstream/model/StreamingExperienceSettings.h>
 #include <aws/appstream/model/UserSetting.h>
+#include <aws/appstream/model/WebAuthnRedirection.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -321,6 +322,26 @@ class CreateStackRequest : public AppStreamRequest {
 
   ///@{
   /**
+   * <p>Configuration for WebAuthn redirection between the streaming session and the
+   * user's local device. Use ProcessCompatibilityList to specify which processes can
+   * use WebAuthn redirection on Windows fleets.</p>
+   */
+  inline const WebAuthnRedirection& GetWebAuthnRedirection() const { return m_webAuthnRedirection; }
+  inline bool WebAuthnRedirectionHasBeenSet() const { return m_webAuthnRedirectionHasBeenSet; }
+  template <typename WebAuthnRedirectionT = WebAuthnRedirection>
+  void SetWebAuthnRedirection(WebAuthnRedirectionT&& value) {
+    m_webAuthnRedirectionHasBeenSet = true;
+    m_webAuthnRedirection = std::forward<WebAuthnRedirectionT>(value);
+  }
+  template <typename WebAuthnRedirectionT = WebAuthnRedirection>
+  CreateStackRequest& WithWebAuthnRedirection(WebAuthnRedirectionT&& value) {
+    SetWebAuthnRedirection(std::forward<WebAuthnRedirectionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The configuration for agent access on the stack. If specified, agent access
    * is enabled for the stack.</p>
    */
@@ -384,6 +405,8 @@ class CreateStackRequest : public AppStreamRequest {
 
   ContentRedirection m_contentRedirection;
 
+  WebAuthnRedirection m_webAuthnRedirection;
+
   AgentAccessConfig m_agentAccessConfig;
 
   StorageConnectorAuthentication m_storageConnectorAuthentication{StorageConnectorAuthentication::NOT_SET};
@@ -400,6 +423,7 @@ class CreateStackRequest : public AppStreamRequest {
   bool m_embedHostDomainsHasBeenSet = false;
   bool m_streamingExperienceSettingsHasBeenSet = false;
   bool m_contentRedirectionHasBeenSet = false;
+  bool m_webAuthnRedirectionHasBeenSet = false;
   bool m_agentAccessConfigHasBeenSet = false;
   bool m_storageConnectorAuthenticationHasBeenSet = false;
 };

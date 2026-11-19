@@ -761,7 +761,9 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * use the <code>WithExpressConfiguration</code> parameter to create an Aurora DB
    * Cluster with express configuration and create cluster in seconds. Express
    * configuration provides a cluster with a writer instance and feature specific
-   * values set to all other input parameters of this API. </p> <p>You can use the
+   * values set to all other input parameters of this API. </p> <p>To create an
+   * Aurora PostgreSQL DB cluster without VPC networking, see
+   * <code>EnableVPCNetworking</code>.</p> <p>You can use the
    * <code>AssociatedRoles</code> parameter to associate one or more Amazon Web
    * Services Identity and Access Management (IAM) roles with an Aurora DB cluster.
    * Each associated role lets the DB cluster access other Amazon Web Services on
@@ -4054,7 +4056,11 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   /**
    * <p>Modifies the settings of an Amazon Aurora DB cluster or a Multi-AZ DB
    * cluster. You can change one or more settings by specifying these parameters and
-   * the new values in the request.</p> <p>For more information on Amazon Aurora DB
+   * the new values in the request.</p> <p>To change the VPC networking configuration
+   * of an Aurora PostgreSQL DB cluster, see <code>EnableVPCNetworking</code>. To
+   * move an Aurora MySQL or Aurora PostgreSQL DB cluster to a different DB subnet
+   * group, in the same VPC or a different VPC, see
+   * <code>DBSubnetGroupName</code>.</p> <p>For more information on Amazon Aurora DB
    * clusters, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
    * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For

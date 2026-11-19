@@ -9,6 +9,7 @@
 #include <aws/agent-registry/AgentRegistryClientPagination.h>
 #include <aws/agent-registry/AgentRegistryPaginationBase.h>
 #include <aws/agent-registry/model/ListDiscoverableRegistryRecordsPaginationTraits.h>
+#include <aws/agent-registry/model/SearchDiscoverableRegistryRecordsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

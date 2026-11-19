@@ -92,6 +92,26 @@ class OfferSummary {
 
   ///@{
   /**
+   * <p>The ID of the subsidiary authorization that the offer was created from. The
+   * ID begins with <code>subauthz-</code> followed by 13 alphanumeric
+   * characters.</p>
+   */
+  inline const Aws::String& GetSubsidiaryAuthorizationId() const { return m_subsidiaryAuthorizationId; }
+  inline bool SubsidiaryAuthorizationIdHasBeenSet() const { return m_subsidiaryAuthorizationIdHasBeenSet; }
+  template <typename SubsidiaryAuthorizationIdT = Aws::String>
+  void SetSubsidiaryAuthorizationId(SubsidiaryAuthorizationIdT&& value) {
+    m_subsidiaryAuthorizationIdHasBeenSet = true;
+    m_subsidiaryAuthorizationId = std::forward<SubsidiaryAuthorizationIdT>(value);
+  }
+  template <typename SubsidiaryAuthorizationIdT = Aws::String>
+  OfferSummary& WithSubsidiaryAuthorizationId(SubsidiaryAuthorizationIdT&& value) {
+    SetSubsidiaryAuthorizationId(std::forward<SubsidiaryAuthorizationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The release date of the offer.</p>
    */
   inline const Aws::String& GetReleaseDate() const { return m_releaseDate; }
@@ -263,6 +283,8 @@ class OfferSummary {
 
   Aws::String m_resaleAuthorizationId;
 
+  Aws::String m_subsidiaryAuthorizationId;
+
   Aws::String m_releaseDate;
 
   Aws::String m_availabilityEndDate;
@@ -283,6 +305,7 @@ class OfferSummary {
   bool m_nameHasBeenSet = false;
   bool m_productIdHasBeenSet = false;
   bool m_resaleAuthorizationIdHasBeenSet = false;
+  bool m_subsidiaryAuthorizationIdHasBeenSet = false;
   bool m_releaseDateHasBeenSet = false;
   bool m_availabilityEndDateHasBeenSet = false;
   bool m_buyerAccountsHasBeenSet = false;

@@ -7,18 +7,26 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/partnercentral-selling/model/ListCustomerAccountBulkJobResultsPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListCustomerAccountBulkJobsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListEngagementByAcceptingInvitationTasksPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListEngagementFromOpportunityTasksPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListEngagementGroupsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListEngagementInvitationsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListEngagementMembersPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListEngagementResourceAssociationsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListEngagementsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListOpportunitiesPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListOpportunityBulkJobResultsPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListOpportunityBulkJobsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListProspectingFromEngagementTasksPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListSolutionsPaginationTraits.h>
+#include <aws/partnercentral-selling/model/SearchCustomerAccountsPaginationTraits.h>
+#include <aws/partnercentral-selling/model/SearchEngagementsPaginationTraits.h>
+#include <aws/partnercentral-selling/model/SearchOpportunitiesPaginationTraits.h>
 
 #include <memory>
 
@@ -28,6 +36,30 @@ namespace PartnerCentralSelling {
 template <typename DerivedClient>
 class PartnerCentralSellingPaginationBase {
  public:
+  /**
+   * Create a paginator for ListCustomerAccountBulkJobResults operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomerAccountBulkJobResultsRequest,
+                                    Pagination::ListCustomerAccountBulkJobResultsPaginationTraits<DerivedClient>>
+  ListCustomerAccountBulkJobResultsPaginator(const Model::ListCustomerAccountBulkJobResultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomerAccountBulkJobResultsRequest,
+                                             Pagination::ListCustomerAccountBulkJobResultsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListCustomerAccountBulkJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomerAccountBulkJobsRequest,
+                                    Pagination::ListCustomerAccountBulkJobsPaginationTraits<DerivedClient>>
+  ListCustomerAccountBulkJobsPaginator(const Model::ListCustomerAccountBulkJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomerAccountBulkJobsRequest,
+                                             Pagination::ListCustomerAccountBulkJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListEngagementByAcceptingInvitationTasks operation
    */
@@ -49,6 +81,18 @@ class PartnerCentralSellingPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementFromOpportunityTasksRequest,
                                              Pagination::ListEngagementFromOpportunityTasksPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListEngagementGroups operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementGroupsRequest,
+                                    Pagination::ListEngagementGroupsPaginationTraits<DerivedClient>>
+  ListEngagementGroupsPaginator(const Model::ListEngagementGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementGroupsRequest,
+                                             Pagination::ListEngagementGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 
@@ -113,6 +157,30 @@ class PartnerCentralSellingPaginationBase {
   }
 
   /**
+   * Create a paginator for ListOpportunityBulkJobResults operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOpportunityBulkJobResultsRequest,
+                                    Pagination::ListOpportunityBulkJobResultsPaginationTraits<DerivedClient>>
+  ListOpportunityBulkJobResultsPaginator(const Model::ListOpportunityBulkJobResultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOpportunityBulkJobResultsRequest,
+                                             Pagination::ListOpportunityBulkJobResultsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListOpportunityBulkJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOpportunityBulkJobsRequest,
+                                    Pagination::ListOpportunityBulkJobsPaginationTraits<DerivedClient>>
+  ListOpportunityBulkJobsPaginator(const Model::ListOpportunityBulkJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOpportunityBulkJobsRequest,
+                                             Pagination::ListOpportunityBulkJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListOpportunityFromEngagementTasks operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOpportunityFromEngagementTasksRequest,
@@ -169,6 +237,42 @@ class PartnerCentralSellingPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSolutionsRequest,
                                              Pagination::ListSolutionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for SearchCustomerAccounts operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchCustomerAccountsRequest,
+                                    Pagination::SearchCustomerAccountsPaginationTraits<DerivedClient>>
+  SearchCustomerAccountsPaginator(const Model::SearchCustomerAccountsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchCustomerAccountsRequest,
+                                             Pagination::SearchCustomerAccountsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for SearchEngagements operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchEngagementsRequest,
+                                    Pagination::SearchEngagementsPaginationTraits<DerivedClient>>
+  SearchEngagementsPaginator(const Model::SearchEngagementsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchEngagementsRequest,
+                                             Pagination::SearchEngagementsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for SearchOpportunities operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchOpportunitiesRequest,
+                                    Pagination::SearchOpportunitiesPaginationTraits<DerivedClient>>
+  SearchOpportunitiesPaginator(const Model::SearchOpportunitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchOpportunitiesRequest,
+                                             Pagination::SearchOpportunitiesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 };
 }  // namespace PartnerCentralSelling

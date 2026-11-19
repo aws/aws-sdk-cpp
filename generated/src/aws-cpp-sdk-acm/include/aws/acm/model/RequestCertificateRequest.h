@@ -8,8 +8,10 @@
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/acm/model/CertificateManagedBy.h>
 #include <aws/acm/model/CertificateOptions.h>
+#include <aws/acm/model/CertificateUsage.h>
 #include <aws/acm/model/DomainValidationOption.h>
 #include <aws/acm/model/KeyAlgorithm.h>
+#include <aws/acm/model/RootHierarchyType.h>
 #include <aws/acm/model/Tag.h>
 #include <aws/acm/model/ValidationMethod.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -183,9 +185,9 @@ class RequestCertificateRequest : public ACMRequest {
   ///@{
   /**
    * <p>You can use this parameter to specify whether to export your certificate.</p>
-   * <p>Certificate transparency logging opt-out is no longer available. All public
-   * certificates are recorded in a certificate transparency log. For more
-   * information, see <a
+   * <p>Certificate transparency logging opt-out is no longer available. ACM records
+   * all public certificates other than Amazon N2 certificates in a certificate
+   * transparency log. For more information, see <a
    * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
    * Transparency Logging</a>.</p> <p>You can export public ACM certificates to use
    * with Amazon Web Services services as well as outside the Amazon Web Services
@@ -307,6 +309,66 @@ class RequestCertificateRequest : public ACMRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Extended Key Usage profile of the certificate. You can specify this
+   * parameter only when <code>RootHierarchyType</code> is
+   * <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. If you
+   * specify <code>CertificateUsage</code> with any other root hierarchy type, or
+   * without <code>RootHierarchyType</code>, the request fails with a
+   * <code>ValidationException</code>.</p> <ul> <li> <p>
+   * <code>CLIENT_AND_SERVER_AUTH</code> authenticates both the client and the
+   * server. Valid for both N2 root hierarchy types.</p> </li> <li> <p>
+   * <code>CLIENT_AUTH_ONLY</code> authenticates only the client. Valid only for
+   * <code>N2_AMAZON_MANAGED</code>.</p> </li> </ul> <p>Default:
+   * CLIENT_AND_SERVER_AUTH</p>
+   */
+  inline CertificateUsage GetCertificateUsage() const { return m_certificateUsage; }
+  inline bool CertificateUsageHasBeenSet() const { return m_certificateUsageHasBeenSet; }
+  inline void SetCertificateUsage(CertificateUsage value) {
+    m_certificateUsageHasBeenSet = true;
+    m_certificateUsage = value;
+  }
+  inline RequestCertificateRequest& WithCertificateUsage(CertificateUsage value) {
+    SetCertificateUsage(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The root hierarchy from which ACM issues the certificate. Specify one of the
+   * following values to request an Amazon N2 certificate:</p> <ul> <li> <p>
+   * <code>N2_AMAZON_MANAGED</code> – An Amazon N2 certificate that chains to an
+   * Amazon N2 root. The maximum validity period, which is also the default, is 395
+   * days.</p> </li> <li> <p> <code>N2_SFG2_AMAZON_MANAGED</code> – An Amazon N2
+   * certificate that chains to an Amazon N2 root cross-signed by Starfield G2. The
+   * maximum validity period, which is also the default, is 98 days.</p> </li> </ul>
+   * <p>You cannot specify <code>RootHierarchyType</code> together with
+   * <code>CertificateAuthorityArn</code>.</p> <p>If you omit this parameter, ACM
+   * issues a standard public certificate. A request that specifies any value other
+   * than <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code> fails
+   * with a <code>ValidationException</code>.</p> <p>An Amazon N2 certificate request
+   * must specify a <code>ValidationMethod</code> of <code>DNS</code>. Amazon N2
+   * certificates are not recorded in a certificate transparency log.</p> <p>A
+   * request for a validity period longer than the maximum fails with a
+   * <code>ValidationException</code>.</p>  <p>Algorithms supported for an N2
+   * certificate request include: </p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
+   * <li> <p> <code>EC_prime256v1</code> </p> </li> <li> <p>
+   * <code>EC_secp384r1</code> </p> </li> </ul>
+   */
+  inline RootHierarchyType GetRootHierarchyType() const { return m_rootHierarchyType; }
+  inline bool RootHierarchyTypeHasBeenSet() const { return m_rootHierarchyTypeHasBeenSet; }
+  inline void SetRootHierarchyType(RootHierarchyType value) {
+    m_rootHierarchyTypeHasBeenSet = true;
+    m_rootHierarchyType = value;
+  }
+  inline RequestCertificateRequest& WithRootHierarchyType(RootHierarchyType value) {
+    SetRootHierarchyType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
@@ -327,6 +389,10 @@ class RequestCertificateRequest : public ACMRequest {
   KeyAlgorithm m_keyAlgorithm{KeyAlgorithm::NOT_SET};
 
   CertificateManagedBy m_managedBy{CertificateManagedBy::NOT_SET};
+
+  CertificateUsage m_certificateUsage{CertificateUsage::NOT_SET};
+
+  RootHierarchyType m_rootHierarchyType{RootHierarchyType::NOT_SET};
   bool m_domainNameHasBeenSet = false;
   bool m_validationMethodHasBeenSet = false;
   bool m_subjectAlternativeNamesHasBeenSet = false;
@@ -337,6 +403,8 @@ class RequestCertificateRequest : public ACMRequest {
   bool m_tagsHasBeenSet = false;
   bool m_keyAlgorithmHasBeenSet = false;
   bool m_managedByHasBeenSet = false;
+  bool m_certificateUsageHasBeenSet = false;
+  bool m_rootHierarchyTypeHasBeenSet = false;
 };
 
 }  // namespace Model

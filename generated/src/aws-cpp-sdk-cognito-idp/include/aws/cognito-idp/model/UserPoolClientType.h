@@ -114,6 +114,33 @@ class UserPoolClientType {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon
+   * Web Services Secrets Manager</a> secret that stores this app client's secret,
+   * when Amazon Cognito manages the secret in Secrets Manager. Retrieve the secret
+   * from Secrets Manager by this ARN. The <code>SecretString</code> value is a JSON
+   * object with <code>userPoolId</code>, <code>userPoolClientId</code>, and
+   * <code>clientSecretValue</code> fields. Use <code>clientSecretValue</code> as the
+   * app client secret. Amazon Cognito returns this ARN instead of
+   * <code>ClientSecret</code> for app clients whose secret it manages in Secrets
+   * Manager.</p>
+   */
+  inline const Aws::String& GetClientSecretArn() const { return m_clientSecretArn; }
+  inline bool ClientSecretArnHasBeenSet() const { return m_clientSecretArnHasBeenSet; }
+  template <typename ClientSecretArnT = Aws::String>
+  void SetClientSecretArn(ClientSecretArnT&& value) {
+    m_clientSecretArnHasBeenSet = true;
+    m_clientSecretArn = std::forward<ClientSecretArnT>(value);
+  }
+  template <typename ClientSecretArnT = Aws::String>
+  UserPoolClientType& WithClientSecretArn(ClientSecretArnT&& value) {
+    SetClientSecretArn(std::forward<ClientSecretArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time when the item was modified. Amazon Cognito returns this
    * timestamp in UNIX epoch time format. Your SDK might render the output in a
    * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
@@ -776,6 +803,8 @@ class UserPoolClientType {
 
   Aws::String m_clientSecret;
 
+  Aws::String m_clientSecretArn;
+
   Aws::Utils::DateTime m_lastModifiedDate{};
 
   Aws::Utils::DateTime m_creationDate{};
@@ -825,6 +854,7 @@ class UserPoolClientType {
   bool m_clientNameHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
   bool m_clientSecretHasBeenSet = false;
+  bool m_clientSecretArnHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
   bool m_refreshTokenValidityHasBeenSet = false;

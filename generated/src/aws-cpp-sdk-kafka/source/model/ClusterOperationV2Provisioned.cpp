@@ -18,6 +18,10 @@ namespace Model {
 ClusterOperationV2Provisioned::ClusterOperationV2Provisioned(JsonView jsonValue) { *this = jsonValue; }
 
 ClusterOperationV2Provisioned& ClusterOperationV2Provisioned::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("brokerTypeUpgradeInfo")) {
+    m_brokerTypeUpgradeInfo = jsonValue.GetObject("brokerTypeUpgradeInfo");
+    m_brokerTypeUpgradeInfoHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("operationSteps")) {
     Aws::Utils::Array<JsonView> operationStepsJsonList = jsonValue.GetArray("operationSteps");
     for (unsigned operationStepsIndex = 0; operationStepsIndex < operationStepsJsonList.GetLength(); ++operationStepsIndex) {
@@ -42,6 +46,10 @@ ClusterOperationV2Provisioned& ClusterOperationV2Provisioned::operator=(JsonView
 
 JsonValue ClusterOperationV2Provisioned::Jsonize() const {
   JsonValue payload;
+
+  if (m_brokerTypeUpgradeInfoHasBeenSet) {
+    payload.WithObject("brokerTypeUpgradeInfo", m_brokerTypeUpgradeInfo.Jsonize());
+  }
 
   if (m_operationStepsHasBeenSet) {
     Aws::Utils::Array<JsonValue> operationStepsJsonList(m_operationSteps.size());

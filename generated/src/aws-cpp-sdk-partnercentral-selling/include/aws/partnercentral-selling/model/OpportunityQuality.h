@@ -33,8 +33,8 @@ class OpportunityQuality {
 
   ///@{
   /**
-   * <p>Deal quality score based on opportunity content completeness and sales
-   * methodology criteria. Values range from 0 to 100.</p>
+   * <p>Deal quality score assigned to the opportunity. Values range from 0 to
+   * 100.</p>
    */
   inline int GetScore() const { return m_score; }
   inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }

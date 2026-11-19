@@ -17,6 +17,7 @@ namespace IntegrationTypeMapper {
 
 static const int GITLAB_SELF_MANAGED_HASH = HashingUtils::HashString("GITLAB_SELF_MANAGED");
 static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
+static const int GITHUB_ENTERPRISE_SERVER_HASH = HashingUtils::HashString("GITHUB_ENTERPRISE_SERVER");
 
 IntegrationType GetIntegrationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ IntegrationType GetIntegrationTypeForName(const Aws::String& name) {
     return IntegrationType::GITLAB_SELF_MANAGED;
   } else if (hashCode == GITHUB_HASH) {
     return IntegrationType::GITHUB;
+  } else if (hashCode == GITHUB_ENTERPRISE_SERVER_HASH) {
+    return IntegrationType::GITHUB_ENTERPRISE_SERVER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForIntegrationType(IntegrationType enumValue) {
       return "GITLAB_SELF_MANAGED";
     case IntegrationType::GITHUB:
       return "GITHUB";
+    case IntegrationType::GITHUB_ENTERPRISE_SERVER:
+      return "GITHUB_ENTERPRISE_SERVER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

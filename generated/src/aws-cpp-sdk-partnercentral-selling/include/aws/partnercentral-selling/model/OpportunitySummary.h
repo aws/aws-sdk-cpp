@@ -77,7 +77,7 @@ class OpportunitySummary {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) for the opportunity. This globally unique
+   * <p>The Amazon Resource Name (ARN) for the opportunity. This globally unique
    * identifier can be used for IAM policies and cross-service references. </p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }

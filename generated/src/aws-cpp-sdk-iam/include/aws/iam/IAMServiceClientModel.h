@@ -359,6 +359,7 @@ class UpdateAssumeRolePolicyRequest;
 class UpdateDelegationRequestRequest;
 class UpdateGroupRequest;
 class UpdateLoginProfileRequest;
+class UpdateOpenIDConnectProviderRequest;
 class UpdateOpenIDConnectProviderThumbprintRequest;
 class UpdateRoleRequest;
 class UpdateRoleDescriptionRequest;
@@ -544,6 +545,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UpdateAssumeRolePolicyOutco
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UpdateDelegationRequestOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UpdateGroupOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UpdateLoginProfileOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UpdateOpenIDConnectProviderOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IAMError> UpdateOpenIDConnectProviderThumbprintOutcome;
 typedef Aws::Utils::Outcome<UpdateRoleResult, IAMError> UpdateRoleOutcome;
 typedef Aws::Utils::Outcome<UpdateRoleDescriptionResult, IAMError> UpdateRoleDescriptionOutcome;
@@ -727,6 +729,7 @@ typedef std::future<UpdateAssumeRolePolicyOutcome> UpdateAssumeRolePolicyOutcome
 typedef std::future<UpdateDelegationRequestOutcome> UpdateDelegationRequestOutcomeCallable;
 typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
 typedef std::future<UpdateLoginProfileOutcome> UpdateLoginProfileOutcomeCallable;
+typedef std::future<UpdateOpenIDConnectProviderOutcome> UpdateOpenIDConnectProviderOutcomeCallable;
 typedef std::future<UpdateOpenIDConnectProviderThumbprintOutcome> UpdateOpenIDConnectProviderThumbprintOutcomeCallable;
 typedef std::future<UpdateRoleOutcome> UpdateRoleOutcomeCallable;
 typedef std::future<UpdateRoleDescriptionOutcome> UpdateRoleDescriptionOutcomeCallable;
@@ -1277,6 +1280,9 @@ typedef std::function<void(const IAMClient*, const Model::UpdateGroupRequest&, c
 typedef std::function<void(const IAMClient*, const Model::UpdateLoginProfileRequest&, const Model::UpdateLoginProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateLoginProfileResponseReceivedHandler;
+typedef std::function<void(const IAMClient*, const Model::UpdateOpenIDConnectProviderRequest&,
+                           const Model::UpdateOpenIDConnectProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateOpenIDConnectProviderResponseReceivedHandler;
 typedef std::function<void(const IAMClient*, const Model::UpdateOpenIDConnectProviderThumbprintRequest&,
                            const Model::UpdateOpenIDConnectProviderThumbprintOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

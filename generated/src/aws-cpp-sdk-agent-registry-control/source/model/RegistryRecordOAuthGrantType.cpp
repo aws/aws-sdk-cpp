@@ -16,11 +16,14 @@ namespace Model {
 namespace RegistryRecordOAuthGrantTypeMapper {
 
 static const int CLIENT_CREDENTIALS_HASH = HashingUtils::HashString("CLIENT_CREDENTIALS");
+static const int AUTHORIZATION_CODE_HASH = HashingUtils::HashString("AUTHORIZATION_CODE");
 
 RegistryRecordOAuthGrantType GetRegistryRecordOAuthGrantTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == CLIENT_CREDENTIALS_HASH) {
     return RegistryRecordOAuthGrantType::CLIENT_CREDENTIALS;
+  } else if (hashCode == AUTHORIZATION_CODE_HASH) {
+    return RegistryRecordOAuthGrantType::AUTHORIZATION_CODE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForRegistryRecordOAuthGrantType(RegistryRecordOAuthGrantType 
       return {};
     case RegistryRecordOAuthGrantType::CLIENT_CREDENTIALS:
       return "CLIENT_CREDENTIALS";
+    case RegistryRecordOAuthGrantType::AUTHORIZATION_CODE:
+      return "AUTHORIZATION_CODE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

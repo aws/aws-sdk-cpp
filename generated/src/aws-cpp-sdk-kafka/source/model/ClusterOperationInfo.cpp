@@ -18,6 +18,10 @@ namespace Model {
 ClusterOperationInfo::ClusterOperationInfo(JsonView jsonValue) { *this = jsonValue; }
 
 ClusterOperationInfo& ClusterOperationInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("brokerTypeUpgradeInfo")) {
+    m_brokerTypeUpgradeInfo = jsonValue.GetObject("brokerTypeUpgradeInfo");
+    m_brokerTypeUpgradeInfoHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("clientRequestId")) {
     m_clientRequestId = jsonValue.GetString("clientRequestId");
     m_clientRequestIdHasBeenSet = true;
@@ -74,6 +78,10 @@ ClusterOperationInfo& ClusterOperationInfo::operator=(JsonView jsonValue) {
 
 JsonValue ClusterOperationInfo::Jsonize() const {
   JsonValue payload;
+
+  if (m_brokerTypeUpgradeInfoHasBeenSet) {
+    payload.WithObject("brokerTypeUpgradeInfo", m_brokerTypeUpgradeInfo.Jsonize());
+  }
 
   if (m_clientRequestIdHasBeenSet) {
     payload.WithString("clientRequestId", m_clientRequestId);

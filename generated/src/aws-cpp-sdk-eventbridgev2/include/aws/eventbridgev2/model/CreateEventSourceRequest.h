@@ -39,7 +39,13 @@ class CreateEventSourceRequest : public EventBridgeV2Request {
   AWS_EVENTBRIDGEV2_API EndpointParameters GetEndpointContextParams() const override;
 
   ///@{
-
+  /**
+   * <p>EventSource name. First character alphanumeric; the rest may add '.', '-',
+   * '_'. Names may not begin with the reserved "aws." prefix. The grammar matches
+   * the ARN local-name segment in EventSourceArn
+   * (event-sourcev2/&lt;type&gt;/&lt;name&gt;/&lt;id&gt;), mirroring EventBusName,
+   * so a name the ARN cannot represent cannot be created.</p>
+   */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
   template <typename NameT = Aws::String>
@@ -55,7 +61,9 @@ class CreateEventSourceRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
+   */
   inline const Aws::String& GetEventBusArn() const { return m_eventBusArn; }
   inline bool EventBusArnHasBeenSet() const { return m_eventBusArnHasBeenSet; }
   template <typename EventBusArnT = Aws::String>
@@ -71,7 +79,9 @@ class CreateEventSourceRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Discriminated EventSource configuration. Exactly one variant must be set.</p>
+   */
   inline const EventSourceConfiguration& GetConfiguration() const { return m_configuration; }
   inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
   template <typename ConfigurationT = EventSourceConfiguration>
@@ -87,7 +97,10 @@ class CreateEventSourceRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Free-text description. Used by every resource type that has one: event buses,
+   * subscribers, and event sources.</p>
+   */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
   template <typename DescriptionT = Aws::String>
@@ -103,7 +116,9 @@ class CreateEventSourceRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Tags attached to a resource, as key-value pairs.</p>
+   */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
   template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
@@ -125,7 +140,10 @@ class CreateEventSourceRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Unique, case-sensitive identifier that ensures the idempotency of the
+   * request. The SDK generates one automatically when the field is omitted.</p>
+   */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
   template <typename ClientTokenT = Aws::String>

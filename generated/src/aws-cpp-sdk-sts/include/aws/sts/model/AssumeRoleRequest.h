@@ -99,19 +99,14 @@ class AssumeRoleRequest : public STSRequest {
    * see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
    * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
-   * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
-   * conversion compresses the passed inline session policy, managed policy ARNs, and
-   * session tags into a packed binary format that has a separate limit. Your request
-   * can fail for this limit even if your plaintext meets the other requirements. The
-   * <code>PackedPolicySize</code> response element indicates by percentage how close
-   * the policies and tags for your request are to the upper size limit.</p>
-   * <p>Passing policies to this operation returns new temporary credentials. The
-   * resulting session's permissions are the intersection of the role's
-   * identity-based policy and the session policies. You can use the role's temporary
-   * credentials in subsequent Amazon Web Services API calls to access resources in
-   * the account that owns the role. You cannot use session policies to grant more
-   * permissions than those allowed by the identity-based policy of the role that is
-   * being assumed. For more information, see <a
+   * Amazon Web Services General Reference.</p> <p>Passing policies to this operation
+   * returns new temporary credentials. The resulting session's permissions are the
+   * intersection of the role's identity-based policy and the session policies. You
+   * can use the role's temporary credentials in subsequent Amazon Web Services API
+   * calls to access resources in the account that owns the role. You cannot use
+   * session policies to grant more permissions than those allowed by the
+   * identity-based policy of the role that is being assumed. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
    * Policies</a> in the <i>IAM User Guide</i>.</p>
    */
@@ -151,14 +146,8 @@ class AssumeRoleRequest : public STSRequest {
    * both inline and managed session policies can't exceed 2,048 characters. The JSON
    * policy characters can be any ASCII character from the space character to the end
    * of the valid character list (\u0020 through \u00FF). It can also include the tab
-   * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p>
-   * <p>An Amazon Web Services conversion compresses the passed inline session
-   * policy, managed policy ARNs, and session tags into a packed binary format that
-   * has a separate limit. Your request can fail for this limit even if your
-   * plaintext meets the other requirements. The <code>PackedPolicySize</code>
-   * response element indicates by percentage how close the policies and tags for
-   * your request are to the upper size limit.</p>  <p>For more information
-   * about role session permissions, see <a
+   * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> <p>For
+   * more information about role session permissions, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
    * policies</a>.</p>
    */
@@ -228,18 +217,13 @@ class AssumeRoleRequest : public STSRequest {
    * tag keys can’t exceed 128 characters, and the values can’t exceed 256
    * characters. For these and additional limits, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-   * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
-   * Amazon Web Services conversion compresses the passed inline session policy,
-   * managed policy ARNs, and session tags into a packed binary format that has a
-   * separate limit. Your request can fail for this limit even if your plaintext
-   * meets the other requirements. The <code>PackedPolicySize</code> response element
-   * indicates by percentage how close the policies and tags for your request are to
-   * the upper size limit.</p>  <p>You can pass a session tag with the same
-   * key as a tag that is already attached to the role. When you do, session tags
-   * override a role tag with the same key. </p> <p>Tag key–value pairs are not case
-   * sensitive, but case is preserved. This means that you cannot have separate
-   * <code>Department</code> and <code>department</code> tag keys. Assume that the
-   * role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
+   * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <p>You can pass a
+   * session tag with the same key as a tag that is already attached to the role.
+   * When you do, session tags override a role tag with the same key. </p> <p>Tag
+   * key–value pairs are not case sensitive, but case is preserved. This means that
+   * you cannot have separate <code>Department</code> and <code>department</code> tag
+   * keys. Assume that the role has the
+   * <code>Department</code>=<code>Marketing</code> tag and you pass the
    * <code>department</code>=<code>engineering</code> session tag.
    * <code>Department</code> and <code>department</code> are not saved as separate
    * tags, and the session tag passed in the request takes precedence over the role

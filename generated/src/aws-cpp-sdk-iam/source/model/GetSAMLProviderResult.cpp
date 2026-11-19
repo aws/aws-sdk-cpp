@@ -39,6 +39,22 @@ GetSAMLProviderResult& GetSAMLProviderResult::operator=(const Aws::AmazonWebServ
       m_sAMLMetadataDocument = Aws::Utils::Xml::DecodeEscapedXmlText(sAMLMetadataDocumentNode.GetText());
       m_sAMLMetadataDocumentHasBeenSet = true;
     }
+    XmlNode contextProviderNode = resultNode.FirstChild("ContextProvider");
+    if (!contextProviderNode.IsNull()) {
+      m_contextProvider = contextProviderNode;
+      m_contextProviderHasBeenSet = true;
+    }
+    XmlNode sAMLKeyHashesNode = resultNode.FirstChild("SAMLKeyHashes");
+    if (!sAMLKeyHashesNode.IsNull()) {
+      XmlNode sAMLKeyHashesMember = sAMLKeyHashesNode.FirstChild("member");
+      m_sAMLKeyHashesHasBeenSet = !sAMLKeyHashesMember.IsNull();
+      while (!sAMLKeyHashesMember.IsNull()) {
+        m_sAMLKeyHashes.push_back(sAMLKeyHashesMember);
+        sAMLKeyHashesMember = sAMLKeyHashesMember.NextNode("member");
+      }
+
+      m_sAMLKeyHashesHasBeenSet = true;
+    }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if (!createDateNode.IsNull()) {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(),
@@ -78,6 +94,16 @@ GetSAMLProviderResult& GetSAMLProviderResult::operator=(const Aws::AmazonWebServ
       }
 
       m_privateKeyListHasBeenSet = true;
+    }
+    XmlNode identityCenterInstanceArnNode = resultNode.FirstChild("IdentityCenterInstanceArn");
+    if (!identityCenterInstanceArnNode.IsNull()) {
+      m_identityCenterInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterInstanceArnNode.GetText());
+      m_identityCenterInstanceArnHasBeenSet = true;
+    }
+    XmlNode identityStoreArnNode = resultNode.FirstChild("IdentityStoreArn");
+    if (!identityStoreArnNode.IsNull()) {
+      m_identityStoreArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityStoreArnNode.GetText());
+      m_identityStoreArnHasBeenSet = true;
     }
   }
 

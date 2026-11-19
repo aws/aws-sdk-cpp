@@ -58,13 +58,13 @@ class RestorationType {
   ///@{
   /**
    * <p>The status of the recovery. Can be one of the following values.</p> <dl>
-   * <dt>PREVIEW_GENERATING</dt> <dd> <p>Amazon Cognito is waiting for available
-   * capacity in the Amazon Web Services Region or is generating the recovery
-   * preview. Write operations in the user pool are paused.</p> </dd>
-   * <dt>PREVIEW_GENERATED</dt> <dd> <p>The recovery preview is ready for review.
-   * Write operations in the user pool are paused. Within 24 hours after you initiate
-   * the recovery, apply it with a <code>StartPointInTimeRecovery</code> request or
-   * discard it with a <code>CancelPointInTimeRecovery</code> request.</p> </dd>
+   * <dt>PREVIEW_GENERATING</dt> <dd> <p>Amazon Cognito is generating the recovery
+   * preview, which might not be available immediately. Write operations in the user
+   * pool are paused.</p> </dd> <dt>PREVIEW_GENERATED</dt> <dd> <p>The recovery
+   * preview is ready for review. Write operations in the user pool are paused.
+   * Within 24 hours after you initiate the recovery, apply it with a
+   * <code>StartPointInTimeRecovery</code> request or discard it with a
+   * <code>CancelPointInTimeRecovery</code> request.</p> </dd>
    * <dt>PREVIEW_CANCELLED</dt> <dd> <p>You canceled the recovery. Amazon Cognito
    * resumed write operations and didn't change your user pool data.</p> </dd>
    * <dt>PREVIEW_GENERATION_FAILED</dt> <dd> <p>Amazon Cognito couldn't generate the

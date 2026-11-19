@@ -290,8 +290,16 @@ Aws::String CreateDBClusterRequest::SerializePayload() const {
        << "&";
   }
 
+  if (m_enableVPCNetworkingHasBeenSet) {
+    ss << "EnableVPCNetworking=" << std::boolalpha << m_enableVPCNetworking << "&";
+  }
+
   if (m_withExpressConfigurationHasBeenSet) {
     ss << "WithExpressConfiguration=" << std::boolalpha << m_withExpressConfiguration << "&";
+  }
+
+  if (m_enableInternetAccessGatewayHasBeenSet) {
+    ss << "EnableInternetAccessGateway=" << std::boolalpha << m_enableInternetAccessGateway << "&";
   }
 
   if (m_associatedRolesHasBeenSet) {

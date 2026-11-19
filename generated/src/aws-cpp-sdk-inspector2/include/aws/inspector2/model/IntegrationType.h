@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Inspector2 {
 namespace Model {
-enum class IntegrationType { NOT_SET, GITLAB_SELF_MANAGED, GITHUB };
+enum class IntegrationType { NOT_SET, GITLAB_SELF_MANAGED, GITHUB, GITHUB_ENTERPRISE_SERVER };
 
 namespace IntegrationTypeMapper {
 AWS_INSPECTOR2_API IntegrationType GetIntegrationTypeForName(const Aws::String& name);

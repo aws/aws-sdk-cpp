@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 
 #include <utility>
@@ -127,6 +128,32 @@ class TopicInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   *
+          <p>The broker IDs hosting replicas of this topic's partitions.</p>
+
+   *
+   */
+  inline const Aws::Vector<int>& GetReplicaIds() const { return m_replicaIds; }
+  inline bool ReplicaIdsHasBeenSet() const { return m_replicaIdsHasBeenSet; }
+  template <typename ReplicaIdsT = Aws::Vector<int>>
+  void SetReplicaIds(ReplicaIdsT&& value) {
+    m_replicaIdsHasBeenSet = true;
+    m_replicaIds = std::forward<ReplicaIdsT>(value);
+  }
+  template <typename ReplicaIdsT = Aws::Vector<int>>
+  TopicInfo& WithReplicaIds(ReplicaIdsT&& value) {
+    SetReplicaIds(std::forward<ReplicaIdsT>(value));
+    return *this;
+  }
+  inline TopicInfo& AddReplicaIds(int value) {
+    m_replicaIdsHasBeenSet = true;
+    m_replicaIds.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_topicArn;
 
@@ -137,11 +164,14 @@ class TopicInfo {
   int m_partitionCount{0};
 
   int m_outOfSyncReplicaCount{0};
+
+  Aws::Vector<int> m_replicaIds;
   bool m_topicArnHasBeenSet = false;
   bool m_topicNameHasBeenSet = false;
   bool m_replicationFactorHasBeenSet = false;
   bool m_partitionCountHasBeenSet = false;
   bool m_outOfSyncReplicaCountHasBeenSet = false;
+  bool m_replicaIdsHasBeenSet = false;
 };
 
 }  // namespace Model

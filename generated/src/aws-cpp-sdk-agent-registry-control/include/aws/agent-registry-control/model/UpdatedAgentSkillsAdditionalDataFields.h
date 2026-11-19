@@ -6,6 +6,9 @@
 #pragma once
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
 #include <aws/agent-registry-control/model/UpdatedAgentSkillsMdDescriptor.h>
+#include <aws/agent-registry-control/model/UpdatedAgentSkillsPackageDescriptor.h>
+#include <aws/agent-registry-control/model/UpdatedAgentSkillsRepositoryProvider.h>
+#include <aws/agent-registry-control/model/UpdatedAgentSkillsSourceConfiguration.h>
 
 #include <utility>
 
@@ -49,9 +52,72 @@ class UpdatedAgentSkillsAdditionalDataFields {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The patch for the skill package source field.</p>
+   */
+  inline const UpdatedAgentSkillsPackageDescriptor& GetSkillPackage() const { return m_skillPackage; }
+  inline bool SkillPackageHasBeenSet() const { return m_skillPackageHasBeenSet; }
+  template <typename SkillPackageT = UpdatedAgentSkillsPackageDescriptor>
+  void SetSkillPackage(SkillPackageT&& value) {
+    m_skillPackageHasBeenSet = true;
+    m_skillPackage = std::forward<SkillPackageT>(value);
+  }
+  template <typename SkillPackageT = UpdatedAgentSkillsPackageDescriptor>
+  UpdatedAgentSkillsAdditionalDataFields& WithSkillPackage(SkillPackageT&& value) {
+    SetSkillPackage(std::forward<SkillPackageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The patch for the repository provider field.</p>
+   */
+  inline const UpdatedAgentSkillsRepositoryProvider& GetRepositoryProvider() const { return m_repositoryProvider; }
+  inline bool RepositoryProviderHasBeenSet() const { return m_repositoryProviderHasBeenSet; }
+  template <typename RepositoryProviderT = UpdatedAgentSkillsRepositoryProvider>
+  void SetRepositoryProvider(RepositoryProviderT&& value) {
+    m_repositoryProviderHasBeenSet = true;
+    m_repositoryProvider = std::forward<RepositoryProviderT>(value);
+  }
+  template <typename RepositoryProviderT = UpdatedAgentSkillsRepositoryProvider>
+  UpdatedAgentSkillsAdditionalDataFields& WithRepositoryProvider(RepositoryProviderT&& value) {
+    SetRepositoryProvider(std::forward<RepositoryProviderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The patch for the source configuration field.</p>
+   */
+  inline const UpdatedAgentSkillsSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
+  inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
+  template <typename SourceConfigurationT = UpdatedAgentSkillsSourceConfiguration>
+  void SetSourceConfiguration(SourceConfigurationT&& value) {
+    m_sourceConfigurationHasBeenSet = true;
+    m_sourceConfiguration = std::forward<SourceConfigurationT>(value);
+  }
+  template <typename SourceConfigurationT = UpdatedAgentSkillsSourceConfiguration>
+  UpdatedAgentSkillsAdditionalDataFields& WithSourceConfiguration(SourceConfigurationT&& value) {
+    SetSourceConfiguration(std::forward<SourceConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UpdatedAgentSkillsMdDescriptor m_skillMd;
+
+  UpdatedAgentSkillsPackageDescriptor m_skillPackage;
+
+  UpdatedAgentSkillsRepositoryProvider m_repositoryProvider;
+
+  UpdatedAgentSkillsSourceConfiguration m_sourceConfiguration;
   bool m_skillMdHasBeenSet = false;
+  bool m_skillPackageHasBeenSet = false;
+  bool m_repositoryProviderHasBeenSet = false;
+  bool m_sourceConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

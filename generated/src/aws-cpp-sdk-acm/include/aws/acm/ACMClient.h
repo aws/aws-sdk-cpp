@@ -854,8 +854,11 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
    * <a>Filters</a>.</p>  <p>By default, this action does not return
    * certificates with a <code>CertificateKeyPairOrigin</code> of <code>ACME</code>.
    * To include ACME certificates, specify <code>ACME</code> in the
-   * <code>CertificateKeyPairOrigins</code> filter.</p> <p><h3>See Also:</h3>
-   * <a
+   * <code>CertificateKeyPairOrigins</code> filter.</p>   <p>By default,
+   * this action does not return certificates with a <code>RootHierarchyType</code>
+   * of <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. To
+   * list only Amazon N2 certificates, specify one or both of these values in the
+   * <code>RootHierarchyTypes</code> filter.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">AWS
    * API Reference</a></p>
    */

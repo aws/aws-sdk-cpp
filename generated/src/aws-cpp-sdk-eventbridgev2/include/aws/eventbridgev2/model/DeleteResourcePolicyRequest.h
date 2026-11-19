@@ -36,7 +36,9 @@ class DeleteResourcePolicyRequest : public EventBridgeV2Request {
   AWS_EVENTBRIDGEV2_API EndpointParameters GetEndpointContextParams() const override;
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
+   */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
   template <typename ResourceArnT = Aws::String>
@@ -53,13 +55,13 @@ class DeleteResourcePolicyRequest : public EventBridgeV2Request {
 
   ///@{
   /**
-   * <p>Which named policy to delete. Defaults to &quot;default&quot; when omitted (a
-   * delete AWS Resource Access Manager makes on the owner's behalf resolves to
-   * &quot;AWS_RAM&quot; instead). The two writers are exclusive in both directions —
-   * only Resource Access Manager can delete &quot;AWS_RAM&quot;, and only the bus
-   * owner can delete &quot;default&quot; — so naming the other party's policy fails
-   * with AccessDeniedException. A well-formed name that is neither of the two fails
-   * with InvalidInputException.</p>
+   * <p>Which named policy to delete. Defaults to "default" when omitted (a delete
+   * AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM"
+   * instead). The two writers are exclusive in both directions — only Resource
+   * Access Manager can delete "AWS_RAM", and only the bus owner can delete "default"
+   * — so naming the other party's policy fails with AccessDeniedException. A
+   * well-formed name that is neither of the two fails with
+   * InvalidInputException.</p>
    */
   inline const Aws::String& GetPolicyName() const { return m_policyName; }
   inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
@@ -79,12 +81,12 @@ class DeleteResourcePolicyRequest : public EventBridgeV2Request {
   /**
    * <p>The delete succeeds only if the named policy's current revision ID matches
    * this value; if it differs or the policy does not exist, the operation fails with
-   * ConflictException. The &quot;NO_POLICY&quot; sentinel is not valid here. When
-   * omitted, deleting an absent policy is an idempotent success. Supplying this
-   * value makes the delete non-idempotent: once it succeeds the expected revision no
-   * longer exists, so retrying an unanswered request fails with ConflictException
-   * even though the policy was deleted. To establish the outcome, read the policy
-   * back: ResourceNotFoundException means the delete took effect.</p>
+   * ConflictException. The "NO_POLICY" sentinel is not valid here. When omitted,
+   * deleting an absent policy is an idempotent success. Supplying this value makes
+   * the delete non-idempotent: once it succeeds the expected revision no longer
+   * exists, so retrying an unanswered request fails with ConflictException even
+   * though the policy was deleted. To establish the outcome, read the policy back:
+   * ResourceNotFoundException means the delete took effect.</p>
    */
   inline const Aws::String& GetExpectedRevisionId() const { return m_expectedRevisionId; }
   inline bool ExpectedRevisionIdHasBeenSet() const { return m_expectedRevisionIdHasBeenSet; }

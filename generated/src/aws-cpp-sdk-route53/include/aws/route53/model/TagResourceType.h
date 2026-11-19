@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Route53 {
 namespace Model {
-enum class TagResourceType { NOT_SET, healthcheck, hostedzone };
+enum class TagResourceType { NOT_SET, healthcheck, hostedzone, healthchecksource };
 
 namespace TagResourceTypeMapper {
 AWS_ROUTE53_API TagResourceType GetTagResourceTypeForName(const Aws::String& name);

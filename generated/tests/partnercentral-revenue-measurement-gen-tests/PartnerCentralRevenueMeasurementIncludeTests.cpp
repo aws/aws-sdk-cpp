@@ -25,6 +25,7 @@
 #include <aws/partnercentral-revenue-measurement/model/CatalogName.h>
 #include <aws/partnercentral-revenue-measurement/model/ConflictException.h>
 #include <aws/partnercentral-revenue-measurement/model/ConflictExceptionReason.h>
+#include <aws/partnercentral-revenue-measurement/model/ContextFilter.h>
 #include <aws/partnercentral-revenue-measurement/model/CreateMarketplaceRevenueShareAllocationRequest.h>
 #include <aws/partnercentral-revenue-measurement/model/CreateMarketplaceRevenueShareAllocationResult.h>
 #include <aws/partnercentral-revenue-measurement/model/CreateMarketplaceRevenueShareRequest.h>
@@ -60,6 +61,9 @@
 #include <aws/partnercentral-revenue-measurement/model/MarketplaceProductSummary.h>
 #include <aws/partnercentral-revenue-measurement/model/MarketplaceRevenueShareAllocationSortField.h>
 #include <aws/partnercentral-revenue-measurement/model/MarketplaceRevenueShareAllocationSummary.h>
+#include <aws/partnercentral-revenue-measurement/model/MarketplaceRevenueShareProductDetail.h>
+#include <aws/partnercentral-revenue-measurement/model/MarketplaceRevenueShareProductEntry.h>
+#include <aws/partnercentral-revenue-measurement/model/MarketplaceRevenueShareProductSummary.h>
 #include <aws/partnercentral-revenue-measurement/model/MarketplaceRevenueShareSortBy.h>
 #include <aws/partnercentral-revenue-measurement/model/MarketplaceRevenueShareSummary.h>
 #include <aws/partnercentral-revenue-measurement/model/ResourceNotFoundException.h>
@@ -71,6 +75,10 @@
 #include <aws/partnercentral-revenue-measurement/model/RevenueAttributionAllocationSummary.h>
 #include <aws/partnercentral-revenue-measurement/model/RevenueAttributionAllocationTaskStatus.h>
 #include <aws/partnercentral-revenue-measurement/model/RevenueShareAllocation.h>
+#include <aws/partnercentral-revenue-measurement/model/RevenueShareProductAccountDetail.h>
+#include <aws/partnercentral-revenue-measurement/model/RevenueShareProductAccountEntry.h>
+#include <aws/partnercentral-revenue-measurement/model/RevenueShareProductAccountSummary.h>
+#include <aws/partnercentral-revenue-measurement/model/RevenueShareProductAccountType.h>
 #include <aws/partnercentral-revenue-measurement/model/ServiceQuotaExceededException.h>
 #include <aws/partnercentral-revenue-measurement/model/ServiceQuotaExceededExceptionReason.h>
 #include <aws/partnercentral-revenue-measurement/model/SortOrder.h>
@@ -83,6 +91,8 @@
 #include <aws/partnercentral-revenue-measurement/model/UntagResourceRequest.h>
 #include <aws/partnercentral-revenue-measurement/model/UpdateMarketplaceRevenueShareAllocationRequest.h>
 #include <aws/partnercentral-revenue-measurement/model/UpdateMarketplaceRevenueShareAllocationResult.h>
+#include <aws/partnercentral-revenue-measurement/model/UpdateMarketplaceRevenueShareRequest.h>
+#include <aws/partnercentral-revenue-measurement/model/UpdateMarketplaceRevenueShareResult.h>
 #include <aws/partnercentral-revenue-measurement/model/UpdateRevenueAttributionRequest.h>
 #include <aws/partnercentral-revenue-measurement/model/UpdateRevenueAttributionResult.h>
 #include <aws/partnercentral-revenue-measurement/model/ValidationException.h>

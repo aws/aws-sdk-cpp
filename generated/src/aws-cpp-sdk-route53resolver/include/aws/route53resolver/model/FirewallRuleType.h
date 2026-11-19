@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
+#include <aws/route53resolver/model/AutoAllowlistConfig.h>
 #include <aws/route53resolver/model/DnsThreatProtectionRuleTypeConfig.h>
 #include <aws/route53resolver/model/FirewallAdvancedContentCategoryConfig.h>
 #include <aws/route53resolver/model/FirewallAdvancedThreatCategoryConfig.h>
@@ -30,7 +31,8 @@ namespace Model {
  * <code>DnsThreatProtection</code> fields on <a>CreateFirewallRule</a> and
  * <a>UpdateFirewallRule</a>.</p> <p>Call <a>ListFirewallRuleTypes</a> to discover
  * which rule-type variants and which values within each variant are available in
- * your account and Region.</p><p><h3>See Also:</h3>   <a
+ * your account and Region. It doesn't return the <code>AutoAllowlist</code>
+ * variant.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/FirewallRuleType">AWS
  * API Reference</a></p>
  */
@@ -125,6 +127,27 @@ class FirewallRuleType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configures the rule as an AutoAllowlist rule, which observes the DNS traffic
+   * of the VPCs that use the rule group, through a rule group association or a Route
+   * 53 Profile, so that you can review the domains and allow them. See
+   * <a>AutoAllowlistConfig</a>.</p>
+   */
+  inline const AutoAllowlistConfig& GetAutoAllowlist() const { return m_autoAllowlist; }
+  inline bool AutoAllowlistHasBeenSet() const { return m_autoAllowlistHasBeenSet; }
+  template <typename AutoAllowlistT = AutoAllowlistConfig>
+  void SetAutoAllowlist(AutoAllowlistT&& value) {
+    m_autoAllowlistHasBeenSet = true;
+    m_autoAllowlist = std::forward<AutoAllowlistT>(value);
+  }
+  template <typename AutoAllowlistT = AutoAllowlistConfig>
+  FirewallRuleType& WithAutoAllowlist(AutoAllowlistT&& value) {
+    SetAutoAllowlist(std::forward<AutoAllowlistT>(value));
+    return *this;
+  }
+  ///@}
  private:
   PartnerThreatProtectionConfig m_partnerThreatProtection;
 
@@ -133,10 +156,13 @@ class FirewallRuleType {
   FirewallAdvancedThreatCategoryConfig m_firewallAdvancedThreatCategory;
 
   DnsThreatProtectionRuleTypeConfig m_dnsThreatProtection;
+
+  AutoAllowlistConfig m_autoAllowlist;
   bool m_partnerThreatProtectionHasBeenSet = false;
   bool m_firewallAdvancedContentCategoryHasBeenSet = false;
   bool m_firewallAdvancedThreatCategoryHasBeenSet = false;
   bool m_dnsThreatProtectionHasBeenSet = false;
+  bool m_autoAllowlistHasBeenSet = false;
 };
 
 }  // namespace Model

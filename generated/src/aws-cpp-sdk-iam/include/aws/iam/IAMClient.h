@@ -724,8 +724,16 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
    * identify the application or applications allowed to authenticate using the OIDC
    * provider</p> </li> <li> <p>A list of tags that are attached to the specified IAM
    * OIDC provider</p> </li> <li> <p>A list of thumbprints of one or more server
-   * certificates that the IdP uses</p> </li> </ul> <p>You get all of this
-   * information from the OIDC IdP you want to use to access Amazon Web Services.</p>
+   * certificates that the IdP uses</p> </li> <li> <p>A trusted identity propagation
+   * context provider that defines how the subject is derived and how keys from the
+   * provider's token are mapped into trusted context keys. Specifying a context
+   * provider enables trusted identity propagation for the provider. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+   * </li> <li> <p>The ARN of an IAM Identity Center instance to associate with the
+   * OIDC provider. If you specify an IAM Identity Center instance, you must also
+   * specify a context provider.</p> </li> </ul> <p>You get the URL, client IDs, and
+   * thumbprints from the OIDC IdP you want to use to access Amazon Web Services.</p>
    *  <p>Amazon Web Services secures communication with OIDC identity providers
    * (IdPs) using our library of trusted root certificate authorities (CAs) to verify
    * the JSON Web Key Set (JWKS) endpoint's TLS certificate. If your OIDC IdP relies
@@ -735,7 +743,22 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
    * provider that this operation creates. Therefore, it is best to limit access to
    * the <a
    * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>
-   * operation to highly privileged users.</p> <p><h3>See Also:</h3>   <a
+   * operation to highly privileged users.</p>  <p>To control who can
+   * configure trusted identity propagation on an OIDC provider, use the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers">iam:RequestIdentityProviderIssuers</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+   * condition keys in IAM policies. The <code>Request</code> keys contain the values
+   * in the request. The <code>Resource</code> keys contain the values stored on the
+   * provider.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">AWS
    * API Reference</a></p>
    */
@@ -887,8 +910,22 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
    * SAML 2.0 federated users to access the Amazon Web Services Management
    * Console</a> and <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-   * SAML 2.0-based federation</a> in the <i>IAM User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * SAML 2.0-based federation</a> in the <i>IAM User Guide</i>.</p> <p>To control
+   * who can configure trusted identity propagation on a SAML provider, use the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers">iam:RequestIdentityProviderIssuers</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+   * condition keys in IAM policies. The <code>Request</code> keys contain the values
+   * in the request. The <code>Resource</code> keys contain the values stored on the
+   * provider.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateSAMLProvider">AWS
    * API Reference</a></p>
    */
@@ -1329,12 +1366,13 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   * <p>Deletes an OpenID Connect identity provider (IdP) resource object in IAM.</p>
+   * <p>Deletes an OpenID Connect identity provider (IdP) resource object in IAM.
+   * Deleting the provider also deletes its trusted identity propagation context
+   * provider and removes any IAM Identity Center instance association.</p>
    * <p>Deleting an IAM OIDC provider resource does not update any roles that
    * reference the provider as a principal in their trust policies. Any attempt to
-   * assume a role that references a deleted provider fails.</p> <p>This operation is
-   * idempotent; it does not fail or return an error if you call the operation for a
-   * provider that does not exist.</p><p><h3>See Also:</h3>   <a
+   * assume a role that references a deleted provider fails.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteOpenIDConnectProvider">AWS
    * API Reference</a></p>
    */
@@ -6481,6 +6519,66 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Updates the configuration of an existing IAM OpenID Connect (OIDC) identity
+   * provider resource object. Use this operation to set, change, or remove the
+   * trusted identity propagation context provider, and to associate or disassociate
+   * an IAM Identity Center instance with the provider.</p>  <p>This operation
+   * does not update the OIDC provider's server certificate thumbprints. Thumbprints
+   * are managed only by the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProviderThumbprint.html">UpdateOpenIDConnectProviderThumbprint</a>
+   * operation. To change a provider's thumbprints, call that operation instead.</p>
+   *  <p>To remove a configuration rather than replace it, use the
+   * <code>RemoveContextProvider</code> and <code>RemoveIdentityCenterInstance</code>
+   * parameters. For each configuration, provide either the new value or the
+   * corresponding <code>Remove</code> flag in a single request, but not both. For
+   * example, specifying both <code>ContextProvider</code> and
+   * <code>RemoveContextProvider</code> in the same request is not allowed.</p> <p>A
+   * single request can change either the context provider or the IAM Identity Center
+   * association, but not both. To change both, make separate
+   * <code>UpdateOpenIDConnectProvider</code> requests. To remove the context
+   * provider, first remove the IAM Identity Center association in a separate
+   * request.</p> <p>To control who can configure trusted identity propagation on an
+   * OIDC provider, use the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+   * condition keys in IAM policies. The <code>Request</code> keys contain the values
+   * in the request. The <code>Resource</code> keys contain the values stored on the
+   * provider.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateOpenIDConnectProviderOutcome UpdateOpenIDConnectProvider(
+      const Model::UpdateOpenIDConnectProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateOpenIDConnectProvider that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateOpenIDConnectProviderRequestT = Model::UpdateOpenIDConnectProviderRequest>
+  Model::UpdateOpenIDConnectProviderOutcomeCallable UpdateOpenIDConnectProviderCallable(
+      const UpdateOpenIDConnectProviderRequestT& request) const {
+    return SubmitCallable(&IAMClient::UpdateOpenIDConnectProvider, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateOpenIDConnectProvider that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateOpenIDConnectProviderRequestT = Model::UpdateOpenIDConnectProviderRequest>
+  void UpdateOpenIDConnectProviderAsync(const UpdateOpenIDConnectProviderRequestT& request,
+                                        const UpdateOpenIDConnectProviderResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IAMClient::UpdateOpenIDConnectProvider, request, handler, context);
+  }
+
+  /**
    * <p>Replaces the existing list of server certificate thumbprints associated with
    * an OpenID Connect (OIDC) provider resource object with a new list of
    * thumbprints.</p> <p>The list that you pass with this operation completely
@@ -6585,7 +6683,34 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
   /**
    * <p>Updates the metadata document, SAML encryption settings, and private keys for
    * an existing SAML provider. To rotate private keys, add your new private key and
-   * then remove the old key in a separate request.</p><p><h3>See Also:</h3>   <a
+   * then remove the old key in a separate request.</p> <p>You can also use this
+   * operation to set, change, or remove the trusted identity propagation context
+   * provider, and to associate or disassociate an IAM Identity Center instance with
+   * the provider. To remove a configuration rather than replace it, use the
+   * <code>RemoveContextProvider</code> and <code>RemoveIdentityCenterInstance</code>
+   * parameters. For each configuration, provide either the new value or the
+   * corresponding <code>Remove</code> flag in a single request, but not both.</p>
+   * <p>A single request can change either the context provider or the provider
+   * metadata, but not both. Provider metadata includes the SAML metadata document,
+   * assertion encryption mode, private keys, and IAM Identity Center association. To
+   * change both, make separate <code>UpdateSAMLProvider</code> requests. To remove
+   * the context provider, first remove the IAM Identity Center association in a
+   * separate request.</p> <p>To control who can configure trusted identity
+   * propagation on a SAML provider, use the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers">iam:RequestIdentityProviderIssuers</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+   * condition keys in IAM policies. The <code>Request</code> keys contain the values
+   * in the request. The <code>Resource</code> keys contain the values stored on the
+   * provider.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSAMLProvider">AWS
    * API Reference</a></p>
    */

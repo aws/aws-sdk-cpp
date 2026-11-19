@@ -73,6 +73,13 @@ AcceptLinkResult& AcceptLinkResult::operator=(const Aws::AmazonWebServiceResult<
     m_connectivityType = ConnectivityTypeMapper::GetConnectivityTypeForName(jsonValue.GetString("connectivityType"));
     m_connectivityTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("errorDetails")) {
+    Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("errorDetails");
+    for (unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex) {
+      m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsObject());
+    }
+    m_errorDetailsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("linkId")) {
     m_linkId = jsonValue.GetString("linkId");
     m_linkIdHasBeenSet = true;

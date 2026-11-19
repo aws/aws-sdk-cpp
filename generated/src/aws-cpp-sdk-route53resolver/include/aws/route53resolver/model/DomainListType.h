@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Route53Resolver {
 namespace Model {
-enum class DomainListType { NOT_SET, THREAT, CONTENT };
+enum class DomainListType { NOT_SET, THREAT, CONTENT, AUTOALLOWLIST };
 
 namespace DomainListTypeMapper {
 AWS_ROUTE53RESOLVER_API DomainListType GetDomainListTypeForName(const Aws::String& name);

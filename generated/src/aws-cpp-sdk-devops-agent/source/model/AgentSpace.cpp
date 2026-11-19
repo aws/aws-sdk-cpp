@@ -54,6 +54,10 @@ AgentSpace& AgentSpace::operator=(JsonView jsonValue) {
     }
     m_preferencesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("awsSourceMode")) {
+    m_awsSourceMode = AwsSourceModeMapper::GetAwsSourceModeForName(jsonValue.GetString("awsSourceMode"));
+    m_awsSourceModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -95,6 +99,10 @@ JsonValue AgentSpace::Jsonize() const {
                                   preferencesItem.second);
     }
     payload.WithObject("preferences", std::move(preferencesJsonMap));
+  }
+
+  if (m_awsSourceModeHasBeenSet) {
+    payload.WithString("awsSourceMode", AwsSourceModeMapper::GetNameForAwsSourceMode(m_awsSourceMode));
   }
 
   return payload;

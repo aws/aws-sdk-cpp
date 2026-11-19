@@ -23,5 +23,9 @@ Aws::String UpdateLinkRequest::SerializePayload() const {
     payload.WithInt64("timeoutInMillis", m_timeoutInMillis);
   }
 
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
+  }
+
   return payload.View().WriteReadable();
 }

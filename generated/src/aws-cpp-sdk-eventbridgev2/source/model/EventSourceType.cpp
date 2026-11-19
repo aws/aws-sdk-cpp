@@ -17,6 +17,7 @@ namespace EventSourceTypeMapper {
 
 static const int AWS_SERVICE_EVENTS_HASH = HashingUtils::HashString("AWS_SERVICE_EVENTS");
 static const int PARTNER_EVENTS_HASH = HashingUtils::HashString("PARTNER_EVENTS");
+static const int WEBHOOK_EVENTS_HASH = HashingUtils::HashString("WEBHOOK_EVENTS");
 
 EventSourceType GetEventSourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ EventSourceType GetEventSourceTypeForName(const Aws::String& name) {
     return EventSourceType::AWS_SERVICE_EVENTS;
   } else if (hashCode == PARTNER_EVENTS_HASH) {
     return EventSourceType::PARTNER_EVENTS;
+  } else if (hashCode == WEBHOOK_EVENTS_HASH) {
+    return EventSourceType::WEBHOOK_EVENTS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForEventSourceType(EventSourceType enumValue) {
       return "AWS_SERVICE_EVENTS";
     case EventSourceType::PARTNER_EVENTS:
       return "PARTNER_EVENTS";
+    case EventSourceType::WEBHOOK_EVENTS:
+      return "WEBHOOK_EVENTS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

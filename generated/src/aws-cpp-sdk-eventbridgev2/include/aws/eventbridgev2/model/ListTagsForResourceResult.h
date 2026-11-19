@@ -29,7 +29,9 @@ class ListTagsForResourceResult {
   AWS_EVENTBRIDGEV2_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
-
+  /**
+   * <p>Tags attached to a resource, as key-value pairs.</p>
+   */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
   void SetTags(TagsT&& value) {

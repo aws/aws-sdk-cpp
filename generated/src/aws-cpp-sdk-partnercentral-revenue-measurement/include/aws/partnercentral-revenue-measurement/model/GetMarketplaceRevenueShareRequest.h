@@ -49,18 +49,18 @@ class GetMarketplaceRevenueShareRequest : public PartnerCentralRevenueMeasuremen
 
   ///@{
   /**
-   * <p>The AWS Marketplace product identifier of the revenue share to retrieve.</p>
+   * <p>The marketplace revenue share to retrieve, by ID (mrs-...) or ARN.</p>
    */
-  inline const Aws::String& GetProductId() const { return m_productId; }
-  inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-  template <typename ProductIdT = Aws::String>
-  void SetProductId(ProductIdT&& value) {
-    m_productIdHasBeenSet = true;
-    m_productId = std::forward<ProductIdT>(value);
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
   }
-  template <typename ProductIdT = Aws::String>
-  GetMarketplaceRevenueShareRequest& WithProductId(ProductIdT&& value) {
-    SetProductId(std::forward<ProductIdT>(value));
+  template <typename IdentifierT = Aws::String>
+  GetMarketplaceRevenueShareRequest& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
     return *this;
   }
   ///@}
@@ -70,25 +70,27 @@ class GetMarketplaceRevenueShareRequest : public PartnerCentralRevenueMeasuremen
    * <p>The revision of the marketplace revenue share to retrieve. Omit to return the
    * latest revision.</p>
    */
-  inline int GetRevision() const { return m_revision; }
+  inline const Aws::String& GetRevision() const { return m_revision; }
   inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-  inline void SetRevision(int value) {
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
     m_revisionHasBeenSet = true;
-    m_revision = value;
+    m_revision = std::forward<RevisionT>(value);
   }
-  inline GetMarketplaceRevenueShareRequest& WithRevision(int value) {
-    SetRevision(value);
+  template <typename RevisionT = Aws::String>
+  GetMarketplaceRevenueShareRequest& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
     return *this;
   }
   ///@}
  private:
   CatalogName m_catalog{CatalogName::NOT_SET};
 
-  Aws::String m_productId;
+  Aws::String m_identifier;
 
-  int m_revision{0};
+  Aws::String m_revision;
   bool m_catalogHasBeenSet = false;
-  bool m_productIdHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
 };
 

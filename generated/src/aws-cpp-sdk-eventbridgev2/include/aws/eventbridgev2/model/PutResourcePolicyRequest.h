@@ -36,7 +36,9 @@ class PutResourcePolicyRequest : public EventBridgeV2Request {
   AWS_EVENTBRIDGEV2_API EndpointParameters GetEndpointContextParams() const override;
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
+   */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
   template <typename ResourceArnT = Aws::String>
@@ -52,7 +54,10 @@ class PutResourcePolicyRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>A resource policy document, as a JSON string. The maximum size is 389,120
+   * bytes of UTF-8; the byte limit is enforced by the service.</p>
+   */
   inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
   inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
   template <typename PolicyDocumentT = Aws::String>
@@ -69,13 +74,13 @@ class PutResourcePolicyRequest : public EventBridgeV2Request {
 
   ///@{
   /**
-   * <p>Which named policy to write. Defaults to &quot;default&quot;, the
-   * customer-managed policy, when omitted (a write AWS Resource Access Manager makes
-   * on the owner's behalf resolves to &quot;AWS_RAM&quot; instead). The two writers
-   * are exclusive in both directions — only Resource Access Manager can write
-   * &quot;AWS_RAM&quot;, and only the bus owner can write &quot;default&quot; — so
-   * naming the other party's policy fails with AccessDeniedException. A well-formed
-   * name that is neither of the two fails with InvalidInputException.</p>
+   * <p>Which named policy to write. Defaults to "default", the customer-managed
+   * policy, when omitted (a write AWS Resource Access Manager makes on the owner's
+   * behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both
+   * directions — only Resource Access Manager can write "AWS_RAM", and only the bus
+   * owner can write "default" — so naming the other party's policy fails with
+   * AccessDeniedException. A well-formed name that is neither of the two fails with
+   * InvalidInputException.</p>
    */
   inline const Aws::String& GetPolicyName() const { return m_policyName; }
   inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
@@ -95,7 +100,7 @@ class PutResourcePolicyRequest : public EventBridgeV2Request {
   /**
    * <p>The write succeeds only if the named policy's current revision ID matches
    * this value; a policy that does not exist yet matches only the sentinel
-   * &quot;NO_POLICY&quot; (create-only). On mismatch the operation fails with
+   * "NO_POLICY" (create-only). On mismatch the operation fails with
    * ConflictException. When omitted, the write is unconditional. Every attempt
    * stores a newly generated revision ID, so retrying an unanswered request can
    * conflict with the caller's own earlier attempt; read the policy back and compare

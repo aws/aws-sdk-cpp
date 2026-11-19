@@ -220,10 +220,12 @@ class SynthesizeSpeechRequest : public PollyRequest {
 
   ///@{
   /**
-   * <p> Voice ID to use for the synthesis. You can get a list of available voice IDs
-   * by calling the <a
+   * <p>The voice ID to use for the synthesis. You can get a list of available voice
+   * IDs by calling the <a
    * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
-   * operation. </p>
+   * operation. To use a custom voice, specify the voice ID that
+   * <code>CreateVoice</code> returned, for example, <code>vc-9a8fa85dd3</code>. You
+   * can't specify the ARN of a voice.</p>
    */
   inline VoiceId GetVoiceId() const { return m_voiceId; }
   inline bool VoiceIdHasBeenSet() const { return m_voiceIdHasBeenSet; }

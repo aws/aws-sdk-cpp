@@ -129,6 +129,10 @@ Channel& Channel::operator=(JsonView jsonValue) {
     m_inferenceSettings = jsonValue.GetObject("inferenceSettings");
     m_inferenceSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jpegXsInputSpecification")) {
+    m_jpegXsInputSpecification = jsonValue.GetObject("jpegXsInputSpecification");
+    m_jpegXsInputSpecificationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -250,6 +254,10 @@ JsonValue Channel::Jsonize() const {
 
   if (m_inferenceSettingsHasBeenSet) {
     payload.WithObject("inferenceSettings", m_inferenceSettings.Jsonize());
+  }
+
+  if (m_jpegXsInputSpecificationHasBeenSet) {
+    payload.WithObject("jpegXsInputSpecification", m_jpegXsInputSpecification.Jsonize());
   }
 
   return payload;

@@ -15,6 +15,10 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the <code>StopResourceSnapshotJob</code>
+ * operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StopResourceSnapshotJobRequest">AWS
+ * API Reference</a></p>
  */
 class StopResourceSnapshotJobRequest : public PartnerCentralSellingRequest {
  public:
@@ -33,9 +37,9 @@ class StopResourceSnapshotJobRequest : public PartnerCentralSellingRequest {
   ///@{
   /**
    * <p>Specifies the catalog related to the request. Valid values are:</p> <ul> <li>
-   * <p>AWS: Stops the request from the production AWS environment.</p> </li> <li>
-   * <p>Sandbox: Stops the request from a sandbox environment used for testing or
-   * development purposes.</p> </li> </ul>
+   * <p> AWS: Stops the request from the production AWS environment. </p> </li> <li>
+   * <p> Sandbox: Stops the request from a sandbox environment used for testing or
+   * development purposes. </p> </li> </ul>
    */
   inline const Aws::String& GetCatalog() const { return m_catalog; }
   inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }

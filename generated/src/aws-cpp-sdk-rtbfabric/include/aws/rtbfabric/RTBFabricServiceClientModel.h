@@ -34,6 +34,8 @@
 #include <aws/rtbfabric/model/DeleteRequesterGatewayResult.h>
 #include <aws/rtbfabric/model/DeleteResponderGatewayResult.h>
 #include <aws/rtbfabric/model/DisassociateCertificateResult.h>
+#include <aws/rtbfabric/model/GetAvailableModuleResult.h>
+#include <aws/rtbfabric/model/GetAvailableModuleVersionResult.h>
 #include <aws/rtbfabric/model/GetCertificateAssociationResult.h>
 #include <aws/rtbfabric/model/GetInboundExternalLinkResult.h>
 #include <aws/rtbfabric/model/GetLinkResult.h>
@@ -41,6 +43,10 @@
 #include <aws/rtbfabric/model/GetOutboundExternalLinkResult.h>
 #include <aws/rtbfabric/model/GetRequesterGatewayResult.h>
 #include <aws/rtbfabric/model/GetResponderGatewayResult.h>
+#include <aws/rtbfabric/model/GetUpdateResult.h>
+#include <aws/rtbfabric/model/ListAvailableModuleVersionsResult.h>
+#include <aws/rtbfabric/model/ListAvailableModulesRequest.h>
+#include <aws/rtbfabric/model/ListAvailableModulesResult.h>
 #include <aws/rtbfabric/model/ListCertificateAssociationsResult.h>
 #include <aws/rtbfabric/model/ListLinkRoutingRulesResult.h>
 #include <aws/rtbfabric/model/ListLinksResult.h>
@@ -49,6 +55,8 @@
 #include <aws/rtbfabric/model/ListResponderGatewaysRequest.h>
 #include <aws/rtbfabric/model/ListResponderGatewaysResult.h>
 #include <aws/rtbfabric/model/ListTagsForResourceResult.h>
+#include <aws/rtbfabric/model/ListUpdatesResult.h>
+#include <aws/rtbfabric/model/PutLinkFlowsResult.h>
 #include <aws/rtbfabric/model/RejectLinkResult.h>
 #include <aws/rtbfabric/model/TagResourceResult.h>
 #include <aws/rtbfabric/model/UntagResourceResult.h>
@@ -105,6 +113,8 @@ class DeleteOutboundExternalLinkRequest;
 class DeleteRequesterGatewayRequest;
 class DeleteResponderGatewayRequest;
 class DisassociateCertificateRequest;
+class GetAvailableModuleRequest;
+class GetAvailableModuleVersionRequest;
 class GetCertificateAssociationRequest;
 class GetInboundExternalLinkRequest;
 class GetLinkRequest;
@@ -112,12 +122,17 @@ class GetLinkRoutingRuleRequest;
 class GetOutboundExternalLinkRequest;
 class GetRequesterGatewayRequest;
 class GetResponderGatewayRequest;
+class GetUpdateRequest;
+class ListAvailableModuleVersionsRequest;
+class ListAvailableModulesRequest;
 class ListCertificateAssociationsRequest;
 class ListLinkRoutingRulesRequest;
 class ListLinksRequest;
 class ListRequesterGatewaysRequest;
 class ListResponderGatewaysRequest;
 class ListTagsForResourceRequest;
+class ListUpdatesRequest;
+class PutLinkFlowsRequest;
 class RejectLinkRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
@@ -144,6 +159,8 @@ typedef Aws::Utils::Outcome<DeleteOutboundExternalLinkResult, RTBFabricError> De
 typedef Aws::Utils::Outcome<DeleteRequesterGatewayResult, RTBFabricError> DeleteRequesterGatewayOutcome;
 typedef Aws::Utils::Outcome<DeleteResponderGatewayResult, RTBFabricError> DeleteResponderGatewayOutcome;
 typedef Aws::Utils::Outcome<DisassociateCertificateResult, RTBFabricError> DisassociateCertificateOutcome;
+typedef Aws::Utils::Outcome<GetAvailableModuleResult, RTBFabricError> GetAvailableModuleOutcome;
+typedef Aws::Utils::Outcome<GetAvailableModuleVersionResult, RTBFabricError> GetAvailableModuleVersionOutcome;
 typedef Aws::Utils::Outcome<GetCertificateAssociationResult, RTBFabricError> GetCertificateAssociationOutcome;
 typedef Aws::Utils::Outcome<GetInboundExternalLinkResult, RTBFabricError> GetInboundExternalLinkOutcome;
 typedef Aws::Utils::Outcome<GetLinkResult, RTBFabricError> GetLinkOutcome;
@@ -151,12 +168,17 @@ typedef Aws::Utils::Outcome<GetLinkRoutingRuleResult, RTBFabricError> GetLinkRou
 typedef Aws::Utils::Outcome<GetOutboundExternalLinkResult, RTBFabricError> GetOutboundExternalLinkOutcome;
 typedef Aws::Utils::Outcome<GetRequesterGatewayResult, RTBFabricError> GetRequesterGatewayOutcome;
 typedef Aws::Utils::Outcome<GetResponderGatewayResult, RTBFabricError> GetResponderGatewayOutcome;
+typedef Aws::Utils::Outcome<GetUpdateResult, RTBFabricError> GetUpdateOutcome;
+typedef Aws::Utils::Outcome<ListAvailableModuleVersionsResult, RTBFabricError> ListAvailableModuleVersionsOutcome;
+typedef Aws::Utils::Outcome<ListAvailableModulesResult, RTBFabricError> ListAvailableModulesOutcome;
 typedef Aws::Utils::Outcome<ListCertificateAssociationsResult, RTBFabricError> ListCertificateAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListLinkRoutingRulesResult, RTBFabricError> ListLinkRoutingRulesOutcome;
 typedef Aws::Utils::Outcome<ListLinksResult, RTBFabricError> ListLinksOutcome;
 typedef Aws::Utils::Outcome<ListRequesterGatewaysResult, RTBFabricError> ListRequesterGatewaysOutcome;
 typedef Aws::Utils::Outcome<ListResponderGatewaysResult, RTBFabricError> ListResponderGatewaysOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, RTBFabricError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<ListUpdatesResult, RTBFabricError> ListUpdatesOutcome;
+typedef Aws::Utils::Outcome<PutLinkFlowsResult, RTBFabricError> PutLinkFlowsOutcome;
 typedef Aws::Utils::Outcome<RejectLinkResult, RTBFabricError> RejectLinkOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, RTBFabricError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, RTBFabricError> UntagResourceOutcome;
@@ -183,6 +205,8 @@ typedef std::future<DeleteOutboundExternalLinkOutcome> DeleteOutboundExternalLin
 typedef std::future<DeleteRequesterGatewayOutcome> DeleteRequesterGatewayOutcomeCallable;
 typedef std::future<DeleteResponderGatewayOutcome> DeleteResponderGatewayOutcomeCallable;
 typedef std::future<DisassociateCertificateOutcome> DisassociateCertificateOutcomeCallable;
+typedef std::future<GetAvailableModuleOutcome> GetAvailableModuleOutcomeCallable;
+typedef std::future<GetAvailableModuleVersionOutcome> GetAvailableModuleVersionOutcomeCallable;
 typedef std::future<GetCertificateAssociationOutcome> GetCertificateAssociationOutcomeCallable;
 typedef std::future<GetInboundExternalLinkOutcome> GetInboundExternalLinkOutcomeCallable;
 typedef std::future<GetLinkOutcome> GetLinkOutcomeCallable;
@@ -190,12 +214,17 @@ typedef std::future<GetLinkRoutingRuleOutcome> GetLinkRoutingRuleOutcomeCallable
 typedef std::future<GetOutboundExternalLinkOutcome> GetOutboundExternalLinkOutcomeCallable;
 typedef std::future<GetRequesterGatewayOutcome> GetRequesterGatewayOutcomeCallable;
 typedef std::future<GetResponderGatewayOutcome> GetResponderGatewayOutcomeCallable;
+typedef std::future<GetUpdateOutcome> GetUpdateOutcomeCallable;
+typedef std::future<ListAvailableModuleVersionsOutcome> ListAvailableModuleVersionsOutcomeCallable;
+typedef std::future<ListAvailableModulesOutcome> ListAvailableModulesOutcomeCallable;
 typedef std::future<ListCertificateAssociationsOutcome> ListCertificateAssociationsOutcomeCallable;
 typedef std::future<ListLinkRoutingRulesOutcome> ListLinkRoutingRulesOutcomeCallable;
 typedef std::future<ListLinksOutcome> ListLinksOutcomeCallable;
 typedef std::future<ListRequesterGatewaysOutcome> ListRequesterGatewaysOutcomeCallable;
 typedef std::future<ListResponderGatewaysOutcome> ListResponderGatewaysOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<ListUpdatesOutcome> ListUpdatesOutcomeCallable;
+typedef std::future<PutLinkFlowsOutcome> PutLinkFlowsOutcomeCallable;
 typedef std::future<RejectLinkOutcome> RejectLinkOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -255,6 +284,12 @@ typedef std::function<void(const RTBFabricClient*, const Model::DeleteResponderG
 typedef std::function<void(const RTBFabricClient*, const Model::DisassociateCertificateRequest&,
                            const Model::DisassociateCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateCertificateResponseReceivedHandler;
+typedef std::function<void(const RTBFabricClient*, const Model::GetAvailableModuleRequest&, const Model::GetAvailableModuleOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAvailableModuleResponseReceivedHandler;
+typedef std::function<void(const RTBFabricClient*, const Model::GetAvailableModuleVersionRequest&,
+                           const Model::GetAvailableModuleVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAvailableModuleVersionResponseReceivedHandler;
 typedef std::function<void(const RTBFabricClient*, const Model::GetCertificateAssociationRequest&,
                            const Model::GetCertificateAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCertificateAssociationResponseReceivedHandler;
@@ -276,6 +311,15 @@ typedef std::function<void(const RTBFabricClient*, const Model::GetRequesterGate
 typedef std::function<void(const RTBFabricClient*, const Model::GetResponderGatewayRequest&, const Model::GetResponderGatewayOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetResponderGatewayResponseReceivedHandler;
+typedef std::function<void(const RTBFabricClient*, const Model::GetUpdateRequest&, const Model::GetUpdateOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetUpdateResponseReceivedHandler;
+typedef std::function<void(const RTBFabricClient*, const Model::ListAvailableModuleVersionsRequest&,
+                           const Model::ListAvailableModuleVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAvailableModuleVersionsResponseReceivedHandler;
+typedef std::function<void(const RTBFabricClient*, const Model::ListAvailableModulesRequest&, const Model::ListAvailableModulesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAvailableModulesResponseReceivedHandler;
 typedef std::function<void(const RTBFabricClient*, const Model::ListCertificateAssociationsRequest&,
                            const Model::ListCertificateAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCertificateAssociationsResponseReceivedHandler;
@@ -294,6 +338,12 @@ typedef std::function<void(const RTBFabricClient*, const Model::ListResponderGat
 typedef std::function<void(const RTBFabricClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const RTBFabricClient*, const Model::ListUpdatesRequest&, const Model::ListUpdatesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListUpdatesResponseReceivedHandler;
+typedef std::function<void(const RTBFabricClient*, const Model::PutLinkFlowsRequest&, const Model::PutLinkFlowsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutLinkFlowsResponseReceivedHandler;
 typedef std::function<void(const RTBFabricClient*, const Model::RejectLinkRequest&, const Model::RejectLinkOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RejectLinkResponseReceivedHandler;

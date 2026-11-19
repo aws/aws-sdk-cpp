@@ -1801,6 +1801,45 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Creates a Client ID Metadata Document (CIMD) policy for an app client. A CIMD
+   * policy lets OAuth clients identify themselves to your user pool with an HTTPS
+   * URL as their client ID. Amazon Cognito retrieves the client metadata document
+   * from that URL and accepts the client only when the URL matches one of the URL
+   * patterns in the policy.</p>  <p>Amazon Cognito evaluates Identity and
+   * Access Management (IAM) policies in requests for this API operation. For this
+   * operation, you must use IAM credentials to authorize requests, and you must
+   * grant yourself the corresponding IAM permission in a policy.</p> <p
+   * class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateCIMDPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCIMDPolicyOutcome CreateCIMDPolicy(const Model::CreateCIMDPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCIMDPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateCIMDPolicyRequestT = Model::CreateCIMDPolicyRequest>
+  Model::CreateCIMDPolicyOutcomeCallable CreateCIMDPolicyCallable(const CreateCIMDPolicyRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::CreateCIMDPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCIMDPolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateCIMDPolicyRequestT = Model::CreateCIMDPolicyRequest>
+  void CreateCIMDPolicyAsync(const CreateCIMDPolicyRequestT& request, const CreateCIMDPolicyResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::CreateCIMDPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new group in the specified user pool. For more information about
    * user pool groups, see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html">Adding
@@ -2230,6 +2269,41 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   void CreateUserPoolReplicaAsync(const CreateUserPoolReplicaRequestT& request, const CreateUserPoolReplicaResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CognitoIdentityProviderClient::CreateUserPoolReplica, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a Client ID Metadata Document (CIMD) policy.</p>  <p>Amazon
+   * Cognito evaluates Identity and Access Management (IAM) policies in requests for
+   * this API operation. For this operation, you must use IAM credentials to
+   * authorize requests, and you must grant yourself the corresponding IAM permission
+   * in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteCIMDPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCIMDPolicyOutcome DeleteCIMDPolicy(const Model::DeleteCIMDPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCIMDPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteCIMDPolicyRequestT = Model::DeleteCIMDPolicyRequest>
+  Model::DeleteCIMDPolicyOutcomeCallable DeleteCIMDPolicyCallable(const DeleteCIMDPolicyRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::DeleteCIMDPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCIMDPolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteCIMDPolicyRequestT = Model::DeleteCIMDPolicyRequest>
+  void DeleteCIMDPolicyAsync(const DeleteCIMDPolicyRequestT& request, const DeleteCIMDPolicyResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::DeleteCIMDPolicy, request, handler, context);
   }
 
   /**
@@ -2693,6 +2767,42 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
                                      const DeleteWebAuthnCredentialResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CognitoIdentityProviderClient::DeleteWebAuthnCredential, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the configuration of a Client ID Metadata Document (CIMD) policy.</p>
+   *  <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies
+   * in requests for this API operation. For this operation, you must use IAM
+   * credentials to authorize requests, and you must grant yourself the corresponding
+   * IAM permission in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeCIMDPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeCIMDPolicyOutcome DescribeCIMDPolicy(const Model::DescribeCIMDPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeCIMDPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeCIMDPolicyRequestT = Model::DescribeCIMDPolicyRequest>
+  Model::DescribeCIMDPolicyOutcomeCallable DescribeCIMDPolicyCallable(const DescribeCIMDPolicyRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::DescribeCIMDPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeCIMDPolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeCIMDPolicyRequestT = Model::DescribeCIMDPolicyRequest>
+  void DescribeCIMDPolicyAsync(const DescribeCIMDPolicyRequestT& request, const DescribeCIMDPolicyResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::DescribeCIMDPolicy, request, handler, context);
   }
 
   /**
@@ -3978,23 +4088,22 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
    * <p>Initiates a point-in-time recovery of a user pool to a time in the past that
    * you specify. This operation is the first step of a recovery and doesn't change
    * your user pool data. Amazon Cognito pauses write operations in the user pool and
-   * generates a recovery preview when capacity is available in the Amazon Web
-   * Services Region, so the preview might not be available immediately. The preview
-   * shows the number of entities that the recovery creates, updates, and deletes. To
-   * check the status of the recovery and review the preview, make a request. When
-   * the status is <code>PREVIEW_GENERATED</code>, apply the recovery with a request
-   * or discard it with a request. The time that it takes to generate the recovery
-   * preview doesn't depend on the size of your user pool.</p>
-   * <p>Point-in-time recovery is a disaster recovery feature. Use it to recover from
-   * accidental or unauthorized changes that affect your user data, for example the
-   * deletion or corruption of many users. Don't use point-in-time recovery to remove
-   * users that were created recently or to revert changes to individual users. To
-   * delete or update individual users, use operations like and .</p>
-   * <p>While a recovery is in progress, Amazon Cognito blocks operations that write
-   * to the user pool, for example user sign-up, user creation, and attribute
-   * updates. Sign-in and read operations continue to work, with the following
-   * exceptions.</p> <ul> <li> <p>Users who must set a new password, set up MFA, or
-   * respond to a TOTP MFA challenge can't complete sign-in. Sign-in with the
+   * generates a recovery preview, which might not be available immediately. The
+   * preview shows the number of entities that the recovery creates, updates, and
+   * deletes. To check the status of the recovery and review the preview, make a
+   * request. When the status is <code>PREVIEW_GENERATED</code>, apply the recovery
+   * with a request or discard it with a request. The time that it takes to generate
+   * the recovery preview doesn't depend on the size of your user pool.</p>
+   *  <p>Point-in-time recovery is a disaster recovery feature. Use it to
+   * recover from accidental or unauthorized changes that affect your user data, for
+   * example the deletion or corruption of many users. Don't use point-in-time
+   * recovery to remove users that were created recently or to revert changes to
+   * individual users. To delete or update individual users, use operations like and
+   * .</p>  <p>While a recovery is in progress, Amazon Cognito blocks
+   * operations that write to the user pool, for example user sign-up, user creation,
+   * and attribute updates. Sign-in and read operations continue to work, with the
+   * following exceptions:</p> <ul> <li> <p>Users who must set a new password, set up
+   * MFA, or respond to a TOTP MFA challenge can't complete sign-in. Sign-in with the
    * <code>NEW_PASSWORD_REQUIRED</code>, <code>MFA_SETUP</code>, and
    * <code>SOFTWARE_TOKEN_MFA</code> challenges fails until the recovery ends.</p>
    * </li> <li> <p>Federated users can sign in only if they have previously signed in
@@ -4004,13 +4113,13 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
    * start or cancel the recovery within 24 hours after you initiate it, the recovery
    * preview expires. Amazon Cognito then resumes write operations and doesn't change
    * your user pool data. The 24-hour period includes the time that Amazon Cognito
-   * waits for available capacity.</p> <p>A point-in-time recovery restores user
-   * data, including user profiles and attributes, group memberships, passwords, MFA
-   * settings, and passkeys. It doesn't restore user pool configuration, for example
-   * app clients, the attribute schema, encryption settings, or multi-Region
+   * takes to generate the recovery preview.</p> <p>A point-in-time recovery restores
+   * user data, including user profiles and attributes, group memberships, passwords,
+   * MFA settings, and passkeys. It doesn't restore user pool configuration, for
+   * example app clients, the attribute schema, encryption settings, or multi-Region
    * replication settings. Users who changed their password after the recovery point
    * keep their current password.</p> <p>The following requirements and limits apply
-   * to point-in-time recovery.</p> <ul> <li> <p>Your user pool must be on the
+   * to point-in-time recovery:</p> <ul> <li> <p>Your user pool must be on the
    * Essentials or Plus <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature
    * plan</a>. With the Essentials feature plan, you can recover your user pool to a
@@ -4077,6 +4186,80 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
                                         const InitiatePointInTimeRecoveryResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CognitoIdentityProviderClient::InitiatePointInTimeRecovery, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the Client ID Metadata Document (CIMD) policies in a user pool.</p>
+   *  <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies
+   * in requests for this API operation. For this operation, you must use IAM
+   * credentials to authorize requests, and you must grant yourself the corresponding
+   * IAM permission in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListCIMDPolicies">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCIMDPoliciesOutcome ListCIMDPolicies(const Model::ListCIMDPoliciesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListCIMDPolicies that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListCIMDPoliciesRequestT = Model::ListCIMDPoliciesRequest>
+  Model::ListCIMDPoliciesOutcomeCallable ListCIMDPoliciesCallable(const ListCIMDPoliciesRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::ListCIMDPolicies, request);
+  }
+
+  /**
+   * An Async wrapper for ListCIMDPolicies that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListCIMDPoliciesRequestT = Model::ListCIMDPoliciesRequest>
+  void ListCIMDPoliciesAsync(const ListCIMDPoliciesRequestT& request, const ListCIMDPoliciesResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::ListCIMDPolicies, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the client ID metadata document URLs that Amazon Cognito has received
+   * for a Client ID Metadata Document (CIMD) policy, with the cache state of each
+   * URL.</p>  <p>Amazon Cognito evaluates Identity and Access Management (IAM)
+   * policies in requests for this API operation. For this operation, you must use
+   * IAM credentials to authorize requests, and you must grant yourself the
+   * corresponding IAM permission in a policy.</p> <p class="title"> <b>Learn
+   * more</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListClientMetadataURLs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListClientMetadataURLsOutcome ListClientMetadataURLs(const Model::ListClientMetadataURLsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListClientMetadataURLs that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListClientMetadataURLsRequestT = Model::ListClientMetadataURLsRequest>
+  Model::ListClientMetadataURLsOutcomeCallable ListClientMetadataURLsCallable(const ListClientMetadataURLsRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::ListClientMetadataURLs, request);
+  }
+
+  /**
+   * An Async wrapper for ListClientMetadataURLs that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListClientMetadataURLsRequestT = Model::ListClientMetadataURLsRequest>
+  void ListClientMetadataURLsAsync(const ListClientMetadataURLsRequestT& request,
+                                   const ListClientMetadataURLsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::ListClientMetadataURLs, request, handler, context);
   }
 
   /**
@@ -5451,6 +5634,83 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
                                     const UpdateAuthEventFeedbackResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CognitoIdentityProviderClient::UpdateAuthEventFeedback, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of a Client ID Metadata Document (CIMD) policy.</p>
+   *  <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies
+   * in requests for this API operation. For this operation, you must use IAM
+   * credentials to authorize requests, and you must grant yourself the corresponding
+   * IAM permission in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateCIMDPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCIMDPolicyOutcome UpdateCIMDPolicy(const Model::UpdateCIMDPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCIMDPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateCIMDPolicyRequestT = Model::UpdateCIMDPolicyRequest>
+  Model::UpdateCIMDPolicyOutcomeCallable UpdateCIMDPolicyCallable(const UpdateCIMDPolicyRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::UpdateCIMDPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCIMDPolicy that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateCIMDPolicyRequestT = Model::UpdateCIMDPolicyRequest>
+  void UpdateCIMDPolicyAsync(const UpdateCIMDPolicyRequestT& request, const UpdateCIMDPolicyResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::UpdateCIMDPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Changes the cache state of a client metadata document URL for a client ID
+   * metadata document (CIMD) policy. Refresh a URL to make Amazon Cognito retrieve
+   * the client metadata document again, or invalidate it to remove the cached
+   * document.</p>  <p>Amazon Cognito evaluates Identity and Access Management
+   * (IAM) policies in requests for this API operation. For this operation, you must
+   * use IAM credentials to authorize requests, and you must grant yourself the
+   * corresponding IAM permission in a policy.</p> <p class="title"> <b>Learn
+   * more</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+   * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+   * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateClientMetadataURLState">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateClientMetadataURLStateOutcome UpdateClientMetadataURLState(
+      const Model::UpdateClientMetadataURLStateRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateClientMetadataURLState that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateClientMetadataURLStateRequestT = Model::UpdateClientMetadataURLStateRequest>
+  Model::UpdateClientMetadataURLStateOutcomeCallable UpdateClientMetadataURLStateCallable(
+      const UpdateClientMetadataURLStateRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::UpdateClientMetadataURLState, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateClientMetadataURLState that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateClientMetadataURLStateRequestT = Model::UpdateClientMetadataURLStateRequest>
+  void UpdateClientMetadataURLStateAsync(const UpdateClientMetadataURLStateRequestT& request,
+                                         const UpdateClientMetadataURLStateResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::UpdateClientMetadataURLState, request, handler, context);
   }
 
   /**

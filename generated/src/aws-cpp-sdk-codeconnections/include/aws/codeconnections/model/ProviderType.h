@@ -10,7 +10,16 @@
 namespace Aws {
 namespace CodeConnections {
 namespace Model {
-enum class ProviderType { NOT_SET, Bitbucket, GitHub, GitHubEnterpriseServer, GitLab, GitLabSelfManaged, AzureDevOps };
+enum class ProviderType {
+  NOT_SET,
+  Bitbucket,
+  GitHub,
+  GitHubEnterpriseServer,
+  GitLab,
+  GitLabSelfManaged,
+  AzureDevOps,
+  GitHubEnterpriseCloudDataResidency
+};
 
 namespace ProviderTypeMapper {
 AWS_CODECONNECTIONS_API ProviderType GetProviderTypeForName(const Aws::String& name);

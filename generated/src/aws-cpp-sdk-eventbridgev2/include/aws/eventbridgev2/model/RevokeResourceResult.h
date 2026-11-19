@@ -28,7 +28,11 @@ class RevokeResourceResult {
   AWS_EVENTBRIDGEV2_API RevokeResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
-
+  /**
+   * <p>ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The
+   * pattern is the revocable subset of TaggableResourceArn; buses are not
+   * revocable.</p>
+   */
   inline const Aws::String& GetArn() const { return m_arn; }
   template <typename ArnT = Aws::String>
   void SetArn(ArnT&& value) {

@@ -10,7 +10,15 @@
 namespace Aws {
 namespace Polly {
 namespace Model {
-enum class ValidationExceptionReason { NOT_SET, unsupportedOperation, fieldValidationFailed, other, invalidInboundEvent };
+enum class ValidationExceptionReason {
+  NOT_SET,
+  unsupportedOperation,
+  fieldValidationFailed,
+  other,
+  invalidInboundEvent,
+  kmsKeyNotFound,
+  kmsKeyUnusable
+};
 
 namespace ValidationExceptionReasonMapper {
 AWS_POLLY_API ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name);

@@ -21,6 +21,12 @@ class JsonValue;
 }  // namespace Utils
 namespace PartnerCentralSelling {
 namespace Model {
+/**
+ * <p>Contains the response that the <code>CreateResourceSnapshot</code> action
+ * returns.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateResourceSnapshotResponse">AWS
+ * API Reference</a></p>
+ */
 class CreateResourceSnapshotResult {
  public:
   AWS_PARTNERCENTRALSELLING_API CreateResourceSnapshotResult() = default;
@@ -30,8 +36,8 @@ class CreateResourceSnapshotResult {
 
   ///@{
   /**
-   * <p> Specifies the Amazon Resource Name (ARN) that uniquely identifies the
-   * snapshot created. </p>
+   * <p>Specifies the Amazon Resource Name (ARN) that uniquely identifies the
+   * snapshot created.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   template <typename ArnT = Aws::String>
@@ -48,9 +54,9 @@ class CreateResourceSnapshotResult {
 
   ///@{
   /**
-   * <p> Specifies the revision number of the created snapshot. This field provides
+   * <p>Specifies the revision number of the created snapshot. This field provides
    * important information about the snapshot's place in the sequence of snapshots
-   * for the given resource. </p>
+   * for the given resource.</p>
    */
   inline int GetRevision() const { return m_revision; }
   inline void SetRevision(int value) {

@@ -133,6 +133,10 @@ StopChannelResult& StopChannelResult::operator=(const Aws::AmazonWebServiceResul
     m_inferenceSettings = jsonValue.GetObject("inferenceSettings");
     m_inferenceSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jpegXsInputSpecification")) {
+    m_jpegXsInputSpecification = jsonValue.GetObject("jpegXsInputSpecification");
+    m_jpegXsInputSpecificationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -54,6 +54,14 @@ GetCodeSecurityIntegrationResult& GetCodeSecurityIntegrationResult::operator=(co
     m_authorizationUrl = jsonValue.GetString("authorizationUrl");
     m_authorizationUrlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vpcConfiguration")) {
+    m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
+    m_vpcConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("instanceUrl")) {
+    m_instanceUrl = jsonValue.GetString("instanceUrl");
+    m_instanceUrlHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {

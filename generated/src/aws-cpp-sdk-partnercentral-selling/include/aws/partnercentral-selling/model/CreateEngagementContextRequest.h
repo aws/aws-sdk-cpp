@@ -18,6 +18,10 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the <code>CreateEngagementContext</code>
+ * operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementContextRequest">AWS
+ * API Reference</a></p>
  */
 class CreateEngagementContextRequest : public PartnerCentralSellingRequest {
  public:
@@ -119,7 +123,10 @@ class CreateEngagementContextRequest : public PartnerCentralSellingRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Contains the contextual information to add to the engagement. The structure
+   * of this payload depends on the context type in the <code>Type</code> field.</p>
+   */
   inline const EngagementContextPayload& GetPayload() const { return m_payload; }
   inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
   template <typename PayloadT = EngagementContextPayload>

@@ -25,6 +25,12 @@ class JsonValue;
 }  // namespace Utils
 namespace PartnerCentralSelling {
 namespace Model {
+/**
+ * <p>Contains the response that the <code>GetResourceSnapshot</code> action
+ * returns.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetResourceSnapshotResponse">AWS
+ * API Reference</a></p>
+ */
 class GetResourceSnapshotResult {
  public:
   AWS_PARTNERCENTRALSELLING_API GetResourceSnapshotResult() = default;
@@ -192,7 +198,10 @@ class GetResourceSnapshotResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Contains the data of the resource snapshot. The structure of this payload
+   * depends on the resource type and the snapshot template.</p>
+   */
   inline const ResourceSnapshotPayload& GetPayload() const { return m_payload; }
   template <typename PayloadT = ResourceSnapshotPayload>
   void SetPayload(PayloadT&& value) {

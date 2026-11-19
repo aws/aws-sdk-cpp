@@ -29,6 +29,8 @@
 #include <aws/sts/model/GetCallerIdentityResult.h>
 #include <aws/sts/model/GetDelegatedAccessTokenResult.h>
 #include <aws/sts/model/GetFederationTokenResult.h>
+#include <aws/sts/model/GetScopedCredentialsRequest.h>
+#include <aws/sts/model/GetScopedCredentialsResult.h>
 #include <aws/sts/model/GetSessionTokenRequest.h>
 #include <aws/sts/model/GetSessionTokenResult.h>
 #include <aws/sts/model/GetWebIdentityTokenResult.h>
@@ -74,6 +76,7 @@ class GetAccessKeyInfoRequest;
 class GetCallerIdentityRequest;
 class GetDelegatedAccessTokenRequest;
 class GetFederationTokenRequest;
+class GetScopedCredentialsRequest;
 class GetSessionTokenRequest;
 class GetWebIdentityTokenRequest;
 /* End of service model forward declarations required in STSClient header */
@@ -88,6 +91,7 @@ typedef Aws::Utils::Outcome<GetAccessKeyInfoResult, STSError> GetAccessKeyInfoOu
 typedef Aws::Utils::Outcome<GetCallerIdentityResult, STSError> GetCallerIdentityOutcome;
 typedef Aws::Utils::Outcome<GetDelegatedAccessTokenResult, STSError> GetDelegatedAccessTokenOutcome;
 typedef Aws::Utils::Outcome<GetFederationTokenResult, STSError> GetFederationTokenOutcome;
+typedef Aws::Utils::Outcome<GetScopedCredentialsResult, STSError> GetScopedCredentialsOutcome;
 typedef Aws::Utils::Outcome<GetSessionTokenResult, STSError> GetSessionTokenOutcome;
 typedef Aws::Utils::Outcome<GetWebIdentityTokenResult, STSError> GetWebIdentityTokenOutcome;
 /* End of service model Outcome class definitions */
@@ -102,6 +106,7 @@ typedef std::future<GetAccessKeyInfoOutcome> GetAccessKeyInfoOutcomeCallable;
 typedef std::future<GetCallerIdentityOutcome> GetCallerIdentityOutcomeCallable;
 typedef std::future<GetDelegatedAccessTokenOutcome> GetDelegatedAccessTokenOutcomeCallable;
 typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
+typedef std::future<GetScopedCredentialsOutcome> GetScopedCredentialsOutcomeCallable;
 typedef std::future<GetSessionTokenOutcome> GetSessionTokenOutcomeCallable;
 typedef std::future<GetWebIdentityTokenOutcome> GetWebIdentityTokenOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -137,6 +142,9 @@ typedef std::function<void(const STSClient*, const Model::GetDelegatedAccessToke
 typedef std::function<void(const STSClient*, const Model::GetFederationTokenRequest&, const Model::GetFederationTokenOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetFederationTokenResponseReceivedHandler;
+typedef std::function<void(const STSClient*, const Model::GetScopedCredentialsRequest&, const Model::GetScopedCredentialsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetScopedCredentialsResponseReceivedHandler;
 typedef std::function<void(const STSClient*, const Model::GetSessionTokenRequest&, const Model::GetSessionTokenOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSessionTokenResponseReceivedHandler;

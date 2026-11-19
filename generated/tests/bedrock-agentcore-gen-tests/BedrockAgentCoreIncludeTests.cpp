@@ -40,6 +40,9 @@
 #include <aws/bedrock-agentcore/model/AutomationStreamStatus.h>
 #include <aws/bedrock-agentcore/model/AutomationStreamUpdate.h>
 #include <aws/bedrock-agentcore/model/AvailableLimits.h>
+#include <aws/bedrock-agentcore/model/AwsBillingPaymentOptions.h>
+#include <aws/bedrock-agentcore/model/AwsBillingX402PaymentInput.h>
+#include <aws/bedrock-agentcore/model/AwsBillingX402PaymentOutput.h>
 #include <aws/bedrock-agentcore/model/BasicAuth.h>
 #include <aws/bedrock-agentcore/model/BatchCreateMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/BatchCreateMemoryRecordsResult.h>
@@ -139,6 +142,7 @@
 #include <aws/bedrock-agentcore/model/DescriptorType.h>
 #include <aws/bedrock-agentcore/model/Descriptors.h>
 #include <aws/bedrock-agentcore/model/DomainFilter.h>
+#include <aws/bedrock-agentcore/model/DpopJwk.h>
 #include <aws/bedrock-agentcore/model/EfsConfiguration.h>
 #include <aws/bedrock-agentcore/model/EmbeddedCryptoWallet.h>
 #include <aws/bedrock-agentcore/model/EvaluateRequest.h>
@@ -319,6 +323,8 @@
 #include <aws/bedrock-agentcore/model/InvokeHarnessStreamOutput.h>
 #include <aws/bedrock-agentcore/model/InvokeWebSearchRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeWebSearchResult.h>
+#include <aws/bedrock-agentcore/model/JwkEllipticCurve.h>
+#include <aws/bedrock-agentcore/model/JwkKeyType.h>
 #include <aws/bedrock-agentcore/model/KeyPressArguments.h>
 #include <aws/bedrock-agentcore/model/KeyPressResult.h>
 #include <aws/bedrock-agentcore/model/KeyShortcutArguments.h>

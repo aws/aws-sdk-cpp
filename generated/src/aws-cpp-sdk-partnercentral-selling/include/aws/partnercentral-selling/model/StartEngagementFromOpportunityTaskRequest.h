@@ -19,6 +19,11 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the
+ * <code>StartEngagementFromOpportunityTask</code> operation.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartEngagementFromOpportunityTaskRequest">AWS
+ * API Reference</a></p>
  */
 class StartEngagementFromOpportunityTaskRequest : public PartnerCentralSellingRequest {
  public:
@@ -94,7 +99,10 @@ class StartEngagementFromOpportunityTaskRequest : public PartnerCentralSellingRe
   ///@}
 
   ///@{
-
+  /**
+   * <p>Specifies the level of AWS involvement for the opportunity. The value
+   * includes the involvement type and the visibility of that involvement.</p>
+   */
   inline const AwsSubmission& GetAwsSubmission() const { return m_awsSubmission; }
   inline bool AwsSubmissionHasBeenSet() const { return m_awsSubmissionHasBeenSet; }
   template <typename AwsSubmissionT = AwsSubmission>

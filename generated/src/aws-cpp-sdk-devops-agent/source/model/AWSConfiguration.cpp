@@ -38,6 +38,10 @@ AWSConfiguration& AWSConfiguration::operator=(JsonView jsonValue) {
     m_agentElevatedRoleArnStatus = ValidationStatusMapper::GetValidationStatusForName(jsonValue.GetString("agentElevatedRoleArnStatus"));
     m_agentElevatedRoleArnStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("serviceManagementRoleArn")) {
+    m_serviceManagementRoleArn = jsonValue.GetString("serviceManagementRoleArn");
+    m_serviceManagementRoleArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue AWSConfiguration::Jsonize() const {
 
   if (m_agentElevatedRoleArnStatusHasBeenSet) {
     payload.WithString("agentElevatedRoleArnStatus", ValidationStatusMapper::GetNameForValidationStatus(m_agentElevatedRoleArnStatus));
+  }
+
+  if (m_serviceManagementRoleArnHasBeenSet) {
+    payload.WithString("serviceManagementRoleArn", m_serviceManagementRoleArn);
   }
 
   return payload;

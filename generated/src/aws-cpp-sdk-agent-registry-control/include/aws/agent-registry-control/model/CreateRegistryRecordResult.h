@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/agent-registry-control/AgentRegistryControl_EXPORTS.h>
+#include <aws/agent-registry-control/model/AuthorizationData.h>
 #include <aws/agent-registry-control/model/RegistryRecordStatus.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -54,8 +55,11 @@ class CreateRegistryRecordResult {
 
   ///@{
   /**
-   * <p>The status of the registry record, set to CREATING while the asynchronous
-   * workflow is in progress</p>
+   * <p>The status of the registry record. <code>CREATING</code> means that the
+   * asynchronous workflow is in progress. <code>CREATE_PENDING_AUTH</code> means
+   * that the record waits for a GitHub user to authorize access before it
+   * synchronizes from its GitHub source. For the authorization link, see
+   * <code>authorizationData</code>.</p>
    */
   inline RegistryRecordStatus GetStatus() const { return m_status; }
   inline void SetStatus(RegistryRecordStatus value) {
@@ -64,6 +68,28 @@ class CreateRegistryRecordResult {
   }
   inline CreateRegistryRecordResult& WithStatus(RegistryRecordStatus value) {
     SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The authorization that a GitHub user must complete before the record's
+   * synchronization starts. Present only in this response, and only while the status
+   * is <code>CREATE_PENDING_AUTH</code>. If the status is
+   * <code>CREATE_PENDING_AUTH</code> but this member is absent, call
+   * <code>UpdateRegistryRecord</code> with <code>triggerSynchronization</code> to
+   * get a new authorization link.</p>
+   */
+  inline const AuthorizationData& GetAuthorizationData() const { return m_authorizationData; }
+  template <typename AuthorizationDataT = AuthorizationData>
+  void SetAuthorizationData(AuthorizationDataT&& value) {
+    m_authorizationDataHasBeenSet = true;
+    m_authorizationData = std::forward<AuthorizationDataT>(value);
+  }
+  template <typename AuthorizationDataT = AuthorizationData>
+  CreateRegistryRecordResult& WithAuthorizationData(AuthorizationDataT&& value) {
+    SetAuthorizationData(std::forward<AuthorizationDataT>(value));
     return *this;
   }
   ///@}
@@ -89,10 +115,13 @@ class CreateRegistryRecordResult {
 
   RegistryRecordStatus m_status{RegistryRecordStatus::NOT_SET};
 
+  AuthorizationData m_authorizationData;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recordArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_authorizationDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

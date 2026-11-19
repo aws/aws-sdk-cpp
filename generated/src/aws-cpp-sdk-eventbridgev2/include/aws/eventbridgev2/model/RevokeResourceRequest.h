@@ -31,7 +31,11 @@ class RevokeResourceRequest : public EventBridgeV2Request {
   AWS_EVENTBRIDGEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
   ///@{
-
+  /**
+   * <p>ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The
+   * pattern is the revocable subset of TaggableResourceArn; buses are not
+   * revocable.</p>
+   */
   inline const Aws::String& GetArn() const { return m_arn; }
   inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
   template <typename ArnT = Aws::String>

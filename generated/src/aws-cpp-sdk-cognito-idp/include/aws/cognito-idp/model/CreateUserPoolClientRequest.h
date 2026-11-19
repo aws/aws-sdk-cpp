@@ -712,6 +712,35 @@ class CreateUserPoolClientRequest : public CognitoIdentityProviderRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether Amazon Cognito stores and manages this app client's secret
+   * in <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon
+   * Web Services Secrets Manager</a> instead of returning the plaintext value.
+   * Applies only when <code>GenerateSecret</code> is <code>true</code>. When you set
+   * this parameter to <code>true</code>, the response returns
+   * <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. Amazon
+   * Cognito starts the first rotation of the secret right away, and then rotates the
+   * secret every 7 days by default. You can change the rotation schedule in Secrets
+   * Manager.</p> <p>Defaults to <code>false</code>. If you don't set this parameter,
+   * Amazon Cognito doesn't manage the secret in Secrets Manager and returns the
+   * plaintext <code>ClientSecret</code> value. The Amazon Cognito console turns on
+   * this option by default when it creates an app client with a generated client
+   * secret.</p>
+   */
+  inline bool GetPublishSecretsInAWSSecretsManager() const { return m_publishSecretsInAWSSecretsManager; }
+  inline bool PublishSecretsInAWSSecretsManagerHasBeenSet() const { return m_publishSecretsInAWSSecretsManagerHasBeenSet; }
+  inline void SetPublishSecretsInAWSSecretsManager(bool value) {
+    m_publishSecretsInAWSSecretsManagerHasBeenSet = true;
+    m_publishSecretsInAWSSecretsManager = value;
+  }
+  inline CreateUserPoolClientRequest& WithPublishSecretsInAWSSecretsManager(bool value) {
+    SetPublishSecretsInAWSSecretsManager(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userPoolId;
 
@@ -760,6 +789,8 @@ class CreateUserPoolClientRequest : public CognitoIdentityProviderRequest {
   int m_authSessionValidity{0};
 
   RefreshTokenRotationType m_refreshTokenRotation;
+
+  bool m_publishSecretsInAWSSecretsManager{false};
   bool m_userPoolIdHasBeenSet = false;
   bool m_clientNameHasBeenSet = false;
   bool m_generateSecretHasBeenSet = false;
@@ -784,6 +815,7 @@ class CreateUserPoolClientRequest : public CognitoIdentityProviderRequest {
   bool m_enablePropagateAdditionalUserContextDataHasBeenSet = false;
   bool m_authSessionValidityHasBeenSet = false;
   bool m_refreshTokenRotationHasBeenSet = false;
+  bool m_publishSecretsInAWSSecretsManagerHasBeenSet = false;
 };
 
 }  // namespace Model

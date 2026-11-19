@@ -18,6 +18,10 @@ namespace Model {
 Voice::Voice(JsonView jsonValue) { *this = jsonValue; }
 
 Voice& Voice::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
+    m_arn = jsonValue.GetString("Arn");
+    m_arnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Gender")) {
     m_gender = GenderMapper::GetGenderForName(jsonValue.GetString("Gender"));
     m_genderHasBeenSet = true;
@@ -38,6 +42,18 @@ Voice& Voice::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Origin")) {
+    m_origin = VoiceOriginMapper::GetVoiceOriginForName(jsonValue.GetString("Origin"));
+    m_originHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Status")) {
+    m_status = VoiceStatusMapper::GetVoiceStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StatusReason")) {
+    m_statusReason = jsonValue.GetString("StatusReason");
+    m_statusReasonHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("AdditionalLanguageCodes")) {
     Aws::Utils::Array<JsonView> additionalLanguageCodesJsonList = jsonValue.GetArray("AdditionalLanguageCodes");
     for (unsigned additionalLanguageCodesIndex = 0; additionalLanguageCodesIndex < additionalLanguageCodesJsonList.GetLength();
@@ -54,11 +70,27 @@ Voice& Voice::operator=(JsonView jsonValue) {
     }
     m_supportedEnginesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VoiceCreationData")) {
+    m_voiceCreationData = jsonValue.GetObject("VoiceCreationData");
+    m_voiceCreationDataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CustomerManagedEncryption")) {
+    m_customerManagedEncryption = jsonValue.GetObject("CustomerManagedEncryption");
+    m_customerManagedEncryptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreationTime")) {
+    m_creationTime = jsonValue.GetDouble("CreationTime");
+    m_creationTimeHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue Voice::Jsonize() const {
   JsonValue payload;
+
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
+  }
 
   if (m_genderHasBeenSet) {
     payload.WithString("Gender", GenderMapper::GetNameForGender(m_gender));
@@ -80,6 +112,18 @@ JsonValue Voice::Jsonize() const {
     payload.WithString("Name", m_name);
   }
 
+  if (m_originHasBeenSet) {
+    payload.WithString("Origin", VoiceOriginMapper::GetNameForVoiceOrigin(m_origin));
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", VoiceStatusMapper::GetNameForVoiceStatus(m_status));
+  }
+
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("StatusReason", m_statusReason);
+  }
+
   if (m_additionalLanguageCodesHasBeenSet) {
     Aws::Utils::Array<JsonValue> additionalLanguageCodesJsonList(m_additionalLanguageCodes.size());
     for (unsigned additionalLanguageCodesIndex = 0; additionalLanguageCodesIndex < additionalLanguageCodesJsonList.GetLength();
@@ -96,6 +140,18 @@ JsonValue Voice::Jsonize() const {
       supportedEnginesJsonList[supportedEnginesIndex].AsString(EngineMapper::GetNameForEngine(m_supportedEngines[supportedEnginesIndex]));
     }
     payload.WithArray("SupportedEngines", std::move(supportedEnginesJsonList));
+  }
+
+  if (m_voiceCreationDataHasBeenSet) {
+    payload.WithObject("VoiceCreationData", m_voiceCreationData.Jsonize());
+  }
+
+  if (m_customerManagedEncryptionHasBeenSet) {
+    payload.WithObject("CustomerManagedEncryption", m_customerManagedEncryption.Jsonize());
+  }
+
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -12,6 +12,7 @@
 #include <aws/agent-registry-control/model/UpdatedDescription.h>
 #include <aws/agent-registry-control/model/UpdatedDescriptors.h>
 #include <aws/agent-registry-control/model/UpdatedDisplayName.h>
+#include <aws/agent-registry-control/model/UpdatedRegistryRecordArtifact.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -166,6 +167,30 @@ class UpdateRegistryRecordRequest : public AgentRegistryControlRequest {
 
   ///@{
   /**
+   * <p>The change to the record's uploaded skill package. Omit it to keep the
+   * current package, specify an empty object to remove an uploaded package, or
+   * specify <code>optionalValue</code> to upload a new package. An empty object
+   * doesn't remove a package that the record synchronizes from a source. To stop
+   * that synchronization, remove <code>skillPackage</code>. A request that changes
+   * <code>skillMd.data</code> replaces the record's package with that text, even if
+   * you omit this member.</p>
+   */
+  inline const UpdatedRegistryRecordArtifact& GetArtifact() const { return m_artifact; }
+  inline bool ArtifactHasBeenSet() const { return m_artifactHasBeenSet; }
+  template <typename ArtifactT = UpdatedRegistryRecordArtifact>
+  void SetArtifact(ArtifactT&& value) {
+    m_artifactHasBeenSet = true;
+    m_artifact = std::forward<ArtifactT>(value);
+  }
+  template <typename ArtifactT = UpdatedRegistryRecordArtifact>
+  UpdateRegistryRecordRequest& WithArtifact(ArtifactT&& value) {
+    SetArtifact(std::forward<ArtifactT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The updated version of the registry record. Omit to leave the version
    * unchanged.</p>
    */
@@ -207,8 +232,13 @@ class UpdateRegistryRecordRequest : public AgentRegistryControlRequest {
 
   ///@{
   /**
-   * <p>Whether to trigger synchronization of the record's descriptor content from
-   * its source</p>
+   * <p>Specifies whether to synchronize the record's descriptor content from its
+   * source. For a skill record, the registry reads the stored
+   * <code>skillMd.source</code> or <code>skillPackage.source</code> again, because
+   * it doesn't watch the source for changes. For a GitHub source, the operation also
+   * returns a new authorization link when one is needed. An update that sets a
+   * different skill source starts a synchronization even if you omit this
+   * member.</p>
    */
   inline bool GetTriggerSynchronization() const { return m_triggerSynchronization; }
   inline bool TriggerSynchronizationHasBeenSet() const { return m_triggerSynchronizationHasBeenSet; }
@@ -218,6 +248,28 @@ class UpdateRegistryRecordRequest : public AgentRegistryControlRequest {
   }
   inline UpdateRegistryRecordRequest& WithTriggerSynchronization(bool value) {
     SetTriggerSynchronization(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to ask a GitHub user to authorize access again, even when
+   * the current authorization still works, for example to use a different GitHub
+   * account. You can use it only together with <code>triggerSynchronization</code>,
+   * for a GitHub source whose credential provider uses the
+   * <code>AUTHORIZATION_CODE</code> grant. The new authorization also replaces the
+   * one that the same IAM principal's other records in the registry use for the same
+   * host, credential provider, scopes, and custom parameters.</p>
+   */
+  inline bool GetForceAuthentication() const { return m_forceAuthentication; }
+  inline bool ForceAuthenticationHasBeenSet() const { return m_forceAuthenticationHasBeenSet; }
+  inline void SetForceAuthentication(bool value) {
+    m_forceAuthenticationHasBeenSet = true;
+    m_forceAuthentication = value;
+  }
+  inline UpdateRegistryRecordRequest& WithForceAuthentication(bool value) {
+    SetForceAuthentication(value);
     return *this;
   }
   ///@}
@@ -264,11 +316,15 @@ class UpdateRegistryRecordRequest : public AgentRegistryControlRequest {
 
   UpdatedDescriptors m_descriptors;
 
+  UpdatedRegistryRecordArtifact m_artifact;
+
   Aws::String m_recordVersion;
 
   UpdatedCustomMetadataMap m_customMetadata;
 
   bool m_triggerSynchronization{false};
+
+  bool m_forceAuthentication{false};
 
   Aws::Vector<Provenance> m_provenance;
   bool m_registryIdHasBeenSet = false;
@@ -278,9 +334,11 @@ class UpdateRegistryRecordRequest : public AgentRegistryControlRequest {
   bool m_descriptionHasBeenSet = false;
   bool m_recordTypeHasBeenSet = false;
   bool m_descriptorsHasBeenSet = false;
+  bool m_artifactHasBeenSet = false;
   bool m_recordVersionHasBeenSet = false;
   bool m_customMetadataHasBeenSet = false;
   bool m_triggerSynchronizationHasBeenSet = false;
+  bool m_forceAuthenticationHasBeenSet = false;
   bool m_provenanceHasBeenSet = false;
 };
 

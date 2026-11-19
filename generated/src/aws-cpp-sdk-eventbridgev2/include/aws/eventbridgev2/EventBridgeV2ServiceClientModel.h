@@ -42,6 +42,7 @@
 #include <aws/eventbridgev2/model/PutRawEventsResult.h>
 #include <aws/eventbridgev2/model/PutResourcePolicyResult.h>
 #include <aws/eventbridgev2/model/RevokeResourceResult.h>
+#include <aws/eventbridgev2/model/RotateWebhookCredentialsResult.h>
 #include <aws/eventbridgev2/model/TagResourceResult.h>
 #include <aws/eventbridgev2/model/UntagResourceResult.h>
 #include <aws/eventbridgev2/model/UpdateEventBusResult.h>
@@ -99,6 +100,7 @@ class PutEventsRequest;
 class PutRawEventsRequest;
 class PutResourcePolicyRequest;
 class RevokeResourceRequest;
+class RotateWebhookCredentialsRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateEventBusRequest;
@@ -127,6 +129,7 @@ typedef Aws::Utils::Outcome<PutEventsResult, EventBridgeV2Error> PutEventsOutcom
 typedef Aws::Utils::Outcome<PutRawEventsResult, EventBridgeV2Error> PutRawEventsOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, EventBridgeV2Error> PutResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<RevokeResourceResult, EventBridgeV2Error> RevokeResourceOutcome;
+typedef Aws::Utils::Outcome<RotateWebhookCredentialsResult, EventBridgeV2Error> RotateWebhookCredentialsOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, EventBridgeV2Error> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, EventBridgeV2Error> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateEventBusResult, EventBridgeV2Error> UpdateEventBusOutcome;
@@ -155,6 +158,7 @@ typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
 typedef std::future<PutRawEventsOutcome> PutRawEventsOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
 typedef std::future<RevokeResourceOutcome> RevokeResourceOutcomeCallable;
+typedef std::future<RotateWebhookCredentialsOutcome> RotateWebhookCredentialsOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateEventBusOutcome> UpdateEventBusOutcomeCallable;
@@ -226,6 +230,9 @@ typedef std::function<void(const EventBridgeV2Client*, const Model::PutResourceP
 typedef std::function<void(const EventBridgeV2Client*, const Model::RevokeResourceRequest&, const Model::RevokeResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RevokeResourceResponseReceivedHandler;
+typedef std::function<void(const EventBridgeV2Client*, const Model::RotateWebhookCredentialsRequest&,
+                           const Model::RotateWebhookCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RotateWebhookCredentialsResponseReceivedHandler;
 typedef std::function<void(const EventBridgeV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

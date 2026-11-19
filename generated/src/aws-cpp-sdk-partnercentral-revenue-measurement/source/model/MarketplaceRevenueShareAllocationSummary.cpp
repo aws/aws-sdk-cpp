@@ -64,13 +64,13 @@ MarketplaceRevenueShareAllocationSummary& MarketplaceRevenueShareAllocationSumma
                 m_marketplaceRevenueShareAllocationIdHasBeenSet = true;
               }
 
-              else if (initialKeyStr == "ProductId") {
+              else if (initialKeyStr == "MarketplaceRevenueShareIdentifier") {
                 auto peekType = decoder->PeekType();
                 if (peekType.has_value()) {
                   if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
                     auto val = decoder->PopNextTextVal();
                     if (val.has_value()) {
-                      m_productId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      m_marketplaceRevenueShareIdentifier = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                     }
                   } else {
                     decoder->ConsumeNextSingleElement();
@@ -88,70 +88,10 @@ MarketplaceRevenueShareAllocationSummary& MarketplaceRevenueShareAllocationSumma
                         ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                       }
                     }
-                    m_productId = ss.str();
+                    m_marketplaceRevenueShareIdentifier = ss.str();
                   }
                 }
-                m_productIdHasBeenSet = true;
-              }
-
-              else if (initialKeyStr == "ProductName") {
-                auto peekType = decoder->PeekType();
-                if (peekType.has_value()) {
-                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
-                    auto val = decoder->PopNextTextVal();
-                    if (val.has_value()) {
-                      m_productName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                    }
-                  } else {
-                    decoder->ConsumeNextSingleElement();
-                    Aws::StringStream ss;
-                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-                      auto nextType = decoder->PeekType();
-                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
-                        if (nextType.has_value()) {
-                          decoder->ConsumeNextSingleElement();  // consume the Break
-                        }
-                        break;
-                      }
-                      auto val = decoder->PopNextTextVal();
-                      if (val.has_value()) {
-                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                      }
-                    }
-                    m_productName = ss.str();
-                  }
-                }
-                m_productNameHasBeenSet = true;
-              }
-
-              else if (initialKeyStr == "Arn") {
-                auto peekType = decoder->PeekType();
-                if (peekType.has_value()) {
-                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
-                    auto val = decoder->PopNextTextVal();
-                    if (val.has_value()) {
-                      m_arn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                    }
-                  } else {
-                    decoder->ConsumeNextSingleElement();
-                    Aws::StringStream ss;
-                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-                      auto nextType = decoder->PeekType();
-                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
-                        if (nextType.has_value()) {
-                          decoder->ConsumeNextSingleElement();  // consume the Break
-                        }
-                        break;
-                      }
-                      auto val = decoder->PopNextTextVal();
-                      if (val.has_value()) {
-                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                      }
-                    }
-                    m_arn = ss.str();
-                  }
-                }
-                m_arnHasBeenSet = true;
+                m_marketplaceRevenueShareIdentifierHasBeenSet = true;
               }
 
               else if (initialKeyStr == "EffectiveFrom") {
@@ -354,13 +294,13 @@ MarketplaceRevenueShareAllocationSummary& MarketplaceRevenueShareAllocationSumma
               m_marketplaceRevenueShareAllocationIdHasBeenSet = true;
             }
 
-            else if (initialKeyStr == "ProductId") {
+            else if (initialKeyStr == "MarketplaceRevenueShareIdentifier") {
               auto peekType = decoder->PeekType();
               if (peekType.has_value()) {
                 if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
                   auto val = decoder->PopNextTextVal();
                   if (val.has_value()) {
-                    m_productId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    m_marketplaceRevenueShareIdentifier = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                   }
                 } else {
                   decoder->ConsumeNextSingleElement();
@@ -378,70 +318,10 @@ MarketplaceRevenueShareAllocationSummary& MarketplaceRevenueShareAllocationSumma
                       ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                     }
                   }
-                  m_productId = ss.str();
+                  m_marketplaceRevenueShareIdentifier = ss.str();
                 }
               }
-              m_productIdHasBeenSet = true;
-            }
-
-            else if (initialKeyStr == "ProductName") {
-              auto peekType = decoder->PeekType();
-              if (peekType.has_value()) {
-                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
-                  auto val = decoder->PopNextTextVal();
-                  if (val.has_value()) {
-                    m_productName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                  }
-                } else {
-                  decoder->ConsumeNextSingleElement();
-                  Aws::StringStream ss;
-                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-                    auto nextType = decoder->PeekType();
-                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
-                      if (nextType.has_value()) {
-                        decoder->ConsumeNextSingleElement();  // consume the Break
-                      }
-                      break;
-                    }
-                    auto val = decoder->PopNextTextVal();
-                    if (val.has_value()) {
-                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                    }
-                  }
-                  m_productName = ss.str();
-                }
-              }
-              m_productNameHasBeenSet = true;
-            }
-
-            else if (initialKeyStr == "Arn") {
-              auto peekType = decoder->PeekType();
-              if (peekType.has_value()) {
-                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
-                  auto val = decoder->PopNextTextVal();
-                  if (val.has_value()) {
-                    m_arn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                  }
-                } else {
-                  decoder->ConsumeNextSingleElement();
-                  Aws::StringStream ss;
-                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-                    auto nextType = decoder->PeekType();
-                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
-                      if (nextType.has_value()) {
-                        decoder->ConsumeNextSingleElement();  // consume the Break
-                      }
-                      break;
-                    }
-                    auto val = decoder->PopNextTextVal();
-                    if (val.has_value()) {
-                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                    }
-                  }
-                  m_arn = ss.str();
-                }
-              }
-              m_arnHasBeenSet = true;
+              m_marketplaceRevenueShareIdentifierHasBeenSet = true;
             }
 
             else if (initialKeyStr == "EffectiveFrom") {
@@ -606,13 +486,7 @@ void MarketplaceRevenueShareAllocationSummary::CborEncode(Aws::Crt::Cbor::CborEn
   if (m_marketplaceRevenueShareAllocationIdHasBeenSet) {
     mapSize++;
   }
-  if (m_productIdHasBeenSet) {
-    mapSize++;
-  }
-  if (m_productNameHasBeenSet) {
-    mapSize++;
-  }
-  if (m_arnHasBeenSet) {
+  if (m_marketplaceRevenueShareIdentifierHasBeenSet) {
     mapSize++;
   }
   if (m_effectiveFromHasBeenSet) {
@@ -641,19 +515,9 @@ void MarketplaceRevenueShareAllocationSummary::CborEncode(Aws::Crt::Cbor::CborEn
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_marketplaceRevenueShareAllocationId.c_str()));
   }
 
-  if (m_productIdHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProductId"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_productId.c_str()));
-  }
-
-  if (m_productNameHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProductName"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_productName.c_str()));
-  }
-
-  if (m_arnHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Arn"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_arn.c_str()));
+  if (m_marketplaceRevenueShareIdentifierHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MarketplaceRevenueShareIdentifier"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_marketplaceRevenueShareIdentifier.c_str()));
   }
 
   if (m_effectiveFromHasBeenSet) {

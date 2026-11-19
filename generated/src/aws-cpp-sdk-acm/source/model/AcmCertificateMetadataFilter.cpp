@@ -63,6 +63,10 @@ AcmCertificateMetadataFilter& AcmCertificateMetadataFilter::operator=(JsonView j
     m_acmeAccountId = jsonValue.GetString("AcmeAccountId");
     m_acmeAccountIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RootHierarchyType")) {
+    m_rootHierarchyType = RootHierarchyTypeMapper::GetRootHierarchyTypeForName(jsonValue.GetString("RootHierarchyType"));
+    m_rootHierarchyTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -112,6 +116,10 @@ JsonValue AcmCertificateMetadataFilter::Jsonize() const {
 
   if (m_acmeAccountIdHasBeenSet) {
     payload.WithString("AcmeAccountId", m_acmeAccountId);
+  }
+
+  if (m_rootHierarchyTypeHasBeenSet) {
+    payload.WithString("RootHierarchyType", RootHierarchyTypeMapper::GetNameForRootHierarchyType(m_rootHierarchyType));
   }
 
   return payload;

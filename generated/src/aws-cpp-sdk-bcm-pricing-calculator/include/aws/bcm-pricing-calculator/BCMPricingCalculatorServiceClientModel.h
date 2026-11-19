@@ -38,6 +38,7 @@
 #include <aws/bcm-pricing-calculator/model/GetBillScenarioResult.h>
 #include <aws/bcm-pricing-calculator/model/GetPreferencesRequest.h>
 #include <aws/bcm-pricing-calculator/model/GetPreferencesResult.h>
+#include <aws/bcm-pricing-calculator/model/GetUsageLinesEstimatedCostResult.h>
 #include <aws/bcm-pricing-calculator/model/GetWorkloadEstimateResult.h>
 #include <aws/bcm-pricing-calculator/model/ListBillEstimateCommitmentsResult.h>
 #include <aws/bcm-pricing-calculator/model/ListBillEstimateInputCommitmentModificationsResult.h>
@@ -111,6 +112,7 @@ class DeleteWorkloadEstimateRequest;
 class GetBillEstimateRequest;
 class GetBillScenarioRequest;
 class GetPreferencesRequest;
+class GetUsageLinesEstimatedCostRequest;
 class GetWorkloadEstimateRequest;
 class ListBillEstimateCommitmentsRequest;
 class ListBillEstimateInputCommitmentModificationsRequest;
@@ -156,6 +158,7 @@ typedef Aws::Utils::Outcome<DeleteWorkloadEstimateResult, BCMPricingCalculatorEr
 typedef Aws::Utils::Outcome<GetBillEstimateResult, BCMPricingCalculatorError> GetBillEstimateOutcome;
 typedef Aws::Utils::Outcome<GetBillScenarioResult, BCMPricingCalculatorError> GetBillScenarioOutcome;
 typedef Aws::Utils::Outcome<GetPreferencesResult, BCMPricingCalculatorError> GetPreferencesOutcome;
+typedef Aws::Utils::Outcome<GetUsageLinesEstimatedCostResult, BCMPricingCalculatorError> GetUsageLinesEstimatedCostOutcome;
 typedef Aws::Utils::Outcome<GetWorkloadEstimateResult, BCMPricingCalculatorError> GetWorkloadEstimateOutcome;
 typedef Aws::Utils::Outcome<ListBillEstimateCommitmentsResult, BCMPricingCalculatorError> ListBillEstimateCommitmentsOutcome;
 typedef Aws::Utils::Outcome<ListBillEstimateInputCommitmentModificationsResult, BCMPricingCalculatorError>
@@ -198,6 +201,7 @@ typedef std::future<DeleteWorkloadEstimateOutcome> DeleteWorkloadEstimateOutcome
 typedef std::future<GetBillEstimateOutcome> GetBillEstimateOutcomeCallable;
 typedef std::future<GetBillScenarioOutcome> GetBillScenarioOutcomeCallable;
 typedef std::future<GetPreferencesOutcome> GetPreferencesOutcomeCallable;
+typedef std::future<GetUsageLinesEstimatedCostOutcome> GetUsageLinesEstimatedCostOutcomeCallable;
 typedef std::future<GetWorkloadEstimateOutcome> GetWorkloadEstimateOutcomeCallable;
 typedef std::future<ListBillEstimateCommitmentsOutcome> ListBillEstimateCommitmentsOutcomeCallable;
 typedef std::future<ListBillEstimateInputCommitmentModificationsOutcome> ListBillEstimateInputCommitmentModificationsOutcomeCallable;
@@ -285,6 +289,9 @@ typedef std::function<void(const BCMPricingCalculatorClient*, const Model::GetBi
 typedef std::function<void(const BCMPricingCalculatorClient*, const Model::GetPreferencesRequest&, const Model::GetPreferencesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPreferencesResponseReceivedHandler;
+typedef std::function<void(const BCMPricingCalculatorClient*, const Model::GetUsageLinesEstimatedCostRequest&,
+                           const Model::GetUsageLinesEstimatedCostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetUsageLinesEstimatedCostResponseReceivedHandler;
 typedef std::function<void(const BCMPricingCalculatorClient*, const Model::GetWorkloadEstimateRequest&,
                            const Model::GetWorkloadEstimateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetWorkloadEstimateResponseReceivedHandler;

@@ -33,6 +33,12 @@ class JsonValue;
 }  // namespace Utils
 namespace PartnerCentralSelling {
 namespace Model {
+/**
+ * <p>Contains the response that the <code>GetAwsOpportunitySummary</code> action
+ * returns.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetAwsOpportunitySummaryResponse">AWS
+ * API Reference</a></p>
+ */
 class GetAwsOpportunitySummaryResult {
  public:
   AWS_PARTNERCENTRALSELLING_API GetAwsOpportunitySummaryResult() = default;
@@ -269,6 +275,24 @@ class GetAwsOpportunitySummaryResult {
 
   ///@{
   /**
+   * <p>The plain-language reason for the current <code>CosellMotion</code> value.
+   * Read-only. Null when <code>CosellMotion</code> is null.</p>
+   */
+  inline const Aws::String& GetCosellMotionReason() const { return m_cosellMotionReason; }
+  template <typename CosellMotionReasonT = Aws::String>
+  void SetCosellMotionReason(CosellMotionReasonT&& value) {
+    m_cosellMotionReasonHasBeenSet = true;
+    m_cosellMotionReason = std::forward<CosellMotionReasonT>(value);
+  }
+  template <typename CosellMotionReasonT = Aws::String>
+  GetAwsOpportunitySummaryResult& WithCosellMotionReason(CosellMotionReasonT&& value) {
+    SetCosellMotionReason(std::forward<CosellMotionReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Seller-provided PARC deal terms: commitment value, discount, and contract
    * dates.</p>
    */
@@ -345,6 +369,8 @@ class GetAwsOpportunitySummaryResult {
 
   Aws::String m_cosellMotion;
 
+  Aws::String m_cosellMotionReason;
+
   AwsSoftwareRevenue m_softwareRevenue;
 
   Aws::String m_catalog;
@@ -363,6 +389,7 @@ class GetAwsOpportunitySummaryResult {
   bool m_customerHasBeenSet = false;
   bool m_projectHasBeenSet = false;
   bool m_cosellMotionHasBeenSet = false;
+  bool m_cosellMotionReasonHasBeenSet = false;
   bool m_softwareRevenueHasBeenSet = false;
   bool m_catalogHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

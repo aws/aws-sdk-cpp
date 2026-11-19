@@ -83,8 +83,12 @@ class AWS_AGENTREGISTRY_API AgentRegistryClient : public Aws::Client::AWSJsonCli
   /**
    * <p> Retrieves multiple discoverable registry records by ID from a single
    * registry. Records that cannot be retrieved are reported individually in the
-   * <code>errors</code> list rather than failing the entire request.</p><p><h3>See
-   * Also:</h3>   <a
+   * <code>errors</code> list rather than failing the entire request. For each skill
+   * record that has a skill package, the operation also returns
+   * <code>artifact</code>. It contains a short-lived download URL and a SHA-256
+   * checksum for the package of the record's latest approved revision. If the
+   * registry can't create a download URL for a package, the whole request
+   * fails.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-2025-12-01/BatchGetDiscoverableRegistryRecord">AWS
    * API Reference</a></p>
    */
@@ -145,7 +149,11 @@ class AWS_AGENTREGISTRY_API AgentRegistryClient : public Aws::Client::AWSJsonCli
   /**
    * <p> Searches the discoverable registry records in a registry using a natural
    * language query. Returns metadata for the matching records ordered by
-   * relevance.</p><p><h3>See Also:</h3>   <a
+   * relevance.</p> <p> Returns at most 1000 results across all pages when
+   * <code>searchType</code> is <code>KEYWORD</code>, and at most 20 results when it
+   * is <code>HYBRID</code> or <code>SEMANTIC</code>. To retrieve more records,
+   * refine the query or filters, or use <code>ListDiscoverableRegistryRecords</code>
+   * to list every record.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-2025-12-01/SearchDiscoverableRegistryRecords">AWS
    * API Reference</a></p>
    */

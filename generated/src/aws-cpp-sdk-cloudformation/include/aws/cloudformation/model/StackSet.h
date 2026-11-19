@@ -164,7 +164,7 @@ class StackSet {
   /**
    * <p>The capabilities that are allowed in the StackSet. Some StackSet templates
    * might include resources that can affect permissions in your Amazon Web Services
-   * account���for example, by creating new Identity and Access Management (IAM)
+   * account��for example, by creating new Identity and Access Management (IAM)
    * users. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging
    * IAM resources in CloudFormation templates</a>.</p>
@@ -412,6 +412,26 @@ class StackSet {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon S3 bucket path where CloudFormation stores the execution role
+   * stack template body. CloudFormation uses this bucket only when you specify a
+   * custom execution role template.</p>
+   */
+  inline const Aws::String& GetStackSetOutputBucketPath() const { return m_stackSetOutputBucketPath; }
+  inline bool StackSetOutputBucketPathHasBeenSet() const { return m_stackSetOutputBucketPathHasBeenSet; }
+  template <typename StackSetOutputBucketPathT = Aws::String>
+  void SetStackSetOutputBucketPath(StackSetOutputBucketPathT&& value) {
+    m_stackSetOutputBucketPathHasBeenSet = true;
+    m_stackSetOutputBucketPath = std::forward<StackSetOutputBucketPathT>(value);
+  }
+  template <typename StackSetOutputBucketPathT = Aws::String>
+  StackSet& WithStackSetOutputBucketPath(StackSetOutputBucketPathT&& value) {
+    SetStackSetOutputBucketPath(std::forward<StackSetOutputBucketPathT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_stackSetName;
 
@@ -446,6 +466,8 @@ class StackSet {
   ManagedExecution m_managedExecution;
 
   Aws::Vector<Aws::String> m_regions;
+
+  Aws::String m_stackSetOutputBucketPath;
   bool m_stackSetNameHasBeenSet = false;
   bool m_stackSetIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -463,6 +485,7 @@ class StackSet {
   bool m_organizationalUnitIdsHasBeenSet = false;
   bool m_managedExecutionHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
+  bool m_stackSetOutputBucketPathHasBeenSet = false;
 };
 
 }  // namespace Model

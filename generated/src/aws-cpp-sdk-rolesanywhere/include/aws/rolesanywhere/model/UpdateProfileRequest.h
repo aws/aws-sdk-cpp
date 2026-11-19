@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rolesanywhere/RolesAnywhereRequest.h>
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
+#include <aws/rolesanywhere/model/TipConfiguration.h>
 
 #include <utility>
 
@@ -207,6 +208,26 @@ class UpdateProfileRequest : public RolesAnywhereRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The trusted identity propagation (TIP) settings for the profile. The settings
+   * that you specify replace the current settings, and a field that you omit returns
+   * to its default. If you omit this parameter, the TIP settings don't change.</p>
+   */
+  inline const TipConfiguration& GetTipConfiguration() const { return m_tipConfiguration; }
+  inline bool TipConfigurationHasBeenSet() const { return m_tipConfigurationHasBeenSet; }
+  template <typename TipConfigurationT = TipConfiguration>
+  void SetTipConfiguration(TipConfigurationT&& value) {
+    m_tipConfigurationHasBeenSet = true;
+    m_tipConfiguration = std::forward<TipConfigurationT>(value);
+  }
+  template <typename TipConfigurationT = TipConfiguration>
+  UpdateProfileRequest& WithTipConfiguration(TipConfigurationT&& value) {
+    SetTipConfiguration(std::forward<TipConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_profileId;
 
@@ -223,6 +244,8 @@ class UpdateProfileRequest : public RolesAnywhereRequest {
   bool m_acceptRoleSessionName{false};
 
   Aws::String m_aliasName;
+
+  TipConfiguration m_tipConfiguration;
   bool m_profileIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_sessionPolicyHasBeenSet = false;
@@ -231,6 +254,7 @@ class UpdateProfileRequest : public RolesAnywhereRequest {
   bool m_durationSecondsHasBeenSet = false;
   bool m_acceptRoleSessionNameHasBeenSet = false;
   bool m_aliasNameHasBeenSet = false;
+  bool m_tipConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

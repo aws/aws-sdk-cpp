@@ -156,19 +156,14 @@ class AssumeRoleWithWebIdentityRequest : public STSRequest {
    * see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
    * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
-   * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
-   * conversion compresses the passed inline session policy, managed policy ARNs, and
-   * session tags into a packed binary format that has a separate limit. Your request
-   * can fail for this limit even if your plaintext meets the other requirements. The
-   * <code>PackedPolicySize</code> response element indicates by percentage how close
-   * the policies and tags for your request are to the upper size limit.</p>
-   * <p>Passing policies to this operation returns new temporary credentials. The
-   * resulting session's permissions are the intersection of the role's
-   * identity-based policy and the session policies. You can use the role's temporary
-   * credentials in subsequent Amazon Web Services API calls to access resources in
-   * the account that owns the role. You cannot use session policies to grant more
-   * permissions than those allowed by the identity-based policy of the role that is
-   * being assumed. For more information, see <a
+   * Amazon Web Services General Reference.</p> <p>Passing policies to this operation
+   * returns new temporary credentials. The resulting session's permissions are the
+   * intersection of the role's identity-based policy and the session policies. You
+   * can use the role's temporary credentials in subsequent Amazon Web Services API
+   * calls to access resources in the account that owns the role. You cannot use
+   * session policies to grant more permissions than those allowed by the
+   * identity-based policy of the role that is being assumed. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
    * Policies</a> in the <i>IAM User Guide</i>.</p>
    */
@@ -211,12 +206,7 @@ class AssumeRoleWithWebIdentityRequest : public STSRequest {
    * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> <p>For
    * more information about role session permissions, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
-   * policies</a>.</p>  <p>An Amazon Web Services conversion compresses the
-   * passed inline session policy, managed policy ARNs, and session tags into a
-   * packed binary format that has a separate limit. Your request can fail for this
-   * limit even if your plaintext meets the other requirements. The
-   * <code>PackedPolicySize</code> response element indicates by percentage how close
-   * the policies and tags for your request are to the upper size limit.</p>
+   * policies</a>.</p>
    */
   inline const Aws::String& GetPolicy() const { return m_policy; }
   inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }

@@ -100,6 +100,11 @@ InvokeConfiguration& InvokeConfiguration::operator=(const std::shared_ptr<Aws::C
                 m_eventBusV2ParametersHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "MskParameters") {
+                m_mskParameters = MskParameters(decoder);
+                m_mskParametersHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "TargetArn") {
                 auto peekType = decoder->PeekType();
                 if (peekType.has_value()) {
@@ -225,6 +230,11 @@ InvokeConfiguration& InvokeConfiguration::operator=(const std::shared_ptr<Aws::C
               m_eventBusV2ParametersHasBeenSet = true;
             }
 
+            else if (initialKeyStr == "MskParameters") {
+              m_mskParameters = MskParameters(decoder);
+              m_mskParametersHasBeenSet = true;
+            }
+
             else if (initialKeyStr == "TargetArn") {
               auto peekType = decoder->PeekType();
               if (peekType.has_value()) {
@@ -296,6 +306,9 @@ void InvokeConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const
   if (m_eventBusV2ParametersHasBeenSet) {
     mapSize++;
   }
+  if (m_mskParametersHasBeenSet) {
+    mapSize++;
+  }
   if (m_targetArnHasBeenSet) {
     mapSize++;
   }
@@ -345,6 +358,11 @@ void InvokeConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const
   if (m_eventBusV2ParametersHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("EventBusV2Parameters"));
     m_eventBusV2Parameters.CborEncode(encoder);
+  }
+
+  if (m_mskParametersHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MskParameters"));
+    m_mskParameters.CborEncode(encoder);
   }
 
   if (m_targetArnHasBeenSet) {

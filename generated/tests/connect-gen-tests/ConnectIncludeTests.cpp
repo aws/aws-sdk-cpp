@@ -1661,6 +1661,9 @@
 #include <aws/connect/model/VoiceEnhancementMode.h>
 #include <aws/connect/model/VoiceRecordingConfiguration.h>
 #include <aws/connect/model/VoiceRecordingTrack.h>
+#include <aws/connect/model/VoicemailAnalysisReference.h>
+#include <aws/connect/model/VoicemailInfo.h>
+#include <aws/connect/model/VoicemailRecordingReference.h>
 #include <aws/connect/model/WebNotificationContent.h>
 #include <aws/connect/model/WebNotificationSource.h>
 #include <aws/connect/model/Websocket.h>

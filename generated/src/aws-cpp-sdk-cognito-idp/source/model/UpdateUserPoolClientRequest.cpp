@@ -145,6 +145,10 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const {
     payload.WithObject("RefreshTokenRotation", m_refreshTokenRotation.Jsonize());
   }
 
+  if (m_publishSecretsInAWSSecretsManagerHasBeenSet) {
+    payload.WithBool("PublishSecretsInAWSSecretsManager", m_publishSecretsInAWSSecretsManager);
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -96,7 +96,7 @@ class CreateBillScenarioRequest : public BCMPricingCalculatorRequest {
 
   ///@{
   /**
-   * <p>The setting for the reserved instance and savings plan group sharing used in
+   * <p>The setting for the reserved instance and savings plans group sharing used in
    * this estimate.</p>
    */
   inline GroupSharingPreferenceEnum GetGroupSharingPreference() const { return m_groupSharingPreference; }

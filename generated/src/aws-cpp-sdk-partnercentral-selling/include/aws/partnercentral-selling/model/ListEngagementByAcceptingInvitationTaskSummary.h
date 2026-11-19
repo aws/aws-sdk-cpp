@@ -37,7 +37,7 @@ class ListEngagementByAcceptingInvitationTaskSummary {
 
   ///@{
   /**
-   * <p> Unique identifier of the task. </p>
+   * <p>Unique identifier of the task.</p>
    */
   inline const Aws::String& GetTaskId() const { return m_taskId; }
   inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
@@ -55,7 +55,7 @@ class ListEngagementByAcceptingInvitationTaskSummary {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) that uniquely identifies the task. </p>
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies the task.</p>
    */
   inline const Aws::String& GetTaskArn() const { return m_taskArn; }
   inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
@@ -73,7 +73,7 @@ class ListEngagementByAcceptingInvitationTaskSummary {
 
   ///@{
   /**
-   * <p> Task start timestamp. </p>
+   * <p>Task start timestamp.</p>
    */
   inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
   inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -91,7 +91,7 @@ class ListEngagementByAcceptingInvitationTaskSummary {
 
   ///@{
   /**
-   * <p> Status of the task. </p>
+   * <p>Status of the task.</p>
    */
   inline TaskStatus GetTaskStatus() const { return m_taskStatus; }
   inline bool TaskStatusHasBeenSet() const { return m_taskStatusHasBeenSet; }
@@ -107,7 +107,7 @@ class ListEngagementByAcceptingInvitationTaskSummary {
 
   ///@{
   /**
-   * <p> Detailed message describing the failure and possible recovery steps. </p>
+   * <p>Detailed message describing the failure and possible recovery steps.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -125,7 +125,7 @@ class ListEngagementByAcceptingInvitationTaskSummary {
 
   ///@{
   /**
-   * <p> A code pointing to the specific reason for the failure. </p>
+   * <p>A code pointing to the specific reason for the failure.</p>
    */
   inline ReasonCode GetReasonCode() const { return m_reasonCode; }
   inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
@@ -159,7 +159,7 @@ class ListEngagementByAcceptingInvitationTaskSummary {
 
   ///@{
   /**
-   * <p> Unique identifier of the resource snapshot job that was created. </p>
+   * <p>Unique identifier of the resource snapshot job that was created.</p>
    */
   inline const Aws::String& GetResourceSnapshotJobId() const { return m_resourceSnapshotJobId; }
   inline bool ResourceSnapshotJobIdHasBeenSet() const { return m_resourceSnapshotJobIdHasBeenSet; }

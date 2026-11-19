@@ -422,6 +422,38 @@ class AWS_MARKETPLACECATALOG_API MarketplaceCatalogClient : public Aws::Client::
   }
 
   /**
+   * <p>Starts an assessment of a product entity against a framework. An
+   * <i>assessment</i> is the result of evaluating an entity against the controls of
+   * a framework. You choose the controls to run and provide the input that each
+   * control needs.</p> <p>The assessment runs asynchronously. This action returns
+   * the ID of the assessment immediately. To get its status and the results of each
+   * control, use the <code>DescribeAssessment</code> action. To find assessments
+   * that you started earlier, use the <code>ListAssessments</code>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartAssessment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartAssessmentOutcome StartAssessment(const Model::StartAssessmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartAssessment that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StartAssessmentRequestT = Model::StartAssessmentRequest>
+  Model::StartAssessmentOutcomeCallable StartAssessmentCallable(const StartAssessmentRequestT& request) const {
+    return SubmitCallable(&MarketplaceCatalogClient::StartAssessment, request);
+  }
+
+  /**
+   * An Async wrapper for StartAssessment that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StartAssessmentRequestT = Model::StartAssessmentRequest>
+  void StartAssessmentAsync(const StartAssessmentRequestT& request, const StartAssessmentResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MarketplaceCatalogClient::StartAssessment, request, handler, context);
+  }
+
+  /**
    * <p>Allows you to request changes for your entities. Within a single
    * <code>ChangeSet</code>, you can't start the same change type against the same
    * entity multiple times. Additionally, when a <code>ChangeSet</code> is running,

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
 #include <aws/devops-agent/model/AgentSpacePreferenceKey.h>
+#include <aws/devops-agent/model/AwsSourceMode.h>
 
 #include <utility>
 
@@ -186,6 +187,24 @@ class AgentSpace {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services source mode for the AgentSpace, indicating whether
+   * its Amazon Web Services source configuration targets an individual Amazon Web
+   * Services account or an Amazon Web Services Organization.</p>
+   */
+  inline AwsSourceMode GetAwsSourceMode() const { return m_awsSourceMode; }
+  inline bool AwsSourceModeHasBeenSet() const { return m_awsSourceModeHasBeenSet; }
+  inline void SetAwsSourceMode(AwsSourceMode value) {
+    m_awsSourceModeHasBeenSet = true;
+    m_awsSourceMode = value;
+  }
+  inline AgentSpace& WithAwsSourceMode(AwsSourceMode value) {
+    SetAwsSourceMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -202,6 +221,8 @@ class AgentSpace {
   Aws::String m_agentSpaceId;
 
   Aws::Map<AgentSpacePreferenceKey, bool> m_preferences;
+
+  AwsSourceMode m_awsSourceMode{AwsSourceMode::NOT_SET};
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_localeHasBeenSet = false;
@@ -210,6 +231,7 @@ class AgentSpace {
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_agentSpaceIdHasBeenSet = false;
   bool m_preferencesHasBeenSet = false;
+  bool m_awsSourceModeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -41,7 +41,9 @@ class CustomerProjectsContext {
   AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>Contains details about the customer that the customer project belongs to.</p>
+   */
   inline const EngagementCustomer& GetCustomer() const { return m_customer; }
   inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
   template <typename CustomerT = EngagementCustomer>

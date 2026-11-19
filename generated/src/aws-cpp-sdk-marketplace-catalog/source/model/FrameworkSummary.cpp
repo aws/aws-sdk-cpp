@@ -26,6 +26,14 @@ FrameworkSummary& FrameworkSummary::operator=(JsonView jsonValue) {
     m_containerSecuritySummary = jsonValue.GetObject("ContainerSecuritySummary");
     m_containerSecuritySummaryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ListingQualitySummary")) {
+    m_listingQualitySummary = jsonValue.GetObject("ListingQualitySummary");
+    m_listingQualitySummaryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ListingRecommendationsSummary")) {
+    m_listingRecommendationsSummary = jsonValue.GetObject("ListingRecommendationsSummary");
+    m_listingRecommendationsSummaryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue FrameworkSummary::Jsonize() const {
 
   if (m_containerSecuritySummaryHasBeenSet) {
     payload.WithObject("ContainerSecuritySummary", m_containerSecuritySummary.Jsonize());
+  }
+
+  if (m_listingQualitySummaryHasBeenSet) {
+    payload.WithObject("ListingQualitySummary", m_listingQualitySummary.Jsonize());
+  }
+
+  if (m_listingRecommendationsSummaryHasBeenSet) {
+    payload.WithObject("ListingRecommendationsSummary", m_listingRecommendationsSummary.Jsonize());
   }
 
   return payload;

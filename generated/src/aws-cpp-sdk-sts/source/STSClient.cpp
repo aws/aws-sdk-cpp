@@ -29,6 +29,7 @@
 #include <aws/sts/model/GetCallerIdentityRequest.h>
 #include <aws/sts/model/GetDelegatedAccessTokenRequest.h>
 #include <aws/sts/model/GetFederationTokenRequest.h>
+#include <aws/sts/model/GetScopedCredentialsRequest.h>
 #include <aws/sts/model/GetSessionTokenRequest.h>
 #include <aws/sts/model/GetWebIdentityTokenRequest.h>
 #include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
@@ -276,6 +277,12 @@ GetFederationTokenOutcome STSClient::GetFederationToken(const GetFederationToken
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetFederationTokenOutcome(result.GetResultWithOwnership())
                             : GetFederationTokenOutcome(std::move(result.GetError()));
+}
+
+GetScopedCredentialsOutcome STSClient::GetScopedCredentials(const GetScopedCredentialsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetScopedCredentialsOutcome(result.GetResultWithOwnership())
+                            : GetScopedCredentialsOutcome(std::move(result.GetError()));
 }
 
 GetSessionTokenOutcome STSClient::GetSessionToken(const GetSessionTokenRequest& request) const {

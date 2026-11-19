@@ -29,6 +29,9 @@ Aws::String CreateConnectionRequest::SerializePayload() const {
   if (m_hostArnHasBeenSet) {
     mapSize++;
   }
+  if (m_providerEndpointHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -53,6 +56,11 @@ Aws::String CreateConnectionRequest::SerializePayload() const {
   if (m_hostArnHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("HostArn"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_hostArn.c_str()));
+  }
+
+  if (m_providerEndpointHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProviderEndpoint"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_providerEndpoint.c_str()));
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

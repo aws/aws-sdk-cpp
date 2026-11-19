@@ -7,6 +7,8 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/kafka/KafkaClient.h>
 #include <aws/kafka/model/DescribeTopicPartitionsPaginationTraits.h>
+#include <aws/kafka/model/ListAssessmentFindingsPaginationTraits.h>
+#include <aws/kafka/model/ListAssessmentsPaginationTraits.h>
 #include <aws/kafka/model/ListClientVpcConnectionsPaginationTraits.h>
 #include <aws/kafka/model/ListClusterOperationsPaginationTraits.h>
 #include <aws/kafka/model/ListClusterOperationsV2PaginationTraits.h>
@@ -18,6 +20,7 @@
 #include <aws/kafka/model/ListNodesPaginationTraits.h>
 #include <aws/kafka/model/ListReplicatorsPaginationTraits.h>
 #include <aws/kafka/model/ListScramSecretsPaginationTraits.h>
+#include <aws/kafka/model/ListTopicReassignmentsPaginationTraits.h>
 #include <aws/kafka/model/ListTopicsPaginationTraits.h>
 #include <aws/kafka/model/ListVpcConnectionsPaginationTraits.h>
 
@@ -27,6 +30,10 @@ namespace Kafka {
 using DescribeTopicPartitionsPaginator =
     Aws::Utils::Pagination::Paginator<KafkaClient, Model::DescribeTopicPartitionsRequest,
                                       Pagination::DescribeTopicPartitionsPaginationTraits<KafkaClient>>;
+using ListAssessmentFindingsPaginator = Aws::Utils::Pagination::Paginator<KafkaClient, Model::ListAssessmentFindingsRequest,
+                                                                          Pagination::ListAssessmentFindingsPaginationTraits<KafkaClient>>;
+using ListAssessmentsPaginator =
+    Aws::Utils::Pagination::Paginator<KafkaClient, Model::ListAssessmentsRequest, Pagination::ListAssessmentsPaginationTraits<KafkaClient>>;
 using ListClientVpcConnectionsPaginator =
     Aws::Utils::Pagination::Paginator<KafkaClient, Model::ListClientVpcConnectionsRequest,
                                       Pagination::ListClientVpcConnectionsPaginationTraits<KafkaClient>>;
@@ -52,6 +59,8 @@ using ListReplicatorsPaginator =
     Aws::Utils::Pagination::Paginator<KafkaClient, Model::ListReplicatorsRequest, Pagination::ListReplicatorsPaginationTraits<KafkaClient>>;
 using ListScramSecretsPaginator = Aws::Utils::Pagination::Paginator<KafkaClient, Model::ListScramSecretsRequest,
                                                                     Pagination::ListScramSecretsPaginationTraits<KafkaClient>>;
+using ListTopicReassignmentsPaginator = Aws::Utils::Pagination::Paginator<KafkaClient, Model::ListTopicReassignmentsRequest,
+                                                                          Pagination::ListTopicReassignmentsPaginationTraits<KafkaClient>>;
 using ListTopicsPaginator =
     Aws::Utils::Pagination::Paginator<KafkaClient, Model::ListTopicsRequest, Pagination::ListTopicsPaginationTraits<KafkaClient>>;
 using ListVpcConnectionsPaginator = Aws::Utils::Pagination::Paginator<KafkaClient, Model::ListVpcConnectionsRequest,

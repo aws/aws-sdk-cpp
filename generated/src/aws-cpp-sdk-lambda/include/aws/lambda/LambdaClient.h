@@ -1632,7 +1632,9 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
    * functions with a long timeout, your client might disconnect during synchronous
    * invocation while it waits for a response. Configure your HTTP client, SDK,
    * firewall, proxy, or operating system to allow for long connections with timeout
-   * or keep-alive settings.</p> <p>This operation requires permission for the <a
+   * or keep-alive settings. Synchronous invocations can run for up to 30 minutes.
+   * Set the read timeout of your client higher than the function timeout, and turn
+   * on TCP keep-alive.</p> <p>This operation requires permission for the <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
    * action. For details on how to set up permissions for cross-account invocations,
    * see <a

@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
 #include <aws/rtbfabric/model/ClientRoutingPolicy.h>
+#include <aws/rtbfabric/model/ErrorDetail.h>
 #include <aws/rtbfabric/model/GatewayType.h>
 #include <aws/rtbfabric/model/ListenerConfig.h>
 #include <aws/rtbfabric/model/ManagedEndpointConfiguration.h>
@@ -162,6 +163,30 @@ class GetResponderGatewayResult {
   template <typename UpdatedAtT = Aws::Utils::DateTime>
   GetResponderGatewayResult& WithUpdatedAt(UpdatedAtT&& value) {
     SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The causes of the failure, such as a deleted subnet. Present only when the
+   * resource has failed.</p>
+   */
+  inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const { return m_errorDetails; }
+  template <typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+  void SetErrorDetails(ErrorDetailsT&& value) {
+    m_errorDetailsHasBeenSet = true;
+    m_errorDetails = std::forward<ErrorDetailsT>(value);
+  }
+  template <typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+  GetResponderGatewayResult& WithErrorDetails(ErrorDetailsT&& value) {
+    SetErrorDetails(std::forward<ErrorDetailsT>(value));
+    return *this;
+  }
+  template <typename ErrorDetailsT = ErrorDetail>
+  GetResponderGatewayResult& AddErrorDetails(ErrorDetailsT&& value) {
+    m_errorDetailsHasBeenSet = true;
+    m_errorDetails.emplace_back(std::forward<ErrorDetailsT>(value));
     return *this;
   }
   ///@}
@@ -437,6 +462,8 @@ class GetResponderGatewayResult {
 
   Aws::Utils::DateTime m_updatedAt{};
 
+  Aws::Vector<ErrorDetail> m_errorDetails;
+
   Aws::String m_domainName;
 
   int m_port{0};
@@ -474,6 +501,7 @@ class GetResponderGatewayResult {
   bool m_descriptionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
   bool m_portHasBeenSet = false;
   bool m_protocolHasBeenSet = false;

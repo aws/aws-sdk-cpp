@@ -58,7 +58,7 @@ class BatchUpdateWorkloadEstimateUsageResult {
 
   ///@{
   /**
-   * <p> Returns the list of error reasons and usage line item IDs that could not be
+   * <p> Returns the list of error reasons and usage line item IDs that couldn't be
    * updated for the Workload estimate. </p>
    */
   inline const Aws::Vector<BatchUpdateWorkloadEstimateUsageError>& GetErrors() const { return m_errors; }

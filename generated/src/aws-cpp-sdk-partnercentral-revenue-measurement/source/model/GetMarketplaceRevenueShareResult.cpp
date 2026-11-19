@@ -41,13 +41,13 @@ GetMarketplaceRevenueShareResult& GetMarketplaceRevenueShareResult::operator=(
             if (initialKey.has_value()) {
               Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
 
-              if (initialKeyStr == "ProductId") {
+              if (initialKeyStr == "Id") {
                 auto peekType = decoder->PeekType();
                 if (peekType.has_value()) {
                   if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
                     auto val = decoder->PopNextTextVal();
                     if (val.has_value()) {
-                      m_productId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      m_id = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                     }
                   } else {
                     decoder->ConsumeNextSingleElement();
@@ -65,10 +65,10 @@ GetMarketplaceRevenueShareResult& GetMarketplaceRevenueShareResult::operator=(
                         ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                       }
                     }
-                    m_productId = ss.str();
+                    m_id = ss.str();
                   }
                 }
-                m_productIdHasBeenSet = true;
+                m_idHasBeenSet = true;
               }
 
               else if (initialKeyStr == "Arn") {
@@ -110,64 +110,33 @@ GetMarketplaceRevenueShareResult& GetMarketplaceRevenueShareResult::operator=(
                 m_catalogHasBeenSet = true;
               }
 
-              else if (initialKeyStr == "ProductCode") {
-                auto peekType = decoder->PeekType();
-                if (peekType.has_value()) {
-                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
-                    auto val = decoder->PopNextTextVal();
-                    if (val.has_value()) {
-                      m_productCode = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+              else if (initialKeyStr == "Products") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_products.push_back(MarketplaceRevenueShareProductDetail(decoder));
+                      }
                     }
-                  } else {
-                    decoder->ConsumeNextSingleElement();
-                    Aws::StringStream ss;
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
                     while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-                      auto nextType = decoder->PeekType();
-                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
-                        if (nextType.has_value()) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
                           decoder->ConsumeNextSingleElement();  // consume the Break
                         }
                         break;
                       }
-                      auto val = decoder->PopNextTextVal();
-                      if (val.has_value()) {
-                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                      }
+                      m_products.push_back(MarketplaceRevenueShareProductDetail(decoder));
                     }
-                    m_productCode = ss.str();
                   }
                 }
-                m_productCodeHasBeenSet = true;
-              }
-
-              else if (initialKeyStr == "ProductName") {
-                auto peekType = decoder->PeekType();
-                if (peekType.has_value()) {
-                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
-                    auto val = decoder->PopNextTextVal();
-                    if (val.has_value()) {
-                      m_productName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                    }
-                  } else {
-                    decoder->ConsumeNextSingleElement();
-                    Aws::StringStream ss;
-                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-                      auto nextType = decoder->PeekType();
-                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
-                        if (nextType.has_value()) {
-                          decoder->ConsumeNextSingleElement();  // consume the Break
-                        }
-                        break;
-                      }
-                      auto val = decoder->PopNextTextVal();
-                      if (val.has_value()) {
-                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                      }
-                    }
-                    m_productName = ss.str();
-                  }
-                }
-                m_productNameHasBeenSet = true;
+                m_productsHasBeenSet = true;
               }
 
               else if (initialKeyStr == "CreatedDate") {
@@ -219,16 +188,28 @@ GetMarketplaceRevenueShareResult& GetMarketplaceRevenueShareResult::operator=(
               else if (initialKeyStr == "Revision") {
                 auto peekType = decoder->PeekType();
                 if (peekType.has_value()) {
-                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
-                    auto val = decoder->PopNextUnsignedIntVal();
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
                     if (val.has_value()) {
-                      m_revision = static_cast<int64_t>(val.value());
+                      m_revision = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                     }
                   } else {
-                    auto val = decoder->PopNextNegativeIntVal();
-                    if (val.has_value()) {
-                      m_revision = static_cast<int64_t>(1 - val.value());
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
                     }
+                    m_revision = ss.str();
                   }
                 }
                 m_revisionHasBeenSet = true;
@@ -237,19 +218,91 @@ GetMarketplaceRevenueShareResult& GetMarketplaceRevenueShareResult::operator=(
               else if (initialKeyStr == "LatestRevision") {
                 auto peekType = decoder->PeekType();
                 if (peekType.has_value()) {
-                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
-                    auto val = decoder->PopNextUnsignedIntVal();
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
                     if (val.has_value()) {
-                      m_latestRevision = static_cast<int64_t>(val.value());
+                      m_latestRevision = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                     }
                   } else {
-                    auto val = decoder->PopNextNegativeIntVal();
-                    if (val.has_value()) {
-                      m_latestRevision = static_cast<int64_t>(1 - val.value());
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
                     }
+                    m_latestRevision = ss.str();
                   }
                 }
                 m_latestRevisionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "EffectiveFrom") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_effectiveFrom = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_effectiveFrom = ss.str();
+                  }
+                }
+                m_effectiveFromHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "EffectiveUntil") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_effectiveUntil = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_effectiveUntil = ss.str();
+                  }
+                }
+                m_effectiveUntilHasBeenSet = true;
               }
 
               else if (initialKeyStr == "TotalActiveMarketplaceRevenueShareAllocationCount") {
@@ -315,13 +368,13 @@ GetMarketplaceRevenueShareResult& GetMarketplaceRevenueShareResult::operator=(
           if (initialKey.has_value()) {
             Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
 
-            if (initialKeyStr == "ProductId") {
+            if (initialKeyStr == "Id") {
               auto peekType = decoder->PeekType();
               if (peekType.has_value()) {
                 if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
                   auto val = decoder->PopNextTextVal();
                   if (val.has_value()) {
-                    m_productId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    m_id = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                   }
                 } else {
                   decoder->ConsumeNextSingleElement();
@@ -339,10 +392,10 @@ GetMarketplaceRevenueShareResult& GetMarketplaceRevenueShareResult::operator=(
                       ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                     }
                   }
-                  m_productId = ss.str();
+                  m_id = ss.str();
                 }
               }
-              m_productIdHasBeenSet = true;
+              m_idHasBeenSet = true;
             }
 
             else if (initialKeyStr == "Arn") {
@@ -384,64 +437,33 @@ GetMarketplaceRevenueShareResult& GetMarketplaceRevenueShareResult::operator=(
               m_catalogHasBeenSet = true;
             }
 
-            else if (initialKeyStr == "ProductCode") {
-              auto peekType = decoder->PeekType();
-              if (peekType.has_value()) {
-                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
-                  auto val = decoder->PopNextTextVal();
-                  if (val.has_value()) {
-                    m_productCode = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+            else if (initialKeyStr == "Products") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_products.push_back(MarketplaceRevenueShareProductDetail(decoder));
+                    }
                   }
-                } else {
-                  decoder->ConsumeNextSingleElement();
-                  Aws::StringStream ss;
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
                   while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-                    auto nextType = decoder->PeekType();
-                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
-                      if (nextType.has_value()) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
                         decoder->ConsumeNextSingleElement();  // consume the Break
                       }
                       break;
                     }
-                    auto val = decoder->PopNextTextVal();
-                    if (val.has_value()) {
-                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                    }
+                    m_products.push_back(MarketplaceRevenueShareProductDetail(decoder));
                   }
-                  m_productCode = ss.str();
                 }
               }
-              m_productCodeHasBeenSet = true;
-            }
-
-            else if (initialKeyStr == "ProductName") {
-              auto peekType = decoder->PeekType();
-              if (peekType.has_value()) {
-                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
-                  auto val = decoder->PopNextTextVal();
-                  if (val.has_value()) {
-                    m_productName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                  }
-                } else {
-                  decoder->ConsumeNextSingleElement();
-                  Aws::StringStream ss;
-                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
-                    auto nextType = decoder->PeekType();
-                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
-                      if (nextType.has_value()) {
-                        decoder->ConsumeNextSingleElement();  // consume the Break
-                      }
-                      break;
-                    }
-                    auto val = decoder->PopNextTextVal();
-                    if (val.has_value()) {
-                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
-                    }
-                  }
-                  m_productName = ss.str();
-                }
-              }
-              m_productNameHasBeenSet = true;
+              m_productsHasBeenSet = true;
             }
 
             else if (initialKeyStr == "CreatedDate") {
@@ -493,16 +515,28 @@ GetMarketplaceRevenueShareResult& GetMarketplaceRevenueShareResult::operator=(
             else if (initialKeyStr == "Revision") {
               auto peekType = decoder->PeekType();
               if (peekType.has_value()) {
-                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
-                  auto val = decoder->PopNextUnsignedIntVal();
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
                   if (val.has_value()) {
-                    m_revision = static_cast<int64_t>(val.value());
+                    m_revision = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                   }
                 } else {
-                  auto val = decoder->PopNextNegativeIntVal();
-                  if (val.has_value()) {
-                    m_revision = static_cast<int64_t>(1 - val.value());
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
                   }
+                  m_revision = ss.str();
                 }
               }
               m_revisionHasBeenSet = true;
@@ -511,19 +545,91 @@ GetMarketplaceRevenueShareResult& GetMarketplaceRevenueShareResult::operator=(
             else if (initialKeyStr == "LatestRevision") {
               auto peekType = decoder->PeekType();
               if (peekType.has_value()) {
-                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
-                  auto val = decoder->PopNextUnsignedIntVal();
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
                   if (val.has_value()) {
-                    m_latestRevision = static_cast<int64_t>(val.value());
+                    m_latestRevision = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
                   }
                 } else {
-                  auto val = decoder->PopNextNegativeIntVal();
-                  if (val.has_value()) {
-                    m_latestRevision = static_cast<int64_t>(1 - val.value());
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
                   }
+                  m_latestRevision = ss.str();
                 }
               }
               m_latestRevisionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EffectiveFrom") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_effectiveFrom = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_effectiveFrom = ss.str();
+                }
+              }
+              m_effectiveFromHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EffectiveUntil") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_effectiveUntil = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_effectiveUntil = ss.str();
+                }
+              }
+              m_effectiveUntilHasBeenSet = true;
             }
 
             else if (initialKeyStr == "TotalActiveMarketplaceRevenueShareAllocationCount") {

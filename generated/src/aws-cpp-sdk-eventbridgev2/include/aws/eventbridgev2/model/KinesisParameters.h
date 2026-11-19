@@ -22,8 +22,8 @@ namespace Model {
 /**
  * <p>Kinesis Data Streams invocation parameters for subscribers. Values are
  * forwarded to the Kinesis PutRecords API. All scalar values accept a literal or a
- * JSONata expression (e.g. &quot;{% $events.Data.partitionKey
- * %}&quot;).</p><p><h3>See Also:</h3>   <a
+ * JSONata expression (e.g. "{% $events.Data.partitionKey %}").</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/KinesisParameters">AWS
  * API Reference</a></p>
  */

@@ -22,6 +22,7 @@
 #include <aws/eventbridgev2/model/BatchConfiguration.h>
 #include <aws/eventbridgev2/model/BusState.h>
 #include <aws/eventbridgev2/model/ConfluentPublicRegistryConfiguration.h>
+#include <aws/eventbridgev2/model/ConnectivityState.h>
 #include <aws/eventbridgev2/model/CreateEventBusRequest.h>
 #include <aws/eventbridgev2/model/CreateEventBusResult.h>
 #include <aws/eventbridgev2/model/CreateEventSourceRequest.h>
@@ -49,6 +50,7 @@
 #include <aws/eventbridgev2/model/EventBusV2Parameters.h>
 #include <aws/eventbridgev2/model/EventBusV2SystemMetadata.h>
 #include <aws/eventbridgev2/model/EventSourceConfiguration.h>
+#include <aws/eventbridgev2/model/EventSourceDetails.h>
 #include <aws/eventbridgev2/model/EventSourceState.h>
 #include <aws/eventbridgev2/model/EventSourceSummary.h>
 #include <aws/eventbridgev2/model/EventSourceType.h>
@@ -81,6 +83,12 @@
 #include <aws/eventbridgev2/model/ListTagsForResourceResult.h>
 #include <aws/eventbridgev2/model/LogConfiguration.h>
 #include <aws/eventbridgev2/model/LogLevel.h>
+#include <aws/eventbridgev2/model/MskAcks.h>
+#include <aws/eventbridgev2/model/MskCompression.h>
+#include <aws/eventbridgev2/model/MskConnectivity.h>
+#include <aws/eventbridgev2/model/MskDetails.h>
+#include <aws/eventbridgev2/model/MskHeader.h>
+#include <aws/eventbridgev2/model/MskParameters.h>
 #include <aws/eventbridgev2/model/OnFailureConfiguration.h>
 #include <aws/eventbridgev2/model/OrderingType.h>
 #include <aws/eventbridgev2/model/PartnerEventsSourceConfiguration.h>
@@ -104,6 +112,8 @@
 #include <aws/eventbridgev2/model/RetryStrategy.h>
 #include <aws/eventbridgev2/model/RevokeResourceRequest.h>
 #include <aws/eventbridgev2/model/RevokeResourceResult.h>
+#include <aws/eventbridgev2/model/RotateWebhookCredentialsRequest.h>
+#include <aws/eventbridgev2/model/RotateWebhookCredentialsResult.h>
 #include <aws/eventbridgev2/model/SchemaRegistryConfiguration.h>
 #include <aws/eventbridgev2/model/SnsMessageAttributeValue.h>
 #include <aws/eventbridgev2/model/SnsParameters.h>
@@ -113,6 +123,7 @@
 #include <aws/eventbridgev2/model/StepFunctionsParameters.h>
 #include <aws/eventbridgev2/model/StorageConfiguration.h>
 #include <aws/eventbridgev2/model/StorageConfigurationOutput.h>
+#include <aws/eventbridgev2/model/SubscriberDetails.h>
 #include <aws/eventbridgev2/model/SubscriberState.h>
 #include <aws/eventbridgev2/model/SubscriberSummary.h>
 #include <aws/eventbridgev2/model/SuccessCode.h>
@@ -130,6 +141,19 @@
 #include <aws/eventbridgev2/model/UpdateInvokeConfiguration.h>
 #include <aws/eventbridgev2/model/UpdateSubscriberRequest.h>
 #include <aws/eventbridgev2/model/UpdateSubscriberResult.h>
+#include <aws/eventbridgev2/model/WebhookAuthConfiguration.h>
+#include <aws/eventbridgev2/model/WebhookBasicHttpAuthConfiguration.h>
+#include <aws/eventbridgev2/model/WebhookCredential.h>
+#include <aws/eventbridgev2/model/WebhookDeduplicationConfiguration.h>
+#include <aws/eventbridgev2/model/WebhookDeduplicationType.h>
+#include <aws/eventbridgev2/model/WebhookDetails.h>
+#include <aws/eventbridgev2/model/WebhookEventsSourceConfiguration.h>
+#include <aws/eventbridgev2/model/WebhookHmacAlgorithm.h>
+#include <aws/eventbridgev2/model/WebhookHmacAuthConfiguration.h>
+#include <aws/eventbridgev2/model/WebhookHmacEncoding.h>
+#include <aws/eventbridgev2/model/WebhookSecretEncoding.h>
+#include <aws/eventbridgev2/model/WebhookSignedMessageComposition.h>
+#include <aws/eventbridgev2/model/WebhookStaticTokenAuthConfiguration.h>
 
 using EventBridgeV2IncludeTest = ::testing::Test;
 

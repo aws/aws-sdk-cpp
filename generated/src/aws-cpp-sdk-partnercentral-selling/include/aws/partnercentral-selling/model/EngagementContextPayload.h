@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/model/CustomerAccountContext.h>
 #include <aws/partnercentral-selling/model/CustomerProjectsContext.h>
 #include <aws/partnercentral-selling/model/LeadContext.h>
 #include <aws/partnercentral-selling/model/ProspectingResult.h>
@@ -94,15 +95,37 @@ class EngagementContextPayload {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The customer account context for account planning. This field appears only
+   * when the context type is <code>CustomerAccount</code>.</p>
+   */
+  inline const CustomerAccountContext& GetCustomerAccount() const { return m_customerAccount; }
+  inline bool CustomerAccountHasBeenSet() const { return m_customerAccountHasBeenSet; }
+  template <typename CustomerAccountT = CustomerAccountContext>
+  void SetCustomerAccount(CustomerAccountT&& value) {
+    m_customerAccountHasBeenSet = true;
+    m_customerAccount = std::forward<CustomerAccountT>(value);
+  }
+  template <typename CustomerAccountT = CustomerAccountContext>
+  EngagementContextPayload& WithCustomerAccount(CustomerAccountT&& value) {
+    SetCustomerAccount(std::forward<CustomerAccountT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CustomerProjectsContext m_customerProject;
 
   LeadContext m_lead;
 
   ProspectingResult m_prospectingResult;
+
+  CustomerAccountContext m_customerAccount;
   bool m_customerProjectHasBeenSet = false;
   bool m_leadHasBeenSet = false;
   bool m_prospectingResultHasBeenSet = false;
+  bool m_customerAccountHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -80,6 +80,24 @@ GetOutboundExternalLinkResult& GetOutboundExternalLinkResult::operator=(const Aw
     m_connectivityType = ConnectivityTypeMapper::GetConnectivityTypeForName(jsonValue.GetString("connectivityType"));
     m_connectivityTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("errorDetails")) {
+    Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("errorDetails");
+    for (unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex) {
+      m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsObject());
+    }
+    m_errorDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lockToken")) {
+    m_lockToken = jsonValue.GetString("lockToken");
+    m_lockTokenHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("flows")) {
+    Aws::Utils::Array<JsonView> flowsJsonList = jsonValue.GetArray("flows");
+    for (unsigned flowsIndex = 0; flowsIndex < flowsJsonList.GetLength(); ++flowsIndex) {
+      m_flows.push_back(flowsJsonList[flowsIndex].AsObject());
+    }
+    m_flowsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

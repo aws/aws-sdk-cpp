@@ -7,6 +7,8 @@
 
 #include <aws/cognito-idp/model/AdminListGroupsForUserPaginationTraits.h>
 #include <aws/cognito-idp/model/AdminListUserAuthEventsPaginationTraits.h>
+#include <aws/cognito-idp/model/ListCIMDPoliciesPaginationTraits.h>
+#include <aws/cognito-idp/model/ListClientMetadataURLsPaginationTraits.h>
 #include <aws/cognito-idp/model/ListGroupsPaginationTraits.h>
 #include <aws/cognito-idp/model/ListIdentityProvidersPaginationTraits.h>
 #include <aws/cognito-idp/model/ListResourceServersPaginationTraits.h>
@@ -46,6 +48,30 @@ class CognitoIdentityProviderPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::AdminListUserAuthEventsRequest,
                                              Pagination::AdminListUserAuthEventsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListCIMDPolicies operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCIMDPoliciesRequest,
+                                    Pagination::ListCIMDPoliciesPaginationTraits<DerivedClient>>
+  ListCIMDPoliciesPaginator(const Model::ListCIMDPoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCIMDPoliciesRequest,
+                                             Pagination::ListCIMDPoliciesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                          request};
+  }
+
+  /**
+   * Create a paginator for ListClientMetadataURLs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClientMetadataURLsRequest,
+                                    Pagination::ListClientMetadataURLsPaginationTraits<DerivedClient>>
+  ListClientMetadataURLsPaginator(const Model::ListClientMetadataURLsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClientMetadataURLsRequest,
+                                             Pagination::ListClientMetadataURLsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

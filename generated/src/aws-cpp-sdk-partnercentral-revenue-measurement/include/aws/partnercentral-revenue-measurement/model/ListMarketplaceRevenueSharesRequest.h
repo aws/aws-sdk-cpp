@@ -53,7 +53,35 @@ class ListMarketplaceRevenueSharesRequest : public PartnerCentralRevenueMeasurem
 
   ///@{
   /**
-   * <p>Filter results to only include shares with these product identifiers.</p>
+   * <p>Filter results to only include these marketplace revenue shares, by ID or
+   * ARN. 1 to 100 identifiers. When several filters are sent, a share must match all
+   * of them.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetIdentifiers() const { return m_identifiers; }
+  inline bool IdentifiersHasBeenSet() const { return m_identifiersHasBeenSet; }
+  template <typename IdentifiersT = Aws::Vector<Aws::String>>
+  void SetIdentifiers(IdentifiersT&& value) {
+    m_identifiersHasBeenSet = true;
+    m_identifiers = std::forward<IdentifiersT>(value);
+  }
+  template <typename IdentifiersT = Aws::Vector<Aws::String>>
+  ListMarketplaceRevenueSharesRequest& WithIdentifiers(IdentifiersT&& value) {
+    SetIdentifiers(std::forward<IdentifiersT>(value));
+    return *this;
+  }
+  template <typename IdentifiersT = Aws::String>
+  ListMarketplaceRevenueSharesRequest& AddIdentifiers(IdentifiersT&& value) {
+    m_identifiersHasBeenSet = true;
+    m_identifiers.emplace_back(std::forward<IdentifiersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter results to the marketplace revenue shares that contain any of these
+   * products. 1 to 10 product IDs or product ARNs. Shares the caller does not own
+   * are never returned.</p>
    */
   inline const Aws::Vector<Aws::String>& GetProductIds() const { return m_productIds; }
   inline bool ProductIdsHasBeenSet() const { return m_productIdsHasBeenSet; }
@@ -77,7 +105,8 @@ class ListMarketplaceRevenueSharesRequest : public PartnerCentralRevenueMeasurem
 
   ///@{
   /**
-   * <p>Filter results to only include shares with these product codes.</p>
+   * <p>Filter results to the marketplace revenue shares that contain a product with
+   * any of these product codes. 1 to 10 product codes.</p>
    */
   inline const Aws::Vector<Aws::String>& GetProductCodes() const { return m_productCodes; }
   inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
@@ -168,8 +197,8 @@ class ListMarketplaceRevenueSharesRequest : public PartnerCentralRevenueMeasurem
 
   ///@{
   /**
-   * <p>Filter results to only include marketplace revenue shares created after this
-   * timestamp.</p>
+   * <p>Filter results to marketplace revenue shares created at or after this
+   * timestamp (inclusive).</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAfter() const { return m_createdAfter; }
   inline bool CreatedAfterHasBeenSet() const { return m_createdAfterHasBeenSet; }
@@ -187,8 +216,8 @@ class ListMarketplaceRevenueSharesRequest : public PartnerCentralRevenueMeasurem
 
   ///@{
   /**
-   * <p>Filter results to only include marketplace revenue shares created before this
-   * timestamp.</p>
+   * <p>Filter results to marketplace revenue shares created before this timestamp
+   * (exclusive).</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedBefore() const { return m_createdBefore; }
   inline bool CreatedBeforeHasBeenSet() const { return m_createdBeforeHasBeenSet; }
@@ -206,6 +235,8 @@ class ListMarketplaceRevenueSharesRequest : public PartnerCentralRevenueMeasurem
  private:
   CatalogName m_catalog{CatalogName::NOT_SET};
 
+  Aws::Vector<Aws::String> m_identifiers;
+
   Aws::Vector<Aws::String> m_productIds;
 
   Aws::Vector<Aws::String> m_productCodes;
@@ -222,6 +253,7 @@ class ListMarketplaceRevenueSharesRequest : public PartnerCentralRevenueMeasurem
 
   Aws::Utils::DateTime m_createdBefore{};
   bool m_catalogHasBeenSet = false;
+  bool m_identifiersHasBeenSet = false;
   bool m_productIdsHasBeenSet = false;
   bool m_productCodesHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;

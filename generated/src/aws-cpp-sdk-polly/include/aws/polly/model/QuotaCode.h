@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Polly {
 namespace Model {
-enum class QuotaCode { NOT_SET, input_stream_inbound_event_timeout, input_stream_timeout };
+enum class QuotaCode { NOT_SET, input_stream_inbound_event_timeout, input_stream_timeout, custom_voice_max_count };
 
 namespace QuotaCodeMapper {
 AWS_POLLY_API QuotaCode GetQuotaCodeForName(const Aws::String& name);

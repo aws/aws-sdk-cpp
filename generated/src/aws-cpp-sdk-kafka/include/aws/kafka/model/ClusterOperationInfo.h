@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/model/BrokerTypeUpgradeInfo.h>
 #include <aws/kafka/model/ClusterOperationStep.h>
 #include <aws/kafka/model/ErrorInfo.h>
 #include <aws/kafka/model/MutableClusterInfo.h>
@@ -39,6 +40,27 @@ class ClusterOperationInfo {
   AWS_KAFKA_API ClusterOperationInfo(Aws::Utils::Json::JsonView jsonValue);
   AWS_KAFKA_API ClusterOperationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   *
+          <p>Topic reassignment details of the UpdateBrokerType operation
+   * that started an upgrade from Standard brokers to Express brokers.</p>
+
+   */
+  inline const BrokerTypeUpgradeInfo& GetBrokerTypeUpgradeInfo() const { return m_brokerTypeUpgradeInfo; }
+  inline bool BrokerTypeUpgradeInfoHasBeenSet() const { return m_brokerTypeUpgradeInfoHasBeenSet; }
+  template <typename BrokerTypeUpgradeInfoT = BrokerTypeUpgradeInfo>
+  void SetBrokerTypeUpgradeInfo(BrokerTypeUpgradeInfoT&& value) {
+    m_brokerTypeUpgradeInfoHasBeenSet = true;
+    m_brokerTypeUpgradeInfo = std::forward<BrokerTypeUpgradeInfoT>(value);
+  }
+  template <typename BrokerTypeUpgradeInfoT = BrokerTypeUpgradeInfo>
+  ClusterOperationInfo& WithBrokerTypeUpgradeInfo(BrokerTypeUpgradeInfoT&& value) {
+    SetBrokerTypeUpgradeInfo(std::forward<BrokerTypeUpgradeInfoT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -290,6 +312,8 @@ class ClusterOperationInfo {
   }
   ///@}
  private:
+  BrokerTypeUpgradeInfo m_brokerTypeUpgradeInfo;
+
   Aws::String m_clientRequestId;
 
   Aws::String m_clusterArn;
@@ -313,6 +337,7 @@ class ClusterOperationInfo {
   MutableClusterInfo m_targetClusterInfo;
 
   VpcConnectionInfo m_vpcConnectionInfo;
+  bool m_brokerTypeUpgradeInfoHasBeenSet = false;
   bool m_clientRequestIdHasBeenSet = false;
   bool m_clusterArnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

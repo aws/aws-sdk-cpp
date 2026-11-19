@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
 #include <aws/rolesanywhere/model/AttributeMapping.h>
+#include <aws/rolesanywhere/model/TipConfiguration.h>
 
 #include <utility>
 
@@ -351,6 +352,24 @@ class ProfileDetail {
 
   ///@{
   /**
+   * <p>The trusted identity propagation (TIP) settings of the profile.</p>
+   */
+  inline const TipConfiguration& GetTipConfiguration() const { return m_tipConfiguration; }
+  inline bool TipConfigurationHasBeenSet() const { return m_tipConfigurationHasBeenSet; }
+  template <typename TipConfigurationT = TipConfiguration>
+  void SetTipConfiguration(TipConfigurationT&& value) {
+    m_tipConfigurationHasBeenSet = true;
+    m_tipConfiguration = std::forward<TipConfigurationT>(value);
+  }
+  template <typename TipConfigurationT = TipConfiguration>
+  ProfileDetail& WithTipConfiguration(TipConfigurationT&& value) {
+    SetTipConfiguration(std::forward<TipConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The alias that the resource had before the update request. IAM Roles Anywhere
    * returns this value only in the response to an update request that changed or
    * removed an existing alias. It isn't returned when the alias was unchanged, when
@@ -402,6 +421,8 @@ class ProfileDetail {
 
   Aws::String m_aliasArn;
 
+  TipConfiguration m_tipConfiguration;
+
   Aws::String m_previousAliasName;
   bool m_profileIdHasBeenSet = false;
   bool m_profileArnHasBeenSet = false;
@@ -419,6 +440,7 @@ class ProfileDetail {
   bool m_attributeMappingsHasBeenSet = false;
   bool m_aliasNameHasBeenSet = false;
   bool m_aliasArnHasBeenSet = false;
+  bool m_tipConfigurationHasBeenSet = false;
   bool m_previousAliasNameHasBeenSet = false;
 };
 

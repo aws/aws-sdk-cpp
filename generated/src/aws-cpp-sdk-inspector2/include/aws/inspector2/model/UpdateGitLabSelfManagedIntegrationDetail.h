@@ -50,9 +50,30 @@ class UpdateGitLabSelfManagedIntegrationDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The PKCE state token used to validate the authorization request.</p>
+   */
+  inline const Aws::String& GetStateToken() const { return m_stateToken; }
+  inline bool StateTokenHasBeenSet() const { return m_stateTokenHasBeenSet; }
+  template <typename StateTokenT = Aws::String>
+  void SetStateToken(StateTokenT&& value) {
+    m_stateTokenHasBeenSet = true;
+    m_stateToken = std::forward<StateTokenT>(value);
+  }
+  template <typename StateTokenT = Aws::String>
+  UpdateGitLabSelfManagedIntegrationDetail& WithStateToken(StateTokenT&& value) {
+    SetStateToken(std::forward<StateTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_authCode;
+
+  Aws::String m_stateToken;
   bool m_authCodeHasBeenSet = false;
+  bool m_stateTokenHasBeenSet = false;
 };
 
 }  // namespace Model

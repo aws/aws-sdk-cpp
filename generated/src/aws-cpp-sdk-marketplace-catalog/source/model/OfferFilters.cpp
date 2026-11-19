@@ -34,6 +34,10 @@ OfferFilters& OfferFilters::operator=(JsonView jsonValue) {
     m_resaleAuthorizationId = jsonValue.GetObject("ResaleAuthorizationId");
     m_resaleAuthorizationIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SubsidiaryAuthorizationId")) {
+    m_subsidiaryAuthorizationId = jsonValue.GetObject("SubsidiaryAuthorizationId");
+    m_subsidiaryAuthorizationIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ReleaseDate")) {
     m_releaseDate = jsonValue.GetObject("ReleaseDate");
     m_releaseDateHasBeenSet = true;
@@ -94,6 +98,10 @@ JsonValue OfferFilters::Jsonize() const {
 
   if (m_resaleAuthorizationIdHasBeenSet) {
     payload.WithObject("ResaleAuthorizationId", m_resaleAuthorizationId.Jsonize());
+  }
+
+  if (m_subsidiaryAuthorizationIdHasBeenSet) {
+    payload.WithObject("SubsidiaryAuthorizationId", m_subsidiaryAuthorizationId.Jsonize());
   }
 
   if (m_releaseDateHasBeenSet) {

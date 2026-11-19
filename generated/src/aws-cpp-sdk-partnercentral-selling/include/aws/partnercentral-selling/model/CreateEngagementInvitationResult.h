@@ -21,6 +21,12 @@ class JsonValue;
 }  // namespace Utils
 namespace PartnerCentralSelling {
 namespace Model {
+/**
+ * <p>Contains the response that the <code>CreateEngagementInvitation</code> action
+ * returns.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementInvitationResponse">AWS
+ * API Reference</a></p>
+ */
 class CreateEngagementInvitationResult {
  public:
   AWS_PARTNERCENTRALSELLING_API CreateEngagementInvitationResult() = default;
@@ -30,7 +36,7 @@ class CreateEngagementInvitationResult {
 
   ///@{
   /**
-   * <p> Unique identifier assigned to the newly created engagement invitation. </p>
+   * <p>Unique identifier assigned to the newly created engagement invitation.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
   template <typename IdT = Aws::String>
@@ -47,8 +53,8 @@ class CreateEngagementInvitationResult {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) that uniquely identifies the engagement
-   * invitation. </p>
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies the engagement
+   * invitation.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   template <typename ArnT = Aws::String>

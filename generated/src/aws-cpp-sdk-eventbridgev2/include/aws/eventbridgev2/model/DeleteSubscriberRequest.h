@@ -31,7 +31,9 @@ class DeleteSubscriberRequest : public EventBridgeV2Request {
   AWS_EVENTBRIDGEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
+   */
   inline const Aws::String& GetSubscriberArn() const { return m_subscriberArn; }
   inline bool SubscriberArnHasBeenSet() const { return m_subscriberArnHasBeenSet; }
   template <typename SubscriberArnT = Aws::String>

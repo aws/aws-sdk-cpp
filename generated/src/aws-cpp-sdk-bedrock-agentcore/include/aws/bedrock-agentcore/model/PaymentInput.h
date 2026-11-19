@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/AwsBillingX402PaymentInput.h>
 #include <aws/bedrock-agentcore/model/CryptoX402PaymentInput.h>
 #include <aws/bedrock-agentcore/model/MppPaymentInput.h>
 
@@ -66,12 +67,34 @@ class PaymentInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Input for an AWS Billing x402 payment, which pays an AWS Marketplace seller's
+   * quote and charges it to the AWS account that owns the payment manager.</p>
+   */
+  inline const AwsBillingX402PaymentInput& GetAwsBillingX402() const { return m_awsBillingX402; }
+  inline bool AwsBillingX402HasBeenSet() const { return m_awsBillingX402HasBeenSet; }
+  template <typename AwsBillingX402T = AwsBillingX402PaymentInput>
+  void SetAwsBillingX402(AwsBillingX402T&& value) {
+    m_awsBillingX402HasBeenSet = true;
+    m_awsBillingX402 = std::forward<AwsBillingX402T>(value);
+  }
+  template <typename AwsBillingX402T = AwsBillingX402PaymentInput>
+  PaymentInput& WithAwsBillingX402(AwsBillingX402T&& value) {
+    SetAwsBillingX402(std::forward<AwsBillingX402T>(value));
+    return *this;
+  }
+  ///@}
  private:
   CryptoX402PaymentInput m_cryptoX402;
 
   MppPaymentInput m_mpp;
+
+  AwsBillingX402PaymentInput m_awsBillingX402;
   bool m_cryptoX402HasBeenSet = false;
   bool m_mppHasBeenSet = false;
+  bool m_awsBillingX402HasBeenSet = false;
 };
 
 }  // namespace Model

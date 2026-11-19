@@ -16,13 +16,14 @@
 namespace Aws {
 namespace EventBridgeV2 {
 /**
- * <p>Amazon EventBridge event bus API. An event bus receives events published by
- * your applications and AWS services, stores them for a configurable retention
- * period, and delivers them to subscribers. A subscriber filters events,
- * optionally transforms them, and invokes a target such as Lambda, SQS, SNS,
- * Kinesis, Step Functions, or an HTTP endpoint. The API manages event buses,
- * subscribers, event sources, resource policies, and tags, and publishes events
- * through PutEvents and PutRawEvents.</p>
+ * <p><fullname>Amazon EventBridge Custom Event Bus</fullname> <p>Amazon
+ * EventBridge event bus API. An event bus receives events published by your
+ * applications and AWS services, stores them for a configurable retention period,
+ * and delivers them to subscribers. A subscriber filters events, optionally
+ * transforms them, and invokes a target such as Lambda, SQS, SNS, Kinesis, Step
+ * Functions, or an HTTP endpoint. The API manages event buses, subscribers, event
+ * sources, resource policies, and tags, and publishes events through PutEvents and
+ * PutRawEvents.</p></p>
  */
 class AWS_EVENTBRIDGEV2_API EventBridgeV2Client : public Aws::Client::AWSRpcV2CborClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<EventBridgeV2Client>,
@@ -114,9 +115,10 @@ class AWS_EVENTBRIDGEV2_API EventBridgeV2Client : public Aws::Client::AWSRpcV2Cb
   }
 
   /**
-   * <p>Creates an EventSource, which forwards events from an origin (an AWS service
-   * or another account) onto an event bus. The bus must be ACTIVE. Retries carrying
-   * the same ClientToken are idempotent.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates an EventSource, which forwards events from an origin (an AWS service,
+   * a partner, or a third-party webhook provider) to an event bus. The event bus
+   * must be in the ACTIVE state. This operation is idempotent: retries that use the
+   * same ClientToken return the same result.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/CreateEventSource">AWS
    * API Reference</a></p>
    */
@@ -144,7 +146,10 @@ class AWS_EVENTBRIDGEV2_API EventBridgeV2Client : public Aws::Client::AWSRpcV2Cb
   /**
    * <p>Creates a subscriber on an event bus, which delivers matching events to the
    * configured target. The bus must be ACTIVE. Retries carrying the same ClientToken
-   * are idempotent.</p><p><h3>See Also:</h3>   <a
+   * are idempotent. A subscriber that targets an Amazon MSK cluster provisions its
+   * connectivity asynchronously after this call returns and begins delivering when
+   * its ConnectivityState reaches ACTIVE (see the MskSubscriberActive
+   * waiter).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/CreateSubscriber">AWS
    * API Reference</a></p>
    */
@@ -531,7 +536,11 @@ class AWS_EVENTBRIDGEV2_API EventBridgeV2Client : public Aws::Client::AWSRpcV2Cb
   }
 
   /**
-   * <p>Publishes events to an event bus.</p><p><h3>See Also:</h3>   <a
+   * <p>Publishes events to an event bus.</p> <p>The total size of all event entries
+   * in a request must not exceed 1 MB (1,048,576 bytes). The limit applies to the
+   * request as a whole, not to individual entries. If you exceed the limit, the
+   * request fails with <code>InvalidInputException</code> and the service publishes
+   * none of the entries in the request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/PutEvents">AWS
    * API Reference</a></p>
    */
@@ -556,7 +565,13 @@ class AWS_EVENTBRIDGEV2_API EventBridgeV2Client : public Aws::Client::AWSRpcV2Cb
   }
 
   /**
-   * <p>Publishes pre-shaped events to an event bus.</p><p><h3>See Also:</h3>   <a
+   * <p>Publishes pre-shaped events to an event bus.</p> <p>The total size of all
+   * event entries in a request must not exceed 1 MB (1,048,576 bytes), including the
+   * <code>Data</code> payload and the keys and values of <code>Metadata</code> for
+   * each entry. The limit applies to the request as a whole, not to individual
+   * entries.</p> <p>If you exceed the limit, the request fails with
+   * <code>InvalidInputException</code>, and the service doesn't publish any of the
+   * entries in the request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/PutRawEvents">AWS
    * API Reference</a></p>
    */
@@ -583,14 +598,13 @@ class AWS_EVENTBRIDGEV2_API EventBridgeV2Client : public Aws::Client::AWSRpcV2Cb
   /**
    * <p>Attaches a named resource policy to an event bus — the only resource type
    * that supports policies; other resource ARNs are rejected. Each bus holds two
-   * named policies: &quot;default&quot; (customer-managed, full IAM policy language
-   * including Deny) and &quot;AWS_RAM&quot; (written exclusively by AWS Resource
-   * Access Manager to reflect resource shares). Both policies are evaluated on
-   * cross-account authorization; an explicit Deny in either overrides an Allow in
-   * the other. Operations that omit PolicyName target &quot;default&quot;. A
-   * &quot;default&quot; policy that would grant public access is rejected with
-   * PublicPolicyException and is not attached; this check is always on and cannot be
-   * disabled.</p><p><h3>See Also:</h3>   <a
+   * named policies: "default" (customer-managed, full IAM policy language including
+   * Deny) and "AWS_RAM" (written exclusively by AWS Resource Access Manager to
+   * reflect resource shares). Both policies are evaluated on cross-account
+   * authorization; an explicit Deny in either overrides an Allow in the other.
+   * Operations that omit PolicyName target "default". A "default" policy that would
+   * grant public access is rejected with PublicPolicyException and is not attached;
+   * this check is always on and cannot be disabled.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/PutResourcePolicy">AWS
    * API Reference</a></p>
    */
@@ -642,6 +656,63 @@ class AWS_EVENTBRIDGEV2_API EventBridgeV2Client : public Aws::Client::AWSRpcV2Cb
   void RevokeResourceAsync(const RevokeResourceRequestT& request, const RevokeResourceResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EventBridgeV2Client::RevokeResource, request, handler, context);
+  }
+
+  /**
+   * <p>Sets a new credential on a webhook EventSource. If you supply Credential,
+   * EventBridge uses that value. Otherwise, EventBridge generates one. For HTTP
+   * Basic authentication, only the password changes. The username does not change.
+   * EventBridge never returns the credential. To read a generated value, call
+   * secretsmanager:GetSecretValue on the secret that SecretArn identifies.</p>
+   * <p>You can rotate the credential of an EventSource in the ACTIVE, UPDATING, or
+   * UPDATE_FAILED state. For a revoked EventSource or an EventSource in any other
+   * state, EventBridge returns InvalidStateException. EventBridge also returns
+   * InvalidStateException if the secret of the EventSource is scheduled for deletion
+   * or has been deleted.</p> <p>If you rotate the credential of one EventSource too
+   * many times in 24 hours, EventBridge returns LimitExceededException. Retry later.
+   * The limit becomes available again automatically.</p> <p>If AWS Secrets Manager
+   * throttles the call, EventBridge returns ThrottlingException. Retry later.</p>
+   * <p>To use this operation, you must have the following permissions in your IAM
+   * policy:</p> <ul> <li> <p>secretsmanager:PutSecretValue on the secret of the
+   * EventSource</p> </li> <li> <p>secretsmanager:GetSecretValue on the secret of the
+   * EventSource, for HTTP Basic authentication only</p> </li> <li>
+   * <p>kms:GenerateDataKey and kms:Decrypt on the AWS KMS key that encrypts the
+   * secret</p> </li> </ul> <p>The resource policy of the secret must not deny the
+   * secretsmanager actions.</p> <p>EventBridge accepts the new credential when this
+   * call returns. In rare cases, the new credential takes up to 2 minutes to reach
+   * every EventBridge endpoint.</p> <p>EventBridge also accepts the previous
+   * credential for 15 minutes after the rotation. The window ends at the CreatedDate
+   * of the AWSCURRENT secret version plus 15 minutes. Only the credential that the
+   * most recent rotation replaced stays valid. If you rotate again within 15
+   * minutes, the older credential stops working immediately.</p> <p>A retry with the
+   * same ClientToken within 8 hours returns the same result and does not rotate
+   * again. A retry of a rotation that supplied a value can arrive after a later
+   * rotation completed. In that case, the retried value becomes the current
+   * credential, and the credential it replaces does not stay valid.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/RotateWebhookCredentials">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RotateWebhookCredentialsOutcome RotateWebhookCredentials(const Model::RotateWebhookCredentialsRequest& request) const;
+
+  /**
+   * A Callable wrapper for RotateWebhookCredentials that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RotateWebhookCredentialsRequestT = Model::RotateWebhookCredentialsRequest>
+  Model::RotateWebhookCredentialsOutcomeCallable RotateWebhookCredentialsCallable(const RotateWebhookCredentialsRequestT& request) const {
+    return SubmitCallable(&EventBridgeV2Client::RotateWebhookCredentials, request);
+  }
+
+  /**
+   * An Async wrapper for RotateWebhookCredentials that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RotateWebhookCredentialsRequestT = Model::RotateWebhookCredentialsRequest>
+  void RotateWebhookCredentialsAsync(const RotateWebhookCredentialsRequestT& request,
+                                     const RotateWebhookCredentialsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EventBridgeV2Client::RotateWebhookCredentials, request, handler, context);
   }
 
   /**
@@ -751,8 +822,10 @@ class AWS_EVENTBRIDGEV2_API EventBridgeV2Client : public Aws::Client::AWSRpcV2Cb
   }
 
   /**
-   * <p>Updates a subscriber. Fields omitted from the request are left
-   * unchanged.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates a subscriber. Fields omitted from the request are left unchanged.
+   * Changing an Amazon MSK subscriber's connectivity can re-provision it; when it
+   * does, the subscriber resumes delivering once its ConnectivityState returns to
+   * ACTIVE (see the MskSubscriberActive waiter).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/UpdateSubscriber">AWS
    * API Reference</a></p>
    */

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaLive {
 namespace Model {
-enum class ReservationMaximumBitrate { NOT_SET, MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS };
+enum class ReservationMaximumBitrate { NOT_SET, MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS, MAX_500_MBPS };
 
 namespace ReservationMaximumBitrateMapper {
 AWS_MEDIALIVE_API ReservationMaximumBitrate GetReservationMaximumBitrateForName(const Aws::String& name);

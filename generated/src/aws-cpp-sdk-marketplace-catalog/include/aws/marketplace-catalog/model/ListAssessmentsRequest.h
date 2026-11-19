@@ -53,7 +53,8 @@ class ListAssessmentsRequest : public MarketplaceCatalogRequest {
   /**
    * <p>The unique identifier of a framework. When specified, only assessments
    * performed against this framework are returned. For example,
-   * <code>AMISecurity</code>.</p>
+   * <code>AMISecurity</code>. Required when you use <code>EntityIds</code> in
+   * <code>AssessmentTargetFilter</code>.</p>
    */
   inline const Aws::String& GetFrameworkId() const { return m_frameworkId; }
   inline bool FrameworkIdHasBeenSet() const { return m_frameworkIdHasBeenSet; }

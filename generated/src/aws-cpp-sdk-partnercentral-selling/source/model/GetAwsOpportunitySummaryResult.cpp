@@ -74,6 +74,10 @@ GetAwsOpportunitySummaryResult& GetAwsOpportunitySummaryResult::operator=(const 
     m_cosellMotion = jsonValue.GetString("CosellMotion");
     m_cosellMotionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CosellMotionReason")) {
+    m_cosellMotionReason = jsonValue.GetString("CosellMotionReason");
+    m_cosellMotionReasonHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SoftwareRevenue")) {
     m_softwareRevenue = jsonValue.GetObject("SoftwareRevenue");
     m_softwareRevenueHasBeenSet = true;

@@ -34,7 +34,10 @@ class AwsServiceEventsSourceConfiguration {
   AWS_EVENTBRIDGEV2_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
-
+  /**
+   * <p>A single AWS service source identifier, e.g. "aws.s3". Wildcards and lists
+   * are rejected.</p>
+   */
   inline const Aws::String& GetAwsService() const { return m_awsService; }
   inline bool AwsServiceHasBeenSet() const { return m_awsServiceHasBeenSet; }
   template <typename AwsServiceT = Aws::String>

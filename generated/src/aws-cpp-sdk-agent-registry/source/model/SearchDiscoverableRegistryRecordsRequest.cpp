@@ -37,5 +37,13 @@ Aws::String SearchDiscoverableRegistryRecordsRequest::SerializePayload() const {
     }
   }
 
+  if (m_searchTypeHasBeenSet) {
+    payload.WithString("searchType", SearchTypeMapper::GetNameForSearchType(m_searchType));
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
+  }
+
   return payload.View().WriteReadable();
 }

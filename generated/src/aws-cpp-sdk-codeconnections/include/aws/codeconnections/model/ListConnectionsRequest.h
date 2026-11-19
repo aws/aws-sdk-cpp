@@ -34,23 +34,6 @@ class ListConnectionsRequest : public CodeConnectionsRequest {
   ///@{
   /**
    * <p>Filters the list of connections to those associated with a specified
-   * provider, such as Bitbucket.</p>
-   */
-  inline ProviderType GetProviderTypeFilter() const { return m_providerTypeFilter; }
-  inline bool ProviderTypeFilterHasBeenSet() const { return m_providerTypeFilterHasBeenSet; }
-  inline void SetProviderTypeFilter(ProviderType value) {
-    m_providerTypeFilterHasBeenSet = true;
-    m_providerTypeFilter = value;
-  }
-  inline ListConnectionsRequest& WithProviderTypeFilter(ProviderType value) {
-    SetProviderTypeFilter(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Filters the list of connections to those associated with a specified
    * host.</p>
    */
   inline const Aws::String& GetHostArnFilter() const { return m_hostArnFilter; }
@@ -63,6 +46,23 @@ class ListConnectionsRequest : public CodeConnectionsRequest {
   template <typename HostArnFilterT = Aws::String>
   ListConnectionsRequest& WithHostArnFilter(HostArnFilterT&& value) {
     SetHostArnFilter(std::forward<HostArnFilterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filters the list of connections to those associated with a specified
+   * provider, such as Bitbucket.</p>
+   */
+  inline ProviderType GetProviderTypeFilter() const { return m_providerTypeFilter; }
+  inline bool ProviderTypeFilterHasBeenSet() const { return m_providerTypeFilterHasBeenSet; }
+  inline void SetProviderTypeFilter(ProviderType value) {
+    m_providerTypeFilterHasBeenSet = true;
+    m_providerTypeFilter = value;
+  }
+  inline ListConnectionsRequest& WithProviderTypeFilter(ProviderType value) {
+    SetProviderTypeFilter(value);
     return *this;
   }
   ///@}
@@ -104,15 +104,15 @@ class ListConnectionsRequest : public CodeConnectionsRequest {
   }
   ///@}
  private:
-  ProviderType m_providerTypeFilter{ProviderType::NOT_SET};
-
   Aws::String m_hostArnFilter;
+
+  ProviderType m_providerTypeFilter{ProviderType::NOT_SET};
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-  bool m_providerTypeFilterHasBeenSet = false;
   bool m_hostArnFilterHasBeenSet = false;
+  bool m_providerTypeFilterHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };

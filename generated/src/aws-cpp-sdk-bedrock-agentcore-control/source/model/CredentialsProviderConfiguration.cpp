@@ -26,6 +26,10 @@ CredentialsProviderConfiguration& CredentialsProviderConfiguration::operator=(Js
     m_stripePrivy = jsonValue.GetObject("stripePrivy");
     m_stripePrivyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("awsBilling")) {
+    m_awsBilling = jsonValue.GetObject("awsBilling");
+    m_awsBillingHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue CredentialsProviderConfiguration::Jsonize() const {
 
   if (m_stripePrivyHasBeenSet) {
     payload.WithObject("stripePrivy", m_stripePrivy.Jsonize());
+  }
+
+  if (m_awsBillingHasBeenSet) {
+    payload.WithObject("awsBilling", m_awsBilling.Jsonize());
   }
 
   return payload;

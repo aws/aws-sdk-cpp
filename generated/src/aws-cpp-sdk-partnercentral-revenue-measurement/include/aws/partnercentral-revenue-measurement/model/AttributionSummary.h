@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurement_EXPORTS.h>
@@ -268,6 +269,30 @@ class AttributionSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Program-defined key-value attributes for the revenue attribution.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetContext() const { return m_context; }
+  inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+  template <typename ContextT = Aws::Map<Aws::String, Aws::String>>
+  void SetContext(ContextT&& value) {
+    m_contextHasBeenSet = true;
+    m_context = std::forward<ContextT>(value);
+  }
+  template <typename ContextT = Aws::Map<Aws::String, Aws::String>>
+  AttributionSummary& WithContext(ContextT&& value) {
+    SetContext(std::forward<ContextT>(value));
+    return *this;
+  }
+  template <typename ContextKeyT = Aws::String, typename ContextValueT = Aws::String>
+  AttributionSummary& AddContext(ContextKeyT&& key, ContextValueT&& value) {
+    m_contextHasBeenSet = true;
+    m_context.emplace(std::forward<ContextKeyT>(key), std::forward<ContextValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -294,6 +319,8 @@ class AttributionSummary {
   int64_t m_totalActiveRevenueAttributionAllocationCount{0};
 
   int64_t m_totalRevenueAttributionAllocationCount{0};
+
+  Aws::Map<Aws::String, Aws::String> m_context;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_catalogHasBeenSet = false;
@@ -307,6 +334,7 @@ class AttributionSummary {
   bool m_effectiveUntilHasBeenSet = false;
   bool m_totalActiveRevenueAttributionAllocationCountHasBeenSet = false;
   bool m_totalRevenueAttributionAllocationCountHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
 };
 
 }  // namespace Model

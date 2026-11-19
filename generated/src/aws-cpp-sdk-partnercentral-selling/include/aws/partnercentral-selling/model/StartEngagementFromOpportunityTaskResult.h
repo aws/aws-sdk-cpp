@@ -24,6 +24,13 @@ class JsonValue;
 }  // namespace Utils
 namespace PartnerCentralSelling {
 namespace Model {
+/**
+ * <p>Contains the response that the
+ * <code>StartEngagementFromOpportunityTask</code> action returns.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartEngagementFromOpportunityTaskResponse">AWS
+ * API Reference</a></p>
+ */
 class StartEngagementFromOpportunityTaskResult {
  public:
   AWS_PARTNERCENTRALSELLING_API StartEngagementFromOpportunityTaskResult() = default;
@@ -156,8 +163,8 @@ class StartEngagementFromOpportunityTaskResult {
   ///@{
   /**
    * <p>The identifier of the resource snapshot job created to add the opportunity
-   * resource snapshot to the Engagement. Only populated if TaskStatus is
-   * COMPLETE</p>
+   * resource snapshot to the Engagement. Only populated if TaskStatus is COMPLETE
+   * </p>
    */
   inline const Aws::String& GetResourceSnapshotJobId() const { return m_resourceSnapshotJobId; }
   template <typename ResourceSnapshotJobIdT = Aws::String>

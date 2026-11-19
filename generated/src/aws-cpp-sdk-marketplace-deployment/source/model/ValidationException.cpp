@@ -18,13 +18,13 @@ namespace Model {
 ValidationException::ValidationException(JsonView jsonValue) { *this = jsonValue; }
 
 ValidationException& ValidationException::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("fieldName")) {
-    m_fieldName = jsonValue.GetString("fieldName");
-    m_fieldNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("fieldName")) {
+    m_fieldName = jsonValue.GetString("fieldName");
+    m_fieldNameHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ ValidationException& ValidationException::operator=(JsonView jsonValue) {
 JsonValue ValidationException::Jsonize() const {
   JsonValue payload;
 
-  if (m_fieldNameHasBeenSet) {
-    payload.WithString("fieldName", m_fieldName);
-  }
-
   if (m_messageHasBeenSet) {
     payload.WithString("message", m_message);
+  }
+
+  if (m_fieldNameHasBeenSet) {
+    payload.WithString("fieldName", m_fieldName);
   }
 
   return payload;

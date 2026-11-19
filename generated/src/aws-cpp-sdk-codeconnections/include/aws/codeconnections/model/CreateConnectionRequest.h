@@ -110,6 +110,27 @@ class CreateConnectionRequest : public CodeConnectionsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The endpoint of the ghe.com tenant where your organization resides. Provide
+   * this parameter only when <code>ProviderType</code> is
+   * <code>GitHubEnterpriseCloudDataResidency</code>. Leave this parameter empty for
+   * all other provider types.</p>
+   */
+  inline const Aws::String& GetProviderEndpoint() const { return m_providerEndpoint; }
+  inline bool ProviderEndpointHasBeenSet() const { return m_providerEndpointHasBeenSet; }
+  template <typename ProviderEndpointT = Aws::String>
+  void SetProviderEndpoint(ProviderEndpointT&& value) {
+    m_providerEndpointHasBeenSet = true;
+    m_providerEndpoint = std::forward<ProviderEndpointT>(value);
+  }
+  template <typename ProviderEndpointT = Aws::String>
+  CreateConnectionRequest& WithProviderEndpoint(ProviderEndpointT&& value) {
+    SetProviderEndpoint(std::forward<ProviderEndpointT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ProviderType m_providerType{ProviderType::NOT_SET};
 
@@ -118,10 +139,13 @@ class CreateConnectionRequest : public CodeConnectionsRequest {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_hostArn;
+
+  Aws::String m_providerEndpoint;
   bool m_providerTypeHasBeenSet = false;
   bool m_connectionNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_hostArnHasBeenSet = false;
+  bool m_providerEndpointHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -23,10 +23,13 @@
 #include <aws/polly/PollyClient.h>
 #include <aws/polly/PollyEndpointProvider.h>
 #include <aws/polly/PollyErrorMarshaller.h>
+#include <aws/polly/model/CreateVoiceRequest.h>
 #include <aws/polly/model/DeleteLexiconRequest.h>
+#include <aws/polly/model/DeleteVoiceRequest.h>
 #include <aws/polly/model/DescribeVoicesRequest.h>
 #include <aws/polly/model/GetLexiconRequest.h>
 #include <aws/polly/model/GetSpeechSynthesisTaskRequest.h>
+#include <aws/polly/model/GetVoiceRequest.h>
 #include <aws/polly/model/ListLexiconsRequest.h>
 #include <aws/polly/model/ListSpeechSynthesisTasksRequest.h>
 #include <aws/polly/model/ListTagsForResourceRequest.h>
@@ -195,6 +198,16 @@ PollyClient::InvokeOperationOutcome PollyClient::InvokeServiceOperation(
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+CreateVoiceOutcome PollyClient::CreateVoice(const CreateVoiceRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/voices");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVoiceOutcome(result.GetResultWithOwnership()) : CreateVoiceOutcome(std::move(result.GetError()));
+}
+
 DeleteLexiconOutcome PollyClient::DeleteLexicon(const DeleteLexiconRequest& request) const {
   if (!request.NameHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteLexicon", "Required field: Name, is not set");
@@ -210,6 +223,23 @@ DeleteLexiconOutcome PollyClient::DeleteLexicon(const DeleteLexiconRequest& requ
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteLexiconOutcome(result.GetResultWithOwnership()) : DeleteLexiconOutcome(std::move(result.GetError()));
+}
+
+DeleteVoiceOutcome PollyClient::DeleteVoice(const DeleteVoiceRequest& request) const {
+  if (!request.VoiceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteVoice", "Required field: VoiceId, is not set");
+    return DeleteVoiceOutcome(
+        Aws::Client::AWSError<PollyErrors>(PollyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/voices/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVoiceOutcome(result.GetResultWithOwnership()) : DeleteVoiceOutcome(std::move(result.GetError()));
 }
 
 DescribeVoicesOutcome PollyClient::DescribeVoices(const DescribeVoicesRequest& request) const {
@@ -255,6 +285,23 @@ GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeec
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetSpeechSynthesisTaskOutcome(result.GetResultWithOwnership())
                             : GetSpeechSynthesisTaskOutcome(std::move(result.GetError()));
+}
+
+GetVoiceOutcome PollyClient::GetVoice(const GetVoiceRequest& request) const {
+  if (!request.VoiceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetVoice", "Required field: VoiceId, is not set");
+    return GetVoiceOutcome(
+        Aws::Client::AWSError<PollyErrors>(PollyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/voices/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVoiceOutcome(result.GetResultWithOwnership()) : GetVoiceOutcome(std::move(result.GetError()));
 }
 
 ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request) const {

@@ -17,6 +17,7 @@ namespace TagResourceTypeMapper {
 
 static const int healthcheck_HASH = HashingUtils::HashString("healthcheck");
 static const int hostedzone_HASH = HashingUtils::HashString("hostedzone");
+static const int healthchecksource_HASH = HashingUtils::HashString("healthchecksource");
 
 TagResourceType GetTagResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ TagResourceType GetTagResourceTypeForName(const Aws::String& name) {
     return TagResourceType::healthcheck;
   } else if (hashCode == hostedzone_HASH) {
     return TagResourceType::hostedzone;
+  } else if (hashCode == healthchecksource_HASH) {
+    return TagResourceType::healthchecksource;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForTagResourceType(TagResourceType enumValue) {
       return "healthcheck";
     case TagResourceType::hostedzone:
       return "hostedzone";
+    case TagResourceType::healthchecksource:
+      return "healthchecksource";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

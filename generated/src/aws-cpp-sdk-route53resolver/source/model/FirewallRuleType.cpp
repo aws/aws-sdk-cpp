@@ -34,6 +34,10 @@ FirewallRuleType& FirewallRuleType::operator=(JsonView jsonValue) {
     m_dnsThreatProtection = jsonValue.GetObject("DnsThreatProtection");
     m_dnsThreatProtectionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AutoAllowlist")) {
+    m_autoAllowlist = jsonValue.GetObject("AutoAllowlist");
+    m_autoAllowlistHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue FirewallRuleType::Jsonize() const {
 
   if (m_dnsThreatProtectionHasBeenSet) {
     payload.WithObject("DnsThreatProtection", m_dnsThreatProtection.Jsonize());
+  }
+
+  if (m_autoAllowlistHasBeenSet) {
+    payload.WithObject("AutoAllowlist", m_autoAllowlist.Jsonize());
   }
 
   return payload;

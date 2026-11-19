@@ -52,18 +52,18 @@ class ListMarketplaceRevenueShareAllocationsRequest : public PartnerCentralReven
 
   ///@{
   /**
-   * <p>The AWS Marketplace product identifier for the parent revenue share.</p>
+   * <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
    */
-  inline const Aws::String& GetProductId() const { return m_productId; }
-  inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-  template <typename ProductIdT = Aws::String>
-  void SetProductId(ProductIdT&& value) {
-    m_productIdHasBeenSet = true;
-    m_productId = std::forward<ProductIdT>(value);
+  inline const Aws::String& GetMarketplaceRevenueShareIdentifier() const { return m_marketplaceRevenueShareIdentifier; }
+  inline bool MarketplaceRevenueShareIdentifierHasBeenSet() const { return m_marketplaceRevenueShareIdentifierHasBeenSet; }
+  template <typename MarketplaceRevenueShareIdentifierT = Aws::String>
+  void SetMarketplaceRevenueShareIdentifier(MarketplaceRevenueShareIdentifierT&& value) {
+    m_marketplaceRevenueShareIdentifierHasBeenSet = true;
+    m_marketplaceRevenueShareIdentifier = std::forward<MarketplaceRevenueShareIdentifierT>(value);
   }
-  template <typename ProductIdT = Aws::String>
-  ListMarketplaceRevenueShareAllocationsRequest& WithProductId(ProductIdT&& value) {
-    SetProductId(std::forward<ProductIdT>(value));
+  template <typename MarketplaceRevenueShareIdentifierT = Aws::String>
+  ListMarketplaceRevenueShareAllocationsRequest& WithMarketplaceRevenueShareIdentifier(MarketplaceRevenueShareIdentifierT&& value) {
+    SetMarketplaceRevenueShareIdentifier(std::forward<MarketplaceRevenueShareIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -72,14 +72,14 @@ class ListMarketplaceRevenueShareAllocationsRequest : public PartnerCentralReven
   /**
    * <p>Filter by allocation status.</p>
    */
-  inline AllocationStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(AllocationStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline AllocationStatus GetStatusFilter() const { return m_statusFilter; }
+  inline bool StatusFilterHasBeenSet() const { return m_statusFilterHasBeenSet; }
+  inline void SetStatusFilter(AllocationStatus value) {
+    m_statusFilterHasBeenSet = true;
+    m_statusFilter = value;
   }
-  inline ListMarketplaceRevenueShareAllocationsRequest& WithStatus(AllocationStatus value) {
-    SetStatus(value);
+  inline ListMarketplaceRevenueShareAllocationsRequest& WithStatusFilter(AllocationStatus value) {
+    SetStatusFilter(value);
     return *this;
   }
   ///@}
@@ -122,6 +122,42 @@ class ListMarketplaceRevenueShareAllocationsRequest : public PartnerCentralReven
 
   ///@{
   /**
+   * <p>Inclusive lower bound for EffectiveUntil date filter.</p>
+   */
+  inline const Aws::String& GetAfterEffectiveUntil() const { return m_afterEffectiveUntil; }
+  inline bool AfterEffectiveUntilHasBeenSet() const { return m_afterEffectiveUntilHasBeenSet; }
+  template <typename AfterEffectiveUntilT = Aws::String>
+  void SetAfterEffectiveUntil(AfterEffectiveUntilT&& value) {
+    m_afterEffectiveUntilHasBeenSet = true;
+    m_afterEffectiveUntil = std::forward<AfterEffectiveUntilT>(value);
+  }
+  template <typename AfterEffectiveUntilT = Aws::String>
+  ListMarketplaceRevenueShareAllocationsRequest& WithAfterEffectiveUntil(AfterEffectiveUntilT&& value) {
+    SetAfterEffectiveUntil(std::forward<AfterEffectiveUntilT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Exclusive upper bound for EffectiveUntil date filter (half-open range).</p>
+   */
+  inline const Aws::String& GetBeforeEffectiveUntil() const { return m_beforeEffectiveUntil; }
+  inline bool BeforeEffectiveUntilHasBeenSet() const { return m_beforeEffectiveUntilHasBeenSet; }
+  template <typename BeforeEffectiveUntilT = Aws::String>
+  void SetBeforeEffectiveUntil(BeforeEffectiveUntilT&& value) {
+    m_beforeEffectiveUntilHasBeenSet = true;
+    m_beforeEffectiveUntil = std::forward<BeforeEffectiveUntilT>(value);
+  }
+  template <typename BeforeEffectiveUntilT = Aws::String>
+  ListMarketplaceRevenueShareAllocationsRequest& WithBeforeEffectiveUntil(BeforeEffectiveUntilT&& value) {
+    SetBeforeEffectiveUntil(std::forward<BeforeEffectiveUntilT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The field to sort marketplace revenue share allocations by.</p>
    */
   inline MarketplaceRevenueShareAllocationSortField GetSortBy() const { return m_sortBy; }
@@ -138,7 +174,7 @@ class ListMarketplaceRevenueShareAllocationsRequest : public PartnerCentralReven
 
   ///@{
   /**
-   * <p>The direction to sort results. Defaults to DESCENDING.</p>
+   * <p>The direction to sort results. Defaults to ASCENDING.</p>
    */
   inline SortOrder GetSortOrder() const { return m_sortOrder; }
   inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
@@ -207,13 +243,17 @@ class ListMarketplaceRevenueShareAllocationsRequest : public PartnerCentralReven
  private:
   CatalogName m_catalog{CatalogName::NOT_SET};
 
-  Aws::String m_productId;
+  Aws::String m_marketplaceRevenueShareIdentifier;
 
-  AllocationStatus m_status{AllocationStatus::NOT_SET};
+  AllocationStatus m_statusFilter{AllocationStatus::NOT_SET};
 
   Aws::String m_afterEffectiveFrom;
 
   Aws::String m_beforeEffectiveFrom;
+
+  Aws::String m_afterEffectiveUntil;
+
+  Aws::String m_beforeEffectiveUntil;
 
   MarketplaceRevenueShareAllocationSortField m_sortBy{MarketplaceRevenueShareAllocationSortField::NOT_SET};
 
@@ -225,10 +265,12 @@ class ListMarketplaceRevenueShareAllocationsRequest : public PartnerCentralReven
 
   Aws::String m_marketplaceRevenueShareRevision;
   bool m_catalogHasBeenSet = false;
-  bool m_productIdHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
+  bool m_marketplaceRevenueShareIdentifierHasBeenSet = false;
+  bool m_statusFilterHasBeenSet = false;
   bool m_afterEffectiveFromHasBeenSet = false;
   bool m_beforeEffectiveFromHasBeenSet = false;
+  bool m_afterEffectiveUntilHasBeenSet = false;
+  bool m_beforeEffectiveUntilHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;

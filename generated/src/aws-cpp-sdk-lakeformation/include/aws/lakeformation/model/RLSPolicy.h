@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/lakeformation/model/Column.h>
+#include <aws/lakeformation/model/RLSPolicyStatus.h>
+#include <aws/lakeformation/model/RLSPolicyStatusReason.h>
 
 #include <utility>
 
@@ -114,6 +116,45 @@ class RLSPolicy {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Whether the row-level security policy can be evaluated. <code>VALID</code>
+   * means that every lookup table and user-defined function the filter expression
+   * references exists. <code>INVALID</code> means that a lookup table or
+   * user-defined function the filter expression references was deleted.</p>
+   */
+  inline RLSPolicyStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(RLSPolicyStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline RLSPolicy& WithStatus(RLSPolicyStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The reason the row-level security policy is <code>INVALID</code>.
+   * <code>REFERENCED_LOOKUP_TABLE_DELETED</code> means that a lookup table the
+   * filter expression references was deleted. <code>REFERENCED_UDF_DELETED</code>
+   * means that a user-defined function the filter expression references was deleted.
+   * Not returned when the status is <code>VALID</code>.</p>
+   */
+  inline RLSPolicyStatusReason GetStatusReason() const { return m_statusReason; }
+  inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+  inline void SetStatusReason(RLSPolicyStatusReason value) {
+    m_statusReasonHasBeenSet = true;
+    m_statusReason = value;
+  }
+  inline RLSPolicy& WithStatusReason(RLSPolicyStatusReason value) {
+    SetStatusReason(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalogId;
 
@@ -122,10 +163,16 @@ class RLSPolicy {
   Aws::Vector<Column> m_attachmentColumns;
 
   Aws::String m_filterExpression;
+
+  RLSPolicyStatus m_status{RLSPolicyStatus::NOT_SET};
+
+  RLSPolicyStatusReason m_statusReason{RLSPolicyStatusReason::NOT_SET};
   bool m_catalogIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_attachmentColumnsHasBeenSet = false;
   bool m_filterExpressionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
 };
 
 }  // namespace Model

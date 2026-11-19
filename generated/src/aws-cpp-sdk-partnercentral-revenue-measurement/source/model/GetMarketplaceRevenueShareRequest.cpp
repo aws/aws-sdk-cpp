@@ -20,7 +20,7 @@ Aws::String GetMarketplaceRevenueShareRequest::SerializePayload() const {
   if (m_catalogHasBeenSet) {
     mapSize++;
   }
-  if (m_productIdHasBeenSet) {
+  if (m_identifierHasBeenSet) {
     mapSize++;
   }
   if (m_revisionHasBeenSet) {
@@ -34,14 +34,14 @@ Aws::String GetMarketplaceRevenueShareRequest::SerializePayload() const {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(CatalogNameMapper::GetNameForCatalogName(m_catalog).c_str()));
   }
 
-  if (m_productIdHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProductId"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_productId.c_str()));
+  if (m_identifierHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Identifier"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_identifier.c_str()));
   }
 
   if (m_revisionHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("Revision"));
-    (m_revision >= 0) ? encoder.WriteUInt(m_revision) : encoder.WriteNegInt(m_revision);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_revision.c_str()));
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

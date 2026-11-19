@@ -101,6 +101,7 @@
 #include <aws/securityagent/model/ClientCertificate.h>
 #include <aws/securityagent/model/CloudWatchLog.h>
 #include <aws/securityagent/model/CodeLocation.h>
+#include <aws/securityagent/model/CodeRemediationJobStatus.h>
 #include <aws/securityagent/model/CodeRemediationStrategy.h>
 #include <aws/securityagent/model/CodeRemediationTask.h>
 #include <aws/securityagent/model/CodeRemediationTaskDetails.h>

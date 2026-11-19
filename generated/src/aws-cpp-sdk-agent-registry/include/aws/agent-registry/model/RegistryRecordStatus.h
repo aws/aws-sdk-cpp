@@ -20,7 +20,9 @@ enum class RegistryRecordStatus {
   CREATING,
   UPDATING,
   CREATE_FAILED,
-  UPDATE_FAILED
+  UPDATE_FAILED,
+  CREATE_PENDING_AUTH,
+  UPDATE_PENDING_AUTH
 };
 
 namespace RegistryRecordStatusMapper {

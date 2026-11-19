@@ -64,6 +64,10 @@ LaunchParameters& LaunchParameters::operator=(JsonView jsonValue) {
     }
     m_propagatedTagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("cpuOptions")) {
+    m_cpuOptions = jsonValue.GetObject("cpuOptions");
+    m_cpuOptionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -117,6 +121,10 @@ JsonValue LaunchParameters::Jsonize() const {
       propagatedTagsJsonMap.WithString(propagatedTagsItem.first, propagatedTagsItem.second);
     }
     payload.WithObject("propagatedTags", std::move(propagatedTagsJsonMap));
+  }
+
+  if (m_cpuOptionsHasBeenSet) {
+    payload.WithObject("cpuOptions", m_cpuOptions.Jsonize());
   }
 
   return payload;

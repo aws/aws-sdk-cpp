@@ -22,6 +22,10 @@ UpdateGitLabSelfManagedIntegrationDetail& UpdateGitLabSelfManagedIntegrationDeta
     m_authCode = jsonValue.GetString("authCode");
     m_authCodeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("stateToken")) {
+    m_stateToken = jsonValue.GetString("stateToken");
+    m_stateTokenHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue UpdateGitLabSelfManagedIntegrationDetail::Jsonize() const {
 
   if (m_authCodeHasBeenSet) {
     payload.WithString("authCode", m_authCode);
+  }
+
+  if (m_stateTokenHasBeenSet) {
+    payload.WithString("stateToken", m_stateToken);
   }
 
   return payload;

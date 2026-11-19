@@ -38,6 +38,11 @@ EventSourceConfiguration& EventSourceConfiguration::operator=(const std::shared_
               else if (initialKeyStr == "PartnerEventsConfiguration") {
                 m_partnerEventsConfiguration = PartnerEventsSourceConfiguration(decoder);
                 m_partnerEventsConfigurationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "WebhookEventsConfiguration") {
+                m_webhookEventsConfiguration = WebhookEventsSourceConfiguration(decoder);
+                m_webhookEventsConfigurationHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -73,6 +78,11 @@ EventSourceConfiguration& EventSourceConfiguration::operator=(const std::shared_
             else if (initialKeyStr == "PartnerEventsConfiguration") {
               m_partnerEventsConfiguration = PartnerEventsSourceConfiguration(decoder);
               m_partnerEventsConfigurationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "WebhookEventsConfiguration") {
+              m_webhookEventsConfiguration = WebhookEventsSourceConfiguration(decoder);
+              m_webhookEventsConfigurationHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -95,6 +105,9 @@ void EventSourceConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) 
   if (m_partnerEventsConfigurationHasBeenSet) {
     mapSize++;
   }
+  if (m_webhookEventsConfigurationHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -106,6 +119,11 @@ void EventSourceConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) 
   if (m_partnerEventsConfigurationHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("PartnerEventsConfiguration"));
     m_partnerEventsConfiguration.CborEncode(encoder);
+  }
+
+  if (m_webhookEventsConfigurationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("WebhookEventsConfiguration"));
+    m_webhookEventsConfiguration.CborEncode(encoder);
   }
 }
 

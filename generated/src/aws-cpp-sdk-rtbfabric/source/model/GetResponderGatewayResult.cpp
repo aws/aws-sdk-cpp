@@ -56,6 +56,13 @@ GetResponderGatewayResult& GetResponderGatewayResult::operator=(const Aws::Amazo
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("errorDetails")) {
+    Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("errorDetails");
+    for (unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex) {
+      m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsObject());
+    }
+    m_errorDetailsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("domainName")) {
     m_domainName = jsonValue.GetString("domainName");
     m_domainNameHasBeenSet = true;

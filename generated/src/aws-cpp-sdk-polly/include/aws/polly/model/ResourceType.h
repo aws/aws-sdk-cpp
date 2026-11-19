@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Polly {
 namespace Model {
-enum class ResourceType { NOT_SET, lexicon };
+enum class ResourceType { NOT_SET, lexicon, voice };
 
 namespace ResourceTypeMapper {
 AWS_POLLY_API ResourceType GetResourceTypeForName(const Aws::String& name);

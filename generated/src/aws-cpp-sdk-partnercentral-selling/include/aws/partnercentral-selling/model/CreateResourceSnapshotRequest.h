@@ -17,6 +17,10 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the <code>CreateResourceSnapshot</code>
+ * operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateResourceSnapshotRequest">AWS
+ * API Reference</a></p>
  */
 class CreateResourceSnapshotRequest : public PartnerCentralSellingRequest {
  public:
@@ -34,8 +38,8 @@ class CreateResourceSnapshotRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> Specifies the catalog where the snapshot is created. Valid values are
-   * <code>AWS</code> and <code>Sandbox</code>. </p>
+   * <p>Specifies the catalog where the snapshot is created. Valid values are
+   * <code>AWS</code> and <code>Sandbox</code>.</p>
    */
   inline const Aws::String& GetCatalog() const { return m_catalog; }
   inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -53,8 +57,8 @@ class CreateResourceSnapshotRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> The unique identifier of the engagement associated with this snapshot. This
-   * field links the snapshot to a specific engagement context. </p>
+   * <p>The unique identifier of the engagement associated with this snapshot. This
+   * field links the snapshot to a specific engagement context.</p>
    */
   inline const Aws::String& GetEngagementIdentifier() const { return m_engagementIdentifier; }
   inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
@@ -72,9 +76,9 @@ class CreateResourceSnapshotRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> Specifies the type of resource for which the snapshot is being created. This
+   * <p>Specifies the type of resource for which the snapshot is being created. This
    * field determines the structure and content of the snapshot. Must be one of the
-   * supported resource types, such as: <code>Opportunity</code>. </p>
+   * supported resource types, such as: <code>Opportunity</code>.</p>
    */
   inline ResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -90,10 +94,10 @@ class CreateResourceSnapshotRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> The unique identifier of the specific resource to be snapshotted. The format
+   * <p>The unique identifier of the specific resource to be snapshotted. The format
    * and constraints of this identifier depend on the <code>ResourceType</code>
    * specified. For example: For <code>Opportunity</code> type, it will be an
-   * opportunity ID. </p>
+   * opportunity ID.</p>
    */
   inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
   inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
@@ -111,10 +115,10 @@ class CreateResourceSnapshotRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> The name of the template that defines the schema for the snapshot. This
+   * <p>The name of the template that defines the schema for the snapshot. This
    * template determines which subset of the resource data will be included in the
    * snapshot. Must correspond to an existing and valid template for the specified
-   * <code>ResourceType</code>. </p>
+   * <code>ResourceType</code>.</p>
    */
   inline const Aws::String& GetResourceSnapshotTemplateIdentifier() const { return m_resourceSnapshotTemplateIdentifier; }
   inline bool ResourceSnapshotTemplateIdentifierHasBeenSet() const { return m_resourceSnapshotTemplateIdentifierHasBeenSet; }
@@ -132,9 +136,8 @@ class CreateResourceSnapshotRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> Specifies a unique, client-generated UUID to ensure that the request is
-   * handled exactly once. This token helps prevent duplicate snapshot creations.
-   * </p>
+   * <p>Specifies a unique, client-generated UUID to ensure that the request is
+   * handled exactly once. This token helps prevent duplicate snapshot creations.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

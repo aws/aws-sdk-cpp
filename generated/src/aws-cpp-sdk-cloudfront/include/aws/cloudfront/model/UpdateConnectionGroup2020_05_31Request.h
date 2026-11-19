@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFrontRequest.h>
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
+#include <aws/cloudfront/model/ViewerFallback.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -118,6 +119,26 @@ class UpdateConnectionGroup2020_05_31Request : public CloudFrontRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The distribution whose certificate CloudFront uses for viewer requests that
+   * arrive on the connection group's Anycast static IPs without Server Name
+   * Indication (SNI).</p>
+   */
+  inline const ViewerFallback& GetViewerFallback() const { return m_viewerFallback; }
+  inline bool ViewerFallbackHasBeenSet() const { return m_viewerFallbackHasBeenSet; }
+  template <typename ViewerFallbackT = ViewerFallback>
+  void SetViewerFallback(ViewerFallbackT&& value) {
+    m_viewerFallbackHasBeenSet = true;
+    m_viewerFallback = std::forward<ViewerFallbackT>(value);
+  }
+  template <typename ViewerFallbackT = ViewerFallback>
+  UpdateConnectionGroup2020_05_31Request& WithViewerFallback(ViewerFallbackT&& value) {
+    SetViewerFallback(std::forward<ViewerFallbackT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -128,11 +149,14 @@ class UpdateConnectionGroup2020_05_31Request : public CloudFrontRequest {
   Aws::String m_anycastIpListId;
 
   bool m_enabled{false};
+
+  ViewerFallback m_viewerFallback;
   bool m_idHasBeenSet = false;
   bool m_ipv6EnabledHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
   bool m_anycastIpListIdHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
+  bool m_viewerFallbackHasBeenSet = false;
 };
 
 }  // namespace Model

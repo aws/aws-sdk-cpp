@@ -35,6 +35,10 @@ Aws::String CreateRegistryRecordRequest::SerializePayload() const {
     payload.WithObject("descriptors", m_descriptors.Jsonize());
   }
 
+  if (m_artifactHasBeenSet) {
+    payload.WithObject("artifact", m_artifact.Jsonize());
+  }
+
   if (m_recordVersionHasBeenSet) {
     payload.WithString("recordVersion", m_recordVersion);
   }

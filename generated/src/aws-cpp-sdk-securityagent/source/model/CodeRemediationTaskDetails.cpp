@@ -30,6 +30,18 @@ CodeRemediationTaskDetails& CodeRemediationTaskDetails::operator=(JsonView jsonV
     m_pullRequestLink = jsonValue.GetString("pullRequestLink");
     m_pullRequestLinkHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("status")) {
+    m_status = CodeRemediationJobStatusMapper::GetCodeRemediationJobStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("statusCode")) {
+    m_statusCode = jsonValue.GetString("statusCode");
+    m_statusCodeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("statusReason")) {
+    m_statusReason = jsonValue.GetString("statusReason");
+    m_statusReasonHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +58,18 @@ JsonValue CodeRemediationTaskDetails::Jsonize() const {
 
   if (m_pullRequestLinkHasBeenSet) {
     payload.WithString("pullRequestLink", m_pullRequestLink);
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", CodeRemediationJobStatusMapper::GetNameForCodeRemediationJobStatus(m_status));
+  }
+
+  if (m_statusCodeHasBeenSet) {
+    payload.WithString("statusCode", m_statusCode);
+  }
+
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("statusReason", m_statusReason);
   }
 
   return payload;

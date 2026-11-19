@@ -36,7 +36,12 @@ class DescriptorSourceFromUrl {
 
   ///@{
   /**
-   * <p>The URL from which the descriptor content is retrieved.</p>
+   * <p>The URL from which the descriptor content is retrieved. For an agent skill
+   * source, specify an <code>s3://</code> URL of an object in a bucket in the same
+   * Amazon Web Services Region as the registry. For a GitHub skill source, specify a
+   * GitHub folder URL in the form
+   * <code>https://host/owner/repo/tree/branch-or-tag/path</code>. Other descriptor
+   * sources use <code>https://</code> URLs.</p>
    */
   inline const Aws::String& GetUrl() const { return m_url; }
   inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }

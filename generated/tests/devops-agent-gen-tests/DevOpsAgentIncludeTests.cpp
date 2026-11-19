@@ -41,6 +41,7 @@
 #include <aws/devops-agent/model/AssociateServiceResult.h>
 #include <aws/devops-agent/model/Association.h>
 #include <aws/devops-agent/model/AuthFlow.h>
+#include <aws/devops-agent/model/AwsSourceMode.h>
 #include <aws/devops-agent/model/AzureConfiguration.h>
 #include <aws/devops-agent/model/AzureDevOpsConfiguration.h>
 #include <aws/devops-agent/model/CapabilityConfiguration.h>
@@ -220,6 +221,9 @@
 #include <aws/devops-agent/model/NewRelicServiceDetails.h>
 #include <aws/devops-agent/model/OAuthAdditionalStepDetails.h>
 #include <aws/devops-agent/model/OrderType.h>
+#include <aws/devops-agent/model/OrgSourceAccountReasonCode.h>
+#include <aws/devops-agent/model/OrgSourceDeploymentState.h>
+#include <aws/devops-agent/model/OrgSourceIssue.h>
 #include <aws/devops-agent/model/PagerDutyAuthorizationConfig.h>
 #include <aws/devops-agent/model/PagerDutyConfiguration.h>
 #include <aws/devops-agent/model/PagerDutyDetails.h>
@@ -304,6 +308,8 @@
 #include <aws/devops-agent/model/SlackTransmissionTarget.h>
 #include <aws/devops-agent/model/SourceAccountType.h>
 #include <aws/devops-agent/model/SourceAwsConfiguration.h>
+#include <aws/devops-agent/model/SourceAwsOrgConfiguration.h>
+#include <aws/devops-agent/model/SourceAwsOrgUnit.h>
 #include <aws/devops-agent/model/TagResourceRequest.h>
 #include <aws/devops-agent/model/TagResourceResult.h>
 #include <aws/devops-agent/model/Task.h>

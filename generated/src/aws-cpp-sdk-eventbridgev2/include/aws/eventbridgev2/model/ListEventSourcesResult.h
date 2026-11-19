@@ -30,7 +30,9 @@ class ListEventSourcesResult {
   AWS_EVENTBRIDGEV2_API ListEventSourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
-
+  /**
+   * <p>List of EventSource summaries.</p>
+   */
   inline const Aws::Vector<EventSourceSummary>& GetEventSources() const { return m_eventSources; }
   template <typename EventSourcesT = Aws::Vector<EventSourceSummary>>
   void SetEventSources(EventSourcesT&& value) {
@@ -51,7 +53,10 @@ class ListEventSourcesResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Opaque pagination token returned by a List operation. Pass it back in the
+   * next request to retrieve the next page of results.</p>
+   */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>
   void SetNextToken(NextTokenT&& value) {

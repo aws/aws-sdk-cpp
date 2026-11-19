@@ -21,6 +21,8 @@ static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_P
 static const int DELETION_IN_PROGRESS_HASH = HashingUtils::HashString("DELETION_IN_PROGRESS");
 static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
+static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
 
 RuleStatus GetRuleStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +38,10 @@ RuleStatus GetRuleStatusForName(const Aws::String& name) {
     return RuleStatus::DELETED;
   } else if (hashCode == FAILED_HASH) {
     return RuleStatus::FAILED;
+  } else if (hashCode == CREATE_FAILED_HASH) {
+    return RuleStatus::CREATE_FAILED;
+  } else if (hashCode == DELETE_FAILED_HASH) {
+    return RuleStatus::DELETE_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +68,10 @@ Aws::String GetNameForRuleStatus(RuleStatus enumValue) {
       return "DELETED";
     case RuleStatus::FAILED:
       return "FAILED";
+    case RuleStatus::CREATE_FAILED:
+      return "CREATE_FAILED";
+    case RuleStatus::DELETE_FAILED:
+      return "DELETE_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

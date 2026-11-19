@@ -91,6 +91,10 @@
 #include <aws/rolesanywhere/model/Tag.h>
 #include <aws/rolesanywhere/model/TagResourceRequest.h>
 #include <aws/rolesanywhere/model/TagResourceResult.h>
+#include <aws/rolesanywhere/model/TipConfiguration.h>
+#include <aws/rolesanywhere/model/TipStatus.h>
+#include <aws/rolesanywhere/model/TipSubjectSource.h>
+#include <aws/rolesanywhere/model/TipSubjectType.h>
 #include <aws/rolesanywhere/model/TrustAnchorDetail.h>
 #include <aws/rolesanywhere/model/TrustAnchorType.h>
 #include <aws/rolesanywhere/model/UntagResourceRequest.h>

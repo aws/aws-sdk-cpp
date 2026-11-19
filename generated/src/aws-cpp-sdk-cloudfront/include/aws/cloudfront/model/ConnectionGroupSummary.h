@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
+#include <aws/cloudfront/model/ViewerFallback.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -228,6 +229,26 @@ class ConnectionGroupSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The distribution whose certificate CloudFront uses for viewer requests that
+   * arrive on the connection group's Anycast static IPs without Server Name
+   * Indication (SNI).</p>
+   */
+  inline const ViewerFallback& GetViewerFallback() const { return m_viewerFallback; }
+  inline bool ViewerFallbackHasBeenSet() const { return m_viewerFallbackHasBeenSet; }
+  template <typename ViewerFallbackT = ViewerFallback>
+  void SetViewerFallback(ViewerFallbackT&& value) {
+    m_viewerFallbackHasBeenSet = true;
+    m_viewerFallback = std::forward<ViewerFallbackT>(value);
+  }
+  template <typename ViewerFallbackT = ViewerFallback>
+  ConnectionGroupSummary& WithViewerFallback(ViewerFallbackT&& value) {
+    SetViewerFallback(std::forward<ViewerFallbackT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -250,6 +271,8 @@ class ConnectionGroupSummary {
   Aws::String m_status;
 
   bool m_isDefault{false};
+
+  ViewerFallback m_viewerFallback;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -261,6 +284,7 @@ class ConnectionGroupSummary {
   bool m_enabledHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_isDefaultHasBeenSet = false;
+  bool m_viewerFallbackHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -15,6 +15,10 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the
+ * <code>DeleteResourceSnapshotJob</code> operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DeleteResourceSnapshotJobRequest">AWS
+ * API Reference</a></p>
  */
 class DeleteResourceSnapshotJobRequest : public PartnerCentralSellingRequest {
  public:
@@ -32,8 +36,8 @@ class DeleteResourceSnapshotJobRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> Specifies the catalog from which to delete the snapshot job. Valid values
-   * are <code>AWS</code> and <code>Sandbox</code>. </p>
+   * <p>Specifies the catalog from which to delete the snapshot job. Valid values are
+   * <code>AWS</code> and <code>Sandbox</code>.</p>
    */
   inline const Aws::String& GetCatalog() const { return m_catalog; }
   inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -51,7 +55,7 @@ class DeleteResourceSnapshotJobRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> The unique identifier of the resource snapshot job to be deleted. </p>
+   * <p>The unique identifier of the resource snapshot job to be deleted.</p>
    */
   inline const Aws::String& GetResourceSnapshotJobIdentifier() const { return m_resourceSnapshotJobIdentifier; }
   inline bool ResourceSnapshotJobIdentifierHasBeenSet() const { return m_resourceSnapshotJobIdentifierHasBeenSet; }

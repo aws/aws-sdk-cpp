@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 
 #include <utility>
@@ -69,12 +70,43 @@ class AssessmentTargetFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of up to 50 entity IDs whose assessments you want to list. The
+   * response includes only the latest published assessment of each entity. You must
+   * also specify <code>FrameworkId</code> in the request, and you can't combine
+   * <code>EntityIds</code> with <code>EntityId</code> or
+   * <code>ChangeSetId</code>.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetEntityIds() const { return m_entityIds; }
+  inline bool EntityIdsHasBeenSet() const { return m_entityIdsHasBeenSet; }
+  template <typename EntityIdsT = Aws::Vector<Aws::String>>
+  void SetEntityIds(EntityIdsT&& value) {
+    m_entityIdsHasBeenSet = true;
+    m_entityIds = std::forward<EntityIdsT>(value);
+  }
+  template <typename EntityIdsT = Aws::Vector<Aws::String>>
+  AssessmentTargetFilter& WithEntityIds(EntityIdsT&& value) {
+    SetEntityIds(std::forward<EntityIdsT>(value));
+    return *this;
+  }
+  template <typename EntityIdsT = Aws::String>
+  AssessmentTargetFilter& AddEntityIds(EntityIdsT&& value) {
+    m_entityIdsHasBeenSet = true;
+    m_entityIds.emplace_back(std::forward<EntityIdsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_entityId;
 
   Aws::String m_changeSetId;
+
+  Aws::Vector<Aws::String> m_entityIds;
   bool m_entityIdHasBeenSet = false;
   bool m_changeSetIdHasBeenSet = false;
+  bool m_entityIdsHasBeenSet = false;
 };
 
 }  // namespace Model

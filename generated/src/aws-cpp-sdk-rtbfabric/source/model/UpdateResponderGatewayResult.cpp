@@ -34,6 +34,10 @@ UpdateResponderGatewayResult& UpdateResponderGatewayResult::operator=(const Aws:
     m_clientRoutingPolicy = ClientRoutingPolicyMapper::GetClientRoutingPolicyForName(jsonValue.GetString("clientRoutingPolicy"));
     m_clientRoutingPolicyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("updateId")) {
+    m_updateId = jsonValue.GetString("updateId");
+    m_updateIdHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

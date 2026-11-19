@@ -27,6 +27,7 @@
 #include <aws/route53/model/ChangeTagsForResourceRequest.h>
 #include <aws/route53/model/CreateCidrCollectionRequest.h>
 #include <aws/route53/model/CreateHealthCheckRequest.h>
+#include <aws/route53/model/CreateHealthCheckSourceRequest.h>
 #include <aws/route53/model/CreateHostedZoneRequest.h>
 #include <aws/route53/model/CreateKeySigningKeyRequest.h>
 #include <aws/route53/model/CreateQueryLoggingConfigRequest.h>
@@ -39,6 +40,7 @@
 #include <aws/route53/model/DeactivateKeySigningKeyRequest.h>
 #include <aws/route53/model/DeleteCidrCollectionRequest.h>
 #include <aws/route53/model/DeleteHealthCheckRequest.h>
+#include <aws/route53/model/DeleteHealthCheckSourceRequest.h>
 #include <aws/route53/model/DeleteHostedZoneRequest.h>
 #include <aws/route53/model/DeleteKeySigningKeyRequest.h>
 #include <aws/route53/model/DeleteQueryLoggingConfigRequest.h>
@@ -58,6 +60,7 @@
 #include <aws/route53/model/GetHealthCheckCountRequest.h>
 #include <aws/route53/model/GetHealthCheckLastFailureReasonRequest.h>
 #include <aws/route53/model/GetHealthCheckRequest.h>
+#include <aws/route53/model/GetHealthCheckSourceRequest.h>
 #include <aws/route53/model/GetHealthCheckStatusRequest.h>
 #include <aws/route53/model/GetHostedZoneCountRequest.h>
 #include <aws/route53/model/GetHostedZoneLimitRequest.h>
@@ -72,6 +75,8 @@
 #include <aws/route53/model/ListCidrCollectionsRequest.h>
 #include <aws/route53/model/ListCidrLocationsRequest.h>
 #include <aws/route53/model/ListGeoLocationsRequest.h>
+#include <aws/route53/model/ListHealthCheckSourcesRequest.h>
+#include <aws/route53/model/ListHealthChecksBySourceRequest.h>
 #include <aws/route53/model/ListHealthChecksRequest.h>
 #include <aws/route53/model/ListHostedZonesByNameRequest.h>
 #include <aws/route53/model/ListHostedZonesByVPCRequest.h>
@@ -376,6 +381,17 @@ CreateHealthCheckOutcome Route53Client::CreateHealthCheck(const CreateHealthChec
                             : CreateHealthCheckOutcome(std::move(result.GetError()));
 }
 
+CreateHealthCheckSourceOutcome Route53Client::CreateHealthCheckSource(const CreateHealthCheckSourceRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthchecksource");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHealthCheckSourceOutcome(result.GetResultWithOwnership())
+                            : CreateHealthCheckSourceOutcome(std::move(result.GetError()));
+}
+
 CreateHostedZoneOutcome Route53Client::CreateHostedZone(const CreateHostedZoneRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -559,6 +575,24 @@ DeleteHealthCheckOutcome Route53Client::DeleteHealthCheck(const DeleteHealthChec
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteHealthCheckOutcome(result.GetResultWithOwnership())
                             : DeleteHealthCheckOutcome(std::move(result.GetError()));
+}
+
+DeleteHealthCheckSourceOutcome Route53Client::DeleteHealthCheckSource(const DeleteHealthCheckSourceRequest& request) const {
+  if (!request.HealthCheckSourceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteHealthCheckSource", "Required field: HealthCheckSourceId, is not set");
+    return DeleteHealthCheckSourceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [HealthCheckSourceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthchecksource/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHealthCheckSourceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteHealthCheckSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteHealthCheckSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteHostedZoneOutcome Route53Client::DeleteHostedZone(const DeleteHostedZoneRequest& request) const {
@@ -901,6 +935,24 @@ GetHealthCheckLastFailureReasonOutcome Route53Client::GetHealthCheckLastFailureR
                             : GetHealthCheckLastFailureReasonOutcome(std::move(result.GetError()));
 }
 
+GetHealthCheckSourceOutcome Route53Client::GetHealthCheckSource(const GetHealthCheckSourceRequest& request) const {
+  if (!request.HealthCheckSourceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetHealthCheckSource", "Required field: HealthCheckSourceId, is not set");
+    return GetHealthCheckSourceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [HealthCheckSourceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthchecksource/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHealthCheckSourceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHealthCheckSourceOutcome(result.GetResultWithOwnership())
+                            : GetHealthCheckSourceOutcome(std::move(result.GetError()));
+}
+
 GetHealthCheckStatusOutcome Route53Client::GetHealthCheckStatus(const GetHealthCheckStatusRequest& request) const {
   if (!request.HealthCheckIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetHealthCheckStatus", "Required field: HealthCheckId, is not set");
@@ -1146,6 +1198,17 @@ ListGeoLocationsOutcome Route53Client::ListGeoLocations(const ListGeoLocationsRe
                             : ListGeoLocationsOutcome(std::move(result.GetError()));
 }
 
+ListHealthCheckSourcesOutcome Route53Client::ListHealthCheckSources(const ListHealthCheckSourcesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthchecksource");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHealthCheckSourcesOutcome(result.GetResultWithOwnership())
+                            : ListHealthCheckSourcesOutcome(std::move(result.GetError()));
+}
+
 ListHealthChecksOutcome Route53Client::ListHealthChecks(const ListHealthChecksRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1155,6 +1218,24 @@ ListHealthChecksOutcome Route53Client::ListHealthChecks(const ListHealthChecksRe
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListHealthChecksOutcome(result.GetResultWithOwnership())
                             : ListHealthChecksOutcome(std::move(result.GetError()));
+}
+
+ListHealthChecksBySourceOutcome Route53Client::ListHealthChecksBySource(const ListHealthChecksBySourceRequest& request) const {
+  if (!request.HealthCheckSourceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListHealthChecksBySource", "Required field: HealthCheckSourceId, is not set");
+    return ListHealthChecksBySourceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [HealthCheckSourceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthchecks/source/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHealthCheckSourceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHealthChecksBySourceOutcome(result.GetResultWithOwnership())
+                            : ListHealthChecksBySourceOutcome(std::move(result.GetError()));
 }
 
 ListHostedZonesOutcome Route53Client::ListHostedZones(const ListHostedZonesRequest& request) const {

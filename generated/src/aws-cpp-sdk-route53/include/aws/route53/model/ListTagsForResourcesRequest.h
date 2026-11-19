@@ -38,7 +38,8 @@ class ListTagsForResourcesRequest : public Route53Request {
   /**
    * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
    * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-   * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
+   * health check sources is <code>healthchecksource</code>.</p> </li> <li> <p>The
+   * resource type for hosted zones is <code>hostedzone</code>.</p> </li> </ul>
    */
   inline TagResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

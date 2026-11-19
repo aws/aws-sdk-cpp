@@ -71,7 +71,9 @@ class SlaInputConfiguration {
 
   ///@{
   /**
-   * <p>Unique identifier of a field.</p>
+   * <p>Unique identifier of the case field that the SLA tracks. The field must be a
+   * single-select field, such as the system <code>status</code> field or a custom
+   * single-select field.</p>
    */
   inline const Aws::String& GetFieldId() const { return m_fieldId; }
   inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }

@@ -11,6 +11,7 @@
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurement_EXPORTS.h>
 #include <aws/partnercentral-revenue-measurement/model/AttributionSortBy.h>
 #include <aws/partnercentral-revenue-measurement/model/CatalogName.h>
+#include <aws/partnercentral-revenue-measurement/model/ContextFilter.h>
 #include <aws/partnercentral-revenue-measurement/model/SortOrder.h>
 
 #include <utility>
@@ -180,6 +181,31 @@ class ListRevenueAttributionsRequest : public PartnerCentralRevenueMeasurementRe
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filter results by context. Filters are combined with AND; values within a
+   * filter are combined with OR.</p>
+   */
+  inline const Aws::Vector<ContextFilter>& GetContextFilters() const { return m_contextFilters; }
+  inline bool ContextFiltersHasBeenSet() const { return m_contextFiltersHasBeenSet; }
+  template <typename ContextFiltersT = Aws::Vector<ContextFilter>>
+  void SetContextFilters(ContextFiltersT&& value) {
+    m_contextFiltersHasBeenSet = true;
+    m_contextFilters = std::forward<ContextFiltersT>(value);
+  }
+  template <typename ContextFiltersT = Aws::Vector<ContextFilter>>
+  ListRevenueAttributionsRequest& WithContextFilters(ContextFiltersT&& value) {
+    SetContextFilters(std::forward<ContextFiltersT>(value));
+    return *this;
+  }
+  template <typename ContextFiltersT = ContextFilter>
+  ListRevenueAttributionsRequest& AddContextFilters(ContextFiltersT&& value) {
+    m_contextFiltersHasBeenSet = true;
+    m_contextFilters.emplace_back(std::forward<ContextFiltersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CatalogName m_catalog{CatalogName::NOT_SET};
 
@@ -196,6 +222,8 @@ class ListRevenueAttributionsRequest : public PartnerCentralRevenueMeasurementRe
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+
+  Aws::Vector<ContextFilter> m_contextFilters;
   bool m_catalogHasBeenSet = false;
   bool m_identifiersHasBeenSet = false;
   bool m_createdAfterHasBeenSet = false;
@@ -204,6 +232,7 @@ class ListRevenueAttributionsRequest : public PartnerCentralRevenueMeasurementRe
   bool m_sortOrderHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_contextFiltersHasBeenSet = false;
 };
 
 }  // namespace Model

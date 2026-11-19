@@ -26,6 +26,10 @@ RelatedItemUpdateContent& RelatedItemUpdateContent::operator=(JsonView jsonValue
     m_custom = jsonValue.GetObject("custom");
     m_customHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sla")) {
+    m_sla = jsonValue.GetObject("sla");
+    m_slaHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue RelatedItemUpdateContent::Jsonize() const {
 
   if (m_customHasBeenSet) {
     payload.WithObject("custom", m_custom.Jsonize());
+  }
+
+  if (m_slaHasBeenSet) {
+    payload.WithObject("sla", m_sla.Jsonize());
   }
 
   return payload;

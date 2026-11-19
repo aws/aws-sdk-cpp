@@ -125,6 +125,26 @@ class AWSConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Organizations service-managed role that
+   * AIDevOps uses to deploy and manage resources across the accounts in your Amazon
+   * Web Services Organization.</p>
+   */
+  inline const Aws::String& GetServiceManagementRoleArn() const { return m_serviceManagementRoleArn; }
+  inline bool ServiceManagementRoleArnHasBeenSet() const { return m_serviceManagementRoleArnHasBeenSet; }
+  template <typename ServiceManagementRoleArnT = Aws::String>
+  void SetServiceManagementRoleArn(ServiceManagementRoleArnT&& value) {
+    m_serviceManagementRoleArnHasBeenSet = true;
+    m_serviceManagementRoleArn = std::forward<ServiceManagementRoleArnT>(value);
+  }
+  template <typename ServiceManagementRoleArnT = Aws::String>
+  AWSConfiguration& WithServiceManagementRoleArn(ServiceManagementRoleArnT&& value) {
+    SetServiceManagementRoleArn(std::forward<ServiceManagementRoleArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_assumableRoleArn;
 
@@ -135,11 +155,14 @@ class AWSConfiguration {
   Aws::String m_agentElevatedRoleArn;
 
   ValidationStatus m_agentElevatedRoleArnStatus{ValidationStatus::NOT_SET};
+
+  Aws::String m_serviceManagementRoleArn;
   bool m_assumableRoleArnHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
   bool m_accountTypeHasBeenSet = false;
   bool m_agentElevatedRoleArnHasBeenSet = false;
   bool m_agentElevatedRoleArnStatusHasBeenSet = false;
+  bool m_serviceManagementRoleArnHasBeenSet = false;
 };
 
 }  // namespace Model

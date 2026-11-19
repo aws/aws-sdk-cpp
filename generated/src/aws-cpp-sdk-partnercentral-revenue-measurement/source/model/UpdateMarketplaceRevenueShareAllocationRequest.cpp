@@ -20,7 +20,7 @@ Aws::String UpdateMarketplaceRevenueShareAllocationRequest::SerializePayload() c
   if (m_catalogHasBeenSet) {
     mapSize++;
   }
-  if (m_productIdHasBeenSet) {
+  if (m_marketplaceRevenueShareIdentifierHasBeenSet) {
     mapSize++;
   }
   if (m_marketplaceRevenueShareAllocationIdHasBeenSet) {
@@ -30,12 +30,6 @@ Aws::String UpdateMarketplaceRevenueShareAllocationRequest::SerializePayload() c
     mapSize++;
   }
   if (m_clientTokenHasBeenSet) {
-    mapSize++;
-  }
-  if (m_effectiveFromHasBeenSet) {
-    mapSize++;
-  }
-  if (m_effectiveUntilHasBeenSet) {
     mapSize++;
   }
   if (m_revenueSharePercentHasBeenSet) {
@@ -52,9 +46,9 @@ Aws::String UpdateMarketplaceRevenueShareAllocationRequest::SerializePayload() c
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(CatalogNameMapper::GetNameForCatalogName(m_catalog).c_str()));
   }
 
-  if (m_productIdHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProductId"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_productId.c_str()));
+  if (m_marketplaceRevenueShareIdentifierHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MarketplaceRevenueShareIdentifier"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_marketplaceRevenueShareIdentifier.c_str()));
   }
 
   if (m_marketplaceRevenueShareAllocationIdHasBeenSet) {
@@ -70,16 +64,6 @@ Aws::String UpdateMarketplaceRevenueShareAllocationRequest::SerializePayload() c
   if (m_clientTokenHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("ClientToken"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clientToken.c_str()));
-  }
-
-  if (m_effectiveFromHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EffectiveFrom"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_effectiveFrom.c_str()));
-  }
-
-  if (m_effectiveUntilHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EffectiveUntil"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_effectiveUntil.c_str()));
   }
 
   if (m_revenueSharePercentHasBeenSet) {

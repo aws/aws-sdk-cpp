@@ -27,7 +27,11 @@
 #include <aws/agent-registry-control/model/AgentSkillsAdditionalData.h>
 #include <aws/agent-registry-control/model/AgentSkillsDefinitionDescriptor.h>
 #include <aws/agent-registry-control/model/AgentSkillsMdDescriptor.h>
+#include <aws/agent-registry-control/model/AgentSkillsPackageDescriptor.h>
+#include <aws/agent-registry-control/model/AgentSkillsRepositoryProvider.h>
+#include <aws/agent-registry-control/model/AgentSkillsSourceConfiguration.h>
 #include <aws/agent-registry-control/model/ApprovalConfiguration.h>
+#include <aws/agent-registry-control/model/AuthorizationData.h>
 #include <aws/agent-registry-control/model/AuthorizerConfiguration.h>
 #include <aws/agent-registry-control/model/AuthorizingClaimMatchValueType.h>
 #include <aws/agent-registry-control/model/AutoApprovalRule.h>
@@ -60,6 +64,7 @@
 #include <aws/agent-registry-control/model/GetRegistryRecordResult.h>
 #include <aws/agent-registry-control/model/GetRegistryRequest.h>
 #include <aws/agent-registry-control/model/GetRegistryResult.h>
+#include <aws/agent-registry-control/model/GitHubSynchronizedSource.h>
 #include <aws/agent-registry-control/model/HttpDescriptor.h>
 #include <aws/agent-registry-control/model/InboundTokenClaimValueType.h>
 #include <aws/agent-registry-control/model/ListRegistriesPaginationTraits.h>
@@ -74,6 +79,7 @@
 #include <aws/agent-registry-control/model/McpServerAdditionalData.h>
 #include <aws/agent-registry-control/model/McpServerDescriptor.h>
 #include <aws/agent-registry-control/model/McpToolsDescriptor.h>
+#include <aws/agent-registry-control/model/OAuth2AuthorizationData.h>
 #include <aws/agent-registry-control/model/PrivateEndpoint.h>
 #include <aws/agent-registry-control/model/PrivateEndpointOverride.h>
 #include <aws/agent-registry-control/model/Provenance.h>
@@ -84,6 +90,8 @@
 #include <aws/agent-registry-control/model/RegistryAuthorizerType.h>
 #include <aws/agent-registry-control/model/RegistryFilter.h>
 #include <aws/agent-registry-control/model/RegistryFilterName.h>
+#include <aws/agent-registry-control/model/RegistryRecordArtifactDownload.h>
+#include <aws/agent-registry-control/model/RegistryRecordArtifactUpload.h>
 #include <aws/agent-registry-control/model/RegistryRecordCredentialProviderConfiguration.h>
 #include <aws/agent-registry-control/model/RegistryRecordCredentialProviderType.h>
 #include <aws/agent-registry-control/model/RegistryRecordCredentialProviderUnion.h>
@@ -94,8 +102,11 @@
 #include <aws/agent-registry-control/model/RegistryRecordOAuthGrantType.h>
 #include <aws/agent-registry-control/model/RegistryRecordStatus.h>
 #include <aws/agent-registry-control/model/RegistryRecordSummary.h>
+#include <aws/agent-registry-control/model/RegistryRecordSynchronizedSource.h>
 #include <aws/agent-registry-control/model/RegistryStatus.h>
 #include <aws/agent-registry-control/model/RegistrySummary.h>
+#include <aws/agent-registry-control/model/S3SourceConfiguration.h>
+#include <aws/agent-registry-control/model/S3SynchronizedSource.h>
 #include <aws/agent-registry-control/model/SelfManagedLatticeResource.h>
 #include <aws/agent-registry-control/model/SourceDetails.h>
 #include <aws/agent-registry-control/model/SourceType.h>
@@ -121,6 +132,9 @@
 #include <aws/agent-registry-control/model/UpdatedAgentSkillsDefinitionDescriptorFields.h>
 #include <aws/agent-registry-control/model/UpdatedAgentSkillsMdDescriptor.h>
 #include <aws/agent-registry-control/model/UpdatedAgentSkillsMdDescriptorFields.h>
+#include <aws/agent-registry-control/model/UpdatedAgentSkillsPackageDescriptor.h>
+#include <aws/agent-registry-control/model/UpdatedAgentSkillsRepositoryProvider.h>
+#include <aws/agent-registry-control/model/UpdatedAgentSkillsSourceConfiguration.h>
 #include <aws/agent-registry-control/model/UpdatedApprovalConfiguration.h>
 #include <aws/agent-registry-control/model/UpdatedAuthorizerConfiguration.h>
 #include <aws/agent-registry-control/model/UpdatedAutoDetectionConfiguration.h>
@@ -144,6 +158,7 @@
 #include <aws/agent-registry-control/model/UpdatedMcpServerDescriptorFields.h>
 #include <aws/agent-registry-control/model/UpdatedMcpToolsDescriptor.h>
 #include <aws/agent-registry-control/model/UpdatedMcpToolsDescriptorFields.h>
+#include <aws/agent-registry-control/model/UpdatedRegistryRecordArtifact.h>
 #include <aws/agent-registry-control/model/ValidationException.h>
 #include <aws/agent-registry-control/model/ValidationExceptionField.h>
 #include <aws/agent-registry-control/model/ValidationExceptionReason.h>

@@ -13,6 +13,8 @@
 #include <aws/connect/model/NumberReference.h>
 #include <aws/connect/model/StringReference.h>
 #include <aws/connect/model/UrlReference.h>
+#include <aws/connect/model/VoicemailAnalysisReference.h>
+#include <aws/connect/model/VoicemailRecordingReference.h>
 
 #include <utility>
 
@@ -236,6 +238,82 @@ class ReferenceSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about the reference when the <code>referenceType</code> is
+   * <code>VOICEMAIL_RECORDING</code>. Otherwise, null.</p>
+   */
+  inline const VoicemailRecordingReference& GetVoicemailRecording() const { return m_voicemailRecording; }
+  inline bool VoicemailRecordingHasBeenSet() const { return m_voicemailRecordingHasBeenSet; }
+  template <typename VoicemailRecordingT = VoicemailRecordingReference>
+  void SetVoicemailRecording(VoicemailRecordingT&& value) {
+    m_voicemailRecordingHasBeenSet = true;
+    m_voicemailRecording = std::forward<VoicemailRecordingT>(value);
+  }
+  template <typename VoicemailRecordingT = VoicemailRecordingReference>
+  ReferenceSummary& WithVoicemailRecording(VoicemailRecordingT&& value) {
+    SetVoicemailRecording(std::forward<VoicemailRecordingT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information about the reference when the <code>referenceType</code> is
+   * <code>VOICEMAIL_RECORDING_REDACTED</code>. Otherwise, null.</p>
+   */
+  inline const VoicemailRecordingReference& GetVoicemailRecordingRedacted() const { return m_voicemailRecordingRedacted; }
+  inline bool VoicemailRecordingRedactedHasBeenSet() const { return m_voicemailRecordingRedactedHasBeenSet; }
+  template <typename VoicemailRecordingRedactedT = VoicemailRecordingReference>
+  void SetVoicemailRecordingRedacted(VoicemailRecordingRedactedT&& value) {
+    m_voicemailRecordingRedactedHasBeenSet = true;
+    m_voicemailRecordingRedacted = std::forward<VoicemailRecordingRedactedT>(value);
+  }
+  template <typename VoicemailRecordingRedactedT = VoicemailRecordingReference>
+  ReferenceSummary& WithVoicemailRecordingRedacted(VoicemailRecordingRedactedT&& value) {
+    SetVoicemailRecordingRedacted(std::forward<VoicemailRecordingRedactedT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information about the reference when the <code>referenceType</code> is
+   * <code>VOICEMAIL_ANALYSIS</code>. Otherwise, null.</p>
+   */
+  inline const VoicemailAnalysisReference& GetVoicemailAnalysis() const { return m_voicemailAnalysis; }
+  inline bool VoicemailAnalysisHasBeenSet() const { return m_voicemailAnalysisHasBeenSet; }
+  template <typename VoicemailAnalysisT = VoicemailAnalysisReference>
+  void SetVoicemailAnalysis(VoicemailAnalysisT&& value) {
+    m_voicemailAnalysisHasBeenSet = true;
+    m_voicemailAnalysis = std::forward<VoicemailAnalysisT>(value);
+  }
+  template <typename VoicemailAnalysisT = VoicemailAnalysisReference>
+  ReferenceSummary& WithVoicemailAnalysis(VoicemailAnalysisT&& value) {
+    SetVoicemailAnalysis(std::forward<VoicemailAnalysisT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information about the reference when the <code>referenceType</code> is
+   * <code>VOICEMAIL_ANALYSIS_REDACTED</code>. Otherwise, null.</p>
+   */
+  inline const VoicemailAnalysisReference& GetVoicemailAnalysisRedacted() const { return m_voicemailAnalysisRedacted; }
+  inline bool VoicemailAnalysisRedactedHasBeenSet() const { return m_voicemailAnalysisRedactedHasBeenSet; }
+  template <typename VoicemailAnalysisRedactedT = VoicemailAnalysisReference>
+  void SetVoicemailAnalysisRedacted(VoicemailAnalysisRedactedT&& value) {
+    m_voicemailAnalysisRedactedHasBeenSet = true;
+    m_voicemailAnalysisRedacted = std::forward<VoicemailAnalysisRedactedT>(value);
+  }
+  template <typename VoicemailAnalysisRedactedT = VoicemailAnalysisReference>
+  ReferenceSummary& WithVoicemailAnalysisRedacted(VoicemailAnalysisRedactedT&& value) {
+    SetVoicemailAnalysisRedacted(std::forward<VoicemailAnalysisRedactedT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UrlReference m_url;
 
@@ -258,6 +336,14 @@ class ReferenceSummary {
   EmailReference m_email;
 
   ContactAnalysisReference m_contactAnalysis;
+
+  VoicemailRecordingReference m_voicemailRecording;
+
+  VoicemailRecordingReference m_voicemailRecordingRedacted;
+
+  VoicemailAnalysisReference m_voicemailAnalysis;
+
+  VoicemailAnalysisReference m_voicemailAnalysisRedacted;
   bool m_urlHasBeenSet = false;
   bool m_attachmentHasBeenSet = false;
   bool m_emailMessageHasBeenSet = false;
@@ -269,6 +355,10 @@ class ReferenceSummary {
   bool m_dateHasBeenSet = false;
   bool m_emailHasBeenSet = false;
   bool m_contactAnalysisHasBeenSet = false;
+  bool m_voicemailRecordingHasBeenSet = false;
+  bool m_voicemailRecordingRedactedHasBeenSet = false;
+  bool m_voicemailAnalysisHasBeenSet = false;
+  bool m_voicemailAnalysisRedactedHasBeenSet = false;
 };
 
 }  // namespace Model

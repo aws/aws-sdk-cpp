@@ -46,6 +46,18 @@ FirewallDomainListMetadata& FirewallDomainListMetadata::operator=(JsonView jsonV
     m_category = jsonValue.GetString("Category");
     m_categoryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FirewallRuleGroupId")) {
+    m_firewallRuleGroupId = jsonValue.GetString("FirewallRuleGroupId");
+    m_firewallRuleGroupIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FirewallThreatProtectionId")) {
+    m_firewallThreatProtectionId = jsonValue.GetString("FirewallThreatProtectionId");
+    m_firewallThreatProtectionIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Status")) {
+    m_status = FirewallDomainListStatusMapper::GetFirewallDomainListStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +90,18 @@ JsonValue FirewallDomainListMetadata::Jsonize() const {
 
   if (m_categoryHasBeenSet) {
     payload.WithString("Category", m_category);
+  }
+
+  if (m_firewallRuleGroupIdHasBeenSet) {
+    payload.WithString("FirewallRuleGroupId", m_firewallRuleGroupId);
+  }
+
+  if (m_firewallThreatProtectionIdHasBeenSet) {
+    payload.WithString("FirewallThreatProtectionId", m_firewallThreatProtectionId);
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", FirewallDomainListStatusMapper::GetNameForFirewallDomainListStatus(m_status));
   }
 
   return payload;

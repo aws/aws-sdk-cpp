@@ -22,8 +22,8 @@ namespace Inspector2 {
 namespace Model {
 
 /**
- * <p>Details about a machine image resource scanned directly by
- * Inspector.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains details about an Amazon Machine Image (AMI) that Amazon Inspector
+ * scanned directly.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/MachineImageDetails">AWS
  * API Reference</a></p>
  */
@@ -36,7 +36,8 @@ class MachineImageDetails {
 
   ///@{
   /**
-   * <p>The machine image ID (e.g., ami-0abcdef1234567890)</p>
+   * <p>The ID of the machine image, for example
+   * <code>ami-0abcdef1234567890</code>.</p>
    */
   inline const Aws::String& GetMachineImageId() const { return m_machineImageId; }
   inline bool MachineImageIdHasBeenSet() const { return m_machineImageIdHasBeenSet; }
@@ -54,7 +55,7 @@ class MachineImageDetails {
 
   ///@{
   /**
-   * <p>Human-readable image name</p>
+   * <p>The name of the machine image.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -72,7 +73,7 @@ class MachineImageDetails {
 
   ///@{
   /**
-   * <p>Account ID that owns the image</p>
+   * <p>The ID of the account that owns the machine image.</p>
    */
   inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
   inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
@@ -90,7 +91,7 @@ class MachineImageDetails {
 
   ///@{
   /**
-   * <p>OS platform (Linux/Windows)</p>
+   * <p>The operating system platform of the machine image.</p>
    */
   inline const Aws::String& GetPlatform() const { return m_platform; }
   inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
@@ -108,7 +109,8 @@ class MachineImageDetails {
 
   ///@{
   /**
-   * <p>CPU architecture (x86_64/arm64)</p>
+   * <p>The CPU architecture of the machine image, for example <code>x86_64</code> or
+   * <code>arm64</code>.</p>
    */
   inline Architecture GetArchitecture() const { return m_architecture; }
   inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
@@ -124,7 +126,7 @@ class MachineImageDetails {
 
   ///@{
   /**
-   * <p>When the image was created</p>
+   * <p>The date and time that the machine image was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
   inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
@@ -142,7 +144,8 @@ class MachineImageDetails {
 
   ///@{
   /**
-   * <p>Image state (available/pending/deregistered)</p>
+   * <p>The state of the machine image, for example <code>available</code>,
+   * <code>pending</code>, or <code>deregistered</code>.</p>
    */
   inline const Aws::String& GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
@@ -160,7 +163,7 @@ class MachineImageDetails {
 
   ///@{
   /**
-   * <p>Whether the image is publicly shared</p>
+   * <p>Indicates whether the machine image is shared publicly.</p>
    */
   inline bool GetIsPublic() const { return m_isPublic; }
   inline bool IsPublicHasBeenSet() const { return m_isPublicHasBeenSet; }
@@ -176,7 +179,8 @@ class MachineImageDetails {
 
   ///@{
   /**
-   * <p>Root device type (ebs/instance-store) — AWS-specific</p>
+   * <p>The root device type of the machine image, either <code>ebs</code> or
+   * <code>instance-store</code>.</p>
    */
   inline const Aws::String& GetRootDeviceType() const { return m_rootDeviceType; }
   inline bool RootDeviceTypeHasBeenSet() const { return m_rootDeviceTypeHasBeenSet; }
@@ -194,7 +198,8 @@ class MachineImageDetails {
 
   ///@{
   /**
-   * <p>Virtualization type (hvm/paravirtual) — AWS-specific</p>
+   * <p>The virtualization type of the machine image, either <code>hvm</code> or
+   * <code>paravirtual</code>.</p>
    */
   inline const Aws::String& GetVirtualizationType() const { return m_virtualizationType; }
   inline bool VirtualizationTypeHasBeenSet() const { return m_virtualizationTypeHasBeenSet; }
@@ -212,7 +217,8 @@ class MachineImageDetails {
 
   ///@{
   /**
-   * <p>Source resource the image was created from (nullable)</p>
+   * <p>The ID of the Amazon EC2 instance that the machine image was created from, if
+   * available.</p>
    */
   inline const Aws::String& GetSourceResourceId() const { return m_sourceResourceId; }
   inline bool SourceResourceIdHasBeenSet() const { return m_sourceResourceIdHasBeenSet; }

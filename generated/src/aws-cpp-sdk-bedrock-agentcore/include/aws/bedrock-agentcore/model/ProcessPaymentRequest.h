@@ -110,7 +110,12 @@ class ProcessPaymentRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The ID of the payment instrument to use.</p>
+   * <p>The ID of the payment instrument to use. For the <code>CRYPTO_X402</code> and
+   * <code>MPP</code> payment types, specify the ID of a payment instrument that you
+   * created. For the <code>AWS_BILLING_X402</code> payment type, specify the
+   * service-managed instrument ID <code>aws.agentcorepayments.awsbilling.v1</code>.
+   * You don't create this instrument; it's available for any payment manager that
+   * has an AWS Billing payment connector.</p>
    */
   inline const Aws::String& GetPaymentInstrumentId() const { return m_paymentInstrumentId; }
   inline bool PaymentInstrumentIdHasBeenSet() const { return m_paymentInstrumentIdHasBeenSet; }

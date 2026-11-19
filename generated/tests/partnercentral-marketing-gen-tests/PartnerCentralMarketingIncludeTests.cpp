@@ -1,0 +1,156 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/partnercentral-marketing/PartnerCentralMarketingClient.h>
+#include <aws/partnercentral-marketing/PartnerCentralMarketingClientPagination.h>
+#include <aws/partnercentral-marketing/PartnerCentralMarketingEndpointProvider.h>
+#include <aws/partnercentral-marketing/PartnerCentralMarketingErrorMarshaller.h>
+#include <aws/partnercentral-marketing/PartnerCentralMarketingErrors.h>
+#include <aws/partnercentral-marketing/PartnerCentralMarketingPaginationBase.h>
+#include <aws/partnercentral-marketing/PartnerCentralMarketingRequest.h>
+#include <aws/partnercentral-marketing/PartnerCentralMarketingServiceClientModel.h>
+#include <aws/partnercentral-marketing/PartnerCentralMarketingWaiter.h>
+#include <aws/partnercentral-marketing/PartnerCentralMarketing_EXPORTS.h>
+#include <aws/partnercentral-marketing/internal/PartnerCentralMarketingEndpointRules.h>
+#include <aws/partnercentral-marketing/model/AccessDeniedException.h>
+#include <aws/partnercentral-marketing/model/AccessDeniedExceptionReason.h>
+#include <aws/partnercentral-marketing/model/ActivationIssue.h>
+#include <aws/partnercentral-marketing/model/AssetLanguage.h>
+#include <aws/partnercentral-marketing/model/AssetLinkFieldType.h>
+#include <aws/partnercentral-marketing/model/AttemptStatus.h>
+#include <aws/partnercentral-marketing/model/BatchCreateCampaignAssetEntry.h>
+#include <aws/partnercentral-marketing/model/BatchCreateCampaignAssetError.h>
+#include <aws/partnercentral-marketing/model/BatchCreateCampaignAssetRequest.h>
+#include <aws/partnercentral-marketing/model/BatchCreateCampaignAssetResult.h>
+#include <aws/partnercentral-marketing/model/BatchCreateCampaignAssetSdkResult.h>
+#include <aws/partnercentral-marketing/model/Campaign.h>
+#include <aws/partnercentral-marketing/model/CampaignAsset.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetActivationOutcome.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetActivationStatus.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetActivationTaskStatus.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetCategory.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetExportFailureCode.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetExportFailureReason.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetExportTaskStatus.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetFieldValue.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetImageSource.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetLayout.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetLayoutOption.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetState.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetStateReason.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetSummary.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetTemplate.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetTemplateField.h>
+#include <aws/partnercentral-marketing/model/CampaignAssetTemplateType.h>
+#include <aws/partnercentral-marketing/model/CampaignSetting.h>
+#include <aws/partnercentral-marketing/model/CampaignSort.h>
+#include <aws/partnercentral-marketing/model/CampaignSortName.h>
+#include <aws/partnercentral-marketing/model/CampaignState.h>
+#include <aws/partnercentral-marketing/model/CampaignSummary.h>
+#include <aws/partnercentral-marketing/model/CampaignTemplate.h>
+#include <aws/partnercentral-marketing/model/CampaignTemplateCollection.h>
+#include <aws/partnercentral-marketing/model/CampaignTemplateSummary.h>
+#include <aws/partnercentral-marketing/model/Catalog.h>
+#include <aws/partnercentral-marketing/model/CompanySize.h>
+#include <aws/partnercentral-marketing/model/ConflictException.h>
+#include <aws/partnercentral-marketing/model/CreateCampaignRequest.h>
+#include <aws/partnercentral-marketing/model/CreateCampaignResult.h>
+#include <aws/partnercentral-marketing/model/CreateSocialConnectionAuthorizationUrlRequest.h>
+#include <aws/partnercentral-marketing/model/CreateSocialConnectionAuthorizationUrlResult.h>
+#include <aws/partnercentral-marketing/model/CustomerSegment.h>
+#include <aws/partnercentral-marketing/model/DeactivateCampaignAssetRequest.h>
+#include <aws/partnercentral-marketing/model/DeactivateCampaignAssetResult.h>
+#include <aws/partnercentral-marketing/model/DeleteCampaignAssetRequest.h>
+#include <aws/partnercentral-marketing/model/DeleteCampaignRequest.h>
+#include <aws/partnercentral-marketing/model/DeleteSocialConnectionRequest.h>
+#include <aws/partnercentral-marketing/model/DeliveryStatus.h>
+#include <aws/partnercentral-marketing/model/EmailTargetDetail.h>
+#include <aws/partnercentral-marketing/model/FieldType.h>
+#include <aws/partnercentral-marketing/model/FieldValueInput.h>
+#include <aws/partnercentral-marketing/model/FileFormat.h>
+#include <aws/partnercentral-marketing/model/FileRef.h>
+#include <aws/partnercentral-marketing/model/GetCampaignAssetActivationTaskRequest.h>
+#include <aws/partnercentral-marketing/model/GetCampaignAssetActivationTaskResult.h>
+#include <aws/partnercentral-marketing/model/GetCampaignAssetExportTaskRequest.h>
+#include <aws/partnercentral-marketing/model/GetCampaignAssetExportTaskResult.h>
+#include <aws/partnercentral-marketing/model/GetCampaignAssetRequest.h>
+#include <aws/partnercentral-marketing/model/GetCampaignAssetResult.h>
+#include <aws/partnercentral-marketing/model/GetCampaignRequest.h>
+#include <aws/partnercentral-marketing/model/GetCampaignResult.h>
+#include <aws/partnercentral-marketing/model/GetCampaignTemplateRequest.h>
+#include <aws/partnercentral-marketing/model/GetCampaignTemplateResult.h>
+#include <aws/partnercentral-marketing/model/ImageFieldType.h>
+#include <aws/partnercentral-marketing/model/ImageFormat.h>
+#include <aws/partnercentral-marketing/model/Industry.h>
+#include <aws/partnercentral-marketing/model/InternalServerException.h>
+#include <aws/partnercentral-marketing/model/LayoutFormat.h>
+#include <aws/partnercentral-marketing/model/LayoutPageType.h>
+#include <aws/partnercentral-marketing/model/LayoutPreview.h>
+#include <aws/partnercentral-marketing/model/ListCampaignAssetsPaginationTraits.h>
+#include <aws/partnercentral-marketing/model/ListCampaignAssetsRequest.h>
+#include <aws/partnercentral-marketing/model/ListCampaignAssetsResult.h>
+#include <aws/partnercentral-marketing/model/ListCampaignsPaginationTraits.h>
+#include <aws/partnercentral-marketing/model/ListCampaignsRequest.h>
+#include <aws/partnercentral-marketing/model/ListCampaignsResult.h>
+#include <aws/partnercentral-marketing/model/ListSocialConnectionsPaginationTraits.h>
+#include <aws/partnercentral-marketing/model/ListSocialConnectionsRequest.h>
+#include <aws/partnercentral-marketing/model/ListSocialConnectionsResult.h>
+#include <aws/partnercentral-marketing/model/ListTagsForResourceRequest.h>
+#include <aws/partnercentral-marketing/model/ListTagsForResourceResult.h>
+#include <aws/partnercentral-marketing/model/MonetaryValue.h>
+#include <aws/partnercentral-marketing/model/PartnerBadgeDetail.h>
+#include <aws/partnercentral-marketing/model/PartnerProfileBranding.h>
+#include <aws/partnercentral-marketing/model/PartnerProfileField.h>
+#include <aws/partnercentral-marketing/model/Platform.h>
+#include <aws/partnercentral-marketing/model/ReferenceMaterial.h>
+#include <aws/partnercentral-marketing/model/ResourceNotFoundException.h>
+#include <aws/partnercentral-marketing/model/RichTextFieldType.h>
+#include <aws/partnercentral-marketing/model/ScanStatus.h>
+#include <aws/partnercentral-marketing/model/SearchCampaignTemplatesPaginationTraits.h>
+#include <aws/partnercentral-marketing/model/SearchCampaignTemplatesRequest.h>
+#include <aws/partnercentral-marketing/model/SearchCampaignTemplatesResult.h>
+#include <aws/partnercentral-marketing/model/SendMode.h>
+#include <aws/partnercentral-marketing/model/ServiceQuotaExceededException.h>
+#include <aws/partnercentral-marketing/model/SocialConnectionStatus.h>
+#include <aws/partnercentral-marketing/model/SocialConnectionSummary.h>
+#include <aws/partnercentral-marketing/model/SortOrder.h>
+#include <aws/partnercentral-marketing/model/StartCampaignAssetActivationTaskRequest.h>
+#include <aws/partnercentral-marketing/model/StartCampaignAssetActivationTaskResult.h>
+#include <aws/partnercentral-marketing/model/StartCampaignAssetExportTaskRequest.h>
+#include <aws/partnercentral-marketing/model/StartCampaignAssetExportTaskResult.h>
+#include <aws/partnercentral-marketing/model/Tag.h>
+#include <aws/partnercentral-marketing/model/TagResourceRequest.h>
+#include <aws/partnercentral-marketing/model/TagResourceResult.h>
+#include <aws/partnercentral-marketing/model/TargetAudience.h>
+#include <aws/partnercentral-marketing/model/TemplateFieldSection.h>
+#include <aws/partnercentral-marketing/model/TemplateFieldValue.h>
+#include <aws/partnercentral-marketing/model/TextFieldType.h>
+#include <aws/partnercentral-marketing/model/Theme.h>
+#include <aws/partnercentral-marketing/model/ThrottlingException.h>
+#include <aws/partnercentral-marketing/model/UntagResourceRequest.h>
+#include <aws/partnercentral-marketing/model/UntagResourceResult.h>
+#include <aws/partnercentral-marketing/model/UpdateCampaignAssetRequest.h>
+#include <aws/partnercentral-marketing/model/UpdateCampaignAssetResult.h>
+#include <aws/partnercentral-marketing/model/UpdateCampaignRequest.h>
+#include <aws/partnercentral-marketing/model/UpdateCampaignResult.h>
+#include <aws/partnercentral-marketing/model/ValidationException.h>
+#include <aws/partnercentral-marketing/model/ValidationExceptionField.h>
+#include <aws/partnercentral-marketing/model/ValidationExceptionFieldCode.h>
+#include <aws/partnercentral-marketing/model/ValidationExceptionReason.h>
+
+using PartnerCentralMarketingIncludeTest = ::testing::Test;
+
+TEST_F(PartnerCentralMarketingIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::PartnerCentralMarketing::PartnerCentralMarketingClient>("PartnerCentralMarketingIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

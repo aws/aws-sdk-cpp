@@ -43,6 +43,14 @@ Aws::String CreateSAMLProviderRequest::SerializePayload() const {
     ss << "AddPrivateKey=" << StringUtils::URLEncode(m_addPrivateKey.c_str()) << "&";
   }
 
+  if (m_contextProviderHasBeenSet) {
+    m_contextProvider.OutputToStream(ss, "ContextProvider");
+  }
+
+  if (m_identityCenterInstanceArnHasBeenSet) {
+    ss << "IdentityCenterInstanceArn=" << StringUtils::URLEncode(m_identityCenterInstanceArn.c_str()) << "&";
+  }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

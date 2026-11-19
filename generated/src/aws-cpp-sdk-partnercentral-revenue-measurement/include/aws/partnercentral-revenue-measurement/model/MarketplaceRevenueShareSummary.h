@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurement_EXPORTS.h>
 #include <aws/partnercentral-revenue-measurement/model/CatalogName.h>
+#include <aws/partnercentral-revenue-measurement/model/MarketplaceRevenueShareProductSummary.h>
 
 #include <utility>
 
@@ -37,18 +39,19 @@ class MarketplaceRevenueShareSummary {
 
   ///@{
   /**
-   * <p>The AWS Marketplace product identifier.</p>
+   * <p>The unique identifier of the marketplace revenue share, short ID form
+   * (mrs-...).</p>
    */
-  inline const Aws::String& GetProductId() const { return m_productId; }
-  inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-  template <typename ProductIdT = Aws::String>
-  void SetProductId(ProductIdT&& value) {
-    m_productIdHasBeenSet = true;
-    m_productId = std::forward<ProductIdT>(value);
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
   }
-  template <typename ProductIdT = Aws::String>
-  MarketplaceRevenueShareSummary& WithProductId(ProductIdT&& value) {
-    SetProductId(std::forward<ProductIdT>(value));
+  template <typename IdT = Aws::String>
+  MarketplaceRevenueShareSummary& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
     return *this;
   }
   ///@}
@@ -89,36 +92,25 @@ class MarketplaceRevenueShareSummary {
 
   ///@{
   /**
-   * <p>The AWS Marketplace product code.</p>
+   * <p>The products in the marketplace revenue share, each with per-type account
+   * counts. Empty when the share is closed.</p>
    */
-  inline const Aws::String& GetProductCode() const { return m_productCode; }
-  inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
-  template <typename ProductCodeT = Aws::String>
-  void SetProductCode(ProductCodeT&& value) {
-    m_productCodeHasBeenSet = true;
-    m_productCode = std::forward<ProductCodeT>(value);
+  inline const Aws::Vector<MarketplaceRevenueShareProductSummary>& GetProducts() const { return m_products; }
+  inline bool ProductsHasBeenSet() const { return m_productsHasBeenSet; }
+  template <typename ProductsT = Aws::Vector<MarketplaceRevenueShareProductSummary>>
+  void SetProducts(ProductsT&& value) {
+    m_productsHasBeenSet = true;
+    m_products = std::forward<ProductsT>(value);
   }
-  template <typename ProductCodeT = Aws::String>
-  MarketplaceRevenueShareSummary& WithProductCode(ProductCodeT&& value) {
-    SetProductCode(std::forward<ProductCodeT>(value));
+  template <typename ProductsT = Aws::Vector<MarketplaceRevenueShareProductSummary>>
+  MarketplaceRevenueShareSummary& WithProducts(ProductsT&& value) {
+    SetProducts(std::forward<ProductsT>(value));
     return *this;
   }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The display name of the AWS Marketplace product.</p>
-   */
-  inline const Aws::String& GetProductName() const { return m_productName; }
-  inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
-  template <typename ProductNameT = Aws::String>
-  void SetProductName(ProductNameT&& value) {
-    m_productNameHasBeenSet = true;
-    m_productName = std::forward<ProductNameT>(value);
-  }
-  template <typename ProductNameT = Aws::String>
-  MarketplaceRevenueShareSummary& WithProductName(ProductNameT&& value) {
-    SetProductName(std::forward<ProductNameT>(value));
+  template <typename ProductsT = MarketplaceRevenueShareProductSummary>
+  MarketplaceRevenueShareSummary& AddProducts(ProductsT&& value) {
+    m_productsHasBeenSet = true;
+    m_products.emplace_back(std::forward<ProductsT>(value));
     return *this;
   }
   ///@}
@@ -161,16 +153,57 @@ class MarketplaceRevenueShareSummary {
 
   ///@{
   /**
-   * <p>The latest revision number of the marketplace revenue share.</p>
+   * <p>The latest revision of the marketplace revenue share.</p>
    */
-  inline int64_t GetLatestRevision() const { return m_latestRevision; }
+  inline const Aws::String& GetLatestRevision() const { return m_latestRevision; }
   inline bool LatestRevisionHasBeenSet() const { return m_latestRevisionHasBeenSet; }
-  inline void SetLatestRevision(int64_t value) {
+  template <typename LatestRevisionT = Aws::String>
+  void SetLatestRevision(LatestRevisionT&& value) {
     m_latestRevisionHasBeenSet = true;
-    m_latestRevision = value;
+    m_latestRevision = std::forward<LatestRevisionT>(value);
   }
-  inline MarketplaceRevenueShareSummary& WithLatestRevision(int64_t value) {
-    SetLatestRevision(value);
+  template <typename LatestRevisionT = Aws::String>
+  MarketplaceRevenueShareSummary& WithLatestRevision(LatestRevisionT&& value) {
+    SetLatestRevision(std::forward<LatestRevisionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date from which this share is effective, derived from the earliest ACTIVE
+   * allocation start date (YYYY-MM-DD). Absent when no ACTIVE allocation
+   * remains.</p>
+   */
+  inline const Aws::String& GetEffectiveFrom() const { return m_effectiveFrom; }
+  inline bool EffectiveFromHasBeenSet() const { return m_effectiveFromHasBeenSet; }
+  template <typename EffectiveFromT = Aws::String>
+  void SetEffectiveFrom(EffectiveFromT&& value) {
+    m_effectiveFromHasBeenSet = true;
+    m_effectiveFrom = std::forward<EffectiveFromT>(value);
+  }
+  template <typename EffectiveFromT = Aws::String>
+  MarketplaceRevenueShareSummary& WithEffectiveFrom(EffectiveFromT&& value) {
+    SetEffectiveFrom(std::forward<EffectiveFromT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date until which this share is effective, derived from the latest ACTIVE
+   * allocation end date (YYYY-MM-DD). Absent when no ACTIVE allocation remains.</p>
+   */
+  inline const Aws::String& GetEffectiveUntil() const { return m_effectiveUntil; }
+  inline bool EffectiveUntilHasBeenSet() const { return m_effectiveUntilHasBeenSet; }
+  template <typename EffectiveUntilT = Aws::String>
+  void SetEffectiveUntil(EffectiveUntilT&& value) {
+    m_effectiveUntilHasBeenSet = true;
+    m_effectiveUntil = std::forward<EffectiveUntilT>(value);
+  }
+  template <typename EffectiveUntilT = Aws::String>
+  MarketplaceRevenueShareSummary& WithEffectiveUntil(EffectiveUntilT&& value) {
+    SetEffectiveUntil(std::forward<EffectiveUntilT>(value));
     return *this;
   }
   ///@}
@@ -213,33 +246,36 @@ class MarketplaceRevenueShareSummary {
   }
   ///@}
  private:
-  Aws::String m_productId;
+  Aws::String m_id;
 
   Aws::String m_arn;
 
   CatalogName m_catalog{CatalogName::NOT_SET};
 
-  Aws::String m_productCode;
-
-  Aws::String m_productName;
+  Aws::Vector<MarketplaceRevenueShareProductSummary> m_products;
 
   Aws::Utils::DateTime m_createdDate{};
 
   Aws::Utils::DateTime m_lastModifiedDate{};
 
-  int64_t m_latestRevision{0};
+  Aws::String m_latestRevision;
+
+  Aws::String m_effectiveFrom;
+
+  Aws::String m_effectiveUntil;
 
   int64_t m_totalActiveMarketplaceRevenueShareAllocationCount{0};
 
   int64_t m_totalMarketplaceRevenueShareAllocationCount{0};
-  bool m_productIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_catalogHasBeenSet = false;
-  bool m_productCodeHasBeenSet = false;
-  bool m_productNameHasBeenSet = false;
+  bool m_productsHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
   bool m_latestRevisionHasBeenSet = false;
+  bool m_effectiveFromHasBeenSet = false;
+  bool m_effectiveUntilHasBeenSet = false;
   bool m_totalActiveMarketplaceRevenueShareAllocationCountHasBeenSet = false;
   bool m_totalMarketplaceRevenueShareAllocationCountHasBeenSet = false;
 };

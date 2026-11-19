@@ -26,6 +26,10 @@ PaymentOutput& PaymentOutput::operator=(JsonView jsonValue) {
     m_mpp = jsonValue.GetObject("mpp");
     m_mppHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("awsBillingX402")) {
+    m_awsBillingX402 = jsonValue.GetObject("awsBillingX402");
+    m_awsBillingX402HasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue PaymentOutput::Jsonize() const {
 
   if (m_mppHasBeenSet) {
     payload.WithObject("mpp", m_mpp.Jsonize());
+  }
+
+  if (m_awsBillingX402HasBeenSet) {
+    payload.WithObject("awsBillingX402", m_awsBillingX402.Jsonize());
   }
 
   return payload;

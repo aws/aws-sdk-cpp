@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rtbfabric/RTBFabricRequest.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
@@ -98,6 +99,25 @@ class UpdateLinkRequest : public RTBFabricRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier for the request. The SDK generates one
+   * when you don't.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateLinkRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayId;
 
@@ -106,10 +126,13 @@ class UpdateLinkRequest : public RTBFabricRequest {
   LinkLogSettings m_logSettings;
 
   long long m_timeoutInMillis{0};
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_gatewayIdHasBeenSet = false;
   bool m_linkIdHasBeenSet = false;
   bool m_logSettingsHasBeenSet = false;
   bool m_timeoutInMillisHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

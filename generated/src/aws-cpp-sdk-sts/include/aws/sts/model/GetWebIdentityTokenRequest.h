@@ -9,6 +9,7 @@
 #include <aws/sts/STSRequest.h>
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/sts/model/Tag.h>
+#include <aws/sts/model/WebIdentityTokenSubjectModeType.h>
 
 #include <utility>
 
@@ -103,6 +104,79 @@ class GetWebIdentityTokenRequest : public STSRequest {
 
   ///@{
   /**
+   * <p>One or more OAuth 2.0 scope values to include in the JSON Web Token (JWT).
+   * Amazon Web Services STS copies the value exactly as you send it into the
+   * top-level <code>scope</code> claim of the token. If you don't specify
+   * <code>Scope</code>, the token doesn't include a <code>scope</code> claim.</p>
+   * <p>Separate multiple values with a single space, as defined in <a
+   * href="https://www.rfc-editor.org/rfc/rfc6749#section-3.3">RFC 6749, section
+   * 3.3</a> on the IETF website. Don't begin or end <code>Scope</code> with a space.
+   * Each scope value can contain printable ASCII characters except spaces, double
+   * quotation marks (<code>"</code>), commas (<code>,</code>), and backslashes
+   * (<code>\</code>).</p> <p>You can't repeat a scope value. Scope values are case
+   * sensitive. This means that <code>read</code> and <code>READ</code> are separate
+   * values.</p> <p>You can specify <code>Scope</code> only when
+   * <code>SubjectMode</code> is <code>OriginIdentity</code> and you request exactly
+   * one audience. To specify <code>Scope</code>, the calling principal must have
+   * permission for the <code>sts:SetWebIdentityTokenScope</code> action in addition
+   * to <code>sts:GetWebIdentityToken</code>. You can use the multivalued
+   * <code>sts:IdentityTokenScope</code> condition key in a policy to control which
+   * scope values a principal can request.</p>
+   */
+  inline const Aws::String& GetScope() const { return m_scope; }
+  inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+  template <typename ScopeT = Aws::String>
+  void SetScope(ScopeT&& value) {
+    m_scopeHasBeenSet = true;
+    m_scope = std::forward<ScopeT>(value);
+  }
+  template <typename ScopeT = Aws::String>
+  GetWebIdentityTokenRequest& WithScope(ScopeT&& value) {
+    SetScope(std::forward<ScopeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies which identity STS puts in the <code>sub</code> (subject) claim of
+   * the JSON Web Token (JWT). Valid values are <code>AWSIdentity</code> and
+   * <code>OriginIdentity</code>. If you don't specify a value, Amazon Web Services
+   * STS uses <code>AWSIdentity</code>.</p> <ul> <li> <p> <code>AWSIdentity</code> –
+   * The <code>sub</code> claim contains the ARN of the calling Amazon Web Services
+   * principal.</p> </li> <li> <p> <code>OriginIdentity</code> – The <code>sub</code>
+   * claim contains the value of the <code>aws:OriginIdentity/Subject</code> key in
+   * the trusted identity propagation context of the calling session. For example,
+   * this can identify the human user or workload on whose behalf the calling session
+   * acts. Amazon Web Services STS also adds a <code>subject_mode</code> claim to the
+   * token.</p> <p>To use <code>OriginIdentity</code>, the trusted identity
+   * propagation context of the calling session must contain the
+   * <code>aws:OriginIdentity/Subject</code> key and either the
+   * <code>aws:OriginIdentity/Issuer</code> key or the
+   * <code>aws:OriginIdentity/FederatedProviderArn</code> key. If it doesn't, or if
+   * the subject is blank, Amazon Web Services STS rejects the request with a
+   * validation error.</p> <p>Amazon Web Services STS denies the request if the
+   * subject begins with the text <code>arn:</code>, in any combination of uppercase
+   * and lowercase letters. Amazon Web Services STS also denies the request if the
+   * subject begins or ends with a space, or contains a control, format, or separator
+   * character other than a space.</p> </li> </ul> <p>You can use the
+   * <code>sts:SubjectMode</code> condition key in a policy to control which subject
+   * modes a principal can request.</p>
+   */
+  inline WebIdentityTokenSubjectModeType GetSubjectMode() const { return m_subjectMode; }
+  inline bool SubjectModeHasBeenSet() const { return m_subjectModeHasBeenSet; }
+  inline void SetSubjectMode(WebIdentityTokenSubjectModeType value) {
+    m_subjectModeHasBeenSet = true;
+    m_subjectMode = value;
+  }
+  inline GetWebIdentityTokenRequest& WithSubjectMode(WebIdentityTokenSubjectModeType value) {
+    SetSubjectMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An optional list of tags to include in the JSON Web Token (JWT). These tags
    * are added as custom claims to the JWT and can be used by the downstream service
    * for authorization decisions. </p>
@@ -133,10 +207,16 @@ class GetWebIdentityTokenRequest : public STSRequest {
 
   Aws::String m_signingAlgorithm;
 
+  Aws::String m_scope;
+
+  WebIdentityTokenSubjectModeType m_subjectMode{WebIdentityTokenSubjectModeType::NOT_SET};
+
   Aws::Vector<Tag> m_tags;
   bool m_audienceHasBeenSet = false;
   bool m_durationSecondsHasBeenSet = false;
   bool m_signingAlgorithmHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_subjectModeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

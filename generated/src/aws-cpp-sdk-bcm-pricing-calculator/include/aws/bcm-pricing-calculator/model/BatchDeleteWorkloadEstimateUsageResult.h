@@ -33,7 +33,7 @@ class BatchDeleteWorkloadEstimateUsageResult {
 
   ///@{
   /**
-   * <p> Returns the list of errors reason and the usage item keys that cannot be
+   * <p> Returns the list of errors reason and the usage item keys that can't be
    * deleted from the Workload estimate. </p>
    */
   inline const Aws::Vector<BatchDeleteWorkloadEstimateUsageError>& GetErrors() const { return m_errors; }

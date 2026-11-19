@@ -35,6 +35,16 @@ Aws::String ListCertificatesRequest::SerializePayload() const {
     payload.WithArray("CertificateKeyPairOrigins", std::move(certificateKeyPairOriginsJsonList));
   }
 
+  if (m_rootHierarchyTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rootHierarchyTypesJsonList(m_rootHierarchyTypes.size());
+    for (unsigned rootHierarchyTypesIndex = 0; rootHierarchyTypesIndex < rootHierarchyTypesJsonList.GetLength();
+         ++rootHierarchyTypesIndex) {
+      rootHierarchyTypesJsonList[rootHierarchyTypesIndex].AsString(
+          RootHierarchyTypeMapper::GetNameForRootHierarchyType(m_rootHierarchyTypes[rootHierarchyTypesIndex]));
+    }
+    payload.WithArray("RootHierarchyTypes", std::move(rootHierarchyTypesJsonList));
+  }
+
   if (m_includesHasBeenSet) {
     payload.WithObject("Includes", m_includes.Jsonize());
   }

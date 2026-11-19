@@ -41,6 +41,9 @@ Aws::String ListRevenueAttributionsRequest::SerializePayload() const {
   if (m_nextTokenHasBeenSet) {
     mapSize++;
   }
+  if (m_contextFiltersHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -87,6 +90,14 @@ Aws::String ListRevenueAttributionsRequest::SerializePayload() const {
   if (m_nextTokenHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
+  }
+
+  if (m_contextFiltersHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ContextFilters"));
+    encoder.WriteArrayStart(m_contextFilters.size());
+    for (const auto& item_0 : m_contextFilters) {
+      item_0.CborEncode(encoder);
+    }
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

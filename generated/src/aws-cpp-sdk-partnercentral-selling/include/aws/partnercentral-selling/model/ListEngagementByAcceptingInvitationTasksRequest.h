@@ -18,6 +18,11 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the
+ * <code>ListEngagementByAcceptingInvitationTasks</code> operation.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementByAcceptingInvitationTasksRequest">AWS
+ * API Reference</a></p>
  */
 class ListEngagementByAcceptingInvitationTasksRequest : public PartnerCentralSellingRequest {
  public:
@@ -35,7 +40,7 @@ class ListEngagementByAcceptingInvitationTasksRequest : public PartnerCentralSel
 
   ///@{
   /**
-   * <p> Use this parameter to control the number of items returned in each request,
+   * <p>Use this parameter to control the number of items returned in each request,
    * which can be useful for performance tuning and managing large result sets. </p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
@@ -52,7 +57,7 @@ class ListEngagementByAcceptingInvitationTasksRequest : public PartnerCentralSel
 
   ///@{
   /**
-   * <p> Use this parameter for pagination when the result set spans multiple pages.
+   * <p>Use this parameter for pagination when the result set spans multiple pages.
    * This value is obtained from the NextToken field in the response of a previous
    * call to this API. </p>
    */
@@ -91,10 +96,10 @@ class ListEngagementByAcceptingInvitationTasksRequest : public PartnerCentralSel
 
   ///@{
   /**
-   * <p> Specifies the catalog related to the request. Valid values are: </p> <ul>
-   * <li> <p> AWS: Retrieves the request from the production AWS environment. </p>
-   * </li> <li> <p> Sandbox: Retrieves the request from a sandbox environment used
-   * for testing or development purposes. </p> </li> </ul>
+   * <p>Specifies the catalog related to the request. Valid values are:</p> <ul> <li>
+   * <p> AWS: Retrieves the request from the production AWS environment. </p> </li>
+   * <li> <p> Sandbox: Retrieves the request from a sandbox environment used for
+   * testing or development purposes. </p> </li> </ul>
    */
   inline const Aws::String& GetCatalog() const { return m_catalog; }
   inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -136,8 +141,8 @@ class ListEngagementByAcceptingInvitationTasksRequest : public PartnerCentralSel
 
   ///@{
   /**
-   * <p> Filters tasks by the identifiers of the opportunities they created or are
-   * associated with. </p>
+   * <p>Filters tasks by the identifiers of the opportunities they created or are
+   * associated with.</p>
    */
   inline const Aws::Vector<Aws::String>& GetOpportunityIdentifier() const { return m_opportunityIdentifier; }
   inline bool OpportunityIdentifierHasBeenSet() const { return m_opportunityIdentifierHasBeenSet; }
@@ -161,8 +166,8 @@ class ListEngagementByAcceptingInvitationTasksRequest : public PartnerCentralSel
 
   ///@{
   /**
-   * <p> Filters tasks by the identifiers of the engagement invitations they are
-   * processing. </p>
+   * <p>Filters tasks by the identifiers of the engagement invitations they are
+   * processing.</p>
    */
   inline const Aws::Vector<Aws::String>& GetEngagementInvitationIdentifier() const { return m_engagementInvitationIdentifier; }
   inline bool EngagementInvitationIdentifierHasBeenSet() const { return m_engagementInvitationIdentifierHasBeenSet; }
@@ -186,8 +191,8 @@ class ListEngagementByAcceptingInvitationTasksRequest : public PartnerCentralSel
 
   ///@{
   /**
-   * <p> Filters tasks by their unique identifiers. Use this when you want to
-   * retrieve information about specific tasks. </p>
+   * <p>Filters tasks by their unique identifiers. Use this when you want to retrieve
+   * information about specific tasks. </p>
    */
   inline const Aws::Vector<Aws::String>& GetTaskIdentifier() const { return m_taskIdentifier; }
   inline bool TaskIdentifierHasBeenSet() const { return m_taskIdentifierHasBeenSet; }

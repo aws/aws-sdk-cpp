@@ -115,6 +115,14 @@ CertificateSummary& CertificateSummary::operator=(JsonView jsonValue) {
         CertificateKeyPairOriginMapper::GetCertificateKeyPairOriginForName(jsonValue.GetString("CertificateKeyPairOrigin"));
     m_certificateKeyPairOriginHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CertificateUsage")) {
+    m_certificateUsage = CertificateUsageMapper::GetCertificateUsageForName(jsonValue.GetString("CertificateUsage"));
+    m_certificateUsageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RootHierarchyType")) {
+    m_rootHierarchyType = RootHierarchyTypeMapper::GetRootHierarchyTypeForName(jsonValue.GetString("RootHierarchyType"));
+    m_rootHierarchyTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -220,6 +228,14 @@ JsonValue CertificateSummary::Jsonize() const {
   if (m_certificateKeyPairOriginHasBeenSet) {
     payload.WithString("CertificateKeyPairOrigin",
                        CertificateKeyPairOriginMapper::GetNameForCertificateKeyPairOrigin(m_certificateKeyPairOrigin));
+  }
+
+  if (m_certificateUsageHasBeenSet) {
+    payload.WithString("CertificateUsage", CertificateUsageMapper::GetNameForCertificateUsage(m_certificateUsage));
+  }
+
+  if (m_rootHierarchyTypeHasBeenSet) {
+    payload.WithString("RootHierarchyType", RootHierarchyTypeMapper::GetNameForRootHierarchyType(m_rootHierarchyType));
   }
 
   return payload;

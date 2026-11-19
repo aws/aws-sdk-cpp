@@ -70,6 +70,14 @@ Aws::String RequestCertificateRequest::SerializePayload() const {
     payload.WithString("ManagedBy", CertificateManagedByMapper::GetNameForCertificateManagedBy(m_managedBy));
   }
 
+  if (m_certificateUsageHasBeenSet) {
+    payload.WithString("CertificateUsage", CertificateUsageMapper::GetNameForCertificateUsage(m_certificateUsage));
+  }
+
+  if (m_rootHierarchyTypeHasBeenSet) {
+    payload.WithString("RootHierarchyType", RootHierarchyTypeMapper::GetNameForRootHierarchyType(m_rootHierarchyType));
+  }
+
   return payload.View().WriteReadable();
 }
 

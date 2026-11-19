@@ -17,6 +17,7 @@ namespace QuotaCodeMapper {
 
 static const int input_stream_inbound_event_timeout_HASH = HashingUtils::HashString("input-stream-inbound-event-timeout");
 static const int input_stream_timeout_HASH = HashingUtils::HashString("input-stream-timeout");
+static const int custom_voice_max_count_HASH = HashingUtils::HashString("custom-voice-max-count");
 
 QuotaCode GetQuotaCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ QuotaCode GetQuotaCodeForName(const Aws::String& name) {
     return QuotaCode::input_stream_inbound_event_timeout;
   } else if (hashCode == input_stream_timeout_HASH) {
     return QuotaCode::input_stream_timeout;
+  } else if (hashCode == custom_voice_max_count_HASH) {
+    return QuotaCode::custom_voice_max_count;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForQuotaCode(QuotaCode enumValue) {
       return "input-stream-inbound-event-timeout";
     case QuotaCode::input_stream_timeout:
       return "input-stream-timeout";
+    case QuotaCode::custom_voice_max_count:
+      return "custom-voice-max-count";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

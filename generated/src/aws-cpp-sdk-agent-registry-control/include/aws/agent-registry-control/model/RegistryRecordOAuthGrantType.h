@@ -10,7 +10,7 @@
 namespace Aws {
 namespace AgentRegistryControl {
 namespace Model {
-enum class RegistryRecordOAuthGrantType { NOT_SET, CLIENT_CREDENTIALS };
+enum class RegistryRecordOAuthGrantType { NOT_SET, CLIENT_CREDENTIALS, AUTHORIZATION_CODE };
 
 namespace RegistryRecordOAuthGrantTypeMapper {
 AWS_AGENTREGISTRYCONTROL_API RegistryRecordOAuthGrantType GetRegistryRecordOAuthGrantTypeForName(const Aws::String& name);

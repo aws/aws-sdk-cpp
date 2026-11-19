@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaLive {
 namespace Model {
-enum class ReservationCodec { NOT_SET, MPEG2, AVC, HEVC, AUDIO, LINK, AV1 };
+enum class ReservationCodec { NOT_SET, MPEG2, AVC, HEVC, AUDIO, LINK, AV1, JPEGXS };
 
 namespace ReservationCodecMapper {
 AWS_MEDIALIVE_API ReservationCodec GetReservationCodecForName(const Aws::String& name);

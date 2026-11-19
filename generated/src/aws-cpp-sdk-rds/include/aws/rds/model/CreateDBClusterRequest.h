@@ -193,7 +193,9 @@ class CreateDBClusterRequest : public RDSRequest {
   ///@{
   /**
    * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
-   * <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+   * <p>Valid only for DB clusters inside a VPC. Don't specify it when you set
+   * <code>EnableVPCNetworking</code> to <code>false</code>.</p> <p>Valid for Cluster
+   * Type: Aurora DB clusters and Multi-AZ DB clusters</p>
    */
   inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
   inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
@@ -218,9 +220,11 @@ class CreateDBClusterRequest : public RDSRequest {
   ///@{
   /**
    * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
-   * required to create a Multi-AZ DB cluster.</p> <p>Valid for Cluster Type: Aurora
-   * DB clusters and Multi-AZ DB clusters</p> <p>Constraints:</p> <ul> <li> <p>Must
-   * match the name of an existing DB subnet group.</p> </li> </ul> <p>Example:
+   * required to create a Multi-AZ DB cluster.</p> <p>Valid only for DB clusters
+   * inside a VPC. Don't specify it when you set <code>EnableVPCNetworking</code> to
+   * <code>false</code>.</p> <p>Valid for Cluster Type: Aurora DB clusters and
+   * Multi-AZ DB clusters</p> <p>Constraints:</p> <ul> <li> <p>Must match the name of
+   * an existing DB subnet group.</p> </li> </ul> <p>Example:
    * <code>mydbsubnetgroup</code> </p>
    */
   inline const Aws::String& GetDBSubnetGroupName() const { return m_dBSubnetGroupName; }
@@ -1064,8 +1068,9 @@ class CreateDBClusterRequest : public RDSRequest {
    * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
    * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
-   * </p> <p>Valid for Cluster Type: Aurora DB clusters only</p> <p>Valid Values:
-   * <code>IPV4 | DUAL</code> </p>
+   * </p> <p>Don't specify it when you set <code>EnableVPCNetworking</code> to
+   * <code>false</code>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+   * <p>Valid Values: <code>IPV4 | DUAL</code> </p>
    */
   inline const Aws::String& GetNetworkType() const { return m_networkType; }
   inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
@@ -1477,9 +1482,43 @@ class CreateDBClusterRequest : public RDSRequest {
 
   ///@{
   /**
+   * <p>Specifies whether VPC networking is enabled for the DB cluster. Set to
+   * <code>false</code> to create a DB cluster without VPC networking.</p> <p>A DB
+   * cluster without VPC networking needs an internet access gateway and IAM database
+   * authentication. Set <code>EnableInternetAccessGateway</code> and
+   * <code>EnableIAMDatabaseAuthentication</code> to <code>true</code>, and set
+   * <code>MasterUserAuthenticationType</code> to <code>iam-db-auth</code>.</p>
+   * <p>Default: <code>true</code>. With <code>WithExpressConfiguration</code>, the
+   * default is <code>false</code>.</p> <p>Valid for Cluster Type: Aurora PostgreSQL
+   * DB clusters only</p>
+   */
+  inline bool GetEnableVPCNetworking() const { return m_enableVPCNetworking; }
+  inline bool EnableVPCNetworkingHasBeenSet() const { return m_enableVPCNetworkingHasBeenSet; }
+  inline void SetEnableVPCNetworking(bool value) {
+    m_enableVPCNetworkingHasBeenSet = true;
+    m_enableVPCNetworking = value;
+  }
+  inline CreateDBClusterRequest& WithEnableVPCNetworking(bool value) {
+    SetEnableVPCNetworking(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies to create an Aurora DB Cluster with express configuration in
    * seconds. Express configuration provides a cluster with a writer instance and
    * feature specific values set to all other input parameters of this API. </p>
+   * <p>By default, a DB cluster with express configuration doesn't use VPC
+   * networking. You connect to it over the internet through an internet access
+   * gateway.</p> <p>To create the DB cluster in a VPC instead, set
+   * <code>EnableVPCNetworking</code> to <code>true</code> and
+   * <code>EnableInternetAccessGateway</code> to <code>false</code>. You can also
+   * specify <code>DBSubnetGroupName</code>, <code>VpcSecurityGroupIds</code>, and
+   * <code>NetworkType</code>. If you don't specify <code>DBSubnetGroupName</code>,
+   * the DB cluster uses the default DB subnet group for your Amazon Web Services
+   * account, in your default VPC.</p> <p>A DB cluster with express configuration in
+   * a VPC takes longer to become available than one without VPC networking.</p>
    * <p>Valid for Cluster Type: Aurora DB clusters</p>
    */
   inline bool GetWithExpressConfiguration() const { return m_withExpressConfiguration; }
@@ -1490,6 +1529,30 @@ class CreateDBClusterRequest : public RDSRequest {
   }
   inline CreateDBClusterRequest& WithWithExpressConfiguration(bool value) {
     SetWithExpressConfiguration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the DB cluster uses an internet access gateway. With an
+   * internet access gateway, you connect to the DB cluster over the internet without
+   * a VPC.</p> <p>Set to <code>true</code> only when you set
+   * <code>EnableVPCNetworking</code> to <code>false</code>. A DB cluster can't use
+   * VPC networking and an internet access gateway at the same time.</p> <p>Default:
+   * <code>false</code>. With <code>WithExpressConfiguration</code>, the default is
+   * <code>true</code>. To create a DB cluster with express configuration in a VPC,
+   * set this parameter to <code>false</code>.</p> <p>Valid for Cluster Type: Aurora
+   * PostgreSQL DB clusters only</p>
+   */
+  inline bool GetEnableInternetAccessGateway() const { return m_enableInternetAccessGateway; }
+  inline bool EnableInternetAccessGatewayHasBeenSet() const { return m_enableInternetAccessGatewayHasBeenSet; }
+  inline void SetEnableInternetAccessGateway(bool value) {
+    m_enableInternetAccessGatewayHasBeenSet = true;
+    m_enableInternetAccessGateway = value;
+  }
+  inline CreateDBClusterRequest& WithEnableInternetAccessGateway(bool value) {
+    SetEnableInternetAccessGateway(value);
     return *this;
   }
   ///@}
@@ -1657,7 +1720,11 @@ class CreateDBClusterRequest : public RDSRequest {
 
   MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
 
+  bool m_enableVPCNetworking{false};
+
   bool m_withExpressConfiguration{false};
+
+  bool m_enableInternetAccessGateway{false};
 
   Aws::Vector<DBClusterAssociatedRole> m_associatedRoles;
 
@@ -1720,7 +1787,9 @@ class CreateDBClusterRequest : public RDSRequest {
   bool m_engineLifecycleSupportHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
   bool m_masterUserAuthenticationTypeHasBeenSet = false;
+  bool m_enableVPCNetworkingHasBeenSet = false;
   bool m_withExpressConfigurationHasBeenSet = false;
+  bool m_enableInternetAccessGatewayHasBeenSet = false;
   bool m_associatedRolesHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };

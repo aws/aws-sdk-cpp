@@ -26,6 +26,10 @@ Payload& Payload::operator=(JsonView jsonValue) {
     m_leadInvitation = jsonValue.GetObject("LeadInvitation");
     m_leadInvitationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AccountPlanningInvitation")) {
+    m_accountPlanningInvitation = jsonValue.GetObject("AccountPlanningInvitation");
+    m_accountPlanningInvitationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue Payload::Jsonize() const {
 
   if (m_leadInvitationHasBeenSet) {
     payload.WithObject("LeadInvitation", m_leadInvitation.Jsonize());
+  }
+
+  if (m_accountPlanningInvitationHasBeenSet) {
+    payload.WithObject("AccountPlanningInvitation", m_accountPlanningInvitation.Jsonize());
   }
 
   return payload;

@@ -34,24 +34,6 @@ class PutDeploymentParameterRequest : public MarketplaceDeploymentRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the agreement.</p>
-   */
-  inline const Aws::String& GetAgreementId() const { return m_agreementId; }
-  inline bool AgreementIdHasBeenSet() const { return m_agreementIdHasBeenSet; }
-  template <typename AgreementIdT = Aws::String>
-  void SetAgreementId(AgreementIdT&& value) {
-    m_agreementIdHasBeenSet = true;
-    m_agreementId = std::forward<AgreementIdT>(value);
-  }
-  template <typename AgreementIdT = Aws::String>
-  PutDeploymentParameterRequest& WithAgreementId(AgreementIdT&& value) {
-    SetAgreementId(std::forward<AgreementIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
    * </p>
    */
@@ -71,65 +53,6 @@ class PutDeploymentParameterRequest : public MarketplaceDeploymentRequest {
 
   ///@{
   /**
-   * <p>The idempotency token for deployment parameters. A unique identifier for the
-   * new version.</p>  <p>This field is not required if you're calling using an
-   * AWS SDK. Otherwise, a <code>clientToken</code> must be provided with the
-   * request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  PutDeploymentParameterRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The deployment parameter targeted to the acceptor of an agreement for which
-   * to create the AWS Secret Manager resource.</p>
-   */
-  inline const DeploymentParameterInput& GetDeploymentParameter() const { return m_deploymentParameter; }
-  inline bool DeploymentParameterHasBeenSet() const { return m_deploymentParameterHasBeenSet; }
-  template <typename DeploymentParameterT = DeploymentParameterInput>
-  void SetDeploymentParameter(DeploymentParameterT&& value) {
-    m_deploymentParameterHasBeenSet = true;
-    m_deploymentParameter = std::forward<DeploymentParameterT>(value);
-  }
-  template <typename DeploymentParameterT = DeploymentParameterInput>
-  PutDeploymentParameterRequest& WithDeploymentParameter(DeploymentParameterT&& value) {
-    SetDeploymentParameter(std::forward<DeploymentParameterT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The date when deployment parameters expire and are scheduled for
-   * deletion.</p>
-   */
-  inline const Aws::Utils::DateTime& GetExpirationDate() const { return m_expirationDate; }
-  inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
-  template <typename ExpirationDateT = Aws::Utils::DateTime>
-  void SetExpirationDate(ExpirationDateT&& value) {
-    m_expirationDateHasBeenSet = true;
-    m_expirationDate = std::forward<ExpirationDateT>(value);
-  }
-  template <typename ExpirationDateT = Aws::Utils::DateTime>
-  PutDeploymentParameterRequest& WithExpirationDate(ExpirationDateT&& value) {
-    SetExpirationDate(std::forward<ExpirationDateT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The product for which AWS Marketplace will save secrets for the buyer’s
    * account.</p>
    */
@@ -143,6 +66,43 @@ class PutDeploymentParameterRequest : public MarketplaceDeploymentRequest {
   template <typename ProductIdT = Aws::String>
   PutDeploymentParameterRequest& WithProductId(ProductIdT&& value) {
     SetProductId(std::forward<ProductIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the agreement.</p>
+   */
+  inline const Aws::String& GetAgreementId() const { return m_agreementId; }
+  inline bool AgreementIdHasBeenSet() const { return m_agreementIdHasBeenSet; }
+  template <typename AgreementIdT = Aws::String>
+  void SetAgreementId(AgreementIdT&& value) {
+    m_agreementIdHasBeenSet = true;
+    m_agreementId = std::forward<AgreementIdT>(value);
+  }
+  template <typename AgreementIdT = Aws::String>
+  PutDeploymentParameterRequest& WithAgreementId(AgreementIdT&& value) {
+    SetAgreementId(std::forward<AgreementIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The deployment parameter targeted to the acceptor of an agreement for which
+   * to create the AWS Secrets Manager resource.</p>
+   */
+  inline const DeploymentParameterInput& GetDeploymentParameter() const { return m_deploymentParameter; }
+  inline bool DeploymentParameterHasBeenSet() const { return m_deploymentParameterHasBeenSet; }
+  template <typename DeploymentParameterT = DeploymentParameterInput>
+  void SetDeploymentParameter(DeploymentParameterT&& value) {
+    m_deploymentParameterHasBeenSet = true;
+    m_deploymentParameter = std::forward<DeploymentParameterT>(value);
+  }
+  template <typename DeploymentParameterT = DeploymentParameterInput>
+  PutDeploymentParameterRequest& WithDeploymentParameter(DeploymentParameterT&& value) {
+    SetDeploymentParameter(std::forward<DeploymentParameterT>(value));
     return *this;
   }
   ///@}
@@ -172,27 +132,67 @@ class PutDeploymentParameterRequest : public MarketplaceDeploymentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The date when deployment parameters expire and are scheduled for
+   * deletion.</p>
+   */
+  inline const Aws::Utils::DateTime& GetExpirationDate() const { return m_expirationDate; }
+  inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
+  template <typename ExpirationDateT = Aws::Utils::DateTime>
+  void SetExpirationDate(ExpirationDateT&& value) {
+    m_expirationDateHasBeenSet = true;
+    m_expirationDate = std::forward<ExpirationDateT>(value);
+  }
+  template <typename ExpirationDateT = Aws::Utils::DateTime>
+  PutDeploymentParameterRequest& WithExpirationDate(ExpirationDateT&& value) {
+    SetExpirationDate(std::forward<ExpirationDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The idempotency token for deployment parameters. A unique identifier for the
+   * new version.</p>  <p>This field is not required if you're calling using an
+   * AWS SDK. Otherwise, a <code>clientToken</code> must be provided with the
+   * request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  PutDeploymentParameterRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_agreementId;
-
   Aws::String m_catalog;
-
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
-  DeploymentParameterInput m_deploymentParameter;
-
-  Aws::Utils::DateTime m_expirationDate{};
 
   Aws::String m_productId;
 
+  Aws::String m_agreementId;
+
+  DeploymentParameterInput m_deploymentParameter;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_agreementIdHasBeenSet = false;
+
+  Aws::Utils::DateTime m_expirationDate{};
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_catalogHasBeenSet = false;
-  bool m_clientTokenHasBeenSet = true;
-  bool m_deploymentParameterHasBeenSet = false;
-  bool m_expirationDateHasBeenSet = false;
   bool m_productIdHasBeenSet = false;
+  bool m_agreementIdHasBeenSet = false;
+  bool m_deploymentParameterHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

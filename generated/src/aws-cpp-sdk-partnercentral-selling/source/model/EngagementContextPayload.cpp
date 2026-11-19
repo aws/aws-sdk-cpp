@@ -30,6 +30,10 @@ EngagementContextPayload& EngagementContextPayload::operator=(JsonView jsonValue
     m_prospectingResult = jsonValue.GetObject("ProspectingResult");
     m_prospectingResultHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CustomerAccount")) {
+    m_customerAccount = jsonValue.GetObject("CustomerAccount");
+    m_customerAccountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue EngagementContextPayload::Jsonize() const {
 
   if (m_prospectingResultHasBeenSet) {
     payload.WithObject("ProspectingResult", m_prospectingResult.Jsonize());
+  }
+
+  if (m_customerAccountHasBeenSet) {
+    payload.WithObject("CustomerAccount", m_customerAccount.Jsonize());
   }
 
   return payload;

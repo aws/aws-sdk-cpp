@@ -58,7 +58,7 @@ class BatchUpdateBillScenarioUsageModificationResult {
 
   ///@{
   /**
-   * <p> Returns the list of error reasons and usage line item IDs that could not be
+   * <p> Returns the list of error reasons and usage line item IDs that couldn't be
    * updated for the Bill Scenario. </p>
    */
   inline const Aws::Vector<BatchUpdateBillScenarioUsageModificationError>& GetErrors() const { return m_errors; }

@@ -108,7 +108,11 @@ class CreatePaymentConnectorRequest : public BedrockAgentCoreControlRequest {
   /**
    * <p>The credential provider configurations for the payment connector. These
    * configurations specify how the connector authenticates with the payment
-   * provider.</p>
+   * provider.</p> <p>For an <code>AwsBilling</code> payment connector, omit this
+   * parameter or specify an empty list. The service uses the AWS Marketplace
+   * service-linked role in your account, which must exist before you create the
+   * connector, and you must have permission to call <code>iam:GetRole</code> on
+   * it.</p>
    */
   inline const Aws::Vector<CredentialsProviderConfiguration>& GetCredentialProviderConfigurations() const {
     return m_credentialProviderConfigurations;

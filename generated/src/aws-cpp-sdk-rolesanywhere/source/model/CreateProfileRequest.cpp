@@ -67,5 +67,9 @@ Aws::String CreateProfileRequest::SerializePayload() const {
     payload.WithString("aliasName", m_aliasName);
   }
 
+  if (m_tipConfigurationHasBeenSet) {
+    payload.WithObject("tipConfiguration", m_tipConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

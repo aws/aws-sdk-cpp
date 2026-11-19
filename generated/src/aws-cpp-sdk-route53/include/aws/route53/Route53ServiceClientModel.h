@@ -26,6 +26,7 @@
 #include <aws/route53/model/ChangeTagsForResourceResult.h>
 #include <aws/route53/model/CreateCidrCollectionResult.h>
 #include <aws/route53/model/CreateHealthCheckResult.h>
+#include <aws/route53/model/CreateHealthCheckSourceResult.h>
 #include <aws/route53/model/CreateHostedZoneResult.h>
 #include <aws/route53/model/CreateKeySigningKeyResult.h>
 #include <aws/route53/model/CreateQueryLoggingConfigResult.h>
@@ -38,6 +39,7 @@
 #include <aws/route53/model/DeactivateKeySigningKeyResult.h>
 #include <aws/route53/model/DeleteCidrCollectionResult.h>
 #include <aws/route53/model/DeleteHealthCheckResult.h>
+#include <aws/route53/model/DeleteHealthCheckSourceResult.h>
 #include <aws/route53/model/DeleteHostedZoneResult.h>
 #include <aws/route53/model/DeleteKeySigningKeyResult.h>
 #include <aws/route53/model/DeleteQueryLoggingConfigResult.h>
@@ -60,6 +62,7 @@
 #include <aws/route53/model/GetHealthCheckCountResult.h>
 #include <aws/route53/model/GetHealthCheckLastFailureReasonResult.h>
 #include <aws/route53/model/GetHealthCheckResult.h>
+#include <aws/route53/model/GetHealthCheckSourceResult.h>
 #include <aws/route53/model/GetHealthCheckStatusResult.h>
 #include <aws/route53/model/GetHostedZoneCountRequest.h>
 #include <aws/route53/model/GetHostedZoneCountResult.h>
@@ -78,6 +81,9 @@
 #include <aws/route53/model/ListCidrLocationsResult.h>
 #include <aws/route53/model/ListGeoLocationsRequest.h>
 #include <aws/route53/model/ListGeoLocationsResult.h>
+#include <aws/route53/model/ListHealthCheckSourcesRequest.h>
+#include <aws/route53/model/ListHealthCheckSourcesResult.h>
+#include <aws/route53/model/ListHealthChecksBySourceResult.h>
 #include <aws/route53/model/ListHealthChecksRequest.h>
 #include <aws/route53/model/ListHealthChecksResult.h>
 #include <aws/route53/model/ListHostedZonesByNameRequest.h>
@@ -147,6 +153,7 @@ class ChangeResourceRecordSetsRequest;
 class ChangeTagsForResourceRequest;
 class CreateCidrCollectionRequest;
 class CreateHealthCheckRequest;
+class CreateHealthCheckSourceRequest;
 class CreateHostedZoneRequest;
 class CreateKeySigningKeyRequest;
 class CreateQueryLoggingConfigRequest;
@@ -159,6 +166,7 @@ class CreateVPCAssociationAuthorizationRequest;
 class DeactivateKeySigningKeyRequest;
 class DeleteCidrCollectionRequest;
 class DeleteHealthCheckRequest;
+class DeleteHealthCheckSourceRequest;
 class DeleteHostedZoneRequest;
 class DeleteKeySigningKeyRequest;
 class DeleteQueryLoggingConfigRequest;
@@ -178,6 +186,7 @@ class GetGeoLocationRequest;
 class GetHealthCheckRequest;
 class GetHealthCheckCountRequest;
 class GetHealthCheckLastFailureReasonRequest;
+class GetHealthCheckSourceRequest;
 class GetHealthCheckStatusRequest;
 class GetHostedZoneRequest;
 class GetHostedZoneCountRequest;
@@ -192,7 +201,9 @@ class ListCidrBlocksRequest;
 class ListCidrCollectionsRequest;
 class ListCidrLocationsRequest;
 class ListGeoLocationsRequest;
+class ListHealthCheckSourcesRequest;
 class ListHealthChecksRequest;
+class ListHealthChecksBySourceRequest;
 class ListHostedZonesRequest;
 class ListHostedZonesByNameRequest;
 class ListHostedZonesByVPCRequest;
@@ -224,6 +235,7 @@ typedef Aws::Utils::Outcome<ChangeResourceRecordSetsResult, Route53Error> Change
 typedef Aws::Utils::Outcome<ChangeTagsForResourceResult, Route53Error> ChangeTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<CreateCidrCollectionResult, Route53Error> CreateCidrCollectionOutcome;
 typedef Aws::Utils::Outcome<CreateHealthCheckResult, Route53Error> CreateHealthCheckOutcome;
+typedef Aws::Utils::Outcome<CreateHealthCheckSourceResult, Route53Error> CreateHealthCheckSourceOutcome;
 typedef Aws::Utils::Outcome<CreateHostedZoneResult, Route53Error> CreateHostedZoneOutcome;
 typedef Aws::Utils::Outcome<CreateKeySigningKeyResult, Route53Error> CreateKeySigningKeyOutcome;
 typedef Aws::Utils::Outcome<CreateQueryLoggingConfigResult, Route53Error> CreateQueryLoggingConfigOutcome;
@@ -236,6 +248,7 @@ typedef Aws::Utils::Outcome<CreateVPCAssociationAuthorizationResult, Route53Erro
 typedef Aws::Utils::Outcome<DeactivateKeySigningKeyResult, Route53Error> DeactivateKeySigningKeyOutcome;
 typedef Aws::Utils::Outcome<DeleteCidrCollectionResult, Route53Error> DeleteCidrCollectionOutcome;
 typedef Aws::Utils::Outcome<DeleteHealthCheckResult, Route53Error> DeleteHealthCheckOutcome;
+typedef Aws::Utils::Outcome<DeleteHealthCheckSourceResult, Route53Error> DeleteHealthCheckSourceOutcome;
 typedef Aws::Utils::Outcome<DeleteHostedZoneResult, Route53Error> DeleteHostedZoneOutcome;
 typedef Aws::Utils::Outcome<DeleteKeySigningKeyResult, Route53Error> DeleteKeySigningKeyOutcome;
 typedef Aws::Utils::Outcome<DeleteQueryLoggingConfigResult, Route53Error> DeleteQueryLoggingConfigOutcome;
@@ -255,6 +268,7 @@ typedef Aws::Utils::Outcome<GetGeoLocationResult, Route53Error> GetGeoLocationOu
 typedef Aws::Utils::Outcome<GetHealthCheckResult, Route53Error> GetHealthCheckOutcome;
 typedef Aws::Utils::Outcome<GetHealthCheckCountResult, Route53Error> GetHealthCheckCountOutcome;
 typedef Aws::Utils::Outcome<GetHealthCheckLastFailureReasonResult, Route53Error> GetHealthCheckLastFailureReasonOutcome;
+typedef Aws::Utils::Outcome<GetHealthCheckSourceResult, Route53Error> GetHealthCheckSourceOutcome;
 typedef Aws::Utils::Outcome<GetHealthCheckStatusResult, Route53Error> GetHealthCheckStatusOutcome;
 typedef Aws::Utils::Outcome<GetHostedZoneResult, Route53Error> GetHostedZoneOutcome;
 typedef Aws::Utils::Outcome<GetHostedZoneCountResult, Route53Error> GetHostedZoneCountOutcome;
@@ -269,7 +283,9 @@ typedef Aws::Utils::Outcome<ListCidrBlocksResult, Route53Error> ListCidrBlocksOu
 typedef Aws::Utils::Outcome<ListCidrCollectionsResult, Route53Error> ListCidrCollectionsOutcome;
 typedef Aws::Utils::Outcome<ListCidrLocationsResult, Route53Error> ListCidrLocationsOutcome;
 typedef Aws::Utils::Outcome<ListGeoLocationsResult, Route53Error> ListGeoLocationsOutcome;
+typedef Aws::Utils::Outcome<ListHealthCheckSourcesResult, Route53Error> ListHealthCheckSourcesOutcome;
 typedef Aws::Utils::Outcome<ListHealthChecksResult, Route53Error> ListHealthChecksOutcome;
+typedef Aws::Utils::Outcome<ListHealthChecksBySourceResult, Route53Error> ListHealthChecksBySourceOutcome;
 typedef Aws::Utils::Outcome<ListHostedZonesResult, Route53Error> ListHostedZonesOutcome;
 typedef Aws::Utils::Outcome<ListHostedZonesByNameResult, Route53Error> ListHostedZonesByNameOutcome;
 typedef Aws::Utils::Outcome<ListHostedZonesByVPCResult, Route53Error> ListHostedZonesByVPCOutcome;
@@ -301,6 +317,7 @@ typedef std::future<ChangeResourceRecordSetsOutcome> ChangeResourceRecordSetsOut
 typedef std::future<ChangeTagsForResourceOutcome> ChangeTagsForResourceOutcomeCallable;
 typedef std::future<CreateCidrCollectionOutcome> CreateCidrCollectionOutcomeCallable;
 typedef std::future<CreateHealthCheckOutcome> CreateHealthCheckOutcomeCallable;
+typedef std::future<CreateHealthCheckSourceOutcome> CreateHealthCheckSourceOutcomeCallable;
 typedef std::future<CreateHostedZoneOutcome> CreateHostedZoneOutcomeCallable;
 typedef std::future<CreateKeySigningKeyOutcome> CreateKeySigningKeyOutcomeCallable;
 typedef std::future<CreateQueryLoggingConfigOutcome> CreateQueryLoggingConfigOutcomeCallable;
@@ -313,6 +330,7 @@ typedef std::future<CreateVPCAssociationAuthorizationOutcome> CreateVPCAssociati
 typedef std::future<DeactivateKeySigningKeyOutcome> DeactivateKeySigningKeyOutcomeCallable;
 typedef std::future<DeleteCidrCollectionOutcome> DeleteCidrCollectionOutcomeCallable;
 typedef std::future<DeleteHealthCheckOutcome> DeleteHealthCheckOutcomeCallable;
+typedef std::future<DeleteHealthCheckSourceOutcome> DeleteHealthCheckSourceOutcomeCallable;
 typedef std::future<DeleteHostedZoneOutcome> DeleteHostedZoneOutcomeCallable;
 typedef std::future<DeleteKeySigningKeyOutcome> DeleteKeySigningKeyOutcomeCallable;
 typedef std::future<DeleteQueryLoggingConfigOutcome> DeleteQueryLoggingConfigOutcomeCallable;
@@ -332,6 +350,7 @@ typedef std::future<GetGeoLocationOutcome> GetGeoLocationOutcomeCallable;
 typedef std::future<GetHealthCheckOutcome> GetHealthCheckOutcomeCallable;
 typedef std::future<GetHealthCheckCountOutcome> GetHealthCheckCountOutcomeCallable;
 typedef std::future<GetHealthCheckLastFailureReasonOutcome> GetHealthCheckLastFailureReasonOutcomeCallable;
+typedef std::future<GetHealthCheckSourceOutcome> GetHealthCheckSourceOutcomeCallable;
 typedef std::future<GetHealthCheckStatusOutcome> GetHealthCheckStatusOutcomeCallable;
 typedef std::future<GetHostedZoneOutcome> GetHostedZoneOutcomeCallable;
 typedef std::future<GetHostedZoneCountOutcome> GetHostedZoneCountOutcomeCallable;
@@ -346,7 +365,9 @@ typedef std::future<ListCidrBlocksOutcome> ListCidrBlocksOutcomeCallable;
 typedef std::future<ListCidrCollectionsOutcome> ListCidrCollectionsOutcomeCallable;
 typedef std::future<ListCidrLocationsOutcome> ListCidrLocationsOutcomeCallable;
 typedef std::future<ListGeoLocationsOutcome> ListGeoLocationsOutcomeCallable;
+typedef std::future<ListHealthCheckSourcesOutcome> ListHealthCheckSourcesOutcomeCallable;
 typedef std::future<ListHealthChecksOutcome> ListHealthChecksOutcomeCallable;
+typedef std::future<ListHealthChecksBySourceOutcome> ListHealthChecksBySourceOutcomeCallable;
 typedef std::future<ListHostedZonesOutcome> ListHostedZonesOutcomeCallable;
 typedef std::future<ListHostedZonesByNameOutcome> ListHostedZonesByNameOutcomeCallable;
 typedef std::future<ListHostedZonesByVPCOutcome> ListHostedZonesByVPCOutcomeCallable;
@@ -395,6 +416,9 @@ typedef std::function<void(const Route53Client*, const Model::CreateCidrCollecti
 typedef std::function<void(const Route53Client*, const Model::CreateHealthCheckRequest&, const Model::CreateHealthCheckOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateHealthCheckResponseReceivedHandler;
+typedef std::function<void(const Route53Client*, const Model::CreateHealthCheckSourceRequest&, const Model::CreateHealthCheckSourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateHealthCheckSourceResponseReceivedHandler;
 typedef std::function<void(const Route53Client*, const Model::CreateHostedZoneRequest&, const Model::CreateHostedZoneOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateHostedZoneResponseReceivedHandler;
@@ -433,6 +457,9 @@ typedef std::function<void(const Route53Client*, const Model::DeleteCidrCollecti
 typedef std::function<void(const Route53Client*, const Model::DeleteHealthCheckRequest&, const Model::DeleteHealthCheckOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteHealthCheckResponseReceivedHandler;
+typedef std::function<void(const Route53Client*, const Model::DeleteHealthCheckSourceRequest&, const Model::DeleteHealthCheckSourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteHealthCheckSourceResponseReceivedHandler;
 typedef std::function<void(const Route53Client*, const Model::DeleteHostedZoneRequest&, const Model::DeleteHostedZoneOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteHostedZoneResponseReceivedHandler;
@@ -494,6 +521,9 @@ typedef std::function<void(const Route53Client*, const Model::GetHealthCheckLast
                            const Model::GetHealthCheckLastFailureReasonOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetHealthCheckLastFailureReasonResponseReceivedHandler;
+typedef std::function<void(const Route53Client*, const Model::GetHealthCheckSourceRequest&, const Model::GetHealthCheckSourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetHealthCheckSourceResponseReceivedHandler;
 typedef std::function<void(const Route53Client*, const Model::GetHealthCheckStatusRequest&, const Model::GetHealthCheckStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetHealthCheckStatusResponseReceivedHandler;
@@ -538,9 +568,15 @@ typedef std::function<void(const Route53Client*, const Model::ListCidrLocationsR
 typedef std::function<void(const Route53Client*, const Model::ListGeoLocationsRequest&, const Model::ListGeoLocationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListGeoLocationsResponseReceivedHandler;
+typedef std::function<void(const Route53Client*, const Model::ListHealthCheckSourcesRequest&, const Model::ListHealthCheckSourcesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListHealthCheckSourcesResponseReceivedHandler;
 typedef std::function<void(const Route53Client*, const Model::ListHealthChecksRequest&, const Model::ListHealthChecksOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListHealthChecksResponseReceivedHandler;
+typedef std::function<void(const Route53Client*, const Model::ListHealthChecksBySourceRequest&,
+                           const Model::ListHealthChecksBySourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListHealthChecksBySourceResponseReceivedHandler;
 typedef std::function<void(const Route53Client*, const Model::ListHostedZonesRequest&, const Model::ListHostedZonesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListHostedZonesResponseReceivedHandler;

@@ -40,6 +40,8 @@
 #include <aws/iam/model/ChangePasswordRequest.h>
 #include <aws/iam/model/ContextEntry.h>
 #include <aws/iam/model/ContextKeyTypeEnum.h>
+#include <aws/iam/model/ContextProvider.h>
+#include <aws/iam/model/ContextProviderKeyDefinition.h>
 #include <aws/iam/model/CreateAccessKeyRequest.h>
 #include <aws/iam/model/CreateAccessKeyResult.h>
 #include <aws/iam/model/CreateAccountAliasRequest.h>
@@ -356,6 +358,7 @@
 #include <aws/iam/model/RoleLastUsed.h>
 #include <aws/iam/model/RoleTemplateVersion.h>
 #include <aws/iam/model/RoleUsageType.h>
+#include <aws/iam/model/SAMLKeyHashEntry.h>
 #include <aws/iam/model/SAMLPrivateKey.h>
 #include <aws/iam/model/SAMLProviderListEntry.h>
 #include <aws/iam/model/SSHPublicKey.h>
@@ -407,6 +410,7 @@
 #include <aws/iam/model/UpdateDelegationRequestRequest.h>
 #include <aws/iam/model/UpdateGroupRequest.h>
 #include <aws/iam/model/UpdateLoginProfileRequest.h>
+#include <aws/iam/model/UpdateOpenIDConnectProviderRequest.h>
 #include <aws/iam/model/UpdateOpenIDConnectProviderThumbprintRequest.h>
 #include <aws/iam/model/UpdateRoleDescriptionRequest.h>
 #include <aws/iam/model/UpdateRoleDescriptionResult.h>

@@ -26,6 +26,10 @@ static const int EMAIL_MESSAGE_HASH = HashingUtils::HashString("EMAIL_MESSAGE");
 static const int EMAIL_MESSAGE_PLAIN_TEXT_HASH = HashingUtils::HashString("EMAIL_MESSAGE_PLAIN_TEXT");
 static const int EMAIL_MESSAGE_PLAIN_TEXT_REDACTED_HASH = HashingUtils::HashString("EMAIL_MESSAGE_PLAIN_TEXT_REDACTED");
 static const int EMAIL_MESSAGE_REDACTED_HASH = HashingUtils::HashString("EMAIL_MESSAGE_REDACTED");
+static const int VOICEMAIL_RECORDING_HASH = HashingUtils::HashString("VOICEMAIL_RECORDING");
+static const int VOICEMAIL_RECORDING_REDACTED_HASH = HashingUtils::HashString("VOICEMAIL_RECORDING_REDACTED");
+static const int VOICEMAIL_ANALYSIS_HASH = HashingUtils::HashString("VOICEMAIL_ANALYSIS");
+static const int VOICEMAIL_ANALYSIS_REDACTED_HASH = HashingUtils::HashString("VOICEMAIL_ANALYSIS_REDACTED");
 
 ReferenceType GetReferenceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -51,6 +55,14 @@ ReferenceType GetReferenceTypeForName(const Aws::String& name) {
     return ReferenceType::EMAIL_MESSAGE_PLAIN_TEXT_REDACTED;
   } else if (hashCode == EMAIL_MESSAGE_REDACTED_HASH) {
     return ReferenceType::EMAIL_MESSAGE_REDACTED;
+  } else if (hashCode == VOICEMAIL_RECORDING_HASH) {
+    return ReferenceType::VOICEMAIL_RECORDING;
+  } else if (hashCode == VOICEMAIL_RECORDING_REDACTED_HASH) {
+    return ReferenceType::VOICEMAIL_RECORDING_REDACTED;
+  } else if (hashCode == VOICEMAIL_ANALYSIS_HASH) {
+    return ReferenceType::VOICEMAIL_ANALYSIS;
+  } else if (hashCode == VOICEMAIL_ANALYSIS_REDACTED_HASH) {
+    return ReferenceType::VOICEMAIL_ANALYSIS_REDACTED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -87,6 +99,14 @@ Aws::String GetNameForReferenceType(ReferenceType enumValue) {
       return "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED";
     case ReferenceType::EMAIL_MESSAGE_REDACTED:
       return "EMAIL_MESSAGE_REDACTED";
+    case ReferenceType::VOICEMAIL_RECORDING:
+      return "VOICEMAIL_RECORDING";
+    case ReferenceType::VOICEMAIL_RECORDING_REDACTED:
+      return "VOICEMAIL_RECORDING_REDACTED";
+    case ReferenceType::VOICEMAIL_ANALYSIS:
+      return "VOICEMAIL_ANALYSIS";
+    case ReferenceType::VOICEMAIL_ANALYSIS_REDACTED:
+      return "VOICEMAIL_ANALYSIS_REDACTED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

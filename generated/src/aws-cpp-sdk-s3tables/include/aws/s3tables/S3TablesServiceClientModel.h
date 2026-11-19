@@ -23,6 +23,7 @@
 #include <aws/s3tables/model/CreateNamespaceResult.h>
 #include <aws/s3tables/model/CreateTableBucketResult.h>
 #include <aws/s3tables/model/CreateTableResult.h>
+#include <aws/s3tables/model/DisassociateTableReplicationResult.h>
 #include <aws/s3tables/model/GetNamespaceResult.h>
 #include <aws/s3tables/model/GetTableBucketEncryptionResult.h>
 #include <aws/s3tables/model/GetTableBucketLoggingResult.h>
@@ -107,6 +108,7 @@ class DeleteTableBucketPolicyRequest;
 class DeleteTableBucketReplicationRequest;
 class DeleteTablePolicyRequest;
 class DeleteTableReplicationRequest;
+class DisassociateTableReplicationRequest;
 class GetNamespaceRequest;
 class GetTableRequest;
 class GetTableBucketRequest;
@@ -167,6 +169,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> DeleteTableBucketPolic
 typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> DeleteTableBucketReplicationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> DeleteTablePolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3TablesError> DeleteTableReplicationOutcome;
+typedef Aws::Utils::Outcome<DisassociateTableReplicationResult, S3TablesError> DisassociateTableReplicationOutcome;
 typedef Aws::Utils::Outcome<GetNamespaceResult, S3TablesError> GetNamespaceOutcome;
 typedef Aws::Utils::Outcome<GetTableResult, S3TablesError> GetTableOutcome;
 typedef Aws::Utils::Outcome<GetTableBucketResult, S3TablesError> GetTableBucketOutcome;
@@ -227,6 +230,7 @@ typedef std::future<DeleteTableBucketPolicyOutcome> DeleteTableBucketPolicyOutco
 typedef std::future<DeleteTableBucketReplicationOutcome> DeleteTableBucketReplicationOutcomeCallable;
 typedef std::future<DeleteTablePolicyOutcome> DeleteTablePolicyOutcomeCallable;
 typedef std::future<DeleteTableReplicationOutcome> DeleteTableReplicationOutcomeCallable;
+typedef std::future<DisassociateTableReplicationOutcome> DisassociateTableReplicationOutcomeCallable;
 typedef std::future<GetNamespaceOutcome> GetNamespaceOutcomeCallable;
 typedef std::future<GetTableOutcome> GetTableOutcomeCallable;
 typedef std::future<GetTableBucketOutcome> GetTableBucketOutcomeCallable;
@@ -318,6 +322,10 @@ typedef std::function<void(const S3TablesClient*, const Model::DeleteTablePolicy
 typedef std::function<void(const S3TablesClient*, const Model::DeleteTableReplicationRequest&, const Model::DeleteTableReplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTableReplicationResponseReceivedHandler;
+typedef std::function<void(const S3TablesClient*, const Model::DisassociateTableReplicationRequest&,
+                           const Model::DisassociateTableReplicationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateTableReplicationResponseReceivedHandler;
 typedef std::function<void(const S3TablesClient*, const Model::GetNamespaceRequest&, const Model::GetNamespaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetNamespaceResponseReceivedHandler;

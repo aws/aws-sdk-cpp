@@ -23,29 +23,41 @@
 #include <aws/partnercentral-selling/model/AcceptEngagementInvitationRequest.h>
 #include <aws/partnercentral-selling/model/AssignOpportunityRequest.h>
 #include <aws/partnercentral-selling/model/AssociateOpportunityRequest.h>
+#include <aws/partnercentral-selling/model/CreateCustomerAccountRequest.h>
 #include <aws/partnercentral-selling/model/CreateEngagementContextRequest.h>
 #include <aws/partnercentral-selling/model/CreateEngagementInvitationRequest.h>
 #include <aws/partnercentral-selling/model/CreateEngagementRequest.h>
 #include <aws/partnercentral-selling/model/CreateOpportunityRequest.h>
 #include <aws/partnercentral-selling/model/CreateResourceSnapshotJobRequest.h>
 #include <aws/partnercentral-selling/model/CreateResourceSnapshotRequest.h>
+#include <aws/partnercentral-selling/model/DeleteCustomerAccountRequest.h>
 #include <aws/partnercentral-selling/model/DeleteResourceSnapshotJobRequest.h>
 #include <aws/partnercentral-selling/model/DisassociateOpportunityRequest.h>
 #include <aws/partnercentral-selling/model/GetAwsOpportunitySummaryRequest.h>
+#include <aws/partnercentral-selling/model/GetCustomerAccountBulkJobReportUrlRequest.h>
+#include <aws/partnercentral-selling/model/GetCustomerAccountBulkJobRequest.h>
+#include <aws/partnercentral-selling/model/GetCustomerAccountRequest.h>
+#include <aws/partnercentral-selling/model/GetCustomerAccountStatisticsRequest.h>
 #include <aws/partnercentral-selling/model/GetEngagementInvitationRequest.h>
 #include <aws/partnercentral-selling/model/GetEngagementRequest.h>
+#include <aws/partnercentral-selling/model/GetOpportunityBulkJobReportUrlRequest.h>
 #include <aws/partnercentral-selling/model/GetOpportunityRequest.h>
 #include <aws/partnercentral-selling/model/GetProspectingFromEngagementTaskRequest.h>
 #include <aws/partnercentral-selling/model/GetResourceSnapshotJobRequest.h>
 #include <aws/partnercentral-selling/model/GetResourceSnapshotRequest.h>
 #include <aws/partnercentral-selling/model/GetSellingSystemSettingsRequest.h>
+#include <aws/partnercentral-selling/model/ListCustomerAccountBulkJobResultsRequest.h>
+#include <aws/partnercentral-selling/model/ListCustomerAccountBulkJobsRequest.h>
 #include <aws/partnercentral-selling/model/ListEngagementByAcceptingInvitationTasksRequest.h>
 #include <aws/partnercentral-selling/model/ListEngagementFromOpportunityTasksRequest.h>
+#include <aws/partnercentral-selling/model/ListEngagementGroupsRequest.h>
 #include <aws/partnercentral-selling/model/ListEngagementInvitationsRequest.h>
 #include <aws/partnercentral-selling/model/ListEngagementMembersRequest.h>
 #include <aws/partnercentral-selling/model/ListEngagementResourceAssociationsRequest.h>
 #include <aws/partnercentral-selling/model/ListEngagementsRequest.h>
 #include <aws/partnercentral-selling/model/ListOpportunitiesRequest.h>
+#include <aws/partnercentral-selling/model/ListOpportunityBulkJobResultsRequest.h>
+#include <aws/partnercentral-selling/model/ListOpportunityBulkJobsRequest.h>
 #include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksRequest.h>
 #include <aws/partnercentral-selling/model/ListProspectingFromEngagementTasksRequest.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsRequest.h>
@@ -54,8 +66,13 @@
 #include <aws/partnercentral-selling/model/ListTagsForResourceRequest.h>
 #include <aws/partnercentral-selling/model/PutSellingSystemSettingsRequest.h>
 #include <aws/partnercentral-selling/model/RejectEngagementInvitationRequest.h>
+#include <aws/partnercentral-selling/model/SearchCustomerAccountsRequest.h>
+#include <aws/partnercentral-selling/model/SearchEngagementsRequest.h>
+#include <aws/partnercentral-selling/model/SearchOpportunitiesRequest.h>
+#include <aws/partnercentral-selling/model/StartCustomerAccountBulkJobRequest.h>
 #include <aws/partnercentral-selling/model/StartEngagementByAcceptingInvitationTaskRequest.h>
 #include <aws/partnercentral-selling/model/StartEngagementFromOpportunityTaskRequest.h>
+#include <aws/partnercentral-selling/model/StartOpportunityBulkJobRequest.h>
 #include <aws/partnercentral-selling/model/StartOpportunityFromEngagementTaskRequest.h>
 #include <aws/partnercentral-selling/model/StartProspectingFromEngagementTaskRequest.h>
 #include <aws/partnercentral-selling/model/StartResourceSnapshotJobRequest.h>
@@ -63,6 +80,7 @@
 #include <aws/partnercentral-selling/model/SubmitOpportunityRequest.h>
 #include <aws/partnercentral-selling/model/TagResourceRequest.h>
 #include <aws/partnercentral-selling/model/UntagResourceRequest.h>
+#include <aws/partnercentral-selling/model/UpdateCustomerAccountRequest.h>
 #include <aws/partnercentral-selling/model/UpdateEngagementContextRequest.h>
 #include <aws/partnercentral-selling/model/UpdateOpportunityRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -245,6 +263,12 @@ AssociateOpportunityOutcome PartnerCentralSellingClient::AssociateOpportunity(co
                             : AssociateOpportunityOutcome(std::move(result.GetError()));
 }
 
+CreateCustomerAccountOutcome PartnerCentralSellingClient::CreateCustomerAccount(const CreateCustomerAccountRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomerAccountOutcome(result.GetResultWithOwnership())
+                            : CreateCustomerAccountOutcome(std::move(result.GetError()));
+}
+
 CreateEngagementOutcome PartnerCentralSellingClient::CreateEngagement(const CreateEngagementRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateEngagementOutcome(result.GetResultWithOwnership())
@@ -283,6 +307,12 @@ CreateResourceSnapshotJobOutcome PartnerCentralSellingClient::CreateResourceSnap
                             : CreateResourceSnapshotJobOutcome(std::move(result.GetError()));
 }
 
+DeleteCustomerAccountOutcome PartnerCentralSellingClient::DeleteCustomerAccount(const DeleteCustomerAccountRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCustomerAccountOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomerAccountOutcome(std::move(result.GetError()));
+}
+
 DeleteResourceSnapshotJobOutcome PartnerCentralSellingClient::DeleteResourceSnapshotJob(
     const DeleteResourceSnapshotJobRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -303,6 +333,33 @@ GetAwsOpportunitySummaryOutcome PartnerCentralSellingClient::GetAwsOpportunitySu
                             : GetAwsOpportunitySummaryOutcome(std::move(result.GetError()));
 }
 
+GetCustomerAccountOutcome PartnerCentralSellingClient::GetCustomerAccount(const GetCustomerAccountRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCustomerAccountOutcome(result.GetResultWithOwnership())
+                            : GetCustomerAccountOutcome(std::move(result.GetError()));
+}
+
+GetCustomerAccountBulkJobOutcome PartnerCentralSellingClient::GetCustomerAccountBulkJob(
+    const GetCustomerAccountBulkJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCustomerAccountBulkJobOutcome(result.GetResultWithOwnership())
+                            : GetCustomerAccountBulkJobOutcome(std::move(result.GetError()));
+}
+
+GetCustomerAccountBulkJobReportUrlOutcome PartnerCentralSellingClient::GetCustomerAccountBulkJobReportUrl(
+    const GetCustomerAccountBulkJobReportUrlRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCustomerAccountBulkJobReportUrlOutcome(result.GetResultWithOwnership())
+                            : GetCustomerAccountBulkJobReportUrlOutcome(std::move(result.GetError()));
+}
+
+GetCustomerAccountStatisticsOutcome PartnerCentralSellingClient::GetCustomerAccountStatistics(
+    const GetCustomerAccountStatisticsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCustomerAccountStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetCustomerAccountStatisticsOutcome(std::move(result.GetError()));
+}
+
 GetEngagementOutcome PartnerCentralSellingClient::GetEngagement(const GetEngagementRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetEngagementOutcome(result.GetResultWithOwnership()) : GetEngagementOutcome(std::move(result.GetError()));
@@ -317,6 +374,13 @@ GetEngagementInvitationOutcome PartnerCentralSellingClient::GetEngagementInvitat
 GetOpportunityOutcome PartnerCentralSellingClient::GetOpportunity(const GetOpportunityRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetOpportunityOutcome(result.GetResultWithOwnership()) : GetOpportunityOutcome(std::move(result.GetError()));
+}
+
+GetOpportunityBulkJobReportUrlOutcome PartnerCentralSellingClient::GetOpportunityBulkJobReportUrl(
+    const GetOpportunityBulkJobReportUrlRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOpportunityBulkJobReportUrlOutcome(result.GetResultWithOwnership())
+                            : GetOpportunityBulkJobReportUrlOutcome(std::move(result.GetError()));
 }
 
 GetProspectingFromEngagementTaskOutcome PartnerCentralSellingClient::GetProspectingFromEngagementTask(
@@ -345,6 +409,20 @@ GetSellingSystemSettingsOutcome PartnerCentralSellingClient::GetSellingSystemSet
                             : GetSellingSystemSettingsOutcome(std::move(result.GetError()));
 }
 
+ListCustomerAccountBulkJobResultsOutcome PartnerCentralSellingClient::ListCustomerAccountBulkJobResults(
+    const ListCustomerAccountBulkJobResultsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomerAccountBulkJobResultsOutcome(result.GetResultWithOwnership())
+                            : ListCustomerAccountBulkJobResultsOutcome(std::move(result.GetError()));
+}
+
+ListCustomerAccountBulkJobsOutcome PartnerCentralSellingClient::ListCustomerAccountBulkJobs(
+    const ListCustomerAccountBulkJobsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomerAccountBulkJobsOutcome(result.GetResultWithOwnership())
+                            : ListCustomerAccountBulkJobsOutcome(std::move(result.GetError()));
+}
+
 ListEngagementByAcceptingInvitationTasksOutcome PartnerCentralSellingClient::ListEngagementByAcceptingInvitationTasks(
     const ListEngagementByAcceptingInvitationTasksRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -357,6 +435,12 @@ ListEngagementFromOpportunityTasksOutcome PartnerCentralSellingClient::ListEngag
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListEngagementFromOpportunityTasksOutcome(result.GetResultWithOwnership())
                             : ListEngagementFromOpportunityTasksOutcome(std::move(result.GetError()));
+}
+
+ListEngagementGroupsOutcome PartnerCentralSellingClient::ListEngagementGroups(const ListEngagementGroupsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEngagementGroupsOutcome(result.GetResultWithOwnership())
+                            : ListEngagementGroupsOutcome(std::move(result.GetError()));
 }
 
 ListEngagementInvitationsOutcome PartnerCentralSellingClient::ListEngagementInvitations(
@@ -389,6 +473,19 @@ ListOpportunitiesOutcome PartnerCentralSellingClient::ListOpportunities(const Li
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListOpportunitiesOutcome(result.GetResultWithOwnership())
                             : ListOpportunitiesOutcome(std::move(result.GetError()));
+}
+
+ListOpportunityBulkJobResultsOutcome PartnerCentralSellingClient::ListOpportunityBulkJobResults(
+    const ListOpportunityBulkJobResultsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOpportunityBulkJobResultsOutcome(result.GetResultWithOwnership())
+                            : ListOpportunityBulkJobResultsOutcome(std::move(result.GetError()));
+}
+
+ListOpportunityBulkJobsOutcome PartnerCentralSellingClient::ListOpportunityBulkJobs(const ListOpportunityBulkJobsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOpportunityBulkJobsOutcome(result.GetResultWithOwnership())
+                            : ListOpportunityBulkJobsOutcome(std::move(result.GetError()));
 }
 
 ListOpportunityFromEngagementTasksOutcome PartnerCentralSellingClient::ListOpportunityFromEngagementTasks(
@@ -443,6 +540,31 @@ RejectEngagementInvitationOutcome PartnerCentralSellingClient::RejectEngagementI
                             : RejectEngagementInvitationOutcome(std::move(result.GetError()));
 }
 
+SearchCustomerAccountsOutcome PartnerCentralSellingClient::SearchCustomerAccounts(const SearchCustomerAccountsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchCustomerAccountsOutcome(result.GetResultWithOwnership())
+                            : SearchCustomerAccountsOutcome(std::move(result.GetError()));
+}
+
+SearchEngagementsOutcome PartnerCentralSellingClient::SearchEngagements(const SearchEngagementsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchEngagementsOutcome(result.GetResultWithOwnership())
+                            : SearchEngagementsOutcome(std::move(result.GetError()));
+}
+
+SearchOpportunitiesOutcome PartnerCentralSellingClient::SearchOpportunities(const SearchOpportunitiesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchOpportunitiesOutcome(result.GetResultWithOwnership())
+                            : SearchOpportunitiesOutcome(std::move(result.GetError()));
+}
+
+StartCustomerAccountBulkJobOutcome PartnerCentralSellingClient::StartCustomerAccountBulkJob(
+    const StartCustomerAccountBulkJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCustomerAccountBulkJobOutcome(result.GetResultWithOwnership())
+                            : StartCustomerAccountBulkJobOutcome(std::move(result.GetError()));
+}
+
 StartEngagementByAcceptingInvitationTaskOutcome PartnerCentralSellingClient::StartEngagementByAcceptingInvitationTask(
     const StartEngagementByAcceptingInvitationTaskRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -455,6 +577,12 @@ StartEngagementFromOpportunityTaskOutcome PartnerCentralSellingClient::StartEnga
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartEngagementFromOpportunityTaskOutcome(result.GetResultWithOwnership())
                             : StartEngagementFromOpportunityTaskOutcome(std::move(result.GetError()));
+}
+
+StartOpportunityBulkJobOutcome PartnerCentralSellingClient::StartOpportunityBulkJob(const StartOpportunityBulkJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartOpportunityBulkJobOutcome(result.GetResultWithOwnership())
+                            : StartOpportunityBulkJobOutcome(std::move(result.GetError()));
 }
 
 StartOpportunityFromEngagementTaskOutcome PartnerCentralSellingClient::StartOpportunityFromEngagementTask(
@@ -498,6 +626,12 @@ TagResourceOutcome PartnerCentralSellingClient::TagResource(const TagResourceReq
 UntagResourceOutcome PartnerCentralSellingClient::UntagResource(const UntagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateCustomerAccountOutcome PartnerCentralSellingClient::UpdateCustomerAccount(const UpdateCustomerAccountRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCustomerAccountOutcome(result.GetResultWithOwnership())
+                            : UpdateCustomerAccountOutcome(std::move(result.GetError()));
 }
 
 UpdateEngagementContextOutcome PartnerCentralSellingClient::UpdateEngagementContext(const UpdateEngagementContextRequest& request) const {

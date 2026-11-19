@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
 #include <aws/rtbfabric/model/ConnectivityType.h>
+#include <aws/rtbfabric/model/ErrorDetail.h>
 #include <aws/rtbfabric/model/LinkAttributes.h>
 #include <aws/rtbfabric/model/LinkDirection.h>
 #include <aws/rtbfabric/model/LinkLogSettings.h>
@@ -228,6 +229,30 @@ class CreateLinkResult {
 
   ///@{
   /**
+   * <p>The causes of the failure, such as a deleted subnet. Present only when the
+   * resource has failed.</p>
+   */
+  inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const { return m_errorDetails; }
+  template <typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+  void SetErrorDetails(ErrorDetailsT&& value) {
+    m_errorDetailsHasBeenSet = true;
+    m_errorDetails = std::forward<ErrorDetailsT>(value);
+  }
+  template <typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+  CreateLinkResult& WithErrorDetails(ErrorDetailsT&& value) {
+    SetErrorDetails(std::forward<ErrorDetailsT>(value));
+    return *this;
+  }
+  template <typename ErrorDetailsT = ErrorDetail>
+  CreateLinkResult& AddErrorDetails(ErrorDetailsT&& value) {
+    m_errorDetailsHasBeenSet = true;
+    m_errorDetails.emplace_back(std::forward<ErrorDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique identifier of the link.</p>
    */
   inline const Aws::String& GetLinkId() const { return m_linkId; }
@@ -299,6 +324,8 @@ class CreateLinkResult {
 
   ConnectivityType m_connectivityType{ConnectivityType::NOT_SET};
 
+  Aws::Vector<ErrorDetail> m_errorDetails;
+
   Aws::String m_linkId;
 
   Aws::String m_customerProvidedId;
@@ -316,6 +343,7 @@ class CreateLinkResult {
   bool m_attributesHasBeenSet = false;
   bool m_logSettingsHasBeenSet = false;
   bool m_connectivityTypeHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
   bool m_linkIdHasBeenSet = false;
   bool m_customerProvidedIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

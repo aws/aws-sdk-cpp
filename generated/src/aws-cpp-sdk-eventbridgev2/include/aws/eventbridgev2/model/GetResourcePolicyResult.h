@@ -36,7 +36,9 @@ class GetResourcePolicyResult {
   AWS_EVENTBRIDGEV2_API GetResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
+   */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   template <typename ResourceArnT = Aws::String>
   void SetResourceArn(ResourceArnT&& value) {
@@ -51,7 +53,10 @@ class GetResourcePolicyResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>A resource policy document, as a JSON string. The maximum size is 389,120
+   * bytes of UTF-8; the byte limit is enforced by the service.</p>
+   */
   inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
   template <typename PolicyDocumentT = Aws::String>
   void SetPolicyDocument(PolicyDocumentT&& value) {
@@ -66,7 +71,11 @@ class GetResourcePolicyResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Name of a policy attached to a resource. Valid values: "default" (the
+   * customer-managed policy) and "AWS_RAM" (managed exclusively by AWS Resource
+   * Access Manager). Any other value is rejected.</p>
+   */
   inline const Aws::String& GetPolicyName() const { return m_policyName; }
   template <typename PolicyNameT = Aws::String>
   void SetPolicyName(PolicyNameT&& value) {
@@ -81,7 +90,10 @@ class GetResourcePolicyResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Revision ID of a resource policy. A new revision ID is generated on every
+   * successful write.</p>
+   */
   inline const Aws::String& GetRevisionId() const { return m_revisionId; }
   template <typename RevisionIdT = Aws::String>
   void SetRevisionId(RevisionIdT&& value) {

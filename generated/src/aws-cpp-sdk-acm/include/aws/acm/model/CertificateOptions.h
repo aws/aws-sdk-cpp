@@ -23,8 +23,9 @@ namespace Model {
 /**
  * <p>Structure that contains options for your certificate. You can use this
  * structure to change the domain validation method or specify whether to export
- * your certificate.</p> <p>All public certificates are recorded in a certificate
- * transparency log. For general information, see <a
+ * your certificate.</p> <p>ACM records all public certificates other than Amazon
+ * N2 certificates in a certificate transparency log. For general information, see
+ * <a
  * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
  * Transparency Logging</a>.</p> <p>You can export public ACM certificates to use
  * with Amazon Web Services services as well as outside Amazon Web Services Cloud.

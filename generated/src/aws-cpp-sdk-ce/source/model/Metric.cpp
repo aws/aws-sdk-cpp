@@ -22,6 +22,11 @@ static const int NET_UNBLENDED_COST_HASH = HashingUtils::HashString("NET_UNBLEND
 static const int NET_AMORTIZED_COST_HASH = HashingUtils::HashString("NET_AMORTIZED_COST");
 static const int USAGE_QUANTITY_HASH = HashingUtils::HashString("USAGE_QUANTITY");
 static const int NORMALIZED_USAGE_AMOUNT_HASH = HashingUtils::HashString("NORMALIZED_USAGE_AMOUNT");
+static const int LIST_COST_HASH = HashingUtils::HashString("LIST_COST");
+static const int CONTRACTED_COST_HASH = HashingUtils::HashString("CONTRACTED_COST");
+static const int BILLED_COST_HASH = HashingUtils::HashString("BILLED_COST");
+static const int PUBLIC_EQUIVALENT_BILLED_COST_HASH = HashingUtils::HashString("PUBLIC_EQUIVALENT_BILLED_COST");
+static const int PUBLIC_ON_DEMAND_COST_HASH = HashingUtils::HashString("PUBLIC_ON_DEMAND_COST");
 
 Metric GetMetricForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +44,16 @@ Metric GetMetricForName(const Aws::String& name) {
     return Metric::USAGE_QUANTITY;
   } else if (hashCode == NORMALIZED_USAGE_AMOUNT_HASH) {
     return Metric::NORMALIZED_USAGE_AMOUNT;
+  } else if (hashCode == LIST_COST_HASH) {
+    return Metric::LIST_COST;
+  } else if (hashCode == CONTRACTED_COST_HASH) {
+    return Metric::CONTRACTED_COST;
+  } else if (hashCode == BILLED_COST_HASH) {
+    return Metric::BILLED_COST;
+  } else if (hashCode == PUBLIC_EQUIVALENT_BILLED_COST_HASH) {
+    return Metric::PUBLIC_EQUIVALENT_BILLED_COST;
+  } else if (hashCode == PUBLIC_ON_DEMAND_COST_HASH) {
+    return Metric::PUBLIC_ON_DEMAND_COST;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +82,16 @@ Aws::String GetNameForMetric(Metric enumValue) {
       return "USAGE_QUANTITY";
     case Metric::NORMALIZED_USAGE_AMOUNT:
       return "NORMALIZED_USAGE_AMOUNT";
+    case Metric::LIST_COST:
+      return "LIST_COST";
+    case Metric::CONTRACTED_COST:
+      return "CONTRACTED_COST";
+    case Metric::BILLED_COST:
+      return "BILLED_COST";
+    case Metric::PUBLIC_EQUIVALENT_BILLED_COST:
+      return "PUBLIC_EQUIVALENT_BILLED_COST";
+    case Metric::PUBLIC_ON_DEMAND_COST:
+      return "PUBLIC_ON_DEMAND_COST";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

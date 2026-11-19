@@ -445,6 +445,11 @@ Stack& Stack::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& deco
                 m_contentRedirectionHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "WebAuthnRedirection") {
+                m_webAuthnRedirection = WebAuthnRedirection(decoder);
+                m_webAuthnRedirectionHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "AgentAccessConfig") {
                 m_agentAccessConfig = AgentAccessConfig(decoder);
                 m_agentAccessConfigHasBeenSet = true;
@@ -899,6 +904,11 @@ Stack& Stack::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& deco
               m_contentRedirectionHasBeenSet = true;
             }
 
+            else if (initialKeyStr == "WebAuthnRedirection") {
+              m_webAuthnRedirection = WebAuthnRedirection(decoder);
+              m_webAuthnRedirectionHasBeenSet = true;
+            }
+
             else if (initialKeyStr == "AgentAccessConfig") {
               m_agentAccessConfig = AgentAccessConfig(decoder);
               m_agentAccessConfigHasBeenSet = true;
@@ -970,6 +980,9 @@ void Stack::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     mapSize++;
   }
   if (m_contentRedirectionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_webAuthnRedirectionHasBeenSet) {
     mapSize++;
   }
   if (m_agentAccessConfigHasBeenSet) {
@@ -1070,6 +1083,11 @@ void Stack::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_contentRedirectionHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("ContentRedirection"));
     m_contentRedirection.CborEncode(encoder);
+  }
+
+  if (m_webAuthnRedirectionHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("WebAuthnRedirection"));
+    m_webAuthnRedirection.CborEncode(encoder);
   }
 
   if (m_agentAccessConfigHasBeenSet) {

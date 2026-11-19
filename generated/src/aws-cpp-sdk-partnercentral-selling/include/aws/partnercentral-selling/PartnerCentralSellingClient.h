@@ -236,6 +236,38 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
+   * <p>Use <code>CreateCustomerAccount</code> to map a customer account from your
+   * records to an AWS customer. Provide details about the customer, such as the
+   * company name and website. AWS then matches the account to a customer and adds
+   * enrichment information about it.</p> <p>Matching runs asynchronously. The
+   * response returns the new customer account with a status of <code>PENDING</code>.
+   * Use <code>GetCustomerAccount</code> to check the result and read the enrichment
+   * information.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateCustomerAccount">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCustomerAccountOutcome CreateCustomerAccount(const Model::CreateCustomerAccountRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCustomerAccount that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateCustomerAccountRequestT = Model::CreateCustomerAccountRequest>
+  Model::CreateCustomerAccountOutcomeCallable CreateCustomerAccountCallable(const CreateCustomerAccountRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::CreateCustomerAccount, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCustomerAccount that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateCustomerAccountRequestT = Model::CreateCustomerAccountRequest>
+  void CreateCustomerAccountAsync(const CreateCustomerAccountRequestT& request, const CreateCustomerAccountResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::CreateCustomerAccount, request, handler, context);
+  }
+
+  /**
    * <p>The <code>CreateEngagement</code> action allows you to create an
    * <code>Engagement</code>, which serves as a collaborative space between different
    * parties such as AWS Partners and AWS Sellers. This action automatically adds the
@@ -296,8 +328,8 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
-   * <p> This action creates an invitation from a sender to a single receiver to join
-   * an engagement. </p><p><h3>See Also:</h3>   <a
+   * <p>This action creates an invitation from a sender to a single receiver to join
+   * an engagement.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementInvitation">AWS
    * API Reference</a></p>
    */
@@ -366,7 +398,7 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
-   * <p> This action allows you to create an immutable snapshot of a specific
+   * <p>This action allows you to create an immutable snapshot of a specific
    * resource, such as an opportunity, within the context of an engagement. The
    * snapshot captures a subset of the resource's data based on the schema defined by
    * the provided template.</p><p><h3>See Also:</h3>   <a
@@ -428,8 +460,36 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
-   * <p> Use this action to deletes a previously created resource snapshot job. The
-   * job must be in a stopped state before it can be deleted. </p><p><h3>See
+   * <p>Use <code>DeleteCustomerAccount</code> to delete a customer account. This
+   * operation is idempotent. Deleting a customer account that was already deleted
+   * succeeds.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DeleteCustomerAccount">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCustomerAccountOutcome DeleteCustomerAccount(const Model::DeleteCustomerAccountRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCustomerAccount that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteCustomerAccountRequestT = Model::DeleteCustomerAccountRequest>
+  Model::DeleteCustomerAccountOutcomeCallable DeleteCustomerAccountCallable(const DeleteCustomerAccountRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::DeleteCustomerAccount, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCustomerAccount that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteCustomerAccountRequestT = Model::DeleteCustomerAccountRequest>
+  void DeleteCustomerAccountAsync(const DeleteCustomerAccountRequestT& request, const DeleteCustomerAccountResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::DeleteCustomerAccount, request, handler, context);
+  }
+
+  /**
+   * <p>Use this action to deletes a previously created resource snapshot job. The
+   * job must be in a stopped state before it can be deleted.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DeleteResourceSnapshotJob">AWS
    * API Reference</a></p>
@@ -526,6 +586,131 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
+   * <p>Use <code>GetCustomerAccount</code> to retrieve the details of a customer
+   * account, including the customer information that you provided, the enrichment
+   * status, and the enrichment information that AWS provides when the status is
+   * <code>ENRICHED</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetCustomerAccount">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCustomerAccountOutcome GetCustomerAccount(const Model::GetCustomerAccountRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCustomerAccount that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetCustomerAccountRequestT = Model::GetCustomerAccountRequest>
+  Model::GetCustomerAccountOutcomeCallable GetCustomerAccountCallable(const GetCustomerAccountRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::GetCustomerAccount, request);
+  }
+
+  /**
+   * An Async wrapper for GetCustomerAccount that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetCustomerAccountRequestT = Model::GetCustomerAccountRequest>
+  void GetCustomerAccountAsync(const GetCustomerAccountRequestT& request, const GetCustomerAccountResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::GetCustomerAccount, request, handler, context);
+  }
+
+  /**
+   * <p>Use <code>GetCustomerAccountBulkJob</code> to retrieve the status and record
+   * counts of a bulk job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetCustomerAccountBulkJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCustomerAccountBulkJobOutcome GetCustomerAccountBulkJob(const Model::GetCustomerAccountBulkJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCustomerAccountBulkJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetCustomerAccountBulkJobRequestT = Model::GetCustomerAccountBulkJobRequest>
+  Model::GetCustomerAccountBulkJobOutcomeCallable GetCustomerAccountBulkJobCallable(
+      const GetCustomerAccountBulkJobRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::GetCustomerAccountBulkJob, request);
+  }
+
+  /**
+   * An Async wrapper for GetCustomerAccountBulkJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetCustomerAccountBulkJobRequestT = Model::GetCustomerAccountBulkJobRequest>
+  void GetCustomerAccountBulkJobAsync(const GetCustomerAccountBulkJobRequestT& request,
+                                      const GetCustomerAccountBulkJobResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::GetCustomerAccountBulkJob, request, handler, context);
+  }
+
+  /**
+   * <p>Use <code>GetCustomerAccountBulkJobReportUrl</code> to get a temporary URL
+   * for downloading the report of a bulk job, such as the list of records that
+   * failed. A report is available only after the job is <code>COMPLETED</code> or
+   * <code>FAILED</code>. For a job that is still running, the request fails with a
+   * <code>ConflictException</code>.</p> <p>The report is generated on request. If
+   * <code>ReportStatus</code> is not <code>AVAILABLE</code>, call the operation
+   * again later.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetCustomerAccountBulkJobReportUrl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCustomerAccountBulkJobReportUrlOutcome GetCustomerAccountBulkJobReportUrl(
+      const Model::GetCustomerAccountBulkJobReportUrlRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCustomerAccountBulkJobReportUrl that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetCustomerAccountBulkJobReportUrlRequestT = Model::GetCustomerAccountBulkJobReportUrlRequest>
+  Model::GetCustomerAccountBulkJobReportUrlOutcomeCallable GetCustomerAccountBulkJobReportUrlCallable(
+      const GetCustomerAccountBulkJobReportUrlRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::GetCustomerAccountBulkJobReportUrl, request);
+  }
+
+  /**
+   * An Async wrapper for GetCustomerAccountBulkJobReportUrl that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetCustomerAccountBulkJobReportUrlRequestT = Model::GetCustomerAccountBulkJobReportUrlRequest>
+  void GetCustomerAccountBulkJobReportUrlAsync(const GetCustomerAccountBulkJobReportUrlRequestT& request,
+                                               const GetCustomerAccountBulkJobReportUrlResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::GetCustomerAccountBulkJobReportUrl, request, handler, context);
+  }
+
+  /**
+   * <p>Use <code>GetCustomerAccountStatistics</code> to count your customer accounts
+   * and group them by fields such as industry, geography, or enrichment status. You
+   * can use the same filters as <code>SearchCustomerAccounts</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetCustomerAccountStatistics">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCustomerAccountStatisticsOutcome GetCustomerAccountStatistics(
+      const Model::GetCustomerAccountStatisticsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCustomerAccountStatistics that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetCustomerAccountStatisticsRequestT = Model::GetCustomerAccountStatisticsRequest>
+  Model::GetCustomerAccountStatisticsOutcomeCallable GetCustomerAccountStatisticsCallable(
+      const GetCustomerAccountStatisticsRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::GetCustomerAccountStatistics, request);
+  }
+
+  /**
+   * An Async wrapper for GetCustomerAccountStatistics that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetCustomerAccountStatisticsRequestT = Model::GetCustomerAccountStatisticsRequest>
+  void GetCustomerAccountStatisticsAsync(const GetCustomerAccountStatisticsRequestT& request,
+                                         const GetCustomerAccountStatisticsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::GetCustomerAccountStatistics, request, handler, context);
+  }
+
+  /**
    * <p>Use this action to retrieve the engagement record for a given
    * <code>EngagementIdentifier</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetEngagement">AWS
@@ -608,6 +793,39 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   void GetOpportunityAsync(const GetOpportunityRequestT& request, const GetOpportunityResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PartnerCentralSellingClient::GetOpportunity, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the status of the failed-records report for a finished opportunity bulk
+   * job and, when the report is ready, a temporary URL to download it.</p> <p>A
+   * report is available only after the job is <code>COMPLETED</code> or
+   * <code>FAILED</code>. The URL expires after 15 minutes, and the report expires
+   * after about 7 days.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetOpportunityBulkJobReportUrl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetOpportunityBulkJobReportUrlOutcome GetOpportunityBulkJobReportUrl(
+      const Model::GetOpportunityBulkJobReportUrlRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetOpportunityBulkJobReportUrl that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetOpportunityBulkJobReportUrlRequestT = Model::GetOpportunityBulkJobReportUrlRequest>
+  Model::GetOpportunityBulkJobReportUrlOutcomeCallable GetOpportunityBulkJobReportUrlCallable(
+      const GetOpportunityBulkJobReportUrlRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::GetOpportunityBulkJobReportUrl, request);
+  }
+
+  /**
+   * An Async wrapper for GetOpportunityBulkJobReportUrl that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetOpportunityBulkJobReportUrlRequestT = Model::GetOpportunityBulkJobReportUrlRequest>
+  void GetOpportunityBulkJobReportUrlAsync(const GetOpportunityBulkJobReportUrlRequestT& request,
+                                           const GetOpportunityBulkJobReportUrlResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::GetOpportunityBulkJobReportUrl, request, handler, context);
   }
 
   /**
@@ -726,7 +944,72 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
-   * <p> Lists all in-progress, completed, or failed
+   * <p>Use <code>ListCustomerAccountBulkJobResults</code> to list the outcome of
+   * each record in a bulk job. You can filter the results to records that succeeded
+   * or failed. A job that failed before it processed any records returns an empty
+   * list.</p> <p>Results are paginated. Use <code>NextToken</code> to retrieve
+   * additional results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListCustomerAccountBulkJobResults">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCustomerAccountBulkJobResultsOutcome ListCustomerAccountBulkJobResults(
+      const Model::ListCustomerAccountBulkJobResultsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListCustomerAccountBulkJobResults that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListCustomerAccountBulkJobResultsRequestT = Model::ListCustomerAccountBulkJobResultsRequest>
+  Model::ListCustomerAccountBulkJobResultsOutcomeCallable ListCustomerAccountBulkJobResultsCallable(
+      const ListCustomerAccountBulkJobResultsRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::ListCustomerAccountBulkJobResults, request);
+  }
+
+  /**
+   * An Async wrapper for ListCustomerAccountBulkJobResults that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListCustomerAccountBulkJobResultsRequestT = Model::ListCustomerAccountBulkJobResultsRequest>
+  void ListCustomerAccountBulkJobResultsAsync(const ListCustomerAccountBulkJobResultsRequestT& request,
+                                              const ListCustomerAccountBulkJobResultsResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::ListCustomerAccountBulkJobResults, request, handler, context);
+  }
+
+  /**
+   * <p>Use <code>ListCustomerAccountBulkJobs</code> to list the bulk jobs in the
+   * specified catalog. You can filter the results by job identifier or status.</p>
+   * <p>Results are paginated. Use <code>NextToken</code> to retrieve additional
+   * results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListCustomerAccountBulkJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCustomerAccountBulkJobsOutcome ListCustomerAccountBulkJobs(
+      const Model::ListCustomerAccountBulkJobsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListCustomerAccountBulkJobs that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListCustomerAccountBulkJobsRequestT = Model::ListCustomerAccountBulkJobsRequest>
+  Model::ListCustomerAccountBulkJobsOutcomeCallable ListCustomerAccountBulkJobsCallable(
+      const ListCustomerAccountBulkJobsRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::ListCustomerAccountBulkJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListCustomerAccountBulkJobs that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListCustomerAccountBulkJobsRequestT = Model::ListCustomerAccountBulkJobsRequest>
+  void ListCustomerAccountBulkJobsAsync(const ListCustomerAccountBulkJobsRequestT& request,
+                                        const ListCustomerAccountBulkJobsResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::ListCustomerAccountBulkJobs, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all in-progress, completed, or failed
    * StartEngagementByAcceptingInvitationTask tasks that were initiated by the
    * caller's account. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementByAcceptingInvitationTasks">AWS
@@ -758,9 +1041,8 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
-   * <p> Lists all in-progress, completed, or failed
-   * <code>EngagementFromOpportunity</code> tasks that were initiated by the caller's
-   * account. </p><p><h3>See Also:</h3>   <a
+   * <p>Lists all in-progress, completed, or failed EngagementFromOpportunity tasks
+   * that were initiated by the caller's account. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementFromOpportunityTasks">AWS
    * API Reference</a></p>
    */
@@ -786,6 +1068,38 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
                                                const ListEngagementFromOpportunityTasksResponseReceivedHandler& handler,
                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PartnerCentralSellingClient::ListEngagementFromOpportunityTasks, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the active, fully curated AWS Partner Central engagement groups that
+   * are available to you in the specified catalog. An engagement group is a curated
+   * set of engagements that share common characteristics, such as customer
+   * geography, industry, or solution category. To retrieve the engagements in a
+   * group, pass the group <code>Id</code> to <code>SearchEngagements</code> as
+   * <code>GroupId</code>, and use <code>NextToken</code> to retrieve additional
+   * pages of groups.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementGroups">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListEngagementGroupsOutcome ListEngagementGroups(const Model::ListEngagementGroupsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListEngagementGroups that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListEngagementGroupsRequestT = Model::ListEngagementGroupsRequest>
+  Model::ListEngagementGroupsOutcomeCallable ListEngagementGroupsCallable(const ListEngagementGroupsRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::ListEngagementGroups, request);
+  }
+
+  /**
+   * An Async wrapper for ListEngagementGroups that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListEngagementGroupsRequestT = Model::ListEngagementGroupsRequest>
+  void ListEngagementGroupsAsync(const ListEngagementGroupsRequestT& request, const ListEngagementGroupsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::ListEngagementGroups, request, handler, context);
   }
 
   /**
@@ -949,6 +1263,68 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
+   * <p>Lists the outcome of each record in an opportunity bulk job. You can filter
+   * the results by record status.</p> <p>Results are paginated. Use
+   * <code>NextToken</code> to retrieve additional results.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunityBulkJobResults">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListOpportunityBulkJobResultsOutcome ListOpportunityBulkJobResults(
+      const Model::ListOpportunityBulkJobResultsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListOpportunityBulkJobResults that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListOpportunityBulkJobResultsRequestT = Model::ListOpportunityBulkJobResultsRequest>
+  Model::ListOpportunityBulkJobResultsOutcomeCallable ListOpportunityBulkJobResultsCallable(
+      const ListOpportunityBulkJobResultsRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::ListOpportunityBulkJobResults, request);
+  }
+
+  /**
+   * An Async wrapper for ListOpportunityBulkJobResults that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListOpportunityBulkJobResultsRequestT = Model::ListOpportunityBulkJobResultsRequest>
+  void ListOpportunityBulkJobResultsAsync(const ListOpportunityBulkJobResultsRequestT& request,
+                                          const ListOpportunityBulkJobResultsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::ListOpportunityBulkJobResults, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the opportunity bulk jobs in the specified catalog, newest first. You
+   * can filter the results by job identifier or status.</p> <p>Results are
+   * paginated. Use <code>NextToken</code> to retrieve additional
+   * results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunityBulkJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListOpportunityBulkJobsOutcome ListOpportunityBulkJobs(const Model::ListOpportunityBulkJobsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListOpportunityBulkJobs that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListOpportunityBulkJobsRequestT = Model::ListOpportunityBulkJobsRequest>
+  Model::ListOpportunityBulkJobsOutcomeCallable ListOpportunityBulkJobsCallable(const ListOpportunityBulkJobsRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::ListOpportunityBulkJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListOpportunityBulkJobs that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListOpportunityBulkJobsRequestT = Model::ListOpportunityBulkJobsRequest>
+  void ListOpportunityBulkJobsAsync(const ListOpportunityBulkJobsRequestT& request,
+                                    const ListOpportunityBulkJobsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::ListOpportunityBulkJobs, request, handler, context);
+  }
+
+  /**
    * <p>Lists all in-progress, completed, or failed opportunity creation tasks from
    * engagements that were initiated by the caller's account.</p><p><h3>See
    * Also:</h3>   <a
@@ -1013,7 +1389,7 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
-   * <p> Lists resource snapshot jobs owned by the customer. This operation supports
+   * <p>Lists resource snapshot jobs owned by the customer. This operation supports
    * various filtering scenarios, including listing all jobs owned by the caller,
    * jobs for a specific engagement, jobs with a specific status, or any combination
    * of these filters. </p><p><h3>See Also:</h3>   <a
@@ -1189,6 +1565,138 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   }
 
   /**
+   * <p>Use <code>SearchCustomerAccounts</code> to find customer accounts in the
+   * specified catalog. You can filter the results by fields such as enrichment
+   * status, industry, geography, and creation date, and sort them by company name,
+   * date, or score.</p> <p>Results are paginated. Use <code>NextToken</code> to
+   * retrieve additional results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SearchCustomerAccounts">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchCustomerAccountsOutcome SearchCustomerAccounts(const Model::SearchCustomerAccountsRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchCustomerAccounts that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SearchCustomerAccountsRequestT = Model::SearchCustomerAccountsRequest>
+  Model::SearchCustomerAccountsOutcomeCallable SearchCustomerAccountsCallable(const SearchCustomerAccountsRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::SearchCustomerAccounts, request);
+  }
+
+  /**
+   * An Async wrapper for SearchCustomerAccounts that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SearchCustomerAccountsRequestT = Model::SearchCustomerAccountsRequest>
+  void SearchCustomerAccountsAsync(const SearchCustomerAccountsRequestT& request,
+                                   const SearchCustomerAccountsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::SearchCustomerAccounts, request, handler, context);
+  }
+
+  /**
+   * <p>Searches the engagements in AWS Partner Central that match your criteria,
+   * such as customer industry or geography. You can combine a free-text
+   * <code>Keyword</code>, a structured <code>Filter</code> tree, an engagement group
+   * (<code>GroupId</code>), and <code>Sort</code> options, and each search criterion
+   * that you specify narrows the results. Results are paginated, so use
+   * <code>NextToken</code> to retrieve additional results.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SearchEngagements">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchEngagementsOutcome SearchEngagements(const Model::SearchEngagementsRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchEngagements that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SearchEngagementsRequestT = Model::SearchEngagementsRequest>
+  Model::SearchEngagementsOutcomeCallable SearchEngagementsCallable(const SearchEngagementsRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::SearchEngagements, request);
+  }
+
+  /**
+   * An Async wrapper for SearchEngagements that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename SearchEngagementsRequestT = Model::SearchEngagementsRequest>
+  void SearchEngagementsAsync(const SearchEngagementsRequestT& request, const SearchEngagementsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::SearchEngagements, request, handler, context);
+  }
+
+  /**
+   * <p>The <code>SearchOpportunities</code> operation in the AWS Partner Central
+   * Selling API searches and filters the opportunities available to you in AWS
+   * Partner Central.</p> <p>You can optionally provide a free-text
+   * <code>Keyword</code>, a structured <code>Filter</code> tree, and
+   * <code>Sort</code> options. The operation returns a curated summary view of each
+   * matching opportunity. If you supply both <code>Keyword</code> and
+   * <code>Filter</code>, the operation combines them with a logical AND, so each one
+   * narrows the result set.</p> <p>Results are paginated. Use the
+   * <code>NextToken</code> parameter to retrieve additional pages of
+   * results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SearchOpportunities">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchOpportunitiesOutcome SearchOpportunities(const Model::SearchOpportunitiesRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchOpportunities that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SearchOpportunitiesRequestT = Model::SearchOpportunitiesRequest>
+  Model::SearchOpportunitiesOutcomeCallable SearchOpportunitiesCallable(const SearchOpportunitiesRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::SearchOpportunities, request);
+  }
+
+  /**
+   * An Async wrapper for SearchOpportunities that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename SearchOpportunitiesRequestT = Model::SearchOpportunitiesRequest>
+  void SearchOpportunitiesAsync(const SearchOpportunitiesRequestT& request, const SearchOpportunitiesResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::SearchOpportunities, request, handler, context);
+  }
+
+  /**
+   * <p>Use <code>StartCustomerAccountBulkJob</code> to create many customer accounts
+   * from a single file. The job starts processing as soon as it is created.</p>
+   * <p>Use <code>GetCustomerAccountBulkJob</code> to track progress,
+   * <code>ListCustomerAccountBulkJobResults</code> to review the outcome of each
+   * record, and <code>GetCustomerAccountBulkJobReportUrl</code> to download a report
+   * when the job finishes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartCustomerAccountBulkJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartCustomerAccountBulkJobOutcome StartCustomerAccountBulkJob(
+      const Model::StartCustomerAccountBulkJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartCustomerAccountBulkJob that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartCustomerAccountBulkJobRequestT = Model::StartCustomerAccountBulkJobRequest>
+  Model::StartCustomerAccountBulkJobOutcomeCallable StartCustomerAccountBulkJobCallable(
+      const StartCustomerAccountBulkJobRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::StartCustomerAccountBulkJob, request);
+  }
+
+  /**
+   * An Async wrapper for StartCustomerAccountBulkJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartCustomerAccountBulkJobRequestT = Model::StartCustomerAccountBulkJobRequest>
+  void StartCustomerAccountBulkJobAsync(const StartCustomerAccountBulkJobRequestT& request,
+                                        const StartCustomerAccountBulkJobResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::StartCustomerAccountBulkJob, request, handler, context);
+  }
+
+  /**
    * <p>This action starts the engagement by accepting an
    * <code>EngagementInvitation</code>. The task is asynchronous and involves the
    * following steps: accepting the invitation, creating an opportunity in the
@@ -1260,6 +1768,40 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
                                                const StartEngagementFromOpportunityTaskResponseReceivedHandler& handler,
                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PartnerCentralSellingClient::StartEngagementFromOpportunityTask, request, handler, context);
+  }
+
+  /**
+   * <p>The <code>StartOpportunityBulkJob</code> operation creates or updates many
+   * opportunities in AWS Partner Central (Partner Central) from a single CSV file.
+   * The column headers in the file determine whether the job creates or updates
+   * opportunities.</p> <p>Returns a <code>JobId</code> for the job. Use
+   * <code>ListOpportunityBulkJobs</code> to track the job,
+   * <code>ListOpportunityBulkJobResults</code> to review each record, and
+   * <code>GetOpportunityBulkJobReportUrl</code> to download a report of the failed
+   * records.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartOpportunityBulkJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartOpportunityBulkJobOutcome StartOpportunityBulkJob(const Model::StartOpportunityBulkJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartOpportunityBulkJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartOpportunityBulkJobRequestT = Model::StartOpportunityBulkJobRequest>
+  Model::StartOpportunityBulkJobOutcomeCallable StartOpportunityBulkJobCallable(const StartOpportunityBulkJobRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::StartOpportunityBulkJob, request);
+  }
+
+  /**
+   * An Async wrapper for StartOpportunityBulkJob that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartOpportunityBulkJobRequestT = Model::StartOpportunityBulkJobRequest>
+  void StartOpportunityBulkJobAsync(const StartOpportunityBulkJobRequestT& request,
+                                    const StartOpportunityBulkJobResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::StartOpportunityBulkJob, request, handler, context);
   }
 
   /**
@@ -1462,6 +2004,37 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PartnerCentralSellingClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Use <code>UpdateCustomerAccount</code> to replace the customer information on
+   * an existing customer account. AWS matches the account again with the updated
+   * information.</p> <p>To prevent concurrent changes from overwriting each other,
+   * specify the <code>LastModifiedDate</code> value that you last read for the
+   * account. If the account changed since then, the request fails with a
+   * <code>ConflictException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UpdateCustomerAccount">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCustomerAccountOutcome UpdateCustomerAccount(const Model::UpdateCustomerAccountRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCustomerAccount that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateCustomerAccountRequestT = Model::UpdateCustomerAccountRequest>
+  Model::UpdateCustomerAccountOutcomeCallable UpdateCustomerAccountCallable(const UpdateCustomerAccountRequestT& request) const {
+    return SubmitCallable(&PartnerCentralSellingClient::UpdateCustomerAccount, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCustomerAccount that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateCustomerAccountRequestT = Model::UpdateCustomerAccountRequest>
+  void UpdateCustomerAccountAsync(const UpdateCustomerAccountRequestT& request, const UpdateCustomerAccountResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralSellingClient::UpdateCustomerAccount, request, handler, context);
   }
 
   /**

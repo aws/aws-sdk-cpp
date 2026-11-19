@@ -135,6 +135,7 @@
 #include <aws/inspector2/model/CodeRepositorySortBy.h>
 #include <aws/inspector2/model/CodeScanStatus.h>
 #include <aws/inspector2/model/CodeSecurityIntegrationSummary.h>
+#include <aws/inspector2/model/CodeSecurityIntegrationVpcConfiguration.h>
 #include <aws/inspector2/model/CodeSecurityResource.h>
 #include <aws/inspector2/model/CodeSecurityScanConfiguration.h>
 #include <aws/inspector2/model/CodeSecurityScanConfigurationAssociationSummary.h>
@@ -192,6 +193,7 @@
 #include <aws/inspector2/model/CreateFilterResult.h>
 #include <aws/inspector2/model/CreateFindingsReportRequest.h>
 #include <aws/inspector2/model/CreateFindingsReportResult.h>
+#include <aws/inspector2/model/CreateGitHubEnterpriseIntegrationDetail.h>
 #include <aws/inspector2/model/CreateGitLabSelfManagedIntegrationDetail.h>
 #include <aws/inspector2/model/CreateIntegrationDetail.h>
 #include <aws/inspector2/model/CreateSbomExportRequest.h>
@@ -321,6 +323,7 @@
 #include <aws/inspector2/model/GetOnDemandScanStatusResult.h>
 #include <aws/inspector2/model/GetSbomExportRequest.h>
 #include <aws/inspector2/model/GetSbomExportResult.h>
+#include <aws/inspector2/model/GitHubEnterpriseServerAppRegistrationDetail.h>
 #include <aws/inspector2/model/GroupKey.h>
 #include <aws/inspector2/model/Image.h>
 #include <aws/inspector2/model/ImageLayerAggregation.h>
@@ -547,6 +550,8 @@
 #include <aws/inspector2/model/UpdateEncryptionKeyResult.h>
 #include <aws/inspector2/model/UpdateFilterRequest.h>
 #include <aws/inspector2/model/UpdateFilterResult.h>
+#include <aws/inspector2/model/UpdateGitHubEnterpriseServerAppInstallationDetail.h>
+#include <aws/inspector2/model/UpdateGitHubEnterpriseServerIntegrationDetail.h>
 #include <aws/inspector2/model/UpdateGitHubIntegrationDetail.h>
 #include <aws/inspector2/model/UpdateGitLabSelfManagedIntegrationDetail.h>
 #include <aws/inspector2/model/UpdateIntegrationDetails.h>

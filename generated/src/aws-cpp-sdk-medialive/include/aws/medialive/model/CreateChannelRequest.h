@@ -18,6 +18,7 @@
 #include <aws/medialive/model/InferenceSettings.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <aws/medialive/model/InputSpecification.h>
+#include <aws/medialive/model/JpegXsInputSpecification.h>
 #include <aws/medialive/model/LinkedChannelSettings.h>
 #include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/MaintenanceCreateSettings.h>
@@ -404,6 +405,24 @@ creating multiple resources.
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Specification of JPEG XS inputs for this channel
+   */
+  inline const JpegXsInputSpecification& GetJpegXsInputSpecification() const { return m_jpegXsInputSpecification; }
+  inline bool JpegXsInputSpecificationHasBeenSet() const { return m_jpegXsInputSpecificationHasBeenSet; }
+  template <typename JpegXsInputSpecificationT = JpegXsInputSpecification>
+  void SetJpegXsInputSpecification(JpegXsInputSpecificationT&& value) {
+    m_jpegXsInputSpecificationHasBeenSet = true;
+    m_jpegXsInputSpecification = std::forward<JpegXsInputSpecificationT>(value);
+  }
+  template <typename JpegXsInputSpecificationT = JpegXsInputSpecification>
+  CreateChannelRequest& WithJpegXsInputSpecification(JpegXsInputSpecificationT&& value) {
+    SetJpegXsInputSpecification(std::forward<JpegXsInputSpecificationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CdiInputSpecification m_cdiInputSpecification;
 
@@ -442,6 +461,8 @@ creating multiple resources.
   Aws::Vector<Aws::String> m_channelSecurityGroups;
 
   InferenceSettings m_inferenceSettings;
+
+  JpegXsInputSpecification m_jpegXsInputSpecification;
   bool m_cdiInputSpecificationHasBeenSet = false;
   bool m_channelClassHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
@@ -461,6 +482,7 @@ creating multiple resources.
   bool m_linkedChannelSettingsHasBeenSet = false;
   bool m_channelSecurityGroupsHasBeenSet = false;
   bool m_inferenceSettingsHasBeenSet = false;
+  bool m_jpegXsInputSpecificationHasBeenSet = false;
 };
 
 }  // namespace Model

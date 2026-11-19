@@ -10,6 +10,7 @@
 #include <aws/sts/model/AssumedRoleUser.h>
 #include <aws/sts/model/Credentials.h>
 #include <aws/sts/model/ResponseMetadata.h>
+#include <aws/sts/model/TrustedIdentityPropagationContext.h>
 
 #include <utility>
 
@@ -78,7 +79,10 @@ class AssumeRoleWithSAMLResult {
   ///@{
   /**
    * <p>The value of the <code>NameID</code> element in the <code>Subject</code>
-   * element of the SAML assertion.</p>
+   * element of the SAML assertion.</p> <p>This is not the trusted identity
+   * propagation subject (<code>aws:OriginIdentity/Subject</code>). When the session
+   * carries trusted identity propagation context, that value is returned in
+   * <code>TrustedIdentityPropagationContext</code>.</p>
    */
   inline const Aws::String& GetSubject() const { return m_subject; }
   template <typename SubjectT = Aws::String>
@@ -102,7 +106,10 @@ class AssumeRoleWithSAMLResult {
    * <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is removed.
    * For example, <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is
    * returned as <code>transient</code>. If the format includes any other prefix, the
-   * format is returned with no modifications.</p>
+   * format is returned with no modifications.</p> <p>This is not the trusted
+   * identity propagation subject type (<code>aws:OriginIdentity/SubjectType</code>).
+   * When the session carries trusted identity propagation context, that value is
+   * returned in <code>TrustedIdentityPropagationContext</code>.</p>
    */
   inline const Aws::String& GetSubjectType() const { return m_subjectType; }
   template <typename SubjectTypeT = Aws::String>
@@ -120,6 +127,10 @@ class AssumeRoleWithSAMLResult {
   ///@{
   /**
    * <p>The value of the <code>Issuer</code> element of the SAML assertion.</p>
+   * <p>This is not the trusted identity propagation issuer
+   * (<code>aws:OriginIdentity/Issuer</code>). When the session carries trusted
+   * identity propagation context, that value is returned in
+   * <code>TrustedIdentityPropagationContext</code>.</p>
    */
   inline const Aws::String& GetIssuer() const { return m_issuer; }
   template <typename IssuerT = Aws::String>
@@ -240,6 +251,42 @@ class AssumeRoleWithSAMLResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The trusted identity propagation context that Amazon Web Services STS set in
+   * the session from the SAML assertion, through the context provider attached to
+   * the SAML identity provider. It is present only when Amazon Web Services STS set
+   * such context in the session. It contains the
+   * <code>aws:OriginIdentity/Subject</code>,
+   * <code>aws:OriginIdentity/SubjectType</code>,
+   * <code>aws:OriginIdentity/Issuer</code> and
+   * <code>aws:OriginIdentity/FederatedProviderArn</code> keys and the
+   * <code>aws:TransactionContext/IdentityProvider/ *</code> keys that Amazon Web
+   * Services STS set in the session. Other keys in the session, such as
+   * <code>aws:IdentityCenterInstanceArn</code> and <code>aws:IdentityStoreArn</code>
+   * for an identity provider with an Identity Center instance attached, are not
+   * returned.</p> <p>Its <code>OriginIdentity</code> members share the names
+   * <code>Subject</code>, <code>SubjectType</code> and <code>Issuer</code> with
+   * members of this response but carry the trusted identity propagation values,
+   * which differ from the SAML assertion values.</p> <p>It is not returned when the
+   * SAML assertion is encrypted, even though the session carries the context.</p>
+   * <p>This element contains information about the end user. Do not log it.</p>
+   */
+  inline const TrustedIdentityPropagationContext& GetTrustedIdentityPropagationContext() const {
+    return m_trustedIdentityPropagationContext;
+  }
+  template <typename TrustedIdentityPropagationContextT = TrustedIdentityPropagationContext>
+  void SetTrustedIdentityPropagationContext(TrustedIdentityPropagationContextT&& value) {
+    m_trustedIdentityPropagationContextHasBeenSet = true;
+    m_trustedIdentityPropagationContext = std::forward<TrustedIdentityPropagationContextT>(value);
+  }
+  template <typename TrustedIdentityPropagationContextT = TrustedIdentityPropagationContext>
+  AssumeRoleWithSAMLResult& WithTrustedIdentityPropagationContext(TrustedIdentityPropagationContextT&& value) {
+    SetTrustedIdentityPropagationContext(std::forward<TrustedIdentityPropagationContextT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
@@ -276,6 +323,8 @@ class AssumeRoleWithSAMLResult {
 
   int m_sessionTokenSize{0};
 
+  TrustedIdentityPropagationContext m_trustedIdentityPropagationContext;
+
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_credentialsHasBeenSet = false;
@@ -288,6 +337,7 @@ class AssumeRoleWithSAMLResult {
   bool m_sourceIdentityHasBeenSet = false;
   bool m_sessionTokenUtilizationHasBeenSet = false;
   bool m_sessionTokenSizeHasBeenSet = false;
+  bool m_trustedIdentityPropagationContextHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

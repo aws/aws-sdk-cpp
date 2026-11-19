@@ -32,7 +32,10 @@ class UntagResourceRequest : public EventBridgeV2Request {
   AWS_EVENTBRIDGEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
   ///@{
-
+  /**
+   * <p>ARN for an EventBridge resource that supports tagging: event buses,
+   * subscribers, and event sources.</p>
+   */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
   template <typename ResourceArnT = Aws::String>
@@ -48,7 +51,9 @@ class UntagResourceRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>List of tag keys.</p>
+   */
   inline const Aws::Vector<Aws::String>& GetTagKeys() const { return m_tagKeys; }
   inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
   template <typename TagKeysT = Aws::Vector<Aws::String>>

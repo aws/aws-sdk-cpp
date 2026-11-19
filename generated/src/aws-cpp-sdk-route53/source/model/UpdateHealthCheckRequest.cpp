@@ -125,5 +125,10 @@ Aws::String UpdateHealthCheckRequest::SerializePayload() const {
     }
   }
 
+  if (m_healthCheckSourceIdHasBeenSet) {
+    XmlNode healthCheckSourceIdNode = parentNode.CreateChildElement("HealthCheckSourceId");
+    healthCheckSourceIdNode.SetText(m_healthCheckSourceId);
+  }
+
   return payloadDoc.ConvertToCompactString();
 }

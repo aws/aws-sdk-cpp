@@ -123,16 +123,22 @@ class GetCostAndUsageRequest : public CostExplorerRequest {
    * does the "blended" annotation appear on some line items in my bill?</a>. </p>
    * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
    * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
-   * <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
-   * <code>UsageQuantity</code>. </p>  <p>If you return the
-   * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
-   * without taking into account the units. For example, if you aggregate
-   * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
-   * meaningful because Amazon EC2 compute hours and data transfer are measured in
-   * different units (for example, hours and GB). To get more meaningful
-   * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
-   * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
-   * for <code>GetCostAndUsage</code> requests.</p>
+   * <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>,
+   * <code>UsageQuantity</code>, <code>BilledCost</code>,
+   * <code>ContractedCost</code>, <code>ListCost</code>,
+   * <code>PublicEquivalentBilledCost</code>, and <code>PublicOnDemandCost</code>.
+   * </p> <p> <code>BilledCost</code>, <code>ContractedCost</code>,
+   * <code>ListCost</code>, <code>PublicEquivalentBilledCost</code>, and
+   * <code>PublicOnDemandCost</code> are cost analytics metrics. They use the same
+   * definitions as the cost analytics columns in Cost and Usage Report (CUR)
+   * 2.0.</p>  <p>If you return the <code>UsageQuantity</code> metric, the
+   * service aggregates all usage numbers without taking into account the units. For
+   * example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2,
+   * the results aren't meaningful because Amazon EC2 compute hours and data transfer
+   * are measured in different units (for example, hours and GB). To get more
+   * meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code>
+   * or <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is
+   * required for <code>GetCostAndUsage</code> requests.</p>
    */
   inline const Aws::Vector<Aws::String>& GetMetrics() const { return m_metrics; }
   inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }

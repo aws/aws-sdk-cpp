@@ -37,6 +37,14 @@ RLSPolicy& RLSPolicy::operator=(JsonView jsonValue) {
     m_filterExpression = jsonValue.GetString("FilterExpression");
     m_filterExpressionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Status")) {
+    m_status = RLSPolicyStatusMapper::GetRLSPolicyStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StatusReason")) {
+    m_statusReason = RLSPolicyStatusReasonMapper::GetRLSPolicyStatusReasonForName(jsonValue.GetString("StatusReason"));
+    m_statusReasonHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +69,14 @@ JsonValue RLSPolicy::Jsonize() const {
 
   if (m_filterExpressionHasBeenSet) {
     payload.WithString("FilterExpression", m_filterExpression);
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", RLSPolicyStatusMapper::GetNameForRLSPolicyStatus(m_status));
+  }
+
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("StatusReason", RLSPolicyStatusReasonMapper::GetNameForRLSPolicyStatusReason(m_statusReason));
   }
 
   return payload;

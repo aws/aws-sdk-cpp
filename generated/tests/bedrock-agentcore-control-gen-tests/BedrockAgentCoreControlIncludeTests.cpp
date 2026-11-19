@@ -53,6 +53,7 @@
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizingClaimMatchValueType.h>
+#include <aws/bedrock-agentcore-control/model/AwsBillingConnectorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/BatchPutGatewayRateLimitsRequest.h>
 #include <aws/bedrock-agentcore-control/model/BatchPutGatewayRateLimitsResult.h>
 #include <aws/bedrock-agentcore-control/model/BatchPutLimitEntry.h>
@@ -124,6 +125,7 @@
 #include <aws/bedrock-agentcore-control/model/ContentConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ContentLevel.h>
 #include <aws/bedrock-agentcore-control/model/ContentType.h>
+#include <aws/bedrock-agentcore-control/model/CpuOptions.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeRequest.h>
@@ -683,6 +685,7 @@
 #include <aws/bedrock-agentcore-control/model/Monitoring.h>
 #include <aws/bedrock-agentcore-control/model/NamespaceKeyEntry.h>
 #include <aws/bedrock-agentcore-control/model/NamespaceKeyValidation.h>
+#include <aws/bedrock-agentcore-control/model/NestedVirtualization.h>
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/NetworkMode.h>
 #include <aws/bedrock-agentcore-control/model/NumberValidation.h>

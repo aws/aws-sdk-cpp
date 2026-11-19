@@ -17,6 +17,7 @@ namespace PaymentTypeMapper {
 
 static const int CRYPTO_X402_HASH = HashingUtils::HashString("CRYPTO_X402");
 static const int MPP_HASH = HashingUtils::HashString("MPP");
+static const int AWS_BILLING_X402_HASH = HashingUtils::HashString("AWS_BILLING_X402");
 
 PaymentType GetPaymentTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ PaymentType GetPaymentTypeForName(const Aws::String& name) {
     return PaymentType::CRYPTO_X402;
   } else if (hashCode == MPP_HASH) {
     return PaymentType::MPP;
+  } else if (hashCode == AWS_BILLING_X402_HASH) {
+    return PaymentType::AWS_BILLING_X402;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForPaymentType(PaymentType enumValue) {
       return "CRYPTO_X402";
     case PaymentType::MPP:
       return "MPP";
+    case PaymentType::AWS_BILLING_X402:
+      return "AWS_BILLING_X402";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

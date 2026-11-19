@@ -22,8 +22,8 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
- * <p> Provides the lifecycle view of an opportunity resource shared through a
- * snapshot. </p><p><h3>See Also:</h3>   <a
+ * <p>Provides the lifecycle view of an opportunity resource shared through a
+ * snapshot.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/LifeCycleForView">AWS
  * API Reference</a></p>
  */
@@ -36,7 +36,7 @@ class LifeCycleForView {
 
   ///@{
   /**
-   * <p> The projected launch date of the opportunity shared through a snapshot. </p>
+   * <p>The projected launch date of the opportunity shared through a snapshot.</p>
    */
   inline const Aws::String& GetTargetCloseDate() const { return m_targetCloseDate; }
   inline bool TargetCloseDateHasBeenSet() const { return m_targetCloseDateHasBeenSet; }
@@ -54,8 +54,7 @@ class LifeCycleForView {
 
   ///@{
   /**
-   * <p> Defines the approval status of the opportunity shared through a snapshot.
-   * </p>
+   * <p>Defines the approval status of the opportunity shared through a snapshot.</p>
    */
   inline ReviewStatus GetReviewStatus() const { return m_reviewStatus; }
   inline bool ReviewStatusHasBeenSet() const { return m_reviewStatusHasBeenSet; }
@@ -71,7 +70,7 @@ class LifeCycleForView {
 
   ///@{
   /**
-   * <p> Defines the current stage of the opportunity shared through a snapshot. </p>
+   * <p>Defines the current stage of the opportunity shared through a snapshot.</p>
    */
   inline Stage GetStage() const { return m_stage; }
   inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
@@ -87,7 +86,7 @@ class LifeCycleForView {
 
   ///@{
   /**
-   * <p> Describes the next steps for the opportunity shared through a snapshot. </p>
+   * <p>Describes the next steps for the opportunity shared through a snapshot.</p>
    */
   inline const Aws::String& GetNextSteps() const { return m_nextSteps; }
   inline bool NextStepsHasBeenSet() const { return m_nextStepsHasBeenSet; }

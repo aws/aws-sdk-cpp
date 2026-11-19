@@ -40,6 +40,10 @@ RegistryRecordOAuthCredentialProvider& RegistryRecordOAuthCredentialProvider::op
     }
     m_customParametersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("returnUrl")) {
+    m_returnUrl = jsonValue.GetString("returnUrl");
+    m_returnUrlHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -68,6 +72,10 @@ JsonValue RegistryRecordOAuthCredentialProvider::Jsonize() const {
       customParametersJsonMap.WithString(customParametersItem.first, customParametersItem.second);
     }
     payload.WithObject("customParameters", std::move(customParametersJsonMap));
+  }
+
+  if (m_returnUrlHasBeenSet) {
+    payload.WithString("returnUrl", m_returnUrl);
   }
 
   return payload;

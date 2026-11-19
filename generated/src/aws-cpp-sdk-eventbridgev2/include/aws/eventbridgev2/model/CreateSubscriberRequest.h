@@ -49,7 +49,10 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   AWS_EVENTBRIDGEV2_API EndpointParameters GetEndpointContextParams() const override;
 
   ///@{
-
+  /**
+   * <p>Name of a subscriber. The first character must be alphanumeric; the remaining
+   * characters may also include '.', '-', and '_'.</p>
+   */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
   template <typename NameT = Aws::String>
@@ -65,7 +68,9 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
+   */
   inline const Aws::String& GetEventBusArn() const { return m_eventBusArn; }
   inline bool EventBusArnHasBeenSet() const { return m_eventBusArnHasBeenSet; }
   template <typename EventBusArnT = Aws::String>
@@ -81,7 +86,9 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Configuration for how the subscriber invokes its target.</p>
+   */
   inline const InvokeConfiguration& GetInvokeConfiguration() const { return m_invokeConfiguration; }
   inline bool InvokeConfigurationHasBeenSet() const { return m_invokeConfigurationHasBeenSet; }
   template <typename InvokeConfigurationT = InvokeConfiguration>
@@ -97,7 +104,10 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Free-text description. Used by every resource type that has one: event buses,
+   * subscribers, and event sources.</p>
+   */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
   template <typename DescriptionT = Aws::String>
@@ -113,7 +123,16 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Configuration for filtering events delivered to a subscriber. On
+   * CreateSubscriber, Filters is required and must contain at least one Filter with
+   * a non-empty Pattern. On UpdateSubscriber, an empty
+   * <code>FilterConfiguration:{}</code> clears the existing filter. Any non-empty
+   * shape (including <code>{Language:X}</code> without Filters) must contain a valid
+   * Filters list — same contract as CreateSubscriber. A non-empty Filters list
+   * overwrites; an omitted FilterConfiguration preserves existing state. All Filters
+   * are implicitly ANDed — an event must match every Filter to be delivered.</p>
+   */
   inline const FilterConfiguration& GetFilterConfiguration() const { return m_filterConfiguration; }
   inline bool FilterConfigurationHasBeenSet() const { return m_filterConfigurationHasBeenSet; }
   template <typename FilterConfigurationT = FilterConfiguration>
@@ -129,7 +148,10 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Delivery ordering mode of a subscriber: FIFO delivers events in order within
+   * an event group; UNORDERED delivers without an ordering guarantee.</p>
+   */
   inline OrderingType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
   inline void SetType(OrderingType value) {
@@ -143,7 +165,9 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Starting position for a subscriber.</p>
+   */
   inline StartingPosition GetStartingPosition() const { return m_startingPosition; }
   inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
   inline void SetStartingPosition(StartingPosition value) {
@@ -157,7 +181,10 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Point-in-time configuration for a subscriber. Only applicable when
+   * StartingPosition is POINT_IN_TIME.</p>
+   */
   inline const PointInTimeConfiguration& GetPointInTimeConfiguration() const { return m_pointInTimeConfiguration; }
   inline bool PointInTimeConfigurationHasBeenSet() const { return m_pointInTimeConfigurationHasBeenSet; }
   template <typename PointInTimeConfigurationT = PointInTimeConfiguration>
@@ -173,7 +200,9 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Batching configuration for a subscriber.</p>
+   */
   inline const BatchConfiguration& GetBatchConfiguration() const { return m_batchConfiguration; }
   inline bool BatchConfigurationHasBeenSet() const { return m_batchConfigurationHasBeenSet; }
   template <typename BatchConfigurationT = BatchConfiguration>
@@ -190,8 +219,7 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
 
   ///@{
   /**
-   * <p>Not applicable to universal (aws-sdk) targets, whose input transformation is
-   * UniversalTargetParameters.Input; a Transformer on such a target is rejected.</p>
+   * <p>Transformer configuration for a subscriber.</p>
    */
   inline const Transformer& GetTransformer() const { return m_transformer; }
   inline bool TransformerHasBeenSet() const { return m_transformerHasBeenSet; }
@@ -208,7 +236,9 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Retry policy for a subscriber.</p>
+   */
   inline const RetryPolicy& GetRetryPolicy() const { return m_retryPolicy; }
   inline bool RetryPolicyHasBeenSet() const { return m_retryPolicyHasBeenSet; }
   template <typename RetryPolicyT = RetryPolicy>
@@ -224,7 +254,10 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>On-failure configuration: where a failed delivery is sent. Shared by the
+   * subscriber and the EventSource.</p>
+   */
   inline const OnFailureConfiguration& GetOnFailureConfiguration() const { return m_onFailureConfiguration; }
   inline bool OnFailureConfigurationHasBeenSet() const { return m_onFailureConfigurationHasBeenSet; }
   template <typename OnFailureConfigurationT = OnFailureConfiguration>
@@ -240,7 +273,9 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Log configuration for a subscriber.</p>
+   */
   inline const LogConfiguration& GetLogConfiguration() const { return m_logConfiguration; }
   inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
   template <typename LogConfigurationT = LogConfiguration>
@@ -256,7 +291,12 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Customer-controlled run state of a subscriber, set on create or update.
+   * Distinct from the bus lifecycle vocabulary, where ACTIVE means "provisioned and
+   * healthy". Delivery requires State RUNNING on a subscriber that is not
+   * revoked.</p>
+   */
   inline SubscriberState GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
   inline void SetState(SubscriberState value) {
@@ -270,7 +310,9 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Tags attached to a resource, as key-value pairs.</p>
+   */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
   template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
@@ -292,7 +334,10 @@ class CreateSubscriberRequest : public EventBridgeV2Request {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Unique, case-sensitive identifier that ensures the idempotency of the
+   * request. The SDK generates one automatically when the field is omitted.</p>
+   */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
   template <typename ClientTokenT = Aws::String>

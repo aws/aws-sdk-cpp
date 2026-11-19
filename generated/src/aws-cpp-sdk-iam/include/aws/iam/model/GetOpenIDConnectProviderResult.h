@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iam/IAM_EXPORTS.h>
+#include <aws/iam/model/ContextProvider.h>
 #include <aws/iam/model/ResponseMetadata.h>
 #include <aws/iam/model/Tag.h>
 
@@ -154,6 +155,71 @@ class GetOpenIDConnectProviderResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The trusted identity propagation context provider configuration associated
+   * with the IAM OIDC provider resource object. For more information, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+   * <p>This element is returned only when a trusted identity propagation context
+   * provider is configured for the OIDC provider.</p>
+   */
+  inline const ContextProvider& GetContextProvider() const { return m_contextProvider; }
+  template <typename ContextProviderT = ContextProvider>
+  void SetContextProvider(ContextProviderT&& value) {
+    m_contextProviderHasBeenSet = true;
+    m_contextProvider = std::forward<ContextProviderT>(value);
+  }
+  template <typename ContextProviderT = ContextProvider>
+  GetOpenIDConnectProviderResult& WithContextProvider(ContextProviderT&& value) {
+    SetContextProvider(std::forward<ContextProviderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance associated
+   * with the IAM OIDC provider resource object.</p> <p>For the format, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a>
+   * in the <i>IAM Identity Center API Reference</i>.</p> <p>This element is returned
+   * only when an IAM Identity Center instance is associated with the OIDC
+   * provider.</p>
+   */
+  inline const Aws::String& GetIdentityCenterInstanceArn() const { return m_identityCenterInstanceArn; }
+  template <typename IdentityCenterInstanceArnT = Aws::String>
+  void SetIdentityCenterInstanceArn(IdentityCenterInstanceArnT&& value) {
+    m_identityCenterInstanceArnHasBeenSet = true;
+    m_identityCenterInstanceArn = std::forward<IdentityCenterInstanceArnT>(value);
+  }
+  template <typename IdentityCenterInstanceArnT = Aws::String>
+  GetOpenIDConnectProviderResult& WithIdentityCenterInstanceArn(IdentityCenterInstanceArnT&& value) {
+    SetIdentityCenterInstanceArn(std::forward<IdentityCenterInstanceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the identity store that is resolved from
+   * the associated IAM Identity Center instance.</p> <p>For the format, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a>
+   * in the <i>IAM Identity Center API Reference</i>.</p> <p>This element is returned
+   * only when an IAM Identity Center instance is associated with the OIDC
+   * provider.</p>
+   */
+  inline const Aws::String& GetIdentityStoreArn() const { return m_identityStoreArn; }
+  template <typename IdentityStoreArnT = Aws::String>
+  void SetIdentityStoreArn(IdentityStoreArnT&& value) {
+    m_identityStoreArnHasBeenSet = true;
+    m_identityStoreArn = std::forward<IdentityStoreArnT>(value);
+  }
+  template <typename IdentityStoreArnT = Aws::String>
+  GetOpenIDConnectProviderResult& WithIdentityStoreArn(IdentityStoreArnT&& value) {
+    SetIdentityStoreArn(std::forward<IdentityStoreArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
@@ -180,6 +246,12 @@ class GetOpenIDConnectProviderResult {
 
   Aws::Vector<Tag> m_tags;
 
+  ContextProvider m_contextProvider;
+
+  Aws::String m_identityCenterInstanceArn;
+
+  Aws::String m_identityStoreArn;
+
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_urlHasBeenSet = false;
@@ -187,6 +259,9 @@ class GetOpenIDConnectProviderResult {
   bool m_thumbprintListHasBeenSet = false;
   bool m_createDateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_contextProviderHasBeenSet = false;
+  bool m_identityCenterInstanceArnHasBeenSet = false;
+  bool m_identityStoreArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

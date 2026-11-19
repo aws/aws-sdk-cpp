@@ -8,18 +8,26 @@
 
 #include <aws/partnercentral-selling/PartnerCentralSellingClientPagination.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingPaginationBase.h>
+#include <aws/partnercentral-selling/model/ListCustomerAccountBulkJobsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListEngagementsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListEngagementInvitationsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListEngagementMembersPaginationTraits.h>
-#include <aws/partnercentral-selling/model/ListSolutionsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListEngagementByAcceptingInvitationTasksPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListEngagementFromOpportunityTasksPaginationTraits.h>
-#include <aws/partnercentral-selling/model/ListEngagementResourceAssociationsPaginationTraits.h>
-#include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListProspectingFromEngagementTasksPaginationTraits.h>
+#include <aws/partnercentral-selling/model/SearchOpportunitiesPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListEngagementGroupsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListOpportunitiesPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotsPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListResourceSnapshotJobsPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListOpportunityBulkJobsPaginationTraits.h>
+#include <aws/partnercentral-selling/model/SearchCustomerAccountsPaginationTraits.h>
+#include <aws/partnercentral-selling/model/SearchEngagementsPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListSolutionsPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListOpportunityBulkJobResultsPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListEngagementResourceAssociationsPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListOpportunityFromEngagementTasksPaginationTraits.h>
+#include <aws/partnercentral-selling/model/ListCustomerAccountBulkJobResultsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

@@ -108,5 +108,9 @@ Aws::String CreateChannelRequest::SerializePayload() const {
     payload.WithObject("inferenceSettings", m_inferenceSettings.Jsonize());
   }
 
+  if (m_jpegXsInputSpecificationHasBeenSet) {
+    payload.WithObject("jpegXsInputSpecification", m_jpegXsInputSpecification.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

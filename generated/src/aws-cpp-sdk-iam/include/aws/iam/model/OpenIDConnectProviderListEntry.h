@@ -49,9 +49,30 @@ class OpenIDConnectProviderListEntry {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether trusted identity propagation is enabled for the OpenID
+   * Connect (OIDC) provider. This is <code>true</code> when an IAM Identity Center
+   * instance is associated with the provider.</p>
+   */
+  inline bool GetIsTrustedIdentityPropagationEnabled() const { return m_isTrustedIdentityPropagationEnabled; }
+  inline bool IsTrustedIdentityPropagationEnabledHasBeenSet() const { return m_isTrustedIdentityPropagationEnabledHasBeenSet; }
+  inline void SetIsTrustedIdentityPropagationEnabled(bool value) {
+    m_isTrustedIdentityPropagationEnabledHasBeenSet = true;
+    m_isTrustedIdentityPropagationEnabled = value;
+  }
+  inline OpenIDConnectProviderListEntry& WithIsTrustedIdentityPropagationEnabled(bool value) {
+    SetIsTrustedIdentityPropagationEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
+
+  bool m_isTrustedIdentityPropagationEnabled{false};
   bool m_arnHasBeenSet = false;
+  bool m_isTrustedIdentityPropagationEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -182,6 +182,11 @@ DescribeEventSourceResult& DescribeEventSourceResult::operator=(const Aws::Amazo
                 m_revokedHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "EventSourceDetails") {
+                m_eventSourceDetails = EventSourceDetails(decoder);
+                m_eventSourceDetailsHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "CreationTime") {
                 auto tag = decoder->PopNextTagVal();
                 if (tag.has_value() &&
@@ -395,6 +400,11 @@ DescribeEventSourceResult& DescribeEventSourceResult::operator=(const Aws::Amazo
                 m_revoked = val.value();
               }
               m_revokedHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EventSourceDetails") {
+              m_eventSourceDetails = EventSourceDetails(decoder);
+              m_eventSourceDetailsHasBeenSet = true;
             }
 
             else if (initialKeyStr == "CreationTime") {

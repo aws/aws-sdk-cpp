@@ -35,7 +35,9 @@ class PutEventsResultEntry {
   AWS_EVENTBRIDGEV2_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
-
+  /**
+   * <p>Unique event ID assigned by the service.</p>
+   */
   inline const Aws::String& GetEventId() const { return m_eventId; }
   inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
   template <typename EventIdT = Aws::String>
@@ -51,7 +53,10 @@ class PutEventsResultEntry {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Sequence number assigned to the message for ordering within the message
+   * group.</p>
+   */
   inline const Aws::String& GetSequenceNumber() const { return m_sequenceNumber; }
   inline bool SequenceNumberHasBeenSet() const { return m_sequenceNumberHasBeenSet; }
   template <typename SequenceNumberT = Aws::String>
@@ -67,7 +72,9 @@ class PutEventsResultEntry {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Indicates the outcome for a successfully processed publish entry.</p>
+   */
   inline SuccessCode GetSuccessCode() const { return m_successCode; }
   inline bool SuccessCodeHasBeenSet() const { return m_successCodeHasBeenSet; }
   inline void SetSuccessCode(SuccessCode value) {
@@ -81,7 +88,9 @@ class PutEventsResultEntry {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Error code if the entry failed.</p>
+   */
   inline const Aws::String& GetErrorCode() const { return m_errorCode; }
   inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
   template <typename ErrorCodeT = Aws::String>
@@ -97,7 +106,9 @@ class PutEventsResultEntry {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Error message if the entry failed.</p>
+   */
   inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
   inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
   template <typename ErrorMessageT = Aws::String>

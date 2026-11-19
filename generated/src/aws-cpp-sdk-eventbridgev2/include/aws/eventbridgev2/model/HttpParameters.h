@@ -35,7 +35,10 @@ class HttpParameters {
   AWS_EVENTBRIDGEV2_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
-
+  /**
+   * <p>Values substituted, in order, for the path-parameter placeholders in an HTTP
+   * target's endpoint path.</p>
+   */
   inline const Aws::Vector<Aws::String>& GetPathParameterValues() const { return m_pathParameterValues; }
   inline bool PathParameterValuesHasBeenSet() const { return m_pathParameterValuesHasBeenSet; }
   template <typename PathParameterValuesT = Aws::Vector<Aws::String>>
@@ -57,7 +60,10 @@ class HttpParameters {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Map of HTTP header names to values, sent with the request to an HTTP
+   * target.</p>
+   */
   inline const Aws::Map<Aws::String, Aws::String>& GetHeaderParameters() const { return m_headerParameters; }
   inline bool HeaderParametersHasBeenSet() const { return m_headerParametersHasBeenSet; }
   template <typename HeaderParametersT = Aws::Map<Aws::String, Aws::String>>
@@ -79,7 +85,10 @@ class HttpParameters {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Map of query-string parameter names to values, appended to the request to an
+   * HTTP target.</p>
+   */
   inline const Aws::Map<Aws::String, Aws::String>& GetQueryStringParameters() const { return m_queryStringParameters; }
   inline bool QueryStringParametersHasBeenSet() const { return m_queryStringParametersHasBeenSet; }
   template <typename QueryStringParametersT = Aws::Map<Aws::String, Aws::String>>

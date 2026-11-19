@@ -12,13 +12,16 @@
 #include <aws/kafka/model/ListScramSecretsPaginationTraits.h>
 #include <aws/kafka/model/ListClientVpcConnectionsPaginationTraits.h>
 #include <aws/kafka/model/ListClustersPaginationTraits.h>
+#include <aws/kafka/model/ListTopicReassignmentsPaginationTraits.h>
 #include <aws/kafka/model/ListNodesPaginationTraits.h>
 #include <aws/kafka/model/ListTopicsPaginationTraits.h>
+#include <aws/kafka/model/ListAssessmentsPaginationTraits.h>
 #include <aws/kafka/model/ListConfigurationsPaginationTraits.h>
 #include <aws/kafka/model/ListReplicatorsPaginationTraits.h>
 #include <aws/kafka/model/ListClusterOperationsPaginationTraits.h>
 #include <aws/kafka/model/DescribeTopicPartitionsPaginationTraits.h>
 #include <aws/kafka/model/ListClusterOperationsV2PaginationTraits.h>
+#include <aws/kafka/model/ListAssessmentFindingsPaginationTraits.h>
 #include <aws/kafka/model/ListKafkaVersionsPaginationTraits.h>
 #include <aws/kafka/model/ListVpcConnectionsPaginationTraits.h>
 #include <aws/kafka/model/ListClustersV2PaginationTraits.h>

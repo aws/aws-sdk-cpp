@@ -19,6 +19,12 @@
 #include <aws/kafka/internal/KafkaEndpointRules.h>
 #include <aws/kafka/model/AmazonMskCluster.h>
 #include <aws/kafka/model/ApacheKafkaCluster.h>
+#include <aws/kafka/model/AssessmentFinding.h>
+#include <aws/kafka/model/AssessmentInfo.h>
+#include <aws/kafka/model/AssessmentParameters.h>
+#include <aws/kafka/model/AssessmentStatus.h>
+#include <aws/kafka/model/AssessmentSummary.h>
+#include <aws/kafka/model/AssessmentType.h>
 #include <aws/kafka/model/AuthorizerLogs.h>
 #include <aws/kafka/model/BadRequestException.h>
 #include <aws/kafka/model/BatchAssociateScramSecretRequest.h>
@@ -31,7 +37,9 @@
 #include <aws/kafka/model/BrokerLogs.h>
 #include <aws/kafka/model/BrokerNodeGroupInfo.h>
 #include <aws/kafka/model/BrokerNodeInfo.h>
+#include <aws/kafka/model/BrokerNodeType.h>
 #include <aws/kafka/model/BrokerSoftwareInfo.h>
+#include <aws/kafka/model/BrokerTypeUpgradeInfo.h>
 #include <aws/kafka/model/Catalog.h>
 #include <aws/kafka/model/ChannelDestinationType.h>
 #include <aws/kafka/model/ChannelInfo.h>
@@ -66,6 +74,8 @@
 #include <aws/kafka/model/ConsumerGroupReplicationUpdate.h>
 #include <aws/kafka/model/ControllerMovedException.h>
 #include <aws/kafka/model/ControllerNodeInfo.h>
+#include <aws/kafka/model/CreateAssessmentRequest.h>
+#include <aws/kafka/model/CreateAssessmentResult.h>
 #include <aws/kafka/model/CreateChannelRequest.h>
 #include <aws/kafka/model/CreateChannelResult.h>
 #include <aws/kafka/model/CreateClusterRequest.h>
@@ -82,6 +92,8 @@
 #include <aws/kafka/model/CreateVpcConnectionResult.h>
 #include <aws/kafka/model/CustomerActionStatus.h>
 #include <aws/kafka/model/DeadLetterQueueS3.h>
+#include <aws/kafka/model/DeleteAssessmentRequest.h>
+#include <aws/kafka/model/DeleteAssessmentResult.h>
 #include <aws/kafka/model/DeleteChannelRequest.h>
 #include <aws/kafka/model/DeleteChannelResult.h>
 #include <aws/kafka/model/DeleteClusterPolicyRequest.h>
@@ -96,6 +108,8 @@
 #include <aws/kafka/model/DeleteTopicResult.h>
 #include <aws/kafka/model/DeleteVpcConnectionRequest.h>
 #include <aws/kafka/model/DeleteVpcConnectionResult.h>
+#include <aws/kafka/model/DescribeAssessmentRequest.h>
+#include <aws/kafka/model/DescribeAssessmentResult.h>
 #include <aws/kafka/model/DescribeChannelRequest.h>
 #include <aws/kafka/model/DescribeChannelResult.h>
 #include <aws/kafka/model/DescribeClusterOperationRequest.h>
@@ -115,6 +129,8 @@
 #include <aws/kafka/model/DescribeTopicPartitionsPaginationTraits.h>
 #include <aws/kafka/model/DescribeTopicPartitionsRequest.h>
 #include <aws/kafka/model/DescribeTopicPartitionsResult.h>
+#include <aws/kafka/model/DescribeTopicReassignmentRequest.h>
+#include <aws/kafka/model/DescribeTopicReassignmentResult.h>
 #include <aws/kafka/model/DescribeTopicRequest.h>
 #include <aws/kafka/model/DescribeTopicResult.h>
 #include <aws/kafka/model/DescribeVpcConnectionRequest.h>
@@ -127,6 +143,9 @@
 #include <aws/kafka/model/EncryptionInfo.h>
 #include <aws/kafka/model/EnhancedMonitoring.h>
 #include <aws/kafka/model/ErrorInfo.h>
+#include <aws/kafka/model/FindingCategory.h>
+#include <aws/kafka/model/FindingRemediation.h>
+#include <aws/kafka/model/FindingSeverity.h>
 #include <aws/kafka/model/Firehose.h>
 #include <aws/kafka/model/ForbiddenException.h>
 #include <aws/kafka/model/GetBootstrapBrokersRequest.h>
@@ -162,6 +181,12 @@
 #include <aws/kafka/model/KafkaTimeoutException.h>
 #include <aws/kafka/model/KafkaVersion.h>
 #include <aws/kafka/model/KafkaVersionStatus.h>
+#include <aws/kafka/model/ListAssessmentFindingsPaginationTraits.h>
+#include <aws/kafka/model/ListAssessmentFindingsRequest.h>
+#include <aws/kafka/model/ListAssessmentFindingsResult.h>
+#include <aws/kafka/model/ListAssessmentsPaginationTraits.h>
+#include <aws/kafka/model/ListAssessmentsRequest.h>
+#include <aws/kafka/model/ListAssessmentsResult.h>
 #include <aws/kafka/model/ListChannelsRequest.h>
 #include <aws/kafka/model/ListChannelsResult.h>
 #include <aws/kafka/model/ListClientVpcConnectionsPaginationTraits.h>
@@ -199,6 +224,9 @@
 #include <aws/kafka/model/ListScramSecretsResult.h>
 #include <aws/kafka/model/ListTagsForResourceRequest.h>
 #include <aws/kafka/model/ListTagsForResourceResult.h>
+#include <aws/kafka/model/ListTopicReassignmentsPaginationTraits.h>
+#include <aws/kafka/model/ListTopicReassignmentsRequest.h>
+#include <aws/kafka/model/ListTopicReassignmentsResult.h>
 #include <aws/kafka/model/ListTopicsPaginationTraits.h>
 #include <aws/kafka/model/ListTopicsRequest.h>
 #include <aws/kafka/model/ListTopicsResult.h>
@@ -266,7 +294,11 @@
 #include <aws/kafka/model/ServerlessRequest.h>
 #include <aws/kafka/model/ServerlessSasl.h>
 #include <aws/kafka/model/ServiceUnavailableException.h>
+#include <aws/kafka/model/StartTopicReassignmentRequest.h>
+#include <aws/kafka/model/StartTopicReassignmentResult.h>
 #include <aws/kafka/model/StateInfo.h>
+#include <aws/kafka/model/StopTopicReassignmentRequest.h>
+#include <aws/kafka/model/StopTopicReassignmentResult.h>
 #include <aws/kafka/model/StorageInfo.h>
 #include <aws/kafka/model/StorageMode.h>
 #include <aws/kafka/model/TableCreation.h>
@@ -279,6 +311,10 @@
 #include <aws/kafka/model/TopicExistsException.h>
 #include <aws/kafka/model/TopicInfo.h>
 #include <aws/kafka/model/TopicPartitionInfo.h>
+#include <aws/kafka/model/TopicReassignment.h>
+#include <aws/kafka/model/TopicReassignmentInfo.h>
+#include <aws/kafka/model/TopicReassignmentMode.h>
+#include <aws/kafka/model/TopicReassignmentStatus.h>
 #include <aws/kafka/model/TopicReplication.h>
 #include <aws/kafka/model/TopicReplicationUpdate.h>
 #include <aws/kafka/model/TopicState.h>

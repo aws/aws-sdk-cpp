@@ -19,6 +19,7 @@
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <aws/medialive/model/InputSpecification.h>
+#include <aws/medialive/model/JpegXsInputSpecification.h>
 #include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/MaintenanceStatus.h>
 #include <aws/medialive/model/OutputDestination.h>
@@ -491,6 +492,24 @@ one destination per
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Specification of JPEG XS inputs for this channel
+   */
+  inline const JpegXsInputSpecification& GetJpegXsInputSpecification() const { return m_jpegXsInputSpecification; }
+  inline bool JpegXsInputSpecificationHasBeenSet() const { return m_jpegXsInputSpecificationHasBeenSet; }
+  template <typename JpegXsInputSpecificationT = JpegXsInputSpecification>
+  void SetJpegXsInputSpecification(JpegXsInputSpecificationT&& value) {
+    m_jpegXsInputSpecificationHasBeenSet = true;
+    m_jpegXsInputSpecification = std::forward<JpegXsInputSpecificationT>(value);
+  }
+  template <typename JpegXsInputSpecificationT = JpegXsInputSpecification>
+  Channel& WithJpegXsInputSpecification(JpegXsInputSpecificationT&& value) {
+    SetJpegXsInputSpecification(std::forward<JpegXsInputSpecificationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -537,6 +556,8 @@ one destination per
   Aws::Vector<Aws::String> m_channelSecurityGroups;
 
   DescribeInferenceSettings m_inferenceSettings;
+
+  JpegXsInputSpecification m_jpegXsInputSpecification;
   bool m_arnHasBeenSet = false;
   bool m_cdiInputSpecificationHasBeenSet = false;
   bool m_channelClassHasBeenSet = false;
@@ -560,6 +581,7 @@ one destination per
   bool m_linkedChannelSettingsHasBeenSet = false;
   bool m_channelSecurityGroupsHasBeenSet = false;
   bool m_inferenceSettingsHasBeenSet = false;
+  bool m_jpegXsInputSpecificationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -74,8 +74,8 @@ class SolutionBase {
 
   ///@{
   /**
-   * <p> The SolutionBase structure provides essential information about a solution.
-   * </p>
+   * <p>The SolutionBase structure provides essential information about a
+   * solution.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

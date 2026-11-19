@@ -36,7 +36,9 @@ class SubscriberSummary {
   AWS_EVENTBRIDGEV2_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
+   */
   inline const Aws::String& GetSubscriberArn() const { return m_subscriberArn; }
   inline bool SubscriberArnHasBeenSet() const { return m_subscriberArnHasBeenSet; }
   template <typename SubscriberArnT = Aws::String>
@@ -52,7 +54,10 @@ class SubscriberSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Name of a subscriber. The first character must be alphanumeric; the remaining
+   * characters may also include '.', '-', and '_'.</p>
+   */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
   template <typename NameT = Aws::String>
@@ -68,7 +73,9 @@ class SubscriberSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
+   */
   inline const Aws::String& GetEventBusArn() const { return m_eventBusArn; }
   inline bool EventBusArnHasBeenSet() const { return m_eventBusArnHasBeenSet; }
   template <typename EventBusArnT = Aws::String>
@@ -84,7 +91,11 @@ class SubscriberSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>ARN of the target a subscriber invokes. The resource grammar is
+   * service-neutral because target services use different separators and the USI
+   * form omits region and account.</p>
+   */
   inline const Aws::String& GetTargetArn() const { return m_targetArn; }
   inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
   template <typename TargetArnT = Aws::String>
@@ -100,7 +111,10 @@ class SubscriberSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Delivery ordering mode of a subscriber: FIFO delivers events in order within
+   * an event group; UNORDERED delivers without an ordering guarantee.</p>
+   */
   inline OrderingType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
   inline void SetType(OrderingType value) {
@@ -132,7 +146,12 @@ class SubscriberSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Customer-controlled run state of a subscriber, set on create or update.
+   * Distinct from the bus lifecycle vocabulary, where ACTIVE means "provisioned and
+   * healthy". Delivery requires State RUNNING on a subscriber that is not
+   * revoked.</p>
+   */
   inline SubscriberState GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
   inline void SetState(SubscriberState value) {
@@ -182,7 +201,9 @@ class SubscriberSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>AWS Account Id.</p>
+   */
   inline const Aws::String& GetSubscriberAccountId() const { return m_subscriberAccountId; }
   inline bool SubscriberAccountIdHasBeenSet() const { return m_subscriberAccountIdHasBeenSet; }
   template <typename SubscriberAccountIdT = Aws::String>

@@ -423,6 +423,7 @@
 #include <aws/cloudfront/model/Method.h>
 #include <aws/cloudfront/model/MinimumProtocolVersion.h>
 #include <aws/cloudfront/model/MonitoringSubscription.h>
+#include <aws/cloudfront/model/OnDomainTakeover.h>
 #include <aws/cloudfront/model/Origin.h>
 #include <aws/cloudfront/model/OriginAccessControl.h>
 #include <aws/cloudfront/model/OriginAccessControlConfig.h>
@@ -507,6 +508,7 @@
 #include <aws/cloudfront/model/S3Origin.h>
 #include <aws/cloudfront/model/S3OriginConfig.h>
 #include <aws/cloudfront/model/SSLSupportMethod.h>
+#include <aws/cloudfront/model/ServeOn.h>
 #include <aws/cloudfront/model/SessionStickinessConfig.h>
 #include <aws/cloudfront/model/Signer.h>
 #include <aws/cloudfront/model/SslProtocol.h>
@@ -588,6 +590,7 @@
 #include <aws/cloudfront/model/VerifyDnsConfiguration2020_05_31Request.h>
 #include <aws/cloudfront/model/VerifyDnsConfiguration2020_05_31Result.h>
 #include <aws/cloudfront/model/ViewerCertificate.h>
+#include <aws/cloudfront/model/ViewerFallback.h>
 #include <aws/cloudfront/model/ViewerMtlsConfig.h>
 #include <aws/cloudfront/model/ViewerMtlsMode.h>
 #include <aws/cloudfront/model/ViewerProtocolPolicy.h>

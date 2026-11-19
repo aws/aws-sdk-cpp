@@ -98,6 +98,14 @@ GetRegistryRecordResult& GetRegistryRecordResult::operator=(const Aws::AmazonWeb
         jsonValue.GetString("customMetadataSchemaComplianceStatus"));
     m_customMetadataSchemaComplianceStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("artifact")) {
+    m_artifact = jsonValue.GetObject("artifact");
+    m_artifactHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("synchronizedSource")) {
+    m_synchronizedSource = jsonValue.GetObject("synchronizedSource");
+    m_synchronizedSourceHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

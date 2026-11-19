@@ -20,6 +20,7 @@ static const int FieldValidationFailed_HASH = HashingUtils::HashString("FieldVal
 static const int IdempotentParameterMismatchException_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
 static const int EventInOtherSession_HASH = HashingUtils::HashString("EventInOtherSession");
 static const int ResourceConflict_HASH = HashingUtils::HashString("ResourceConflict");
+static const int UnsupportedInRegion_HASH = HashingUtils::HashString("UnsupportedInRegion");
 
 ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String&
     return ValidationExceptionReason::EventInOtherSession;
   } else if (hashCode == ResourceConflict_HASH) {
     return ValidationExceptionReason::ResourceConflict;
+  } else if (hashCode == UnsupportedInRegion_HASH) {
+    return ValidationExceptionReason::UnsupportedInRegion;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason enumVa
       return "EventInOtherSession";
     case ValidationExceptionReason::ResourceConflict:
       return "ResourceConflict";
+    case ValidationExceptionReason::UnsupportedInRegion:
+      return "UnsupportedInRegion";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

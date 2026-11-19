@@ -23,7 +23,7 @@ Aws::String CreateMarketplaceRevenueShareRequest::SerializePayload() const {
   if (m_clientTokenHasBeenSet) {
     mapSize++;
   }
-  if (m_productIdHasBeenSet) {
+  if (m_productsHasBeenSet) {
     mapSize++;
   }
   if (m_tagsHasBeenSet) {
@@ -42,9 +42,12 @@ Aws::String CreateMarketplaceRevenueShareRequest::SerializePayload() const {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clientToken.c_str()));
   }
 
-  if (m_productIdHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProductId"));
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_productId.c_str()));
+  if (m_productsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Products"));
+    encoder.WriteArrayStart(m_products.size());
+    for (const auto& item_0 : m_products) {
+      item_0.CborEncode(encoder);
+    }
   }
 
   if (m_tagsHasBeenSet) {

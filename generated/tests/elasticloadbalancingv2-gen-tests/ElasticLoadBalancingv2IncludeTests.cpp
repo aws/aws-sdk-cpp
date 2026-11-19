@@ -38,6 +38,10 @@
 #include <aws/elasticloadbalancingv2/model/CapacityReservationStatus.h>
 #include <aws/elasticloadbalancingv2/model/Certificate.h>
 #include <aws/elasticloadbalancingv2/model/Cipher.h>
+#include <aws/elasticloadbalancingv2/model/ClientCertificateIdentityFilter.h>
+#include <aws/elasticloadbalancingv2/model/ClientCertificateIdentityFilterAction.h>
+#include <aws/elasticloadbalancingv2/model/ClientCertificateIdentityFilterField.h>
+#include <aws/elasticloadbalancingv2/model/ClientCertificateIdentityFilterMatchType.h>
 #include <aws/elasticloadbalancingv2/model/CreateListenerRequest.h>
 #include <aws/elasticloadbalancingv2/model/CreateListenerResult.h>
 #include <aws/elasticloadbalancingv2/model/CreateLoadBalancerRequest.h>

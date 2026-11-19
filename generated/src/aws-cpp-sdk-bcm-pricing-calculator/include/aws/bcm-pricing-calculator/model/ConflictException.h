@@ -20,8 +20,9 @@ namespace BCMPricingCalculator {
 namespace Model {
 
 /**
- * <p> The request could not be processed because of conflict in the current state
- * of the resource. </p><p><h3>See Also:</h3>   <a
+ * <p> The request couldn't be processed because the resource is in a conflicting
+ * state. Verify the resource's current state and retry the request. </p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ConflictException">AWS
  * API Reference</a></p>
  */
@@ -50,7 +51,7 @@ class ConflictException {
 
   ///@{
   /**
-   * <p> The identifier of the resource that was not found. </p>
+   * <p> The identifier of the resource that is in a conflicting state. </p>
    */
   inline const Aws::String& GetResourceId() const { return m_resourceId; }
   inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
@@ -68,7 +69,7 @@ class ConflictException {
 
   ///@{
   /**
-   * <p> The type of the resource that was not found. </p>
+   * <p> The type of the resource that is in a conflicting state. </p>
    */
   inline const Aws::String& GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

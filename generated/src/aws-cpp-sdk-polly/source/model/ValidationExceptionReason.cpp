@@ -19,6 +19,8 @@ static const int unsupportedOperation_HASH = HashingUtils::HashString("unsupport
 static const int fieldValidationFailed_HASH = HashingUtils::HashString("fieldValidationFailed");
 static const int other_HASH = HashingUtils::HashString("other");
 static const int invalidInboundEvent_HASH = HashingUtils::HashString("invalidInboundEvent");
+static const int kmsKeyNotFound_HASH = HashingUtils::HashString("kmsKeyNotFound");
+static const int kmsKeyUnusable_HASH = HashingUtils::HashString("kmsKeyUnusable");
 
 ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +32,10 @@ ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String&
     return ValidationExceptionReason::other;
   } else if (hashCode == invalidInboundEvent_HASH) {
     return ValidationExceptionReason::invalidInboundEvent;
+  } else if (hashCode == kmsKeyNotFound_HASH) {
+    return ValidationExceptionReason::kmsKeyNotFound;
+  } else if (hashCode == kmsKeyUnusable_HASH) {
+    return ValidationExceptionReason::kmsKeyUnusable;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +58,10 @@ Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason enumVa
       return "other";
     case ValidationExceptionReason::invalidInboundEvent:
       return "invalidInboundEvent";
+    case ValidationExceptionReason::kmsKeyNotFound:
+      return "kmsKeyNotFound";
+    case ValidationExceptionReason::kmsKeyUnusable:
+      return "kmsKeyUnusable";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

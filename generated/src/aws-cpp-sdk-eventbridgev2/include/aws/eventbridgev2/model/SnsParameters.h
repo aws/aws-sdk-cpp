@@ -24,7 +24,7 @@ namespace Model {
 /**
  * <p>SNS invocation parameters for subscribers. Values are forwarded to the SNS
  * PublishBatch API. All scalar values accept a literal or a JSONata expression
- * (e.g. &quot;{% $events.Data.groupId %}&quot;).</p><p><h3>See Also:</h3>   <a
+ * (e.g. "{% $events.Data.groupId %}").</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/SnsParameters">AWS
  * API Reference</a></p>
  */

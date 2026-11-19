@@ -20,6 +20,7 @@ static const int MAX_HOSTED_ZONES_BY_OWNER_HASH = HashingUtils::HashString("MAX_
 static const int MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER_HASH = HashingUtils::HashString("MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER");
 static const int MAX_REUSABLE_DELEGATION_SETS_BY_OWNER_HASH = HashingUtils::HashString("MAX_REUSABLE_DELEGATION_SETS_BY_OWNER");
 static const int MAX_TRAFFIC_POLICIES_BY_OWNER_HASH = HashingUtils::HashString("MAX_TRAFFIC_POLICIES_BY_OWNER");
+static const int MAX_HEALTH_CHECK_SOURCES_BY_OWNER_HASH = HashingUtils::HashString("MAX_HEALTH_CHECK_SOURCES_BY_OWNER");
 
 AccountLimitType GetAccountLimitTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ AccountLimitType GetAccountLimitTypeForName(const Aws::String& name) {
     return AccountLimitType::MAX_REUSABLE_DELEGATION_SETS_BY_OWNER;
   } else if (hashCode == MAX_TRAFFIC_POLICIES_BY_OWNER_HASH) {
     return AccountLimitType::MAX_TRAFFIC_POLICIES_BY_OWNER;
+  } else if (hashCode == MAX_HEALTH_CHECK_SOURCES_BY_OWNER_HASH) {
+    return AccountLimitType::MAX_HEALTH_CHECK_SOURCES_BY_OWNER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForAccountLimitType(AccountLimitType enumValue) {
       return "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER";
     case AccountLimitType::MAX_TRAFFIC_POLICIES_BY_OWNER:
       return "MAX_TRAFFIC_POLICIES_BY_OWNER";
+    case AccountLimitType::MAX_HEALTH_CHECK_SOURCES_BY_OWNER:
+      return "MAX_HEALTH_CHECK_SOURCES_BY_OWNER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

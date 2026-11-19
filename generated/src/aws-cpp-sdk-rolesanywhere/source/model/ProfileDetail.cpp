@@ -91,6 +91,10 @@ ProfileDetail& ProfileDetail::operator=(JsonView jsonValue) {
     m_aliasArn = jsonValue.GetString("aliasArn");
     m_aliasArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("tipConfiguration")) {
+    m_tipConfiguration = jsonValue.GetObject("tipConfiguration");
+    m_tipConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("previousAliasName")) {
     m_previousAliasName = jsonValue.GetString("previousAliasName");
     m_previousAliasNameHasBeenSet = true;
@@ -175,6 +179,10 @@ JsonValue ProfileDetail::Jsonize() const {
 
   if (m_aliasArnHasBeenSet) {
     payload.WithString("aliasArn", m_aliasArn);
+  }
+
+  if (m_tipConfigurationHasBeenSet) {
+    payload.WithObject("tipConfiguration", m_tipConfiguration.Jsonize());
   }
 
   if (m_previousAliasNameHasBeenSet) {

@@ -70,6 +70,10 @@ RegistryRecordSummary& RegistryRecordSummary::operator=(JsonView jsonValue) {
     m_customMetadata = jsonValue.GetObject("customMetadata");
     m_customMetadataHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("artifact")) {
+    m_artifact = jsonValue.GetObject("artifact");
+    m_artifactHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -128,6 +132,10 @@ JsonValue RegistryRecordSummary::Jsonize() const {
     if (!m_customMetadata.View().IsNull()) {
       payload.WithObject("customMetadata", JsonValue(m_customMetadata.View()));
     }
+  }
+
+  if (m_artifactHasBeenSet) {
+    payload.WithObject("artifact", m_artifact.Jsonize());
   }
 
   return payload;

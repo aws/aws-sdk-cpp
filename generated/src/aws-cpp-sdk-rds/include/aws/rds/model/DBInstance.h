@@ -27,6 +27,7 @@
 #include <aws/rds/model/MasterUserSecret.h>
 #include <aws/rds/model/OptionGroupMembership.h>
 #include <aws/rds/model/PendingModifiedValues.h>
+#include <aws/rds/model/PrimaryEndpoint.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <aws/rds/model/ReplicaMode.h>
 #include <aws/rds/model/StorageEncryptionType.h>
@@ -197,6 +198,28 @@ class DBInstance {
   template <typename EndpointT = Endpoint>
   DBInstance& WithEndpoint(EndpointT&& value) {
     SetEndpoint(std::forward<EndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the connection endpoint for the DB instance that currently has the
+   * primary role.</p> <p>This endpoint points to the new primary DB instance after a
+   * switchover, so you don't have to connect to a different DNS name.</p> <p>A read
+   * replica reports the same primary endpoint as the DB instance it replicates from.
+   * When you promote a read replica, it reports its own primary endpoint.</p>
+   */
+  inline const PrimaryEndpoint& GetPrimaryEndpoint() const { return m_primaryEndpoint; }
+  inline bool PrimaryEndpointHasBeenSet() const { return m_primaryEndpointHasBeenSet; }
+  template <typename PrimaryEndpointT = PrimaryEndpoint>
+  void SetPrimaryEndpoint(PrimaryEndpointT&& value) {
+    m_primaryEndpointHasBeenSet = true;
+    m_primaryEndpoint = std::forward<PrimaryEndpointT>(value);
+  }
+  template <typename PrimaryEndpointT = PrimaryEndpoint>
+  DBInstance& WithPrimaryEndpoint(PrimaryEndpointT&& value) {
+    SetPrimaryEndpoint(std::forward<PrimaryEndpointT>(value));
     return *this;
   }
   ///@}
@@ -1972,6 +1995,24 @@ class DBInstance {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the DB instance uses VPC networking. For a DB instance in
+   * an Aurora PostgreSQL DB cluster without VPC networking, the value is
+   * <code>false</code>.</p>
+   */
+  inline bool GetVPCNetworkingEnabled() const { return m_vPCNetworkingEnabled; }
+  inline bool VPCNetworkingEnabledHasBeenSet() const { return m_vPCNetworkingEnabledHasBeenSet; }
+  inline void SetVPCNetworkingEnabled(bool value) {
+    m_vPCNetworkingEnabledHasBeenSet = true;
+    m_vPCNetworkingEnabled = value;
+  }
+  inline DBInstance& WithVPCNetworkingEnabled(bool value) {
+    SetVPCNetworkingEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
 
@@ -1986,6 +2027,8 @@ class DBInstance {
   Aws::String m_dBName;
 
   Endpoint m_endpoint;
+
+  PrimaryEndpoint m_primaryEndpoint;
 
   int m_allocatedStorage{0};
 
@@ -2160,6 +2203,8 @@ class DBInstance {
   int m_storageOperationPercentProgress{0};
 
   Aws::String m_dBCapacityReservationIdentifier;
+
+  bool m_vPCNetworkingEnabled{false};
   bool m_dBInstanceIdentifierHasBeenSet = false;
   bool m_dBInstanceClassHasBeenSet = false;
   bool m_engineHasBeenSet = false;
@@ -2167,6 +2212,7 @@ class DBInstance {
   bool m_masterUsernameHasBeenSet = false;
   bool m_dBNameHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
+  bool m_primaryEndpointHasBeenSet = false;
   bool m_allocatedStorageHasBeenSet = false;
   bool m_instanceCreateTimeHasBeenSet = false;
   bool m_preferredBackupWindowHasBeenSet = false;
@@ -2254,6 +2300,7 @@ class DBInstance {
   bool m_storageOperationStatusHasBeenSet = false;
   bool m_storageOperationPercentProgressHasBeenSet = false;
   bool m_dBCapacityReservationIdentifierHasBeenSet = false;
+  bool m_vPCNetworkingEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

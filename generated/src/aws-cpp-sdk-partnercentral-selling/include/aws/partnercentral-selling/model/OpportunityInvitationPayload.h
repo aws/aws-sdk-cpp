@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/model/EngagementCustomer.h>
+#include <aws/partnercentral-selling/model/OpportunityType.h>
 #include <aws/partnercentral-selling/model/ProjectDetails.h>
 #include <aws/partnercentral-selling/model/ReceiverResponsibility.h>
 #include <aws/partnercentral-selling/model/SenderContact.h>
@@ -124,6 +125,30 @@ class OpportunityInvitationPayload {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the opportunity being shared. The sender of the invitation sets
+   * it. Valid values:</p> <ul> <li> <p> <code>Net New Business</code>: A new
+   * business opportunity with a potential customer that's not previously engaged
+   * with your solutions or services.</p> </li> <li> <p> <code>Flat Renewal</code>:
+   * An opportunity to renew an existing contract or subscription with a current
+   * customer, ensuring continuity of service.</p> </li> <li> <p>
+   * <code>Expansion</code>: An opportunity to expand the scope of an existing
+   * contract or subscription, either by adding new services or increasing the volume
+   * of existing services for a current customer.</p> </li> </ul>
+   */
+  inline OpportunityType GetOpportunityType() const { return m_opportunityType; }
+  inline bool OpportunityTypeHasBeenSet() const { return m_opportunityTypeHasBeenSet; }
+  inline void SetOpportunityType(OpportunityType value) {
+    m_opportunityTypeHasBeenSet = true;
+    m_opportunityType = value;
+  }
+  inline OpportunityInvitationPayload& WithOpportunityType(OpportunityType value) {
+    SetOpportunityType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<SenderContact> m_senderContacts;
 
@@ -132,10 +157,13 @@ class OpportunityInvitationPayload {
   EngagementCustomer m_customer;
 
   ProjectDetails m_project;
+
+  OpportunityType m_opportunityType{OpportunityType::NOT_SET};
   bool m_senderContactsHasBeenSet = false;
   bool m_receiverResponsibilitiesHasBeenSet = false;
   bool m_customerHasBeenSet = false;
   bool m_projectHasBeenSet = false;
+  bool m_opportunityTypeHasBeenSet = false;
 };
 
 }  // namespace Model

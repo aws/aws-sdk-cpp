@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCore {
 namespace Model {
-enum class PaymentType { NOT_SET, CRYPTO_X402, MPP };
+enum class PaymentType { NOT_SET, CRYPTO_X402, MPP, AWS_BILLING_X402 };
 
 namespace PaymentTypeMapper {
 AWS_BEDROCKAGENTCORE_API PaymentType GetPaymentTypeForName(const Aws::String& name);

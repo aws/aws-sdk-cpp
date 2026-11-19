@@ -51,18 +51,18 @@ class UpdateMarketplaceRevenueShareAllocationRequest : public PartnerCentralReve
 
   ///@{
   /**
-   * <p>The AWS Marketplace product identifier for the parent revenue share.</p>
+   * <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
    */
-  inline const Aws::String& GetProductId() const { return m_productId; }
-  inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-  template <typename ProductIdT = Aws::String>
-  void SetProductId(ProductIdT&& value) {
-    m_productIdHasBeenSet = true;
-    m_productId = std::forward<ProductIdT>(value);
+  inline const Aws::String& GetMarketplaceRevenueShareIdentifier() const { return m_marketplaceRevenueShareIdentifier; }
+  inline bool MarketplaceRevenueShareIdentifierHasBeenSet() const { return m_marketplaceRevenueShareIdentifierHasBeenSet; }
+  template <typename MarketplaceRevenueShareIdentifierT = Aws::String>
+  void SetMarketplaceRevenueShareIdentifier(MarketplaceRevenueShareIdentifierT&& value) {
+    m_marketplaceRevenueShareIdentifierHasBeenSet = true;
+    m_marketplaceRevenueShareIdentifier = std::forward<MarketplaceRevenueShareIdentifierT>(value);
   }
-  template <typename ProductIdT = Aws::String>
-  UpdateMarketplaceRevenueShareAllocationRequest& WithProductId(ProductIdT&& value) {
-    SetProductId(std::forward<ProductIdT>(value));
+  template <typename MarketplaceRevenueShareIdentifierT = Aws::String>
+  UpdateMarketplaceRevenueShareAllocationRequest& WithMarketplaceRevenueShareIdentifier(MarketplaceRevenueShareIdentifierT&& value) {
+    SetMarketplaceRevenueShareIdentifier(std::forward<MarketplaceRevenueShareIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -124,44 +124,6 @@ class UpdateMarketplaceRevenueShareAllocationRequest : public PartnerCentralReve
 
   ///@{
   /**
-   * <p>The new effective start date. Must be the first day of a month. Only
-   * modifiable on future-dated allocations.</p>
-   */
-  inline const Aws::String& GetEffectiveFrom() const { return m_effectiveFrom; }
-  inline bool EffectiveFromHasBeenSet() const { return m_effectiveFromHasBeenSet; }
-  template <typename EffectiveFromT = Aws::String>
-  void SetEffectiveFrom(EffectiveFromT&& value) {
-    m_effectiveFromHasBeenSet = true;
-    m_effectiveFrom = std::forward<EffectiveFromT>(value);
-  }
-  template <typename EffectiveFromT = Aws::String>
-  UpdateMarketplaceRevenueShareAllocationRequest& WithEffectiveFrom(EffectiveFromT&& value) {
-    SetEffectiveFrom(std::forward<EffectiveFromT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The new effective end date. Must be the last day of a month and on or after
-   * today.</p>
-   */
-  inline const Aws::String& GetEffectiveUntil() const { return m_effectiveUntil; }
-  inline bool EffectiveUntilHasBeenSet() const { return m_effectiveUntilHasBeenSet; }
-  template <typename EffectiveUntilT = Aws::String>
-  void SetEffectiveUntil(EffectiveUntilT&& value) {
-    m_effectiveUntilHasBeenSet = true;
-    m_effectiveUntil = std::forward<EffectiveUntilT>(value);
-  }
-  template <typename EffectiveUntilT = Aws::String>
-  UpdateMarketplaceRevenueShareAllocationRequest& WithEffectiveUntil(EffectiveUntilT&& value) {
-    SetEffectiveUntil(std::forward<EffectiveUntilT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The new revenue share percentage. Only modifiable on future-dated
    * allocations.</p>
    */
@@ -198,7 +160,7 @@ class UpdateMarketplaceRevenueShareAllocationRequest : public PartnerCentralReve
  private:
   CatalogName m_catalog{CatalogName::NOT_SET};
 
-  Aws::String m_productId;
+  Aws::String m_marketplaceRevenueShareIdentifier;
 
   Aws::String m_marketplaceRevenueShareAllocationId;
 
@@ -206,20 +168,14 @@ class UpdateMarketplaceRevenueShareAllocationRequest : public PartnerCentralReve
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
-  Aws::String m_effectiveFrom;
-
-  Aws::String m_effectiveUntil;
-
   Aws::String m_revenueSharePercent;
 
   AllocationStatus m_status{AllocationStatus::NOT_SET};
   bool m_catalogHasBeenSet = false;
-  bool m_productIdHasBeenSet = false;
+  bool m_marketplaceRevenueShareIdentifierHasBeenSet = false;
   bool m_marketplaceRevenueShareAllocationIdHasBeenSet = false;
   bool m_marketplaceRevenueShareRevisionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
-  bool m_effectiveFromHasBeenSet = false;
-  bool m_effectiveUntilHasBeenSet = false;
   bool m_revenueSharePercentHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };

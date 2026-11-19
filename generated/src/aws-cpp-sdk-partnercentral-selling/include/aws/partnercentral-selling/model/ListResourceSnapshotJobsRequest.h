@@ -17,6 +17,10 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the <code>ListResourceSnapshotJobs</code>
+ * operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListResourceSnapshotJobsRequest">AWS
+ * API Reference</a></p>
  */
 class ListResourceSnapshotJobsRequest : public PartnerCentralSellingRequest {
  public:
@@ -52,8 +56,8 @@ class ListResourceSnapshotJobsRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> The maximum number of results to return in a single call. If omitted,
-   * defaults to 50. </p>
+   * <p>The maximum number of results to return in a single call. If omitted,
+   * defaults to 50.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -69,7 +73,7 @@ class ListResourceSnapshotJobsRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> The token for the next set of results. </p>
+   * <p>The token for the next set of results.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -87,7 +91,7 @@ class ListResourceSnapshotJobsRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> The identifier of the engagement to filter the response. </p>
+   * <p>The identifier of the engagement to filter the response.</p>
    */
   inline const Aws::String& GetEngagementIdentifier() const { return m_engagementIdentifier; }
   inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
@@ -121,8 +125,8 @@ class ListResourceSnapshotJobsRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> Configures the sorting of the response. If omitted, results are sorted by
-   * <code>CreatedDate</code> in descending order. </p>
+   * <p>Configures the sorting of the response. If omitted, results are sorted by
+   * CreatedDate in descending order. </p>
    */
   inline const SortObject& GetSort() const { return m_sort; }
   inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }

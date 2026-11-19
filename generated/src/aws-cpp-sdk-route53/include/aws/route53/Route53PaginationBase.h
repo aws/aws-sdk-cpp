@@ -10,6 +10,8 @@
 #include <aws/route53/model/ListCidrBlocksPaginationTraits.h>
 #include <aws/route53/model/ListCidrCollectionsPaginationTraits.h>
 #include <aws/route53/model/ListCidrLocationsPaginationTraits.h>
+#include <aws/route53/model/ListHealthCheckSourcesPaginationTraits.h>
+#include <aws/route53/model/ListHealthChecksBySourcePaginationTraits.h>
 #include <aws/route53/model/ListHealthChecksPaginationTraits.h>
 #include <aws/route53/model/ListHostedZonesPaginationTraits.h>
 #include <aws/route53/model/ListQueryLoggingConfigsPaginationTraits.h>
@@ -68,6 +70,30 @@ class Route53PaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHealthChecksRequest,
                                              Pagination::ListHealthChecksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
+  }
+
+  /**
+   * Create a paginator for ListHealthChecksBySource operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHealthChecksBySourceRequest,
+                                    Pagination::ListHealthChecksBySourcePaginationTraits<DerivedClient>>
+  ListHealthChecksBySourcePaginator(const Model::ListHealthChecksBySourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHealthChecksBySourceRequest,
+                                             Pagination::ListHealthChecksBySourcePaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListHealthCheckSources operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHealthCheckSourcesRequest,
+                                    Pagination::ListHealthCheckSourcesPaginationTraits<DerivedClient>>
+  ListHealthCheckSourcesPaginator(const Model::ListHealthCheckSourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHealthCheckSourcesRequest,
+                                             Pagination::ListHealthCheckSourcesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

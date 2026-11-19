@@ -116,7 +116,10 @@ class ResourceDetails {
   ///@}
 
   ///@{
-
+  /**
+   * <p>An object that contains details about the Amazon Machine Image (AMI) involved
+   * in the finding.</p>
+   */
   inline const MachineImageDetails& GetMachineImage() const { return m_machineImage; }
   inline bool MachineImageHasBeenSet() const { return m_machineImageHasBeenSet; }
   template <typename MachineImageT = MachineImageDetails>

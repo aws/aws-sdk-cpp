@@ -28,6 +28,11 @@ DomainItem& DomainItem::operator=(const XmlNode& xmlNode) {
       m_domain = Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText());
       m_domainHasBeenSet = true;
     }
+    XmlNode serveOnNode = resultNode.FirstChild("ServeOn");
+    if (!serveOnNode.IsNull()) {
+      m_serveOn = ServeOnMapper::GetServeOnForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serveOnNode.GetText()).c_str()));
+      m_serveOnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -38,6 +43,11 @@ void DomainItem::AddToNode(XmlNode& parentNode) const {
   if (m_domainHasBeenSet) {
     XmlNode domainNode = parentNode.CreateChildElement("Domain");
     domainNode.SetText(m_domain);
+  }
+
+  if (m_serveOnHasBeenSet) {
+    XmlNode serveOnNode = parentNode.CreateChildElement("ServeOn");
+    serveOnNode.SetText(ServeOnMapper::GetNameForServeOn(m_serveOn));
   }
 }
 

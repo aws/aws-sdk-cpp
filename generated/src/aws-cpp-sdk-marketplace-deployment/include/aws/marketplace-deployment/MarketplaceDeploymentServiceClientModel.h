@@ -19,8 +19,12 @@
 /* End of generic header includes */
 
 /* Service model headers required in MarketplaceDeploymentClient header */
+#include <aws/marketplace-deployment/model/GetDeploymentConfigurationJobResult.h>
+#include <aws/marketplace-deployment/model/GetDeploymentConfigurationResult.h>
+#include <aws/marketplace-deployment/model/ListDeploymentConfigurationJobsResult.h>
 #include <aws/marketplace-deployment/model/ListTagsForResourceResult.h>
 #include <aws/marketplace-deployment/model/PutDeploymentParameterResult.h>
+#include <aws/marketplace-deployment/model/StartDeploymentConfigurationJobResult.h>
 #include <aws/marketplace-deployment/model/TagResourceResult.h>
 #include <aws/marketplace-deployment/model/UntagResourceResult.h>
 /* End of service model headers required in MarketplaceDeploymentClient header */
@@ -56,22 +60,34 @@ using MarketplaceDeploymentEndpointProvider = Aws::MarketplaceDeployment::Endpoi
 
 namespace Model {
 /* Service model forward declarations required in MarketplaceDeploymentClient header */
+class GetDeploymentConfigurationRequest;
+class GetDeploymentConfigurationJobRequest;
+class ListDeploymentConfigurationJobsRequest;
 class ListTagsForResourceRequest;
 class PutDeploymentParameterRequest;
+class StartDeploymentConfigurationJobRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 /* End of service model forward declarations required in MarketplaceDeploymentClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<GetDeploymentConfigurationResult, MarketplaceDeploymentError> GetDeploymentConfigurationOutcome;
+typedef Aws::Utils::Outcome<GetDeploymentConfigurationJobResult, MarketplaceDeploymentError> GetDeploymentConfigurationJobOutcome;
+typedef Aws::Utils::Outcome<ListDeploymentConfigurationJobsResult, MarketplaceDeploymentError> ListDeploymentConfigurationJobsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, MarketplaceDeploymentError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutDeploymentParameterResult, MarketplaceDeploymentError> PutDeploymentParameterOutcome;
+typedef Aws::Utils::Outcome<StartDeploymentConfigurationJobResult, MarketplaceDeploymentError> StartDeploymentConfigurationJobOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, MarketplaceDeploymentError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, MarketplaceDeploymentError> UntagResourceOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<GetDeploymentConfigurationOutcome> GetDeploymentConfigurationOutcomeCallable;
+typedef std::future<GetDeploymentConfigurationJobOutcome> GetDeploymentConfigurationJobOutcomeCallable;
+typedef std::future<ListDeploymentConfigurationJobsOutcome> ListDeploymentConfigurationJobsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutDeploymentParameterOutcome> PutDeploymentParameterOutcomeCallable;
+typedef std::future<StartDeploymentConfigurationJobOutcome> StartDeploymentConfigurationJobOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -80,12 +96,27 @@ typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 class MarketplaceDeploymentClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const MarketplaceDeploymentClient*, const Model::GetDeploymentConfigurationRequest&,
+                           const Model::GetDeploymentConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDeploymentConfigurationResponseReceivedHandler;
+typedef std::function<void(const MarketplaceDeploymentClient*, const Model::GetDeploymentConfigurationJobRequest&,
+                           const Model::GetDeploymentConfigurationJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDeploymentConfigurationJobResponseReceivedHandler;
+typedef std::function<void(const MarketplaceDeploymentClient*, const Model::ListDeploymentConfigurationJobsRequest&,
+                           const Model::ListDeploymentConfigurationJobsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDeploymentConfigurationJobsResponseReceivedHandler;
 typedef std::function<void(const MarketplaceDeploymentClient*, const Model::ListTagsForResourceRequest&,
                            const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
 typedef std::function<void(const MarketplaceDeploymentClient*, const Model::PutDeploymentParameterRequest&,
                            const Model::PutDeploymentParameterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutDeploymentParameterResponseReceivedHandler;
+typedef std::function<void(const MarketplaceDeploymentClient*, const Model::StartDeploymentConfigurationJobRequest&,
+                           const Model::StartDeploymentConfigurationJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartDeploymentConfigurationJobResponseReceivedHandler;
 typedef std::function<void(const MarketplaceDeploymentClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

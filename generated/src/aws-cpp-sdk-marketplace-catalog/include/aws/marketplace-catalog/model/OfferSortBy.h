@@ -16,6 +16,7 @@ enum class OfferSortBy {
   Name,
   ProductId,
   ResaleAuthorizationId,
+  SubsidiaryAuthorizationId,
   ReleaseDate,
   AvailabilityEndDate,
   BuyerAccounts,

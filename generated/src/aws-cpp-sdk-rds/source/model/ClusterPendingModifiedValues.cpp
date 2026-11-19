@@ -81,6 +81,18 @@ ClusterPendingModifiedValues& ClusterPendingModifiedValues::operator=(const XmlN
       m_certificateDetails = certificateDetailsNode;
       m_certificateDetailsHasBeenSet = true;
     }
+    XmlNode vPCNetworkingEnabledNode = resultNode.FirstChild("VPCNetworkingEnabled");
+    if (!vPCNetworkingEnabledNode.IsNull()) {
+      m_vPCNetworkingEnabled = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vPCNetworkingEnabledNode.GetText()).c_str()).c_str());
+      m_vPCNetworkingEnabledHasBeenSet = true;
+    }
+    XmlNode internetAccessGatewayEnabledNode = resultNode.FirstChild("InternetAccessGatewayEnabled");
+    if (!internetAccessGatewayEnabledNode.IsNull()) {
+      m_internetAccessGatewayEnabled = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(internetAccessGatewayEnabledNode.GetText()).c_str()).c_str());
+      m_internetAccessGatewayEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -139,6 +151,15 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
     certificateDetailsLocationAndMemberSs << location << index << locationValue << ".CertificateDetails";
     m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMemberSs.str().c_str());
   }
+
+  if (m_vPCNetworkingEnabledHasBeenSet) {
+    oStream << location << index << locationValue << ".VPCNetworkingEnabled=" << std::boolalpha << m_vPCNetworkingEnabled << "&";
+  }
+
+  if (m_internetAccessGatewayEnabledHasBeenSet) {
+    oStream << location << index << locationValue << ".InternetAccessGatewayEnabled=" << std::boolalpha << m_internetAccessGatewayEnabled
+            << "&";
+  }
 }
 
 void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -180,6 +201,12 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
     Aws::String certificateDetailsLocationAndMember(location);
     certificateDetailsLocationAndMember += ".CertificateDetails";
     m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMember.c_str());
+  }
+  if (m_vPCNetworkingEnabledHasBeenSet) {
+    oStream << location << ".VPCNetworkingEnabled=" << std::boolalpha << m_vPCNetworkingEnabled << "&";
+  }
+  if (m_internetAccessGatewayEnabledHasBeenSet) {
+    oStream << location << ".InternetAccessGatewayEnabled=" << std::boolalpha << m_internetAccessGatewayEnabled << "&";
   }
 }
 

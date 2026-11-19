@@ -30,6 +30,10 @@ CreateRegistryRecordResult& CreateRegistryRecordResult::operator=(const Aws::Ama
     m_status = RegistryRecordStatusMapper::GetRegistryRecordStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("authorizationData")) {
+    m_authorizationData = jsonValue.GetObject("authorizationData");
+    m_authorizationDataHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -24,6 +24,8 @@ static const int PENDING_UPDATE_HASH = HashingUtils::HashString("PENDING_UPDATE"
 static const int ISOLATED_HASH = HashingUtils::HashString("ISOLATED");
 static const int PENDING_ISOLATION_HASH = HashingUtils::HashString("PENDING_ISOLATION");
 static const int PENDING_RESTORATION_HASH = HashingUtils::HashString("PENDING_RESTORATION");
+static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
+static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
 
 RequesterGatewayStatus GetRequesterGatewayStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +47,10 @@ RequesterGatewayStatus GetRequesterGatewayStatusForName(const Aws::String& name)
     return RequesterGatewayStatus::PENDING_ISOLATION;
   } else if (hashCode == PENDING_RESTORATION_HASH) {
     return RequesterGatewayStatus::PENDING_RESTORATION;
+  } else if (hashCode == CREATE_FAILED_HASH) {
+    return RequesterGatewayStatus::CREATE_FAILED;
+  } else if (hashCode == DELETE_FAILED_HASH) {
+    return RequesterGatewayStatus::DELETE_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +83,10 @@ Aws::String GetNameForRequesterGatewayStatus(RequesterGatewayStatus enumValue) {
       return "PENDING_ISOLATION";
     case RequesterGatewayStatus::PENDING_RESTORATION:
       return "PENDING_RESTORATION";
+    case RequesterGatewayStatus::CREATE_FAILED:
+      return "CREATE_FAILED";
+    case RequesterGatewayStatus::DELETE_FAILED:
+      return "DELETE_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

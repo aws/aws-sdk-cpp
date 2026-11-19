@@ -18,6 +18,7 @@ namespace InputCodecMapper {
 static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
 static const int AVC_HASH = HashingUtils::HashString("AVC");
 static const int HEVC_HASH = HashingUtils::HashString("HEVC");
+static const int JPEGXS_HASH = HashingUtils::HashString("JPEGXS");
 
 InputCodec GetInputCodecForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ InputCodec GetInputCodecForName(const Aws::String& name) {
     return InputCodec::AVC;
   } else if (hashCode == HEVC_HASH) {
     return InputCodec::HEVC;
+  } else if (hashCode == JPEGXS_HASH) {
+    return InputCodec::JPEGXS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForInputCodec(InputCodec enumValue) {
       return "AVC";
     case InputCodec::HEVC:
       return "HEVC";
+    case InputCodec::JPEGXS:
+      return "JPEGXS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

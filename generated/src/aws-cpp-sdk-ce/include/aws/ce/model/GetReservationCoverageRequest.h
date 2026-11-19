@@ -66,12 +66,23 @@ class GetReservationCoverageRequest : public CostExplorerRequest {
 
   ///@{
   /**
-   * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
-   * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
-   * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-   * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
-   * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
-   * </li> <li> <p>TENANCY</p> </li> </ul>
+   * <p>You can group the data by the following attributes. The attributes that you
+   * can use depend on the service in the <code>SERVICE</code> filter. If you don't
+   * provide a <code>SERVICE</code> filter, Cost Explorer uses Amazon Elastic Compute
+   * Cloud - Compute.</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute:
+   * <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>INSTANCE_TYPE_FAMILY</code>,
+   * <code>LINKED_ACCOUNT</code>, <code>PLATFORM</code>, <code>REGION</code>, and
+   * <code>TENANCY</code> </p> </li> <li> <p>Amazon Relational Database Service:
+   * <code>AZ</code>, <code>DATABASE_ENGINE</code>, <code>DEPLOYMENT_OPTION</code>,
+   * <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code>
+   * </p> </li> <li> <p>Amazon ElastiCache and Amazon MemoryDB: <code>AZ</code>,
+   * <code>CACHE_ENGINE</code>, <code>INSTANCE_TYPE</code>,
+   * <code>LINKED_ACCOUNT</code>, and <code>REGION</code> </p> </li> <li> <p>Amazon
+   * Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service:
+   * <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and
+   * <code>REGION</code> </p> </li> </ul> <p>If you specify two <code>SERVICE</code>
+   * values, use only attributes that both services support. You can specify up to
+   * four attributes, and only the <code>DIMENSION</code> type is supported.</p>
    */
   inline const Aws::Vector<GroupDefinition>& GetGroupBy() const { return m_groupBy; }
   inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
@@ -117,13 +128,24 @@ class GetReservationCoverageRequest : public CostExplorerRequest {
 
   ///@{
   /**
-   * <p>Filters utilization data by dimensions. You can filter by the following
+   * <p>Filters coverage data by dimensions. You can filter by the following
    * dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li>
    * <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li>
-   * <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
-   * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
-   * </li> <li> <p>SERVICE</p> </li> <li> <p>TAG</p> </li> <li> <p>TENANCY</p> </li>
-   * </ul> <p> <code>GetReservationCoverage</code> uses the same <a
+   * <p>INSTANCE_TYPE</p> </li> <li> <p>INSTANCE_TYPE_FAMILY</p> </li> <li>
+   * <p>LINKED_ACCOUNT</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li>
+   * <li> <p>SERVICE</p>  <p>Supported values for <code>SERVICE</code> are
+   * Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service,
+   * Amazon ElastiCache, Amazon MemoryDB, Amazon Redshift, Amazon Elasticsearch
+   * Service, and Amazon OpenSearch Service. You can specify up to two
+   * <code>SERVICE</code> values.</p>  </li> <li> <p>TAG</p> </li> <li>
+   * <p>TENANCY</p> </li> </ul> <p>The dimensions that you can use depend on the
+   * service in the <code>SERVICE</code> filter. <code>CACHE_ENGINE</code> applies
+   * only to Amazon ElastiCache and Amazon MemoryDB. <code>DATABASE_ENGINE</code> and
+   * <code>DEPLOYMENT_OPTION</code> apply only to Amazon Relational Database Service.
+   * <code>INSTANCE_TYPE_FAMILY</code>, <code>PLATFORM</code>, and
+   * <code>TENANCY</code> apply only to Amazon Elastic Compute Cloud - Compute. If
+   * you specify two <code>SERVICE</code> values, use only dimensions that both
+   * services support.</p> <p> <code>GetReservationCoverage</code> uses the same <a
    * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
    * object as the other operations, but only <code>AND</code> is supported among
    * each dimension. You can nest only one level deep. If there are multiple values
@@ -149,7 +171,12 @@ class GetReservationCoverageRequest : public CostExplorerRequest {
   /**
    * <p>The measurement that you want your reservation coverage reported in.</p>
    * <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>.
-   * You can use multiple values in a request.</p>
+   * You can use multiple values in a request. <code>Hour</code> returns
+   * <code>CoverageHours</code>, <code>Unit</code> returns
+   * <code>CoverageNormalizedUnits</code>, and <code>Cost</code> returns
+   * <code>CoverageCost</code>. <code>Unit</code> is supported only for Amazon
+   * Elastic Compute Cloud - Compute. If you don't specify <code>Metrics</code>, the
+   * response includes only <code>CoverageHours</code>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetMetrics() const { return m_metrics; }
   inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }

@@ -33,7 +33,7 @@ class BatchDeleteBillScenarioUsageModificationResult {
 
   ///@{
   /**
-   * <p> Returns the list of errors reason and the usage item keys that cannot be
+   * <p> Returns the list of errors reason and the usage item keys that can't be
    * deleted from the Bill Scenario. </p>
    */
   inline const Aws::Vector<BatchDeleteBillScenarioUsageModificationError>& GetErrors() const { return m_errors; }

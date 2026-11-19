@@ -53,6 +53,14 @@ Aws::String CreateOpenIDConnectProviderRequest::SerializePayload() const {
     }
   }
 
+  if (m_contextProviderHasBeenSet) {
+    m_contextProvider.OutputToStream(ss, "ContextProvider");
+  }
+
+  if (m_identityCenterInstanceArnHasBeenSet) {
+    ss << "IdentityCenterInstanceArn=" << StringUtils::URLEncode(m_identityCenterInstanceArn.c_str()) << "&";
+  }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

@@ -17,6 +17,10 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
+ * <p>Contains the request parameters for the
+ * <code>CreateEngagementInvitation</code> operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementInvitationRequest">AWS
+ * API Reference</a></p>
  */
 class CreateEngagementInvitationRequest : public PartnerCentralSellingRequest {
  public:
@@ -34,9 +38,9 @@ class CreateEngagementInvitationRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> Specifies the catalog related to the engagement. Accepted values are
+   * <p>Specifies the catalog related to the engagement. Accepted values are
    * <code>AWS</code> and <code>Sandbox</code>, which determine the environment in
-   * which the engagement is managed. </p>
+   * which the engagement is managed.</p>
    */
   inline const Aws::String& GetCatalog() const { return m_catalog; }
   inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -54,9 +58,9 @@ class CreateEngagementInvitationRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> Specifies a unique, client-generated UUID to ensure that the request is
-   * handled exactly once. This token helps prevent duplicate invitation creations.
-   * </p>
+   * <p>Specifies a unique, client-generated UUID to ensure that the request is
+   * handled exactly once. This token helps prevent duplicate invitation
+   * creations.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -74,9 +78,9 @@ class CreateEngagementInvitationRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> The unique identifier of the <code>Engagement</code> associated with the
+   * <p>The unique identifier of the <code>Engagement</code> associated with the
    * invitation. This parameter ensures the invitation is created within the correct
-   * <code>Engagement</code> context. </p>
+   * <code>Engagement</code> context.</p>
    */
   inline const Aws::String& GetEngagementIdentifier() const { return m_engagementIdentifier; }
   inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
@@ -94,13 +98,13 @@ class CreateEngagementInvitationRequest : public PartnerCentralSellingRequest {
 
   ///@{
   /**
-   * <p> The <code>Invitation</code> object all information necessary to initiate an
+   * <p>The <code>Invitation</code> object all information necessary to initiate an
    * engagement invitation to a partner. It contains a personalized message from the
    * sender, the invitation's receiver, and a payload. The <code>Payload</code> can
    * be the <code>OpportunityInvitation</code>, which includes detailed structures
    * for sender contacts, partner responsibilities, customer information, and project
    * details, or <code>LeadInvitation</code>, which includes structures for customer
-   * information and interaction details. </p>
+   * information and interaction details.</p>
    */
   inline const Invitation& GetInvitation() const { return m_invitation; }
   inline bool InvitationHasBeenSet() const { return m_invitationHasBeenSet; }

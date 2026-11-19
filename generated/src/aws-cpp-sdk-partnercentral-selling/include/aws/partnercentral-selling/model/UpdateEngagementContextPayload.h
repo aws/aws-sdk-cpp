@@ -56,7 +56,10 @@ class UpdateEngagementContextPayload {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Contains the updated details of a customer project when the context type is
+   * <code>CustomerProject</code>.</p>
+   */
   inline const CustomerProjectsContext& GetCustomerProject() const { return m_customerProject; }
   inline bool CustomerProjectHasBeenSet() const { return m_customerProjectHasBeenSet; }
   template <typename CustomerProjectT = CustomerProjectsContext>

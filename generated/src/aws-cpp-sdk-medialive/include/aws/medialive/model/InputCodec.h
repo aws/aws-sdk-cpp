@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaLive {
 namespace Model {
-enum class InputCodec { NOT_SET, MPEG2, AVC, HEVC };
+enum class InputCodec { NOT_SET, MPEG2, AVC, HEVC, JPEGXS };
 
 namespace InputCodecMapper {
 AWS_MEDIALIVE_API InputCodec GetInputCodecForName(const Aws::String& name);

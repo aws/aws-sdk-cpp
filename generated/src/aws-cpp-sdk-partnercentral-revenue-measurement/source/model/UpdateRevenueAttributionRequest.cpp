@@ -32,6 +32,9 @@ Aws::String UpdateRevenueAttributionRequest::SerializePayload() const {
   if (m_revisionHasBeenSet) {
     mapSize++;
   }
+  if (m_contextHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -58,6 +61,15 @@ Aws::String UpdateRevenueAttributionRequest::SerializePayload() const {
   if (m_revisionHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("Revision"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_revision.c_str()));
+  }
+
+  if (m_contextHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Context"));
+    encoder.WriteMapStart(m_context.size());
+    for (const auto& item_0 : m_context) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.second.c_str()));
+    }
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

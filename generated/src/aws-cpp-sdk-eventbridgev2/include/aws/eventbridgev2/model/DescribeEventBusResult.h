@@ -32,7 +32,9 @@ class DescribeEventBusResult {
   AWS_EVENTBRIDGEV2_API DescribeEventBusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
-
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
+   */
   inline const Aws::String& GetEventBusArn() const { return m_eventBusArn; }
   template <typename EventBusArnT = Aws::String>
   void SetEventBusArn(EventBusArnT&& value) {
@@ -47,7 +49,13 @@ class DescribeEventBusResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Name of an event bus. The first character must be alphanumeric; the remaining
+   * characters may also include '.', '-', and '_'. The grammar matches the name
+   * segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid
+   * name can be represented in the bus's ARN. The same type is used everywhere a bus
+   * name appears.</p>
+   */
   inline const Aws::String& GetName() const { return m_name; }
   template <typename NameT = Aws::String>
   void SetName(NameT&& value) {
@@ -62,7 +70,10 @@ class DescribeEventBusResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Free-text description. Used by every resource type that has one: event buses,
+   * subscribers, and event sources.</p>
+   */
   inline const Aws::String& GetDescription() const { return m_description; }
   template <typename DescriptionT = Aws::String>
   void SetDescription(DescriptionT&& value) {
@@ -77,7 +88,9 @@ class DescribeEventBusResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Encryption configuration for an event bus.</p>
+   */
   inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
   template <typename EncryptionConfigurationT = EncryptionConfiguration>
   void SetEncryptionConfiguration(EncryptionConfigurationT&& value) {
@@ -92,7 +105,9 @@ class DescribeEventBusResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Event storage configuration of an event bus, as returned on reads.</p>
+   */
   inline const StorageConfigurationOutput& GetStorageConfiguration() const { return m_storageConfiguration; }
   template <typename StorageConfigurationT = StorageConfigurationOutput>
   void SetStorageConfiguration(StorageConfigurationT&& value) {
@@ -141,7 +156,18 @@ class DescribeEventBusResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Lifecycle state of an event bus.</p> <ul> <li> <p>CREATING: Bus creation is
+   * in progress.</p> </li> <li> <p>CREATE_FAILED: Bus creation failed; see
+   * StateReason. The bus cannot be recovered or recreated in place: delete it with
+   * DeleteEventBus, then create a new bus.</p> </li> <li> <p>ACTIVE: Bus is fully
+   * operational and can accept events.</p> </li> <li> <p>UPDATING: Bus update is in
+   * progress.</p> </li> <li> <p>UPDATE_FAILED: Bus update failed; the bus remains
+   * operational with its previous configuration.</p> </li> <li> <p>DELETING: Bus
+   * deletion is actively in progress.</p> </li> <li> <p>DELETE_FAILED: Bus deletion
+   * failed; see StateReason. Retry DeleteEventBus after removing subscribers and
+   * event sources.</p> </li> </ul>
+   */
   inline BusState GetState() const { return m_state; }
   inline void SetState(BusState value) {
     m_stateHasBeenSet = true;
@@ -154,7 +180,14 @@ class DescribeEventBusResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Human-readable explanation of why an event bus is in its current State.
+   * Omitted when the bus is in a normal operational state (ACTIVE). It stands in for
+   * the error response an asynchronous failure cannot return, so it applies only to
+   * resources with an asynchronous lifecycle: event buses. EventSources and
+   * subscribers are provisioned synchronously and report failures directly on the
+   * request.</p>
+   */
   inline const Aws::String& GetStateReason() const { return m_stateReason; }
   template <typename StateReasonT = Aws::String>
   void SetStateReason(StateReasonT&& value) {

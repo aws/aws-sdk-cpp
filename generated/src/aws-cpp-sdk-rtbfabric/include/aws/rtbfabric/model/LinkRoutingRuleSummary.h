@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
+#include <aws/rtbfabric/model/ErrorDetail.h>
 #include <aws/rtbfabric/model/RuleCondition.h>
 #include <aws/rtbfabric/model/RuleStatus.h>
 
@@ -137,6 +139,31 @@ class LinkRoutingRuleSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The causes of the failure, such as a deleted subnet. Present only when the
+   * resource has failed.</p>
+   */
+  inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const { return m_errorDetails; }
+  inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
+  template <typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+  void SetErrorDetails(ErrorDetailsT&& value) {
+    m_errorDetailsHasBeenSet = true;
+    m_errorDetails = std::forward<ErrorDetailsT>(value);
+  }
+  template <typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+  LinkRoutingRuleSummary& WithErrorDetails(ErrorDetailsT&& value) {
+    SetErrorDetails(std::forward<ErrorDetailsT>(value));
+    return *this;
+  }
+  template <typename ErrorDetailsT = ErrorDetail>
+  LinkRoutingRuleSummary& AddErrorDetails(ErrorDetailsT&& value) {
+    m_errorDetailsHasBeenSet = true;
+    m_errorDetails.emplace_back(std::forward<ErrorDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ruleId;
 
@@ -149,12 +176,15 @@ class LinkRoutingRuleSummary {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
+
+  Aws::Vector<ErrorDetail> m_errorDetails;
   bool m_ruleIdHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
   bool m_conditionsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

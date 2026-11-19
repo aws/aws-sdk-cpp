@@ -40,6 +40,12 @@ SAMLProviderListEntry& SAMLProviderListEntry::operator=(const XmlNode& xmlNode) 
                               Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
+    XmlNode isTrustedIdentityPropagationEnabledNode = resultNode.FirstChild("IsTrustedIdentityPropagationEnabled");
+    if (!isTrustedIdentityPropagationEnabledNode.IsNull()) {
+      m_isTrustedIdentityPropagationEnabled = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTrustedIdentityPropagationEnabledNode.GetText()).c_str()).c_str());
+      m_isTrustedIdentityPropagationEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -59,6 +65,11 @@ void SAMLProviderListEntry::OutputToStream(Aws::OStream& oStream, const char* lo
     oStream << location << index << locationValue
             << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
+
+  if (m_isTrustedIdentityPropagationEnabledHasBeenSet) {
+    oStream << location << index << locationValue << ".IsTrustedIdentityPropagationEnabled=" << std::boolalpha
+            << m_isTrustedIdentityPropagationEnabled << "&";
+  }
 }
 
 void SAMLProviderListEntry::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -72,6 +83,9 @@ void SAMLProviderListEntry::OutputToStream(Aws::OStream& oStream, const char* lo
   if (m_createDateHasBeenSet) {
     oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
             << "&";
+  }
+  if (m_isTrustedIdentityPropagationEnabledHasBeenSet) {
+    oStream << location << ".IsTrustedIdentityPropagationEnabled=" << std::boolalpha << m_isTrustedIdentityPropagationEnabled << "&";
   }
 }
 

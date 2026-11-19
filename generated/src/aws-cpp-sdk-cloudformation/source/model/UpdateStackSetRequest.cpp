@@ -130,6 +130,22 @@ Aws::String UpdateStackSetRequest::SerializePayload() const {
     m_managedExecution.OutputToStream(ss, "ManagedExecution");
   }
 
+  if (m_executionRoleTemplateBodyHasBeenSet) {
+    ss << "ExecutionRoleTemplateBody=" << StringUtils::URLEncode(m_executionRoleTemplateBody.c_str()) << "&";
+  }
+
+  if (m_executionRoleTemplateUrlHasBeenSet) {
+    ss << "ExecutionRoleTemplateUrl=" << StringUtils::URLEncode(m_executionRoleTemplateUrl.c_str()) << "&";
+  }
+
+  if (m_useAdminExecutionRoleHasBeenSet) {
+    ss << "UseAdminExecutionRole=" << std::boolalpha << m_useAdminExecutionRole << "&";
+  }
+
+  if (m_stackSetOutputBucketHasBeenSet) {
+    ss << "StackSetOutputBucket=" << StringUtils::URLEncode(m_stackSetOutputBucket.c_str()) << "&";
+  }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

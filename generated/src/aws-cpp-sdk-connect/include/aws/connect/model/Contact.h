@@ -29,6 +29,7 @@
 #include <aws/connect/model/RoutingCriteria.h>
 #include <aws/connect/model/SegmentAttributeValue.h>
 #include <aws/connect/model/TaskTemplateInfoV2.h>
+#include <aws/connect/model/VoicemailInfo.h>
 #include <aws/connect/model/WisdomInfo.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -1034,6 +1035,25 @@ class Contact {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If one or more voicemails were recorded for the contact, this contains
+   * information about the voicemails.</p>
+   */
+  inline const VoicemailInfo& GetVoicemailInfo() const { return m_voicemailInfo; }
+  inline bool VoicemailInfoHasBeenSet() const { return m_voicemailInfoHasBeenSet; }
+  template <typename VoicemailInfoT = VoicemailInfo>
+  void SetVoicemailInfo(VoicemailInfoT&& value) {
+    m_voicemailInfoHasBeenSet = true;
+    m_voicemailInfo = std::forward<VoicemailInfoT>(value);
+  }
+  template <typename VoicemailInfoT = VoicemailInfo>
+  Contact& WithVoicemailInfo(VoicemailInfoT&& value) {
+    SetVoicemailInfo(std::forward<VoicemailInfoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -1134,6 +1154,8 @@ class Contact {
   GlobalResiliencyMetadata m_globalResiliencyMetadata;
 
   ContactLens m_contactLens;
+
+  VoicemailInfo m_voicemailInfo;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_initialContactIdHasBeenSet = false;
@@ -1184,6 +1206,7 @@ class Contact {
   bool m_nextContactsHasBeenSet = false;
   bool m_globalResiliencyMetadataHasBeenSet = false;
   bool m_contactLensHasBeenSet = false;
+  bool m_voicemailInfoHasBeenSet = false;
 };
 
 }  // namespace Model

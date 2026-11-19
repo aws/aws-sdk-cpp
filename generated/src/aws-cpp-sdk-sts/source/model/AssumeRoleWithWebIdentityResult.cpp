@@ -71,6 +71,11 @@ AssumeRoleWithWebIdentityResult& AssumeRoleWithWebIdentityResult::operator=(cons
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sessionTokenSizeNode.GetText()).c_str()).c_str());
       m_sessionTokenSizeHasBeenSet = true;
     }
+    XmlNode trustedIdentityPropagationContextNode = resultNode.FirstChild("TrustedIdentityPropagationContext");
+    if (!trustedIdentityPropagationContextNode.IsNull()) {
+      m_trustedIdentityPropagationContext = trustedIdentityPropagationContextNode;
+      m_trustedIdentityPropagationContextHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

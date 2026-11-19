@@ -16,6 +16,7 @@
 #include <aws/marketplace-catalog/model/OfferResaleAuthorizationIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferSetIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferStateFilter.h>
+#include <aws/marketplace-catalog/model/OfferSubsidiaryAuthorizationIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferTargetAgreementIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferTargetAgreementIntentFilter.h>
 #include <aws/marketplace-catalog/model/OfferTargetingFilter.h>
@@ -116,6 +117,26 @@ class OfferFilters {
   template <typename ResaleAuthorizationIdT = OfferResaleAuthorizationIdFilter>
   OfferFilters& WithResaleAuthorizationId(ResaleAuthorizationIdT&& value) {
     SetResaleAuthorizationId(std::forward<ResaleAuthorizationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A filter that matches offers by the ID of the subsidiary authorization that
+   * they were created from.</p>  <p>Not all offers have a
+   * <code>SubsidiaryAuthorizationId</code>.</p>
+   */
+  inline const OfferSubsidiaryAuthorizationIdFilter& GetSubsidiaryAuthorizationId() const { return m_subsidiaryAuthorizationId; }
+  inline bool SubsidiaryAuthorizationIdHasBeenSet() const { return m_subsidiaryAuthorizationIdHasBeenSet; }
+  template <typename SubsidiaryAuthorizationIdT = OfferSubsidiaryAuthorizationIdFilter>
+  void SetSubsidiaryAuthorizationId(SubsidiaryAuthorizationIdT&& value) {
+    m_subsidiaryAuthorizationIdHasBeenSet = true;
+    m_subsidiaryAuthorizationId = std::forward<SubsidiaryAuthorizationIdT>(value);
+  }
+  template <typename SubsidiaryAuthorizationIdT = OfferSubsidiaryAuthorizationIdFilter>
+  OfferFilters& WithSubsidiaryAuthorizationId(SubsidiaryAuthorizationIdT&& value) {
+    SetSubsidiaryAuthorizationId(std::forward<SubsidiaryAuthorizationIdT>(value));
     return *this;
   }
   ///@}
@@ -308,6 +329,8 @@ class OfferFilters {
 
   OfferResaleAuthorizationIdFilter m_resaleAuthorizationId;
 
+  OfferSubsidiaryAuthorizationIdFilter m_subsidiaryAuthorizationId;
+
   OfferReleaseDateFilter m_releaseDate;
 
   OfferAvailabilityEndDateFilter m_availabilityEndDate;
@@ -331,6 +354,7 @@ class OfferFilters {
   bool m_nameHasBeenSet = false;
   bool m_productIdHasBeenSet = false;
   bool m_resaleAuthorizationIdHasBeenSet = false;
+  bool m_subsidiaryAuthorizationIdHasBeenSet = false;
   bool m_releaseDateHasBeenSet = false;
   bool m_availabilityEndDateHasBeenSet = false;
   bool m_buyerAccountsHasBeenSet = false;

@@ -23,7 +23,8 @@ namespace Model {
 /**
  * <p>Amazon Polly can't find the specified resource. Verify that the resource
  * exists in the Amazon Web Services account and Region of the request and that its
- * ARN is spelled correctly, and then try again.</p><p><h3>See Also:</h3>   <a
+ * ARN or ID is spelled correctly, and then try again.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ResourceNotFoundException">AWS
  * API Reference</a></p>
  */

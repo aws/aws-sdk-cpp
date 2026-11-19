@@ -8,6 +8,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/AssertionEncryptionModeType.h>
+#include <aws/iam/model/ContextProvider.h>
 
 #include <utility>
 
@@ -130,6 +131,86 @@ class UpdateSAMLProviderRequest : public IAMRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The trusted identity propagation context provider configuration to associate
+   * with the SAML provider. This replaces the existing context provider
+   * configuration. For more information, see <a
+   * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+   */
+  inline const ContextProvider& GetContextProvider() const { return m_contextProvider; }
+  inline bool ContextProviderHasBeenSet() const { return m_contextProviderHasBeenSet; }
+  template <typename ContextProviderT = ContextProvider>
+  void SetContextProvider(ContextProviderT&& value) {
+    m_contextProviderHasBeenSet = true;
+    m_contextProvider = std::forward<ContextProviderT>(value);
+  }
+  template <typename ContextProviderT = ContextProvider>
+  UpdateSAMLProviderRequest& WithContextProvider(ContextProviderT&& value) {
+    SetContextProvider(std::forward<ContextProviderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to
+   * associate with the SAML provider.</p> <p>For the format, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a>
+   * in the <i>IAM Identity Center API Reference</i>.</p>
+   */
+  inline const Aws::String& GetIdentityCenterInstanceArn() const { return m_identityCenterInstanceArn; }
+  inline bool IdentityCenterInstanceArnHasBeenSet() const { return m_identityCenterInstanceArnHasBeenSet; }
+  template <typename IdentityCenterInstanceArnT = Aws::String>
+  void SetIdentityCenterInstanceArn(IdentityCenterInstanceArnT&& value) {
+    m_identityCenterInstanceArnHasBeenSet = true;
+    m_identityCenterInstanceArn = std::forward<IdentityCenterInstanceArnT>(value);
+  }
+  template <typename IdentityCenterInstanceArnT = Aws::String>
+  UpdateSAMLProviderRequest& WithIdentityCenterInstanceArn(IdentityCenterInstanceArnT&& value) {
+    SetIdentityCenterInstanceArn(std::forward<IdentityCenterInstanceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to remove the existing trusted identity propagation context
+   * provider configuration from the SAML provider. When set to <code>true</code>,
+   * the context provider is removed. This parameter is mutually exclusive with
+   * <code>ContextProvider</code>.</p>
+   */
+  inline bool GetRemoveContextProvider() const { return m_removeContextProvider; }
+  inline bool RemoveContextProviderHasBeenSet() const { return m_removeContextProviderHasBeenSet; }
+  inline void SetRemoveContextProvider(bool value) {
+    m_removeContextProviderHasBeenSet = true;
+    m_removeContextProvider = value;
+  }
+  inline UpdateSAMLProviderRequest& WithRemoveContextProvider(bool value) {
+    SetRemoveContextProvider(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to disassociate the IAM Identity Center instance from the
+   * SAML provider. When set to <code>true</code>, the instance is disassociated.
+   * This parameter is mutually exclusive with
+   * <code>IdentityCenterInstanceArn</code>.</p>
+   */
+  inline bool GetRemoveIdentityCenterInstance() const { return m_removeIdentityCenterInstance; }
+  inline bool RemoveIdentityCenterInstanceHasBeenSet() const { return m_removeIdentityCenterInstanceHasBeenSet; }
+  inline void SetRemoveIdentityCenterInstance(bool value) {
+    m_removeIdentityCenterInstanceHasBeenSet = true;
+    m_removeIdentityCenterInstance = value;
+  }
+  inline UpdateSAMLProviderRequest& WithRemoveIdentityCenterInstance(bool value) {
+    SetRemoveIdentityCenterInstance(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sAMLMetadataDocument;
 
@@ -140,11 +221,23 @@ class UpdateSAMLProviderRequest : public IAMRequest {
   Aws::String m_addPrivateKey;
 
   Aws::String m_removePrivateKey;
+
+  ContextProvider m_contextProvider;
+
+  Aws::String m_identityCenterInstanceArn;
+
+  bool m_removeContextProvider{false};
+
+  bool m_removeIdentityCenterInstance{false};
   bool m_sAMLMetadataDocumentHasBeenSet = false;
   bool m_sAMLProviderArnHasBeenSet = false;
   bool m_assertionEncryptionModeHasBeenSet = false;
   bool m_addPrivateKeyHasBeenSet = false;
   bool m_removePrivateKeyHasBeenSet = false;
+  bool m_contextProviderHasBeenSet = false;
+  bool m_identityCenterInstanceArnHasBeenSet = false;
+  bool m_removeContextProviderHasBeenSet = false;
+  bool m_removeIdentityCenterInstanceHasBeenSet = false;
 };
 
 }  // namespace Model

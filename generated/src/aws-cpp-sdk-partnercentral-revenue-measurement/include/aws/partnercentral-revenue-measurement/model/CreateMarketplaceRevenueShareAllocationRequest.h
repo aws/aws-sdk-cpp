@@ -50,18 +50,18 @@ class CreateMarketplaceRevenueShareAllocationRequest : public PartnerCentralReve
 
   ///@{
   /**
-   * <p>The AWS Marketplace product identifier for the parent revenue share.</p>
+   * <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
    */
-  inline const Aws::String& GetProductId() const { return m_productId; }
-  inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-  template <typename ProductIdT = Aws::String>
-  void SetProductId(ProductIdT&& value) {
-    m_productIdHasBeenSet = true;
-    m_productId = std::forward<ProductIdT>(value);
+  inline const Aws::String& GetMarketplaceRevenueShareIdentifier() const { return m_marketplaceRevenueShareIdentifier; }
+  inline bool MarketplaceRevenueShareIdentifierHasBeenSet() const { return m_marketplaceRevenueShareIdentifierHasBeenSet; }
+  template <typename MarketplaceRevenueShareIdentifierT = Aws::String>
+  void SetMarketplaceRevenueShareIdentifier(MarketplaceRevenueShareIdentifierT&& value) {
+    m_marketplaceRevenueShareIdentifierHasBeenSet = true;
+    m_marketplaceRevenueShareIdentifier = std::forward<MarketplaceRevenueShareIdentifierT>(value);
   }
-  template <typename ProductIdT = Aws::String>
-  CreateMarketplaceRevenueShareAllocationRequest& WithProductId(ProductIdT&& value) {
-    SetProductId(std::forward<ProductIdT>(value));
+  template <typename MarketplaceRevenueShareIdentifierT = Aws::String>
+  CreateMarketplaceRevenueShareAllocationRequest& WithMarketplaceRevenueShareIdentifier(MarketplaceRevenueShareIdentifierT&& value) {
+    SetMarketplaceRevenueShareIdentifier(std::forward<MarketplaceRevenueShareIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -80,6 +80,26 @@ class CreateMarketplaceRevenueShareAllocationRequest : public PartnerCentralReve
   template <typename ClientTokenT = Aws::String>
   CreateMarketplaceRevenueShareAllocationRequest& WithClientToken(ClientTokenT&& value) {
     SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The revision of the parent marketplace revenue share that the caller last
+   * read, for optimistic concurrency control. A stale value returns
+   * ConflictException with Reason REVISION_MISMATCH.</p>
+   */
+  inline const Aws::String& GetMarketplaceRevenueShareRevision() const { return m_marketplaceRevenueShareRevision; }
+  inline bool MarketplaceRevenueShareRevisionHasBeenSet() const { return m_marketplaceRevenueShareRevisionHasBeenSet; }
+  template <typename MarketplaceRevenueShareRevisionT = Aws::String>
+  void SetMarketplaceRevenueShareRevision(MarketplaceRevenueShareRevisionT&& value) {
+    m_marketplaceRevenueShareRevisionHasBeenSet = true;
+    m_marketplaceRevenueShareRevision = std::forward<MarketplaceRevenueShareRevisionT>(value);
+  }
+  template <typename MarketplaceRevenueShareRevisionT = Aws::String>
+  CreateMarketplaceRevenueShareAllocationRequest& WithMarketplaceRevenueShareRevision(MarketplaceRevenueShareRevisionT&& value) {
+    SetMarketplaceRevenueShareRevision(std::forward<MarketplaceRevenueShareRevisionT>(value));
     return *this;
   }
   ///@}
@@ -106,7 +126,7 @@ class CreateMarketplaceRevenueShareAllocationRequest : public PartnerCentralReve
   ///@{
   /**
    * <p>The effective end date for the allocation. Must be the last day of a month
-   * (YYYY-MM-DD). Omit for open-ended allocations.</p>
+   * (YYYY-MM-DD).</p>
    */
   inline const Aws::String& GetEffectiveUntil() const { return m_effectiveUntil; }
   inline bool EffectiveUntilHasBeenSet() const { return m_effectiveUntilHasBeenSet; }
@@ -142,9 +162,11 @@ class CreateMarketplaceRevenueShareAllocationRequest : public PartnerCentralReve
  private:
   CatalogName m_catalog{CatalogName::NOT_SET};
 
-  Aws::String m_productId;
+  Aws::String m_marketplaceRevenueShareIdentifier;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  Aws::String m_marketplaceRevenueShareRevision;
 
   Aws::String m_effectiveFrom;
 
@@ -152,8 +174,9 @@ class CreateMarketplaceRevenueShareAllocationRequest : public PartnerCentralReve
 
   Aws::String m_revenueSharePercent;
   bool m_catalogHasBeenSet = false;
-  bool m_productIdHasBeenSet = false;
+  bool m_marketplaceRevenueShareIdentifierHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_marketplaceRevenueShareRevisionHasBeenSet = false;
   bool m_effectiveFromHasBeenSet = false;
   bool m_effectiveUntilHasBeenSet = false;
   bool m_revenueSharePercentHasBeenSet = false;

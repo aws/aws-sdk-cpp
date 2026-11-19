@@ -58,7 +58,7 @@ class BatchCreateWorkloadEstimateUsageResult {
 
   ///@{
   /**
-   * <p> Returns the list of errors reason and the usage item keys that cannot be
+   * <p> Returns the list of errors reason and the usage item keys that can't be
    * created in the Workload estimate. </p>
    */
   inline const Aws::Vector<BatchCreateWorkloadEstimateUsageError>& GetErrors() const { return m_errors; }

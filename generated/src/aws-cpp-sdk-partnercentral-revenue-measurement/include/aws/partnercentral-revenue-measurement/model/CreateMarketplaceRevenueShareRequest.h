@@ -10,6 +10,7 @@
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementRequest.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurement_EXPORTS.h>
 #include <aws/partnercentral-revenue-measurement/model/CatalogName.h>
+#include <aws/partnercentral-revenue-measurement/model/MarketplaceRevenueShareProductEntry.h>
 #include <aws/partnercentral-revenue-measurement/model/Tag.h>
 
 #include <utility>
@@ -70,18 +71,25 @@ class CreateMarketplaceRevenueShareRequest : public PartnerCentralRevenueMeasure
 
   ///@{
   /**
-   * <p>The AWS Marketplace product identifier for this revenue share.</p>
+   * <p>The products in the marketplace revenue share, each with its typed account
+   * lists. 1 to 25 products.</p>
    */
-  inline const Aws::String& GetProductId() const { return m_productId; }
-  inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-  template <typename ProductIdT = Aws::String>
-  void SetProductId(ProductIdT&& value) {
-    m_productIdHasBeenSet = true;
-    m_productId = std::forward<ProductIdT>(value);
+  inline const Aws::Vector<MarketplaceRevenueShareProductEntry>& GetProducts() const { return m_products; }
+  inline bool ProductsHasBeenSet() const { return m_productsHasBeenSet; }
+  template <typename ProductsT = Aws::Vector<MarketplaceRevenueShareProductEntry>>
+  void SetProducts(ProductsT&& value) {
+    m_productsHasBeenSet = true;
+    m_products = std::forward<ProductsT>(value);
   }
-  template <typename ProductIdT = Aws::String>
-  CreateMarketplaceRevenueShareRequest& WithProductId(ProductIdT&& value) {
-    SetProductId(std::forward<ProductIdT>(value));
+  template <typename ProductsT = Aws::Vector<MarketplaceRevenueShareProductEntry>>
+  CreateMarketplaceRevenueShareRequest& WithProducts(ProductsT&& value) {
+    SetProducts(std::forward<ProductsT>(value));
+    return *this;
+  }
+  template <typename ProductsT = MarketplaceRevenueShareProductEntry>
+  CreateMarketplaceRevenueShareRequest& AddProducts(ProductsT&& value) {
+    m_productsHasBeenSet = true;
+    m_products.emplace_back(std::forward<ProductsT>(value));
     return *this;
   }
   ///@}
@@ -114,12 +122,12 @@ class CreateMarketplaceRevenueShareRequest : public PartnerCentralRevenueMeasure
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
-  Aws::String m_productId;
+  Aws::Vector<MarketplaceRevenueShareProductEntry> m_products;
 
   Aws::Vector<Tag> m_tags;
   bool m_catalogHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
-  bool m_productIdHasBeenSet = false;
+  bool m_productsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

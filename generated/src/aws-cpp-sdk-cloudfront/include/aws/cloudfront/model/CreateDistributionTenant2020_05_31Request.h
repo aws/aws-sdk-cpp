@@ -9,6 +9,7 @@
 #include <aws/cloudfront/model/Customizations.h>
 #include <aws/cloudfront/model/DomainItem.h>
 #include <aws/cloudfront/model/ManagedCertificateRequest.h>
+#include <aws/cloudfront/model/OnDomainTakeover.h>
 #include <aws/cloudfront/model/Parameter.h>
 #include <aws/cloudfront/model/Tags.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -215,6 +216,29 @@ class CreateDistributionTenant2020_05_31Request : public CloudFrontRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether CloudFront moves a domain in this request to this
+   * distribution tenant when the domain is already associated with another standard
+   * distribution or distribution tenant. Valid values are:</p> <ul> <li> <p>
+   * <code>allow</code> – CloudFront moves the domain to this distribution tenant
+   * when the domain's DNS points to this distribution tenant.</p> </li> <li> <p>
+   * <code>reject</code> – CloudFront doesn't move the domain, and the request fails
+   * if the domain is associated with another resource. This is the default if you
+   * don't specify a value.</p> </li> </ul>
+   */
+  inline OnDomainTakeover GetOnDomainTakeover() const { return m_onDomainTakeover; }
+  inline bool OnDomainTakeoverHasBeenSet() const { return m_onDomainTakeoverHasBeenSet; }
+  inline void SetOnDomainTakeover(OnDomainTakeover value) {
+    m_onDomainTakeoverHasBeenSet = true;
+    m_onDomainTakeover = value;
+  }
+  inline CreateDistributionTenant2020_05_31Request& WithOnDomainTakeover(OnDomainTakeover value) {
+    SetOnDomainTakeover(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_distributionId;
 
@@ -233,6 +257,8 @@ class CreateDistributionTenant2020_05_31Request : public CloudFrontRequest {
   ManagedCertificateRequest m_managedCertificateRequest;
 
   bool m_enabled{false};
+
+  OnDomainTakeover m_onDomainTakeover{OnDomainTakeover::NOT_SET};
   bool m_distributionIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_domainsHasBeenSet = false;
@@ -242,6 +268,7 @@ class CreateDistributionTenant2020_05_31Request : public CloudFrontRequest {
   bool m_connectionGroupIdHasBeenSet = false;
   bool m_managedCertificateRequestHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
+  bool m_onDomainTakeoverHasBeenSet = false;
 };
 
 }  // namespace Model

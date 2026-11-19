@@ -23,8 +23,8 @@ namespace Model {
 /**
  * <p>Step Functions invocation parameters for subscribers. Values are forwarded to
  * the Step Functions StartExecution or StartSyncExecution API. Every string member
- * accepts a literal or a JSONata expression (e.g. &quot;{%
- * $events.Data.executionName %}&quot;).</p><p><h3>See Also:</h3>   <a
+ * accepts a literal or a JSONata expression (e.g. "{% $events.Data.executionName
+ * %}").</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/StepFunctionsParameters">AWS
  * API Reference</a></p>
  */

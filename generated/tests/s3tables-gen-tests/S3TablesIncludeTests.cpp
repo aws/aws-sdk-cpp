@@ -38,6 +38,8 @@
 #include <aws/s3tables/model/DeleteTableReplicationRequest.h>
 #include <aws/s3tables/model/DeleteTableRequest.h>
 #include <aws/s3tables/model/DestinationTable.h>
+#include <aws/s3tables/model/DisassociateTableReplicationRequest.h>
+#include <aws/s3tables/model/DisassociateTableReplicationResult.h>
 #include <aws/s3tables/model/EncryptionConfiguration.h>
 #include <aws/s3tables/model/FindingCategory.h>
 #include <aws/s3tables/model/GetNamespaceRequest.h>

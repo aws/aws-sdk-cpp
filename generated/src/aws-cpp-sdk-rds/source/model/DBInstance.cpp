@@ -58,6 +58,11 @@ DBInstance& DBInstance::operator=(const XmlNode& xmlNode) {
       m_endpoint = endpointNode;
       m_endpointHasBeenSet = true;
     }
+    XmlNode primaryEndpointNode = resultNode.FirstChild("PrimaryEndpoint");
+    if (!primaryEndpointNode.IsNull()) {
+      m_primaryEndpoint = primaryEndpointNode;
+      m_primaryEndpointHasBeenSet = true;
+    }
     XmlNode allocatedStorageNode = resultNode.FirstChild("AllocatedStorage");
     if (!allocatedStorageNode.IsNull()) {
       m_allocatedStorage = StringUtils::ConvertToInt32(
@@ -618,6 +623,12 @@ DBInstance& DBInstance::operator=(const XmlNode& xmlNode) {
       m_dBCapacityReservationIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBCapacityReservationIdentifierNode.GetText());
       m_dBCapacityReservationIdentifierHasBeenSet = true;
     }
+    XmlNode vPCNetworkingEnabledNode = resultNode.FirstChild("VPCNetworkingEnabled");
+    if (!vPCNetworkingEnabledNode.IsNull()) {
+      m_vPCNetworkingEnabled = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vPCNetworkingEnabledNode.GetText()).c_str()).c_str());
+      m_vPCNetworkingEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -653,6 +664,12 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
     Aws::StringStream endpointLocationAndMemberSs;
     endpointLocationAndMemberSs << location << index << locationValue << ".Endpoint";
     m_endpoint.OutputToStream(oStream, endpointLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_primaryEndpointHasBeenSet) {
+    Aws::StringStream primaryEndpointLocationAndMemberSs;
+    primaryEndpointLocationAndMemberSs << location << index << locationValue << ".PrimaryEndpoint";
+    m_primaryEndpoint.OutputToStream(oStream, primaryEndpointLocationAndMemberSs.str().c_str());
   }
 
   if (m_allocatedStorageHasBeenSet) {
@@ -1120,6 +1137,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
     oStream << location << index << locationValue
             << ".DBCapacityReservationIdentifier=" << StringUtils::URLEncode(m_dBCapacityReservationIdentifier.c_str()) << "&";
   }
+
+  if (m_vPCNetworkingEnabledHasBeenSet) {
+    oStream << location << index << locationValue << ".VPCNetworkingEnabled=" << std::boolalpha << m_vPCNetworkingEnabled << "&";
+  }
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -1145,6 +1166,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
     Aws::String endpointLocationAndMember(location);
     endpointLocationAndMember += ".Endpoint";
     m_endpoint.OutputToStream(oStream, endpointLocationAndMember.c_str());
+  }
+  if (m_primaryEndpointHasBeenSet) {
+    Aws::String primaryEndpointLocationAndMember(location);
+    primaryEndpointLocationAndMember += ".PrimaryEndpoint";
+    m_primaryEndpoint.OutputToStream(oStream, primaryEndpointLocationAndMember.c_str());
   }
   if (m_allocatedStorageHasBeenSet) {
     oStream << location << ".AllocatedStorage=" << m_allocatedStorage << "&";
@@ -1501,6 +1527,9 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if (m_dBCapacityReservationIdentifierHasBeenSet) {
     oStream << location << ".DBCapacityReservationIdentifier=" << StringUtils::URLEncode(m_dBCapacityReservationIdentifier.c_str()) << "&";
+  }
+  if (m_vPCNetworkingEnabledHasBeenSet) {
+    oStream << location << ".VPCNetworkingEnabled=" << std::boolalpha << m_vPCNetworkingEnabled << "&";
   }
 }
 

@@ -46,6 +46,13 @@ ClusterSlurmConfigurationRequest& ClusterSlurmConfigurationRequest::operator=(Js
     }
     m_cgroupCustomSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jobSubmitPlugins")) {
+    Aws::Utils::Array<JsonView> jobSubmitPluginsJsonList = jsonValue.GetArray("jobSubmitPlugins");
+    for (unsigned jobSubmitPluginsIndex = 0; jobSubmitPluginsIndex < jobSubmitPluginsJsonList.GetLength(); ++jobSubmitPluginsIndex) {
+      m_jobSubmitPlugins.push_back(jobSubmitPluginsJsonList[jobSubmitPluginsIndex].AsObject());
+    }
+    m_jobSubmitPluginsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("accounting")) {
     m_accounting = jsonValue.GetObject("accounting");
     m_accountingHasBeenSet = true;
@@ -89,6 +96,14 @@ JsonValue ClusterSlurmConfigurationRequest::Jsonize() const {
       cgroupCustomSettingsJsonList[cgroupCustomSettingsIndex].AsObject(m_cgroupCustomSettings[cgroupCustomSettingsIndex].Jsonize());
     }
     payload.WithArray("cgroupCustomSettings", std::move(cgroupCustomSettingsJsonList));
+  }
+
+  if (m_jobSubmitPluginsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> jobSubmitPluginsJsonList(m_jobSubmitPlugins.size());
+    for (unsigned jobSubmitPluginsIndex = 0; jobSubmitPluginsIndex < jobSubmitPluginsJsonList.GetLength(); ++jobSubmitPluginsIndex) {
+      jobSubmitPluginsJsonList[jobSubmitPluginsIndex].AsObject(m_jobSubmitPlugins[jobSubmitPluginsIndex].Jsonize());
+    }
+    payload.WithArray("jobSubmitPlugins", std::move(jobSubmitPluginsJsonList));
   }
 
   if (m_accountingHasBeenSet) {

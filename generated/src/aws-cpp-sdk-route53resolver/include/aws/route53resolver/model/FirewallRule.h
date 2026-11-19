@@ -405,8 +405,11 @@ class FirewallRule {
    * detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or
    * <code>DICTIONARY_DGA</code>).</p> </li> <li> <p>
    * <code>PartnerThreatProtection</code> — a third-party threat feed delivered
-   * through Amazon Web Services Marketplace.</p> </li> </ul> <p>To enumerate the
-   * values supported in your account, call <a>ListFirewallRuleTypes</a>.</p>
+   * through Amazon Web Services Marketplace.</p> </li> <li> <p>
+   * <code>AutoAllowlist</code> — an AutoAllowlist rule, which allows the domains on
+   * its managed domain list. See <a>AutoAllowlistConfig</a>.</p> </li> </ul> <p>To
+   * enumerate the values supported in your account, call
+   * <a>ListFirewallRuleTypes</a>. It doesn't return <code>AutoAllowlist</code>.</p>
    */
   inline const FirewallRuleType& GetFirewallRuleType() const { return m_firewallRuleType; }
   inline bool FirewallRuleTypeHasBeenSet() const { return m_firewallRuleTypeHasBeenSet; }
@@ -428,8 +431,10 @@ class FirewallRule {
    * <code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created
    * with the <code>PartnerThreatProtection</code> rule type begin in this state
    * while DNS Firewall verifies the calling account's Amazon Web Services
-   * Marketplace entitlement.</p> </li> <li> <p> <code>COMPLETE</code> — The rule is
-   * provisioned and enforcing matches.</p> </li> <li> <p>
+   * Marketplace entitlement. Rules created with the <code>AutoAllowlist</code> rule
+   * type begin in this state while DNS Firewall reads the look-back window of each
+   * VPC that uses the rule group.</p> </li> <li> <p> <code>COMPLETE</code> — The
+   * rule is provisioned and enforcing matches.</p> </li> <li> <p>
    * <code>CREATION_FAILED</code> — Provisioning failed. <code>StatusMessage</code>
    * contains a human-readable reason. A rule in this state is immutable:
    * <a>UpdateFirewallRule</a> rejects the request, and the rule must be removed with

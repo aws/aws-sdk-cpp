@@ -92,5 +92,9 @@ Aws::String UpdateChannelRequest::SerializePayload() const {
     payload.WithObject("specialRouterSettings", m_specialRouterSettings.Jsonize());
   }
 
+  if (m_jpegXsInputSpecificationHasBeenSet) {
+    payload.WithObject("jpegXsInputSpecification", m_jpegXsInputSpecification.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

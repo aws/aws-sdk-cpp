@@ -140,6 +140,11 @@ StackSet& StackSet::operator=(const XmlNode& xmlNode) {
 
       m_regionsHasBeenSet = true;
     }
+    XmlNode stackSetOutputBucketPathNode = resultNode.FirstChild("StackSetOutputBucketPath");
+    if (!stackSetOutputBucketPathNode.IsNull()) {
+      m_stackSetOutputBucketPath = Aws::Utils::Xml::DecodeEscapedXmlText(stackSetOutputBucketPathNode.GetText());
+      m_stackSetOutputBucketPathHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -244,6 +249,11 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location, unsig
               << "&";
     }
   }
+
+  if (m_stackSetOutputBucketPathHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".StackSetOutputBucketPath=" << StringUtils::URLEncode(m_stackSetOutputBucketPath.c_str()) << "&";
+  }
 }
 
 void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -325,6 +335,9 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
     for (auto& item : m_regions) {
       oStream << location << ".Regions.member." << regionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
     }
+  }
+  if (m_stackSetOutputBucketPathHasBeenSet) {
+    oStream << location << ".StackSetOutputBucketPath=" << StringUtils::URLEncode(m_stackSetOutputBucketPath.c_str()) << "&";
   }
 }
 

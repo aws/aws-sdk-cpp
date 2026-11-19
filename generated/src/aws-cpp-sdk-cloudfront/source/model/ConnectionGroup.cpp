@@ -89,6 +89,11 @@ ConnectionGroup& ConnectionGroup::operator=(const XmlNode& xmlNode) {
           StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
       m_isDefaultHasBeenSet = true;
     }
+    XmlNode viewerFallbackNode = resultNode.FirstChild("ViewerFallback");
+    if (!viewerFallbackNode.IsNull()) {
+      m_viewerFallback = viewerFallbackNode;
+      m_viewerFallbackHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -160,6 +165,11 @@ void ConnectionGroup::AddToNode(XmlNode& parentNode) const {
     ss << std::boolalpha << m_isDefault;
     isDefaultNode.SetText(ss.str());
     ss.str("");
+  }
+
+  if (m_viewerFallbackHasBeenSet) {
+    XmlNode viewerFallbackNode = parentNode.CreateChildElement("ViewerFallback");
+    m_viewerFallback.AddToNode(viewerFallbackNode);
   }
 }
 

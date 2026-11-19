@@ -368,20 +368,24 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
    * <code>DnsThreatProtection</code> — match a built-in DNS Firewall Advanced threat
    * detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or
    * <code>DICTIONARY_DGA</code>).</p> </li> <li> <p> <code>FirewallRuleType</code> —
-   * match one of the rule-type variants returned by <a>ListFirewallRuleTypes</a>:
+   * match one of the rule-type variants:
    * <code>FirewallAdvancedContentCategory</code>,
    * <code>FirewallAdvancedThreatCategory</code>, <code>DnsThreatProtection</code>,
-   * or <code>PartnerThreatProtection</code>. The
+   * <code>PartnerThreatProtection</code>, or <code>AutoAllowlist</code>.
+   * <a>ListFirewallRuleTypes</a> returns the first four. The
    * <code>PartnerThreatProtection</code> variant requires an active Amazon Web
    * Services Marketplace subscription to the named partner product.</p> </li> </ul>
-   * <p>For rules that require asynchronous provisioning (today, the
-   * <code>PartnerThreatProtection</code> rule type), the rule's <code>Status</code>
-   * begins at <code>CREATING</code> and transitions to <code>COMPLETE</code> once
-   * the rule is provisioned and the marketplace entitlement is verified. If
-   * provisioning fails, <code>Status</code> becomes <code>CREATION_FAILED</code> and
-   * <code>StatusMessage</code> contains a human-readable reason; the rule is then
-   * immutable and must be removed with <a>DeleteFirewallRule</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>For rules that require asynchronous provisioning (the
+   * <code>PartnerThreatProtection</code> and <code>AutoAllowlist</code> rule types),
+   * the rule's <code>Status</code> begins at <code>CREATING</code> and transitions
+   * to <code>COMPLETE</code> once the rule is provisioned: for
+   * <code>PartnerThreatProtection</code>, when the marketplace entitlement is
+   * verified, and for <code>AutoAllowlist</code>, when DNS Firewall has read the
+   * look-back window of every VPC that uses the rule group, which can take hours for
+   * a rule group that many VPCs use. If provisioning fails, <code>Status</code>
+   * becomes <code>CREATION_FAILED</code> and <code>StatusMessage</code> contains a
+   * human-readable reason; the rule is then immutable and must be removed with
+   * <a>DeleteFirewallRule</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRule">AWS
    * API Reference</a></p>
    */
@@ -1354,13 +1358,16 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
 
   /**
    * <p>Imports domain names from a file into a domain list, for use in a DNS
-   * firewall rule group. </p> <p>Each domain specification in your domain list must
-   * satisfy the following requirements: </p> <ul> <li> <p>It can optionally start
-   * with <code>*</code> (asterisk).</p> </li> <li> <p>With the exception of the
-   * optional starting asterisk, it must only contain the following characters:
-   * <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code>
-   * (hyphen).</p> </li> <li> <p>It must be from 1-255 characters in length. </p>
-   * </li> </ul><p><h3>See Also:</h3>   <a
+   * firewall rule group. </p> <p>You can't import into an AutoAllowlist rule's
+   * managed domain list. To seed such a list, specify
+   * <code>ImportFromFirewallDomainListId</code> when you create the rule.</p>
+   * <p>Each domain specification in your domain list must satisfy the following
+   * requirements: </p> <ul> <li> <p>It can optionally start with <code>*</code>
+   * (asterisk).</p> </li> <li> <p>With the exception of the optional starting
+   * asterisk, it must only contain the following characters: <code>A-Z</code>,
+   * <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li> <li>
+   * <p>It must be from 1-255 characters in length. </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ImportFirewallDomains">AWS
    * API Reference</a></p>
    */
@@ -1475,6 +1482,44 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>Retrieves the domains of an AutoAllowlist firewall rule. Only the owner of
+   * the rule group can call this operation. Results are paginated. Use
+   * <code>MaxResults</code> and <code>NextToken</code> to retrieve additional
+   * domains.</p> <p>Identify the rule by <code>FirewallThreatProtectionId</code> to
+   * get the domains that DNS Firewall observed in the VPCs that use the rule group,
+   * through a rule group association or through a Route 53 Profile that includes the
+   * rule group, including VPCs in other accounts. Each domain is returned with its
+   * <code>DomainStatus</code> and request counts. Use <code>QueryOptions</code> to
+   * filter and sort the results.</p> <p>Identify the rule's managed domain list by
+   * <code>FirewallDomainListId</code> to get the domains that the rule currently
+   * allows. For any other domain list, use <a>ListFirewallDomains</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleDomains">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListFirewallRuleDomainsOutcome ListFirewallRuleDomains(const Model::ListFirewallRuleDomainsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListFirewallRuleDomains that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListFirewallRuleDomainsRequestT = Model::ListFirewallRuleDomainsRequest>
+  Model::ListFirewallRuleDomainsOutcomeCallable ListFirewallRuleDomainsCallable(const ListFirewallRuleDomainsRequestT& request) const {
+    return SubmitCallable(&Route53ResolverClient::ListFirewallRuleDomains, request);
+  }
+
+  /**
+   * An Async wrapper for ListFirewallRuleDomains that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListFirewallRuleDomainsRequestT = Model::ListFirewallRuleDomainsRequest>
+  void ListFirewallRuleDomainsAsync(const ListFirewallRuleDomainsRequestT& request,
+                                    const ListFirewallRuleDomainsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53ResolverClient::ListFirewallRuleDomains, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the firewall rule group associations that you have defined. Each
    * association enables DNS filtering for a VPC with one rule group. </p> <p>A
    * single call might return only a partial list of the associations. For
@@ -1551,8 +1596,10 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
    * <code>PartnerThreatProtection</code>), the response also includes a
    * <a>SubscriptionInfo</a> identifying the Amazon Web Services Marketplace product
    * that backs it; absence of <code>SubscriptionInfo</code> means the variant is
-   * fully managed by Amazon Web Services and requires no separate
-   * subscription.</p><p><h3>See Also:</h3>   <a
+   * fully managed by Amazon Web Services and requires no separate subscription.</p>
+   * <p>This operation doesn't return the <code>AutoAllowlist</code> variant.
+   * Configure an AutoAllowlist rule with <a>AutoAllowlistConfig</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleTypes">AWS
    * API Reference</a></p>
    */
@@ -1584,8 +1631,8 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
    * traffic for a VPC.</p> <p>A single call might return only a partial list of the
    * rules. For information, see <code>MaxResults</code>.</p> <p>For rules that
    * require asynchronous provisioning, the response includes <code>Status</code>
-   * (see <a>FirewallRuleStatus</a>) and, on failure, <code>StatusMessage</code> with
-   * the reason.</p><p><h3>See Also:</h3>   <a
+   * (see <a>FirewallRule</a>) and, on failure, <code>StatusMessage</code> with the
+   * reason.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRules">AWS
    * API Reference</a></p>
    */
@@ -2074,8 +2121,20 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Updates the firewall domain list from an array of domain specifications.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Updates the firewall domain list from an array of domain specifications. </p>
+   * <p>For an AutoAllowlist rule's managed domain list, use <code>ADD</code> to
+   * approve observed domains, <code>REMOVE</code> to stop allowing domains, unless a
+   * wildcard entry that's still on the list matches them, and <code>DENY</code> to
+   * dismiss observed domains. <code>REPLACE</code> and <a>ImportFirewallDomains</a>
+   * aren't supported for these lists.</p> <p>DNS Firewall throttles
+   * <code>UpdateFirewallDomains</code> requests based on both the request rate and
+   * the total number of domains across your requests.</p> <p> <b>Best Practice for
+   * Updating Domain Lists</b> </p> <p>If you only need to modify a subset of
+   * domains, use the <code>ADD</code> or <code>REMOVE</code> operations instead of
+   * <code>REPLACE</code>. With <code>REPLACE</code>, you send the complete list you
+   * want to end up with, and throttling counts every domain in that request,
+   * including domains that aren't changing, which can use up your available
+   * throttling capacity.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallDomains">AWS
    * API Reference</a></p>
    */

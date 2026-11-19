@@ -142,6 +142,33 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a new assessment for the specified cluster. Kicks off an asynchronous
+   * scan.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateAssessment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAssessmentOutcome CreateAssessment(const Model::CreateAssessmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAssessment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateAssessmentRequestT = Model::CreateAssessmentRequest>
+  Model::CreateAssessmentOutcomeCallable CreateAssessmentCallable(const CreateAssessmentRequestT& request) const {
+    return SubmitCallable(&KafkaClient::CreateAssessment, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAssessment that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateAssessmentRequestT = Model::CreateAssessmentRequest>
+  void CreateAssessmentAsync(const CreateAssessmentRequestT& request, const CreateAssessmentResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::CreateAssessment, request, handler, context);
+  }
+
+  /**
    * <p>Creates a Channel that streams records from an Amazon MSK Express cluster
    * topic to Amazon S3 or Apache Iceberg.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateChannel">AWS
@@ -333,6 +360,33 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
   void CreateVpcConnectionAsync(const CreateVpcConnectionRequestT& request, const CreateVpcConnectionResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KafkaClient::CreateVpcConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an assessment and its findings. Frees one slot against the cluster's
+   * assessment quota.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteAssessment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAssessmentOutcome DeleteAssessment(const Model::DeleteAssessmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAssessment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteAssessmentRequestT = Model::DeleteAssessmentRequest>
+  Model::DeleteAssessmentOutcomeCallable DeleteAssessmentCallable(const DeleteAssessmentRequestT& request) const {
+    return SubmitCallable(&KafkaClient::DeleteAssessment, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAssessment that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteAssessmentRequestT = Model::DeleteAssessmentRequest>
+  void DeleteAssessmentAsync(const DeleteAssessmentRequestT& request, const DeleteAssessmentResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::DeleteAssessment, request, handler, context);
   }
 
   /**
@@ -529,6 +583,33 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
   void DeleteVpcConnectionAsync(const DeleteVpcConnectionRequestT& request, const DeleteVpcConnectionResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KafkaClient::DeleteVpcConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the status and summary of an assessment.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeAssessment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAssessmentOutcome DescribeAssessment(const Model::DescribeAssessmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeAssessment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeAssessmentRequestT = Model::DescribeAssessmentRequest>
+  Model::DescribeAssessmentOutcomeCallable DescribeAssessmentCallable(const DescribeAssessmentRequestT& request) const {
+    return SubmitCallable(&KafkaClient::DescribeAssessment, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAssessment that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeAssessmentRequestT = Model::DescribeAssessmentRequest>
+  void DescribeAssessmentAsync(const DescribeAssessmentRequestT& request, const DescribeAssessmentResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::DescribeAssessment, request, handler, context);
   }
 
   /**
@@ -822,6 +903,35 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns the status and progress of a topic reassignment
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeTopicReassignment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTopicReassignmentOutcome DescribeTopicReassignment(const Model::DescribeTopicReassignmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeTopicReassignment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeTopicReassignmentRequestT = Model::DescribeTopicReassignmentRequest>
+  Model::DescribeTopicReassignmentOutcomeCallable DescribeTopicReassignmentCallable(
+      const DescribeTopicReassignmentRequestT& request) const {
+    return SubmitCallable(&KafkaClient::DescribeTopicReassignment, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTopicReassignment that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeTopicReassignmentRequestT = Model::DescribeTopicReassignmentRequest>
+  void DescribeTopicReassignmentAsync(const DescribeTopicReassignmentRequestT& request,
+                                      const DescribeTopicReassignmentResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::DescribeTopicReassignment, request, handler, context);
+  }
+
+  /**
    *
       <p>Returns a description of this MSK VPC connection.</p>
 
@@ -943,6 +1053,60 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                        const GetCompatibleKafkaVersionsRequestT& request = {}) const {
     return SubmitAsync(&KafkaClient::GetCompatibleKafkaVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the findings for a completed assessment. Paginated.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListAssessmentFindings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAssessmentFindingsOutcome ListAssessmentFindings(const Model::ListAssessmentFindingsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAssessmentFindings that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAssessmentFindingsRequestT = Model::ListAssessmentFindingsRequest>
+  Model::ListAssessmentFindingsOutcomeCallable ListAssessmentFindingsCallable(const ListAssessmentFindingsRequestT& request) const {
+    return SubmitCallable(&KafkaClient::ListAssessmentFindings, request);
+  }
+
+  /**
+   * An Async wrapper for ListAssessmentFindings that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAssessmentFindingsRequestT = Model::ListAssessmentFindingsRequest>
+  void ListAssessmentFindingsAsync(const ListAssessmentFindingsRequestT& request,
+                                   const ListAssessmentFindingsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::ListAssessmentFindings, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of assessments for the specified cluster. Optionally
+   * filterable by assessment type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListAssessments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAssessmentsOutcome ListAssessments(const Model::ListAssessmentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAssessments that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListAssessmentsRequestT = Model::ListAssessmentsRequest>
+  Model::ListAssessmentsOutcomeCallable ListAssessmentsCallable(const ListAssessmentsRequestT& request) const {
+    return SubmitCallable(&KafkaClient::ListAssessments, request);
+  }
+
+  /**
+   * An Async wrapper for ListAssessments that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListAssessmentsRequestT = Model::ListAssessmentsRequest>
+  void ListAssessmentsAsync(const ListAssessmentsRequestT& request, const ListAssessmentsResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::ListAssessments, request, handler, context);
   }
 
   /**
@@ -1322,6 +1486,34 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists topic reassignment operations for a cluster.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListTopicReassignments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTopicReassignmentsOutcome ListTopicReassignments(const Model::ListTopicReassignmentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTopicReassignments that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTopicReassignmentsRequestT = Model::ListTopicReassignmentsRequest>
+  Model::ListTopicReassignmentsOutcomeCallable ListTopicReassignmentsCallable(const ListTopicReassignmentsRequestT& request) const {
+    return SubmitCallable(&KafkaClient::ListTopicReassignments, request);
+  }
+
+  /**
+   * An Async wrapper for ListTopicReassignments that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListTopicReassignmentsRequestT = Model::ListTopicReassignmentsRequest>
+  void ListTopicReassignmentsAsync(const ListTopicReassignmentsRequestT& request,
+                                   const ListTopicReassignmentsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::ListTopicReassignments, request, handler, context);
+  }
+
+  /**
    *
       <p>List topics in a MSK cluster.</p>
    <p><h3>See Also:</h3>
@@ -1461,6 +1653,60 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
                                       const RejectClientVpcConnectionResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KafkaClient::RejectClientVpcConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Initiates topic partition reassignment between broker types in a mixed-mode
+   * cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/StartTopicReassignment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartTopicReassignmentOutcome StartTopicReassignment(const Model::StartTopicReassignmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartTopicReassignment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartTopicReassignmentRequestT = Model::StartTopicReassignmentRequest>
+  Model::StartTopicReassignmentOutcomeCallable StartTopicReassignmentCallable(const StartTopicReassignmentRequestT& request) const {
+    return SubmitCallable(&KafkaClient::StartTopicReassignment, request);
+  }
+
+  /**
+   * An Async wrapper for StartTopicReassignment that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartTopicReassignmentRequestT = Model::StartTopicReassignmentRequest>
+  void StartTopicReassignmentAsync(const StartTopicReassignmentRequestT& request,
+                                   const StartTopicReassignmentResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::StartTopicReassignment, request, handler, context);
+  }
+
+  /**
+   * <p>Stops an active topic reassignment operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/StopTopicReassignment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopTopicReassignmentOutcome StopTopicReassignment(const Model::StopTopicReassignmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopTopicReassignment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopTopicReassignmentRequestT = Model::StopTopicReassignmentRequest>
+  Model::StopTopicReassignmentOutcomeCallable StopTopicReassignmentCallable(const StopTopicReassignmentRequestT& request) const {
+    return SubmitCallable(&KafkaClient::StopTopicReassignment, request);
+  }
+
+  /**
+   * An Async wrapper for StopTopicReassignment that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StopTopicReassignmentRequestT = Model::StopTopicReassignmentRequest>
+  void StopTopicReassignmentAsync(const StopTopicReassignmentRequestT& request, const StopTopicReassignmentResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::StopTopicReassignment, request, handler, context);
   }
 
   /**

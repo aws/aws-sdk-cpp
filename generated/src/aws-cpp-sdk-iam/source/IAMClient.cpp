@@ -188,6 +188,7 @@
 #include <aws/iam/model/UpdateDelegationRequestRequest.h>
 #include <aws/iam/model/UpdateGroupRequest.h>
 #include <aws/iam/model/UpdateLoginProfileRequest.h>
+#include <aws/iam/model/UpdateOpenIDConnectProviderRequest.h>
 #include <aws/iam/model/UpdateOpenIDConnectProviderThumbprintRequest.h>
 #include <aws/iam/model/UpdateRoleDescriptionRequest.h>
 #include <aws/iam/model/UpdateRoleRequest.h>
@@ -1356,6 +1357,12 @@ UpdateLoginProfileOutcome IAMClient::UpdateLoginProfile(const UpdateLoginProfile
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateLoginProfileOutcome(result.GetResultWithOwnership())
                             : UpdateLoginProfileOutcome(std::move(result.GetError()));
+}
+
+UpdateOpenIDConnectProviderOutcome IAMClient::UpdateOpenIDConnectProvider(const UpdateOpenIDConnectProviderRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOpenIDConnectProviderOutcome(result.GetResultWithOwnership())
+                            : UpdateOpenIDConnectProviderOutcome(std::move(result.GetError()));
 }
 
 UpdateOpenIDConnectProviderThumbprintOutcome IAMClient::UpdateOpenIDConnectProviderThumbprint(

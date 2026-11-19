@@ -46,6 +46,13 @@ DescribeTopicResult& DescribeTopicResult::operator=(const Aws::AmazonWebServiceR
     m_status = TopicStateMapper::GetTopicStateForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("replicaIds")) {
+    Aws::Utils::Array<JsonView> replicaIdsJsonList = jsonValue.GetArray("replicaIds");
+    for (unsigned replicaIdsIndex = 0; replicaIdsIndex < replicaIdsJsonList.GetLength(); ++replicaIdsIndex) {
+      m_replicaIds.push_back(replicaIdsJsonList[replicaIdsIndex].AsInteger());
+    }
+    m_replicaIdsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

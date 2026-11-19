@@ -16,7 +16,8 @@ enum class ValidationExceptionReason {
   FieldValidationFailed,
   IdempotentParameterMismatchException,
   EventInOtherSession,
-  ResourceConflict
+  ResourceConflict,
+  UnsupportedInRegion
 };
 
 namespace ValidationExceptionReasonMapper {
