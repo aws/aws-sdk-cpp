@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/memorydb/MemoryDBClient.h>
+#include <aws/memorydb/MemoryDBClientConfiguration.h>
 #include <aws/memorydb/MemoryDBClientPagination.h>
 #include <aws/memorydb/MemoryDBEndpointProvider.h>
 #include <aws/memorydb/MemoryDBErrorMarshaller.h>

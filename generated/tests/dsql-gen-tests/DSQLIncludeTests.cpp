@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/dsql/DSQLClient.h>
+#include <aws/dsql/DSQLClientConfiguration.h>
 #include <aws/dsql/DSQLClientPagination.h>
 #include <aws/dsql/DSQLEndpointProvider.h>
 #include <aws/dsql/DSQLErrorMarshaller.h>

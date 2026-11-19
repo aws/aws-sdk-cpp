@@ -79,7 +79,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SsmSap {
-using SsmSapClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SsmSapEndpointProviderBase = Aws::SsmSap::Endpoint::SsmSapEndpointProviderBase;
 using SsmSapEndpointProvider = Aws::SsmSap::Endpoint::SsmSapEndpointProvider;
 

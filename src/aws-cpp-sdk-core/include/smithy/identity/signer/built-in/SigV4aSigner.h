@@ -12,6 +12,7 @@
 
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/auth/signer/AWSAuthSignerHelper.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/crt/http/HttpConnection.h>
 #include <aws/crt/http/HttpRequestResponse.h>
 #include <condition_variable>
@@ -34,8 +35,14 @@ namespace smithy {
 
     public:
         using SigV4aAuthSchemeParameters = DefaultAuthSchemeResolverParameters;
-        explicit AwsSigV4aSigner(const Aws::String& serviceName, const Aws::String& region)
-            :  m_serviceName(serviceName), m_region(region)
+        /**
+         * signingRegionSet: regions configured on the client (sigV4aSigningRegionSet). When set, used instead of
+         * the endpoint's signing region, so configuration wins over endpoint rules.
+         */
+        explicit AwsSigV4aSigner(const Aws::String& serviceName, const Aws::String& region,
+                                 const Aws::Vector<Aws::String>& signingRegionSet = {})
+            :  m_serviceName(serviceName), m_region(region),
+               m_signingRegionSet(Aws::Utils::StringUtils::Join(signingRegionSet, ','))
         {
         }
 
@@ -174,8 +181,12 @@ namespace smithy {
             auto signPayloadIt = properties.find("SignPayload");
             bool signPayload = signPayloadIt == properties.end() ? true : signPayloadIt->second.get<Aws::String>() == "true";
 
+            // Configured region set wins, then the endpoint's signing region, then the client's region.
             auto signerRegionOverrideIt = properties.find(smithy::SIGNER_REGION_PROPERTY);
-            auto regionOverride = signerRegionOverrideIt != properties.end() ? signerRegionOverrideIt->second.get<Aws::String>().c_str() : region.c_str();
+            const Aws::String signingRegion = !m_signingRegionSet.empty() ? m_signingRegionSet
+                : signerRegionOverrideIt != properties.end() ? signerRegionOverrideIt->second.get<Aws::String>()
+                : region;
+            auto regionOverride = signingRegion.c_str();
 
             auto signerServiceNameOverrideIt = properties.find(smithy::SIGNER_SERVICE_NAME);
             auto serviceName = signerServiceNameOverrideIt != properties.end() ? signerServiceNameOverrideIt->second.get<Aws::String>().c_str() : svcName.c_str();
@@ -286,6 +297,7 @@ namespace smithy {
 
         Aws::String m_serviceName;
         Aws::String m_region;
+        Aws::String m_signingRegionSet;
         std::shared_ptr<Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy> m_policy;
         //params that can be exposed later
         long long m_expirationTimeInSeconds{0};

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/dms/DatabaseMigrationServiceClient.h>
+#include <aws/dms/DatabaseMigrationServiceClientConfiguration.h>
 #include <aws/dms/DatabaseMigrationServiceClientPagination.h>
 #include <aws/dms/DatabaseMigrationServiceEndpointProvider.h>
 #include <aws/dms/DatabaseMigrationServiceErrorMarshaller.h>

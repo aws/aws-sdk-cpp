@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/signer-data/SignerDataClient.h>
+#include <aws/signer-data/SignerDataClientConfiguration.h>
 #include <aws/signer-data/SignerDataEndpointProvider.h>
 #include <aws/signer-data/SignerDataErrorMarshaller.h>
 #include <aws/signer-data/SignerDataErrors.h>

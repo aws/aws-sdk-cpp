@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/resource-groups/ResourceGroupsClient.h>
+#include <aws/resource-groups/ResourceGroupsClientConfiguration.h>
 #include <aws/resource-groups/ResourceGroupsClientPagination.h>
 #include <aws/resource-groups/ResourceGroupsEndpointProvider.h>
 #include <aws/resource-groups/ResourceGroupsErrorMarshaller.h>

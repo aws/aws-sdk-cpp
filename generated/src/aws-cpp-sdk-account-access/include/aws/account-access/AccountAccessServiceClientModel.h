@@ -58,7 +58,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace AccountAccess {
-using AccountAccessClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AccountAccessEndpointProviderBase = Aws::AccountAccess::Endpoint::AccountAccessEndpointProviderBase;
 using AccountAccessEndpointProvider = Aws::AccountAccess::Endpoint::AccountAccessEndpointProvider;
 

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sagemaker-metrics/SageMakerMetricsClient.h>
+#include <aws/sagemaker-metrics/SageMakerMetricsClientConfiguration.h>
 #include <aws/sagemaker-metrics/SageMakerMetricsEndpointProvider.h>
 #include <aws/sagemaker-metrics/SageMakerMetricsErrorMarshaller.h>
 #include <aws/sagemaker-metrics/SageMakerMetricsErrors.h>

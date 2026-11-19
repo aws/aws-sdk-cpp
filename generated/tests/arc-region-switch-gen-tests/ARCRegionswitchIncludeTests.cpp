@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/arc-region-switch/ARCRegionswitchClient.h>
+#include <aws/arc-region-switch/ARCRegionswitchClientConfiguration.h>
 #include <aws/arc-region-switch/ARCRegionswitchClientPagination.h>
 #include <aws/arc-region-switch/ARCRegionswitchEndpointProvider.h>
 #include <aws/arc-region-switch/ARCRegionswitchErrorMarshaller.h>

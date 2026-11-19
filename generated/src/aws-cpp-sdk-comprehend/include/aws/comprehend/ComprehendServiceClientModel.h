@@ -148,7 +148,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Comprehend {
-using ComprehendClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ComprehendEndpointProviderBase = Aws::Comprehend::Endpoint::ComprehendEndpointProviderBase;
 using ComprehendEndpointProvider = Aws::Comprehend::Endpoint::ComprehendEndpointProvider;
 

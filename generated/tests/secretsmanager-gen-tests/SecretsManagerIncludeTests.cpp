@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/secretsmanager/SecretsManagerClient.h>
+#include <aws/secretsmanager/SecretsManagerClientConfiguration.h>
 #include <aws/secretsmanager/SecretsManagerClientPagination.h>
 #include <aws/secretsmanager/SecretsManagerEndpointProvider.h>
 #include <aws/secretsmanager/SecretsManagerErrorMarshaller.h>

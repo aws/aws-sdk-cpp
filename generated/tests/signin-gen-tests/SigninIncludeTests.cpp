@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/signin/SigninClient.h>
+#include <aws/signin/SigninClientConfiguration.h>
 #include <aws/signin/SigninClientPagination.h>
 #include <aws/signin/SigninEndpointProvider.h>
 #include <aws/signin/SigninErrorMarshaller.h>

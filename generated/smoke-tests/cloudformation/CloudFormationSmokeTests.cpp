@@ -35,8 +35,6 @@ TEST_F(CloudFormationSmokeTestSuite, CreateStackFailure )
 {
     Aws::CloudFormation::CloudFormationClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<CloudFormationClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -50,8 +48,6 @@ TEST_F(CloudFormationSmokeTestSuite, ListStacksSuccess )
 {
     Aws::CloudFormation::CloudFormationClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<CloudFormationClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

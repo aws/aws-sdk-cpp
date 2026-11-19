@@ -54,27 +54,6 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
                 std::shared_ptr<KinesisEndpointProviderBase> endpointProvider = nullptr,
                 const Aws::Kinesis::KinesisClientConfiguration& clientConfiguration = Aws::Kinesis::KinesisClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  KinesisClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  KinesisClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  KinesisClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~KinesisClient();
 
   /**
@@ -2006,7 +1985,6 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&KinesisClient::UpdateStreamWarmThroughput, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<KinesisEndpointProviderBase>& accessEndpointProvider();
 
  private:

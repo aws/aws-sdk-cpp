@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/comprehend/ComprehendClient.h>
+#include <aws/comprehend/ComprehendClientConfiguration.h>
 #include <aws/comprehend/ComprehendClientPagination.h>
 #include <aws/comprehend/ComprehendEndpointProvider.h>
 #include <aws/comprehend/ComprehendErrorMarshaller.h>

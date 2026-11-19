@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/geo-maps/GeoMapsClient.h>
+#include <aws/geo-maps/GeoMapsClientConfiguration.h>
 #include <aws/geo-maps/GeoMapsEndpointProvider.h>
 #include <aws/geo-maps/GeoMapsErrorMarshaller.h>
 #include <aws/geo-maps/GeoMapsErrors.h>

@@ -56,7 +56,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ProtocolMock {
-using ProtocolMockClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ProtocolMockEndpointProviderBase = Aws::ProtocolMock::Endpoint::ProtocolMockEndpointProviderBase;
 using ProtocolMockEndpointProvider = Aws::ProtocolMock::Endpoint::ProtocolMockEndpointProvider;
 

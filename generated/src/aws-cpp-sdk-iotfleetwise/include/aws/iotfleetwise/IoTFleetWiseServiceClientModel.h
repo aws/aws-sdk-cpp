@@ -114,7 +114,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace IoTFleetWise {
-using IoTFleetWiseClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTFleetWiseEndpointProviderBase = Aws::IoTFleetWise::Endpoint::IoTFleetWiseEndpointProviderBase;
 using IoTFleetWiseEndpointProvider = Aws::IoTFleetWise::Endpoint::IoTFleetWiseEndpointProvider;
 

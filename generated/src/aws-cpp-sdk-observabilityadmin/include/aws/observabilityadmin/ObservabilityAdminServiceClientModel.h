@@ -98,7 +98,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ObservabilityAdmin {
-using ObservabilityAdminClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ObservabilityAdminEndpointProviderBase = Aws::ObservabilityAdmin::Endpoint::ObservabilityAdminEndpointProviderBase;
 using ObservabilityAdminEndpointProvider = Aws::ObservabilityAdmin::Endpoint::ObservabilityAdminEndpointProvider;
 

@@ -51,7 +51,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SSMGuiConnect {
-using SSMGuiConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SSMGuiConnectEndpointProviderBase = Aws::SSMGuiConnect::Endpoint::SSMGuiConnectEndpointProviderBase;
 using SSMGuiConnectEndpointProvider = Aws::SSMGuiConnect::Endpoint::SSMGuiConnectEndpointProvider;
 

@@ -48,7 +48,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace EC2InstanceConnect {
-using EC2InstanceConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EC2InstanceConnectEndpointProviderBase = Aws::EC2InstanceConnect::Endpoint::EC2InstanceConnectEndpointProviderBase;
 using EC2InstanceConnectEndpointProvider = Aws::EC2InstanceConnect::Endpoint::EC2InstanceConnectEndpointProvider;
 

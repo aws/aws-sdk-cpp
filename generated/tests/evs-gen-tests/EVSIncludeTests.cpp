@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/evs/EVSClient.h>
+#include <aws/evs/EVSClientConfiguration.h>
 #include <aws/evs/EVSClientPagination.h>
 #include <aws/evs/EVSEndpointProvider.h>
 #include <aws/evs/EVSErrorMarshaller.h>

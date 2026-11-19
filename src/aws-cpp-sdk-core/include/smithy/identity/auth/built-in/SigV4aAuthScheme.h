@@ -27,20 +27,22 @@ namespace smithy {
         //This allows to override the identity resolver
         explicit SigV4aAuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver,
                                   const Aws::String& serviceName,
-                                  const Aws::String& region)
+                                  const Aws::String& region,
+                                  const Aws::Vector<Aws::String>& signingRegionSet = {})
             : AuthScheme(SIGV4A),
             m_identityResolver{identityResolver},
-            m_signer{Aws::MakeShared<AwsSigV4aSigner>("SigV4aAuthScheme", serviceName, region)}
+            m_signer{Aws::MakeShared<AwsSigV4aSigner>("SigV4aAuthScheme", serviceName, region, signingRegionSet)}
         {
             assert(m_identityResolver);
             assert(m_signer);
         }
 
         explicit SigV4aAuthScheme(const Aws::String& serviceName, const Aws::String& region,
-                                  const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config)
+                                  const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config,
+                                  const Aws::Vector<Aws::String>& signingRegionSet = {})
             : SigV4aAuthScheme(
                   Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4aAuthScheme", config),
-                  serviceName, region) {
+                  serviceName, region, signingRegionSet) {
           assert(m_identityResolver);
           assert(m_signer);
         }

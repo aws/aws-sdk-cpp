@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsClient.h>
+#include <aws/bcm-recommended-actions/BCMRecommendedActionsClientConfiguration.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsClientPagination.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsEndpointProvider.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsErrorMarshaller.h>

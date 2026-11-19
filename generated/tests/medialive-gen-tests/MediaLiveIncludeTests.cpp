@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/medialive/MediaLiveClient.h>
+#include <aws/medialive/MediaLiveClientConfiguration.h>
 #include <aws/medialive/MediaLiveClientPagination.h>
 #include <aws/medialive/MediaLiveEndpointProvider.h>
 #include <aws/medialive/MediaLiveErrorMarshaller.h>

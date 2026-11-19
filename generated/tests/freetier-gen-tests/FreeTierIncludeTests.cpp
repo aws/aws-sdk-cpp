@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/freetier/FreeTierClient.h>
+#include <aws/freetier/FreeTierClientConfiguration.h>
 #include <aws/freetier/FreeTierClientPagination.h>
 #include <aws/freetier/FreeTierEndpointProvider.h>
 #include <aws/freetier/FreeTierErrorMarshaller.h>

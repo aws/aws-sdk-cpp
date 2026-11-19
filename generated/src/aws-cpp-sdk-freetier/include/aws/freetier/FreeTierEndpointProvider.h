@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/freetier/FreeTierClientConfiguration.h>
 #include <aws/freetier/FreeTier_EXPORTS.h>
 
 namespace Aws {
 namespace FreeTier {
 namespace Endpoint {
+using FreeTierClientConfiguration = Aws::FreeTier::FreeTierClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using FreeTierClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using FreeTierClientConfiguration = Aws::Client::GenericClientConfiguration;
-using FreeTierBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_FREETIER_API FreeTierBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~FreeTierBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const FreeTierClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const FreeTierClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const FreeTierClientConfiguration& config);
+};
 
 /**
  * The type for the FreeTier Client Endpoint Provider.
@@ -34,6 +43,24 @@ using FreeTierEndpointProviderBase =
 using FreeTierDefaultEpProviderBase =
     BDDEndpointProvider<FreeTierClientConfiguration, FreeTierBuiltInParameters, FreeTierClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace FreeTier
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_FREETIER_EXTERN template class AWS_FREETIER_API
+    Aws::Endpoint::EndpointProviderBase<FreeTier::Endpoint::FreeTierClientConfiguration, FreeTier::Endpoint::FreeTierBuiltInParameters,
+                                        FreeTier::Endpoint::FreeTierClientContextParameters>;
+
+AWS_FREETIER_EXTERN template class AWS_FREETIER_API
+    Aws::Endpoint::BDDEndpointProvider<FreeTier::Endpoint::FreeTierClientConfiguration, FreeTier::Endpoint::FreeTierBuiltInParameters,
+                                       FreeTier::Endpoint::FreeTierClientContextParameters>;
+}  // namespace Endpoint
+
+namespace FreeTier {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

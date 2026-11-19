@@ -57,7 +57,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Pipes {
-using PipesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PipesEndpointProviderBase = Aws::Pipes::Endpoint::PipesEndpointProviderBase;
 using PipesEndpointProvider = Aws::Pipes::Endpoint::PipesEndpointProvider;
 

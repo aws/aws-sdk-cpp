@@ -11,6 +11,10 @@ namespace Bedrock {
 static const char AWS_BEARER_TOKEN_BEDROCK[] = "AWS_BEARER_TOKEN_BEDROCK";
 
 void BedrockClientConfiguration::LoadBedrockSpecificConfig(const Aws::String& inputProfileName) {
+  useFIPS = Aws::Client::ClientConfiguration::LoadConfigFromEnvOrProfile("AWS_USE_FIPS_ENDPOINT", this->profileName, "use_fips_endpoint",
+                                                                         {"true", "false"}, "false") == "true";
+  useDualStack = Aws::Client::ClientConfiguration::LoadConfigFromEnvOrProfile(
+                     "AWS_USE_DUALSTACK_ENDPOINT", this->profileName, "use_dualstack_endpoint", {"true", "false"}, "false") == "true";
   const Aws::String& bedrockToken =
       BaseClientConfigClass::LoadConfigFromEnvOrProfile(AWS_BEARER_TOKEN_BEDROCK, inputProfileName, AWS_BEARER_TOKEN_BEDROCK, {}, "");
   if (!bedrockToken.empty()) {
@@ -37,7 +41,8 @@ BedrockClientConfiguration::BedrockClientConfiguration(bool useSmartDefaults, co
   LoadBedrockSpecificConfig(this->profileName);
 }
 
-BedrockClientConfiguration::BedrockClientConfiguration(const Aws::Client::ClientConfiguration& config) : BaseClientConfigClass(config) {
+BedrockClientConfiguration::BedrockClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig)
+    : BaseClientConfigClass(sharedConfig) {
   LoadBedrockSpecificConfig(this->profileName);
 }
 

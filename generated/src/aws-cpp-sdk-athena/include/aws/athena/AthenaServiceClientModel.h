@@ -123,7 +123,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Athena {
-using AthenaClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AthenaEndpointProviderBase = Aws::Athena::Endpoint::AthenaEndpointProviderBase;
 using AthenaEndpointProvider = Aws::Athena::Endpoint::AthenaEndpointProvider;
 

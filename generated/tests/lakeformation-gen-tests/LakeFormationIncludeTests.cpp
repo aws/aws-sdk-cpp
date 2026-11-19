@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/lakeformation/LakeFormationClient.h>
+#include <aws/lakeformation/LakeFormationClientConfiguration.h>
 #include <aws/lakeformation/LakeFormationClientPagination.h>
 #include <aws/lakeformation/LakeFormationEndpointProvider.h>
 #include <aws/lakeformation/LakeFormationErrorMarshaller.h>

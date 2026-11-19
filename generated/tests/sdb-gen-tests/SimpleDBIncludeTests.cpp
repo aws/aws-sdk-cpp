@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sdb/SimpleDBClient.h>
+#include <aws/sdb/SimpleDBClientConfiguration.h>
 #include <aws/sdb/SimpleDBEndpointProvider.h>
 #include <aws/sdb/SimpleDBErrorMarshaller.h>
 #include <aws/sdb/SimpleDBErrors.h>

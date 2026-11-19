@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/es/ElasticsearchServiceClient.h>
+#include <aws/es/ElasticsearchServiceClientConfiguration.h>
 #include <aws/es/ElasticsearchServiceClientPagination.h>
 #include <aws/es/ElasticsearchServiceEndpointProvider.h>
 #include <aws/es/ElasticsearchServiceErrorMarshaller.h>

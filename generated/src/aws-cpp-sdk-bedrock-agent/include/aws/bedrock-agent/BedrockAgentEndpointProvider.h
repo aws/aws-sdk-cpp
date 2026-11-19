@@ -27,6 +27,9 @@ class AWS_BEDROCKAGENT_API BedrockAgentBuiltInParameters : public Aws::Endpoint:
   using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
   virtual void SetFromClientConfiguration(const BedrockAgentClientConfiguration& config);
   virtual void SetFromClientConfiguration(const BedrockAgentClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const BedrockAgentClientConfiguration& config);
 };
 
 /**

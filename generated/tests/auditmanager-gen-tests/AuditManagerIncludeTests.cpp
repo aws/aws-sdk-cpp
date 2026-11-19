@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/auditmanager/AuditManagerClient.h>
+#include <aws/auditmanager/AuditManagerClientConfiguration.h>
 #include <aws/auditmanager/AuditManagerClientPagination.h>
 #include <aws/auditmanager/AuditManagerEndpointProvider.h>
 #include <aws/auditmanager/AuditManagerErrorMarshaller.h>

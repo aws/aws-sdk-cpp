@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/braket/BraketClient.h>
+#include <aws/braket/BraketClientConfiguration.h>
 #include <aws/braket/BraketClientPagination.h>
 #include <aws/braket/BraketEndpointProvider.h>
 #include <aws/braket/BraketErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cloudhsmv2/CloudHSMV2Client.h>
+#include <aws/cloudhsmv2/CloudHSMV2ClientConfiguration.h>
 #include <aws/cloudhsmv2/CloudHSMV2ClientPagination.h>
 #include <aws/cloudhsmv2/CloudHSMV2EndpointProvider.h>
 #include <aws/cloudhsmv2/CloudHSMV2ErrorMarshaller.h>

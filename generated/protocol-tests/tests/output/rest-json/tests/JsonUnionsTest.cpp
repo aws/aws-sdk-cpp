@@ -12,7 +12,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeStringUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -35,7 +35,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeStringUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeBooleanUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -58,7 +58,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeBooleanUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeNumberUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -81,7 +81,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeNumberUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeBlobUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -104,7 +104,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeBlobUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeTimestampUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -127,7 +127,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeTimestampUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeEnumUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -150,7 +150,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeEnumUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeListUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -176,7 +176,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeListUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeMapUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -206,7 +206,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeMapUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeStructureUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -233,7 +233,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeStructureUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeNestedUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -260,7 +260,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeNestedUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeIgnoreType) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

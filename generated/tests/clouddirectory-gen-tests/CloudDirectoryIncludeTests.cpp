@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/clouddirectory/CloudDirectoryClient.h>
+#include <aws/clouddirectory/CloudDirectoryClientConfiguration.h>
 #include <aws/clouddirectory/CloudDirectoryClientPagination.h>
 #include <aws/clouddirectory/CloudDirectoryEndpointProvider.h>
 #include <aws/clouddirectory/CloudDirectoryErrorMarshaller.h>

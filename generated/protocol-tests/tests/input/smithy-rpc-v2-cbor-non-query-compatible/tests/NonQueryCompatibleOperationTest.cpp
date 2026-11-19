@@ -12,7 +12,8 @@ using NonQueryCompatibleRpcV2ProtocolClient = Aws::NonQueryCompatibleRpcV2Protoc
 using namespace Aws::NonQueryCompatibleRpcV2Protocol::Model;
 
 AWS_PROTOCOL_TEST(NonQueryCompatibleOperation, NonQueryCompatibleRpcV2CborForbidsQueryModeHeader) {
-  NonQueryCompatibleRpcV2ProtocolClient client(mockCredentials, mockConfig);
+  NonQueryCompatibleRpcV2ProtocolClient client(
+      mockCredentials, nullptr, Aws::NonQueryCompatibleRpcV2Protocol::NonQueryCompatibleRpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;

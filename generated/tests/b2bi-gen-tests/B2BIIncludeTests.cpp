@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/b2bi/B2BIClient.h>
+#include <aws/b2bi/B2BIClientConfiguration.h>
 #include <aws/b2bi/B2BIClientPagination.h>
 #include <aws/b2bi/B2BIEndpointProvider.h>
 #include <aws/b2bi/B2BIErrorMarshaller.h>

@@ -84,7 +84,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Amplify {
-using AmplifyClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AmplifyEndpointProviderBase = Aws::Amplify::Endpoint::AmplifyEndpointProviderBase;
 using AmplifyEndpointProvider = Aws::Amplify::Endpoint::AmplifyEndpointProvider;
 

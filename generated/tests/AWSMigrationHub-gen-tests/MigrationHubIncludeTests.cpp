@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/AWSMigrationHub/MigrationHubClient.h>
+#include <aws/AWSMigrationHub/MigrationHubClientConfiguration.h>
 #include <aws/AWSMigrationHub/MigrationHubClientPagination.h>
 #include <aws/AWSMigrationHub/MigrationHubEndpointProvider.h>
 #include <aws/AWSMigrationHub/MigrationHubErrorMarshaller.h>

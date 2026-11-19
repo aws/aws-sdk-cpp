@@ -62,6 +62,8 @@ enum class UserAgentFeature {
 class AWS_CORE_API UserAgent {
  public:
   static Aws::String BusinessMetricForFeature(UserAgentFeature feature);
+  /** The user agent feature for an account ID endpoint mode ("preferred", "disabled", "required"), if any. */
+  static Aws::Crt::Optional<UserAgentFeature> FeatureForAccountIdEndpointMode(const Aws::String& accountIdEndpointMode);
   explicit UserAgent(const ClientConfiguration& clientConfiguration, const Aws::String& retryStrategyName, const Aws::String& apiName);
   Aws::String SerializeWithFeatures(const Aws::Set<UserAgentFeature>& features) const;
   void SetApiName(const Aws::String& apiName) { m_api = apiName; }

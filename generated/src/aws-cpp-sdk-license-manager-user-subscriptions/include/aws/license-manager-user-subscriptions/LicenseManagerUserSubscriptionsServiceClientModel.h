@@ -69,7 +69,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace LicenseManagerUserSubscriptions {
-using LicenseManagerUserSubscriptionsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LicenseManagerUserSubscriptionsEndpointProviderBase =
     Aws::LicenseManagerUserSubscriptions::Endpoint::LicenseManagerUserSubscriptionsEndpointProviderBase;
 using LicenseManagerUserSubscriptionsEndpointProvider =

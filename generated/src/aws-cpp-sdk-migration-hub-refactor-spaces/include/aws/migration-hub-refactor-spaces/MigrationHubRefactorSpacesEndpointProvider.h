@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesClientConfiguration.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
 
 namespace Aws {
 namespace MigrationHubRefactorSpaces {
 namespace Endpoint {
+using MigrationHubRefactorSpacesClientConfiguration = Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using MigrationHubRefactorSpacesClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MigrationHubRefactorSpacesClientConfiguration = Aws::Client::GenericClientConfiguration;
-using MigrationHubRefactorSpacesBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~MigrationHubRefactorSpacesBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const MigrationHubRefactorSpacesClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const MigrationHubRefactorSpacesClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const MigrationHubRefactorSpacesClientConfiguration& config);
+};
 
 /**
  * The type for the MigrationHubRefactorSpaces Client Endpoint Provider.
@@ -36,6 +45,26 @@ using MigrationHubRefactorSpacesDefaultEpProviderBase =
     BDDEndpointProvider<MigrationHubRefactorSpacesClientConfiguration, MigrationHubRefactorSpacesBuiltInParameters,
                         MigrationHubRefactorSpacesClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace MigrationHubRefactorSpaces
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_MIGRATIONHUBREFACTORSPACES_EXTERN template class AWS_MIGRATIONHUBREFACTORSPACES_API
+    Aws::Endpoint::EndpointProviderBase<MigrationHubRefactorSpaces::Endpoint::MigrationHubRefactorSpacesClientConfiguration,
+                                        MigrationHubRefactorSpaces::Endpoint::MigrationHubRefactorSpacesBuiltInParameters,
+                                        MigrationHubRefactorSpaces::Endpoint::MigrationHubRefactorSpacesClientContextParameters>;
+
+AWS_MIGRATIONHUBREFACTORSPACES_EXTERN template class AWS_MIGRATIONHUBREFACTORSPACES_API
+    Aws::Endpoint::BDDEndpointProvider<MigrationHubRefactorSpaces::Endpoint::MigrationHubRefactorSpacesClientConfiguration,
+                                       MigrationHubRefactorSpaces::Endpoint::MigrationHubRefactorSpacesBuiltInParameters,
+                                       MigrationHubRefactorSpaces::Endpoint::MigrationHubRefactorSpacesClientContextParameters>;
+}  // namespace Endpoint
+
+namespace MigrationHubRefactorSpaces {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

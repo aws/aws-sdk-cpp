@@ -54,7 +54,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace FreeTier {
-using FreeTierClientConfiguration = Aws::Client::GenericClientConfiguration;
 using FreeTierEndpointProviderBase = Aws::FreeTier::Endpoint::FreeTierEndpointProviderBase;
 using FreeTierEndpointProvider = Aws::FreeTier::Endpoint::FreeTierEndpointProvider;
 

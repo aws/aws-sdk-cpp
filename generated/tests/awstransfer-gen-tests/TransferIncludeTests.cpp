@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/awstransfer/TransferClient.h>
+#include <aws/awstransfer/TransferClientConfiguration.h>
 #include <aws/awstransfer/TransferClientPagination.h>
 #include <aws/awstransfer/TransferEndpointProvider.h>
 #include <aws/awstransfer/TransferErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/accessanalyzer/AccessAnalyzerClient.h>
+#include <aws/accessanalyzer/AccessAnalyzerClientConfiguration.h>
 #include <aws/accessanalyzer/AccessAnalyzerClientPagination.h>
 #include <aws/accessanalyzer/AccessAnalyzerEndpointProvider.h>
 #include <aws/accessanalyzer/AccessAnalyzerErrorMarshaller.h>

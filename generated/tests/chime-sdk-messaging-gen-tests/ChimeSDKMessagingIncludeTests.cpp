@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingClient.h>
+#include <aws/chime-sdk-messaging/ChimeSDKMessagingClientConfiguration.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingClientPagination.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingEndpointProvider.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingErrorMarshaller.h>

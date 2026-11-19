@@ -8,6 +8,7 @@
 #include <smithy/identity/signer/AwsSignerBase.h>
 
 #include <aws/crt/Variant.h>
+#include <aws/core/utils/memory/stl/AWSArray.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace smithy {

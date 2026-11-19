@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/athena/AthenaClient.h>
+#include <aws/athena/AthenaClientConfiguration.h>
 #include <aws/athena/AthenaClientPagination.h>
 #include <aws/athena/AthenaEndpointProvider.h>
 #include <aws/athena/AthenaErrorMarshaller.h>

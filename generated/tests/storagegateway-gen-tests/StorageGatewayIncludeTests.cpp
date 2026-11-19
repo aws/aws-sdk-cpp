@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/storagegateway/StorageGatewayClient.h>
+#include <aws/storagegateway/StorageGatewayClientConfiguration.h>
 #include <aws/storagegateway/StorageGatewayClientPagination.h>
 #include <aws/storagegateway/StorageGatewayEndpointProvider.h>
 #include <aws/storagegateway/StorageGatewayErrorMarshaller.h>

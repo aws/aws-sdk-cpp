@@ -93,27 +93,6 @@ class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient,
               std::shared_ptr<ChimeEndpointProviderBase> endpointProvider = nullptr,
               const Aws::Chime::ChimeClientConfiguration& clientConfiguration = Aws::Chime::ChimeClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  ChimeClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  ChimeClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  ChimeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-              const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~ChimeClient();
 
   /**
@@ -1915,7 +1894,6 @@ class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&ChimeClient::UpdateUserSettings, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<ChimeEndpointProviderBase>& accessEndpointProvider();
 
  private:

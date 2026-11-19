@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/eks-auth/EKSAuthClient.h>
+#include <aws/eks-auth/EKSAuthClientConfiguration.h>
 #include <aws/eks-auth/EKSAuthEndpointProvider.h>
 #include <aws/eks-auth/EKSAuthErrorMarshaller.h>
 #include <aws/eks-auth/EKSAuthErrors.h>

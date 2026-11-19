@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lex-models/LexModelBuildingServiceClientConfiguration.h>
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 
 namespace Aws {
 namespace LexModelBuildingService {
 namespace Endpoint {
+using LexModelBuildingServiceClientConfiguration = Aws::LexModelBuildingService::LexModelBuildingServiceClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using LexModelBuildingServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using LexModelBuildingServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
-using LexModelBuildingServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_LEXMODELBUILDINGSERVICE_API LexModelBuildingServiceBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~LexModelBuildingServiceBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const LexModelBuildingServiceClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const LexModelBuildingServiceClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const LexModelBuildingServiceClientConfiguration& config);
+};
 
 /**
  * The type for the LexModelBuildingService Client Endpoint Provider.
@@ -36,6 +45,26 @@ using LexModelBuildingServiceDefaultEpProviderBase =
     BDDEndpointProvider<LexModelBuildingServiceClientConfiguration, LexModelBuildingServiceBuiltInParameters,
                         LexModelBuildingServiceClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace LexModelBuildingService
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_LEXMODELBUILDINGSERVICE_EXTERN template class AWS_LEXMODELBUILDINGSERVICE_API
+    Aws::Endpoint::EndpointProviderBase<LexModelBuildingService::Endpoint::LexModelBuildingServiceClientConfiguration,
+                                        LexModelBuildingService::Endpoint::LexModelBuildingServiceBuiltInParameters,
+                                        LexModelBuildingService::Endpoint::LexModelBuildingServiceClientContextParameters>;
+
+AWS_LEXMODELBUILDINGSERVICE_EXTERN template class AWS_LEXMODELBUILDINGSERVICE_API
+    Aws::Endpoint::BDDEndpointProvider<LexModelBuildingService::Endpoint::LexModelBuildingServiceClientConfiguration,
+                                       LexModelBuildingService::Endpoint::LexModelBuildingServiceBuiltInParameters,
+                                       LexModelBuildingService::Endpoint::LexModelBuildingServiceClientContextParameters>;
+}  // namespace Endpoint
+
+namespace LexModelBuildingService {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

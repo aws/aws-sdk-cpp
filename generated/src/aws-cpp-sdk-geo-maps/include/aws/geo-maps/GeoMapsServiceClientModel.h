@@ -51,7 +51,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace GeoMaps {
-using GeoMapsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GeoMapsEndpointProviderBase = Aws::GeoMaps::Endpoint::GeoMapsEndpointProviderBase;
 using GeoMapsEndpointProvider = Aws::GeoMaps::Endpoint::GeoMapsEndpointProvider;
 

@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces-instances/WorkspacesInstancesClientConfiguration.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 
 namespace Aws {
 namespace WorkspacesInstances {
 namespace Endpoint {
+using WorkspacesInstancesClientConfiguration = Aws::WorkspacesInstances::WorkspacesInstancesClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using WorkspacesInstancesClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using WorkspacesInstancesClientConfiguration = Aws::Client::GenericClientConfiguration;
-using WorkspacesInstancesBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_WORKSPACESINSTANCES_API WorkspacesInstancesBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~WorkspacesInstancesBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const WorkspacesInstancesClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const WorkspacesInstancesClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const WorkspacesInstancesClientConfiguration& config);
+};
 
 /**
  * The type for the WorkspacesInstances Client Endpoint Provider.
@@ -36,6 +45,26 @@ using WorkspacesInstancesDefaultEpProviderBase =
     BDDEndpointProvider<WorkspacesInstancesClientConfiguration, WorkspacesInstancesBuiltInParameters,
                         WorkspacesInstancesClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace WorkspacesInstances
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_WORKSPACESINSTANCES_EXTERN template class AWS_WORKSPACESINSTANCES_API
+    Aws::Endpoint::EndpointProviderBase<WorkspacesInstances::Endpoint::WorkspacesInstancesClientConfiguration,
+                                        WorkspacesInstances::Endpoint::WorkspacesInstancesBuiltInParameters,
+                                        WorkspacesInstances::Endpoint::WorkspacesInstancesClientContextParameters>;
+
+AWS_WORKSPACESINSTANCES_EXTERN template class AWS_WORKSPACESINSTANCES_API
+    Aws::Endpoint::BDDEndpointProvider<WorkspacesInstances::Endpoint::WorkspacesInstancesClientConfiguration,
+                                       WorkspacesInstances::Endpoint::WorkspacesInstancesBuiltInParameters,
+                                       WorkspacesInstances::Endpoint::WorkspacesInstancesClientContextParameters>;
+}  // namespace Endpoint
+
+namespace WorkspacesInstances {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

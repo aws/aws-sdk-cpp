@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/appflow/AppflowClient.h>
+#include <aws/appflow/AppflowClientConfiguration.h>
 #include <aws/appflow/AppflowClientPagination.h>
 #include <aws/appflow/AppflowEndpointProvider.h>
 #include <aws/appflow/AppflowErrorMarshaller.h>

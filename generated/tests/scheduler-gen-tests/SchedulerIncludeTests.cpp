@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/scheduler/SchedulerClient.h>
+#include <aws/scheduler/SchedulerClientConfiguration.h>
 #include <aws/scheduler/SchedulerClientPagination.h>
 #include <aws/scheduler/SchedulerEndpointProvider.h>
 #include <aws/scheduler/SchedulerErrorMarshaller.h>

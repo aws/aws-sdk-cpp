@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/databrew/GlueDataBrewClient.h>
+#include <aws/databrew/GlueDataBrewClientConfiguration.h>
 #include <aws/databrew/GlueDataBrewClientPagination.h>
 #include <aws/databrew/GlueDataBrewEndpointProvider.h>
 #include <aws/databrew/GlueDataBrewErrorMarshaller.h>

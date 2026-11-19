@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/savingsplans/SavingsPlansClient.h>
+#include <aws/savingsplans/SavingsPlansClientConfiguration.h>
 #include <aws/savingsplans/SavingsPlansEndpointProvider.h>
 #include <aws/savingsplans/SavingsPlansErrorMarshaller.h>
 #include <aws/savingsplans/SavingsPlansErrors.h>

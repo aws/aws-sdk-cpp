@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codeguruprofiler/CodeGuruProfilerClient.h>
+#include <aws/codeguruprofiler/CodeGuruProfilerClientConfiguration.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerClientPagination.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerEndpointProvider.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerErrorMarshaller.h>

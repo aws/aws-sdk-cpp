@@ -200,7 +200,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DatabaseMigrationService {
-using DatabaseMigrationServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DatabaseMigrationServiceEndpointProviderBase = Aws::DatabaseMigrationService::Endpoint::DatabaseMigrationServiceEndpointProviderBase;
 using DatabaseMigrationServiceEndpointProvider = Aws::DatabaseMigrationService::Endpoint::DatabaseMigrationServiceEndpointProvider;
 

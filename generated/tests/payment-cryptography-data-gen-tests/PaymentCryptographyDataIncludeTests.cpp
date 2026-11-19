@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/payment-cryptography-data/PaymentCryptographyDataClient.h>
+#include <aws/payment-cryptography-data/PaymentCryptographyDataClientConfiguration.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataEndpointProvider.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataErrorMarshaller.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataErrors.h>

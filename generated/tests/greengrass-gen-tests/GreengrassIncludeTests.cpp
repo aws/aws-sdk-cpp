@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/greengrass/GreengrassClient.h>
+#include <aws/greengrass/GreengrassClientConfiguration.h>
 #include <aws/greengrass/GreengrassEndpointProvider.h>
 #include <aws/greengrass/GreengrassErrorMarshaller.h>
 #include <aws/greengrass/GreengrassErrors.h>

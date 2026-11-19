@@ -154,7 +154,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Inspector2 {
-using Inspector2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using Inspector2EndpointProviderBase = Aws::Inspector2::Endpoint::Inspector2EndpointProviderBase;
 using Inspector2EndpointProvider = Aws::Inspector2::Endpoint::Inspector2EndpointProvider;
 

@@ -76,7 +76,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace S3Vectors {
-using S3VectorsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using S3VectorsEndpointProviderBase = Aws::S3Vectors::Endpoint::S3VectorsEndpointProviderBase;
 using S3VectorsEndpointProvider = Aws::S3Vectors::Endpoint::S3VectorsEndpointProvider;
 

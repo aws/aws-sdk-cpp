@@ -84,7 +84,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace RTBFabric {
-using RTBFabricClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RTBFabricEndpointProviderBase = Aws::RTBFabric::Endpoint::RTBFabricEndpointProviderBase;
 using RTBFabricEndpointProvider = Aws::RTBFabric::Endpoint::RTBFabricEndpointProvider;
 

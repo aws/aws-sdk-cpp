@@ -35,8 +35,6 @@ TEST_F(DirectConnectSmokeTestSuite, DescribeConnectionsSuccess )
 {
     Aws::DirectConnect::DirectConnectClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<DirectConnectClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -48,8 +46,6 @@ TEST_F(DirectConnectSmokeTestSuite, DescribeConnectionsFailure )
 {
     Aws::DirectConnect::DirectConnectClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<DirectConnectClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

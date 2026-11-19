@@ -34,8 +34,6 @@ TEST_F(WorkspacesInstancesSmokeTestSuite, ListRegionsSuccess )
 {
     Aws::WorkspacesInstances::WorkspacesInstancesClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<WorkspacesInstancesClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

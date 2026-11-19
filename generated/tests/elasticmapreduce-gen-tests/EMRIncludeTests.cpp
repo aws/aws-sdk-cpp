@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/elasticmapreduce/EMRClient.h>
+#include <aws/elasticmapreduce/EMRClientConfiguration.h>
 #include <aws/elasticmapreduce/EMRClientPagination.h>
 #include <aws/elasticmapreduce/EMREndpointProvider.h>
 #include <aws/elasticmapreduce/EMRErrorMarshaller.h>

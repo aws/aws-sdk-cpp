@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/eventbridge/EventBridgeClient.h>
+#include <aws/eventbridge/EventBridgeClientConfiguration.h>
 #include <aws/eventbridge/EventBridgeEndpointProvider.h>
 #include <aws/eventbridge/EventBridgeErrorMarshaller.h>
 #include <aws/eventbridge/EventBridgeErrors.h>

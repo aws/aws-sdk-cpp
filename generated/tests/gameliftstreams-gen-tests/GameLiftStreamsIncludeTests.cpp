@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/gameliftstreams/GameLiftStreamsClient.h>
+#include <aws/gameliftstreams/GameLiftStreamsClientConfiguration.h>
 #include <aws/gameliftstreams/GameLiftStreamsClientPagination.h>
 #include <aws/gameliftstreams/GameLiftStreamsEndpointProvider.h>
 #include <aws/gameliftstreams/GameLiftStreamsErrorMarshaller.h>

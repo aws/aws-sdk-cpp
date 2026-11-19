@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeClient.h>
+#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeClientConfiguration.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeClientPagination.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeEndpointProvider.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeErrorMarshaller.h>

@@ -27,6 +27,9 @@ class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeBuiltInPa
   using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
   virtual void SetFromClientConfiguration(const BedrockDataAutomationRuntimeClientConfiguration& config);
   virtual void SetFromClientConfiguration(const BedrockDataAutomationRuntimeClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const BedrockDataAutomationRuntimeClientConfiguration& config);
 };
 
 /**

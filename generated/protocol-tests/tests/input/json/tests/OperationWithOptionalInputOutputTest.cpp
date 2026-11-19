@@ -12,7 +12,7 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(OperationWithOptionalInputOutput, can_call_operation_with_no_input_or_output) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -30,7 +30,7 @@ AWS_PROTOCOL_TEST(OperationWithOptionalInputOutput, can_call_operation_with_no_i
 }
 
 AWS_PROTOCOL_TEST(OperationWithOptionalInputOutput, can_call_operation_with_optional_input) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

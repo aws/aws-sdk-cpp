@@ -29,5 +29,5 @@ Aws::String XmlAttributesRequest::SerializePayload() const {
     parentNode.SetAttributeValue("test", m_attr);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }

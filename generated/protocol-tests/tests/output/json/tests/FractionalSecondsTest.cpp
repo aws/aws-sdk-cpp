@@ -12,7 +12,7 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(FractionalSeconds, AwsJson11DateTimeWithFractionalSeconds) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

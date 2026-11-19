@@ -15,7 +15,7 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStrings) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -35,7 +35,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStrings) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStringAndBooleanTrue) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -55,7 +55,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStringAndBooleanTrue) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStringsAndBooleanFalse) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -74,7 +74,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsStringsAndBooleanFalse)
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsInteger) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -93,7 +93,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsInteger) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsFloat) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -112,7 +112,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsFloat) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsBlob) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -131,7 +131,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2SimpleInputParamsBlob) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2Enums) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -150,7 +150,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2Enums) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2Query) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -169,7 +169,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2Query) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QueryIsPreferred) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -188,7 +188,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QueryIsPreferred) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2XmlNameIsUppercased) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -207,7 +207,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2XmlNameIsUppercased) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsNaNFloatInputs) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -227,7 +227,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsNaNFloatInputs) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsInfinityFloatInputs) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -247,7 +247,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsInfinityFloatInputs) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, Ec2QuerySupportsNegativeInfinityFloatInputs) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/outposts/OutpostsClient.h>
+#include <aws/outposts/OutpostsClientConfiguration.h>
 #include <aws/outposts/OutpostsClientPagination.h>
 #include <aws/outposts/OutpostsEndpointProvider.h>
 #include <aws/outposts/OutpostsErrorMarshaller.h>

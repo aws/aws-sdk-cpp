@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/personalize-runtime/PersonalizeRuntimeClient.h>
+#include <aws/personalize-runtime/PersonalizeRuntimeClientConfiguration.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeEndpointProvider.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeErrorMarshaller.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeErrors.h>

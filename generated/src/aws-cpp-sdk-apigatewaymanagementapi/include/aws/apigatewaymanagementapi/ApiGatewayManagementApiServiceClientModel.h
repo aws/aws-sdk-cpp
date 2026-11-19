@@ -48,7 +48,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ApiGatewayManagementApi {
-using ApiGatewayManagementApiClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ApiGatewayManagementApiEndpointProviderBase = Aws::ApiGatewayManagementApi::Endpoint::ApiGatewayManagementApiEndpointProviderBase;
 using ApiGatewayManagementApiEndpointProvider = Aws::ApiGatewayManagementApi::Endpoint::ApiGatewayManagementApiEndpointProvider;
 

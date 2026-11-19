@@ -15,7 +15,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithStringHeaders) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -34,7 +34,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithStringHea
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithQuotedStringHeaders) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -51,7 +51,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithQuotedStr
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithNumericHeaders) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -76,7 +76,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithNumericHe
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithBooleanHeaders) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -95,7 +95,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithBooleanHe
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithTimestampHeaders) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -113,7 +113,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithTimestamp
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithEnumHeaders) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -132,7 +132,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithEnumHeade
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithIntEnumHeaders) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -150,7 +150,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonInputAndOutputWithIntEnumHe
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonSupportsNaNFloatHeaderInputs) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -168,7 +168,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonSupportsNaNFloatHeaderInput
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonSupportsInfinityFloatHeaderInputs) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -186,7 +186,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonSupportsInfinityFloatHeader
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestJsonSupportsNegativeInfinityFloatHeaderInputs) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

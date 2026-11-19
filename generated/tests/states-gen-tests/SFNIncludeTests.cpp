@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/states/SFNClient.h>
+#include <aws/states/SFNClientConfiguration.h>
 #include <aws/states/SFNClientPagination.h>
 #include <aws/states/SFNEndpointProvider.h>
 #include <aws/states/SFNErrorMarshaller.h>

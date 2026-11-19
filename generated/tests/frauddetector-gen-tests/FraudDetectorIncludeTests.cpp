@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/frauddetector/FraudDetectorClient.h>
+#include <aws/frauddetector/FraudDetectorClientConfiguration.h>
 #include <aws/frauddetector/FraudDetectorClientPagination.h>
 #include <aws/frauddetector/FraudDetectorEndpointProvider.h>
 #include <aws/frauddetector/FraudDetectorErrorMarshaller.h>

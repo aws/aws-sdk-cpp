@@ -46,7 +46,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Proton {
-using ProtonClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ProtonEndpointProviderBase = Aws::Proton::Endpoint::ProtonEndpointProviderBase;
 using ProtonEndpointProvider = Aws::Proton::Endpoint::ProtonEndpointProvider;
 

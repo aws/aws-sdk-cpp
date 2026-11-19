@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codepipeline/CodePipelineClient.h>
+#include <aws/codepipeline/CodePipelineClientConfiguration.h>
 #include <aws/codepipeline/CodePipelineClientPagination.h>
 #include <aws/codepipeline/CodePipelineEndpointProvider.h>
 #include <aws/codepipeline/CodePipelineErrorMarshaller.h>

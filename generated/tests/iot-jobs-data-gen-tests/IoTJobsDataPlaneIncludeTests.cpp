@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iot-jobs-data/IoTJobsDataPlaneClient.h>
+#include <aws/iot-jobs-data/IoTJobsDataPlaneClientConfiguration.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneEndpointProvider.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneErrorMarshaller.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneErrors.h>

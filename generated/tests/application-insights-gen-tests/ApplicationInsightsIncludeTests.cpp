@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/application-insights/ApplicationInsightsClient.h>
+#include <aws/application-insights/ApplicationInsightsClientConfiguration.h>
 #include <aws/application-insights/ApplicationInsightsClientPagination.h>
 #include <aws/application-insights/ApplicationInsightsEndpointProvider.h>
 #include <aws/application-insights/ApplicationInsightsErrorMarshaller.h>

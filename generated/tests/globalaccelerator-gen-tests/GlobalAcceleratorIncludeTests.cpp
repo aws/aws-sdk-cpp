@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/globalaccelerator/GlobalAcceleratorClient.h>
+#include <aws/globalaccelerator/GlobalAcceleratorClientConfiguration.h>
 #include <aws/globalaccelerator/GlobalAcceleratorClientPagination.h>
 #include <aws/globalaccelerator/GlobalAcceleratorEndpointProvider.h>
 #include <aws/globalaccelerator/GlobalAcceleratorErrorMarshaller.h>

@@ -346,7 +346,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace QuickSight {
-using QuickSightClientConfiguration = Aws::Client::GenericClientConfiguration;
 using QuickSightEndpointProviderBase = Aws::QuickSight::Endpoint::QuickSightEndpointProviderBase;
 using QuickSightEndpointProvider = Aws::QuickSight::Endpoint::QuickSightEndpointProvider;
 

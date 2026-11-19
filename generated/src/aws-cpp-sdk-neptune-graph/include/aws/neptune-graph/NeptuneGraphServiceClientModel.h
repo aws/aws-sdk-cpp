@@ -84,7 +84,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace NeptuneGraph {
-using NeptuneGraphClientConfiguration = Aws::Client::GenericClientConfiguration;
 using NeptuneGraphEndpointProviderBase = Aws::NeptuneGraph::Endpoint::NeptuneGraphEndpointProviderBase;
 using NeptuneGraphEndpointProvider = Aws::NeptuneGraph::Endpoint::NeptuneGraphEndpointProvider;
 

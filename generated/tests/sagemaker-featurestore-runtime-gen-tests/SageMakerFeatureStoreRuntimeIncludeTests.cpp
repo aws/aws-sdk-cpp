@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeClient.h>
+#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeClientConfiguration.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeClientPagination.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeEndpointProvider.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeErrorMarshaller.h>

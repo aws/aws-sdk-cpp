@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codestar-connections/CodeStarconnectionsClient.h>
+#include <aws/codestar-connections/CodeStarconnectionsClientConfiguration.h>
 #include <aws/codestar-connections/CodeStarconnectionsClientPagination.h>
 #include <aws/codestar-connections/CodeStarconnectionsEndpointProvider.h>
 #include <aws/codestar-connections/CodeStarconnectionsErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/securityagent/SecurityAgentClient.h>
+#include <aws/securityagent/SecurityAgentClientConfiguration.h>
 #include <aws/securityagent/SecurityAgentClientPagination.h>
 #include <aws/securityagent/SecurityAgentEndpointProvider.h>
 #include <aws/securityagent/SecurityAgentErrorMarshaller.h>

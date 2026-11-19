@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kendra-ranking/KendraRankingClient.h>
+#include <aws/kendra-ranking/KendraRankingClientConfiguration.h>
 #include <aws/kendra-ranking/KendraRankingClientPagination.h>
 #include <aws/kendra-ranking/KendraRankingEndpointProvider.h>
 #include <aws/kendra-ranking/KendraRankingErrorMarshaller.h>

@@ -204,7 +204,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace IoTSiteWise {
-using IoTSiteWiseClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTSiteWiseEndpointProviderBase = Aws::IoTSiteWise::Endpoint::IoTSiteWiseEndpointProviderBase;
 using IoTSiteWiseEndpointProvider = Aws::IoTSiteWise::Endpoint::IoTSiteWiseEndpointProvider;
 

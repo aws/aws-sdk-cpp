@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/supplychain/SupplyChainClient.h>
+#include <aws/supplychain/SupplyChainClientConfiguration.h>
 #include <aws/supplychain/SupplyChainClientPagination.h>
 #include <aws/supplychain/SupplyChainEndpointProvider.h>
 #include <aws/supplychain/SupplyChainErrorMarshaller.h>

@@ -15,7 +15,7 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, QuerySimpleScalarProperties) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -53,7 +53,7 @@ AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, QuerySimpleScalarProperties) {
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, AwsQuerySupportsNaNFloatOutputs) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -78,7 +78,7 @@ AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, AwsQuerySupportsNaNFloatOutputs) {
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, AwsQuerySupportsInfinityFloatOutputs) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -102,7 +102,7 @@ AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, AwsQuerySupportsInfinityFloatOutput
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarXmlProperties, AwsQuerySupportsNegativeInfinityFloatOutputs) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

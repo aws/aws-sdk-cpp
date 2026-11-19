@@ -35,8 +35,6 @@ TEST_F(SocialMessagingSmokeTestSuite, ListTagsFailure )
 {
     Aws::SocialMessaging::SocialMessagingClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<SocialMessagingClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

@@ -68,7 +68,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace KinesisAnalytics {
-using KinesisAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KinesisAnalyticsEndpointProviderBase = Aws::KinesisAnalytics::Endpoint::KinesisAnalyticsEndpointProviderBase;
 using KinesisAnalyticsEndpointProvider = Aws::KinesisAnalytics::Endpoint::KinesisAnalyticsEndpointProvider;
 

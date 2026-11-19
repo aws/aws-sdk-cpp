@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/chatbot/ChatbotClientConfiguration.h>
 #include <aws/chatbot/Chatbot_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace chatbot {
 namespace Endpoint {
+using ChatbotClientConfiguration = Aws::chatbot::ChatbotClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ChatbotClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ChatbotClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ChatbotBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CHATBOT_API ChatbotBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ChatbotBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ChatbotClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ChatbotClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ChatbotClientConfiguration& config);
+};
 
 /**
  * The type for the chatbot Client Endpoint Provider.
@@ -34,6 +43,24 @@ using ChatbotEndpointProviderBase =
 using ChatbotDefaultEpProviderBase =
     BDDEndpointProvider<ChatbotClientConfiguration, ChatbotBuiltInParameters, ChatbotClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace chatbot
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CHATBOT_EXTERN template class AWS_CHATBOT_API
+    Aws::Endpoint::EndpointProviderBase<chatbot::Endpoint::ChatbotClientConfiguration, chatbot::Endpoint::ChatbotBuiltInParameters,
+                                        chatbot::Endpoint::ChatbotClientContextParameters>;
+
+AWS_CHATBOT_EXTERN template class AWS_CHATBOT_API
+    Aws::Endpoint::BDDEndpointProvider<chatbot::Endpoint::ChatbotClientConfiguration, chatbot::Endpoint::ChatbotBuiltInParameters,
+                                       chatbot::Endpoint::ChatbotClientContextParameters>;
+}  // namespace Endpoint
+
+namespace chatbot {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

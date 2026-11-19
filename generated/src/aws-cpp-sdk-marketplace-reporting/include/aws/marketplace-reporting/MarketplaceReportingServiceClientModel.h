@@ -47,7 +47,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MarketplaceReporting {
-using MarketplaceReportingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MarketplaceReportingEndpointProviderBase = Aws::MarketplaceReporting::Endpoint::MarketplaceReportingEndpointProviderBase;
 using MarketplaceReportingEndpointProvider = Aws::MarketplaceReporting::Endpoint::MarketplaceReportingEndpointProvider;
 

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cloudtrail/CloudTrailClient.h>
+#include <aws/cloudtrail/CloudTrailClientConfiguration.h>
 #include <aws/cloudtrail/CloudTrailClientPagination.h>
 #include <aws/cloudtrail/CloudTrailEndpointProvider.h>
 #include <aws/cloudtrail/CloudTrailErrorMarshaller.h>

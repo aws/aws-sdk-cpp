@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/codedeploy/CodeDeployClientConfiguration.h>
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace CodeDeploy {
 namespace Endpoint {
+using CodeDeployClientConfiguration = Aws::CodeDeploy::CodeDeployClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using CodeDeployClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodeDeployClientConfiguration = Aws::Client::GenericClientConfiguration;
-using CodeDeployBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CODEDEPLOY_API CodeDeployBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~CodeDeployBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const CodeDeployClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const CodeDeployClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const CodeDeployClientConfiguration& config);
+};
 
 /**
  * The type for the CodeDeploy Client Endpoint Provider.
@@ -34,6 +43,24 @@ using CodeDeployEndpointProviderBase =
 using CodeDeployDefaultEpProviderBase =
     BDDEndpointProvider<CodeDeployClientConfiguration, CodeDeployBuiltInParameters, CodeDeployClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace CodeDeploy
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CODEDEPLOY_EXTERN template class AWS_CODEDEPLOY_API Aws::Endpoint::EndpointProviderBase<
+    CodeDeploy::Endpoint::CodeDeployClientConfiguration, CodeDeploy::Endpoint::CodeDeployBuiltInParameters,
+    CodeDeploy::Endpoint::CodeDeployClientContextParameters>;
+
+AWS_CODEDEPLOY_EXTERN template class AWS_CODEDEPLOY_API Aws::Endpoint::BDDEndpointProvider<
+    CodeDeploy::Endpoint::CodeDeployClientConfiguration, CodeDeploy::Endpoint::CodeDeployBuiltInParameters,
+    CodeDeploy::Endpoint::CodeDeployClientContextParameters>;
+}  // namespace Endpoint
+
+namespace CodeDeploy {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

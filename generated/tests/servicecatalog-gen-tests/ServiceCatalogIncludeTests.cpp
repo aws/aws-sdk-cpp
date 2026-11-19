@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/servicecatalog/ServiceCatalogClient.h>
+#include <aws/servicecatalog/ServiceCatalogClientConfiguration.h>
 #include <aws/servicecatalog/ServiceCatalogClientPagination.h>
 #include <aws/servicecatalog/ServiceCatalogEndpointProvider.h>
 #include <aws/servicecatalog/ServiceCatalogErrorMarshaller.h>

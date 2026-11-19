@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/servicecatalog-appregistry/AppRegistryClient.h>
+#include <aws/servicecatalog-appregistry/AppRegistryClientConfiguration.h>
 #include <aws/servicecatalog-appregistry/AppRegistryClientPagination.h>
 #include <aws/servicecatalog-appregistry/AppRegistryEndpointProvider.h>
 #include <aws/servicecatalog-appregistry/AppRegistryErrorMarshaller.h>

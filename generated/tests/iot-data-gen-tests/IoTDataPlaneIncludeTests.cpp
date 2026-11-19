@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iot-data/IoTDataPlaneClient.h>
+#include <aws/iot-data/IoTDataPlaneClientConfiguration.h>
 #include <aws/iot-data/IoTDataPlaneClientPagination.h>
 #include <aws/iot-data/IoTDataPlaneEndpointProvider.h>
 #include <aws/iot-data/IoTDataPlaneErrorMarshaller.h>

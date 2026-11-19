@@ -61,7 +61,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CodeGuruReviewer {
-using CodeGuruReviewerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeGuruReviewerEndpointProviderBase = Aws::CodeGuruReviewer::Endpoint::CodeGuruReviewerEndpointProviderBase;
 using CodeGuruReviewerEndpointProvider = Aws::CodeGuruReviewer::Endpoint::CodeGuruReviewerEndpointProvider;
 

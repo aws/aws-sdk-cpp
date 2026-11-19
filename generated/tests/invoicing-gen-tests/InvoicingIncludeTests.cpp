@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/invoicing/InvoicingClient.h>
+#include <aws/invoicing/InvoicingClientConfiguration.h>
 #include <aws/invoicing/InvoicingClientPagination.h>
 #include <aws/invoicing/InvoicingEndpointProvider.h>
 #include <aws/invoicing/InvoicingErrorMarshaller.h>

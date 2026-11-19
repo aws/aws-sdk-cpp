@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pi/PIClient.h>
+#include <aws/pi/PIClientConfiguration.h>
 #include <aws/pi/PIClientPagination.h>
 #include <aws/pi/PIEndpointProvider.h>
 #include <aws/pi/PIErrorMarshaller.h>

@@ -36,7 +36,7 @@ namespace Aws
                 Initialize with customer master key ID and client configuration. If no configuration is supplied, then use the default.
                 Client configuration will be used to setup KMS Client.
                 */
-                KMSEncryptionMaterialsBase(const Aws::String& customerMasterKeyID, const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration());
+                KMSEncryptionMaterialsBase(const Aws::String& customerMasterKeyID, const Aws::KMS::KMSClientConfiguration& clientConfig = Aws::KMS::KMSClientConfiguration());
 
                 /*
                 Initialize with customer master key ID and KMS Client.
@@ -77,7 +77,7 @@ namespace Aws
             AWS_S3ENCRYPTION_API KMSEncryptionMaterials : public KMSEncryptionMaterialsBase
             {
             public:
-                KMSEncryptionMaterials(const Aws::String& customerMasterKeyID, const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                KMSEncryptionMaterials(const Aws::String& customerMasterKeyID, const Aws::KMS::KMSClientConfiguration& clientConfig = Aws::KMS::KMSClientConfiguration())
                     : KMSEncryptionMaterialsBase(customerMasterKeyID, clientConfig) {}
 
                 KMSEncryptionMaterials(const Aws::String& customerMasterKeyID, const std::shared_ptr<Aws::KMS::KMSClient>& kmsClient)
@@ -94,7 +94,7 @@ namespace Aws
             class AWS_S3ENCRYPTION_API KMSWithContextEncryptionMaterials : public KMSEncryptionMaterialsBase
             {
             public:
-                KMSWithContextEncryptionMaterials(const Aws::String& customerMasterKeyID, const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                KMSWithContextEncryptionMaterials(const Aws::String& customerMasterKeyID, const Aws::KMS::KMSClientConfiguration& clientConfig = Aws::KMS::KMSClientConfiguration())
                     : KMSEncryptionMaterialsBase(customerMasterKeyID, clientConfig)
                 {
                     SetKMSDecryptWithAnyCMK(false);

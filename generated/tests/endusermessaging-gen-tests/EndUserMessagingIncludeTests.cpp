@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/endusermessaging/EndUserMessagingClient.h>
+#include <aws/endusermessaging/EndUserMessagingClientConfiguration.h>
 #include <aws/endusermessaging/EndUserMessagingClientPagination.h>
 #include <aws/endusermessaging/EndUserMessagingEndpointProvider.h>
 #include <aws/endusermessaging/EndUserMessagingErrorMarshaller.h>

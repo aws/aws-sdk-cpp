@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/apprunner/AppRunnerClient.h>
+#include <aws/apprunner/AppRunnerClientConfiguration.h>
 #include <aws/apprunner/AppRunnerClientPagination.h>
 #include <aws/apprunner/AppRunnerEndpointProvider.h>
 #include <aws/apprunner/AppRunnerErrorMarshaller.h>

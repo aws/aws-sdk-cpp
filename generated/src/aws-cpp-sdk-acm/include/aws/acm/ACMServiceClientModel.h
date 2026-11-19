@@ -75,7 +75,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ACM {
-using ACMClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ACMEndpointProviderBase = Aws::ACM::Endpoint::ACMEndpointProviderBase;
 using ACMEndpointProvider = Aws::ACM::Endpoint::ACMEndpointProvider;
 

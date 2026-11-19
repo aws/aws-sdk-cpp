@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/lexv2-runtime/LexRuntimeV2Client.h>
+#include <aws/lexv2-runtime/LexRuntimeV2ClientConfiguration.h>
 #include <aws/lexv2-runtime/LexRuntimeV2EndpointProvider.h>
 #include <aws/lexv2-runtime/LexRuntimeV2ErrorMarshaller.h>
 #include <aws/lexv2-runtime/LexRuntimeV2Errors.h>

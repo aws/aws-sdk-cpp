@@ -79,7 +79,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MigrationHubStrategyRecommendations {
-using MigrationHubStrategyRecommendationsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MigrationHubStrategyRecommendationsEndpointProviderBase =
     Aws::MigrationHubStrategyRecommendations::Endpoint::MigrationHubStrategyRecommendationsEndpointProviderBase;
 using MigrationHubStrategyRecommendationsEndpointProvider =

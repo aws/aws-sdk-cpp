@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iotsecuretunneling/IoTSecureTunnelingClient.h>
+#include <aws/iotsecuretunneling/IoTSecureTunnelingClientConfiguration.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingClientPagination.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingEndpointProvider.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingErrorMarshaller.h>

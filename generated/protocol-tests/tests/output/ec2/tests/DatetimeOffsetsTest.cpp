@@ -12,7 +12,7 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, Ec2QueryDateTimeWithNegativeOffset) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -35,7 +35,7 @@ AWS_PROTOCOL_TEST(DatetimeOffsets, Ec2QueryDateTimeWithNegativeOffset) {
 }
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, Ec2QueryDateTimeWithPositiveOffset) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

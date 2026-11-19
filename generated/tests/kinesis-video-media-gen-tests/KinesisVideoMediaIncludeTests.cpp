@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kinesis-video-media/KinesisVideoMediaClient.h>
+#include <aws/kinesis-video-media/KinesisVideoMediaClientConfiguration.h>
 #include <aws/kinesis-video-media/KinesisVideoMediaEndpointProvider.h>
 #include <aws/kinesis-video-media/KinesisVideoMediaErrorMarshaller.h>
 #include <aws/kinesis-video-media/KinesisVideoMediaErrors.h>

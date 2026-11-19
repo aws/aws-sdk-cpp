@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mailmanager/MailManagerClient.h>
+#include <aws/mailmanager/MailManagerClientConfiguration.h>
 #include <aws/mailmanager/MailManagerClientPagination.h>
 #include <aws/mailmanager/MailManagerEndpointProvider.h>
 #include <aws/mailmanager/MailManagerErrorMarshaller.h>

@@ -116,7 +116,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CloudDirectory {
-using CloudDirectoryClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudDirectoryEndpointProviderBase = Aws::CloudDirectory::Endpoint::CloudDirectoryEndpointProviderBase;
 using CloudDirectoryEndpointProvider = Aws::CloudDirectory::Endpoint::CloudDirectoryEndpointProvider;
 

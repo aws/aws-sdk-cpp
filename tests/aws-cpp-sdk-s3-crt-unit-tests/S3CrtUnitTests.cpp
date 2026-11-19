@@ -4,12 +4,18 @@
  */
 #include <aws/core/Aws.h>
 #include <aws/core/auth/AWSCredentials.h>
+#include <aws/core/http/HttpClientFactory.h>
 #include <aws/s3-crt/ClientConfiguration.h>
 #include <aws/s3-crt/S3CrtClient.h>
 #include <aws/s3-crt/S3CrtEndpointProvider.h>
 #include <aws/testing/MemoryTesting.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <gtest/gtest.h>
+#include <smithy/client/features/ChecksumInterceptor.h>
+#include <smithy/client/features/ChunkingInterceptor.h>
+#include <smithy/client/features/ExpectHeaderInterceptor.h>
+
+#include <algorithm>
 
 #include <memory>
 
@@ -21,6 +27,12 @@ using namespace Aws::S3Crt;
 namespace {
 const char* LOG_TAG = "S3CrtUnitTest";
 const char* MRAP_BUCKET_ARN = "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap";
+
+template <typename InterceptorT>
+size_t CountOf(const Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>>& interceptors) {
+  return static_cast<size_t>(std::count_if(interceptors.begin(), interceptors.end(),
+      [](const std::shared_ptr<smithy::interceptor::Interceptor>& interceptor) { return dynamic_cast<InterceptorT*>(interceptor.get()) != nullptr; }));
+}
 }  // namespace
 
 class S3CrtUnitTest : public testing::Test {
@@ -154,4 +166,24 @@ TEST_F(S3CrtUnitTest, DisabledMultiRegionAccessPointsRejectsMrapArn) {
   const auto outcome = provider->ResolveEndpoint(requestParameters);
   EXPECT_TRUE(!outcome.IsSuccess());
   EXPECT_EQ("Invalid configuration: Multi-Region Access Point ARNs are disabled.", outcome.GetError().GetMessage());
+}
+
+// S3CrtClient never called ApplyServiceOptions, so it ignored these options for requests that don't go through the CRT.
+// Its configuration now builds the interceptors, and the base client takes them in its constructor.
+TEST_F(S3CrtUnitTest, ConfigurationBuildsChecksumChunkingAndExpectHeaderInterceptors) {
+  S3CrtClientConfiguration configuration;
+  const auto interceptors = configuration.CreateInterceptors({Aws::Http::CreateHttpClient(configuration)});
+
+  EXPECT_EQ(1u, CountOf<smithy::client::ChecksumInterceptor>(interceptors));
+  EXPECT_EQ(1u, CountOf<smithy::client::features::ChunkingInterceptor>(interceptors));
+  EXPECT_EQ(1u, CountOf<smithy::client::features::ExpectHeaderInterceptor>(interceptors));
+}
+
+TEST_F(S3CrtUnitTest, DisableExpectHeaderOmitsExpectHeaderInterceptor) {
+  S3CrtClientConfiguration configuration;
+  configuration.disableExpectHeader = true;
+  const auto interceptors = configuration.CreateInterceptors({Aws::Http::CreateHttpClient(configuration)});
+
+  EXPECT_EQ(1u, CountOf<smithy::client::ChecksumInterceptor>(interceptors));
+  EXPECT_EQ(0u, CountOf<smithy::client::features::ExpectHeaderInterceptor>(interceptors));
 }

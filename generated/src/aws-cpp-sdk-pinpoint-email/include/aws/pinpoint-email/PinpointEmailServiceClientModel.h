@@ -97,7 +97,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace PinpointEmail {
-using PinpointEmailClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PinpointEmailEndpointProviderBase = Aws::PinpointEmail::Endpoint::PinpointEmailEndpointProviderBase;
 using PinpointEmailEndpointProvider = Aws::PinpointEmail::Endpoint::PinpointEmailEndpointProvider;
 

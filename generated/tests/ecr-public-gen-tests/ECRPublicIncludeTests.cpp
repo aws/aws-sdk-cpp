@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ecr-public/ECRPublicClient.h>
+#include <aws/ecr-public/ECRPublicClientConfiguration.h>
 #include <aws/ecr-public/ECRPublicClientPagination.h>
 #include <aws/ecr-public/ECRPublicEndpointProvider.h>
 #include <aws/ecr-public/ECRPublicErrorMarshaller.h>

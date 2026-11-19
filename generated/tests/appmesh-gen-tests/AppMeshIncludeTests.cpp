@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/appmesh/AppMeshClient.h>
+#include <aws/appmesh/AppMeshClientConfiguration.h>
 #include <aws/appmesh/AppMeshClientPagination.h>
 #include <aws/appmesh/AppMeshEndpointProvider.h>
 #include <aws/appmesh/AppMeshErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/keyspaces/KeyspacesClient.h>
+#include <aws/keyspaces/KeyspacesClientConfiguration.h>
 #include <aws/keyspaces/KeyspacesClientPagination.h>
 #include <aws/keyspaces/KeyspacesEndpointProvider.h>
 #include <aws/keyspaces/KeyspacesErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/geo-routes/GeoRoutesClient.h>
+#include <aws/geo-routes/GeoRoutesClientConfiguration.h>
 #include <aws/geo-routes/GeoRoutesEndpointProvider.h>
 #include <aws/geo-routes/GeoRoutesErrorMarshaller.h>
 #include <aws/geo-routes/GeoRoutesErrors.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/workdocs/WorkDocsClient.h>
+#include <aws/workdocs/WorkDocsClientConfiguration.h>
 #include <aws/workdocs/WorkDocsClientPagination.h>
 #include <aws/workdocs/WorkDocsEndpointProvider.h>
 #include <aws/workdocs/WorkDocsErrorMarshaller.h>

@@ -12,7 +12,7 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(EmptyOperation, sends_requests_to_slash) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -28,7 +28,7 @@ AWS_PROTOCOL_TEST(EmptyOperation, sends_requests_to_slash) {
 }
 
 AWS_PROTOCOL_TEST(EmptyOperation, includes_x_amz_target_and_content_type) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -44,7 +44,7 @@ AWS_PROTOCOL_TEST(EmptyOperation, includes_x_amz_target_and_content_type) {
 }
 
 AWS_PROTOCOL_TEST(EmptyOperation, json_1_1_client_sends_empty_payload_for_no_input_shape) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

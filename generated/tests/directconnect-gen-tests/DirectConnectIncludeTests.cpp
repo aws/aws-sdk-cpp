@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/directconnect/DirectConnectClient.h>
+#include <aws/directconnect/DirectConnectClientConfiguration.h>
 #include <aws/directconnect/DirectConnectEndpointProvider.h>
 #include <aws/directconnect/DirectConnectErrorMarshaller.h>
 #include <aws/directconnect/DirectConnectErrors.h>

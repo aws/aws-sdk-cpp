@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/amplify/AmplifyClientConfiguration.h>
 #include <aws/amplify/Amplify_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace Amplify {
 namespace Endpoint {
+using AmplifyClientConfiguration = Aws::Amplify::AmplifyClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using AmplifyClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AmplifyClientConfiguration = Aws::Client::GenericClientConfiguration;
-using AmplifyBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_AMPLIFY_API AmplifyBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~AmplifyBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const AmplifyClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const AmplifyClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const AmplifyClientConfiguration& config);
+};
 
 /**
  * The type for the Amplify Client Endpoint Provider.
@@ -34,6 +43,24 @@ using AmplifyEndpointProviderBase =
 using AmplifyDefaultEpProviderBase =
     BDDEndpointProvider<AmplifyClientConfiguration, AmplifyBuiltInParameters, AmplifyClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace Amplify
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_AMPLIFY_EXTERN template class AWS_AMPLIFY_API
+    Aws::Endpoint::EndpointProviderBase<Amplify::Endpoint::AmplifyClientConfiguration, Amplify::Endpoint::AmplifyBuiltInParameters,
+                                        Amplify::Endpoint::AmplifyClientContextParameters>;
+
+AWS_AMPLIFY_EXTERN template class AWS_AMPLIFY_API
+    Aws::Endpoint::BDDEndpointProvider<Amplify::Endpoint::AmplifyClientConfiguration, Amplify::Endpoint::AmplifyBuiltInParameters,
+                                       Amplify::Endpoint::AmplifyClientContextParameters>;
+}  // namespace Endpoint
+
+namespace Amplify {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/amplifybackend/AmplifyBackendClient.h>
+#include <aws/amplifybackend/AmplifyBackendClientConfiguration.h>
 #include <aws/amplifybackend/AmplifyBackendEndpointProvider.h>
 #include <aws/amplifybackend/AmplifyBackendErrorMarshaller.h>
 #include <aws/amplifybackend/AmplifyBackendErrors.h>

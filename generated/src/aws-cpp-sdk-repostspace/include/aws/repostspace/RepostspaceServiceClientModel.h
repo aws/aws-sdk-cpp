@@ -62,7 +62,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace repostspace {
-using RepostspaceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RepostspaceEndpointProviderBase = Aws::repostspace::Endpoint::RepostspaceEndpointProviderBase;
 using RepostspaceEndpointProvider = Aws::repostspace::Endpoint::RepostspaceEndpointProvider;
 

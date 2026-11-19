@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/autoscaling/AutoScalingClient.h>
+#include <aws/autoscaling/AutoScalingClientConfiguration.h>
 #include <aws/autoscaling/AutoScalingClientPagination.h>
 #include <aws/autoscaling/AutoScalingEndpointProvider.h>
 #include <aws/autoscaling/AutoScalingErrorMarshaller.h>

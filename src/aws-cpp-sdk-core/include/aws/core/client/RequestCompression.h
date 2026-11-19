@@ -29,6 +29,13 @@ Aws::String AWS_CORE_API
 GetCompressionAlgorithmId(const CompressionAlgorithm &algorithm);
 
 /**
+ * Loads the request compression settings from the environment (DISABLE_REQUEST_COMPRESSION,
+ * REQUEST_MIN_COMPRESSION_SIZE_BYTES) or the given profile. Called by the configurations of
+ * services whose operations support request compression.
+ */
+AWS_CORE_API RequestCompressionConfig LoadRequestCompressionConfigFromEnvOrProfile(const Aws::String& profileName);
+
+/**
  * Request compression API
  */
 class AWS_CORE_API RequestCompression final {

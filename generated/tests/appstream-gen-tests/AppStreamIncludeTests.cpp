@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/appstream/AppStreamClient.h>
+#include <aws/appstream/AppStreamClientConfiguration.h>
 #include <aws/appstream/AppStreamClientPagination.h>
 #include <aws/appstream/AppStreamEndpointProvider.h>
 #include <aws/appstream/AppStreamErrorMarshaller.h>

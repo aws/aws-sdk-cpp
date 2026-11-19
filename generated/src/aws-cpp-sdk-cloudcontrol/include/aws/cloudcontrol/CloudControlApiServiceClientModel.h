@@ -55,7 +55,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CloudControlApi {
-using CloudControlApiClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudControlApiEndpointProviderBase = Aws::CloudControlApi::Endpoint::CloudControlApiEndpointProviderBase;
 using CloudControlApiEndpointProvider = Aws::CloudControlApi::Endpoint::CloudControlApiEndpointProvider;
 

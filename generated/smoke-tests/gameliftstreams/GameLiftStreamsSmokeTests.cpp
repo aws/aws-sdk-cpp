@@ -38,8 +38,6 @@ TEST_F(GameLiftStreamsSmokeTestSuite, GetStreamSession )
 {
     Aws::GameLiftStreams::GameLiftStreamsClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<GameLiftStreamsClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -53,8 +51,6 @@ TEST_F(GameLiftStreamsSmokeTestSuite, ListStreamSessions )
 {
     Aws::GameLiftStreams::GameLiftStreamsClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<GameLiftStreamsClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -67,8 +63,6 @@ TEST_F(GameLiftStreamsSmokeTestSuite, ListStreamSessionsByAccount )
 {
     Aws::GameLiftStreams::GameLiftStreamsClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<GameLiftStreamsClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -80,8 +74,6 @@ TEST_F(GameLiftStreamsSmokeTestSuite, ListTagsForResource )
 {
     Aws::GameLiftStreams::GameLiftStreamsClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<GameLiftStreamsClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

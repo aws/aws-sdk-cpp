@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/swf/SWFClient.h>
+#include <aws/swf/SWFClientConfiguration.h>
 #include <aws/swf/SWFClientPagination.h>
 #include <aws/swf/SWFEndpointProvider.h>
 #include <aws/swf/SWFErrorMarshaller.h>

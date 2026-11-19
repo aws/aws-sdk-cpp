@@ -30,13 +30,23 @@ BedrockDataAutomationEndpointProvider::BedrockDataAutomationEndpointProvider()
 
 void BedrockDataAutomationBuiltInParameters::SetFromClientConfiguration(const BedrockDataAutomationClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const BedrockDataAutomationClientConfiguration::BaseClientConfigClass&>(config));
+  SetServiceSpecificParameters(config);
 }
 
 void BedrockDataAutomationBuiltInParameters::SetFromClientConfiguration(const BedrockDataAutomationClientConfiguration& config,
                                                                         const Aws::String& serviceName) {
   SetFromClientConfiguration(static_cast<const BedrockDataAutomationClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+  SetServiceSpecificParameters(config);
 }
 
+void BedrockDataAutomationBuiltInParameters::SetServiceSpecificParameters(const BedrockDataAutomationClientConfiguration& config) {
+  if (config.useFIPS) {
+    SetBooleanParameter("UseFIPS", true);
+  }
+  if (config.useDualStack) {
+    SetBooleanParameter("UseDualStack", true);
+  }
+}
 }  // namespace Endpoint
 }  // namespace BedrockDataAutomation
 }  // namespace Aws

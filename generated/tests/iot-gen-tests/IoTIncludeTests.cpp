@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iot/IoTClient.h>
+#include <aws/iot/IoTClientConfiguration.h>
 #include <aws/iot/IoTClientPagination.h>
 #include <aws/iot/IoTEndpointProvider.h>
 #include <aws/iot/IoTErrorMarshaller.h>

@@ -50,7 +50,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SagemakerJobRuntime {
-using SagemakerJobRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SagemakerJobRuntimeEndpointProviderBase = Aws::SagemakerJobRuntime::Endpoint::SagemakerJobRuntimeEndpointProviderBase;
 using SagemakerJobRuntimeEndpointProvider = Aws::SagemakerJobRuntime::Endpoint::SagemakerJobRuntimeEndpointProvider;
 

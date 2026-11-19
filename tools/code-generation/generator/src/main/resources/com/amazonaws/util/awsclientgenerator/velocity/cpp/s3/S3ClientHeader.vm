@@ -201,7 +201,9 @@ namespace ${rootNamespace}
 
         ${s3_virtual}bool MultipartUploadSupported() const;
 
+#if($serviceNamespace == "S3Crt")
         ${s3_virtual}void OverrideEndpoint(const Aws::String& endpoint);
+#end
 #if($serviceModel.endpointRules)
         ${s3_virtual}std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end

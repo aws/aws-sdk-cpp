@@ -12,7 +12,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingXAmznErrorType) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -26,7 +26,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingXAmznErrorType) {
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingXAmznErrorTypeWithUri) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -40,7 +40,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingXAmznErrorTypeWithUr
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingXAmznErrorTypeWithUriAndNamespace) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -55,7 +55,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingXAmznErrorTypeWithUr
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingXAmznErrorTypeWithUriAndDifferentNamespace) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -70,7 +70,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingXAmznErrorTypeWithUr
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingCode) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -85,7 +85,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingCode) {
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingCodeAndNamespace) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -100,7 +100,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingCodeAndNamespace) {
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingCodeUriAndNamespace) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -117,7 +117,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingCodeUriAndNamespace)
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorWithDunderType) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -132,7 +132,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorWithDunderType) {
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorWithDunderTypeAndNamespace) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -147,7 +147,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorWithDunderTypeAndNamespac
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorWithDunderTypeUriAndNamespace) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -164,7 +164,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorWithDunderTypeUriAndNames
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorWithNestedTypeProperty) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;

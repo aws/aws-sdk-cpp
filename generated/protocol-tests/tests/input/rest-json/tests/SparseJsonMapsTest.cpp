@@ -12,7 +12,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonSparseJsonMaps) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -41,7 +41,7 @@ AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonSparseJsonMaps) {
 }
 
 AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonSerializesSparseNullMapValues) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -65,7 +65,7 @@ AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonSerializesSparseNullMapValues) {
 }
 
 AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonSerializesZeroValuesInSparseMaps) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -86,7 +86,7 @@ AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonSerializesZeroValuesInSparseMaps) {
 }
 
 AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonSerializesSparseSetMap) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -105,7 +105,7 @@ AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonSerializesSparseSetMap) {
 }
 
 AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonSerializesSparseSetMapAndRetainsNull) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

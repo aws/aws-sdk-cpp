@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/bcm-data-exports/BCMDataExportsClient.h>
+#include <aws/bcm-data-exports/BCMDataExportsClientConfiguration.h>
 #include <aws/bcm-data-exports/BCMDataExportsClientPagination.h>
 #include <aws/bcm-data-exports/BCMDataExportsEndpointProvider.h>
 #include <aws/bcm-data-exports/BCMDataExportsErrorMarshaller.h>

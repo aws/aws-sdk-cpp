@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codebuild/CodeBuildClient.h>
+#include <aws/codebuild/CodeBuildClientConfiguration.h>
 #include <aws/codebuild/CodeBuildClientPagination.h>
 #include <aws/codebuild/CodeBuildEndpointProvider.h>
 #include <aws/codebuild/CodeBuildErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/amp/PrometheusServiceClient.h>
+#include <aws/amp/PrometheusServiceClientConfiguration.h>
 #include <aws/amp/PrometheusServiceClientPagination.h>
 #include <aws/amp/PrometheusServiceEndpointProvider.h>
 #include <aws/amp/PrometheusServiceErrorMarshaller.h>

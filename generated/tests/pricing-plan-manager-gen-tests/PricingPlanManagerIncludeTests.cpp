@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pricing-plan-manager/PricingPlanManagerClient.h>
+#include <aws/pricing-plan-manager/PricingPlanManagerClientConfiguration.h>
 #include <aws/pricing-plan-manager/PricingPlanManagerClientPagination.h>
 #include <aws/pricing-plan-manager/PricingPlanManagerEndpointProvider.h>
 #include <aws/pricing-plan-manager/PricingPlanManagerErrorMarshaller.h>

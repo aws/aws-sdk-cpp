@@ -12,7 +12,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonSparseJsonMaps) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -47,7 +47,7 @@ AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonSparseJsonMaps) {
 }
 
 AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonDeserializesSparseNullMapValues) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -88,7 +88,7 @@ AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonDeserializesSparseNullMapValues) {
 }
 
 AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonDeserializesZeroValuesInSparseMaps) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -119,7 +119,7 @@ AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonDeserializesZeroValuesInSparseMaps) {
 }
 
 AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonDeserializesSparseSetMap) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -146,7 +146,7 @@ AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonDeserializesSparseSetMap) {
 }
 
 AWS_PROTOCOL_TEST(SparseJsonMaps, RestJsonDeserializesSparseSetMapAndRetainsNull) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

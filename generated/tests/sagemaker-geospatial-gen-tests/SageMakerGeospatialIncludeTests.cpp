@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sagemaker-geospatial/SageMakerGeospatialClient.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatialClientConfiguration.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialClientPagination.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialEndpointProvider.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialErrorMarshaller.h>

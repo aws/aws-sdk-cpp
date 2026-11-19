@@ -47,7 +47,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace IAMToolbox {
-using IAMToolboxClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IAMToolboxEndpointProviderBase = Aws::IAMToolbox::Endpoint::IAMToolboxEndpointProviderBase;
 using IAMToolboxEndpointProvider = Aws::IAMToolbox::Endpoint::IAMToolboxEndpointProvider;
 

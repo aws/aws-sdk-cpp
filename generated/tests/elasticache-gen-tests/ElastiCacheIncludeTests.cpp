@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/elasticache/ElastiCacheClient.h>
+#include <aws/elasticache/ElastiCacheClientConfiguration.h>
 #include <aws/elasticache/ElastiCacheClientPagination.h>
 #include <aws/elasticache/ElastiCacheEndpointProvider.h>
 #include <aws/elasticache/ElastiCacheErrorMarshaller.h>

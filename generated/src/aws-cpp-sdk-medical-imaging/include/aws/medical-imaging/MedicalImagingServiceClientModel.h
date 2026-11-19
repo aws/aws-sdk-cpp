@@ -65,7 +65,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MedicalImaging {
-using MedicalImagingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MedicalImagingEndpointProviderBase = Aws::MedicalImaging::Endpoint::MedicalImagingEndpointProviderBase;
 using MedicalImagingEndpointProvider = Aws::MedicalImaging::Endpoint::MedicalImagingEndpointProvider;
 

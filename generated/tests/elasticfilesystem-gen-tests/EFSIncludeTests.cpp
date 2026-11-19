@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/elasticfilesystem/EFSClient.h>
+#include <aws/elasticfilesystem/EFSClientConfiguration.h>
 #include <aws/elasticfilesystem/EFSClientPagination.h>
 #include <aws/elasticfilesystem/EFSEndpointProvider.h>
 #include <aws/elasticfilesystem/EFSErrorMarshaller.h>

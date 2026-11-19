@@ -34,8 +34,6 @@ TEST_F(EFSSmokeTestSuite, DescribeFileSystemsSuccess )
 {
     Aws::EFS::EFSClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<EFSClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

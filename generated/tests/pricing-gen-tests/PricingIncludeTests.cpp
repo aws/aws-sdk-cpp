@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pricing/PricingClient.h>
+#include <aws/pricing/PricingClientConfiguration.h>
 #include <aws/pricing/PricingClientPagination.h>
 #include <aws/pricing/PricingEndpointProvider.h>
 #include <aws/pricing/PricingErrorMarshaller.h>

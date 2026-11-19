@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/glue/GlueClient.h>
+#include <aws/glue/GlueClientConfiguration.h>
 #include <aws/glue/GlueClientPagination.h>
 #include <aws/glue/GlueEndpointProvider.h>
 #include <aws/glue/GlueErrorMarshaller.h>

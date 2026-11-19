@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iottwinmaker/IoTTwinMakerClient.h>
+#include <aws/iottwinmaker/IoTTwinMakerClientConfiguration.h>
 #include <aws/iottwinmaker/IoTTwinMakerClientPagination.h>
 #include <aws/iottwinmaker/IoTTwinMakerEndpointProvider.h>
 #include <aws/iottwinmaker/IoTTwinMakerErrorMarshaller.h>

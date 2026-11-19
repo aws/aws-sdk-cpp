@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/frauddetector/FraudDetectorClientConfiguration.h>
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
 namespace Aws {
 namespace FraudDetector {
 namespace Endpoint {
+using FraudDetectorClientConfiguration = Aws::FraudDetector::FraudDetectorClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using FraudDetectorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using FraudDetectorClientConfiguration = Aws::Client::GenericClientConfiguration;
-using FraudDetectorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_FRAUDDETECTOR_API FraudDetectorBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~FraudDetectorBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const FraudDetectorClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const FraudDetectorClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const FraudDetectorClientConfiguration& config);
+};
 
 /**
  * The type for the FraudDetector Client Endpoint Provider.
@@ -34,6 +43,24 @@ using FraudDetectorEndpointProviderBase =
 using FraudDetectorDefaultEpProviderBase =
     BDDEndpointProvider<FraudDetectorClientConfiguration, FraudDetectorBuiltInParameters, FraudDetectorClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace FraudDetector
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_FRAUDDETECTOR_EXTERN template class AWS_FRAUDDETECTOR_API Aws::Endpoint::EndpointProviderBase<
+    FraudDetector::Endpoint::FraudDetectorClientConfiguration, FraudDetector::Endpoint::FraudDetectorBuiltInParameters,
+    FraudDetector::Endpoint::FraudDetectorClientContextParameters>;
+
+AWS_FRAUDDETECTOR_EXTERN template class AWS_FRAUDDETECTOR_API Aws::Endpoint::BDDEndpointProvider<
+    FraudDetector::Endpoint::FraudDetectorClientConfiguration, FraudDetector::Endpoint::FraudDetectorBuiltInParameters,
+    FraudDetector::Endpoint::FraudDetectorClientContextParameters>;
+}  // namespace Endpoint
+
+namespace FraudDetector {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

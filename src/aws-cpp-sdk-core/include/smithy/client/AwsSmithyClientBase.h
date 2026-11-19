@@ -110,12 +110,7 @@ namespace client
           m_serviceUserAgentName(std::move(serviceUserAgentName)),
           m_httpClient(std::move(httpClient)),
           m_errorMarshaller(std::move(errorMarshaller)),
-          m_interceptors({
-              Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig),
-              Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", 
-                  m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : m_clientConfig->httpClientChunkedMode,
-                  m_clientConfig->awsChunkedBufferSize)
-          }),
+          m_interceptors(m_clientConfig->CreateInterceptors({m_httpClient})),
           m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"}
         {
             

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ssm-sap/SsmSapClient.h>
+#include <aws/ssm-sap/SsmSapClientConfiguration.h>
 #include <aws/ssm-sap/SsmSapClientPagination.h>
 #include <aws/ssm-sap/SsmSapEndpointProvider.h>
 #include <aws/ssm-sap/SsmSapErrorMarshaller.h>

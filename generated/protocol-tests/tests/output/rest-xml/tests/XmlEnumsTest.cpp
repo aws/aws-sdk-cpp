@@ -12,7 +12,7 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(XmlEnums, XmlEnums) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

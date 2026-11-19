@@ -35,8 +35,6 @@ TEST_F(EC2SmokeTestSuite, DescribeInstancesFailure )
 {
     Aws::EC2::EC2ClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<EC2Client>(ALLOCATION_TAG, clientConfiguration);
     //Prepare test data
     auto GetdescribeinstancesElemLvl0Idx0 = [&]() -> Aws::Vector<Aws::String>
@@ -58,8 +56,6 @@ TEST_F(EC2SmokeTestSuite, DescribeRegionsSuccess )
 {
     Aws::EC2::EC2ClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<EC2Client>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

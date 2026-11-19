@@ -154,7 +154,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Omics {
-using OmicsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using OmicsEndpointProviderBase = Aws::Omics::Endpoint::OmicsEndpointProviderBase;
 using OmicsEndpointProvider = Aws::Omics::Endpoint::OmicsEndpointProvider;
 

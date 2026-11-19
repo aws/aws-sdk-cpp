@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mediapackage-vod/MediaPackageVodClient.h>
+#include <aws/mediapackage-vod/MediaPackageVodClientConfiguration.h>
 #include <aws/mediapackage-vod/MediaPackageVodClientPagination.h>
 #include <aws/mediapackage-vod/MediaPackageVodEndpointProvider.h>
 #include <aws/mediapackage-vod/MediaPackageVodErrorMarshaller.h>

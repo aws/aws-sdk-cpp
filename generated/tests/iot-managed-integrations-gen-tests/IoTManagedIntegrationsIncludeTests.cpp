@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsClient.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrationsClientConfiguration.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsClientPagination.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsEndpointProvider.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsErrorMarshaller.h>

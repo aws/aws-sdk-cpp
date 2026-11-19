@@ -12,7 +12,7 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithStructMember) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -51,7 +51,7 @@ AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithStructMember) {
 }
 
 AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithStringMember) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -75,7 +75,7 @@ AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithStringMember) {
 }
 
 AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithBooleanMember) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -99,7 +99,7 @@ AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithBooleanMember) {
 }
 
 AWS_PROTOCOL_TEST(XmlUnions, XmlUnionsWithUnionMember) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

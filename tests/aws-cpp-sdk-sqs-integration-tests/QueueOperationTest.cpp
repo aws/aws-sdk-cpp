@@ -107,7 +107,7 @@ protected:
 
     void SetUp()
     {
-        sqsClient = Aws::MakeShared<SQSClient>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), GetConfig());
+        sqsClient = Aws::MakeShared<SQSClient>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), nullptr, Aws::SQS::SQSClientConfiguration(GetConfig()));
     }
 
     void TearDown()
@@ -169,8 +169,8 @@ protected:
     {
         auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");
         if (accountId.empty()) {
-            auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, GetConfig());
-            auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, GetConfig());
+            auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, Aws::CognitoIdentity::CognitoIdentityClientConfiguration(GetConfig()));
+            auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, Aws::IAM::IAMClientConfiguration(GetConfig()));
             Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
             accountId = accessManagementClient.GetAccountId();
         }

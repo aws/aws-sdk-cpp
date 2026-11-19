@@ -88,7 +88,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SecurityLake {
-using SecurityLakeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SecurityLakeEndpointProviderBase = Aws::SecurityLake::Endpoint::SecurityLakeEndpointProviderBase;
 using SecurityLakeEndpointProvider = Aws::SecurityLake::Endpoint::SecurityLakeEndpointProvider;
 

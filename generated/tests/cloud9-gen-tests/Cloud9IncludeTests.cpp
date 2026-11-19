@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cloud9/Cloud9Client.h>
+#include <aws/cloud9/Cloud9ClientConfiguration.h>
 #include <aws/cloud9/Cloud9ClientPagination.h>
 #include <aws/cloud9/Cloud9EndpointProvider.h>
 #include <aws/cloud9/Cloud9ErrorMarshaller.h>

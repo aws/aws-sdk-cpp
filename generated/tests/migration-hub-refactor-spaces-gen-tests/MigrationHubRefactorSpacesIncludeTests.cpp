@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesClient.h>
+#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesClientConfiguration.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesClientPagination.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesEndpointProvider.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesErrorMarshaller.h>

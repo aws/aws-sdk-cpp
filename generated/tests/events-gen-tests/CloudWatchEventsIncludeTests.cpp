@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/events/CloudWatchEventsClient.h>
+#include <aws/events/CloudWatchEventsClientConfiguration.h>
 #include <aws/events/CloudWatchEventsEndpointProvider.h>
 #include <aws/events/CloudWatchEventsErrorMarshaller.h>
 #include <aws/events/CloudWatchEventsErrors.h>

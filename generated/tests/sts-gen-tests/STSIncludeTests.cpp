@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sts/STSClient.h>
+#include <aws/sts/STSClientConfiguration.h>
 #include <aws/sts/STSEndpointProvider.h>
 #include <aws/sts/STSErrorMarshaller.h>
 #include <aws/sts/STSErrors.h>

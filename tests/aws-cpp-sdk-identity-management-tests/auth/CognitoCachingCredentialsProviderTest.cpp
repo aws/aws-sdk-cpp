@@ -107,7 +107,7 @@ namespace
         void SetUp()
         {
             // Create a client
-            ClientConfiguration config;
+            Aws::CognitoIdentity::CognitoIdentityClientConfiguration config;
             config.scheme = Scheme::HTTP;
             config.connectTimeoutMs = 30000;
             config.requestTimeoutMs = 30000;
@@ -118,7 +118,7 @@ namespace
             SetHttpClientFactory(mockHttpClientFactory);
             cognitoIdentityClient = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG,
                                                                            Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, "", ""),
-                                                                           config);
+                                                                           nullptr, config);
             mockIdentityRepository = Aws::MakeShared<MockPersistentCognitoIdentityProvider>(ALLOCATION_TAG);
             mockIdentityRepository->SetIdentityPoolId("TestIdentityPool");
             mockIdentityRepository->SetAccountId("598156584");

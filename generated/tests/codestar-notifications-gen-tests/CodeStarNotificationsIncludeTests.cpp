@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codestar-notifications/CodeStarNotificationsClient.h>
+#include <aws/codestar-notifications/CodeStarNotificationsClientConfiguration.h>
 #include <aws/codestar-notifications/CodeStarNotificationsClientPagination.h>
 #include <aws/codestar-notifications/CodeStarNotificationsEndpointProvider.h>
 #include <aws/codestar-notifications/CodeStarNotificationsErrorMarshaller.h>

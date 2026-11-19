@@ -71,7 +71,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MigrationHubRefactorSpaces {
-using MigrationHubRefactorSpacesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MigrationHubRefactorSpacesEndpointProviderBase =
     Aws::MigrationHubRefactorSpaces::Endpoint::MigrationHubRefactorSpacesEndpointProviderBase;
 using MigrationHubRefactorSpacesEndpointProvider = Aws::MigrationHubRefactorSpaces::Endpoint::MigrationHubRefactorSpacesEndpointProvider;

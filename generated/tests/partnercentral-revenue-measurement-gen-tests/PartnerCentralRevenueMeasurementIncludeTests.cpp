@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementClient.h>
+#include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementClientConfiguration.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementClientPagination.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementEndpointProvider.h>
 #include <aws/partnercentral-revenue-measurement/PartnerCentralRevenueMeasurementErrorMarshaller.h>

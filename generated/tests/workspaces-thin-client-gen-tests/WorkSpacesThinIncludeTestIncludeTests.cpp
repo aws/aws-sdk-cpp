@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/workspaces-thin-client/WorkSpacesThinClientClient.h>
+#include <aws/workspaces-thin-client/WorkSpacesThinClientClientConfiguration.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClientClientPagination.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClientEndpointProvider.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClientErrorMarshaller.h>

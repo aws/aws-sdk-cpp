@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mwaa/MWAAClient.h>
+#include <aws/mwaa/MWAAClientConfiguration.h>
 #include <aws/mwaa/MWAAClientPagination.h>
 #include <aws/mwaa/MWAAEndpointProvider.h>
 #include <aws/mwaa/MWAAErrorMarshaller.h>

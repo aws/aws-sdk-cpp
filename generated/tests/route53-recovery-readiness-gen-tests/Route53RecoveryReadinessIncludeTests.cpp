@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessClient.h>
+#include <aws/route53-recovery-readiness/Route53RecoveryReadinessClientConfiguration.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessClientPagination.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessEndpointProvider.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/detective/DetectiveClient.h>
+#include <aws/detective/DetectiveClientConfiguration.h>
 #include <aws/detective/DetectiveClientPagination.h>
 #include <aws/detective/DetectiveEndpointProvider.h>
 #include <aws/detective/DetectiveErrorMarshaller.h>

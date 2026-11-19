@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiClient.h>
+#include <aws/apigatewaymanagementapi/ApiGatewayManagementApiClientConfiguration.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiEndpointProvider.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiErrorMarshaller.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiErrors.h>

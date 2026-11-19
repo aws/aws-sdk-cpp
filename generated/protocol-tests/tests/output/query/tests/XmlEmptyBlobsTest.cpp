@@ -12,7 +12,7 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(XmlEmptyBlobs, QueryXmlEmptyBlobs) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -34,7 +34,7 @@ AWS_PROTOCOL_TEST(XmlEmptyBlobs, QueryXmlEmptyBlobs) {
 }
 
 AWS_PROTOCOL_TEST(XmlEmptyBlobs, QueryXmlEmptySelfClosedBlobs) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

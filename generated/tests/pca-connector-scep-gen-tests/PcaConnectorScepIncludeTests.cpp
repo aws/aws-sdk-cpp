@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pca-connector-scep/PcaConnectorScepClient.h>
+#include <aws/pca-connector-scep/PcaConnectorScepClientConfiguration.h>
 #include <aws/pca-connector-scep/PcaConnectorScepClientPagination.h>
 #include <aws/pca-connector-scep/PcaConnectorScepEndpointProvider.h>
 #include <aws/pca-connector-scep/PcaConnectorScepErrorMarshaller.h>

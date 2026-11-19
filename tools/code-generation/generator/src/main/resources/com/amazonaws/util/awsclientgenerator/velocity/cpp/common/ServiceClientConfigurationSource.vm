@@ -6,6 +6,26 @@
 #set($endpointPrefix = $metadata.endpointPrefix)
 #set($serviceNameCaps = $metadata.serviceId.replaceAll("[^a-zA-Z\d]+", "_").toUpperCase())
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
+#set($options = $serviceModel.supportedClientOptions)
+#if($options.contains("requestCompressionConfig"))
+\#include <aws/core/client/RequestCompression.h>
+\#include <smithy/client/features/RequestCompressionInterceptor.h>
+#end
+#if($options.contains("sigV4aSigningRegionSet"))
+\#include <smithy/identity/signer/built-in/SigV4aSigningRegionSet.h>
+#end
+#if($options.contains("checksumConfig"))
+\#include <smithy/client/features/ChecksumInterceptor.h>
+#end
+#if($options.contains("disableExpectHeader"))
+\#include <aws/core/http/HttpClient.h>
+\#include <smithy/client/features/ChunkingInterceptor.h>
+\#include <smithy/client/features/ExpectHeaderInterceptor.h>
+#end
+#if($options.contains("accountIdEndpointMode"))
+\#include <aws/core/client/UserAgent.h>
+\#include <smithy/client/features/UserAgentFeatureInterceptor.h>
+#end
 #if($serviceNamespace == "S3Crt")
 \#include <aws/core/Globals.h>
 \#include <aws/core/client/RetryStrategy.h>
@@ -30,6 +50,12 @@ static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
 #end
 #if($serviceModel.metadata.signingName == "bedrock")
 static const char AWS_BEARER_TOKEN_BEDROCK[] = "AWS_BEARER_TOKEN_BEDROCK";
+#end
+#if($options.contains("disableExpectHeader"))
+namespace {
+// Default aws-chunked buffer size used to content encode streaming request bodies.
+const size_t DEFAULT_AWS_CHUNKED_BUFFER_SIZE = 64UL * 1024;
+}  // namespace
 #end
 
 #if($metadata.hasEndpointDiscoveryTrait)
@@ -124,6 +150,32 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
     useArnRegion = true;
   }
 #end
+#set($options = $serviceModel.supportedClientOptions)
+#if($options.contains("disableExpectHeader"))
+  awsChunkedBufferSize = DEFAULT_AWS_CHUNKED_BUFFER_SIZE;
+#end
+#if($options.contains("useFIPS"))
+  useFIPS = Aws::Client::ClientConfiguration::LoadConfigFromEnvOrProfile("AWS_USE_FIPS_ENDPOINT", this->profileName,
+      "use_fips_endpoint", {"true", "false"}, "false") == "true";
+#end
+#if($options.contains("useDualStack"))
+  useDualStack = Aws::Client::ClientConfiguration::LoadConfigFromEnvOrProfile("AWS_USE_DUALSTACK_ENDPOINT", this->profileName,
+      "use_dualstack_endpoint", {"true", "false"}, "false") == "true";
+#end
+#if($options.contains("accountIdEndpointMode"))
+  // accountId is intentionally not loaded: AWS_ACCOUNT_ID may not match the credentials in use.
+  accountIdEndpointMode = Aws::Client::ClientConfiguration::LoadConfigFromEnvOrProfile("AWS_ACCOUNT_ID_ENDPOINT_MODE", this->profileName,
+      "account_id_endpoint_mode", {"required", "disabled", "preferred"}, "preferred");
+#end
+#if($options.contains("requestCompressionConfig"))
+  requestCompressionConfig = Aws::Client::LoadRequestCompressionConfigFromEnvOrProfile(this->profileName);
+#end
+#if($options.contains("checksumConfig"))
+  checksumConfig = Aws::Client::LoadChecksumConfigFromEnvOrProfile(this->profileName);
+#end
+#if($options.contains("sigV4aSigningRegionSet"))
+  sigV4aSigningRegionSet = Aws::Client::LoadSigV4aSigningRegionSetFromEnvOrProfile(this->profileName);
+#end
 #if($metadata.hasEndpointDiscoveryTrait)
 #set($inputProfileNameUsed = true)
   if(!enableEndpointDiscovery) {
@@ -163,42 +215,61 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
 }
 
 ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const Aws::Client::ClientConfigurationInitValues &configuration)
-: BaseClientConfigClass(configuration)#if($metadata.hasEndpointDiscoveryTrait), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)#end${nl}{
+: BaseClientConfigClass(configuration)${nl}{
   Load${serviceNamespace}SpecificConfig(this->profileName);
 }
 
 ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS)
-: BaseClientConfigClass(inputProfileName, shouldDisableIMDS)#if($metadata.hasEndpointDiscoveryTrait), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)#end${nl}{
+: BaseClientConfigClass(inputProfileName, shouldDisableIMDS)${nl}{
   Load${serviceNamespace}SpecificConfig(Aws::String(inputProfileName));
 }
 
 ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(bool useSmartDefaults, const char* defaultMode, bool shouldDisableIMDS)
-: BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS)#if($metadata.hasEndpointDiscoveryTrait), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)#end${nl}{
+: BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS)${nl}{
   Load${serviceNamespace}SpecificConfig(this->profileName);
 }
 
-#set($classNamePrefix = $metadata.classNamePrefix)
-#set($clsPrefixWSpace = $classNamePrefix.replaceAll(".", " "))
-#set($earlyClose = $serviceModel.metadata.serviceId != "S3")
-${classNamePrefix}ClientConfiguration::${classNamePrefix}ClientConfiguration(const Aws::Client::ClientConfiguration& config#if($earlyClose))#else,
-#end
-#if($serviceModel.metadata.serviceId == "S3")
-${clsPrefixWSpace}                     ${clsPrefixWSpace}Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy,
-${clsPrefixWSpace}                     ${clsPrefixWSpace}bool iUseVirtualAddressing,
-${clsPrefixWSpace}                     ${clsPrefixWSpace}US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption)
-#end
-  : BaseClientConfigClass(config)#if($metadata.hasEndpointDiscoveryTrait), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)#end#if($serviceModel.metadata.serviceId == "S3"),
-#else
-#end
-#if($serviceModel.metadata.serviceId == "S3")
-    useVirtualAddressing(iUseVirtualAddressing),
-    useUSEast1RegionalEndPointOption(iUseUSEast1RegionalEndPointOption),
-    payloadSigningPolicy(iPayloadSigningPolicy)
-#end
+${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig)
+: BaseClientConfigClass(sharedConfig)
 {
   Load${serviceNamespace}SpecificConfig(this->profileName);
 }
 
+#set($needsInterceptors = $options.contains("requestCompressionConfig") || $options.contains("checksumConfig") || $options.contains("disableExpectHeader") || $options.contains("accountIdEndpointMode"))
+#if($needsInterceptors)
+Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> ${metadata.classNamePrefix}ClientConfiguration::CreateInterceptors(
+    const Aws::Client::CreateInterceptorsRequest& request) const
+{
+  static const char TAG[] = "${metadata.classNamePrefix}ClientConfiguration";
+  Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> interceptors;
+#if($options.contains("requestCompressionConfig"))
+  interceptors.push_back(Aws::MakeShared<smithy::client::features::RequestCompressionInterceptor>(TAG, requestCompressionConfig, request.httpClient));
+#end
+#if($options.contains("checksumConfig"))
+  interceptors.push_back(Aws::MakeShared<smithy::client::ChecksumInterceptor>(TAG, checksumConfig));
+#end
+#if($options.contains("disableExpectHeader"))
+  interceptors.push_back(Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(TAG,
+      request.httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : httpClientChunkedMode,
+      awsChunkedBufferSize));
+  if (!disableExpectHeader) {
+    interceptors.push_back(Aws::MakeShared<smithy::client::features::ExpectHeaderInterceptor>(TAG));
+  }
+#end
+#if($options.contains("accountIdEndpointMode"))
+  const auto accountIdEndpointModeFeature = Aws::Client::UserAgent::FeatureForAccountIdEndpointMode(accountIdEndpointMode);
+  if (accountIdEndpointModeFeature) {
+    interceptors.push_back(Aws::MakeShared<smithy::client::features::UserAgentFeatureInterceptor>(TAG,
+        Aws::Set<Aws::Client::UserAgentFeature>{*accountIdEndpointModeFeature}));
+  }
+#end
+#if(!$options.contains("requestCompressionConfig") && !$options.contains("disableExpectHeader"))
+  (void)(request);
+#end
+  return interceptors;
+}
+
+#end
 #if($serviceNamespace == "S3Crt")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtClientConfigSource.vm")
 #end

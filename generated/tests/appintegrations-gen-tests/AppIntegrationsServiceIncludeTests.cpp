@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/appintegrations/AppIntegrationsServiceClient.h>
+#include <aws/appintegrations/AppIntegrationsServiceClientConfiguration.h>
 #include <aws/appintegrations/AppIntegrationsServiceClientPagination.h>
 #include <aws/appintegrations/AppIntegrationsServiceEndpointProvider.h>
 #include <aws/appintegrations/AppIntegrationsServiceErrorMarshaller.h>

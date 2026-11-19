@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/iam/IAMClient.h>
+#include <aws/iam/IAMClientConfiguration.h>
 #include <aws/iam/IAMClientPagination.h>
 #include <aws/iam/IAMEndpointProvider.h>
 #include <aws/iam/IAMErrorMarshaller.h>

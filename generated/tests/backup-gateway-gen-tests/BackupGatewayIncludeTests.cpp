@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/backup-gateway/BackupGatewayClient.h>
+#include <aws/backup-gateway/BackupGatewayClientConfiguration.h>
 #include <aws/backup-gateway/BackupGatewayClientPagination.h>
 #include <aws/backup-gateway/BackupGatewayEndpointProvider.h>
 #include <aws/backup-gateway/BackupGatewayErrorMarshaller.h>

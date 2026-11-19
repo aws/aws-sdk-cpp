@@ -55,7 +55,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace KendraRanking {
-using KendraRankingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KendraRankingEndpointProviderBase = Aws::KendraRanking::Endpoint::KendraRankingEndpointProviderBase;
 using KendraRankingEndpointProvider = Aws::KendraRanking::Endpoint::KendraRankingEndpointProvider;
 

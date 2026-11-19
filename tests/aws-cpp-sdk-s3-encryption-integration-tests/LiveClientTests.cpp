@@ -74,7 +74,7 @@ public:
     {
         TimeStamp = DateTime::Now().CalculateLocalTimestampAsString("%Y%m%dt%H%M%Sz").c_str();
 
-        ClientConfiguration config;
+        Aws::S3::S3ClientConfiguration config;
         config.region = AWS_TEST_REGION;
         StandardClient = Aws::MakeShared<Aws::S3::S3Client>(ALLOCATION_TAG, config);
         BucketName = ComputeUniqueBucketName(ENCRYPTED_BUCKET_TEST_NAME).c_str();
@@ -129,7 +129,7 @@ TEST_F(LiveClientTest, TestEOMode)
     configuration.SetCryptoMode(CryptoMode::ENCRYPTION_ONLY);
     configuration.SetStorageMethod(StorageMethod::METADATA);
 
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
@@ -206,7 +206,7 @@ TEST_F(LiveClientTest, TestEOMode)
 
 TEST_F(LiveClientTest, TestEncryptionContextEmpty)
 {
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
@@ -246,7 +246,7 @@ TEST_F(LiveClientTest, TestV2EncryptionContextEmptyKms)
     auto materials = std::make_shared<KMSWithContextEncryptionMaterials>(KMS_KEY);
     CryptoConfigurationV2  configuration(materials);
 
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     static const char* objectKey = "TestEncryptionContextKms";
@@ -282,7 +282,7 @@ TEST_F(LiveClientTest, TestV2EncryptionContextFullKms)
     auto materials = std::make_shared<KMSWithContextEncryptionMaterials>(KMS_KEY);
     CryptoConfigurationV2  configuration(materials);
 
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     static const char* objectKey = "TestEncryptionContextKms";
@@ -349,7 +349,7 @@ TEST_F(LiveClientTest, TestWriteV2ReadV3)
     auto materials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
     CryptoConfigurationV2  v2_configuration(materials);
 
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     static const char* objectKey = "TestWriteV2ReadV3";
@@ -415,7 +415,7 @@ TEST_F(LiveClientTest, TestWriteV1ReadV3)
     configuration.SetCryptoMode(CryptoMode::ENCRYPTION_ONLY);
     configuration.SetStorageMethod(StorageMethod::METADATA);
 
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
@@ -468,7 +468,7 @@ TEST_F(LiveClientTest, TestWriteV3ReadV2)
     CryptoConfigurationV3  v3_configuration(materials);
     v3_configuration.SetCommitmentPolicy(CommitmentPolicy::FORBID_ENCRYPT_ALLOW_DECRYPT);
 
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     static const char* objectKey = "TestWriteV2ReadV3";
@@ -512,7 +512,7 @@ TEST_F(LiveClientTest, TestWriteV3ReadV3)
     CryptoConfigurationV3  v3_configuration(materials);
     v3_configuration.SetCommitmentPolicy(CommitmentPolicy::REQUIRE_ENCRYPT_ALLOW_DECRYPT);
 
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     static const char* objectKey = "TestWriteV3ReadV3";
@@ -572,7 +572,7 @@ TEST_F(LiveClientTest, TestWriteV2Instruction)
     CryptoConfigurationV2  configuration(materials);
     configuration.SetStorageMethod(StorageMethod::INSTRUCTION_FILE);
 
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     static const char* objectKey = "TestWriteV2Instruction";
@@ -637,7 +637,7 @@ TEST_F(LiveClientTest, TestWriteV3Instruction)
     CryptoConfigurationV3  configuration(materials);
     configuration.SetStorageMethod(StorageMethod::INSTRUCTION_FILE);
 
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     static const char* objectKey = "TestWriteV3Instruction";
@@ -717,7 +717,7 @@ TEST_F(LiveClientTest, TestAEMode)
     configuration.SetCryptoMode(CryptoMode::AUTHENTICATED_ENCRYPTION);
     configuration.SetStorageMethod(StorageMethod::METADATA);
 
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
@@ -804,7 +804,7 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     configuration.SetCryptoMode(CryptoMode::AUTHENTICATED_ENCRYPTION);
     configuration.SetStorageMethod(StorageMethod::METADATA);
 
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
@@ -897,7 +897,7 @@ TEST_F(LiveClientTest, TestGcmModeRangeGet)
     auto materials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
     CryptoConfigurationV3  configuration(materials);
 
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     static const char* objectKey = "TestAERangeGetKey";
@@ -968,7 +968,7 @@ TEST_F(LiveClientTest, TestGcmModeRangeGet)
 
 TEST_F(LiveClientTest, TestS3EncryptionError)
 {
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     auto kmsMaterials = Aws::MakeShared<Aws::S3Encryption::Materials::KMSWithContextEncryptionMaterials>("s3Encryption", "badKey");
@@ -1002,7 +1002,7 @@ TEST_F(LiveClientTest, TestS3EncryptionError)
 
 TEST_F(LiveClientTest, TestV2AEMode)
 {
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
@@ -1100,7 +1100,7 @@ TEST_F(LiveClientTest, TestV2AEMode)
 
 TEST_F(LiveClientTest, TestV2AEModeRangeGetPass)
 {
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
@@ -1185,7 +1185,7 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetPass)
 
 TEST_F(LiveClientTest, TestV2AEModeRangeGetFailWithoutSetting)
 {
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
@@ -1223,7 +1223,7 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetFailWithoutSetting)
 
 TEST_F(LiveClientTest, TestV2AEModeRangeGetPassWithRangeUpperBoundOverflow)
 {
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     auto key = SymmetricCipher::GenerateKey();
@@ -1308,7 +1308,7 @@ TEST_F(LiveClientTest, TestV2AEModeRangeGetPassWithRangeUpperBoundOverflow)
 
 TEST_F(LiveClientTest, TestV2S3EncryptionError)
 {
-    ClientConfiguration s3ClientConfig;
+    Aws::S3::S3ClientConfiguration s3ClientConfig;
     s3ClientConfig.region = AWS_TEST_REGION;
 
     auto kmsMaterials = Aws::MakeShared<Aws::S3Encryption::Materials::KMSWithContextEncryptionMaterials>("s3Encryption", "badKey");

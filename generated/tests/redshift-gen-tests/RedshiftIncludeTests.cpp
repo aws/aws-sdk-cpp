@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/redshift/RedshiftClient.h>
+#include <aws/redshift/RedshiftClientConfiguration.h>
 #include <aws/redshift/RedshiftClientPagination.h>
 #include <aws/redshift/RedshiftEndpointProvider.h>
 #include <aws/redshift/RedshiftErrorMarshaller.h>

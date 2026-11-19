@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/healthlake/HealthLakeClient.h>
+#include <aws/healthlake/HealthLakeClientConfiguration.h>
 #include <aws/healthlake/HealthLakeClientPagination.h>
 #include <aws/healthlake/HealthLakeEndpointProvider.h>
 #include <aws/healthlake/HealthLakeErrorMarshaller.h>

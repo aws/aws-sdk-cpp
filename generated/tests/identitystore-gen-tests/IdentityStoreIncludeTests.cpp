@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/identitystore/IdentityStoreClient.h>
+#include <aws/identitystore/IdentityStoreClientConfiguration.h>
 #include <aws/identitystore/IdentityStoreClientPagination.h>
 #include <aws/identitystore/IdentityStoreEndpointProvider.h>
 #include <aws/identitystore/IdentityStoreErrorMarshaller.h>

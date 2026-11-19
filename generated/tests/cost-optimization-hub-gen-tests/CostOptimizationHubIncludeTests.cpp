@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cost-optimization-hub/CostOptimizationHubClient.h>
+#include <aws/cost-optimization-hub/CostOptimizationHubClientConfiguration.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubClientPagination.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubEndpointProvider.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubErrorMarshaller.h>

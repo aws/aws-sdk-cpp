@@ -33,7 +33,7 @@ protected:
 
     void SetUp() override
     {
-        Aws::Client::ClientConfiguration config;
+        Aws::STS::STSClientConfiguration config;
         config.authPreferences = {smithy::SIGV4A_PREFERENCE};
         config.region = AWS_TEST_REGION;
         config.sigV4aSigningRegionSet = {"*"};

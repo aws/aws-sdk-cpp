@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/bedrock-agentcore/BedrockAgentCoreClient.h>
+#include <aws/bedrock-agentcore/BedrockAgentCoreClientConfiguration.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreClientPagination.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreEndpointProvider.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreErrorMarshaller.h>

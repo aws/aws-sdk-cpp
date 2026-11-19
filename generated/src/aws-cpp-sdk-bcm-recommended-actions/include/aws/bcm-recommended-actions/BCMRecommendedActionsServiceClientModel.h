@@ -48,7 +48,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace BCMRecommendedActions {
-using BCMRecommendedActionsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BCMRecommendedActionsEndpointProviderBase = Aws::BCMRecommendedActions::Endpoint::BCMRecommendedActionsEndpointProviderBase;
 using BCMRecommendedActionsEndpointProvider = Aws::BCMRecommendedActions::Endpoint::BCMRecommendedActionsEndpointProvider;
 

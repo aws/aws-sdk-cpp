@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/qconnect/QConnectClient.h>
+#include <aws/qconnect/QConnectClientConfiguration.h>
 #include <aws/qconnect/QConnectClientPagination.h>
 #include <aws/qconnect/QConnectEndpointProvider.h>
 #include <aws/qconnect/QConnectErrorMarshaller.h>

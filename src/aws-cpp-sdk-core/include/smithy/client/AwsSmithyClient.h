@@ -386,10 +386,7 @@ namespace client
           if (resolvedNonEmptyAccountId) {
             ctx.m_pRequest->AddUserAgentFeature(Aws::Client::UserAgentFeature::RESOLVED_ACCOUNT_ID);
           }
-          // Only set EP param if client configuration does not have a configured account ID and we resolved a account id
-          if (resolvedNonEmptyAccountId && m_clientConfiguration.accountId.empty()) {
-            endpointParameters.emplace_back("AccountId", resolvedAccountId.value(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
-          }
+          // Services whose endpoint rules take AccountId add it in their generated GetContextEndpointParameters override.
           return endpointParameters;
         }
     };

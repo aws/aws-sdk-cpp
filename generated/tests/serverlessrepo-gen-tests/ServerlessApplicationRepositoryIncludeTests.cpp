@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryClient.h>
+#include <aws/serverlessrepo/ServerlessApplicationRepositoryClientConfiguration.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryClientPagination.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryEndpointProvider.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryErrorMarshaller.h>

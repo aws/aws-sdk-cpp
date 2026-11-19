@@ -34,8 +34,6 @@ TEST_F(BCMDashboardsSmokeTestSuite, ListDashboardsSuccess )
 {
     Aws::BCMDashboards::BCMDashboardsClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<BCMDashboardsClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

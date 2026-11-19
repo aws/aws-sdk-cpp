@@ -12,7 +12,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadInput) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -33,7 +33,7 @@ AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadInput) {
 }
 
 AWS_PROTOCOL_TEST(DocumentTypeAsPayload, DocumentTypeAsPayloadInputString) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

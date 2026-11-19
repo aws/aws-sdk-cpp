@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/appflow/AppflowClientConfiguration.h>
 #include <aws/appflow/Appflow_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace Appflow {
 namespace Endpoint {
+using AppflowClientConfiguration = Aws::Appflow::AppflowClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using AppflowClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppflowClientConfiguration = Aws::Client::GenericClientConfiguration;
-using AppflowBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_APPFLOW_API AppflowBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~AppflowBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const AppflowClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const AppflowClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const AppflowClientConfiguration& config);
+};
 
 /**
  * The type for the Appflow Client Endpoint Provider.
@@ -34,6 +43,24 @@ using AppflowEndpointProviderBase =
 using AppflowDefaultEpProviderBase =
     BDDEndpointProvider<AppflowClientConfiguration, AppflowBuiltInParameters, AppflowClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace Appflow
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_APPFLOW_EXTERN template class AWS_APPFLOW_API
+    Aws::Endpoint::EndpointProviderBase<Appflow::Endpoint::AppflowClientConfiguration, Appflow::Endpoint::AppflowBuiltInParameters,
+                                        Appflow::Endpoint::AppflowClientContextParameters>;
+
+AWS_APPFLOW_EXTERN template class AWS_APPFLOW_API
+    Aws::Endpoint::BDDEndpointProvider<Appflow::Endpoint::AppflowClientConfiguration, Appflow::Endpoint::AppflowBuiltInParameters,
+                                       Appflow::Endpoint::AppflowClientContextParameters>;
+}  // namespace Endpoint
+
+namespace Appflow {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

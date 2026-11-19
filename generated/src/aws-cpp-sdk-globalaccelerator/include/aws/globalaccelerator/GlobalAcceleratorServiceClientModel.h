@@ -97,7 +97,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace GlobalAccelerator {
-using GlobalAcceleratorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GlobalAcceleratorEndpointProviderBase = Aws::GlobalAccelerator::Endpoint::GlobalAcceleratorEndpointProviderBase;
 using GlobalAcceleratorEndpointProvider = Aws::GlobalAccelerator::Endpoint::GlobalAcceleratorEndpointProvider;
 

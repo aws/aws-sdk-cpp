@@ -153,7 +153,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ECS {
-using ECSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ECSEndpointProviderBase = Aws::ECS::Endpoint::ECSEndpointProviderBase;
 using ECSEndpointProvider = Aws::ECS::Endpoint::ECSEndpointProvider;
 

@@ -74,7 +74,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace BackupGateway {
-using BackupGatewayClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BackupGatewayEndpointProviderBase = Aws::BackupGateway::Endpoint::BackupGatewayEndpointProviderBase;
 using BackupGatewayEndpointProvider = Aws::BackupGateway::Endpoint::BackupGatewayEndpointProvider;
 

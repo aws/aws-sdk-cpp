@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/datazone/DataZoneClient.h>
+#include <aws/datazone/DataZoneClientConfiguration.h>
 #include <aws/datazone/DataZoneClientPagination.h>
 #include <aws/datazone/DataZoneEndpointProvider.h>
 #include <aws/datazone/DataZoneErrorMarshaller.h>

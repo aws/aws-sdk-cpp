@@ -65,7 +65,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ConnectHealth {
-using ConnectHealthClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ConnectHealthEndpointProviderBase = Aws::ConnectHealth::Endpoint::ConnectHealthEndpointProviderBase;
 using ConnectHealthEndpointProvider = Aws::ConnectHealth::Endpoint::ConnectHealthEndpointProvider;
 

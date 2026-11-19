@@ -39,7 +39,7 @@ protected:
 
   void SetUp() {
     m_UUID = Aws::Utils::UUID::RandomUUID();
-    ClientConfiguration config;
+    Aws::CloudWatch::CloudWatchClientConfiguration config;
     config.scheme = Scheme::HTTPS;
     config.region = AWS_TEST_REGION;
     m_client = Aws::MakeUnique<Aws::CloudWatch::CloudWatchClient>(

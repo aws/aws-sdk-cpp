@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/marketplace-catalog/MarketplaceCatalogClient.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogClientConfiguration.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogClientPagination.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogEndpointProvider.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogErrorMarshaller.h>

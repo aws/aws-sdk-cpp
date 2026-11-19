@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/dax/DAXClient.h>
+#include <aws/dax/DAXClientConfiguration.h>
 #include <aws/dax/DAXEndpointProvider.h>
 #include <aws/dax/DAXErrorMarshaller.h>
 #include <aws/dax/DAXErrors.h>

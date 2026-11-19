@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pinpoint/PinpointClient.h>
+#include <aws/pinpoint/PinpointClientConfiguration.h>
 #include <aws/pinpoint/PinpointEndpointProvider.h>
 #include <aws/pinpoint/PinpointErrorMarshaller.h>
 #include <aws/pinpoint/PinpointErrors.h>

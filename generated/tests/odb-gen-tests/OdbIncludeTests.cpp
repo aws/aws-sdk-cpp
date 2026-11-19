@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/odb/OdbClient.h>
+#include <aws/odb/OdbClientConfiguration.h>
 #include <aws/odb/OdbClientPagination.h>
 #include <aws/odb/OdbEndpointProvider.h>
 #include <aws/odb/OdbErrorMarshaller.h>

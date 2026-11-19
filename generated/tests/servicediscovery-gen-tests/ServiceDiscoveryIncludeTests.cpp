@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/servicediscovery/ServiceDiscoveryClient.h>
+#include <aws/servicediscovery/ServiceDiscoveryClientConfiguration.h>
 #include <aws/servicediscovery/ServiceDiscoveryClientPagination.h>
 #include <aws/servicediscovery/ServiceDiscoveryEndpointProvider.h>
 #include <aws/servicediscovery/ServiceDiscoveryErrorMarshaller.h>

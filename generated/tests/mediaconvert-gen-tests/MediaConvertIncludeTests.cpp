@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mediaconvert/MediaConvertClient.h>
+#include <aws/mediaconvert/MediaConvertClientConfiguration.h>
 #include <aws/mediaconvert/MediaConvertClientPagination.h>
 #include <aws/mediaconvert/MediaConvertEndpointProvider.h>
 #include <aws/mediaconvert/MediaConvertErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/observabilityadmin/ObservabilityAdminClient.h>
+#include <aws/observabilityadmin/ObservabilityAdminClientConfiguration.h>
 #include <aws/observabilityadmin/ObservabilityAdminClientPagination.h>
 #include <aws/observabilityadmin/ObservabilityAdminEndpointProvider.h>
 #include <aws/observabilityadmin/ObservabilityAdminErrorMarshaller.h>

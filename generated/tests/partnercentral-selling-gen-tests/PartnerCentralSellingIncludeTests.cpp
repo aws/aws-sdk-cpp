@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/partnercentral-selling/PartnerCentralSellingClient.h>
+#include <aws/partnercentral-selling/PartnerCentralSellingClientConfiguration.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingClientPagination.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingEndpointProvider.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingErrorMarshaller.h>

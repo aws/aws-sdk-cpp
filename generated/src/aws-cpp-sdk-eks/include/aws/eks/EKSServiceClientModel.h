@@ -121,7 +121,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace EKS {
-using EKSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EKSEndpointProviderBase = Aws::EKS::Endpoint::EKSEndpointProviderBase;
 using EKSEndpointProvider = Aws::EKS::Endpoint::EKSEndpointProvider;
 

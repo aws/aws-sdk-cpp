@@ -12,7 +12,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpRequestWithLabels, RestJsonInputWithHeadersAndAllParams) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -35,7 +35,7 @@ AWS_PROTOCOL_TEST(HttpRequestWithLabels, RestJsonInputWithHeadersAndAllParams) {
 }
 
 AWS_PROTOCOL_TEST(HttpRequestWithLabels, RestJsonHttpRequestLabelEscaping) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

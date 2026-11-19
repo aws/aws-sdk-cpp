@@ -15,7 +15,7 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarProperties) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -51,7 +51,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarProperties) {
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesComplexEscapes) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -76,7 +76,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesComplexEscapes) 
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithEscapedCharacter) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -99,7 +99,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithEscapedChara
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithXMLPreamble) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -123,7 +123,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithXMLPreamble)
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithWhiteSpace) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -146,7 +146,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithWhiteSpace) 
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesPureWhiteSpace) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -169,7 +169,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesPureWhiteSpace) 
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RestXmlSupportsNaNFloatOutputs) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -192,7 +192,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestXmlSupportsNaNFloatOutputs) {
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RestXmlSupportsInfinityFloatOutputs) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -215,7 +215,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestXmlSupportsInfinityFloatOutputs) {
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RestXmlSupportsNegativeInfinityFloatOutputs) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

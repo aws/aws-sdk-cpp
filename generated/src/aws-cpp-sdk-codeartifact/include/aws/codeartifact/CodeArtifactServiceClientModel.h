@@ -96,7 +96,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CodeArtifact {
-using CodeArtifactClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeArtifactEndpointProviderBase = Aws::CodeArtifact::Endpoint::CodeArtifactEndpointProviderBase;
 using CodeArtifactEndpointProvider = Aws::CodeArtifact::Endpoint::CodeArtifactEndpointProvider;
 

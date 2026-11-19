@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/s3files/S3FilesClient.h>
+#include <aws/s3files/S3FilesClientConfiguration.h>
 #include <aws/s3files/S3FilesClientPagination.h>
 #include <aws/s3files/S3FilesEndpointProvider.h>
 #include <aws/s3files/S3FilesErrorMarshaller.h>

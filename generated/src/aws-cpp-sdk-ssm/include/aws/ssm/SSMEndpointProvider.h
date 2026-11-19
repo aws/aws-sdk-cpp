@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/SSMClientConfiguration.h>
 #include <aws/ssm/SSM_EXPORTS.h>
 
 namespace Aws {
 namespace SSM {
 namespace Endpoint {
+using SSMClientConfiguration = Aws::SSM::SSMClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using SSMClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SSMClientConfiguration = Aws::Client::GenericClientConfiguration;
-using SSMBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_SSM_API SSMBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~SSMBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const SSMClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const SSMClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const SSMClientConfiguration& config);
+};
 
 /**
  * The type for the SSM Client Endpoint Provider.
@@ -32,6 +41,22 @@ using SSMEndpointProviderBase = EndpointProviderBase<SSMClientConfiguration, SSM
 
 using SSMDefaultEpProviderBase = BDDEndpointProvider<SSMClientConfiguration, SSMBuiltInParameters, SSMClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace SSM
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_SSM_EXTERN template class AWS_SSM_API Aws::Endpoint::EndpointProviderBase<
+    SSM::Endpoint::SSMClientConfiguration, SSM::Endpoint::SSMBuiltInParameters, SSM::Endpoint::SSMClientContextParameters>;
+
+AWS_SSM_EXTERN template class AWS_SSM_API Aws::Endpoint::BDDEndpointProvider<
+    SSM::Endpoint::SSMClientConfiguration, SSM::Endpoint::SSMBuiltInParameters, SSM::Endpoint::SSMClientContextParameters>;
+}  // namespace Endpoint
+
+namespace SSM {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

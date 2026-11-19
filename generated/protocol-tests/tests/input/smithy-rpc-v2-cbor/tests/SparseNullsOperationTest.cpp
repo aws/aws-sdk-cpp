@@ -12,7 +12,7 @@ using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
 using namespace Aws::RpcV2Protocol::Model;
 
 AWS_PROTOCOL_TEST(SparseNullsOperation, RpcV2CborSparseMapsSerializeNullValues) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;
@@ -42,7 +42,7 @@ AWS_PROTOCOL_TEST(SparseNullsOperation, RpcV2CborSparseMapsSerializeNullValues) 
 }
 
 AWS_PROTOCOL_TEST(SparseNullsOperation, RpcV2CborSparseListsSerializeNull) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;

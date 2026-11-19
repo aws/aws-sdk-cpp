@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/lambda-core/LambdaCoreClient.h>
+#include <aws/lambda-core/LambdaCoreClientConfiguration.h>
 #include <aws/lambda-core/LambdaCoreClientPagination.h>
 #include <aws/lambda-core/LambdaCoreEndpointProvider.h>
 #include <aws/lambda-core/LambdaCoreErrorMarshaller.h>

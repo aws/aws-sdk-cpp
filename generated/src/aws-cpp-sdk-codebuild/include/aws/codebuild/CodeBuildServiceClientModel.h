@@ -120,7 +120,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CodeBuild {
-using CodeBuildClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeBuildEndpointProviderBase = Aws::CodeBuild::Endpoint::CodeBuildEndpointProviderBase;
 using CodeBuildEndpointProvider = Aws::CodeBuild::Endpoint::CodeBuildEndpointProvider;
 

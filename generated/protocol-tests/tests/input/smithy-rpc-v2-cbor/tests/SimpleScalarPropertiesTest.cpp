@@ -15,7 +15,7 @@ using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
 using namespace Aws::RpcV2Protocol::Model;
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSimpleScalarProperties) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;
@@ -70,7 +70,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSimpleScalarProperties) {
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborClientDoesntSerializeNullStructureValues) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;
@@ -96,7 +96,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborClientDoesntSerializeNullStru
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsNaNFloatInputs) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;
@@ -125,7 +125,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsNaNFloatInputs) {
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsInfinityFloatInputs) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;
@@ -154,7 +154,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsInfinityFloatInputs) 
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsNegativeInfinityFloatInputs) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;

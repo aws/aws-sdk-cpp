@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pcs/PCSClient.h>
+#include <aws/pcs/PCSClientConfiguration.h>
 #include <aws/pcs/PCSClientPagination.h>
 #include <aws/pcs/PCSEndpointProvider.h>
 #include <aws/pcs/PCSErrorMarshaller.h>

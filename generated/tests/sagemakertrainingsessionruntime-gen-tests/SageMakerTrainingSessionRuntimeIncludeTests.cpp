@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sagemakertrainingsessionruntime/SageMakerTrainingSessionRuntimeClient.h>
+#include <aws/sagemakertrainingsessionruntime/SageMakerTrainingSessionRuntimeClientConfiguration.h>
 #include <aws/sagemakertrainingsessionruntime/SageMakerTrainingSessionRuntimeEndpointProvider.h>
 #include <aws/sagemakertrainingsessionruntime/SageMakerTrainingSessionRuntimeErrorMarshaller.h>
 #include <aws/sagemakertrainingsessionruntime/SageMakerTrainingSessionRuntimeErrors.h>

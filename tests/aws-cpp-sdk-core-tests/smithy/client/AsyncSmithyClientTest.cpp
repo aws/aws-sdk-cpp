@@ -89,8 +89,13 @@ namespace
 
     static constexpr char AsyncSmithyServiceName[] = "AsyncSmithyService";
 
+    struct TestClientConfiguration : public Aws::Client::ClientConfiguration
+    {
+    };
+
+
     using AsyncSmithyClient = smithy::client::AwsSmithyClientT<AsyncSmithyServiceName,
-        Aws::Client::ClientConfiguration,
+        TestClientConfiguration,
         smithy::GenericAuthSchemeResolver<>,
         Aws::Crt::Variant<smithy::SigV4AuthScheme>,
         TestEndpointProvider,
@@ -114,7 +119,7 @@ namespace
 
         std::shared_ptr<AsyncSmithyClient> MakeClient(const std::shared_ptr<RetryStrategy>& retryStrategy) const
         {
-            ClientConfiguration config;
+            TestClientConfiguration config;
             config.retryStrategy = retryStrategy;
 
             auto credentialsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG,

@@ -94,7 +94,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace NetworkSecurityManager {
-using NetworkSecurityManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using NetworkSecurityManagerEndpointProviderBase = Aws::NetworkSecurityManager::Endpoint::NetworkSecurityManagerEndpointProviderBase;
 using NetworkSecurityManagerEndpointProvider = Aws::NetworkSecurityManager::Endpoint::NetworkSecurityManagerEndpointProvider;
 

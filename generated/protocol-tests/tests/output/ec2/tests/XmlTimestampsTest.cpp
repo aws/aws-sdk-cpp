@@ -12,7 +12,7 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestamps) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -34,7 +34,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestamps) {
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithDateTimeFormat) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -56,7 +56,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithDateTimeFormat) {
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithDateTimeOnTargetFormat) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -79,7 +79,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithDateTimeOnTargetFormat) {
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithEpochSecondsFormat) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -101,7 +101,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithEpochSecondsFormat) {
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithEpochSecondsOnTargetFormat) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -123,7 +123,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithEpochSecondsOnTargetFormat)
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithHttpDateFormat) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -145,7 +145,7 @@ AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithHttpDateFormat) {
 }
 
 AWS_PROTOCOL_TEST(XmlTimestamps, Ec2XmlTimestampsWithHttpDateOnTargetFormat) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

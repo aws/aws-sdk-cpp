@@ -68,7 +68,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Glacier {
-using GlacierClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GlacierEndpointProviderBase = Aws::Glacier::Endpoint::GlacierEndpointProviderBase;
 using GlacierEndpointProvider = Aws::Glacier::Endpoint::GlacierEndpointProvider;
 

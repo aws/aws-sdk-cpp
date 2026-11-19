@@ -54,7 +54,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CostandUsageReportService {
-using CostandUsageReportServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CostandUsageReportServiceEndpointProviderBase =
     Aws::CostandUsageReportService::Endpoint::CostandUsageReportServiceEndpointProviderBase;
 using CostandUsageReportServiceEndpointProvider = Aws::CostandUsageReportService::Endpoint::CostandUsageReportServiceEndpointProvider;

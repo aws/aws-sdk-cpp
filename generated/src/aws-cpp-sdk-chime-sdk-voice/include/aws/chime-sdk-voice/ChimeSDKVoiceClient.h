@@ -60,27 +60,6 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonCli
                       const Aws::ChimeSDKVoice::ChimeSDKVoiceClientConfiguration& clientConfiguration =
                           Aws::ChimeSDKVoice::ChimeSDKVoiceClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  ChimeSDKVoiceClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  ChimeSDKVoiceClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  ChimeSDKVoiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~ChimeSDKVoiceClient();
 
   /**
@@ -2628,7 +2607,6 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&ChimeSDKVoiceClient::ValidateE911Address, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<ChimeSDKVoiceEndpointProviderBase>& accessEndpointProvider();
 
  private:

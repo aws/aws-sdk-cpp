@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codedeploy/CodeDeployClient.h>
+#include <aws/codedeploy/CodeDeployClientConfiguration.h>
 #include <aws/codedeploy/CodeDeployClientPagination.h>
 #include <aws/codedeploy/CodeDeployEndpointProvider.h>
 #include <aws/codedeploy/CodeDeployErrorMarshaller.h>

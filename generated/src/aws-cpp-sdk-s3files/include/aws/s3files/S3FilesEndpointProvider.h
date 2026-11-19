@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/s3files/S3FilesClientConfiguration.h>
 #include <aws/s3files/S3Files_EXPORTS.h>
 
 namespace Aws {
 namespace S3Files {
 namespace Endpoint {
+using S3FilesClientConfiguration = Aws::S3Files::S3FilesClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using S3FilesClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using S3FilesClientConfiguration = Aws::Client::GenericClientConfiguration;
-using S3FilesBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_S3FILES_API S3FilesBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~S3FilesBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const S3FilesClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const S3FilesClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const S3FilesClientConfiguration& config);
+};
 
 /**
  * The type for the S3Files Client Endpoint Provider.
@@ -34,6 +43,24 @@ using S3FilesEndpointProviderBase =
 using S3FilesDefaultEpProviderBase =
     BDDEndpointProvider<S3FilesClientConfiguration, S3FilesBuiltInParameters, S3FilesClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace S3Files
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_S3FILES_EXTERN template class AWS_S3FILES_API
+    Aws::Endpoint::EndpointProviderBase<S3Files::Endpoint::S3FilesClientConfiguration, S3Files::Endpoint::S3FilesBuiltInParameters,
+                                        S3Files::Endpoint::S3FilesClientContextParameters>;
+
+AWS_S3FILES_EXTERN template class AWS_S3FILES_API
+    Aws::Endpoint::BDDEndpointProvider<S3Files::Endpoint::S3FilesClientConfiguration, S3Files::Endpoint::S3FilesBuiltInParameters,
+                                       S3Files::Endpoint::S3FilesClientContextParameters>;
+}  // namespace Endpoint
+
+namespace S3Files {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

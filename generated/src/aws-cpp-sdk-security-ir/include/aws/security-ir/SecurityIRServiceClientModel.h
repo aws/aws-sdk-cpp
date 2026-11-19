@@ -73,7 +73,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SecurityIR {
-using SecurityIRClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SecurityIREndpointProviderBase = Aws::SecurityIR::Endpoint::SecurityIREndpointProviderBase;
 using SecurityIREndpointProvider = Aws::SecurityIR::Endpoint::SecurityIREndpointProvider;
 

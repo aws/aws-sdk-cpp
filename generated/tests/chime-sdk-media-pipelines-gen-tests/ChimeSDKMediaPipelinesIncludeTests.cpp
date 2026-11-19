@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesClient.h>
+#include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesClientConfiguration.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesClientPagination.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesEndpointProvider.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesErrorMarshaller.h>

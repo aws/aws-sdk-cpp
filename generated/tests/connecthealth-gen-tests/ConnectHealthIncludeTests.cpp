@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/connecthealth/ConnectHealthClient.h>
+#include <aws/connecthealth/ConnectHealthClientConfiguration.h>
 #include <aws/connecthealth/ConnectHealthClientPagination.h>
 #include <aws/connecthealth/ConnectHealthEndpointProvider.h>
 #include <aws/connecthealth/ConnectHealthErrorMarshaller.h>

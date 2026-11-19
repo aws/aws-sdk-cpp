@@ -36,8 +36,6 @@ TEST_F(DirectoryServiceDataSmokeTestSuite, DescribeGroupFailure )
 {
     Aws::DirectoryServiceData::DirectoryServiceDataClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<DirectoryServiceDataClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -51,8 +49,6 @@ TEST_F(DirectoryServiceDataSmokeTestSuite, DescribeUserFailure )
 {
     Aws::DirectoryServiceData::DirectoryServiceDataClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<DirectoryServiceDataClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

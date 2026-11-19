@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationClient.h>
+#include <aws/compute-optimizer-automation/ComputeOptimizerAutomationClientConfiguration.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationClientPagination.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationEndpointProvider.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationErrorMarshaller.h>

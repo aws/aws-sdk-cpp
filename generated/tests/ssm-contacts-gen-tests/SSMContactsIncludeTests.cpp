@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ssm-contacts/SSMContactsClient.h>
+#include <aws/ssm-contacts/SSMContactsClientConfiguration.h>
 #include <aws/ssm-contacts/SSMContactsClientPagination.h>
 #include <aws/ssm-contacts/SSMContactsEndpointProvider.h>
 #include <aws/ssm-contacts/SSMContactsErrorMarshaller.h>

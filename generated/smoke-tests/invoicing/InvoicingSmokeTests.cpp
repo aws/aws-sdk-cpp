@@ -34,8 +34,6 @@ TEST_F(InvoicingSmokeTestSuite, ListInvoiceUnitsSuccess )
 {
     Aws::Invoicing::InvoicingClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<InvoicingClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

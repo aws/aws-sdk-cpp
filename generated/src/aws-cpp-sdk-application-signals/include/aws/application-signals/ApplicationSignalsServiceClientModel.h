@@ -80,7 +80,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ApplicationSignals {
-using ApplicationSignalsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ApplicationSignalsEndpointProviderBase = Aws::ApplicationSignals::Endpoint::ApplicationSignalsEndpointProviderBase;
 using ApplicationSignalsEndpointProvider = Aws::ApplicationSignals::Endpoint::ApplicationSignalsEndpointProvider;
 

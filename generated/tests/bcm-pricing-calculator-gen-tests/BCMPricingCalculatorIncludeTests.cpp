@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorClient.h>
+#include <aws/bcm-pricing-calculator/BCMPricingCalculatorClientConfiguration.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorClientPagination.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorEndpointProvider.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorErrorMarshaller.h>

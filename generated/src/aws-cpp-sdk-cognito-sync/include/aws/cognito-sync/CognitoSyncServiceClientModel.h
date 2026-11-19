@@ -64,7 +64,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CognitoSync {
-using CognitoSyncClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CognitoSyncEndpointProviderBase = Aws::CognitoSync::Endpoint::CognitoSyncEndpointProviderBase;
 using CognitoSyncEndpointProvider = Aws::CognitoSync::Endpoint::CognitoSyncEndpointProvider;
 

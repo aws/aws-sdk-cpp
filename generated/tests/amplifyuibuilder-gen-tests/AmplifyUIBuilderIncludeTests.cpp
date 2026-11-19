@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/amplifyuibuilder/AmplifyUIBuilderClient.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilderClientConfiguration.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderClientPagination.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderEndpointProvider.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderErrorMarshaller.h>

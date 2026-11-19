@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/continuum/ContinuumClient.h>
+#include <aws/continuum/ContinuumClientConfiguration.h>
 #include <aws/continuum/ContinuumClientPagination.h>
 #include <aws/continuum/ContinuumEndpointProvider.h>
 #include <aws/continuum/ContinuumErrorMarshaller.h>

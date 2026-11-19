@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/docdb/DocDBClient.h>
+#include <aws/docdb/DocDBClientConfiguration.h>
 #include <aws/docdb/DocDBClientPagination.h>
 #include <aws/docdb/DocDBEndpointProvider.h>
 #include <aws/docdb/DocDBErrorMarshaller.h>

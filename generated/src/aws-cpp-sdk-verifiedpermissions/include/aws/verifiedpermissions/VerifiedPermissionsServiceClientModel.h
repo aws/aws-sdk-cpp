@@ -82,7 +82,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace VerifiedPermissions {
-using VerifiedPermissionsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using VerifiedPermissionsEndpointProviderBase = Aws::VerifiedPermissions::Endpoint::VerifiedPermissionsEndpointProviderBase;
 using VerifiedPermissionsEndpointProvider = Aws::VerifiedPermissions::Endpoint::VerifiedPermissionsEndpointProvider;
 

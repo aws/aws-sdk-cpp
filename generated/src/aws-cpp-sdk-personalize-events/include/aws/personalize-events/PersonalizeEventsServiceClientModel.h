@@ -47,7 +47,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace PersonalizeEvents {
-using PersonalizeEventsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PersonalizeEventsEndpointProviderBase = Aws::PersonalizeEvents::Endpoint::PersonalizeEventsEndpointProviderBase;
 using PersonalizeEventsEndpointProvider = Aws::PersonalizeEvents::Endpoint::PersonalizeEventsEndpointProvider;
 

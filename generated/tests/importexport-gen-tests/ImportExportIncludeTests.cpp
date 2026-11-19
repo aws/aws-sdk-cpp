@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/importexport/ImportExportClient.h>
+#include <aws/importexport/ImportExportClientConfiguration.h>
 #include <aws/importexport/ImportExportEndpointProvider.h>
 #include <aws/importexport/ImportExportErrorMarshaller.h>
 #include <aws/importexport/ImportExportErrors.h>

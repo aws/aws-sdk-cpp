@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sms-voice/PinpointSMSVoiceClientConfiguration.h>
 #include <aws/sms-voice/PinpointSMSVoice_EXPORTS.h>
 
 namespace Aws {
 namespace PinpointSMSVoice {
 namespace Endpoint {
+using PinpointSMSVoiceClientConfiguration = Aws::PinpointSMSVoice::PinpointSMSVoiceClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using PinpointSMSVoiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PinpointSMSVoiceClientConfiguration = Aws::Client::GenericClientConfiguration;
-using PinpointSMSVoiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_PINPOINTSMSVOICE_API PinpointSMSVoiceBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~PinpointSMSVoiceBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const PinpointSMSVoiceClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const PinpointSMSVoiceClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const PinpointSMSVoiceClientConfiguration& config);
+};
 
 /**
  * The type for the PinpointSMSVoice Client Endpoint Provider.
@@ -34,6 +43,24 @@ using PinpointSMSVoiceEndpointProviderBase =
 using PinpointSMSVoiceDefaultEpProviderBase =
     BDDEndpointProvider<PinpointSMSVoiceClientConfiguration, PinpointSMSVoiceBuiltInParameters, PinpointSMSVoiceClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace PinpointSMSVoice
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_PINPOINTSMSVOICE_EXTERN template class AWS_PINPOINTSMSVOICE_API Aws::Endpoint::EndpointProviderBase<
+    PinpointSMSVoice::Endpoint::PinpointSMSVoiceClientConfiguration, PinpointSMSVoice::Endpoint::PinpointSMSVoiceBuiltInParameters,
+    PinpointSMSVoice::Endpoint::PinpointSMSVoiceClientContextParameters>;
+
+AWS_PINPOINTSMSVOICE_EXTERN template class AWS_PINPOINTSMSVOICE_API Aws::Endpoint::BDDEndpointProvider<
+    PinpointSMSVoice::Endpoint::PinpointSMSVoiceClientConfiguration, PinpointSMSVoice::Endpoint::PinpointSMSVoiceBuiltInParameters,
+    PinpointSMSVoice::Endpoint::PinpointSMSVoiceClientContextParameters>;
+}  // namespace Endpoint
+
+namespace PinpointSMSVoice {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

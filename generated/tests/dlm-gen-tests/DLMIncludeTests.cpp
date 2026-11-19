@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/dlm/DLMClient.h>
+#include <aws/dlm/DLMClientConfiguration.h>
 #include <aws/dlm/DLMEndpointProvider.h>
 #include <aws/dlm/DLMErrorMarshaller.h>
 #include <aws/dlm/DLMErrors.h>

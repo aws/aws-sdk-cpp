@@ -69,7 +69,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Translate {
-using TranslateClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TranslateEndpointProviderBase = Aws::Translate::Endpoint::TranslateEndpointProviderBase;
 using TranslateEndpointProvider = Aws::Translate::Endpoint::TranslateEndpointProvider;
 

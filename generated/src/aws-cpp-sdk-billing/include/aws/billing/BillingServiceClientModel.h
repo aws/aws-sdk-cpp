@@ -82,7 +82,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Billing {
-using BillingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BillingEndpointProviderBase = Aws::Billing::Endpoint::BillingEndpointProviderBase;
 using BillingEndpointProvider = Aws::Billing::Endpoint::BillingEndpointProvider;
 

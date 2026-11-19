@@ -78,7 +78,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Appflow {
-using AppflowClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppflowEndpointProviderBase = Aws::Appflow::Endpoint::AppflowEndpointProviderBase;
 using AppflowEndpointProvider = Aws::Appflow::Endpoint::AppflowEndpointProvider;
 

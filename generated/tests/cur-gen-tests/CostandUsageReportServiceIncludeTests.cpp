@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cur/CostandUsageReportServiceClient.h>
+#include <aws/cur/CostandUsageReportServiceClientConfiguration.h>
 #include <aws/cur/CostandUsageReportServiceClientPagination.h>
 #include <aws/cur/CostandUsageReportServiceEndpointProvider.h>
 #include <aws/cur/CostandUsageReportServiceErrorMarshaller.h>

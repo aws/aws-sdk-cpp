@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/vpc-lattice/VPCLatticeClient.h>
+#include <aws/vpc-lattice/VPCLatticeClientConfiguration.h>
 #include <aws/vpc-lattice/VPCLatticeClientPagination.h>
 #include <aws/vpc-lattice/VPCLatticeEndpointProvider.h>
 #include <aws/vpc-lattice/VPCLatticeErrorMarshaller.h>

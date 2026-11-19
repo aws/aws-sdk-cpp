@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/interconnect/InterconnectClient.h>
+#include <aws/interconnect/InterconnectClientConfiguration.h>
 #include <aws/interconnect/InterconnectClientPagination.h>
 #include <aws/interconnect/InterconnectEndpointProvider.h>
 #include <aws/interconnect/InterconnectErrorMarshaller.h>

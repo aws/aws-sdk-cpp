@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ivs-realtime/IvsrealtimeClientConfiguration.h>
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 
 namespace Aws {
 namespace ivsrealtime {
 namespace Endpoint {
+using IvsrealtimeClientConfiguration = Aws::ivsrealtime::IvsrealtimeClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using IvsrealtimeClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IvsrealtimeClientConfiguration = Aws::Client::GenericClientConfiguration;
-using IvsrealtimeBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_IVSREALTIME_API IvsrealtimeBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~IvsrealtimeBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const IvsrealtimeClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const IvsrealtimeClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const IvsrealtimeClientConfiguration& config);
+};
 
 /**
  * The type for the ivsrealtime Client Endpoint Provider.
@@ -34,6 +43,24 @@ using IvsrealtimeEndpointProviderBase =
 using IvsrealtimeDefaultEpProviderBase =
     BDDEndpointProvider<IvsrealtimeClientConfiguration, IvsrealtimeBuiltInParameters, IvsrealtimeClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace ivsrealtime
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_IVSREALTIME_EXTERN template class AWS_IVSREALTIME_API Aws::Endpoint::EndpointProviderBase<
+    ivsrealtime::Endpoint::IvsrealtimeClientConfiguration, ivsrealtime::Endpoint::IvsrealtimeBuiltInParameters,
+    ivsrealtime::Endpoint::IvsrealtimeClientContextParameters>;
+
+AWS_IVSREALTIME_EXTERN template class AWS_IVSREALTIME_API Aws::Endpoint::BDDEndpointProvider<
+    ivsrealtime::Endpoint::IvsrealtimeClientConfiguration, ivsrealtime::Endpoint::IvsrealtimeBuiltInParameters,
+    ivsrealtime::Endpoint::IvsrealtimeClientContextParameters>;
+}  // namespace Endpoint
+
+namespace ivsrealtime {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

@@ -30,13 +30,23 @@ TimestreamWriteEndpointProvider::TimestreamWriteEndpointProvider()
 
 void TimestreamWriteBuiltInParameters::SetFromClientConfiguration(const TimestreamWriteClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const TimestreamWriteClientConfiguration::BaseClientConfigClass&>(config));
+  SetServiceSpecificParameters(config);
 }
 
 void TimestreamWriteBuiltInParameters::SetFromClientConfiguration(const TimestreamWriteClientConfiguration& config,
                                                                   const Aws::String& serviceName) {
   SetFromClientConfiguration(static_cast<const TimestreamWriteClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+  SetServiceSpecificParameters(config);
 }
 
+void TimestreamWriteBuiltInParameters::SetServiceSpecificParameters(const TimestreamWriteClientConfiguration& config) {
+  if (config.useFIPS) {
+    SetBooleanParameter("UseFIPS", true);
+  }
+  if (config.useDualStack) {
+    SetBooleanParameter("UseDualStack", true);
+  }
+}
 }  // namespace Endpoint
 }  // namespace TimestreamWrite
 }  // namespace Aws

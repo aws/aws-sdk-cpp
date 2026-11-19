@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/detective/DetectiveClientConfiguration.h>
 #include <aws/detective/Detective_EXPORTS.h>
 
 namespace Aws {
 namespace Detective {
 namespace Endpoint {
+using DetectiveClientConfiguration = Aws::Detective::DetectiveClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using DetectiveClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DetectiveClientConfiguration = Aws::Client::GenericClientConfiguration;
-using DetectiveBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_DETECTIVE_API DetectiveBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~DetectiveBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const DetectiveClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const DetectiveClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const DetectiveClientConfiguration& config);
+};
 
 /**
  * The type for the Detective Client Endpoint Provider.
@@ -34,6 +43,24 @@ using DetectiveEndpointProviderBase =
 using DetectiveDefaultEpProviderBase =
     BDDEndpointProvider<DetectiveClientConfiguration, DetectiveBuiltInParameters, DetectiveClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace Detective
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_DETECTIVE_EXTERN template class AWS_DETECTIVE_API
+    Aws::Endpoint::EndpointProviderBase<Detective::Endpoint::DetectiveClientConfiguration, Detective::Endpoint::DetectiveBuiltInParameters,
+                                        Detective::Endpoint::DetectiveClientContextParameters>;
+
+AWS_DETECTIVE_EXTERN template class AWS_DETECTIVE_API
+    Aws::Endpoint::BDDEndpointProvider<Detective::Endpoint::DetectiveClientConfiguration, Detective::Endpoint::DetectiveBuiltInParameters,
+                                       Detective::Endpoint::DetectiveClientContextParameters>;
+}  // namespace Endpoint
+
+namespace Detective {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

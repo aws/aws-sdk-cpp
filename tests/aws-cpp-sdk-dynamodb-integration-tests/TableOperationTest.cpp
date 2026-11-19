@@ -175,7 +175,7 @@ public:
         Aws::Http::TransferLibType transferType = Aws::Http::TransferLibType::DEFAULT_CLIENT;
         m_limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
         // Create a client
-        ClientConfiguration config;
+        Aws::DynamoDB::DynamoDBClientConfiguration config;
         config.endpointOverride = ENDPOINT_OVERRIDE;
         config.scheme = Scheme::HTTPS;
         config.connectTimeoutMs = 30000;
@@ -184,7 +184,6 @@ public:
         config.writeRateLimiter = m_limiter;
         config.httpLibOverride = transferType;
         config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
-        config.disableExpectHeader = true;
         config.enableHttpClientTrace = true;
 
         //to test proxy functionality, uncomment the next two lines.
@@ -1653,7 +1652,7 @@ TEST_F(TableOperationTest, TestWriteDataApi) {
 
 TEST_F(TableOperationTest, AsyncHandlerHoldingTheLastClientReferenceCompletes)
 {
-    Aws::Client::ClientConfiguration config;
+    Aws::DynamoDB::DynamoDBClientConfiguration config;
     config.region = "us-east-1";
     auto destroyed = std::make_shared<std::promise<void>>();
     std::shared_ptr<DynamoDBClient> client(Aws::New<DynamoDBClient>(ALLOCATION_TAG, config), [destroyed](DynamoDBClient* toDelete) {
@@ -1675,7 +1674,7 @@ TEST_F(TableOperationTest, AsyncHandlerDestroyingTheClientOwnerCompletes)
         std::shared_ptr<DynamoDBClient> client;
     };
 
-    Aws::Client::ClientConfiguration config;
+    Aws::DynamoDB::DynamoDBClientConfiguration config;
     config.region = "us-east-1";
     auto destroyed = std::make_shared<std::promise<void>>();
     auto* session = Aws::New<Session>(ALLOCATION_TAG);

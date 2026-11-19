@@ -128,7 +128,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace VPCLattice {
-using VPCLatticeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using VPCLatticeEndpointProviderBase = Aws::VPCLattice::Endpoint::VPCLatticeEndpointProviderBase;
 using VPCLatticeEndpointProvider = Aws::VPCLattice::Endpoint::VPCLatticeEndpointProvider;
 

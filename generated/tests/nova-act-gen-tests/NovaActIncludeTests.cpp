@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/nova-act/NovaActClient.h>
+#include <aws/nova-act/NovaActClientConfiguration.h>
 #include <aws/nova-act/NovaActClientPagination.h>
 #include <aws/nova-act/NovaActEndpointProvider.h>
 #include <aws/nova-act/NovaActErrorMarshaller.h>

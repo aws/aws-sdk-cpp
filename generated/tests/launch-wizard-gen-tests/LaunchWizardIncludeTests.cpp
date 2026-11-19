@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/launch-wizard/LaunchWizardClient.h>
+#include <aws/launch-wizard/LaunchWizardClientConfiguration.h>
 #include <aws/launch-wizard/LaunchWizardClientPagination.h>
 #include <aws/launch-wizard/LaunchWizardEndpointProvider.h>
 #include <aws/launch-wizard/LaunchWizardErrorMarshaller.h>

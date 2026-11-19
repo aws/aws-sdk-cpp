@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/partnercentral-account/PartnerCentralAccountClient.h>
+#include <aws/partnercentral-account/PartnerCentralAccountClientConfiguration.h>
 #include <aws/partnercentral-account/PartnerCentralAccountClientPagination.h>
 #include <aws/partnercentral-account/PartnerCentralAccountEndpointProvider.h>
 #include <aws/partnercentral-account/PartnerCentralAccountErrorMarshaller.h>

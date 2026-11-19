@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sso-admin/SSOAdminClient.h>
+#include <aws/sso-admin/SSOAdminClientConfiguration.h>
 #include <aws/sso-admin/SSOAdminClientPagination.h>
 #include <aws/sso-admin/SSOAdminEndpointProvider.h>
 #include <aws/sso-admin/SSOAdminErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/agent-registry/AgentRegistryClient.h>
+#include <aws/agent-registry/AgentRegistryClientConfiguration.h>
 #include <aws/agent-registry/AgentRegistryClientPagination.h>
 #include <aws/agent-registry/AgentRegistryEndpointProvider.h>
 #include <aws/agent-registry/AgentRegistryErrorMarshaller.h>

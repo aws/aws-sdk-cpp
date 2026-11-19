@@ -72,7 +72,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DAX {
-using DAXClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DAXEndpointProviderBase = Aws::DAX::Endpoint::DAXEndpointProviderBase;
 using DAXEndpointProvider = Aws::DAX::Endpoint::DAXEndpointProvider;
 

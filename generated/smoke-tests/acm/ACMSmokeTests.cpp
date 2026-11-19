@@ -35,8 +35,6 @@ TEST_F(ACMSmokeTestSuite, GetCertificateFailure )
 {
     Aws::ACM::ACMClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<ACMClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -49,8 +47,6 @@ TEST_F(ACMSmokeTestSuite, ListCertificatesSuccess )
 {
     Aws::ACM::ACMClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<ACMClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

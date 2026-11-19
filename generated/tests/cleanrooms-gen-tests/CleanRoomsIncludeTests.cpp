@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cleanrooms/CleanRoomsClient.h>
+#include <aws/cleanrooms/CleanRoomsClientConfiguration.h>
 #include <aws/cleanrooms/CleanRoomsClientPagination.h>
 #include <aws/cleanrooms/CleanRoomsEndpointProvider.h>
 #include <aws/cleanrooms/CleanRoomsErrorMarshaller.h>

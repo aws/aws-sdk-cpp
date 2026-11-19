@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2Client.h>
+#include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2ClientConfiguration.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2EndpointProvider.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2ErrorMarshaller.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2Errors.h>

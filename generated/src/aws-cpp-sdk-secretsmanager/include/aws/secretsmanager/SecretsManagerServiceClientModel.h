@@ -71,7 +71,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SecretsManager {
-using SecretsManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SecretsManagerEndpointProviderBase = Aws::SecretsManager::Endpoint::SecretsManagerEndpointProviderBase;
 using SecretsManagerEndpointProvider = Aws::SecretsManager::Endpoint::SecretsManagerEndpointProvider;
 

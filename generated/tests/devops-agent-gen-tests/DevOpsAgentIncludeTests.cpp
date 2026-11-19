@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/devops-agent/DevOpsAgentClient.h>
+#include <aws/devops-agent/DevOpsAgentClientConfiguration.h>
 #include <aws/devops-agent/DevOpsAgentClientPagination.h>
 #include <aws/devops-agent/DevOpsAgentEndpointProvider.h>
 #include <aws/devops-agent/DevOpsAgentErrorMarshaller.h>

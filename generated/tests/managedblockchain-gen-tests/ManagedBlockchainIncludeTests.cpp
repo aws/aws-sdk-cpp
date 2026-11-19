@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/managedblockchain/ManagedBlockchainClient.h>
+#include <aws/managedblockchain/ManagedBlockchainClientConfiguration.h>
 #include <aws/managedblockchain/ManagedBlockchainClientPagination.h>
 #include <aws/managedblockchain/ManagedBlockchainEndpointProvider.h>
 #include <aws/managedblockchain/ManagedBlockchainErrorMarshaller.h>

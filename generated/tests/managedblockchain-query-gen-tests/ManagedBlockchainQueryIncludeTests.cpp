@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/managedblockchain-query/ManagedBlockchainQueryClient.h>
+#include <aws/managedblockchain-query/ManagedBlockchainQueryClientConfiguration.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQueryClientPagination.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQueryEndpointProvider.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQueryErrorMarshaller.h>

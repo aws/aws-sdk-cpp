@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/networkmonitor/NetworkMonitorClient.h>
+#include <aws/networkmonitor/NetworkMonitorClientConfiguration.h>
 #include <aws/networkmonitor/NetworkMonitorClientPagination.h>
 #include <aws/networkmonitor/NetworkMonitorEndpointProvider.h>
 #include <aws/networkmonitor/NetworkMonitorErrorMarshaller.h>

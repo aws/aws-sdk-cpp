@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/repostspace/RepostspaceClient.h>
+#include <aws/repostspace/RepostspaceClientConfiguration.h>
 #include <aws/repostspace/RepostspaceClientPagination.h>
 #include <aws/repostspace/RepostspaceEndpointProvider.h>
 #include <aws/repostspace/RepostspaceErrorMarshaller.h>

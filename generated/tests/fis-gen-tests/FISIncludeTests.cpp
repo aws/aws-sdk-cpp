@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/fis/FISClient.h>
+#include <aws/fis/FISClientConfiguration.h>
 #include <aws/fis/FISClientPagination.h>
 #include <aws/fis/FISEndpointProvider.h>
 #include <aws/fis/FISErrorMarshaller.h>

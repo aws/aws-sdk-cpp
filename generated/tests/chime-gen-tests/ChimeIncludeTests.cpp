@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/chime/ChimeClient.h>
+#include <aws/chime/ChimeClientConfiguration.h>
 #include <aws/chime/ChimeClientPagination.h>
 #include <aws/chime/ChimeEndpointProvider.h>
 #include <aws/chime/ChimeErrorMarshaller.h>

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaClient.h>
+#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaClientConfiguration.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaClientPagination.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaEndpointProvider.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaErrorMarshaller.h>

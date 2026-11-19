@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ivs-realtime/IvsrealtimeClient.h>
+#include <aws/ivs-realtime/IvsrealtimeClientConfiguration.h>
 #include <aws/ivs-realtime/IvsrealtimeClientPagination.h>
 #include <aws/ivs-realtime/IvsrealtimeEndpointProvider.h>
 #include <aws/ivs-realtime/IvsrealtimeErrorMarshaller.h>

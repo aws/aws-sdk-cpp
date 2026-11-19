@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/location/LocationServiceClient.h>
+#include <aws/location/LocationServiceClientConfiguration.h>
 #include <aws/location/LocationServiceClientPagination.h>
 #include <aws/location/LocationServiceEndpointProvider.h>
 #include <aws/location/LocationServiceErrorMarshaller.h>

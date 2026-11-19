@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/uxc/UxcClient.h>
+#include <aws/uxc/UxcClientConfiguration.h>
 #include <aws/uxc/UxcClientPagination.h>
 #include <aws/uxc/UxcEndpointProvider.h>
 #include <aws/uxc/UxcErrorMarshaller.h>

@@ -50,7 +50,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Sustainability {
-using SustainabilityClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SustainabilityEndpointProviderBase = Aws::Sustainability::Endpoint::SustainabilityEndpointProviderBase;
 using SustainabilityEndpointProvider = Aws::Sustainability::Endpoint::SustainabilityEndpointProvider;
 

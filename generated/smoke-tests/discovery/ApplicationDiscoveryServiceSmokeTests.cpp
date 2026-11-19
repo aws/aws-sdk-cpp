@@ -34,8 +34,6 @@ TEST_F(ApplicationDiscoveryServiceSmokeTestSuite, DescribeAgentsSuccess )
 {
     Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<ApplicationDiscoveryServiceClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

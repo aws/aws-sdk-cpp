@@ -4,6 +4,9 @@
  */
 
 #include <aws/core/client/RequestCompression.h>
+#include <aws/core/config/AWSProfileConfigLoader.h>
+#include <aws/core/platform/Environment.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <algorithm>
@@ -334,4 +337,47 @@ Aws::Client::RequestCompression::uncompress(std::shared_ptr<Aws::IOStream> input
     AWS_UNREFERENCED_PARAM(input);     // silencing warning;
     return false;
 #endif
+}
+
+namespace {
+const char DISABLE_REQUEST_COMPRESSION_ENV_VAR[] = "DISABLE_REQUEST_COMPRESSION";
+const char DISABLE_REQUEST_COMPRESSION_CONFIG_VAR[] = "disable_request_compression";
+const char REQUEST_MIN_COMPRESSION_SIZE_BYTES_ENV_VAR[] = "REQUEST_MIN_COMPRESSION_SIZE_BYTES";
+const char REQUEST_MIN_COMPRESSION_SIZE_BYTES_CONFIG_VAR[] = "request_min_compression_size_bytes";
+}  // namespace
+
+Aws::Client::RequestCompressionConfig Aws::Client::LoadRequestCompressionConfigFromEnvOrProfile(const Aws::String& profileName)
+{
+    RequestCompressionConfig requestCompressionConfig;
+    Aws::String disableCompressionConfig = ClientConfiguration::LoadConfigFromEnvOrProfile(
+        DISABLE_REQUEST_COMPRESSION_ENV_VAR,
+        profileName,
+        DISABLE_REQUEST_COMPRESSION_CONFIG_VAR,
+        {"TRUE", "FALSE", "true", "false"},
+        "false"
+        );
+
+    if (Aws::Utils::StringUtils::ToLower(disableCompressionConfig.c_str())  == "true") {
+      requestCompressionConfig.useRequestCompression = Aws::Client::UseRequestCompression::DISABLE;
+      AWS_LOGSTREAM_DEBUG(AWS_REQUEST_COMPRESSION_LOG_TAG, "Request Compression disabled");
+    } else {
+      //Using default to true for forward compatibility in case new config is added but SDK is not updated.
+      requestCompressionConfig.useRequestCompression = Aws::Client::UseRequestCompression::ENABLE;
+      AWS_LOGSTREAM_DEBUG(AWS_REQUEST_COMPRESSION_LOG_TAG, "Request Compression enabled");
+    }
+
+    // Getting min request compression length
+    Aws::String minRequestCompressionString = Aws::Environment::GetEnv(REQUEST_MIN_COMPRESSION_SIZE_BYTES_ENV_VAR);
+    if (minRequestCompressionString.empty())
+    {
+      minRequestCompressionString = Aws::Config::GetCachedConfigValue(REQUEST_MIN_COMPRESSION_SIZE_BYTES_CONFIG_VAR);
+    }
+    if (!minRequestCompressionString.empty()) {
+      requestCompressionConfig.requestMinCompressionSizeBytes = static_cast<int>(Aws::Utils::StringUtils::ConvertToInt32(minRequestCompressionString.c_str()));
+      if (requestCompressionConfig.requestMinCompressionSizeBytes > 10485760) {
+        AWS_LOGSTREAM_ERROR(AWS_REQUEST_COMPRESSION_LOG_TAG, "ClientConfiguration for MinReqCompression is unsupported, received: " << requestCompressionConfig.requestMinCompressionSizeBytes);
+      }
+    }
+    AWS_LOGSTREAM_DEBUG(AWS_REQUEST_COMPRESSION_LOG_TAG, "ClientConfiguration will use MinReqCompression: " << requestCompressionConfig.requestMinCompressionSizeBytes);
+    return requestCompressionConfig;
 }

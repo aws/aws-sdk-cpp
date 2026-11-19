@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/agent-registry/AgentRegistryClientConfiguration.h>
 #include <aws/agent-registry/AgentRegistry_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,20 @@
 namespace Aws {
 namespace AgentRegistry {
 namespace Endpoint {
+using AgentRegistryClientConfiguration = Aws::AgentRegistry::AgentRegistryClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using AgentRegistryClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AgentRegistryClientConfiguration = Aws::Client::GenericClientConfiguration;
-using AgentRegistryBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_AGENTREGISTRY_API AgentRegistryBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~AgentRegistryBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const AgentRegistryClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const AgentRegistryClientConfiguration& config, const Aws::String& serviceName);
+};
 
 /**
  * The type for the AgentRegistry Client Endpoint Provider.
@@ -34,6 +40,24 @@ using AgentRegistryEndpointProviderBase =
 using AgentRegistryDefaultEpProviderBase =
     BDDEndpointProvider<AgentRegistryClientConfiguration, AgentRegistryBuiltInParameters, AgentRegistryClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace AgentRegistry
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_AGENTREGISTRY_EXTERN template class AWS_AGENTREGISTRY_API Aws::Endpoint::EndpointProviderBase<
+    AgentRegistry::Endpoint::AgentRegistryClientConfiguration, AgentRegistry::Endpoint::AgentRegistryBuiltInParameters,
+    AgentRegistry::Endpoint::AgentRegistryClientContextParameters>;
+
+AWS_AGENTREGISTRY_EXTERN template class AWS_AGENTREGISTRY_API Aws::Endpoint::BDDEndpointProvider<
+    AgentRegistry::Endpoint::AgentRegistryClientConfiguration, AgentRegistry::Endpoint::AgentRegistryBuiltInParameters,
+    AgentRegistry::Endpoint::AgentRegistryClientContextParameters>;
+}  // namespace Endpoint
+
+namespace AgentRegistry {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

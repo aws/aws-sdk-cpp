@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/simpledbv2/SimpleDBv2Client.h>
+#include <aws/simpledbv2/SimpleDBv2ClientConfiguration.h>
 #include <aws/simpledbv2/SimpleDBv2ClientPagination.h>
 #include <aws/simpledbv2/SimpleDBv2EndpointProvider.h>
 #include <aws/simpledbv2/SimpleDBv2ErrorMarshaller.h>

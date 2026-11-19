@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/sns/SNSClient.h>
+#include <aws/sns/SNSClientConfiguration.h>
 #include <aws/sns/SNSClientPagination.h>
 #include <aws/sns/SNSEndpointProvider.h>
 #include <aws/sns/SNSErrorMarshaller.h>

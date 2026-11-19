@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pipes/PipesClient.h>
+#include <aws/pipes/PipesClientConfiguration.h>
 #include <aws/pipes/PipesClientPagination.h>
 #include <aws/pipes/PipesEndpointProvider.h>
 #include <aws/pipes/PipesErrorMarshaller.h>

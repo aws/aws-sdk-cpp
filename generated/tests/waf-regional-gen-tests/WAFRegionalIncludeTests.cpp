@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/waf-regional/WAFRegionalClient.h>
+#include <aws/waf-regional/WAFRegionalClientConfiguration.h>
 #include <aws/waf-regional/WAFRegionalEndpointProvider.h>
 #include <aws/waf-regional/WAFRegionalErrorMarshaller.h>
 #include <aws/waf-regional/WAFRegionalErrors.h>

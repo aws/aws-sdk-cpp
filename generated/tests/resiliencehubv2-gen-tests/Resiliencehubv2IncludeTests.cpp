@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/resiliencehubv2/Resiliencehubv2Client.h>
+#include <aws/resiliencehubv2/Resiliencehubv2ClientConfiguration.h>
 #include <aws/resiliencehubv2/Resiliencehubv2ClientPagination.h>
 #include <aws/resiliencehubv2/Resiliencehubv2EndpointProvider.h>
 #include <aws/resiliencehubv2/Resiliencehubv2ErrorMarshaller.h>

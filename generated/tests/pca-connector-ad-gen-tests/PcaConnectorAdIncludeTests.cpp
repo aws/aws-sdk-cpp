@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/pca-connector-ad/PcaConnectorAdClient.h>
+#include <aws/pca-connector-ad/PcaConnectorAdClientConfiguration.h>
 #include <aws/pca-connector-ad/PcaConnectorAdClientPagination.h>
 #include <aws/pca-connector-ad/PcaConnectorAdEndpointProvider.h>
 #include <aws/pca-connector-ad/PcaConnectorAdErrorMarshaller.h>

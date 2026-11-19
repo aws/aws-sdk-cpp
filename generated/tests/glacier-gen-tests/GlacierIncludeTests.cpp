@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/glacier/GlacierClient.h>
+#include <aws/glacier/GlacierClientConfiguration.h>
 #include <aws/glacier/GlacierClientPagination.h>
 #include <aws/glacier/GlacierEndpointProvider.h>
 #include <aws/glacier/GlacierErrorMarshaller.h>

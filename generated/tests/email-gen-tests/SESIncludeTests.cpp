@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/email/SESClient.h>
+#include <aws/email/SESClientConfiguration.h>
 #include <aws/email/SESClientPagination.h>
 #include <aws/email/SESEndpointProvider.h>
 #include <aws/email/SESErrorMarshaller.h>

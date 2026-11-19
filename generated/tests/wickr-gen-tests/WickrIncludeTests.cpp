@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/wickr/WickrClient.h>
+#include <aws/wickr/WickrClientConfiguration.h>
 #include <aws/wickr/WickrClientPagination.h>
 #include <aws/wickr/WickrEndpointProvider.h>
 #include <aws/wickr/WickrErrorMarshaller.h>

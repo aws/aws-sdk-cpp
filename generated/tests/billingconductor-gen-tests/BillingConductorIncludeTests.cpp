@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/billingconductor/BillingConductorClient.h>
+#include <aws/billingconductor/BillingConductorClientConfiguration.h>
 #include <aws/billingconductor/BillingConductorClientPagination.h>
 #include <aws/billingconductor/BillingConductorEndpointProvider.h>
 #include <aws/billingconductor/BillingConductorErrorMarshaller.h>

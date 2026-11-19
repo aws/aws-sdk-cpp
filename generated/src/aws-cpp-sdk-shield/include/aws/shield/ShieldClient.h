@@ -58,27 +58,6 @@ class AWS_SHIELD_API ShieldClient : public Aws::Client::AWSJsonClient,
                std::shared_ptr<ShieldEndpointProviderBase> endpointProvider = nullptr,
                const Aws::Shield::ShieldClientConfiguration& clientConfiguration = Aws::Shield::ShieldClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  ShieldClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  ShieldClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  ShieldClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-               const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~ShieldClient();
 
   /**
@@ -1188,7 +1167,6 @@ class AWS_SHIELD_API ShieldClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&ShieldClient::UpdateSubscription, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<ShieldEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/datapipeline/DataPipelineClient.h>
+#include <aws/datapipeline/DataPipelineClientConfiguration.h>
 #include <aws/datapipeline/DataPipelineClientPagination.h>
 #include <aws/datapipeline/DataPipelineEndpointProvider.h>
 #include <aws/datapipeline/DataPipelineErrorMarshaller.h>

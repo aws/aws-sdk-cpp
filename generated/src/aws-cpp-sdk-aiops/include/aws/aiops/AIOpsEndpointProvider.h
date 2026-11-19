@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/aiops/AIOpsClientConfiguration.h>
 #include <aws/aiops/AIOps_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace AIOps {
 namespace Endpoint {
+using AIOpsClientConfiguration = Aws::AIOps::AIOpsClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using AIOpsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AIOpsClientConfiguration = Aws::Client::GenericClientConfiguration;
-using AIOpsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_AIOPS_API AIOpsBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~AIOpsBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const AIOpsClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const AIOpsClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const AIOpsClientConfiguration& config);
+};
 
 /**
  * The type for the AIOps Client Endpoint Provider.
@@ -32,6 +41,22 @@ using AIOpsEndpointProviderBase = EndpointProviderBase<AIOpsClientConfiguration,
 
 using AIOpsDefaultEpProviderBase = BDDEndpointProvider<AIOpsClientConfiguration, AIOpsBuiltInParameters, AIOpsClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace AIOps
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_AIOPS_EXTERN template class AWS_AIOPS_API Aws::Endpoint::EndpointProviderBase<
+    AIOps::Endpoint::AIOpsClientConfiguration, AIOps::Endpoint::AIOpsBuiltInParameters, AIOps::Endpoint::AIOpsClientContextParameters>;
+
+AWS_AIOPS_EXTERN template class AWS_AIOPS_API Aws::Endpoint::BDDEndpointProvider<
+    AIOps::Endpoint::AIOpsClientConfiguration, AIOps::Endpoint::AIOpsBuiltInParameters, AIOps::Endpoint::AIOpsClientContextParameters>;
+}  // namespace Endpoint
+
+namespace AIOps {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

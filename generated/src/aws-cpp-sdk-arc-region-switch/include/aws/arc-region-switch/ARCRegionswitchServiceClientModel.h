@@ -71,7 +71,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ARCRegionswitch {
-using ARCRegionswitchClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ARCRegionswitchEndpointProviderBase = Aws::ARCRegionswitch::Endpoint::ARCRegionswitchEndpointProviderBase;
 using ARCRegionswitchEndpointProvider = Aws::ARCRegionswitch::Endpoint::ARCRegionswitchEndpointProvider;
 

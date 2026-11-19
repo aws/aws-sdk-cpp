@@ -30,13 +30,23 @@ BedrockRuntimeEndpointProvider::BedrockRuntimeEndpointProvider()
 
 void BedrockRuntimeBuiltInParameters::SetFromClientConfiguration(const BedrockRuntimeClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const BedrockRuntimeClientConfiguration::BaseClientConfigClass&>(config));
+  SetServiceSpecificParameters(config);
 }
 
 void BedrockRuntimeBuiltInParameters::SetFromClientConfiguration(const BedrockRuntimeClientConfiguration& config,
                                                                  const Aws::String& serviceName) {
   SetFromClientConfiguration(static_cast<const BedrockRuntimeClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+  SetServiceSpecificParameters(config);
 }
 
+void BedrockRuntimeBuiltInParameters::SetServiceSpecificParameters(const BedrockRuntimeClientConfiguration& config) {
+  if (config.useFIPS) {
+    SetBooleanParameter("UseFIPS", true);
+  }
+  if (config.useDualStack) {
+    SetBooleanParameter("UseDualStack", true);
+  }
+}
 }  // namespace Endpoint
 }  // namespace BedrockRuntime
 }  // namespace Aws

@@ -12,7 +12,7 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonIntEnums, AwsJson11IntEnums) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

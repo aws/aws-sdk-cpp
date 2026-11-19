@@ -55,27 +55,6 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
               std::shared_ptr<KafkaEndpointProviderBase> endpointProvider = nullptr,
               const Aws::Kafka::KafkaClientConfiguration& clientConfiguration = Aws::Kafka::KafkaClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  KafkaClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  KafkaClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  KafkaClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-              const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~KafkaClient();
 
   /**
@@ -1924,7 +1903,6 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&KafkaClient::UpdateTopic, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<KafkaEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/medical-imaging/MedicalImagingClient.h>
+#include <aws/medical-imaging/MedicalImagingClientConfiguration.h>
 #include <aws/medical-imaging/MedicalImagingClientPagination.h>
 #include <aws/medical-imaging/MedicalImagingEndpointProvider.h>
 #include <aws/medical-imaging/MedicalImagingErrorMarshaller.h>

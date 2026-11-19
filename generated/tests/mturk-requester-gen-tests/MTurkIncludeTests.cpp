@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mturk-requester/MTurkClient.h>
+#include <aws/mturk-requester/MTurkClientConfiguration.h>
 #include <aws/mturk-requester/MTurkClientPagination.h>
 #include <aws/mturk-requester/MTurkEndpointProvider.h>
 #include <aws/mturk-requester/MTurkErrorMarshaller.h>

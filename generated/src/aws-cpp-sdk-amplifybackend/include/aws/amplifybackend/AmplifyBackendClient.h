@@ -56,27 +56,6 @@ class AWS_AMPLIFYBACKEND_API AmplifyBackendClient : public Aws::Client::AWSJsonC
                        const Aws::AmplifyBackend::AmplifyBackendClientConfiguration& clientConfiguration =
                            Aws::AmplifyBackend::AmplifyBackendClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  AmplifyBackendClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  AmplifyBackendClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  AmplifyBackendClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~AmplifyBackendClient();
 
   /**
@@ -890,7 +869,6 @@ class AWS_AMPLIFYBACKEND_API AmplifyBackendClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&AmplifyBackendClient::UpdateBackendStorage, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<AmplifyBackendEndpointProviderBase>& accessEndpointProvider();
 
  private:

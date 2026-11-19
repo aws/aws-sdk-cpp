@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/transcribestreaming/TranscribeStreamingServiceClient.h>
+#include <aws/transcribestreaming/TranscribeStreamingServiceClientConfiguration.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceEndpointProvider.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceErrorMarshaller.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceErrors.h>

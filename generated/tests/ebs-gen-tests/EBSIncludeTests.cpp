@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ebs/EBSClient.h>
+#include <aws/ebs/EBSClientConfiguration.h>
 #include <aws/ebs/EBSClientPagination.h>
 #include <aws/ebs/EBSEndpointProvider.h>
 #include <aws/ebs/EBSErrorMarshaller.h>

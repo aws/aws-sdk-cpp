@@ -124,7 +124,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace AppSync {
-using AppSyncClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppSyncEndpointProviderBase = Aws::AppSync::Endpoint::AppSyncEndpointProviderBase;
 using AppSyncEndpointProvider = Aws::AppSync::Endpoint::AppSyncEndpointProvider;
 

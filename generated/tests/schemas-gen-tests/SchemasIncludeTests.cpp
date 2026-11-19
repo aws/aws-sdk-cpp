@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/schemas/SchemasClient.h>
+#include <aws/schemas/SchemasClientConfiguration.h>
 #include <aws/schemas/SchemasClientPagination.h>
 #include <aws/schemas/SchemasEndpointProvider.h>
 #include <aws/schemas/SchemasErrorMarshaller.h>

@@ -165,7 +165,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace NetworkFirewall {
-using NetworkFirewallClientConfiguration = Aws::Client::GenericClientConfiguration;
 using NetworkFirewallEndpointProviderBase = Aws::NetworkFirewall::Endpoint::NetworkFirewallEndpointProviderBase;
 using NetworkFirewallEndpointProvider = Aws::NetworkFirewall::Endpoint::NetworkFirewallEndpointProvider;
 

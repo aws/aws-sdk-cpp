@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/oam/OAMClient.h>
+#include <aws/oam/OAMClientConfiguration.h>
 #include <aws/oam/OAMClientPagination.h>
 #include <aws/oam/OAMEndpointProvider.h>
 #include <aws/oam/OAMErrorMarshaller.h>

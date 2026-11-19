@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/appmesh/AppMeshClientConfiguration.h>
 #include <aws/appmesh/AppMesh_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace AppMesh {
 namespace Endpoint {
+using AppMeshClientConfiguration = Aws::AppMesh::AppMeshClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using AppMeshClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppMeshClientConfiguration = Aws::Client::GenericClientConfiguration;
-using AppMeshBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_APPMESH_API AppMeshBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~AppMeshBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const AppMeshClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const AppMeshClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const AppMeshClientConfiguration& config);
+};
 
 /**
  * The type for the AppMesh Client Endpoint Provider.
@@ -34,6 +43,24 @@ using AppMeshEndpointProviderBase =
 using AppMeshDefaultEpProviderBase =
     BDDEndpointProvider<AppMeshClientConfiguration, AppMeshBuiltInParameters, AppMeshClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace AppMesh
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_APPMESH_EXTERN template class AWS_APPMESH_API
+    Aws::Endpoint::EndpointProviderBase<AppMesh::Endpoint::AppMeshClientConfiguration, AppMesh::Endpoint::AppMeshBuiltInParameters,
+                                        AppMesh::Endpoint::AppMeshClientContextParameters>;
+
+AWS_APPMESH_EXTERN template class AWS_APPMESH_API
+    Aws::Endpoint::BDDEndpointProvider<AppMesh::Endpoint::AppMeshClientConfiguration, AppMesh::Endpoint::AppMeshBuiltInParameters,
+                                       AppMesh::Endpoint::AppMeshClientContextParameters>;
+}  // namespace Endpoint
+
+namespace AppMesh {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

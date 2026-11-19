@@ -35,8 +35,6 @@ TEST_F(CloudWatchSmokeTestSuite, ListMetricsSuccess )
 {
     Aws::CloudWatch::CloudWatchClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<CloudWatchClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

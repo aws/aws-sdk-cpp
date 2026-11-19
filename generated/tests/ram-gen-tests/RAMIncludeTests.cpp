@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ram/RAMClient.h>
+#include <aws/ram/RAMClientConfiguration.h>
 #include <aws/ram/RAMClientPagination.h>
 #include <aws/ram/RAMEndpointProvider.h>
 #include <aws/ram/RAMErrorMarshaller.h>

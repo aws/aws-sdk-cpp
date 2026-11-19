@@ -49,7 +49,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CloudSearchDomain {
-using CloudSearchDomainClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudSearchDomainEndpointProviderBase = Aws::CloudSearchDomain::Endpoint::CloudSearchDomainEndpointProviderBase;
 using CloudSearchDomainEndpointProvider = Aws::CloudSearchDomain::Endpoint::CloudSearchDomainEndpointProvider;
 

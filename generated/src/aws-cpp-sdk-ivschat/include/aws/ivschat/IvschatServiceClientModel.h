@@ -65,7 +65,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ivschat {
-using IvschatClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IvschatEndpointProviderBase = Aws::ivschat::Endpoint::IvschatEndpointProviderBase;
 using IvschatEndpointProvider = Aws::ivschat::Endpoint::IvschatEndpointProvider;
 

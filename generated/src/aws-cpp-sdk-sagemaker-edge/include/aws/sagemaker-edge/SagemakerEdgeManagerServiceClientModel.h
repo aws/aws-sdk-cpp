@@ -49,7 +49,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SagemakerEdgeManager {
-using SagemakerEdgeManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SagemakerEdgeManagerEndpointProviderBase = Aws::SagemakerEdgeManager::Endpoint::SagemakerEdgeManagerEndpointProviderBase;
 using SagemakerEdgeManagerEndpointProvider = Aws::SagemakerEdgeManager::Endpoint::SagemakerEdgeManagerEndpointProvider;
 

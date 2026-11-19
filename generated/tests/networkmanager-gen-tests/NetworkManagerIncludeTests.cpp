@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/networkmanager/NetworkManagerClient.h>
+#include <aws/networkmanager/NetworkManagerClientConfiguration.h>
 #include <aws/networkmanager/NetworkManagerClientPagination.h>
 #include <aws/networkmanager/NetworkManagerEndpointProvider.h>
 #include <aws/networkmanager/NetworkManagerErrorMarshaller.h>

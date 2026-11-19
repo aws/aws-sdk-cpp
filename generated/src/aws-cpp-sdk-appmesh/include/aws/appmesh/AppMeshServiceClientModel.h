@@ -85,7 +85,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace AppMesh {
-using AppMeshClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppMeshEndpointProviderBase = Aws::AppMesh::Endpoint::AppMeshEndpointProviderBase;
 using AppMeshEndpointProvider = Aws::AppMesh::Endpoint::AppMeshEndpointProvider;
 

@@ -63,27 +63,6 @@ class AWS_MAILMANAGER_API MailManagerClient : public Aws::Client::AWSRpcV2CborCl
       std::shared_ptr<MailManagerEndpointProviderBase> endpointProvider = nullptr,
       const Aws::MailManager::MailManagerClientConfiguration& clientConfiguration = Aws::MailManager::MailManagerClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  MailManagerClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  MailManagerClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  MailManagerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~MailManagerClient();
 
   /**
@@ -1689,7 +1668,6 @@ class AWS_MAILMANAGER_API MailManagerClient : public Aws::Client::AWSRpcV2CborCl
     return SubmitAsync(&MailManagerClient::UpdateTrafficPolicy, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<MailManagerEndpointProviderBase>& accessEndpointProvider();
 
  private:

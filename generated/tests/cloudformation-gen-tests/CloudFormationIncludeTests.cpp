@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/cloudformation/CloudFormationClient.h>
+#include <aws/cloudformation/CloudFormationClientConfiguration.h>
 #include <aws/cloudformation/CloudFormationClientPagination.h>
 #include <aws/cloudformation/CloudFormationEndpointProvider.h>
 #include <aws/cloudformation/CloudFormationErrorMarshaller.h>

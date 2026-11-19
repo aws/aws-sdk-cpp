@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/rolesanywhere/RolesAnywhereClient.h>
+#include <aws/rolesanywhere/RolesAnywhereClientConfiguration.h>
 #include <aws/rolesanywhere/RolesAnywhereClientPagination.h>
 #include <aws/rolesanywhere/RolesAnywhereEndpointProvider.h>
 #include <aws/rolesanywhere/RolesAnywhereErrorMarshaller.h>

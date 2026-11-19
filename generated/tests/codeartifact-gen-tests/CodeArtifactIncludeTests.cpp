@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codeartifact/CodeArtifactClient.h>
+#include <aws/codeartifact/CodeArtifactClientConfiguration.h>
 #include <aws/codeartifact/CodeArtifactClientPagination.h>
 #include <aws/codeartifact/CodeArtifactEndpointProvider.h>
 #include <aws/codeartifact/CodeArtifactErrorMarshaller.h>

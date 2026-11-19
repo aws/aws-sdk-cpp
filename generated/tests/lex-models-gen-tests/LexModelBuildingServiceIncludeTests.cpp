@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/lex-models/LexModelBuildingServiceClient.h>
+#include <aws/lex-models/LexModelBuildingServiceClientConfiguration.h>
 #include <aws/lex-models/LexModelBuildingServiceEndpointProvider.h>
 #include <aws/lex-models/LexModelBuildingServiceErrorMarshaller.h>
 #include <aws/lex-models/LexModelBuildingServiceErrors.h>

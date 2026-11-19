@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsClient.h>
+#include <aws/partnercentral-benefits/PartnerCentralBenefitsClientConfiguration.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsClientPagination.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsEndpointProvider.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsErrorMarshaller.h>

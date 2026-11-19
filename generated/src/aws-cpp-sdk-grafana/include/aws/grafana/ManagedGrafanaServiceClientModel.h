@@ -73,7 +73,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ManagedGrafana {
-using ManagedGrafanaClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ManagedGrafanaEndpointProviderBase = Aws::ManagedGrafana::Endpoint::ManagedGrafanaEndpointProviderBase;
 using ManagedGrafanaEndpointProvider = Aws::ManagedGrafana::Endpoint::ManagedGrafanaEndpointProvider;
 

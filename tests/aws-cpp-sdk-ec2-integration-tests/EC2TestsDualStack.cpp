@@ -45,13 +45,13 @@ TEST_F(EC2DualStackTests, TestDualStackMocked)
 
     Aws::Client::ClientConfigurationInitValues initValues;
     initValues.shouldDisableIMDS = true;
-    Aws::Client::ClientConfiguration clientConfig(initValues);
+    Aws::EC2::EC2ClientConfiguration clientConfig(initValues);
 
     clientConfig.region = "us-east-1";
     clientConfig.useDualStack = true;
 
     Aws::Auth::AWSCredentials mockCreds("accessKey", "secretKey", "sessionToken");
-    Aws::EC2::EC2Client ec2Client(mockCreds, clientConfig);
+    Aws::EC2::EC2Client ec2Client(mockCreds, nullptr, clientConfig);
 
     Aws::EC2::Model::DescribeHostsRequest request;
     Aws::EC2::Model::DescribeHostsOutcome response = ec2Client.DescribeHosts(request);
@@ -74,7 +74,7 @@ TEST_F(EC2DualStackTests, TestDualStackEndpoint)
 {
     Aws::Client::ClientConfigurationInitValues initValues;
     initValues.shouldDisableIMDS = true;
-    Aws::Client::ClientConfiguration clientConfig(initValues);
+    Aws::EC2::EC2ClientConfiguration clientConfig(initValues);
 
     clientConfig.region = "us-east-1";
     clientConfig.useDualStack = true;

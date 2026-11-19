@@ -96,7 +96,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace GlueDataBrew {
-using GlueDataBrewClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GlueDataBrewEndpointProviderBase = Aws::GlueDataBrew::Endpoint::GlueDataBrewEndpointProviderBase;
 using GlueDataBrewEndpointProvider = Aws::GlueDataBrew::Endpoint::GlueDataBrewEndpointProvider;
 

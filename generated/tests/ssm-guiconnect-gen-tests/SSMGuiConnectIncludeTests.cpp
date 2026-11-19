@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/ssm-guiconnect/SSMGuiConnectClient.h>
+#include <aws/ssm-guiconnect/SSMGuiConnectClientConfiguration.h>
 #include <aws/ssm-guiconnect/SSMGuiConnectEndpointProvider.h>
 #include <aws/ssm-guiconnect/SSMGuiConnectErrorMarshaller.h>
 #include <aws/ssm-guiconnect/SSMGuiConnectErrors.h>

@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/entityresolution/EntityResolutionClientConfiguration.h>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 
 namespace Aws {
 namespace EntityResolution {
 namespace Endpoint {
+using EntityResolutionClientConfiguration = Aws::EntityResolution::EntityResolutionClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using EntityResolutionClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using EntityResolutionClientConfiguration = Aws::Client::GenericClientConfiguration;
-using EntityResolutionBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_ENTITYRESOLUTION_API EntityResolutionBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~EntityResolutionBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const EntityResolutionClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const EntityResolutionClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const EntityResolutionClientConfiguration& config);
+};
 
 /**
  * The type for the EntityResolution Client Endpoint Provider.
@@ -34,6 +43,24 @@ using EntityResolutionEndpointProviderBase =
 using EntityResolutionDefaultEpProviderBase =
     BDDEndpointProvider<EntityResolutionClientConfiguration, EntityResolutionBuiltInParameters, EntityResolutionClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace EntityResolution
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_ENTITYRESOLUTION_EXTERN template class AWS_ENTITYRESOLUTION_API Aws::Endpoint::EndpointProviderBase<
+    EntityResolution::Endpoint::EntityResolutionClientConfiguration, EntityResolution::Endpoint::EntityResolutionBuiltInParameters,
+    EntityResolution::Endpoint::EntityResolutionClientContextParameters>;
+
+AWS_ENTITYRESOLUTION_EXTERN template class AWS_ENTITYRESOLUTION_API Aws::Endpoint::BDDEndpointProvider<
+    EntityResolution::Endpoint::EntityResolutionClientConfiguration, EntityResolution::Endpoint::EntityResolutionBuiltInParameters,
+    EntityResolution::Endpoint::EntityResolutionClientContextParameters>;
+}  // namespace Endpoint
+
+namespace EntityResolution {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

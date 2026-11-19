@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/redshift-data/RedshiftDataAPIServiceClient.h>
+#include <aws/redshift-data/RedshiftDataAPIServiceClientConfiguration.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceClientPagination.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceEndpointProvider.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceErrorMarshaller.h>

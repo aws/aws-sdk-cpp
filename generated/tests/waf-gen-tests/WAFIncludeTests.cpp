@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/waf/WAFClient.h>
+#include <aws/waf/WAFClientConfiguration.h>
 #include <aws/waf/WAFEndpointProvider.h>
 #include <aws/waf/WAFErrorMarshaller.h>
 #include <aws/waf/WAFErrors.h>

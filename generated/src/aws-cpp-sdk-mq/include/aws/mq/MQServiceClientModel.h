@@ -74,7 +74,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MQ {
-using MQClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MQEndpointProviderBase = Aws::MQ::Endpoint::MQEndpointProviderBase;
 using MQEndpointProvider = Aws::MQ::Endpoint::MQEndpointProvider;
 

@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/bcm-dashboards/BCMDashboardsClientConfiguration.h>
 #include <aws/bcm-dashboards/BCMDashboards_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace BCMDashboards {
 namespace Endpoint {
+using BCMDashboardsClientConfiguration = Aws::BCMDashboards::BCMDashboardsClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using BCMDashboardsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using BCMDashboardsClientConfiguration = Aws::Client::GenericClientConfiguration;
-using BCMDashboardsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_BCMDASHBOARDS_API BCMDashboardsBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~BCMDashboardsBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const BCMDashboardsClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const BCMDashboardsClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const BCMDashboardsClientConfiguration& config);
+};
 
 /**
  * The type for the BCMDashboards Client Endpoint Provider.
@@ -34,6 +43,24 @@ using BCMDashboardsEndpointProviderBase =
 using BCMDashboardsDefaultEpProviderBase =
     BDDEndpointProvider<BCMDashboardsClientConfiguration, BCMDashboardsBuiltInParameters, BCMDashboardsClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace BCMDashboards
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_BCMDASHBOARDS_EXTERN template class AWS_BCMDASHBOARDS_API Aws::Endpoint::EndpointProviderBase<
+    BCMDashboards::Endpoint::BCMDashboardsClientConfiguration, BCMDashboards::Endpoint::BCMDashboardsBuiltInParameters,
+    BCMDashboards::Endpoint::BCMDashboardsClientContextParameters>;
+
+AWS_BCMDASHBOARDS_EXTERN template class AWS_BCMDASHBOARDS_API Aws::Endpoint::BDDEndpointProvider<
+    BCMDashboards::Endpoint::BCMDashboardsClientConfiguration, BCMDashboards::Endpoint::BCMDashboardsBuiltInParameters,
+    BCMDashboards::Endpoint::BCMDashboardsClientContextParameters>;
+}  // namespace Endpoint
+
+namespace BCMDashboards {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/rtbfabric/RTBFabricClient.h>
+#include <aws/rtbfabric/RTBFabricClientConfiguration.h>
 #include <aws/rtbfabric/RTBFabricClientPagination.h>
 #include <aws/rtbfabric/RTBFabricEndpointProvider.h>
 #include <aws/rtbfabric/RTBFabricErrorMarshaller.h>

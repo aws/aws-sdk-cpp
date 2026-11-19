@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/chatbot/ChatbotClient.h>
+#include <aws/chatbot/ChatbotClientConfiguration.h>
 #include <aws/chatbot/ChatbotClientPagination.h>
 #include <aws/chatbot/ChatbotEndpointProvider.h>
 #include <aws/chatbot/ChatbotErrorMarshaller.h>

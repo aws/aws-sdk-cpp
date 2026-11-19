@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/textract/TextractClient.h>
+#include <aws/textract/TextractClientConfiguration.h>
 #include <aws/textract/TextractClientPagination.h>
 #include <aws/textract/TextractEndpointProvider.h>
 #include <aws/textract/TextractErrorMarshaller.h>

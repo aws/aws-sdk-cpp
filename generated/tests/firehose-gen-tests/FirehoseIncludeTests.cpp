@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/firehose/FirehoseClient.h>
+#include <aws/firehose/FirehoseClientConfiguration.h>
 #include <aws/firehose/FirehoseEndpointProvider.h>
 #include <aws/firehose/FirehoseErrorMarshaller.h>
 #include <aws/firehose/FirehoseErrors.h>

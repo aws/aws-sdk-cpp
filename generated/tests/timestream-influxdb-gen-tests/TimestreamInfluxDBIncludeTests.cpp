@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/timestream-influxdb/TimestreamInfluxDBClient.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDBClientConfiguration.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBClientPagination.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBEndpointProvider.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBErrorMarshaller.h>

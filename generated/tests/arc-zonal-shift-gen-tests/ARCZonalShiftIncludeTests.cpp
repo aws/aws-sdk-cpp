@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/arc-zonal-shift/ARCZonalShiftClient.h>
+#include <aws/arc-zonal-shift/ARCZonalShiftClientConfiguration.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftClientPagination.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftEndpointProvider.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftErrorMarshaller.h>

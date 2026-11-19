@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/marketplace-agreement/AgreementServiceClient.h>
+#include <aws/marketplace-agreement/AgreementServiceClientConfiguration.h>
 #include <aws/marketplace-agreement/AgreementServiceClientPagination.h>
 #include <aws/marketplace-agreement/AgreementServiceEndpointProvider.h>
 #include <aws/marketplace-agreement/AgreementServiceErrorMarshaller.h>

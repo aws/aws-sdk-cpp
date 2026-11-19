@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/codecommit/CodeCommitClient.h>
+#include <aws/codecommit/CodeCommitClientConfiguration.h>
 #include <aws/codecommit/CodeCommitClientPagination.h>
 #include <aws/codecommit/CodeCommitEndpointProvider.h>
 #include <aws/codecommit/CodeCommitErrorMarshaller.h>

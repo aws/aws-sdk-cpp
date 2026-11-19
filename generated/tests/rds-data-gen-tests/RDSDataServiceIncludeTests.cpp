@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/rds-data/RDSDataServiceClient.h>
+#include <aws/rds-data/RDSDataServiceClientConfiguration.h>
 #include <aws/rds-data/RDSDataServiceEndpointProvider.h>
 #include <aws/rds-data/RDSDataServiceErrorMarshaller.h>
 #include <aws/rds-data/RDSDataServiceErrors.h>

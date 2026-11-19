@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/connectcases/ConnectCasesClient.h>
+#include <aws/connectcases/ConnectCasesClientConfiguration.h>
 #include <aws/connectcases/ConnectCasesClientPagination.h>
 #include <aws/connectcases/ConnectCasesEndpointProvider.h>
 #include <aws/connectcases/ConnectCasesErrorMarshaller.h>

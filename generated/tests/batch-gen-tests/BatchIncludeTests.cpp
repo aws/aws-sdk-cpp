@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/batch/BatchClient.h>
+#include <aws/batch/BatchClientConfiguration.h>
 #include <aws/batch/BatchClientPagination.h>
 #include <aws/batch/BatchEndpointProvider.h>
 #include <aws/batch/BatchErrorMarshaller.h>

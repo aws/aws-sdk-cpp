@@ -89,7 +89,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ConnectCases {
-using ConnectCasesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ConnectCasesEndpointProviderBase = Aws::ConnectCases::Endpoint::ConnectCasesEndpointProviderBase;
 using ConnectCasesEndpointProvider = Aws::ConnectCases::Endpoint::ConnectCasesEndpointProvider;
 

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/mediapackage/MediaPackageClient.h>
+#include <aws/mediapackage/MediaPackageClientConfiguration.h>
 #include <aws/mediapackage/MediaPackageClientPagination.h>
 #include <aws/mediapackage/MediaPackageEndpointProvider.h>
 #include <aws/mediapackage/MediaPackageErrorMarshaller.h>

@@ -105,7 +105,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ElasticsearchService {
-using ElasticsearchServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ElasticsearchServiceEndpointProviderBase = Aws::ElasticsearchService::Endpoint::ElasticsearchServiceEndpointProviderBase;
 using ElasticsearchServiceEndpointProvider = Aws::ElasticsearchService::Endpoint::ElasticsearchServiceEndpointProvider;
 

@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/emr-containers/EMRContainersClient.h>
+#include <aws/emr-containers/EMRContainersClientConfiguration.h>
 #include <aws/emr-containers/EMRContainersClientPagination.h>
 #include <aws/emr-containers/EMRContainersEndpointProvider.h>
 #include <aws/emr-containers/EMRContainersErrorMarshaller.h>
