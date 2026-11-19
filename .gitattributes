@@ -1,0 +1,29 @@
+# GitHub Linguist: mark generated files so PR diffs collapse them by default
+# and language stats ignore them. Keep in sync with the output paths in
+# tools/scripts/run_code_generation.py and tools/scripts/codegen/*.py.
+# Check a path with: git check-attr linguist-generated -- <path>
+
+# Service clients, endpoint/include tests, protocol tests, smoke tests.
+/generated/**                                                  linguist-generated=true
+# Hand-written smoke-test driver; no generator emits it.
+/generated/smoke-tests/RunTests.cpp                            linguist-generated=false
+
+# Core files written by the defaults and partitions generators.
+/src/aws-cpp-sdk-core/**/ClientConfigurationDefaults.*         linguist-generated=true
+/src/aws-cpp-sdk-core/**/AWSPartitions.*                       linguist-generated=true
+
+# Written by tools/scripts/codegen/install_test_gen.py.
+/tools/CI/install-test/all_services_test.cpp                   linguist-generated=true
+# Written by the Smithy build.gradle.kts files.
+/tools/code-generation/smithy/**/smithy-build.json             linguist-generated=true
+
+# Service models and endpoint rules copied in from upstream by release automation.
+/tools/code-generation/api-descriptions/**                     linguist-generated=true
+/tools/code-generation/endpoints/**                            linguist-generated=true
+/tools/code-generation/smithy/api-descriptions/**              linguist-generated=true
+/tools/code-generation/defaults/sdk-default-configuration.json linguist-generated=true
+/tools/code-generation/partitions/partitions.json              linguist-generated=true
+# Protocol-test client models and test suites, generated from the Smithy protocol-test models.
+/tools/code-generation/protocol-tests/api-descriptions/**      linguist-generated=true
+/tools/code-generation/protocol-tests/input/**                 linguist-generated=true
+/tools/code-generation/protocol-tests/output/**                linguist-generated=true
