@@ -16,4 +16,9 @@ if (AWSSDK_CRYPTO_IN_SOURCE_BUILD)
     find_dependency(ssl)
 endif()
 set(BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS_PREV})
+# A static aws-cpp-sdk-core carries its PRIVATE ZLIB::ZLIB dependency in its
+# exported link interface, so consumers must be able to resolve that target.
+if (@AWSSDK_CORE_EXPORTS_ZLIB_DEPENDENCY@)
+    find_dependency(ZLIB)
+endif()
 include("${CMAKE_CURRENT_LIST_DIR}/@PROJECT_NAME@-targets.cmake")

@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "jmccl",
+  "description": "Find zlib in the installed aws-cpp-sdk-core CMake config for static builds with request compression enabled, so consumers no longer fail with a missing ZLIB::ZLIB target."
+}
