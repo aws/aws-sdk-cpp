@@ -96,9 +96,9 @@ TEST_F(TimestreamQueryUnitTest, EndpointOverrideShouldDisableEndpointDiscoveryTh
   initValues.shouldDisableIMDS = true;
   TimestreamQueryClientConfiguration config{initValues};
   config.region = "us-east-1";
+  config.endpointOverride = "http://spacers-choice.com:8080";
   const AWSCredentials credentials{};
   TimestreamQueryClient client(credentials, nullptr, config);
-  client.OverrideEndpoint("http://spacers-choice.com:8080");
 
   const auto responseStream = Aws::MakeShared<StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);
   responseStream->SetResponseStreamFactory(Utils::Stream::DefaultResponseStreamFactoryMethod);

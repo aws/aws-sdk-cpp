@@ -123,7 +123,7 @@ private:
 class MockPollyClient : public PollyClient
 {
 public:
-    MockPollyClient(const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration()) : PollyClient(Aws::Auth::AWSCredentials("", ""), clientConfig) {}
+    MockPollyClient(const Aws::Polly::PollyClientConfiguration& clientConfig = Aws::Polly::PollyClientConfiguration()) : PollyClient(Aws::Auth::AWSCredentials("", ""), nullptr, clientConfig) {}
 
     DescribeVoicesOutcome DescribeVoices(const DescribeVoicesRequest& request) const override
     {
@@ -274,7 +274,7 @@ TEST(TextToSpeechManagerTests, TestDeviceListEmpty)
 
 TEST(TextToSpeechManagerTests, TestTextToSpeechManagerLifetime)
 {
-    Aws::Client::ClientConfiguration clientConfig;
+    Aws::Polly::PollyClientConfiguration clientConfig;
     clientConfig.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOC_TAG, 5);
     auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG, clientConfig);
 
@@ -329,7 +329,7 @@ TEST(TextToSpeechManagerTests, TestTextToSpeechManagerLifetime)
 
 TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
 {
-    Aws::Client::ClientConfiguration clientConfig;
+    Aws::Polly::PollyClientConfiguration clientConfig;
     clientConfig.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOC_TAG, 5);
     auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG, clientConfig);
 
@@ -403,7 +403,7 @@ TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
 
 TEST(TextToSpeechManagerTests, TestSynthRequestFailedAndNoOutput)
 {
-    Aws::Client::ClientConfiguration clientConfig;
+    Aws::Polly::PollyClientConfiguration clientConfig;
     clientConfig.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOC_TAG, 5);
     auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG, clientConfig);
 

@@ -6,7 +6,7 @@
 #pragma once
 
 #include <aws/core/NoResult.h>
-#include <aws/core/client/ClientConfiguration.h>
+#include <aws/s3/S3ClientConfiguration.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -24,7 +24,7 @@ namespace S3 {
  */
 class S3PerformanceTest : public PerformanceTestBase {
  public:
-  S3PerformanceTest(const Aws::Client::ClientConfiguration& clientConfig, const TestConfig::TestCase& testConfig, int iterations = 10,
+  S3PerformanceTest(const Aws::S3::S3ClientConfiguration& clientConfig, const TestConfig::TestCase& testConfig, int iterations = 10,
                     const Aws::String& availabilityZoneId = "");
 
   Aws::Utils::Outcome<Aws::NoResult, Aws::String> Setup() override;

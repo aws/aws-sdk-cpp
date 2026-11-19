@@ -15,10 +15,8 @@
 #if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
 #set($hasServiceSpecificEpParams = true)
 #end
-#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountId"))
-#set($hasServiceSpecificEpParams = true)
-#end
-#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountIdEndpointMode"))
+#set($options = $serviceModel.supportedClientOptions)
+#if($options.contains("accountId") || $options.contains("accountIdEndpointMode") || $options.contains("useFIPS") || $options.contains("useDualStack"))
 #set($hasServiceSpecificEpParams = true)
 #end
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
@@ -28,7 +26,6 @@
 
 namespace ${rootNamespace}
 {
-#if($serviceModel.hasServiceSpecificClientConfig() || $serviceModel.clientContextParams)
 #ifndef AWS_${metadata.classNamePrefix.toUpperCase()}_EXPORTS // Except for Windows DLL
 namespace Endpoint
 {
@@ -45,7 +42,6 @@ template class Aws::Endpoint::${epProviderType}<${serviceNamespace}::Endpoint::$
 } // namespace Endpoint
 #endif
 
-#end
 namespace ${serviceNamespace}
 {
 namespace Endpoint
@@ -80,7 +76,6 @@ ${metadata.classNamePrefix}EndpointProvider::${metadata.classNamePrefix}Endpoint
   }
 #end
 #end
-#if($serviceModel.hasServiceSpecificClientConfig())
   void ${epBuiltInClassName}::SetFromClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& config)
   {
     SetFromClientConfiguration(static_cast<const ${metadata.classNamePrefix}ClientConfiguration::BaseClientConfigClass&>(config));
@@ -104,12 +99,22 @@ ${metadata.classNamePrefix}EndpointProvider::${metadata.classNamePrefix}Endpoint
     static const char* AWS_S3_USE_ARN_REGION = "UseArnRegion";
     SetBooleanParameter(AWS_S3_USE_ARN_REGION, config.useArnRegion);
 #end
-#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountId"))
+#if($options.contains("useFIPS"))
+    if (config.useFIPS) {
+      SetBooleanParameter("UseFIPS", true);
+    }
+#end
+#if($options.contains("useDualStack"))
+    if (config.useDualStack) {
+      SetBooleanParameter("UseDualStack", true);
+    }
+#end
+#if($options.contains("accountId"))
     if(!config.accountId.empty()) {
       SetStringParameter("AccountId", config.accountId);
     }
 #end
-#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountIdEndpointMode"))
+#if($options.contains("accountIdEndpointMode"))
     if(!config.accountIdEndpointMode.empty()) {
       SetStringParameter("AccountIdEndpointMode", config.accountIdEndpointMode);
     }
@@ -141,7 +146,6 @@ ${metadata.classNamePrefix}EndpointProvider::${metadata.classNamePrefix}Endpoint
     }
 #end
   }
-#end
 #end
 #end
 } // namespace Endpoint

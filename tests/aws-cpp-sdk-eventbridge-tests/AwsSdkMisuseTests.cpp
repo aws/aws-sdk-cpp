@@ -117,11 +117,11 @@ TEST_F(AwsSdkMisuseTest, MissingCurlyBracesTest)
     // However, it looks weird and some IDEs suggest to remove them
     // The purpose of this test is to intentionally violate recommended use
     // {
-    Aws::Client::ClientConfiguration clientConfig;
+    Aws::EventBridge::EventBridgeClientConfiguration clientConfig;
     clientConfig.region = "us-east-1";
     Aws::Auth::AWSCredentials mockCreds("accessKey", "secretKey", "sessionToken");
 
-    Aws::EventBridge::EventBridgeClient eventBridgeClient(mockCreds, clientConfig);
+    Aws::EventBridge::EventBridgeClient eventBridgeClient(mockCreds, nullptr, clientConfig);
 
     Aws::EventBridge::Model::PutEventsRequest request = buildEventBridgeRequest();
     const Aws::String eventIdToReply = "baadf00d-1234-5678-910a-baadf00dcafe";

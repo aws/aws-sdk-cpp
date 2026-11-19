@@ -14,7 +14,7 @@ using namespace Aws::$serviceNs::Model;
 #foreach($case in $testSuite.cases)
 
 AWS_PROTOCOL_TEST($testSuite.name, $case.id) {
-  $serviceClient client(mockCredentials, mockConfig);
+  $serviceClient client(mockCredentials, nullptr, Aws::${serviceNs}::${serviceModel.metadata.classNamePrefix}ClientConfiguration(mockConfig));
 
 #if($case.input && $serviceModel.metadata.protocol == "smithy-rpc-v2-cbor")
   //Cbor specific

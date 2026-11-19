@@ -58,7 +58,6 @@ namespace ${serviceNamespace}
 #set($xml_virtual = "virtual ")
 #end
 
-        ${xml_virtual}void OverrideEndpoint(const Aws::String& endpoint);
 #if($serviceModel.endpointRules)
         ${xml_virtual}std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end

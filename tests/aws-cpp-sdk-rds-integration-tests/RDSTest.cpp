@@ -80,7 +80,7 @@ namespace
 
         RDSTest()
         {
-            ClientConfiguration config;
+            Aws::RDS::RDSClientConfiguration config;
             config.region = Aws::Region::US_WEST_2;
             config.scheme = Scheme::HTTPS;
             m_rdsClient = RDSClient(config);

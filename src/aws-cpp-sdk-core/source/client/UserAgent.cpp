@@ -117,6 +117,10 @@ Aws::String UserAgent::BusinessMetricForFeature(UserAgentFeature feature) {
   return metric->second;
 }
 
+Aws::Crt::Optional<UserAgentFeature> UserAgent::FeatureForAccountIdEndpointMode(const Aws::String& accountIdEndpointMode) {
+  return BusinessMetricForAccountIdMode(accountIdEndpointMode);
+}
+
 UserAgent::UserAgent(const ClientConfiguration& clientConfiguration,
   const Aws::String& retryStrategyName,
   const Aws::String& apiName)
@@ -142,10 +146,6 @@ UserAgent::UserAgent(const ClientConfiguration& clientConfiguration,
 {
   if (clientConfiguration.executor) {
     SetExecutor(*clientConfiguration.executor);
-  }
-  const auto accountIdMode = BusinessMetricForAccountIdMode(clientConfiguration.accountIdEndpointMode);
-  if (accountIdMode.has_value()) {
-    m_features.emplace(accountIdMode.value());
   }
 }
 

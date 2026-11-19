@@ -32,7 +32,7 @@
 #include <chrono>
 #include <thread>
 
-PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::DynamoDBPerformanceTest(const Aws::Client::ClientConfiguration& clientConfig,
+PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest::DynamoDBPerformanceTest(const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfig,
                                                                                       const TestConfig::TestCase& testConfig,
                                                                                       int iterations)
     : m_dynamodb(Aws::MakeUnique<Aws::DynamoDB::DynamoDBClient>("DynamoDBPerformanceTest", clientConfig)),

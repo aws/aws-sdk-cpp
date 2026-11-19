@@ -48,7 +48,7 @@ class TranscribeStreamingErrorTests : public Aws::Testing::AwsCppSdkGTestSuite {
 TEST_F(TranscribeStreamingErrorTests, TranscribeAudioFile) {
   Aws::Client::ClientConfigurationInitValues cfgInit;
   cfgInit.shouldDisableIMDS = true;
-  Aws::Client::ClientConfiguration config(cfgInit);
+  Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration config(cfgInit);
   config.httpLibPerfMode = Http::TransferLibPerformanceMode::REGULAR;
   config.enableHttpClientTrace = true;
   Aws::UniquePtr<TranscribeStreamingServiceClient> client = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
@@ -157,7 +157,7 @@ TEST_F(TranscribeStreamingErrorTests, TranscribeAudioFile) {
 TEST_F(TranscribeStreamingErrorTests, TranscribeTerminateByLowSpeedLimit) {
   Aws::Client::ClientConfigurationInitValues cfgInit;
   cfgInit.shouldDisableIMDS = true;
-  Aws::Client::ClientConfiguration config(cfgInit);
+  Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration config(cfgInit);
   config.httpLibPerfMode = Http::TransferLibPerformanceMode::REGULAR;
   config.enableHttpClientTrace = true;
   config.lowSpeedLimit = 10;
@@ -261,7 +261,7 @@ TEST_F(TranscribeStreamingErrorTests, TranscribeTerminateByLowSpeedLimit) {
 TEST_F(TranscribeStreamingErrorTests, TranscribeRequestGoesOutOfScope) {
   Aws::Client::ClientConfigurationInitValues cfgInit;
   cfgInit.shouldDisableIMDS = true;
-  Aws::Client::ClientConfiguration config(cfgInit);
+  Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration config(cfgInit);
   config.httpLibPerfMode = Http::TransferLibPerformanceMode::REGULAR;
   config.enableHttpClientTrace = true;
 

@@ -41,13 +41,13 @@ public:
     {
         Aws::Client::ClientConfigurationInitValues cfgInit;
         cfgInit.shouldDisableIMDS = true;
-        Aws::Client::ClientConfiguration config(cfgInit);
+        Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration config(cfgInit);
         config.enableHttpClientTrace = true;
 #ifdef _WIN32
         // TODO: remove this once we get H2 working with WinHttp client
         config.httpLibOverride = Aws::Http::TransferLibType::WIN_INET_CLIENT;
 #endif
-        m_clientWithWrongCreds = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, Aws::Auth::AWSCredentials("a", "b"), config);
+        m_clientWithWrongCreds = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, Aws::Auth::AWSCredentials("a", "b"), nullptr, config);
         config.endpointOverride = "https://0xxxabcdefg123456789.com";
         m_clientWithWrongEndpoint = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
     }
@@ -125,7 +125,7 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
 {
     Aws::Client::ClientConfigurationInitValues cfgInit;
     cfgInit.shouldDisableIMDS = true;
-    Aws::Client::ClientConfiguration config(cfgInit);
+    Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration config(cfgInit);
     config.httpLibPerfMode = Http::TransferLibPerformanceMode::REGULAR;
     Aws::UniquePtr<TranscribeStreamingServiceClient> client = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
 
@@ -595,7 +595,7 @@ TEST_F(TranscribeStreamingTests, TranscribeStreamingCppSdkSample)
 {
   Aws::Client::ClientConfigurationInitValues cfgInit;
   cfgInit.shouldDisableIMDS = true;
-  Aws::Client::ClientConfiguration config(cfgInit);
+  Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration config(cfgInit);
   Aws::UniquePtr<TranscribeStreamingServiceClient> client = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
 
   const Aws::Vector<Aws::String> EXPECTED_ALTERNATIVES = {"This is a C plus plus test sample", "This is a C++ test sample"};
@@ -622,7 +622,7 @@ TEST_F(TranscribeStreamingTests, TranscribeStreamingKantSample)
 {
   Aws::Client::ClientConfigurationInitValues cfgInit;
   cfgInit.shouldDisableIMDS = true;
-  Aws::Client::ClientConfiguration config(cfgInit);
+  Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration config(cfgInit);
   Aws::UniquePtr<TranscribeStreamingServiceClient> client = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
 
   static const char expected[] = "Categorical imperative: Act only according to that maxim whereby you can at the same time will that it should become a universal law. "

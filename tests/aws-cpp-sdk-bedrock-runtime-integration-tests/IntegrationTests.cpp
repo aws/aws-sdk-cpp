@@ -48,7 +48,7 @@ protected:
 
     void SetUp()
     {
-        Aws::Client::ClientConfiguration config;
+        Aws::BedrockRuntime::BedrockRuntimeClientConfiguration config;
         config.connectTimeoutMs = 30000;
         config.requestTimeoutMs = 30000;
         config.region = AWS_TEST_REGION;

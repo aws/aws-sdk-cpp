@@ -206,7 +206,7 @@ namespace
             Limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 50000000);
 
             // Create a client
-            ClientConfiguration config;
+            S3ClientConfiguration config;
             config.region = Aws::Region::US_EAST_1;
             config.scheme = Scheme::HTTPS;
             config.connectTimeoutMs = 30000;
@@ -223,23 +223,24 @@ namespace
                 config.proxyPort = PROXY_PORT;
             }
 
-            Client = Aws::MakeShared<S3TestClient>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
-                        AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY);
+            config.payloadSigningPolicy = AWSAuthV4Signer::PayloadSigningPolicy::Never;
+            config.useVirtualAddressing = true;
+            config.useUSEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY;
+            Client = Aws::MakeShared<S3TestClient>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                        std::shared_ptr<S3EndpointProviderBase>(), config);
+            config.useUSEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET;
             config.region = Aws::Region::AWS_GLOBAL;
             globalClient = Aws::MakeShared<S3TestClient>(ALLOCATION_TAG,
-                Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
-                    AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/);
+                Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), std::shared_ptr<S3EndpointProviderBase>(), config);
             config.region = Aws::Region::US_WEST_2;
             config.useDualStack = true;
             oregonClient = Aws::MakeShared<S3TestClient>(ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
-                        AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/);
+                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), std::shared_ptr<S3EndpointProviderBase>(), config);
             m_HttpClient = Aws::Http::CreateHttpClient(config);
 
             config.retryStrategy = Aws::MakeShared<RetryFiveTimesRetryStrategy>(ALLOCATION_TAG);
             retryClient = Aws::MakeShared<S3TestClient>(ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
-                        AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/);
+                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), std::shared_ptr<S3EndpointProviderBase>(), config);
             // Using client side monitoring for endpoint override testing.
             TestingMonitoringManager::InitTestingMonitoring();
         }
@@ -549,7 +550,7 @@ namespace
             WaitForBucketToEmpty(fullBucketName);
         }
 
-        void DoTestGetObjectWithBucketARN(const ClientConfiguration& config, const Aws::String& bucketArn, const Aws::String& expectedEndpoint,
+        void DoTestGetObjectWithBucketARN(const S3ClientConfiguration& config, const Aws::String& bucketArn, const Aws::String& expectedEndpoint,
             const Aws::String& expectedSignerRegion, const Aws::String& expectedSignerServiceName, bool arnExpectedToBeValid)
         {
             S3Client s3Client(config);
@@ -579,7 +580,7 @@ namespace
             }
         }
 
-        void DoTestWriteGetObjectResponse(const ClientConfiguration& config, const Aws::String& expectedEndpoint)
+        void DoTestWriteGetObjectResponse(const S3ClientConfiguration& config, const Aws::String& expectedEndpoint)
         {
             // Chunked encoding
             S3Client s3Client(config);
@@ -1968,9 +1969,11 @@ namespace
         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         // Checksums in request headers
-        ClientConfiguration config;
+        S3ClientConfiguration config;
         config.region = Aws::Region::US_EAST_1;
-        S3Client s3ClientSigningBody(config, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Always, false);
+        config.payloadSigningPolicy = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Always;
+        config.useVirtualAddressing = false;
+        S3Client s3ClientSigningBody(config);
 
         objectStream->clear();
         objectStream->seekg(0);
@@ -2019,7 +2022,7 @@ namespace
         WaitForBucketToPropagate(fullBucketName, Client);
         TagTestBucket(fullBucketName, Client);
 
-        ClientConfiguration config;
+        S3ClientConfiguration config;
         config.region = Aws::Region::US_EAST_1;
         config.checksumConfig.requestChecksumCalculation = RequestChecksumCalculation::WHEN_REQUIRED;
         const S3Client whenRequiredClient{config};
@@ -2194,11 +2197,13 @@ namespace
         Aws::StringStream ss;
 
         // Traditional bucket name with virtual addressing
-        ClientConfiguration config;
+        S3ClientConfiguration config;
         config.region = Aws::Region::US_WEST_2;
         config.endpointOverride = CUSTOM_ENDPOINT_OVERRIDE;
         config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
-        S3Client s3ClientWithVirtualAddressing(config, AWSAuthV4Signer::PayloadSigningPolicy::Never, true /*useVirtualAddressing*/);
+        config.payloadSigningPolicy = AWSAuthV4Signer::PayloadSigningPolicy::Never;
+        config.useVirtualAddressing = true;
+        S3Client s3ClientWithVirtualAddressing(config);
 
         ListObjectsRequest listObjectsRequest;
         listObjectsRequest.SetBucket(fullBucketName);
@@ -2242,7 +2247,9 @@ namespace
         ASSERT_STREQ("s3", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
 
         // Tradition bucket name with path addressing
-        S3Client s3ClientWithPathAddressing(config, AWSAuthV4Signer::PayloadSigningPolicy::Never, false /*useVirtualAddressing*/);
+        config.payloadSigningPolicy = AWSAuthV4Signer::PayloadSigningPolicy::Never;
+        config.useVirtualAddressing = false;
+        S3Client s3ClientWithPathAddressing(config);
         listObjectsRequest.SetBucket(fullBucketName);
         listObjectsOutcome = s3ClientWithPathAddressing.ListObjects(listObjectsRequest);
         ASSERT_FALSE(listObjectsOutcome.IsSuccess());
@@ -2255,8 +2262,12 @@ namespace
         // Use arn region, Access Point Arn with virtual addressing
         Aws::String awsS3UseArnRegion = Aws::Environment::GetEnv("AWS_S3_USE_ARN_REGION");
         Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
+        // S3ClientConfiguration reads the environment when it is constructed; set the option on this config too.
+        config.useArnRegion = true;
         config.region = Aws::Region::EU_WEST_1;
-        S3Client s3ClientInEuWest1(config, AWSAuthV4Signer::PayloadSigningPolicy::Never, true /*useVirtualAddressing*/);
+        config.payloadSigningPolicy = AWSAuthV4Signer::PayloadSigningPolicy::Never;
+        config.useVirtualAddressing = true;
+        S3Client s3ClientInEuWest1(config);
         if (awsS3UseArnRegion.empty())
         {
             Aws::Environment::UnSetEnv("AWS_S3_USE_ARN_REGION");
@@ -2278,7 +2289,9 @@ namespace
         // Failure case, dualstack endpoint is not compatible with custom endpoint override.
         config.region = Aws::Region::US_WEST_2;
         config.useDualStack = true;
-        S3Client s3ClientWithDualStack(config, AWSAuthV4Signer::PayloadSigningPolicy::Never, true /*useVirtualAddressing*/);
+        config.payloadSigningPolicy = AWSAuthV4Signer::PayloadSigningPolicy::Never;
+        config.useVirtualAddressing = true;
+        S3Client s3ClientWithDualStack(config);
         listObjectsRequest.SetBucket(fullBucketName);
         listObjectsOutcome = s3ClientWithDualStack.ListObjects(listObjectsRequest);
         ASSERT_FALSE(listObjectsOutcome.IsSuccess());
@@ -2293,7 +2306,7 @@ namespace
     TEST_F(BucketAndObjectOperationTest, TestS3AccessPointARN)
     {
         Aws::String awsS3UseArnRegionBackup = Aws::Environment::GetEnv("AWS_S3_USE_ARN_REGION");
-        ClientConfiguration config;
+        S3ClientConfiguration config;
         config.region = Aws::Region::US_WEST_2;
         config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
 
@@ -2347,6 +2360,8 @@ namespace
 
         // Use ARN region
         Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
+        // S3ClientConfiguration reads the environment when it is constructed; set the option on this config too.
+        config.useArnRegion = true;
 
         // US regions
         config.region = Aws::Region::US_WEST_2;
@@ -2406,7 +2421,7 @@ namespace
     TEST_F(BucketAndObjectOperationTest, TestS3MultiRegionAccessPointARN)
     {
         Aws::String awsS3DisableMultiregionAccessPointsBackup = Aws::Environment::GetEnv("AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS");
-        ClientConfiguration config;
+        S3ClientConfiguration config;
         config.region = Aws::Region::US_WEST_2;
         config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
 
@@ -2459,6 +2474,8 @@ namespace
 
         // Disable S3 Multi Region Access Points ARN
         Aws::Environment::SetEnv("AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS", "true", 1);
+        // S3ClientConfiguration reads the environment when it is constructed; set the option on this config too.
+        config.disableMultiRegionAccessPoints = true;
 
         config.region = Aws::Region::US_WEST_2;
         DoTestGetObjectWithBucketARN(config, "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "", "", "", false);
@@ -2810,7 +2827,7 @@ namespace
     }
 
     TEST_F(BucketAndObjectOperationTest, TestHeaderResponse) {
-      ClientConfiguration configuration;
+      S3ClientConfiguration configuration;
       configuration.region = "us-east-1";
       configuration.enableHttpClientTrace = true;
       std::shared_ptr<S3TestClient> client =  Aws::MakeShared<S3TestClient>("test",configuration);

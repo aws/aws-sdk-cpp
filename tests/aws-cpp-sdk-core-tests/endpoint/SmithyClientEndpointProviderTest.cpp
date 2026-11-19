@@ -21,6 +21,7 @@ namespace
     {
     };
 
+
     class RecordingEndpointProvider : public Aws::Endpoint::EndpointProviderBase<>
     {
     public:

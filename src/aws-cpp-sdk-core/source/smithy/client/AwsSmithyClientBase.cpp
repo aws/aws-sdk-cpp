@@ -5,8 +5,8 @@
 
 #include <smithy/client/AwsSmithyClientBase.h>
 #include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
+#include <smithy/client/common/AwsSmithyClientUtils.h>
 #include <smithy/client/features/RecursionDetection.h>
-#include <smithy/client/features/RequestPayloadCompression.h>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -111,13 +111,8 @@ void AwsSmithyClientBase::baseCopyAssign(const AwsSmithyClientBase& other,
   m_enableNewRetries = other.m_enableNewRetries;
   m_httpClient = std::move(httpClient);
   m_errorMarshaller = std::move(errorMarshaller);
-  
-  m_interceptors = Aws::Vector<std::shared_ptr<interceptor::Interceptor>>{
-      Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig),
-      Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", 
-          m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : m_clientConfig->httpClientChunkedMode,
-          m_clientConfig->awsChunkedBufferSize)
-  };
+
+  m_interceptors = m_clientConfig->CreateInterceptors({m_httpClient});
 
   baseCopyInit();
 }
@@ -171,19 +166,8 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
         }
         else
         {
-            //Check if compression is required
-            Aws::Client::CompressionAlgorithm selectedCompressionAlgorithm = pRequest->GetSelectedCompressionAlgorithm(m_clientConfig->requestCompressionConfig);
-            if (Aws::Client::CompressionAlgorithm::NONE != selectedCompressionAlgorithm) {
-                RequestPayloadCompression::AddCompressedContentBodyToRequest(pRequest, httpRequest, selectedCompressionAlgorithm, m_httpClient);
-            } else {
-                Utils::AddContentBodyToRequest(httpRequest, pRequest->GetBody(), m_httpClient,
-                                               pRequest->ShouldComputeContentMd5(), pRequest->IsStreaming() && pRequest->IsChunked());
-            }
-        }
-
-        if (pRequest->IsStreaming() && !m_clientConfig->disableExpectHeader)
-        {
-            httpRequest->SetHeaderValue(Aws::Http::EXPECT_HEADER, Aws::Http::EXPECT_100_CONTINUE_VALUE);
+            Utils::AddContentBodyToRequest(httpRequest, pRequest->GetBody(), m_httpClient,
+                                           pRequest->ShouldComputeContentMd5(), pRequest->IsStreaming() && pRequest->IsChunked());
         }
 
         // Pass along handlers for processing data sent/received in bytes
@@ -431,11 +415,6 @@ void AwsSmithyClientBase::UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSE
             auto signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName();
             authscheme.putSignerProperty(smithy::SIGNER_SERVICE_NAME, Aws::Crt::Variant<Aws::String, bool>(Aws::String(signerServiceNameOverride->c_str())));
         }
-    }
-    // If a value is explicitly set in configuration, it must be used over values defined anywhere else (ONLY FOR SigV4a)
-    if (strcmp(authscheme.schemeId, SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId) == 0 && !m_clientConfig->sigV4aSigningRegionSet.empty()) {
-        authscheme.putSignerProperty(smithy::SIGNER_REGION_PROPERTY,
-            Aws::Crt::Variant<Aws::String, bool>(Aws::Utils::StringUtils::Join(m_clientConfig->sigV4aSigningRegionSet, ',')));
     }
 }
 

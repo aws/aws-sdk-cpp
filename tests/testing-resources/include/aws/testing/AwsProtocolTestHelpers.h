@@ -88,7 +88,7 @@ public:
 
   Aws::Auth::AWSCredentials mockCredentials{"mock", "credentials"};
 
-  ProtocolMockClient mockClient = ProtocolMockClient(Aws::Client::ClientConfiguration(disableImdsConfigInit));
+  ProtocolMockClient mockClient = ProtocolMockClient(Aws::ProtocolMock::ProtocolMockClientConfiguration(disableImdsConfigInit));
 
   void SetUp() override {
     auto pingOutcome = mockClient.Ping();

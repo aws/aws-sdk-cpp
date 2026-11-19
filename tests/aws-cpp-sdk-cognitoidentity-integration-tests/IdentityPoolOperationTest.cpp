@@ -62,7 +62,7 @@ public:
 protected:
     void SetUp()
     {
-        Aws::Client::ClientConfiguration config;
+        Aws::CognitoIdentity::CognitoIdentityClientConfiguration config;
         config.region = AWS_TEST_REGION;
 
         //TODO: move this over to profile config file.
@@ -266,7 +266,7 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
     GetIdRequest getIdRequest;
     getIdRequest.WithIdentityPoolId(identityPoolId);
 
-    ClientConfiguration clientConfig;
+    Aws::IAM::IAMClientConfiguration clientConfig;
     clientConfig.region = AWS_TEST_REGION;
 
     auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");

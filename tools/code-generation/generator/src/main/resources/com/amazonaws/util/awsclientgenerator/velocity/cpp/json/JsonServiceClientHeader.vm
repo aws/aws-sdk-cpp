@@ -51,7 +51,6 @@ namespace ${serviceNamespace}
 #set($json_virtual = "virtual ")
 #end
 
-    ${json_virtual}void OverrideEndpoint(const Aws::String& endpoint);
 #if($serviceModel.endpointRules)
     ${json_virtual}std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end

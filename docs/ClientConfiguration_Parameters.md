@@ -11,7 +11,6 @@ struct AWS_CORE_API ClientConfiguration
     Aws::String userAgent;
     Aws::Http::Scheme scheme;
     Aws::Region region;
-    bool useDualStack;
     unsigned maxConnections;
     long requestTimeoutMs;
     long connectTimeoutMs;
@@ -41,6 +40,7 @@ The region specifies where you want the client to communicate. Examples include 
 
 ### UseDualStack
 Sets the endpoint calculation to go to a dual stack (ipv6 enabled) endpoint. It is your responsibility to check that the service actually supports ipv6 in the region you specify.
+`useDualStack` is not part of the shared `Aws::Client::ClientConfiguration`; it is available on a service's own configuration (for example `Aws::S3::S3ClientConfiguration`) only when that service's endpoints support dual stack.
 
 ### Max Connections
 The default value for the maximum number of allowed connections to a single server for your HTTP communications is 25. You can set this value as high as you can support the bandwidth. We recommend a value around 25.

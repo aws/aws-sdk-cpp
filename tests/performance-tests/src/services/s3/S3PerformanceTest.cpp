@@ -30,7 +30,7 @@
 
 #include <cassert>
 
-PerformanceTest::Services::S3::S3PerformanceTest::S3PerformanceTest(const Aws::Client::ClientConfiguration& clientConfig,
+PerformanceTest::Services::S3::S3PerformanceTest::S3PerformanceTest(const Aws::S3::S3ClientConfiguration& clientConfig,
                                                                     const TestConfig::TestCase& testConfig, int iterations,
                                                                     const Aws::String& availabilityZoneId)
     : m_s3(Aws::MakeUnique<Aws::S3::S3Client>("S3PerformanceTest", clientConfig)),

@@ -73,7 +73,7 @@ namespace
             mediaStoreConfig.scheme = Scheme::HTTPS;
             mediaStoreConfig.connectTimeoutMs = 30000;
             mediaStoreConfig.requestTimeoutMs = 30000;
-            m_mediaStoreClient = Aws::MakeShared<MediaStoreClient>(ALLOCATION_TAG, mediaStoreConfig);
+            m_mediaStoreClient = Aws::MakeShared<MediaStoreClient>(ALLOCATION_TAG, Aws::MediaStore::MediaStoreClientConfiguration(mediaStoreConfig));
 
             // Create a testing container.
             DescribeContainerRequest describeContainerRequest;
@@ -95,7 +95,7 @@ namespace
             m_mediaStoreDataConfig->requestTimeoutMs = 30000;
             describeContainerOutcome = m_mediaStoreClient->DescribeContainer(describeContainerRequest);
             m_mediaStoreDataConfig->endpointOverride = describeContainerOutcome.GetResult().GetContainer().GetEndpoint();
-            m_mediaStoreDataClient = Aws::MakeShared<MediaStoreDataClient>(ALLOCATION_TAG, *m_mediaStoreDataConfig);
+            m_mediaStoreDataClient = Aws::MakeShared<MediaStoreDataClient>(ALLOCATION_TAG, Aws::MediaStoreData::MediaStoreDataClientConfiguration(*m_mediaStoreDataConfig));
         }
 
         static void TearDownTestCase()
@@ -337,7 +337,7 @@ namespace
 #ifdef _MSC_VER
         // Test wininet http client.
         m_mediaStoreDataConfig->httpLibOverride = TransferLibType::WIN_INET_CLIENT;
-        m_mediaStoreDataClient = Aws::MakeShared<MediaStoreDataClient>(ALLOCATION_TAG, *m_mediaStoreDataConfig);
+        m_mediaStoreDataClient = Aws::MakeShared<MediaStoreDataClient>(ALLOCATION_TAG, Aws::MediaStoreData::MediaStoreDataClientConfiguration(*m_mediaStoreDataConfig));
         TestChunkedEncodingWithSmallPayload();
 #endif // _MSC_VER
     }
@@ -348,7 +348,7 @@ namespace
 #ifdef _MSC_VER
         // Test wininet http client.
         m_mediaStoreDataConfig->httpLibOverride = TransferLibType::WIN_INET_CLIENT;
-        m_mediaStoreDataClient = Aws::MakeShared<MediaStoreDataClient>(ALLOCATION_TAG, *m_mediaStoreDataConfig);
+        m_mediaStoreDataClient = Aws::MakeShared<MediaStoreDataClient>(ALLOCATION_TAG, Aws::MediaStoreData::MediaStoreDataClientConfiguration(*m_mediaStoreDataConfig));
         TestChunkedEncodingWithLargePayload();
 #endif // _MSC_VER
     }

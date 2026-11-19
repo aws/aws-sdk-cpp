@@ -38,7 +38,7 @@ protected:
     Aws::String bucketName;
 
     void SetUp() override {
-        Aws::Client::ClientConfiguration config;
+        Aws::S3::S3ClientConfiguration config;
         config.region = Aws::Region::US_EAST_1;
         Client = S3Client(config);
         

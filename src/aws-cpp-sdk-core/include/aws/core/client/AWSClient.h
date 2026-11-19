@@ -397,11 +397,9 @@ namespace Aws
             bool m_enableClockSkewAdjustment;
             mutable std::shared_ptr<Aws::Internal::ClientSkew> m_clientSkew;
             Aws::String m_serviceName = "AWSBaseClient";
-            Aws::Client::RequestCompressionConfig m_requestCompressionConfig;
             std::shared_ptr<smithy::client::UserAgentInterceptor> m_userAgentInterceptor;
             Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors;
             bool m_enableNewRetries;
-            bool m_disableExpectHeader;
         };
 
         AWS_CORE_API Aws::String GetAuthorizationHeader(const Aws::Http::HttpRequest& httpRequest);

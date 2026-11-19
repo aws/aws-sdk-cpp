@@ -150,6 +150,16 @@ namespace Aws
     } // namespace Client
 } // namespace Aws
 
+static Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> CreateClientInterceptors(
+    const Aws::Client::ClientConfiguration& configuration,
+    const std::shared_ptr<Aws::Http::HttpClient>& httpClient,
+    const std::shared_ptr<smithy::interceptor::Interceptor>& userAgentInterceptor)
+{
+    auto interceptors = configuration.CreateInterceptors({httpClient});
+    interceptors.push_back(userAgentInterceptor);
+    return interceptors;
+}
+
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
@@ -171,14 +181,9 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_clientSkew(Aws::MakeShared<Aws::Internal::ClientSkew>(AWS_CLIENT_LOG_TAG, std::chrono::milliseconds(0))),
-    m_requestCompressionConfig(configuration.requestCompressionConfig),
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
-    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG,
-        m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : configuration.httpClientChunkedMode,
-        configuration.awsChunkedBufferSize),
-        m_userAgentInterceptor},
-    m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"},
-    m_disableExpectHeader(configuration.disableExpectHeader)
+    m_interceptors(CreateClientInterceptors(configuration, m_httpClient, m_userAgentInterceptor)),
+    m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"}
 {
 }
 
@@ -203,14 +208,9 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_clientSkew(Aws::MakeShared<Aws::Internal::ClientSkew>(AWS_CLIENT_LOG_TAG, std::chrono::milliseconds(0))),
-    m_requestCompressionConfig(configuration.requestCompressionConfig),
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
-    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG, configuration), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG,
-        m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : configuration.httpClientChunkedMode,
-        configuration.awsChunkedBufferSize),
-        m_userAgentInterceptor},
-    m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"},
-    m_disableExpectHeader(configuration.disableExpectHeader)
+    m_interceptors(CreateClientInterceptors(configuration, m_httpClient, m_userAgentInterceptor)),
+    m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"}
 {
 }
 
@@ -1329,41 +1329,12 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
     }
     else
     {
-        //Check if compression is required
-        CompressionAlgorithm selectedCompressionAlgorithm =
-            request.GetSelectedCompressionAlgorithm(m_requestCompressionConfig);
-        if (Aws::Client::CompressionAlgorithm::NONE != selectedCompressionAlgorithm) {
-            Aws::Client::RequestCompression rc;
-            auto compressOutcome = rc.compress(request.GetBody(), selectedCompressionAlgorithm);
-
-            if (compressOutcome.IsSuccess()) {
-                Aws::String compressionAlgorithmId = Aws::Client::GetCompressionAlgorithmId(selectedCompressionAlgorithm);
-                AppendHeaderValueToRequest(httpRequest, CONTENT_ENCODING_HEADER, compressionAlgorithmId);
-                if (selectedCompressionAlgorithm == Aws::Client::CompressionAlgorithm::GZIP) {
-                  request.AddUserAgentFeature(Aws::Client::UserAgentFeature::GZIP_REQUEST_COMPRESSION);
-                }
-                AddContentBodyToRequest(
-                    httpRequest, compressOutcome.GetResult(),
-                    request.ShouldComputeContentMd5(),
-                    request.IsStreaming() && request.IsChunked() &&
-                        m_httpClient->SupportsChunkedTransferEncoding());
-            } else {
-                AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Failed to compress request, submitting uncompressed");
-                AddContentBodyToRequest(httpRequest, request.GetBody(), request.ShouldComputeContentMd5(), request.IsStreaming() && request.IsChunked() && m_httpClient->SupportsChunkedTransferEncoding());
-            }
-        } else {
-            AddContentBodyToRequest(httpRequest, request.GetBody(), request.ShouldComputeContentMd5(), request.IsStreaming() && request.IsChunked() && m_httpClient->SupportsChunkedTransferEncoding());
-        }
+        AddContentBodyToRequest(httpRequest, request.GetBody(), request.ShouldComputeContentMd5(), request.IsStreaming() && request.IsChunked() && m_httpClient->SupportsChunkedTransferEncoding());
     }
 
     if (httpRequest->HasHeader(Aws::Http::SMITHY_PROTOCOL_HEADER))
     {
         request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PROTOCOL_RPC_V2_CBOR);
-    }
-
-    if (request.IsStreaming() && !m_disableExpectHeader)
-    {
-        httpRequest->SetHeaderValue(Aws::Http::EXPECT_HEADER, Aws::Http::EXPECT_100_CONTINUE_VALUE);
     }
 
     // Pass along handlers for processing data sent/received in bytes

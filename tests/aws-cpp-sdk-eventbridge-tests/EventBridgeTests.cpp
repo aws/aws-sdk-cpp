@@ -126,11 +126,11 @@ static void assertProtocolHeaders(const Aws::Http::Standard::StandardHttpRequest
 
 TEST_F(EventBridgeTests, TestPutEventsBasic)
 {
-    Aws::Client::ClientConfiguration clientConfig("default", true);
+    Aws::EventBridge::EventBridgeClientConfiguration clientConfig("default", true);
     clientConfig.region = "us-east-1";
     Aws::Auth::AWSCredentials mockCreds("accessKey", "secretKey", "sessionToken");
 
-    Aws::EventBridge::EventBridgeClient eventBridgeClient(mockCreds, clientConfig);
+    Aws::EventBridge::EventBridgeClient eventBridgeClient(mockCreds, nullptr, clientConfig);
 
     Aws::EventBridge::Model::PutEventsRequest request = buildEventBridgeRequest();
     const Aws::String eventIdToReply = "baadf00d-1234-5678-910a-baadf00dcafe";
@@ -153,11 +153,11 @@ TEST_F(EventBridgeTests, TestPutEventsBasic)
 
 TEST_F(EventBridgeTests, TestPutEventsMultiRegional)
 {
-    Aws::Client::ClientConfiguration clientConfig("default", true);
+    Aws::EventBridge::EventBridgeClientConfiguration clientConfig("default", true);
     clientConfig.region = "us-east-1";
     Aws::Auth::AWSCredentials mockCreds("accessKey", "secretKey", "sessionToken");
 
-    Aws::EventBridge::EventBridgeClient eventBridgeClient(mockCreds, clientConfig);
+    Aws::EventBridge::EventBridgeClient eventBridgeClient(mockCreds, nullptr, clientConfig);
 
     Aws::EventBridge::Model::PutEventsRequest request = buildEventBridgeRequest();
     const Aws::String eventIdToReply = "baadf00d-1234-5678-910a-baadf00dcafe";
@@ -221,13 +221,13 @@ TEST_F(EventBridgeTests, TestPutEventsEndpointTests)
     for(size_t tcIdx = 0; tcIdx < TEST_CASES.size(); ++tcIdx)
     {
         const EventBridgeEndpointTestCase& testCase = TEST_CASES[tcIdx];
-        Aws::Client::ClientConfiguration clientConfig("default", true);
+        Aws::EventBridge::EventBridgeClientConfiguration clientConfig("default", true);
         clientConfig.region = testCase.clientRegion;
         clientConfig.useDualStack = testCase.useDualStackEndpoint;
         clientConfig.useFIPS = testCase.useFipsEndpoint;
 
         Aws::Auth::AWSCredentials mockCreds("accessKey", "secretKey", "sessionToken");
-        Aws::EventBridge::EventBridgeClient eventBridgeClient(mockCreds, clientConfig);
+        Aws::EventBridge::EventBridgeClient eventBridgeClient(mockCreds, nullptr, clientConfig);
 
         Aws::EventBridge::Model::PutEventsRequest request = buildEventBridgeRequest();
         const Aws::String eventIdToReply = "baadf00d-1234-5678-910a-baadf00dcafe";
