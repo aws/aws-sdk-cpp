@@ -76,14 +76,14 @@ class JsonDocument final : public AbstractDocument {
         if (!numericFormat || !value.has_value()) {
           return {};
         }
-        return Aws::Utils::DateTime(static_cast<double>(*value));
+        return EpochSecondsToDateTime(static_cast<double>(*value));
       }
       case ShapeType::Double: {
         const auto value = AsDouble();
         if (!numericFormat || !value.has_value()) {
           return {};
         }
-        return Aws::Utils::DateTime(*value);
+        return EpochSecondsToDateTime(*value);
       }
       case ShapeType::String: {
         const auto text = AsString();

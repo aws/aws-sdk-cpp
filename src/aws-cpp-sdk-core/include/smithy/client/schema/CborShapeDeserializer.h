@@ -28,6 +28,7 @@ class SMITHY_API CborShapeDeserializer final : public ShapeDeserializer {
   std::shared_ptr<const Document> ReadDocument(const Schema& schema) override;
 
   bool IsNull() override;
+  Aws::Crt::Optional<DeserializerError> GetError() const override;
 
  private:
   class Impl;

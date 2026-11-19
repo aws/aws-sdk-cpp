@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/crt/Optional.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <smithy/client/schema/Document.h>
@@ -15,6 +18,7 @@
 #include <smithy/client/schema/XmlShapeSerializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
+#include <array>
 #include <cmath>
 #include <functional>
 #include <limits>
@@ -77,19 +81,16 @@ TEST_F(XmlShapeDeserializerTest, Long) {
   EXPECT_EQ(got.value(), 9876543210LL);
 }
 
-TEST_F(XmlShapeDeserializerTest, LongClampsPlainDigitOverflow) {
+TEST_F(XmlShapeDeserializerTest, LongPlainDigitOverflowRecordsError) {
   auto root = RootBuilder().PutMember("big", Schema::CreateLong("L")).Build();
-  const Aws::Vector<std::pair<Aws::String, int64_t>> cases = {
-      {"<Root><big>99999999999999999999</big></Root>", (std::numeric_limits<int64_t>::max)()},
-      {"<Root><big>-99999999999999999999</big></Root>", (std::numeric_limits<int64_t>::min)()},
-      {"<Root><big> 99999999999999999999</big></Root>", (std::numeric_limits<int64_t>::max)()},
-  };
-  for (const auto& c : cases) {
-    XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(c.first.data()), c.first.size()));
+  for (const Aws::String payload : {"<Root><big>99999999999999999999</big></Root>", "<Root><big>-99999999999999999999</big></Root>",
+                                    "<Root><big> 99999999999999999999</big></Root>", "<Root><big>9223372036854775808</big></Root>"}) {
+    XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
     Aws::Crt::Optional<int64_t> got;
     d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadLong(m); });
-    ASSERT_TRUE(got.has_value()) << c.first;
-    EXPECT_EQ(got.value(), c.second) << c.first;
+    EXPECT_FALSE(got.has_value()) << payload;
+    ASSERT_TRUE(d.GetError().has_value()) << payload;
+    EXPECT_NE(d.GetError()->GetMessage().find("out of range"), Aws::String::npos) << payload;
   }
 }
 
@@ -650,9 +651,653 @@ TEST_F(XmlShapeDeserializerTest, TimestampFormatTraitControlsParsing) {
   }
 }
 
+TEST_F(XmlShapeDeserializerTest, EpochTimestampMatchesLegacyDateTimeDouble) {
+  auto root =
+      RootBuilder()
+          .PutMember(
+              "ts", Schema::CreateTimestamp("T"),
+              {{TimestampFormatTrait::KEY(), Aws::MakeShared<TimestampFormatTrait>("Test", TimestampFormatTrait::Format::EPOCH_SECONDS)}})
+          .Build();
+  auto member = root->GetMember("ts").value();
+  for (const int64_t millis : {int64_t(-4307758798296), int64_t(4307758798296), int64_t(1296), int64_t(-1296), int64_t(1700000000123)}) {
+    auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, Aws::Utils::DateTime(millis)); });
+    XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+    Aws::Crt::Optional<Aws::Utils::DateTime> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
+    ASSERT_TRUE(got.has_value()) << payload;
+    EXPECT_EQ(got.value().Millis(), LegacyEpochMillis(EpochSecondsText(Aws::Utils::DateTime(millis)))) << payload;
+  }
+}
+
 TEST_F(XmlShapeDeserializerTest, ReadDocumentIsUnsupported) {
   Aws::String xml = "<x/>";
   XmlShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.c_str()), xml.size()));
   auto schema = Schema::CreateDocument("smithy.api#Document");
   EXPECT_EQ(deser.ReadDocument(*schema), nullptr);
+}
+
+TEST_F(XmlShapeDeserializerTest, WhitespaceOnlyInputIsNotAnError) {
+  const Aws::String xml = "  \n\t ";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.data()), xml.size()));
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(XmlShapeDeserializerTest, UnclosedRootSetsError) {
+  const Aws::String xml = "<Root><a>1</a>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.data()), xml.size()));
+  ASSERT_TRUE(d.GetError().has_value());
+  EXPECT_NE(d.GetError()->GetMessage().find("unclosed"), Aws::String::npos);
+}
+
+TEST_F(XmlShapeDeserializerTest, TextWithoutRootSetsError) {
+  const Aws::String xml = "hello";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.data()), xml.size()));
+  EXPECT_TRUE(d.GetError().has_value());
+}
+
+TEST_F(XmlShapeDeserializerTest, RecursiveStructAtMaxDepthSucceeds) {
+  RecursiveNodeSchema node;
+  const Aws::String xml = NestedXmlNodes(MAX_NESTING_DEPTH);
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.data()), xml.size()));
+  EXPECT_EQ(DescendRecursiveNode(d, node.Get()), MAX_NESTING_DEPTH);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(XmlShapeDeserializerTest, RecursiveStructPastMaxDepthSetsError) {
+  RecursiveNodeSchema node;
+  const Aws::String xml = NestedXmlNodes(MAX_NESTING_DEPTH + 1);
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.data()), xml.size()));
+  DescendRecursiveNode(d, node.Get());
+  ASSERT_TRUE(d.GetError().has_value());
+  EXPECT_NE(d.GetError()->GetMessage().find("depth"), Aws::String::npos);
+}
+
+namespace {
+template <typename Fn>
+void WithXmlValue(const Aws::String& text, const std::shared_ptr<const Schema>& member, const Fn& fn, TraitList memberTraits = {}) {
+  auto root = Schema::StructureBuilder("Root").PutMember("v", member, memberTraits).Build();
+  const Aws::String xml = "<Root><v>" + text + "</v></Root>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.data()), xml.size()));
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { fn(m, de); });
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+template <typename Fn>
+void ExpectXmlValueOutOfRange(const Aws::String& text, const std::shared_ptr<const Schema>& member, const Fn& read,
+                              TraitList memberTraits = {}) {
+  auto root = Schema::StructureBuilder("Root").PutMember("v", member, memberTraits).Build();
+  const Aws::String xml = "<Root><v>" + text + "</v></Root>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.data()), xml.size()));
+  bool present = true;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { present = read(m, de); });
+  EXPECT_FALSE(present) << text;
+  ASSERT_TRUE(d.GetError().has_value()) << text;
+  EXPECT_NE(d.GetError()->GetMessage().find("out of range"), Aws::String::npos) << text;
+}
+}  // namespace
+
+TEST_F(XmlShapeDeserializerTest, IntegerBeyondInt32RecordsError) {
+  ExpectXmlValueOutOfRange("3000000000", Schema::CreateInteger("I"),
+                           [](const Schema& m, ShapeDeserializer& de) { return de.ReadInteger(m).has_value(); });
+}
+
+TEST_F(XmlShapeDeserializerTest, FloatBeyondFloatRangeRecordsError) {
+  ExpectXmlValueOutOfRange("1e300", Schema::CreateFloat("F"),
+                           [](const Schema& m, ShapeDeserializer& de) { return de.ReadFloat(m).has_value(); });
+}
+
+TEST_F(XmlShapeDeserializerTest, UnrepresentableEpochTimestampRecordsError) {
+  ExpectXmlValueOutOfRange("1e300", Schema::CreateTimestamp("T"),
+                           [](const Schema& m, ShapeDeserializer& de) { return de.ReadTimestamp(m).has_value(); },
+                           {{TimestampFormatTrait::KEY(), Aws::MakeShared<TimestampFormatTrait>("Test", TimestampFormatTrait::Format::EPOCH_SECONDS)}});
+}
+
+namespace {
+const std::array<double, 7> ROUND_TRIP_DOUBLES = {{2147483647.0, 0.1, 1.0 / 3.0, 9007199254740993.0, (std::numeric_limits<double>::max)(),
+                                                  (std::numeric_limits<double>::min)(), -123456789.123456789}};
+const std::array<float, 8> ROUND_TRIP_FLOATS = {{(std::numeric_limits<float>::max)(), (std::numeric_limits<float>::min)(),
+                                                std::numeric_limits<float>::denorm_min(), 0.1f, 3.14f, std::nextafter(16777216.0f, 1e9f),
+                                                std::nextafter(16777216.0f, 0.0f), 2147483647.0f}};
+
+std::shared_ptr<const Schema> ElementNumberRoot(ShapeType type) {
+  return RootBuilder().PutMember("n", type == ShapeType::Float ? Schema::CreateFloat("N") : Schema::CreateDouble("N")).Build();
+}
+
+std::shared_ptr<const Schema> AttributeNumberRoot(ShapeType type) {
+  return RootBuilder()
+      .PutMember("n", type == ShapeType::Float ? Schema::CreateFloat("N") : Schema::CreateDouble("N"),
+                 {{XmlAttributeTrait::KEY(), Aws::MakeShared<XmlAttributeTrait>("Test")}})
+      .Build();
+}
+
+template <typename T>
+Aws::Crt::Optional<T> RoundTripNumber(ShapeType type, const std::shared_ptr<const Schema>& root, T value) {
+  auto n = root->GetMember("n").value();
+  const Aws::String payload = Encode(root, [&](ShapeSerializer& ser) {
+    if (type == ShapeType::Float) {
+      ser.WriteFloat(*n, static_cast<float>(value));
+    } else {
+      ser.WriteDouble(*n, static_cast<double>(value));
+    }
+  });
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  Aws::Crt::Optional<T> got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    if (type == ShapeType::Float) {
+      auto v = de.ReadFloat(m);
+      if (v.has_value()) {
+        got = static_cast<T>(v.value());
+      }
+    } else {
+      auto v = de.ReadDouble(m);
+      if (v.has_value()) {
+        got = static_cast<T>(v.value());
+      }
+    }
+  });
+  return got;
+}
+}  // namespace
+
+TEST_F(XmlShapeDeserializerTest, DoubleRoundTripsExactlyAsElementAndAttribute) {
+  const auto element = ElementNumberRoot(ShapeType::Double);
+  const auto attribute = AttributeNumberRoot(ShapeType::Double);
+  for (const double value : ROUND_TRIP_DOUBLES) {
+    const auto asElement = RoundTripNumber<double>(ShapeType::Double, element, value);
+    ASSERT_TRUE(asElement.has_value()) << value;
+    EXPECT_EQ(asElement.value(), value);
+    const auto asAttribute = RoundTripNumber<double>(ShapeType::Double, attribute, value);
+    ASSERT_TRUE(asAttribute.has_value()) << value;
+    EXPECT_EQ(asAttribute.value(), value);
+  }
+}
+
+TEST_F(XmlShapeDeserializerTest, FloatRoundTripsExactlyAsElementAndAttribute) {
+  const auto element = ElementNumberRoot(ShapeType::Float);
+  const auto attribute = AttributeNumberRoot(ShapeType::Float);
+  for (const float value : ROUND_TRIP_FLOATS) {
+    const auto asElement = RoundTripNumber<float>(ShapeType::Float, element, value);
+    ASSERT_TRUE(asElement.has_value()) << value;
+    EXPECT_EQ(asElement.value(), value);
+    const auto asAttribute = RoundTripNumber<float>(ShapeType::Float, attribute, value);
+    ASSERT_TRUE(asAttribute.has_value()) << value;
+    EXPECT_EQ(asAttribute.value(), value);
+  }
+}
+
+TEST_F(XmlShapeDeserializerTest, NonFiniteDoubleRoundTripsAsAttribute) {
+  const auto attribute = AttributeNumberRoot(ShapeType::Double);
+  const auto nan = RoundTripNumber<double>(ShapeType::Double, attribute, std::numeric_limits<double>::quiet_NaN());
+  ASSERT_TRUE(nan.has_value());
+  EXPECT_TRUE(std::isnan(nan.value()));
+  for (const double value : {std::numeric_limits<double>::infinity(), -std::numeric_limits<double>::infinity()}) {
+    const auto got = RoundTripNumber<double>(ShapeType::Double, attribute, value);
+    ASSERT_TRUE(got.has_value()) << value;
+    EXPECT_EQ(got.value(), value);
+  }
+}
+
+TEST_F(XmlShapeDeserializerTest, AbsentAttributeMemberIsNotDelivered) {
+  auto root = RootBuilder()
+                  .PutMember("id", Schema::CreateString("S"), {{XmlAttributeTrait::KEY(), Aws::MakeShared<XmlAttributeTrait>("Test")}})
+                  .Build();
+  const Aws::String payload = "<Root></Root>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  int delivered = 0;
+  d.ReadStruct(*root, [&](const Schema&, ShapeDeserializer&) { ++delivered; });
+  EXPECT_EQ(delivered, 0);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(XmlShapeDeserializerTest, AbsentNumericAttributeMemberIsNotDelivered) {
+  auto root = RootBuilder()
+                  .PutMember("n", Schema::CreateInteger("I"), {{XmlAttributeTrait::KEY(), Aws::MakeShared<XmlAttributeTrait>("Test")}})
+                  .Build();
+  const Aws::String payload = "<Root other=\"1\"/>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  int delivered = 0;
+  d.ReadStruct(*root, [&](const Schema&, ShapeDeserializer&) { ++delivered; });
+  EXPECT_EQ(delivered, 0);
+}
+
+TEST_F(XmlShapeDeserializerTest, ExplicitEmptyAttributeIsDeliveredAsEmptyString) {
+  auto root = RootBuilder()
+                  .PutMember("id", Schema::CreateString("S"), {{XmlAttributeTrait::KEY(), Aws::MakeShared<XmlAttributeTrait>("Test")}})
+                  .Build();
+  const Aws::String payload = "<Root id=\"\"></Root>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  int delivered = 0;
+  Aws::Crt::Optional<Aws::String> got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    ++delivered;
+    got = de.ReadString(m);
+  });
+  EXPECT_EQ(delivered, 1);
+  ASSERT_TRUE(got.has_value());
+  EXPECT_EQ(got.value(), "");
+}
+
+namespace {
+Aws::Map<Aws::String, Aws::String> ReadStringAttributes(const Aws::String& payload, const Aws::Vector<Aws::String>& names,
+                                                        Aws::Crt::Optional<DeserializerError>* error = nullptr) {
+  auto builder = RootBuilder();
+  for (const auto& name : names) {
+    builder.PutMember(name.c_str(), Schema::CreateString("S"), {{XmlAttributeTrait::KEY(), Aws::MakeShared<XmlAttributeTrait>("Test")}});
+  }
+  auto root = builder.Build();
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  Aws::Map<Aws::String, Aws::String> got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    const auto value = de.ReadString(m);
+    if (value.has_value()) {
+      got[m.GetMemberName()] = value.value();
+    }
+  });
+  if (error) {
+    *error = d.GetError();
+  }
+  return got;
+}
+}  // namespace
+
+TEST_F(XmlShapeDeserializerTest, AttributeNameInsideDoubleQuotedValueIsNotMatched) {
+  const auto got = ReadStringAttributes("<Root a=\"z b='x'\" b=\"y\"/>", {"a", "b"});
+  ASSERT_EQ(got.size(), 2u);
+  EXPECT_EQ(got.at("a"), "z b='x'");
+  EXPECT_EQ(got.at("b"), "y");
+}
+
+TEST_F(XmlShapeDeserializerTest, AttributeNameInsideSingleQuotedValueIsNotMatched) {
+  const auto got = ReadStringAttributes("<Root a='z b=\"x\"' b='y'/>", {"a", "b"});
+  ASSERT_EQ(got.size(), 2u);
+  EXPECT_EQ(got.at("a"), "z b=\"x\"");
+  EXPECT_EQ(got.at("b"), "y");
+}
+
+TEST_F(XmlShapeDeserializerTest, AttributeNameInsideValueFollowedByQuoteIsNotMatched) {
+  const auto got = ReadStringAttributes("<Root attr=\"x int-attr=\" int-attr=\"1\"/>", {"attr", "int-attr"});
+  ASSERT_EQ(got.size(), 2u);
+  EXPECT_EQ(got.at("attr"), "x int-attr=");
+  EXPECT_EQ(got.at("int-attr"), "1");
+}
+
+TEST_F(XmlShapeDeserializerTest, AttributeValueContainingTagEndIsRead) {
+  const auto got = ReadStringAttributes("<Root a=\"1>2\" b=\"y\"/>", {"a", "b"});
+  ASSERT_EQ(got.size(), 2u);
+  EXPECT_EQ(got.at("a"), "1>2");
+  EXPECT_EQ(got.at("b"), "y");
+}
+
+TEST_F(XmlShapeDeserializerTest, AttributeNameThatIsSuffixOfAnotherIsNotMatched) {
+  const auto got = ReadStringAttributes("<Root int-attr=\"1\" attr=\"2\"/>", {"attr", "int-attr"});
+  ASSERT_EQ(got.size(), 2u);
+  EXPECT_EQ(got.at("attr"), "2");
+  EXPECT_EQ(got.at("int-attr"), "1");
+}
+
+TEST_F(XmlShapeDeserializerTest, AttributeNameThatIsSuffixOfAnotherIsAbsentWhenOnlyLongerPresent) {
+  const auto got = ReadStringAttributes("<Root int-attr=\"1\"/>", {"attr"});
+  EXPECT_TRUE(got.empty());
+}
+
+TEST_F(XmlShapeDeserializerTest, AttributeWithWhitespaceAroundEqualsIsRead) {
+  const auto got = ReadStringAttributes("<Root a = \"1\"  b\t=\n'2'/>", {"a", "b"});
+  ASSERT_EQ(got.size(), 2u);
+  EXPECT_EQ(got.at("a"), "1");
+  EXPECT_EQ(got.at("b"), "2");
+}
+
+TEST_F(XmlShapeDeserializerTest, MalformedAttributeRecordsError) {
+  for (const char* payload : {"<Root a></Root>", "<Root a=1></Root>", "<Root a=\"1\" a=\"2\"/>", "<Root 1a=\"1\"/>", "<Root a$=\"1\"/>",
+                              "<Root a=\"1\" / >", "<Root><c a=\"1\" a=\"1\"/></Root>", "<Root a=\"1>"}) {
+    Aws::Crt::Optional<DeserializerError> error;
+    EXPECT_TRUE(ReadStringAttributes(payload, {"a"}, &error).empty()) << payload;
+    EXPECT_TRUE(error.has_value()) << payload;
+  }
+}
+
+TEST_F(XmlShapeDeserializerTest, AttributesWithoutSeparatingWhitespaceAreRead) {
+  Aws::Crt::Optional<DeserializerError> error;
+  const auto got = ReadStringAttributes("<Root a=\"1\"b='2'/>", {"a", "b"}, &error);
+  EXPECT_FALSE(error.has_value());
+  ASSERT_EQ(got.size(), 2u);
+  EXPECT_EQ(got.at("b"), "2");
+}
+
+TEST_F(XmlShapeDeserializerTest, AttributeValueIsDecodedAndLineEndsNormalized) {
+  const auto got = ReadStringAttributes("<Root a=\"x&#65;&lt;\r\ny&#xD;\tz\"/>", {"a"});
+  ASSERT_EQ(got.size(), 1u);
+  EXPECT_EQ(got.at("a"), "xA<\ny\r\tz");
+}
+
+TEST_F(XmlShapeDeserializerTest, UnterminatedAttributeQuoteBeforeLaterQuoteIsAbsent) {
+  EXPECT_TRUE(ReadStringAttributes("<Root a=\"1><x b=\"2\"/></Root>", {"a"}).empty());
+}
+
+TEST_F(XmlShapeDeserializerTest, OverflowingFiniteTextRecordsError) {
+  auto root = RootBuilder().PutMember("d", Schema::CreateDouble("D")).PutMember("f", Schema::CreateFloat("F")).Build();
+  for (const char* text : {"1e400", "-1e400"}) {
+    ExpectXmlValueOutOfRange(text, Schema::CreateDouble("D"),
+                             [](const Schema& m, ShapeDeserializer& de) { return de.ReadDouble(m).has_value(); });
+    ExpectXmlValueOutOfRange(text, Schema::CreateFloat("F"),
+                             [](const Schema& m, ShapeDeserializer& de) { return de.ReadFloat(m).has_value(); });
+  }
+  const Aws::String payload = "<Root><d>Infinity</d></Root>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  Aws::Crt::Optional<double> got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadDouble(m); });
+  ASSERT_TRUE(got.has_value());
+  EXPECT_TRUE(std::isinf(got.value()));
+}
+
+namespace {
+Aws::String ReadText(const Aws::String& payload, Aws::Crt::Optional<DeserializerError>* error = nullptr) {
+  auto root = RootBuilder().PutMember("s", Schema::CreateString("S")).Build();
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  Aws::Crt::Optional<Aws::String> got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadString(m); });
+  if (error) {
+    *error = d.GetError();
+  }
+  return got.has_value() ? got.value() : Aws::String("<absent>");
+}
+}  // namespace
+
+TEST_F(XmlShapeDeserializerTest, NumericCharacterReferencesDecode) {
+  EXPECT_EQ(ReadText("<Root><s>&#65;&#x42;&#xE9;&#x1F600;&#0000067;</s></Root>"), Aws::String("AB\xC3\xA9\xF0\x9F\x98\x80" "C"));
+}
+
+TEST_F(XmlShapeDeserializerTest, UnrecognisedReferencesAreKeptAsWritten) {
+  for (const char* text : {"&#X41;", "&#;", "&#x;", "&#x110000;", "&#12a;", "&#65", "&foo;", "a&b", "&amp"}) {
+    EXPECT_EQ(ReadText(Aws::String("<Root><s>") + text + "</s></Root>"), Aws::String(text)) << text;
+  }
+}
+
+TEST_F(XmlShapeDeserializerTest, CdataIsLiteral) {
+  EXPECT_EQ(ReadText("<Root><s><![CDATA[<a>&amp;]]></s></Root>"), Aws::String("<a>&amp;"));
+  EXPECT_EQ(ReadText("<Root><s>x<![CDATA[y]]>&amp;z</s></Root>"), Aws::String("xy&z"));
+}
+
+TEST_F(XmlShapeDeserializerTest, CommentsAreNotText) { EXPECT_EQ(ReadText("<Root><s>a<!--c-->b<!---->c</s></Root>"), Aws::String("abc")); }
+
+TEST_F(XmlShapeDeserializerTest, LineEndsAreNormalizedAsTinyxml2Does) {
+  EXPECT_EQ(ReadText("<Root><s>a\r\nb\rc\n\rd\n\ne</s></Root>"), Aws::String("a\nb\nc\nd\n\ne"));
+  EXPECT_EQ(ReadText("<Root><s><![CDATA[a\r\nb]]></s></Root>"), Aws::String("a\nb"));
+  EXPECT_EQ(ReadText("<Root><s>a&#xD;&#13;\nb</s></Root>"), Aws::String("a\r\r\nb"));
+}
+
+TEST_F(XmlShapeDeserializerTest, InvalidElementNameRecordsError) {
+  for (const char* payload : {"<Root><1v>x</1v><s>a</s></Root>", "<Root><-v/><s>a</s></Root>", "<Root$><s>a</s></Root$>",
+                              "<Root><s>a</s><.x/></Root>"}) {
+    Aws::Crt::Optional<DeserializerError> error;
+    EXPECT_EQ(ReadText(payload, &error), "<absent>") << payload;
+    EXPECT_TRUE(error.has_value()) << payload;
+  }
+  Aws::Crt::Optional<DeserializerError> error;
+  EXPECT_EQ(ReadText("<Root><_a.b-c:d\xC3\xA9/><s>a</s></Root>", &error), Aws::String("a"));
+  EXPECT_FALSE(error.has_value());
+}
+
+TEST_F(XmlShapeDeserializerTest, MalformedStructureRecordsError) {
+  auto root = RootBuilder().PutMember("a", Schema::CreateString("S")).Build();
+  const Aws::Vector<std::pair<Aws::String, Aws::String>> cases = {
+      {"<Root/", "unterminated tag"},
+      {"<Root a='x/", "unterminated tag"},
+      {"<Root><a>x</b></Root>", "mismatched closing tag"},
+      {"<Root><a>x</Root></a>", "mismatched closing tag"},
+      {"<Root><a>x</a>", "unclosed element"},
+      {"<Root/>junk", "text outside the root element"},
+      {"<Root></Root><Root></Root>", "multiple root elements"},
+      {"<Root><!-- open </Root>", "unterminated markup"},
+      {"<?pi <Root/>", "unterminated markup"},
+      {"<Root><a>x</a y></Root>", "invalid closing tag"},
+      {"<Root><a>x</a '<b>y</b>'></Root>", "invalid closing tag"},
+  };
+  for (const auto& c : cases) {
+    XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(c.first.data()), c.first.size()));
+    int delivered = 0;
+    d.ReadStruct(*root, [&](const Schema&, ShapeDeserializer&) { ++delivered; });
+    EXPECT_EQ(delivered, 0) << c.first;
+    ASSERT_TRUE(d.GetError().has_value()) << c.first;
+    EXPECT_NE(d.GetError()->GetMessage().find(c.second), Aws::String::npos) << c.first << ": " << d.GetError()->GetMessage();
+  }
+}
+
+TEST_F(XmlShapeDeserializerTest, MarkupAroundRootIsAccepted) {
+  auto root = RootBuilder().PutMember("a", Schema::CreateString("S")).Build();
+  for (const Aws::String payload : {"\xEF\xBB\xBF<?xml version=\"1.0\"?>\n<!-- lead --><Root><a>x</a></Root>\n<!-- tail -->\n",
+                                    "<!DOCTYPE Root><Root><a><![CDATA[x]]></a></Root>", "<ns:Root xmlns:ns=\"u\"><a>x</a></ns:Root>"}) {
+    XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+    Aws::Crt::Optional<Aws::String> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadString(m); });
+    EXPECT_FALSE(d.GetError().has_value()) << payload;
+    EXPECT_TRUE(got.has_value()) << payload;
+  }
+}
+
+namespace {
+Aws::Map<Aws::String, Aws::String> ReadStringMembers(const Aws::String& payload, const Aws::Vector<Aws::String>& names) {
+  auto builder = RootBuilder();
+  for (const auto& name : names) {
+    builder.PutMember(name.c_str(), Schema::CreateString("S"));
+  }
+  auto root = builder.Build();
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  Aws::Map<Aws::String, Aws::String> got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    const auto value = de.ReadString(m);
+    if (value.has_value()) {
+      got[m.GetMemberName()] = value.value();
+    }
+  });
+  EXPECT_FALSE(d.GetError().has_value()) << payload;
+  return got;
+}
+}  // namespace
+
+TEST_F(XmlShapeDeserializerTest, DeclarationInsideElementIsSkippedByNavigation) {
+  const auto got = ReadStringMembers("<Root><!X><a>1</a><b>2</b></Root>", {"a", "b"});
+  ASSERT_EQ(got.size(), 2u);
+  EXPECT_EQ(got.at("a"), "1");
+  EXPECT_EQ(got.at("b"), "2");
+  EXPECT_EQ(ReadStringMembers("<Root><a><!X>1</a><b>2</b></Root>", {"a", "b"}).at("b"), "2");
+}
+
+TEST_F(XmlShapeDeserializerTest, ProcessingInstructionEndsAtItsOwnTerminator) {
+  const auto got = ReadStringMembers("<?><Root><a>1</a></Root>?><Root><b>2</b></Root>", {"a", "b"});
+  ASSERT_EQ(got.size(), 1u);
+  EXPECT_EQ(got.at("b"), "2");
+}
+
+TEST_F(XmlShapeDeserializerTest, RootIsFoundAfterProcessingInstructionContainingTags) {
+  const auto got = ReadStringMembers("<?p <Root><a>1</a></Root> ?><Root><a>2</a></Root>", {"a"});
+  ASSERT_EQ(got.size(), 1u);
+  EXPECT_EQ(got.at("a"), "2");
+}
+
+TEST_F(XmlShapeDeserializerTest, StructStopsDeliveringMembersAfterFailure) {
+  auto root = RootBuilder().PutMember("a", Schema::CreateInteger("I")).PutMember("b", Schema::CreateString("S")).Build();
+  const Aws::String payload = "<Root><a>99999999999</a><b>x</b></Root>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  int delivered = 0;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    ++delivered;
+    de.ReadInteger(m);
+  });
+  EXPECT_EQ(delivered, 1);
+  EXPECT_TRUE(d.GetError().has_value());
+}
+
+TEST_F(XmlShapeDeserializerTest, ListStopsDeliveringElementsAfterFailure) {
+  auto listBuilder = Schema::ListBuilder("Nums");
+  auto root = RootBuilder().PutMember("nums", listBuilder).Build();
+  auto elem = Schema::CreateMember("member", ShapeType::Integer);
+  const Aws::String payload = "<Root><nums><member>99999999999</member><member>1</member><member>2</member></nums></Root>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  int delivered = 0;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    de.ReadList(m, [&](ShapeDeserializer& ede) {
+      ++delivered;
+      ede.ReadInteger(*elem);
+    });
+  });
+  EXPECT_EQ(delivered, 1);
+  EXPECT_TRUE(d.GetError().has_value());
+}
+
+TEST_F(XmlShapeDeserializerTest, MapStopsDeliveringEntriesAfterFailure) {
+  auto mapBuilder = Schema::MapBuilder("M");
+  auto root = RootBuilder().PutMember("m", mapBuilder).Build();
+  auto valSchema = Schema::CreateMember("value", ShapeType::Integer);
+  const Aws::String payload =
+      "<Root><m><entry><key>k1</key><value>99999999999</value></entry><entry><key>k2</key><value>1</value></entry></m></Root>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  int delivered = 0;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    de.ReadMap(m, [&](const Aws::String&, ShapeDeserializer& vde) {
+      ++delivered;
+      vde.ReadInteger(*valSchema);
+    });
+  });
+  EXPECT_EQ(delivered, 1);
+  EXPECT_TRUE(d.GetError().has_value());
+}
+
+namespace {
+
+int ReadUnionVariants(XmlShapeDeserializer& d) {
+  auto variants = Schema::UnionBuilder("U").PutMember("a", Schema::CreateString("S")).PutMember("b", Schema::CreateInteger("I")).Build();
+  auto root = RootBuilder().PutMember("u", variants).Build();
+  int delivered = 0;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    de.ReadStruct(**m.GetMemberTarget(), [&](const Schema& variant, ShapeDeserializer& vde) {
+      ++delivered;
+      if (variant.GetMemberName() == Aws::String("a")) {
+        vde.ReadString(variant);
+      } else {
+        vde.ReadInteger(variant);
+      }
+    });
+  });
+  return delivered;
+}
+
+}  // namespace
+
+TEST_F(XmlShapeDeserializerTest, UnionWithTwoMembersSetRecordsError) {
+  const Aws::String payload = "<Root><u><a>x</a><b>1</b></u></Root>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  EXPECT_EQ(ReadUnionVariants(d), 1);
+  ASSERT_TRUE(d.GetError().has_value());
+  EXPECT_NE(d.GetError()->GetMessage().find("more than one member"), Aws::String::npos);
+}
+
+TEST_F(XmlShapeDeserializerTest, UnionIgnoresUnmodeledMembers) {
+  const Aws::String payload = "<Root><u><z>2</z><b>1</b></u></Root>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  EXPECT_EQ(ReadUnionVariants(d), 1);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(XmlShapeDeserializerTest, ProcessingInstructionOnlyOpensTheDocument) {
+  auto root = RootBuilder().PutMember("v", Schema::CreateString("S")).Build();
+  const auto errorFor = [&](const Aws::String& payload) {
+    XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+    d.ReadStruct(*root, [](const Schema&, ShapeDeserializer&) {});
+    return d.GetError();
+  };
+  EXPECT_FALSE(errorFor("<?xml version=\"1.0\"?><?pi data?><Root><v>x</v></Root>").has_value());
+  EXPECT_FALSE(errorFor("  <?pi?>\n<!-- c --><Root/>").has_value());
+  for (const Aws::String payload :
+       {"<Root><?pi?></Root>", "<Root/><?pi?>", "<!-- c --><?xml version=\"1.0\"?><Root/>", "<!DOCTYPE x><?pi?><Root/>"}) {
+    const auto error = errorFor(payload);
+    ASSERT_TRUE(error.has_value()) << payload;
+    EXPECT_NE(error->GetMessage().find("processing instruction"), Aws::String::npos) << payload;
+  }
+}
+
+TEST_F(XmlShapeDeserializerTest, NumberBooleanAndTimestampTextIsTrimmedAsLegacyClientsDo) {
+  const auto epoch = Aws::MakeShared<TimestampFormatTrait>("Test", TimestampFormatTrait::Format::EPOCH_SECONDS);
+  auto root = RootBuilder()
+                  .PutMember("b", Schema::CreateBoolean("B"))
+                  .PutMember("i", Schema::CreateInteger("I"))
+                  .PutMember("l", Schema::CreateLong("L"))
+                  .PutMember("f", Schema::CreateFloat("F"))
+                  .PutMember("d", Schema::CreateDouble("D"))
+                  .PutMember("n", Schema::CreateDouble("D"))
+                  .PutMember("t", Schema::CreateTimestamp("T"))
+                  .PutMember("e", Schema::CreateTimestamp("T"), {{TimestampFormatTrait::KEY(), epoch}})
+                  .PutMember("a", Schema::CreateInteger("I"), {{XmlAttributeTrait::KEY(), Aws::MakeShared<XmlAttributeTrait>("Test")}})
+                  .Build();
+  const Aws::String payload =
+      "<Root a=\" 7 \"><b> true\n</b><i>\n  42\n</i><l>\t-9876543210 </l><f> 1.5 </f><d>&#32;2.25&#10;</d><n> NaN </n>"
+      "<t> 2020-01-02T03:04:05Z </t><e> 1.5 </e></Root>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  Aws::Map<Aws::String, Aws::String> got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    const Aws::String name = m.GetMemberName();
+    if (name == "b") {
+      const auto v = de.ReadBoolean(m);
+      got[name] = v.has_value() ? (v.value() ? "true" : "false") : "<absent>";
+    } else if (name == "i" || name == "a") {
+      const auto v = de.ReadInteger(m);
+      got[name] = v.has_value() ? Aws::Utils::StringUtils::to_string(v.value()) : "<absent>";
+    } else if (name == "l") {
+      const auto v = de.ReadLong(m);
+      got[name] = v.has_value() ? Aws::Utils::StringUtils::to_string(v.value()) : "<absent>";
+    } else if (name == "f") {
+      const auto v = de.ReadFloat(m);
+      got[name] = v.has_value() ? Aws::Utils::StringUtils::to_string(v.value()) : "<absent>";
+    } else if (name == "d" || name == "n") {
+      const auto v = de.ReadDouble(m);
+      got[name] = v.has_value() ? (std::isnan(v.value()) ? "NaN" : Aws::Utils::StringUtils::to_string(v.value())) : "<absent>";
+    } else {
+      const auto v = de.ReadTimestamp(m);
+      got[name] = v.has_value() ? Aws::Utils::StringUtils::to_string(v->Millis()) : "<absent>";
+    }
+  });
+  EXPECT_FALSE(d.GetError().has_value());
+  EXPECT_EQ(got["b"], "true");
+  EXPECT_EQ(got["i"], "42");
+  EXPECT_EQ(got["l"], "-9876543210");
+  EXPECT_EQ(got["f"], "1.5");
+  EXPECT_EQ(got["d"], "2.25");
+  EXPECT_EQ(got["n"], "NaN");
+  EXPECT_EQ(got["t"], "1577934245000");
+  EXPECT_EQ(got["e"], "1500");
+  EXPECT_EQ(got["a"], "7");
+}
+
+TEST_F(XmlShapeDeserializerTest, StringAndBlobTextIsNotTrimmed) {
+  EXPECT_EQ(ReadText("<Root><s> x\n</s></Root>"), " x\n");
+  auto root = RootBuilder().PutMember("b", Schema::CreateBlob("B")).Build();
+  const Aws::String payload = "<Root><b> AQI= </b></Root>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  Aws::Crt::Optional<Aws::Utils::ByteBuffer> got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadBlob(m); });
+  ASSERT_TRUE(got.has_value());
+  EXPECT_EQ(got.value(), Aws::Utils::HashingUtils::Base64Decode(" AQI= "));
+}
+
+TEST_F(XmlShapeDeserializerTest, BooleanTextIsCaseInsensitive) {
+  auto root = RootBuilder().PutMember("b", Schema::CreateBoolean("B")).Build();
+  const auto read = [&](const char* text) {
+    const Aws::String payload = Aws::String("<Root><b>") + text + "</b></Root>";
+    XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+    Aws::Crt::Optional<bool> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadBoolean(m); });
+    EXPECT_FALSE(d.GetError().has_value()) << text;
+    return got;
+  };
+  for (const char* text : {"TRUE", "True", "tRuE"}) {
+    ASSERT_TRUE(read(text).has_value()) << text;
+    EXPECT_TRUE(read(text).value()) << text;
+  }
+  for (const char* text : {"FALSE", "False"}) {
+    ASSERT_TRUE(read(text).has_value()) << text;
+    EXPECT_FALSE(read(text).value()) << text;
+  }
+  for (const char* text : {"1", "0", "yes", "truee", ""}) {
+    EXPECT_FALSE(read(text).has_value()) << text;
+  }
 }
