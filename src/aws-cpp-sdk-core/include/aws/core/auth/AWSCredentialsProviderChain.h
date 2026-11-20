@@ -53,15 +53,15 @@ namespace Aws
         };
 
         /**
-         * Creates an AWSCredentialsProviderChain which uses in order EnvironmentAWSCredentialsProvider, ProfileConfigFileAWSCredentialsProvider,
-         * ProcessCredentialsProvider, STSAssumeRoleWebIdentityCredentialsProvider and SSOCredentialsProvider.
+         * Creates an AWSCredentialsProviderChain which uses in order EnvironmentAWSCredentialsProvider, ProfileCredentialsProvider,
+         * STSAssumeRoleWebIdentityCredentialsProvider and SSOCredentialsProvider.
          */
         class AWS_CORE_API DefaultAWSCredentialsProviderChain : public AWSCredentialsProviderChain
         {
         public:
             /**
-             * Initializes the provider chain with EnvironmentAWSCredentialsProvider, ProfileConfigFileAWSCredentialsProvider,
-             * ProcessCredentialsProvider, STSAssumeRoleWebIdentityCredentialsProvider and SSOCredentialsProvider in that order.
+             * Initializes the provider chain with EnvironmentAWSCredentialsProvider, ProfileCredentialsProvider,
+             * STSAssumeRoleWebIdentityCredentialsProvider and SSOCredentialsProvider in that order.
              */
             DefaultAWSCredentialsProviderChain();
 

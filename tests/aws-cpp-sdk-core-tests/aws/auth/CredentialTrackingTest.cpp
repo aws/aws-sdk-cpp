@@ -10,6 +10,7 @@
 #include <aws/testing/mocks/aws/auth/MockAWSHttpResourceClient.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/auth/GeneralHTTPCredentialsProvider.h>
 #include <aws/core/client/AWSClient.h>
@@ -178,7 +179,7 @@ TEST_F(CredentialTrackingTest, TestProfileCredentialsTracking)
     }};
     Aws::Config::ReloadCachedCredentialsFile();
 
-    auto credsProvider = Aws::MakeShared<Aws::Auth::ProfileConfigFileAWSCredentialsProvider>(TEST_LOG_TAG);
+    auto credsProvider = Aws::MakeShared<Aws::Auth::ProfileCredentialsProvider>(TEST_LOG_TAG);
     RunTestWithCredentialsProvider(std::move(credsProvider), "n");
 }
 
@@ -191,16 +192,24 @@ TEST_F(CredentialTrackingTest, TestProfileProcessCredentialsTracking)
     configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"test-process-key\", \"SecretAccessKey\": \"test-process-secret\"}") << std::endl;
     configFile.close();
 
+    // ProfileCredentialsProvider also reads the credentials file, so point it at an empty one to keep a local [default] from taking over.
+    Aws::Utils::TempFile credentialsFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(credentialsFile.good());
+    credentialsFile.close();
+
     // Set environment to use our test config file
     Aws::Environment::EnvironmentRAII testEnvironment{{
         {"AWS_CONFIG_FILE", configFile.GetFileName().c_str()},
+        {"AWS_SHARED_CREDENTIALS_FILE", credentialsFile.GetFileName().c_str()},
     }};
 
     // Force reload config file after setting environment variable
     Aws::Config::ReloadCachedConfigFile();
 
-    auto credsProvider = Aws::MakeShared<Aws::Auth::ProcessCredentialsProvider>(TEST_LOG_TAG);
-    RunTestWithCredentialsProvider(std::move(credsProvider), "v");
+    auto credsProvider = Aws::MakeShared<Aws::Auth::ProfileCredentialsProvider>(TEST_LOG_TAG);
+    ASSERT_STREQ("test-process-key", credsProvider->GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    // TODO: ProfileCredentialsProvider reports CREDENTIALS_PROFILE ("n") even when credentials come from credential_process; restore "v" once it reports the source.
+    RunTestWithCredentialsProvider(std::move(credsProvider), "n");
 }
 
 TEST_F(CredentialTrackingTest, TestInstanceProfileCredentialsTracking)

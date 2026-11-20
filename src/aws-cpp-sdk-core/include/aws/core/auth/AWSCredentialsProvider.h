@@ -147,58 +147,6 @@ namespace Aws
         };
 
         /**
-        * Reads credentials profile from the default Profile Config File. Refreshes at set interval for credential rotation.
-        * Looks for environment variables AWS_SHARED_CREDENTIALS_FILE and AWS_PROFILE. If they aren't found, then it defaults
-        * to the default profile in ~/.aws/credentials.
-        * Optionally a user can specify the profile and it will override the environment variable
-        * and defaults. To alter the file this pulls from, then the user should alter the AWS_SHARED_CREDENTIALS_FILE variable.
-        */
-        // class AWS_DEPRECATED("This class is in the maintenance mode, no new updates will be released, use S3EncryptionClientV3. Please see https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html for more information.") AWS_CORE_API ProfileConfigFileAWSCredentialsProvider : public AWSCredentialsProvider
-        class AWS_CORE_API ProfileConfigFileAWSCredentialsProvider : public AWSCredentialsProvider
-        {
-        public:
-
-            /**
-            * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
-            */
-            ProfileConfigFileAWSCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
-
-            /**
-            * Initializes with a profile override and
-            * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
-            */
-            ProfileConfigFileAWSCredentialsProvider(const char* profile, long refreshRateMs = REFRESH_THRESHOLD);
-
-            /**
-            * Retrieves the credentials if found, otherwise returns empty credential set.
-            */
-            AWSCredentials GetAWSCredentials() override;
-
-            /**
-             * Returns the fullpath of the calculated credentials profile file
-             */
-            static Aws::String GetCredentialsProfileFilename();
-
-            /**
-             * Returns the directory storing the profile file.
-             */
-            static Aws::String GetProfileDirectory();
-
-        protected:
-            void Reload() override;
-        private:
-
-            /**
-             * Checks to see if the refresh interval has expired and reparses the file if it has.
-             */
-            void RefreshIfExpired();
-
-            Aws::String m_profileToUse;
-            Aws::Config::AWSConfigFileProfileConfigLoader m_credentialsFileLoader;
-            long m_loadFrequencyMs;
-        };
-
-        /**
         * Credentials provider implementation that loads credentials from the Amazon
         * EC2 Instance Metadata Service.
         */
@@ -237,51 +185,7 @@ namespace Aws
             std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_ec2MetadataConfigLoader;
             long m_loadFrequencyMs;
         };
-
-        /**
-         * Process credentials provider that loads credentials by running another command (or program) configured in config file
-         * The configuration format is as following:
-         * credential_process = command_path <arguments_list>
-         * Each time the credentials needs to be refreshed, this command will be executed with configured arguments.
-         * The default profile name to look up this configuration is "default", same as normal aws credentials configuration and other configurations.
-         * The expected valid output of the command is a Json doc output to stdout:
-         * {"Version": 1, "AccessKeyId": "AccessKey123", "SecretAccessKey": "SecretKey321", "SessionToken": "Token123", "Expiration": "1970-01-01T00:00:01Z"}
-         * The Version key specifies the version of the JSON payload and must be set to 1 for now (as an integer type).
-         * If the Version key is bumped to 2, SDKs would support both versions of the returned payload.
-         * Value of Expiration field should be an valid ISO8601 formatted date string as above example.
-         * The expected error message of the command is a string to output to stderr.
-         */
-        class AWS_CORE_API ProcessCredentialsProvider : public AWSCredentialsProvider
-        {
-        public:
-            /**
-             * Initializes the provider by checking default profile
-             */
-            ProcessCredentialsProvider();
-
-            /**
-             * Initializes the provider by checking specified profile
-             * @param profile which profile in config file to use.
-             */
-            ProcessCredentialsProvider(const Aws::String& profile);
-
-            /**
-             * Retrieves the credentials if found, otherwise returns empty credential set.
-             */
-            AWSCredentials GetAWSCredentials() override;
-
-        protected:
-            void Reload() override;
-        private:
-            void RefreshIfExpired();
-
-        private:
-            Aws::String m_profileToUse;
-            Aws::Auth::AWSCredentials m_credentials;
-        };
     } // namespace Auth
 } // namespace Aws
 
-// TODO: remove on a next minor API bump from 1.11.x
-#endif // !defined(AWS_CLIENT_H)
-#include <aws/core/auth/GeneralHTTPCredentialsProvider.h>
+#endif // !defined(AWS_CREDENTIALS_PROVIDER)

@@ -49,22 +49,6 @@ namespace Aws
         {
         }
 
-        CryptoConfigurationV2::CryptoConfigurationV2(const std::shared_ptr<Aws::S3Encryption::Materials::KMSWithContextEncryptionMaterials>& materials) :
-            m_storageMethod(StorageMethod::METADATA),
-            m_unAuthenticatedRangeGet(RangeGetMode::DISABLED),
-            m_securityProfile(SecurityProfile::V2),
-            m_encryptionMaterials(materials)
-        {
-        }
-
-        CryptoConfigurationV2::CryptoConfigurationV2(const std::shared_ptr<Aws::S3Encryption::Materials::SimpleEncryptionMaterialsWithGCMAAD>& materials) :
-            m_storageMethod(StorageMethod::METADATA),
-            m_unAuthenticatedRangeGet(RangeGetMode::DISABLED),
-            m_securityProfile(SecurityProfile::V2),
-            m_encryptionMaterials(materials)
-        {
-        }
-
         CryptoConfigurationV3::CryptoConfigurationV3(const std::shared_ptr<Aws::S3Encryption::Materials::KMSWithContextEncryptionMaterials>& materials) :
             m_storageMethod(StorageMethod::METADATA),
             m_unAuthenticatedRangeGet(RangeGetMode::DISABLED),

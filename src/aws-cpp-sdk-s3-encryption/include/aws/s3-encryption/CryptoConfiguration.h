@@ -11,8 +11,6 @@ namespace Aws
 {
     namespace S3Encryption
     {
-        class S3EncryptionClient;
-
         enum class StorageMethod
         {
             METADATA,
@@ -158,29 +156,7 @@ namespace Aws
             CommitmentPolicy m_commitmentPolicy;
 
             friend class S3EncryptionClientBase;
-            friend class S3EncryptionClientV2;
             friend class S3EncryptionClientV3;
-        };
-
-        class AWS_S3ENCRYPTION_API CryptoConfigurationV2
-        {
-        public:
-            CryptoConfigurationV2(const std::shared_ptr<Aws::S3Encryption::Materials::KMSWithContextEncryptionMaterials>& materials);
-            CryptoConfigurationV2(const std::shared_ptr<Aws::S3Encryption::Materials::SimpleEncryptionMaterialsWithGCMAAD>& materials);
-
-            inline void SetSecurityProfile(SecurityProfile profile) { m_securityProfile = profile; }
-            inline void SetUnAuthenticatedRangeGet(RangeGetMode mode) { m_unAuthenticatedRangeGet = mode; }
-            inline void SetStorageMethod(StorageMethod storageMethod) { m_storageMethod = storageMethod; }
-
-            inline SecurityProfile GetSecurityProfile() const { return m_securityProfile; }
-            inline RangeGetMode GetUnAuthenticatedRangeGet() const { return m_unAuthenticatedRangeGet; }
-            inline StorageMethod GetStorageMethod() const { return m_storageMethod; }
-            std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials> GetEncryptionMaterials() const { return m_encryptionMaterials; }
-        private:
-            StorageMethod m_storageMethod;
-            RangeGetMode m_unAuthenticatedRangeGet;
-            SecurityProfile m_securityProfile;
-            std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials> m_encryptionMaterials;
         };
 
         //= ../specification/s3-encryption/client.md#aws-sdk-compatibility

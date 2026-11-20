@@ -12,17 +12,20 @@ namespace Auth {
 /**
  * CRT-based credentials provider that sources credentials from config files with full SEP compliance.
  * Supports assume role, credential_source, role chaining, and all SEP scenarios.
+ *
+ * The config and credentials files are read once, when the provider is created. Credentials that expire, such as
+ * from assume role or credential_process, are refreshed from those settings, but later changes to the files, such
+ * as rotated keys, are only picked up by a new provider.
  */
 class AWS_CORE_API ProfileCredentialsProvider : public AWSCredentialsProvider {
  public:
   /**
-   * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
+   * Initializes with the profile from AWS_PROFILE, then "default". AWS_DEFAULT_PROFILE is not read.
    */
   ProfileCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
 
   /**
-   * Initializes with a profile override and
-   * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
+   * Initializes with a profile override.
    */
   ProfileCredentialsProvider(const char* profile, long refreshRateMs = REFRESH_THRESHOLD);
 
@@ -54,5 +57,7 @@ class AWS_CORE_API ProfileCredentialsProvider : public AWSCredentialsProvider {
   class ProfileCredentialsProviderImp;
   std::shared_ptr<ProfileCredentialsProviderImp> m_impl;
 };
+
+using ProfileConfigFileAWSCredentialsProvider [[deprecated("Use ProfileCredentialsProvider")]] = ProfileCredentialsProvider;
 }  // namespace Auth
 }  // namespace Aws

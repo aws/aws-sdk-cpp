@@ -74,6 +74,21 @@ TEST_F(ProfileCredentialsProviderTests, LoadStaticCredentials) {
   EXPECT_STREQ("SecretKey456", credentials.GetAWSSecretKey().c_str());
 }
 
+TEST_F(ProfileCredentialsProviderTests, LoadAccountIdFromCredentialsFile) {
+  std::ofstream creds(m_credsFile.c_str());
+  creds << "[default]\n";
+  creds << "aws_access_key_id = AKIATEST123\n";
+  creds << "aws_secret_access_key = SecretKey456\n";
+  creds << "aws_account_id = 111122223333\n";
+  creds.close();
+
+  ProfileCredentialsProvider provider;
+  auto credentials = provider.GetAWSCredentials();
+
+  EXPECT_STREQ("AKIATEST123", credentials.GetAWSAccessKeyId().c_str());
+  EXPECT_STREQ("111122223333", credentials.GetAccountId().c_str());
+}
+
 TEST_F(ProfileCredentialsProviderTests, LoadNamedProfile) {
   std::ofstream creds(m_credsFile.c_str());
   creds << "[default]\n";
@@ -132,4 +147,17 @@ TEST_F(ProfileCredentialsProviderTests, ProcessCredentials) {
 
   EXPECT_STREQ("ProcessKey", credentials.GetAWSAccessKeyId().c_str());
   EXPECT_STREQ("ProcessSecret", credentials.GetAWSSecretKey().c_str());
+}
+
+TEST_F(ProfileCredentialsProviderTests, ProcessCredentialsAccountId) {
+  std::ofstream config(m_configFile.c_str());
+  config << "[default]\n";
+  config << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"ProcessKey\", \"SecretAccessKey\": \"ProcessSecret\", \"AccountId\": \"444455556666\"}") << "\n";
+  config.close();
+
+  ProfileCredentialsProvider provider;
+  auto credentials = provider.GetAWSCredentials();
+
+  EXPECT_STREQ("ProcessKey", credentials.GetAWSAccessKeyId().c_str());
+  EXPECT_STREQ("444455556666", credentials.GetAccountId().c_str());
 }

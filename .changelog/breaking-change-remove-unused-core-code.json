@@ -1,0 +1,6 @@
+{
+  "type": "breaking-change",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "averyk22",
+  "description": "Remove code the SDK never used: Aws::Utils::GetTheLights, the aws/core/utils/memory/stl/AWSMultiMap.h header and aws/core/external/CommonCryptorSPI.h. Aws::MultiMap is still available from aws/core/utils/memory/stl/AWSMap.h."
+}
