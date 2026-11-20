@@ -19,6 +19,9 @@
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <aws/dynamodb/DynamoDBClientConfiguration.h>
 #include <aws/dynamodb/model/PutItemRequest.h>
+#include <aws/dynamodb/model/GetItemRequest.h>
+#include <aws/dynamodb/model/AttributeValue.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #ifdef HAS_DYNAMODB_STREAMS
 #include <aws/dynamodbstreams/DynamoDBStreamsClientConfiguration.h>
 #endif
@@ -918,3 +921,109 @@ TEST_F(DynamoDBUnitTest, DynamoDBStreamsDefaultRetryStrategyUsesDynamoDBTuning) 
   Aws::Config::ReloadCachedConfigFile();
 }
 #endif
+
+namespace {
+std::shared_ptr<StandardHttpResponse> MockJsonResponse(const char* body) {
+  auto request = Aws::MakeShared<StandardHttpRequest>(LOG_TAG, "mockuri", HttpMethod::HTTP_POST);
+  const Aws::String bodyCopy(body);
+  // Written into, like a real HTTP client does: the outcome serializers skip a body whose put position is 0.
+  request->SetResponseStreamFactory([bodyCopy]() -> IOStream* {
+    auto* stream = Aws::New<StringStream>(LOG_TAG, std::ios_base::in | std::ios_base::out | std::ios_base::binary);
+    *stream << bodyCopy;
+    return stream;
+  });
+  auto response = Aws::MakeShared<StandardHttpResponse>(LOG_TAG, request);
+  response->SetResponseCode(HttpResponseCode::OK);
+  return response;
+}
+}  // namespace
+
+// Every AttributeValue type deserializes from the wire: scalars, sets, nested maps and lists.
+TEST_F(DynamoDBUnitTest, GetItemDeserializesEveryAttributeValueType)
+{
+  mock_http_client_->AddResponseToReturn(MockJsonResponse(R"({"Item":{
+    "s":{"S":"hello"},"n":{"N":"42"},"b":{"B":"AQID"},
+    "ss":{"SS":["a","b"]},"ns":{"NS":["1","2"]},"bs":{"BS":["AQ==","Ag=="]},
+    "bool":{"BOOL":true},"null":{"NULL":true},
+    "m":{"M":{"inner":{"S":"x"},"deep":{"M":{"k":{"N":"1"}}}}},
+    "l":{"L":[{"N":"7"},{"BOOL":false},{"L":[{"S":"y"}]}]},
+    "emptyList":{"L":[]},"emptyMap":{"M":{}}}})"));
+
+  Model::GetItemRequest request;
+  request.SetTableName("table");
+  request.AddKey("id", Model::AttributeValue("key"));
+  const auto outcome = client_->GetItem(request);
+  ASSERT_TRUE(outcome.IsSuccess()) << outcome.GetError().GetMessage();
+
+  const auto& item = outcome.GetResult().GetItem();
+  ASSERT_EQ(12u, item.size());
+  EXPECT_EQ("hello", item.at("s").GetS());
+  EXPECT_EQ("42", item.at("n").GetN());
+  const unsigned char bytes[] = {1, 2, 3};
+  EXPECT_EQ(Aws::Utils::ByteBuffer(bytes, 3), item.at("b").GetB());
+  EXPECT_EQ((Aws::Vector<Aws::String>{"a", "b"}), item.at("ss").GetSS());
+  EXPECT_EQ((Aws::Vector<Aws::String>{"1", "2"}), item.at("ns").GetNS());
+  ASSERT_EQ(2u, item.at("bs").GetBS().size());
+  EXPECT_TRUE(item.at("bool").GetBool());
+  EXPECT_EQ(Model::ValueType::BOOL, item.at("bool").GetType());
+  EXPECT_TRUE(item.at("null").GetNull());
+  EXPECT_EQ(Model::ValueType::NULLVALUE, item.at("null").GetType());
+
+  const auto m = item.at("m").GetM();
+  ASSERT_EQ(2u, m.size());
+  EXPECT_EQ("x", m.at("inner")->GetS());
+  EXPECT_EQ("1", m.at("deep")->GetM().at("k")->GetN());
+
+  const auto l = item.at("l").GetL();
+  ASSERT_EQ(3u, l.size());
+  EXPECT_EQ("7", l[0]->GetN());
+  EXPECT_EQ(Model::ValueType::BOOL, l[1]->GetType());
+  EXPECT_FALSE(l[1]->GetBool());
+  EXPECT_EQ("y", l[2]->GetL().at(0)->GetS());
+
+  // Empty collections still specialize the value to their type.
+  EXPECT_EQ(Model::ValueType::ATTRIBUTE_LIST, item.at("emptyList").GetType());
+  EXPECT_EQ(Model::ValueType::ATTRIBUTE_MAP, item.at("emptyMap").GetType());
+}
+
+// Every AttributeValue type serializes to the wire as DynamoDB expects.
+TEST_F(DynamoDBUnitTest, PutItemSerializesEveryAttributeValueType)
+{
+  mock_http_client_->AddResponseToReturn(MockJsonResponse("{}"));
+
+  const unsigned char bytes[] = {1, 2, 3};
+  Model::AttributeValue nestedMap;
+  nestedMap.AddMEntry("inner", Aws::MakeShared<Model::AttributeValue>(LOG_TAG, "x"));
+  Model::AttributeValue nestedList;
+  nestedList.AddLItem(Aws::MakeShared<Model::AttributeValue>(LOG_TAG, "y"));
+  nestedList.AddLItem(Aws::MakeShared<Model::AttributeValue>(LOG_TAG, Model::AttributeValue().SetBool(false)));
+
+  Model::PutItemRequest request;
+  request.SetTableName("table");
+  request.AddItem("s", Model::AttributeValue("hello"));
+  request.AddItem("n", Model::AttributeValue().SetN("42"));
+  request.AddItem("b", Model::AttributeValue().SetB(Aws::Utils::ByteBuffer(bytes, 3)));
+  request.AddItem("ss", Model::AttributeValue(Aws::Vector<Aws::String>{"a", "b"}));
+  request.AddItem("ns", Model::AttributeValue().SetNS({"1", "2"}));
+  request.AddItem("bool", Model::AttributeValue().SetBool(true));
+  request.AddItem("null", Model::AttributeValue().SetNull(true));
+  request.AddItem("m", nestedMap);
+  request.AddItem("l", nestedList);
+  const auto outcome = client_->PutItem(request);
+  ASSERT_TRUE(outcome.IsSuccess()) << outcome.GetError().GetMessage();
+
+  const auto& sent = mock_http_client_->GetMostRecentHttpRequest();
+  ASSERT_TRUE(sent.GetContentBody());
+  sent.GetContentBody()->clear();
+  sent.GetContentBody()->seekg(0);
+  const Aws::Utils::Json::JsonValue body(*sent.GetContentBody());
+  ASSERT_TRUE(body.WasParseSuccessful()) << body.GetErrorMessage();
+  const Aws::Utils::Json::JsonValue expected(Aws::String(R"({"TableName":"table","Item":{
+    "s":{"S":"hello"},"n":{"N":"42"},"b":{"B":"AQID"},
+    "ss":{"SS":["a","b"]},"ns":{"NS":["1","2"]},
+    "bool":{"BOOL":true},"null":{"NULL":true},
+    "m":{"M":{"inner":{"S":"x"}}},
+    "l":{"L":[{"S":"y"},{"BOOL":false}]}}})"));
+  ASSERT_TRUE(expected.WasParseSuccessful());
+  EXPECT_EQ(expected, body) << body.View().WriteReadable();
+}
