@@ -32,9 +32,8 @@ namespace Model {
 class EmptyInputAndEmptyOutputResult {
  public:
   AWS_RESTJSONPROTOCOL_API EmptyInputAndEmptyOutputResult() = default;
-  AWS_RESTJSONPROTOCOL_API EmptyInputAndEmptyOutputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API EmptyInputAndEmptyOutputResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API EmptyInputAndEmptyOutputResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API EmptyInputAndEmptyOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
 
   ///@{
 

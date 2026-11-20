@@ -32,8 +32,8 @@ namespace Model {
 class NoInputAndOutputResult {
  public:
   AWS_RESTXMLPROTOCOL_API NoInputAndOutputResult() = default;
-  AWS_RESTXMLPROTOCOL_API NoInputAndOutputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API NoInputAndOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API NoInputAndOutputResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API NoInputAndOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
 
   ///@{
 

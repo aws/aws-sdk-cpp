@@ -32,8 +32,8 @@ namespace Model {
 class TestGetNoInputNoPayloadResult {
  public:
   AWS_RESTJSONPROTOCOL_API TestGetNoInputNoPayloadResult() = default;
-  AWS_RESTJSONPROTOCOL_API TestGetNoInputNoPayloadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API TestGetNoInputNoPayloadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API TestGetNoInputNoPayloadResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API TestGetNoInputNoPayloadResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

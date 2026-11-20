@@ -33,8 +33,8 @@ namespace Model {
 class IgnoresWrappingXmlNameResponse {
  public:
   AWS_EC2PROTOCOL_API IgnoresWrappingXmlNameResponse() = default;
-  AWS_EC2PROTOCOL_API IgnoresWrappingXmlNameResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_EC2PROTOCOL_API IgnoresWrappingXmlNameResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2PROTOCOL_API IgnoresWrappingXmlNameResponse(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_EC2PROTOCOL_API IgnoresWrappingXmlNameResponse& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_EC2PROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

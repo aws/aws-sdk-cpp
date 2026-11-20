@@ -33,8 +33,8 @@ namespace Model {
 class DatetimeOffsetsResponse {
  public:
   AWS_EC2PROTOCOL_API DatetimeOffsetsResponse() = default;
-  AWS_EC2PROTOCOL_API DatetimeOffsetsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_EC2PROTOCOL_API DatetimeOffsetsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2PROTOCOL_API DatetimeOffsetsResponse(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_EC2PROTOCOL_API DatetimeOffsetsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_EC2PROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

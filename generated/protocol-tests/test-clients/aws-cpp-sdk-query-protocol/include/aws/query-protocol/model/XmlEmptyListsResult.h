@@ -37,8 +37,8 @@ namespace Model {
 class XmlEmptyListsResult {
  public:
   AWS_QUERYPROTOCOL_API XmlEmptyListsResult() = default;
-  AWS_QUERYPROTOCOL_API XmlEmptyListsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_QUERYPROTOCOL_API XmlEmptyListsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_QUERYPROTOCOL_API XmlEmptyListsResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_QUERYPROTOCOL_API XmlEmptyListsResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_QUERYPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

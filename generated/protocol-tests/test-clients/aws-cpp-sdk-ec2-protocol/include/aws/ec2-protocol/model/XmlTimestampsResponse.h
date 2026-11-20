@@ -33,8 +33,8 @@ namespace Model {
 class XmlTimestampsResponse {
  public:
   AWS_EC2PROTOCOL_API XmlTimestampsResponse() = default;
-  AWS_EC2PROTOCOL_API XmlTimestampsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_EC2PROTOCOL_API XmlTimestampsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2PROTOCOL_API XmlTimestampsResponse(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_EC2PROTOCOL_API XmlTimestampsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_EC2PROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

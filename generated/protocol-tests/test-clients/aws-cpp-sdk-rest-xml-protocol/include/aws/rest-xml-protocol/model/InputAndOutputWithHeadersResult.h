@@ -35,9 +35,8 @@ namespace Model {
 class InputAndOutputWithHeadersResult {
  public:
   AWS_RESTXMLPROTOCOL_API InputAndOutputWithHeadersResult() = default;
-  AWS_RESTXMLPROTOCOL_API InputAndOutputWithHeadersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API InputAndOutputWithHeadersResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API InputAndOutputWithHeadersResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API InputAndOutputWithHeadersResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

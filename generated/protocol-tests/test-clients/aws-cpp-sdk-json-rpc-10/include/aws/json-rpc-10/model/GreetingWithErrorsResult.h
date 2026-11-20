@@ -32,8 +32,8 @@ namespace Model {
 class GreetingWithErrorsResult {
  public:
   AWS_JSONRPC10_API GreetingWithErrorsResult() = default;
-  AWS_JSONRPC10_API GreetingWithErrorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_JSONRPC10_API GreetingWithErrorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_JSONRPC10_API GreetingWithErrorsResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_JSONRPC10_API GreetingWithErrorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_JSONRPC10_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

@@ -33,8 +33,8 @@ namespace Model {
 class PutAndGetInlineDocumentsResult {
  public:
   AWS_JSONPROTOCOL_API PutAndGetInlineDocumentsResult() = default;
-  AWS_JSONPROTOCOL_API PutAndGetInlineDocumentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_JSONPROTOCOL_API PutAndGetInlineDocumentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_JSONPROTOCOL_API PutAndGetInlineDocumentsResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_JSONPROTOCOL_API PutAndGetInlineDocumentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_JSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

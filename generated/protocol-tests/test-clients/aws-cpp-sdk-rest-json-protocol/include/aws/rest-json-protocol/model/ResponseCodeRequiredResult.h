@@ -32,8 +32,8 @@ namespace Model {
 class ResponseCodeRequiredResult {
  public:
   AWS_RESTJSONPROTOCOL_API ResponseCodeRequiredResult() = default;
-  AWS_RESTJSONPROTOCOL_API ResponseCodeRequiredResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API ResponseCodeRequiredResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API ResponseCodeRequiredResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API ResponseCodeRequiredResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

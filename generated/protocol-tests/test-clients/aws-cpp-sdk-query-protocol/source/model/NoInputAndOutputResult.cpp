@@ -29,15 +29,14 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-NoInputAndOutputResult::NoInputAndOutputResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
+NoInputAndOutputResult::NoInputAndOutputResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-NoInputAndOutputResult& NoInputAndOutputResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+NoInputAndOutputResult& NoInputAndOutputResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode rootNode = xmlDocument.GetRootElement();
-  if (!rootNode.IsNull()) {
-    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-    m_responseMetadata = responseMetadataNode;
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_responseMetadata.SetRequestId(requestIdIter->second);
     m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::QueryProtocol::Model::NoInputAndOutputResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }

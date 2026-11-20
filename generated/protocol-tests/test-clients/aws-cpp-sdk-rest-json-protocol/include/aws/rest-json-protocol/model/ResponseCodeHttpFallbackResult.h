@@ -32,9 +32,8 @@ namespace Model {
 class ResponseCodeHttpFallbackResult {
  public:
   AWS_RESTJSONPROTOCOL_API ResponseCodeHttpFallbackResult() = default;
-  AWS_RESTJSONPROTOCOL_API ResponseCodeHttpFallbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API ResponseCodeHttpFallbackResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API ResponseCodeHttpFallbackResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API ResponseCodeHttpFallbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
 
   ///@{
 

@@ -34,8 +34,8 @@ namespace Model {
 class DocumentTypeAsMapValueResult {
  public:
   AWS_RESTJSONPROTOCOL_API DocumentTypeAsMapValueResult() = default;
-  AWS_RESTJSONPROTOCOL_API DocumentTypeAsMapValueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API DocumentTypeAsMapValueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API DocumentTypeAsMapValueResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API DocumentTypeAsMapValueResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

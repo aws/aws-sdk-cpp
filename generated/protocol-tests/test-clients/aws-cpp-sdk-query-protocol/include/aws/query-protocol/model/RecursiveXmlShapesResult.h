@@ -33,8 +33,8 @@ namespace Model {
 class RecursiveXmlShapesResult {
  public:
   AWS_QUERYPROTOCOL_API RecursiveXmlShapesResult() = default;
-  AWS_QUERYPROTOCOL_API RecursiveXmlShapesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_QUERYPROTOCOL_API RecursiveXmlShapesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_QUERYPROTOCOL_API RecursiveXmlShapesResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_QUERYPROTOCOL_API RecursiveXmlShapesResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_QUERYPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

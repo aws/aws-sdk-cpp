@@ -27,9 +27,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestPostNoPayloadResult::TestPostNoPayloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+TestPostNoPayloadResult::TestPostNoPayloadResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-TestPostNoPayloadResult& TestPostNoPayloadResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+TestPostNoPayloadResult& TestPostNoPayloadResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -27,9 +27,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TimestampFormatHeadersResult::TimestampFormatHeadersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
+TimestampFormatHeadersResult::TimestampFormatHeadersResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-TimestampFormatHeadersResult& TimestampFormatHeadersResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+TimestampFormatHeadersResult& TimestampFormatHeadersResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

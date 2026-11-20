@@ -33,9 +33,8 @@ namespace Model {
 class NullAndEmptyHeadersClientResult {
  public:
   AWS_RESTXMLPROTOCOL_API NullAndEmptyHeadersClientResult() = default;
-  AWS_RESTXMLPROTOCOL_API NullAndEmptyHeadersClientResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API NullAndEmptyHeadersClientResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API NullAndEmptyHeadersClientResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API NullAndEmptyHeadersClientResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

@@ -32,8 +32,8 @@ namespace Model {
 class SimpleScalarPropertiesResult {
  public:
   AWS_JSONRPC10_API SimpleScalarPropertiesResult() = default;
-  AWS_JSONRPC10_API SimpleScalarPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_JSONRPC10_API SimpleScalarPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_JSONRPC10_API SimpleScalarPropertiesResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_JSONRPC10_API SimpleScalarPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_JSONRPC10_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

@@ -32,9 +32,8 @@ namespace Model {
 class IgnoreQueryParamsInResponseResult {
  public:
   AWS_RESTXMLPROTOCOL_API IgnoreQueryParamsInResponseResult() = default;
-  AWS_RESTXMLPROTOCOL_API IgnoreQueryParamsInResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API IgnoreQueryParamsInResponseResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API IgnoreQueryParamsInResponseResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API IgnoreQueryParamsInResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

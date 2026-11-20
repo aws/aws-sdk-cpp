@@ -27,9 +27,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SparseJsonMapsResult::SparseJsonMapsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+SparseJsonMapsResult::SparseJsonMapsResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-SparseJsonMapsResult& SparseJsonMapsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+SparseJsonMapsResult& SparseJsonMapsResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

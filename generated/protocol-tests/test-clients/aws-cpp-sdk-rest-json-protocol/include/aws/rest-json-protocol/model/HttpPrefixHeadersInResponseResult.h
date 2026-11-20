@@ -33,9 +33,8 @@ namespace Model {
 class HttpPrefixHeadersInResponseResult {
  public:
   AWS_RESTJSONPROTOCOL_API HttpPrefixHeadersInResponseResult() = default;
-  AWS_RESTJSONPROTOCOL_API HttpPrefixHeadersInResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API HttpPrefixHeadersInResponseResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API HttpPrefixHeadersInResponseResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API HttpPrefixHeadersInResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

@@ -33,8 +33,8 @@ namespace Model {
 class DocumentTypeAsPayloadResult {
  public:
   AWS_RESTJSONPROTOCOL_API DocumentTypeAsPayloadResult() = default;
-  AWS_RESTJSONPROTOCOL_API DocumentTypeAsPayloadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API DocumentTypeAsPayloadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API DocumentTypeAsPayloadResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API DocumentTypeAsPayloadResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

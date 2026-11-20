@@ -32,8 +32,8 @@ namespace Model {
 class ContentTypeParametersResult {
  public:
   AWS_RESTJSONPROTOCOL_API ContentTypeParametersResult() = default;
-  AWS_RESTJSONPROTOCOL_API ContentTypeParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API ContentTypeParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API ContentTypeParametersResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API ContentTypeParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
 
   ///@{
 

@@ -33,8 +33,8 @@ namespace Model {
 class SimpleScalarXmlPropertiesResult {
  public:
   AWS_QUERYPROTOCOL_API SimpleScalarXmlPropertiesResult() = default;
-  AWS_QUERYPROTOCOL_API SimpleScalarXmlPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_QUERYPROTOCOL_API SimpleScalarXmlPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_QUERYPROTOCOL_API SimpleScalarXmlPropertiesResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_QUERYPROTOCOL_API SimpleScalarXmlPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_QUERYPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

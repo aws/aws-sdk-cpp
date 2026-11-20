@@ -32,8 +32,8 @@ namespace Model {
 class EmptyInputAndEmptyOutputResponse {
  public:
   AWS_EC2PROTOCOL_API EmptyInputAndEmptyOutputResponse() = default;
-  AWS_EC2PROTOCOL_API EmptyInputAndEmptyOutputResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_EC2PROTOCOL_API EmptyInputAndEmptyOutputResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2PROTOCOL_API EmptyInputAndEmptyOutputResponse(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_EC2PROTOCOL_API EmptyInputAndEmptyOutputResponse& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
 
   ///@{
 

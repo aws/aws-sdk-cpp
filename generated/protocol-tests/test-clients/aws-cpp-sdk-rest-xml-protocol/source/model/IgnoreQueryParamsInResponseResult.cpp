@@ -27,11 +27,11 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-IgnoreQueryParamsInResponseResult::IgnoreQueryParamsInResponseResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+IgnoreQueryParamsInResponseResult::IgnoreQueryParamsInResponseResult(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   *this = result;
 }
 
-IgnoreQueryParamsInResponseResult& IgnoreQueryParamsInResponseResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+IgnoreQueryParamsInResponseResult& IgnoreQueryParamsInResponseResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

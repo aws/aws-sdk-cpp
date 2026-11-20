@@ -32,8 +32,8 @@ namespace Model {
 class EmptyInputAndEmptyOutputResult {
  public:
   AWS_JSONRPC10_API EmptyInputAndEmptyOutputResult() = default;
-  AWS_JSONRPC10_API EmptyInputAndEmptyOutputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_JSONRPC10_API EmptyInputAndEmptyOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_JSONRPC10_API EmptyInputAndEmptyOutputResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_JSONRPC10_API EmptyInputAndEmptyOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
 
   ///@{
 

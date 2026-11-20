@@ -33,8 +33,8 @@ namespace Model {
 class GreetingWithErrorsResponse {
  public:
   AWS_EC2PROTOCOL_API GreetingWithErrorsResponse() = default;
-  AWS_EC2PROTOCOL_API GreetingWithErrorsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_EC2PROTOCOL_API GreetingWithErrorsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2PROTOCOL_API GreetingWithErrorsResponse(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_EC2PROTOCOL_API GreetingWithErrorsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_EC2PROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{
