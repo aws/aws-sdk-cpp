@@ -295,7 +295,7 @@ public interface ProtocolTraits {
      */
     void writeRequestMethodImpls(CppWriter writer, String className,
                                  StructureShape shape, OperationShape operation,
-                                 ServiceShape service, Model model);
+                                 ServiceShape service, Model model, String namespace);
 
     /** True when this protocol always attaches an {@code X-Amz-Target} header (AWS JSON-RPC). */
     default boolean hasTargetHeader() {

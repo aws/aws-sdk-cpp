@@ -158,7 +158,7 @@ class JsonProtocolTraitsTest {
         assertTrue(d.contains("AWS_EX_API Aws::String SerializePayload() const override;"), d);
         assertTrue(d.contains("Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;"), d);
         assertFalse(d.contains("DumpBodyToUrl"), d);
-        String i = render(w -> json.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> json.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return \"{}\"; }"), i);
         assertTrue(i.contains("headers.insert(Aws::Http::HeaderValuePair(\"X-Amz-Target\", \"AmazonAthena.DoThing\"));"), i);
     }
@@ -169,7 +169,7 @@ class JsonProtocolTraitsTest {
         String d = render(w -> restJson.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
         assertTrue(d.contains("SerializePayload() const override;"), d);
         assertFalse(d.contains("GetRequestSpecificHeaders"), d);
-        String i = render(w -> restJson.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> restJson.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return {}; }"), i);
         assertFalse(i.contains("X-Amz-Target"), i);
     }
@@ -179,7 +179,7 @@ class JsonProtocolTraitsTest {
         var req = reqWith(true, false); var model = modelWith(req);
         String d = render(w -> restJson.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
         assertTrue(d.contains("GetRequestSpecificHeaders() const override;"), d);
-        String i = render(w -> restJson.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> restJson.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertFalse(i.contains("X-Amz-Target"), i);
     }
 
@@ -188,7 +188,7 @@ class JsonProtocolTraitsTest {
         // RPC awsJson routes @httpHeader members to the JSON body; GetRequestSpecificHeaders still
         // emits X-Amz-Target but performs no member header serialization.
         var req = reqWith(true, false); var model = modelWith(req);
-        String i = render(w -> json.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> json.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertTrue(i.contains("X-Amz-Target"), i);
         assertFalse(i.contains("headers.emplace(\"x-h\""), i);
         assertFalse(i.contains("ss << m_h;"), i);
@@ -200,7 +200,7 @@ class JsonProtocolTraitsTest {
         var req = reqWith(false, true); var model = modelWith(req);
         String d = render(w -> json.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
         assertFalse(d.contains("AddQueryStringParameters"), d);
-        String i = render(w -> json.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> json.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertFalse(i.contains("AddQueryStringParameters"), i);
     }
 
@@ -208,7 +208,7 @@ class JsonProtocolTraitsTest {
     void restJson_headerMember_isWireSerialized() {
         // REST protocols honor HTTP bindings: the @httpHeader member is serialized onto the wire.
         var req = reqWith(true, false); var model = modelWith(req);
-        String i = render(w -> restJson.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> restJson.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertTrue(i.contains("if (m_hHasBeenSet) {"), i);
         assertTrue(i.contains("headers.emplace(\"x-h\", ss.str());"), i);
     }
@@ -223,7 +223,7 @@ class JsonProtocolTraitsTest {
             .build();
         var model = modelWith(req);
         String i = render(w -> restJson.writeRequestMethodImpls(
-            w, "UploadArchiveRequest", req, opDoThing(), svcAthena(), model));
+            w, "UploadArchiveRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertTrue(i.contains(
             "headers.insert(Aws::Http::HeaderValuePair(\"x-amz-glacier-version\", \"2012-06-01\"));"), i);
         assertTrue(i.indexOf("x-amz-glacier-version") < i.indexOf("Aws::StringStream ss;"),
@@ -234,7 +234,7 @@ class JsonProtocolTraitsTest {
     void restJson_noAdditionalHeadersTrait_emitsNoConstantHeader() {
         var req = reqWith(true, false); var model = modelWith(req);
         String i = render(w -> restJson.writeRequestMethodImpls(
-            w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+            w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertFalse(i.contains("x-amz-glacier-version"), i);
     }
 
@@ -243,7 +243,7 @@ class JsonProtocolTraitsTest {
         var req = reqWith(false, true); var model = modelWith(req);
         String d = render(w -> restJson.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
         assertTrue(d.contains("void AddQueryStringParameters(Aws::Http::URI& uri) const override;"), d);
-        String i = render(w -> restJson.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> restJson.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertTrue(i.contains("uri.AddQueryStringParameter(\"q\", ss.str());"), i);
     }
 
@@ -253,7 +253,7 @@ class JsonProtocolTraitsTest {
         // emits the decl, JsonProtocolTraits supplies a stub impl (same trait) that defers serde.
         var req = reqWith(false, false); var model = modelWith(req);
         String i = render(w -> restJson.writeRequestMethodImpls(
-            w, "SynthesizeSpeechRequest", req, opDoThingPresigning(), svcAthena(), model));
+            w, "SynthesizeSpeechRequest", req, opDoThingPresigning(), svcAthena(), model, "Example"));
         assertTrue(i.contains(
             "void SynthesizeSpeechRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }"),
             i);
@@ -263,7 +263,7 @@ class JsonProtocolTraitsTest {
     void withoutSupportsPresigning_omitsDumpBodyToUrlImpl() {
         var req = reqWith(false, false); var model = modelWith(req);
         String i = render(w -> restJson.writeRequestMethodImpls(
-            w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+            w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertFalse(i.contains("DumpBodyToUrl"),
             "non-presignable request must not emit a DumpBodyToUrl impl: " + i);
     }

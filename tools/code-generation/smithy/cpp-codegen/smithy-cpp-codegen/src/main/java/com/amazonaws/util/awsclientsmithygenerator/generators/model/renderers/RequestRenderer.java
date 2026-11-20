@@ -324,7 +324,8 @@ public final class RequestRenderer implements ShapeRenderer {
                     writer.write("");
                 });
                 // Header/query method bodies (SerializePayload is gated off for streaming requests).
-                ctx.protocolTraits().writeRequestMethodImpls(writer, className, shape, operation, ctx.service(), ctx.model());
+                ctx.protocolTraits().writeRequestMethodImpls(writer, className, shape, operation, ctx.service(), ctx.model(),
+                    ctx.namespace());
                 renderRequestSpecificAuthImpl(writer, className, operation);
                 renderChecksumImpls(writer, className, shape, operation);
                 renderRequestCompressionImpl(writer, className, operation, true);
@@ -350,7 +351,8 @@ public final class RequestRenderer implements ShapeRenderer {
             IncludeSets.emitUsings(writer, ctx.protocolTraits().serdeUsings(FileKind.REQUEST_SOURCE));
             writer.write("");
 
-            ctx.protocolTraits().writeRequestMethodImpls(writer, className, shape, operation, ctx.service(), ctx.model());
+            ctx.protocolTraits().writeRequestMethodImpls(writer, className, shape, operation, ctx.service(), ctx.model(),
+                    ctx.namespace());
             renderRequestSpecificAuthImpl(writer, className, operation);
             renderChecksumImpls(writer, className, shape, operation);
             renderRequestCompressionImpl(writer, className, operation, false);

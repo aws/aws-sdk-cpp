@@ -184,7 +184,8 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
             writeResultTransportMembers(writer, shape, model);
             writer.write("return *this;");
         });
-        SchemaSerdeRenderer.writeResultSchemaSerde(writer, this, className, shape, model, SchemaSerdeRenderer::xmlMemberTraits);
+        SchemaSerdeRenderer.writeResultSchemaSerde(writer, this, className, shape, model, SchemaSerdeRenderer::xmlMemberTraits,
+            namespace);
     }
 
     @Override
@@ -231,10 +232,10 @@ public final class RestXmlProtocolTraits implements ProtocolTraits {
     @Override
     public void writeRequestMethodImpls(CppWriter writer, String className,
                                         StructureShape shape, OperationShape operation,
-                                        ServiceShape service, Model model) {
+                                        ServiceShape service, Model model, String namespace) {
         // An HTTP-bound request's protocol places every member (path, query, headers, payload, body).
         boolean bound = SchemaSerdeRenderer.writeRequestSchemaSerde(writer, this, className, shape, operation, service,
-            model, SchemaSerdeRenderer::xmlMemberTraits, "{}");
+            model, SchemaSerdeRenderer::xmlMemberTraits, "{}", namespace);
         if (RequestBindings.hasHeaderMembers(shape, model)) {
             writer.write("");
             writeGetRequestSpecificHeadersImpl(writer, className, shape, operation, service, model, !bound);

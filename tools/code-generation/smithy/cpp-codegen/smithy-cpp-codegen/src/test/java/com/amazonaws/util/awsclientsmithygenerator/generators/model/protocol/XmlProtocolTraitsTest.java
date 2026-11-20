@@ -248,7 +248,7 @@ class XmlProtocolTraitsTest {
         assertFalse(d.contains("GetRequestSpecificHeaders"), d);
         assertFalse(d.contains("DumpBodyToUrl"), d);
         assertFalse(d.contains("AddQueryStringParameters"), d);
-        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return {}; }"), i);
     }
 
@@ -258,7 +258,7 @@ class XmlProtocolTraitsTest {
         ProtocolTraits xml = new RestXmlProtocolTraits();
         String d = render(w -> xml.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
         assertTrue(d.contains("GetRequestSpecificHeaders() const override;"), d);
-        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertFalse(i.contains("X-Amz-Target"), i);
     }
 
@@ -285,7 +285,7 @@ class XmlProtocolTraitsTest {
         String d = render(w -> xml.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
         assertTrue(d.contains("AWS_EX_API bool HasEmbeddedError(IOStream &body, "
             + "const Http::HeaderValueCollection &header) const override;"), d);
-        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         // The impl is the real constant XML error-sniff body (not a stub) — matches C2J's S3
         // request-source templates: parse the body and report true iff the root element is <Error>.
         assertTrue(i.contains("bool DoThingRequest::HasEmbeddedError("), i);
@@ -300,7 +300,7 @@ class XmlProtocolTraitsTest {
         ProtocolTraits xml = new RestXmlProtocolTraits();
         String d = render(w -> xml.writeRequestMethodDecls(w, "AWS_EX_API", req, opDoThing(), model));
         assertFalse(d.contains("HasEmbeddedError"), d);
-        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> xml.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertFalse(i.contains("HasEmbeddedError"), i);
     }
 
@@ -317,7 +317,7 @@ class XmlProtocolTraitsTest {
         assertFalse(d.contains("DumpBodyToUrl"),
             "DumpBodyToUrl decl moved to RequestRenderer; query traits must not emit it: " + d);
         assertFalse(d.contains("GetRequestSpecificHeaders"), d);
-        String i = render(w -> q.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThingPresigning(), svcAthena(), model));
+        String i = render(w -> q.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThingPresigning(), svcAthena(), model, "Example"));
         assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return {}; }"), i);
         assertTrue(i.contains("void DoThingRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }"), i);
     }
@@ -328,7 +328,7 @@ class XmlProtocolTraitsTest {
         // Unit-input op that never got the operation trait doesn't emit an impl with no declaration.
         var req = reqWith(false, false); var model = modelWith(req);
         ProtocolTraits q = new QueryXmlProtocolTraits(Protocol.QUERY_XML);
-        String i = render(w -> q.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model));
+        String i = render(w -> q.writeRequestMethodImpls(w, "DoThingRequest", req, opDoThing(), svcAthena(), model, "Example"));
         assertTrue(i.contains("Aws::String DoThingRequest::SerializePayload() const { return {}; }"), i);
         assertFalse(i.contains("DumpBodyToUrl"),
             "operation without SupportsPresigningTrait must not emit the DumpBodyToUrl impl: " + i);
