@@ -50,6 +50,8 @@ TEST_F(STSIntegrationTest, TestGetCallerIdentity)
     EXPECT_FALSE(result.GetAccount().empty());
     EXPECT_FALSE(result.GetArn().empty());
     EXPECT_FALSE(result.GetUserId().empty());
+    // aws-query carries the request id in <ResponseMetadata> and in the x-amzn-requestid header.
+    EXPECT_FALSE(result.GetResponseMetadata().GetRequestId().empty());
 }
 
 TEST_F(STSIntegrationTest, TestGetAccessKeyInfo)
