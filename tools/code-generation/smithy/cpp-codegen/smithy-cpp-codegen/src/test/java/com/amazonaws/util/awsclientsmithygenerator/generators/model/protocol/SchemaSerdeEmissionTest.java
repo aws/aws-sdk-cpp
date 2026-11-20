@@ -45,7 +45,7 @@ class SchemaSerdeEmissionTest {
     private static final Model MODEL = Model.builder().addShapes(STR, REQ, OP, SVC).build();
 
     private static String impls(ProtocolTraits t) {
-        return render(w -> t.writeRequestMethodImpls(w, "DoThingRequest", REQ, OP, SVC, MODEL));
+        return render(w -> t.writeRequestMethodImpls(w, "DoThingRequest", REQ, OP, SVC, MODEL, "Example"));
     }
 
     // A result with a single scalar (string) body member "arn".
@@ -139,6 +139,35 @@ class SchemaSerdeEmissionTest {
         assertFalse(out.contains("XmlShapeDeserializer"), out);
         assertFalse(out.contains("EnterWrapperElement"), out);
         assertFalse(out.contains("// TODO: protocol-specific body member deserialization"), out);
+    }
+
+    @Test
+    void adaptersAreEmittedInsideTheModelNamespace() {
+        // A shape named like an Aws-level namespace / type (Endpoint, Event, Region, Model, ...) is ambiguous at
+        // file scope, where the model .cpp has `using namespace Aws;` and `using namespace Aws::<ns>::Model;`.
+        // The adapters therefore live in an anonymous namespace inside Aws::<ns>::Model.
+        StructureShape endpoint = StructureShape.builder()
+            .id("com.example#Endpoint")
+            .addMember(MemberShape.builder().id("com.example#Endpoint$address").target(STR.getId()).build())
+            .build();
+        StructureShape result = StructureShape.builder()
+            .id("com.example#DescribeThingResult")
+            .addMember(MemberShape.builder().id("com.example#DescribeThingResult$endpoint").target(endpoint.getId()).build())
+            .build();
+        Model model = Model.builder().addShapes(STR, endpoint, result).build();
+        String out = render(w -> new QueryXmlProtocolTraits(Protocol.QUERY_XML)
+            .writeResultSerdeImpls(w, "DescribeThingResult", result, model, "Example"));
+        int aws = out.indexOf("namespace Aws\n{");
+        int anon = out.indexOf("namespace {");
+        int use = out.indexOf("Endpoint nested0;");
+        int anonClose = out.indexOf("}  // namespace\n");
+        int modelClose = out.indexOf("} // namespace Model");
+        int nsClose = out.indexOf("} // namespace Example");
+        int close = out.indexOf("} // namespace Aws");
+        assertTrue(aws >= 0 && aws < anon && anon < use && use < anonClose && anonClose < modelClose
+            && modelClose < nsClose && nsClose < close, out);
+        // The out-of-line member definition stays at file scope, after the model namespace closes.
+        assertTrue(close < out.indexOf("DescribeThingResult::GetSchemaSerdeOutput() {"), out);
     }
 
     @Test

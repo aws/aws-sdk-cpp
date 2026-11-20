@@ -244,21 +244,23 @@ final class SchemaSerdeRenderer {
      * @param memberTraits the protocol's schema trait entries for a member
      */
     static void writeSerializePayload(CppWriter writer, String className, List<MemberShape> members, Model model,
-                                      MemberTraits memberTraits) {
+                                      MemberTraits memberTraits, String namespace) {
         // Adapters are declared first and defined after, so mutually recursive shapes can name each other.
         Map<String, Adapter> adapters = new LinkedHashMap<>();
         for (MemberShape m : members) {
             collectNestedAdapters(className, model.expectShape(m.getTarget()), model, adapters, SER_SUFFIX);
         }
         adapters.put(className + "Serializable", new Adapter(className + "Serializable", className, false, members));
-        writer.write("namespace {");
-        for (Adapter adapter : adapters.values()) {
-            declareStructSerAdapter(writer, adapter);
-        }
-        for (Adapter adapter : adapters.values()) {
-            defineStructSerAdapter(writer, className, adapter, model, memberTraits);
-        }
-        writer.write("}  // namespace");
+        modelNamespace(writer, namespace, () -> {
+            writer.write("namespace {");
+            for (Adapter adapter : adapters.values()) {
+                declareStructSerAdapter(writer, adapter);
+            }
+            for (Adapter adapter : adapters.values()) {
+                defineStructSerAdapter(writer, className, adapter, model, memberTraits);
+            }
+            writer.write("}  // namespace");
+        });
         writer.write("");
 
         writer.write("Aws::UniquePtr<smithy::schema::SerializableStruct> $L::GetSchemaSerdeInput() const {", className);
@@ -554,7 +556,7 @@ final class SchemaSerdeRenderer {
      * @param memberTraits the protocol's schema trait entries for a member
      */
     static void writeResultDeser(CppWriter writer, String className, List<MemberShape> members, Model model,
-                                 MemberTraits memberTraits) {
+                                 MemberTraits memberTraits, String namespace) {
         // Adapters are declared first and defined after, so mutually recursive shapes can name each other.
         Map<String, Adapter> adapters = new LinkedHashMap<>();
         for (MemberShape m : members) {
@@ -562,16 +564,29 @@ final class SchemaSerdeRenderer {
         }
         String rootAdapter = className + "Deserializable";
         adapters.put(rootAdapter, new Adapter(rootAdapter, className, false, members));
-        writer.write("namespace {");
-        for (Adapter adapter : adapters.values()) {
-            declareStructDeserAdapter(writer, adapter);
-        }
-        for (Adapter adapter : adapters.values()) {
-            defineStructDeserAdapter(writer, className, adapter, model, memberTraits);
-        }
-        writer.write("}  // namespace");
+        modelNamespace(writer, namespace, () -> {
+            writer.write("namespace {");
+            for (Adapter adapter : adapters.values()) {
+                declareStructDeserAdapter(writer, adapter);
+            }
+            for (Adapter adapter : adapters.values()) {
+                defineStructDeserAdapter(writer, className, adapter, model, memberTraits);
+            }
+            writer.write("}  // namespace");
+        });
         writer.write("");
         writeGetSchemaSerdeOutput(writer, className);
+    }
+
+    /**
+     * Emits {@code body} inside {@code Aws::<namespace>::Model}. The adapters live there (in an anonymous
+     * namespace) rather than at file scope: the model {@code .cpp} has {@code using namespace Aws;} and
+     * {@code using namespace Aws::<namespace>::Model;}, so at file scope an unqualified shape name such as
+     * {@code Endpoint}, {@code Event}, {@code Region} or {@code Model} is ambiguous with a namespace / type of
+     * the same name; inside the model namespace the service's own shape is found first.
+     */
+    private static void modelNamespace(CppWriter writer, String namespace, Runnable body) {
+        writer.withNamespace("Aws", () -> writer.withNamespace(namespace, () -> writer.withNamespace("Model", body)));
     }
 
     private static void writeGetSchemaSerdeOutput(CppWriter writer, String className) {
@@ -754,10 +769,11 @@ final class SchemaSerdeRenderer {
      */
     static boolean writeRequestSchemaSerde(CppWriter writer, ProtocolTraits traits, String className,
                                            StructureShape shape, OperationShape operation, ServiceShape service,
-                                           Model model, MemberTraits memberTraits, String stubPayload) {
+                                           Model model, MemberTraits memberTraits, String stubPayload,
+                                           String namespace) {
         String action = operation.getId().getName();
         if (traits.bindsRequestViaSchemaSerde(shape, operation, model)) {
-            writeSerializePayload(writer, className, RequestBindings.members(shape), model, memberTraits);
+            writeSerializePayload(writer, className, RequestBindings.members(shape), model, memberTraits, namespace);
             writeOperationContext(writer, className, action, service.getVersion(),
                 ProtocolTraits.uriPattern(operation), ProtocolTraits.hostPrefix(operation));
             return true;
@@ -765,7 +781,7 @@ final class SchemaSerdeRenderer {
         if (RequestBindings.emitsSerializePayload(operation, model)) {
             List<MemberShape> body = RequestBindings.bodyMembers(shape);
             if (RequestBindings.nonEmptySchemaSerializable(body, model)) {
-                writeSerializePayload(writer, className, body, model, memberTraits);
+                writeSerializePayload(writer, className, body, model, memberTraits, namespace);
             } else {
                 writer.write("Aws::String $L::SerializePayload() const { return $L; }", className, stubPayload);
             }
@@ -782,12 +798,12 @@ final class SchemaSerdeRenderer {
 
     /** Emits the result's {@code GetSchemaSerdeOutput} adapters, gated as {@link #emitsSchemaSerdeOutput}. */
     static void writeResultSchemaSerde(CppWriter writer, ProtocolTraits traits, String className, StructureShape shape,
-                                       Model model, MemberTraits memberTraits) {
+                                       Model model, MemberTraits memberTraits, String namespace) {
         List<MemberShape> members = traits.bindsResultViaSchemaSerde(shape, model)
             ? RequestBindings.resultMembers(shape) : RequestBindings.resultBodyMembers(shape);
         if (RequestBindings.nonEmptySchemaSerializable(members, model)) {
             writer.write("");
-            writeResultDeser(writer, className, members, model, memberTraits);
+            writeResultDeser(writer, className, members, model, memberTraits, namespace);
         }
     }
 

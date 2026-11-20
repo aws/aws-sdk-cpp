@@ -204,7 +204,7 @@ public final class CborProtocolTraits implements ProtocolTraits {
     @Override
     public void writeRequestMethodImpls(CppWriter writer, String className,
                                         StructureShape shape, OperationShape operation,
-                                        ServiceShape service, Model model) {
+                                        ServiceShape service, Model model, String namespace) {
         boolean hasRequest = !operation.getInputShape().equals(UnitTypeTrait.UNIT);
         if (RequestBindings.emitsSerializePayload(operation, model)) {
             if (hasRequest) {

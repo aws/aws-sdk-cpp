@@ -229,7 +229,7 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
         if (RequestBindings.nonEmptySchemaSerializable(RequestBindings.resultMembers(shape), model)) {
             writer.write("");
             SchemaSerdeRenderer.writeResultDeser(writer, className, RequestBindings.resultMembers(shape), model,
-                memberTraits());
+                memberTraits(), namespace);
         }
     }
 
@@ -257,14 +257,14 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
     @Override
     public void writeRequestMethodImpls(CppWriter writer, String className,
                                         StructureShape shape, OperationShape operation,
-                                        ServiceShape service, Model model) {
+                                        ServiceShape service, Model model, String namespace) {
         if (RequestBindings.emitsSerializePayload(operation, model)) {
             if (RequestBindings.schemaSerializable(RequestBindings.members(shape), model)) {
                 // aws-query/ec2 wrap the member body with Action/Version (owned by the protocol via the
                 // OperationRequestContext); ec2 uses Ec2QueryNameTrait wire names. HTTP binding traits are
                 // ignored, so every member is a body field.
                 SchemaSerdeRenderer.writeSerializePayload(writer, className, RequestBindings.members(shape), model,
-                    memberTraits());
+                    memberTraits(), namespace);
             } else {
                 writer.write("Aws::String $L::SerializePayload() const { return {}; }", className);
             }

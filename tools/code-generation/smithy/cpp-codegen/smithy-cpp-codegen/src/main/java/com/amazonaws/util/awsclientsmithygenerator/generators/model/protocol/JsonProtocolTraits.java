@@ -196,7 +196,7 @@ public final class JsonProtocolTraits implements ProtocolTraits {
             writeResultTransportMembers(writer, shape, model);
             writer.write("return *this;");
         });
-        SchemaSerdeRenderer.writeResultSchemaSerde(writer, this, className, shape, model, memberTraits());
+        SchemaSerdeRenderer.writeResultSchemaSerde(writer, this, className, shape, model, memberTraits(), namespace);
     }
 
     @Override
@@ -262,10 +262,10 @@ public final class JsonProtocolTraits implements ProtocolTraits {
     @Override
     public void writeRequestMethodImpls(CppWriter writer, String className,
                                         StructureShape shape, OperationShape operation,
-                                        ServiceShape service, Model model) {
+                                        ServiceShape service, Model model, String namespace) {
         // An HTTP-bound request's protocol places every member (path, query, headers, payload, body).
         boolean bound = SchemaSerdeRenderer.writeRequestSchemaSerde(writer, this, className, shape, operation, service,
-            model, memberTraits(), protocol == Protocol.JSON ? "\"{}\"" : "{}");
+            model, memberTraits(), protocol == Protocol.JSON ? "\"{}\"" : "{}", namespace);
         if (hasTargetHeader()
                 || (serializesHttpBindingMembers() && RequestBindings.hasHeaderMembers(shape, model))) {
             writer.write("");

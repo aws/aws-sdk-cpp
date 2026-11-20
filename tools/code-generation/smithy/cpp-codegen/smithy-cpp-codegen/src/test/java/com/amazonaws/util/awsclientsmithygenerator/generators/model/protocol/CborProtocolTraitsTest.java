@@ -162,7 +162,7 @@ class CborProtocolTraitsTest {
     @Test
     void requestImpls_noTargetHeaderAndEmptyBracesPayload() {
         var req = reqWith(false, false); var model = modelWith(req);
-        String i = render(w -> cbor.writeRequestMethodImpls(w, "PingRequest", unitStructure(), opNoInput(), svcAthena(), model));
+        String i = render(w -> cbor.writeRequestMethodImpls(w, "PingRequest", unitStructure(), opNoInput(), svcAthena(), model, "Example"));
         assertFalse(i.contains("X-Amz-Target"), i);
     }
 
@@ -171,7 +171,7 @@ class CborProtocolTraitsTest {
     void requestWithInput_emitsContentTypeAndEncoderPayload() {
         var req = reqWith(false, false); var model = modelWith(req);
         var op = opWithInput(req);
-        String i = render(w -> cbor.writeRequestMethodImpls(w, "DoThingRequest", req, op, svcAthena(), model));
+        String i = render(w -> cbor.writeRequestMethodImpls(w, "DoThingRequest", req, op, svcAthena(), model, "Example"));
         assertTrue(i.contains("Aws::Crt::Cbor::CborEncoder encoder;"), i);
         assertTrue(i.contains("headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);"), i);
         assertTrue(i.contains("headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);"), i);
@@ -185,7 +185,7 @@ class CborProtocolTraitsTest {
         var req = reqWith(false, true); var op = opWithInput(req); var model = modelWith(req);
         String d = render(w -> cbor.writeRequestMethodDecls(w, "AWS_EX_API", req, op, model));
         assertFalse(d.contains("AddQueryStringParameters"), d);
-        String i = render(w -> cbor.writeRequestMethodImpls(w, "DoThingRequest", req, op, svcAthena(), model));
+        String i = render(w -> cbor.writeRequestMethodImpls(w, "DoThingRequest", req, op, svcAthena(), model, "Example"));
         assertFalse(i.contains("AddQueryStringParameters"), i);
         assertTrue(i.contains("headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);"), i);
     }
@@ -193,7 +193,7 @@ class CborProtocolTraitsTest {
     @Test
     void cbor_headerMember_notWireSerialized_keepsProtocolHeaders() {
         var req = reqWith(true, false); var op = opWithInput(req); var model = modelWith(req);
-        String i = render(w -> cbor.writeRequestMethodImpls(w, "DoThingRequest", req, op, svcAthena(), model));
+        String i = render(w -> cbor.writeRequestMethodImpls(w, "DoThingRequest", req, op, svcAthena(), model, "Example"));
         assertFalse(i.contains("headers.emplace(\"x-h\""), i);
         assertFalse(i.contains("ss << m_h;"), i);
         assertTrue(i.contains("headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);"), i);
@@ -205,7 +205,7 @@ class CborProtocolTraitsTest {
         var op = opNoInput();
         var unit = unitStructure();
         var model = modelWith(unit);
-        String i = render(w -> cbor.writeRequestMethodImpls(w, "PingRequest", unit, op, svcAthena(), model));
+        String i = render(w -> cbor.writeRequestMethodImpls(w, "PingRequest", unit, op, svcAthena(), model, "Example"));
         assertTrue(i.contains("Aws::String PingRequest::SerializePayload() const { return {}; }"), i);
         assertFalse(i.contains("CONTENT_TYPE_HEADER"), i);
         assertTrue(i.contains("headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);"), i);
