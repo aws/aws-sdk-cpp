@@ -27,9 +27,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-MediaTypeHeaderResult::MediaTypeHeaderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+MediaTypeHeaderResult::MediaTypeHeaderResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-MediaTypeHeaderResult& MediaTypeHeaderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+MediaTypeHeaderResult& MediaTypeHeaderResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

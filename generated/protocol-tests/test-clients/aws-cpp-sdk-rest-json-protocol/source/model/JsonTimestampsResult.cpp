@@ -27,9 +27,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-JsonTimestampsResult::JsonTimestampsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+JsonTimestampsResult::JsonTimestampsResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-JsonTimestampsResult& JsonTimestampsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+JsonTimestampsResult& JsonTimestampsResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

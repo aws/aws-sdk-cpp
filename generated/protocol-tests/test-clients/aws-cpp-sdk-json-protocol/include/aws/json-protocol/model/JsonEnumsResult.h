@@ -35,8 +35,8 @@ namespace Model {
 class JsonEnumsResult {
  public:
   AWS_JSONPROTOCOL_API JsonEnumsResult() = default;
-  AWS_JSONPROTOCOL_API JsonEnumsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_JSONPROTOCOL_API JsonEnumsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_JSONPROTOCOL_API JsonEnumsResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_JSONPROTOCOL_API JsonEnumsResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_JSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

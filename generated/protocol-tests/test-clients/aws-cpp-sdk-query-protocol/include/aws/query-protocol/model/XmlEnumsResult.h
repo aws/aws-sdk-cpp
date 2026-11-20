@@ -36,8 +36,8 @@ namespace Model {
 class XmlEnumsResult {
  public:
   AWS_QUERYPROTOCOL_API XmlEnumsResult() = default;
-  AWS_QUERYPROTOCOL_API XmlEnumsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_QUERYPROTOCOL_API XmlEnumsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_QUERYPROTOCOL_API XmlEnumsResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_QUERYPROTOCOL_API XmlEnumsResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_QUERYPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

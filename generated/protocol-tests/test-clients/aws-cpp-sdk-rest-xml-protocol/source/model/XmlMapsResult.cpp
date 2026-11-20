@@ -27,9 +27,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlMapsResult::XmlMapsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
+XmlMapsResult::XmlMapsResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-XmlMapsResult& XmlMapsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+XmlMapsResult& XmlMapsResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

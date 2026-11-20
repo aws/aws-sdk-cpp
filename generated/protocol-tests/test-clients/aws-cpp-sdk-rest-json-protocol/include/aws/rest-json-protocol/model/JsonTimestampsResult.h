@@ -33,8 +33,8 @@ namespace Model {
 class JsonTimestampsResult {
  public:
   AWS_RESTJSONPROTOCOL_API JsonTimestampsResult() = default;
-  AWS_RESTJSONPROTOCOL_API JsonTimestampsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API JsonTimestampsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API JsonTimestampsResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API JsonTimestampsResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

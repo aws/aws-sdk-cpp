@@ -32,8 +32,8 @@ namespace Model {
 class XmlAttributesResult {
  public:
   AWS_RESTXMLPROTOCOL_API XmlAttributesResult() = default;
-  AWS_RESTXMLPROTOCOL_API XmlAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API XmlAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API XmlAttributesResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API XmlAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

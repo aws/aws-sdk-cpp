@@ -33,8 +33,8 @@ namespace Model {
 class FractionalSecondsResult {
  public:
   AWS_QUERYPROTOCOL_API FractionalSecondsResult() = default;
-  AWS_QUERYPROTOCOL_API FractionalSecondsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_QUERYPROTOCOL_API FractionalSecondsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_QUERYPROTOCOL_API FractionalSecondsResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_QUERYPROTOCOL_API FractionalSecondsResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_QUERYPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

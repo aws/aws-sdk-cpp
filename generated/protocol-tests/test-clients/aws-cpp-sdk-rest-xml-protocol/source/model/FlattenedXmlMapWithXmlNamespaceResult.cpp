@@ -27,12 +27,12 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-FlattenedXmlMapWithXmlNamespaceResult::FlattenedXmlMapWithXmlNamespaceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+FlattenedXmlMapWithXmlNamespaceResult::FlattenedXmlMapWithXmlNamespaceResult(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   *this = result;
 }
 
 FlattenedXmlMapWithXmlNamespaceResult& FlattenedXmlMapWithXmlNamespaceResult::operator=(
-    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+    const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

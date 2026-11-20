@@ -27,9 +27,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GreetingWithErrorsResult::GreetingWithErrorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+GreetingWithErrorsResult::GreetingWithErrorsResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-GreetingWithErrorsResult& GreetingWithErrorsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+GreetingWithErrorsResult& GreetingWithErrorsResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -27,9 +27,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ResponseCodeHttpFallbackResult::ResponseCodeHttpFallbackResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+ResponseCodeHttpFallbackResult::ResponseCodeHttpFallbackResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-ResponseCodeHttpFallbackResult& ResponseCodeHttpFallbackResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+ResponseCodeHttpFallbackResult& ResponseCodeHttpFallbackResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

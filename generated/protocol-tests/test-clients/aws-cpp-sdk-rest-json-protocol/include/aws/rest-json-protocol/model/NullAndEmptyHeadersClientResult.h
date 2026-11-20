@@ -33,9 +33,8 @@ namespace Model {
 class NullAndEmptyHeadersClientResult {
  public:
   AWS_RESTJSONPROTOCOL_API NullAndEmptyHeadersClientResult() = default;
-  AWS_RESTJSONPROTOCOL_API NullAndEmptyHeadersClientResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API NullAndEmptyHeadersClientResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API NullAndEmptyHeadersClientResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API NullAndEmptyHeadersClientResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

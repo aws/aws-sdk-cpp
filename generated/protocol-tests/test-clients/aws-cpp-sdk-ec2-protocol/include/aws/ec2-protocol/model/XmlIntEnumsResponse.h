@@ -35,8 +35,8 @@ namespace Model {
 class XmlIntEnumsResponse {
  public:
   AWS_EC2PROTOCOL_API XmlIntEnumsResponse() = default;
-  AWS_EC2PROTOCOL_API XmlIntEnumsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_EC2PROTOCOL_API XmlIntEnumsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2PROTOCOL_API XmlIntEnumsResponse(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_EC2PROTOCOL_API XmlIntEnumsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_EC2PROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

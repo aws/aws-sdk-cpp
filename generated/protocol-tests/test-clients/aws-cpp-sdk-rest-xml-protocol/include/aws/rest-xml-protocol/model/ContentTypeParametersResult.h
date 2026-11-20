@@ -32,8 +32,8 @@ namespace Model {
 class ContentTypeParametersResult {
  public:
   AWS_RESTXMLPROTOCOL_API ContentTypeParametersResult() = default;
-  AWS_RESTXMLPROTOCOL_API ContentTypeParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API ContentTypeParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API ContentTypeParametersResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API ContentTypeParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
 
   ///@{
 

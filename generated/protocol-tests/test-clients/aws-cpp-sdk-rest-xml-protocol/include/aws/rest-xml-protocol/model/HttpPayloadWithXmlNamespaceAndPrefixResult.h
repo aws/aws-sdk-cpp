@@ -33,10 +33,8 @@ namespace Model {
 class HttpPayloadWithXmlNamespaceAndPrefixResult {
  public:
   AWS_RESTXMLPROTOCOL_API HttpPayloadWithXmlNamespaceAndPrefixResult() = default;
-  AWS_RESTXMLPROTOCOL_API HttpPayloadWithXmlNamespaceAndPrefixResult(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API HttpPayloadWithXmlNamespaceAndPrefixResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API HttpPayloadWithXmlNamespaceAndPrefixResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API HttpPayloadWithXmlNamespaceAndPrefixResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

@@ -10,7 +10,7 @@
 #include <aws/json-protocol/JsonProtocolServiceClientModel.h>
 #include <aws/json-protocol/JsonProtocol_EXPORTS.h>
 #include <smithy/client/AwsSmithyClient.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <smithy/client/serializer/RawOutcomeSerializer.h>
 #include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
@@ -21,8 +21,8 @@ class AWS_JSONPROTOCOL_API JsonProtocolClient
     : Aws::Client::ClientWithAsyncTemplateMethods<JsonProtocolClient>,
       public smithy::client::AwsSmithyClientT<Aws::JsonProtocol::SERVICE_NAME, Aws::JsonProtocol::JsonProtocolClientConfiguration,
                                               smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-                                              JsonProtocolEndpointProviderBase, smithy::client::JsonOutcomeSerializer,
-                                              smithy::client::JsonOutcome, Aws::Client::JsonProtocolErrorMarshaller> {
+                                              JsonProtocolEndpointProviderBase, smithy::client::RawOutcomeSerializer,
+                                              smithy::client::RawOutcome, Aws::Client::JsonProtocolErrorMarshaller> {
  public:
   static const char* GetServiceName();
   static const char* GetAllocationTag();
@@ -555,7 +555,7 @@ class AWS_JSONPROTOCOL_API JsonProtocolClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<JsonProtocolClient>;
 
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>, JsonProtocolError> InvokeOperationOutcome;
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::String>, JsonProtocolError> InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 };

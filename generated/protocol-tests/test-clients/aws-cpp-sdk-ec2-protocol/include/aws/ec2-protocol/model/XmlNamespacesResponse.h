@@ -33,8 +33,8 @@ namespace Model {
 class XmlNamespacesResponse {
  public:
   AWS_EC2PROTOCOL_API XmlNamespacesResponse() = default;
-  AWS_EC2PROTOCOL_API XmlNamespacesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_EC2PROTOCOL_API XmlNamespacesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2PROTOCOL_API XmlNamespacesResponse(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_EC2PROTOCOL_API XmlNamespacesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_EC2PROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

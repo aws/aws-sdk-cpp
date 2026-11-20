@@ -33,8 +33,8 @@ namespace Model {
 class DatetimeOffsetsResult {
  public:
   AWS_QUERYPROTOCOL_API DatetimeOffsetsResult() = default;
-  AWS_QUERYPROTOCOL_API DatetimeOffsetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_QUERYPROTOCOL_API DatetimeOffsetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_QUERYPROTOCOL_API DatetimeOffsetsResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_QUERYPROTOCOL_API DatetimeOffsetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_QUERYPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

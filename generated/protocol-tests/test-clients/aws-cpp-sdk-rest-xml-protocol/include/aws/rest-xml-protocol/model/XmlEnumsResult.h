@@ -35,8 +35,8 @@ namespace Model {
 class XmlEnumsResult {
  public:
   AWS_RESTXMLPROTOCOL_API XmlEnumsResult() = default;
-  AWS_RESTXMLPROTOCOL_API XmlEnumsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API XmlEnumsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API XmlEnumsResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API XmlEnumsResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

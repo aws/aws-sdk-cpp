@@ -27,9 +27,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DatetimeOffsetsResult::DatetimeOffsetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
+DatetimeOffsetsResult::DatetimeOffsetsResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-DatetimeOffsetsResult& DatetimeOffsetsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+DatetimeOffsetsResult& DatetimeOffsetsResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

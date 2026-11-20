@@ -33,8 +33,8 @@ namespace Model {
 class GreetingWithErrorsResult {
  public:
   AWS_QUERYPROTOCOL_API GreetingWithErrorsResult() = default;
-  AWS_QUERYPROTOCOL_API GreetingWithErrorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_QUERYPROTOCOL_API GreetingWithErrorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_QUERYPROTOCOL_API GreetingWithErrorsResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_QUERYPROTOCOL_API GreetingWithErrorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_QUERYPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

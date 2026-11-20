@@ -32,8 +32,8 @@ namespace Model {
 class NoInputAndOutputResult {
  public:
   AWS_JSONRPC10_API NoInputAndOutputResult() = default;
-  AWS_JSONRPC10_API NoInputAndOutputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_JSONRPC10_API NoInputAndOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_JSONRPC10_API NoInputAndOutputResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_JSONRPC10_API NoInputAndOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
 
   ///@{
 

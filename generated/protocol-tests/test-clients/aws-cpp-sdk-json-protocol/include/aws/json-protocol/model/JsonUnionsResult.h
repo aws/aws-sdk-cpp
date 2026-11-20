@@ -39,8 +39,8 @@ namespace Model {
 class JsonUnionsResult {
  public:
   AWS_JSONPROTOCOL_API JsonUnionsResult() = default;
-  AWS_JSONPROTOCOL_API JsonUnionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_JSONPROTOCOL_API JsonUnionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_JSONPROTOCOL_API JsonUnionsResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_JSONPROTOCOL_API JsonUnionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_JSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

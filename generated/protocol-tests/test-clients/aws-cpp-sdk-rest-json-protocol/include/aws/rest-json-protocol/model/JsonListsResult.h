@@ -36,8 +36,8 @@ namespace Model {
 class JsonListsResult {
  public:
   AWS_RESTJSONPROTOCOL_API JsonListsResult() = default;
-  AWS_RESTJSONPROTOCOL_API JsonListsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API JsonListsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API JsonListsResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API JsonListsResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

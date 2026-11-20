@@ -32,8 +32,8 @@ namespace Model {
 class NoInputAndOutputResponse {
  public:
   AWS_EC2PROTOCOL_API NoInputAndOutputResponse() = default;
-  AWS_EC2PROTOCOL_API NoInputAndOutputResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_EC2PROTOCOL_API NoInputAndOutputResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2PROTOCOL_API NoInputAndOutputResponse(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_EC2PROTOCOL_API NoInputAndOutputResponse& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
 
   ///@{
 

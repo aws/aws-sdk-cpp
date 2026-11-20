@@ -33,8 +33,8 @@ namespace Model {
 class XmlEmptyBlobsResult {
  public:
   AWS_RESTXMLPROTOCOL_API XmlEmptyBlobsResult() = default;
-  AWS_RESTXMLPROTOCOL_API XmlEmptyBlobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API XmlEmptyBlobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API XmlEmptyBlobsResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API XmlEmptyBlobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

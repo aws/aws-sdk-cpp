@@ -35,8 +35,8 @@ namespace Model {
 class SparseNullsOperationResult {
  public:
   AWS_JSONPROTOCOL_API SparseNullsOperationResult() = default;
-  AWS_JSONPROTOCOL_API SparseNullsOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_JSONPROTOCOL_API SparseNullsOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_JSONPROTOCOL_API SparseNullsOperationResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_JSONPROTOCOL_API SparseNullsOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_JSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

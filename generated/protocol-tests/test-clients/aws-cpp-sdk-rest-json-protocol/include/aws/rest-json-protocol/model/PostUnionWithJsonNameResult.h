@@ -33,8 +33,8 @@ namespace Model {
 class PostUnionWithJsonNameResult {
  public:
   AWS_RESTJSONPROTOCOL_API PostUnionWithJsonNameResult() = default;
-  AWS_RESTJSONPROTOCOL_API PostUnionWithJsonNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API PostUnionWithJsonNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API PostUnionWithJsonNameResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API PostUnionWithJsonNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

@@ -34,9 +34,8 @@ namespace Model {
 class FlattenedXmlMapWithXmlNameResult {
  public:
   AWS_QUERYPROTOCOL_API FlattenedXmlMapWithXmlNameResult() = default;
-  AWS_QUERYPROTOCOL_API FlattenedXmlMapWithXmlNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_QUERYPROTOCOL_API FlattenedXmlMapWithXmlNameResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_QUERYPROTOCOL_API FlattenedXmlMapWithXmlNameResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_QUERYPROTOCOL_API FlattenedXmlMapWithXmlNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_QUERYPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

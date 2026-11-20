@@ -32,9 +32,8 @@ namespace Model {
 class OperationWithOptionalInputOutputResult {
  public:
   AWS_JSONPROTOCOL_API OperationWithOptionalInputOutputResult() = default;
-  AWS_JSONPROTOCOL_API OperationWithOptionalInputOutputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_JSONPROTOCOL_API OperationWithOptionalInputOutputResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_JSONPROTOCOL_API OperationWithOptionalInputOutputResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_JSONPROTOCOL_API OperationWithOptionalInputOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_JSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

@@ -33,8 +33,8 @@ namespace Model {
 class HttpPayloadWithUnionResult {
  public:
   AWS_RESTJSONPROTOCOL_API HttpPayloadWithUnionResult() = default;
-  AWS_RESTJSONPROTOCOL_API HttpPayloadWithUnionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API HttpPayloadWithUnionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API HttpPayloadWithUnionResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API HttpPayloadWithUnionResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

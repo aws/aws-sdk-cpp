@@ -33,8 +33,8 @@ namespace Model {
 class HttpPayloadWithUnionResult {
  public:
   AWS_RESTXMLPROTOCOL_API HttpPayloadWithUnionResult() = default;
-  AWS_RESTXMLPROTOCOL_API HttpPayloadWithUnionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API HttpPayloadWithUnionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API HttpPayloadWithUnionResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API HttpPayloadWithUnionResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

@@ -27,9 +27,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlEnumsResult::XmlEnumsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
+XmlEnumsResult::XmlEnumsResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-XmlEnumsResult& XmlEnumsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+XmlEnumsResult& XmlEnumsResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -33,8 +33,8 @@ namespace Model {
 class SimpleScalarXmlPropertiesResponse {
  public:
   AWS_EC2PROTOCOL_API SimpleScalarXmlPropertiesResponse() = default;
-  AWS_EC2PROTOCOL_API SimpleScalarXmlPropertiesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_EC2PROTOCOL_API SimpleScalarXmlPropertiesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2PROTOCOL_API SimpleScalarXmlPropertiesResponse(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_EC2PROTOCOL_API SimpleScalarXmlPropertiesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_EC2PROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

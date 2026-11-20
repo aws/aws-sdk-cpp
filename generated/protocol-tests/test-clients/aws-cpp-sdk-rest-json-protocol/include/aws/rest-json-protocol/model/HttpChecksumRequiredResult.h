@@ -32,8 +32,8 @@ namespace Model {
 class HttpChecksumRequiredResult {
  public:
   AWS_RESTJSONPROTOCOL_API HttpChecksumRequiredResult() = default;
-  AWS_RESTJSONPROTOCOL_API HttpChecksumRequiredResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API HttpChecksumRequiredResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API HttpChecksumRequiredResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API HttpChecksumRequiredResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

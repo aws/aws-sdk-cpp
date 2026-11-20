@@ -10,7 +10,7 @@
 #include <aws/ec2-protocol/EC2ProtocolServiceClientModel.h>
 #include <aws/ec2-protocol/EC2Protocol_EXPORTS.h>
 #include <smithy/client/AwsSmithyClient.h>
-#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <smithy/client/serializer/RawOutcomeSerializer.h>
 #include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
@@ -24,8 +24,8 @@ class AWS_EC2PROTOCOL_API EC2ProtocolClient
     : Aws::Client::ClientWithAsyncTemplateMethods<EC2ProtocolClient>,
       public smithy::client::AwsSmithyClientT<Aws::EC2Protocol::SERVICE_NAME, Aws::EC2Protocol::EC2ProtocolClientConfiguration,
                                               smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-                                              EC2ProtocolEndpointProviderBase, smithy::client::XmlOutcomeSerializer,
-                                              smithy::client::XmlOutcome, Aws::Client::EC2ProtocolErrorMarshaller> {
+                                              EC2ProtocolEndpointProviderBase, smithy::client::RawOutcomeSerializer,
+                                              smithy::client::RawOutcome, Aws::Client::EC2ProtocolErrorMarshaller> {
  public:
   static const char* GetServiceName();
   static const char* GetAllocationTag();
@@ -761,7 +761,7 @@ class AWS_EC2PROTOCOL_API EC2ProtocolClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EC2ProtocolClient>;
 
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>, EC2ProtocolError> InvokeOperationOutcome;
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::String>, EC2ProtocolError> InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 };

@@ -27,11 +27,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpPrefixHeadersInResponseResult::HttpPrefixHeadersInResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+HttpPrefixHeadersInResponseResult::HttpPrefixHeadersInResponseResult(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   *this = result;
 }
 
-HttpPrefixHeadersInResponseResult& HttpPrefixHeadersInResponseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+HttpPrefixHeadersInResponseResult& HttpPrefixHeadersInResponseResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

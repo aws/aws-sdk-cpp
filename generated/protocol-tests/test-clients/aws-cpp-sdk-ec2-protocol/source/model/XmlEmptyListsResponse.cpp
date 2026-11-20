@@ -29,18 +29,16 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlEmptyListsResponse::XmlEmptyListsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
+XmlEmptyListsResponse::XmlEmptyListsResponse(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-XmlEmptyListsResponse& XmlEmptyListsResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+XmlEmptyListsResponse& XmlEmptyListsResponse::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode rootNode = xmlDocument.GetRootElement();
-  if (!rootNode.IsNull()) {
-    XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull()) {
-      m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
-      m_responseMetadataHasBeenSet = true;
-    }
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_responseMetadata.SetRequestId(requestIdIter->second);
+    m_responseMetadataHasBeenSet = true;
+    AWS_LOGSTREAM_DEBUG("Aws::EC2Protocol::Model::XmlEmptyListsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

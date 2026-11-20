@@ -40,8 +40,8 @@ namespace Model {
 class KitchenSinkOperationResult {
  public:
   AWS_JSONPROTOCOL_API KitchenSinkOperationResult() = default;
-  AWS_JSONPROTOCOL_API KitchenSinkOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_JSONPROTOCOL_API KitchenSinkOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_JSONPROTOCOL_API KitchenSinkOperationResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_JSONPROTOCOL_API KitchenSinkOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_JSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

@@ -10,7 +10,7 @@
 #include <aws/query-protocol/QueryProtocolServiceClientModel.h>
 #include <aws/query-protocol/QueryProtocol_EXPORTS.h>
 #include <smithy/client/AwsSmithyClient.h>
-#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <smithy/client/serializer/RawOutcomeSerializer.h>
 #include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
@@ -24,8 +24,8 @@ class AWS_QUERYPROTOCOL_API QueryProtocolClient
     : Aws::Client::ClientWithAsyncTemplateMethods<QueryProtocolClient>,
       public smithy::client::AwsSmithyClientT<Aws::QueryProtocol::SERVICE_NAME, Aws::QueryProtocol::QueryProtocolClientConfiguration,
                                               smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-                                              QueryProtocolEndpointProviderBase, smithy::client::XmlOutcomeSerializer,
-                                              smithy::client::XmlOutcome, Aws::Client::QueryProtocolErrorMarshaller> {
+                                              QueryProtocolEndpointProviderBase, smithy::client::RawOutcomeSerializer,
+                                              smithy::client::RawOutcome, Aws::Client::QueryProtocolErrorMarshaller> {
  public:
   static const char* GetServiceName();
   static const char* GetAllocationTag();
@@ -982,7 +982,7 @@ class AWS_QUERYPROTOCOL_API QueryProtocolClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<QueryProtocolClient>;
 
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>, QueryProtocolError> InvokeOperationOutcome;
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::String>, QueryProtocolError> InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 };

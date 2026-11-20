@@ -33,8 +33,8 @@ namespace Model {
 class NestedXmlMapWithXmlNameResult {
  public:
   AWS_RESTXMLPROTOCOL_API NestedXmlMapWithXmlNameResult() = default;
-  AWS_RESTXMLPROTOCOL_API NestedXmlMapWithXmlNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API NestedXmlMapWithXmlNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API NestedXmlMapWithXmlNameResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API NestedXmlMapWithXmlNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

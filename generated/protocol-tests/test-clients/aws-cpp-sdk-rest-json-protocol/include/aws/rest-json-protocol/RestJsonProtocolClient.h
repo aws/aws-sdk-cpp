@@ -10,7 +10,7 @@
 #include <aws/rest-json-protocol/RestJsonProtocolServiceClientModel.h>
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
 #include <smithy/client/AwsSmithyClient.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <smithy/client/serializer/RawOutcomeSerializer.h>
 #include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
@@ -21,8 +21,8 @@ class AWS_RESTJSONPROTOCOL_API RestJsonProtocolClient
     : Aws::Client::ClientWithAsyncTemplateMethods<RestJsonProtocolClient>,
       public smithy::client::AwsSmithyClientT<
           Aws::RestJsonProtocol::SERVICE_NAME, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration, smithy::AuthSchemeResolverBase<>,
-          Aws::Crt::Variant<smithy::SigV4AuthScheme>, RestJsonProtocolEndpointProviderBase, smithy::client::JsonOutcomeSerializer,
-          smithy::client::JsonOutcome, Aws::Client::RestJsonProtocolErrorMarshaller> {
+          Aws::Crt::Variant<smithy::SigV4AuthScheme>, RestJsonProtocolEndpointProviderBase, smithy::client::RawOutcomeSerializer,
+          smithy::client::RawOutcome, Aws::Client::RestJsonProtocolErrorMarshaller> {
  public:
   static const char* GetServiceName();
   static const char* GetAllocationTag();
@@ -1998,7 +1998,7 @@ class AWS_RESTJSONPROTOCOL_API RestJsonProtocolClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RestJsonProtocolClient>;
 
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>, RestJsonProtocolError> InvokeOperationOutcome;
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::String>, RestJsonProtocolError> InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
                                                 const std::function<void(Aws::Endpoint::AWSEndpoint&)>& resolveUri,

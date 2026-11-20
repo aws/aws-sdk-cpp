@@ -27,9 +27,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-FractionalSecondsResult::FractionalSecondsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
+FractionalSecondsResult::FractionalSecondsResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-FractionalSecondsResult& FractionalSecondsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+FractionalSecondsResult& FractionalSecondsResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

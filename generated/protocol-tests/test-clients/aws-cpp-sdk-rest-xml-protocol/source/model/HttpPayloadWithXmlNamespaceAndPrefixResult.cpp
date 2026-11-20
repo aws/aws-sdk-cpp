@@ -28,12 +28,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 HttpPayloadWithXmlNamespaceAndPrefixResult::HttpPayloadWithXmlNamespaceAndPrefixResult(
-    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+    const Aws::AmazonWebServiceResult<Aws::String>& result) {
   *this = result;
 }
 
 HttpPayloadWithXmlNamespaceAndPrefixResult& HttpPayloadWithXmlNamespaceAndPrefixResult::operator=(
-    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+    const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();

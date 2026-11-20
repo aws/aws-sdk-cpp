@@ -33,8 +33,8 @@ namespace Model {
 class TimestampFormatHeadersResult {
  public:
   AWS_RESTXMLPROTOCOL_API TimestampFormatHeadersResult() = default;
-  AWS_RESTXMLPROTOCOL_API TimestampFormatHeadersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API TimestampFormatHeadersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API TimestampFormatHeadersResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API TimestampFormatHeadersResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

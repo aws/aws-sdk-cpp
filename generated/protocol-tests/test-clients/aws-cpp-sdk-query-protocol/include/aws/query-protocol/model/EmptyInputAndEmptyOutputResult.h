@@ -32,8 +32,8 @@ namespace Model {
 class EmptyInputAndEmptyOutputResult {
  public:
   AWS_QUERYPROTOCOL_API EmptyInputAndEmptyOutputResult() = default;
-  AWS_QUERYPROTOCOL_API EmptyInputAndEmptyOutputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_QUERYPROTOCOL_API EmptyInputAndEmptyOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_QUERYPROTOCOL_API EmptyInputAndEmptyOutputResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_QUERYPROTOCOL_API EmptyInputAndEmptyOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
 
   ///@{
 

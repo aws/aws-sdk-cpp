@@ -34,8 +34,8 @@ namespace Model {
 class FlattenedXmlMapResult {
  public:
   AWS_RESTXMLPROTOCOL_API FlattenedXmlMapResult() = default;
-  AWS_RESTXMLPROTOCOL_API FlattenedXmlMapResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API FlattenedXmlMapResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API FlattenedXmlMapResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API FlattenedXmlMapResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

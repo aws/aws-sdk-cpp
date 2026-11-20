@@ -33,8 +33,8 @@ namespace Model {
 class XmlAttributesInMiddleResult {
  public:
   AWS_RESTXMLPROTOCOL_API XmlAttributesInMiddleResult() = default;
-  AWS_RESTXMLPROTOCOL_API XmlAttributesInMiddleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API XmlAttributesInMiddleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API XmlAttributesInMiddleResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API XmlAttributesInMiddleResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTXMLPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

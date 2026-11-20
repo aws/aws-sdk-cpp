@@ -10,7 +10,7 @@
 #include <aws/rest-xml-protocol/RestXmlProtocolServiceClientModel.h>
 #include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
 #include <smithy/client/AwsSmithyClient.h>
-#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <smithy/client/serializer/RawOutcomeSerializer.h>
 #include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
@@ -24,8 +24,8 @@ class AWS_RESTXMLPROTOCOL_API RestXmlProtocolClient
     : Aws::Client::ClientWithAsyncTemplateMethods<RestXmlProtocolClient>,
       public smithy::client::AwsSmithyClientT<Aws::RestXmlProtocol::SERVICE_NAME, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration,
                                               smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-                                              RestXmlProtocolEndpointProviderBase, smithy::client::XmlOutcomeSerializer,
-                                              smithy::client::XmlOutcome, Aws::Client::RestXmlProtocolErrorMarshaller> {
+                                              RestXmlProtocolEndpointProviderBase, smithy::client::RawOutcomeSerializer,
+                                              smithy::client::RawOutcome, Aws::Client::RestXmlProtocolErrorMarshaller> {
  public:
   static const char* GetServiceName();
   static const char* GetAllocationTag();
@@ -1845,7 +1845,7 @@ class AWS_RESTXMLPROTOCOL_API RestXmlProtocolClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RestXmlProtocolClient>;
 
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>, RestXmlProtocolError> InvokeOperationOutcome;
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::String>, RestXmlProtocolError> InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
                                                 const std::function<void(Aws::Endpoint::AWSEndpoint&)>& resolveUri,

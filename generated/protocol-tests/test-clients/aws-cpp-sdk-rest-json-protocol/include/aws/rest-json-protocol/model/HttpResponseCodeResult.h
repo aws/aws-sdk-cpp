@@ -32,8 +32,8 @@ namespace Model {
 class HttpResponseCodeResult {
  public:
   AWS_RESTJSONPROTOCOL_API HttpResponseCodeResult() = default;
-  AWS_RESTJSONPROTOCOL_API HttpResponseCodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API HttpResponseCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API HttpResponseCodeResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API HttpResponseCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

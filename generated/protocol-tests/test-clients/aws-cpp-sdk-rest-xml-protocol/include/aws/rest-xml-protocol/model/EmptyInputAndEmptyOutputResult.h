@@ -32,9 +32,8 @@ namespace Model {
 class EmptyInputAndEmptyOutputResult {
  public:
   AWS_RESTXMLPROTOCOL_API EmptyInputAndEmptyOutputResult() = default;
-  AWS_RESTXMLPROTOCOL_API EmptyInputAndEmptyOutputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_RESTXMLPROTOCOL_API EmptyInputAndEmptyOutputResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RESTXMLPROTOCOL_API EmptyInputAndEmptyOutputResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTXMLPROTOCOL_API EmptyInputAndEmptyOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
 
   ///@{
 

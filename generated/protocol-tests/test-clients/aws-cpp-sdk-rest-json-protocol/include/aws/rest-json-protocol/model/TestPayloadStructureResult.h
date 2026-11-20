@@ -33,8 +33,8 @@ namespace Model {
 class TestPayloadStructureResult {
  public:
   AWS_RESTJSONPROTOCOL_API TestPayloadStructureResult() = default;
-  AWS_RESTJSONPROTOCOL_API TestPayloadStructureResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_RESTJSONPROTOCOL_API TestPayloadStructureResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESTJSONPROTOCOL_API TestPayloadStructureResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_RESTJSONPROTOCOL_API TestPayloadStructureResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
   AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{

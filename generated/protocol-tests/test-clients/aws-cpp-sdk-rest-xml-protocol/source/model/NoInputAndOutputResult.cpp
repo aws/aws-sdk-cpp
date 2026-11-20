@@ -27,9 +27,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-NoInputAndOutputResult::NoInputAndOutputResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
+NoInputAndOutputResult::NoInputAndOutputResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-NoInputAndOutputResult& NoInputAndOutputResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+NoInputAndOutputResult& NoInputAndOutputResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
 
   const auto& headers = result.GetHeaderValueCollection();
