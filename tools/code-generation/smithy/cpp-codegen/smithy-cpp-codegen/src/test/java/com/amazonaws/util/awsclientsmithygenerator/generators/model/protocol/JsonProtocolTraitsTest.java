@@ -119,26 +119,26 @@ class JsonProtocolTraitsTest {
     }
 
     @Test
-    void resultSerdeDecls_useJsonValuePayload() {
+    void resultSerdeDecls_useRawPayload() {
         software.amazon.smithy.model.shapes.StructureShape emptyResult =
             software.amazon.smithy.model.shapes.StructureShape.builder().id("com.example#DoThingResult").build();
         software.amazon.smithy.model.Model emptyModel = software.amazon.smithy.model.Model.builder().addShape(emptyResult).build();
         String out = render(w -> json.writeResultSerdeDecls(w, "AWS_EXAMPLE_API", "DoThingResult", emptyResult, emptyModel));
         assertTrue(out.contains("AWS_EXAMPLE_API DoThingResult(const "
-            + "Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);"), out);
+            + "Aws::AmazonWebServiceResult<Aws::String>& result);"), out);
         assertTrue(out.contains("AWS_EXAMPLE_API DoThingResult& operator=(const "
-            + "Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);"), out);
+            + "Aws::AmazonWebServiceResult<Aws::String>& result);"), out);
     }
 
     @Test
-    void resultSerdeImpls_useJsonValuePayload() {
+    void resultSerdeImpls_useRawPayload() {
         var req = reqWith(false, false); var model = modelWith(req);
         String out = render(w -> json.writeResultSerdeImpls(w, "DoThingResult", req, model, "Example"));
         assertTrue(out.contains("DoThingResult::DoThingResult(const "
-            + "Aws::AmazonWebServiceResult<JsonValue>& result) {"), out);
+            + "Aws::AmazonWebServiceResult<Aws::String>& result) {"), out);
         assertTrue(out.contains("*this = result;"), out);
         assertTrue(out.contains("DoThingResult& DoThingResult::operator=(const "
-            + "Aws::AmazonWebServiceResult<JsonValue>& result) {"), out);
+            + "Aws::AmazonWebServiceResult<Aws::String>& result) {"), out);
         assertTrue(out.contains("return *this;"), out);
     }
 

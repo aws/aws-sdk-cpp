@@ -40,6 +40,12 @@ import java.util.Optional;
  */
 public interface ProtocolTraits {
 
+    /**
+     * The transport result a Smithy-generated (schema-serde) result class is built from: the raw response body,
+     * which the client-owned ClientProtocol parses (see smithy::client::RawOutcomeSerializer).
+     */
+    String RAW_RESULT_TYPE = "Aws::AmazonWebServiceResult<Aws::String>";
+
     /** The protocol this instance was resolved for. */
     Protocol protocol();
 

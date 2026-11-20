@@ -11,6 +11,12 @@
 #set($serializer = "XmlOutcomeSerializer")
 #set($serializerOutcome = "XmlOutcome")
 #end
+## Clients whose models the Smithy plugin generates (schema-serde shapes) keep the response body raw: their
+## ClientProtocol parses it once, instead of a JsonValue / XmlDocument being built first.
+#if($serviceModel.skipModelGeneration)
+#set($serializer = "RawOutcomeSerializer")
+#set($serializerOutcome = "RawOutcome")
+#end
 #set($serviceConfiguration = "Aws::" + ${serviceNamespace} + "::" + ${metadata.classNamePrefix} + "ClientConfiguration")
 #pragma once
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>

@@ -119,7 +119,7 @@ class SchemaSerdeEmissionTest {
         String out = render(w -> new QueryXmlProtocolTraits(Protocol.QUERY_XML)
             .writeResultSerdeImpls(w, "DoThingResult", RESULT, RESULT_MODEL, "Example"));
         // Legacy XmlDocument operator= still emitted (additive until the response marshaller switches).
-        assertTrue(out.contains("DoThingResult& DoThingResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result)"), out);
+        assertTrue(out.contains("DoThingResult& DoThingResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result)"), out);
         // Client-driven deserialize adapter: reads wire members into the result via setters, names no protocol.
         assertTrue(out.contains("class DoThingResultDeserializable final : public smithy::schema::SerializableStruct"), out);
         assertTrue(out.contains("void From(const smithy::schema::Schema& memberSchema, "
@@ -134,7 +134,7 @@ class SchemaSerdeEmissionTest {
         assertTrue(out.contains("return Aws::MakeUnique<DoThingResultDeserializable>(\"DoThingResultDeserializable\", *this);"), out);
         // The result is protocol-agnostic: it names no protocol, no XML deserializer, and does NOT peel
         // the response envelope itself — the client-owned ClientProtocol drives DeserializeResponse over
-        // GetSchemaSerdeOutput(). operator= only handles transport concerns (status + ResponseMetadata).
+        // GetSchemaSerdeOutput(). operator= only handles transport concerns (status + request id header).
         assertFalse(out.contains("smithy::schema::AwsQueryProtocol"), out);
         assertFalse(out.contains("XmlShapeDeserializer"), out);
         assertFalse(out.contains("EnterWrapperElement"), out);

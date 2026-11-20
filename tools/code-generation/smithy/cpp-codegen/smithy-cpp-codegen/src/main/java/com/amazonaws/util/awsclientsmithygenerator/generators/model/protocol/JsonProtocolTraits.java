@@ -78,10 +78,8 @@ public final class JsonProtocolTraits implements ProtocolTraits {
     @Override
     public void writeResultSerdeDecls(CppWriter writer, String exportMacro, String className,
                                       StructureShape shape, Model model) {
-        writer.write("$L $L(const Aws::AmazonWebServiceResult<$L>& result);",
-            exportMacro, className, protocol.getValueType());
-        writer.write("$L $L& operator=(const Aws::AmazonWebServiceResult<$L>& result);",
-            exportMacro, className, protocol.getValueType());
+        writer.write("$L $L(const $L& result);", exportMacro, className, RAW_RESULT_TYPE);
+        writer.write("$L $L& operator=(const $L& result);", exportMacro, className, RAW_RESULT_TYPE);
         if (SchemaSerdeRenderer.emitsSchemaSerdeOutput(this, shape, model)) {
             SchemaSerdeRenderer.writeResultDeserMethodDecls(writer, exportMacro);
         }
@@ -190,11 +188,11 @@ public final class JsonProtocolTraits implements ProtocolTraits {
     @Override
     public void writeResultSerdeImpls(CppWriter writer, String className, StructureShape shape, Model model,
                                       String namespace) {
-        writer.openBlock("$L::$L(const Aws::AmazonWebServiceResult<JsonValue>& result) {", "}",
-            className, className, () -> writer.write("*this = result;"));
+        writer.openBlock("$L::$L(const $L& result) {", "}",
+            className, className, RAW_RESULT_TYPE, () -> writer.write("*this = result;"));
         writer.write("");
-        writer.openBlock("$L& $L::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {", "}",
-            className, className, () -> {
+        writer.openBlock("$L& $L::operator=(const $L& result) {", "}",
+            className, className, RAW_RESULT_TYPE, () -> {
             writeResultTransportMembers(writer, shape, model);
             writer.write("return *this;");
         });

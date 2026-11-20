@@ -11,6 +11,7 @@
 #include <smithy/identity/auth/AuthSchemeOption.h>
 #include <smithy/identity/auth/AuthSchemeResolverBase.h>
 #include <smithy/tracing/TelemetryProvider.h>
+#include <smithy/tracing/TracingUtils.h>
 
 #include <aws/crt/Variant.h>
 
@@ -49,17 +50,6 @@ namespace client
         struct HasSchemaSerdeOutput : std::false_type {};
         template <typename T>
         struct HasSchemaSerdeOutput<T, decltype(void(std::declval<T&>().GetSchemaSerdeOutput()))> : std::true_type {};
-
-        // The response body bytes handed to ClientProtocol::DeserializeResponse, recovered from the parsed
-        // transport payload (XmlDocument / JsonValue) until the outcome serializers hand over raw bytes.
-        template <typename PayloadT>
-        auto ResponseBodyBytes(const PayloadT& payload, int) -> decltype(payload.ConvertToString()) {
-            return payload.ConvertToString();
-        }
-        template <typename PayloadT>
-        auto ResponseBodyBytes(const PayloadT& payload, long) -> decltype(payload.View().WriteCompact()) {
-            return payload.View().WriteCompact();
-        }
     }  // namespace detail
 
     template<const char* ServiceNameT,
@@ -268,8 +258,9 @@ namespace client
 
         // Build a typed operation result from the transport result. When the result is a schema-serde
         // shape AND this client owns a ClientProtocol, deserialization is client-driven and
-        // protocol-agnostic: the protocol peels any response envelope and fills the shape via its
-        // adapter. Otherwise this is the legacy result construction. Selected at compile time by
+        // protocol-agnostic: the protocol parses the raw response body (kept unparsed by the
+        // RawOutcomeSerializer), peels any response envelope and fills the shape via its adapter.
+        // Otherwise this is the legacy result construction. Selected at compile time by
         // detail::HasSchemaSerdeOutput, so the shared op-method template stays protocol-neutral.
         template <typename ResultT, typename AwsResultT>
         ResultT BuildOperationResult(AwsResultT&& awsResult, const smithy::schema::OperationRequestContext& operation,
@@ -277,11 +268,18 @@ namespace client
           ResultT typed(awsResult);
           const auto& protocol = this->GetClientProtocol();
           if (protocol) {
-            const Aws::String rawBody = detail::ResponseBodyBytes(awsResult.GetPayload(), 0);
-            protocol->DeserializeHttpResponse(
-                operation, static_cast<int>(awsResult.GetResponseCode()), awsResult.GetHeaderValueCollection(),
-                Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(rawBody.data()), rawBody.size()),
-                *typed.GetSchemaSerdeOutput());
+            const Aws::String& rawBody = awsResult.GetPayload();
+            components::tracing::TracingUtils::MakeCallWithTiming(
+                [&]() -> void {
+                  protocol->DeserializeHttpResponse(
+                      operation, static_cast<int>(awsResult.GetResponseCode()), awsResult.GetHeaderValueCollection(),
+                      Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(rawBody.data()), rawBody.size()),
+                      *typed.GetSchemaSerdeOutput());
+                },
+                components::tracing::TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
+                *m_clientConfiguration.telemetryProvider->getMeter(GetServiceClientName(), {}),
+                {{components::tracing::TracingUtils::SMITHY_METHOD_DIMENSION, operation.action},
+                 {components::tracing::TracingUtils::SMITHY_SERVICE_DIMENSION, GetServiceClientName()}});
           }
           return typed;
         }
