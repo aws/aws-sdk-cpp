@@ -162,6 +162,29 @@ def parse_arguments() -> dict:
     return arg_map
 
 
+def legacy_clients_with_smithy_models(output_location: str, smithy_model_services: set) -> int:
+    """Fail when a --use-smithy-models service was generated with the legacy client.
+
+    Smithy-generated (schema-serde) models only work with the smithy client, which owns the ClientProtocol that
+    serializes requests and parses responses. Some C2J generators (custom per-service generators, CBOR services with
+    event-stream requests) still emit the legacy client, which does not compile against the models' raw result type
+    and would never deserialize a response body. Catch that here, after the C2J pass.
+
+    :return: 0 if every such service got the smithy client, -1 otherwise
+    """
+    legacy = []
+    for service in sorted(smithy_model_services):
+        include_dir = Path(output_location) / "src" / f"aws-cpp-sdk-{service}" / "include" / "aws"
+        client_headers = list(include_dir.glob("*/*Client.h")) if include_dir.is_dir() else []
+        if client_headers and not any("AwsSmithyClientT" in h.read_text(errors="replace") for h in client_headers):
+            legacy.append(service)
+    if legacy:
+        print(f"ERROR: --use-smithy-models requires the smithy client, but these services were generated with the "
+              f"legacy client (their C2J generator does not support the smithy client yet): {', '.join(legacy)}")
+        return -1
+    return 0
+
+
 def main():
     """Main entrypoint for this script that wraps AWS-SDK-CPP code generation
 
@@ -197,6 +220,8 @@ def main():
                                    skip_model_services=smithy_model_services)
         if c2j_gen.generate(executor, max_workers, args) != 0:
             print("ERROR: Failed to generate service client(s)!")
+            return -1
+        if legacy_clients_with_smithy_models(args["output_location"], smithy_model_services) != 0:
             return -1
 
         if args["generate_protocol_tests"]:
