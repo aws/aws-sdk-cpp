@@ -156,6 +156,8 @@ class AWS_DYNAMODB_API AttributeValue {
   Aws::String SerializeAttribute() const;
   Aws::Utils::Json::JsonValue Jsonize() const;
   ValueType GetType() const;
+  /// true once the value is specialized to a type; GetType() may only be called when this holds
+  inline bool HasValue() const { return m_value != nullptr; }
 
  private:
   std::shared_ptr<AttributeValueValue> m_value;

@@ -171,6 +171,43 @@ class SchemaSerdeEmissionTest {
     }
 
     @Test
+    void dynamoDbAttributeValue_usesItsHandWrittenApi() {
+        // DynamoDB's AttributeValue is C2J's hand-written class (CustomRenderedTrait), not a generated union: its
+        // adapter switches on GetType() and uses the class's own accessors rather than <Member>HasBeenSet().
+        software.amazon.smithy.model.shapes.UnionShape av = software.amazon.smithy.model.shapes.UnionShape.builder()
+            .id("com.amazonaws.dynamodb#AttributeValue")
+            .addMember(MemberShape.builder().id("com.amazonaws.dynamodb#AttributeValue$S").target(STR.getId()).build())
+            .addTrait(new com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.CustomRenderedTrait())
+            .build();
+        StructureShape result = StructureShape.builder()
+            .id("com.amazonaws.dynamodb#GetThingResult")
+            .addMember(MemberShape.builder().id("com.amazonaws.dynamodb#GetThingResult$value").target(av.getId()).build())
+            .build();
+        Model model = Model.builder().addShapes(STR, av, result).build();
+        String out = render(w -> new JsonProtocolTraits(Protocol.JSON)
+            .writeResultSerdeImpls(w, "GetThingResult", result, model, "DynamoDB"));
+        assertTrue(out.contains("if (memberName == \"S\") {"), out);
+        assertTrue(out.contains("m_obj.SetS(*value);"), out);
+        assertTrue(out.contains("m_obj.AddMEntry(key, nested);"), out);
+        assertFalse(out.contains("m_obj.SHasBeenSet()"), out);
+
+        StructureShape request = StructureShape.builder()
+            .id("com.amazonaws.dynamodb#PutThingRequest")
+            .addMember(MemberShape.builder().id("com.amazonaws.dynamodb#PutThingRequest$value").target(av.getId()).build())
+            .build();
+        OperationShape op = OperationShape.builder().id("com.amazonaws.dynamodb#PutThing").input(request.getId()).build();
+        ServiceShape svc = ServiceShape.builder().id("com.amazonaws.dynamodb#DynamoDB_20120810").version("2012-08-10")
+            .addOperation(op.getId()).build();
+        Model reqModel = Model.builder().addShapes(STR, av, request, op, svc).build();
+        String req = render(w -> new JsonProtocolTraits(Protocol.JSON)
+            .writeRequestMethodImpls(w, "PutThingRequest", request, op, svc, reqModel, "DynamoDB"));
+        assertTrue(req.contains("if (!m_obj.HasValue()) {"), req);
+        assertTrue(req.contains("switch (m_obj.GetType()) {"), req);
+        assertTrue(req.contains("case ValueType::ATTRIBUTE_MAP: {"), req);
+        assertFalse(req.contains("m_obj.SHasBeenSet()"), req);
+    }
+
+    @Test
     void query_nestedStructResult_emitsRecursiveAdapters() {
         String out = render(w -> new QueryXmlProtocolTraits(Protocol.QUERY_XML)
             .writeResultSerdeImpls(w, "DoNestedResult", NESTED_RESULT, NESTED_MODEL, "Example"));
