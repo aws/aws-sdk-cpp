@@ -42,6 +42,9 @@ DocumentTypeResult& DocumentTypeResult::operator=(const Aws::AmazonWebServiceRes
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class DocumentTypeResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -82,6 +85,9 @@ std::shared_ptr<const smithy::schema::Schema> DocumentTypeResultDeserializable::
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> DocumentTypeResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<DocumentTypeResultDeserializable>("DocumentTypeResultDeserializable", *this);

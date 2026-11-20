@@ -30,6 +30,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class RecursiveShapesRequest_RecursiveShapesInputOutputNested1SchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
@@ -127,6 +130,9 @@ std::shared_ptr<const smithy::schema::Schema> RecursiveShapesRequestSerializable
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> RecursiveShapesRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<RecursiveShapesRequestSerializable>("RecursiveShapesRequestSerializable", *this);

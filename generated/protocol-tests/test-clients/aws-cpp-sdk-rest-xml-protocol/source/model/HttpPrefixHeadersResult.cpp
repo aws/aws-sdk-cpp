@@ -42,6 +42,9 @@ HttpPrefixHeadersResult& HttpPrefixHeadersResult::operator=(const Aws::AmazonWeb
   return *this;
 }
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class HttpPrefixHeadersResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -95,6 +98,9 @@ std::shared_ptr<const smithy::schema::Schema> HttpPrefixHeadersResultDeserializa
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> HttpPrefixHeadersResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<HttpPrefixHeadersResultDeserializable>("HttpPrefixHeadersResultDeserializable", *this);

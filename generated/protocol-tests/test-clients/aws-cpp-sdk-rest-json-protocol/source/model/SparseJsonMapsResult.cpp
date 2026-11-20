@@ -42,6 +42,9 @@ SparseJsonMapsResult& SparseJsonMapsResult::operator=(const Aws::AmazonWebServic
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class SparseJsonMapsResult_GreetingStructSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
@@ -216,6 +219,9 @@ std::shared_ptr<const smithy::schema::Schema> SparseJsonMapsResultDeserializable
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> SparseJsonMapsResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<SparseJsonMapsResultDeserializable>("SparseJsonMapsResultDeserializable", *this);

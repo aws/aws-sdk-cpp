@@ -42,6 +42,9 @@ PutAndGetInlineDocumentsResult& PutAndGetInlineDocumentsResult::operator=(const 
   return *this;
 }
 
+namespace Aws {
+namespace JsonProtocol {
+namespace Model {
 namespace {
 class PutAndGetInlineDocumentsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -75,6 +78,9 @@ std::shared_ptr<const smithy::schema::Schema> PutAndGetInlineDocumentsResultDese
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace JsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> PutAndGetInlineDocumentsResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<PutAndGetInlineDocumentsResultDeserializable>("PutAndGetInlineDocumentsResultDeserializable", *this);

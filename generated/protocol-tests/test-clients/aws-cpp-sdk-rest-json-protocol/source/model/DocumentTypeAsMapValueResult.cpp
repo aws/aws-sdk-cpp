@@ -42,6 +42,9 @@ DocumentTypeAsMapValueResult& DocumentTypeAsMapValueResult::operator=(const Aws:
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class DocumentTypeAsMapValueResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -83,6 +86,9 @@ std::shared_ptr<const smithy::schema::Schema> DocumentTypeAsMapValueResultDeseri
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> DocumentTypeAsMapValueResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<DocumentTypeAsMapValueResultDeserializable>("DocumentTypeAsMapValueResultDeserializable", *this);

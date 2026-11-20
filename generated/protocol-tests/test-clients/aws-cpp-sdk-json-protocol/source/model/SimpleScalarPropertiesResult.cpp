@@ -42,6 +42,9 @@ SimpleScalarPropertiesResult& SimpleScalarPropertiesResult::operator=(const Aws:
   return *this;
 }
 
+namespace Aws {
+namespace JsonProtocol {
+namespace Model {
 namespace {
 class SimpleScalarPropertiesResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -83,6 +86,9 @@ std::shared_ptr<const smithy::schema::Schema> SimpleScalarPropertiesResultDeseri
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace JsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> SimpleScalarPropertiesResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<SimpleScalarPropertiesResultDeserializable>("SimpleScalarPropertiesResultDeserializable", *this);

@@ -42,6 +42,9 @@ TestBodyStructureResult& TestBodyStructureResult::operator=(const Aws::AmazonWeb
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class TestBodyStructureResult_TestConfigSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
@@ -115,6 +118,9 @@ std::shared_ptr<const smithy::schema::Schema> TestBodyStructureResultDeserializa
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> TestBodyStructureResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<TestBodyStructureResultDeserializable>("TestBodyStructureResultDeserializable", *this);

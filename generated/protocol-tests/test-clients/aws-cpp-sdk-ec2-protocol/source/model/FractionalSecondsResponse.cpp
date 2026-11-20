@@ -43,6 +43,9 @@ FractionalSecondsResponse& FractionalSecondsResponse::operator=(const Aws::Amazo
   return *this;
 }
 
+namespace Aws {
+namespace EC2Protocol {
+namespace Model {
 namespace {
 class FractionalSecondsResponseDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -79,6 +82,9 @@ std::shared_ptr<const smithy::schema::Schema> FractionalSecondsResponseDeseriali
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace EC2Protocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> FractionalSecondsResponse::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<FractionalSecondsResponseDeserializable>("FractionalSecondsResponseDeserializable", *this);

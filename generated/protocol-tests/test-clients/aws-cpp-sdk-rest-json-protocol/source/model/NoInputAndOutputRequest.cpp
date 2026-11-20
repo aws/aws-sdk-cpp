@@ -29,6 +29,9 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class NoInputAndOutputRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -49,6 +52,9 @@ std::shared_ptr<const smithy::schema::Schema> NoInputAndOutputRequestSerializabl
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> NoInputAndOutputRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<NoInputAndOutputRequestSerializable>("NoInputAndOutputRequestSerializable", *this);

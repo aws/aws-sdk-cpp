@@ -42,6 +42,9 @@ InputAndOutputWithHeadersResult& InputAndOutputWithHeadersResult::operator=(cons
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class InputAndOutputWithHeadersResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -290,6 +293,9 @@ std::shared_ptr<const smithy::schema::Schema> InputAndOutputWithHeadersResultDes
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> InputAndOutputWithHeadersResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<InputAndOutputWithHeadersResultDeserializable>("InputAndOutputWithHeadersResultDeserializable", *this);

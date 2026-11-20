@@ -43,6 +43,9 @@ XmlEnumsResponse& XmlEnumsResponse::operator=(const Aws::AmazonWebServiceResult<
   return *this;
 }
 
+namespace Aws {
+namespace EC2Protocol {
+namespace Model {
 namespace {
 class XmlEnumsResponseDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -137,6 +140,9 @@ std::shared_ptr<const smithy::schema::Schema> XmlEnumsResponseDeserializable::Bu
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace EC2Protocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> XmlEnumsResponse::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<XmlEnumsResponseDeserializable>("XmlEnumsResponseDeserializable", *this);

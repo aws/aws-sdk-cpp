@@ -42,6 +42,9 @@ JsonEnumsResult& JsonEnumsResult::operator=(const Aws::AmazonWebServiceResult<Aw
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class JsonEnumsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -136,6 +139,9 @@ std::shared_ptr<const smithy::schema::Schema> JsonEnumsResultDeserializable::Bui
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> JsonEnumsResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<JsonEnumsResultDeserializable>("JsonEnumsResultDeserializable", *this);

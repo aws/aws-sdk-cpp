@@ -43,6 +43,9 @@ GreetingWithErrorsResponse& GreetingWithErrorsResponse::operator=(const Aws::Ama
   return *this;
 }
 
+namespace Aws {
+namespace EC2Protocol {
+namespace Model {
 namespace {
 class GreetingWithErrorsResponseDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -76,6 +79,9 @@ std::shared_ptr<const smithy::schema::Schema> GreetingWithErrorsResponseDeserial
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace EC2Protocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> GreetingWithErrorsResponse::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<GreetingWithErrorsResponseDeserializable>("GreetingWithErrorsResponseDeserializable", *this);

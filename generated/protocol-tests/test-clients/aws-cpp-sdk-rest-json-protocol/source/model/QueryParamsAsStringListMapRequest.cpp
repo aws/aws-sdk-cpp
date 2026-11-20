@@ -29,6 +29,9 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class QueryParamsAsStringListMapRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -83,6 +86,9 @@ std::shared_ptr<const smithy::schema::Schema> QueryParamsAsStringListMapRequestS
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> QueryParamsAsStringListMapRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<QueryParamsAsStringListMapRequestSerializable>("QueryParamsAsStringListMapRequestSerializable", *this);

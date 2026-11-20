@@ -42,6 +42,9 @@ RecursiveShapesResult& RecursiveShapesResult::operator=(const Aws::AmazonWebServ
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class RecursiveShapesResult_RecursiveShapesInputOutputNested1SchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
@@ -152,6 +155,9 @@ std::shared_ptr<const smithy::schema::Schema> RecursiveShapesResultDeserializabl
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> RecursiveShapesResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<RecursiveShapesResultDeserializable>("RecursiveShapesResultDeserializable", *this);

@@ -44,6 +44,9 @@ IgnoresWrappingXmlNameResult& IgnoresWrappingXmlNameResult::operator=(const Aws:
   return *this;
 }
 
+namespace Aws {
+namespace QueryProtocol {
+namespace Model {
 namespace {
 class IgnoresWrappingXmlNameResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -77,6 +80,9 @@ std::shared_ptr<const smithy::schema::Schema> IgnoresWrappingXmlNameResultDeseri
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace QueryProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> IgnoresWrappingXmlNameResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<IgnoresWrappingXmlNameResultDeserializable>("IgnoresWrappingXmlNameResultDeserializable", *this);

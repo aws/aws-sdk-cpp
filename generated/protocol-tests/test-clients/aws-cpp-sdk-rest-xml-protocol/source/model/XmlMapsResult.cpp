@@ -42,6 +42,9 @@ XmlMapsResult& XmlMapsResult::operator=(const Aws::AmazonWebServiceResult<Aws::S
   return *this;
 }
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class XmlMapsResult_GreetingStructSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
@@ -109,6 +112,9 @@ std::shared_ptr<const smithy::schema::Schema> XmlMapsResultDeserializable::Build
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> XmlMapsResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<XmlMapsResultDeserializable>("XmlMapsResultDeserializable", *this);

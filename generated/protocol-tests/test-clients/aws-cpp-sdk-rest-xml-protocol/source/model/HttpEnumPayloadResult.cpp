@@ -42,6 +42,9 @@ HttpEnumPayloadResult& HttpEnumPayloadResult::operator=(const Aws::AmazonWebServ
   return *this;
 }
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class HttpEnumPayloadResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -76,6 +79,9 @@ std::shared_ptr<const smithy::schema::Schema> HttpEnumPayloadResultDeserializabl
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> HttpEnumPayloadResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<HttpEnumPayloadResultDeserializable>("HttpEnumPayloadResultDeserializable", *this);

@@ -30,6 +30,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class ContentTypeParametersRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -58,6 +61,9 @@ std::shared_ptr<const smithy::schema::Schema> ContentTypeParametersRequestSerial
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> ContentTypeParametersRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<ContentTypeParametersRequestSerializable>("ContentTypeParametersRequestSerializable", *this);

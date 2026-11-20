@@ -30,6 +30,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class NoInputAndOutputRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -50,6 +53,9 @@ std::shared_ptr<const smithy::schema::Schema> NoInputAndOutputRequestSerializabl
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> NoInputAndOutputRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<NoInputAndOutputRequestSerializable>("NoInputAndOutputRequestSerializable", *this);

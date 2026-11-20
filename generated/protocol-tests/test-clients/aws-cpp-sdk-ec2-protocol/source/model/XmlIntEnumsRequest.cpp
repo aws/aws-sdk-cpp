@@ -28,6 +28,9 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2Protocol {
+namespace Model {
 namespace {
 class XmlIntEnumsRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -48,6 +51,9 @@ std::shared_ptr<const smithy::schema::Schema> XmlIntEnumsRequestSerializable::Bu
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace EC2Protocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> XmlIntEnumsRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<XmlIntEnumsRequestSerializable>("XmlIntEnumsRequestSerializable", *this);

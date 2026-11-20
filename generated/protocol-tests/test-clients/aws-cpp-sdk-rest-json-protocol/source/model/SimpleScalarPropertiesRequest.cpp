@@ -29,6 +29,9 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class SimpleScalarPropertiesRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -105,6 +108,9 @@ std::shared_ptr<const smithy::schema::Schema> SimpleScalarPropertiesRequestSeria
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> SimpleScalarPropertiesRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<SimpleScalarPropertiesRequestSerializable>("SimpleScalarPropertiesRequestSerializable", *this);

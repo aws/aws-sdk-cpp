@@ -42,6 +42,9 @@ HttpEmptyPrefixHeadersResult& HttpEmptyPrefixHeadersResult::operator=(const Aws:
   return *this;
 }
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class HttpEmptyPrefixHeadersResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -95,6 +98,9 @@ std::shared_ptr<const smithy::schema::Schema> HttpEmptyPrefixHeadersResultDeseri
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> HttpEmptyPrefixHeadersResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<HttpEmptyPrefixHeadersResultDeserializable>("HttpEmptyPrefixHeadersResultDeserializable", *this);

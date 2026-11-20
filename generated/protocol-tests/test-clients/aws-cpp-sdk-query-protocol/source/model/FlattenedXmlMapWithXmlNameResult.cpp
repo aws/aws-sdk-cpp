@@ -46,6 +46,9 @@ FlattenedXmlMapWithXmlNameResult& FlattenedXmlMapWithXmlNameResult::operator=(co
   return *this;
 }
 
+namespace Aws {
+namespace QueryProtocol {
+namespace Model {
 namespace {
 class FlattenedXmlMapWithXmlNameResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -95,6 +98,9 @@ std::shared_ptr<const smithy::schema::Schema> FlattenedXmlMapWithXmlNameResultDe
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace QueryProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> FlattenedXmlMapWithXmlNameResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<FlattenedXmlMapWithXmlNameResultDeserializable>("FlattenedXmlMapWithXmlNameResultDeserializable", *this);

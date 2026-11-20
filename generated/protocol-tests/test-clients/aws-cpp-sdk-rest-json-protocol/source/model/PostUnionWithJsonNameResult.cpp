@@ -42,6 +42,9 @@ PostUnionWithJsonNameResult& PostUnionWithJsonNameResult::operator=(const Aws::A
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class PostUnionWithJsonNameResult_UnionWithJsonNameSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
@@ -123,6 +126,9 @@ std::shared_ptr<const smithy::schema::Schema> PostUnionWithJsonNameResultDeseria
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> PostUnionWithJsonNameResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<PostUnionWithJsonNameResultDeserializable>("PostUnionWithJsonNameResultDeserializable", *this);

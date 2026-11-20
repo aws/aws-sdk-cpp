@@ -28,6 +28,9 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2Protocol {
+namespace Model {
 namespace {
 class QueryListsRequest_GreetingStructSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
@@ -174,6 +177,9 @@ std::shared_ptr<const smithy::schema::Schema> QueryListsRequestSerializable::Bui
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace EC2Protocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> QueryListsRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<QueryListsRequestSerializable>("QueryListsRequestSerializable", *this);

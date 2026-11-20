@@ -29,6 +29,9 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class HttpRequestWithRegexLiteralRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -59,6 +62,9 @@ std::shared_ptr<const smithy::schema::Schema> HttpRequestWithRegexLiteralRequest
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> HttpRequestWithRegexLiteralRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<HttpRequestWithRegexLiteralRequestSerializable>("HttpRequestWithRegexLiteralRequestSerializable", *this);

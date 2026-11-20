@@ -42,6 +42,9 @@ TestPayloadStructureResult& TestPayloadStructureResult::operator=(const Aws::Ama
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class TestPayloadStructureResult_PayloadConfigSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
@@ -114,6 +117,9 @@ std::shared_ptr<const smithy::schema::Schema> TestPayloadStructureResultDeserial
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> TestPayloadStructureResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<TestPayloadStructureResultDeserializable>("TestPayloadStructureResultDeserializable", *this);

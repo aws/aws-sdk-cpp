@@ -45,6 +45,9 @@ OperationWithOptionalInputOutputResult& OperationWithOptionalInputOutputResult::
   return *this;
 }
 
+namespace Aws {
+namespace JsonProtocol {
+namespace Model {
 namespace {
 class OperationWithOptionalInputOutputResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -79,6 +82,9 @@ std::shared_ptr<const smithy::schema::Schema> OperationWithOptionalInputOutputRe
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace JsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> OperationWithOptionalInputOutputResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<OperationWithOptionalInputOutputResultDeserializable>("OperationWithOptionalInputOutputResultDeserializable",

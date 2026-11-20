@@ -43,6 +43,9 @@ XmlTimestampsResult& XmlTimestampsResult::operator=(const Aws::AmazonWebServiceR
   return *this;
 }
 
+namespace Aws {
+namespace QueryProtocol {
+namespace Model {
 namespace {
 class XmlTimestampsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -141,6 +144,9 @@ std::shared_ptr<const smithy::schema::Schema> XmlTimestampsResultDeserializable:
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace QueryProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> XmlTimestampsResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<XmlTimestampsResultDeserializable>("XmlTimestampsResultDeserializable", *this);

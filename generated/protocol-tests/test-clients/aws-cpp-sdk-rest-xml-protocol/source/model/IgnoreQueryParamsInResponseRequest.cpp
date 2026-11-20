@@ -30,6 +30,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class IgnoreQueryParamsInResponseRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -50,6 +53,9 @@ std::shared_ptr<const smithy::schema::Schema> IgnoreQueryParamsInResponseRequest
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> IgnoreQueryParamsInResponseRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<IgnoreQueryParamsInResponseRequestSerializable>("IgnoreQueryParamsInResponseRequestSerializable", *this);

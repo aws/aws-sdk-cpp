@@ -28,6 +28,9 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2Protocol {
+namespace Model {
 namespace {
 class EndpointWithHostLabelOperationRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -58,6 +61,9 @@ std::shared_ptr<const smithy::schema::Schema> EndpointWithHostLabelOperationRequ
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace EC2Protocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> EndpointWithHostLabelOperationRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<EndpointWithHostLabelOperationRequestSerializable>("EndpointWithHostLabelOperationRequestSerializable", *this);

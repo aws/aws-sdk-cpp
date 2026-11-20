@@ -29,6 +29,9 @@ using namespace Aws::JSONRPC10::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace JSONRPC10 {
+namespace Model {
 namespace {
 class PutWithContentEncodingRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -57,6 +60,9 @@ std::shared_ptr<const smithy::schema::Schema> PutWithContentEncodingRequestSeria
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace JSONRPC10
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> PutWithContentEncodingRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<PutWithContentEncodingRequestSerializable>("PutWithContentEncodingRequestSerializable", *this);

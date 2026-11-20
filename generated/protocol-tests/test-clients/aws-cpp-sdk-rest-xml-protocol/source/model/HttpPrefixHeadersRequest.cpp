@@ -30,6 +30,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class HttpPrefixHeadersRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -77,6 +80,9 @@ std::shared_ptr<const smithy::schema::Schema> HttpPrefixHeadersRequestSerializab
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> HttpPrefixHeadersRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<HttpPrefixHeadersRequestSerializable>("HttpPrefixHeadersRequestSerializable", *this);

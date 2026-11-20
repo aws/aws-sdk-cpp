@@ -29,6 +29,9 @@ using namespace Aws::JsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace JsonProtocol {
+namespace Model {
 namespace {
 class JsonUnionsRequest_MyUnionSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
@@ -166,6 +169,9 @@ std::shared_ptr<const smithy::schema::Schema> JsonUnionsRequestSerializable::Bui
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace JsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> JsonUnionsRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<JsonUnionsRequestSerializable>("JsonUnionsRequestSerializable", *this);

@@ -42,6 +42,9 @@ HttpChecksumRequiredResult& HttpChecksumRequiredResult::operator=(const Aws::Ama
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class HttpChecksumRequiredResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -75,6 +78,9 @@ std::shared_ptr<const smithy::schema::Schema> HttpChecksumRequiredResultDeserial
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> HttpChecksumRequiredResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<HttpChecksumRequiredResultDeserializable>("HttpChecksumRequiredResultDeserializable", *this);

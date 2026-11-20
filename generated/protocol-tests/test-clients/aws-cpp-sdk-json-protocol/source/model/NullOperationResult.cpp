@@ -42,6 +42,9 @@ NullOperationResult& NullOperationResult::operator=(const Aws::AmazonWebServiceR
   return *this;
 }
 
+namespace Aws {
+namespace JsonProtocol {
+namespace Model {
 namespace {
 class NullOperationResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -74,6 +77,9 @@ std::shared_ptr<const smithy::schema::Schema> NullOperationResultDeserializable:
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace JsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> NullOperationResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<NullOperationResultDeserializable>("NullOperationResultDeserializable", *this);

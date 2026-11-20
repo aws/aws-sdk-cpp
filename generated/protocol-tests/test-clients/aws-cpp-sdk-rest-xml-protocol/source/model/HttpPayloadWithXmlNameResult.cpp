@@ -42,6 +42,9 @@ HttpPayloadWithXmlNameResult& HttpPayloadWithXmlNameResult::operator=(const Aws:
   return *this;
 }
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class HttpPayloadWithXmlNameResult_PayloadWithXmlNameSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
@@ -107,6 +110,9 @@ std::shared_ptr<const smithy::schema::Schema> HttpPayloadWithXmlNameResultDeseri
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> HttpPayloadWithXmlNameResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<HttpPayloadWithXmlNameResultDeserializable>("HttpPayloadWithXmlNameResultDeserializable", *this);

@@ -29,6 +29,9 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class HttpChecksumRequiredRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -57,6 +60,9 @@ std::shared_ptr<const smithy::schema::Schema> HttpChecksumRequiredRequestSeriali
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> HttpChecksumRequiredRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<HttpChecksumRequiredRequestSerializable>("HttpChecksumRequiredRequestSerializable", *this);

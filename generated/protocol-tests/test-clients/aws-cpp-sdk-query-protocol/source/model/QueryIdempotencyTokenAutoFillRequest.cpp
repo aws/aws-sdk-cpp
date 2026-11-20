@@ -28,6 +28,9 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace QueryProtocol {
+namespace Model {
 namespace {
 class QueryIdempotencyTokenAutoFillRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -57,6 +60,9 @@ std::shared_ptr<const smithy::schema::Schema> QueryIdempotencyTokenAutoFillReque
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace QueryProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> QueryIdempotencyTokenAutoFillRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<QueryIdempotencyTokenAutoFillRequestSerializable>("QueryIdempotencyTokenAutoFillRequestSerializable", *this);
