@@ -84,10 +84,8 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
     @Override
     public void writeResultSerdeDecls(CppWriter writer, String exportMacro, String className,
                                       StructureShape shape, Model model) {
-        writer.write("$L $L(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);",
-            exportMacro, className);
-        writer.write("$L $L& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);",
-            exportMacro, className);
+        writer.write("$L $L(const $L& result);", exportMacro, className, RAW_RESULT_TYPE);
+        writer.write("$L $L& operator=(const $L& result);", exportMacro, className, RAW_RESULT_TYPE);
         if (RequestBindings.nonEmptySchemaSerializable(RequestBindings.resultMembers(shape), model)) {
             SchemaSerdeRenderer.writeResultDeserMethodDecls(writer, exportMacro);
         }
@@ -205,38 +203,27 @@ public final class QueryXmlProtocolTraits implements ProtocolTraits {
     @Override
     public void writeResultSerdeImpls(CppWriter writer, String className, StructureShape shape, Model model,
                                       String namespace) {
-        writer.openBlock("$L::$L(const Aws::AmazonWebServiceResult<XmlDocument>& result) {", "}",
-            className, className, () -> writer.write("*this = result;"));
+        writer.openBlock("$L::$L(const $L& result) {", "}",
+            className, className, RAW_RESULT_TYPE, () -> writer.write("*this = result;"));
         writer.write("");
-        writer.openBlock("$L& $L::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {", "}",
-            className, className, () -> {
+        writer.openBlock("$L& $L::operator=(const $L& result) {", "}",
+            className, className, RAW_RESULT_TYPE, () -> {
             writer.write("m_HttpResponseCode = result.GetResponseCode();");
-            writer.write("const XmlDocument& xmlDocument = result.GetPayload();");
-            writer.write("XmlNode rootNode = xmlDocument.GetRootElement();");
-            // Query extracts <ResponseMetadata>; EC2 extracts a top-level <requestId>. Both
-            // populate m_responseMetadata; rest-xml/json/cbor do neither.
-            if (protocol == Protocol.EC2) {
-                writer.openBlock("if (!rootNode.IsNull()) {", "}", () -> {
-                    writer.write("XmlNode requestIdNode = rootNode.FirstChild(\"requestId\");");
-                    writer.openBlock("if (!requestIdNode.IsNull()) {", "}", () -> {
-                        writer.write("m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));");
-                        writer.write("m_responseMetadataHasBeenSet = true;");
-                    });
-                });
-            } else {
-                writer.openBlock("if (!rootNode.IsNull()) {", "}", () -> {
-                    writer.write("XmlNode responseMetadataNode = rootNode.FirstChild(\"ResponseMetadata\");");
-                    writer.write("m_responseMetadata = responseMetadataNode;");
-                    writer.write("m_responseMetadataHasBeenSet = true;");
-                    writer.write("AWS_LOGSTREAM_DEBUG(\"Aws::$L::Model::$L\", "
-                        + "\"x-amzn-request-id: \" << m_responseMetadata.GetRequestId());",
-                        namespace, className);
-                });
-            }
+            // The body is not parsed here (it reaches the ClientProtocol raw), so the request id that query
+            // carries in <ResponseMetadata> and ec2 in a top-level <requestId> is read from the
+            // x-amzn-requestid header, which both protocols also send. It populates m_responseMetadata.
+            writer.write("const auto& headers = result.GetHeaderValueCollection();");
+            writer.write("const auto requestIdIter = headers.find(\"x-amzn-requestid\");");
+            writer.openBlock("if (requestIdIter != headers.end()) {", "}", () -> {
+                writer.write("m_responseMetadata.SetRequestId(requestIdIter->second);");
+                writer.write("m_responseMetadataHasBeenSet = true;");
+                writer.write("AWS_LOGSTREAM_DEBUG(\"Aws::$L::Model::$L\", "
+                    + "\"x-amzn-request-id: \" << m_responseMetadata.GetRequestId());", namespace, className);
+            });
             writeResultStatusCodeMembers(writer, shape, model);
             writer.write("return *this;");
         });
-        // The body members are NOT read by operator= (which handles only the HTTP status and ResponseMetadata):
+        // The body members are NOT read by operator= (which handles only the HTTP status and request id):
         // the client drives ClientProtocol::DeserializeResponse over GetSchemaSerdeOutput(), and the protocol
         // peels the aws-query <OperationResult> envelope (ec2 members sit at the response root).
         if (RequestBindings.nonEmptySchemaSerializable(RequestBindings.resultMembers(shape), model)) {

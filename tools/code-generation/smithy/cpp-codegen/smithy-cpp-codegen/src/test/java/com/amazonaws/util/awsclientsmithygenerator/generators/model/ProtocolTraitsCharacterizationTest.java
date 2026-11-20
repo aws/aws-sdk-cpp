@@ -276,12 +276,12 @@ class ProtocolTraitsCharacterizationTest {
 
     @ParameterizedTest
     @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON"})
-    void jsonLike_resultHeader_usesJsonValuePayloadAndForwardDeclaresJsonValue(Protocol p) {
+    void jsonLike_resultHeader_usesRawPayloadAndForwardDeclaresJsonValue(Protocol p) {
         String h = file(p, result(p) + ".h");
         assertTrue(h.contains("AWS_EXAMPLE_API " + result(p) + "(const "
-            + "Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);"), h);
+            + "Aws::AmazonWebServiceResult<Aws::String>& result);"), h);
         assertTrue(h.contains("AWS_EXAMPLE_API " + result(p) + "& operator=(const "
-            + "Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);"), h);
+            + "Aws::AmazonWebServiceResult<Aws::String>& result);"), h);
         assertTrue(h.contains("class JsonValue;"), h);
         // Result headers forward-declare only the document type, never JsonView.
         assertFalse(h.contains("class JsonView;"),
@@ -291,12 +291,12 @@ class ProtocolTraitsCharacterizationTest {
 
     @ParameterizedTest
     @EnumSource(value = Protocol.class, names = {"REST_XML", "QUERY_XML", "EC2"})
-    void xmlLike_resultHeader_usesXmlDocumentPayloadAndForwardDeclaresXmlDocument(Protocol p) {
+    void xmlLike_resultHeader_usesRawPayloadAndForwardDeclaresXmlDocument(Protocol p) {
         String h = file(p, result(p) + ".h");
         assertTrue(h.contains("AWS_EXAMPLE_API " + result(p) + "(const "
-            + "Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);"), h);
+            + "Aws::AmazonWebServiceResult<Aws::String>& result);"), h);
         assertTrue(h.contains("AWS_EXAMPLE_API " + result(p) + "& operator=(const "
-            + "Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);"), h);
+            + "Aws::AmazonWebServiceResult<Aws::String>& result);"), h);
         assertTrue(h.contains("class XmlDocument;"), h);
         assertFalse(h.contains("JsonValue"), h);
     }
@@ -327,9 +327,9 @@ class ProtocolTraitsCharacterizationTest {
         assertTrue(c.contains("using namespace Aws::Utils;"), c);
         assertTrue(c.contains("using namespace Aws;"), c);
         assertTrue(c.contains(result(p) + "::" + result(p) + "(const "
-            + "Aws::AmazonWebServiceResult<JsonValue>& result) {"), c);
+            + "Aws::AmazonWebServiceResult<Aws::String>& result) {"), c);
         assertTrue(c.contains(result(p) + "& " + result(p) + "::operator=(const "
-            + "Aws::AmazonWebServiceResult<JsonValue>& result) {"), c);
+            + "Aws::AmazonWebServiceResult<Aws::String>& result) {"), c);
     }
 
     @ParameterizedTest
@@ -339,9 +339,9 @@ class ProtocolTraitsCharacterizationTest {
         assertTrue(c.contains("#include <aws/core/utils/xml/XmlSerializer.h>"), c);
         assertTrue(c.contains("using namespace Aws::Utils::Xml;"), c);
         assertTrue(c.contains(result(p) + "::" + result(p) + "(const "
-            + "Aws::AmazonWebServiceResult<XmlDocument>& result) {"), c);
+            + "Aws::AmazonWebServiceResult<Aws::String>& result) {"), c);
         assertTrue(c.contains(result(p) + "& " + result(p) + "::operator=(const "
-            + "Aws::AmazonWebServiceResult<XmlDocument>& result) {"), c);
+            + "Aws::AmazonWebServiceResult<Aws::String>& result) {"), c);
     }
 
     // ---------- request: only the serde include + usings are protocol-specific ----------
@@ -443,9 +443,9 @@ class ProtocolTraitsCharacterizationTest {
 
     @ParameterizedTest
     @EnumSource(value = Protocol.class, names = {"JSON", "REST_JSON"})
-    void jsonResults_useJsonValue(Protocol p) {
+    void jsonResults_useRawPayload(Protocol p) {
         String h = file(p, result(p) + ".h");
-        assertTrue(h.contains("AmazonWebServiceResult<Aws::Utils::Json::JsonValue>"), h);
+        assertTrue(h.contains("AmazonWebServiceResult<Aws::String>"), h);
         assertFalse(h.contains("HasBeenSet() const"), h);   // JSON results hide HasBeenSet
     }
 
@@ -460,9 +460,9 @@ class ProtocolTraitsCharacterizationTest {
 
     @ParameterizedTest
     @EnumSource(value = Protocol.class, names = {"REST_XML", "QUERY_XML", "EC2"})
-    void xmlResults_useXmlDocument(Protocol p) {
+    void xmlResults_useRawPayload(Protocol p) {
         String h = file(p, result(p) + ".h");
-        assertTrue(h.contains("AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>"), h);
+        assertTrue(h.contains("AmazonWebServiceResult<Aws::String>"), h);
     }
 
     @ParameterizedTest

@@ -4,6 +4,10 @@
 #elseif($serviceModel.metadata.findFirstSupportedProtocol() == "rest-xml" || $serviceModel.metadata.findFirstSupportedProtocol() == "query" || $serviceModel.metadata.findFirstSupportedProtocol() == "ec2")
 #set($invokeResponseType = "Aws::Utils::Xml::XmlDocument")
 #end
+## Schema-serde clients (Smithy-generated models) carry the raw response body; see SmithyClientHeader.vm.
+#if($serviceModel.skipModelGeneration)
+#set($invokeResponseType = "Aws::String")
+#end
 typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<${invokeResponseType}>, ${metadata.classNamePrefix}Error> InvokeOperationOutcome;
 
 InvokeOperationOutcome InvokeServiceOperation(

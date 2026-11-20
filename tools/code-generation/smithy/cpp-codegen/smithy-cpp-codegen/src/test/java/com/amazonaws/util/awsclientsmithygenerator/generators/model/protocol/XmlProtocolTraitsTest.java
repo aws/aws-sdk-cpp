@@ -224,16 +224,16 @@ class XmlProtocolTraitsTest {
         for (ProtocolTraits traits : java.util.List.of(restXml, queryXml, ec2)) {
             String decls = render(w -> traits.writeResultSerdeDecls(w, "AWS_EXAMPLE_API", "DoThingResult", emptyResult, emptyModel));
             assertTrue(decls.contains("AWS_EXAMPLE_API DoThingResult(const "
-                + "Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);"), decls);
+                + "Aws::AmazonWebServiceResult<Aws::String>& result);"), decls);
             assertTrue(decls.contains("AWS_EXAMPLE_API DoThingResult& operator=(const "
-                + "Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);"), decls);
+                + "Aws::AmazonWebServiceResult<Aws::String>& result);"), decls);
 
             var req = reqWith(false, false); var model = modelWith(req);
             String impls = render(w -> traits.writeResultSerdeImpls(w, "DoThingResult", req, model, "Example"));
             assertTrue(impls.contains("DoThingResult::DoThingResult(const "
-                + "Aws::AmazonWebServiceResult<XmlDocument>& result) {"), impls);
+                + "Aws::AmazonWebServiceResult<Aws::String>& result) {"), impls);
             assertTrue(impls.contains("DoThingResult& DoThingResult::operator=(const "
-                + "Aws::AmazonWebServiceResult<XmlDocument>& result) {"), impls);
+                + "Aws::AmazonWebServiceResult<Aws::String>& result) {"), impls);
         }
     }
 
@@ -345,15 +345,17 @@ class XmlProtocolTraitsTest {
             "DumpBodyToUrl decl moved to RequestRenderer; query traits must not emit it: " + d);
     }
 
-    // ---------- Query/EC2 result ResponseMetadata / requestId extraction ----------
+    // ---------- Query/EC2 result request id (from the x-amzn-requestid header) ----------
 
     @Test
-    void queryResult_extractsResponseMetadata() {
+    void queryResult_readsRequestIdHeaderIntoResponseMetadata() {
         var req = reqWith(false, false); var model = modelWith(req);
         String out = render(w -> new QueryXmlProtocolTraits(Protocol.QUERY_XML)
             .writeResultSerdeImpls(w, "GetThingResult", req, model, "IAM"));
-        assertTrue(out.contains("FirstChild(\"ResponseMetadata\")"), out);
-        assertTrue(out.contains("m_responseMetadata"), out);
+        // The body reaches the ClientProtocol unparsed, so the request id comes from the header.
+        assertTrue(out.contains("headers.find(\"x-amzn-requestid\")"), out);
+        assertTrue(out.contains("m_responseMetadata.SetRequestId(requestIdIter->second);"), out);
+        assertFalse(out.contains("FirstChild(\"ResponseMetadata\")"), out);
     }
 
     @Test
@@ -366,11 +368,12 @@ class XmlProtocolTraitsTest {
     }
 
     @Test
-    void ec2Result_extractsRequestIdChild() {
+    void ec2Result_readsRequestIdHeader() {
         var req = reqWith(false, false); var model = modelWith(req);
         String out = render(w -> new QueryXmlProtocolTraits(Protocol.EC2)
             .writeResultSerdeImpls(w, "GetThingResult", req, model, "IAM"));
-        assertTrue(out.contains("FirstChild(\"requestId\")"), out);
+        assertTrue(out.contains("headers.find(\"x-amzn-requestid\")"), out);
         assertTrue(out.contains("SetRequestId"), out);
+        assertFalse(out.contains("FirstChild(\"requestId\")"), out);
     }
 }
