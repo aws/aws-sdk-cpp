@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/network-security-manager/NetworkSecurityManager_EXPORTS.h>
+#include <aws/network-security-manager/model/IgwFirewallConfig.h>
 #include <aws/network-security-manager/model/WafConfig.h>
 
 #include <utility>
@@ -52,8 +53,8 @@ class PolicyConfiguration {
   ///@{
   /**
    * <p>Specifies whether AWS Network Security Manager automatically removes the
-   * resources it created when they are no longer needed. Default:
-   * <code>false</code>.</p>
+   * resources it created when they are no longer needed. This member is required,
+   * and the only supported value is <code>true</code>.</p>
    */
   inline bool GetResourcesCleanUp() const { return m_resourcesCleanUp; }
   inline bool ResourcesCleanUpHasBeenSet() const { return m_resourcesCleanUpHasBeenSet; }
@@ -85,15 +86,37 @@ class PolicyConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Policy settings for Network Firewall automated internet firewall policies.
+   * Specify these settings only for this policy type.</p>
+   */
+  inline const IgwFirewallConfig& GetIgwFirewallConfig() const { return m_igwFirewallConfig; }
+  inline bool IgwFirewallConfigHasBeenSet() const { return m_igwFirewallConfigHasBeenSet; }
+  template <typename IgwFirewallConfigT = IgwFirewallConfig>
+  void SetIgwFirewallConfig(IgwFirewallConfigT&& value) {
+    m_igwFirewallConfigHasBeenSet = true;
+    m_igwFirewallConfig = std::forward<IgwFirewallConfigT>(value);
+  }
+  template <typename IgwFirewallConfigT = IgwFirewallConfig>
+  PolicyConfiguration& WithIgwFirewallConfig(IgwFirewallConfigT&& value) {
+    SetIgwFirewallConfig(std::forward<IgwFirewallConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_remediationEnabled{false};
 
   bool m_resourcesCleanUp{false};
 
   WafConfig m_wafConfig;
+
+  IgwFirewallConfig m_igwFirewallConfig;
   bool m_remediationEnabledHasBeenSet = false;
   bool m_resourcesCleanUpHasBeenSet = false;
   bool m_wafConfigHasBeenSet = false;
+  bool m_igwFirewallConfigHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -4,9 +4,13 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/network-security-manager/NetworkSecurityManager_EXPORTS.h>
 #include <aws/network-security-manager/model/InvalidFirewallReasons.h>
+#include <aws/network-security-manager/model/InvalidResourceIssue.h>
+#include <aws/network-security-manager/model/ScopeResourceType.h>
 
 #include <utility>
 
@@ -22,8 +26,8 @@ namespace Model {
 
 /**
  * <p>Describes why a firewall is out of sync. Exactly one of
- * <code>missingFirewall</code> or <code>invalidFirewall</code> is
- * set.</p><p><h3>See Also:</h3>   <a
+ * <code>missingFirewall</code>, <code>invalidFirewall</code>, or
+ * <code>invalidResource</code> contains a value.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-security-manager-2025-10-30/FirewallSyncReason">AWS
  * API Reference</a></p>
  */
@@ -71,12 +75,41 @@ class FirewallSyncReason {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A map of related resources whose configuration does not match the intended
+   * configuration, grouped by resource type. Each entry lists the resources of that
+   * type that are out of sync. For example, subnets whose connectivity type differs
+   * from the connectivity type that the policy specifies.</p>
+   */
+  inline const Aws::Map<ScopeResourceType, Aws::Vector<InvalidResourceIssue>>& GetInvalidResource() const { return m_invalidResource; }
+  inline bool InvalidResourceHasBeenSet() const { return m_invalidResourceHasBeenSet; }
+  template <typename InvalidResourceT = Aws::Map<ScopeResourceType, Aws::Vector<InvalidResourceIssue>>>
+  void SetInvalidResource(InvalidResourceT&& value) {
+    m_invalidResourceHasBeenSet = true;
+    m_invalidResource = std::forward<InvalidResourceT>(value);
+  }
+  template <typename InvalidResourceT = Aws::Map<ScopeResourceType, Aws::Vector<InvalidResourceIssue>>>
+  FirewallSyncReason& WithInvalidResource(InvalidResourceT&& value) {
+    SetInvalidResource(std::forward<InvalidResourceT>(value));
+    return *this;
+  }
+  inline FirewallSyncReason& AddInvalidResource(ScopeResourceType key, Aws::Vector<InvalidResourceIssue> value) {
+    m_invalidResourceHasBeenSet = true;
+    m_invalidResource.emplace(key, value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_missingFirewall;
 
   InvalidFirewallReasons m_invalidFirewall;
+
+  Aws::Map<ScopeResourceType, Aws::Vector<InvalidResourceIssue>> m_invalidResource;
   bool m_missingFirewallHasBeenSet = false;
   bool m_invalidFirewallHasBeenSet = false;
+  bool m_invalidResourceHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ElementalInference {
 namespace Model {
-enum class TranscriptionLanguage { NOT_SET, eng, eng_au, eng_gb, eng_us, fra, ita, deu, spa, por };
+enum class TranscriptionLanguage { NOT_SET, eng, eng_au, eng_gb, eng_us, fra, ita, deu, spa, por, ara };
 
 namespace TranscriptionLanguageMapper {
 AWS_ELEMENTALINFERENCE_API TranscriptionLanguage GetTranscriptionLanguageForName(const Aws::String& name);

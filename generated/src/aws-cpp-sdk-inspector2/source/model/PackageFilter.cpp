@@ -50,6 +50,18 @@ PackageFilter& PackageFilter::operator=(JsonView jsonValue) {
     m_filePath = jsonValue.GetObject("filePath");
     m_filePathHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("runtimeReachability")) {
+    m_runtimeReachability = jsonValue.GetObject("runtimeReachability");
+    m_runtimeReachabilityHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("runtimeReachabilityReason")) {
+    m_runtimeReachabilityReason = jsonValue.GetObject("runtimeReachabilityReason");
+    m_runtimeReachabilityReasonHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("purlQualifier")) {
+    m_purlQualifier = jsonValue.GetObject("purlQualifier");
+    m_purlQualifierHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +98,18 @@ JsonValue PackageFilter::Jsonize() const {
 
   if (m_filePathHasBeenSet) {
     payload.WithObject("filePath", m_filePath.Jsonize());
+  }
+
+  if (m_runtimeReachabilityHasBeenSet) {
+    payload.WithObject("runtimeReachability", m_runtimeReachability.Jsonize());
+  }
+
+  if (m_runtimeReachabilityReasonHasBeenSet) {
+    payload.WithObject("runtimeReachabilityReason", m_runtimeReachabilityReason.Jsonize());
+  }
+
+  if (m_purlQualifierHasBeenSet) {
+    payload.WithObject("purlQualifier", m_purlQualifier.Jsonize());
   }
 
   return payload;

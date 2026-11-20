@@ -99,20 +99,21 @@ class AdministrativeAction {
    * processing the administrative action.</p> </li> <li> <p> <code>PENDING</code> -
    * Amazon FSx is waiting to process the administrative action.</p> </li> <li> <p>
    * <code>COMPLETED</code> - Amazon FSx has finished processing the administrative
-   * task.</p> <p>For a backup restore to a second-generation FSx for ONTAP file
-   * system, indicates that all data has been downloaded to the volume, and clients
-   * now have read-write access to volume.</p> </li> <li> <p>
+   * task.</p> <p>For a backup restore to a second-generation or third-generation FSx
+   * for ONTAP file system, indicates that all data has been downloaded to the
+   * volume, and clients now have read-write access to volume.</p> </li> <li> <p>
    * <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon
    * FSx has updated the file system with the new storage capacity, and is now
    * performing the storage-optimization process.</p> </li> <li> <p>
-   * <code>PENDING</code> - For a backup restore to a second-generation FSx for ONTAP
-   * file system, indicates that the file metadata is being downloaded onto the
-   * volume. The volume's Lifecycle state is CREATING.</p> </li> <li> <p>
-   * <code>IN_PROGRESS</code> - For a backup restore to a second-generation FSx for
-   * ONTAP file system, indicates that all metadata has been downloaded to the new
-   * volume and client can access data with read-only access while Amazon FSx
-   * downloads the file data to the volume. Track the progress of this process with
-   * the <code>ProgressPercent</code> element.</p> </li> </ul>
+   * <code>PENDING</code> - For a backup restore to a second-generation or
+   * third-generation FSx for ONTAP file system, indicates that the file metadata is
+   * being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p>
+   * </li> <li> <p> <code>IN_PROGRESS</code> - For a backup restore to a
+   * second-generation or third-generation FSx for ONTAP file system, indicates that
+   * all metadata has been downloaded to the new volume and client can access data
+   * with read-only access while Amazon FSx downloads the file data to the volume.
+   * Track the progress of this process with the <code>ProgressPercent</code>
+   * element.</p> </li> </ul>
    */
   inline Status GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

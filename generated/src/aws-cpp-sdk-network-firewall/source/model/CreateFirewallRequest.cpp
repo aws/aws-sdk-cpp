@@ -59,6 +59,9 @@ Aws::String CreateFirewallRequest::SerializePayload() const {
   if (m_availabilityZoneChangeProtectionHasBeenSet) {
     mapSize++;
   }
+  if (m_igwFirewallConfigurationHasBeenSet) {
+    mapSize++;
+  }
   if (m_natGatewayCreateMappingsHasBeenSet) {
     mapSize++;
   }
@@ -154,6 +157,11 @@ Aws::String CreateFirewallRequest::SerializePayload() const {
   if (m_availabilityZoneChangeProtectionHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("AvailabilityZoneChangeProtection"));
     encoder.WriteBool(m_availabilityZoneChangeProtection);
+  }
+
+  if (m_igwFirewallConfigurationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("IgwFirewallConfiguration"));
+    m_igwFirewallConfiguration.CborEncode(encoder);
   }
 
   if (m_natGatewayCreateMappingsHasBeenSet) {

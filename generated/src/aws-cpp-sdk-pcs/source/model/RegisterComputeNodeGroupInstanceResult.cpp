@@ -60,6 +60,10 @@ RegisterComputeNodeGroupInstanceResult& RegisterComputeNodeGroupInstanceResult::
     m_schedulerVersion = jsonValue.GetString("schedulerVersion");
     m_schedulerVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("instanceHealthChecks")) {
+    m_instanceHealthChecks = jsonValue.GetObject("instanceHealthChecks");
+    m_instanceHealthChecksHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

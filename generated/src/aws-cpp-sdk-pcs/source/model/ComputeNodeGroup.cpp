@@ -107,6 +107,10 @@ ComputeNodeGroup& ComputeNodeGroup::operator=(JsonView jsonValue) {
     m_nodeLifecycleActions = jsonValue.GetObject("nodeLifecycleActions");
     m_nodeLifecycleActionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("instanceHealthChecks")) {
+    m_instanceHealthChecks = jsonValue.GetObject("instanceHealthChecks");
+    m_instanceHealthChecksHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("errorInfo")) {
     Aws::Utils::Array<JsonView> errorInfoJsonList = jsonValue.GetArray("errorInfo");
     for (unsigned errorInfoIndex = 0; errorInfoIndex < errorInfoJsonList.GetLength(); ++errorInfoIndex) {
@@ -210,6 +214,10 @@ JsonValue ComputeNodeGroup::Jsonize() const {
 
   if (m_nodeLifecycleActionsHasBeenSet) {
     payload.WithObject("nodeLifecycleActions", m_nodeLifecycleActions.Jsonize());
+  }
+
+  if (m_instanceHealthChecksHasBeenSet) {
+    payload.WithObject("instanceHealthChecks", m_instanceHealthChecks.Jsonize());
   }
 
   if (m_errorInfoHasBeenSet) {

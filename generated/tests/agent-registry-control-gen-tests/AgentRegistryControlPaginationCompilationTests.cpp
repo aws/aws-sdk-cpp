@@ -8,8 +8,10 @@
 
 #include <aws/agent-registry-control/AgentRegistryControlClientPagination.h>
 #include <aws/agent-registry-control/AgentRegistryControlPaginationBase.h>
+#include <aws/agent-registry-control/model/ListPublisherAssociationsPaginationTraits.h>
 #include <aws/agent-registry-control/model/ListRegistryRecordsPaginationTraits.h>
 #include <aws/agent-registry-control/model/ListRegistriesPaginationTraits.h>
+#include <aws/agent-registry-control/model/ListPublishersPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

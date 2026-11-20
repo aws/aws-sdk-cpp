@@ -127,18 +127,19 @@ class PutAttachmentRequest : public GlueRequest {
 
   ///@{
   /**
-   * <p>The identifier of the form type for this attachment.</p>
+   * <p>The identifier of the form type for this attachment. This field is
+   * required.</p>
    */
-  inline const Aws::String& GetFormTypeId() const { return m_formTypeId; }
-  inline bool FormTypeIdHasBeenSet() const { return m_formTypeIdHasBeenSet; }
-  template <typename FormTypeIdT = Aws::String>
-  void SetFormTypeId(FormTypeIdT&& value) {
-    m_formTypeIdHasBeenSet = true;
-    m_formTypeId = std::forward<FormTypeIdT>(value);
+  inline const Aws::String& GetFormTypeIdentifier() const { return m_formTypeIdentifier; }
+  inline bool FormTypeIdentifierHasBeenSet() const { return m_formTypeIdentifierHasBeenSet; }
+  template <typename FormTypeIdentifierT = Aws::String>
+  void SetFormTypeIdentifier(FormTypeIdentifierT&& value) {
+    m_formTypeIdentifierHasBeenSet = true;
+    m_formTypeIdentifier = std::forward<FormTypeIdentifierT>(value);
   }
-  template <typename FormTypeIdT = Aws::String>
-  PutAttachmentRequest& WithFormTypeId(FormTypeIdT&& value) {
-    SetFormTypeId(std::forward<FormTypeIdT>(value));
+  template <typename FormTypeIdentifierT = Aws::String>
+  PutAttachmentRequest& WithFormTypeIdentifier(FormTypeIdentifierT&& value) {
+    SetFormTypeIdentifier(std::forward<FormTypeIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -172,7 +173,7 @@ class PutAttachmentRequest : public GlueRequest {
 
   Aws::String m_content;
 
-  Aws::String m_formTypeId;
+  Aws::String m_formTypeIdentifier;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_assetIdentifierHasBeenSet = false;
@@ -180,7 +181,7 @@ class PutAttachmentRequest : public GlueRequest {
   bool m_itemIdentifierHasBeenSet = false;
   bool m_attachmentNameHasBeenSet = false;
   bool m_contentHasBeenSet = false;
-  bool m_formTypeIdHasBeenSet = false;
+  bool m_formTypeIdentifierHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

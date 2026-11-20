@@ -17,6 +17,8 @@
 #include <aws/route53/Route53Waiter.h>
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/internal/Route53EndpointRules.h>
+#include <aws/route53/model/AZAffinity.h>
+#include <aws/route53/model/AZAffinityLocationType.h>
 #include <aws/route53/model/AcceleratedRecoveryStatus.h>
 #include <aws/route53/model/AccountLimit.h>
 #include <aws/route53/model/AccountLimitType.h>
@@ -29,8 +31,15 @@
 #include <aws/route53/model/Change.h>
 #include <aws/route53/model/ChangeAction.h>
 #include <aws/route53/model/ChangeBatch.h>
+#include <aws/route53/model/ChangeBatchSummary.h>
 #include <aws/route53/model/ChangeCidrCollectionRequest.h>
 #include <aws/route53/model/ChangeCidrCollectionResult.h>
+#include <aws/route53/model/ChangeGuardrail.h>
+#include <aws/route53/model/ChangeGuardrailName.h>
+#include <aws/route53/model/ChangeGuardrailStatus.h>
+#include <aws/route53/model/ChangeHistoryFeature.h>
+#include <aws/route53/model/ChangeHistoryOperation.h>
+#include <aws/route53/model/ChangeHistorySortOrder.h>
 #include <aws/route53/model/ChangeInfo.h>
 #include <aws/route53/model/ChangeResourceRecordSetsRequest.h>
 #include <aws/route53/model/ChangeResourceRecordSetsResult.h>
@@ -105,6 +114,8 @@
 #include <aws/route53/model/EnableHostedZoneDNSSECRequest.h>
 #include <aws/route53/model/EnableHostedZoneDNSSECResult.h>
 #include <aws/route53/model/EndpointType.h>
+#include <aws/route53/model/FeatureEnablement.h>
+#include <aws/route53/model/FeatureStatus.h>
 #include <aws/route53/model/GeoLocation.h>
 #include <aws/route53/model/GeoLocationDetails.h>
 #include <aws/route53/model/GeoProximityLocation.h>
@@ -128,6 +139,8 @@
 #include <aws/route53/model/GetHealthCheckSourceResult.h>
 #include <aws/route53/model/GetHealthCheckStatusRequest.h>
 #include <aws/route53/model/GetHealthCheckStatusResult.h>
+#include <aws/route53/model/GetHostedZoneChangeBatchRequest.h>
+#include <aws/route53/model/GetHostedZoneChangeBatchResult.h>
 #include <aws/route53/model/GetHostedZoneCountRequest.h>
 #include <aws/route53/model/GetHostedZoneCountResult.h>
 #include <aws/route53/model/GetHostedZoneLimitRequest.h>
@@ -163,6 +176,7 @@
 #include <aws/route53/model/HostedZoneLimitType.h>
 #include <aws/route53/model/HostedZoneOwner.h>
 #include <aws/route53/model/HostedZoneSummary.h>
+#include <aws/route53/model/HostedZoneTier.h>
 #include <aws/route53/model/HostedZoneType.h>
 #include <aws/route53/model/InsufficientDataHealthStatus.h>
 #include <aws/route53/model/InvalidChangeBatch.h>
@@ -189,6 +203,9 @@
 #include <aws/route53/model/ListHealthChecksPaginationTraits.h>
 #include <aws/route53/model/ListHealthChecksRequest.h>
 #include <aws/route53/model/ListHealthChecksResult.h>
+#include <aws/route53/model/ListHostedZoneChangeBatchesPaginationTraits.h>
+#include <aws/route53/model/ListHostedZoneChangeBatchesRequest.h>
+#include <aws/route53/model/ListHostedZoneChangeBatchesResult.h>
 #include <aws/route53/model/ListHostedZonesByNameRequest.h>
 #include <aws/route53/model/ListHostedZonesByNameResult.h>
 #include <aws/route53/model/ListHostedZonesByVPCRequest.h>
@@ -199,6 +216,9 @@
 #include <aws/route53/model/ListQueryLoggingConfigsPaginationTraits.h>
 #include <aws/route53/model/ListQueryLoggingConfigsRequest.h>
 #include <aws/route53/model/ListQueryLoggingConfigsResult.h>
+#include <aws/route53/model/ListResourceRecordSetChangesPaginationTraits.h>
+#include <aws/route53/model/ListResourceRecordSetChangesRequest.h>
+#include <aws/route53/model/ListResourceRecordSetChangesResult.h>
 #include <aws/route53/model/ListResourceRecordSetProtectionsPaginationTraits.h>
 #include <aws/route53/model/ListResourceRecordSetProtectionsRequest.h>
 #include <aws/route53/model/ListResourceRecordSetProtectionsResult.h>
@@ -230,6 +250,7 @@
 #include <aws/route53/model/ResettableElementName.h>
 #include <aws/route53/model/ResourceRecord.h>
 #include <aws/route53/model/ResourceRecordSet.h>
+#include <aws/route53/model/ResourceRecordSetChange.h>
 #include <aws/route53/model/ResourceRecordSetFailover.h>
 #include <aws/route53/model/ResourceRecordSetProtection.h>
 #include <aws/route53/model/ResourceRecordSetProtectionConfig.h>
@@ -254,6 +275,8 @@
 #include <aws/route53/model/UpdateHostedZoneCommentResult.h>
 #include <aws/route53/model/UpdateHostedZoneFeaturesRequest.h>
 #include <aws/route53/model/UpdateHostedZoneFeaturesResult.h>
+#include <aws/route53/model/UpdateHostedZoneTierRequest.h>
+#include <aws/route53/model/UpdateHostedZoneTierResult.h>
 #include <aws/route53/model/UpdateTrafficPolicyCommentRequest.h>
 #include <aws/route53/model/UpdateTrafficPolicyCommentResult.h>
 #include <aws/route53/model/UpdateTrafficPolicyInstanceRequest.h>

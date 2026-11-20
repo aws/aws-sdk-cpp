@@ -16,7 +16,9 @@ enum class ScopeResourceType {
   AWS_CloudFront_Distribution,
   AWS_EC2_EIP,
   AWS_ElasticLoadBalancingV2_LoadBalancer_application,
-  AWS_ElasticLoadBalancing_LoadBalancer
+  AWS_ElasticLoadBalancing_LoadBalancer,
+  AWS_EC2_VPC,
+  AWS_EC2_Subnet
 };
 
 namespace ScopeResourceTypeMapper {

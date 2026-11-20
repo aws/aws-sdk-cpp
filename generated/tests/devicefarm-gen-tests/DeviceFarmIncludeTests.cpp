@@ -78,6 +78,7 @@
 #include <aws/devicefarm/model/DeviceProxy.h>
 #include <aws/devicefarm/model/DeviceSelectionConfiguration.h>
 #include <aws/devicefarm/model/DeviceSelectionResult.h>
+#include <aws/devicefarm/model/DeviceType.h>
 #include <aws/devicefarm/model/EnvironmentVariable.h>
 #include <aws/devicefarm/model/ExecutionConfiguration.h>
 #include <aws/devicefarm/model/ExecutionResult.h>

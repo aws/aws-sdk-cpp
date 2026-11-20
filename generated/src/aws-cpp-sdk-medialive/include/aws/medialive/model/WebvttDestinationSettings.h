@@ -36,10 +36,10 @@ class WebvttDestinationSettings {
   /**
    * Controls whether the color and position of the source captions is passed through
    * to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions
-   * are EMBEDDED, TELETEXT, or SMART SUBTITLES.  NO_STYLE_DATA - Don't pass through
-   * the style. The output captions will not contain any font styling information.
-   * MANUAL - Applies the specified styling and positioning. All other styling and
-   * positioning is given default values.
+   * are EMBEDDED, TELETEXT, SMART SUBTITLES, or WEBVTT.  NO_STYLE_DATA - Don't pass
+   * through the style. The output captions will not contain any font styling
+   * information. MANUAL - Applies the specified styling and positioning. All other
+   * styling and positioning is given default values.
    */
   inline WebvttDestinationStyleControl GetStyleControl() const { return m_styleControl; }
   inline bool StyleControlHasBeenSet() const { return m_styleControlHasBeenSet; }

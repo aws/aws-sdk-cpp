@@ -40,8 +40,9 @@ class FileSystemLustreMetadataConfiguration {
    * <p>For SSD file systems, valid values are <code>1500</code>, <code>3000</code>,
    * <code>6000</code>, <code>12000</code>, and multiples of <code>12000</code> up to
    * a maximum of <code>192000</code>.</p> </li> <li> <p>For Intelligent-Tiering file
-   * systems, valid values are <code>6000</code> and <code>12000</code>.</p> </li>
-   * </ul>
+   * systems, valid values are <code>1500</code>, <code>3000</code>,
+   * <code>6000</code>, <code>12000</code>, and multiples of <code>12000</code> up to
+   * a maximum of <code>192000</code>.</p> </li> </ul>
    */
   inline int GetIops() const { return m_iops; }
   inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
@@ -58,11 +59,11 @@ class FileSystemLustreMetadataConfiguration {
   ///@{
   /**
    * <p>The metadata configuration mode for provisioning Metadata IOPS for the file
-   * system.</p> <ul> <li> <p>In AUTOMATIC mode (supported only on SSD file systems),
-   * FSx for Lustre automatically provisions and scales the number of Metadata IOPS
-   * on your file system based on your file system storage capacity.</p> </li> <li>
-   * <p>In USER_PROVISIONED mode, you can choose to specify the number of Metadata
-   * IOPS to provision for your file system.</p> </li> </ul>
+   * system.</p> <ul> <li> <p>In AUTOMATIC mode, FSx for Lustre provisions and scales
+   * Metadata IOPS for you. For SSD file systems, the number is based on storage
+   * capacity. For Intelligent-Tiering file systems, it is based on throughput
+   * capacity.</p> </li> <li> <p>In USER_PROVISIONED mode, you can choose to specify
+   * the number of Metadata IOPS to provision for your file system.</p> </li> </ul>
    */
   inline MetadataConfigurationMode GetMode() const { return m_mode; }
   inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }

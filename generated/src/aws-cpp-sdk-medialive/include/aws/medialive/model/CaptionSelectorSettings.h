@@ -13,6 +13,7 @@
 #include <aws/medialive/model/Scte27SourceSettings.h>
 #include <aws/medialive/model/SmartSubtitleSourceSettings.h>
 #include <aws/medialive/model/TeletextSourceSettings.h>
+#include <aws/medialive/model/WebvttSourceSettings.h>
 
 #include <utility>
 
@@ -165,6 +166,22 @@ class CaptionSelectorSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const WebvttSourceSettings& GetWebvttSourceSettings() const { return m_webvttSourceSettings; }
+  inline bool WebvttSourceSettingsHasBeenSet() const { return m_webvttSourceSettingsHasBeenSet; }
+  template <typename WebvttSourceSettingsT = WebvttSourceSettings>
+  void SetWebvttSourceSettings(WebvttSourceSettingsT&& value) {
+    m_webvttSourceSettingsHasBeenSet = true;
+    m_webvttSourceSettings = std::forward<WebvttSourceSettingsT>(value);
+  }
+  template <typename WebvttSourceSettingsT = WebvttSourceSettings>
+  CaptionSelectorSettings& WithWebvttSourceSettings(WebvttSourceSettingsT&& value) {
+    SetWebvttSourceSettings(std::forward<WebvttSourceSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AncillarySourceSettings m_ancillarySourceSettings;
 
@@ -181,6 +198,8 @@ class CaptionSelectorSettings {
   TeletextSourceSettings m_teletextSourceSettings;
 
   SmartSubtitleSourceSettings m_smartSubtitleSourceSettings;
+
+  WebvttSourceSettings m_webvttSourceSettings;
   bool m_ancillarySourceSettingsHasBeenSet = false;
   bool m_aribSourceSettingsHasBeenSet = false;
   bool m_dvbSubSourceSettingsHasBeenSet = false;
@@ -189,6 +208,7 @@ class CaptionSelectorSettings {
   bool m_scte27SourceSettingsHasBeenSet = false;
   bool m_teletextSourceSettingsHasBeenSet = false;
   bool m_smartSubtitleSourceSettingsHasBeenSet = false;
+  bool m_webvttSourceSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

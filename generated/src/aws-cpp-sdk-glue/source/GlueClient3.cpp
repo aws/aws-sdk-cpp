@@ -20,9 +20,7 @@
 #include <aws/glue/GlueClient.h>
 #include <aws/glue/GlueEndpointProvider.h>
 #include <aws/glue/GlueErrorMarshaller.h>
-#include <aws/glue/model/UpdateIntegrationTablePropertiesRequest.h>
 #include <aws/glue/model/UpdateJobFromSourceControlRequest.h>
-#include <aws/glue/model/UpdateJobRequest.h>
 #include <aws/glue/model/UpdateMLTransformRequest.h>
 #include <aws/glue/model/UpdatePartitionRequest.h>
 #include <aws/glue/model/UpdateRegistryRequest.h>
@@ -45,18 +43,6 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
-
-UpdateIntegrationTablePropertiesOutcome GlueClient::UpdateIntegrationTableProperties(
-    const UpdateIntegrationTablePropertiesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateIntegrationTablePropertiesOutcome(result.GetResultWithOwnership())
-                            : UpdateIntegrationTablePropertiesOutcome(std::move(result.GetError()));
-}
-
-UpdateJobOutcome GlueClient::UpdateJob(const UpdateJobRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateJobOutcome(result.GetResultWithOwnership()) : UpdateJobOutcome(std::move(result.GetError()));
-}
 
 UpdateJobFromSourceControlOutcome GlueClient::UpdateJobFromSourceControl(const UpdateJobFromSourceControlRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

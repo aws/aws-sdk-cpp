@@ -8,8 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/glue/Glue_EXPORTS.h>
-#include <aws/glue/model/ExportEncryptionConfiguration.h>
-#include <aws/glue/model/ExportSetting.h>
+#include <aws/glue/model/AssetsExport.h>
+#include <aws/glue/model/S3TablesConfiguration.h>
 
 #include <utility>
 
@@ -35,43 +35,6 @@ class PutDataCatalogExportConfigurationRequest : public GlueRequest {
 
   ///@{
   /**
-   * <p>The export setting for the data catalog. Specify <code>ENABLED</code> to
-   * start exporting catalog metadata to S3 Tables, or <code>DISABLED</code> to stop
-   * exporting. This field is required.</p>
-   */
-  inline ExportSetting GetExportSetting() const { return m_exportSetting; }
-  inline bool ExportSettingHasBeenSet() const { return m_exportSettingHasBeenSet; }
-  inline void SetExportSetting(ExportSetting value) {
-    m_exportSettingHasBeenSet = true;
-    m_exportSetting = value;
-  }
-  inline PutDataCatalogExportConfigurationRequest& WithExportSetting(ExportSetting value) {
-    SetExportSetting(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The encryption configuration for the exported data. If not specified, the
-   * default encryption settings are used.</p>
-   */
-  inline const ExportEncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
-  inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-  template <typename EncryptionConfigurationT = ExportEncryptionConfiguration>
-  void SetEncryptionConfiguration(EncryptionConfigurationT&& value) {
-    m_encryptionConfigurationHasBeenSet = true;
-    m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value);
-  }
-  template <typename EncryptionConfigurationT = ExportEncryptionConfiguration>
-  PutDataCatalogExportConfigurationRequest& WithEncryptionConfiguration(EncryptionConfigurationT&& value) {
-    SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request.</p>
    */
@@ -88,15 +51,55 @@ class PutDataCatalogExportConfigurationRequest : public GlueRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The S3 Tables configuration for the export. The encryption configuration
+   * applies only when Glue creates the table bucket that holds the exported catalog
+   * metadata. If not specified, the default encryption settings are used.</p>
+   */
+  inline const S3TablesConfiguration& GetS3TablesConfiguration() const { return m_s3TablesConfiguration; }
+  inline bool S3TablesConfigurationHasBeenSet() const { return m_s3TablesConfigurationHasBeenSet; }
+  template <typename S3TablesConfigurationT = S3TablesConfiguration>
+  void SetS3TablesConfiguration(S3TablesConfigurationT&& value) {
+    m_s3TablesConfigurationHasBeenSet = true;
+    m_s3TablesConfiguration = std::forward<S3TablesConfigurationT>(value);
+  }
+  template <typename S3TablesConfigurationT = S3TablesConfiguration>
+  PutDataCatalogExportConfigurationRequest& WithS3TablesConfiguration(S3TablesConfigurationT&& value) {
+    SetS3TablesConfiguration(std::forward<S3TablesConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The export setting for asset metadata. Set <code>S3TablesExport</code> to
+   * <code>ENABLED</code> to start exporting asset metadata to S3 Tables, or to
+   * <code>DISABLED</code> to stop exporting.</p>
+   */
+  inline const AssetsExport& GetAssets() const { return m_assets; }
+  inline bool AssetsHasBeenSet() const { return m_assetsHasBeenSet; }
+  template <typename AssetsT = AssetsExport>
+  void SetAssets(AssetsT&& value) {
+    m_assetsHasBeenSet = true;
+    m_assets = std::forward<AssetsT>(value);
+  }
+  template <typename AssetsT = AssetsExport>
+  PutDataCatalogExportConfigurationRequest& WithAssets(AssetsT&& value) {
+    SetAssets(std::forward<AssetsT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  ExportSetting m_exportSetting{ExportSetting::NOT_SET};
-
-  ExportEncryptionConfiguration m_encryptionConfiguration;
-
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_exportSettingHasBeenSet = false;
-  bool m_encryptionConfigurationHasBeenSet = false;
+
+  S3TablesConfiguration m_s3TablesConfiguration;
+
+  AssetsExport m_assets;
   bool m_clientTokenHasBeenSet = true;
+  bool m_s3TablesConfigurationHasBeenSet = false;
+  bool m_assetsHasBeenSet = false;
 };
 
 }  // namespace Model

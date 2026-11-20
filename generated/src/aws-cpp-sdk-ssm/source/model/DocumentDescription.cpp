@@ -163,6 +163,13 @@ DocumentDescription& DocumentDescription::operator=(JsonView jsonValue) {
     }
     m_categoryEnumHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CloudProviders")) {
+    Aws::Utils::Array<JsonView> cloudProvidersJsonList = jsonValue.GetArray("CloudProviders");
+    for (unsigned cloudProvidersIndex = 0; cloudProvidersIndex < cloudProvidersJsonList.GetLength(); ++cloudProvidersIndex) {
+      m_cloudProviders.push_back(CloudProviderMapper::GetCloudProviderForName(cloudProvidersJsonList[cloudProvidersIndex].AsString()));
+    }
+    m_cloudProvidersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -320,6 +327,15 @@ JsonValue DocumentDescription::Jsonize() const {
       categoryEnumJsonList[categoryEnumIndex].AsString(m_categoryEnum[categoryEnumIndex]);
     }
     payload.WithArray("CategoryEnum", std::move(categoryEnumJsonList));
+  }
+
+  if (m_cloudProvidersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudProvidersJsonList(m_cloudProviders.size());
+    for (unsigned cloudProvidersIndex = 0; cloudProvidersIndex < cloudProvidersJsonList.GetLength(); ++cloudProvidersIndex) {
+      cloudProvidersJsonList[cloudProvidersIndex].AsString(
+          CloudProviderMapper::GetNameForCloudProvider(m_cloudProviders[cloudProvidersIndex]));
+    }
+    payload.WithArray("CloudProviders", std::move(cloudProvidersJsonList));
   }
 
   return payload;

@@ -38,6 +38,8 @@ static const int AWS_MSK_Cluster_HASH = HashingUtils::HashString("AWS::MSK::Clus
 static const int AWS_S3_Bucket_HASH = HashingUtils::HashString("AWS::S3::Bucket");
 static const int AWS_Bedrock_KnowledgeBase_HASH = HashingUtils::HashString("AWS::Bedrock::KnowledgeBase");
 static const int AWS_XRay_TransactionSearchConfig_HASH = HashingUtils::HashString("AWS::XRay::TransactionSearchConfig");
+static const int AWS_CloudWatchOmni_HASH = HashingUtils::HashString("AWS::CloudWatchOmni");
+static const int AWS_NetworkFirewall_Firewall_HASH = HashingUtils::HashString("AWS::NetworkFirewall::Firewall");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -87,6 +89,10 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::AWS_Bedrock_KnowledgeBase;
   } else if (hashCode == AWS_XRay_TransactionSearchConfig_HASH) {
     return ResourceType::AWS_XRay_TransactionSearchConfig;
+  } else if (hashCode == AWS_CloudWatchOmni_HASH) {
+    return ResourceType::AWS_CloudWatchOmni;
+  } else if (hashCode == AWS_NetworkFirewall_Firewall_HASH) {
+    return ResourceType::AWS_NetworkFirewall_Firewall;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -147,6 +153,10 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "AWS::Bedrock::KnowledgeBase";
     case ResourceType::AWS_XRay_TransactionSearchConfig:
       return "AWS::XRay::TransactionSearchConfig";
+    case ResourceType::AWS_CloudWatchOmni:
+      return "AWS::CloudWatchOmni";
+    case ResourceType::AWS_NetworkFirewall_Firewall:
+      return "AWS::NetworkFirewall::Firewall";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

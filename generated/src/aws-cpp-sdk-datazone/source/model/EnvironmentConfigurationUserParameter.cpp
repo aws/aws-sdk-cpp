@@ -22,6 +22,10 @@ EnvironmentConfigurationUserParameter& EnvironmentConfigurationUserParameter::op
     m_environmentId = jsonValue.GetString("environmentId");
     m_environmentIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("environmentBlueprintId")) {
+    m_environmentBlueprintId = jsonValue.GetString("environmentBlueprintId");
+    m_environmentBlueprintIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("environmentResolvedAccount")) {
     m_environmentResolvedAccount = jsonValue.GetObject("environmentResolvedAccount");
     m_environmentResolvedAccountHasBeenSet = true;
@@ -46,6 +50,10 @@ JsonValue EnvironmentConfigurationUserParameter::Jsonize() const {
 
   if (m_environmentIdHasBeenSet) {
     payload.WithString("environmentId", m_environmentId);
+  }
+
+  if (m_environmentBlueprintIdHasBeenSet) {
+    payload.WithString("environmentBlueprintId", m_environmentBlueprintId);
   }
 
   if (m_environmentResolvedAccountHasBeenSet) {

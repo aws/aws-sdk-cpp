@@ -23,6 +23,7 @@ static const int update_in_progress_HASH = HashingUtils::HashString("update-in-p
 static const int update_complete_HASH = HashingUtils::HashString("update-complete");
 static const int delete_in_progress_HASH = HashingUtils::HashString("delete-in-progress");
 static const int delete_complete_HASH = HashingUtils::HashString("delete-complete");
+static const int disable_complete_HASH = HashingUtils::HashString("disable-complete");
 
 IpamRoutingPolicyRegistrationState GetIpamRoutingPolicyRegistrationStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +43,8 @@ IpamRoutingPolicyRegistrationState GetIpamRoutingPolicyRegistrationStateForName(
     return IpamRoutingPolicyRegistrationState::delete_in_progress;
   } else if (hashCode == delete_complete_HASH) {
     return IpamRoutingPolicyRegistrationState::delete_complete;
+  } else if (hashCode == disable_complete_HASH) {
+    return IpamRoutingPolicyRegistrationState::disable_complete;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +75,8 @@ Aws::String GetNameForIpamRoutingPolicyRegistrationState(IpamRoutingPolicyRegist
       return "delete-in-progress";
     case IpamRoutingPolicyRegistrationState::delete_complete:
       return "delete-complete";
+    case IpamRoutingPolicyRegistrationState::disable_complete:
+      return "disable-complete";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -9,6 +9,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/marketplace-discovery/model/GetOfferTermsPaginationTraits.h>
 #include <aws/marketplace-discovery/model/ListFulfillmentOptionsPaginationTraits.h>
+#include <aws/marketplace-discovery/model/ListListingAttributesPaginationTraits.h>
 #include <aws/marketplace-discovery/model/ListPurchaseOptionsPaginationTraits.h>
 #include <aws/marketplace-discovery/model/SearchFacetsPaginationTraits.h>
 #include <aws/marketplace-discovery/model/SearchListingsPaginationTraits.h>
@@ -41,6 +42,18 @@ class MarketplaceDiscoveryPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFulfillmentOptionsRequest,
                                              Pagination::ListFulfillmentOptionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListListingAttributes operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListListingAttributesRequest,
+                                    Pagination::ListListingAttributesPaginationTraits<DerivedClient>>
+  ListListingAttributesPaginator(const Model::ListListingAttributesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListListingAttributesRequest,
+                                             Pagination::ListListingAttributesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

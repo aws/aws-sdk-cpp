@@ -11,6 +11,7 @@
 #include <aws/odb/model/ListAutonomousDatabaseCharacterSetsPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabaseClonesPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabasePeersPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabaseRefreshableClonesPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabaseVersionsPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabasesPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousVirtualMachinesPaginationTraits.h>
@@ -82,6 +83,18 @@ class OdbPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabasePeersRequest,
                                              Pagination::ListAutonomousDatabasePeersPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAutonomousDatabaseRefreshableClones operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabaseRefreshableClonesRequest,
+                                    Pagination::ListAutonomousDatabaseRefreshableClonesPaginationTraits<DerivedClient>>
+  ListAutonomousDatabaseRefreshableClonesPaginator(const Model::ListAutonomousDatabaseRefreshableClonesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousDatabaseRefreshableClonesRequest,
+                                             Pagination::ListAutonomousDatabaseRefreshableClonesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

@@ -133,9 +133,9 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient
    * provides a consistent interface that works with all models that support
    * messages. This allows you to write code once and use it with different models.
    * If a model has unique inference parameters, you can also pass those unique
-   * parameters to the model.</p> <p>Amazon Bedrock doesn't store any text, images,
-   * or documents that you provide as content. The data is only used to generate the
-   * response.</p> <p>You can submit a prompt by including it in the
+   * parameters to the model.</p> <p>Data retention for this request depends on the
+   * applicable account or project configuration and the model's data retention
+   * policy.</p> <p>You can submit a prompt by including it in the
    * <code>messages</code> field, specifying the <code>modelId</code> of a foundation
    * model or inference profile to run inference on it, and including any other
    * fields that are relevant to your use case.</p> <p>You can also submit a prompt
@@ -155,9 +155,12 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient
    * (Function calling)</i> in the <i>Amazon Bedrock User Guide</i> </p> <p>For
    * example code, see <i>Converse API examples</i> in the <i>Amazon Bedrock User
    * Guide</i>. </p> <p>This operation requires permission for the
-   * <code>bedrock:InvokeModel</code> action. </p>  <p>To deny all
-   * inference access to resources that you specify in the modelId field, you need to
-   * deny access to the <code>bedrock:InvokeModel</code> and
+   * <code>bedrock:InvokeModel</code> action on both the inference target and the
+   * project. If you omit <code>projectIdentifier</code> or specify
+   * <code>default</code>, this includes permission on the default project for your
+   * account.</p>  <p>To deny all inference access to resources that you
+   * specify in the modelId field, you need to deny access to the
+   * <code>bedrock:InvokeModel</code> and
    * <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also
    * denies access to the resource through the base inference actions (<a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a>
@@ -204,10 +207,10 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html">GetFoundationModel</a>
    * and check the <code>responseStreamingSupported</code> field in the response.</p>
    *  <p>The CLI doesn't support streaming operations in Amazon Bedrock,
-   * including <code>ConverseStream</code>.</p>  <p>Amazon Bedrock doesn't
-   * store any text, images, or documents that you provide as content. The data is
-   * only used to generate the response.</p> <p>You can submit a prompt by including
-   * it in the <code>messages</code> field, specifying the <code>modelId</code> of a
+   * including <code>ConverseStream</code>.</p>  <p>Data retention for this
+   * request depends on the applicable account or project configuration and the
+   * model's data retention policy.</p> <p>You can submit a prompt by including it in
+   * the <code>messages</code> field, specifying the <code>modelId</code> of a
    * foundation model or inference profile to run inference on it, and including any
    * other fields that are relevant to your use case.</p> <p>You can also submit a
    * prompt from Prompt management by specifying the ARN of the prompt version and
@@ -226,9 +229,12 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient
    * (Function calling)</i> in the <i>Amazon Bedrock User Guide</i> </p> <p>For
    * example code, see <i>Conversation streaming example</i> in the <i>Amazon Bedrock
    * User Guide</i>. </p> <p>This operation requires permission for the
-   * <code>bedrock:InvokeModelWithResponseStream</code> action.</p>  <p>To
-   * deny all inference access to resources that you specify in the modelId field,
-   * you need to deny access to the <code>bedrock:InvokeModel</code> and
+   * <code>bedrock:InvokeModelWithResponseStream</code> action on both the inference
+   * target and the project. If you omit <code>projectIdentifier</code> or specify
+   * <code>default</code>, this includes permission on the default project for your
+   * account.</p>  <p>To deny all inference access to resources that you
+   * specify in the modelId field, you need to deny access to the
+   * <code>bedrock:InvokeModel</code> and
    * <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also
    * denies access to the resource through the base inference actions (<a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a>
@@ -368,10 +374,12 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient
    * and inference parameters provided in the request body. You use model inference
    * to generate text, images, and embeddings.</p> <p>For example code, see <i>Invoke
    * model code examples</i> in the <i>Amazon Bedrock User Guide</i>. </p> <p>This
-   * operation requires permission for the <code>bedrock:InvokeModel</code>
-   * action.</p>  <p>To deny all inference access to resources that you
-   * specify in the modelId field, you need to deny access to the
-   * <code>bedrock:InvokeModel</code> and
+   * operation requires permission for the <code>bedrock:InvokeModel</code> action on
+   * both the inference target and the project. If you omit
+   * <code>projectIdentifier</code> or specify <code>default</code>, this includes
+   * permission on the default project for your account.</p>  <p>To deny
+   * all inference access to resources that you specify in the modelId field, you
+   * need to deny access to the <code>bedrock:InvokeModel</code> and
    * <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also
    * denies access to the resource through the Converse API actions (<a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
@@ -439,10 +447,13 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient
    *  <p>The CLI doesn't support streaming operations in Amazon Bedrock,
    * including <code>InvokeModelWithResponseStream</code>.</p>  <p>For example
    * code, see <i>Invoke model with streaming code example</i> in the <i>Amazon
-   * Bedrock User Guide</i>. </p> <p>This operation requires permissions to perform
-   * the <code>bedrock:InvokeModelWithResponseStream</code> action. </p>
-   * <p>To deny all inference access to resources that you specify in the modelId
-   * field, you need to deny access to the <code>bedrock:InvokeModel</code> and
+   * Bedrock User Guide</i>. </p> <p>This operation requires permission for the
+   * <code>bedrock:InvokeModelWithResponseStream</code> action on both the inference
+   * target and the project. If you omit <code>projectIdentifier</code> or specify
+   * <code>default</code>, this includes permission on the default project for your
+   * account.</p>  <p>To deny all inference access to resources that you
+   * specify in the modelId field, you need to deny access to the
+   * <code>bedrock:InvokeModel</code> and
    * <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also
    * denies access to the resource through the Converse API actions (<a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>

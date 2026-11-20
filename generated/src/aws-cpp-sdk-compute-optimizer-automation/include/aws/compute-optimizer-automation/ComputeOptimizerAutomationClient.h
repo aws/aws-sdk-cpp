@@ -103,8 +103,10 @@ class AWS_COMPUTEOPTIMIZERAUTOMATION_API ComputeOptimizerAutomationClient
    * "Any allowed," which permits the management account to create Automation rules
    * that automatically apply actions to that account. If the member account has not
    * previously enabled the Automation feature, the association process automatically
-   * enables it.</p>  <p>Only the management account or a delegated
-   * administrator can perform this action.</p> <p><h3>See Also:</h3>   <a
+   * enables it.</p> <p>Requests that include an account to which an organization
+   * enrollment configuration applies are rejected.</p>  <p>Only the management
+   * account or a delegated administrator can perform this action.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/AssociateAccounts">AWS
    * API Reference</a></p>
    */
@@ -183,12 +185,50 @@ class AWS_COMPUTEOPTIMIZERAUTOMATION_API ComputeOptimizerAutomationClient
   }
 
   /**
+   * <p> Deletes the specified configuration types from an organization enrollment
+   * configuration. After deletion, Automation stays enabled for affected accounts
+   * and earlier account associations aren't restored. Affected accounts inherit the
+   * organization rule mode from the closest parent that has an organization
+   * enrollment configuration, or get None allowed if no parent has one. </p>
+   * <p>Only the management account or a delegated administrator can perform this
+   * action.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/DeleteOrganizationEnrollmentConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteOrganizationEnrollmentConfigurationOutcome DeleteOrganizationEnrollmentConfiguration(
+      const Model::DeleteOrganizationEnrollmentConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteOrganizationEnrollmentConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteOrganizationEnrollmentConfigurationRequestT = Model::DeleteOrganizationEnrollmentConfigurationRequest>
+  Model::DeleteOrganizationEnrollmentConfigurationOutcomeCallable DeleteOrganizationEnrollmentConfigurationCallable(
+      const DeleteOrganizationEnrollmentConfigurationRequestT& request) const {
+    return SubmitCallable(&ComputeOptimizerAutomationClient::DeleteOrganizationEnrollmentConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteOrganizationEnrollmentConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteOrganizationEnrollmentConfigurationRequestT = Model::DeleteOrganizationEnrollmentConfigurationRequest>
+  void DeleteOrganizationEnrollmentConfigurationAsync(
+      const DeleteOrganizationEnrollmentConfigurationRequestT& request,
+      const DeleteOrganizationEnrollmentConfigurationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ComputeOptimizerAutomationClient::DeleteOrganizationEnrollmentConfiguration, request, handler, context);
+  }
+
+  /**
    * <p> Disassociates member accounts from your organization's management account,
    * removing centralized automation capabilities. Once disassociated, organization
    * rules no longer apply to the member account, and the management account (or
-   * delegated administrator) cannot create Automation rules for that account. </p>
-   *  <p>Only the management account or a delegated administrator can perform
-   * this action.</p> <p><h3>See Also:</h3>   <a
+   * delegated administrator) can't create automation rules for that account. </p>
+   * <p>Requests that include an account to which an organization enrollment
+   * configuration applies are rejected.</p>  <p>Only the management account or
+   * a delegated administrator can perform this action.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/DisassociateAccounts">AWS
    * API Reference</a></p>
    */
@@ -501,11 +541,75 @@ class AWS_COMPUTEOPTIMIZERAUTOMATION_API ComputeOptimizerAutomationClient
   }
 
   /**
+   * <p> Lists the organization enrollment configurations that are stored directly on
+   * accounts, organizational units (OUs), and the organization root. </p>
+   * <p>Only the management account or a delegated administrator can perform this
+   * action.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/ListOrganizationEnrollmentConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListOrganizationEnrollmentConfigurationsOutcome ListOrganizationEnrollmentConfigurations(
+      const Model::ListOrganizationEnrollmentConfigurationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListOrganizationEnrollmentConfigurations that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListOrganizationEnrollmentConfigurationsRequestT = Model::ListOrganizationEnrollmentConfigurationsRequest>
+  Model::ListOrganizationEnrollmentConfigurationsOutcomeCallable ListOrganizationEnrollmentConfigurationsCallable(
+      const ListOrganizationEnrollmentConfigurationsRequestT& request = {}) const {
+    return SubmitCallable(&ComputeOptimizerAutomationClient::ListOrganizationEnrollmentConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for ListOrganizationEnrollmentConfigurations that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListOrganizationEnrollmentConfigurationsRequestT = Model::ListOrganizationEnrollmentConfigurationsRequest>
+  void ListOrganizationEnrollmentConfigurationsAsync(const ListOrganizationEnrollmentConfigurationsResponseReceivedHandler& handler,
+                                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                     const ListOrganizationEnrollmentConfigurationsRequestT& request = {}) const {
+    return SubmitAsync(&ComputeOptimizerAutomationClient::ListOrganizationEnrollmentConfigurations, request, handler, context);
+  }
+
+  /**
+   * <p> Lists the organization root and organizational units (OUs), including
+   * whether an applicable organization enrollment configuration enables Automation
+   * for member accounts and the effective organization rule mode for each root or
+   * OU. </p>  <p>Only the management account or a delegated administrator can
+   * perform this action.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/ListOrganizationalUnits">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListOrganizationalUnitsOutcome ListOrganizationalUnits(const Model::ListOrganizationalUnitsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListOrganizationalUnits that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListOrganizationalUnitsRequestT = Model::ListOrganizationalUnitsRequest>
+  Model::ListOrganizationalUnitsOutcomeCallable ListOrganizationalUnitsCallable(const ListOrganizationalUnitsRequestT& request = {}) const {
+    return SubmitCallable(&ComputeOptimizerAutomationClient::ListOrganizationalUnits, request);
+  }
+
+  /**
+   * An Async wrapper for ListOrganizationalUnits that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListOrganizationalUnitsRequestT = Model::ListOrganizationalUnitsRequest>
+  void ListOrganizationalUnitsAsync(const ListOrganizationalUnitsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const ListOrganizationalUnitsRequestT& request = {}) const {
+    return SubmitAsync(&ComputeOptimizerAutomationClient::ListOrganizationalUnits, request, handler, context);
+  }
+
+  /**
    * <p> Provides a summary of recommended actions based on specified filters. </p>
    *  <p>Management accounts and delegated administrators can retrieve
-   * recommended actions that include associated member accounts. You can associate a
-   * member account using <code>AssociateAccounts</code>.</p> <p><h3>See
-   * Also:</h3>   <a
+   * recommended action summaries for member accounts that are associated using
+   * <code>AssociateAccounts</code> or have an applicable organization enrollment
+   * configuration with <code>organizationRuleMode</code> set to
+   * <code>AnyAllowed</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/ListRecommendedActionSummaries">AWS
    * API Reference</a></p>
    */
@@ -534,11 +638,12 @@ class AWS_COMPUTEOPTIMIZERAUTOMATION_API ComputeOptimizerAutomationClient
   }
 
   /**
-   * <p> Lists the recommended actions based that match specified filters. </p>
-   *  <p>Management accounts and delegated administrators can retrieve
-   * recommended actions that include associated member accounts. You can associate a
-   * member account using <code>AssociateAccounts</code>.</p> <p><h3>See
-   * Also:</h3>   <a
+   * <p> Lists the recommended actions that match the specified filters. </p>
+   * <p>Management accounts and delegated administrators can retrieve recommended
+   * actions for member accounts that are associated using
+   * <code>AssociateAccounts</code> or have an applicable organization enrollment
+   * configuration with <code>organizationRuleMode</code> set to
+   * <code>AnyAllowed</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/ListRecommendedActions">AWS
    * API Reference</a></p>
    */
@@ -591,11 +696,52 @@ class AWS_COMPUTEOPTIMIZERAUTOMATION_API ComputeOptimizerAutomationClient
   }
 
   /**
+   * <p> Creates or updates an organization enrollment configuration. The
+   * organization enrollment configuration sets the organization rule mode on the
+   * specified account, organizational unit (OU), or organization root and enables
+   * Automation for affected member accounts that have opted in to Compute Optimizer,
+   * including accounts that join later. Changes on an OU or the organization root
+   * can take up to 5 minutes. Organization enrollment configurations take precedence
+   * over settings made by <code>AssociateAccounts</code> and
+   * <code>DisassociateAccounts</code>. You must specify at least one configuration
+   * in the request. </p>  <p>Only the management account or a delegated
+   * administrator can perform this action.</p> <p>Organization enrollment
+   * configurations can't be created for the management account.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/PutOrganizationEnrollmentConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutOrganizationEnrollmentConfigurationOutcome PutOrganizationEnrollmentConfiguration(
+      const Model::PutOrganizationEnrollmentConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutOrganizationEnrollmentConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename PutOrganizationEnrollmentConfigurationRequestT = Model::PutOrganizationEnrollmentConfigurationRequest>
+  Model::PutOrganizationEnrollmentConfigurationOutcomeCallable PutOrganizationEnrollmentConfigurationCallable(
+      const PutOrganizationEnrollmentConfigurationRequestT& request) const {
+    return SubmitCallable(&ComputeOptimizerAutomationClient::PutOrganizationEnrollmentConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for PutOrganizationEnrollmentConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename PutOrganizationEnrollmentConfigurationRequestT = Model::PutOrganizationEnrollmentConfigurationRequest>
+  void PutOrganizationEnrollmentConfigurationAsync(const PutOrganizationEnrollmentConfigurationRequestT& request,
+                                                   const PutOrganizationEnrollmentConfigurationResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ComputeOptimizerAutomationClient::PutOrganizationEnrollmentConfiguration, request, handler, context);
+  }
+
+  /**
    * <p> Initiates a rollback for a completed automation event. </p>
-   * <p>Management accounts and delegated administrators can only initiate a rollback
-   * for events belonging to associated member accounts. You can associate a member
-   * account using <code>AssociateAccounts</code>.</p> <p><h3>See Also:</h3>
-   * <a
+   * <p>Management accounts and delegated administrators can initiate a rollback for
+   * events belonging to member accounts that are associated using
+   * <code>AssociateAccounts</code> or have an applicable organization enrollment
+   * configuration with <code>organizationRuleMode</code> set to
+   * <code>AnyAllowed</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/RollbackAutomationEvent">AWS
    * API Reference</a></p>
    */
@@ -623,10 +769,11 @@ class AWS_COMPUTEOPTIMIZERAUTOMATION_API ComputeOptimizerAutomationClient
 
   /**
    * <p> Initiates a one-time, on-demand automation for the specified recommended
-   * action. </p>  <p>Management accounts and delegated administrators can only
-   * initiate recommended actions for associated member accounts. You can associate a
-   * member account using <code>AssociateAccounts</code>.</p> <p><h3>See
-   * Also:</h3>   <a
+   * action. </p>  <p>Management accounts and delegated administrators can
+   * initiate recommended actions for member accounts that are associated using
+   * <code>AssociateAccounts</code> or have an applicable organization enrollment
+   * configuration with <code>organizationRuleMode</code> set to
+   * <code>AnyAllowed</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/StartAutomationEvent">AWS
    * API Reference</a></p>
    */

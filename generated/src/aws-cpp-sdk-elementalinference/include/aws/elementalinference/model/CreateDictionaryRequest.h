@@ -51,7 +51,10 @@ class CreateDictionaryRequest : public ElementalInferenceRequest {
   ///@{
   /**
    * <p>The language of the dictionary entries. Specify the language using an ISO
-   * 639-2/T three-letter code. Supported values: eng, fra, ita, deu, spa, por. </p>
+   * 639-2/T three-letter code. Supported values: </p> <ul> <li> <p>eng – English</p>
+   * </li> <li> <p>fra – French</p> </li> <li> <p>ita – Italian</p> </li> <li> <p>deu
+   * – German</p> </li> <li> <p>spa – Spanish</p> </li> <li> <p>por – Portuguese</p>
+   * </li> <li> <p>ara – Arabic</p> </li> </ul>
    */
   inline DictionaryLanguage GetLanguage() const { return m_language; }
   inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }

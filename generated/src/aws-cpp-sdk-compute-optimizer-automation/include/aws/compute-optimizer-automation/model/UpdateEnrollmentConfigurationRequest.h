@@ -40,11 +40,14 @@ class UpdateEnrollmentConfigurationRequest : public ComputeOptimizerAutomationRe
    * you opt in again later, all rules will be inactive, and you must enable the
    * rules you want to run. You must wait at least 24 hours after opting out to opt
    * in again.</p> </li> </ul>  <p>The <code>Pending</code> and
-   * <code>Failed</code> options cannot be used to update the enrollment status of an
+   * <code>Failed</code> options can't be used to update the enrollment status of an
    * account. They are returned in the response of a request to update the enrollment
-   * status of an account.</p> <p>If you are a member account, your account must be
-   * disassociated from your organization’s management account before you can disable
-   * Automation. Contact your administrator to make this change.</p>
+   * status of an account.</p> <p>If you are a member account, you can't disable
+   * Automation while an organization enrollment configuration applies. If no
+   * organization enrollment configuration applies, you also can't disable Automation
+   * while your organization rule mode is <code>AnyAllowed</code>. Ask your
+   * administrator to delete the organization enrollment configuration or
+   * disassociate your account, as applicable.</p>
    */
   inline EnrollmentStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

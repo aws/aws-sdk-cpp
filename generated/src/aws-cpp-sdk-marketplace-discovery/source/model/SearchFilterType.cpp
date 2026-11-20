@@ -24,6 +24,12 @@ static const int PRICING_MODEL_HASH = HashingUtils::HashString("PRICING_MODEL");
 static const int PRICING_UNIT_HASH = HashingUtils::HashString("PRICING_UNIT");
 static const int DEPLOYED_ON_AWS_HASH = HashingUtils::HashString("DEPLOYED_ON_AWS");
 static const int NUMBER_OF_PRODUCTS_HASH = HashingUtils::HashString("NUMBER_OF_PRODUCTS");
+static const int CERTIFICATES_HASH = HashingUtils::HashString("CERTIFICATES");
+static const int PRODUCT_ID_HASH = HashingUtils::HashString("PRODUCT_ID");
+static const int SPECIALIZATION_HASH = HashingUtils::HashString("SPECIALIZATION");
+static const int SPECIALIZATION_CATEGORY_HASH = HashingUtils::HashString("SPECIALIZATION_CATEGORY");
+static const int SELLER_ENGAGEMENT_HASH = HashingUtils::HashString("SELLER_ENGAGEMENT");
+static const int TRUST_CENTER_HASH = HashingUtils::HashString("TRUST_CENTER");
 
 SearchFilterType GetSearchFilterTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +51,18 @@ SearchFilterType GetSearchFilterTypeForName(const Aws::String& name) {
     return SearchFilterType::DEPLOYED_ON_AWS;
   } else if (hashCode == NUMBER_OF_PRODUCTS_HASH) {
     return SearchFilterType::NUMBER_OF_PRODUCTS;
+  } else if (hashCode == CERTIFICATES_HASH) {
+    return SearchFilterType::CERTIFICATES;
+  } else if (hashCode == PRODUCT_ID_HASH) {
+    return SearchFilterType::PRODUCT_ID;
+  } else if (hashCode == SPECIALIZATION_HASH) {
+    return SearchFilterType::SPECIALIZATION;
+  } else if (hashCode == SPECIALIZATION_CATEGORY_HASH) {
+    return SearchFilterType::SPECIALIZATION_CATEGORY;
+  } else if (hashCode == SELLER_ENGAGEMENT_HASH) {
+    return SearchFilterType::SELLER_ENGAGEMENT;
+  } else if (hashCode == TRUST_CENTER_HASH) {
+    return SearchFilterType::TRUST_CENTER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +95,18 @@ Aws::String GetNameForSearchFilterType(SearchFilterType enumValue) {
       return "DEPLOYED_ON_AWS";
     case SearchFilterType::NUMBER_OF_PRODUCTS:
       return "NUMBER_OF_PRODUCTS";
+    case SearchFilterType::CERTIFICATES:
+      return "CERTIFICATES";
+    case SearchFilterType::PRODUCT_ID:
+      return "PRODUCT_ID";
+    case SearchFilterType::SPECIALIZATION:
+      return "SPECIALIZATION";
+    case SearchFilterType::SPECIALIZATION_CATEGORY:
+      return "SPECIALIZATION_CATEGORY";
+    case SearchFilterType::SELLER_ENGAGEMENT:
+      return "SELLER_ENGAGEMENT";
+    case SearchFilterType::TRUST_CENTER:
+      return "TRUST_CENTER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

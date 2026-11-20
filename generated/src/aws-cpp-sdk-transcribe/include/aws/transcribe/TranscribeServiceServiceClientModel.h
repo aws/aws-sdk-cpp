@@ -60,6 +60,7 @@
 #include <aws/transcribe/model/StartMedicalTranscriptionJobResult.h>
 #include <aws/transcribe/model/StartTranscriptionJobResult.h>
 #include <aws/transcribe/model/TagResourceResult.h>
+#include <aws/transcribe/model/TranscribeAudioResult.h>
 #include <aws/transcribe/model/UntagResourceResult.h>
 #include <aws/transcribe/model/UpdateCallAnalyticsCategoryResult.h>
 #include <aws/transcribe/model/UpdateLanguageModelResult.h>
@@ -137,6 +138,7 @@ class StartMedicalScribeJobRequest;
 class StartMedicalTranscriptionJobRequest;
 class StartTranscriptionJobRequest;
 class TagResourceRequest;
+class TranscribeAudioRequest;
 class UntagResourceRequest;
 class UpdateCallAnalyticsCategoryRequest;
 class UpdateLanguageModelRequest;
@@ -184,6 +186,7 @@ typedef Aws::Utils::Outcome<StartMedicalScribeJobResult, TranscribeServiceError>
 typedef Aws::Utils::Outcome<StartMedicalTranscriptionJobResult, TranscribeServiceError> StartMedicalTranscriptionJobOutcome;
 typedef Aws::Utils::Outcome<StartTranscriptionJobResult, TranscribeServiceError> StartTranscriptionJobOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, TranscribeServiceError> TagResourceOutcome;
+typedef Aws::Utils::Outcome<TranscribeAudioResult, TranscribeServiceError> TranscribeAudioOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, TranscribeServiceError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateCallAnalyticsCategoryResult, TranscribeServiceError> UpdateCallAnalyticsCategoryOutcome;
 typedef Aws::Utils::Outcome<UpdateLanguageModelResult, TranscribeServiceError> UpdateLanguageModelOutcome;
@@ -231,6 +234,7 @@ typedef std::future<StartMedicalScribeJobOutcome> StartMedicalScribeJobOutcomeCa
 typedef std::future<StartMedicalTranscriptionJobOutcome> StartMedicalTranscriptionJobOutcomeCallable;
 typedef std::future<StartTranscriptionJobOutcome> StartTranscriptionJobOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+typedef std::future<TranscribeAudioOutcome> TranscribeAudioOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateCallAnalyticsCategoryOutcome> UpdateCallAnalyticsCategoryOutcomeCallable;
 typedef std::future<UpdateLanguageModelOutcome> UpdateLanguageModelOutcomeCallable;
@@ -360,6 +364,9 @@ typedef std::function<void(const TranscribeServiceClient*, const Model::StartTra
 typedef std::function<void(const TranscribeServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;
+typedef std::function<void(const TranscribeServiceClient*, const Model::TranscribeAudioRequest&, const Model::TranscribeAudioOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    TranscribeAudioResponseReceivedHandler;
 typedef std::function<void(const TranscribeServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;

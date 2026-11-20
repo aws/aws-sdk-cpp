@@ -30,10 +30,11 @@ class GetOfferTermsRequest : public MarketplaceDiscoveryRequest {
 
   ///@{
   /**
-   * <p>A BCP 47 language tag or comma-separated priority list specifying the
-   * preferred locale for response content. See <code>Locale</code> for supported
-   * values, constraints, fallback behavior, and the default locale. If omitted, the
-   * service returns content in the default locale.</p>
+   * <p>The preferred locale for response content, as a Best Current Practice 47 (BCP
+   * 47) language tag or a comma-separated priority list of language tags. See
+   * <code>Locale</code> for supported values, constraints, fallback behavior, and
+   * the default locale. If you omit this field, the service returns content in the
+   * default locale.</p>
    */
   inline const Aws::String& GetLocale() const { return m_locale; }
   inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
@@ -69,8 +70,8 @@ class GetOfferTermsRequest : public MarketplaceDiscoveryRequest {
 
   ///@{
   /**
-   * <p>The maximum number of results that are returned per call. You can use
-   * <code>nextToken</code> to get more results.</p>
+   * <p>The maximum number of terms to return in each call. If you omit this field,
+   * the default is 10. Use <code>nextToken</code> to retrieve the next page.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -86,8 +87,11 @@ class GetOfferTermsRequest : public MarketplaceDiscoveryRequest {
 
   ///@{
   /**
-   * <p>If <code>nextToken</code> is returned, there are more results available. Make
-   * the call again using the returned token to retrieve the next page.</p>
+   * <p>If the service returns <code>nextToken</code>, more results are available.
+   * The value of <code>nextToken</code> is a unique pagination token for each page.
+   * Make the call again with the returned token to retrieve the next page. Keep all
+   * other arguments unchanged. Each pagination token expires after 24 hours. An
+   * expired pagination token returns a <code>ValidationException</code>.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

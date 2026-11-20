@@ -21,8 +21,8 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>A legal document associated with a legal term, such as a EULA or data
- * subscription agreement.</p><p><h3>See Also:</h3>   <a
+ * <p>A legal document associated with a legal term, such as an End User License
+ * Agreement (EULA) or a data subscription agreement.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/DocumentItem">AWS
  * API Reference</a></p>
  */

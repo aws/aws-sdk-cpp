@@ -1,0 +1,155 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/textract/TextractRequest.h>
+#include <aws/textract/Textract_EXPORTS.h>
+#include <aws/textract/model/EncryptionConfiguration.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Textract {
+namespace Model {
+
+/**
+ */
+class CreateBlueprintRequest : public TextractRequest {
+ public:
+  AWS_TEXTRACT_API CreateBlueprintRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "CreateBlueprint"; }
+
+  AWS_TEXTRACT_API Aws::String SerializePayload() const override;
+
+  AWS_TEXTRACT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that you provide to ensure that the
+   * operation completes no more than one time. If you use the same token for a
+   * request that matches a previous request, the service ignores the request, but
+   * does not return an error.</p>
+   */
+  inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
+  inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
+  template <typename ClientRequestTokenT = Aws::String>
+  void SetClientRequestToken(ClientRequestTokenT&& value) {
+    m_clientRequestTokenHasBeenSet = true;
+    m_clientRequestToken = std::forward<ClientRequestTokenT>(value);
+  }
+  template <typename ClientRequestTokenT = Aws::String>
+  CreateBlueprintRequest& WithClientRequestToken(ClientRequestTokenT&& value) {
+    SetClientRequestToken(std::forward<ClientRequestTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique name for the blueprint.</p>
+   */
+  inline const Aws::String& GetBlueprintName() const { return m_blueprintName; }
+  inline bool BlueprintNameHasBeenSet() const { return m_blueprintNameHasBeenSet; }
+  template <typename BlueprintNameT = Aws::String>
+  void SetBlueprintName(BlueprintNameT&& value) {
+    m_blueprintNameHasBeenSet = true;
+    m_blueprintName = std::forward<BlueprintNameT>(value);
+  }
+  template <typename BlueprintNameT = Aws::String>
+  CreateBlueprintRequest& WithBlueprintName(BlueprintNameT&& value) {
+    SetBlueprintName(std::forward<BlueprintNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The schema of the blueprint, which defines the fields to extract and their
+   * expected structure.</p>
+   */
+  inline const Aws::String& GetSchema() const { return m_schema; }
+  inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
+  template <typename SchemaT = Aws::String>
+  void SetSchema(SchemaT&& value) {
+    m_schemaHasBeenSet = true;
+    m_schema = std::forward<SchemaT>(value);
+  }
+  template <typename SchemaT = Aws::String>
+  CreateBlueprintRequest& WithSchema(SchemaT&& value) {
+    SetSchema(std::forward<SchemaT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The AWS KMS encryption configuration used to encrypt the blueprint at
+   * rest.</p>
+   */
+  inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
+  inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  void SetEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    m_encryptionConfigurationHasBeenSet = true;
+    m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value);
+  }
+  template <typename EncryptionConfigurationT = EncryptionConfiguration>
+  CreateBlueprintRequest& WithEncryptionConfiguration(EncryptionConfigurationT&& value) {
+    SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A set of tags (key-value pairs) to assign to the blueprint.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateBlueprintRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  CreateBlueprintRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  Aws::String m_blueprintName;
+
+  Aws::String m_schema;
+
+  EncryptionConfiguration m_encryptionConfiguration;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_blueprintNameHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

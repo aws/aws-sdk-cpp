@@ -24,8 +24,8 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Defines a renewal term that enables automatic agreement
- * renewal.</p><p><h3>See Also:</h3>   <a
+ * <p>Describes a renewal term that renews the agreement
+ * automatically.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/RenewalTerm">AWS
  * API Reference</a></p>
  */
@@ -109,8 +109,8 @@ class RenewalTerm {
   ///@{
   /**
    * <p>The duration before the agreement end date by which the renewal price is
-   * finalized, represented in ISO 8601 format (for example, P30D). Only applicable
-   * with <code>PercentageRange</code>.</p>
+   * finalized, represented in ISO 8601 format (for example, P30D). This field
+   * applies only with <code>PercentageRange</code>.</p>
    */
   inline const Aws::String& GetAdjustmentDeadline() const { return m_adjustmentDeadline; }
   inline bool AdjustmentDeadlineHasBeenSet() const { return m_adjustmentDeadlineHasBeenSet; }

@@ -38,6 +38,14 @@ AudioCodecSettings& AudioCodecSettings::operator=(JsonView jsonValue) {
     m_codec = AudioCodecMapper::GetAudioCodecForName(jsonValue.GetString("codec"));
     m_codecHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dtscSettings")) {
+    m_dtscSettings = jsonValue.GetObject("dtscSettings");
+    m_dtscSettingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dtsxSettings")) {
+    m_dtsxSettings = jsonValue.GetObject("dtsxSettings");
+    m_dtsxSettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("eac3AtmosSettings")) {
     m_eac3AtmosSettings = jsonValue.GetObject("eac3AtmosSettings");
     m_eac3AtmosSettingsHasBeenSet = true;
@@ -94,6 +102,14 @@ JsonValue AudioCodecSettings::Jsonize() const {
 
   if (m_codecHasBeenSet) {
     payload.WithString("codec", AudioCodecMapper::GetNameForAudioCodec(m_codec));
+  }
+
+  if (m_dtscSettingsHasBeenSet) {
+    payload.WithObject("dtscSettings", m_dtscSettings.Jsonize());
+  }
+
+  if (m_dtsxSettingsHasBeenSet) {
+    payload.WithObject("dtsxSettings", m_dtsxSettings.Jsonize());
   }
 
   if (m_eac3AtmosSettingsHasBeenSet) {

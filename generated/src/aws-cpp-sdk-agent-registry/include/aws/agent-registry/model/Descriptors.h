@@ -11,6 +11,7 @@
 #include <aws/agent-registry/model/CustomDescriptor.h>
 #include <aws/agent-registry/model/HttpDescriptor.h>
 #include <aws/agent-registry/model/McpServerDescriptor.h>
+#include <aws/agent-registry/model/SignatureAgentCardDescriptor.h>
 
 #include <utility>
 
@@ -146,6 +147,26 @@ class Descriptors {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The signature agent card descriptor, populated when the record represents a
+   * web bot. It identifies the JSON Web Key Set (JWKS) used to verify the bot's HTTP
+   * message signatures.</p>
+   */
+  inline const SignatureAgentCardDescriptor& GetSignatureAgentCard() const { return m_signatureAgentCard; }
+  inline bool SignatureAgentCardHasBeenSet() const { return m_signatureAgentCardHasBeenSet; }
+  template <typename SignatureAgentCardT = SignatureAgentCardDescriptor>
+  void SetSignatureAgentCard(SignatureAgentCardT&& value) {
+    m_signatureAgentCardHasBeenSet = true;
+    m_signatureAgentCard = std::forward<SignatureAgentCardT>(value);
+  }
+  template <typename SignatureAgentCardT = SignatureAgentCardDescriptor>
+  Descriptors& WithSignatureAgentCard(SignatureAgentCardT&& value) {
+    SetSignatureAgentCard(std::forward<SignatureAgentCardT>(value));
+    return *this;
+  }
+  ///@}
  private:
   McpServerDescriptor m_mcpServer;
 
@@ -158,12 +179,15 @@ class Descriptors {
   HttpDescriptor m_http;
 
   AgUiDescriptor m_agui;
+
+  SignatureAgentCardDescriptor m_signatureAgentCard;
   bool m_mcpServerHasBeenSet = false;
   bool m_a2aAgentCardHasBeenSet = false;
   bool m_agentSkillsDefinitionHasBeenSet = false;
   bool m_customHasBeenSet = false;
   bool m_httpHasBeenSet = false;
   bool m_aguiHasBeenSet = false;
+  bool m_signatureAgentCardHasBeenSet = false;
 };
 
 }  // namespace Model

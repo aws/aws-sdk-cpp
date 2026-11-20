@@ -87,7 +87,10 @@ class Attachment {
    * <p>The current status of the firewall endpoint instantiation in the subnet. </p>
    * <p>When this value is <code>READY</code>, the endpoint is available to handle
    * network traffic. Otherwise, this value reflects its state, for example
-   * <code>CREATING</code> or <code>DELETING</code>.</p>
+   * <code>CREATING</code> or <code>DELETING</code>.</p> <p>For an internet gateway
+   * firewall, <code>STANDBY</code> indicates an Availability Zone that has no
+   * resources yet. Network Firewall provisions the endpoint there when the first
+   * resource is launched in that Availability Zone.</p>
    */
   inline AttachmentStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

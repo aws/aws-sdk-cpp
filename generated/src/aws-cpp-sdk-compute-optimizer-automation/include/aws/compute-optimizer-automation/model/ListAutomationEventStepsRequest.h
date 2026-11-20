@@ -51,7 +51,7 @@ class ListAutomationEventStepsRequest : public ComputeOptimizerAutomationRequest
   ///@{
   /**
    * <p>The maximum number of automation event steps to return in a single response.
-   * Valid range is 1-1000.</p>
+   * If you don't specify a value, the default is 100.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

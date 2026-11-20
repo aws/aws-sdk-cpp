@@ -79,6 +79,10 @@ Aws::String UpdateComputeNodeGroupRequest::SerializePayload() const {
     payload.WithObject("nodeLifecycleActions", m_nodeLifecycleActions.Jsonize());
   }
 
+  if (m_instanceHealthChecksHasBeenSet) {
+    payload.WithObject("instanceHealthChecks", m_instanceHealthChecks.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

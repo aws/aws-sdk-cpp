@@ -1396,6 +1396,52 @@ class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Transcribes a media file and returns the transcript in the same response.
+   * There is no job to start and no status to poll.</p> <p>Use
+   * <code>TranscribeAudio</code> when you already have a complete media file and
+   * want the transcript right away. For large files, long audio, or bulk processing,
+   * use .</p> <p>You must include the following parameters in your
+   * <code>TranscribeAudio</code> request:</p> <ul> <li> <p> <code>Media</code>: Your
+   * audio, either as inline bytes (<code>MediaBytes</code>) or as the Amazon S3
+   * location of a media file (<code>MediaFileUri</code>).</p> </li> <li> <p>One of
+   * <code>Language</code> or <code>LanguageDetectionMode</code>: Specify the
+   * language of your audio, or have Amazon Transcribe identify it.</p> </li> </ul>
+   * <p>Your audio must be between 0.5 seconds and 1 hour long. Supported formats are
+   * WAV, MP3, FLAC, M4A, MP4, Ogg, WebM, and AMR.</p> <p>If you send your audio in
+   * the request (<code>MediaBytes</code>), the file can be up to 25 MB. If you
+   * provide an Amazon S3 location (<code>MediaFileUri</code>), the file can be up to
+   * 500 MB.</p> <p>Amazon Transcribe always turns on smart formatting, also known as
+   * inverse text normalization (ITN). It writes numbers, dates, currency, and
+   * similar items in their usual written form. For example, "one hundred" becomes
+   * "100". You can't turn smart formatting off.</p> <p>By default, Amazon Transcribe
+   * returns the transcript in <code>TranscriptResponse</code>. If you include
+   * <code>OutputConfiguration</code>, Amazon Transcribe writes the transcript to the
+   * Amazon S3 location you specify instead, and the response contains only that
+   * location.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscribeAudio">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TranscribeAudioOutcome TranscribeAudio(const Model::TranscribeAudioRequest& request) const;
+
+  /**
+   * A Callable wrapper for TranscribeAudio that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename TranscribeAudioRequestT = Model::TranscribeAudioRequest>
+  Model::TranscribeAudioOutcomeCallable TranscribeAudioCallable(const TranscribeAudioRequestT& request) const {
+    return SubmitCallable(&TranscribeServiceClient::TranscribeAudio, request);
+  }
+
+  /**
+   * An Async wrapper for TranscribeAudio that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename TranscribeAudioRequestT = Model::TranscribeAudioRequest>
+  void TranscribeAudioAsync(const TranscribeAudioRequestT& request, const TranscribeAudioResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TranscribeServiceClient::TranscribeAudio, request, handler, context);
+  }
+
+  /**
    * <p>Removes the specified tags from the specified Amazon Transcribe resource.</p>
    * <p>If you include <code>UntagResource</code> in your request, you must also
    * include <code>ResourceArn</code> and <code>TagKeys</code>.</p><p><h3>See

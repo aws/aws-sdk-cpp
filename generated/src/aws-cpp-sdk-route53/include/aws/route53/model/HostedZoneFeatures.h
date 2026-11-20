@@ -4,8 +4,12 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/AcceleratedRecoveryStatus.h>
+#include <aws/route53/model/ChangeGuardrail.h>
+#include <aws/route53/model/ChangeHistoryFeature.h>
+#include <aws/route53/model/FeatureStatus.h>
 #include <aws/route53/model/HostedZoneFailureReasons.h>
 
 #include <utility>
@@ -52,6 +56,46 @@ class HostedZoneFeatures {
 
   ///@{
   /**
+   * <p>The current status of public DNS fallback for the hosted zone. Valid
+   * values:</p> <ul> <li> <p> <code>ENABLED</code>: Public DNS fallback is
+   * enabled.</p> </li> <li> <p> <code>DISABLED</code>: Public DNS fallback is
+   * disabled.</p> </li> <li> <p> <code>ENABLING</code>: A request to enable public
+   * DNS fallback is still propagating.</p> </li> <li> <p> <code>DISABLING</code>: A
+   * request to disable public DNS fallback is still propagating.</p> </li> </ul>
+   */
+  inline FeatureStatus GetPublicDNSFallbackStatus() const { return m_publicDNSFallbackStatus; }
+  inline bool PublicDNSFallbackStatusHasBeenSet() const { return m_publicDNSFallbackStatusHasBeenSet; }
+  inline void SetPublicDNSFallbackStatus(FeatureStatus value) {
+    m_publicDNSFallbackStatusHasBeenSet = true;
+    m_publicDNSFallbackStatus = value;
+  }
+  inline HostedZoneFeatures& WithPublicDNSFallbackStatus(FeatureStatus value) {
+    SetPublicDNSFallbackStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of Change History for the hosted zone, and the earliest time from
+   * which you can read its change history.</p>
+   */
+  inline const ChangeHistoryFeature& GetChangeHistory() const { return m_changeHistory; }
+  inline bool ChangeHistoryHasBeenSet() const { return m_changeHistoryHasBeenSet; }
+  template <typename ChangeHistoryT = ChangeHistoryFeature>
+  void SetChangeHistory(ChangeHistoryT&& value) {
+    m_changeHistoryHasBeenSet = true;
+    m_changeHistory = std::forward<ChangeHistoryT>(value);
+  }
+  template <typename ChangeHistoryT = ChangeHistoryFeature>
+  HostedZoneFeatures& WithChangeHistory(ChangeHistoryT&& value) {
+    SetChangeHistory(std::forward<ChangeHistoryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Information about any failures that occurred when attempting to enable or
    * configure features for the hosted zone.</p>
    */
@@ -68,12 +112,46 @@ class HostedZoneFeatures {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name and status of each Change Guardrail for the hosted zone. For the
+   * guardrail names and statuses, see <code>ChangeGuardrail</code>.</p>
+   */
+  inline const Aws::Vector<ChangeGuardrail>& GetChangeGuardrails() const { return m_changeGuardrails; }
+  inline bool ChangeGuardrailsHasBeenSet() const { return m_changeGuardrailsHasBeenSet; }
+  template <typename ChangeGuardrailsT = Aws::Vector<ChangeGuardrail>>
+  void SetChangeGuardrails(ChangeGuardrailsT&& value) {
+    m_changeGuardrailsHasBeenSet = true;
+    m_changeGuardrails = std::forward<ChangeGuardrailsT>(value);
+  }
+  template <typename ChangeGuardrailsT = Aws::Vector<ChangeGuardrail>>
+  HostedZoneFeatures& WithChangeGuardrails(ChangeGuardrailsT&& value) {
+    SetChangeGuardrails(std::forward<ChangeGuardrailsT>(value));
+    return *this;
+  }
+  template <typename ChangeGuardrailsT = ChangeGuardrail>
+  HostedZoneFeatures& AddChangeGuardrails(ChangeGuardrailsT&& value) {
+    m_changeGuardrailsHasBeenSet = true;
+    m_changeGuardrails.emplace_back(std::forward<ChangeGuardrailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AcceleratedRecoveryStatus m_acceleratedRecoveryStatus{AcceleratedRecoveryStatus::NOT_SET};
 
+  FeatureStatus m_publicDNSFallbackStatus{FeatureStatus::NOT_SET};
+
+  ChangeHistoryFeature m_changeHistory;
+
   HostedZoneFailureReasons m_failureReasons;
+
+  Aws::Vector<ChangeGuardrail> m_changeGuardrails;
   bool m_acceleratedRecoveryStatusHasBeenSet = false;
+  bool m_publicDNSFallbackStatusHasBeenSet = false;
+  bool m_changeHistoryHasBeenSet = false;
   bool m_failureReasonsHasBeenSet = false;
+  bool m_changeGuardrailsHasBeenSet = false;
 };
 
 }  // namespace Model

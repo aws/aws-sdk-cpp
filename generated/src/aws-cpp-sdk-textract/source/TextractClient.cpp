@@ -25,26 +25,39 @@
 #include <aws/textract/model/AnalyzeIDRequest.h>
 #include <aws/textract/model/CreateAdapterRequest.h>
 #include <aws/textract/model/CreateAdapterVersionRequest.h>
+#include <aws/textract/model/CreateBlueprintRequest.h>
+#include <aws/textract/model/CreateBlueprintVersionRequest.h>
+#include <aws/textract/model/CreateProjectRequest.h>
 #include <aws/textract/model/DeleteAdapterRequest.h>
 #include <aws/textract/model/DeleteAdapterVersionRequest.h>
+#include <aws/textract/model/DeleteBlueprintRequest.h>
+#include <aws/textract/model/DeleteProjectRequest.h>
 #include <aws/textract/model/DetectDocumentTextRequest.h>
 #include <aws/textract/model/GetAdapterRequest.h>
 #include <aws/textract/model/GetAdapterVersionRequest.h>
+#include <aws/textract/model/GetBlueprintRequest.h>
 #include <aws/textract/model/GetDocumentAnalysisRequest.h>
+#include <aws/textract/model/GetDocumentInsightsRequest.h>
 #include <aws/textract/model/GetDocumentTextDetectionRequest.h>
 #include <aws/textract/model/GetExpenseAnalysisRequest.h>
 #include <aws/textract/model/GetLendingAnalysisRequest.h>
 #include <aws/textract/model/GetLendingAnalysisSummaryRequest.h>
+#include <aws/textract/model/GetProjectRequest.h>
 #include <aws/textract/model/ListAdapterVersionsRequest.h>
 #include <aws/textract/model/ListAdaptersRequest.h>
+#include <aws/textract/model/ListBlueprintsRequest.h>
+#include <aws/textract/model/ListProjectsRequest.h>
 #include <aws/textract/model/ListTagsForResourceRequest.h>
 #include <aws/textract/model/StartDocumentAnalysisRequest.h>
+#include <aws/textract/model/StartDocumentInsightsRequest.h>
 #include <aws/textract/model/StartDocumentTextDetectionRequest.h>
 #include <aws/textract/model/StartExpenseAnalysisRequest.h>
 #include <aws/textract/model/StartLendingAnalysisRequest.h>
 #include <aws/textract/model/TagResourceRequest.h>
 #include <aws/textract/model/UntagResourceRequest.h>
 #include <aws/textract/model/UpdateAdapterRequest.h>
+#include <aws/textract/model/UpdateBlueprintRequest.h>
+#include <aws/textract/model/UpdateProjectRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -227,6 +240,23 @@ CreateAdapterVersionOutcome TextractClient::CreateAdapterVersion(const CreateAda
                             : CreateAdapterVersionOutcome(std::move(result.GetError()));
 }
 
+CreateBlueprintOutcome TextractClient::CreateBlueprint(const CreateBlueprintRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBlueprintOutcome(result.GetResultWithOwnership())
+                            : CreateBlueprintOutcome(std::move(result.GetError()));
+}
+
+CreateBlueprintVersionOutcome TextractClient::CreateBlueprintVersion(const CreateBlueprintVersionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBlueprintVersionOutcome(result.GetResultWithOwnership())
+                            : CreateBlueprintVersionOutcome(std::move(result.GetError()));
+}
+
+CreateProjectOutcome TextractClient::CreateProject(const CreateProjectRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProjectOutcome(result.GetResultWithOwnership()) : CreateProjectOutcome(std::move(result.GetError()));
+}
+
 DeleteAdapterOutcome TextractClient::DeleteAdapter(const DeleteAdapterRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteAdapterOutcome(result.GetResultWithOwnership()) : DeleteAdapterOutcome(std::move(result.GetError()));
@@ -236,6 +266,17 @@ DeleteAdapterVersionOutcome TextractClient::DeleteAdapterVersion(const DeleteAda
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteAdapterVersionOutcome(result.GetResultWithOwnership())
                             : DeleteAdapterVersionOutcome(std::move(result.GetError()));
+}
+
+DeleteBlueprintOutcome TextractClient::DeleteBlueprint(const DeleteBlueprintRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBlueprintOutcome(result.GetResultWithOwnership())
+                            : DeleteBlueprintOutcome(std::move(result.GetError()));
+}
+
+DeleteProjectOutcome TextractClient::DeleteProject(const DeleteProjectRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProjectOutcome(result.GetResultWithOwnership()) : DeleteProjectOutcome(std::move(result.GetError()));
 }
 
 DetectDocumentTextOutcome TextractClient::DetectDocumentText(const DetectDocumentTextRequest& request) const {
@@ -255,10 +296,21 @@ GetAdapterVersionOutcome TextractClient::GetAdapterVersion(const GetAdapterVersi
                             : GetAdapterVersionOutcome(std::move(result.GetError()));
 }
 
+GetBlueprintOutcome TextractClient::GetBlueprint(const GetBlueprintRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBlueprintOutcome(result.GetResultWithOwnership()) : GetBlueprintOutcome(std::move(result.GetError()));
+}
+
 GetDocumentAnalysisOutcome TextractClient::GetDocumentAnalysis(const GetDocumentAnalysisRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetDocumentAnalysisOutcome(result.GetResultWithOwnership())
                             : GetDocumentAnalysisOutcome(std::move(result.GetError()));
+}
+
+GetDocumentInsightsOutcome TextractClient::GetDocumentInsights(const GetDocumentInsightsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDocumentInsightsOutcome(result.GetResultWithOwnership())
+                            : GetDocumentInsightsOutcome(std::move(result.GetError()));
 }
 
 GetDocumentTextDetectionOutcome TextractClient::GetDocumentTextDetection(const GetDocumentTextDetectionRequest& request) const {
@@ -285,6 +337,11 @@ GetLendingAnalysisSummaryOutcome TextractClient::GetLendingAnalysisSummary(const
                             : GetLendingAnalysisSummaryOutcome(std::move(result.GetError()));
 }
 
+GetProjectOutcome TextractClient::GetProject(const GetProjectRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetProjectOutcome(result.GetResultWithOwnership()) : GetProjectOutcome(std::move(result.GetError()));
+}
+
 ListAdapterVersionsOutcome TextractClient::ListAdapterVersions(const ListAdapterVersionsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListAdapterVersionsOutcome(result.GetResultWithOwnership())
@@ -294,6 +351,16 @@ ListAdapterVersionsOutcome TextractClient::ListAdapterVersions(const ListAdapter
 ListAdaptersOutcome TextractClient::ListAdapters(const ListAdaptersRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListAdaptersOutcome(result.GetResultWithOwnership()) : ListAdaptersOutcome(std::move(result.GetError()));
+}
+
+ListBlueprintsOutcome TextractClient::ListBlueprints(const ListBlueprintsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBlueprintsOutcome(result.GetResultWithOwnership()) : ListBlueprintsOutcome(std::move(result.GetError()));
+}
+
+ListProjectsOutcome TextractClient::ListProjects(const ListProjectsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProjectsOutcome(result.GetResultWithOwnership()) : ListProjectsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome TextractClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -306,6 +373,12 @@ StartDocumentAnalysisOutcome TextractClient::StartDocumentAnalysis(const StartDo
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartDocumentAnalysisOutcome(result.GetResultWithOwnership())
                             : StartDocumentAnalysisOutcome(std::move(result.GetError()));
+}
+
+StartDocumentInsightsOutcome TextractClient::StartDocumentInsights(const StartDocumentInsightsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDocumentInsightsOutcome(result.GetResultWithOwnership())
+                            : StartDocumentInsightsOutcome(std::move(result.GetError()));
 }
 
 StartDocumentTextDetectionOutcome TextractClient::StartDocumentTextDetection(const StartDocumentTextDetectionRequest& request) const {
@@ -339,4 +412,15 @@ UntagResourceOutcome TextractClient::UntagResource(const UntagResourceRequest& r
 UpdateAdapterOutcome TextractClient::UpdateAdapter(const UpdateAdapterRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateAdapterOutcome(result.GetResultWithOwnership()) : UpdateAdapterOutcome(std::move(result.GetError()));
+}
+
+UpdateBlueprintOutcome TextractClient::UpdateBlueprint(const UpdateBlueprintRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBlueprintOutcome(result.GetResultWithOwnership())
+                            : UpdateBlueprintOutcome(std::move(result.GetError()));
+}
+
+UpdateProjectOutcome TextractClient::UpdateProject(const UpdateProjectRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProjectOutcome(result.GetResultWithOwnership()) : UpdateProjectOutcome(std::move(result.GetError()));
 }

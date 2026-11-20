@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/BlockPublicAccessStates.h>
+#include <aws/ec2/model/NetworkFirewallConnectivityType.h>
 #include <aws/ec2/model/PrivateDnsNameOptionsOnLaunch.h>
 #include <aws/ec2/model/SubnetIpv6CidrBlockAssociation.h>
 #include <aws/ec2/model/SubnetState.h>
@@ -325,6 +326,43 @@ class Subnet {
 
   ///@{
   /**
+   * <p>The internet connectivity treatment that the Automated Internet Firewall
+   * applies to the subnet. The response includes this value only if the subnet is in
+   * a VPC that has a firewall. Possible values:</p> <ul> <li> <p>
+   * <code>az-unsupported</code>: The firewall doesn't support the subnet's
+   * Availability Zone, so it doesn't inspect traffic for the subnet.</p> </li> <li>
+   * <p> <code>bidirectional</code>: Provides bidirectional internet connectivity to
+   * every network interface that has a public IP association. Any network interface
+   * without a public IP cannot communicate with the internet unless a NAT device is
+   * explicitly inserted in the path. All inbound and outbound traffic is inspected
+   * against your firewall rules.</p> </li> <li> <p> <code>exclude</code>: The
+   * firewall doesn't inspect traffic for the subnet. The subnet bypasses the
+   * firewall, and its traffic passes directly through the internet gateway.</p>
+   * </li> <li> <p> <code>flexible</code>: Sets the connectivity for each network
+   * interface in the subnet based on whether it is associated with a public IP
+   * address. A network interface with a public IP address gets bidirectional
+   * internet connectivity. A network interface without a public IP address gets
+   * outbound-only connectivity. All traffic is inspected against your firewall
+   * rules.</p> </li> <li> <p> <code>outbound-only</code>: Provides egress-only
+   * connectivity for all network interfaces in the subnet. All outbound traffic and
+   * inbound responses are inspected against your firewall rules. Unsolicited inbound
+   * connections are dropped. For IPv4 traffic, the firewall performs NAT.</p> </li>
+   * </ul>
+   */
+  inline NetworkFirewallConnectivityType GetNetworkFirewallConnectivityType() const { return m_networkFirewallConnectivityType; }
+  inline bool NetworkFirewallConnectivityTypeHasBeenSet() const { return m_networkFirewallConnectivityTypeHasBeenSet; }
+  inline void SetNetworkFirewallConnectivityType(NetworkFirewallConnectivityType value) {
+    m_networkFirewallConnectivityTypeHasBeenSet = true;
+    m_networkFirewallConnectivityType = value;
+  }
+  inline Subnet& WithNetworkFirewallConnectivityType(NetworkFirewallConnectivityType value) {
+    SetNetworkFirewallConnectivityType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the subnet.</p>
    */
   inline const Aws::String& GetSubnetId() const { return m_subnetId; }
@@ -498,6 +536,8 @@ class Subnet {
 
   Aws::String m_type;
 
+  NetworkFirewallConnectivityType m_networkFirewallConnectivityType{NetworkFirewallConnectivityType::NOT_SET};
+
   Aws::String m_subnetId;
 
   SubnetState m_state{SubnetState::NOT_SET};
@@ -528,6 +568,7 @@ class Subnet {
   bool m_privateDnsNameOptionsOnLaunchHasBeenSet = false;
   bool m_blockPublicAccessStatesHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_networkFirewallConnectivityTypeHasBeenSet = false;
   bool m_subnetIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;

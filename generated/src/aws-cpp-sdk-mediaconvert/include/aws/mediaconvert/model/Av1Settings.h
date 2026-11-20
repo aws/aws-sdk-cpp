@@ -8,13 +8,16 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/Av1AdaptiveQuantization.h>
 #include <aws/mediaconvert/model/Av1BitDepth.h>
+#include <aws/mediaconvert/model/Av1FastDecode.h>
 #include <aws/mediaconvert/model/Av1FilmGrainSynthesis.h>
 #include <aws/mediaconvert/model/Av1FramerateControl.h>
 #include <aws/mediaconvert/model/Av1FramerateConversionAlgorithm.h>
+#include <aws/mediaconvert/model/Av1GopSizeUnits.h>
 #include <aws/mediaconvert/model/Av1QvbrSettings.h>
 #include <aws/mediaconvert/model/Av1RateControlMode.h>
 #include <aws/mediaconvert/model/Av1SceneChangeDetect.h>
 #include <aws/mediaconvert/model/Av1SpatialAdaptiveQuantization.h>
+#include <aws/mediaconvert/model/Av1TemporalAdaptiveQuantization.h>
 #include <aws/mediaconvert/model/FrameMetricType.h>
 
 #include <utility>
@@ -44,8 +47,19 @@ class Av1Settings {
 
   ///@{
   /**
-   * Specify the strength of any adaptive quantization filters that you enable. The
-   * value that you choose here applies to Spatial adaptive quantization.
+   * Specify whether MediaConvert applies adaptive quantization in this output. With
+   * AV1, adaptive quantization is on or off; there is no strength to choose. Choose
+   * Auto to let MediaConvert manage adaptive quantization for you. MediaConvert
+   * enables both Spatial adaptive quantization and Temporal adaptive quantization,
+   * and you can't specify either one yourself. To choose the filters yourself, set
+   * Adaptive quantization to any of the strength values, Low, Medium, High, Higher
+   * or Max, and then use the related settings Spatial adaptive quantization and
+   * Temporal adaptive quantization. With AV1 these strength values all behave the
+   * same, because AV1 adaptive quantization has no strength. If you don't want
+   * MediaConvert to do any adaptive quantization in this transcode, set Adaptive
+   * quantization to Off. Related settings: The value that you choose here applies to
+   * the following settings: Av1SpatialAdaptiveQuantization and
+   * Av1TemporalAdaptiveQuantization.
    */
   inline Av1AdaptiveQuantization GetAdaptiveQuantization() const { return m_adaptiveQuantization; }
   inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
@@ -88,6 +102,25 @@ class Av1Settings {
   }
   inline Av1Settings& WithBitrate(int value) {
     SetBitrate(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Choose Enabled to limit the AV1 feature set that MediaConvert uses, which
+   * reduces the complexity of decoding your output in software. Keep the default
+   * value, Disabled, unless your playback devices need the simpler bitstream.
+   * Encoding with Fast decode is slightly slower and gives comparable video quality.
+   */
+  inline Av1FastDecode GetFastDecode() const { return m_fastDecode; }
+  inline bool FastDecodeHasBeenSet() const { return m_fastDecodeHasBeenSet; }
+  inline void SetFastDecode(Av1FastDecode value) {
+    m_fastDecodeHasBeenSet = true;
+    m_fastDecode = value;
+  }
+  inline Av1Settings& WithFastDecode(Av1FastDecode value) {
+    SetFastDecode(value);
     return *this;
   }
   ///@}
@@ -209,9 +242,10 @@ class Av1Settings {
 
   ///@{
   /**
-   * Specify the GOP length (keyframe interval) in frames. With AV1, MediaConvert
-   * doesn't support GOP length in seconds. This value must be greater than zero and
-   * preferably equal to 1 + ((numberBFrames + 1) * x), where x is an integer value.
+   * Specify the GOP length (keyframe interval). Use GOP size units to say whether
+   * this value is in frames or in seconds. This value must be greater than zero.
+   * With AV1, MediaConvert can't choose the GOP length for you, so you must specify
+   * it.
    */
   inline double GetGopSize() const { return m_gopSize; }
   inline bool GopSizeHasBeenSet() const { return m_gopSizeHasBeenSet; }
@@ -221,6 +255,25 @@ class Av1Settings {
   }
   inline Av1Settings& WithGopSize(double value) {
     SetGopSize(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Specify the units for GOP size. If you don't specify a value, MediaConvert
+   * treats GOP size as a number of frames. With AV1, MediaConvert can't choose the
+   * GOP length for you, so there is no automatic option here: specify the GOP length
+   * in the related setting GOP size, in frames or in seconds.
+   */
+  inline Av1GopSizeUnits GetGopSizeUnits() const { return m_gopSizeUnits; }
+  inline bool GopSizeUnitsHasBeenSet() const { return m_gopSizeUnitsHasBeenSet; }
+  inline void SetGopSizeUnits(Av1GopSizeUnits value) {
+    m_gopSizeUnitsHasBeenSet = true;
+    m_gopSizeUnits = value;
+  }
+  inline Av1Settings& WithGopSizeUnits(Av1GopSizeUnits value) {
+    SetGopSizeUnits(value);
     return *this;
   }
   ///@}
@@ -244,9 +297,10 @@ class Av1Settings {
 
   ///@{
   /**
-   * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we
-   * recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller
-   * file size; choose a smaller number for better video quality.
+   * Specify the number of B-frames between reference frames, in the range of 0-15.
+   * For AV1 encoding, we recommend the default value, 15, which gives the lowest
+   * bitrate and smallest file size. Choose a smaller number for better video quality
+   * at a higher bitrate.
    */
   inline int GetNumberBFramesBetweenReferenceFrames() const { return m_numberBFramesBetweenReferenceFrames; }
   inline bool NumberBFramesBetweenReferenceFramesHasBeenSet() const { return m_numberBFramesBetweenReferenceFramesHasBeenSet; }
@@ -337,12 +391,15 @@ class Av1Settings {
 
   ///@{
   /**
-   * Optional. Use this setting to have the service insert I-frames at scene changes
-   * that it automatically detects. For AV1, scene change detection is disabled by
-   * default. Choose Enabled to insert I-frames at detected scene changes, which can
-   * improve video quality. If this output uses QVBR, you can instead choose
-   * Transition detection for further video quality improvement. For more information
-   * about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+   * Keep the default value, Enabled, to have MediaConvert insert I-frames at scene
+   * changes that it automatically detects, which improves video quality. Choose
+   * Disabled if you need a strictly fixed keyframe cadence instead. With AV1,
+   * MediaConvert doesn't support Transition detection. Transition detection is
+   * accepted for backward compatibility but behaves exactly the same as Enabled, so
+   * we recommend that you use Enabled instead. It also keeps the QVBR requirement it
+   * has for other codecs: if you choose Transition detection in an AV1 output, Rate
+   * control mode must be QVBR. Choose Enabled to get the same result with any rate
+   * control mode.
    */
   inline Av1SceneChangeDetect GetSceneChangeDetect() const { return m_sceneChangeDetect; }
   inline bool SceneChangeDetectHasBeenSet() const { return m_sceneChangeDetectHasBeenSet; }
@@ -415,20 +472,22 @@ class Av1Settings {
 
   ///@{
   /**
-   * Keep the default value, Enabled, to adjust quantization within each frame based
-   * on spatial variation of content complexity. When you enable this feature, the
-   * encoder uses fewer bits on areas that can sustain more distortion with no
-   * noticeable visual degradation and uses more bits on areas where any small
-   * distortion will be noticeable. For example, complex textured blocks are encoded
-   * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
-   * this feature will almost always improve your video quality. Note, though, that
-   * this feature doesn't take into account where the viewer's attention is likely to
-   * be. If viewers are likely to be focusing their attention on a part of the screen
-   * with a lot of complex texture, you might choose to disable this feature. Related
-   * setting: When you enable spatial adaptive quantization, set the value for
-   * Adaptive quantization depending on your content. For homogeneous content, such
-   * as cartoons and video games, set it to Low. For content with a wider variety of
-   * textures, set it to High or Higher.
+   * Only use this setting when you set Adaptive quantization to one of the strength
+   * values, Low, Medium, High, Higher or Max. When you set Adaptive quantization to
+   * Auto, MediaConvert enables this feature for you and you can't specify it
+   * manually. When you enable adaptive quantization, the default value for
+   * Av1SpatialAdaptiveQuantization is Enabled. Keep this default value to adjust
+   * quantization within each frame based on spatial variation of content complexity.
+   * When you enable this feature, the encoder uses fewer bits on areas that can
+   * sustain more distortion with no noticeable visual degradation and uses more bits
+   * on areas where any small distortion will be noticeable. For example, complex
+   * textured blocks are encoded with fewer bits and smooth textured blocks are
+   * encoded with more bits. Enabling this feature will almost always improve your
+   * video quality. Note, though, that this feature doesn't take into account where
+   * the viewer's attention is likely to be. If viewers are likely to be focusing
+   * their attention on a part of the screen with a lot of complex texture, you might
+   * choose to disable this feature. Related setting: With AV1 this filter is on or
+   * off; the Adaptive quantization value does not change its strength.
    */
   inline Av1SpatialAdaptiveQuantization GetSpatialAdaptiveQuantization() const { return m_spatialAdaptiveQuantization; }
   inline bool SpatialAdaptiveQuantizationHasBeenSet() const { return m_spatialAdaptiveQuantizationHasBeenSet; }
@@ -441,12 +500,46 @@ class Av1Settings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Only use this setting when you set Adaptive quantization to one of the strength
+   * values, Low, Medium, High, Higher or Max. When you set Adaptive quantization to
+   * Auto, MediaConvert enables this feature for you and you can't specify it
+   * manually. When you enable adaptive quantization, the default value for
+   * Av1TemporalAdaptiveQuantization is Enabled. Keep this default value to adjust
+   * quantization within each frame based on temporal variation of content
+   * complexity. When you enable this feature, the encoder uses fewer bits on areas
+   * of the frame that aren't moving and uses more bits on complex objects with sharp
+   * edges that move a lot. For example, this feature improves the readability of
+   * text tickers on newscasts and scoreboards on sports matches. Enabling this
+   * feature will almost always improve your video quality. Note, though, that this
+   * feature doesn't take into account where the viewer's attention is likely to be.
+   * If viewers are likely to be focusing their attention on a part of the screen
+   * that doesn't have moving objects with sharp edges, such as sports athletes'
+   * faces, you might choose to set Av1TemporalAdaptiveQuantization to Disabled.
+   * Related setting: With AV1 this filter is on or off; the Adaptive quantization
+   * value does not change its strength.
+   */
+  inline Av1TemporalAdaptiveQuantization GetTemporalAdaptiveQuantization() const { return m_temporalAdaptiveQuantization; }
+  inline bool TemporalAdaptiveQuantizationHasBeenSet() const { return m_temporalAdaptiveQuantizationHasBeenSet; }
+  inline void SetTemporalAdaptiveQuantization(Av1TemporalAdaptiveQuantization value) {
+    m_temporalAdaptiveQuantizationHasBeenSet = true;
+    m_temporalAdaptiveQuantization = value;
+  }
+  inline Av1Settings& WithTemporalAdaptiveQuantization(Av1TemporalAdaptiveQuantization value) {
+    SetTemporalAdaptiveQuantization(value);
+    return *this;
+  }
+  ///@}
  private:
   Av1AdaptiveQuantization m_adaptiveQuantization{Av1AdaptiveQuantization::NOT_SET};
 
   Av1BitDepth m_bitDepth{Av1BitDepth::NOT_SET};
 
   int m_bitrate{0};
+
+  Av1FastDecode m_fastDecode{Av1FastDecode::NOT_SET};
 
   Av1FilmGrainSynthesis m_filmGrainSynthesis{Av1FilmGrainSynthesis::NOT_SET};
 
@@ -459,6 +552,8 @@ class Av1Settings {
   int m_framerateNumerator{0};
 
   double m_gopSize{0.0};
+
+  Av1GopSizeUnits m_gopSizeUnits{Av1GopSizeUnits::NOT_SET};
 
   int m_maxBitrate{0};
 
@@ -479,15 +574,19 @@ class Av1Settings {
   int m_slidingWindowPeakBitrate{0};
 
   Av1SpatialAdaptiveQuantization m_spatialAdaptiveQuantization{Av1SpatialAdaptiveQuantization::NOT_SET};
+
+  Av1TemporalAdaptiveQuantization m_temporalAdaptiveQuantization{Av1TemporalAdaptiveQuantization::NOT_SET};
   bool m_adaptiveQuantizationHasBeenSet = false;
   bool m_bitDepthHasBeenSet = false;
   bool m_bitrateHasBeenSet = false;
+  bool m_fastDecodeHasBeenSet = false;
   bool m_filmGrainSynthesisHasBeenSet = false;
   bool m_framerateControlHasBeenSet = false;
   bool m_framerateConversionAlgorithmHasBeenSet = false;
   bool m_framerateDenominatorHasBeenSet = false;
   bool m_framerateNumeratorHasBeenSet = false;
   bool m_gopSizeHasBeenSet = false;
+  bool m_gopSizeUnitsHasBeenSet = false;
   bool m_maxBitrateHasBeenSet = false;
   bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
   bool m_perFrameMetricsHasBeenSet = false;
@@ -498,6 +597,7 @@ class Av1Settings {
   bool m_slidingWindowMsHasBeenSet = false;
   bool m_slidingWindowPeakBitrateHasBeenSet = false;
   bool m_spatialAdaptiveQuantizationHasBeenSet = false;
+  bool m_temporalAdaptiveQuantizationHasBeenSet = false;
 };
 
 }  // namespace Model

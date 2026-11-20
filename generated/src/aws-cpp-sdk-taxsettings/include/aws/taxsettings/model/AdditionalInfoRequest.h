@@ -21,6 +21,8 @@
 #include <aws/taxsettings/model/MalaysiaAdditionalInfo.h>
 #include <aws/taxsettings/model/MexicoAdditionalInfo.h>
 #include <aws/taxsettings/model/MonacoAdditionalInfo.h>
+#include <aws/taxsettings/model/NewZealandAdditionalInfo.h>
+#include <aws/taxsettings/model/NorwayAdditionalInfo.h>
 #include <aws/taxsettings/model/PhilippinesAdditionalInfo.h>
 #include <aws/taxsettings/model/PolandAdditionalInfo.h>
 #include <aws/taxsettings/model/RomaniaAdditionalInfo.h>
@@ -29,6 +31,7 @@
 #include <aws/taxsettings/model/SpainAdditionalInfo.h>
 #include <aws/taxsettings/model/TurkeyAdditionalInfo.h>
 #include <aws/taxsettings/model/UkraineAdditionalInfo.h>
+#include <aws/taxsettings/model/UnitedArabEmiratesAdditionalInfo.h>
 #include <aws/taxsettings/model/UzbekistanAdditionalInfo.h>
 #include <aws/taxsettings/model/VietnamAdditionalInfo.h>
 
@@ -532,6 +535,63 @@ class AdditionalInfoRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Additional tax information to specify for a Tax Registration Number (TRN) in
+   * the United Arab Emirates.</p>
+   */
+  inline const UnitedArabEmiratesAdditionalInfo& GetUnitedArabEmiratesAdditionalInfo() const { return m_unitedArabEmiratesAdditionalInfo; }
+  inline bool UnitedArabEmiratesAdditionalInfoHasBeenSet() const { return m_unitedArabEmiratesAdditionalInfoHasBeenSet; }
+  template <typename UnitedArabEmiratesAdditionalInfoT = UnitedArabEmiratesAdditionalInfo>
+  void SetUnitedArabEmiratesAdditionalInfo(UnitedArabEmiratesAdditionalInfoT&& value) {
+    m_unitedArabEmiratesAdditionalInfoHasBeenSet = true;
+    m_unitedArabEmiratesAdditionalInfo = std::forward<UnitedArabEmiratesAdditionalInfoT>(value);
+  }
+  template <typename UnitedArabEmiratesAdditionalInfoT = UnitedArabEmiratesAdditionalInfo>
+  AdditionalInfoRequest& WithUnitedArabEmiratesAdditionalInfo(UnitedArabEmiratesAdditionalInfoT&& value) {
+    SetUnitedArabEmiratesAdditionalInfo(std::forward<UnitedArabEmiratesAdditionalInfoT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Additional tax information to specify for a Tax Registration Number (TRN) in
+   * Norway.</p>
+   */
+  inline const NorwayAdditionalInfo& GetNorwayAdditionalInfo() const { return m_norwayAdditionalInfo; }
+  inline bool NorwayAdditionalInfoHasBeenSet() const { return m_norwayAdditionalInfoHasBeenSet; }
+  template <typename NorwayAdditionalInfoT = NorwayAdditionalInfo>
+  void SetNorwayAdditionalInfo(NorwayAdditionalInfoT&& value) {
+    m_norwayAdditionalInfoHasBeenSet = true;
+    m_norwayAdditionalInfo = std::forward<NorwayAdditionalInfoT>(value);
+  }
+  template <typename NorwayAdditionalInfoT = NorwayAdditionalInfo>
+  AdditionalInfoRequest& WithNorwayAdditionalInfo(NorwayAdditionalInfoT&& value) {
+    SetNorwayAdditionalInfo(std::forward<NorwayAdditionalInfoT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Additional tax information to specify for a Tax Registration Number (TRN) in
+   * New Zealand.</p>
+   */
+  inline const NewZealandAdditionalInfo& GetNewZealandAdditionalInfo() const { return m_newZealandAdditionalInfo; }
+  inline bool NewZealandAdditionalInfoHasBeenSet() const { return m_newZealandAdditionalInfoHasBeenSet; }
+  template <typename NewZealandAdditionalInfoT = NewZealandAdditionalInfo>
+  void SetNewZealandAdditionalInfo(NewZealandAdditionalInfoT&& value) {
+    m_newZealandAdditionalInfoHasBeenSet = true;
+    m_newZealandAdditionalInfo = std::forward<NewZealandAdditionalInfoT>(value);
+  }
+  template <typename NewZealandAdditionalInfoT = NewZealandAdditionalInfo>
+  AdditionalInfoRequest& WithNewZealandAdditionalInfo(NewZealandAdditionalInfoT&& value) {
+    SetNewZealandAdditionalInfo(std::forward<NewZealandAdditionalInfoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   MalaysiaAdditionalInfo m_malaysiaAdditionalInfo;
 
@@ -584,6 +644,12 @@ class AdditionalInfoRequest {
   GermanyAdditionalInfo m_germanyAdditionalInfo;
 
   MexicoAdditionalInfo m_mexicoAdditionalInfo;
+
+  UnitedArabEmiratesAdditionalInfo m_unitedArabEmiratesAdditionalInfo;
+
+  NorwayAdditionalInfo m_norwayAdditionalInfo;
+
+  NewZealandAdditionalInfo m_newZealandAdditionalInfo;
   bool m_malaysiaAdditionalInfoHasBeenSet = false;
   bool m_israelAdditionalInfoHasBeenSet = false;
   bool m_estoniaAdditionalInfoHasBeenSet = false;
@@ -610,6 +676,9 @@ class AdditionalInfoRequest {
   bool m_monacoAdditionalInfoHasBeenSet = false;
   bool m_germanyAdditionalInfoHasBeenSet = false;
   bool m_mexicoAdditionalInfoHasBeenSet = false;
+  bool m_unitedArabEmiratesAdditionalInfoHasBeenSet = false;
+  bool m_norwayAdditionalInfoHasBeenSet = false;
+  bool m_newZealandAdditionalInfoHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace FSx {
 namespace Model {
-enum class OntapDeploymentType { NOT_SET, MULTI_AZ_1, SINGLE_AZ_1, SINGLE_AZ_2, MULTI_AZ_2 };
+enum class OntapDeploymentType { NOT_SET, MULTI_AZ_1, SINGLE_AZ_1, SINGLE_AZ_2, MULTI_AZ_2, SINGLE_AZ_3, MULTI_AZ_3 };
 
 namespace OntapDeploymentTypeMapper {
 AWS_FSX_API OntapDeploymentType GetOntapDeploymentTypeForName(const Aws::String& name);

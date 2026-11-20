@@ -7,6 +7,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/EmbeddedCaptionPositionSettings.h>
 #include <aws/medialive/model/EmbeddedDestinationStyleControl.h>
+#include <aws/medialive/model/EmbeddedModeType.h>
 
 #include <utility>
 
@@ -75,12 +76,69 @@ class EmbeddedDestinationSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * CC Channel / Service number for 608/708 encode mode. Serves as both the 608 CC
+   * channel
+and the 708 service number (e.g., 1 = CC1 + Service 1). Only takes
+   * effect when the source
+is non-embedded (teletext, smart captions, etc.) —
+   * ignored in passthrough mode.
+
+Range 1-4: valid for embedded608Only,
+   * embedded708Only, or embedded608And708.
+Range 5-63: valid for embedded708Only.
+   */
+  inline int GetCaptionServiceChannel() const { return m_captionServiceChannel; }
+  inline bool CaptionServiceChannelHasBeenSet() const { return m_captionServiceChannelHasBeenSet; }
+  inline void SetCaptionServiceChannel(int value) {
+    m_captionServiceChannelHasBeenSet = true;
+    m_captionServiceChannel = value;
+  }
+  inline EmbeddedDestinationSettings& WithCaptionServiceChannel(int value) {
+    SetCaptionServiceChannel(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Controls what the encoder generates when in encode mode (non-embedded source →
+   * embedded destination).
+Ignored in passthrough mode (embedded source → embedded
+   * destination).
+
+- "embedded608Only": Generate CEA-608 CC pairs only (channel must
+   * be 1-4)
+- "embedded708Only": Generate CEA-708 service blocks only (channel
+   * 1-63)
+- "embedded608And708": Generate both 608 CC pairs and 708 service blocks
+   * (channel 1-4 gets both, 5-63 gets 708 only)
+   */
+  inline EmbeddedModeType GetEmbeddedMode() const { return m_embeddedMode; }
+  inline bool EmbeddedModeHasBeenSet() const { return m_embeddedModeHasBeenSet; }
+  inline void SetEmbeddedMode(EmbeddedModeType value) {
+    m_embeddedModeHasBeenSet = true;
+    m_embeddedMode = value;
+  }
+  inline EmbeddedDestinationSettings& WithEmbeddedMode(EmbeddedModeType value) {
+    SetEmbeddedMode(value);
+    return *this;
+  }
+  ///@}
  private:
   EmbeddedCaptionPositionSettings m_position;
 
   EmbeddedDestinationStyleControl m_styleControl{EmbeddedDestinationStyleControl::NOT_SET};
+
+  int m_captionServiceChannel{0};
+
+  EmbeddedModeType m_embeddedMode{EmbeddedModeType::NOT_SET};
   bool m_positionHasBeenSet = false;
   bool m_styleControlHasBeenSet = false;
+  bool m_captionServiceChannelHasBeenSet = false;
+  bool m_embeddedModeHasBeenSet = false;
 };
 
 }  // namespace Model

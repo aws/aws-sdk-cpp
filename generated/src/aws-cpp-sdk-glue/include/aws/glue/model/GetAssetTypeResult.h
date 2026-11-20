@@ -8,7 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
-#include <aws/glue/model/AssetTypeFormReference.h>
+#include <aws/glue/model/AssetTypeFormOutput.h>
 
 #include <utility>
 
@@ -67,18 +67,18 @@ class GetAssetTypeResult {
   /**
    * <p>The forms that make up the asset type, keyed by form name.</p>
    */
-  inline const Aws::Map<Aws::String, AssetTypeFormReference>& GetForms() const { return m_forms; }
-  template <typename FormsT = Aws::Map<Aws::String, AssetTypeFormReference>>
+  inline const Aws::Map<Aws::String, AssetTypeFormOutput>& GetForms() const { return m_forms; }
+  template <typename FormsT = Aws::Map<Aws::String, AssetTypeFormOutput>>
   void SetForms(FormsT&& value) {
     m_formsHasBeenSet = true;
     m_forms = std::forward<FormsT>(value);
   }
-  template <typename FormsT = Aws::Map<Aws::String, AssetTypeFormReference>>
+  template <typename FormsT = Aws::Map<Aws::String, AssetTypeFormOutput>>
   GetAssetTypeResult& WithForms(FormsT&& value) {
     SetForms(std::forward<FormsT>(value));
     return *this;
   }
-  template <typename FormsKeyT = Aws::String, typename FormsValueT = AssetTypeFormReference>
+  template <typename FormsKeyT = Aws::String, typename FormsValueT = AssetTypeFormOutput>
   GetAssetTypeResult& AddForms(FormsKeyT&& key, FormsValueT&& value) {
     m_formsHasBeenSet = true;
     m_forms.emplace(std::forward<FormsKeyT>(key), std::forward<FormsValueT>(value));
@@ -107,7 +107,7 @@ class GetAssetTypeResult {
 
   Aws::String m_name;
 
-  Aws::Map<Aws::String, AssetTypeFormReference> m_forms;
+  Aws::Map<Aws::String, AssetTypeFormOutput> m_forms;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;

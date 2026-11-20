@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PartnerCentralChannel {
 namespace Model {
-enum class AssociationType { NOT_SET, DOWNSTREAM_SELLER, END_CUSTOMER, INTERNAL };
+enum class AssociationType { NOT_SET, DOWNSTREAM_SELLER, END_CUSTOMER, INTERNAL, MANAGED_SERVICES_END_CUSTOMER };
 
 namespace AssociationTypeMapper {
 AWS_PARTNERCENTRALCHANNEL_API AssociationType GetAssociationTypeForName(const Aws::String& name);

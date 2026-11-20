@@ -22,8 +22,8 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>An engagement option available to potential buyers of a product, such as
- * requesting a private offer or a demo.</p><p><h3>See Also:</h3>   <a
+ * <p>A way you can engage with the seller of a product, such as requesting a
+ * private offer or a demo.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/SellerEngagement">AWS
  * API Reference</a></p>
  */
@@ -36,8 +36,13 @@ class SellerEngagement {
 
   ///@{
   /**
-   * <p>The type of engagement, such as <code>REQUEST_FOR_PRIVATE_OFFER</code> or
-   * <code>REQUEST_FOR_DEMO</code>.</p>
+   * <p>The type of engagement. This field has one of the following values:</p> <dl>
+   * <dt>BUY_NOW</dt> <dd> <p>The product is available for immediate purchase.</p>
+   * </dd> <dt>EXPRESS_PRIVATE_OFFER</dt> <dd> <p>You can request an express private
+   * offer and accept it immediately.</p> </dd> <dt>REQUEST_FOR_DEMO</dt> <dd> <p>You
+   * can request a demo from the seller.</p> </dd> <dt>REQUEST_FOR_PRIVATE_OFFER</dt>
+   * <dd> <p>You can request a private offer from the seller.</p> </dd>
+   * <dt>TRY_FOR_FREE</dt> <dd> <p>The product offers a free trial.</p> </dd> </dl>
    */
   inline SellerEngagementType GetEngagementType() const { return m_engagementType; }
   inline bool EngagementTypeHasBeenSet() const { return m_engagementTypeHasBeenSet; }

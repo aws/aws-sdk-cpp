@@ -47,8 +47,10 @@
 #include <aws/network-security-manager/model/ListAggregateResourceSynchronizationStatusesRequest.h>
 #include <aws/network-security-manager/model/ListDeploymentSnapshotsRequest.h>
 #include <aws/network-security-manager/model/ListDeploymentsRequest.h>
+#include <aws/network-security-manager/model/ListEntityCoveragesRequest.h>
 #include <aws/network-security-manager/model/ListPoliciesRequest.h>
 #include <aws/network-security-manager/model/ListPolicySnapshotsRequest.h>
+#include <aws/network-security-manager/model/ListProtectedResourceCoveragesRequest.h>
 #include <aws/network-security-manager/model/ListResourceAssociationsRequest.h>
 #include <aws/network-security-manager/model/ListResourceSynchronizationStatusesRequest.h>
 #include <aws/network-security-manager/model/ListRuleSnapshotsRequest.h>
@@ -649,6 +651,23 @@ ListDeploymentsOutcome NetworkSecurityManagerClient::ListDeployments(const ListD
                             : ListDeploymentsOutcome(std::move(result.GetError()));
 }
 
+ListEntityCoveragesOutcome NetworkSecurityManagerClient::ListEntityCoverages(const ListEntityCoveragesRequest& request) const {
+  if (!request.EntityArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListEntityCoverages", "Required field: EntityArn, is not set");
+    return ListEntityCoveragesOutcome(Aws::Client::AWSError<NetworkSecurityManagerErrors>(
+        NetworkSecurityManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EntityArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/resource-coverage/entities");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEntityCoveragesOutcome(result.GetResultWithOwnership())
+                            : ListEntityCoveragesOutcome(std::move(result.GetError()));
+}
+
 ListPoliciesOutcome NetworkSecurityManagerClient::ListPolicies(const ListPoliciesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -676,6 +695,24 @@ ListPolicySnapshotsOutcome NetworkSecurityManagerClient::ListPolicySnapshots(con
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListPolicySnapshotsOutcome(result.GetResultWithOwnership())
                             : ListPolicySnapshotsOutcome(std::move(result.GetError()));
+}
+
+ListProtectedResourceCoveragesOutcome NetworkSecurityManagerClient::ListProtectedResourceCoverages(
+    const ListProtectedResourceCoveragesRequest& request) const {
+  if (!request.ResourceArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListProtectedResourceCoverages", "Required field: ResourceArn, is not set");
+    return ListProtectedResourceCoveragesOutcome(Aws::Client::AWSError<NetworkSecurityManagerErrors>(
+        NetworkSecurityManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/resource-coverage/protected-resources");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProtectedResourceCoveragesOutcome(result.GetResultWithOwnership())
+                            : ListProtectedResourceCoveragesOutcome(std::move(result.GetError()));
 }
 
 ListResourceAssociationsOutcome NetworkSecurityManagerClient::ListResourceAssociations(

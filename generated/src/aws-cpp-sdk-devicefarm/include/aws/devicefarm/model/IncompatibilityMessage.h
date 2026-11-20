@@ -53,10 +53,11 @@ class IncompatibilityMessage {
   ///@{
   /**
    * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
-   * <p>ARN</p> </li> <li> <p>FORM_FACTOR (for example, phone or tablet)</p> </li>
-   * <li> <p>MANUFACTURER</p> </li> <li> <p>PLATFORM (for example, Android or
-   * iOS)</p> </li> <li> <p>REMOTE_ACCESS_ENABLED</p> </li> <li>
-   * <p>APPIUM_VERSION</p> </li> </ul>
+   * <p>ARN</p> </li> <li> <p>DEVICE_TYPE (for example, physical or virtual)</p>
+   * </li> <li> <p>FORM_FACTOR (for example, phone or tablet)</p> </li> <li>
+   * <p>MANUFACTURER</p> </li> <li> <p>PLATFORM (for example, Android or iOS)</p>
+   * </li> <li> <p>REMOTE_ACCESS_ENABLED</p> </li> <li> <p>APPIUM_VERSION</p> </li>
+   * </ul>
    */
   inline DeviceAttribute GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

@@ -54,7 +54,9 @@ class ListAutomationRulePreviewRequest : public ComputeOptimizerAutomationReques
 
   ///@{
   /**
-   * <p> The organizational scope for the rule preview. </p>
+   * <p> The organizational scope for the rule preview. This parameter is required
+   * when <code>ruleType</code> is <code>OrganizationRule</code>. Don't specify it
+   * when <code>ruleType</code> is <code>AccountRule</code>. </p>
    */
   inline const OrganizationScope& GetOrganizationScope() const { return m_organizationScope; }
   inline bool OrganizationScopeHasBeenSet() const { return m_organizationScopeHasBeenSet; }
@@ -117,7 +119,7 @@ class ListAutomationRulePreviewRequest : public ComputeOptimizerAutomationReques
   ///@{
   /**
    * <p>The maximum number of automation rule preview results to return in a single
-   * response. Valid range is 1-1000.</p>
+   * response. If you don't specify a value, the default is 100.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

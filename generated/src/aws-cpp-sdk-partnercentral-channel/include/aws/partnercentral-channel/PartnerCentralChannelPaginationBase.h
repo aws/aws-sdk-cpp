@@ -7,6 +7,7 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/partnercentral-channel/model/ListChannelContractsPaginationTraits.h>
 #include <aws/partnercentral-channel/model/ListChannelHandshakesPaginationTraits.h>
 #include <aws/partnercentral-channel/model/ListProgramManagementAccountsPaginationTraits.h>
 #include <aws/partnercentral-channel/model/ListRelationshipsPaginationTraits.h>
@@ -19,6 +20,18 @@ namespace PartnerCentralChannel {
 template <typename DerivedClient>
 class PartnerCentralChannelPaginationBase {
  public:
+  /**
+   * Create a paginator for ListChannelContracts operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelContractsRequest,
+                                    Pagination::ListChannelContractsPaginationTraits<DerivedClient>>
+  ListChannelContractsPaginator(const Model::ListChannelContractsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelContractsRequest,
+                                             Pagination::ListChannelContractsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListChannelHandshakes operation
    */

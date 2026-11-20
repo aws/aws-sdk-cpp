@@ -45,7 +45,8 @@ class FulfillmentOption {
 
   ///@{
   /**
-   * <p>An Amazon Machine Image (AMI) fulfillment option for EC2 deployment.</p>
+   * <p>An Amazon Machine Image (AMI) fulfillment option for Amazon Elastic Compute
+   * Cloud (Amazon EC2) deployment.</p>
    */
   inline const AmazonMachineImageFulfillmentOption& GetAmazonMachineImageFulfillmentOption() const {
     return m_amazonMachineImageFulfillmentOption;
@@ -156,7 +157,8 @@ class FulfillmentOption {
 
   ///@{
   /**
-   * <p>An EC2 Image Builder component fulfillment option.</p>
+   * <p>An Amazon Elastic Compute Cloud (Amazon EC2) Image Builder component
+   * fulfillment option.</p>
    */
   inline const Ec2ImageBuilderComponentFulfillmentOption& GetEc2ImageBuilderComponentFulfillmentOption() const {
     return m_ec2ImageBuilderComponentFulfillmentOption;

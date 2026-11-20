@@ -30,10 +30,11 @@ class GetListingRequest : public MarketplaceDiscoveryRequest {
 
   ///@{
   /**
-   * <p>A BCP 47 language tag or comma-separated priority list specifying the
-   * preferred locale for response content. See <code>Locale</code> for supported
-   * values, constraints, fallback behavior, and the default locale. If omitted, the
-   * service returns content in the default locale.</p>
+   * <p>The preferred locale for response content, as a Best Current Practice 47 (BCP
+   * 47) language tag or a comma-separated priority list of language tags. See
+   * <code>Locale</code> for supported values, constraints, fallback behavior, and
+   * the default locale. If you omit this field, the service returns content in the
+   * default locale.</p>
    */
   inline const Aws::String& GetLocale() const { return m_locale; }
   inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }

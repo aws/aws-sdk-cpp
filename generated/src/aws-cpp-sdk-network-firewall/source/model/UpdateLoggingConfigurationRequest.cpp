@@ -23,6 +23,9 @@ Aws::String UpdateLoggingConfigurationRequest::SerializePayload() const {
   if (m_firewallNameHasBeenSet) {
     mapSize++;
   }
+  if (m_firewallTypeHasBeenSet) {
+    mapSize++;
+  }
   if (m_loggingConfigurationHasBeenSet) {
     mapSize++;
   }
@@ -40,6 +43,11 @@ Aws::String UpdateLoggingConfigurationRequest::SerializePayload() const {
   if (m_firewallNameHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallName"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_firewallName.c_str()));
+  }
+
+  if (m_firewallTypeHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(FirewallTypeMapper::GetNameForFirewallType(m_firewallType).c_str()));
   }
 
   if (m_loggingConfigurationHasBeenSet) {

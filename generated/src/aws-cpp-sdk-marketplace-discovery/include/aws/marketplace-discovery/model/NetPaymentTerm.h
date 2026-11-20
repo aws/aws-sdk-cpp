@@ -21,8 +21,8 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Defines a net payment term that sets how many days after the invoice date the
- * payment is due.</p><p><h3>See Also:</h3>   <a
+ * <p>Describes a net payment term that sets how many days after the invoice date
+ * the payment is due.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/NetPaymentTerm">AWS
  * API Reference</a></p>
  */

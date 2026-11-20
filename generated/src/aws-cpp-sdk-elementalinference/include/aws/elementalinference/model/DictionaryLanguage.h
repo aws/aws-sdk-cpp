@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ElementalInference {
 namespace Model {
-enum class DictionaryLanguage { NOT_SET, eng, fra, ita, deu, spa, por };
+enum class DictionaryLanguage { NOT_SET, eng, fra, ita, deu, spa, por, ara };
 
 namespace DictionaryLanguageMapper {
 AWS_ELEMENTALINFERENCE_API DictionaryLanguage GetDictionaryLanguageForName(const Aws::String& name);

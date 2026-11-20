@@ -53,7 +53,8 @@ class ListingBadge {
 
   ///@{
   /**
-   * <p>The machine-readable type of the badge.</p>
+   * <p>The machine-readable type of the badge. See <code>ListingBadgeType</code> for
+   * the values.</p>
    */
   inline ListingBadgeType GetBadgeType() const { return m_badgeType; }
   inline bool BadgeTypeHasBeenSet() const { return m_badgeTypeHasBeenSet; }

@@ -30,6 +30,10 @@ TemplateSummary& TemplateSummary::operator=(JsonView jsonValue) {
     m_templateName = jsonValue.GetString("templateName");
     m_templateNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("templateOwner")) {
+    m_templateOwner = TemplateOwnerMapper::GetTemplateOwnerForName(jsonValue.GetString("templateOwner"));
+    m_templateOwnerHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = EntityStatusMapper::GetEntityStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
@@ -66,6 +70,10 @@ JsonValue TemplateSummary::Jsonize() const {
 
   if (m_templateNameHasBeenSet) {
     payload.WithString("templateName", m_templateName);
+  }
+
+  if (m_templateOwnerHasBeenSet) {
+    payload.WithString("templateOwner", TemplateOwnerMapper::GetNameForTemplateOwner(m_templateOwner));
   }
 
   if (m_statusHasBeenSet) {

@@ -24,8 +24,8 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Describes an EC2 Image Builder component fulfillment option.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Describes an Amazon Elastic Compute Cloud (Amazon EC2) Image Builder
+ * component fulfillment option.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/Ec2ImageBuilderComponentFulfillmentOption">AWS
  * API Reference</a></p>
  */
@@ -150,7 +150,7 @@ class Ec2ImageBuilderComponentFulfillmentOption {
 
   ///@{
   /**
-   * <p>The AWS services supported by this EC2 Image Builder component.</p>
+   * <p>The AWS services that this EC2 Image Builder component supports.</p>
    */
   inline const Aws::Vector<AwsSupportedService>& GetAwsSupportedServices() const { return m_awsSupportedServices; }
   inline bool AwsSupportedServicesHasBeenSet() const { return m_awsSupportedServicesHasBeenSet; }
@@ -174,7 +174,7 @@ class Ec2ImageBuilderComponentFulfillmentOption {
 
   ///@{
   /**
-   * <p>Release notes describing changes in this version of the fulfillment
+   * <p>Release notes that describe the changes in this version of the fulfillment
    * option.</p>
    */
   inline const Aws::String& GetReleaseNotes() const { return m_releaseNotes; }

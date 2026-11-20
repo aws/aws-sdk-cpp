@@ -69,7 +69,8 @@ class UpdateGlossaryRequest : public GlueRequest {
 
   ///@{
   /**
-   * <p>The updated description of the glossary.</p>
+   * The new description. Omit it to keep the current description; set it to an empty
+   * string to clear it.
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }

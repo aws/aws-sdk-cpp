@@ -34,8 +34,8 @@ class GetOfferSetResult {
 
   ///@{
   /**
-   * <p>The locale of the returned content. Indicates whether the response contains
-   * content in the requested locale, or fell back to the default locale. See
+   * <p>The locale of the returned content. This value indicates whether the response
+   * contains content in the requested locale or fell back to the default locale. See
    * <code>Locale</code> for details.</p>
    */
   inline const Aws::String& GetLocale() const { return m_locale; }
@@ -104,7 +104,7 @@ class GetOfferSetResult {
 
   ///@{
   /**
-   * <p>The date and time when the offer set became available to the buyer.</p>
+   * <p>The date and time when the offer set became available to you.</p>
    */
   inline const Aws::Utils::DateTime& GetAvailableFromTime() const { return m_availableFromTime; }
   template <typename AvailableFromTimeT = Aws::Utils::DateTime>
@@ -139,7 +139,7 @@ class GetOfferSetResult {
 
   ///@{
   /**
-   * <p>Detailed information about the offer set that helps buyers understand its
+   * <p>Detailed information about the offer set that helps you understand its
    * purpose and contents.</p>
    */
   inline const Aws::String& GetBuyerNotes() const { return m_buyerNotes; }
@@ -175,7 +175,7 @@ class GetOfferSetResult {
   ///@{
   /**
    * <p>Badges indicating special attributes of the offer set, such as private
-   * pricing or future dated.</p>
+   * pricing or future-dated.</p>
    */
   inline const Aws::Vector<PurchaseOptionBadge>& GetBadges() const { return m_badges; }
   template <typename BadgesT = Aws::Vector<PurchaseOptionBadge>>

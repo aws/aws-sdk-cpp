@@ -23,7 +23,7 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Describes an API-based fulfillment option, where the product is accessed
+ * <p>Describes an API-based fulfillment option, where you access the product
  * through an API integration.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ApiFulfillmentOption">AWS
  * API Reference</a></p>

@@ -16,6 +16,7 @@ namespace Model {
 namespace Av1AdaptiveQuantizationMapper {
 
 static const int OFF_HASH = HashingUtils::HashString("OFF");
+static const int AUTO_HASH = HashingUtils::HashString("AUTO");
 static const int LOW_HASH = HashingUtils::HashString("LOW");
 static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
 static const int HIGH_HASH = HashingUtils::HashString("HIGH");
@@ -26,6 +27,8 @@ Av1AdaptiveQuantization GetAv1AdaptiveQuantizationForName(const Aws::String& nam
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == OFF_HASH) {
     return Av1AdaptiveQuantization::OFF;
+  } else if (hashCode == AUTO_HASH) {
+    return Av1AdaptiveQuantization::AUTO;
   } else if (hashCode == LOW_HASH) {
     return Av1AdaptiveQuantization::LOW;
   } else if (hashCode == MEDIUM_HASH) {
@@ -52,6 +55,8 @@ Aws::String GetNameForAv1AdaptiveQuantization(Av1AdaptiveQuantization enumValue)
       return {};
     case Av1AdaptiveQuantization::OFF:
       return "OFF";
+    case Av1AdaptiveQuantization::AUTO:
+      return "AUTO";
     case Av1AdaptiveQuantization::LOW:
       return "LOW";
     case Av1AdaptiveQuantization::MEDIUM:

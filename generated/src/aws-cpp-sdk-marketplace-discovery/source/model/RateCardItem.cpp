@@ -45,6 +45,13 @@ RateCardItem& RateCardItem::operator=(JsonView jsonValue) {
     m_price = jsonValue.GetString("price");
     m_priceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("regionalPrices")) {
+    Aws::Utils::Array<JsonView> regionalPricesJsonList = jsonValue.GetArray("regionalPrices");
+    for (unsigned regionalPricesIndex = 0; regionalPricesIndex < regionalPricesJsonList.GetLength(); ++regionalPricesIndex) {
+      m_regionalPrices.push_back(regionalPricesJsonList[regionalPricesIndex].AsObject());
+    }
+    m_regionalPricesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -77,6 +84,14 @@ JsonValue RateCardItem::Jsonize() const {
 
   if (m_priceHasBeenSet) {
     payload.WithString("price", m_price);
+  }
+
+  if (m_regionalPricesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> regionalPricesJsonList(m_regionalPrices.size());
+    for (unsigned regionalPricesIndex = 0; regionalPricesIndex < regionalPricesJsonList.GetLength(); ++regionalPricesIndex) {
+      regionalPricesJsonList[regionalPricesIndex].AsObject(m_regionalPrices[regionalPricesIndex].Jsonize());
+    }
+    payload.WithArray("regionalPrices", std::move(regionalPricesJsonList));
   }
 
   return payload;

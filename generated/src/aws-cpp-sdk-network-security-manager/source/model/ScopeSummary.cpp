@@ -30,6 +30,10 @@ ScopeSummary& ScopeSummary::operator=(JsonView jsonValue) {
     m_scopeName = jsonValue.GetString("scopeName");
     m_scopeNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("specializedScopeType")) {
+    m_specializedScopeType = SpecializedScopeTypeMapper::GetSpecializedScopeTypeForName(jsonValue.GetString("specializedScopeType"));
+    m_specializedScopeTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = EntityStatusMapper::GetEntityStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
@@ -62,6 +66,10 @@ JsonValue ScopeSummary::Jsonize() const {
 
   if (m_scopeNameHasBeenSet) {
     payload.WithString("scopeName", m_scopeName);
+  }
+
+  if (m_specializedScopeTypeHasBeenSet) {
+    payload.WithString("specializedScopeType", SpecializedScopeTypeMapper::GetNameForSpecializedScopeType(m_specializedScopeType));
   }
 
   if (m_statusHasBeenSet) {

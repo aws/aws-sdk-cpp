@@ -75,9 +75,9 @@ class ChangeTagsForResourceRequest : public Route53Request {
   ///@{
   /**
    * <p>A complex type that contains a list of the tags that you want to add to the
-   * specified health check or hosted zone and/or the tags that you want to edit
-   * <code>Value</code> for.</p> <p>You can add a maximum of 10 tags to a health
-   * check, a health check source, or a hosted zone.</p>
+   * specified health check, health check source, or hosted zone and/or the tags that
+   * you want to edit <code>Value</code> for.</p> <p>You can add a maximum of 10 tags
+   * to a health check, a health check source, or a hosted zone.</p>
    */
   inline const Aws::Vector<Tag>& GetAddTags() const { return m_addTags; }
   inline bool AddTagsHasBeenSet() const { return m_addTagsHasBeenSet; }

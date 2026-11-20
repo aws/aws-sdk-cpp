@@ -110,6 +110,34 @@ class AWS_PARTNERCENTRALCHANNEL_API PartnerCentralChannelClient
   }
 
   /**
+   * <p>Cancels a pending channel contract created within the last 30 days. A request
+   * for a channel contract that isn't PENDING, including one that is already
+   * CANCELED, fails with a ValidationException.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/CancelChannelContract">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelChannelContractOutcome CancelChannelContract(const Model::CancelChannelContractRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelChannelContract that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CancelChannelContractRequestT = Model::CancelChannelContractRequest>
+  Model::CancelChannelContractOutcomeCallable CancelChannelContractCallable(const CancelChannelContractRequestT& request) const {
+    return SubmitCallable(&PartnerCentralChannelClient::CancelChannelContract, request);
+  }
+
+  /**
+   * An Async wrapper for CancelChannelContract that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CancelChannelContractRequestT = Model::CancelChannelContractRequest>
+  void CancelChannelContractAsync(const CancelChannelContractRequestT& request, const CancelChannelContractResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralChannelClient::CancelChannelContract, request, handler, context);
+  }
+
+  /**
    * <p>Cancels a pending channel handshake request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/CancelChannelHandshake">AWS
    * API Reference</a></p>
@@ -134,6 +162,34 @@ class AWS_PARTNERCENTRALCHANNEL_API PartnerCentralChannelClient
                                    const CancelChannelHandshakeResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PartnerCentralChannelClient::CancelChannelHandshake, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new channel contract and sends it to the signatory for signature.
+   * In the Sandbox catalog, the channel contract is accepted
+   * automatically.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/CreateChannelContract">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateChannelContractOutcome CreateChannelContract(const Model::CreateChannelContractRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateChannelContract that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateChannelContractRequestT = Model::CreateChannelContractRequest>
+  Model::CreateChannelContractOutcomeCallable CreateChannelContractCallable(const CreateChannelContractRequestT& request) const {
+    return SubmitCallable(&PartnerCentralChannelClient::CreateChannelContract, request);
+  }
+
+  /**
+   * An Async wrapper for CreateChannelContract that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateChannelContractRequestT = Model::CreateChannelContractRequest>
+  void CreateChannelContractAsync(const CreateChannelContractRequestT& request, const CreateChannelContractResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralChannelClient::CreateChannelContract, request, handler, context);
   }
 
   /**
@@ -277,6 +333,33 @@ class AWS_PARTNERCENTRALCHANNEL_API PartnerCentralChannelClient
   }
 
   /**
+   * <p>Retrieves details of a specific channel contract.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/GetChannelContract">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetChannelContractOutcome GetChannelContract(const Model::GetChannelContractRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetChannelContract that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetChannelContractRequestT = Model::GetChannelContractRequest>
+  Model::GetChannelContractOutcomeCallable GetChannelContractCallable(const GetChannelContractRequestT& request) const {
+    return SubmitCallable(&PartnerCentralChannelClient::GetChannelContract, request);
+  }
+
+  /**
+   * An Async wrapper for GetChannelContract that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetChannelContractRequestT = Model::GetChannelContractRequest>
+  void GetChannelContractAsync(const GetChannelContractRequestT& request, const GetChannelContractResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralChannelClient::GetChannelContract, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves details of a specific partner relationship.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/GetRelationship">AWS
@@ -300,6 +383,33 @@ class AWS_PARTNERCENTRALCHANNEL_API PartnerCentralChannelClient
   void GetRelationshipAsync(const GetRelationshipRequestT& request, const GetRelationshipResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PartnerCentralChannelClient::GetRelationship, request, handler, context);
+  }
+
+  /**
+   * <p>Lists channel contracts based on specified criteria.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/ListChannelContracts">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListChannelContractsOutcome ListChannelContracts(const Model::ListChannelContractsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListChannelContracts that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListChannelContractsRequestT = Model::ListChannelContractsRequest>
+  Model::ListChannelContractsOutcomeCallable ListChannelContractsCallable(const ListChannelContractsRequestT& request) const {
+    return SubmitCallable(&PartnerCentralChannelClient::ListChannelContracts, request);
+  }
+
+  /**
+   * An Async wrapper for ListChannelContracts that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListChannelContractsRequestT = Model::ListChannelContractsRequest>
+  void ListChannelContractsAsync(const ListChannelContractsRequestT& request, const ListChannelContractsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PartnerCentralChannelClient::ListChannelContracts, request, handler, context);
   }
 
   /**

@@ -19,7 +19,8 @@ enum class IpamRoutingPolicyRegistrationState {
   update_in_progress,
   update_complete,
   delete_in_progress,
-  delete_complete
+  delete_complete,
+  disable_complete
 };
 
 namespace IpamRoutingPolicyRegistrationStateMapper {

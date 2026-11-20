@@ -56,8 +56,8 @@ class ConfigurableUpfrontRateCardItem {
 
   ///@{
   /**
-   * <p>Constraints on how the buyer can configure this rate card, such as whether
-   * multiple dimensions can be selected.</p>
+   * <p>Constraints on how you can configure this rate card, such as whether you can
+   * select multiple dimensions.</p>
    */
   inline const Constraints& GetConstraints() const { return m_constraints; }
   inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }

@@ -20,7 +20,6 @@
 #include <aws/glue/GlueClient.h>
 #include <aws/glue/GlueEndpointProvider.h>
 #include <aws/glue/GlueErrorMarshaller.h>
-#include <aws/glue/model/ListColumnStatisticsTaskRunsRequest.h>
 #include <aws/glue/model/ListConnectionTypesRequest.h>
 #include <aws/glue/model/ListCrawlersRequest.h>
 #include <aws/glue/model/ListCrawlsRequest.h>
@@ -56,7 +55,6 @@
 #include <aws/glue/model/ModifyIntegrationRequest.h>
 #include <aws/glue/model/PublishDataQualityResultV2Request.h>
 #include <aws/glue/model/PutAssetRequest.h>
-#include <aws/glue/model/PutAssetTypeRequest.h>
 #include <aws/glue/model/PutAttachmentRequest.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsRequest.h>
 #include <aws/glue/model/PutDataCatalogExportConfigurationRequest.h>
@@ -120,6 +118,8 @@
 #include <aws/glue/model/UpdateGlossaryTermRequest.h>
 #include <aws/glue/model/UpdateGlueIdentityCenterConfigurationRequest.h>
 #include <aws/glue/model/UpdateIntegrationResourcePropertyRequest.h>
+#include <aws/glue/model/UpdateIntegrationTablePropertiesRequest.h>
+#include <aws/glue/model/UpdateJobRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,12 +131,6 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
-
-ListColumnStatisticsTaskRunsOutcome GlueClient::ListColumnStatisticsTaskRuns(const ListColumnStatisticsTaskRunsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListColumnStatisticsTaskRunsOutcome(result.GetResultWithOwnership())
-                            : ListColumnStatisticsTaskRunsOutcome(std::move(result.GetError()));
-}
 
 ListConnectionTypesOutcome GlueClient::ListConnectionTypes(const ListConnectionTypesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -340,11 +334,6 @@ PublishDataQualityResultV2Outcome GlueClient::PublishDataQualityResultV2(const P
 PutAssetOutcome GlueClient::PutAsset(const PutAssetRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutAssetOutcome(result.GetResultWithOwnership()) : PutAssetOutcome(std::move(result.GetError()));
-}
-
-PutAssetTypeOutcome GlueClient::PutAssetType(const PutAssetTypeRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? PutAssetTypeOutcome(result.GetResultWithOwnership()) : PutAssetTypeOutcome(std::move(result.GetError()));
 }
 
 PutAttachmentOutcome GlueClient::PutAttachment(const PutAttachmentRequest& request) const {
@@ -720,4 +709,16 @@ UpdateIntegrationResourcePropertyOutcome GlueClient::UpdateIntegrationResourcePr
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateIntegrationResourcePropertyOutcome(result.GetResultWithOwnership())
                             : UpdateIntegrationResourcePropertyOutcome(std::move(result.GetError()));
+}
+
+UpdateIntegrationTablePropertiesOutcome GlueClient::UpdateIntegrationTableProperties(
+    const UpdateIntegrationTablePropertiesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIntegrationTablePropertiesOutcome(result.GetResultWithOwnership())
+                            : UpdateIntegrationTablePropertiesOutcome(std::move(result.GetError()));
+}
+
+UpdateJobOutcome GlueClient::UpdateJob(const UpdateJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateJobOutcome(result.GetResultWithOwnership()) : UpdateJobOutcome(std::move(result.GetError()));
 }

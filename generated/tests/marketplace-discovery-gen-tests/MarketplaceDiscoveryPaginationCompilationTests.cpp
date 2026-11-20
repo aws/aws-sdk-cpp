@@ -12,6 +12,7 @@
 #include <aws/marketplace-discovery/model/ListPurchaseOptionsPaginationTraits.h>
 #include <aws/marketplace-discovery/model/SearchListingsPaginationTraits.h>
 #include <aws/marketplace-discovery/model/ListFulfillmentOptionsPaginationTraits.h>
+#include <aws/marketplace-discovery/model/ListListingAttributesPaginationTraits.h>
 #include <aws/marketplace-discovery/model/SearchFacetsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

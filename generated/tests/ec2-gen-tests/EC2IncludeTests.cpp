@@ -1669,6 +1669,8 @@
 #include <aws/ec2/model/FilterByDimension.h>
 #include <aws/ec2/model/FilterPortRange.h>
 #include <aws/ec2/model/FindingsFound.h>
+#include <aws/ec2/model/FirewallMode.h>
+#include <aws/ec2/model/FirewallOnboardingStatus.h>
 #include <aws/ec2/model/FirewallStatefulRule.h>
 #include <aws/ec2/model/FirewallStatelessRule.h>
 #include <aws/ec2/model/FleetActivityStatus.h>
@@ -1959,6 +1961,7 @@
 #include <aws/ec2/model/IcmpTypeCode.h>
 #include <aws/ec2/model/IdFormat.h>
 #include <aws/ec2/model/Igmpv2SupportValue.h>
+#include <aws/ec2/model/IgwFirewall.h>
 #include <aws/ec2/model/Image.h>
 #include <aws/ec2/model/ImageAncestryEntry.h>
 #include <aws/ec2/model/ImageAttributeName.h>
@@ -2565,6 +2568,8 @@
 #include <aws/ec2/model/NetworkBandwidthGbpsRequest.h>
 #include <aws/ec2/model/NetworkCardInfo.h>
 #include <aws/ec2/model/NetworkCardInterfaceType.h>
+#include <aws/ec2/model/NetworkFirewallAssociation.h>
+#include <aws/ec2/model/NetworkFirewallConnectivityType.h>
 #include <aws/ec2/model/NetworkInfo.h>
 #include <aws/ec2/model/NetworkInsightsAccessScope.h>
 #include <aws/ec2/model/NetworkInsightsAccessScopeAnalysis.h>

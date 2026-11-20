@@ -239,8 +239,8 @@ class AliasTarget {
 
   ///@{
   /**
-   * <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias,
-   * and weighted alias resource record sets:</i> When
+   * <p> <i>Applies only to alias, az-affinity alias, failover alias, geolocation
+   * alias, latency alias, and weighted alias resource record sets:</i> When
    * <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record
    * set inherits the health of the referenced Amazon Web Services resource, such as
    * an ELB load balancer or another resource record set in the hosted zone.</p>

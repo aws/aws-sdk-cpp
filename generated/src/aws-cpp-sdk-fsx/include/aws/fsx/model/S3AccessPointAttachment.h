@@ -47,8 +47,12 @@ class S3AccessPointAttachment {
    * creating the S3 access point and attachment</p> </li> <li> <p>DELETING - Amazon
    * FSx is deleting the S3 access point and attachment</p> </li> <li> <p>FAILED -
    * The S3 access point attachment is in a failed state. Delete and detach the S3
-   * access point attachment, and create a new one.</p> </li> <li> <p>UPDATING -
-   * Amazon FSx is updating the S3 access point attachment</p> </li> </ul>
+   * access point attachment, and create a new one.</p> </li> <li> <p>MISCONFIGURED -
+   * The S3 access point attachment has a configuration issue that prevents it from
+   * serving requests. Amazon FSx periodically checks for this condition and
+   * automatically returns the access point to AVAILABLE when the issue is
+   * resolved.</p> </li> <li> <p>UPDATING - Amazon FSx is updating the S3 access
+   * point attachment</p> </li> </ul>
    */
   inline S3AccessPointAttachmentLifecycle GetLifecycle() const { return m_lifecycle; }
   inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }

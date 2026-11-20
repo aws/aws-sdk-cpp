@@ -8,6 +8,7 @@
 #include <aws/network-security-manager/NetworkSecurityManagerRequest.h>
 #include <aws/network-security-manager/NetworkSecurityManager_EXPORTS.h>
 #include <aws/network-security-manager/model/EntityStatusFilter.h>
+#include <aws/network-security-manager/model/TemplateOwner.h>
 
 #include <utility>
 
@@ -88,15 +89,37 @@ class ListTemplatesRequest : public NetworkSecurityManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies which templates to list. The default is <code>CUSTOMER</code>.
+   * Valid values:</p> <ul> <li> <p> <code>CUSTOMER</code> – Lists the templates in
+   * your account.</p> </li> <li> <p> <code>AWS</code> – Lists the AWS managed
+   * templates.</p> </li> </ul>
+   */
+  inline TemplateOwner GetTemplateOwner() const { return m_templateOwner; }
+  inline bool TemplateOwnerHasBeenSet() const { return m_templateOwnerHasBeenSet; }
+  inline void SetTemplateOwner(TemplateOwner value) {
+    m_templateOwnerHasBeenSet = true;
+    m_templateOwner = value;
+  }
+  inline ListTemplatesRequest& WithTemplateOwner(TemplateOwner value) {
+    SetTemplateOwner(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_maxResults{0};
 
   Aws::String m_nextToken;
 
   EntityStatusFilter m_status{EntityStatusFilter::NOT_SET};
+
+  TemplateOwner m_templateOwner{TemplateOwner::NOT_SET};
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_templateOwnerHasBeenSet = false;
 };
 
 }  // namespace Model

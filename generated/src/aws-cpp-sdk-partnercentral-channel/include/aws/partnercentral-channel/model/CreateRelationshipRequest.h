@@ -4,11 +4,13 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-channel/PartnerCentralChannelRequest.h>
 #include <aws/partnercentral-channel/PartnerCentralChannel_EXPORTS.h>
+#include <aws/partnercentral-channel/model/AccountScope.h>
 #include <aws/partnercentral-channel/model/AssociationType.h>
 #include <aws/partnercentral-channel/model/ResaleAccountModel.h>
 #include <aws/partnercentral-channel/model/Sector.h>
@@ -128,7 +130,8 @@ class CreateRelationshipRequest : public PartnerCentralChannelRequest {
 
   ///@{
   /**
-   * <p>The resale account model for the relationship.</p>
+   * <p>The resale account model for the relationship. Applies only to billing
+   * transfer relationships.</p>
    */
   inline ResaleAccountModel GetResaleAccountModel() const { return m_resaleAccountModel; }
   inline bool ResaleAccountModelHasBeenSet() const { return m_resaleAccountModelHasBeenSet; }
@@ -202,7 +205,8 @@ class CreateRelationshipRequest : public PartnerCentralChannelRequest {
 
   ///@{
   /**
-   * <p>The support plan requested for this relationship.</p>
+   * <p>The support plan requested for this relationship. Applies only to billing
+   * transfer relationships.</p>
    */
   inline const SupportPlan& GetRequestedSupportPlan() const { return m_requestedSupportPlan; }
   inline bool RequestedSupportPlanHasBeenSet() const { return m_requestedSupportPlanHasBeenSet; }
@@ -214,6 +218,43 @@ class CreateRelationshipRequest : public PartnerCentralChannelRequest {
   template <typename RequestedSupportPlanT = SupportPlan>
   CreateRelationshipRequest& WithRequestedSupportPlan(RequestedSupportPlanT&& value) {
     SetRequestedSupportPlan(std::forward<RequestedSupportPlanT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The account scope for a managed services relationship (for example, entire
+   * organization, specific member accounts). Applies only to managed services
+   * relationships.</p>
+   */
+  inline AccountScope GetAccountScope() const { return m_accountScope; }
+  inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
+  inline void SetAccountScope(AccountScope value) {
+    m_accountScopeHasBeenSet = true;
+    m_accountScope = value;
+  }
+  inline CreateRelationshipRequest& WithAccountScope(AccountScope value) {
+    SetAccountScope(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The start date of the managed services relationship. Applies only to managed
+   * services relationships.</p>
+   */
+  inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
+  inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
+  template <typename StartDateT = Aws::Utils::DateTime>
+  void SetStartDate(StartDateT&& value) {
+    m_startDateHasBeenSet = true;
+    m_startDate = std::forward<StartDateT>(value);
+  }
+  template <typename StartDateT = Aws::Utils::DateTime>
+  CreateRelationshipRequest& WithStartDate(StartDateT&& value) {
+    SetStartDate(std::forward<StartDateT>(value));
     return *this;
   }
   ///@}
@@ -237,6 +278,10 @@ class CreateRelationshipRequest : public PartnerCentralChannelRequest {
   Aws::Vector<Tag> m_tags;
 
   SupportPlan m_requestedSupportPlan;
+
+  AccountScope m_accountScope{AccountScope::NOT_SET};
+
+  Aws::Utils::DateTime m_startDate{};
   bool m_catalogHasBeenSet = false;
   bool m_associationTypeHasBeenSet = false;
   bool m_programManagementAccountIdentifierHasBeenSet = false;
@@ -247,6 +292,8 @@ class CreateRelationshipRequest : public PartnerCentralChannelRequest {
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
   bool m_requestedSupportPlanHasBeenSet = false;
+  bool m_accountScopeHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -95,15 +95,47 @@ class ListInferenceProfilesRequest : public BedrockRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the
+   * project's trusted access program participation when determining which
+   * system-defined inference profiles to return. The project must belong to your
+   * account in the same AWS Region and partition as the request.</p> <p>If you omit
+   * this parameter or specify <code>default</code>, Amazon Bedrock uses your
+   * account's participation, including organization inheritance.</p> <p>A project
+   * that doesn't exist or is archived causes a <code>ValidationException</code>.
+   * Specifying a project other than <code>default</code> with
+   * <code>typeEquals</code> set to <code>APPLICATION</code> also causes a
+   * <code>ValidationException</code>. Omit <code>typeEquals</code> or set it to
+   * <code>SYSTEM_DEFINED</code> to list system-defined inference profiles for the
+   * project.</p>
+   */
+  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
+  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
+  template <typename ProjectIdentifierT = Aws::String>
+  void SetProjectIdentifier(ProjectIdentifierT&& value) {
+    m_projectIdentifierHasBeenSet = true;
+    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
+  }
+  template <typename ProjectIdentifierT = Aws::String>
+  ListInferenceProfilesRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
+    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_maxResults{0};
 
   Aws::String m_nextToken;
 
   InferenceProfileType m_typeEquals{InferenceProfileType::NOT_SET};
+
+  Aws::String m_projectIdentifier;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_typeEqualsHasBeenSet = false;
+  bool m_projectIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -228,6 +228,30 @@ class ConverseStreamRequest : public BedrockRuntimeRequest {
 
   ///@{
   /**
+   * <p>The ID or Amazon Resource Name (ARN) of the project to use for this
+   * invocation. The project must be active and belong to your AWS account and the
+   * AWS Region to which you send the request. Specify <code>default</code> or omit
+   * this field to use the default project for your account.</p> <p>For a non-default
+   * project, the inference target must resolve to a foundation model or
+   * system-defined inference profile. Application inference profiles don't support
+   * non-default projects.</p>
+   */
+  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
+  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
+  template <typename ProjectIdentifierT = Aws::String>
+  void SetProjectIdentifier(ProjectIdentifierT&& value) {
+    m_projectIdentifierHasBeenSet = true;
+    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
+  }
+  template <typename ProjectIdentifierT = Aws::String>
+  ConverseStreamRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
+    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Additional inference parameters that the model supports, beyond the base set
    * of inference parameters that <code>Converse</code> and
    * <code>ConverseStream</code> support in the <code>inferenceConfig</code> field.
@@ -401,6 +425,8 @@ class ConverseStreamRequest : public BedrockRuntimeRequest {
 
   GuardrailStreamConfiguration m_guardrailConfig;
 
+  Aws::String m_projectIdentifier;
+
   Aws::Utils::Document m_additionalModelRequestFields;
 
   Aws::Map<Aws::String, PromptVariableValues> m_promptVariables;
@@ -423,6 +449,7 @@ class ConverseStreamRequest : public BedrockRuntimeRequest {
   bool m_inferenceConfigHasBeenSet = false;
   bool m_toolConfigHasBeenSet = false;
   bool m_guardrailConfigHasBeenSet = false;
+  bool m_projectIdentifierHasBeenSet = false;
   bool m_additionalModelRequestFieldsHasBeenSet = false;
   bool m_promptVariablesHasBeenSet = false;
   bool m_additionalModelResponseFieldPathsHasBeenSet = false;

@@ -54,6 +54,24 @@ class EnvironmentConfigurationUserParameter {
 
   ///@{
   /**
+   * <p>The ID of the environment blueprint.</p>
+   */
+  inline const Aws::String& GetEnvironmentBlueprintId() const { return m_environmentBlueprintId; }
+  inline bool EnvironmentBlueprintIdHasBeenSet() const { return m_environmentBlueprintIdHasBeenSet; }
+  template <typename EnvironmentBlueprintIdT = Aws::String>
+  void SetEnvironmentBlueprintId(EnvironmentBlueprintIdT&& value) {
+    m_environmentBlueprintIdHasBeenSet = true;
+    m_environmentBlueprintId = std::forward<EnvironmentBlueprintIdT>(value);
+  }
+  template <typename EnvironmentBlueprintIdT = Aws::String>
+  EnvironmentConfigurationUserParameter& WithEnvironmentBlueprintId(EnvironmentBlueprintIdT&& value) {
+    SetEnvironmentBlueprintId(std::forward<EnvironmentBlueprintIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the account/Region that is to be used during project creation for a
    * particular blueprint.</p>
    */
@@ -115,12 +133,15 @@ class EnvironmentConfigurationUserParameter {
  private:
   Aws::String m_environmentId;
 
+  Aws::String m_environmentBlueprintId;
+
   EnvironmentResolvedAccount m_environmentResolvedAccount;
 
   Aws::String m_environmentConfigurationName;
 
   Aws::Vector<EnvironmentParameter> m_environmentParameters;
   bool m_environmentIdHasBeenSet = false;
+  bool m_environmentBlueprintIdHasBeenSet = false;
   bool m_environmentResolvedAccountHasBeenSet = false;
   bool m_environmentConfigurationNameHasBeenSet = false;
   bool m_environmentParametersHasBeenSet = false;

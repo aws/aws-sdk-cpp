@@ -21,6 +21,7 @@
 /* Service model headers required in SageMakerClient header */
 #include <aws/core/NoResult.h>
 #include <aws/sagemaker/model/AddAssociationResult.h>
+#include <aws/sagemaker/model/AddInferenceGatewayResult.h>
 #include <aws/sagemaker/model/AddTagsResult.h>
 #include <aws/sagemaker/model/AssociateTrialComponentResult.h>
 #include <aws/sagemaker/model/AttachClusterNodeNetworkInterfaceResult.h>
@@ -55,6 +56,7 @@
 #include <aws/sagemaker/model/CreateExperimentResult.h>
 #include <aws/sagemaker/model/CreateFeatureGroupResult.h>
 #include <aws/sagemaker/model/CreateFlowDefinitionResult.h>
+#include <aws/sagemaker/model/CreateGlobalInferenceGatewayResult.h>
 #include <aws/sagemaker/model/CreateHubContentPresignedUrlsResult.h>
 #include <aws/sagemaker/model/CreateHubContentReferenceResult.h>
 #include <aws/sagemaker/model/CreateHubResult.h>
@@ -116,6 +118,7 @@
 #include <aws/sagemaker/model/DeleteEndpointPolicyResult.h>
 #include <aws/sagemaker/model/DeleteExperimentResult.h>
 #include <aws/sagemaker/model/DeleteFlowDefinitionResult.h>
+#include <aws/sagemaker/model/DeleteGlobalInferenceGatewayResult.h>
 #include <aws/sagemaker/model/DeleteHumanTaskUiResult.h>
 #include <aws/sagemaker/model/DeleteImageResult.h>
 #include <aws/sagemaker/model/DeleteImageVersionResult.h>
@@ -163,6 +166,7 @@
 #include <aws/sagemaker/model/DescribeFeatureGroupResult.h>
 #include <aws/sagemaker/model/DescribeFeatureMetadataResult.h>
 #include <aws/sagemaker/model/DescribeFlowDefinitionResult.h>
+#include <aws/sagemaker/model/DescribeGlobalInferenceGatewayResult.h>
 #include <aws/sagemaker/model/DescribeHubContentResult.h>
 #include <aws/sagemaker/model/DescribeHubResult.h>
 #include <aws/sagemaker/model/DescribeHumanTaskUiResult.h>
@@ -288,6 +292,8 @@
 #include <aws/sagemaker/model/ListFeatureGroupsResult.h>
 #include <aws/sagemaker/model/ListFlowDefinitionsRequest.h>
 #include <aws/sagemaker/model/ListFlowDefinitionsResult.h>
+#include <aws/sagemaker/model/ListGlobalInferenceGatewaysRequest.h>
+#include <aws/sagemaker/model/ListGlobalInferenceGatewaysResult.h>
 #include <aws/sagemaker/model/ListHubContentVersionsResult.h>
 #include <aws/sagemaker/model/ListHubContentsResult.h>
 #include <aws/sagemaker/model/ListHubsRequest.h>
@@ -303,6 +309,7 @@
 #include <aws/sagemaker/model/ListInferenceComponentsResult.h>
 #include <aws/sagemaker/model/ListInferenceExperimentsRequest.h>
 #include <aws/sagemaker/model/ListInferenceExperimentsResult.h>
+#include <aws/sagemaker/model/ListInferenceGatewaysResult.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsResult.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsRequest.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsResult.h>
@@ -393,10 +400,12 @@
 #include <aws/sagemaker/model/ListWorkforcesResult.h>
 #include <aws/sagemaker/model/ListWorkteamsRequest.h>
 #include <aws/sagemaker/model/ListWorkteamsResult.h>
+#include <aws/sagemaker/model/MoveClusterNodesResult.h>
 #include <aws/sagemaker/model/PutEndpointPolicyResult.h>
 #include <aws/sagemaker/model/PutModelPackageGroupPolicyResult.h>
 #include <aws/sagemaker/model/QueryLineageRequest.h>
 #include <aws/sagemaker/model/QueryLineageResult.h>
+#include <aws/sagemaker/model/RemoveInferenceGatewayResult.h>
 #include <aws/sagemaker/model/RenderUiTemplateResult.h>
 #include <aws/sagemaker/model/RetryPipelineExecutionResult.h>
 #include <aws/sagemaker/model/SearchResult.h>
@@ -431,6 +440,7 @@
 #include <aws/sagemaker/model/UpdateEndpointWeightsAndCapacitiesResult.h>
 #include <aws/sagemaker/model/UpdateExperimentResult.h>
 #include <aws/sagemaker/model/UpdateFeatureGroupResult.h>
+#include <aws/sagemaker/model/UpdateGlobalInferenceGatewayResult.h>
 #include <aws/sagemaker/model/UpdateHubContentReferenceResult.h>
 #include <aws/sagemaker/model/UpdateHubContentResult.h>
 #include <aws/sagemaker/model/UpdateHubResult.h>
@@ -494,6 +504,7 @@ using SageMakerEndpointProvider = Aws::SageMaker::Endpoint::SageMakerEndpointPro
 namespace Model {
 /* Service model forward declarations required in SageMakerClient header */
 class AddAssociationRequest;
+class AddInferenceGatewayRequest;
 class AddTagsRequest;
 class AssociateTrialComponentRequest;
 class AttachClusterNodeNetworkInterfaceRequest;
@@ -531,6 +542,7 @@ class CreateEndpointConfigRequest;
 class CreateExperimentRequest;
 class CreateFeatureGroupRequest;
 class CreateFlowDefinitionRequest;
+class CreateGlobalInferenceGatewayRequest;
 class CreateHubRequest;
 class CreateHubContentPresignedUrlsRequest;
 class CreateHubContentReferenceRequest;
@@ -605,6 +617,7 @@ class DeleteEndpointPolicyRequest;
 class DeleteExperimentRequest;
 class DeleteFeatureGroupRequest;
 class DeleteFlowDefinitionRequest;
+class DeleteGlobalInferenceGatewayRequest;
 class DeleteHubRequest;
 class DeleteHubContentRequest;
 class DeleteHubContentReferenceRequest;
@@ -677,6 +690,7 @@ class DescribeExperimentRequest;
 class DescribeFeatureGroupRequest;
 class DescribeFeatureMetadataRequest;
 class DescribeFlowDefinitionRequest;
+class DescribeGlobalInferenceGatewayRequest;
 class DescribeHubRequest;
 class DescribeHubContentRequest;
 class DescribeHumanTaskUiRequest;
@@ -772,6 +786,7 @@ class ListEndpointsRequest;
 class ListExperimentsRequest;
 class ListFeatureGroupsRequest;
 class ListFlowDefinitionsRequest;
+class ListGlobalInferenceGatewaysRequest;
 class ListHubContentVersionsRequest;
 class ListHubContentsRequest;
 class ListHubsRequest;
@@ -781,6 +796,7 @@ class ListImageVersionsRequest;
 class ListImagesRequest;
 class ListInferenceComponentsRequest;
 class ListInferenceExperimentsRequest;
+class ListInferenceGatewaysRequest;
 class ListInferenceRecommendationsJobStepsRequest;
 class ListInferenceRecommendationsJobsRequest;
 class ListInferenceRoutersRequest;
@@ -833,10 +849,12 @@ class ListUltraServersByReservedCapacityRequest;
 class ListUserProfilesRequest;
 class ListWorkforcesRequest;
 class ListWorkteamsRequest;
+class MoveClusterNodesRequest;
 class PutEndpointPolicyRequest;
 class PutModelPackageGroupPolicyRequest;
 class QueryLineageRequest;
 class RegisterDevicesRequest;
+class RemoveInferenceGatewayRequest;
 class RenderUiTemplateRequest;
 class RetryPipelineExecutionRequest;
 class SearchRequest;
@@ -889,6 +907,7 @@ class UpdateEndpointWeightsAndCapacitiesRequest;
 class UpdateExperimentRequest;
 class UpdateFeatureGroupRequest;
 class UpdateFeatureMetadataRequest;
+class UpdateGlobalInferenceGatewayRequest;
 class UpdateHubRequest;
 class UpdateHubContentRequest;
 class UpdateHubContentReferenceRequest;
@@ -922,6 +941,7 @@ class UpdateWorkteamRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<AddAssociationResult, SageMakerError> AddAssociationOutcome;
+typedef Aws::Utils::Outcome<AddInferenceGatewayResult, SageMakerError> AddInferenceGatewayOutcome;
 typedef Aws::Utils::Outcome<AddTagsResult, SageMakerError> AddTagsOutcome;
 typedef Aws::Utils::Outcome<AssociateTrialComponentResult, SageMakerError> AssociateTrialComponentOutcome;
 typedef Aws::Utils::Outcome<AttachClusterNodeNetworkInterfaceResult, SageMakerError> AttachClusterNodeNetworkInterfaceOutcome;
@@ -959,6 +979,7 @@ typedef Aws::Utils::Outcome<CreateEndpointConfigResult, SageMakerError> CreateEn
 typedef Aws::Utils::Outcome<CreateExperimentResult, SageMakerError> CreateExperimentOutcome;
 typedef Aws::Utils::Outcome<CreateFeatureGroupResult, SageMakerError> CreateFeatureGroupOutcome;
 typedef Aws::Utils::Outcome<CreateFlowDefinitionResult, SageMakerError> CreateFlowDefinitionOutcome;
+typedef Aws::Utils::Outcome<CreateGlobalInferenceGatewayResult, SageMakerError> CreateGlobalInferenceGatewayOutcome;
 typedef Aws::Utils::Outcome<CreateHubResult, SageMakerError> CreateHubOutcome;
 typedef Aws::Utils::Outcome<CreateHubContentPresignedUrlsResult, SageMakerError> CreateHubContentPresignedUrlsOutcome;
 typedef Aws::Utils::Outcome<CreateHubContentReferenceResult, SageMakerError> CreateHubContentReferenceOutcome;
@@ -1033,6 +1054,7 @@ typedef Aws::Utils::Outcome<DeleteEndpointPolicyResult, SageMakerError> DeleteEn
 typedef Aws::Utils::Outcome<DeleteExperimentResult, SageMakerError> DeleteExperimentOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteFeatureGroupOutcome;
 typedef Aws::Utils::Outcome<DeleteFlowDefinitionResult, SageMakerError> DeleteFlowDefinitionOutcome;
+typedef Aws::Utils::Outcome<DeleteGlobalInferenceGatewayResult, SageMakerError> DeleteGlobalInferenceGatewayOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteHubOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteHubContentOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteHubContentReferenceOutcome;
@@ -1105,6 +1127,7 @@ typedef Aws::Utils::Outcome<DescribeExperimentResult, SageMakerError> DescribeEx
 typedef Aws::Utils::Outcome<DescribeFeatureGroupResult, SageMakerError> DescribeFeatureGroupOutcome;
 typedef Aws::Utils::Outcome<DescribeFeatureMetadataResult, SageMakerError> DescribeFeatureMetadataOutcome;
 typedef Aws::Utils::Outcome<DescribeFlowDefinitionResult, SageMakerError> DescribeFlowDefinitionOutcome;
+typedef Aws::Utils::Outcome<DescribeGlobalInferenceGatewayResult, SageMakerError> DescribeGlobalInferenceGatewayOutcome;
 typedef Aws::Utils::Outcome<DescribeHubResult, SageMakerError> DescribeHubOutcome;
 typedef Aws::Utils::Outcome<DescribeHubContentResult, SageMakerError> DescribeHubContentOutcome;
 typedef Aws::Utils::Outcome<DescribeHumanTaskUiResult, SageMakerError> DescribeHumanTaskUiOutcome;
@@ -1201,6 +1224,7 @@ typedef Aws::Utils::Outcome<ListEndpointsResult, SageMakerError> ListEndpointsOu
 typedef Aws::Utils::Outcome<ListExperimentsResult, SageMakerError> ListExperimentsOutcome;
 typedef Aws::Utils::Outcome<ListFeatureGroupsResult, SageMakerError> ListFeatureGroupsOutcome;
 typedef Aws::Utils::Outcome<ListFlowDefinitionsResult, SageMakerError> ListFlowDefinitionsOutcome;
+typedef Aws::Utils::Outcome<ListGlobalInferenceGatewaysResult, SageMakerError> ListGlobalInferenceGatewaysOutcome;
 typedef Aws::Utils::Outcome<ListHubContentVersionsResult, SageMakerError> ListHubContentVersionsOutcome;
 typedef Aws::Utils::Outcome<ListHubContentsResult, SageMakerError> ListHubContentsOutcome;
 typedef Aws::Utils::Outcome<ListHubsResult, SageMakerError> ListHubsOutcome;
@@ -1210,6 +1234,7 @@ typedef Aws::Utils::Outcome<ListImageVersionsResult, SageMakerError> ListImageVe
 typedef Aws::Utils::Outcome<ListImagesResult, SageMakerError> ListImagesOutcome;
 typedef Aws::Utils::Outcome<ListInferenceComponentsResult, SageMakerError> ListInferenceComponentsOutcome;
 typedef Aws::Utils::Outcome<ListInferenceExperimentsResult, SageMakerError> ListInferenceExperimentsOutcome;
+typedef Aws::Utils::Outcome<ListInferenceGatewaysResult, SageMakerError> ListInferenceGatewaysOutcome;
 typedef Aws::Utils::Outcome<ListInferenceRecommendationsJobStepsResult, SageMakerError> ListInferenceRecommendationsJobStepsOutcome;
 typedef Aws::Utils::Outcome<ListInferenceRecommendationsJobsResult, SageMakerError> ListInferenceRecommendationsJobsOutcome;
 typedef Aws::Utils::Outcome<ListInferenceRoutersResult, SageMakerError> ListInferenceRoutersOutcome;
@@ -1263,10 +1288,12 @@ typedef Aws::Utils::Outcome<ListUltraServersByReservedCapacityResult, SageMakerE
 typedef Aws::Utils::Outcome<ListUserProfilesResult, SageMakerError> ListUserProfilesOutcome;
 typedef Aws::Utils::Outcome<ListWorkforcesResult, SageMakerError> ListWorkforcesOutcome;
 typedef Aws::Utils::Outcome<ListWorkteamsResult, SageMakerError> ListWorkteamsOutcome;
+typedef Aws::Utils::Outcome<MoveClusterNodesResult, SageMakerError> MoveClusterNodesOutcome;
 typedef Aws::Utils::Outcome<PutEndpointPolicyResult, SageMakerError> PutEndpointPolicyOutcome;
 typedef Aws::Utils::Outcome<PutModelPackageGroupPolicyResult, SageMakerError> PutModelPackageGroupPolicyOutcome;
 typedef Aws::Utils::Outcome<QueryLineageResult, SageMakerError> QueryLineageOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> RegisterDevicesOutcome;
+typedef Aws::Utils::Outcome<RemoveInferenceGatewayResult, SageMakerError> RemoveInferenceGatewayOutcome;
 typedef Aws::Utils::Outcome<RenderUiTemplateResult, SageMakerError> RenderUiTemplateOutcome;
 typedef Aws::Utils::Outcome<RetryPipelineExecutionResult, SageMakerError> RetryPipelineExecutionOutcome;
 typedef Aws::Utils::Outcome<SearchResult, SageMakerError> SearchOutcome;
@@ -1319,6 +1346,7 @@ typedef Aws::Utils::Outcome<UpdateEndpointWeightsAndCapacitiesResult, SageMakerE
 typedef Aws::Utils::Outcome<UpdateExperimentResult, SageMakerError> UpdateExperimentOutcome;
 typedef Aws::Utils::Outcome<UpdateFeatureGroupResult, SageMakerError> UpdateFeatureGroupOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> UpdateFeatureMetadataOutcome;
+typedef Aws::Utils::Outcome<UpdateGlobalInferenceGatewayResult, SageMakerError> UpdateGlobalInferenceGatewayOutcome;
 typedef Aws::Utils::Outcome<UpdateHubResult, SageMakerError> UpdateHubOutcome;
 typedef Aws::Utils::Outcome<UpdateHubContentResult, SageMakerError> UpdateHubContentOutcome;
 typedef Aws::Utils::Outcome<UpdateHubContentReferenceResult, SageMakerError> UpdateHubContentReferenceOutcome;
@@ -1352,6 +1380,7 @@ typedef Aws::Utils::Outcome<UpdateWorkteamResult, SageMakerError> UpdateWorkteam
 
 /* Service model Outcome callable definitions */
 typedef std::future<AddAssociationOutcome> AddAssociationOutcomeCallable;
+typedef std::future<AddInferenceGatewayOutcome> AddInferenceGatewayOutcomeCallable;
 typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
 typedef std::future<AssociateTrialComponentOutcome> AssociateTrialComponentOutcomeCallable;
 typedef std::future<AttachClusterNodeNetworkInterfaceOutcome> AttachClusterNodeNetworkInterfaceOutcomeCallable;
@@ -1389,6 +1418,7 @@ typedef std::future<CreateEndpointConfigOutcome> CreateEndpointConfigOutcomeCall
 typedef std::future<CreateExperimentOutcome> CreateExperimentOutcomeCallable;
 typedef std::future<CreateFeatureGroupOutcome> CreateFeatureGroupOutcomeCallable;
 typedef std::future<CreateFlowDefinitionOutcome> CreateFlowDefinitionOutcomeCallable;
+typedef std::future<CreateGlobalInferenceGatewayOutcome> CreateGlobalInferenceGatewayOutcomeCallable;
 typedef std::future<CreateHubOutcome> CreateHubOutcomeCallable;
 typedef std::future<CreateHubContentPresignedUrlsOutcome> CreateHubContentPresignedUrlsOutcomeCallable;
 typedef std::future<CreateHubContentReferenceOutcome> CreateHubContentReferenceOutcomeCallable;
@@ -1463,6 +1493,7 @@ typedef std::future<DeleteEndpointPolicyOutcome> DeleteEndpointPolicyOutcomeCall
 typedef std::future<DeleteExperimentOutcome> DeleteExperimentOutcomeCallable;
 typedef std::future<DeleteFeatureGroupOutcome> DeleteFeatureGroupOutcomeCallable;
 typedef std::future<DeleteFlowDefinitionOutcome> DeleteFlowDefinitionOutcomeCallable;
+typedef std::future<DeleteGlobalInferenceGatewayOutcome> DeleteGlobalInferenceGatewayOutcomeCallable;
 typedef std::future<DeleteHubOutcome> DeleteHubOutcomeCallable;
 typedef std::future<DeleteHubContentOutcome> DeleteHubContentOutcomeCallable;
 typedef std::future<DeleteHubContentReferenceOutcome> DeleteHubContentReferenceOutcomeCallable;
@@ -1535,6 +1566,7 @@ typedef std::future<DescribeExperimentOutcome> DescribeExperimentOutcomeCallable
 typedef std::future<DescribeFeatureGroupOutcome> DescribeFeatureGroupOutcomeCallable;
 typedef std::future<DescribeFeatureMetadataOutcome> DescribeFeatureMetadataOutcomeCallable;
 typedef std::future<DescribeFlowDefinitionOutcome> DescribeFlowDefinitionOutcomeCallable;
+typedef std::future<DescribeGlobalInferenceGatewayOutcome> DescribeGlobalInferenceGatewayOutcomeCallable;
 typedef std::future<DescribeHubOutcome> DescribeHubOutcomeCallable;
 typedef std::future<DescribeHubContentOutcome> DescribeHubContentOutcomeCallable;
 typedef std::future<DescribeHumanTaskUiOutcome> DescribeHumanTaskUiOutcomeCallable;
@@ -1630,6 +1662,7 @@ typedef std::future<ListEndpointsOutcome> ListEndpointsOutcomeCallable;
 typedef std::future<ListExperimentsOutcome> ListExperimentsOutcomeCallable;
 typedef std::future<ListFeatureGroupsOutcome> ListFeatureGroupsOutcomeCallable;
 typedef std::future<ListFlowDefinitionsOutcome> ListFlowDefinitionsOutcomeCallable;
+typedef std::future<ListGlobalInferenceGatewaysOutcome> ListGlobalInferenceGatewaysOutcomeCallable;
 typedef std::future<ListHubContentVersionsOutcome> ListHubContentVersionsOutcomeCallable;
 typedef std::future<ListHubContentsOutcome> ListHubContentsOutcomeCallable;
 typedef std::future<ListHubsOutcome> ListHubsOutcomeCallable;
@@ -1639,6 +1672,7 @@ typedef std::future<ListImageVersionsOutcome> ListImageVersionsOutcomeCallable;
 typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
 typedef std::future<ListInferenceComponentsOutcome> ListInferenceComponentsOutcomeCallable;
 typedef std::future<ListInferenceExperimentsOutcome> ListInferenceExperimentsOutcomeCallable;
+typedef std::future<ListInferenceGatewaysOutcome> ListInferenceGatewaysOutcomeCallable;
 typedef std::future<ListInferenceRecommendationsJobStepsOutcome> ListInferenceRecommendationsJobStepsOutcomeCallable;
 typedef std::future<ListInferenceRecommendationsJobsOutcome> ListInferenceRecommendationsJobsOutcomeCallable;
 typedef std::future<ListInferenceRoutersOutcome> ListInferenceRoutersOutcomeCallable;
@@ -1691,10 +1725,12 @@ typedef std::future<ListUltraServersByReservedCapacityOutcome> ListUltraServersB
 typedef std::future<ListUserProfilesOutcome> ListUserProfilesOutcomeCallable;
 typedef std::future<ListWorkforcesOutcome> ListWorkforcesOutcomeCallable;
 typedef std::future<ListWorkteamsOutcome> ListWorkteamsOutcomeCallable;
+typedef std::future<MoveClusterNodesOutcome> MoveClusterNodesOutcomeCallable;
 typedef std::future<PutEndpointPolicyOutcome> PutEndpointPolicyOutcomeCallable;
 typedef std::future<PutModelPackageGroupPolicyOutcome> PutModelPackageGroupPolicyOutcomeCallable;
 typedef std::future<QueryLineageOutcome> QueryLineageOutcomeCallable;
 typedef std::future<RegisterDevicesOutcome> RegisterDevicesOutcomeCallable;
+typedef std::future<RemoveInferenceGatewayOutcome> RemoveInferenceGatewayOutcomeCallable;
 typedef std::future<RenderUiTemplateOutcome> RenderUiTemplateOutcomeCallable;
 typedef std::future<RetryPipelineExecutionOutcome> RetryPipelineExecutionOutcomeCallable;
 typedef std::future<SearchOutcome> SearchOutcomeCallable;
@@ -1747,6 +1783,7 @@ typedef std::future<UpdateEndpointWeightsAndCapacitiesOutcome> UpdateEndpointWei
 typedef std::future<UpdateExperimentOutcome> UpdateExperimentOutcomeCallable;
 typedef std::future<UpdateFeatureGroupOutcome> UpdateFeatureGroupOutcomeCallable;
 typedef std::future<UpdateFeatureMetadataOutcome> UpdateFeatureMetadataOutcomeCallable;
+typedef std::future<UpdateGlobalInferenceGatewayOutcome> UpdateGlobalInferenceGatewayOutcomeCallable;
 typedef std::future<UpdateHubOutcome> UpdateHubOutcomeCallable;
 typedef std::future<UpdateHubContentOutcome> UpdateHubContentOutcomeCallable;
 typedef std::future<UpdateHubContentReferenceOutcome> UpdateHubContentReferenceOutcomeCallable;
@@ -1785,6 +1822,9 @@ class SageMakerClient;
 typedef std::function<void(const SageMakerClient*, const Model::AddAssociationRequest&, const Model::AddAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AddAssociationResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::AddInferenceGatewayRequest&, const Model::AddInferenceGatewayOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AddInferenceGatewayResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AddTagsResponseReceivedHandler;
@@ -1899,6 +1939,10 @@ typedef std::function<void(const SageMakerClient*, const Model::CreateFeatureGro
 typedef std::function<void(const SageMakerClient*, const Model::CreateFlowDefinitionRequest&, const Model::CreateFlowDefinitionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateFlowDefinitionResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::CreateGlobalInferenceGatewayRequest&,
+                           const Model::CreateGlobalInferenceGatewayOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateGlobalInferenceGatewayResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::CreateHubRequest&, const Model::CreateHubOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateHubResponseReceivedHandler;
@@ -2133,6 +2177,10 @@ typedef std::function<void(const SageMakerClient*, const Model::DeleteFeatureGro
 typedef std::function<void(const SageMakerClient*, const Model::DeleteFlowDefinitionRequest&, const Model::DeleteFlowDefinitionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteFlowDefinitionResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DeleteGlobalInferenceGatewayRequest&,
+                           const Model::DeleteGlobalInferenceGatewayOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteGlobalInferenceGatewayResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::DeleteHubRequest&, const Model::DeleteHubOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteHubResponseReceivedHandler;
@@ -2357,6 +2405,10 @@ typedef std::function<void(const SageMakerClient*, const Model::DescribeFeatureM
 typedef std::function<void(const SageMakerClient*, const Model::DescribeFlowDefinitionRequest&, const Model::DescribeFlowDefinitionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeFlowDefinitionResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DescribeGlobalInferenceGatewayRequest&,
+                           const Model::DescribeGlobalInferenceGatewayOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeGlobalInferenceGatewayResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::DescribeHubRequest&, const Model::DescribeHubOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeHubResponseReceivedHandler;
@@ -2658,6 +2710,9 @@ typedef std::function<void(const SageMakerClient*, const Model::ListFeatureGroup
 typedef std::function<void(const SageMakerClient*, const Model::ListFlowDefinitionsRequest&, const Model::ListFlowDefinitionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFlowDefinitionsResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::ListGlobalInferenceGatewaysRequest&,
+                           const Model::ListGlobalInferenceGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListGlobalInferenceGatewaysResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::ListHubContentVersionsRequest&, const Model::ListHubContentVersionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListHubContentVersionsResponseReceivedHandler;
@@ -2686,6 +2741,9 @@ typedef std::function<void(const SageMakerClient*, const Model::ListInferenceCom
 typedef std::function<void(const SageMakerClient*, const Model::ListInferenceExperimentsRequest&,
                            const Model::ListInferenceExperimentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListInferenceExperimentsResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::ListInferenceGatewaysRequest&, const Model::ListInferenceGatewaysOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListInferenceGatewaysResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::ListInferenceRecommendationsJobStepsRequest&,
                            const Model::ListInferenceRecommendationsJobStepsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -2850,6 +2908,9 @@ typedef std::function<void(const SageMakerClient*, const Model::ListWorkforcesRe
 typedef std::function<void(const SageMakerClient*, const Model::ListWorkteamsRequest&, const Model::ListWorkteamsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListWorkteamsResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::MoveClusterNodesRequest&, const Model::MoveClusterNodesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    MoveClusterNodesResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::PutEndpointPolicyRequest&, const Model::PutEndpointPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutEndpointPolicyResponseReceivedHandler;
@@ -2862,6 +2923,9 @@ typedef std::function<void(const SageMakerClient*, const Model::QueryLineageRequ
 typedef std::function<void(const SageMakerClient*, const Model::RegisterDevicesRequest&, const Model::RegisterDevicesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RegisterDevicesResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::RemoveInferenceGatewayRequest&, const Model::RemoveInferenceGatewayOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RemoveInferenceGatewayResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::RenderUiTemplateRequest&, const Model::RenderUiTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RenderUiTemplateResponseReceivedHandler;
@@ -3023,6 +3087,10 @@ typedef std::function<void(const SageMakerClient*, const Model::UpdateFeatureGro
 typedef std::function<void(const SageMakerClient*, const Model::UpdateFeatureMetadataRequest&, const Model::UpdateFeatureMetadataOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateFeatureMetadataResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::UpdateGlobalInferenceGatewayRequest&,
+                           const Model::UpdateGlobalInferenceGatewayOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateGlobalInferenceGatewayResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::UpdateHubRequest&, const Model::UpdateHubOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateHubResponseReceivedHandler;

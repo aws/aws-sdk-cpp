@@ -36,8 +36,14 @@ class PurchaseOptionFilter {
 
   ///@{
   /**
-   * <p>The type of filter to apply, such as <code>PRODUCT_ID</code>,
-   * <code>VISIBILITY_SCOPE</code>, or <code>PURCHASE_OPTION_TYPE</code>.</p>
+   * <p>The type of filter to apply. This field has one of the following values:</p>
+   * <dl> <dt>AVAILABILITY_STATUS</dt> <dd> <p>Filters by whether the purchase option
+   * is available or expired.</p> </dd> <dt>PRODUCT_ID</dt> <dd> <p>Filters by
+   * product.</p> </dd> <dt>PURCHASE_OPTION_TYPE</dt> <dd> <p>Filters by offer or
+   * offer set.</p> </dd> <dt>SELLER_OF_RECORD_PROFILE_ID</dt> <dd> <p>Filters by
+   * seller.</p> </dd> <dt>VISIBILITY_SCOPE</dt> <dd> <p>Filters by visibility.</p>
+   * </dd> </dl> <p>See <code>filterValues</code> for the values that each type
+   * accepts.</p>
    */
   inline PurchaseOptionFilterType GetFilterType() const { return m_filterType; }
   inline bool FilterTypeHasBeenSet() const { return m_filterTypeHasBeenSet; }
@@ -54,18 +60,18 @@ class PurchaseOptionFilter {
   ///@{
   /**
    * <p>The values to filter by. Supported values depend on
-   * <code>filterType</code>:</p> <ul> <li> <p> <code>PRODUCT_ID</code> – One or more
-   * product identifiers to filter by.</p> </li> <li> <p>
-   * <code>SELLER_OF_RECORD_PROFILE_ID</code> – One or more seller profile
-   * identifiers to filter by.</p> </li> <li> <p> <code>PURCHASE_OPTION_TYPE</code> –
-   * One or more purchase option types to filter by: <code>OFFER</code> or
-   * <code>OFFERSET</code>.</p> </li> <li> <p> <code>VISIBILITY_SCOPE</code> – The
-   * visibility scope to filter by: <code>PRIVATE</code>.</p> </li> <li> <p>
-   * <code>AVAILABILITY_STATUS</code> – One or more availability statuses to filter
-   * by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p> </li> </ul> <p>To
-   * retrieve private offers and offer sets visible to you, use
-   * <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. OR logic combines
-   * multiple values within the same filter.</p>
+   * <code>filterType</code>:</p> <dl> <dt>AVAILABILITY_STATUS</dt> <dd> <p>One or
+   * more availability statuses to filter by: <code>AVAILABLE</code> or
+   * <code>EXPIRED</code>.</p> </dd> <dt>PRODUCT_ID</dt> <dd> <p>One or more product
+   * identifiers to filter by.</p> </dd> <dt>PURCHASE_OPTION_TYPE</dt> <dd> <p>One or
+   * more purchase option types to filter by: <code>OFFER</code> or
+   * <code>OFFERSET</code>.</p> </dd> <dt>SELLER_OF_RECORD_PROFILE_ID</dt> <dd>
+   * <p>One or more seller profile identifiers to filter by.</p> </dd>
+   * <dt>VISIBILITY_SCOPE</dt> <dd> <p>The visibility scope to filter by:
+   * <code>PRIVATE</code>.</p> </dd> </dl> <p>To retrieve private offers and offer
+   * sets visible to you, use <code>VISIBILITY_SCOPE</code> with
+   * <code>PRIVATE</code>. Within one filter, a result matches if it has any of the
+   * values.</p>
    */
   inline const Aws::Vector<Aws::String>& GetFilterValues() const { return m_filterValues; }
   inline bool FilterValuesHasBeenSet() const { return m_filterValuesHasBeenSet; }

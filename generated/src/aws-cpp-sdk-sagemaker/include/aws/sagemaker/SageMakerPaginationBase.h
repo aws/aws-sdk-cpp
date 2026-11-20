@@ -43,12 +43,14 @@
 #include <aws/sagemaker/model/ListExperimentsPaginationTraits.h>
 #include <aws/sagemaker/model/ListFeatureGroupsPaginationTraits.h>
 #include <aws/sagemaker/model/ListFlowDefinitionsPaginationTraits.h>
+#include <aws/sagemaker/model/ListGlobalInferenceGatewaysPaginationTraits.h>
 #include <aws/sagemaker/model/ListHumanTaskUisPaginationTraits.h>
 #include <aws/sagemaker/model/ListHyperParameterTuningJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListImageVersionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListImagesPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceComponentsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceExperimentsPaginationTraits.h>
+#include <aws/sagemaker/model/ListInferenceGatewaysPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceRoutersPaginationTraits.h>
@@ -533,6 +535,18 @@ class SageMakerPaginationBase {
   }
 
   /**
+   * Create a paginator for ListGlobalInferenceGateways operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGlobalInferenceGatewaysRequest,
+                                    Pagination::ListGlobalInferenceGatewaysPaginationTraits<DerivedClient>>
+  ListGlobalInferenceGatewaysPaginator(const Model::ListGlobalInferenceGatewaysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGlobalInferenceGatewaysRequest,
+                                             Pagination::ListGlobalInferenceGatewaysPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListHumanTaskUis operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHumanTaskUisRequest,
@@ -600,6 +614,18 @@ class SageMakerPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInferenceExperimentsRequest,
                                              Pagination::ListInferenceExperimentsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListInferenceGateways operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInferenceGatewaysRequest,
+                                    Pagination::ListInferenceGatewaysPaginationTraits<DerivedClient>>
+  ListInferenceGatewaysPaginator(const Model::ListInferenceGatewaysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInferenceGatewaysRequest,
+                                             Pagination::ListInferenceGatewaysPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

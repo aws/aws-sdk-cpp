@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/network-firewall/NetworkFirewallRequest.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
+#include <aws/network-firewall/model/FirewallType.h>
 
 #include <utility>
 
@@ -97,15 +98,39 @@ class ListFirewallsRequest : public NetworkFirewallRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the firewall type to filter the results by. You can specify one of
+   * the following values:</p> <ul> <li> <p> <code>IGW_FIREWALL</code> - Returns only
+   * internet gateway firewalls, which Amazon Web Services Network Security Manager
+   * creates and manages for your VPCs.</p> </li> <li> <p> <code>FIREWALL</code> -
+   * Returns only standard Network Firewall firewalls.</p> </li> </ul> <p>If you
+   * don't specify a type, the default is to return firewalls of both types.</p>
+   */
+  inline FirewallType GetFirewallType() const { return m_firewallType; }
+  inline bool FirewallTypeHasBeenSet() const { return m_firewallTypeHasBeenSet; }
+  inline void SetFirewallType(FirewallType value) {
+    m_firewallTypeHasBeenSet = true;
+    m_firewallType = value;
+  }
+  inline ListFirewallsRequest& WithFirewallType(FirewallType value) {
+    SetFirewallType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<Aws::String> m_vpcIds;
 
   int m_maxResults{0};
+
+  FirewallType m_firewallType{FirewallType::NOT_SET};
   bool m_nextTokenHasBeenSet = false;
   bool m_vpcIdsHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
+  bool m_firewallTypeHasBeenSet = false;
 };
 
 }  // namespace Model

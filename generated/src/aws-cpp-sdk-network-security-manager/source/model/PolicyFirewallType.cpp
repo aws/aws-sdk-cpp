@@ -17,6 +17,7 @@ namespace PolicyFirewallTypeMapper {
 
 static const int WAF_HASH = HashingUtils::HashString("WAF");
 static const int SHIELD_ADVANCED_HASH = HashingUtils::HashString("SHIELD_ADVANCED");
+static const int IGW_FIREWALL_HASH = HashingUtils::HashString("IGW_FIREWALL");
 
 PolicyFirewallType GetPolicyFirewallTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ PolicyFirewallType GetPolicyFirewallTypeForName(const Aws::String& name) {
     return PolicyFirewallType::WAF;
   } else if (hashCode == SHIELD_ADVANCED_HASH) {
     return PolicyFirewallType::SHIELD_ADVANCED;
+  } else if (hashCode == IGW_FIREWALL_HASH) {
+    return PolicyFirewallType::IGW_FIREWALL;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForPolicyFirewallType(PolicyFirewallType enumValue) {
       return "WAF";
     case PolicyFirewallType::SHIELD_ADVANCED:
       return "SHIELD_ADVANCED";
+    case PolicyFirewallType::IGW_FIREWALL:
+      return "IGW_FIREWALL";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

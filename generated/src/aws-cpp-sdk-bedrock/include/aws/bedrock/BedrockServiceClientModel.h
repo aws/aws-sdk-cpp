@@ -19,6 +19,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in BedrockClient header */
+#include <aws/bedrock/model/ArchiveProjectResult.h>
 #include <aws/bedrock/model/BatchDeleteAdvancedPromptOptimizationJobResult.h>
 #include <aws/bedrock/model/BatchDeleteEvaluationJobResult.h>
 #include <aws/bedrock/model/CancelAutomatedReasoningPolicyBuildWorkflowResult.h>
@@ -38,8 +39,10 @@
 #include <aws/bedrock/model/CreateModelCustomizationJobResult.h>
 #include <aws/bedrock/model/CreateModelImportJobResult.h>
 #include <aws/bedrock/model/CreateModelInvocationJobResult.h>
+#include <aws/bedrock/model/CreateProjectResult.h>
 #include <aws/bedrock/model/CreatePromptRouterResult.h>
 #include <aws/bedrock/model/CreateProvisionedModelThroughputResult.h>
+#include <aws/bedrock/model/DeleteAccountDataRetentionStorageResult.h>
 #include <aws/bedrock/model/DeleteAutomatedReasoningPolicyBuildWorkflowResult.h>
 #include <aws/bedrock/model/DeleteAutomatedReasoningPolicyResult.h>
 #include <aws/bedrock/model/DeleteAutomatedReasoningPolicyTestCaseResult.h>
@@ -53,6 +56,8 @@
 #include <aws/bedrock/model/DeleteMarketplaceModelEndpointResult.h>
 #include <aws/bedrock/model/DeleteModelInvocationLoggingConfigurationRequest.h>
 #include <aws/bedrock/model/DeleteModelInvocationLoggingConfigurationResult.h>
+#include <aws/bedrock/model/DeleteOrganizationDataRetentionStorageResult.h>
+#include <aws/bedrock/model/DeleteProjectDataRetentionStorageResult.h>
 #include <aws/bedrock/model/DeletePromptRouterResult.h>
 #include <aws/bedrock/model/DeleteProvisionedModelThroughputResult.h>
 #include <aws/bedrock/model/DeleteResourcePolicyResult.h>
@@ -60,6 +65,7 @@
 #include <aws/bedrock/model/ExportAutomatedReasoningPolicyVersionResult.h>
 #include <aws/bedrock/model/GetAccountDataRetentionRequest.h>
 #include <aws/bedrock/model/GetAccountDataRetentionResult.h>
+#include <aws/bedrock/model/GetAccountDataRetentionStorageResult.h>
 #include <aws/bedrock/model/GetAdvancedPromptOptimizationJobResult.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyAnnotationsResult.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyBuildWorkflowResult.h>
@@ -83,9 +89,16 @@
 #include <aws/bedrock/model/GetModelInvocationJobResult.h>
 #include <aws/bedrock/model/GetModelInvocationLoggingConfigurationRequest.h>
 #include <aws/bedrock/model/GetModelInvocationLoggingConfigurationResult.h>
+#include <aws/bedrock/model/GetOrganizationDataRetentionStorageResult.h>
+#include <aws/bedrock/model/GetProjectDataRetentionStorageResult.h>
+#include <aws/bedrock/model/GetProjectResult.h>
 #include <aws/bedrock/model/GetPromptRouterResult.h>
 #include <aws/bedrock/model/GetProvisionedModelThroughputResult.h>
 #include <aws/bedrock/model/GetResourcePolicyResult.h>
+#include <aws/bedrock/model/GetTrustedAccessProgramAccountEnrollmentResult.h>
+#include <aws/bedrock/model/GetTrustedAccessProgramOrganizationEnrollmentResult.h>
+#include <aws/bedrock/model/GetTrustedAccessProgramProjectEnrollmentResult.h>
+#include <aws/bedrock/model/GetTrustedAccessProgramResult.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessRequest.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessResult.h>
 #include <aws/bedrock/model/ListAdvancedPromptOptimizationJobsRequest.h>
@@ -122,19 +135,32 @@
 #include <aws/bedrock/model/ListModelImportJobsResult.h>
 #include <aws/bedrock/model/ListModelInvocationJobsRequest.h>
 #include <aws/bedrock/model/ListModelInvocationJobsResult.h>
+#include <aws/bedrock/model/ListProjectsRequest.h>
+#include <aws/bedrock/model/ListProjectsResult.h>
 #include <aws/bedrock/model/ListPromptRoutersRequest.h>
 #include <aws/bedrock/model/ListPromptRoutersResult.h>
 #include <aws/bedrock/model/ListProvisionedModelThroughputsRequest.h>
 #include <aws/bedrock/model/ListProvisionedModelThroughputsResult.h>
 #include <aws/bedrock/model/ListTagsForResourceResult.h>
+#include <aws/bedrock/model/ListTrustedAccessProgramsRequest.h>
+#include <aws/bedrock/model/ListTrustedAccessProgramsResult.h>
 #include <aws/bedrock/model/PutAccountDataRetentionResult.h>
+#include <aws/bedrock/model/PutAccountDataRetentionStorageResult.h>
 #include <aws/bedrock/model/PutEnforcedGuardrailConfigurationResult.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationResult.h>
+#include <aws/bedrock/model/PutOrganizationDataRetentionStorageResult.h>
+#include <aws/bedrock/model/PutProjectDataRetentionStorageResult.h>
 #include <aws/bedrock/model/PutResourcePolicyResult.h>
+#include <aws/bedrock/model/PutTrustedAccessProgramAccountEnrollmentResult.h>
+#include <aws/bedrock/model/PutTrustedAccessProgramOrganizationEnrollmentResult.h>
+#include <aws/bedrock/model/PutTrustedAccessProgramProjectEnrollmentResult.h>
 #include <aws/bedrock/model/PutUseCaseForModelAccessResult.h>
 #include <aws/bedrock/model/RegisterMarketplaceModelEndpointResult.h>
 #include <aws/bedrock/model/StartAutomatedReasoningPolicyBuildWorkflowResult.h>
 #include <aws/bedrock/model/StartAutomatedReasoningPolicyTestWorkflowResult.h>
+#include <aws/bedrock/model/StartTrustedAccessProgramAccountApplicationResult.h>
+#include <aws/bedrock/model/StartTrustedAccessProgramOrganizationApplicationResult.h>
+#include <aws/bedrock/model/StartTrustedAccessProgramProjectApplicationResult.h>
 #include <aws/bedrock/model/StopAdvancedPromptOptimizationJobResult.h>
 #include <aws/bedrock/model/StopEvaluationJobResult.h>
 #include <aws/bedrock/model/StopModelCustomizationJobResult.h>
@@ -147,6 +173,7 @@
 #include <aws/bedrock/model/UpdateCustomModelDeploymentResult.h>
 #include <aws/bedrock/model/UpdateGuardrailResult.h>
 #include <aws/bedrock/model/UpdateMarketplaceModelEndpointResult.h>
+#include <aws/bedrock/model/UpdateProjectResult.h>
 #include <aws/bedrock/model/UpdateProvisionedModelThroughputResult.h>
 /* End of service model headers required in BedrockClient header */
 
@@ -181,6 +208,7 @@ using BedrockEndpointProvider = Aws::Bedrock::Endpoint::BedrockEndpointProvider;
 
 namespace Model {
 /* Service model forward declarations required in BedrockClient header */
+class ArchiveProjectRequest;
 class BatchDeleteAdvancedPromptOptimizationJobRequest;
 class BatchDeleteEvaluationJobRequest;
 class CancelAutomatedReasoningPolicyBuildWorkflowRequest;
@@ -200,8 +228,10 @@ class CreateModelCopyJobRequest;
 class CreateModelCustomizationJobRequest;
 class CreateModelImportJobRequest;
 class CreateModelInvocationJobRequest;
+class CreateProjectRequest;
 class CreatePromptRouterRequest;
 class CreateProvisionedModelThroughputRequest;
+class DeleteAccountDataRetentionStorageRequest;
 class DeleteAutomatedReasoningPolicyRequest;
 class DeleteAutomatedReasoningPolicyBuildWorkflowRequest;
 class DeleteAutomatedReasoningPolicyTestCaseRequest;
@@ -214,12 +244,15 @@ class DeleteImportedModelRequest;
 class DeleteInferenceProfileRequest;
 class DeleteMarketplaceModelEndpointRequest;
 class DeleteModelInvocationLoggingConfigurationRequest;
+class DeleteOrganizationDataRetentionStorageRequest;
+class DeleteProjectDataRetentionStorageRequest;
 class DeletePromptRouterRequest;
 class DeleteProvisionedModelThroughputRequest;
 class DeleteResourcePolicyRequest;
 class DeregisterMarketplaceModelEndpointRequest;
 class ExportAutomatedReasoningPolicyVersionRequest;
 class GetAccountDataRetentionRequest;
+class GetAccountDataRetentionStorageRequest;
 class GetAdvancedPromptOptimizationJobRequest;
 class GetAutomatedReasoningPolicyRequest;
 class GetAutomatedReasoningPolicyAnnotationsRequest;
@@ -242,9 +275,16 @@ class GetModelCustomizationJobRequest;
 class GetModelImportJobRequest;
 class GetModelInvocationJobRequest;
 class GetModelInvocationLoggingConfigurationRequest;
+class GetOrganizationDataRetentionStorageRequest;
+class GetProjectRequest;
+class GetProjectDataRetentionStorageRequest;
 class GetPromptRouterRequest;
 class GetProvisionedModelThroughputRequest;
 class GetResourcePolicyRequest;
+class GetTrustedAccessProgramRequest;
+class GetTrustedAccessProgramAccountEnrollmentRequest;
+class GetTrustedAccessProgramOrganizationEnrollmentRequest;
+class GetTrustedAccessProgramProjectEnrollmentRequest;
 class GetUseCaseForModelAccessRequest;
 class ListAdvancedPromptOptimizationJobsRequest;
 class ListAutomatedReasoningPoliciesRequest;
@@ -265,17 +305,28 @@ class ListModelCopyJobsRequest;
 class ListModelCustomizationJobsRequest;
 class ListModelImportJobsRequest;
 class ListModelInvocationJobsRequest;
+class ListProjectsRequest;
 class ListPromptRoutersRequest;
 class ListProvisionedModelThroughputsRequest;
 class ListTagsForResourceRequest;
+class ListTrustedAccessProgramsRequest;
 class PutAccountDataRetentionRequest;
+class PutAccountDataRetentionStorageRequest;
 class PutEnforcedGuardrailConfigurationRequest;
 class PutModelInvocationLoggingConfigurationRequest;
+class PutOrganizationDataRetentionStorageRequest;
+class PutProjectDataRetentionStorageRequest;
 class PutResourcePolicyRequest;
+class PutTrustedAccessProgramAccountEnrollmentRequest;
+class PutTrustedAccessProgramOrganizationEnrollmentRequest;
+class PutTrustedAccessProgramProjectEnrollmentRequest;
 class PutUseCaseForModelAccessRequest;
 class RegisterMarketplaceModelEndpointRequest;
 class StartAutomatedReasoningPolicyBuildWorkflowRequest;
 class StartAutomatedReasoningPolicyTestWorkflowRequest;
+class StartTrustedAccessProgramAccountApplicationRequest;
+class StartTrustedAccessProgramOrganizationApplicationRequest;
+class StartTrustedAccessProgramProjectApplicationRequest;
 class StopAdvancedPromptOptimizationJobRequest;
 class StopEvaluationJobRequest;
 class StopModelCustomizationJobRequest;
@@ -288,10 +339,12 @@ class UpdateAutomatedReasoningPolicyTestCaseRequest;
 class UpdateCustomModelDeploymentRequest;
 class UpdateGuardrailRequest;
 class UpdateMarketplaceModelEndpointRequest;
+class UpdateProjectRequest;
 class UpdateProvisionedModelThroughputRequest;
 /* End of service model forward declarations required in BedrockClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<ArchiveProjectResult, BedrockError> ArchiveProjectOutcome;
 typedef Aws::Utils::Outcome<BatchDeleteAdvancedPromptOptimizationJobResult, BedrockError> BatchDeleteAdvancedPromptOptimizationJobOutcome;
 typedef Aws::Utils::Outcome<BatchDeleteEvaluationJobResult, BedrockError> BatchDeleteEvaluationJobOutcome;
 typedef Aws::Utils::Outcome<CancelAutomatedReasoningPolicyBuildWorkflowResult, BedrockError>
@@ -312,8 +365,10 @@ typedef Aws::Utils::Outcome<CreateModelCopyJobResult, BedrockError> CreateModelC
 typedef Aws::Utils::Outcome<CreateModelCustomizationJobResult, BedrockError> CreateModelCustomizationJobOutcome;
 typedef Aws::Utils::Outcome<CreateModelImportJobResult, BedrockError> CreateModelImportJobOutcome;
 typedef Aws::Utils::Outcome<CreateModelInvocationJobResult, BedrockError> CreateModelInvocationJobOutcome;
+typedef Aws::Utils::Outcome<CreateProjectResult, BedrockError> CreateProjectOutcome;
 typedef Aws::Utils::Outcome<CreatePromptRouterResult, BedrockError> CreatePromptRouterOutcome;
 typedef Aws::Utils::Outcome<CreateProvisionedModelThroughputResult, BedrockError> CreateProvisionedModelThroughputOutcome;
+typedef Aws::Utils::Outcome<DeleteAccountDataRetentionStorageResult, BedrockError> DeleteAccountDataRetentionStorageOutcome;
 typedef Aws::Utils::Outcome<DeleteAutomatedReasoningPolicyResult, BedrockError> DeleteAutomatedReasoningPolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteAutomatedReasoningPolicyBuildWorkflowResult, BedrockError>
     DeleteAutomatedReasoningPolicyBuildWorkflowOutcome;
@@ -327,12 +382,15 @@ typedef Aws::Utils::Outcome<DeleteImportedModelResult, BedrockError> DeleteImpor
 typedef Aws::Utils::Outcome<DeleteInferenceProfileResult, BedrockError> DeleteInferenceProfileOutcome;
 typedef Aws::Utils::Outcome<DeleteMarketplaceModelEndpointResult, BedrockError> DeleteMarketplaceModelEndpointOutcome;
 typedef Aws::Utils::Outcome<DeleteModelInvocationLoggingConfigurationResult, BedrockError> DeleteModelInvocationLoggingConfigurationOutcome;
+typedef Aws::Utils::Outcome<DeleteOrganizationDataRetentionStorageResult, BedrockError> DeleteOrganizationDataRetentionStorageOutcome;
+typedef Aws::Utils::Outcome<DeleteProjectDataRetentionStorageResult, BedrockError> DeleteProjectDataRetentionStorageOutcome;
 typedef Aws::Utils::Outcome<DeletePromptRouterResult, BedrockError> DeletePromptRouterOutcome;
 typedef Aws::Utils::Outcome<DeleteProvisionedModelThroughputResult, BedrockError> DeleteProvisionedModelThroughputOutcome;
 typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, BedrockError> DeleteResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<DeregisterMarketplaceModelEndpointResult, BedrockError> DeregisterMarketplaceModelEndpointOutcome;
 typedef Aws::Utils::Outcome<ExportAutomatedReasoningPolicyVersionResult, BedrockError> ExportAutomatedReasoningPolicyVersionOutcome;
 typedef Aws::Utils::Outcome<GetAccountDataRetentionResult, BedrockError> GetAccountDataRetentionOutcome;
+typedef Aws::Utils::Outcome<GetAccountDataRetentionStorageResult, BedrockError> GetAccountDataRetentionStorageOutcome;
 typedef Aws::Utils::Outcome<GetAdvancedPromptOptimizationJobResult, BedrockError> GetAdvancedPromptOptimizationJobOutcome;
 typedef Aws::Utils::Outcome<GetAutomatedReasoningPolicyResult, BedrockError> GetAutomatedReasoningPolicyOutcome;
 typedef Aws::Utils::Outcome<GetAutomatedReasoningPolicyAnnotationsResult, BedrockError> GetAutomatedReasoningPolicyAnnotationsOutcome;
@@ -356,9 +414,17 @@ typedef Aws::Utils::Outcome<GetModelCustomizationJobResult, BedrockError> GetMod
 typedef Aws::Utils::Outcome<GetModelImportJobResult, BedrockError> GetModelImportJobOutcome;
 typedef Aws::Utils::Outcome<GetModelInvocationJobResult, BedrockError> GetModelInvocationJobOutcome;
 typedef Aws::Utils::Outcome<GetModelInvocationLoggingConfigurationResult, BedrockError> GetModelInvocationLoggingConfigurationOutcome;
+typedef Aws::Utils::Outcome<GetOrganizationDataRetentionStorageResult, BedrockError> GetOrganizationDataRetentionStorageOutcome;
+typedef Aws::Utils::Outcome<GetProjectResult, BedrockError> GetProjectOutcome;
+typedef Aws::Utils::Outcome<GetProjectDataRetentionStorageResult, BedrockError> GetProjectDataRetentionStorageOutcome;
 typedef Aws::Utils::Outcome<GetPromptRouterResult, BedrockError> GetPromptRouterOutcome;
 typedef Aws::Utils::Outcome<GetProvisionedModelThroughputResult, BedrockError> GetProvisionedModelThroughputOutcome;
 typedef Aws::Utils::Outcome<GetResourcePolicyResult, BedrockError> GetResourcePolicyOutcome;
+typedef Aws::Utils::Outcome<GetTrustedAccessProgramResult, BedrockError> GetTrustedAccessProgramOutcome;
+typedef Aws::Utils::Outcome<GetTrustedAccessProgramAccountEnrollmentResult, BedrockError> GetTrustedAccessProgramAccountEnrollmentOutcome;
+typedef Aws::Utils::Outcome<GetTrustedAccessProgramOrganizationEnrollmentResult, BedrockError>
+    GetTrustedAccessProgramOrganizationEnrollmentOutcome;
+typedef Aws::Utils::Outcome<GetTrustedAccessProgramProjectEnrollmentResult, BedrockError> GetTrustedAccessProgramProjectEnrollmentOutcome;
 typedef Aws::Utils::Outcome<GetUseCaseForModelAccessResult, BedrockError> GetUseCaseForModelAccessOutcome;
 typedef Aws::Utils::Outcome<ListAdvancedPromptOptimizationJobsResult, BedrockError> ListAdvancedPromptOptimizationJobsOutcome;
 typedef Aws::Utils::Outcome<ListAutomatedReasoningPoliciesResult, BedrockError> ListAutomatedReasoningPoliciesOutcome;
@@ -380,18 +446,33 @@ typedef Aws::Utils::Outcome<ListModelCopyJobsResult, BedrockError> ListModelCopy
 typedef Aws::Utils::Outcome<ListModelCustomizationJobsResult, BedrockError> ListModelCustomizationJobsOutcome;
 typedef Aws::Utils::Outcome<ListModelImportJobsResult, BedrockError> ListModelImportJobsOutcome;
 typedef Aws::Utils::Outcome<ListModelInvocationJobsResult, BedrockError> ListModelInvocationJobsOutcome;
+typedef Aws::Utils::Outcome<ListProjectsResult, BedrockError> ListProjectsOutcome;
 typedef Aws::Utils::Outcome<ListPromptRoutersResult, BedrockError> ListPromptRoutersOutcome;
 typedef Aws::Utils::Outcome<ListProvisionedModelThroughputsResult, BedrockError> ListProvisionedModelThroughputsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<ListTrustedAccessProgramsResult, BedrockError> ListTrustedAccessProgramsOutcome;
 typedef Aws::Utils::Outcome<PutAccountDataRetentionResult, BedrockError> PutAccountDataRetentionOutcome;
+typedef Aws::Utils::Outcome<PutAccountDataRetentionStorageResult, BedrockError> PutAccountDataRetentionStorageOutcome;
 typedef Aws::Utils::Outcome<PutEnforcedGuardrailConfigurationResult, BedrockError> PutEnforcedGuardrailConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutModelInvocationLoggingConfigurationResult, BedrockError> PutModelInvocationLoggingConfigurationOutcome;
+typedef Aws::Utils::Outcome<PutOrganizationDataRetentionStorageResult, BedrockError> PutOrganizationDataRetentionStorageOutcome;
+typedef Aws::Utils::Outcome<PutProjectDataRetentionStorageResult, BedrockError> PutProjectDataRetentionStorageOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, BedrockError> PutResourcePolicyOutcome;
+typedef Aws::Utils::Outcome<PutTrustedAccessProgramAccountEnrollmentResult, BedrockError> PutTrustedAccessProgramAccountEnrollmentOutcome;
+typedef Aws::Utils::Outcome<PutTrustedAccessProgramOrganizationEnrollmentResult, BedrockError>
+    PutTrustedAccessProgramOrganizationEnrollmentOutcome;
+typedef Aws::Utils::Outcome<PutTrustedAccessProgramProjectEnrollmentResult, BedrockError> PutTrustedAccessProgramProjectEnrollmentOutcome;
 typedef Aws::Utils::Outcome<PutUseCaseForModelAccessResult, BedrockError> PutUseCaseForModelAccessOutcome;
 typedef Aws::Utils::Outcome<RegisterMarketplaceModelEndpointResult, BedrockError> RegisterMarketplaceModelEndpointOutcome;
 typedef Aws::Utils::Outcome<StartAutomatedReasoningPolicyBuildWorkflowResult, BedrockError>
     StartAutomatedReasoningPolicyBuildWorkflowOutcome;
 typedef Aws::Utils::Outcome<StartAutomatedReasoningPolicyTestWorkflowResult, BedrockError> StartAutomatedReasoningPolicyTestWorkflowOutcome;
+typedef Aws::Utils::Outcome<StartTrustedAccessProgramAccountApplicationResult, BedrockError>
+    StartTrustedAccessProgramAccountApplicationOutcome;
+typedef Aws::Utils::Outcome<StartTrustedAccessProgramOrganizationApplicationResult, BedrockError>
+    StartTrustedAccessProgramOrganizationApplicationOutcome;
+typedef Aws::Utils::Outcome<StartTrustedAccessProgramProjectApplicationResult, BedrockError>
+    StartTrustedAccessProgramProjectApplicationOutcome;
 typedef Aws::Utils::Outcome<StopAdvancedPromptOptimizationJobResult, BedrockError> StopAdvancedPromptOptimizationJobOutcome;
 typedef Aws::Utils::Outcome<StopEvaluationJobResult, BedrockError> StopEvaluationJobOutcome;
 typedef Aws::Utils::Outcome<StopModelCustomizationJobResult, BedrockError> StopModelCustomizationJobOutcome;
@@ -404,10 +485,12 @@ typedef Aws::Utils::Outcome<UpdateAutomatedReasoningPolicyTestCaseResult, Bedroc
 typedef Aws::Utils::Outcome<UpdateCustomModelDeploymentResult, BedrockError> UpdateCustomModelDeploymentOutcome;
 typedef Aws::Utils::Outcome<UpdateGuardrailResult, BedrockError> UpdateGuardrailOutcome;
 typedef Aws::Utils::Outcome<UpdateMarketplaceModelEndpointResult, BedrockError> UpdateMarketplaceModelEndpointOutcome;
+typedef Aws::Utils::Outcome<UpdateProjectResult, BedrockError> UpdateProjectOutcome;
 typedef Aws::Utils::Outcome<UpdateProvisionedModelThroughputResult, BedrockError> UpdateProvisionedModelThroughputOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<ArchiveProjectOutcome> ArchiveProjectOutcomeCallable;
 typedef std::future<BatchDeleteAdvancedPromptOptimizationJobOutcome> BatchDeleteAdvancedPromptOptimizationJobOutcomeCallable;
 typedef std::future<BatchDeleteEvaluationJobOutcome> BatchDeleteEvaluationJobOutcomeCallable;
 typedef std::future<CancelAutomatedReasoningPolicyBuildWorkflowOutcome> CancelAutomatedReasoningPolicyBuildWorkflowOutcomeCallable;
@@ -427,8 +510,10 @@ typedef std::future<CreateModelCopyJobOutcome> CreateModelCopyJobOutcomeCallable
 typedef std::future<CreateModelCustomizationJobOutcome> CreateModelCustomizationJobOutcomeCallable;
 typedef std::future<CreateModelImportJobOutcome> CreateModelImportJobOutcomeCallable;
 typedef std::future<CreateModelInvocationJobOutcome> CreateModelInvocationJobOutcomeCallable;
+typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
 typedef std::future<CreatePromptRouterOutcome> CreatePromptRouterOutcomeCallable;
 typedef std::future<CreateProvisionedModelThroughputOutcome> CreateProvisionedModelThroughputOutcomeCallable;
+typedef std::future<DeleteAccountDataRetentionStorageOutcome> DeleteAccountDataRetentionStorageOutcomeCallable;
 typedef std::future<DeleteAutomatedReasoningPolicyOutcome> DeleteAutomatedReasoningPolicyOutcomeCallable;
 typedef std::future<DeleteAutomatedReasoningPolicyBuildWorkflowOutcome> DeleteAutomatedReasoningPolicyBuildWorkflowOutcomeCallable;
 typedef std::future<DeleteAutomatedReasoningPolicyTestCaseOutcome> DeleteAutomatedReasoningPolicyTestCaseOutcomeCallable;
@@ -441,12 +526,15 @@ typedef std::future<DeleteImportedModelOutcome> DeleteImportedModelOutcomeCallab
 typedef std::future<DeleteInferenceProfileOutcome> DeleteInferenceProfileOutcomeCallable;
 typedef std::future<DeleteMarketplaceModelEndpointOutcome> DeleteMarketplaceModelEndpointOutcomeCallable;
 typedef std::future<DeleteModelInvocationLoggingConfigurationOutcome> DeleteModelInvocationLoggingConfigurationOutcomeCallable;
+typedef std::future<DeleteOrganizationDataRetentionStorageOutcome> DeleteOrganizationDataRetentionStorageOutcomeCallable;
+typedef std::future<DeleteProjectDataRetentionStorageOutcome> DeleteProjectDataRetentionStorageOutcomeCallable;
 typedef std::future<DeletePromptRouterOutcome> DeletePromptRouterOutcomeCallable;
 typedef std::future<DeleteProvisionedModelThroughputOutcome> DeleteProvisionedModelThroughputOutcomeCallable;
 typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
 typedef std::future<DeregisterMarketplaceModelEndpointOutcome> DeregisterMarketplaceModelEndpointOutcomeCallable;
 typedef std::future<ExportAutomatedReasoningPolicyVersionOutcome> ExportAutomatedReasoningPolicyVersionOutcomeCallable;
 typedef std::future<GetAccountDataRetentionOutcome> GetAccountDataRetentionOutcomeCallable;
+typedef std::future<GetAccountDataRetentionStorageOutcome> GetAccountDataRetentionStorageOutcomeCallable;
 typedef std::future<GetAdvancedPromptOptimizationJobOutcome> GetAdvancedPromptOptimizationJobOutcomeCallable;
 typedef std::future<GetAutomatedReasoningPolicyOutcome> GetAutomatedReasoningPolicyOutcomeCallable;
 typedef std::future<GetAutomatedReasoningPolicyAnnotationsOutcome> GetAutomatedReasoningPolicyAnnotationsOutcomeCallable;
@@ -470,9 +558,16 @@ typedef std::future<GetModelCustomizationJobOutcome> GetModelCustomizationJobOut
 typedef std::future<GetModelImportJobOutcome> GetModelImportJobOutcomeCallable;
 typedef std::future<GetModelInvocationJobOutcome> GetModelInvocationJobOutcomeCallable;
 typedef std::future<GetModelInvocationLoggingConfigurationOutcome> GetModelInvocationLoggingConfigurationOutcomeCallable;
+typedef std::future<GetOrganizationDataRetentionStorageOutcome> GetOrganizationDataRetentionStorageOutcomeCallable;
+typedef std::future<GetProjectOutcome> GetProjectOutcomeCallable;
+typedef std::future<GetProjectDataRetentionStorageOutcome> GetProjectDataRetentionStorageOutcomeCallable;
 typedef std::future<GetPromptRouterOutcome> GetPromptRouterOutcomeCallable;
 typedef std::future<GetProvisionedModelThroughputOutcome> GetProvisionedModelThroughputOutcomeCallable;
 typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
+typedef std::future<GetTrustedAccessProgramOutcome> GetTrustedAccessProgramOutcomeCallable;
+typedef std::future<GetTrustedAccessProgramAccountEnrollmentOutcome> GetTrustedAccessProgramAccountEnrollmentOutcomeCallable;
+typedef std::future<GetTrustedAccessProgramOrganizationEnrollmentOutcome> GetTrustedAccessProgramOrganizationEnrollmentOutcomeCallable;
+typedef std::future<GetTrustedAccessProgramProjectEnrollmentOutcome> GetTrustedAccessProgramProjectEnrollmentOutcomeCallable;
 typedef std::future<GetUseCaseForModelAccessOutcome> GetUseCaseForModelAccessOutcomeCallable;
 typedef std::future<ListAdvancedPromptOptimizationJobsOutcome> ListAdvancedPromptOptimizationJobsOutcomeCallable;
 typedef std::future<ListAutomatedReasoningPoliciesOutcome> ListAutomatedReasoningPoliciesOutcomeCallable;
@@ -493,17 +588,29 @@ typedef std::future<ListModelCopyJobsOutcome> ListModelCopyJobsOutcomeCallable;
 typedef std::future<ListModelCustomizationJobsOutcome> ListModelCustomizationJobsOutcomeCallable;
 typedef std::future<ListModelImportJobsOutcome> ListModelImportJobsOutcomeCallable;
 typedef std::future<ListModelInvocationJobsOutcome> ListModelInvocationJobsOutcomeCallable;
+typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
 typedef std::future<ListPromptRoutersOutcome> ListPromptRoutersOutcomeCallable;
 typedef std::future<ListProvisionedModelThroughputsOutcome> ListProvisionedModelThroughputsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<ListTrustedAccessProgramsOutcome> ListTrustedAccessProgramsOutcomeCallable;
 typedef std::future<PutAccountDataRetentionOutcome> PutAccountDataRetentionOutcomeCallable;
+typedef std::future<PutAccountDataRetentionStorageOutcome> PutAccountDataRetentionStorageOutcomeCallable;
 typedef std::future<PutEnforcedGuardrailConfigurationOutcome> PutEnforcedGuardrailConfigurationOutcomeCallable;
 typedef std::future<PutModelInvocationLoggingConfigurationOutcome> PutModelInvocationLoggingConfigurationOutcomeCallable;
+typedef std::future<PutOrganizationDataRetentionStorageOutcome> PutOrganizationDataRetentionStorageOutcomeCallable;
+typedef std::future<PutProjectDataRetentionStorageOutcome> PutProjectDataRetentionStorageOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
+typedef std::future<PutTrustedAccessProgramAccountEnrollmentOutcome> PutTrustedAccessProgramAccountEnrollmentOutcomeCallable;
+typedef std::future<PutTrustedAccessProgramOrganizationEnrollmentOutcome> PutTrustedAccessProgramOrganizationEnrollmentOutcomeCallable;
+typedef std::future<PutTrustedAccessProgramProjectEnrollmentOutcome> PutTrustedAccessProgramProjectEnrollmentOutcomeCallable;
 typedef std::future<PutUseCaseForModelAccessOutcome> PutUseCaseForModelAccessOutcomeCallable;
 typedef std::future<RegisterMarketplaceModelEndpointOutcome> RegisterMarketplaceModelEndpointOutcomeCallable;
 typedef std::future<StartAutomatedReasoningPolicyBuildWorkflowOutcome> StartAutomatedReasoningPolicyBuildWorkflowOutcomeCallable;
 typedef std::future<StartAutomatedReasoningPolicyTestWorkflowOutcome> StartAutomatedReasoningPolicyTestWorkflowOutcomeCallable;
+typedef std::future<StartTrustedAccessProgramAccountApplicationOutcome> StartTrustedAccessProgramAccountApplicationOutcomeCallable;
+typedef std::future<StartTrustedAccessProgramOrganizationApplicationOutcome>
+    StartTrustedAccessProgramOrganizationApplicationOutcomeCallable;
+typedef std::future<StartTrustedAccessProgramProjectApplicationOutcome> StartTrustedAccessProgramProjectApplicationOutcomeCallable;
 typedef std::future<StopAdvancedPromptOptimizationJobOutcome> StopAdvancedPromptOptimizationJobOutcomeCallable;
 typedef std::future<StopEvaluationJobOutcome> StopEvaluationJobOutcomeCallable;
 typedef std::future<StopModelCustomizationJobOutcome> StopModelCustomizationJobOutcomeCallable;
@@ -516,6 +623,7 @@ typedef std::future<UpdateAutomatedReasoningPolicyTestCaseOutcome> UpdateAutomat
 typedef std::future<UpdateCustomModelDeploymentOutcome> UpdateCustomModelDeploymentOutcomeCallable;
 typedef std::future<UpdateGuardrailOutcome> UpdateGuardrailOutcomeCallable;
 typedef std::future<UpdateMarketplaceModelEndpointOutcome> UpdateMarketplaceModelEndpointOutcomeCallable;
+typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
 typedef std::future<UpdateProvisionedModelThroughputOutcome> UpdateProvisionedModelThroughputOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -523,6 +631,9 @@ typedef std::future<UpdateProvisionedModelThroughputOutcome> UpdateProvisionedMo
 class BedrockClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const BedrockClient*, const Model::ArchiveProjectRequest&, const Model::ArchiveProjectOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ArchiveProjectResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::BatchDeleteAdvancedPromptOptimizationJobRequest&,
                            const Model::BatchDeleteAdvancedPromptOptimizationJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -588,6 +699,9 @@ typedef std::function<void(const BedrockClient*, const Model::CreateModelImportJ
 typedef std::function<void(const BedrockClient*, const Model::CreateModelInvocationJobRequest&,
                            const Model::CreateModelInvocationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateModelInvocationJobResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateProjectResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::CreatePromptRouterRequest&, const Model::CreatePromptRouterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreatePromptRouterResponseReceivedHandler;
@@ -595,6 +709,10 @@ typedef std::function<void(const BedrockClient*, const Model::CreateProvisionedM
                            const Model::CreateProvisionedModelThroughputOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateProvisionedModelThroughputResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::DeleteAccountDataRetentionStorageRequest&,
+                           const Model::DeleteAccountDataRetentionStorageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteAccountDataRetentionStorageResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::DeleteAutomatedReasoningPolicyRequest&,
                            const Model::DeleteAutomatedReasoningPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -638,6 +756,14 @@ typedef std::function<void(const BedrockClient*, const Model::DeleteModelInvocat
                            const Model::DeleteModelInvocationLoggingConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteModelInvocationLoggingConfigurationResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::DeleteOrganizationDataRetentionStorageRequest&,
+                           const Model::DeleteOrganizationDataRetentionStorageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteOrganizationDataRetentionStorageResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::DeleteProjectDataRetentionStorageRequest&,
+                           const Model::DeleteProjectDataRetentionStorageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteProjectDataRetentionStorageResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::DeletePromptRouterRequest&, const Model::DeletePromptRouterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePromptRouterResponseReceivedHandler;
@@ -659,6 +785,10 @@ typedef std::function<void(const BedrockClient*, const Model::ExportAutomatedRea
 typedef std::function<void(const BedrockClient*, const Model::GetAccountDataRetentionRequest&, const Model::GetAccountDataRetentionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAccountDataRetentionResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::GetAccountDataRetentionStorageRequest&,
+                           const Model::GetAccountDataRetentionStorageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetAccountDataRetentionStorageResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::GetAdvancedPromptOptimizationJobRequest&,
                            const Model::GetAdvancedPromptOptimizationJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -734,6 +864,17 @@ typedef std::function<void(const BedrockClient*, const Model::GetModelInvocation
                            const Model::GetModelInvocationLoggingConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetModelInvocationLoggingConfigurationResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::GetOrganizationDataRetentionStorageRequest&,
+                           const Model::GetOrganizationDataRetentionStorageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetOrganizationDataRetentionStorageResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::GetProjectRequest&, const Model::GetProjectOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetProjectResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::GetProjectDataRetentionStorageRequest&,
+                           const Model::GetProjectDataRetentionStorageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetProjectDataRetentionStorageResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::GetPromptRouterRequest&, const Model::GetPromptRouterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPromptRouterResponseReceivedHandler;
@@ -744,6 +885,21 @@ typedef std::function<void(const BedrockClient*, const Model::GetProvisionedMode
 typedef std::function<void(const BedrockClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetResourcePolicyResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::GetTrustedAccessProgramRequest&, const Model::GetTrustedAccessProgramOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTrustedAccessProgramResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::GetTrustedAccessProgramAccountEnrollmentRequest&,
+                           const Model::GetTrustedAccessProgramAccountEnrollmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTrustedAccessProgramAccountEnrollmentResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::GetTrustedAccessProgramOrganizationEnrollmentRequest&,
+                           const Model::GetTrustedAccessProgramOrganizationEnrollmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTrustedAccessProgramOrganizationEnrollmentResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::GetTrustedAccessProgramProjectEnrollmentRequest&,
+                           const Model::GetTrustedAccessProgramProjectEnrollmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTrustedAccessProgramProjectEnrollmentResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::GetUseCaseForModelAccessRequest&,
                            const Model::GetUseCaseForModelAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetUseCaseForModelAccessResponseReceivedHandler;
@@ -812,6 +968,9 @@ typedef std::function<void(const BedrockClient*, const Model::ListModelImportJob
 typedef std::function<void(const BedrockClient*, const Model::ListModelInvocationJobsRequest&, const Model::ListModelInvocationJobsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListModelInvocationJobsResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListProjectsResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::ListPromptRoutersRequest&, const Model::ListPromptRoutersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPromptRoutersResponseReceivedHandler;
@@ -822,9 +981,16 @@ typedef std::function<void(const BedrockClient*, const Model::ListProvisionedMod
 typedef std::function<void(const BedrockClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::ListTrustedAccessProgramsRequest&,
+                           const Model::ListTrustedAccessProgramsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTrustedAccessProgramsResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::PutAccountDataRetentionRequest&, const Model::PutAccountDataRetentionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutAccountDataRetentionResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::PutAccountDataRetentionStorageRequest&,
+                           const Model::PutAccountDataRetentionStorageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutAccountDataRetentionStorageResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::PutEnforcedGuardrailConfigurationRequest&,
                            const Model::PutEnforcedGuardrailConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -833,9 +999,29 @@ typedef std::function<void(const BedrockClient*, const Model::PutModelInvocation
                            const Model::PutModelInvocationLoggingConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutModelInvocationLoggingConfigurationResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::PutOrganizationDataRetentionStorageRequest&,
+                           const Model::PutOrganizationDataRetentionStorageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutOrganizationDataRetentionStorageResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::PutProjectDataRetentionStorageRequest&,
+                           const Model::PutProjectDataRetentionStorageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutProjectDataRetentionStorageResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutResourcePolicyResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::PutTrustedAccessProgramAccountEnrollmentRequest&,
+                           const Model::PutTrustedAccessProgramAccountEnrollmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutTrustedAccessProgramAccountEnrollmentResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::PutTrustedAccessProgramOrganizationEnrollmentRequest&,
+                           const Model::PutTrustedAccessProgramOrganizationEnrollmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutTrustedAccessProgramOrganizationEnrollmentResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::PutTrustedAccessProgramProjectEnrollmentRequest&,
+                           const Model::PutTrustedAccessProgramProjectEnrollmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutTrustedAccessProgramProjectEnrollmentResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::PutUseCaseForModelAccessRequest&,
                            const Model::PutUseCaseForModelAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutUseCaseForModelAccessResponseReceivedHandler;
@@ -851,6 +1037,18 @@ typedef std::function<void(const BedrockClient*, const Model::StartAutomatedReas
                            const Model::StartAutomatedReasoningPolicyTestWorkflowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartAutomatedReasoningPolicyTestWorkflowResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::StartTrustedAccessProgramAccountApplicationRequest&,
+                           const Model::StartTrustedAccessProgramAccountApplicationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartTrustedAccessProgramAccountApplicationResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::StartTrustedAccessProgramOrganizationApplicationRequest&,
+                           const Model::StartTrustedAccessProgramOrganizationApplicationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartTrustedAccessProgramOrganizationApplicationResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::StartTrustedAccessProgramProjectApplicationRequest&,
+                           const Model::StartTrustedAccessProgramProjectApplicationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartTrustedAccessProgramProjectApplicationResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::StopAdvancedPromptOptimizationJobRequest&,
                            const Model::StopAdvancedPromptOptimizationJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -892,6 +1090,9 @@ typedef std::function<void(const BedrockClient*, const Model::UpdateMarketplaceM
                            const Model::UpdateMarketplaceModelEndpointOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateMarketplaceModelEndpointResponseReceivedHandler;
+typedef std::function<void(const BedrockClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateProjectResponseReceivedHandler;
 typedef std::function<void(const BedrockClient*, const Model::UpdateProvisionedModelThroughputRequest&,
                            const Model::UpdateProvisionedModelThroughputOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

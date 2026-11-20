@@ -366,9 +366,9 @@ class StartTranscriptionJobRequest : public TranscribeServiceRequest {
 
   ///@{
   /**
-   * <p>Makes it possible to redact or flag specified personally identifiable
-   * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
-   * you must also include the sub-parameters: <code>RedactionOutput</code> and
+   * <p>Makes it possible to redact specified personally identifiable information
+   * (PII) in your transcript. If you use <code>ContentRedaction</code>, you must
+   * also include the sub-parameters: <code>RedactionOutput</code> and
    * <code>RedactionType</code>. You can optionally include
    * <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If
    * you do not include <code>PiiEntityTypes</code> in your request, all PII is

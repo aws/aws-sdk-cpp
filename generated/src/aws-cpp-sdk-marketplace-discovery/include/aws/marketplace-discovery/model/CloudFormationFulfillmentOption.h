@@ -124,7 +124,7 @@ class CloudFormationFulfillmentOption {
 
   ///@{
   /**
-   * <p>Release notes describing changes in this version of the fulfillment
+   * <p>Release notes that describe the changes in this version of the fulfillment
    * option.</p>
    */
   inline const Aws::String& GetReleaseNotes() const { return m_releaseNotes; }
@@ -174,6 +174,42 @@ class CloudFormationFulfillmentOption {
   template <typename AvailableFromTimeT = Aws::Utils::DateTime>
   CloudFormationFulfillmentOption& WithAvailableFromTime(AvailableFromTimeT&& value) {
     SetAvailableFromTime(std::forward<AvailableFromTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The URL of the architecture diagram for the CloudFormation template.</p>
+   */
+  inline const Aws::String& GetArchitectureDiagramUrl() const { return m_architectureDiagramUrl; }
+  inline bool ArchitectureDiagramUrlHasBeenSet() const { return m_architectureDiagramUrlHasBeenSet; }
+  template <typename ArchitectureDiagramUrlT = Aws::String>
+  void SetArchitectureDiagramUrl(ArchitectureDiagramUrlT&& value) {
+    m_architectureDiagramUrlHasBeenSet = true;
+    m_architectureDiagramUrl = std::forward<ArchitectureDiagramUrlT>(value);
+  }
+  template <typename ArchitectureDiagramUrlT = Aws::String>
+  CloudFormationFulfillmentOption& WithArchitectureDiagramUrl(ArchitectureDiagramUrlT&& value) {
+    SetArchitectureDiagramUrl(std::forward<ArchitectureDiagramUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The URL of the CloudFormation template.</p>
+   */
+  inline const Aws::String& GetDeploymentTemplateUrl() const { return m_deploymentTemplateUrl; }
+  inline bool DeploymentTemplateUrlHasBeenSet() const { return m_deploymentTemplateUrlHasBeenSet; }
+  template <typename DeploymentTemplateUrlT = Aws::String>
+  void SetDeploymentTemplateUrl(DeploymentTemplateUrlT&& value) {
+    m_deploymentTemplateUrlHasBeenSet = true;
+    m_deploymentTemplateUrl = std::forward<DeploymentTemplateUrlT>(value);
+  }
+  template <typename DeploymentTemplateUrlT = Aws::String>
+  CloudFormationFulfillmentOption& WithDeploymentTemplateUrl(DeploymentTemplateUrlT&& value) {
+    SetDeploymentTemplateUrl(std::forward<DeploymentTemplateUrlT>(value));
     return *this;
   }
   ///@}
@@ -230,6 +266,10 @@ class CloudFormationFulfillmentOption {
 
   Aws::Utils::DateTime m_availableFromTime{};
 
+  Aws::String m_architectureDiagramUrl;
+
+  Aws::String m_deploymentTemplateUrl;
+
   Aws::String m_shortDescription;
 
   Aws::String m_longDescription;
@@ -241,6 +281,8 @@ class CloudFormationFulfillmentOption {
   bool m_releaseNotesHasBeenSet = false;
   bool m_usageInstructionsHasBeenSet = false;
   bool m_availableFromTimeHasBeenSet = false;
+  bool m_architectureDiagramUrlHasBeenSet = false;
+  bool m_deploymentTemplateUrlHasBeenSet = false;
   bool m_shortDescriptionHasBeenSet = false;
   bool m_longDescriptionHasBeenSet = false;
 };

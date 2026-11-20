@@ -37,6 +37,14 @@ DescribeRegionSettingsResult& DescribeRegionSettingsResult::operator=(const Aws:
     }
     m_resourceTypeManagementPreferenceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ResourceTypeOptInIncremental")) {
+    Aws::Map<Aws::String, JsonView> resourceTypeOptInIncrementalJsonMap =
+        jsonValue.GetObject("ResourceTypeOptInIncremental").GetAllObjects();
+    for (auto& resourceTypeOptInIncrementalItem : resourceTypeOptInIncrementalJsonMap) {
+      m_resourceTypeOptInIncremental[resourceTypeOptInIncrementalItem.first] = resourceTypeOptInIncrementalItem.second.AsBool();
+    }
+    m_resourceTypeOptInIncrementalHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

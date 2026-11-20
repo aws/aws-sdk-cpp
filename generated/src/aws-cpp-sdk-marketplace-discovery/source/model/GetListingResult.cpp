@@ -141,6 +141,14 @@ GetListingResult& GetListingResult::operator=(const Aws::AmazonWebServiceResult<
     }
     m_useCasesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("purchaseIndicators")) {
+    Aws::Utils::Array<JsonView> purchaseIndicatorsJsonList = jsonValue.GetArray("purchaseIndicators");
+    for (unsigned purchaseIndicatorsIndex = 0; purchaseIndicatorsIndex < purchaseIndicatorsJsonList.GetLength();
+         ++purchaseIndicatorsIndex) {
+      m_purchaseIndicators.push_back(purchaseIndicatorsJsonList[purchaseIndicatorsIndex].AsObject());
+    }
+    m_purchaseIndicatorsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

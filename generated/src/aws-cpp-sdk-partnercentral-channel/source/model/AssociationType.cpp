@@ -18,6 +18,7 @@ namespace AssociationTypeMapper {
 static const int DOWNSTREAM_SELLER_HASH = HashingUtils::HashString("DOWNSTREAM_SELLER");
 static const int END_CUSTOMER_HASH = HashingUtils::HashString("END_CUSTOMER");
 static const int INTERNAL_HASH = HashingUtils::HashString("INTERNAL");
+static const int MANAGED_SERVICES_END_CUSTOMER_HASH = HashingUtils::HashString("MANAGED_SERVICES_END_CUSTOMER");
 
 AssociationType GetAssociationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ AssociationType GetAssociationTypeForName(const Aws::String& name) {
     return AssociationType::END_CUSTOMER;
   } else if (hashCode == INTERNAL_HASH) {
     return AssociationType::INTERNAL;
+  } else if (hashCode == MANAGED_SERVICES_END_CUSTOMER_HASH) {
+    return AssociationType::MANAGED_SERVICES_END_CUSTOMER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForAssociationType(AssociationType enumValue) {
       return "END_CUSTOMER";
     case AssociationType::INTERNAL:
       return "INTERNAL";
+    case AssociationType::MANAGED_SERVICES_END_CUSTOMER:
+      return "MANAGED_SERVICES_END_CUSTOMER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

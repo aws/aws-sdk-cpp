@@ -107,7 +107,7 @@ class SageMakerModelFulfillmentOption {
 
   ///@{
   /**
-   * <p>Release notes describing changes in this version of the fulfillment
+   * <p>Release notes that describe the changes in this version of the fulfillment
    * option.</p>
    */
   inline const Aws::String& GetReleaseNotes() const { return m_releaseNotes; }
@@ -144,7 +144,7 @@ class SageMakerModelFulfillmentOption {
 
   ///@{
   /**
-   * <p>Recommended instance types for inference with this model.</p>
+   * <p>The recommended instance types for inference with this model.</p>
    */
   inline const SageMakerModelRecommendation& GetRecommendation() const { return m_recommendation; }
   inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
@@ -162,7 +162,8 @@ class SageMakerModelFulfillmentOption {
 
   ///@{
   /**
-   * <p>The MIME types that this model accepts as input.</p>
+   * <p>The Multipurpose Internet Mail Extensions (MIME) types that this model
+   * accepts as input.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSupportedContentTypes() const { return m_supportedContentTypes; }
   inline bool SupportedContentTypesHasBeenSet() const { return m_supportedContentTypesHasBeenSet; }

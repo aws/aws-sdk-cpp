@@ -164,7 +164,7 @@ class ListPipelinesRequest : public SageMakerRequest {
    * <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return
    * pipelines that Amazon Web Services manages, or <code>CUSTOMER</code> to return
    * pipelines that you created. If you don't specify a value, the response includes
-   * both.</p>
+   * only pipelines that you created.</p>
    */
   inline PipelineManagedBy GetManagedBy() const { return m_managedBy; }
   inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }

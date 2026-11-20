@@ -44,9 +44,11 @@
 #include <aws/network-security-manager/model/ListDeploymentSnapshotsResult.h>
 #include <aws/network-security-manager/model/ListDeploymentsRequest.h>
 #include <aws/network-security-manager/model/ListDeploymentsResult.h>
+#include <aws/network-security-manager/model/ListEntityCoveragesResult.h>
 #include <aws/network-security-manager/model/ListPoliciesRequest.h>
 #include <aws/network-security-manager/model/ListPoliciesResult.h>
 #include <aws/network-security-manager/model/ListPolicySnapshotsResult.h>
+#include <aws/network-security-manager/model/ListProtectedResourceCoveragesResult.h>
 #include <aws/network-security-manager/model/ListResourceAssociationsResult.h>
 #include <aws/network-security-manager/model/ListResourceSynchronizationStatusesResult.h>
 #include <aws/network-security-manager/model/ListRuleSnapshotsResult.h>
@@ -127,8 +129,10 @@ class ListAdminAccountsRequest;
 class ListAggregateResourceSynchronizationStatusesRequest;
 class ListDeploymentSnapshotsRequest;
 class ListDeploymentsRequest;
+class ListEntityCoveragesRequest;
 class ListPoliciesRequest;
 class ListPolicySnapshotsRequest;
+class ListProtectedResourceCoveragesRequest;
 class ListResourceAssociationsRequest;
 class ListResourceSynchronizationStatusesRequest;
 class ListRuleSnapshotsRequest;
@@ -177,8 +181,10 @@ typedef Aws::Utils::Outcome<ListAggregateResourceSynchronizationStatusesResult, 
     ListAggregateResourceSynchronizationStatusesOutcome;
 typedef Aws::Utils::Outcome<ListDeploymentSnapshotsResult, NetworkSecurityManagerError> ListDeploymentSnapshotsOutcome;
 typedef Aws::Utils::Outcome<ListDeploymentsResult, NetworkSecurityManagerError> ListDeploymentsOutcome;
+typedef Aws::Utils::Outcome<ListEntityCoveragesResult, NetworkSecurityManagerError> ListEntityCoveragesOutcome;
 typedef Aws::Utils::Outcome<ListPoliciesResult, NetworkSecurityManagerError> ListPoliciesOutcome;
 typedef Aws::Utils::Outcome<ListPolicySnapshotsResult, NetworkSecurityManagerError> ListPolicySnapshotsOutcome;
+typedef Aws::Utils::Outcome<ListProtectedResourceCoveragesResult, NetworkSecurityManagerError> ListProtectedResourceCoveragesOutcome;
 typedef Aws::Utils::Outcome<ListResourceAssociationsResult, NetworkSecurityManagerError> ListResourceAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListResourceSynchronizationStatusesResult, NetworkSecurityManagerError>
     ListResourceSynchronizationStatusesOutcome;
@@ -227,8 +233,10 @@ typedef std::future<ListAdminAccountsOutcome> ListAdminAccountsOutcomeCallable;
 typedef std::future<ListAggregateResourceSynchronizationStatusesOutcome> ListAggregateResourceSynchronizationStatusesOutcomeCallable;
 typedef std::future<ListDeploymentSnapshotsOutcome> ListDeploymentSnapshotsOutcomeCallable;
 typedef std::future<ListDeploymentsOutcome> ListDeploymentsOutcomeCallable;
+typedef std::future<ListEntityCoveragesOutcome> ListEntityCoveragesOutcomeCallable;
 typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
 typedef std::future<ListPolicySnapshotsOutcome> ListPolicySnapshotsOutcomeCallable;
+typedef std::future<ListProtectedResourceCoveragesOutcome> ListProtectedResourceCoveragesOutcomeCallable;
 typedef std::future<ListResourceAssociationsOutcome> ListResourceAssociationsOutcomeCallable;
 typedef std::future<ListResourceSynchronizationStatusesOutcome> ListResourceSynchronizationStatusesOutcomeCallable;
 typedef std::future<ListRuleSnapshotsOutcome> ListRuleSnapshotsOutcomeCallable;
@@ -334,12 +342,19 @@ typedef std::function<void(const NetworkSecurityManagerClient*, const Model::Lis
 typedef std::function<void(const NetworkSecurityManagerClient*, const Model::ListDeploymentsRequest&, const Model::ListDeploymentsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDeploymentsResponseReceivedHandler;
+typedef std::function<void(const NetworkSecurityManagerClient*, const Model::ListEntityCoveragesRequest&,
+                           const Model::ListEntityCoveragesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListEntityCoveragesResponseReceivedHandler;
 typedef std::function<void(const NetworkSecurityManagerClient*, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPoliciesResponseReceivedHandler;
 typedef std::function<void(const NetworkSecurityManagerClient*, const Model::ListPolicySnapshotsRequest&,
                            const Model::ListPolicySnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPolicySnapshotsResponseReceivedHandler;
+typedef std::function<void(const NetworkSecurityManagerClient*, const Model::ListProtectedResourceCoveragesRequest&,
+                           const Model::ListProtectedResourceCoveragesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListProtectedResourceCoveragesResponseReceivedHandler;
 typedef std::function<void(const NetworkSecurityManagerClient*, const Model::ListResourceAssociationsRequest&,
                            const Model::ListResourceAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListResourceAssociationsResponseReceivedHandler;

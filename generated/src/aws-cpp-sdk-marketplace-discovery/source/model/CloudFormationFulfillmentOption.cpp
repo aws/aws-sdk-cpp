@@ -50,6 +50,14 @@ CloudFormationFulfillmentOption& CloudFormationFulfillmentOption::operator=(Json
     m_availableFromTime = jsonValue.GetDouble("availableFromTime");
     m_availableFromTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("architectureDiagramUrl")) {
+    m_architectureDiagramUrl = jsonValue.GetString("architectureDiagramUrl");
+    m_architectureDiagramUrlHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("deploymentTemplateUrl")) {
+    m_deploymentTemplateUrl = jsonValue.GetString("deploymentTemplateUrl");
+    m_deploymentTemplateUrlHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("shortDescription")) {
     m_shortDescription = jsonValue.GetString("shortDescription");
     m_shortDescriptionHasBeenSet = true;
@@ -94,6 +102,14 @@ JsonValue CloudFormationFulfillmentOption::Jsonize() const {
 
   if (m_availableFromTimeHasBeenSet) {
     payload.WithDouble("availableFromTime", m_availableFromTime.SecondsWithMSPrecision());
+  }
+
+  if (m_architectureDiagramUrlHasBeenSet) {
+    payload.WithString("architectureDiagramUrl", m_architectureDiagramUrl);
+  }
+
+  if (m_deploymentTemplateUrlHasBeenSet) {
+    payload.WithString("deploymentTemplateUrl", m_deploymentTemplateUrl);
   }
 
   if (m_shortDescriptionHasBeenSet) {

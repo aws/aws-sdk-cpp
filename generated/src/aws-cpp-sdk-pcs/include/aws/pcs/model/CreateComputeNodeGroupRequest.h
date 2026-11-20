@@ -13,6 +13,7 @@
 #include <aws/pcs/model/ComputeNodeGroupSlurmConfigurationRequest.h>
 #include <aws/pcs/model/CustomLaunchTemplate.h>
 #include <aws/pcs/model/InstanceConfig.h>
+#include <aws/pcs/model/InstanceHealthChecksRequest.h>
 #include <aws/pcs/model/LaunchTemplateMode.h>
 #include <aws/pcs/model/NodeLifecycleActionsRequest.h>
 #include <aws/pcs/model/PurchaseOption.h>
@@ -384,6 +385,29 @@ class CreateComputeNodeGroupRequest : public PCSRequest {
 
   ///@{
   /**
+   * <p>The instance health check settings for the compute node group. Instance
+   * health checks detect faults on instances in the compute node group and respond
+   * with the repair action that you choose. You can configure health monitoring,
+   * deep health checks, or both. You can't specify an empty object
+   * (<code>{}</code>). Instance health checks require Slurm version 26.05 or
+   * later.</p>
+   */
+  inline const InstanceHealthChecksRequest& GetInstanceHealthChecks() const { return m_instanceHealthChecks; }
+  inline bool InstanceHealthChecksHasBeenSet() const { return m_instanceHealthChecksHasBeenSet; }
+  template <typename InstanceHealthChecksT = InstanceHealthChecksRequest>
+  void SetInstanceHealthChecks(InstanceHealthChecksT&& value) {
+    m_instanceHealthChecksHasBeenSet = true;
+    m_instanceHealthChecks = std::forward<InstanceHealthChecksT>(value);
+  }
+  template <typename InstanceHealthChecksT = InstanceHealthChecksRequest>
+  CreateComputeNodeGroupRequest& WithInstanceHealthChecks(InstanceHealthChecksT&& value) {
+    SetInstanceHealthChecks(std::forward<InstanceHealthChecksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request. Idempotency ensures that an API request completes
    * only once. With an idempotent request, if the original request completes
@@ -461,6 +485,8 @@ class CreateComputeNodeGroupRequest : public PCSRequest {
 
   NodeLifecycleActionsRequest m_nodeLifecycleActions;
 
+  InstanceHealthChecksRequest m_instanceHealthChecks;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -479,6 +505,7 @@ class CreateComputeNodeGroupRequest : public PCSRequest {
   bool m_spotOptionsHasBeenSet = false;
   bool m_slurmConfigurationHasBeenSet = false;
   bool m_nodeLifecycleActionsHasBeenSet = false;
+  bool m_instanceHealthChecksHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };

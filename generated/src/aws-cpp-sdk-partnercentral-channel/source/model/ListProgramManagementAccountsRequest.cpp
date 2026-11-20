@@ -64,6 +64,10 @@ Aws::String ListProgramManagementAccountsRequest::SerializePayload() const {
     payload.WithString("nextToken", m_nextToken);
   }
 
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ProgramManagementAccountTypeMapper::GetNameForProgramManagementAccountType(m_type));
+  }
+
   return payload.View().WriteReadable();
 }
 

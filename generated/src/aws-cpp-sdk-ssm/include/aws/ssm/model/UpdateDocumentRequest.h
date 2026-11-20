@@ -9,6 +9,7 @@
 #include <aws/ssm/SSMRequest.h>
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/AttachmentsSource.h>
+#include <aws/ssm/model/CloudProvider.h>
 #include <aws/ssm/model/DocumentFormat.h>
 
 #include <utility>
@@ -193,6 +194,35 @@ class UpdateDocumentRequest : public SSMRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The cloud providers that the new document version can run against. Valid
+   * values include the following:</p> <ul> <li> <p> <code>AWS</code> - The document
+   * runs against Amazon Web Services resources.</p> </li> <li> <p>
+   * <code>Azure</code> - The document runs against Microsoft Azure resources.</p>
+   * </li> <li> <p> <code>GCP</code> - The document runs against Google Cloud
+   * resources.</p> </li> </ul> <p>If you don't specify a value, the new version uses
+   * the cloud providers of the latest version.</p>
+   */
+  inline const Aws::Vector<CloudProvider>& GetCloudProviders() const { return m_cloudProviders; }
+  inline bool CloudProvidersHasBeenSet() const { return m_cloudProvidersHasBeenSet; }
+  template <typename CloudProvidersT = Aws::Vector<CloudProvider>>
+  void SetCloudProviders(CloudProvidersT&& value) {
+    m_cloudProvidersHasBeenSet = true;
+    m_cloudProviders = std::forward<CloudProvidersT>(value);
+  }
+  template <typename CloudProvidersT = Aws::Vector<CloudProvider>>
+  UpdateDocumentRequest& WithCloudProviders(CloudProvidersT&& value) {
+    SetCloudProviders(std::forward<CloudProvidersT>(value));
+    return *this;
+  }
+  inline UpdateDocumentRequest& AddCloudProviders(CloudProvider value) {
+    m_cloudProvidersHasBeenSet = true;
+    m_cloudProviders.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_content;
 
@@ -209,6 +239,8 @@ class UpdateDocumentRequest : public SSMRequest {
   DocumentFormat m_documentFormat{DocumentFormat::NOT_SET};
 
   Aws::String m_targetType;
+
+  Aws::Vector<CloudProvider> m_cloudProviders;
   bool m_contentHasBeenSet = false;
   bool m_attachmentsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -217,6 +249,7 @@ class UpdateDocumentRequest : public SSMRequest {
   bool m_documentVersionHasBeenSet = false;
   bool m_documentFormatHasBeenSet = false;
   bool m_targetTypeHasBeenSet = false;
+  bool m_cloudProvidersHasBeenSet = false;
 };
 
 }  // namespace Model

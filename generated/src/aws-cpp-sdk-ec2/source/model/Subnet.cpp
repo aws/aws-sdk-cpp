@@ -115,6 +115,12 @@ Subnet& Subnet::operator=(const XmlNode& xmlNode) {
       m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
       m_typeHasBeenSet = true;
     }
+    XmlNode networkFirewallConnectivityTypeNode = resultNode.FirstChild("networkFirewallConnectivityType");
+    if (!networkFirewallConnectivityTypeNode.IsNull()) {
+      m_networkFirewallConnectivityType = NetworkFirewallConnectivityTypeMapper::GetNetworkFirewallConnectivityTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkFirewallConnectivityTypeNode.GetText()).c_str()));
+      m_networkFirewallConnectivityTypeHasBeenSet = true;
+    }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if (!subnetIdNode.IsNull()) {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
@@ -243,6 +249,13 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
     oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
   }
 
+  if (m_networkFirewallConnectivityTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".NetworkFirewallConnectivityType="
+            << StringUtils::URLEncode(
+                   NetworkFirewallConnectivityTypeMapper::GetNameForNetworkFirewallConnectivityType(m_networkFirewallConnectivityType))
+            << "&";
+  }
+
   if (m_subnetIdHasBeenSet) {
     oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
@@ -336,6 +349,12 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const {
   }
   if (m_typeHasBeenSet) {
     oStream << location << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
+  }
+  if (m_networkFirewallConnectivityTypeHasBeenSet) {
+    oStream << location << ".NetworkFirewallConnectivityType="
+            << StringUtils::URLEncode(
+                   NetworkFirewallConnectivityTypeMapper::GetNameForNetworkFirewallConnectivityType(m_networkFirewallConnectivityType))
+            << "&";
   }
   if (m_subnetIdHasBeenSet) {
     oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";

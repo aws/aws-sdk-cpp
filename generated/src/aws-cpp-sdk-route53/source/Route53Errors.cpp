@@ -55,6 +55,7 @@ static const int CIDR_BLOCK_IN_USE_HASH = HashingUtils::HashString("CidrBlockInU
 static const int V_P_C_ASSOCIATION_NOT_FOUND_HASH = HashingUtils::HashString("VPCAssociationNotFound");
 static const int CIDR_COLLECTION_VERSION_MISMATCH_HASH = HashingUtils::HashString("CidrCollectionVersionMismatchException");
 static const int INVALID_TRAFFIC_POLICY_DOCUMENT_HASH = HashingUtils::HashString("InvalidTrafficPolicyDocument");
+static const int FEATURE_NOT_ENABLED_HASH = HashingUtils::HashString("FeatureNotEnabled");
 static const int HOSTED_ZONE_ALREADY_EXISTS_HASH = HashingUtils::HashString("HostedZoneAlreadyExists");
 static const int LAST_V_P_C_ASSOCIATION_HASH = HashingUtils::HashString("LastVPCAssociation");
 static const int DELEGATION_SET_NOT_AVAILABLE_HASH = HashingUtils::HashString("DelegationSetNotAvailable");
@@ -153,6 +154,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::CIDR_COLLECTION_VERSION_MISMATCH), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_TRAFFIC_POLICY_DOCUMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::INVALID_TRAFFIC_POLICY_DOCUMENT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == FEATURE_NOT_ENABLED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::FEATURE_NOT_ENABLED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == HOSTED_ZONE_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::HOSTED_ZONE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LAST_V_P_C_ASSOCIATION_HASH) {

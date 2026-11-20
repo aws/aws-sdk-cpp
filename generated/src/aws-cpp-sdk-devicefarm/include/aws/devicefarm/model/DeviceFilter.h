@@ -61,6 +61,8 @@ class DeviceFilter {
    * HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> <p>Supported operators:
    * <code>EQUALS</code> </p> </dd> <dt>FORM_FACTOR</dt> <dd> <p>The device form
    * factor. Valid values are PHONE or TABLET.</p> <p>Supported operators:
+   * <code>EQUALS</code> </p> </dd> <dt>DEVICE_TYPE</dt> <dd> <p>The device type.
+   * Valid values are PHYSICAL or VIRTUAL.</p> <p>Supported operators:
    * <code>EQUALS</code> </p> </dd> <dt>MANUFACTURER</dt> <dd> <p>The device
    * manufacturer (for example, Apple).</p> <p>Supported operators:
    * <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
@@ -118,7 +120,8 @@ class DeviceFilter {
    * attribute can be set to ANDROID or IOS.</p> </li> <li> <p>The AVAILABILITY
    * attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
    * TEMPORARY_NOT_AVAILABLE.</p> </li> <li> <p>The FORM_FACTOR attribute can be set
-   * to PHONE or TABLET.</p> </li> <li> <p>The FLEET_TYPE attribute can be set to
+   * to PHONE or TABLET.</p> </li> <li> <p>The DEVICE_TYPE attribute can be set to
+   * PHYSICAL or VIRTUAL.</p> </li> <li> <p>The FLEET_TYPE attribute can be set to
    * PUBLIC or PRIVATE.</p> </li> </ul>
    */
   inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }

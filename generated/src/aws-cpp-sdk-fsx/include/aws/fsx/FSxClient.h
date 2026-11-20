@@ -243,7 +243,10 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
    * for OpenZFS file systems, the volume must be hosted on a high-availability file
    * system, either Single-AZ or Multi-AZ. For more information, see <a
    * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
-   * your data using Amazon S3 access points</a>. in the Amazon FSx for OpenZFS User
+   * your data using Amazon S3 access points</a> in the Amazon FSx for OpenZFS User
+   * Guide. For FSx for ONTAP file systems, see <a
+   * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/s3-access-points.html">Accessing
+   * data using Amazon S3 access points</a> in the Amazon FSx for NetApp ONTAP User
    * Guide. </p> <p>The requester requires the following permissions to perform these
    * actions:</p> <ul> <li> <p> <code>fsx:CreateAndAttachS3AccessPoint</code> </p>
    * </li> <li> <p> <code>s3:CreateAccessPoint</code> </p> </li> <li> <p>
@@ -1300,8 +1303,8 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
    * all snapshots owned by your Amazon Web Services account in the Amazon Web
    * Services Region of the endpoint that you're calling.</p> <p>When retrieving all
    * snapshots, you can optionally specify the <code>MaxResults</code> parameter to
-   * limit the number of snapshots in a response. If more backups remain, Amazon FSx
-   * returns a <code>NextToken</code> value in the response. In this case, send a
+   * limit the number of snapshots in a response. If more snapshots remain, Amazon
+   * FSx returns a <code>NextToken</code> value in the response. In this case, send a
    * later request with the <code>NextToken</code> request parameter set to the value
    * of <code>NextToken</code> from the last response. </p> <p>Use this operation in
    * an iterative process to retrieve a list of your snapshots.
@@ -1313,8 +1316,8 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
    * than the <code>MaxResults</code> value of snapshot descriptions while still
    * including a <code>NextToken</code> value.</p> </li> <li> <p>The order of
    * snapshots returned in the response of one <code>DescribeSnapshots</code> call
-   * and the order of backups returned across the responses of a multi-call iteration
-   * is unspecified. </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * and the order of snapshots returned across the responses of a multi-call
+   * iteration is unspecified. </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapshots">AWS
    * API Reference</a></p>
    */

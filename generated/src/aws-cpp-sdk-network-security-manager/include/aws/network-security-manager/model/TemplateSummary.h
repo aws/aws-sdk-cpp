@@ -9,6 +9,7 @@
 #include <aws/network-security-manager/NetworkSecurityManager_EXPORTS.h>
 #include <aws/network-security-manager/model/EntityStatus.h>
 #include <aws/network-security-manager/model/TemplateFirewallType.h>
+#include <aws/network-security-manager/model/TemplateOwner.h>
 
 #include <utility>
 
@@ -84,6 +85,24 @@ class TemplateSummary {
   template <typename TemplateNameT = Aws::String>
   TemplateSummary& WithTemplateName(TemplateNameT&& value) {
     SetTemplateName(std::forward<TemplateNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The owner of the template. Valid values:</p> <ul> <li> <p>
+   * <code>CUSTOMER</code> – The template is in your account.</p> </li> <li> <p>
+   * <code>AWS</code> – The template is an AWS managed template.</p> </li> </ul>
+   */
+  inline TemplateOwner GetTemplateOwner() const { return m_templateOwner; }
+  inline bool TemplateOwnerHasBeenSet() const { return m_templateOwnerHasBeenSet; }
+  inline void SetTemplateOwner(TemplateOwner value) {
+    m_templateOwnerHasBeenSet = true;
+    m_templateOwner = value;
+  }
+  inline TemplateSummary& WithTemplateOwner(TemplateOwner value) {
+    SetTemplateOwner(value);
     return *this;
   }
   ///@}
@@ -180,6 +199,8 @@ class TemplateSummary {
 
   Aws::String m_templateName;
 
+  TemplateOwner m_templateOwner{TemplateOwner::NOT_SET};
+
   EntityStatus m_status{EntityStatus::NOT_SET};
 
   Aws::String m_version;
@@ -192,6 +213,7 @@ class TemplateSummary {
   bool m_templateIdHasBeenSet = false;
   bool m_templateArnHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
+  bool m_templateOwnerHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_hasPublishedVersionHasBeenSet = false;

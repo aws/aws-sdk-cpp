@@ -90,6 +90,25 @@ ListingSummary& ListingSummary::operator=(JsonView jsonValue) {
     }
     m_associatedEntitiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("trustCenterSummary")) {
+    m_trustCenterSummary = jsonValue.GetObject("trustCenterSummary");
+    m_trustCenterSummaryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("caseStudiesSummary")) {
+    m_caseStudiesSummary = jsonValue.GetObject("caseStudiesSummary");
+    m_caseStudiesSummaryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("useCaseSummary")) {
+    m_useCaseSummary = jsonValue.GetObject("useCaseSummary");
+    m_useCaseSummaryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sellerEngagements")) {
+    Aws::Utils::Array<JsonView> sellerEngagementsJsonList = jsonValue.GetArray("sellerEngagements");
+    for (unsigned sellerEngagementsIndex = 0; sellerEngagementsIndex < sellerEngagementsJsonList.GetLength(); ++sellerEngagementsIndex) {
+      m_sellerEngagements.push_back(sellerEngagementsJsonList[sellerEngagementsIndex].AsObject());
+    }
+    m_sellerEngagementsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -173,6 +192,26 @@ JsonValue ListingSummary::Jsonize() const {
       associatedEntitiesJsonList[associatedEntitiesIndex].AsObject(m_associatedEntities[associatedEntitiesIndex].Jsonize());
     }
     payload.WithArray("associatedEntities", std::move(associatedEntitiesJsonList));
+  }
+
+  if (m_trustCenterSummaryHasBeenSet) {
+    payload.WithObject("trustCenterSummary", m_trustCenterSummary.Jsonize());
+  }
+
+  if (m_caseStudiesSummaryHasBeenSet) {
+    payload.WithObject("caseStudiesSummary", m_caseStudiesSummary.Jsonize());
+  }
+
+  if (m_useCaseSummaryHasBeenSet) {
+    payload.WithObject("useCaseSummary", m_useCaseSummary.Jsonize());
+  }
+
+  if (m_sellerEngagementsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sellerEngagementsJsonList(m_sellerEngagements.size());
+    for (unsigned sellerEngagementsIndex = 0; sellerEngagementsIndex < sellerEngagementsJsonList.GetLength(); ++sellerEngagementsIndex) {
+      sellerEngagementsJsonList[sellerEngagementsIndex].AsObject(m_sellerEngagements[sellerEngagementsIndex].Jsonize());
+    }
+    payload.WithArray("sellerEngagements", std::move(sellerEngagementsJsonList));
   }
 
   return payload;

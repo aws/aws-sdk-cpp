@@ -10,6 +10,7 @@
 #include <aws/network-security-manager/NetworkSecurityManager_EXPORTS.h>
 #include <aws/network-security-manager/model/EntityStatus.h>
 #include <aws/network-security-manager/model/ScopeConfiguration.h>
+#include <aws/network-security-manager/model/SpecializedScopeType.h>
 
 #include <utility>
 
@@ -111,6 +112,25 @@ class CreateScopeResult {
   template <typename ScopeConfigurationT = ScopeConfiguration>
   CreateScopeResult& WithScopeConfiguration(ScopeConfigurationT&& value) {
     SetScopeConfiguration(std::forward<ScopeConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The specialized type of the scope, if the scope is built for one specific
+   * purpose. A scope with no <code>specializedScopeType</code> is a standard scope
+   * that you can associate with a deployment. A specialized scope can be used only
+   * for the purpose that its type defines and can't be associated with a deployment.
+   * This value is set when the scope is created and can't be changed.</p>
+   */
+  inline SpecializedScopeType GetSpecializedScopeType() const { return m_specializedScopeType; }
+  inline void SetSpecializedScopeType(SpecializedScopeType value) {
+    m_specializedScopeTypeHasBeenSet = true;
+    m_specializedScopeType = value;
+  }
+  inline CreateScopeResult& WithSpecializedScopeType(SpecializedScopeType value) {
+    SetSpecializedScopeType(value);
     return *this;
   }
   ///@}
@@ -241,6 +261,8 @@ class CreateScopeResult {
 
   ScopeConfiguration m_scopeConfiguration;
 
+  SpecializedScopeType m_specializedScopeType{SpecializedScopeType::NOT_SET};
+
   EntityStatus m_status{EntityStatus::NOT_SET};
 
   Aws::String m_version;
@@ -260,6 +282,7 @@ class CreateScopeResult {
   bool m_scopeNameHasBeenSet = false;
   bool m_scopeDescriptionHasBeenSet = false;
   bool m_scopeConfigurationHasBeenSet = false;
+  bool m_specializedScopeTypeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_updateTokenHasBeenSet = false;

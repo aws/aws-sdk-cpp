@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/BlockPublicAccessStates.h>
+#include <aws/ec2/model/NetworkFirewallAssociation.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/Tenancy.h>
 #include <aws/ec2/model/VpcCidrBlockAssociation.h>
@@ -199,6 +200,33 @@ class Vpc {
 
   ///@{
   /**
+   * <p>Information about the firewall associations for the VPC. Automated Internet
+   * Firewall, a feature of Amazon Virtual Private Cloud (Amazon VPC), inspects
+   * traffic between the VPC and its internet gateway or egress-only internet
+   * gateway. This list is empty if the VPC doesn't have a firewall.</p>
+   */
+  inline const Aws::Vector<NetworkFirewallAssociation>& GetNetworkFirewallAssociations() const { return m_networkFirewallAssociations; }
+  inline bool NetworkFirewallAssociationsHasBeenSet() const { return m_networkFirewallAssociationsHasBeenSet; }
+  template <typename NetworkFirewallAssociationsT = Aws::Vector<NetworkFirewallAssociation>>
+  void SetNetworkFirewallAssociations(NetworkFirewallAssociationsT&& value) {
+    m_networkFirewallAssociationsHasBeenSet = true;
+    m_networkFirewallAssociations = std::forward<NetworkFirewallAssociationsT>(value);
+  }
+  template <typename NetworkFirewallAssociationsT = Aws::Vector<NetworkFirewallAssociation>>
+  Vpc& WithNetworkFirewallAssociations(NetworkFirewallAssociationsT&& value) {
+    SetNetworkFirewallAssociations(std::forward<NetworkFirewallAssociationsT>(value));
+    return *this;
+  }
+  template <typename NetworkFirewallAssociationsT = NetworkFirewallAssociation>
+  Vpc& AddNetworkFirewallAssociations(NetworkFirewallAssociationsT&& value) {
+    m_networkFirewallAssociationsHasBeenSet = true;
+    m_networkFirewallAssociations.emplace_back(std::forward<NetworkFirewallAssociationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the VPC.</p>
    */
   inline const Aws::String& GetVpcId() const { return m_vpcId; }
@@ -283,6 +311,8 @@ class Vpc {
 
   BlockPublicAccessStates m_blockPublicAccessStates;
 
+  Aws::Vector<NetworkFirewallAssociation> m_networkFirewallAssociations;
+
   Aws::String m_vpcId;
 
   VpcState m_state{VpcState::NOT_SET};
@@ -298,6 +328,7 @@ class Vpc {
   bool m_encryptionControlHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_blockPublicAccessStatesHasBeenSet = false;
+  bool m_networkFirewallAssociationsHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_cidrBlockHasBeenSet = false;

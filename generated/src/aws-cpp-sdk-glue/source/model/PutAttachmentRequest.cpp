@@ -35,8 +35,8 @@ Aws::String PutAttachmentRequest::SerializePayload() const {
     payload.WithString("Content", m_content);
   }
 
-  if (m_formTypeIdHasBeenSet) {
-    payload.WithString("FormTypeId", m_formTypeId);
+  if (m_formTypeIdentifierHasBeenSet) {
+    payload.WithString("FormTypeIdentifier", m_formTypeIdentifier);
   }
 
   if (m_clientTokenHasBeenSet) {

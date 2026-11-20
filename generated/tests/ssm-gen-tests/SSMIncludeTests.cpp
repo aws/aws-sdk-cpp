@@ -71,6 +71,7 @@
 #include <aws/ssm/model/CloudConnectorFilter.h>
 #include <aws/ssm/model/CloudConnectorFilterKey.h>
 #include <aws/ssm/model/CloudConnectorSummary.h>
+#include <aws/ssm/model/CloudProvider.h>
 #include <aws/ssm/model/CloudWatchOutputConfig.h>
 #include <aws/ssm/model/Command.h>
 #include <aws/ssm/model/CommandFilter.h>

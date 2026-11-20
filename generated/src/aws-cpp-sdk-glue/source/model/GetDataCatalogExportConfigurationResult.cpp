@@ -25,22 +25,6 @@ GetDataCatalogExportConfigurationResult& GetDataCatalogExportConfigurationResult
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("ExportSetting")) {
-    m_exportSetting = ExportSettingMapper::GetExportSettingForName(jsonValue.GetString("ExportSetting"));
-    m_exportSettingHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Status")) {
-    m_status = ExportStatusMapper::GetExportStatusForName(jsonValue.GetString("Status"));
-    m_statusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("EncryptionConfiguration")) {
-    m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
-    m_encryptionConfigurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("S3TableBucketArn")) {
-    m_s3TableBucketArn = jsonValue.GetString("S3TableBucketArn");
-    m_s3TableBucketArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;
@@ -48,6 +32,14 @@ GetDataCatalogExportConfigurationResult& GetDataCatalogExportConfigurationResult
   if (jsonValue.ValueExists("UpdatedAt")) {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
     m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("S3TablesConfiguration")) {
+    m_s3TablesConfiguration = jsonValue.GetObject("S3TablesConfiguration");
+    m_s3TablesConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Assets")) {
+    m_assets = jsonValue.GetObject("Assets");
+    m_assetsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

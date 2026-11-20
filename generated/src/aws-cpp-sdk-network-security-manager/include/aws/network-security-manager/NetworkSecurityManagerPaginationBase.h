@@ -11,8 +11,10 @@
 #include <aws/network-security-manager/model/ListAggregateResourceSynchronizationStatusesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListDeploymentSnapshotsPaginationTraits.h>
 #include <aws/network-security-manager/model/ListDeploymentsPaginationTraits.h>
+#include <aws/network-security-manager/model/ListEntityCoveragesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListPoliciesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListPolicySnapshotsPaginationTraits.h>
+#include <aws/network-security-manager/model/ListProtectedResourceCoveragesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListResourceAssociationsPaginationTraits.h>
 #include <aws/network-security-manager/model/ListResourceSynchronizationStatusesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListRuleSnapshotsPaginationTraits.h>
@@ -79,6 +81,18 @@ class NetworkSecurityManagerPaginationBase {
   }
 
   /**
+   * Create a paginator for ListEntityCoverages operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntityCoveragesRequest,
+                                    Pagination::ListEntityCoveragesPaginationTraits<DerivedClient>>
+  ListEntityCoveragesPaginator(const Model::ListEntityCoveragesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntityCoveragesRequest,
+                                             Pagination::ListEntityCoveragesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListPolicies operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPoliciesRequest, Pagination::ListPoliciesPaginationTraits<DerivedClient>>
@@ -98,6 +112,18 @@ class NetworkSecurityManagerPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicySnapshotsRequest,
                                              Pagination::ListPolicySnapshotsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListProtectedResourceCoverages operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectedResourceCoveragesRequest,
+                                    Pagination::ListProtectedResourceCoveragesPaginationTraits<DerivedClient>>
+  ListProtectedResourceCoveragesPaginator(const Model::ListProtectedResourceCoveragesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectedResourceCoveragesRequest,
+                                             Pagination::ListProtectedResourceCoveragesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

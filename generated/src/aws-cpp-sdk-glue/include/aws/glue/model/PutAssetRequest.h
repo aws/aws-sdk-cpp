@@ -9,7 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/glue/Glue_EXPORTS.h>
-#include <aws/glue/model/AssetFormEntry.h>
+#include <aws/glue/model/AssetFormInput.h>
 
 #include <utility>
 
@@ -35,18 +35,18 @@ class PutAssetRequest : public GlueRequest {
 
   ///@{
   /**
-   * <p>The identifier of the asset type for the asset.</p>
+   * <p>The identifier of the asset type for the asset. This field is required.</p>
    */
-  inline const Aws::String& GetAssetTypeId() const { return m_assetTypeId; }
-  inline bool AssetTypeIdHasBeenSet() const { return m_assetTypeIdHasBeenSet; }
-  template <typename AssetTypeIdT = Aws::String>
-  void SetAssetTypeId(AssetTypeIdT&& value) {
-    m_assetTypeIdHasBeenSet = true;
-    m_assetTypeId = std::forward<AssetTypeIdT>(value);
+  inline const Aws::String& GetAssetTypeIdentifier() const { return m_assetTypeIdentifier; }
+  inline bool AssetTypeIdentifierHasBeenSet() const { return m_assetTypeIdentifierHasBeenSet; }
+  template <typename AssetTypeIdentifierT = Aws::String>
+  void SetAssetTypeIdentifier(AssetTypeIdentifierT&& value) {
+    m_assetTypeIdentifierHasBeenSet = true;
+    m_assetTypeIdentifier = std::forward<AssetTypeIdentifierT>(value);
   }
-  template <typename AssetTypeIdT = Aws::String>
-  PutAssetRequest& WithAssetTypeId(AssetTypeIdT&& value) {
-    SetAssetTypeId(std::forward<AssetTypeIdT>(value));
+  template <typename AssetTypeIdentifierT = Aws::String>
+  PutAssetRequest& WithAssetTypeIdentifier(AssetTypeIdentifierT&& value) {
+    SetAssetTypeIdentifier(std::forward<AssetTypeIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -111,19 +111,19 @@ class PutAssetRequest : public GlueRequest {
    * <p>The forms to set on the asset, keyed by form name. Each entry specifies the
    * form type and its JSON content.</p>
    */
-  inline const Aws::Map<Aws::String, AssetFormEntry>& GetForms() const { return m_forms; }
+  inline const Aws::Map<Aws::String, AssetFormInput>& GetForms() const { return m_forms; }
   inline bool FormsHasBeenSet() const { return m_formsHasBeenSet; }
-  template <typename FormsT = Aws::Map<Aws::String, AssetFormEntry>>
+  template <typename FormsT = Aws::Map<Aws::String, AssetFormInput>>
   void SetForms(FormsT&& value) {
     m_formsHasBeenSet = true;
     m_forms = std::forward<FormsT>(value);
   }
-  template <typename FormsT = Aws::Map<Aws::String, AssetFormEntry>>
+  template <typename FormsT = Aws::Map<Aws::String, AssetFormInput>>
   PutAssetRequest& WithForms(FormsT&& value) {
     SetForms(std::forward<FormsT>(value));
     return *this;
   }
-  template <typename FormsKeyT = Aws::String, typename FormsValueT = AssetFormEntry>
+  template <typename FormsKeyT = Aws::String, typename FormsValueT = AssetFormInput>
   PutAssetRequest& AddForms(FormsKeyT&& key, FormsValueT&& value) {
     m_formsHasBeenSet = true;
     m_forms.emplace(std::forward<FormsKeyT>(key), std::forward<FormsValueT>(value));
@@ -150,7 +150,7 @@ class PutAssetRequest : public GlueRequest {
   }
   ///@}
  private:
-  Aws::String m_assetTypeId;
+  Aws::String m_assetTypeIdentifier;
 
   Aws::String m_identifier;
 
@@ -158,10 +158,10 @@ class PutAssetRequest : public GlueRequest {
 
   Aws::String m_description;
 
-  Aws::Map<Aws::String, AssetFormEntry> m_forms;
+  Aws::Map<Aws::String, AssetFormInput> m_forms;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_assetTypeIdHasBeenSet = false;
+  bool m_assetTypeIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

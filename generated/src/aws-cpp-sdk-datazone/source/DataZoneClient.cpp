@@ -194,6 +194,7 @@
 #include <aws/datazone/model/UntagResourceRequest.h>
 #include <aws/datazone/model/UpdateAccountPoolRequest.h>
 #include <aws/datazone/model/UpdateAssetFilterRequest.h>
+#include <aws/datazone/model/UpdateAssetOwnerRequest.h>
 #include <aws/datazone/model/UpdateConnectionRequest.h>
 #include <aws/datazone/model/UpdateDataSourceRequest.h>
 #include <aws/datazone/model/UpdateDesignationRequest.h>
@@ -4553,6 +4554,31 @@ UpdateAssetFilterOutcome DataZoneClient::UpdateAssetFilter(const UpdateAssetFilt
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateAssetFilterOutcome(result.GetResultWithOwnership())
                             : UpdateAssetFilterOutcome(std::move(result.GetError()));
+}
+
+UpdateAssetOwnerOutcome DataZoneClient::UpdateAssetOwner(const UpdateAssetOwnerRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAssetOwner", "Required field: DomainIdentifier, is not set");
+    return UpdateAssetOwnerOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAssetOwner", "Required field: Identifier, is not set");
+    return UpdateAssetOwnerOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [Identifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAssetOwnerOutcome(result.GetResultWithOwnership())
+                            : UpdateAssetOwnerOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectionOutcome DataZoneClient::UpdateConnection(const UpdateConnectionRequest& request) const {

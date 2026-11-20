@@ -37,7 +37,8 @@ class ResourceTagsCriteriaCondition {
   ///@{
   /**
    * <p>The comparison operator used to evaluate the attribute against the specified
-   * values.</p>
+   * values. Only operators that begin with <code>String</code> are valid. Any other
+   * operator returns an <code>InvalidParameterValueException</code>.</p>
    */
   inline ComparisonOperator GetComparison() const { return m_comparison; }
   inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }

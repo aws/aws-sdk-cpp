@@ -48,7 +48,7 @@ class ListFulfillmentOptionsResult {
   ///@{
   /**
    * <p>The fulfillment options available for the product. Each option describes how
-   * the buyer can deploy or access the product.</p>
+   * you can deploy or access the product.</p>
    */
   inline const Aws::Vector<FulfillmentOption>& GetFulfillmentOptions() const { return m_fulfillmentOptions; }
   template <typename FulfillmentOptionsT = Aws::Vector<FulfillmentOption>>
@@ -71,8 +71,11 @@ class ListFulfillmentOptionsResult {
 
   ///@{
   /**
-   * <p>If <code>nextToken</code> is returned, there are more results available. Make
-   * the call again using the returned token to retrieve the next page.</p>
+   * <p>If the service returns <code>nextToken</code>, more results are available.
+   * The value of <code>nextToken</code> is a unique pagination token for each page.
+   * Make the call again with the returned token to retrieve the next page. Keep all
+   * other arguments unchanged. Each pagination token expires after 24 hours. An
+   * expired pagination token returns a <code>ValidationException</code>.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

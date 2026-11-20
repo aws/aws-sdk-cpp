@@ -22,8 +22,10 @@
 #include <aws/bedrock/model/ListModelCustomizationJobsPaginationTraits.h>
 #include <aws/bedrock/model/ListModelImportJobsPaginationTraits.h>
 #include <aws/bedrock/model/ListModelInvocationJobsPaginationTraits.h>
+#include <aws/bedrock/model/ListProjectsPaginationTraits.h>
 #include <aws/bedrock/model/ListPromptRoutersPaginationTraits.h>
 #include <aws/bedrock/model/ListProvisionedModelThroughputsPaginationTraits.h>
+#include <aws/bedrock/model/ListTrustedAccessProgramsPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
@@ -239,6 +241,17 @@ class BedrockPaginationBase {
   }
 
   /**
+   * Create a paginator for ListProjects operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectsRequest, Pagination::ListProjectsPaginationTraits<DerivedClient>>
+  ListProjectsPaginator(const Model::ListProjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectsRequest,
+                                             Pagination::ListProjectsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                      request};
+  }
+
+  /**
    * Create a paginator for ListPromptRouters operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPromptRoutersRequest,
@@ -259,6 +272,18 @@ class BedrockPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProvisionedModelThroughputsRequest,
                                              Pagination::ListProvisionedModelThroughputsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListTrustedAccessPrograms operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTrustedAccessProgramsRequest,
+                                    Pagination::ListTrustedAccessProgramsPaginationTraits<DerivedClient>>
+  ListTrustedAccessProgramsPaginator(const Model::ListTrustedAccessProgramsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTrustedAccessProgramsRequest,
+                                             Pagination::ListTrustedAccessProgramsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 };

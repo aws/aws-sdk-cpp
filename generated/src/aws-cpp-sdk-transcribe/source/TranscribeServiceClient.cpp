@@ -58,6 +58,7 @@
 #include <aws/transcribe/model/StartMedicalTranscriptionJobRequest.h>
 #include <aws/transcribe/model/StartTranscriptionJobRequest.h>
 #include <aws/transcribe/model/TagResourceRequest.h>
+#include <aws/transcribe/model/TranscribeAudioRequest.h>
 #include <aws/transcribe/model/UntagResourceRequest.h>
 #include <aws/transcribe/model/UpdateCallAnalyticsCategoryRequest.h>
 #include <aws/transcribe/model/UpdateLanguageModelRequest.h>
@@ -455,6 +456,12 @@ StartTranscriptionJobOutcome TranscribeServiceClient::StartTranscriptionJob(cons
 TagResourceOutcome TranscribeServiceClient::TagResource(const TagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
+}
+
+TranscribeAudioOutcome TranscribeServiceClient::TranscribeAudio(const TranscribeAudioRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TranscribeAudioOutcome(result.GetResultWithOwnership())
+                            : TranscribeAudioOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome TranscribeServiceClient::UntagResource(const UntagResourceRequest& request) const {

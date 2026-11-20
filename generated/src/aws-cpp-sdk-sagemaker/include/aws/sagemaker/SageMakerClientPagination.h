@@ -42,12 +42,14 @@
 #include <aws/sagemaker/model/ListExperimentsPaginationTraits.h>
 #include <aws/sagemaker/model/ListFeatureGroupsPaginationTraits.h>
 #include <aws/sagemaker/model/ListFlowDefinitionsPaginationTraits.h>
+#include <aws/sagemaker/model/ListGlobalInferenceGatewaysPaginationTraits.h>
 #include <aws/sagemaker/model/ListHumanTaskUisPaginationTraits.h>
 #include <aws/sagemaker/model/ListHyperParameterTuningJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListImageVersionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListImagesPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceComponentsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceExperimentsPaginationTraits.h>
+#include <aws/sagemaker/model/ListInferenceGatewaysPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceRoutersPaginationTraits.h>
@@ -190,6 +192,9 @@ using ListFeatureGroupsPaginator = Aws::Utils::Pagination::Paginator<SageMakerCl
                                                                      Pagination::ListFeatureGroupsPaginationTraits<SageMakerClient>>;
 using ListFlowDefinitionsPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListFlowDefinitionsRequest,
                                                                        Pagination::ListFlowDefinitionsPaginationTraits<SageMakerClient>>;
+using ListGlobalInferenceGatewaysPaginator =
+    Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListGlobalInferenceGatewaysRequest,
+                                      Pagination::ListGlobalInferenceGatewaysPaginationTraits<SageMakerClient>>;
 using ListHumanTaskUisPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListHumanTaskUisRequest,
                                                                     Pagination::ListHumanTaskUisPaginationTraits<SageMakerClient>>;
 using ListHyperParameterTuningJobsPaginator =
@@ -205,6 +210,9 @@ using ListInferenceComponentsPaginator =
 using ListInferenceExperimentsPaginator =
     Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListInferenceExperimentsRequest,
                                       Pagination::ListInferenceExperimentsPaginationTraits<SageMakerClient>>;
+using ListInferenceGatewaysPaginator =
+    Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListInferenceGatewaysRequest,
+                                      Pagination::ListInferenceGatewaysPaginationTraits<SageMakerClient>>;
 using ListInferenceRecommendationsJobsPaginator =
     Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListInferenceRecommendationsJobsRequest,
                                       Pagination::ListInferenceRecommendationsJobsPaginationTraits<SageMakerClient>>;

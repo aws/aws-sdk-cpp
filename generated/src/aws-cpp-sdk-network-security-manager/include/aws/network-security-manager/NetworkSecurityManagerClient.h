@@ -835,6 +835,36 @@ class AWS_NETWORKSECURITYMANAGER_API NetworkSecurityManagerClient
   }
 
   /**
+   * <p>Lists the protected resources that the specified Network Security Manager
+   * entity covers. You can filter the results to the resources owned by a single
+   * account and page through them. You must call this operation from the
+   * administrator account that owns the Network Security Manager
+   * entity.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-security-manager-2025-10-30/ListEntityCoverages">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListEntityCoveragesOutcome ListEntityCoverages(const Model::ListEntityCoveragesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListEntityCoverages that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListEntityCoveragesRequestT = Model::ListEntityCoveragesRequest>
+  Model::ListEntityCoveragesOutcomeCallable ListEntityCoveragesCallable(const ListEntityCoveragesRequestT& request) const {
+    return SubmitCallable(&NetworkSecurityManagerClient::ListEntityCoverages, request);
+  }
+
+  /**
+   * An Async wrapper for ListEntityCoverages that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListEntityCoveragesRequestT = Model::ListEntityCoveragesRequest>
+  void ListEntityCoveragesAsync(const ListEntityCoveragesRequestT& request, const ListEntityCoveragesResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkSecurityManagerClient::ListEntityCoverages, request, handler, context);
+  }
+
+  /**
    * <p>Lists the policies in the account. You can filter the results by status and
    * page through them using <code>maxResults</code> and
    * <code>nextToken</code>.</p><p><h3>See Also:</h3>   <a
@@ -886,6 +916,37 @@ class AWS_NETWORKSECURITYMANAGER_API NetworkSecurityManagerClient
   void ListPolicySnapshotsAsync(const ListPolicySnapshotsRequestT& request, const ListPolicySnapshotsResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkSecurityManagerClient::ListPolicySnapshots, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the AWS Network Security Manager entities that cover the specified
+   * protected resource. You can filter the results by entity type and page through
+   * them. You must own the resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-security-manager-2025-10-30/ListProtectedResourceCoverages">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListProtectedResourceCoveragesOutcome ListProtectedResourceCoverages(
+      const Model::ListProtectedResourceCoveragesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListProtectedResourceCoverages that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListProtectedResourceCoveragesRequestT = Model::ListProtectedResourceCoveragesRequest>
+  Model::ListProtectedResourceCoveragesOutcomeCallable ListProtectedResourceCoveragesCallable(
+      const ListProtectedResourceCoveragesRequestT& request) const {
+    return SubmitCallable(&NetworkSecurityManagerClient::ListProtectedResourceCoverages, request);
+  }
+
+  /**
+   * An Async wrapper for ListProtectedResourceCoverages that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListProtectedResourceCoveragesRequestT = Model::ListProtectedResourceCoveragesRequest>
+  void ListProtectedResourceCoveragesAsync(const ListProtectedResourceCoveragesRequestT& request,
+                                           const ListProtectedResourceCoveragesResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkSecurityManagerClient::ListProtectedResourceCoverages, request, handler, context);
   }
 
   /**

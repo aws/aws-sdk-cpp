@@ -13,8 +13,10 @@
 #include <aws/route53/model/ListHealthCheckSourcesPaginationTraits.h>
 #include <aws/route53/model/ListHealthChecksBySourcePaginationTraits.h>
 #include <aws/route53/model/ListHealthChecksPaginationTraits.h>
+#include <aws/route53/model/ListHostedZoneChangeBatchesPaginationTraits.h>
 #include <aws/route53/model/ListHostedZonesPaginationTraits.h>
 #include <aws/route53/model/ListQueryLoggingConfigsPaginationTraits.h>
+#include <aws/route53/model/ListResourceRecordSetChangesPaginationTraits.h>
 #include <aws/route53/model/ListResourceRecordSetProtectionsPaginationTraits.h>
 
 #include <memory>
@@ -97,6 +99,18 @@ class Route53PaginationBase {
   }
 
   /**
+   * Create a paginator for ListHostedZoneChangeBatches operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHostedZoneChangeBatchesRequest,
+                                    Pagination::ListHostedZoneChangeBatchesPaginationTraits<DerivedClient>>
+  ListHostedZoneChangeBatchesPaginator(const Model::ListHostedZoneChangeBatchesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHostedZoneChangeBatchesRequest,
+                                             Pagination::ListHostedZoneChangeBatchesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListHostedZones operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHostedZonesRequest,
@@ -117,6 +131,18 @@ class Route53PaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueryLoggingConfigsRequest,
                                              Pagination::ListQueryLoggingConfigsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListResourceRecordSetChanges operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceRecordSetChangesRequest,
+                                    Pagination::ListResourceRecordSetChangesPaginationTraits<DerivedClient>>
+  ListResourceRecordSetChangesPaginator(const Model::ListResourceRecordSetChangesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceRecordSetChangesRequest,
+                                             Pagination::ListResourceRecordSetChangesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

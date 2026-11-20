@@ -23,9 +23,9 @@ namespace TranscribeService {
 namespace Model {
 
 /**
- * <p>Makes it possible to redact or flag specified personally identifiable
- * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
- * you must also include the sub-parameters: <code>RedactionOutput</code> and
+ * <p>Makes it possible to redact specified personally identifiable information
+ * (PII) in your transcript. If you use <code>ContentRedaction</code>, you must
+ * also include the sub-parameters: <code>RedactionOutput</code> and
  * <code>RedactionType</code>. You can optionally include
  * <code>PiiEntityTypes</code> to choose which types of PII you want to
  * redact.</p><p><h3>See Also:</h3>   <a
@@ -65,7 +65,10 @@ class ContentRedaction {
    * an unredacted transcript.</p> <p>When you choose <code>redacted</code> Amazon
    * Transcribe creates only a redacted transcript.</p> <p>When you choose
    * <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an
-   * unredacted transcript (as two separate files).</p>
+   * unredacted transcript. For batch jobs, Amazon Transcribe creates two separate
+   * files. For <code>TranscribeAudio</code>, Amazon Transcribe returns them in
+   * <code>RedactedResults</code> and <code>Results</code>, or writes them as two
+   * separate files if you use <code>OutputConfiguration</code>.</p>
    */
   inline RedactionOutput GetRedactionOutput() const { return m_redactionOutput; }
   inline bool RedactionOutputHasBeenSet() const { return m_redactionOutputHasBeenSet; }

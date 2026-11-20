@@ -34,8 +34,9 @@ class VietnamAdditionalInfo {
 
   ///@{
   /**
-   * <p>The enterprise identification number for tax registration. This field must be
-   * provided for successful API operation.</p>
+   * <p>The enterprise identification number for tax registration. Required when
+   * <code>vatCreditMethod</code> is <code>true</code>; must not be specified when it
+   * is <code>false</code>.</p>
    */
   inline const Aws::String& GetEnterpriseIdentificationNumber() const { return m_enterpriseIdentificationNumber; }
   inline bool EnterpriseIdentificationNumberHasBeenSet() const { return m_enterpriseIdentificationNumberHasBeenSet; }
@@ -53,8 +54,9 @@ class VietnamAdditionalInfo {
 
   ///@{
   /**
-   * <p>The electronic transaction code number on the tax return document. This field
-   * must be provided for successful API operation.</p>
+   * <p>The electronic transaction code number on the tax return document. Required
+   * when <code>vatCreditMethod</code> is <code>true</code>; must not be specified
+   * when it is <code>false</code>.</p>
    */
   inline const Aws::String& GetElectronicTransactionCodeNumber() const { return m_electronicTransactionCodeNumber; }
   inline bool ElectronicTransactionCodeNumberHasBeenSet() const { return m_electronicTransactionCodeNumberHasBeenSet; }
@@ -72,8 +74,9 @@ class VietnamAdditionalInfo {
 
   ///@{
   /**
-   * <p>The payment voucher number on the tax return payment document. This field
-   * must be provided for successful API operation.</p>
+   * <p>The payment voucher number on the tax return payment document. Required when
+   * <code>vatCreditMethod</code> is <code>true</code>; must not be specified when it
+   * is <code>false</code>.</p>
    */
   inline const Aws::String& GetPaymentVoucherNumber() const { return m_paymentVoucherNumber; }
   inline bool PaymentVoucherNumberHasBeenSet() const { return m_paymentVoucherNumberHasBeenSet; }
@@ -91,8 +94,9 @@ class VietnamAdditionalInfo {
 
   ///@{
   /**
-   * <p>The date on the tax return payment document. This field must be provided for
-   * successful API operation.</p>
+   * <p>The date on the tax return payment document. Required when
+   * <code>vatCreditMethod</code> is <code>true</code>; must not be specified when it
+   * is <code>false</code>.</p>
    */
   inline const Aws::String& GetPaymentVoucherNumberDate() const { return m_paymentVoucherNumberDate; }
   inline bool PaymentVoucherNumberDateHasBeenSet() const { return m_paymentVoucherNumberDateHasBeenSet; }
@@ -107,6 +111,24 @@ class VietnamAdditionalInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Whether your business applies the VAT credit method in Vietnam. Specify
+   * <code>true</code> for a business (sector <code>Business</code>) or
+   * <code>false</code> for an individual (sector <code>Individual</code>).</p>
+   */
+  inline bool GetVatCreditMethod() const { return m_vatCreditMethod; }
+  inline bool VatCreditMethodHasBeenSet() const { return m_vatCreditMethodHasBeenSet; }
+  inline void SetVatCreditMethod(bool value) {
+    m_vatCreditMethodHasBeenSet = true;
+    m_vatCreditMethod = value;
+  }
+  inline VietnamAdditionalInfo& WithVatCreditMethod(bool value) {
+    SetVatCreditMethod(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_enterpriseIdentificationNumber;
 
@@ -115,10 +137,13 @@ class VietnamAdditionalInfo {
   Aws::String m_paymentVoucherNumber;
 
   Aws::String m_paymentVoucherNumberDate;
+
+  bool m_vatCreditMethod{false};
   bool m_enterpriseIdentificationNumberHasBeenSet = false;
   bool m_electronicTransactionCodeNumberHasBeenSet = false;
   bool m_paymentVoucherNumberHasBeenSet = false;
   bool m_paymentVoucherNumberDateHasBeenSet = false;
+  bool m_vatCreditMethodHasBeenSet = false;
 };
 
 }  // namespace Model

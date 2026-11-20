@@ -19,7 +19,8 @@ enum class ResourceType {
   AWS_ElasticLoadBalancing_LoadBalancer,
   AWS_WAFv2_WebACL,
   AWS_Shield_Protection,
-  AWS_ShieldRegional_Protection
+  AWS_ShieldRegional_Protection,
+  AWS_EC2_VPC
 };
 
 namespace ResourceTypeMapper {

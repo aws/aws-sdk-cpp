@@ -29,6 +29,9 @@ Aws::String UpdateFirewallDescriptionRequest::SerializePayload() const {
   if (m_descriptionHasBeenSet) {
     mapSize++;
   }
+  if (m_firewallTypeHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -50,6 +53,11 @@ Aws::String UpdateFirewallDescriptionRequest::SerializePayload() const {
   if (m_descriptionHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
+  }
+
+  if (m_firewallTypeHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(FirewallTypeMapper::GetNameForFirewallType(m_firewallType).c_str()));
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

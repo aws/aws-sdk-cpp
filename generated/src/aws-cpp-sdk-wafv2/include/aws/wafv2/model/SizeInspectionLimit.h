@@ -10,7 +10,7 @@
 namespace Aws {
 namespace WAFV2 {
 namespace Model {
-enum class SizeInspectionLimit { NOT_SET, KB_16, KB_32, KB_48, KB_64 };
+enum class SizeInspectionLimit { NOT_SET, KB_8, KB_16, KB_32, KB_48, KB_64 };
 
 namespace SizeInspectionLimitMapper {
 AWS_WAFV2_API SizeInspectionLimit GetSizeInspectionLimitForName(const Aws::String& name);

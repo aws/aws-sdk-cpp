@@ -9,6 +9,8 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/textract/model/ListAdapterVersionsPaginationTraits.h>
 #include <aws/textract/model/ListAdaptersPaginationTraits.h>
+#include <aws/textract/model/ListBlueprintsPaginationTraits.h>
+#include <aws/textract/model/ListProjectsPaginationTraits.h>
 
 #include <memory>
 
@@ -39,6 +41,28 @@ class TextractPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAdapterVersionsRequest,
                                              Pagination::ListAdapterVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListBlueprints operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBlueprintsRequest, Pagination::ListBlueprintsPaginationTraits<DerivedClient>>
+  ListBlueprintsPaginator(const Model::ListBlueprintsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBlueprintsRequest,
+                                             Pagination::ListBlueprintsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for ListProjects operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectsRequest, Pagination::ListProjectsPaginationTraits<DerivedClient>>
+  ListProjectsPaginator(const Model::ListProjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectsRequest,
+                                             Pagination::ListProjectsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                      request};
   }
 };
 }  // namespace Textract

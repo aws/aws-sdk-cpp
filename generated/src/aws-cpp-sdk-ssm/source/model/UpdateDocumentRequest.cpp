@@ -51,6 +51,15 @@ Aws::String UpdateDocumentRequest::SerializePayload() const {
     payload.WithString("TargetType", m_targetType);
   }
 
+  if (m_cloudProvidersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudProvidersJsonList(m_cloudProviders.size());
+    for (unsigned cloudProvidersIndex = 0; cloudProvidersIndex < cloudProvidersJsonList.GetLength(); ++cloudProvidersIndex) {
+      cloudProvidersJsonList[cloudProvidersIndex].AsString(
+          CloudProviderMapper::GetNameForCloudProvider(m_cloudProviders[cloudProvidersIndex]));
+    }
+    payload.WithArray("CloudProviders", std::move(cloudProvidersJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

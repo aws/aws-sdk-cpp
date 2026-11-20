@@ -31,6 +31,10 @@
 #include <aws/agent-registry-control/model/AgentSkillsRepositoryProvider.h>
 #include <aws/agent-registry-control/model/AgentSkillsSourceConfiguration.h>
 #include <aws/agent-registry-control/model/ApprovalConfiguration.h>
+#include <aws/agent-registry-control/model/AssociatePublisherRequest.h>
+#include <aws/agent-registry-control/model/AssociatePublisherResult.h>
+#include <aws/agent-registry-control/model/AssociationApprovalStatus.h>
+#include <aws/agent-registry-control/model/AssociationStatus.h>
 #include <aws/agent-registry-control/model/AuthorizationData.h>
 #include <aws/agent-registry-control/model/AuthorizerConfiguration.h>
 #include <aws/agent-registry-control/model/AuthorizingClaimMatchValueType.h>
@@ -39,8 +43,11 @@
 #include <aws/agent-registry-control/model/AutoDetectionConfiguration.h>
 #include <aws/agent-registry-control/model/AutoDetectionScope.h>
 #include <aws/agent-registry-control/model/AutoDetectionStatus.h>
+#include <aws/agent-registry-control/model/BotCategory.h>
 #include <aws/agent-registry-control/model/ClaimMatchOperatorType.h>
 #include <aws/agent-registry-control/model/ClaimMatchValueType.h>
+#include <aws/agent-registry-control/model/CreatePublisherRequest.h>
+#include <aws/agent-registry-control/model/CreatePublisherResult.h>
 #include <aws/agent-registry-control/model/CreateRegistryRecordRequest.h>
 #include <aws/agent-registry-control/model/CreateRegistryRecordResult.h>
 #include <aws/agent-registry-control/model/CreateRegistryRequest.h>
@@ -50,6 +57,7 @@
 #include <aws/agent-registry-control/model/CustomJWTAuthorizerConfiguration.h>
 #include <aws/agent-registry-control/model/CustomMetadataSchemaComplianceStatus.h>
 #include <aws/agent-registry-control/model/CustomMetadataSchemaConfiguration.h>
+#include <aws/agent-registry-control/model/DeletePublisherRequest.h>
 #include <aws/agent-registry-control/model/DeleteRegistryRecordRequest.h>
 #include <aws/agent-registry-control/model/DeleteRegistryRecordResult.h>
 #include <aws/agent-registry-control/model/DeleteRegistryRequest.h>
@@ -57,16 +65,28 @@
 #include <aws/agent-registry-control/model/DescriptorSource.h>
 #include <aws/agent-registry-control/model/DescriptorSourceFromUrl.h>
 #include <aws/agent-registry-control/model/Descriptors.h>
+#include <aws/agent-registry-control/model/DisassociatePublisherRequest.h>
 #include <aws/agent-registry-control/model/DiscoveryConfiguration.h>
+#include <aws/agent-registry-control/model/DomainChallenge.h>
 #include <aws/agent-registry-control/model/EncryptionConfiguration.h>
 #include <aws/agent-registry-control/model/EndpointIpAddressType.h>
+#include <aws/agent-registry-control/model/GetPublisherRequest.h>
+#include <aws/agent-registry-control/model/GetPublisherResult.h>
 #include <aws/agent-registry-control/model/GetRegistryRecordRequest.h>
 #include <aws/agent-registry-control/model/GetRegistryRecordResult.h>
 #include <aws/agent-registry-control/model/GetRegistryRequest.h>
 #include <aws/agent-registry-control/model/GetRegistryResult.h>
 #include <aws/agent-registry-control/model/GitHubSynchronizedSource.h>
 #include <aws/agent-registry-control/model/HttpDescriptor.h>
+#include <aws/agent-registry-control/model/Identifier.h>
+#include <aws/agent-registry-control/model/IdentifierType.h>
 #include <aws/agent-registry-control/model/InboundTokenClaimValueType.h>
+#include <aws/agent-registry-control/model/ListPublisherAssociationsPaginationTraits.h>
+#include <aws/agent-registry-control/model/ListPublisherAssociationsRequest.h>
+#include <aws/agent-registry-control/model/ListPublisherAssociationsResult.h>
+#include <aws/agent-registry-control/model/ListPublishersPaginationTraits.h>
+#include <aws/agent-registry-control/model/ListPublishersRequest.h>
+#include <aws/agent-registry-control/model/ListPublishersResult.h>
 #include <aws/agent-registry-control/model/ListRegistriesPaginationTraits.h>
 #include <aws/agent-registry-control/model/ListRegistriesRequest.h>
 #include <aws/agent-registry-control/model/ListRegistriesResult.h>
@@ -85,6 +105,8 @@
 #include <aws/agent-registry-control/model/Provenance.h>
 #include <aws/agent-registry-control/model/ProvenanceRelation.h>
 #include <aws/agent-registry-control/model/ProvenanceSummary.h>
+#include <aws/agent-registry-control/model/PublisherAssociation.h>
+#include <aws/agent-registry-control/model/PublisherSummary.h>
 #include <aws/agent-registry-control/model/RecordType.h>
 #include <aws/agent-registry-control/model/RecordTypeSchemaOverride.h>
 #include <aws/agent-registry-control/model/RegistryAuthorizerType.h>
@@ -108,6 +130,8 @@
 #include <aws/agent-registry-control/model/S3SourceConfiguration.h>
 #include <aws/agent-registry-control/model/S3SynchronizedSource.h>
 #include <aws/agent-registry-control/model/SelfManagedLatticeResource.h>
+#include <aws/agent-registry-control/model/SignatureAgentCardAdditionalData.h>
+#include <aws/agent-registry-control/model/SignatureAgentCardDescriptor.h>
 #include <aws/agent-registry-control/model/SourceDetails.h>
 #include <aws/agent-registry-control/model/SourceType.h>
 #include <aws/agent-registry-control/model/SubmitRegistryRecordForApprovalRequest.h>
@@ -116,6 +140,8 @@
 #include <aws/agent-registry-control/model/TagResourceResult.h>
 #include <aws/agent-registry-control/model/UntagResourceRequest.h>
 #include <aws/agent-registry-control/model/UntagResourceResult.h>
+#include <aws/agent-registry-control/model/UpdatePublisherAssociationApprovalStatusRequest.h>
+#include <aws/agent-registry-control/model/UpdatePublisherAssociationApprovalStatusResult.h>
 #include <aws/agent-registry-control/model/UpdateRegistryRecordRequest.h>
 #include <aws/agent-registry-control/model/UpdateRegistryRecordResult.h>
 #include <aws/agent-registry-control/model/UpdateRegistryRecordStatusRequest.h>
@@ -138,6 +164,7 @@
 #include <aws/agent-registry-control/model/UpdatedApprovalConfiguration.h>
 #include <aws/agent-registry-control/model/UpdatedAuthorizerConfiguration.h>
 #include <aws/agent-registry-control/model/UpdatedAutoDetectionConfiguration.h>
+#include <aws/agent-registry-control/model/UpdatedBotCategory.h>
 #include <aws/agent-registry-control/model/UpdatedCustomDescriptor.h>
 #include <aws/agent-registry-control/model/UpdatedCustomDescriptorFields.h>
 #include <aws/agent-registry-control/model/UpdatedCustomMetadataMap.h>
@@ -159,9 +186,16 @@
 #include <aws/agent-registry-control/model/UpdatedMcpToolsDescriptor.h>
 #include <aws/agent-registry-control/model/UpdatedMcpToolsDescriptorFields.h>
 #include <aws/agent-registry-control/model/UpdatedRegistryRecordArtifact.h>
+#include <aws/agent-registry-control/model/UpdatedSignatureAgentCardAdditionalData.h>
+#include <aws/agent-registry-control/model/UpdatedSignatureAgentCardAdditionalDataFields.h>
+#include <aws/agent-registry-control/model/UpdatedSignatureAgentCardDescriptor.h>
+#include <aws/agent-registry-control/model/UpdatedSignatureAgentCardDescriptorFields.h>
+#include <aws/agent-registry-control/model/ValidatePublisherRequest.h>
+#include <aws/agent-registry-control/model/ValidatePublisherResult.h>
 #include <aws/agent-registry-control/model/ValidationException.h>
 #include <aws/agent-registry-control/model/ValidationExceptionField.h>
 #include <aws/agent-registry-control/model/ValidationExceptionReason.h>
+#include <aws/agent-registry-control/model/VerificationStatus.h>
 #include <aws/agent-registry-control/model/WorkloadIdentityDetails.h>
 
 using AgentRegistryControlIncludeTest = ::testing::Test;

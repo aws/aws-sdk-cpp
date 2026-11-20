@@ -83,14 +83,17 @@
 #include <aws/mediaconvert/model/AutomatedEncodingSettings.h>
 #include <aws/mediaconvert/model/Av1AdaptiveQuantization.h>
 #include <aws/mediaconvert/model/Av1BitDepth.h>
+#include <aws/mediaconvert/model/Av1FastDecode.h>
 #include <aws/mediaconvert/model/Av1FilmGrainSynthesis.h>
 #include <aws/mediaconvert/model/Av1FramerateControl.h>
 #include <aws/mediaconvert/model/Av1FramerateConversionAlgorithm.h>
+#include <aws/mediaconvert/model/Av1GopSizeUnits.h>
 #include <aws/mediaconvert/model/Av1QvbrSettings.h>
 #include <aws/mediaconvert/model/Av1RateControlMode.h>
 #include <aws/mediaconvert/model/Av1SceneChangeDetect.h>
 #include <aws/mediaconvert/model/Av1Settings.h>
 #include <aws/mediaconvert/model/Av1SpatialAdaptiveQuantization.h>
+#include <aws/mediaconvert/model/Av1TemporalAdaptiveQuantization.h>
 #include <aws/mediaconvert/model/AvailBlanking.h>
 #include <aws/mediaconvert/model/AvcIntraClass.h>
 #include <aws/mediaconvert/model/AvcIntraFramerateControl.h>
@@ -241,6 +244,9 @@
 #include <aws/mediaconvert/model/DolbyVisionPresence.h>
 #include <aws/mediaconvert/model/DolbyVisionProfile.h>
 #include <aws/mediaconvert/model/DropFrameTimecode.h>
+#include <aws/mediaconvert/model/DtscSettings.h>
+#include <aws/mediaconvert/model/DtsxCodingMode.h>
+#include <aws/mediaconvert/model/DtsxSettings.h>
 #include <aws/mediaconvert/model/DurationControl.h>
 #include <aws/mediaconvert/model/DvbNitSettings.h>
 #include <aws/mediaconvert/model/DvbSdtSettings.h>
@@ -260,6 +266,8 @@
 #include <aws/mediaconvert/model/DvbddsHandling.h>
 #include <aws/mediaconvert/model/DynamicAudioSelector.h>
 #include <aws/mediaconvert/model/DynamicAudioSelectorType.h>
+#include <aws/mediaconvert/model/DynamicMultiviewSettings.h>
+#include <aws/mediaconvert/model/DynamicMultiviewSettingsEnabled.h>
 #include <aws/mediaconvert/model/Eac3AtmosBitstreamMode.h>
 #include <aws/mediaconvert/model/Eac3AtmosCodingMode.h>
 #include <aws/mediaconvert/model/Eac3AtmosDialogueIntelligence.h>

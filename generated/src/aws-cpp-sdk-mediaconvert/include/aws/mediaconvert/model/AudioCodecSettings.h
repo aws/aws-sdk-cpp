@@ -10,6 +10,8 @@
 #include <aws/mediaconvert/model/Ac4Settings.h>
 #include <aws/mediaconvert/model/AiffSettings.h>
 #include <aws/mediaconvert/model/AudioCodec.h>
+#include <aws/mediaconvert/model/DtscSettings.h>
+#include <aws/mediaconvert/model/DtsxSettings.h>
 #include <aws/mediaconvert/model/Eac3AtmosSettings.h>
 #include <aws/mediaconvert/model/Eac3Settings.h>
 #include <aws/mediaconvert/model/FlacSettings.h>
@@ -142,6 +144,42 @@ class AudioCodecSettings {
   }
   inline AudioCodecSettings& WithCodec(AudioCodec value) {
     SetCodec(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Required when you set Codec to the value DTSC.
+   */
+  inline const DtscSettings& GetDtscSettings() const { return m_dtscSettings; }
+  inline bool DtscSettingsHasBeenSet() const { return m_dtscSettingsHasBeenSet; }
+  template <typename DtscSettingsT = DtscSettings>
+  void SetDtscSettings(DtscSettingsT&& value) {
+    m_dtscSettingsHasBeenSet = true;
+    m_dtscSettings = std::forward<DtscSettingsT>(value);
+  }
+  template <typename DtscSettingsT = DtscSettings>
+  AudioCodecSettings& WithDtscSettings(DtscSettingsT&& value) {
+    SetDtscSettings(std::forward<DtscSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Required when you set Codec to the value DTSX.
+   */
+  inline const DtsxSettings& GetDtsxSettings() const { return m_dtsxSettings; }
+  inline bool DtsxSettingsHasBeenSet() const { return m_dtsxSettingsHasBeenSet; }
+  template <typename DtsxSettingsT = DtsxSettings>
+  void SetDtsxSettings(DtsxSettingsT&& value) {
+    m_dtsxSettingsHasBeenSet = true;
+    m_dtsxSettings = std::forward<DtsxSettingsT>(value);
+  }
+  template <typename DtsxSettingsT = DtsxSettings>
+  AudioCodecSettings& WithDtsxSettings(DtsxSettingsT&& value) {
+    SetDtsxSettings(std::forward<DtsxSettingsT>(value));
     return *this;
   }
   ///@}
@@ -304,6 +342,10 @@ class AudioCodecSettings {
 
   AudioCodec m_codec{AudioCodec::NOT_SET};
 
+  DtscSettings m_dtscSettings;
+
+  DtsxSettings m_dtsxSettings;
+
   Eac3AtmosSettings m_eac3AtmosSettings;
 
   Eac3Settings m_eac3Settings;
@@ -324,6 +366,8 @@ class AudioCodecSettings {
   bool m_ac4SettingsHasBeenSet = false;
   bool m_aiffSettingsHasBeenSet = false;
   bool m_codecHasBeenSet = false;
+  bool m_dtscSettingsHasBeenSet = false;
+  bool m_dtsxSettingsHasBeenSet = false;
   bool m_eac3AtmosSettingsHasBeenSet = false;
   bool m_eac3SettingsHasBeenSet = false;
   bool m_flacSettingsHasBeenSet = false;

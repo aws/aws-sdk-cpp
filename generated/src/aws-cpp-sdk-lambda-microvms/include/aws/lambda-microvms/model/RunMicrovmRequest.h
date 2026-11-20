@@ -175,6 +175,28 @@ class RunMicrovmRequest : public LambdaMicrovmsRequest {
 
   ///@{
   /**
+   * <p>The customer managed Amazon Web Services Key Management Service (Amazon Web
+   * Services KMS) key that encrypts your MicroVM configuration at rest. To use this
+   * operation, you must have permission to use the key. Specify the key ARN or the
+   * alias ARN.</p> <p>If you don't specify a key, your MicroVM uses an Amazon Web
+   * Services owned key.</p>
+   */
+  inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+  inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    m_kmsKeyIdentifierHasBeenSet = true;
+    m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value);
+  }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  RunMicrovmRequest& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Per-MicroVM initialization data delivered as the request body of the /run
    * lifecycle hook. Use to pass tenant-specific configuration such as session IDs or
    * secret references. Maximum: 16,384 bytes.</p>
@@ -243,6 +265,8 @@ class RunMicrovmRequest : public LambdaMicrovmsRequest {
 
   Logging m_logging;
 
+  Aws::String m_kmsKeyIdentifier;
+
   Aws::String m_runHookPayload;
 
   int m_maximumDurationInSeconds{0};
@@ -255,6 +279,7 @@ class RunMicrovmRequest : public LambdaMicrovmsRequest {
   bool m_executionRoleArnHasBeenSet = false;
   bool m_idlePolicyHasBeenSet = false;
   bool m_loggingHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_runHookPayloadHasBeenSet = false;
   bool m_maximumDurationInSecondsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;

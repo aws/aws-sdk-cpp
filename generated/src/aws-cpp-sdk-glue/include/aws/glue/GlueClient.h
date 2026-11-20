@@ -1799,31 +1799,6 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes an asset type from Glue Data Catalog.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteAssetType">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::DeleteAssetTypeOutcome DeleteAssetType(const Model::DeleteAssetTypeRequest& request) const;
-
-  /**
-   * A Callable wrapper for DeleteAssetType that returns a future to the operation so that it can be executed in parallel to other requests.
-   */
-  template <typename DeleteAssetTypeRequestT = Model::DeleteAssetTypeRequest>
-  Model::DeleteAssetTypeOutcomeCallable DeleteAssetTypeCallable(const DeleteAssetTypeRequestT& request) const {
-    return SubmitCallable(&GlueClient::DeleteAssetType, request);
-  }
-
-  /**
-   * An Async wrapper for DeleteAssetType that queues the request into a thread executor and triggers associated callback when operation has
-   * finished.
-   */
-  template <typename DeleteAssetTypeRequestT = Model::DeleteAssetTypeRequest>
-  void DeleteAssetTypeAsync(const DeleteAssetTypeRequestT& request, const DeleteAssetTypeResponseReceivedHandler& handler,
-                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&GlueClient::DeleteAssetType, request, handler, context);
-  }
-
-  /**
    * <p>Deletes a form attachment from an asset in Glue Data Catalog.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteAttachment">AWS
@@ -6766,33 +6741,6 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates or updates an asset type in Glue Data Catalog. An asset type defines
-   * the structure of assets by specifying which forms they include. If an asset type
-   * with the given name already exists, it is updated.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutAssetType">AWS
-   * API Reference</a></p>
-   */
-  virtual Model::PutAssetTypeOutcome PutAssetType(const Model::PutAssetTypeRequest& request) const;
-
-  /**
-   * A Callable wrapper for PutAssetType that returns a future to the operation so that it can be executed in parallel to other requests.
-   */
-  template <typename PutAssetTypeRequestT = Model::PutAssetTypeRequest>
-  Model::PutAssetTypeOutcomeCallable PutAssetTypeCallable(const PutAssetTypeRequestT& request) const {
-    return SubmitCallable(&GlueClient::PutAssetType, request);
-  }
-
-  /**
-   * An Async wrapper for PutAssetType that queues the request into a thread executor and triggers associated callback when operation has
-   * finished.
-   */
-  template <typename PutAssetTypeRequestT = Model::PutAssetTypeRequest>
-  void PutAssetTypeAsync(const PutAssetTypeRequestT& request, const PutAssetTypeResponseReceivedHandler& handler,
-                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
-    return SubmitAsync(&GlueClient::PutAssetType, request, handler, context);
-  }
-
-  /**
    * <p>Attaches a form to an asset or an iterable form item in Glue Data Catalog. If
    * an attachment with the same name already exists, it is
    * overwritten.</p><p><h3>See Also:</h3>   <a
@@ -6858,7 +6806,7 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
    * API Reference</a></p>
    */
   virtual Model::PutDataCatalogExportConfigurationOutcome PutDataCatalogExportConfiguration(
-      const Model::PutDataCatalogExportConfigurationRequest& request) const;
+      const Model::PutDataCatalogExportConfigurationRequest& request = {}) const;
 
   /**
    * A Callable wrapper for PutDataCatalogExportConfiguration that returns a future to the operation so that it can be executed in parallel
@@ -6866,7 +6814,7 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
    */
   template <typename PutDataCatalogExportConfigurationRequestT = Model::PutDataCatalogExportConfigurationRequest>
   Model::PutDataCatalogExportConfigurationOutcomeCallable PutDataCatalogExportConfigurationCallable(
-      const PutDataCatalogExportConfigurationRequestT& request) const {
+      const PutDataCatalogExportConfigurationRequestT& request = {}) const {
     return SubmitCallable(&GlueClient::PutDataCatalogExportConfiguration, request);
   }
 
@@ -6875,9 +6823,9 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
    * when operation has finished.
    */
   template <typename PutDataCatalogExportConfigurationRequestT = Model::PutDataCatalogExportConfigurationRequest>
-  void PutDataCatalogExportConfigurationAsync(const PutDataCatalogExportConfigurationRequestT& request,
-                                              const PutDataCatalogExportConfigurationResponseReceivedHandler& handler,
-                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void PutDataCatalogExportConfigurationAsync(const PutDataCatalogExportConfigurationResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                              const PutDataCatalogExportConfigurationRequestT& request = {}) const {
     return SubmitAsync(&GlueClient::PutDataCatalogExportConfiguration, request, handler, context);
   }
 
@@ -7244,9 +7192,9 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Searches for assets in Glue Data Catalog using full-text search, filters,
-   * sorting, and aggregations. Returns matching assets with relevance-ranked
-   * results.</p><p><h3>See Also:</h3>   <a
+   * <p>Searches for assets in Glue Data Catalog using full-text search, filters, and
+   * sorting. Returns matching assets with relevance-ranked results.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SearchAssets">AWS
    * API Reference</a></p>
    */

@@ -55,5 +55,11 @@ Aws::Http::HeaderValueCollection InvokeModelRequest::GetRequestSpecificHeaders()
     ss.str("");
   }
 
+  if (m_projectIdentifierHasBeenSet) {
+    ss << m_projectIdentifier;
+    headers.emplace("x-amzn-bedrock-projectidentifier", ss.str());
+    ss.str("");
+  }
+
   return headers;
 }

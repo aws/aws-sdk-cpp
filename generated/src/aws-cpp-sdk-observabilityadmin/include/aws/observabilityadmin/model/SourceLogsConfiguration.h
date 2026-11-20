@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
+#include <aws/observabilityadmin/model/CentralizeWithDataProtection.h>
 #include <aws/observabilityadmin/model/EncryptedLogGroupStrategy.h>
 
 #include <utility>
@@ -94,15 +95,45 @@ class SourceLogsConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether this centralization rule centralizes log events with data
+   * protection applied. If you don't specify this setting, or you set it to
+   * <code>DISABLED</code>, the rule centralizes the original log events, including
+   * any sensitive data that a data protection policy on the source log group
+   * masks.</p> <p>When you set this to <code>ENABLED</code>, the rule centralizes
+   * the same masked data that anyone in the source account without the
+   * <code>logs:Unmask</code> permission sees. The rule doesn't copy the original
+   * values to the destination, so you can't unmask them in the destination account.
+   * The rule centralizes log events from source log groups that don't have a data
+   * protection policy without changes.</p> <p>The setting applies only to log events
+   * that the rule centralizes after you enable it. It doesn't change log events that
+   * the rule already centralized.</p>
+   */
+  inline CentralizeWithDataProtection GetCentralizeWithDataProtection() const { return m_centralizeWithDataProtection; }
+  inline bool CentralizeWithDataProtectionHasBeenSet() const { return m_centralizeWithDataProtectionHasBeenSet; }
+  inline void SetCentralizeWithDataProtection(CentralizeWithDataProtection value) {
+    m_centralizeWithDataProtectionHasBeenSet = true;
+    m_centralizeWithDataProtection = value;
+  }
+  inline SourceLogsConfiguration& WithCentralizeWithDataProtection(CentralizeWithDataProtection value) {
+    SetCentralizeWithDataProtection(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_logGroupSelectionCriteria;
 
   Aws::String m_dataSourceSelectionCriteria;
 
   EncryptedLogGroupStrategy m_encryptedLogGroupStrategy{EncryptedLogGroupStrategy::NOT_SET};
+
+  CentralizeWithDataProtection m_centralizeWithDataProtection{CentralizeWithDataProtection::NOT_SET};
   bool m_logGroupSelectionCriteriaHasBeenSet = false;
   bool m_dataSourceSelectionCriteriaHasBeenSet = false;
   bool m_encryptedLogGroupStrategyHasBeenSet = false;
+  bool m_centralizeWithDataProtectionHasBeenSet = false;
 };
 
 }  // namespace Model

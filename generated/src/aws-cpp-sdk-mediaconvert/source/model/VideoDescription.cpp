@@ -46,6 +46,10 @@ VideoDescription& VideoDescription::operator=(JsonView jsonValue) {
     m_dropFrameTimecode = DropFrameTimecodeMapper::GetDropFrameTimecodeForName(jsonValue.GetString("dropFrameTimecode"));
     m_dropFrameTimecodeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dynamicMultiviewSettings")) {
+    m_dynamicMultiviewSettings = jsonValue.GetObject("dynamicMultiviewSettings");
+    m_dynamicMultiviewSettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("fixedAfd")) {
     m_fixedAfd = jsonValue.GetInteger("fixedAfd");
     m_fixedAfdHasBeenSet = true;
@@ -118,6 +122,10 @@ JsonValue VideoDescription::Jsonize() const {
 
   if (m_dropFrameTimecodeHasBeenSet) {
     payload.WithString("dropFrameTimecode", DropFrameTimecodeMapper::GetNameForDropFrameTimecode(m_dropFrameTimecode));
+  }
+
+  if (m_dynamicMultiviewSettingsHasBeenSet) {
+    payload.WithObject("dynamicMultiviewSettings", m_dynamicMultiviewSettings.Jsonize());
   }
 
   if (m_fixedAfdHasBeenSet) {

@@ -12,8 +12,10 @@
 #include <aws/route53/model/ListHealthCheckSourcesPaginationTraits.h>
 #include <aws/route53/model/ListHealthChecksBySourcePaginationTraits.h>
 #include <aws/route53/model/ListHealthChecksPaginationTraits.h>
+#include <aws/route53/model/ListHostedZoneChangeBatchesPaginationTraits.h>
 #include <aws/route53/model/ListHostedZonesPaginationTraits.h>
 #include <aws/route53/model/ListQueryLoggingConfigsPaginationTraits.h>
+#include <aws/route53/model/ListResourceRecordSetChangesPaginationTraits.h>
 #include <aws/route53/model/ListResourceRecordSetProtectionsPaginationTraits.h>
 
 namespace Aws {
@@ -33,11 +35,17 @@ using ListHealthChecksBySourcePaginator =
 using ListHealthCheckSourcesPaginator =
     Aws::Utils::Pagination::Paginator<Route53Client, Model::ListHealthCheckSourcesRequest,
                                       Pagination::ListHealthCheckSourcesPaginationTraits<Route53Client>>;
+using ListHostedZoneChangeBatchesPaginator =
+    Aws::Utils::Pagination::Paginator<Route53Client, Model::ListHostedZoneChangeBatchesRequest,
+                                      Pagination::ListHostedZoneChangeBatchesPaginationTraits<Route53Client>>;
 using ListHostedZonesPaginator = Aws::Utils::Pagination::Paginator<Route53Client, Model::ListHostedZonesRequest,
                                                                    Pagination::ListHostedZonesPaginationTraits<Route53Client>>;
 using ListQueryLoggingConfigsPaginator =
     Aws::Utils::Pagination::Paginator<Route53Client, Model::ListQueryLoggingConfigsRequest,
                                       Pagination::ListQueryLoggingConfigsPaginationTraits<Route53Client>>;
+using ListResourceRecordSetChangesPaginator =
+    Aws::Utils::Pagination::Paginator<Route53Client, Model::ListResourceRecordSetChangesRequest,
+                                      Pagination::ListResourceRecordSetChangesPaginationTraits<Route53Client>>;
 using ListResourceRecordSetProtectionsPaginator =
     Aws::Utils::Pagination::Paginator<Route53Client, Model::ListResourceRecordSetProtectionsRequest,
                                       Pagination::ListResourceRecordSetProtectionsPaginationTraits<Route53Client>>;

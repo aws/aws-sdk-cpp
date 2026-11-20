@@ -15,6 +15,7 @@ namespace WAFV2 {
 namespace Model {
 namespace SizeInspectionLimitMapper {
 
+static const int KB_8_HASH = HashingUtils::HashString("KB_8");
 static const int KB_16_HASH = HashingUtils::HashString("KB_16");
 static const int KB_32_HASH = HashingUtils::HashString("KB_32");
 static const int KB_48_HASH = HashingUtils::HashString("KB_48");
@@ -22,7 +23,9 @@ static const int KB_64_HASH = HashingUtils::HashString("KB_64");
 
 SizeInspectionLimit GetSizeInspectionLimitForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == KB_16_HASH) {
+  if (hashCode == KB_8_HASH) {
+    return SizeInspectionLimit::KB_8;
+  } else if (hashCode == KB_16_HASH) {
     return SizeInspectionLimit::KB_16;
   } else if (hashCode == KB_32_HASH) {
     return SizeInspectionLimit::KB_32;
@@ -44,6 +47,8 @@ Aws::String GetNameForSizeInspectionLimit(SizeInspectionLimit enumValue) {
   switch (enumValue) {
     case SizeInspectionLimit::NOT_SET:
       return {};
+    case SizeInspectionLimit::KB_8:
+      return "KB_8";
     case SizeInspectionLimit::KB_16:
       return "KB_16";
     case SizeInspectionLimit::KB_32:

@@ -60,8 +60,35 @@ class ListRecommendedActionSummariesRequest : public ComputeOptimizerAutomationR
 
   ///@{
   /**
+   * <p> The organizational unit (OU) or organization root IDs to use to filter the
+   * results. The response includes recommended action summaries for accounts in the
+   * specified OUs and their child OUs. Only the management account or a delegated
+   * administrator can specify this parameter. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const { return m_organizationalUnitIds; }
+  inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
+  template <typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+  void SetOrganizationalUnitIds(OrganizationalUnitIdsT&& value) {
+    m_organizationalUnitIdsHasBeenSet = true;
+    m_organizationalUnitIds = std::forward<OrganizationalUnitIdsT>(value);
+  }
+  template <typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+  ListRecommendedActionSummariesRequest& WithOrganizationalUnitIds(OrganizationalUnitIdsT&& value) {
+    SetOrganizationalUnitIds(std::forward<OrganizationalUnitIdsT>(value));
+    return *this;
+  }
+  template <typename OrganizationalUnitIdsT = Aws::String>
+  ListRecommendedActionSummariesRequest& AddOrganizationalUnitIds(OrganizationalUnitIdsT&& value) {
+    m_organizationalUnitIdsHasBeenSet = true;
+    m_organizationalUnitIds.emplace_back(std::forward<OrganizationalUnitIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of recommended action summaries to return in a single
-   * response. Valid range is 1-1000.</p>
+   * response. If you don't specify a value, the default is 100.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -96,10 +123,13 @@ class ListRecommendedActionSummariesRequest : public ComputeOptimizerAutomationR
  private:
   Aws::Vector<RecommendedActionFilter> m_filters;
 
+  Aws::Vector<Aws::String> m_organizationalUnitIds;
+
   int m_maxResults{0};
 
   Aws::String m_nextToken;
   bool m_filtersHasBeenSet = false;
+  bool m_organizationalUnitIdsHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };

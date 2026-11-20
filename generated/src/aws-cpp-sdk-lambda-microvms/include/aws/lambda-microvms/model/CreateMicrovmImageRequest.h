@@ -289,6 +289,29 @@ class CreateMicrovmImageRequest : public LambdaMicrovmsRequest {
 
   ///@{
   /**
+   * <p>The customer managed Amazon Web Services Key Management Service (Amazon Web
+   * Services KMS) key that encrypts the contents and metadata of your MicroVM image
+   * version. You must have permission to use the key. Specify the key in one of the
+   * following formats:</p> <ul> <li> <p>Key ARN</p> </li> <li> <p>Alias ARN</p>
+   * </li> </ul> <p>If you don't specify a key, your MicroVM image version uses an
+   * Amazon Web Services owned key.</p>
+   */
+  inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+  inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    m_kmsKeyIdentifierHasBeenSet = true;
+    m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value);
+  }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  CreateMicrovmImageRequest& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the MicroVM image. Must be unique within the AWS account.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -376,6 +399,8 @@ class CreateMicrovmImageRequest : public LambdaMicrovmsRequest {
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
 
+  Aws::String m_kmsKeyIdentifier;
+
   Aws::String m_name;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -393,6 +418,7 @@ class CreateMicrovmImageRequest : public LambdaMicrovmsRequest {
   bool m_additionalOsCapabilitiesHasBeenSet = false;
   bool m_hooksHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;

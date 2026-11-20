@@ -106,7 +106,7 @@ class SageMakerAlgorithmFulfillmentOption {
 
   ///@{
   /**
-   * <p>Release notes describing changes in this version of the fulfillment
+   * <p>Release notes that describe the changes in this version of the fulfillment
    * option.</p>
    */
   inline const Aws::String& GetReleaseNotes() const { return m_releaseNotes; }
@@ -143,7 +143,7 @@ class SageMakerAlgorithmFulfillmentOption {
 
   ///@{
   /**
-   * <p>Recommended instance types for training and inference with this
+   * <p>The recommended instance types for training and inference with this
    * algorithm.</p>
    */
   inline const SageMakerAlgorithmRecommendation& GetRecommendation() const { return m_recommendation; }

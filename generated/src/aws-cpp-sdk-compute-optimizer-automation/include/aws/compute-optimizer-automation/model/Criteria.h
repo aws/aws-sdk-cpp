@@ -215,7 +215,10 @@ class Criteria {
   ///@{
   /**
    * <p>Filter criteria indicating whether the recommended action requires a resource
-   * restart.</p>
+   * restart. Valid values are <code>true</code> and <code>false</code>. Values are
+   * case-sensitive unless you use an <code>IgnoreCase</code> comparison operator.
+   * For example, <code>StringEquals</code> with the value <code>False</code> matches
+   * no recommended actions.</p>
    */
   inline const Aws::Vector<StringCriteriaCondition>& GetRestartNeeded() const { return m_restartNeeded; }
   inline bool RestartNeededHasBeenSet() const { return m_restartNeededHasBeenSet; }

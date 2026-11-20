@@ -66,6 +66,10 @@ GetMicrovmResult& GetMicrovmResult::operator=(const Aws::AmazonWebServiceResult<
     m_stateReason = jsonValue.GetString("stateReason");
     m_stateReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("kmsKeyIdentifier")) {
+    m_kmsKeyIdentifier = jsonValue.GetString("kmsKeyIdentifier");
+    m_kmsKeyIdentifierHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ingressNetworkConnectors")) {
     Aws::Utils::Array<JsonView> ingressNetworkConnectorsJsonList = jsonValue.GetArray("ingressNetworkConnectors");
     for (unsigned ingressNetworkConnectorsIndex = 0; ingressNetworkConnectorsIndex < ingressNetworkConnectorsJsonList.GetLength();

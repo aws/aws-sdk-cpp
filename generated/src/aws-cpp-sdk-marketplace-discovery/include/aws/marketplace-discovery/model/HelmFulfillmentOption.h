@@ -150,7 +150,7 @@ class HelmFulfillmentOption {
 
   ///@{
   /**
-   * <p>Release notes describing changes in this version of the fulfillment
+   * <p>Release notes that describe the changes in this version of the fulfillment
    * option.</p>
    */
   inline const Aws::String& GetReleaseNotes() const { return m_releaseNotes; }

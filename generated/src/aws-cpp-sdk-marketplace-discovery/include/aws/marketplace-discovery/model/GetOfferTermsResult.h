@@ -31,8 +31,8 @@ class GetOfferTermsResult {
 
   ///@{
   /**
-   * <p>The locale of the returned content. Indicates whether the response contains
-   * content in the requested locale, or fell back to the default locale. See
+   * <p>The locale of the returned content. This value indicates whether the response
+   * contains content in the requested locale or fell back to the default locale. See
    * <code>Locale</code> for details.</p>
    */
   inline const Aws::String& GetLocale() const { return m_locale; }
@@ -74,8 +74,11 @@ class GetOfferTermsResult {
 
   ///@{
   /**
-   * <p>If <code>nextToken</code> is returned, there are more results available. Make
-   * the call again using the returned token to retrieve the next page.</p>
+   * <p>If the service returns <code>nextToken</code>, more results are available.
+   * The value of <code>nextToken</code> is a unique pagination token for each page.
+   * Make the call again with the returned token to retrieve the next page. Keep all
+   * other arguments unchanged. Each pagination token expires after 24 hours. An
+   * expired pagination token returns a <code>ValidationException</code>.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>

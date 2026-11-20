@@ -31,6 +31,11 @@ SourceLogsConfiguration& SourceLogsConfiguration::operator=(JsonView jsonValue) 
         EncryptedLogGroupStrategyMapper::GetEncryptedLogGroupStrategyForName(jsonValue.GetString("EncryptedLogGroupStrategy"));
     m_encryptedLogGroupStrategyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CentralizeWithDataProtection")) {
+    m_centralizeWithDataProtection =
+        CentralizeWithDataProtectionMapper::GetCentralizeWithDataProtectionForName(jsonValue.GetString("CentralizeWithDataProtection"));
+    m_centralizeWithDataProtectionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -48,6 +53,11 @@ JsonValue SourceLogsConfiguration::Jsonize() const {
   if (m_encryptedLogGroupStrategyHasBeenSet) {
     payload.WithString("EncryptedLogGroupStrategy",
                        EncryptedLogGroupStrategyMapper::GetNameForEncryptedLogGroupStrategy(m_encryptedLogGroupStrategy));
+  }
+
+  if (m_centralizeWithDataProtectionHasBeenSet) {
+    payload.WithString("CentralizeWithDataProtection",
+                       CentralizeWithDataProtectionMapper::GetNameForCentralizeWithDataProtection(m_centralizeWithDataProtection));
   }
 
   return payload;

@@ -17,8 +17,10 @@
 #include <aws/network-security-manager/model/ListAdminAccountsPaginationTraits.h>
 #include <aws/network-security-manager/model/ListDeploymentsPaginationTraits.h>
 #include <aws/network-security-manager/model/ListPolicySnapshotsPaginationTraits.h>
+#include <aws/network-security-manager/model/ListProtectedResourceCoveragesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListAggregateResourceSynchronizationStatusesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListTemplateSnapshotsPaginationTraits.h>
+#include <aws/network-security-manager/model/ListEntityCoveragesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListRulesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListScopesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListDeploymentSnapshotsPaginationTraits.h>

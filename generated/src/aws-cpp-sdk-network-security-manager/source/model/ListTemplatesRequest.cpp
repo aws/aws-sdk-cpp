@@ -36,4 +36,10 @@ void ListTemplatesRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("status", ss.str());
     ss.str("");
   }
+
+  if (m_templateOwnerHasBeenSet) {
+    ss << TemplateOwnerMapper::GetNameForTemplateOwner(m_templateOwner);
+    uri.AddQueryStringParameter("templateOwner", ss.str());
+    ss.str("");
+  }
 }

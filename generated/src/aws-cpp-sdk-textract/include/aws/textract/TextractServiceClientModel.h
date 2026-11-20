@@ -24,28 +24,43 @@
 #include <aws/textract/model/AnalyzeIDResult.h>
 #include <aws/textract/model/CreateAdapterResult.h>
 #include <aws/textract/model/CreateAdapterVersionResult.h>
+#include <aws/textract/model/CreateBlueprintResult.h>
+#include <aws/textract/model/CreateBlueprintVersionResult.h>
+#include <aws/textract/model/CreateProjectResult.h>
 #include <aws/textract/model/DeleteAdapterResult.h>
 #include <aws/textract/model/DeleteAdapterVersionResult.h>
+#include <aws/textract/model/DeleteBlueprintResult.h>
+#include <aws/textract/model/DeleteProjectResult.h>
 #include <aws/textract/model/DetectDocumentTextResult.h>
 #include <aws/textract/model/GetAdapterResult.h>
 #include <aws/textract/model/GetAdapterVersionResult.h>
+#include <aws/textract/model/GetBlueprintResult.h>
 #include <aws/textract/model/GetDocumentAnalysisResult.h>
+#include <aws/textract/model/GetDocumentInsightsResult.h>
 #include <aws/textract/model/GetDocumentTextDetectionResult.h>
 #include <aws/textract/model/GetExpenseAnalysisResult.h>
 #include <aws/textract/model/GetLendingAnalysisResult.h>
 #include <aws/textract/model/GetLendingAnalysisSummaryResult.h>
+#include <aws/textract/model/GetProjectResult.h>
 #include <aws/textract/model/ListAdapterVersionsRequest.h>
 #include <aws/textract/model/ListAdapterVersionsResult.h>
 #include <aws/textract/model/ListAdaptersRequest.h>
 #include <aws/textract/model/ListAdaptersResult.h>
+#include <aws/textract/model/ListBlueprintsRequest.h>
+#include <aws/textract/model/ListBlueprintsResult.h>
+#include <aws/textract/model/ListProjectsRequest.h>
+#include <aws/textract/model/ListProjectsResult.h>
 #include <aws/textract/model/ListTagsForResourceResult.h>
 #include <aws/textract/model/StartDocumentAnalysisResult.h>
+#include <aws/textract/model/StartDocumentInsightsResult.h>
 #include <aws/textract/model/StartDocumentTextDetectionResult.h>
 #include <aws/textract/model/StartExpenseAnalysisResult.h>
 #include <aws/textract/model/StartLendingAnalysisResult.h>
 #include <aws/textract/model/TagResourceResult.h>
 #include <aws/textract/model/UntagResourceResult.h>
 #include <aws/textract/model/UpdateAdapterResult.h>
+#include <aws/textract/model/UpdateBlueprintResult.h>
+#include <aws/textract/model/UpdateProjectResult.h>
 /* End of service model headers required in TextractClient header */
 
 namespace Aws {
@@ -84,26 +99,39 @@ class AnalyzeExpenseRequest;
 class AnalyzeIDRequest;
 class CreateAdapterRequest;
 class CreateAdapterVersionRequest;
+class CreateBlueprintRequest;
+class CreateBlueprintVersionRequest;
+class CreateProjectRequest;
 class DeleteAdapterRequest;
 class DeleteAdapterVersionRequest;
+class DeleteBlueprintRequest;
+class DeleteProjectRequest;
 class DetectDocumentTextRequest;
 class GetAdapterRequest;
 class GetAdapterVersionRequest;
+class GetBlueprintRequest;
 class GetDocumentAnalysisRequest;
+class GetDocumentInsightsRequest;
 class GetDocumentTextDetectionRequest;
 class GetExpenseAnalysisRequest;
 class GetLendingAnalysisRequest;
 class GetLendingAnalysisSummaryRequest;
+class GetProjectRequest;
 class ListAdapterVersionsRequest;
 class ListAdaptersRequest;
+class ListBlueprintsRequest;
+class ListProjectsRequest;
 class ListTagsForResourceRequest;
 class StartDocumentAnalysisRequest;
+class StartDocumentInsightsRequest;
 class StartDocumentTextDetectionRequest;
 class StartExpenseAnalysisRequest;
 class StartLendingAnalysisRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAdapterRequest;
+class UpdateBlueprintRequest;
+class UpdateProjectRequest;
 /* End of service model forward declarations required in TextractClient header */
 
 /* Service model Outcome class definitions */
@@ -112,26 +140,39 @@ typedef Aws::Utils::Outcome<AnalyzeExpenseResult, TextractError> AnalyzeExpenseO
 typedef Aws::Utils::Outcome<AnalyzeIDResult, TextractError> AnalyzeIDOutcome;
 typedef Aws::Utils::Outcome<CreateAdapterResult, TextractError> CreateAdapterOutcome;
 typedef Aws::Utils::Outcome<CreateAdapterVersionResult, TextractError> CreateAdapterVersionOutcome;
+typedef Aws::Utils::Outcome<CreateBlueprintResult, TextractError> CreateBlueprintOutcome;
+typedef Aws::Utils::Outcome<CreateBlueprintVersionResult, TextractError> CreateBlueprintVersionOutcome;
+typedef Aws::Utils::Outcome<CreateProjectResult, TextractError> CreateProjectOutcome;
 typedef Aws::Utils::Outcome<DeleteAdapterResult, TextractError> DeleteAdapterOutcome;
 typedef Aws::Utils::Outcome<DeleteAdapterVersionResult, TextractError> DeleteAdapterVersionOutcome;
+typedef Aws::Utils::Outcome<DeleteBlueprintResult, TextractError> DeleteBlueprintOutcome;
+typedef Aws::Utils::Outcome<DeleteProjectResult, TextractError> DeleteProjectOutcome;
 typedef Aws::Utils::Outcome<DetectDocumentTextResult, TextractError> DetectDocumentTextOutcome;
 typedef Aws::Utils::Outcome<GetAdapterResult, TextractError> GetAdapterOutcome;
 typedef Aws::Utils::Outcome<GetAdapterVersionResult, TextractError> GetAdapterVersionOutcome;
+typedef Aws::Utils::Outcome<GetBlueprintResult, TextractError> GetBlueprintOutcome;
 typedef Aws::Utils::Outcome<GetDocumentAnalysisResult, TextractError> GetDocumentAnalysisOutcome;
+typedef Aws::Utils::Outcome<GetDocumentInsightsResult, TextractError> GetDocumentInsightsOutcome;
 typedef Aws::Utils::Outcome<GetDocumentTextDetectionResult, TextractError> GetDocumentTextDetectionOutcome;
 typedef Aws::Utils::Outcome<GetExpenseAnalysisResult, TextractError> GetExpenseAnalysisOutcome;
 typedef Aws::Utils::Outcome<GetLendingAnalysisResult, TextractError> GetLendingAnalysisOutcome;
 typedef Aws::Utils::Outcome<GetLendingAnalysisSummaryResult, TextractError> GetLendingAnalysisSummaryOutcome;
+typedef Aws::Utils::Outcome<GetProjectResult, TextractError> GetProjectOutcome;
 typedef Aws::Utils::Outcome<ListAdapterVersionsResult, TextractError> ListAdapterVersionsOutcome;
 typedef Aws::Utils::Outcome<ListAdaptersResult, TextractError> ListAdaptersOutcome;
+typedef Aws::Utils::Outcome<ListBlueprintsResult, TextractError> ListBlueprintsOutcome;
+typedef Aws::Utils::Outcome<ListProjectsResult, TextractError> ListProjectsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, TextractError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<StartDocumentAnalysisResult, TextractError> StartDocumentAnalysisOutcome;
+typedef Aws::Utils::Outcome<StartDocumentInsightsResult, TextractError> StartDocumentInsightsOutcome;
 typedef Aws::Utils::Outcome<StartDocumentTextDetectionResult, TextractError> StartDocumentTextDetectionOutcome;
 typedef Aws::Utils::Outcome<StartExpenseAnalysisResult, TextractError> StartExpenseAnalysisOutcome;
 typedef Aws::Utils::Outcome<StartLendingAnalysisResult, TextractError> StartLendingAnalysisOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, TextractError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, TextractError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAdapterResult, TextractError> UpdateAdapterOutcome;
+typedef Aws::Utils::Outcome<UpdateBlueprintResult, TextractError> UpdateBlueprintOutcome;
+typedef Aws::Utils::Outcome<UpdateProjectResult, TextractError> UpdateProjectOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -140,26 +181,39 @@ typedef std::future<AnalyzeExpenseOutcome> AnalyzeExpenseOutcomeCallable;
 typedef std::future<AnalyzeIDOutcome> AnalyzeIDOutcomeCallable;
 typedef std::future<CreateAdapterOutcome> CreateAdapterOutcomeCallable;
 typedef std::future<CreateAdapterVersionOutcome> CreateAdapterVersionOutcomeCallable;
+typedef std::future<CreateBlueprintOutcome> CreateBlueprintOutcomeCallable;
+typedef std::future<CreateBlueprintVersionOutcome> CreateBlueprintVersionOutcomeCallable;
+typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
 typedef std::future<DeleteAdapterOutcome> DeleteAdapterOutcomeCallable;
 typedef std::future<DeleteAdapterVersionOutcome> DeleteAdapterVersionOutcomeCallable;
+typedef std::future<DeleteBlueprintOutcome> DeleteBlueprintOutcomeCallable;
+typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
 typedef std::future<DetectDocumentTextOutcome> DetectDocumentTextOutcomeCallable;
 typedef std::future<GetAdapterOutcome> GetAdapterOutcomeCallable;
 typedef std::future<GetAdapterVersionOutcome> GetAdapterVersionOutcomeCallable;
+typedef std::future<GetBlueprintOutcome> GetBlueprintOutcomeCallable;
 typedef std::future<GetDocumentAnalysisOutcome> GetDocumentAnalysisOutcomeCallable;
+typedef std::future<GetDocumentInsightsOutcome> GetDocumentInsightsOutcomeCallable;
 typedef std::future<GetDocumentTextDetectionOutcome> GetDocumentTextDetectionOutcomeCallable;
 typedef std::future<GetExpenseAnalysisOutcome> GetExpenseAnalysisOutcomeCallable;
 typedef std::future<GetLendingAnalysisOutcome> GetLendingAnalysisOutcomeCallable;
 typedef std::future<GetLendingAnalysisSummaryOutcome> GetLendingAnalysisSummaryOutcomeCallable;
+typedef std::future<GetProjectOutcome> GetProjectOutcomeCallable;
 typedef std::future<ListAdapterVersionsOutcome> ListAdapterVersionsOutcomeCallable;
 typedef std::future<ListAdaptersOutcome> ListAdaptersOutcomeCallable;
+typedef std::future<ListBlueprintsOutcome> ListBlueprintsOutcomeCallable;
+typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<StartDocumentAnalysisOutcome> StartDocumentAnalysisOutcomeCallable;
+typedef std::future<StartDocumentInsightsOutcome> StartDocumentInsightsOutcomeCallable;
 typedef std::future<StartDocumentTextDetectionOutcome> StartDocumentTextDetectionOutcomeCallable;
 typedef std::future<StartExpenseAnalysisOutcome> StartExpenseAnalysisOutcomeCallable;
 typedef std::future<StartLendingAnalysisOutcome> StartLendingAnalysisOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAdapterOutcome> UpdateAdapterOutcomeCallable;
+typedef std::future<UpdateBlueprintOutcome> UpdateBlueprintOutcomeCallable;
+typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -181,12 +235,27 @@ typedef std::function<void(const TextractClient*, const Model::CreateAdapterRequ
 typedef std::function<void(const TextractClient*, const Model::CreateAdapterVersionRequest&, const Model::CreateAdapterVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateAdapterVersionResponseReceivedHandler;
+typedef std::function<void(const TextractClient*, const Model::CreateBlueprintRequest&, const Model::CreateBlueprintOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateBlueprintResponseReceivedHandler;
+typedef std::function<void(const TextractClient*, const Model::CreateBlueprintVersionRequest&, const Model::CreateBlueprintVersionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateBlueprintVersionResponseReceivedHandler;
+typedef std::function<void(const TextractClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateProjectResponseReceivedHandler;
 typedef std::function<void(const TextractClient*, const Model::DeleteAdapterRequest&, const Model::DeleteAdapterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAdapterResponseReceivedHandler;
 typedef std::function<void(const TextractClient*, const Model::DeleteAdapterVersionRequest&, const Model::DeleteAdapterVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAdapterVersionResponseReceivedHandler;
+typedef std::function<void(const TextractClient*, const Model::DeleteBlueprintRequest&, const Model::DeleteBlueprintOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteBlueprintResponseReceivedHandler;
+typedef std::function<void(const TextractClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteProjectResponseReceivedHandler;
 typedef std::function<void(const TextractClient*, const Model::DetectDocumentTextRequest&, const Model::DetectDocumentTextOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DetectDocumentTextResponseReceivedHandler;
@@ -196,9 +265,15 @@ typedef std::function<void(const TextractClient*, const Model::GetAdapterRequest
 typedef std::function<void(const TextractClient*, const Model::GetAdapterVersionRequest&, const Model::GetAdapterVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetAdapterVersionResponseReceivedHandler;
+typedef std::function<void(const TextractClient*, const Model::GetBlueprintRequest&, const Model::GetBlueprintOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetBlueprintResponseReceivedHandler;
 typedef std::function<void(const TextractClient*, const Model::GetDocumentAnalysisRequest&, const Model::GetDocumentAnalysisOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDocumentAnalysisResponseReceivedHandler;
+typedef std::function<void(const TextractClient*, const Model::GetDocumentInsightsRequest&, const Model::GetDocumentInsightsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDocumentInsightsResponseReceivedHandler;
 typedef std::function<void(const TextractClient*, const Model::GetDocumentTextDetectionRequest&,
                            const Model::GetDocumentTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDocumentTextDetectionResponseReceivedHandler;
@@ -211,18 +286,30 @@ typedef std::function<void(const TextractClient*, const Model::GetLendingAnalysi
 typedef std::function<void(const TextractClient*, const Model::GetLendingAnalysisSummaryRequest&,
                            const Model::GetLendingAnalysisSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetLendingAnalysisSummaryResponseReceivedHandler;
+typedef std::function<void(const TextractClient*, const Model::GetProjectRequest&, const Model::GetProjectOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetProjectResponseReceivedHandler;
 typedef std::function<void(const TextractClient*, const Model::ListAdapterVersionsRequest&, const Model::ListAdapterVersionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAdapterVersionsResponseReceivedHandler;
 typedef std::function<void(const TextractClient*, const Model::ListAdaptersRequest&, const Model::ListAdaptersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAdaptersResponseReceivedHandler;
+typedef std::function<void(const TextractClient*, const Model::ListBlueprintsRequest&, const Model::ListBlueprintsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListBlueprintsResponseReceivedHandler;
+typedef std::function<void(const TextractClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListProjectsResponseReceivedHandler;
 typedef std::function<void(const TextractClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
 typedef std::function<void(const TextractClient*, const Model::StartDocumentAnalysisRequest&, const Model::StartDocumentAnalysisOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartDocumentAnalysisResponseReceivedHandler;
+typedef std::function<void(const TextractClient*, const Model::StartDocumentInsightsRequest&, const Model::StartDocumentInsightsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartDocumentInsightsResponseReceivedHandler;
 typedef std::function<void(const TextractClient*, const Model::StartDocumentTextDetectionRequest&,
                            const Model::StartDocumentTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartDocumentTextDetectionResponseReceivedHandler;
@@ -241,6 +328,12 @@ typedef std::function<void(const TextractClient*, const Model::UntagResourceRequ
 typedef std::function<void(const TextractClient*, const Model::UpdateAdapterRequest&, const Model::UpdateAdapterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAdapterResponseReceivedHandler;
+typedef std::function<void(const TextractClient*, const Model::UpdateBlueprintRequest&, const Model::UpdateBlueprintOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateBlueprintResponseReceivedHandler;
+typedef std::function<void(const TextractClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateProjectResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace Textract
 }  // namespace Aws

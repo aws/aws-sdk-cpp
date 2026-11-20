@@ -55,16 +55,16 @@ class SearchResultItem {
   /**
    * <p>The name of the matched asset.</p>
    */
-  inline const Aws::String& GetAssetName() const { return m_assetName; }
-  inline bool AssetNameHasBeenSet() const { return m_assetNameHasBeenSet; }
-  template <typename AssetNameT = Aws::String>
-  void SetAssetName(AssetNameT&& value) {
-    m_assetNameHasBeenSet = true;
-    m_assetName = std::forward<AssetNameT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename AssetNameT = Aws::String>
-  SearchResultItem& WithAssetName(AssetNameT&& value) {
-    SetAssetName(std::forward<AssetNameT>(value));
+  template <typename NameT = Aws::String>
+  SearchResultItem& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -73,16 +73,34 @@ class SearchResultItem {
   /**
    * <p>The description of the matched asset.</p>
    */
-  inline const Aws::String& GetAssetDescription() const { return m_assetDescription; }
-  inline bool AssetDescriptionHasBeenSet() const { return m_assetDescriptionHasBeenSet; }
-  template <typename AssetDescriptionT = Aws::String>
-  void SetAssetDescription(AssetDescriptionT&& value) {
-    m_assetDescriptionHasBeenSet = true;
-    m_assetDescription = std::forward<AssetDescriptionT>(value);
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
   }
-  template <typename AssetDescriptionT = Aws::String>
-  SearchResultItem& WithAssetDescription(AssetDescriptionT&& value) {
-    SetAssetDescription(std::forward<AssetDescriptionT>(value));
+  template <typename DescriptionT = Aws::String>
+  SearchResultItem& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which the matched asset was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  SearchResultItem& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
@@ -125,16 +143,19 @@ class SearchResultItem {
  private:
   Aws::String m_id;
 
-  Aws::String m_assetName;
+  Aws::String m_name;
 
-  Aws::String m_assetDescription;
+  Aws::String m_description;
+
+  Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_assetTypeId;
   bool m_idHasBeenSet = false;
-  bool m_assetNameHasBeenSet = false;
-  bool m_assetDescriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_assetTypeIdHasBeenSet = false;
 };

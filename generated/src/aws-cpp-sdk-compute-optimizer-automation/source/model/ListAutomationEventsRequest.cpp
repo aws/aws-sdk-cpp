@@ -20,6 +20,9 @@ Aws::String ListAutomationEventsRequest::SerializePayload() const {
   if (m_filtersHasBeenSet) {
     mapSize++;
   }
+  if (m_organizationalUnitIdsHasBeenSet) {
+    mapSize++;
+  }
   if (m_startTimeInclusiveHasBeenSet) {
     mapSize++;
   }
@@ -40,6 +43,14 @@ Aws::String ListAutomationEventsRequest::SerializePayload() const {
     encoder.WriteArrayStart(m_filters.size());
     for (const auto& item_0 : m_filters) {
       item_0.CborEncode(encoder);
+    }
+  }
+
+  if (m_organizationalUnitIdsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("organizationalUnitIds"));
+    encoder.WriteArrayStart(m_organizationalUnitIds.size());
+    for (const auto& item_0 : m_organizationalUnitIds) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
   }
 

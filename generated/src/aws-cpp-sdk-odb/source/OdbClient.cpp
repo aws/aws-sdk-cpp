@@ -66,6 +66,7 @@
 #include <aws/odb/model/ListAutonomousDatabaseCharacterSetsRequest.h>
 #include <aws/odb/model/ListAutonomousDatabaseClonesRequest.h>
 #include <aws/odb/model/ListAutonomousDatabasePeersRequest.h>
+#include <aws/odb/model/ListAutonomousDatabaseRefreshableClonesRequest.h>
 #include <aws/odb/model/ListAutonomousDatabaseVersionsRequest.h>
 #include <aws/odb/model/ListAutonomousDatabasesRequest.h>
 #include <aws/odb/model/ListAutonomousVirtualMachinesRequest.h>
@@ -88,6 +89,7 @@
 #include <aws/odb/model/RebootDbNodeRequest.h>
 #include <aws/odb/model/RestoreAutonomousDatabaseRequest.h>
 #include <aws/odb/model/ShrinkAutonomousDatabaseRequest.h>
+#include <aws/odb/model/StartAutonomousDatabaseRefreshRequest.h>
 #include <aws/odb/model/StartAutonomousDatabaseRequest.h>
 #include <aws/odb/model/StartDbNodeRequest.h>
 #include <aws/odb/model/StopAutonomousDatabaseRequest.h>
@@ -544,6 +546,13 @@ ListAutonomousDatabasePeersOutcome OdbClient::ListAutonomousDatabasePeers(const 
                             : ListAutonomousDatabasePeersOutcome(std::move(result.GetError()));
 }
 
+ListAutonomousDatabaseRefreshableClonesOutcome OdbClient::ListAutonomousDatabaseRefreshableClones(
+    const ListAutonomousDatabaseRefreshableClonesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutonomousDatabaseRefreshableClonesOutcome(result.GetResultWithOwnership())
+                            : ListAutonomousDatabaseRefreshableClonesOutcome(std::move(result.GetError()));
+}
+
 ListAutonomousDatabaseVersionsOutcome OdbClient::ListAutonomousDatabaseVersions(
     const ListAutonomousDatabaseVersionsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -678,6 +687,13 @@ StartAutonomousDatabaseOutcome OdbClient::StartAutonomousDatabase(const StartAut
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartAutonomousDatabaseOutcome(result.GetResultWithOwnership())
                             : StartAutonomousDatabaseOutcome(std::move(result.GetError()));
+}
+
+StartAutonomousDatabaseRefreshOutcome OdbClient::StartAutonomousDatabaseRefresh(
+    const StartAutonomousDatabaseRefreshRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAutonomousDatabaseRefreshOutcome(result.GetResultWithOwnership())
+                            : StartAutonomousDatabaseRefreshOutcome(std::move(result.GetError()));
 }
 
 StartDbNodeOutcome OdbClient::StartDbNode(const StartDbNodeRequest& request) const {

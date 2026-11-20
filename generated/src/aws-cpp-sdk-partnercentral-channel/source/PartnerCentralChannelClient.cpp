@@ -21,13 +21,17 @@
 #include <aws/partnercentral-channel/PartnerCentralChannelEndpointProvider.h>
 #include <aws/partnercentral-channel/PartnerCentralChannelErrorMarshaller.h>
 #include <aws/partnercentral-channel/model/AcceptChannelHandshakeRequest.h>
+#include <aws/partnercentral-channel/model/CancelChannelContractRequest.h>
 #include <aws/partnercentral-channel/model/CancelChannelHandshakeRequest.h>
+#include <aws/partnercentral-channel/model/CreateChannelContractRequest.h>
 #include <aws/partnercentral-channel/model/CreateChannelHandshakeRequest.h>
 #include <aws/partnercentral-channel/model/CreateProgramManagementAccountRequest.h>
 #include <aws/partnercentral-channel/model/CreateRelationshipRequest.h>
 #include <aws/partnercentral-channel/model/DeleteProgramManagementAccountRequest.h>
 #include <aws/partnercentral-channel/model/DeleteRelationshipRequest.h>
+#include <aws/partnercentral-channel/model/GetChannelContractRequest.h>
 #include <aws/partnercentral-channel/model/GetRelationshipRequest.h>
+#include <aws/partnercentral-channel/model/ListChannelContractsRequest.h>
 #include <aws/partnercentral-channel/model/ListChannelHandshakesRequest.h>
 #include <aws/partnercentral-channel/model/ListProgramManagementAccountsRequest.h>
 #include <aws/partnercentral-channel/model/ListRelationshipsRequest.h>
@@ -208,10 +212,22 @@ AcceptChannelHandshakeOutcome PartnerCentralChannelClient::AcceptChannelHandshak
                             : AcceptChannelHandshakeOutcome(std::move(result.GetError()));
 }
 
+CancelChannelContractOutcome PartnerCentralChannelClient::CancelChannelContract(const CancelChannelContractRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelChannelContractOutcome(result.GetResultWithOwnership())
+                            : CancelChannelContractOutcome(std::move(result.GetError()));
+}
+
 CancelChannelHandshakeOutcome PartnerCentralChannelClient::CancelChannelHandshake(const CancelChannelHandshakeRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CancelChannelHandshakeOutcome(result.GetResultWithOwnership())
                             : CancelChannelHandshakeOutcome(std::move(result.GetError()));
+}
+
+CreateChannelContractOutcome PartnerCentralChannelClient::CreateChannelContract(const CreateChannelContractRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelContractOutcome(result.GetResultWithOwnership())
+                            : CreateChannelContractOutcome(std::move(result.GetError()));
 }
 
 CreateChannelHandshakeOutcome PartnerCentralChannelClient::CreateChannelHandshake(const CreateChannelHandshakeRequest& request) const {
@@ -246,10 +262,22 @@ DeleteRelationshipOutcome PartnerCentralChannelClient::DeleteRelationship(const 
                             : DeleteRelationshipOutcome(std::move(result.GetError()));
 }
 
+GetChannelContractOutcome PartnerCentralChannelClient::GetChannelContract(const GetChannelContractRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetChannelContractOutcome(result.GetResultWithOwnership())
+                            : GetChannelContractOutcome(std::move(result.GetError()));
+}
+
 GetRelationshipOutcome PartnerCentralChannelClient::GetRelationship(const GetRelationshipRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetRelationshipOutcome(result.GetResultWithOwnership())
                             : GetRelationshipOutcome(std::move(result.GetError()));
+}
+
+ListChannelContractsOutcome PartnerCentralChannelClient::ListChannelContracts(const ListChannelContractsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListChannelContractsOutcome(result.GetResultWithOwnership())
+                            : ListChannelContractsOutcome(std::move(result.GetError()));
 }
 
 ListChannelHandshakesOutcome PartnerCentralChannelClient::ListChannelHandshakes(const ListChannelHandshakesRequest& request) const {

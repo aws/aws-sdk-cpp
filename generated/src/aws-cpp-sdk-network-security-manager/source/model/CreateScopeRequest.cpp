@@ -31,6 +31,10 @@ Aws::String CreateScopeRequest::SerializePayload() const {
     payload.WithObject("scopeConfiguration", m_scopeConfiguration.Jsonize());
   }
 
+  if (m_specializedScopeTypeHasBeenSet) {
+    payload.WithString("specializedScopeType", SpecializedScopeTypeMapper::GetNameForSpecializedScopeType(m_specializedScopeType));
+  }
+
   if (m_isPublishedHasBeenSet) {
     payload.WithBool("isPublished", m_isPublished);
   }

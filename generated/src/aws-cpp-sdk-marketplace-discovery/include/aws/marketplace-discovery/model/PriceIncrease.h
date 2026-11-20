@@ -22,8 +22,12 @@ namespace Model {
 
 /**
  * <p>The pricing adjustment that applies at each renewal cycle, expressed as
- * either a fixed percentage or a percentage range. Exactly one variant is
- * present.</p><p><h3>See Also:</h3>   <a
+ * either a fixed percentage or a percentage range. Exactly one of the following
+ * members is present:</p> <dl> <dt>fixedPercentage</dt> <dd> <p>A single fixed
+ * percentage applied uniformly at every renewal cycle.</p> </dd>
+ * <dt>percentageRange</dt> <dd> <p>A percentage range with minimum, maximum, and
+ * default values that bound the price increase at each renewal cycle.</p> </dd>
+ * </dl><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/PriceIncrease">AWS
  * API Reference</a></p>
  */

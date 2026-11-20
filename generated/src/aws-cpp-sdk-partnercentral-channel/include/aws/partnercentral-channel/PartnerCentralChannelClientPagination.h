@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/partnercentral-channel/PartnerCentralChannelClient.h>
+#include <aws/partnercentral-channel/model/ListChannelContractsPaginationTraits.h>
 #include <aws/partnercentral-channel/model/ListChannelHandshakesPaginationTraits.h>
 #include <aws/partnercentral-channel/model/ListProgramManagementAccountsPaginationTraits.h>
 #include <aws/partnercentral-channel/model/ListRelationshipsPaginationTraits.h>
@@ -13,6 +14,9 @@
 namespace Aws {
 namespace PartnerCentralChannel {
 
+using ListChannelContractsPaginator =
+    Aws::Utils::Pagination::Paginator<PartnerCentralChannelClient, Model::ListChannelContractsRequest,
+                                      Pagination::ListChannelContractsPaginationTraits<PartnerCentralChannelClient>>;
 using ListChannelHandshakesPaginator =
     Aws::Utils::Pagination::Paginator<PartnerCentralChannelClient, Model::ListChannelHandshakesRequest,
                                       Pagination::ListChannelHandshakesPaginationTraits<PartnerCentralChannelClient>>;

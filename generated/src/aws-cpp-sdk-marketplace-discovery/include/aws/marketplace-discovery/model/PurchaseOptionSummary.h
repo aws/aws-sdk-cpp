@@ -27,7 +27,7 @@ namespace Model {
 
 /**
  * <p>Summary information about a purchase option (offer or offer set) available to
- * the buyer, including the seller, badges, and associated products.</p><p><h3>See
+ * you, including the seller, badges, and associated products.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/PurchaseOptionSummary">AWS
  * API Reference</a></p>
@@ -77,8 +77,10 @@ class PurchaseOptionSummary {
 
   ///@{
   /**
-   * <p>The type of purchase option. Values are <code>OFFER</code> for a
-   * single-product offer or <code>OFFERSET</code> for a bundled offer set.</p>
+   * <p>The type of purchase option. This field has one of the following values:</p>
+   * <dl> <dt>OFFER</dt> <dd> <p>An offer for a single product.</p> </dd>
+   * <dt>OFFERSET</dt> <dd> <p>An offer set that bundles offers for several
+   * products.</p> </dd> </dl>
    */
   inline PurchaseOptionType GetPurchaseOptionType() const { return m_purchaseOptionType; }
   inline bool PurchaseOptionTypeHasBeenSet() const { return m_purchaseOptionTypeHasBeenSet; }
@@ -112,7 +114,7 @@ class PurchaseOptionSummary {
 
   ///@{
   /**
-   * <p>The date and time when the purchase option became available to the buyer.</p>
+   * <p>The date and time when the purchase option became available to you.</p>
    */
   inline const Aws::Utils::DateTime& GetAvailableFromTime() const { return m_availableFromTime; }
   inline bool AvailableFromTimeHasBeenSet() const { return m_availableFromTimeHasBeenSet; }
@@ -169,7 +171,7 @@ class PurchaseOptionSummary {
   ///@{
   /**
    * <p>Badges indicating special attributes of the purchase option, such as private
-   * pricing or future dated.</p>
+   * pricing or future-dated.</p>
    */
   inline const Aws::Vector<PurchaseOptionBadge>& GetBadges() const { return m_badges; }
   inline bool BadgesHasBeenSet() const { return m_badgesHasBeenSet; }

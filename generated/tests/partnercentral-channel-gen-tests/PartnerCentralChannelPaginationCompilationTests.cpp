@@ -10,6 +10,7 @@
 #include <aws/partnercentral-channel/PartnerCentralChannelPaginationBase.h>
 #include <aws/partnercentral-channel/model/ListRelationshipsPaginationTraits.h>
 #include <aws/partnercentral-channel/model/ListChannelHandshakesPaginationTraits.h>
+#include <aws/partnercentral-channel/model/ListChannelContractsPaginationTraits.h>
 #include <aws/partnercentral-channel/model/ListProgramManagementAccountsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

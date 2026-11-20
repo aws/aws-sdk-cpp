@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
+#include <aws/network-firewall/model/AddressTranslations.h>
 #include <aws/network-firewall/model/Attachment.h>
 #include <aws/network-firewall/model/NatGatewayAttachment.h>
 #include <aws/network-firewall/model/PerObjectStatus.h>
@@ -95,6 +96,27 @@ class SyncState {
 
   ///@{
   /**
+   * <p>The public IP addresses that an internet gateway firewall uses for network
+   * address translation in this Availability Zone. Network Firewall allocates these
+   * addresses in your account and adds or removes addresses automatically based on
+   * traffic. This setting is only present for an internet gateway firewall.</p>
+   */
+  inline const AddressTranslations& GetAddressTranslations() const { return m_addressTranslations; }
+  inline bool AddressTranslationsHasBeenSet() const { return m_addressTranslationsHasBeenSet; }
+  template <typename AddressTranslationsT = AddressTranslations>
+  void SetAddressTranslations(AddressTranslationsT&& value) {
+    m_addressTranslationsHasBeenSet = true;
+    m_addressTranslations = std::forward<AddressTranslationsT>(value);
+  }
+  template <typename AddressTranslationsT = AddressTranslations>
+  SyncState& WithAddressTranslations(AddressTranslationsT&& value) {
+    SetAddressTranslations(std::forward<AddressTranslationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The NAT gateway that's attached to a proxy mode firewall in the Availability
    * Zone, and the status of the attachment. To get NAT gateway details, such as IP
    * addresses, use the Amazon EC2 <code>DescribeNatGateways</code> action.</p> <p>A
@@ -125,9 +147,12 @@ class SyncState {
 
   Aws::Map<Aws::String, PerObjectStatus> m_config;
 
+  AddressTranslations m_addressTranslations;
+
   Aws::Vector<NatGatewayAttachment> m_natGatewayAttachments;
   bool m_attachmentHasBeenSet = false;
   bool m_configHasBeenSet = false;
+  bool m_addressTranslationsHasBeenSet = false;
   bool m_natGatewayAttachmentsHasBeenSet = false;
 };
 

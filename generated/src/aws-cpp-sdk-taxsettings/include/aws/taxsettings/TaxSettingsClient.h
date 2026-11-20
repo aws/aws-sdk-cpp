@@ -241,12 +241,29 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * need to provide address and legal name. These will be populated based on your
    * tax registration number.</p> </li> </ul> <p> <b>Nepal</b> </p> <ul> <li> <p>The
    * sector valid values are <code>Business</code> and <code>Individual</code>.</p>
-   * </li> </ul> <p> <b>Saudi Arabia</b> </p> <ul> <li> <p>For <code>address</code>,
-   * you must specify <code>addressLine3</code>.</p> </li> </ul> <p> <b>South
-   * Korea</b> </p> <ul> <li> <p>You must specify the <code>certifiedEmailId</code>
-   * and <code>legalName</code> in the <code>TaxRegistrationEntry</code> object. Use
-   * Korean characters for <code>legalName</code>.</p> </li> <li> <p>You must specify
-   * the <code>businessRepresentativeName</code>, <code>itemOfBusiness</code>, and
+   * </li> </ul> <p> <b>New Zealand</b> </p> <ul> <li> <p>You can optionally specify
+   * the <code>sector</code>. Valid values are <code>Government</code> and
+   * <code>Business</code>. Non-government customers use <code>Business</code>.</p>
+   * </li> <li> <p>If your <code>sector</code> is <code>Government</code>, you can
+   * optionally specify the <code>peppolId</code> in the
+   * <code>newZealandAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Norway</b>
+   * </p> <ul> <li> <p>You can optionally specify the
+   * <code>taxRegistrationNumberType</code> in the <code>norwayAdditionalInfo</code>
+   * field of the <code>additionalTaxInformation</code> object. Valid values are
+   * <code>TaxRegistrationNumber</code> and <code>LocalRegistrationNumber</code>. Use
+   * <code>LocalRegistrationNumber</code> to register a Norwegian Organisation Number
+   * for a business that isn't VAT registered. In that case, the
+   * <code>registrationId</code> must be the 9-digit Organisation Number.</p> </li>
+   * <li> <p>You can optionally specify the <code>peppolId</code> in the
+   * <code>norwayAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Saudi
+   * Arabia</b> </p> <ul> <li> <p>For <code>address</code>, you must specify
+   * <code>addressLine3</code>.</p> </li> </ul> <p> <b>South Korea</b> </p> <ul> <li>
+   * <p>You must specify the <code>certifiedEmailId</code> and <code>legalName</code>
+   * in the <code>TaxRegistrationEntry</code> object. Use Korean characters for
+   * <code>legalName</code>.</p> </li> <li> <p>You must specify the
+   * <code>businessRepresentativeName</code>, <code>itemOfBusiness</code>, and
    * <code>lineOfBusiness</code> in the <code>southKoreaAdditionalInfo</code> field
    * of the <code>additionalTaxInformation</code> object. Use Korean characters for
    * these fields.</p> </li> <li> <p>You must specify the tax registration
@@ -275,15 +292,34 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * <code>industries</code> field.</p> </li> <li> <p>For <code>address</code>, you
    * must specify <code>districtOrCounty</code>.</p> </li> </ul> <p> <b>Ukraine</b>
    * </p> <ul> <li> <p>The sector valid values are <code>Business</code> and
-   * <code>Individual</code>.</p> </li> </ul> <p> <b>Uruguay</b> </p> <ul> <li> <p>
-   * <code>RegistrationType</code> valid values are <code>RUT</code> (Registro Único
-   * Tributario), <code>NIE</code> (Numero de Identificacion del Extranjero), and
-   * <code>CI</code> (Cedula Identidad).</p> </li> </ul> <p> <b>Philippines</b> </p>
-   * <ul> <li> <p>You can optionally specify the <code>isVatRegistered</code> in the
-   * <code>philippinesAdditionalInfo</code> field of the
-   * <code>additionalTaxInformation</code> object to indicate your VAT registration
-   * status with the Bureau of Internal Revenue (BIR).</p> </li> </ul> <p>
-   * <b>Belgium</b> </p> <ul> <li> <p>You can optionally specify the
+   * <code>Individual</code>.</p> </li> </ul> <p> <b>United Arab Emirates</b> </p>
+   * <ul> <li> <p>You must specify the <code>taxRegistrationNumberType</code> in the
+   * <code>unitedArabEmiratesAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object. Valid values are
+   * <code>VATTaxRegistrationNumber</code> and
+   * <code>LocalTaxRegistrationNumber</code> (Corporate Tax).</p> </li> <li> <p>You
+   * can optionally specify the <code>peppolId</code>,
+   * <code>tradeLicenseNumber</code>, and <code>emiratesId</code> in the
+   * <code>unitedArabEmiratesAdditionalInfo</code> field.</p> </li> </ul> <p>
+   * <b>Uruguay</b> </p> <ul> <li> <p> <code>RegistrationType</code> valid values are
+   * <code>RUT</code> (Registro Único Tributario), <code>NIE</code> (Numero de
+   * Identificacion del Extranjero), and <code>CI</code> (Cedula Identidad).</p>
+   * </li> </ul> <p> <b>Vietnam</b> </p> <ul> <li> <p>You must specify the
+   * <code>vatCreditMethod</code> in the <code>vietnamAdditionalInfo</code> field of
+   * the <code>additionalTaxInformation</code> object.</p> </li> <li> <p>If
+   * <code>vatCreditMethod</code> is <code>true</code>, the sector must be
+   * <code>Business</code>, and you must specify the
+   * <code>enterpriseIdentificationNumber</code>,
+   * <code>electronicTransactionCodeNumber</code>, <code>paymentVoucherNumber</code>,
+   * and <code>paymentVoucherNumberDate</code>.</p> </li> <li> <p>If
+   * <code>vatCreditMethod</code> is <code>false</code>, the sector must be
+   * <code>Individual</code>, and you must not specify those four fields. The tax
+   * registration number can also be 12 digits.</p> </li> </ul> <p>
+   * <b>Philippines</b> </p> <ul> <li> <p>You can optionally specify the
+   * <code>isVatRegistered</code> in the <code>philippinesAdditionalInfo</code> field
+   * of the <code>additionalTaxInformation</code> object to indicate your VAT
+   * registration status with the Bureau of Internal Revenue (BIR).</p> </li> </ul>
+   * <p> <b>Belgium</b> </p> <ul> <li> <p>You can optionally specify the
    * <code>peppolId</code> in the <code>belgiumAdditionalInfo</code> field of the
    * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Chile</b>
    * </p> <ul> <li> <p>You can optionally specify the <code>documentType</code> and
@@ -777,12 +813,29 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * need to provide address and legal name. These will be populated based on your
    * tax registration number.</p> </li> </ul> <p> <b>Nepal</b> </p> <ul> <li> <p>The
    * sector valid values are <code>Business</code> and <code>Individual</code>.</p>
-   * </li> </ul> <p> <b>Saudi Arabia</b> </p> <ul> <li> <p>For <code>address</code>,
-   * you must specify <code>addressLine3</code>.</p> </li> </ul> <p> <b>South
-   * Korea</b> </p> <ul> <li> <p>You must specify the <code>certifiedEmailId</code>
-   * and <code>legalName</code> in the <code>TaxRegistrationEntry</code> object. Use
-   * Korean characters for <code>legalName</code>.</p> </li> <li> <p>You must specify
-   * the <code>businessRepresentativeName</code>, <code>itemOfBusiness</code>, and
+   * </li> </ul> <p> <b>New Zealand</b> </p> <ul> <li> <p>You can optionally specify
+   * the <code>sector</code>. Valid values are <code>Government</code> and
+   * <code>Business</code>. Non-government customers use <code>Business</code>.</p>
+   * </li> <li> <p>If your <code>sector</code> is <code>Government</code>, you can
+   * optionally specify the <code>peppolId</code> in the
+   * <code>newZealandAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Norway</b>
+   * </p> <ul> <li> <p>You can optionally specify the
+   * <code>taxRegistrationNumberType</code> in the <code>norwayAdditionalInfo</code>
+   * field of the <code>additionalTaxInformation</code> object. Valid values are
+   * <code>TaxRegistrationNumber</code> and <code>LocalRegistrationNumber</code>. Use
+   * <code>LocalRegistrationNumber</code> to register a Norwegian Organisation Number
+   * for a business that isn't VAT registered. In that case, the
+   * <code>registrationId</code> must be the 9-digit Organisation Number.</p> </li>
+   * <li> <p>You can optionally specify the <code>peppolId</code> in the
+   * <code>norwayAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Saudi
+   * Arabia</b> </p> <ul> <li> <p>For <code>address</code>, you must specify
+   * <code>addressLine3</code>.</p> </li> </ul> <p> <b>South Korea</b> </p> <ul> <li>
+   * <p>You must specify the <code>certifiedEmailId</code> and <code>legalName</code>
+   * in the <code>TaxRegistrationEntry</code> object. Use Korean characters for
+   * <code>legalName</code>.</p> </li> <li> <p>You must specify the
+   * <code>businessRepresentativeName</code>, <code>itemOfBusiness</code>, and
    * <code>lineOfBusiness</code> in the <code>southKoreaAdditionalInfo</code> field
    * of the <code>additionalTaxInformation</code> object. Use Korean characters for
    * these fields.</p> </li> <li> <p>You must specify the tax registration
@@ -811,15 +864,34 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * <code>industries</code> field.</p> </li> <li> <p>For <code>address</code>, you
    * must specify <code>districtOrCounty</code>.</p> </li> </ul> <p> <b>Ukraine</b>
    * </p> <ul> <li> <p>The sector valid values are <code>Business</code> and
-   * <code>Individual</code>.</p> </li> </ul> <p> <b>Uruguay</b> </p> <ul> <li> <p>
-   * <code>RegistrationType</code> valid values are <code>RUT</code> (Registro Único
-   * Tributario), <code>NIE</code> (Numero de Identificacion del Extranjero), and
-   * <code>CI</code> (Cedula Identidad).</p> </li> </ul> <p> <b>Philippines</b> </p>
-   * <ul> <li> <p>You can optionally specify the <code>isVatRegistered</code> in the
-   * <code>philippinesAdditionalInfo</code> field of the
-   * <code>additionalTaxInformation</code> object to indicate your VAT registration
-   * status with the Bureau of Internal Revenue (BIR).</p> </li> </ul> <p>
-   * <b>Belgium</b> </p> <ul> <li> <p>You can optionally specify the
+   * <code>Individual</code>.</p> </li> </ul> <p> <b>United Arab Emirates</b> </p>
+   * <ul> <li> <p>You must specify the <code>taxRegistrationNumberType</code> in the
+   * <code>unitedArabEmiratesAdditionalInfo</code> field of the
+   * <code>additionalTaxInformation</code> object. Valid values are
+   * <code>VATTaxRegistrationNumber</code> and
+   * <code>LocalTaxRegistrationNumber</code> (Corporate Tax).</p> </li> <li> <p>You
+   * can optionally specify the <code>peppolId</code>,
+   * <code>tradeLicenseNumber</code>, and <code>emiratesId</code> in the
+   * <code>unitedArabEmiratesAdditionalInfo</code> field.</p> </li> </ul> <p>
+   * <b>Uruguay</b> </p> <ul> <li> <p> <code>RegistrationType</code> valid values are
+   * <code>RUT</code> (Registro Único Tributario), <code>NIE</code> (Numero de
+   * Identificacion del Extranjero), and <code>CI</code> (Cedula Identidad).</p>
+   * </li> </ul> <p> <b>Vietnam</b> </p> <ul> <li> <p>You must specify the
+   * <code>vatCreditMethod</code> in the <code>vietnamAdditionalInfo</code> field of
+   * the <code>additionalTaxInformation</code> object.</p> </li> <li> <p>If
+   * <code>vatCreditMethod</code> is <code>true</code>, the sector must be
+   * <code>Business</code>, and you must specify the
+   * <code>enterpriseIdentificationNumber</code>,
+   * <code>electronicTransactionCodeNumber</code>, <code>paymentVoucherNumber</code>,
+   * and <code>paymentVoucherNumberDate</code>.</p> </li> <li> <p>If
+   * <code>vatCreditMethod</code> is <code>false</code>, the sector must be
+   * <code>Individual</code>, and you must not specify those four fields. The tax
+   * registration number can also be 12 digits.</p> </li> </ul> <p>
+   * <b>Philippines</b> </p> <ul> <li> <p>You can optionally specify the
+   * <code>isVatRegistered</code> in the <code>philippinesAdditionalInfo</code> field
+   * of the <code>additionalTaxInformation</code> object to indicate your VAT
+   * registration status with the Bureau of Internal Revenue (BIR).</p> </li> </ul>
+   * <p> <b>Belgium</b> </p> <ul> <li> <p>You can optionally specify the
    * <code>peppolId</code> in the <code>belgiumAdditionalInfo</code> field of the
    * <code>additionalTaxInformation</code> object.</p> </li> </ul> <p> <b>Chile</b>
    * </p> <ul> <li> <p>You can optionally specify the <code>documentType</code> and

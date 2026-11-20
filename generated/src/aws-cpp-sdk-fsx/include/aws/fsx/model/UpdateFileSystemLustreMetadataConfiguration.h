@@ -44,9 +44,12 @@ class UpdateFileSystemLustreMetadataConfiguration {
    * values are <code>1500</code>, <code>3000</code>, <code>6000</code>,
    * <code>12000</code>, and multiples of <code>12000</code> up to a maximum of
    * <code>192000</code>.</p> </li> <li> <p>For Intelligent-Tiering file systems,
-   * valid values are <code>6000</code> and <code>12000</code>.</p> </li> </ul>
-   * <p>The value you provide must be greater than or equal to the current number of
-   * Metadata IOPS provisioned for the file system.</p>
+   * valid values are <code>1500</code>, <code>3000</code>, <code>6000</code>,
+   * <code>12000</code>, and multiples of <code>12000</code> up to a maximum of
+   * <code>192000</code>.</p> </li> </ul> <p>The value you provide must be greater
+   * than or equal to the current number of Metadata IOPS provisioned for the file
+   * system. You can't provision fewer Metadata IOPS than AUTOMATIC mode provisions
+   * for your file system.</p>
    */
   inline int GetIops() const { return m_iops; }
   inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
@@ -64,18 +67,18 @@ class UpdateFileSystemLustreMetadataConfiguration {
   /**
    * <p>The metadata configuration mode for provisioning Metadata IOPS for an FSx for
    * Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p> <ul>
-   * <li> <p>To increase the Metadata IOPS or to switch an SSD file system from
-   * AUTOMATIC, specify <code>USER_PROVISIONED</code> as the value for this
-   * parameter. Then use the Iops parameter to provide a Metadata IOPS value that is
-   * greater than or equal to the current number of Metadata IOPS provisioned for the
-   * file system.</p> </li> <li> <p>To switch from USER_PROVISIONED mode on an SSD
-   * file system, specify <code>AUTOMATIC</code> as the value for this parameter, but
-   * do not input a value for Iops.</p>  <ul> <li> <p>If you request to switch
-   * from USER_PROVISIONED to AUTOMATIC mode and the current Metadata IOPS value is
-   * greater than the automated default, FSx for Lustre rejects the request because
-   * downscaling Metadata IOPS is not supported.</p> </li> <li> <p>AUTOMATIC mode is
-   * not supported on Intelligent-Tiering file systems. For Intelligent-Tiering file
-   * systems, use USER_PROVISIONED mode.</p> </li> </ul>  </li> </ul>
+   * <li> <p>To increase the Metadata IOPS or to switch from AUTOMATIC mode, specify
+   * <code>USER_PROVISIONED</code> as the value for this parameter. Then use the Iops
+   * parameter to provide a Metadata IOPS value that is greater than or equal to the
+   * current number of Metadata IOPS provisioned for the file system.</p> </li> <li>
+   * <p>To switch from USER_PROVISIONED mode, specify <code>AUTOMATIC</code> as the
+   * value for this parameter, but do not input a value for Iops.</p>  <ul>
+   * <li> <p>FSx for Lustre rejects a switch to AUTOMATIC mode when your current
+   * Metadata IOPS value is greater than what AUTOMATIC mode provisions, because
+   * decreasing Metadata IOPS is not supported. To unblock the switch, increase
+   * storage capacity for SSD file systems, or throughput capacity for
+   * Intelligent-Tiering file systems, until AUTOMATIC mode provisions at least your
+   * current Metadata IOPS.</p> </li> </ul>  </li> </ul>
    */
   inline MetadataConfigurationMode GetMode() const { return m_mode; }
   inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }

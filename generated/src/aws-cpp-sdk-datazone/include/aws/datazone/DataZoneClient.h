@@ -5108,6 +5108,44 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Transfers the ownership of an asset to another project in the same Amazon
+   * DataZone domain. The transfer changes the asset's owning project and moves its
+   * published listing, subscriptions, and subscription grants to the target
+   * project.</p> <p>The transfer runs asynchronously, and the operation returns HTTP
+   * status code 202. To follow the transfer, call <code>GetAsset</code> and check
+   * <code>ownershipTransfer.status</code> until it is <code>SUCCEEDED</code> or
+   * <code>FAILED</code>.</p> <p>You need to be an owner of the project that
+   * currently owns the asset. You can transfer an asset from the domain's
+   * administration project to any project. You can also transfer an asset from any
+   * project to the administration project.</p> <p>An asset can have only one
+   * ownership transfer in progress at a time. While a transfer is in progress,
+   * requests that change the asset or its listing fail with a
+   * <code>ConflictException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateAssetOwner">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAssetOwnerOutcome UpdateAssetOwner(const Model::UpdateAssetOwnerRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAssetOwner that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateAssetOwnerRequestT = Model::UpdateAssetOwnerRequest>
+  Model::UpdateAssetOwnerOutcomeCallable UpdateAssetOwnerCallable(const UpdateAssetOwnerRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::UpdateAssetOwner, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAssetOwner that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateAssetOwnerRequestT = Model::UpdateAssetOwnerRequest>
+  void UpdateAssetOwnerAsync(const UpdateAssetOwnerRequestT& request, const UpdateAssetOwnerResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::UpdateAssetOwner, request, handler, context);
+  }
+
+  /**
    * <p>Updates a connection. In Amazon DataZone, a connection enables you to connect
    * your resources (domains, projects, and environments) to external resources and
    * services.</p><p><h3>See Also:</h3>   <a

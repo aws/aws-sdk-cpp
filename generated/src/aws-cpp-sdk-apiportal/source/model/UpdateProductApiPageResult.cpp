@@ -1,0 +1,66 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/apiportal/model/UpdateProductApiPageResult.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::APIPortal::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+UpdateProductApiPageResult::UpdateProductApiPageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+UpdateProductApiPageResult& UpdateProductApiPageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("productApiPageId")) {
+    m_productApiPageId = jsonValue.GetString("productApiPageId");
+    m_productApiPageIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("productApiPageArn")) {
+    m_productApiPageArn = jsonValue.GetString("productApiPageArn");
+    m_productApiPageArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("apiId")) {
+    m_apiId = jsonValue.GetObject("apiId");
+    m_apiIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("displayContent")) {
+    m_displayContent = jsonValue.GetObject("displayContent");
+    m_displayContentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("tryItState")) {
+    m_tryItState = TryItStateMapper::GetTryItStateForName(jsonValue.GetString("tryItState"));
+    m_tryItStateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("updatedAt")) {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("statusException")) {
+    m_statusException = jsonValue.GetObject("statusException");
+    m_statusExceptionHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

@@ -20,7 +20,7 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Recommended instance types for inference with a SageMaker
+ * <p>The recommended instance types for inference with a SageMaker
  * model.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/SageMakerModelRecommendation">AWS
  * API Reference</a></p>
@@ -34,7 +34,8 @@ class SageMakerModelRecommendation {
 
   ///@{
   /**
-   * <p>The recommended instance type for batch inference.</p>
+   * <p>The instance type that the seller recommends for batch transform jobs with
+   * this model package.</p>
    */
   inline const Aws::String& GetRecommendedBatchTransformInstanceType() const { return m_recommendedBatchTransformInstanceType; }
   inline bool RecommendedBatchTransformInstanceTypeHasBeenSet() const { return m_recommendedBatchTransformInstanceTypeHasBeenSet; }
@@ -52,7 +53,8 @@ class SageMakerModelRecommendation {
 
   ///@{
   /**
-   * <p>The recommended instance type for real-time inference.</p>
+   * <p>The instance type that the seller recommends for real-time inference
+   * endpoints with this model package.</p>
    */
   inline const Aws::String& GetRecommendedRealtimeInferenceInstanceType() const { return m_recommendedRealtimeInferenceInstanceType; }
   inline bool RecommendedRealtimeInferenceInstanceTypeHasBeenSet() const { return m_recommendedRealtimeInferenceInstanceTypeHasBeenSet; }

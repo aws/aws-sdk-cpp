@@ -7,6 +7,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/PackageManager.h>
+#include <aws/inspector2/model/RuntimeReachability.h>
+#include <aws/inspector2/model/RuntimeReachabilityReason.h>
 
 #include <utility>
 
@@ -228,6 +230,62 @@ class VulnerablePackage {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The runtime reachability status of the vulnerable package. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding
+   * runtime reachability</a> in the Amazon Inspector user guide.</p>
+   */
+  inline RuntimeReachability GetRuntimeReachability() const { return m_runtimeReachability; }
+  inline bool RuntimeReachabilityHasBeenSet() const { return m_runtimeReachabilityHasBeenSet; }
+  inline void SetRuntimeReachability(RuntimeReachability value) {
+    m_runtimeReachabilityHasBeenSet = true;
+    m_runtimeReachability = value;
+  }
+  inline VulnerablePackage& WithRuntimeReachability(RuntimeReachability value) {
+    SetRuntimeReachability(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The reason for the runtime reachability status of the vulnerable package. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding
+   * runtime reachability</a> in the Amazon Inspector user guide.</p>
+   */
+  inline RuntimeReachabilityReason GetRuntimeReachabilityReason() const { return m_runtimeReachabilityReason; }
+  inline bool RuntimeReachabilityReasonHasBeenSet() const { return m_runtimeReachabilityReasonHasBeenSet; }
+  inline void SetRuntimeReachabilityReason(RuntimeReachabilityReason value) {
+    m_runtimeReachabilityReasonHasBeenSet = true;
+    m_runtimeReachabilityReason = value;
+  }
+  inline VulnerablePackage& WithRuntimeReachabilityReason(RuntimeReachabilityReason value) {
+    SetRuntimeReachabilityReason(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The package URL (purl) of the vulnerable package.</p>
+   */
+  inline const Aws::String& GetPurl() const { return m_purl; }
+  inline bool PurlHasBeenSet() const { return m_purlHasBeenSet; }
+  template <typename PurlT = Aws::String>
+  void SetPurl(PurlT&& value) {
+    m_purlHasBeenSet = true;
+    m_purl = std::forward<PurlT>(value);
+  }
+  template <typename PurlT = Aws::String>
+  VulnerablePackage& WithPurl(PurlT&& value) {
+    SetPurl(std::forward<PurlT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -250,6 +308,12 @@ class VulnerablePackage {
   Aws::String m_remediation;
 
   Aws::String m_sourceLambdaLayerArn;
+
+  RuntimeReachability m_runtimeReachability{RuntimeReachability::NOT_SET};
+
+  RuntimeReachabilityReason m_runtimeReachabilityReason{RuntimeReachabilityReason::NOT_SET};
+
+  Aws::String m_purl;
   bool m_nameHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_sourceLayerHashHasBeenSet = false;
@@ -261,6 +325,9 @@ class VulnerablePackage {
   bool m_fixedInVersionHasBeenSet = false;
   bool m_remediationHasBeenSet = false;
   bool m_sourceLambdaLayerArnHasBeenSet = false;
+  bool m_runtimeReachabilityHasBeenSet = false;
+  bool m_runtimeReachabilityReasonHasBeenSet = false;
+  bool m_purlHasBeenSet = false;
 };
 
 }  // namespace Model

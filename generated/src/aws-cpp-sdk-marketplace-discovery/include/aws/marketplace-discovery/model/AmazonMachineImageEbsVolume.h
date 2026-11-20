@@ -59,7 +59,8 @@ class AmazonMachineImageEbsVolume {
 
   ///@{
   /**
-   * <p>The total number of provisioned IOPS supported.</p>
+   * <p>The total number of provisioned input/output operations per second (IOPS)
+   * that the volume supports.</p>
    */
   inline int GetIops() const { return m_iops; }
   inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }

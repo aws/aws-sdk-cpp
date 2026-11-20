@@ -45,11 +45,13 @@ class Rule {
    * operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
    * <dt>AVAILABILITY</dt> <dd> <p>The current availability of the device. Valid
    * values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-   * <p>Supported operators: <code>EQUALS</code> </p> </dd> <dt>FLEET_TYPE</dt> <dd>
-   * <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p> <p>Supported
-   * operators: <code>EQUALS</code> </p> </dd> <dt>FORM_FACTOR</dt> <dd> <p>The
-   * device form factor. Valid values are PHONE or TABLET.</p> <p>Supported
-   * operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
+   * <p>Supported operators: <code>EQUALS</code> </p> </dd> <dt>DEVICE_TYPE</dt> <dd>
+   * <p>The device type. Valid values are PHYSICAL or VIRTUAL.</p> <p>Supported
+   * operators: <code>EQUALS</code> </p> </dd> <dt>FLEET_TYPE</dt> <dd> <p>The fleet
+   * type. Valid values are PUBLIC or PRIVATE.</p> <p>Supported operators:
+   * <code>EQUALS</code> </p> </dd> <dt>FORM_FACTOR</dt> <dd> <p>The device form
+   * factor. Valid values are PHONE or TABLET.</p> <p>Supported operators:
+   * <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
    * <dt>INSTANCE_ARN</dt> <dd> <p>The Amazon Resource Name (ARN) of the device
    * instance.</p> <p>Supported operators: <code>IN</code>, <code>NOT_IN</code> </p>
    * </dd> <dt>INSTANCE_LABELS</dt> <dd> <p>The label of the device instance.</p>

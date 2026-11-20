@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/IgwFirewall.h>
 #include <aws/ec2/model/RouteOrigin.h>
 #include <aws/ec2/model/RouteState.h>
 
@@ -363,6 +364,28 @@ class Route {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about the Automated Internet Firewall that inspects traffic for
+   * this route. The response includes this value only for routes that target an
+   * internet gateway or egress-only internet gateway in a VPC that has a firewall.
+   * The route target remains the internet gateway or egress-only internet
+   * gateway.</p>
+   */
+  inline const IgwFirewall& GetIgwFirewall() const { return m_igwFirewall; }
+  inline bool IgwFirewallHasBeenSet() const { return m_igwFirewallHasBeenSet; }
+  template <typename IgwFirewallT = IgwFirewall>
+  void SetIgwFirewall(IgwFirewallT&& value) {
+    m_igwFirewallHasBeenSet = true;
+    m_igwFirewall = std::forward<IgwFirewallT>(value);
+  }
+  template <typename IgwFirewallT = IgwFirewall>
+  Route& WithIgwFirewall(IgwFirewallT&& value) {
+    SetIgwFirewall(std::forward<IgwFirewallT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_destinationCidrBlock;
 
@@ -399,6 +422,8 @@ class Route {
   Aws::String m_odbNetworkArn;
 
   Aws::String m_ipAddress;
+
+  IgwFirewall m_igwFirewall;
   bool m_destinationCidrBlockHasBeenSet = false;
   bool m_destinationIpv6CidrBlockHasBeenSet = false;
   bool m_destinationPrefixListIdHasBeenSet = false;
@@ -417,6 +442,7 @@ class Route {
   bool m_coreNetworkArnHasBeenSet = false;
   bool m_odbNetworkArnHasBeenSet = false;
   bool m_ipAddressHasBeenSet = false;
+  bool m_igwFirewallHasBeenSet = false;
 };
 
 }  // namespace Model

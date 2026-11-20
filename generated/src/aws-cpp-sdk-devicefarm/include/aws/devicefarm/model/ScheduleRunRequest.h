@@ -99,6 +99,9 @@ class ScheduleRunRequest : public DeviceFarmRequest {
    * run and the maximum number of devices to be included in the run.</p> <p>Either
    * <b> <code>devicePoolArn</code> </b> or <b>
    * <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
+   *  <p>If the filters select devices by attribute and do not include a
+   * <code>DEVICE_TYPE</code> filter, only physical devices are selected. If the
+   * filters select devices by ARN, the run uses the devices you list.</p>
    */
   inline const DeviceSelectionConfiguration& GetDeviceSelectionConfiguration() const { return m_deviceSelectionConfiguration; }
   inline bool DeviceSelectionConfigurationHasBeenSet() const { return m_deviceSelectionConfigurationHasBeenSet; }

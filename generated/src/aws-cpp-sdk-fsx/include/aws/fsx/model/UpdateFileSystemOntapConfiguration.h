@@ -35,7 +35,12 @@ class UpdateFileSystemOntapConfiguration {
   AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>The number of days to retain automatic backups. Setting this property to
+   * <code>0</code> disables automatic backups and deletes all existing automatic
+   * backups for the file system's volumes. You can retain automatic backups for a
+   * maximum of 90 days. The default is <code>30</code>.</p>
+   */
   inline int GetAutomaticBackupRetentionDays() const { return m_automaticBackupRetentionDays; }
   inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
   inline void SetAutomaticBackupRetentionDays(int value) {
@@ -214,14 +219,17 @@ class UpdateFileSystemOntapConfiguration {
    * and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512, 1024,
    * 2048, or 4096 MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_2</code>, valid values
    * are 1536, 3072, or 6144 MBps.</p> </li> <li> <p>For <code>MULTI_AZ_2</code>,
-   * valid values are 384, 768, 1536, 3072, or 6144 MBps.</p> </li> </ul> <p>Amazon
-   * FSx responds with an HTTP status code 400 (Bad Request) for the following
-   * conditions:</p> <ul> <li> <p>The value of <code>ThroughputCapacity</code> and
+   * valid values are 384, 768, 1536, 3072, or 6144 MBps.</p> </li> <li> <p>For
+   * <code>SINGLE_AZ_3</code>, valid values are 1536, 3072, 6144, 12288, or 18432
+   * MBps.</p> </li> <li> <p>For <code>MULTI_AZ_3</code>, valid values are 384, 768,
+   * 1536, 3072, 6144, 12288, or 18432 MBps.</p> </li> </ul> <p>Amazon FSx responds
+   * with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+   * <ul> <li> <p>The value of <code>ThroughputCapacity</code> and
    * <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems
    * with one HA pair.</p> </li> <li> <p>The value of deployment type is
-   * <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> /
-   * <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between
-   * 1 and 12).</p> </li> <li> <p>The value of
+   * <code>SINGLE_AZ_2</code> or <code>SINGLE_AZ_3</code> and
+   * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is
+   * not a valid HA pair (a value between 1 and 12).</p> </li> <li> <p>The value of
    * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
    */
   inline int GetThroughputCapacityPerHAPair() const { return m_throughputCapacityPerHAPair; }
@@ -239,9 +247,9 @@ class UpdateFileSystemOntapConfiguration {
   ///@{
   /**
    * <p>Use to update the number of high-availability (HA) pairs for a
-   * second-generation single-AZ file system. If you increase the number of HA pairs
-   * for your file system, you must specify proportional increases for
-   * <code>StorageCapacity</code>, <code>Iops</code>, and
+   * second-generation or third-generation single-AZ file system. If you increase the
+   * number of HA pairs for your file system, you must specify proportional increases
+   * for <code>StorageCapacity</code>, <code>Iops</code>, and
    * <code>ThroughputCapacity</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability
    * (HA) pairs</a> in the FSx for ONTAP user guide. Block storage protocol support

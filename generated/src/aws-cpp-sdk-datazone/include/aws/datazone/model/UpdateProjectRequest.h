@@ -11,6 +11,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/EnvironmentConfigurationUserParameter.h>
 #include <aws/datazone/model/EnvironmentDeploymentDetails.h>
+#include <aws/datazone/model/ProjectProfileAction.h>
 
 #include <utility>
 
@@ -232,6 +233,24 @@ class UpdateProjectRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The action to perform on the project profile of the project. Specify
+   * <code>DISASSOCIATE</code> to disassociate the project from its project
+   * profile.</p>
+   */
+  inline ProjectProfileAction GetProjectProfileAction() const { return m_projectProfileAction; }
+  inline bool ProjectProfileActionHasBeenSet() const { return m_projectProfileActionHasBeenSet; }
+  inline void SetProjectProfileAction(ProjectProfileAction value) {
+    m_projectProfileActionHasBeenSet = true;
+    m_projectProfileAction = value;
+  }
+  inline UpdateProjectRequest& WithProjectProfileAction(ProjectProfileAction value) {
+    SetProjectProfileAction(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
@@ -252,6 +271,8 @@ class UpdateProjectRequest : public DataZoneRequest {
   Aws::Vector<EnvironmentConfigurationUserParameter> m_userParameters;
 
   Aws::String m_projectProfileVersion;
+
+  ProjectProfileAction m_projectProfileAction{ProjectProfileAction::NOT_SET};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -262,6 +283,7 @@ class UpdateProjectRequest : public DataZoneRequest {
   bool m_environmentDeploymentDetailsHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
   bool m_projectProfileVersionHasBeenSet = false;
+  bool m_projectProfileActionHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -217,6 +217,25 @@ class RunMicrovmResult {
 
   ///@{
   /**
+   * <p>The customer managed Amazon Web Services Key Management Service (Amazon Web
+   * Services KMS) key that encrypts your MicroVM configuration at rest. If you don't
+   * specify a key, your MicroVM uses an Amazon Web Services owned key.</p>
+   */
+  inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    m_kmsKeyIdentifierHasBeenSet = true;
+    m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value);
+  }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  RunMicrovmResult& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of ingress network connectors configured for the MicroVM.</p>
    */
   inline const Aws::Vector<Aws::String>& GetIngressNetworkConnectors() const { return m_ingressNetworkConnectors; }
@@ -301,6 +320,8 @@ class RunMicrovmResult {
 
   Aws::String m_stateReason;
 
+  Aws::String m_kmsKeyIdentifier;
+
   Aws::Vector<Aws::String> m_ingressNetworkConnectors;
 
   Aws::Vector<Aws::String> m_egressNetworkConnectors;
@@ -318,6 +339,7 @@ class RunMicrovmResult {
   bool m_startedAtHasBeenSet = false;
   bool m_terminatedAtHasBeenSet = false;
   bool m_stateReasonHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_ingressNetworkConnectorsHasBeenSet = false;
   bool m_egressNetworkConnectorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

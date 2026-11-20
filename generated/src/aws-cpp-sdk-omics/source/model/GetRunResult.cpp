@@ -204,6 +204,14 @@ GetRunResult& GetRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValu
     m_outputUriPrefixMode = RunOutputUriPrefixModeMapper::GetRunOutputUriPrefixModeForName(jsonValue.GetString("outputUriPrefixMode"));
     m_outputUriPrefixModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("requesterPaysEnabled")) {
+    m_requesterPaysEnabled = jsonValue.GetBool("requesterPaysEnabled");
+    m_requesterPaysEnabledHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("parametersUri")) {
+    m_parametersUri = jsonValue.GetString("parametersUri");
+    m_parametersUriHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

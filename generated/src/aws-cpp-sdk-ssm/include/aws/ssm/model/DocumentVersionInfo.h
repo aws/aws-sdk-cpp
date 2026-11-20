@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/SSM_EXPORTS.h>
+#include <aws/ssm/model/CloudProvider.h>
 #include <aws/ssm/model/DocumentFormat.h>
 #include <aws/ssm/model/DocumentStatus.h>
 #include <aws/ssm/model/ReviewStatus.h>
@@ -215,6 +217,30 @@ class DocumentVersionInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>This field specifies the cloud providers that this version of the document
+   * can run against.</p>
+   */
+  inline const Aws::Vector<CloudProvider>& GetCloudProviders() const { return m_cloudProviders; }
+  inline bool CloudProvidersHasBeenSet() const { return m_cloudProvidersHasBeenSet; }
+  template <typename CloudProvidersT = Aws::Vector<CloudProvider>>
+  void SetCloudProviders(CloudProvidersT&& value) {
+    m_cloudProvidersHasBeenSet = true;
+    m_cloudProviders = std::forward<CloudProvidersT>(value);
+  }
+  template <typename CloudProvidersT = Aws::Vector<CloudProvider>>
+  DocumentVersionInfo& WithCloudProviders(CloudProvidersT&& value) {
+    SetCloudProviders(std::forward<CloudProvidersT>(value));
+    return *this;
+  }
+  inline DocumentVersionInfo& AddCloudProviders(CloudProvider value) {
+    m_cloudProvidersHasBeenSet = true;
+    m_cloudProviders.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -235,6 +261,8 @@ class DocumentVersionInfo {
   Aws::String m_statusInformation;
 
   ReviewStatus m_reviewStatus{ReviewStatus::NOT_SET};
+
+  Aws::Vector<CloudProvider> m_cloudProviders;
   bool m_nameHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_documentVersionHasBeenSet = false;
@@ -245,6 +273,7 @@ class DocumentVersionInfo {
   bool m_statusHasBeenSet = false;
   bool m_statusInformationHasBeenSet = false;
   bool m_reviewStatusHasBeenSet = false;
+  bool m_cloudProvidersHasBeenSet = false;
 };
 
 }  // namespace Model

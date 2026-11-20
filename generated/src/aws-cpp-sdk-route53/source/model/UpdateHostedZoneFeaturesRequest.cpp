@@ -28,5 +28,27 @@ Aws::String UpdateHostedZoneFeaturesRequest::SerializePayload() const {
     ss.str("");
   }
 
+  if (m_enablePublicDNSFallbackHasBeenSet) {
+    XmlNode enablePublicDNSFallbackNode = parentNode.CreateChildElement("EnablePublicDNSFallback");
+    ss << std::boolalpha << m_enablePublicDNSFallback;
+    enablePublicDNSFallbackNode.SetText(ss.str());
+    ss.str("");
+  }
+
+  if (m_changeGuardrailsHasBeenSet) {
+    XmlNode changeGuardrailsParentNode = parentNode.CreateChildElement("ChangeGuardrails");
+    for (const auto& item : m_changeGuardrails) {
+      XmlNode changeGuardrailsNode = changeGuardrailsParentNode.CreateChildElement("ChangeGuardrail");
+      item.AddToNode(changeGuardrailsNode);
+    }
+  }
+
+  if (m_dryRunHasBeenSet) {
+    XmlNode dryRunNode = parentNode.CreateChildElement("DryRun");
+    ss << std::boolalpha << m_dryRun;
+    dryRunNode.SetText(ss.str());
+    ss.str("");
+  }
+
   return payloadDoc.ConvertToCompactString();
 }

@@ -112,8 +112,9 @@ class SelfManagedActiveDirectoryAttributes {
 
   ///@{
   /**
-   * <p>A list of up to three IP addresses of DNS servers or domain controllers in
-   * the self-managed AD directory.</p>
+   * <p>A list of IP addresses of DNS servers or domain controllers in the
+   * self-managed AD directory. FSx for ONTAP SVMs support up to three IP addresses,
+   * FSx for Windows supports up to two.</p>
    */
   inline const Aws::Vector<Aws::String>& GetDnsIps() const { return m_dnsIps; }
   inline bool DnsIpsHasBeenSet() const { return m_dnsIpsHasBeenSet; }

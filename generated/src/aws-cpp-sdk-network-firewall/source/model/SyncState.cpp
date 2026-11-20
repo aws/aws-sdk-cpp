@@ -71,6 +71,11 @@ SyncState& SyncState::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecode
                 m_configHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "AddressTranslations") {
+                m_addressTranslations = AddressTranslations(decoder);
+                m_addressTranslationsHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "NatGatewayAttachments") {
                 auto peekType_0 = decoder->PeekType();
                 if (peekType_0.has_value() &&
@@ -166,6 +171,11 @@ SyncState& SyncState::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecode
               m_configHasBeenSet = true;
             }
 
+            else if (initialKeyStr == "AddressTranslations") {
+              m_addressTranslations = AddressTranslations(decoder);
+              m_addressTranslationsHasBeenSet = true;
+            }
+
             else if (initialKeyStr == "NatGatewayAttachments") {
               auto peekType_0 = decoder->PeekType();
               if (peekType_0.has_value() &&
@@ -215,6 +225,9 @@ void SyncState::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_configHasBeenSet) {
     mapSize++;
   }
+  if (m_addressTranslationsHasBeenSet) {
+    mapSize++;
+  }
   if (m_natGatewayAttachmentsHasBeenSet) {
     mapSize++;
   }
@@ -233,6 +246,11 @@ void SyncState::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
       encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
       item_0.second.CborEncode(encoder);
     }
+  }
+
+  if (m_addressTranslationsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AddressTranslations"));
+    m_addressTranslations.CborEncode(encoder);
   }
 
   if (m_natGatewayAttachmentsHasBeenSet) {

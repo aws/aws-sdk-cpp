@@ -14,6 +14,7 @@
 #include <aws/odb/model/ListOdbPeeringConnectionsPaginationTraits.h>
 #include <aws/odb/model/ListDbSystemShapesPaginationTraits.h>
 #include <aws/odb/model/ListSystemVersionsPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabaseRefreshableClonesPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabaseClonesPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousVirtualMachinesPaginationTraits.h>
 #include <aws/odb/model/ListGiVersionsPaginationTraits.h>

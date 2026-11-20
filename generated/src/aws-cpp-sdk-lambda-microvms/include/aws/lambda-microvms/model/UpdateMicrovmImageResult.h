@@ -374,6 +374,26 @@ class UpdateMicrovmImageResult {
 
   ///@{
   /**
+   * <p>The customer managed Amazon Web Services Key Management Service (Amazon Web
+   * Services KMS) key that encrypts the contents and metadata of your MicroVM image
+   * version. If you don't specify a key, your MicroVM image version uses an Amazon
+   * Web Services owned key.</p>
+   */
+  inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    m_kmsKeyIdentifierHasBeenSet = true;
+    m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value);
+  }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  UpdateMicrovmImageResult& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp when the MicroVM image was last updated.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
@@ -459,6 +479,8 @@ class UpdateMicrovmImageResult {
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
 
+  Aws::String m_kmsKeyIdentifier;
+
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_imageVersion;
@@ -483,6 +505,7 @@ class UpdateMicrovmImageResult {
   bool m_additionalOsCapabilitiesHasBeenSet = false;
   bool m_hooksHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_imageVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

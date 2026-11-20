@@ -7,6 +7,7 @@
 #include <aws/bedrock/BedrockClient.h>
 #include <aws/bedrock/BedrockEndpointProvider.h>
 #include <aws/bedrock/BedrockErrorMarshaller.h>
+#include <aws/bedrock/model/ArchiveProjectRequest.h>
 #include <aws/bedrock/model/BatchDeleteAdvancedPromptOptimizationJobRequest.h>
 #include <aws/bedrock/model/BatchDeleteEvaluationJobRequest.h>
 #include <aws/bedrock/model/CancelAutomatedReasoningPolicyBuildWorkflowRequest.h>
@@ -26,8 +27,10 @@
 #include <aws/bedrock/model/CreateModelCustomizationJobRequest.h>
 #include <aws/bedrock/model/CreateModelImportJobRequest.h>
 #include <aws/bedrock/model/CreateModelInvocationJobRequest.h>
+#include <aws/bedrock/model/CreateProjectRequest.h>
 #include <aws/bedrock/model/CreatePromptRouterRequest.h>
 #include <aws/bedrock/model/CreateProvisionedModelThroughputRequest.h>
+#include <aws/bedrock/model/DeleteAccountDataRetentionStorageRequest.h>
 #include <aws/bedrock/model/DeleteAutomatedReasoningPolicyBuildWorkflowRequest.h>
 #include <aws/bedrock/model/DeleteAutomatedReasoningPolicyRequest.h>
 #include <aws/bedrock/model/DeleteAutomatedReasoningPolicyTestCaseRequest.h>
@@ -40,12 +43,15 @@
 #include <aws/bedrock/model/DeleteInferenceProfileRequest.h>
 #include <aws/bedrock/model/DeleteMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/DeleteModelInvocationLoggingConfigurationRequest.h>
+#include <aws/bedrock/model/DeleteOrganizationDataRetentionStorageRequest.h>
+#include <aws/bedrock/model/DeleteProjectDataRetentionStorageRequest.h>
 #include <aws/bedrock/model/DeletePromptRouterRequest.h>
 #include <aws/bedrock/model/DeleteProvisionedModelThroughputRequest.h>
 #include <aws/bedrock/model/DeleteResourcePolicyRequest.h>
 #include <aws/bedrock/model/DeregisterMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/ExportAutomatedReasoningPolicyVersionRequest.h>
 #include <aws/bedrock/model/GetAccountDataRetentionRequest.h>
+#include <aws/bedrock/model/GetAccountDataRetentionStorageRequest.h>
 #include <aws/bedrock/model/GetAdvancedPromptOptimizationJobRequest.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyAnnotationsRequest.h>
 #include <aws/bedrock/model/GetAutomatedReasoningPolicyBuildWorkflowRequest.h>
@@ -68,9 +74,16 @@
 #include <aws/bedrock/model/GetModelImportJobRequest.h>
 #include <aws/bedrock/model/GetModelInvocationJobRequest.h>
 #include <aws/bedrock/model/GetModelInvocationLoggingConfigurationRequest.h>
+#include <aws/bedrock/model/GetOrganizationDataRetentionStorageRequest.h>
+#include <aws/bedrock/model/GetProjectDataRetentionStorageRequest.h>
+#include <aws/bedrock/model/GetProjectRequest.h>
 #include <aws/bedrock/model/GetPromptRouterRequest.h>
 #include <aws/bedrock/model/GetProvisionedModelThroughputRequest.h>
 #include <aws/bedrock/model/GetResourcePolicyRequest.h>
+#include <aws/bedrock/model/GetTrustedAccessProgramAccountEnrollmentRequest.h>
+#include <aws/bedrock/model/GetTrustedAccessProgramOrganizationEnrollmentRequest.h>
+#include <aws/bedrock/model/GetTrustedAccessProgramProjectEnrollmentRequest.h>
+#include <aws/bedrock/model/GetTrustedAccessProgramRequest.h>
 #include <aws/bedrock/model/GetUseCaseForModelAccessRequest.h>
 #include <aws/bedrock/model/ListAdvancedPromptOptimizationJobsRequest.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPoliciesRequest.h>
@@ -91,17 +104,28 @@
 #include <aws/bedrock/model/ListModelCustomizationJobsRequest.h>
 #include <aws/bedrock/model/ListModelImportJobsRequest.h>
 #include <aws/bedrock/model/ListModelInvocationJobsRequest.h>
+#include <aws/bedrock/model/ListProjectsRequest.h>
 #include <aws/bedrock/model/ListPromptRoutersRequest.h>
 #include <aws/bedrock/model/ListProvisionedModelThroughputsRequest.h>
 #include <aws/bedrock/model/ListTagsForResourceRequest.h>
+#include <aws/bedrock/model/ListTrustedAccessProgramsRequest.h>
 #include <aws/bedrock/model/PutAccountDataRetentionRequest.h>
+#include <aws/bedrock/model/PutAccountDataRetentionStorageRequest.h>
 #include <aws/bedrock/model/PutEnforcedGuardrailConfigurationRequest.h>
 #include <aws/bedrock/model/PutModelInvocationLoggingConfigurationRequest.h>
+#include <aws/bedrock/model/PutOrganizationDataRetentionStorageRequest.h>
+#include <aws/bedrock/model/PutProjectDataRetentionStorageRequest.h>
 #include <aws/bedrock/model/PutResourcePolicyRequest.h>
+#include <aws/bedrock/model/PutTrustedAccessProgramAccountEnrollmentRequest.h>
+#include <aws/bedrock/model/PutTrustedAccessProgramOrganizationEnrollmentRequest.h>
+#include <aws/bedrock/model/PutTrustedAccessProgramProjectEnrollmentRequest.h>
 #include <aws/bedrock/model/PutUseCaseForModelAccessRequest.h>
 #include <aws/bedrock/model/RegisterMarketplaceModelEndpointRequest.h>
 #include <aws/bedrock/model/StartAutomatedReasoningPolicyBuildWorkflowRequest.h>
 #include <aws/bedrock/model/StartAutomatedReasoningPolicyTestWorkflowRequest.h>
+#include <aws/bedrock/model/StartTrustedAccessProgramAccountApplicationRequest.h>
+#include <aws/bedrock/model/StartTrustedAccessProgramOrganizationApplicationRequest.h>
+#include <aws/bedrock/model/StartTrustedAccessProgramProjectApplicationRequest.h>
 #include <aws/bedrock/model/StopAdvancedPromptOptimizationJobRequest.h>
 #include <aws/bedrock/model/StopEvaluationJobRequest.h>
 #include <aws/bedrock/model/StopModelCustomizationJobRequest.h>
@@ -114,6 +138,7 @@
 #include <aws/bedrock/model/UpdateCustomModelDeploymentRequest.h>
 #include <aws/bedrock/model/UpdateGuardrailRequest.h>
 #include <aws/bedrock/model/UpdateMarketplaceModelEndpointRequest.h>
+#include <aws/bedrock/model/UpdateProjectRequest.h>
 #include <aws/bedrock/model/UpdateProvisionedModelThroughputRequest.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/auth/signer-provider/BearerTokenAuthSignerProvider.h>
@@ -307,6 +332,23 @@ BedrockClient::InvokeOperationOutcome BedrockClient::InvokeServiceOperation(
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+}
+ArchiveProjectOutcome BedrockClient::ArchiveProject(const ArchiveProjectRequest& request) const {
+  if (!request.ProjectIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ArchiveProject", "Required field: ProjectIdentifier, is not set");
+    return ArchiveProjectOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [ProjectIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/projects/");
+        resolvedEndpoint.AddPathSegment(request.GetProjectIdentifier());
+        resolvedEndpoint.AddPathSegments("/archive");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ArchiveProjectOutcome(result.GetResultWithOwnership()) : ArchiveProjectOutcome(std::move(result.GetError()));
 }
 BatchDeleteAdvancedPromptOptimizationJobOutcome BedrockClient::BatchDeleteAdvancedPromptOptimizationJob(
     const BatchDeleteAdvancedPromptOptimizationJobRequest& request) const {
@@ -508,6 +550,12 @@ CreateModelInvocationJobOutcome BedrockClient::CreateModelInvocationJob(const Cr
   return result.IsSuccess() ? CreateModelInvocationJobOutcome(result.GetResultWithOwnership())
                             : CreateModelInvocationJobOutcome(std::move(result.GetError()));
 }
+CreateProjectOutcome BedrockClient::CreateProject(const CreateProjectRequest& request) const {
+  auto result = InvokeServiceOperation(
+      request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/projects"); },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProjectOutcome(result.GetResultWithOwnership()) : CreateProjectOutcome(std::move(result.GetError()));
+}
 CreatePromptRouterOutcome BedrockClient::CreatePromptRouter(const CreatePromptRouterRequest& request) const {
   auto result = InvokeServiceOperation(
       request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/prompt-routers"); },
@@ -522,6 +570,25 @@ CreateProvisionedModelThroughputOutcome BedrockClient::CreateProvisionedModelThr
       Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateProvisionedModelThroughputOutcome(result.GetResultWithOwnership())
                             : CreateProvisionedModelThroughputOutcome(std::move(result.GetError()));
+}
+DeleteAccountDataRetentionStorageOutcome BedrockClient::DeleteAccountDataRetentionStorage(
+    const DeleteAccountDataRetentionStorageRequest& request) const {
+  if (!request.ModelProviderHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAccountDataRetentionStorage", "Required field: ModelProvider, is not set");
+    return DeleteAccountDataRetentionStorageOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelProvider]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/v1/data_retention/storage/");
+        resolvedEndpoint.AddPathSegment(
+            DataRetentionStorageModelProviderMapper::GetNameForDataRetentionStorageModelProvider(request.GetModelProvider()));
+      },
+      Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccountDataRetentionStorageOutcome(result.GetResultWithOwnership())
+                            : DeleteAccountDataRetentionStorageOutcome(std::move(result.GetError()));
 }
 DeleteAutomatedReasoningPolicyOutcome BedrockClient::DeleteAutomatedReasoningPolicy(
     const DeleteAutomatedReasoningPolicyRequest& request) const {
@@ -739,6 +806,51 @@ DeleteModelInvocationLoggingConfigurationOutcome BedrockClient::DeleteModelInvoc
   return result.IsSuccess() ? DeleteModelInvocationLoggingConfigurationOutcome(result.GetResultWithOwnership())
                             : DeleteModelInvocationLoggingConfigurationOutcome(std::move(result.GetError()));
 }
+DeleteOrganizationDataRetentionStorageOutcome BedrockClient::DeleteOrganizationDataRetentionStorage(
+    const DeleteOrganizationDataRetentionStorageRequest& request) const {
+  if (!request.ModelProviderHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteOrganizationDataRetentionStorage", "Required field: ModelProvider, is not set");
+    return DeleteOrganizationDataRetentionStorageOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelProvider]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/v1/data_retention/organization-storage/");
+        resolvedEndpoint.AddPathSegment(
+            DataRetentionStorageModelProviderMapper::GetNameForDataRetentionStorageModelProvider(request.GetModelProvider()));
+      },
+      Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteOrganizationDataRetentionStorageOutcome(result.GetResultWithOwnership())
+                            : DeleteOrganizationDataRetentionStorageOutcome(std::move(result.GetError()));
+}
+DeleteProjectDataRetentionStorageOutcome BedrockClient::DeleteProjectDataRetentionStorage(
+    const DeleteProjectDataRetentionStorageRequest& request) const {
+  if (!request.ProjectIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteProjectDataRetentionStorage", "Required field: ProjectIdentifier, is not set");
+    return DeleteProjectDataRetentionStorageOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectIdentifier]", false));
+  }
+  if (!request.ModelProviderHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteProjectDataRetentionStorage", "Required field: ModelProvider, is not set");
+    return DeleteProjectDataRetentionStorageOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelProvider]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/v1/projects/");
+        resolvedEndpoint.AddPathSegment(request.GetProjectIdentifier());
+        resolvedEndpoint.AddPathSegments("/data_retention/storage/");
+        resolvedEndpoint.AddPathSegment(
+            DataRetentionStorageModelProviderMapper::GetNameForDataRetentionStorageModelProvider(request.GetModelProvider()));
+      },
+      Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProjectDataRetentionStorageOutcome(result.GetResultWithOwnership())
+                            : DeleteProjectDataRetentionStorageOutcome(std::move(result.GetError()));
+}
 DeletePromptRouterOutcome BedrockClient::DeletePromptRouter(const DeletePromptRouterRequest& request) const {
   if (!request.PromptRouterArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeletePromptRouter", "Required field: PromptRouterArn, is not set");
@@ -835,6 +947,25 @@ GetAccountDataRetentionOutcome BedrockClient::GetAccountDataRetention(const GetA
       Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetAccountDataRetentionOutcome(result.GetResultWithOwnership())
                             : GetAccountDataRetentionOutcome(std::move(result.GetError()));
+}
+GetAccountDataRetentionStorageOutcome BedrockClient::GetAccountDataRetentionStorage(
+    const GetAccountDataRetentionStorageRequest& request) const {
+  if (!request.ModelProviderHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAccountDataRetentionStorage", "Required field: ModelProvider, is not set");
+    return GetAccountDataRetentionStorageOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                      "Missing required field [ModelProvider]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/v1/data_retention/storage/");
+        resolvedEndpoint.AddPathSegment(
+            DataRetentionStorageModelProviderMapper::GetNameForDataRetentionStorageModelProvider(request.GetModelProvider()));
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountDataRetentionStorageOutcome(result.GetResultWithOwnership())
+                            : GetAccountDataRetentionStorageOutcome(std::move(result.GetError()));
 }
 GetAdvancedPromptOptimizationJobOutcome BedrockClient::GetAdvancedPromptOptimizationJob(
     const GetAdvancedPromptOptimizationJobRequest& request) const {
@@ -1265,6 +1396,67 @@ GetModelInvocationLoggingConfigurationOutcome BedrockClient::GetModelInvocationL
   return result.IsSuccess() ? GetModelInvocationLoggingConfigurationOutcome(result.GetResultWithOwnership())
                             : GetModelInvocationLoggingConfigurationOutcome(std::move(result.GetError()));
 }
+GetOrganizationDataRetentionStorageOutcome BedrockClient::GetOrganizationDataRetentionStorage(
+    const GetOrganizationDataRetentionStorageRequest& request) const {
+  if (!request.ModelProviderHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetOrganizationDataRetentionStorage", "Required field: ModelProvider, is not set");
+    return GetOrganizationDataRetentionStorageOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelProvider]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/v1/data_retention/organization-storage/");
+        resolvedEndpoint.AddPathSegment(
+            DataRetentionStorageModelProviderMapper::GetNameForDataRetentionStorageModelProvider(request.GetModelProvider()));
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOrganizationDataRetentionStorageOutcome(result.GetResultWithOwnership())
+                            : GetOrganizationDataRetentionStorageOutcome(std::move(result.GetError()));
+}
+GetProjectOutcome BedrockClient::GetProject(const GetProjectRequest& request) const {
+  if (!request.ProjectIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetProject", "Required field: ProjectIdentifier, is not set");
+    return GetProjectOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                  "Missing required field [ProjectIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/projects/");
+        resolvedEndpoint.AddPathSegment(request.GetProjectIdentifier());
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProjectOutcome(result.GetResultWithOwnership()) : GetProjectOutcome(std::move(result.GetError()));
+}
+GetProjectDataRetentionStorageOutcome BedrockClient::GetProjectDataRetentionStorage(
+    const GetProjectDataRetentionStorageRequest& request) const {
+  if (!request.ProjectIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetProjectDataRetentionStorage", "Required field: ProjectIdentifier, is not set");
+    return GetProjectDataRetentionStorageOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                      "Missing required field [ProjectIdentifier]", false));
+  }
+  if (!request.ModelProviderHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetProjectDataRetentionStorage", "Required field: ModelProvider, is not set");
+    return GetProjectDataRetentionStorageOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                      "Missing required field [ModelProvider]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/v1/projects/");
+        resolvedEndpoint.AddPathSegment(request.GetProjectIdentifier());
+        resolvedEndpoint.AddPathSegments("/data_retention/storage/");
+        resolvedEndpoint.AddPathSegment(
+            DataRetentionStorageModelProviderMapper::GetNameForDataRetentionStorageModelProvider(request.GetModelProvider()));
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProjectDataRetentionStorageOutcome(result.GetResultWithOwnership())
+                            : GetProjectDataRetentionStorageOutcome(std::move(result.GetError()));
+}
 GetPromptRouterOutcome BedrockClient::GetPromptRouter(const GetPromptRouterRequest& request) const {
   if (!request.PromptRouterArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetPromptRouter", "Required field: PromptRouterArn, is not set");
@@ -1316,6 +1508,86 @@ GetResourcePolicyOutcome BedrockClient::GetResourcePolicy(const GetResourcePolic
       Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
                             : GetResourcePolicyOutcome(std::move(result.GetError()));
+}
+GetTrustedAccessProgramOutcome BedrockClient::GetTrustedAccessProgram(const GetTrustedAccessProgramRequest& request) const {
+  if (!request.ProgramIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetTrustedAccessProgram", "Required field: ProgramIdentifier, is not set");
+    return GetTrustedAccessProgramOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [ProgramIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/trusted-access-programs/");
+        resolvedEndpoint.AddPathSegment(request.GetProgramIdentifier());
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrustedAccessProgramOutcome(result.GetResultWithOwnership())
+                            : GetTrustedAccessProgramOutcome(std::move(result.GetError()));
+}
+GetTrustedAccessProgramAccountEnrollmentOutcome BedrockClient::GetTrustedAccessProgramAccountEnrollment(
+    const GetTrustedAccessProgramAccountEnrollmentRequest& request) const {
+  if (!request.ProgramIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetTrustedAccessProgramAccountEnrollment", "Required field: ProgramIdentifier, is not set");
+    return GetTrustedAccessProgramAccountEnrollmentOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProgramIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/trusted-access-programs/");
+        resolvedEndpoint.AddPathSegment(request.GetProgramIdentifier());
+        resolvedEndpoint.AddPathSegments("/account-enrollment");
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrustedAccessProgramAccountEnrollmentOutcome(result.GetResultWithOwnership())
+                            : GetTrustedAccessProgramAccountEnrollmentOutcome(std::move(result.GetError()));
+}
+GetTrustedAccessProgramOrganizationEnrollmentOutcome BedrockClient::GetTrustedAccessProgramOrganizationEnrollment(
+    const GetTrustedAccessProgramOrganizationEnrollmentRequest& request) const {
+  if (!request.ProgramIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetTrustedAccessProgramOrganizationEnrollment", "Required field: ProgramIdentifier, is not set");
+    return GetTrustedAccessProgramOrganizationEnrollmentOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProgramIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/trusted-access-programs/");
+        resolvedEndpoint.AddPathSegment(request.GetProgramIdentifier());
+        resolvedEndpoint.AddPathSegments("/organization-enrollment");
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrustedAccessProgramOrganizationEnrollmentOutcome(result.GetResultWithOwnership())
+                            : GetTrustedAccessProgramOrganizationEnrollmentOutcome(std::move(result.GetError()));
+}
+GetTrustedAccessProgramProjectEnrollmentOutcome BedrockClient::GetTrustedAccessProgramProjectEnrollment(
+    const GetTrustedAccessProgramProjectEnrollmentRequest& request) const {
+  if (!request.ProgramIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetTrustedAccessProgramProjectEnrollment", "Required field: ProgramIdentifier, is not set");
+    return GetTrustedAccessProgramProjectEnrollmentOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProgramIdentifier]", false));
+  }
+  if (!request.ProjectIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetTrustedAccessProgramProjectEnrollment", "Required field: ProjectIdentifier, is not set");
+    return GetTrustedAccessProgramProjectEnrollmentOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/trusted-access-programs/");
+        resolvedEndpoint.AddPathSegment(request.GetProgramIdentifier());
+        resolvedEndpoint.AddPathSegments("/project-enrollment/");
+        resolvedEndpoint.AddPathSegment(request.GetProjectIdentifier());
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrustedAccessProgramProjectEnrollmentOutcome(result.GetResultWithOwnership())
+                            : GetTrustedAccessProgramProjectEnrollmentOutcome(std::move(result.GetError()));
 }
 GetUseCaseForModelAccessOutcome BedrockClient::GetUseCaseForModelAccess(const GetUseCaseForModelAccessRequest& request) const {
   auto result = InvokeServiceOperation(
@@ -1518,6 +1790,12 @@ ListModelInvocationJobsOutcome BedrockClient::ListModelInvocationJobs(const List
   return result.IsSuccess() ? ListModelInvocationJobsOutcome(result.GetResultWithOwnership())
                             : ListModelInvocationJobsOutcome(std::move(result.GetError()));
 }
+ListProjectsOutcome BedrockClient::ListProjects(const ListProjectsRequest& request) const {
+  auto result = InvokeServiceOperation(
+      request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/projects"); },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProjectsOutcome(result.GetResultWithOwnership()) : ListProjectsOutcome(std::move(result.GetError()));
+}
 ListPromptRoutersOutcome BedrockClient::ListPromptRouters(const ListPromptRoutersRequest& request) const {
   auto result = InvokeServiceOperation(
       request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/prompt-routers"); },
@@ -1540,12 +1818,38 @@ ListTagsForResourceOutcome BedrockClient::ListTagsForResource(const ListTagsForR
   return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
+ListTrustedAccessProgramsOutcome BedrockClient::ListTrustedAccessPrograms(const ListTrustedAccessProgramsRequest& request) const {
+  auto result = InvokeServiceOperation(
+      request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/trusted-access-programs"); },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrustedAccessProgramsOutcome(result.GetResultWithOwnership())
+                            : ListTrustedAccessProgramsOutcome(std::move(result.GetError()));
+}
 PutAccountDataRetentionOutcome BedrockClient::PutAccountDataRetention(const PutAccountDataRetentionRequest& request) const {
   auto result = InvokeServiceOperation(
       request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/data-retention"); },
       Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutAccountDataRetentionOutcome(result.GetResultWithOwnership())
                             : PutAccountDataRetentionOutcome(std::move(result.GetError()));
+}
+PutAccountDataRetentionStorageOutcome BedrockClient::PutAccountDataRetentionStorage(
+    const PutAccountDataRetentionStorageRequest& request) const {
+  if (!request.ModelProviderHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutAccountDataRetentionStorage", "Required field: ModelProvider, is not set");
+    return PutAccountDataRetentionStorageOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                      "Missing required field [ModelProvider]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/v1/data_retention/storage/");
+        resolvedEndpoint.AddPathSegment(
+            DataRetentionStorageModelProviderMapper::GetNameForDataRetentionStorageModelProvider(request.GetModelProvider()));
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccountDataRetentionStorageOutcome(result.GetResultWithOwnership())
+                            : PutAccountDataRetentionStorageOutcome(std::move(result.GetError()));
 }
 PutEnforcedGuardrailConfigurationOutcome BedrockClient::PutEnforcedGuardrailConfiguration(
     const PutEnforcedGuardrailConfigurationRequest& request) const {
@@ -1563,12 +1867,120 @@ PutModelInvocationLoggingConfigurationOutcome BedrockClient::PutModelInvocationL
   return result.IsSuccess() ? PutModelInvocationLoggingConfigurationOutcome(result.GetResultWithOwnership())
                             : PutModelInvocationLoggingConfigurationOutcome(std::move(result.GetError()));
 }
+PutOrganizationDataRetentionStorageOutcome BedrockClient::PutOrganizationDataRetentionStorage(
+    const PutOrganizationDataRetentionStorageRequest& request) const {
+  if (!request.ModelProviderHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutOrganizationDataRetentionStorage", "Required field: ModelProvider, is not set");
+    return PutOrganizationDataRetentionStorageOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelProvider]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/v1/data_retention/organization-storage/");
+        resolvedEndpoint.AddPathSegment(
+            DataRetentionStorageModelProviderMapper::GetNameForDataRetentionStorageModelProvider(request.GetModelProvider()));
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutOrganizationDataRetentionStorageOutcome(result.GetResultWithOwnership())
+                            : PutOrganizationDataRetentionStorageOutcome(std::move(result.GetError()));
+}
+PutProjectDataRetentionStorageOutcome BedrockClient::PutProjectDataRetentionStorage(
+    const PutProjectDataRetentionStorageRequest& request) const {
+  if (!request.ProjectIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutProjectDataRetentionStorage", "Required field: ProjectIdentifier, is not set");
+    return PutProjectDataRetentionStorageOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                      "Missing required field [ProjectIdentifier]", false));
+  }
+  if (!request.ModelProviderHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutProjectDataRetentionStorage", "Required field: ModelProvider, is not set");
+    return PutProjectDataRetentionStorageOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                      "Missing required field [ModelProvider]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/v1/projects/");
+        resolvedEndpoint.AddPathSegment(request.GetProjectIdentifier());
+        resolvedEndpoint.AddPathSegments("/data_retention/storage/");
+        resolvedEndpoint.AddPathSegment(
+            DataRetentionStorageModelProviderMapper::GetNameForDataRetentionStorageModelProvider(request.GetModelProvider()));
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutProjectDataRetentionStorageOutcome(result.GetResultWithOwnership())
+                            : PutProjectDataRetentionStorageOutcome(std::move(result.GetError()));
+}
 PutResourcePolicyOutcome BedrockClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
   auto result = InvokeServiceOperation(
       request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/resource-policy"); },
       Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
                             : PutResourcePolicyOutcome(std::move(result.GetError()));
+}
+PutTrustedAccessProgramAccountEnrollmentOutcome BedrockClient::PutTrustedAccessProgramAccountEnrollment(
+    const PutTrustedAccessProgramAccountEnrollmentRequest& request) const {
+  if (!request.ProgramIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutTrustedAccessProgramAccountEnrollment", "Required field: ProgramIdentifier, is not set");
+    return PutTrustedAccessProgramAccountEnrollmentOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProgramIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/trusted-access-programs/");
+        resolvedEndpoint.AddPathSegment(request.GetProgramIdentifier());
+        resolvedEndpoint.AddPathSegments("/account-enrollment");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTrustedAccessProgramAccountEnrollmentOutcome(result.GetResultWithOwnership())
+                            : PutTrustedAccessProgramAccountEnrollmentOutcome(std::move(result.GetError()));
+}
+PutTrustedAccessProgramOrganizationEnrollmentOutcome BedrockClient::PutTrustedAccessProgramOrganizationEnrollment(
+    const PutTrustedAccessProgramOrganizationEnrollmentRequest& request) const {
+  if (!request.ProgramIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutTrustedAccessProgramOrganizationEnrollment", "Required field: ProgramIdentifier, is not set");
+    return PutTrustedAccessProgramOrganizationEnrollmentOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProgramIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/trusted-access-programs/");
+        resolvedEndpoint.AddPathSegment(request.GetProgramIdentifier());
+        resolvedEndpoint.AddPathSegments("/organization-enrollment");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTrustedAccessProgramOrganizationEnrollmentOutcome(result.GetResultWithOwnership())
+                            : PutTrustedAccessProgramOrganizationEnrollmentOutcome(std::move(result.GetError()));
+}
+PutTrustedAccessProgramProjectEnrollmentOutcome BedrockClient::PutTrustedAccessProgramProjectEnrollment(
+    const PutTrustedAccessProgramProjectEnrollmentRequest& request) const {
+  if (!request.ProgramIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutTrustedAccessProgramProjectEnrollment", "Required field: ProgramIdentifier, is not set");
+    return PutTrustedAccessProgramProjectEnrollmentOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProgramIdentifier]", false));
+  }
+  if (!request.ProjectIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutTrustedAccessProgramProjectEnrollment", "Required field: ProjectIdentifier, is not set");
+    return PutTrustedAccessProgramProjectEnrollmentOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/trusted-access-programs/");
+        resolvedEndpoint.AddPathSegment(request.GetProgramIdentifier());
+        resolvedEndpoint.AddPathSegments("/project-enrollment/");
+        resolvedEndpoint.AddPathSegment(request.GetProjectIdentifier());
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTrustedAccessProgramProjectEnrollmentOutcome(result.GetResultWithOwnership())
+                            : PutTrustedAccessProgramProjectEnrollmentOutcome(std::move(result.GetError()));
 }
 PutUseCaseForModelAccessOutcome BedrockClient::PutUseCaseForModelAccess(const PutUseCaseForModelAccessRequest& request) const {
   auto result = InvokeServiceOperation(
@@ -1649,6 +2061,69 @@ StartAutomatedReasoningPolicyTestWorkflowOutcome BedrockClient::StartAutomatedRe
       Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartAutomatedReasoningPolicyTestWorkflowOutcome(result.GetResultWithOwnership())
                             : StartAutomatedReasoningPolicyTestWorkflowOutcome(std::move(result.GetError()));
+}
+StartTrustedAccessProgramAccountApplicationOutcome BedrockClient::StartTrustedAccessProgramAccountApplication(
+    const StartTrustedAccessProgramAccountApplicationRequest& request) const {
+  if (!request.ProgramIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartTrustedAccessProgramAccountApplication", "Required field: ProgramIdentifier, is not set");
+    return StartTrustedAccessProgramAccountApplicationOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProgramIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/trusted-access-programs/");
+        resolvedEndpoint.AddPathSegment(request.GetProgramIdentifier());
+        resolvedEndpoint.AddPathSegments("/account-application");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTrustedAccessProgramAccountApplicationOutcome(result.GetResultWithOwnership())
+                            : StartTrustedAccessProgramAccountApplicationOutcome(std::move(result.GetError()));
+}
+StartTrustedAccessProgramOrganizationApplicationOutcome BedrockClient::StartTrustedAccessProgramOrganizationApplication(
+    const StartTrustedAccessProgramOrganizationApplicationRequest& request) const {
+  if (!request.ProgramIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartTrustedAccessProgramOrganizationApplication", "Required field: ProgramIdentifier, is not set");
+    return StartTrustedAccessProgramOrganizationApplicationOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProgramIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/trusted-access-programs/");
+        resolvedEndpoint.AddPathSegment(request.GetProgramIdentifier());
+        resolvedEndpoint.AddPathSegments("/organization-application");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTrustedAccessProgramOrganizationApplicationOutcome(result.GetResultWithOwnership())
+                            : StartTrustedAccessProgramOrganizationApplicationOutcome(std::move(result.GetError()));
+}
+StartTrustedAccessProgramProjectApplicationOutcome BedrockClient::StartTrustedAccessProgramProjectApplication(
+    const StartTrustedAccessProgramProjectApplicationRequest& request) const {
+  if (!request.ProgramIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartTrustedAccessProgramProjectApplication", "Required field: ProgramIdentifier, is not set");
+    return StartTrustedAccessProgramProjectApplicationOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProgramIdentifier]", false));
+  }
+  if (!request.ProjectIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartTrustedAccessProgramProjectApplication", "Required field: ProjectIdentifier, is not set");
+    return StartTrustedAccessProgramProjectApplicationOutcome(Aws::Client::AWSError<BedrockErrors>(
+        BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/trusted-access-programs/");
+        resolvedEndpoint.AddPathSegment(request.GetProgramIdentifier());
+        resolvedEndpoint.AddPathSegments("/project-application/");
+        resolvedEndpoint.AddPathSegment(request.GetProjectIdentifier());
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTrustedAccessProgramProjectApplicationOutcome(result.GetResultWithOwnership())
+                            : StartTrustedAccessProgramProjectApplicationOutcome(std::move(result.GetError()));
 }
 StopAdvancedPromptOptimizationJobOutcome BedrockClient::StopAdvancedPromptOptimizationJob(
     const StopAdvancedPromptOptimizationJobRequest& request) const {
@@ -1855,6 +2330,22 @@ UpdateMarketplaceModelEndpointOutcome BedrockClient::UpdateMarketplaceModelEndpo
       Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateMarketplaceModelEndpointOutcome(result.GetResultWithOwnership())
                             : UpdateMarketplaceModelEndpointOutcome(std::move(result.GetError()));
+}
+UpdateProjectOutcome BedrockClient::UpdateProject(const UpdateProjectRequest& request) const {
+  if (!request.ProjectIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateProject", "Required field: ProjectIdentifier, is not set");
+    return UpdateProjectOutcome(Aws::Client::AWSError<BedrockErrors>(BedrockErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                     "Missing required field [ProjectIdentifier]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/projects/");
+        resolvedEndpoint.AddPathSegment(request.GetProjectIdentifier());
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProjectOutcome(result.GetResultWithOwnership()) : UpdateProjectOutcome(std::move(result.GetError()));
 }
 UpdateProvisionedModelThroughputOutcome BedrockClient::UpdateProvisionedModelThroughput(
     const UpdateProvisionedModelThroughputRequest& request) const {

@@ -123,5 +123,13 @@ Aws::String StartRunRequest::SerializePayload() const {
     payload.WithString("outputUriPrefixMode", RunOutputUriPrefixModeMapper::GetNameForRunOutputUriPrefixMode(m_outputUriPrefixMode));
   }
 
+  if (m_requesterPaysEnabledHasBeenSet) {
+    payload.WithBool("requesterPaysEnabled", m_requesterPaysEnabled);
+  }
+
+  if (m_parametersUriHasBeenSet) {
+    payload.WithString("parametersUri", m_parametersUri);
+  }
+
   return payload.View().WriteReadable();
 }

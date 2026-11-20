@@ -12,6 +12,8 @@
 #include <aws/compute-optimizer-automation/model/ListAutomationRulePreviewPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListAutomationRulePreviewSummariesPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListAutomationRulesPaginationTraits.h>
+#include <aws/compute-optimizer-automation/model/ListOrganizationEnrollmentConfigurationsPaginationTraits.h>
+#include <aws/compute-optimizer-automation/model/ListOrganizationalUnitsPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionSummariesPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionsPaginationTraits.h>
 #include <aws/core/utils/pagination/Paginator.h>
@@ -39,6 +41,12 @@ using ListAutomationRulePreviewSummariesPaginator =
 using ListAutomationRulesPaginator =
     Aws::Utils::Pagination::Paginator<ComputeOptimizerAutomationClient, Model::ListAutomationRulesRequest,
                                       Pagination::ListAutomationRulesPaginationTraits<ComputeOptimizerAutomationClient>>;
+using ListOrganizationalUnitsPaginator =
+    Aws::Utils::Pagination::Paginator<ComputeOptimizerAutomationClient, Model::ListOrganizationalUnitsRequest,
+                                      Pagination::ListOrganizationalUnitsPaginationTraits<ComputeOptimizerAutomationClient>>;
+using ListOrganizationEnrollmentConfigurationsPaginator = Aws::Utils::Pagination::Paginator<
+    ComputeOptimizerAutomationClient, Model::ListOrganizationEnrollmentConfigurationsRequest,
+    Pagination::ListOrganizationEnrollmentConfigurationsPaginationTraits<ComputeOptimizerAutomationClient>>;
 using ListRecommendedActionsPaginator =
     Aws::Utils::Pagination::Paginator<ComputeOptimizerAutomationClient, Model::ListRecommendedActionsRequest,
                                       Pagination::ListRecommendedActionsPaginationTraits<ComputeOptimizerAutomationClient>>;

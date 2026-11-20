@@ -34,6 +34,10 @@ PutAssetResult& PutAssetResult::operator=(const Aws::AmazonWebServiceResult<Json
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AssetTypeId")) {
+    m_assetTypeId = jsonValue.GetString("AssetTypeId");
+    m_assetTypeIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;

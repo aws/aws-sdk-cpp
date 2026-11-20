@@ -20,6 +20,7 @@ static const int AGENT_HASH = HashingUtils::HashString("AGENT");
 static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 static const int SKILL_HASH = HashingUtils::HashString("SKILL");
 static const int GATEWAY_HASH = HashingUtils::HashString("GATEWAY");
+static const int WEB_BOT_HASH = HashingUtils::HashString("WEB_BOT");
 
 RecordType GetRecordTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ RecordType GetRecordTypeForName(const Aws::String& name) {
     return RecordType::SKILL;
   } else if (hashCode == GATEWAY_HASH) {
     return RecordType::GATEWAY;
+  } else if (hashCode == WEB_BOT_HASH) {
+    return RecordType::WEB_BOT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForRecordType(RecordType enumValue) {
       return "SKILL";
     case RecordType::GATEWAY:
       return "GATEWAY";
+    case RecordType::WEB_BOT:
+      return "WEB_BOT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

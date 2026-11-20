@@ -9,8 +9,10 @@
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationClientPagination.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationPaginationBase.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionsPaginationTraits.h>
+#include <aws/compute-optimizer-automation/model/ListOrganizationEnrollmentConfigurationsPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListAutomationRulePreviewPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListAutomationRulePreviewSummariesPaginationTraits.h>
+#include <aws/compute-optimizer-automation/model/ListOrganizationalUnitsPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListAutomationEventsPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListAccountsPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionSummariesPaginationTraits.h>

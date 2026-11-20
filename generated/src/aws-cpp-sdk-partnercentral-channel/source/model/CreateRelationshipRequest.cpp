@@ -59,6 +59,14 @@ Aws::String CreateRelationshipRequest::SerializePayload() const {
     payload.WithObject("requestedSupportPlan", m_requestedSupportPlan.Jsonize());
   }
 
+  if (m_accountScopeHasBeenSet) {
+    payload.WithString("accountScope", AccountScopeMapper::GetNameForAccountScope(m_accountScope));
+  }
+
+  if (m_startDateHasBeenSet) {
+    payload.WithString("startDate", m_startDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   return payload.View().WriteReadable();
 }
 

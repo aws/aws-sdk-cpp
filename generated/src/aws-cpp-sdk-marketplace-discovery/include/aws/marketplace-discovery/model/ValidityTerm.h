@@ -22,7 +22,7 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Defines a validity term that specifies the duration or date range of an
+ * <p>Describes a validity term that specifies the duration or date range of an
  * agreement.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ValidityTerm">AWS
  * API Reference</a></p>

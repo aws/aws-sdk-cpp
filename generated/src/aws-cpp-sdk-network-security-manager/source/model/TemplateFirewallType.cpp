@@ -16,11 +16,14 @@ namespace Model {
 namespace TemplateFirewallTypeMapper {
 
 static const int WAF_HASH = HashingUtils::HashString("WAF");
+static const int IGW_FIREWALL_HASH = HashingUtils::HashString("IGW_FIREWALL");
 
 TemplateFirewallType GetTemplateFirewallTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == WAF_HASH) {
     return TemplateFirewallType::WAF;
+  } else if (hashCode == IGW_FIREWALL_HASH) {
+    return TemplateFirewallType::IGW_FIREWALL;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForTemplateFirewallType(TemplateFirewallType enumValue) {
       return {};
     case TemplateFirewallType::WAF:
       return "WAF";
+    case TemplateFirewallType::IGW_FIREWALL:
+      return "IGW_FIREWALL";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

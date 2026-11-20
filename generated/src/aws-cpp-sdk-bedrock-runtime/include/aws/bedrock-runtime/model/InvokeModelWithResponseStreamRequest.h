@@ -232,6 +232,30 @@ class InvokeModelWithResponseStreamRequest : public StreamingBedrockRuntimeReque
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID or Amazon Resource Name (ARN) of the project to use for this
+   * invocation. The project must be active and belong to your AWS account and the
+   * AWS Region to which you send the request. Specify <code>default</code> or omit
+   * this field to use the default project for your account.</p> <p>For a non-default
+   * project, the inference target must resolve to a foundation model or
+   * system-defined inference profile. Application inference profiles don't support
+   * non-default projects.</p>
+   */
+  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
+  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
+  template <typename ProjectIdentifierT = Aws::String>
+  void SetProjectIdentifier(ProjectIdentifierT&& value) {
+    m_projectIdentifierHasBeenSet = true;
+    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
+  }
+  template <typename ProjectIdentifierT = Aws::String>
+  InvokeModelWithResponseStreamRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
+    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accept;
 
@@ -248,6 +272,8 @@ class InvokeModelWithResponseStreamRequest : public StreamingBedrockRuntimeReque
   ServiceTierType m_serviceTier{ServiceTierType::NOT_SET};
 
   Aws::String m_requestMetadata;
+
+  Aws::String m_projectIdentifier;
   InvokeModelWithResponseStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
@@ -259,6 +285,7 @@ class InvokeModelWithResponseStreamRequest : public StreamingBedrockRuntimeReque
   bool m_performanceConfigLatencyHasBeenSet = false;
   bool m_serviceTierHasBeenSet = false;
   bool m_requestMetadataHasBeenSet = false;
+  bool m_projectIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

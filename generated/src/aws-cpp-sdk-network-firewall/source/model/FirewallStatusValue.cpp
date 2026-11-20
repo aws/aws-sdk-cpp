@@ -19,6 +19,7 @@ static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 static const int READY_HASH = HashingUtils::HashString("READY");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int STANDBY_HASH = HashingUtils::HashString("STANDBY");
 
 FirewallStatusValue GetFirewallStatusValueForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ FirewallStatusValue GetFirewallStatusValueForName(const Aws::String& name) {
     return FirewallStatusValue::READY;
   } else if (hashCode == FAILED_HASH) {
     return FirewallStatusValue::FAILED;
+  } else if (hashCode == STANDBY_HASH) {
+    return FirewallStatusValue::STANDBY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForFirewallStatusValue(FirewallStatusValue enumValue) {
       return "READY";
     case FirewallStatusValue::FAILED:
       return "FAILED";
+    case FirewallStatusValue::STANDBY:
+      return "STANDBY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

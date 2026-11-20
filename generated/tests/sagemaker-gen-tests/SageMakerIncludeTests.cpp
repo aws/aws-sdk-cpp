@@ -71,6 +71,8 @@
 #include <aws/sagemaker/model/AddAssociationRequest.h>
 #include <aws/sagemaker/model/AddAssociationResult.h>
 #include <aws/sagemaker/model/AddClusterNodeSpecification.h>
+#include <aws/sagemaker/model/AddInferenceGatewayRequest.h>
+#include <aws/sagemaker/model/AddInferenceGatewayResult.h>
 #include <aws/sagemaker/model/AddTagsRequest.h>
 #include <aws/sagemaker/model/AddTagsResult.h>
 #include <aws/sagemaker/model/AdditionalEnis.h>
@@ -412,6 +414,8 @@
 #include <aws/sagemaker/model/CreateFeatureGroupResult.h>
 #include <aws/sagemaker/model/CreateFlowDefinitionRequest.h>
 #include <aws/sagemaker/model/CreateFlowDefinitionResult.h>
+#include <aws/sagemaker/model/CreateGlobalInferenceGatewayRequest.h>
+#include <aws/sagemaker/model/CreateGlobalInferenceGatewayResult.h>
 #include <aws/sagemaker/model/CreateHubContentPresignedUrlsPaginationTraits.h>
 #include <aws/sagemaker/model/CreateHubContentPresignedUrlsRequest.h>
 #include <aws/sagemaker/model/CreateHubContentPresignedUrlsResult.h>
@@ -576,6 +580,8 @@
 #include <aws/sagemaker/model/DeleteFeatureGroupRequest.h>
 #include <aws/sagemaker/model/DeleteFlowDefinitionRequest.h>
 #include <aws/sagemaker/model/DeleteFlowDefinitionResult.h>
+#include <aws/sagemaker/model/DeleteGlobalInferenceGatewayRequest.h>
+#include <aws/sagemaker/model/DeleteGlobalInferenceGatewayResult.h>
 #include <aws/sagemaker/model/DeleteHubContentReferenceRequest.h>
 #include <aws/sagemaker/model/DeleteHubContentRequest.h>
 #include <aws/sagemaker/model/DeleteHubRequest.h>
@@ -702,6 +708,8 @@
 #include <aws/sagemaker/model/DescribeFeatureMetadataResult.h>
 #include <aws/sagemaker/model/DescribeFlowDefinitionRequest.h>
 #include <aws/sagemaker/model/DescribeFlowDefinitionResult.h>
+#include <aws/sagemaker/model/DescribeGlobalInferenceGatewayRequest.h>
+#include <aws/sagemaker/model/DescribeGlobalInferenceGatewayResult.h>
 #include <aws/sagemaker/model/DescribeHubContentRequest.h>
 #include <aws/sagemaker/model/DescribeHubContentResult.h>
 #include <aws/sagemaker/model/DescribeHubRequest.h>
@@ -949,6 +957,17 @@
 #include <aws/sagemaker/model/GetSearchSuggestionsResult.h>
 #include <aws/sagemaker/model/GitConfig.h>
 #include <aws/sagemaker/model/GitConfigForUpdate.h>
+#include <aws/sagemaker/model/GlobalInferenceGatewayFilter.h>
+#include <aws/sagemaker/model/GlobalInferenceGatewayFilterName.h>
+#include <aws/sagemaker/model/GlobalInferenceGatewayMember.h>
+#include <aws/sagemaker/model/GlobalInferenceGatewayMemberFilter.h>
+#include <aws/sagemaker/model/GlobalInferenceGatewayMemberFilterName.h>
+#include <aws/sagemaker/model/GlobalInferenceGatewayMemberStatus.h>
+#include <aws/sagemaker/model/GlobalInferenceGatewayMemberSummary.h>
+#include <aws/sagemaker/model/GlobalInferenceGatewayRouting.h>
+#include <aws/sagemaker/model/GlobalInferenceGatewayRoutingWeights.h>
+#include <aws/sagemaker/model/GlobalInferenceGatewayStatus.h>
+#include <aws/sagemaker/model/GlobalInferenceGatewaySummary.h>
 #include <aws/sagemaker/model/HiddenSageMakerImage.h>
 #include <aws/sagemaker/model/HolidayConfigAttributes.h>
 #include <aws/sagemaker/model/HomeEfsFileSystemCreation.h>
@@ -1222,6 +1241,9 @@
 #include <aws/sagemaker/model/ListFlowDefinitionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListFlowDefinitionsRequest.h>
 #include <aws/sagemaker/model/ListFlowDefinitionsResult.h>
+#include <aws/sagemaker/model/ListGlobalInferenceGatewaysPaginationTraits.h>
+#include <aws/sagemaker/model/ListGlobalInferenceGatewaysRequest.h>
+#include <aws/sagemaker/model/ListGlobalInferenceGatewaysResult.h>
 #include <aws/sagemaker/model/ListHubContentVersionsRequest.h>
 #include <aws/sagemaker/model/ListHubContentVersionsResult.h>
 #include <aws/sagemaker/model/ListHubContentsRequest.h>
@@ -1246,6 +1268,9 @@
 #include <aws/sagemaker/model/ListInferenceExperimentsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceExperimentsRequest.h>
 #include <aws/sagemaker/model/ListInferenceExperimentsResult.h>
+#include <aws/sagemaker/model/ListInferenceGatewaysPaginationTraits.h>
+#include <aws/sagemaker/model/ListInferenceGatewaysRequest.h>
+#include <aws/sagemaker/model/ListInferenceGatewaysResult.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsRequest.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsResult.h>
@@ -1550,6 +1575,11 @@
 #include <aws/sagemaker/model/MonitoringStatisticsResource.h>
 #include <aws/sagemaker/model/MonitoringStoppingCondition.h>
 #include <aws/sagemaker/model/MonitoringType.h>
+#include <aws/sagemaker/model/MoveClusterNodeLogicalIdsError.h>
+#include <aws/sagemaker/model/MoveClusterNodesError.h>
+#include <aws/sagemaker/model/MoveClusterNodesErrorCode.h>
+#include <aws/sagemaker/model/MoveClusterNodesRequest.h>
+#include <aws/sagemaker/model/MoveClusterNodesResult.h>
 #include <aws/sagemaker/model/MultiModelConfig.h>
 #include <aws/sagemaker/model/NeoVpcConfig.h>
 #include <aws/sagemaker/model/NestedFilters.h>
@@ -1724,6 +1754,8 @@
 #include <aws/sagemaker/model/Relation.h>
 #include <aws/sagemaker/model/RemoteDebugConfig.h>
 #include <aws/sagemaker/model/RemoteDebugConfigForUpdate.h>
+#include <aws/sagemaker/model/RemoveInferenceGatewayRequest.h>
+#include <aws/sagemaker/model/RemoveInferenceGatewayResult.h>
 #include <aws/sagemaker/model/RenderUiTemplateRequest.h>
 #include <aws/sagemaker/model/RenderUiTemplateResult.h>
 #include <aws/sagemaker/model/RenderableTask.h>
@@ -2040,6 +2072,8 @@
 #include <aws/sagemaker/model/UpdateFeatureGroupRequest.h>
 #include <aws/sagemaker/model/UpdateFeatureGroupResult.h>
 #include <aws/sagemaker/model/UpdateFeatureMetadataRequest.h>
+#include <aws/sagemaker/model/UpdateGlobalInferenceGatewayRequest.h>
+#include <aws/sagemaker/model/UpdateGlobalInferenceGatewayResult.h>
 #include <aws/sagemaker/model/UpdateHubContentReferenceRequest.h>
 #include <aws/sagemaker/model/UpdateHubContentReferenceResult.h>
 #include <aws/sagemaker/model/UpdateHubContentRequest.h>

@@ -50,6 +50,14 @@ SaasFulfillmentOption& SaasFulfillmentOption::operator=(JsonView jsonValue) {
     m_quickLaunch = SaasQuickLaunchStatusMapper::GetSaasQuickLaunchStatusForName(jsonValue.GetString("quickLaunch"));
     m_quickLaunchHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("deploymentTemplates")) {
+    Aws::Utils::Array<JsonView> deploymentTemplatesJsonList = jsonValue.GetArray("deploymentTemplates");
+    for (unsigned deploymentTemplatesIndex = 0; deploymentTemplatesIndex < deploymentTemplatesJsonList.GetLength();
+         ++deploymentTemplatesIndex) {
+      m_deploymentTemplates.push_back(deploymentTemplatesJsonList[deploymentTemplatesIndex].AsObject());
+    }
+    m_deploymentTemplatesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +94,15 @@ JsonValue SaasFulfillmentOption::Jsonize() const {
 
   if (m_quickLaunchHasBeenSet) {
     payload.WithString("quickLaunch", SaasQuickLaunchStatusMapper::GetNameForSaasQuickLaunchStatus(m_quickLaunch));
+  }
+
+  if (m_deploymentTemplatesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> deploymentTemplatesJsonList(m_deploymentTemplates.size());
+    for (unsigned deploymentTemplatesIndex = 0; deploymentTemplatesIndex < deploymentTemplatesJsonList.GetLength();
+         ++deploymentTemplatesIndex) {
+      deploymentTemplatesJsonList[deploymentTemplatesIndex].AsObject(m_deploymentTemplates[deploymentTemplatesIndex].Jsonize());
+    }
+    payload.WithArray("deploymentTemplates", std::move(deploymentTemplatesJsonList));
   }
 
   return payload;

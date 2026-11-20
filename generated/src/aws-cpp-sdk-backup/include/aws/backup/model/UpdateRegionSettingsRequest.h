@@ -86,12 +86,45 @@ class UpdateRegionSettingsRequest : public BackupRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether you opt in to incremental backups for each resource type in
+   * the Region. Opt in when you want to reduce backup storage and backup time for
+   * large resources that change infrequently. Incremental backup opt-in is currently
+   * available for Amazon DynamoDB.</p> <p>To view your current incremental backup
+   * settings, use the <code>DescribeRegionSettings</code> API. For the resource
+   * types that each Backup feature supports, see the <a
+   * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+   * availability by resource</a> table.</p>
+   */
+  inline const Aws::Map<Aws::String, bool>& GetResourceTypeOptInIncremental() const { return m_resourceTypeOptInIncremental; }
+  inline bool ResourceTypeOptInIncrementalHasBeenSet() const { return m_resourceTypeOptInIncrementalHasBeenSet; }
+  template <typename ResourceTypeOptInIncrementalT = Aws::Map<Aws::String, bool>>
+  void SetResourceTypeOptInIncremental(ResourceTypeOptInIncrementalT&& value) {
+    m_resourceTypeOptInIncrementalHasBeenSet = true;
+    m_resourceTypeOptInIncremental = std::forward<ResourceTypeOptInIncrementalT>(value);
+  }
+  template <typename ResourceTypeOptInIncrementalT = Aws::Map<Aws::String, bool>>
+  UpdateRegionSettingsRequest& WithResourceTypeOptInIncremental(ResourceTypeOptInIncrementalT&& value) {
+    SetResourceTypeOptInIncremental(std::forward<ResourceTypeOptInIncrementalT>(value));
+    return *this;
+  }
+  inline UpdateRegionSettingsRequest& AddResourceTypeOptInIncremental(Aws::String key, bool value) {
+    m_resourceTypeOptInIncrementalHasBeenSet = true;
+    m_resourceTypeOptInIncremental.emplace(key, value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Map<Aws::String, bool> m_resourceTypeOptInPreference;
 
   Aws::Map<Aws::String, bool> m_resourceTypeManagementPreference;
+
+  Aws::Map<Aws::String, bool> m_resourceTypeOptInIncremental;
   bool m_resourceTypeOptInPreferenceHasBeenSet = false;
   bool m_resourceTypeManagementPreferenceHasBeenSet = false;
+  bool m_resourceTypeOptInIncrementalHasBeenSet = false;
 };
 
 }  // namespace Model

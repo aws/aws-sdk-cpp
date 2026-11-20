@@ -30,6 +30,10 @@ PolicyConfiguration& PolicyConfiguration::operator=(JsonView jsonValue) {
     m_wafConfig = jsonValue.GetObject("wafConfig");
     m_wafConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("igwFirewallConfig")) {
+    m_igwFirewallConfig = jsonValue.GetObject("igwFirewallConfig");
+    m_igwFirewallConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue PolicyConfiguration::Jsonize() const {
 
   if (m_wafConfigHasBeenSet) {
     payload.WithObject("wafConfig", m_wafConfig.Jsonize());
+  }
+
+  if (m_igwFirewallConfigHasBeenSet) {
+    payload.WithObject("igwFirewallConfig", m_igwFirewallConfig.Jsonize());
   }
 
   return payload;

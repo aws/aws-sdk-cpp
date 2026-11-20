@@ -30,6 +30,10 @@ Av1Settings& Av1Settings::operator=(JsonView jsonValue) {
     m_bitrate = jsonValue.GetInteger("bitrate");
     m_bitrateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("fastDecode")) {
+    m_fastDecode = Av1FastDecodeMapper::GetAv1FastDecodeForName(jsonValue.GetString("fastDecode"));
+    m_fastDecodeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("filmGrainSynthesis")) {
     m_filmGrainSynthesis = Av1FilmGrainSynthesisMapper::GetAv1FilmGrainSynthesisForName(jsonValue.GetString("filmGrainSynthesis"));
     m_filmGrainSynthesisHasBeenSet = true;
@@ -54,6 +58,10 @@ Av1Settings& Av1Settings::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("gopSize")) {
     m_gopSize = jsonValue.GetDouble("gopSize");
     m_gopSizeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("gopSizeUnits")) {
+    m_gopSizeUnits = Av1GopSizeUnitsMapper::GetAv1GopSizeUnitsForName(jsonValue.GetString("gopSizeUnits"));
+    m_gopSizeUnitsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("maxBitrate")) {
     m_maxBitrate = jsonValue.GetInteger("maxBitrate");
@@ -100,6 +108,11 @@ Av1Settings& Av1Settings::operator=(JsonView jsonValue) {
         Av1SpatialAdaptiveQuantizationMapper::GetAv1SpatialAdaptiveQuantizationForName(jsonValue.GetString("spatialAdaptiveQuantization"));
     m_spatialAdaptiveQuantizationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("temporalAdaptiveQuantization")) {
+    m_temporalAdaptiveQuantization = Av1TemporalAdaptiveQuantizationMapper::GetAv1TemporalAdaptiveQuantizationForName(
+        jsonValue.GetString("temporalAdaptiveQuantization"));
+    m_temporalAdaptiveQuantizationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -116,6 +129,10 @@ JsonValue Av1Settings::Jsonize() const {
 
   if (m_bitrateHasBeenSet) {
     payload.WithInteger("bitrate", m_bitrate);
+  }
+
+  if (m_fastDecodeHasBeenSet) {
+    payload.WithString("fastDecode", Av1FastDecodeMapper::GetNameForAv1FastDecode(m_fastDecode));
   }
 
   if (m_filmGrainSynthesisHasBeenSet) {
@@ -141,6 +158,10 @@ JsonValue Av1Settings::Jsonize() const {
 
   if (m_gopSizeHasBeenSet) {
     payload.WithDouble("gopSize", m_gopSize);
+  }
+
+  if (m_gopSizeUnitsHasBeenSet) {
+    payload.WithString("gopSizeUnits", Av1GopSizeUnitsMapper::GetNameForAv1GopSizeUnits(m_gopSizeUnits));
   }
 
   if (m_maxBitrateHasBeenSet) {
@@ -187,6 +208,11 @@ JsonValue Av1Settings::Jsonize() const {
   if (m_spatialAdaptiveQuantizationHasBeenSet) {
     payload.WithString("spatialAdaptiveQuantization",
                        Av1SpatialAdaptiveQuantizationMapper::GetNameForAv1SpatialAdaptiveQuantization(m_spatialAdaptiveQuantization));
+  }
+
+  if (m_temporalAdaptiveQuantizationHasBeenSet) {
+    payload.WithString("temporalAdaptiveQuantization",
+                       Av1TemporalAdaptiveQuantizationMapper::GetNameForAv1TemporalAdaptiveQuantization(m_temporalAdaptiveQuantization));
   }
 
   return payload;

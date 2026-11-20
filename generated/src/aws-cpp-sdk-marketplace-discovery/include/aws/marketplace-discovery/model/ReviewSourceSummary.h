@@ -56,10 +56,10 @@ class ReviewSourceSummary {
   ///@{
   /**
    * <p>The machine-readable identifier of the review source. This field has one of
-   * the following values:</p> <ul> <li> <p> <code>AWS_MARKETPLACE</code> – The
-   * reviews come from AWS Marketplace.</p> </li> <li> <p> <code>G2</code> – The
-   * reviews come from G2.</p> </li> <li> <p> <code>PEERSPOT</code> – The reviews
-   * come from PeerSpot.</p> </li> </ul>
+   * the following values:</p> <dl> <dt>AWS_MARKETPLACE</dt> <dd> <p>The reviews come
+   * from AWS Marketplace.</p> </dd> <dt>G2</dt> <dd> <p>The reviews come from
+   * G2.</p> </dd> <dt>PEERSPOT</dt> <dd> <p>The reviews come from PeerSpot.</p>
+   * </dd> </dl>
    */
   inline ReviewSourceId GetSourceId() const { return m_sourceId; }
   inline bool SourceIdHasBeenSet() const { return m_sourceIdHasBeenSet; }
@@ -75,7 +75,7 @@ class ReviewSourceSummary {
 
   ///@{
   /**
-   * <p>The URL where the reviews can be accessed at the source.</p>
+   * <p>The URL where you can read the reviews at their source.</p>
    */
   inline const Aws::String& GetSourceUrl() const { return m_sourceUrl; }
   inline bool SourceUrlHasBeenSet() const { return m_sourceUrlHasBeenSet; }

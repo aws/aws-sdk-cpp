@@ -11,6 +11,7 @@
 #include <aws/network-firewall/model/AvailabilityZoneMapping.h>
 #include <aws/network-firewall/model/EnabledAnalysisType.h>
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
+#include <aws/network-firewall/model/IgwFirewallConfiguration.h>
 #include <aws/network-firewall/model/NatGatewayCreateMapping.h>
 #include <aws/network-firewall/model/ProxySettings.h>
 #include <aws/network-firewall/model/SubnetMapping.h>
@@ -349,6 +350,32 @@ class CreateFirewallRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
+   * <p>Settings that make this firewall an internet gateway firewall. An internet
+   * gateway firewall inspects all traffic between a VPC and its internet gateway,
+   * without changes to your subnets or route tables. Amazon Web Services Network
+   * Security Manager creates and manages internet gateway firewalls on your behalf,
+   * so you don't include this setting when you create a standard Network Firewall
+   * firewall.</p> <p>When this setting is present, <code>FirewallName</code> must
+   * equal the <code>VpcId</code>, <code>AvailabilityZoneMappings</code> is required
+   * and must use Availability Zone IDs, and you can't specify
+   * <code>SubnetMappings</code> or a transit gateway.</p>
+   */
+  inline const IgwFirewallConfiguration& GetIgwFirewallConfiguration() const { return m_igwFirewallConfiguration; }
+  inline bool IgwFirewallConfigurationHasBeenSet() const { return m_igwFirewallConfigurationHasBeenSet; }
+  template <typename IgwFirewallConfigurationT = IgwFirewallConfiguration>
+  void SetIgwFirewallConfiguration(IgwFirewallConfigurationT&& value) {
+    m_igwFirewallConfigurationHasBeenSet = true;
+    m_igwFirewallConfiguration = std::forward<IgwFirewallConfigurationT>(value);
+  }
+  template <typename IgwFirewallConfigurationT = IgwFirewallConfiguration>
+  CreateFirewallRequest& WithIgwFirewallConfiguration(IgwFirewallConfigurationT&& value) {
+    SetIgwFirewallConfiguration(std::forward<IgwFirewallConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The NAT gateways that Network Firewall creates for a proxy mode firewall, one
    * for each Availability Zone. When you specify this, you create a proxy mode
    * firewall. Destinations see the IP address of the NAT gateway in the client's
@@ -483,6 +510,8 @@ class CreateFirewallRequest : public NetworkFirewallRequest {
 
   bool m_availabilityZoneChangeProtection{false};
 
+  IgwFirewallConfiguration m_igwFirewallConfiguration;
+
   Aws::Vector<NatGatewayCreateMapping> m_natGatewayCreateMappings;
 
   ProxySettings m_proxySettings;
@@ -504,6 +533,7 @@ class CreateFirewallRequest : public NetworkFirewallRequest {
   bool m_transitGatewayIdHasBeenSet = false;
   bool m_availabilityZoneMappingsHasBeenSet = false;
   bool m_availabilityZoneChangeProtectionHasBeenSet = false;
+  bool m_igwFirewallConfigurationHasBeenSet = false;
   bool m_natGatewayCreateMappingsHasBeenSet = false;
   bool m_proxySettingsHasBeenSet = false;
   bool m_vpcEndpointHasBeenSet = false;

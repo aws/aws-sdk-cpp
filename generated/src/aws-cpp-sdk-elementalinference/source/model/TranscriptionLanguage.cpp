@@ -24,6 +24,7 @@ static const int ita_HASH = HashingUtils::HashString("ita");
 static const int deu_HASH = HashingUtils::HashString("deu");
 static const int spa_HASH = HashingUtils::HashString("spa");
 static const int por_HASH = HashingUtils::HashString("por");
+static const int ara_HASH = HashingUtils::HashString("ara");
 
 TranscriptionLanguage GetTranscriptionLanguageForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +46,8 @@ TranscriptionLanguage GetTranscriptionLanguageForName(const Aws::String& name) {
     return TranscriptionLanguage::spa;
   } else if (hashCode == por_HASH) {
     return TranscriptionLanguage::por;
+  } else if (hashCode == ara_HASH) {
+    return TranscriptionLanguage::ara;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +80,8 @@ Aws::String GetNameForTranscriptionLanguage(TranscriptionLanguage enumValue) {
       return "spa";
     case TranscriptionLanguage::por:
       return "por";
+    case TranscriptionLanguage::ara:
+      return "ara";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

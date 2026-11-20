@@ -109,6 +109,252 @@ OrganizationScope& OrganizationScope::operator=(const std::shared_ptr<Aws::Crt::
                   }
                 }
                 m_accountIdsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "organizationalUnitIds") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1.has_value()) {
+                          if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              m_organizationalUnitIds.push_back(
+                                  Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                            }
+                          } else {
+                            decoder->ConsumeNextSingleElement();
+                            Aws::StringStream ss_1;
+                            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                              auto nextType_1 = decoder->PeekType();
+                              if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                if (nextType_1.has_value()) {
+                                  decoder->ConsumeNextSingleElement();  // consume the Break
+                                }
+                                break;
+                              }
+                              auto val = decoder->PopNextTextVal();
+                              if (val.has_value()) {
+                                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                              }
+                            }
+                            m_organizationalUnitIds.push_back(ss_1.str());
+                            ss_1.clear();
+                          }
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_organizationalUnitIds.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_organizationalUnitIds.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                }
+                m_organizationalUnitIdsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "excludedOrganizationalUnitIds") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1.has_value()) {
+                          if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              m_excludedOrganizationalUnitIds.push_back(
+                                  Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                            }
+                          } else {
+                            decoder->ConsumeNextSingleElement();
+                            Aws::StringStream ss_1;
+                            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                              auto nextType_1 = decoder->PeekType();
+                              if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                if (nextType_1.has_value()) {
+                                  decoder->ConsumeNextSingleElement();  // consume the Break
+                                }
+                                break;
+                              }
+                              auto val = decoder->PopNextTextVal();
+                              if (val.has_value()) {
+                                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                              }
+                            }
+                            m_excludedOrganizationalUnitIds.push_back(ss_1.str());
+                            ss_1.clear();
+                          }
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_excludedOrganizationalUnitIds.push_back(
+                                Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_excludedOrganizationalUnitIds.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                }
+                m_excludedOrganizationalUnitIdsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "excludedAccountIds") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1.has_value()) {
+                          if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              m_excludedAccountIds.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                            }
+                          } else {
+                            decoder->ConsumeNextSingleElement();
+                            Aws::StringStream ss_1;
+                            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                              auto nextType_1 = decoder->PeekType();
+                              if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                if (nextType_1.has_value()) {
+                                  decoder->ConsumeNextSingleElement();  // consume the Break
+                                }
+                                break;
+                              }
+                              auto val = decoder->PopNextTextVal();
+                              if (val.has_value()) {
+                                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                              }
+                            }
+                            m_excludedAccountIds.push_back(ss_1.str());
+                            ss_1.clear();
+                          }
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_excludedAccountIds.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_excludedAccountIds.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                }
+                m_excludedAccountIdsHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -215,6 +461,251 @@ OrganizationScope& OrganizationScope::operator=(const std::shared_ptr<Aws::Crt::
                 }
               }
               m_accountIdsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "organizationalUnitIds") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_organizationalUnitIds.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_organizationalUnitIds.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto peekType_1 = decoder->PeekType();
+                    if (peekType_1.has_value()) {
+                      if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                        auto val = decoder->PopNextTextVal();
+                        if (val.has_value()) {
+                          m_organizationalUnitIds.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                        }
+                      } else {
+                        decoder->ConsumeNextSingleElement();
+                        Aws::StringStream ss_1;
+                        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                          auto nextType_1 = decoder->PeekType();
+                          if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                            if (nextType_1.has_value()) {
+                              decoder->ConsumeNextSingleElement();  // consume the Break
+                            }
+                            break;
+                          }
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                          }
+                        }
+                        m_organizationalUnitIds.push_back(ss_1.str());
+                        ss_1.clear();
+                      }
+                    }
+                  }
+                }
+              }
+              m_organizationalUnitIdsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "excludedOrganizationalUnitIds") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_excludedOrganizationalUnitIds.push_back(
+                                Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_excludedOrganizationalUnitIds.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto peekType_1 = decoder->PeekType();
+                    if (peekType_1.has_value()) {
+                      if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                        auto val = decoder->PopNextTextVal();
+                        if (val.has_value()) {
+                          m_excludedOrganizationalUnitIds.push_back(
+                              Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                        }
+                      } else {
+                        decoder->ConsumeNextSingleElement();
+                        Aws::StringStream ss_1;
+                        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                          auto nextType_1 = decoder->PeekType();
+                          if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                            if (nextType_1.has_value()) {
+                              decoder->ConsumeNextSingleElement();  // consume the Break
+                            }
+                            break;
+                          }
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                          }
+                        }
+                        m_excludedOrganizationalUnitIds.push_back(ss_1.str());
+                        ss_1.clear();
+                      }
+                    }
+                  }
+                }
+              }
+              m_excludedOrganizationalUnitIdsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "excludedAccountIds") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_excludedAccountIds.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_excludedAccountIds.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto peekType_1 = decoder->PeekType();
+                    if (peekType_1.has_value()) {
+                      if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                        auto val = decoder->PopNextTextVal();
+                        if (val.has_value()) {
+                          m_excludedAccountIds.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                        }
+                      } else {
+                        decoder->ConsumeNextSingleElement();
+                        Aws::StringStream ss_1;
+                        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                          auto nextType_1 = decoder->PeekType();
+                          if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                            if (nextType_1.has_value()) {
+                              decoder->ConsumeNextSingleElement();  // consume the Break
+                            }
+                            break;
+                          }
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                          }
+                        }
+                        m_excludedAccountIds.push_back(ss_1.str());
+                        ss_1.clear();
+                      }
+                    }
+                  }
+                }
+              }
+              m_excludedAccountIdsHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -234,6 +725,15 @@ void OrganizationScope::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_accountIdsHasBeenSet) {
     mapSize++;
   }
+  if (m_organizationalUnitIdsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_excludedOrganizationalUnitIdsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_excludedAccountIdsHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -241,6 +741,30 @@ void OrganizationScope::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("accountIds"));
     encoder.WriteArrayStart(m_accountIds.size());
     for (const auto& item_0 : m_accountIds) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
+    }
+  }
+
+  if (m_organizationalUnitIdsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("organizationalUnitIds"));
+    encoder.WriteArrayStart(m_organizationalUnitIds.size());
+    for (const auto& item_0 : m_organizationalUnitIds) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
+    }
+  }
+
+  if (m_excludedOrganizationalUnitIdsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("excludedOrganizationalUnitIds"));
+    encoder.WriteArrayStart(m_excludedOrganizationalUnitIds.size());
+    for (const auto& item_0 : m_excludedOrganizationalUnitIds) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
+    }
+  }
+
+  if (m_excludedAccountIdsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("excludedAccountIds"));
+    encoder.WriteArrayStart(m_excludedAccountIds.size());
+    for (const auto& item_0 : m_excludedAccountIds) {
       encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
   }

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pcs/PCS_EXPORTS.h>
 #include <aws/pcs/model/Endpoint.h>
+#include <aws/pcs/model/InstanceHealthChecks.h>
 #include <aws/pcs/model/NodeLifecycleActions.h>
 
 #include <utility>
@@ -177,6 +178,25 @@ class RegisterComputeNodeGroupInstanceResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The instance health check settings configured for the compute node group that
+   * the compute node registered into. The compute node uses these settings to
+   * configure health monitoring and deep health checks.</p>
+   */
+  inline const InstanceHealthChecks& GetInstanceHealthChecks() const { return m_instanceHealthChecks; }
+  template <typename InstanceHealthChecksT = InstanceHealthChecks>
+  void SetInstanceHealthChecks(InstanceHealthChecksT&& value) {
+    m_instanceHealthChecksHasBeenSet = true;
+    m_instanceHealthChecks = std::forward<InstanceHealthChecksT>(value);
+  }
+  template <typename InstanceHealthChecksT = InstanceHealthChecks>
+  RegisterComputeNodeGroupInstanceResult& WithInstanceHealthChecks(InstanceHealthChecksT&& value) {
+    SetInstanceHealthChecks(std::forward<InstanceHealthChecksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -209,6 +229,8 @@ class RegisterComputeNodeGroupInstanceResult {
 
   Aws::String m_schedulerVersion;
 
+  InstanceHealthChecks m_instanceHealthChecks;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nodeIDHasBeenSet = false;
@@ -219,6 +241,7 @@ class RegisterComputeNodeGroupInstanceResult {
   bool m_computeNodeGroupNameHasBeenSet = false;
   bool m_nodeLifecycleActionsHasBeenSet = false;
   bool m_schedulerVersionHasBeenSet = false;
+  bool m_instanceHealthChecksHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

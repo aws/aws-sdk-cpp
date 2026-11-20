@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-discovery/MarketplaceDiscovery_EXPORTS.h>
 #include <aws/marketplace-discovery/model/DimensionLabel.h>
+#include <aws/marketplace-discovery/model/RegionalPrice.h>
 
 #include <utility>
 
@@ -90,7 +91,7 @@ class RateCardItem {
 
   ///@{
   /**
-   * <p>Labels used to categorize this dimension, such as by region.</p>
+   * <p>Labels that categorize this dimension, such as by region.</p>
    */
   inline const Aws::Vector<DimensionLabel>& GetDimensionLabels() const { return m_dimensionLabels; }
   inline bool DimensionLabelsHasBeenSet() const { return m_dimensionLabelsHasBeenSet; }
@@ -147,6 +148,31 @@ class RateCardItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The price overrides for the dimension in individual AWS Regions. When a
+   * Regional price is present for an AWS Region, it replaces the default price.</p>
+   */
+  inline const Aws::Vector<RegionalPrice>& GetRegionalPrices() const { return m_regionalPrices; }
+  inline bool RegionalPricesHasBeenSet() const { return m_regionalPricesHasBeenSet; }
+  template <typename RegionalPricesT = Aws::Vector<RegionalPrice>>
+  void SetRegionalPrices(RegionalPricesT&& value) {
+    m_regionalPricesHasBeenSet = true;
+    m_regionalPrices = std::forward<RegionalPricesT>(value);
+  }
+  template <typename RegionalPricesT = Aws::Vector<RegionalPrice>>
+  RateCardItem& WithRegionalPrices(RegionalPricesT&& value) {
+    SetRegionalPrices(std::forward<RegionalPricesT>(value));
+    return *this;
+  }
+  template <typename RegionalPricesT = RegionalPrice>
+  RateCardItem& AddRegionalPrices(RegionalPricesT&& value) {
+    m_regionalPricesHasBeenSet = true;
+    m_regionalPrices.emplace_back(std::forward<RegionalPricesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dimensionKey;
 
@@ -159,12 +185,15 @@ class RateCardItem {
   Aws::String m_unit;
 
   Aws::String m_price;
+
+  Aws::Vector<RegionalPrice> m_regionalPrices;
   bool m_dimensionKeyHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_dimensionLabelsHasBeenSet = false;
   bool m_unitHasBeenSet = false;
   bool m_priceHasBeenSet = false;
+  bool m_regionalPricesHasBeenSet = false;
 };
 
 }  // namespace Model

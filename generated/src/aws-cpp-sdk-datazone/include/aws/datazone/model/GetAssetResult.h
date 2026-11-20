@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/AssetListingDetails.h>
+#include <aws/datazone/model/AssetOwnershipTransfer.h>
 #include <aws/datazone/model/FormOutput.h>
 #include <aws/datazone/model/TimeSeriesDataPointSummaryFormOutput.h>
 
@@ -389,6 +390,24 @@ class GetAssetResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The most recent ownership transfer of the asset. The response omits this
+   * member if the asset has never had an ownership transfer.</p>
+   */
+  inline const AssetOwnershipTransfer& GetOwnershipTransfer() const { return m_ownershipTransfer; }
+  template <typename OwnershipTransferT = AssetOwnershipTransfer>
+  void SetOwnershipTransfer(OwnershipTransferT&& value) {
+    m_ownershipTransferHasBeenSet = true;
+    m_ownershipTransfer = std::forward<OwnershipTransferT>(value);
+  }
+  template <typename OwnershipTransferT = AssetOwnershipTransfer>
+  GetAssetResult& WithOwnershipTransfer(OwnershipTransferT&& value) {
+    SetOwnershipTransfer(std::forward<OwnershipTransferT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -443,6 +462,8 @@ class GetAssetResult {
 
   Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointFormsOutput;
 
+  AssetOwnershipTransfer m_ownershipTransfer;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
@@ -464,6 +485,7 @@ class GetAssetResult {
   bool m_formsOutputHasBeenSet = false;
   bool m_readOnlyFormsOutputHasBeenSet = false;
   bool m_latestTimeSeriesDataPointFormsOutputHasBeenSet = false;
+  bool m_ownershipTransferHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

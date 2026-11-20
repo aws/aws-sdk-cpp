@@ -14,9 +14,11 @@
 #include <aws/route53/model/ListHealthChecksBySourcePaginationTraits.h>
 #include <aws/route53/model/ListHostedZonesPaginationTraits.h>
 #include <aws/route53/model/ListCidrCollectionsPaginationTraits.h>
+#include <aws/route53/model/ListHostedZoneChangeBatchesPaginationTraits.h>
 #include <aws/route53/model/ListQueryLoggingConfigsPaginationTraits.h>
 #include <aws/route53/model/ListCidrBlocksPaginationTraits.h>
 #include <aws/route53/model/ListHealthChecksPaginationTraits.h>
+#include <aws/route53/model/ListResourceRecordSetChangesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

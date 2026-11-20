@@ -10,6 +10,7 @@
 #include <aws/network-security-manager/NetworkSecurityManagerRequest.h>
 #include <aws/network-security-manager/NetworkSecurityManager_EXPORTS.h>
 #include <aws/network-security-manager/model/ScopeConfiguration.h>
+#include <aws/network-security-manager/model/SpecializedScopeType.h>
 
 #include <utility>
 
@@ -108,6 +109,27 @@ class CreateScopeRequest : public NetworkSecurityManagerRequest {
 
   ///@{
   /**
+   * <p>The specialized type of the scope. Omit this value to create a standard scope
+   * that you can associate with a deployment. Set it to create a scope that is built
+   * for one specific purpose: a specialized scope can be used only for the purpose
+   * that its type defines, is validated against that use, and can't be associated
+   * with a deployment. This value is set when the scope is created and can't be
+   * changed.</p>
+   */
+  inline SpecializedScopeType GetSpecializedScopeType() const { return m_specializedScopeType; }
+  inline bool SpecializedScopeTypeHasBeenSet() const { return m_specializedScopeTypeHasBeenSet; }
+  inline void SetSpecializedScopeType(SpecializedScopeType value) {
+    m_specializedScopeTypeHasBeenSet = true;
+    m_specializedScopeType = value;
+  }
+  inline CreateScopeRequest& WithSpecializedScopeType(SpecializedScopeType value) {
+    SetSpecializedScopeType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies whether to publish the resource. When <code>true</code>, the
    * resource is saved in published (<code>ACTIVE</code>) state. When
    * <code>false</code>, it is saved as a draft (<code>DRAFT</code>). Default:
@@ -157,6 +179,8 @@ class CreateScopeRequest : public NetworkSecurityManagerRequest {
 
   ScopeConfiguration m_scopeConfiguration;
 
+  SpecializedScopeType m_specializedScopeType{SpecializedScopeType::NOT_SET};
+
   bool m_isPublished{false};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -164,6 +188,7 @@ class CreateScopeRequest : public NetworkSecurityManagerRequest {
   bool m_scopeNameHasBeenSet = false;
   bool m_scopeDescriptionHasBeenSet = false;
   bool m_scopeConfigurationHasBeenSet = false;
+  bool m_specializedScopeTypeHasBeenSet = false;
   bool m_isPublishedHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };

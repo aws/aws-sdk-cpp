@@ -42,6 +42,10 @@ GetScopeResult& GetScopeResult::operator=(const Aws::AmazonWebServiceResult<Json
     m_scopeConfiguration = jsonValue.GetObject("scopeConfiguration");
     m_scopeConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("specializedScopeType")) {
+    m_specializedScopeType = SpecializedScopeTypeMapper::GetSpecializedScopeTypeForName(jsonValue.GetString("specializedScopeType"));
+    m_specializedScopeTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = EntityStatusMapper::GetEntityStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;

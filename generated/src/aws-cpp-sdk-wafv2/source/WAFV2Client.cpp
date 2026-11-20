@@ -41,6 +41,8 @@
 #include <aws/wafv2/model/DisassociateWebACLRequest.h>
 #include <aws/wafv2/model/GenerateMobileSdkReleaseUrlRequest.h>
 #include <aws/wafv2/model/GetDecryptedAPIKeyRequest.h>
+#include <aws/wafv2/model/GetEventActorRequest.h>
+#include <aws/wafv2/model/GetEventRequest.h>
 #include <aws/wafv2/model/GetIPSetRequest.h>
 #include <aws/wafv2/model/GetLoggingConfigurationRequest.h>
 #include <aws/wafv2/model/GetManagedRuleSetRequest.h>
@@ -59,6 +61,9 @@
 #include <aws/wafv2/model/ListAPIKeysRequest.h>
 #include <aws/wafv2/model/ListAvailableManagedRuleGroupVersionsRequest.h>
 #include <aws/wafv2/model/ListAvailableManagedRuleGroupsRequest.h>
+#include <aws/wafv2/model/ListEventActorsRequest.h>
+#include <aws/wafv2/model/ListEventsByWebACLRequest.h>
+#include <aws/wafv2/model/ListEventsRequest.h>
 #include <aws/wafv2/model/ListIPSetsRequest.h>
 #include <aws/wafv2/model/ListLoggingConfigurationsRequest.h>
 #include <aws/wafv2/model/ListManagedRuleSetsRequest.h>
@@ -352,6 +357,16 @@ GetDecryptedAPIKeyOutcome WAFV2Client::GetDecryptedAPIKey(const GetDecryptedAPIK
                             : GetDecryptedAPIKeyOutcome(std::move(result.GetError()));
 }
 
+GetEventOutcome WAFV2Client::GetEvent(const GetEventRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEventOutcome(result.GetResultWithOwnership()) : GetEventOutcome(std::move(result.GetError()));
+}
+
+GetEventActorOutcome WAFV2Client::GetEventActor(const GetEventActorRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEventActorOutcome(result.GetResultWithOwnership()) : GetEventActorOutcome(std::move(result.GetError()));
+}
+
 GetIPSetOutcome WAFV2Client::GetIPSet(const GetIPSetRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetIPSetOutcome(result.GetResultWithOwnership()) : GetIPSetOutcome(std::move(result.GetError()));
@@ -458,6 +473,23 @@ ListAvailableManagedRuleGroupsOutcome WAFV2Client::ListAvailableManagedRuleGroup
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListAvailableManagedRuleGroupsOutcome(result.GetResultWithOwnership())
                             : ListAvailableManagedRuleGroupsOutcome(std::move(result.GetError()));
+}
+
+ListEventActorsOutcome WAFV2Client::ListEventActors(const ListEventActorsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventActorsOutcome(result.GetResultWithOwnership())
+                            : ListEventActorsOutcome(std::move(result.GetError()));
+}
+
+ListEventsOutcome WAFV2Client::ListEvents(const ListEventsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventsOutcome(result.GetResultWithOwnership()) : ListEventsOutcome(std::move(result.GetError()));
+}
+
+ListEventsByWebACLOutcome WAFV2Client::ListEventsByWebACL(const ListEventsByWebACLRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventsByWebACLOutcome(result.GetResultWithOwnership())
+                            : ListEventsByWebACLOutcome(std::move(result.GetError()));
 }
 
 ListIPSetsOutcome WAFV2Client::ListIPSets(const ListIPSetsRequest& request) const {

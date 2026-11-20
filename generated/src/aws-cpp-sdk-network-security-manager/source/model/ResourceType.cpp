@@ -24,6 +24,7 @@ static const int AWS_ElasticLoadBalancing_LoadBalancer_HASH = HashingUtils::Hash
 static const int AWS_WAFv2_WebACL_HASH = HashingUtils::HashString("AWS::WAFv2::WebACL");
 static const int AWS_Shield_Protection_HASH = HashingUtils::HashString("AWS::Shield::Protection");
 static const int AWS_ShieldRegional_Protection_HASH = HashingUtils::HashString("AWS::ShieldRegional::Protection");
+static const int AWS_EC2_VPC_HASH = HashingUtils::HashString("AWS::EC2::VPC");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -43,6 +44,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::AWS_Shield_Protection;
   } else if (hashCode == AWS_ShieldRegional_Protection_HASH) {
     return ResourceType::AWS_ShieldRegional_Protection;
+  } else if (hashCode == AWS_EC2_VPC_HASH) {
+    return ResourceType::AWS_EC2_VPC;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -73,6 +76,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "AWS::Shield::Protection";
     case ResourceType::AWS_ShieldRegional_Protection:
       return "AWS::ShieldRegional::Protection";
+    case ResourceType::AWS_EC2_VPC:
+      return "AWS::EC2::VPC";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
