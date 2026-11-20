@@ -43,6 +43,9 @@ RecursiveXmlShapesResponse& RecursiveXmlShapesResponse::operator=(const Aws::Ama
   return *this;
 }
 
+namespace Aws {
+namespace EC2Protocol {
+namespace Model {
 namespace {
 class RecursiveXmlShapesResponse_RecursiveXmlShapesOutputNested1SchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
@@ -153,6 +156,9 @@ std::shared_ptr<const smithy::schema::Schema> RecursiveXmlShapesResponseDeserial
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace EC2Protocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> RecursiveXmlShapesResponse::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<RecursiveXmlShapesResponseDeserializable>("RecursiveXmlShapesResponseDeserializable", *this);

@@ -28,6 +28,9 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace QueryProtocol {
+namespace Model {
 namespace {
 class SimpleInputParamsRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -96,6 +99,9 @@ std::shared_ptr<const smithy::schema::Schema> SimpleInputParamsRequestSerializab
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace QueryProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> SimpleInputParamsRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<SimpleInputParamsRequestSerializable>("SimpleInputParamsRequestSerializable", *this);

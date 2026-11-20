@@ -42,6 +42,9 @@ KitchenSinkOperationResult& KitchenSinkOperationResult::operator=(const Aws::Ama
   return *this;
 }
 
+namespace Aws {
+namespace JsonProtocol {
+namespace Model {
 namespace {
 class KitchenSinkOperationResult_EmptyStructSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
@@ -792,6 +795,9 @@ std::shared_ptr<const smithy::schema::Schema> KitchenSinkOperationResultDeserial
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace JsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> KitchenSinkOperationResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<KitchenSinkOperationResultDeserializable>("KitchenSinkOperationResultDeserializable", *this);

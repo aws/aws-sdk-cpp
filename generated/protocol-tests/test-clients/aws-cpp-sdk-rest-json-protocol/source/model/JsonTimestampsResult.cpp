@@ -42,6 +42,9 @@ JsonTimestampsResult& JsonTimestampsResult::operator=(const Aws::AmazonWebServic
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class JsonTimestampsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -140,6 +143,9 @@ std::shared_ptr<const smithy::schema::Schema> JsonTimestampsResultDeserializable
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> JsonTimestampsResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<JsonTimestampsResultDeserializable>("JsonTimestampsResultDeserializable", *this);

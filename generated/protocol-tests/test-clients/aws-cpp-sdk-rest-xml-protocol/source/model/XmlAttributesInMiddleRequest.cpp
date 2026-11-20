@@ -30,6 +30,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class XmlAttributesInMiddleRequest_XmlAttributesInMiddlePayloadRequestSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
@@ -103,6 +106,9 @@ std::shared_ptr<const smithy::schema::Schema> XmlAttributesInMiddleRequestSerial
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> XmlAttributesInMiddleRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<XmlAttributesInMiddleRequestSerializable>("XmlAttributesInMiddleRequestSerializable", *this);

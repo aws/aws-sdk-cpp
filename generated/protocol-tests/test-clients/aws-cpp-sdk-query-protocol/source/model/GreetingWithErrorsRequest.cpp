@@ -28,6 +28,9 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace QueryProtocol {
+namespace Model {
 namespace {
 class GreetingWithErrorsRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -48,6 +51,9 @@ std::shared_ptr<const smithy::schema::Schema> GreetingWithErrorsRequestSerializa
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace QueryProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> GreetingWithErrorsRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<GreetingWithErrorsRequestSerializable>("GreetingWithErrorsRequestSerializable", *this);

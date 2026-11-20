@@ -42,6 +42,9 @@ ResponseCodeRequiredResult& ResponseCodeRequiredResult::operator=(const Aws::Ama
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class ResponseCodeRequiredResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -77,6 +80,9 @@ std::shared_ptr<const smithy::schema::Schema> ResponseCodeRequiredResultDeserial
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> ResponseCodeRequiredResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<ResponseCodeRequiredResultDeserializable>("ResponseCodeRequiredResultDeserializable", *this);

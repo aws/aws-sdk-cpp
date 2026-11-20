@@ -43,6 +43,9 @@ XmlNamespacesResponse& XmlNamespacesResponse::operator=(const Aws::AmazonWebServ
   return *this;
 }
 
+namespace Aws {
+namespace EC2Protocol {
+namespace Model {
 namespace {
 class XmlNamespacesResponse_XmlNamespaceNestedSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
@@ -128,6 +131,9 @@ std::shared_ptr<const smithy::schema::Schema> XmlNamespacesResponseDeserializabl
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace EC2Protocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> XmlNamespacesResponse::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<XmlNamespacesResponseDeserializable>("XmlNamespacesResponseDeserializable", *this);

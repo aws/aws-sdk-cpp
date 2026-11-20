@@ -44,6 +44,9 @@ SimpleScalarXmlPropertiesResult& SimpleScalarXmlPropertiesResult::operator=(cons
   return *this;
 }
 
+namespace Aws {
+namespace QueryProtocol {
+namespace Model {
 namespace {
 class SimpleScalarXmlPropertiesResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -151,6 +154,9 @@ std::shared_ptr<const smithy::schema::Schema> SimpleScalarXmlPropertiesResultDes
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace QueryProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> SimpleScalarXmlPropertiesResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<SimpleScalarXmlPropertiesResultDeserializable>("SimpleScalarXmlPropertiesResultDeserializable", *this);

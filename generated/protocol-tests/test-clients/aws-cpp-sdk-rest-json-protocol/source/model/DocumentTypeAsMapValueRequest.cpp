@@ -29,6 +29,9 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class DocumentTypeAsMapValueRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -67,6 +70,9 @@ std::shared_ptr<const smithy::schema::Schema> DocumentTypeAsMapValueRequestSeria
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> DocumentTypeAsMapValueRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<DocumentTypeAsMapValueRequestSerializable>("DocumentTypeAsMapValueRequestSerializable", *this);

@@ -30,6 +30,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class HttpRequestWithLabelsAndTimestampFormatRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -114,6 +117,9 @@ std::shared_ptr<const smithy::schema::Schema> HttpRequestWithLabelsAndTimestampF
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> HttpRequestWithLabelsAndTimestampFormatRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<HttpRequestWithLabelsAndTimestampFormatRequestSerializable>(

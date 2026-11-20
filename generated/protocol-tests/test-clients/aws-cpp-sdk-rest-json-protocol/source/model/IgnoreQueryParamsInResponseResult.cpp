@@ -44,6 +44,9 @@ IgnoreQueryParamsInResponseResult& IgnoreQueryParamsInResponseResult::operator=(
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class IgnoreQueryParamsInResponseResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -78,6 +81,9 @@ std::shared_ptr<const smithy::schema::Schema> IgnoreQueryParamsInResponseResultD
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> IgnoreQueryParamsInResponseResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<IgnoreQueryParamsInResponseResultDeserializable>("IgnoreQueryParamsInResponseResultDeserializable", *this);

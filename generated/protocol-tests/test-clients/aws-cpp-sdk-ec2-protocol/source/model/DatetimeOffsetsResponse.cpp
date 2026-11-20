@@ -43,6 +43,9 @@ DatetimeOffsetsResponse& DatetimeOffsetsResponse::operator=(const Aws::AmazonWeb
   return *this;
 }
 
+namespace Aws {
+namespace EC2Protocol {
+namespace Model {
 namespace {
 class DatetimeOffsetsResponseDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -79,6 +82,9 @@ std::shared_ptr<const smithy::schema::Schema> DatetimeOffsetsResponseDeserializa
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace EC2Protocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> DatetimeOffsetsResponse::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<DatetimeOffsetsResponseDeserializable>("DatetimeOffsetsResponseDeserializable", *this);

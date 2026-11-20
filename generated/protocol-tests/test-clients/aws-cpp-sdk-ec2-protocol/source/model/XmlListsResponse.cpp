@@ -43,6 +43,9 @@ XmlListsResponse& XmlListsResponse::operator=(const Aws::AmazonWebServiceResult<
   return *this;
 }
 
+namespace Aws {
+namespace EC2Protocol {
+namespace Model {
 namespace {
 class XmlListsResponse_StructureListMemberSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
@@ -354,6 +357,9 @@ std::shared_ptr<const smithy::schema::Schema> XmlListsResponseDeserializable::Bu
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace EC2Protocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> XmlListsResponse::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<XmlListsResponseDeserializable>("XmlListsResponseDeserializable", *this);

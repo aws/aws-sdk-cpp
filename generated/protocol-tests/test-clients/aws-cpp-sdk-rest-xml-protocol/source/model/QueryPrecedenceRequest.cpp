@@ -30,6 +30,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class QueryPrecedenceRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -76,6 +79,9 @@ std::shared_ptr<const smithy::schema::Schema> QueryPrecedenceRequestSerializable
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> QueryPrecedenceRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<QueryPrecedenceRequestSerializable>("QueryPrecedenceRequestSerializable", *this);

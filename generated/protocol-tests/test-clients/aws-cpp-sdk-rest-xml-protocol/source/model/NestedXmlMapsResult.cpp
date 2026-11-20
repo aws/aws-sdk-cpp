@@ -42,6 +42,9 @@ NestedXmlMapsResult& NestedXmlMapsResult::operator=(const Aws::AmazonWebServiceR
   return *this;
 }
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class NestedXmlMapsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -116,6 +119,9 @@ std::shared_ptr<const smithy::schema::Schema> NestedXmlMapsResultDeserializable:
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> NestedXmlMapsResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<NestedXmlMapsResultDeserializable>("NestedXmlMapsResultDeserializable", *this);

@@ -42,6 +42,9 @@ TestGetNoInputNoPayloadResult& TestGetNoInputNoPayloadResult::operator=(const Aw
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class TestGetNoInputNoPayloadResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -77,6 +80,9 @@ std::shared_ptr<const smithy::schema::Schema> TestGetNoInputNoPayloadResultDeser
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> TestGetNoInputNoPayloadResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<TestGetNoInputNoPayloadResultDeserializable>("TestGetNoInputNoPayloadResultDeserializable", *this);

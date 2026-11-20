@@ -29,6 +29,9 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class HttpPayloadWithUnionRequest_UnionPayloadSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
@@ -85,6 +88,9 @@ std::shared_ptr<const smithy::schema::Schema> HttpPayloadWithUnionRequestSeriali
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> HttpPayloadWithUnionRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<HttpPayloadWithUnionRequestSerializable>("HttpPayloadWithUnionRequestSerializable", *this);

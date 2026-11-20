@@ -42,6 +42,9 @@ NullAndEmptyHeadersClientResult& NullAndEmptyHeadersClientResult::operator=(cons
   return *this;
 }
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class NullAndEmptyHeadersClientResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -101,6 +104,9 @@ std::shared_ptr<const smithy::schema::Schema> NullAndEmptyHeadersClientResultDes
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> NullAndEmptyHeadersClientResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<NullAndEmptyHeadersClientResultDeserializable>("NullAndEmptyHeadersClientResultDeserializable", *this);

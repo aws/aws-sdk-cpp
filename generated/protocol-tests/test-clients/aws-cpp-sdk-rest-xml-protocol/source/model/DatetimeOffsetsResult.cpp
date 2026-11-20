@@ -42,6 +42,9 @@ DatetimeOffsetsResult& DatetimeOffsetsResult::operator=(const Aws::AmazonWebServ
   return *this;
 }
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class DatetimeOffsetsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -78,6 +81,9 @@ std::shared_ptr<const smithy::schema::Schema> DatetimeOffsetsResultDeserializabl
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> DatetimeOffsetsResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<DatetimeOffsetsResultDeserializable>("DatetimeOffsetsResultDeserializable", *this);

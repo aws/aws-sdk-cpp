@@ -42,6 +42,9 @@ MediaTypeHeaderResult& MediaTypeHeaderResult::operator=(const Aws::AmazonWebServ
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class MediaTypeHeaderResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -78,6 +81,9 @@ std::shared_ptr<const smithy::schema::Schema> MediaTypeHeaderResultDeserializabl
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> MediaTypeHeaderResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<MediaTypeHeaderResultDeserializable>("MediaTypeHeaderResultDeserializable", *this);

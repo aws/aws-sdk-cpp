@@ -30,6 +30,9 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class HttpPayloadWithXmlNamespaceAndPrefixRequest_PayloadWithXmlNamespaceAndPrefixSchemaSerdeSer final
     : public smithy::schema::SerializableStruct {
@@ -96,6 +99,9 @@ std::shared_ptr<const smithy::schema::Schema> HttpPayloadWithXmlNamespaceAndPref
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> HttpPayloadWithXmlNamespaceAndPrefixRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<HttpPayloadWithXmlNamespaceAndPrefixRequestSerializable>("HttpPayloadWithXmlNamespaceAndPrefixRequestSerializable",

@@ -42,6 +42,9 @@ JsonBlobsResult& JsonBlobsResult::operator=(const Aws::AmazonWebServiceResult<Aw
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class JsonBlobsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -72,6 +75,9 @@ std::shared_ptr<const smithy::schema::Schema> JsonBlobsResultDeserializable::Bui
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> JsonBlobsResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<JsonBlobsResultDeserializable>("JsonBlobsResultDeserializable", *this);

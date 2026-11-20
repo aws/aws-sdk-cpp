@@ -42,6 +42,9 @@ JsonMapsResult& JsonMapsResult::operator=(const Aws::AmazonWebServiceResult<Aws:
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class JsonMapsResult_GreetingStructSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
@@ -180,6 +183,9 @@ std::shared_ptr<const smithy::schema::Schema> JsonMapsResultDeserializable::Buil
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> JsonMapsResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<JsonMapsResultDeserializable>("JsonMapsResultDeserializable", *this);

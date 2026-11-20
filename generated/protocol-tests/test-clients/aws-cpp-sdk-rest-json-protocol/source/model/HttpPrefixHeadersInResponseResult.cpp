@@ -44,6 +44,9 @@ HttpPrefixHeadersInResponseResult& HttpPrefixHeadersInResponseResult::operator=(
   return *this;
 }
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class HttpPrefixHeadersInResponseResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -88,6 +91,9 @@ std::shared_ptr<const smithy::schema::Schema> HttpPrefixHeadersInResponseResultD
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> HttpPrefixHeadersInResponseResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<HttpPrefixHeadersInResponseResultDeserializable>("HttpPrefixHeadersInResponseResultDeserializable", *this);

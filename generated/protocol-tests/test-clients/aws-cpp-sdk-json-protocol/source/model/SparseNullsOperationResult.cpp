@@ -42,6 +42,9 @@ SparseNullsOperationResult& SparseNullsOperationResult::operator=(const Aws::Ama
   return *this;
 }
 
+namespace Aws {
+namespace JsonProtocol {
+namespace Model {
 namespace {
 class SparseNullsOperationResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -112,6 +115,9 @@ std::shared_ptr<const smithy::schema::Schema> SparseNullsOperationResultDeserial
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace JsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> SparseNullsOperationResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<SparseNullsOperationResultDeserializable>("SparseNullsOperationResultDeserializable", *this);

@@ -43,6 +43,9 @@ XmlBlobsResponse& XmlBlobsResponse::operator=(const Aws::AmazonWebServiceResult<
   return *this;
 }
 
+namespace Aws {
+namespace EC2Protocol {
+namespace Model {
 namespace {
 class XmlBlobsResponseDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -73,6 +76,9 @@ std::shared_ptr<const smithy::schema::Schema> XmlBlobsResponseDeserializable::Bu
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace EC2Protocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> XmlBlobsResponse::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<XmlBlobsResponseDeserializable>("XmlBlobsResponseDeserializable", *this);

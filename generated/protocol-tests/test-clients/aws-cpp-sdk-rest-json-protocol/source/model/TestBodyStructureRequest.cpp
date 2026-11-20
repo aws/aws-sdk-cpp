@@ -29,6 +29,9 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace RestJsonProtocol {
+namespace Model {
 namespace {
 class TestBodyStructureRequest_TestConfigSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
@@ -91,6 +94,9 @@ std::shared_ptr<const smithy::schema::Schema> TestBodyStructureRequestSerializab
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestJsonProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> TestBodyStructureRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<TestBodyStructureRequestSerializable>("TestBodyStructureRequestSerializable", *this);

@@ -42,6 +42,9 @@ XmlEmptyStringsResult& XmlEmptyStringsResult::operator=(const Aws::AmazonWebServ
   return *this;
 }
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class XmlEmptyStringsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -75,6 +78,9 @@ std::shared_ptr<const smithy::schema::Schema> XmlEmptyStringsResultDeserializabl
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> XmlEmptyStringsResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<XmlEmptyStringsResultDeserializable>("XmlEmptyStringsResultDeserializable", *this);

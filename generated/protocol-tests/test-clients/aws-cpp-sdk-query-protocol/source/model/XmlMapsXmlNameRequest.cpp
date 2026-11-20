@@ -28,6 +28,9 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace QueryProtocol {
+namespace Model {
 namespace {
 class XmlMapsXmlNameRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
@@ -48,6 +51,9 @@ std::shared_ptr<const smithy::schema::Schema> XmlMapsXmlNameRequestSerializable:
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace QueryProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> XmlMapsXmlNameRequest::GetSchemaSerdeInput() const {
   return Aws::MakeUnique<XmlMapsXmlNameRequestSerializable>("XmlMapsXmlNameRequestSerializable", *this);

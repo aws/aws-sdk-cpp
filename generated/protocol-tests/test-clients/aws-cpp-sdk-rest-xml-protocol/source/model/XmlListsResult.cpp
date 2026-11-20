@@ -42,6 +42,9 @@ XmlListsResult& XmlListsResult::operator=(const Aws::AmazonWebServiceResult<Aws:
   return *this;
 }
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class XmlListsResult_StructureListMemberSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
@@ -372,6 +375,9 @@ std::shared_ptr<const smithy::schema::Schema> XmlListsResultDeserializable::Buil
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> XmlListsResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<XmlListsResultDeserializable>("XmlListsResultDeserializable", *this);

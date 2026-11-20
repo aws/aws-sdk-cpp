@@ -42,6 +42,9 @@ HttpResponseCodeResult& HttpResponseCodeResult::operator=(const Aws::AmazonWebSe
   return *this;
 }
 
+namespace Aws {
+namespace RestXmlProtocol {
+namespace Model {
 namespace {
 class HttpResponseCodeResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
@@ -77,6 +80,9 @@ std::shared_ptr<const smithy::schema::Schema> HttpResponseCodeResultDeserializab
 }
 
 }  // namespace
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws
 
 Aws::UniquePtr<smithy::schema::SerializableStruct> HttpResponseCodeResult::GetSchemaSerdeOutput() {
   return Aws::MakeUnique<HttpResponseCodeResultDeserializable>("HttpResponseCodeResultDeserializable", *this);
