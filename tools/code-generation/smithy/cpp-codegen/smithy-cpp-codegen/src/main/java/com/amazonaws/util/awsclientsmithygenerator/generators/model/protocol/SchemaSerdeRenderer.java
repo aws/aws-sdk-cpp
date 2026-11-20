@@ -7,6 +7,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model.protocol;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppNames;
 import com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper;
+import com.amazonaws.util.awsclientsmithygenerator.generators.model.transforms.CustomRenderedTrait;
 import software.amazon.smithy.aws.traits.protocols.Ec2QueryNameTrait;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.MapShape;
@@ -250,7 +251,7 @@ final class SchemaSerdeRenderer {
         for (MemberShape m : members) {
             collectNestedAdapters(className, model.expectShape(m.getTarget()), model, adapters, SER_SUFFIX);
         }
-        adapters.put(className + "Serializable", new Adapter(className + "Serializable", className, false, members));
+        adapters.put(className + "Serializable", new Adapter(className + "Serializable", className, false, members, null));
         modelNamespace(writer, namespace, () -> {
             writer.write("namespace {");
             for (Adapter adapter : adapters.values()) {
@@ -276,13 +277,26 @@ final class SchemaSerdeRenderer {
         final String cppType;
         final boolean isUnion;
         final List<MemberShape> members;
+        /** DynamoDB's bespoke AttributeValue (see {@link #isDynamoDbAttributeValue}). */
+        final boolean dynamoDbAttributeValue;
 
-        Adapter(String adapterClass, String cppType, boolean isUnion, List<MemberShape> members) {
+        Adapter(String adapterClass, String cppType, boolean isUnion, List<MemberShape> members, Shape shape) {
             this.adapterClass = adapterClass;
             this.cppType = cppType;
             this.isUnion = isUnion;
             this.members = members;
+            this.dynamoDbAttributeValue = shape != null && isDynamoDbAttributeValue(shape);
         }
+    }
+
+    /**
+     * DynamoDB's AttributeValue is not a generated union class: DynamoDbRenderer emits C2J's hand-written class
+     * (marked {@link CustomRenderedTrait}), whose single value is read through {@code HasValue()} / {@code GetType()}
+     * and type-specific getters ({@code GetS()}, {@code GetBool()}, {@code GetM()} of shared pointers, ...). Its
+     * schema is still the Smithy union's, but its adapter bodies are written against that API.
+     */
+    private static boolean isDynamoDbAttributeValue(Shape shape) {
+        return shape.hasTrait(CustomRenderedTrait.class) && "AttributeValue".equals(shape.getId().getName());
     }
 
     /** Class-name suffix of the serialize adapters. */
@@ -324,7 +338,8 @@ final class SchemaSerdeRenderer {
             return;
         }
         List<MemberShape> members = new ArrayList<>(target.getAllMembers().values());
-        adapters.put(adapterClass, new Adapter(adapterClass, CppTypeMapper.cppShapeName(target), target.isUnionShape(), members));
+        adapters.put(adapterClass, new Adapter(adapterClass, CppTypeMapper.cppShapeName(target), target.isUnionShape(), members,
+            target));
         for (MemberShape mm : members) {
             collectNestedAdapters(unitPrefix, model.expectShape(mm.getTarget()), model, adapters, suffix);
         }
@@ -359,7 +374,10 @@ final class SchemaSerdeRenderer {
         boolean empty = adapter.members.isEmpty();
         writer.write("void $L::SerializeMembers(smithy::schema::ShapeSerializer&$L) const {", adapter.adapterClass,
             empty ? "" : " serializer");
-        for (MemberShape m : adapter.members) {
+        if (adapter.dynamoDbAttributeValue) {
+            writeAttributeValueSerializeMembers(writer, adapter.adapterClass);
+        }
+        for (MemberShape m : adapter.dynamoDbAttributeValue ? List.<MemberShape>of() : adapter.members) {
             writer.write("  if (m_obj.$LHasBeenSet()) {", methodName(m));
             writer.write("    const smithy::schema::Schema& memberSchema = *m_schema->GetMember(\"$L\").value();", m.getMemberName());
             writeValue(writer, "    ", unitPrefix, "serializer", "memberSchema", "m_obj.Get" + methodName(m) + "()",
@@ -563,7 +581,7 @@ final class SchemaSerdeRenderer {
             collectNestedAdapters(className, model.expectShape(m.getTarget()), model, adapters, DESER_SUFFIX);
         }
         String rootAdapter = className + "Deserializable";
-        adapters.put(rootAdapter, new Adapter(rootAdapter, className, false, members));
+        adapters.put(rootAdapter, new Adapter(rootAdapter, className, false, members, null));
         modelNamespace(writer, namespace, () -> {
             writer.write("namespace {");
             for (Adapter adapter : adapters.values()) {
@@ -618,6 +636,125 @@ final class SchemaSerdeRenderer {
         writer.write("");
     }
 
+    /** Writes the set value of a DynamoDB AttributeValue: exactly one of its union members, chosen by GetType(). */
+    private static void writeAttributeValueSerializeMembers(CppWriter writer, String self) {
+        writer.write("  if (!m_obj.HasValue()) {");
+        writer.write("    return;");
+        writer.write("  }");
+        writer.write("  switch (m_obj.GetType()) {");
+        String[][] scalars = {
+            {"STRING", "S", "WriteString", "GetS"}, {"NUMBER", "N", "WriteString", "GetN"},
+            {"BYTEBUFFER", "B", "WriteBlob", "GetB"}, {"BOOL", "BOOL", "WriteBoolean", "GetBool"},
+            {"NULLVALUE", "NULL", "WriteBoolean", "GetNull"}};
+        for (String[] c : scalars) {
+            writer.write("    case ValueType::$L:", c[0]);
+            writer.write("      serializer.$L(*m_schema->GetMember(\"$L\").value(), m_obj.$L());", c[2], c[1], c[3]);
+            writer.write("      break;");
+        }
+        String[][] sets = {{"STRING_SET", "SS", "WriteString", "GetSS"}, {"NUMBER_SET", "NS", "WriteString", "GetNS"},
+            {"BYTEBUFFER_SET", "BS", "WriteBlob", "GetBS"}};
+        for (String[] c : sets) {
+            writer.write("    case ValueType::$L: {", c[0]);
+            writer.write("      const smithy::schema::Schema& setSchema = *m_schema->GetMember(\"$L\").value();", c[1]);
+            writer.write("      const auto items = m_obj.$L();", c[3]);
+            writer.write("      serializer.WriteList(setSchema, items.size(), [&](smithy::schema::ShapeSerializer& listSerializer) {");
+            writer.write("        const smithy::schema::Schema& itemSchema = *setSchema.GetMemberTarget().value()->GetMember(\"member\").value();");
+            writer.write("        for (const auto& item : items) {");
+            writer.write("          listSerializer.$L(itemSchema, item);", c[2]);
+            writer.write("        }");
+            writer.write("      });");
+            writer.write("      break;");
+            writer.write("    }");
+        }
+        writer.write("    case ValueType::ATTRIBUTE_MAP: {");
+        writer.write("      const smithy::schema::Schema& mapSchema = *m_schema->GetMember(\"M\").value();");
+        writer.write("      const auto entries = m_obj.GetM();");
+        writer.write("      serializer.WriteMap(mapSchema, entries.size(), [&](smithy::schema::MapSerializer& mapSerializer) {");
+        writer.write("        const smithy::schema::Schema& valueSchema = *mapSchema.GetMemberTarget().value()->GetMember(\"value\").value();");
+        writer.write("        for (const auto& entry : entries) {");
+        writer.write("          mapSerializer.WriteEntry(entry.first, [&](smithy::schema::ShapeSerializer& valueSerializer) {");
+        writer.write("            if (entry.second) {");
+        writer.write("              $L nested(*entry.second);", self);
+        writer.write("              valueSerializer.WriteStruct(valueSchema, nested);");
+        writer.write("            } else {");
+        writer.write("              valueSerializer.WriteNull(valueSchema);");
+        writer.write("            }");
+        writer.write("          });");
+        writer.write("        }");
+        writer.write("      });");
+        writer.write("      break;");
+        writer.write("    }");
+        writer.write("    case ValueType::ATTRIBUTE_LIST: {");
+        writer.write("      const smithy::schema::Schema& listSchema = *m_schema->GetMember(\"L\").value();");
+        writer.write("      const auto items = m_obj.GetL();");
+        writer.write("      serializer.WriteList(listSchema, items.size(), [&](smithy::schema::ShapeSerializer& listSerializer) {");
+        writer.write("        const smithy::schema::Schema& itemSchema = *listSchema.GetMemberTarget().value()->GetMember(\"member\").value();");
+        writer.write("        for (const auto& item : items) {");
+        writer.write("          if (item) {");
+        writer.write("            $L nested(*item);", self);
+        writer.write("            listSerializer.WriteStruct(itemSchema, nested);");
+        writer.write("          } else {");
+        writer.write("            listSerializer.WriteNull(itemSchema);");
+        writer.write("          }");
+        writer.write("        }");
+        writer.write("      });");
+        writer.write("      break;");
+        writer.write("    }");
+        writer.write("  }");
+    }
+
+    /**
+     * Reads one DynamoDB AttributeValue union member into the value. Sets, maps and lists are first set empty, so
+     * an empty one still specializes the value to its type (C2J parity).
+     */
+    private static void writeAttributeValueFrom(CppWriter writer, String self) {
+        String[][] scalars = {
+            {"S", "ReadString", "SetS"}, {"N", "ReadString", "SetN"}, {"B", "ReadBlob", "SetB"},
+            {"BOOL", "ReadBoolean", "SetBool"}, {"NULL", "ReadBoolean", "SetNull"}};
+        for (String[] c : scalars) {
+            writer.write("  if (memberName == \"$L\") {", c[0]);
+            writer.write("    auto value = deserializer.$L(memberSchema);", c[1]);
+            writer.write("    if (value.has_value()) {");
+            writer.write("      m_obj.$L(*value);", c[2]);
+            writer.write("    }");
+            writer.write("    return;");
+            writer.write("  }");
+        }
+        String[][] sets = {{"SS", "ReadString", "SetSS", "AddSItem"}, {"NS", "ReadString", "SetNS", "AddNItem"},
+            {"BS", "ReadBlob", "SetBS", "AddBItem"}};
+        for (String[] c : sets) {
+            writer.write("  if (memberName == \"$L\") {", c[0]);
+            writer.write("    m_obj.$L({});", c[2]);
+            writer.write("    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer) {");
+            writer.write("      const smithy::schema::Schema& itemSchema = *memberSchema.GetMemberTarget().value()->GetMember(\"member\").value();");
+            writer.write("      auto item = itemDeserializer.$L(itemSchema);", c[1]);
+            writer.write("      if (item.has_value()) {");
+            writer.write("        m_obj.$L(*item);", c[3]);
+            writer.write("      }");
+            writer.write("    });");
+            writer.write("    return;");
+            writer.write("  }");
+        }
+        writer.write("  if (memberName == \"M\") {");
+        writer.write("    m_obj.SetM({});");
+        writer.write("    deserializer.ReadMap(memberSchema, [&](const Aws::String& key, smithy::schema::ShapeDeserializer& valueDeserializer) {");
+        writer.write("      auto nested = Aws::MakeShared<AttributeValue>(\"AttributeValue\");");
+        writer.write("      $L{*nested}.Deserialize(valueDeserializer);", self);
+        writer.write("      m_obj.AddMEntry(key, nested);");
+        writer.write("    });");
+        writer.write("    return;");
+        writer.write("  }");
+        writer.write("  if (memberName == \"L\") {");
+        writer.write("    m_obj.SetL({});");
+        writer.write("    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer) {");
+        writer.write("      auto nested = Aws::MakeShared<AttributeValue>(\"AttributeValue\");");
+        writer.write("      $L{*nested}.Deserialize(itemDeserializer);", self);
+        writer.write("      m_obj.AddLItem(nested);");
+        writer.write("    });");
+        writer.write("    return;");
+        writer.write("  }");
+    }
+
     private static void defineStructDeserAdapter(CppWriter writer, String unitPrefix, Adapter adapter, Model model,
                                                  MemberTraits memberTraits) {
         if (adapter.members.isEmpty()) {
@@ -626,7 +763,10 @@ final class SchemaSerdeRenderer {
             writer.write("void $L::From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) {",
                 adapter.adapterClass);
             writer.write("  const Aws::String memberName = memberSchema.GetMemberName();");
-            for (MemberShape m : adapter.members) {
+            if (adapter.dynamoDbAttributeValue) {
+                writeAttributeValueFrom(writer, adapter.adapterClass);
+            }
+            for (MemberShape m : adapter.dynamoDbAttributeValue ? List.<MemberShape>of() : adapter.members) {
                 String setter = "m_obj.Set" + methodName(m);
                 writer.write("  if (memberName == \"$L\") {", m.getMemberName());
                 readValue(writer, "    ", unitPrefix, "deserializer", "memberSchema", model.expectShape(m.getTarget()), model, 0,
