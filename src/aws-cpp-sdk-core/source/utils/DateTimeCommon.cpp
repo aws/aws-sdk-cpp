@@ -399,6 +399,34 @@ public:
     bool ShouldIAssumeThisIsUTC() const { return m_utcAssumed; }
     const char* GetParsedTimezone() const { return m_tz; }
 
+    // Reads a numeric UTC offset ("+hh", "+hhmm" or "+hh:mm") from the parsed timezone, in seconds east of UTC.
+    bool GetNumericUtcOffset(int& offsetSeconds) const {
+      if (m_tz[0] != '+' && m_tz[0] != '-') {
+        return false;
+      }
+
+      const char* digits = m_tz + 1;
+      size_t len = strlen(digits);
+      bool hasMinutes = len == 4 || (len == 5 && digits[2] == ':');
+      if (len != 2 && !hasMinutes) {
+        return false;
+      }
+
+      const char* minuteDigits = digits + len - 2;
+      if (!isdigit(digits[0]) || !isdigit(digits[1]) || (hasMinutes && (!isdigit(minuteDigits[0]) || !isdigit(minuteDigits[1])))) {
+        return false;
+      }
+
+      int hours = (digits[0] - '0') * 10 + (digits[1] - '0');
+      int minutes = hasMinutes ? (minuteDigits[0] - '0') * 10 + (minuteDigits[1] - '0') : 0;
+      if (hours > 23 || minutes > 59) {
+        return false;
+      }
+
+      offsetSeconds = (hours * 3600 + minutes * 60) * (m_tz[0] == '-' ? -1 : 1);
+      return true;
+    }
+
 protected:
     bool m_error;
     const char* m_toParse;
@@ -1457,6 +1485,8 @@ void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateForm
 {
     std::tm timeStruct;
     bool isUtc = true;
+    bool hasUtcOffset = false;
+    int utcOffsetSeconds = 0;
     int milliseconds = 0;
 
     switch (format)
@@ -1467,6 +1497,7 @@ void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateForm
         parser.Parse();
         m_valid = parser.WasParseSuccessful();
         isUtc = parser.ShouldIAssumeThisIsUTC();
+        hasUtcOffset = parser.GetNumericUtcOffset(utcOffsetSeconds);
         timeStruct = parser.GetParsedTimestamp();
         break;
     }
@@ -1476,6 +1507,7 @@ void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateForm
         parser.Parse();
         m_valid = parser.WasParseSuccessful();
         isUtc = parser.ShouldIAssumeThisIsUTC();
+        hasUtcOffset = parser.GetNumericUtcOffset(utcOffsetSeconds);
         timeStruct = parser.GetParsedTimestamp();
         milliseconds = parser.GetParsedMilliseconds();
         break;
@@ -1486,6 +1518,7 @@ void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateForm
         parser.Parse();
         m_valid = parser.WasParseSuccessful();
         isUtc = parser.ShouldIAssumeThisIsUTC();
+        hasUtcOffset = parser.GetNumericUtcOffset(utcOffsetSeconds);
         timeStruct = parser.GetParsedTimestamp();
         milliseconds = parser.GetParsedMilliseconds();
         break;
@@ -1498,6 +1531,7 @@ void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateForm
         {
             m_valid = true;
             isUtc = rfcParser.ShouldIAssumeThisIsUTC();
+            hasUtcOffset = rfcParser.GetNumericUtcOffset(utcOffsetSeconds);
             timeStruct = rfcParser.GetParsedTimestamp();
             break;
         }
@@ -1507,6 +1541,7 @@ void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateForm
         {
             m_valid = true;
             isUtc = isoParser.ShouldIAssumeThisIsUTC();
+            hasUtcOffset = isoParser.GetNumericUtcOffset(utcOffsetSeconds);
             timeStruct = isoParser.GetParsedTimestamp();
             milliseconds = isoParser.GetParsedMilliseconds();
             break;
@@ -1517,6 +1552,7 @@ void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateForm
         {
             m_valid = true;
             isUtc = isoBasicParser.ShouldIAssumeThisIsUTC();
+            hasUtcOffset = isoBasicParser.GetNumericUtcOffset(utcOffsetSeconds);
             timeStruct = isoBasicParser.GetParsedTimestamp();
             milliseconds = isoBasicParser.GetParsedMilliseconds();
             break;
@@ -1531,14 +1567,15 @@ void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateForm
     if (m_valid)
     {
         std::time_t tt;
-        if(isUtc)
-        {
-            tt = Aws::Time::TimeGM(&timeStruct);
-        }
-        else
-        {
-            AWS_LOGSTREAM_ERROR(CLASS_TAG, "Non-UTC timestamp detected. This is always a bug. Make the world a better place and fix whatever sent you this timestamp: " << timestamp)
-            tt = std::mktime(&timeStruct);
+        if (isUtc || hasUtcOffset) {
+          // With a numeric offset the parsed fields are local time at that offset, so take it off to get UTC.
+          tt = Aws::Time::TimeGM(&timeStruct) - utcOffsetSeconds;
+        } else {
+          AWS_LOGSTREAM_ERROR(
+              CLASS_TAG,
+              "Non-UTC timestamp detected. This is always a bug. Make the world a better place and fix whatever sent you this timestamp: "
+                  << timestamp)
+          tt = std::mktime(&timeStruct);
         }
 
         if (IsSecondsSinceEpochRepresentable(tt))
