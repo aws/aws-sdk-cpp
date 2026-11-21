@@ -30,6 +30,10 @@ RedshiftParameters& RedshiftParameters::operator=(JsonView jsonValue) {
     m_database = jsonValue.GetString("Database");
     m_databaseHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FederatedCatalog")) {
+    m_federatedCatalog = jsonValue.GetString("FederatedCatalog");
+    m_federatedCatalogHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ClusterId")) {
     m_clusterId = jsonValue.GetString("ClusterId");
     m_clusterIdHasBeenSet = true;
@@ -58,6 +62,10 @@ JsonValue RedshiftParameters::Jsonize() const {
 
   if (m_databaseHasBeenSet) {
     payload.WithString("Database", m_database);
+  }
+
+  if (m_federatedCatalogHasBeenSet) {
+    payload.WithString("FederatedCatalog", m_federatedCatalog);
   }
 
   if (m_clusterIdHasBeenSet) {

@@ -7,7 +7,9 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/model/CreateHubContentPresignedUrlsPaginationTraits.h>
+#include <aws/sagemaker/model/DescribeResourceAssociationsPaginationTraits.h>
 #include <aws/sagemaker/model/DescribeTrainingPlanExtensionHistoryPaginationTraits.h>
+#include <aws/sagemaker/model/GetCapacityReservationUsagePaginationTraits.h>
 #include <aws/sagemaker/model/ListAIBenchmarkJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAIRecommendationJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAIWorkloadConfigsPaginationTraits.h>
@@ -20,6 +22,7 @@
 #include <aws/sagemaker/model/ListAssociationsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAutoMLJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobPaginationTraits.h>
+#include <aws/sagemaker/model/ListCapacityReservationsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterEventsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterExtensionVersionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterExtensionsPaginationTraits.h>
@@ -111,9 +114,15 @@ namespace SageMaker {
 using CreateHubContentPresignedUrlsPaginator =
     Aws::Utils::Pagination::Paginator<SageMakerClient, Model::CreateHubContentPresignedUrlsRequest,
                                       Pagination::CreateHubContentPresignedUrlsPaginationTraits<SageMakerClient>>;
+using DescribeResourceAssociationsPaginator =
+    Aws::Utils::Pagination::Paginator<SageMakerClient, Model::DescribeResourceAssociationsRequest,
+                                      Pagination::DescribeResourceAssociationsPaginationTraits<SageMakerClient>>;
 using DescribeTrainingPlanExtensionHistoryPaginator =
     Aws::Utils::Pagination::Paginator<SageMakerClient, Model::DescribeTrainingPlanExtensionHistoryRequest,
                                       Pagination::DescribeTrainingPlanExtensionHistoryPaginationTraits<SageMakerClient>>;
+using GetCapacityReservationUsagePaginator =
+    Aws::Utils::Pagination::Paginator<SageMakerClient, Model::GetCapacityReservationUsageRequest,
+                                      Pagination::GetCapacityReservationUsagePaginationTraits<SageMakerClient>>;
 using ListActionsPaginator =
     Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListActionsRequest, Pagination::ListActionsPaginationTraits<SageMakerClient>>;
 using ListAIBenchmarkJobsPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListAIBenchmarkJobsRequest,
@@ -141,6 +150,9 @@ using ListAutoMLJobsPaginator = Aws::Utils::Pagination::Paginator<SageMakerClien
 using ListCandidatesForAutoMLJobPaginator =
     Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListCandidatesForAutoMLJobRequest,
                                       Pagination::ListCandidatesForAutoMLJobPaginationTraits<SageMakerClient>>;
+using ListCapacityReservationsPaginator =
+    Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListCapacityReservationsRequest,
+                                      Pagination::ListCapacityReservationsPaginationTraits<SageMakerClient>>;
 using ListClusterEventsPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListClusterEventsRequest,
                                                                      Pagination::ListClusterEventsPaginationTraits<SageMakerClient>>;
 using ListClusterExtensionsPaginator =

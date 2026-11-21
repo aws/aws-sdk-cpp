@@ -144,6 +144,7 @@
 #include <aws/sagemaker/model/DescribeArtifactResult.h>
 #include <aws/sagemaker/model/DescribeAutoMLJobResult.h>
 #include <aws/sagemaker/model/DescribeAutoMLJobV2Result.h>
+#include <aws/sagemaker/model/DescribeCapacityReservationResult.h>
 #include <aws/sagemaker/model/DescribeClusterEventResult.h>
 #include <aws/sagemaker/model/DescribeClusterExtensionResult.h>
 #include <aws/sagemaker/model/DescribeClusterNodeResult.h>
@@ -202,6 +203,7 @@
 #include <aws/sagemaker/model/DescribeProcessingJobResult.h>
 #include <aws/sagemaker/model/DescribeProjectResult.h>
 #include <aws/sagemaker/model/DescribeReservedCapacityResult.h>
+#include <aws/sagemaker/model/DescribeResourceAssociationsResult.h>
 #include <aws/sagemaker/model/DescribeSpaceResult.h>
 #include <aws/sagemaker/model/DescribeStudioLifecycleConfigResult.h>
 #include <aws/sagemaker/model/DescribeSubscribedWorkteamResult.h>
@@ -222,6 +224,7 @@
 #include <aws/sagemaker/model/EnableSagemakerServicecatalogPortfolioRequest.h>
 #include <aws/sagemaker/model/EnableSagemakerServicecatalogPortfolioResult.h>
 #include <aws/sagemaker/model/ExtendTrainingPlanResult.h>
+#include <aws/sagemaker/model/GetCapacityReservationUsageResult.h>
 #include <aws/sagemaker/model/GetDeviceFleetReportResult.h>
 #include <aws/sagemaker/model/GetEndpointPolicyResult.h>
 #include <aws/sagemaker/model/GetLineageGroupPolicyResult.h>
@@ -253,6 +256,8 @@
 #include <aws/sagemaker/model/ListAutoMLJobsRequest.h>
 #include <aws/sagemaker/model/ListAutoMLJobsResult.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobResult.h>
+#include <aws/sagemaker/model/ListCapacityReservationsRequest.h>
+#include <aws/sagemaker/model/ListCapacityReservationsResult.h>
 #include <aws/sagemaker/model/ListClusterEventsResult.h>
 #include <aws/sagemaker/model/ListClusterExtensionVersionsResult.h>
 #include <aws/sagemaker/model/ListClusterExtensionsResult.h>
@@ -668,6 +673,7 @@ class DescribeAppImageConfigRequest;
 class DescribeArtifactRequest;
 class DescribeAutoMLJobRequest;
 class DescribeAutoMLJobV2Request;
+class DescribeCapacityReservationRequest;
 class DescribeClusterRequest;
 class DescribeClusterEventRequest;
 class DescribeClusterExtensionRequest;
@@ -726,6 +732,7 @@ class DescribePipelineExecutionRequest;
 class DescribeProcessingJobRequest;
 class DescribeProjectRequest;
 class DescribeReservedCapacityRequest;
+class DescribeResourceAssociationsRequest;
 class DescribeSpaceRequest;
 class DescribeStudioLifecycleConfigRequest;
 class DescribeSubscribedWorkteamRequest;
@@ -744,6 +751,7 @@ class DisableSagemakerServicecatalogPortfolioRequest;
 class DisassociateTrialComponentRequest;
 class EnableSagemakerServicecatalogPortfolioRequest;
 class ExtendTrainingPlanRequest;
+class GetCapacityReservationUsageRequest;
 class GetDeviceFleetReportRequest;
 class GetEndpointPolicyRequest;
 class GetLineageGroupPolicyRequest;
@@ -764,6 +772,7 @@ class ListArtifactsRequest;
 class ListAssociationsRequest;
 class ListAutoMLJobsRequest;
 class ListCandidatesForAutoMLJobRequest;
+class ListCapacityReservationsRequest;
 class ListClusterEventsRequest;
 class ListClusterExtensionVersionsRequest;
 class ListClusterExtensionsRequest;
@@ -1105,6 +1114,7 @@ typedef Aws::Utils::Outcome<DescribeAppImageConfigResult, SageMakerError> Descri
 typedef Aws::Utils::Outcome<DescribeArtifactResult, SageMakerError> DescribeArtifactOutcome;
 typedef Aws::Utils::Outcome<DescribeAutoMLJobResult, SageMakerError> DescribeAutoMLJobOutcome;
 typedef Aws::Utils::Outcome<DescribeAutoMLJobV2Result, SageMakerError> DescribeAutoMLJobV2Outcome;
+typedef Aws::Utils::Outcome<DescribeCapacityReservationResult, SageMakerError> DescribeCapacityReservationOutcome;
 typedef Aws::Utils::Outcome<DescribeClusterResult, SageMakerError> DescribeClusterOutcome;
 typedef Aws::Utils::Outcome<DescribeClusterEventResult, SageMakerError> DescribeClusterEventOutcome;
 typedef Aws::Utils::Outcome<DescribeClusterExtensionResult, SageMakerError> DescribeClusterExtensionOutcome;
@@ -1163,6 +1173,7 @@ typedef Aws::Utils::Outcome<DescribePipelineExecutionResult, SageMakerError> Des
 typedef Aws::Utils::Outcome<DescribeProcessingJobResult, SageMakerError> DescribeProcessingJobOutcome;
 typedef Aws::Utils::Outcome<DescribeProjectResult, SageMakerError> DescribeProjectOutcome;
 typedef Aws::Utils::Outcome<DescribeReservedCapacityResult, SageMakerError> DescribeReservedCapacityOutcome;
+typedef Aws::Utils::Outcome<DescribeResourceAssociationsResult, SageMakerError> DescribeResourceAssociationsOutcome;
 typedef Aws::Utils::Outcome<DescribeSpaceResult, SageMakerError> DescribeSpaceOutcome;
 typedef Aws::Utils::Outcome<DescribeStudioLifecycleConfigResult, SageMakerError> DescribeStudioLifecycleConfigOutcome;
 typedef Aws::Utils::Outcome<DescribeSubscribedWorkteamResult, SageMakerError> DescribeSubscribedWorkteamOutcome;
@@ -1181,6 +1192,7 @@ typedef Aws::Utils::Outcome<DisableSagemakerServicecatalogPortfolioResult, SageM
 typedef Aws::Utils::Outcome<DisassociateTrialComponentResult, SageMakerError> DisassociateTrialComponentOutcome;
 typedef Aws::Utils::Outcome<EnableSagemakerServicecatalogPortfolioResult, SageMakerError> EnableSagemakerServicecatalogPortfolioOutcome;
 typedef Aws::Utils::Outcome<ExtendTrainingPlanResult, SageMakerError> ExtendTrainingPlanOutcome;
+typedef Aws::Utils::Outcome<GetCapacityReservationUsageResult, SageMakerError> GetCapacityReservationUsageOutcome;
 typedef Aws::Utils::Outcome<GetDeviceFleetReportResult, SageMakerError> GetDeviceFleetReportOutcome;
 typedef Aws::Utils::Outcome<GetEndpointPolicyResult, SageMakerError> GetEndpointPolicyOutcome;
 typedef Aws::Utils::Outcome<GetLineageGroupPolicyResult, SageMakerError> GetLineageGroupPolicyOutcome;
@@ -1202,6 +1214,7 @@ typedef Aws::Utils::Outcome<ListArtifactsResult, SageMakerError> ListArtifactsOu
 typedef Aws::Utils::Outcome<ListAssociationsResult, SageMakerError> ListAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListAutoMLJobsResult, SageMakerError> ListAutoMLJobsOutcome;
 typedef Aws::Utils::Outcome<ListCandidatesForAutoMLJobResult, SageMakerError> ListCandidatesForAutoMLJobOutcome;
+typedef Aws::Utils::Outcome<ListCapacityReservationsResult, SageMakerError> ListCapacityReservationsOutcome;
 typedef Aws::Utils::Outcome<ListClusterEventsResult, SageMakerError> ListClusterEventsOutcome;
 typedef Aws::Utils::Outcome<ListClusterExtensionVersionsResult, SageMakerError> ListClusterExtensionVersionsOutcome;
 typedef Aws::Utils::Outcome<ListClusterExtensionsResult, SageMakerError> ListClusterExtensionsOutcome;
@@ -1544,6 +1557,7 @@ typedef std::future<DescribeAppImageConfigOutcome> DescribeAppImageConfigOutcome
 typedef std::future<DescribeArtifactOutcome> DescribeArtifactOutcomeCallable;
 typedef std::future<DescribeAutoMLJobOutcome> DescribeAutoMLJobOutcomeCallable;
 typedef std::future<DescribeAutoMLJobV2Outcome> DescribeAutoMLJobV2OutcomeCallable;
+typedef std::future<DescribeCapacityReservationOutcome> DescribeCapacityReservationOutcomeCallable;
 typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
 typedef std::future<DescribeClusterEventOutcome> DescribeClusterEventOutcomeCallable;
 typedef std::future<DescribeClusterExtensionOutcome> DescribeClusterExtensionOutcomeCallable;
@@ -1602,6 +1616,7 @@ typedef std::future<DescribePipelineExecutionOutcome> DescribePipelineExecutionO
 typedef std::future<DescribeProcessingJobOutcome> DescribeProcessingJobOutcomeCallable;
 typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
 typedef std::future<DescribeReservedCapacityOutcome> DescribeReservedCapacityOutcomeCallable;
+typedef std::future<DescribeResourceAssociationsOutcome> DescribeResourceAssociationsOutcomeCallable;
 typedef std::future<DescribeSpaceOutcome> DescribeSpaceOutcomeCallable;
 typedef std::future<DescribeStudioLifecycleConfigOutcome> DescribeStudioLifecycleConfigOutcomeCallable;
 typedef std::future<DescribeSubscribedWorkteamOutcome> DescribeSubscribedWorkteamOutcomeCallable;
@@ -1620,6 +1635,7 @@ typedef std::future<DisableSagemakerServicecatalogPortfolioOutcome> DisableSagem
 typedef std::future<DisassociateTrialComponentOutcome> DisassociateTrialComponentOutcomeCallable;
 typedef std::future<EnableSagemakerServicecatalogPortfolioOutcome> EnableSagemakerServicecatalogPortfolioOutcomeCallable;
 typedef std::future<ExtendTrainingPlanOutcome> ExtendTrainingPlanOutcomeCallable;
+typedef std::future<GetCapacityReservationUsageOutcome> GetCapacityReservationUsageOutcomeCallable;
 typedef std::future<GetDeviceFleetReportOutcome> GetDeviceFleetReportOutcomeCallable;
 typedef std::future<GetEndpointPolicyOutcome> GetEndpointPolicyOutcomeCallable;
 typedef std::future<GetLineageGroupPolicyOutcome> GetLineageGroupPolicyOutcomeCallable;
@@ -1640,6 +1656,7 @@ typedef std::future<ListArtifactsOutcome> ListArtifactsOutcomeCallable;
 typedef std::future<ListAssociationsOutcome> ListAssociationsOutcomeCallable;
 typedef std::future<ListAutoMLJobsOutcome> ListAutoMLJobsOutcomeCallable;
 typedef std::future<ListCandidatesForAutoMLJobOutcome> ListCandidatesForAutoMLJobOutcomeCallable;
+typedef std::future<ListCapacityReservationsOutcome> ListCapacityReservationsOutcomeCallable;
 typedef std::future<ListClusterEventsOutcome> ListClusterEventsOutcomeCallable;
 typedef std::future<ListClusterExtensionVersionsOutcome> ListClusterExtensionVersionsOutcomeCallable;
 typedef std::future<ListClusterExtensionsOutcome> ListClusterExtensionsOutcomeCallable;
@@ -2337,6 +2354,9 @@ typedef std::function<void(const SageMakerClient*, const Model::DescribeAutoMLJo
 typedef std::function<void(const SageMakerClient*, const Model::DescribeAutoMLJobV2Request&, const Model::DescribeAutoMLJobV2Outcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeAutoMLJobV2ResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DescribeCapacityReservationRequest&,
+                           const Model::DescribeCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeCapacityReservationResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeClusterResponseReceivedHandler;
@@ -2522,6 +2542,10 @@ typedef std::function<void(const SageMakerClient*, const Model::DescribeProjectR
 typedef std::function<void(const SageMakerClient*, const Model::DescribeReservedCapacityRequest&,
                            const Model::DescribeReservedCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeReservedCapacityResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DescribeResourceAssociationsRequest&,
+                           const Model::DescribeResourceAssociationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeResourceAssociationsResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::DescribeSpaceRequest&, const Model::DescribeSpaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeSpaceResponseReceivedHandler;
@@ -2580,6 +2604,9 @@ typedef std::function<void(const SageMakerClient*, const Model::EnableSagemakerS
 typedef std::function<void(const SageMakerClient*, const Model::ExtendTrainingPlanRequest&, const Model::ExtendTrainingPlanOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ExtendTrainingPlanResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::GetCapacityReservationUsageRequest&,
+                           const Model::GetCapacityReservationUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetCapacityReservationUsageResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::GetDeviceFleetReportRequest&, const Model::GetDeviceFleetReportOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDeviceFleetReportResponseReceivedHandler;
@@ -2642,6 +2669,9 @@ typedef std::function<void(const SageMakerClient*, const Model::ListAutoMLJobsRe
 typedef std::function<void(const SageMakerClient*, const Model::ListCandidatesForAutoMLJobRequest&,
                            const Model::ListCandidatesForAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCandidatesForAutoMLJobResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::ListCapacityReservationsRequest&,
+                           const Model::ListCapacityReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCapacityReservationsResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::ListClusterEventsRequest&, const Model::ListClusterEventsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListClusterEventsResponseReceivedHandler;

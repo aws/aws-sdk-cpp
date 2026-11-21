@@ -21,6 +21,7 @@ static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
 static const int Failed_HASH = HashingUtils::HashString("Failed");
 static const int RollbackInProgress_HASH = HashingUtils::HashString("RollbackInProgress");
 static const int RollbackComplete_HASH = HashingUtils::HashString("RollbackComplete");
+static const int PartiallySucceeded_HASH = HashingUtils::HashString("PartiallySucceeded");
 
 SoftwareUpdateStatus GetSoftwareUpdateStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ SoftwareUpdateStatus GetSoftwareUpdateStatusForName(const Aws::String& name) {
     return SoftwareUpdateStatus::RollbackInProgress;
   } else if (hashCode == RollbackComplete_HASH) {
     return SoftwareUpdateStatus::RollbackComplete;
+  } else if (hashCode == PartiallySucceeded_HASH) {
+    return SoftwareUpdateStatus::PartiallySucceeded;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForSoftwareUpdateStatus(SoftwareUpdateStatus enumValue) {
       return "RollbackInProgress";
     case SoftwareUpdateStatus::RollbackComplete:
       return "RollbackComplete";
+    case SoftwareUpdateStatus::PartiallySucceeded:
+      return "PartiallySucceeded";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

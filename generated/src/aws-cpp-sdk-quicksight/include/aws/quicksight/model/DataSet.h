@@ -24,6 +24,7 @@
 #include <aws/quicksight/model/RowLevelPermissionDataSet.h>
 #include <aws/quicksight/model/RowLevelPermissionTagConfiguration.h>
 #include <aws/quicksight/model/SemanticModelConfiguration.h>
+#include <aws/quicksight/model/UnmaterializedCalculatedColumn.h>
 
 #include <utility>
 
@@ -472,6 +473,33 @@ class DataSet {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The unmaterialized calculated columns associated with this dataset. You can
+   * only use this with the new data preparation experience.</p>
+   */
+  inline const Aws::Vector<UnmaterializedCalculatedColumn>& GetUnmaterializedCalculatedColumns() const {
+    return m_unmaterializedCalculatedColumns;
+  }
+  inline bool UnmaterializedCalculatedColumnsHasBeenSet() const { return m_unmaterializedCalculatedColumnsHasBeenSet; }
+  template <typename UnmaterializedCalculatedColumnsT = Aws::Vector<UnmaterializedCalculatedColumn>>
+  void SetUnmaterializedCalculatedColumns(UnmaterializedCalculatedColumnsT&& value) {
+    m_unmaterializedCalculatedColumnsHasBeenSet = true;
+    m_unmaterializedCalculatedColumns = std::forward<UnmaterializedCalculatedColumnsT>(value);
+  }
+  template <typename UnmaterializedCalculatedColumnsT = Aws::Vector<UnmaterializedCalculatedColumn>>
+  DataSet& WithUnmaterializedCalculatedColumns(UnmaterializedCalculatedColumnsT&& value) {
+    SetUnmaterializedCalculatedColumns(std::forward<UnmaterializedCalculatedColumnsT>(value));
+    return *this;
+  }
+  template <typename UnmaterializedCalculatedColumnsT = UnmaterializedCalculatedColumn>
+  DataSet& AddUnmaterializedCalculatedColumns(UnmaterializedCalculatedColumnsT&& value) {
+    m_unmaterializedCalculatedColumnsHasBeenSet = true;
+    m_unmaterializedCalculatedColumns.emplace_back(std::forward<UnmaterializedCalculatedColumnsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -514,6 +542,8 @@ class DataSet {
   DataPrepConfiguration m_dataPrepConfiguration;
 
   SemanticModelConfiguration m_semanticModelConfiguration;
+
+  Aws::Vector<UnmaterializedCalculatedColumn> m_unmaterializedCalculatedColumns;
   bool m_arnHasBeenSet = false;
   bool m_dataSetIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -535,6 +565,7 @@ class DataSet {
   bool m_useAsHasBeenSet = false;
   bool m_dataPrepConfigurationHasBeenSet = false;
   bool m_semanticModelConfigurationHasBeenSet = false;
+  bool m_unmaterializedCalculatedColumnsHasBeenSet = false;
 };
 
 }  // namespace Model

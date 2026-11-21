@@ -1,3 +1,9 @@
+# 1.11.935 (2026-11-21)
+
+## Service Updates
+* **QuickSight**: Quicksight public SDK release for November 20
+* **SageMaker**: Amazon SageMaker AI adds APIs to view capacity reservations and their usage.
+
 # 1.11.934 (2026-11-20)
 
 ## Service Updates

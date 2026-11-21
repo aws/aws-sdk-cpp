@@ -22,6 +22,7 @@
 #include <aws/quicksight/model/ResourcePermission.h>
 #include <aws/quicksight/model/SemanticModelConfiguration.h>
 #include <aws/quicksight/model/Tag.h>
+#include <aws/quicksight/model/UnmaterializedCalculatedColumn.h>
 
 #include <utility>
 
@@ -404,6 +405,34 @@ class CreateDataSetRequest : public QuickSightRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of unmaterialized calculated columns for the dataset. These columns
+   * are computed at analysis time and are not stored in the prepared data. You can
+   * only use this with the new data preparation experience.</p>
+   */
+  inline const Aws::Vector<UnmaterializedCalculatedColumn>& GetUnmaterializedCalculatedColumns() const {
+    return m_unmaterializedCalculatedColumns;
+  }
+  inline bool UnmaterializedCalculatedColumnsHasBeenSet() const { return m_unmaterializedCalculatedColumnsHasBeenSet; }
+  template <typename UnmaterializedCalculatedColumnsT = Aws::Vector<UnmaterializedCalculatedColumn>>
+  void SetUnmaterializedCalculatedColumns(UnmaterializedCalculatedColumnsT&& value) {
+    m_unmaterializedCalculatedColumnsHasBeenSet = true;
+    m_unmaterializedCalculatedColumns = std::forward<UnmaterializedCalculatedColumnsT>(value);
+  }
+  template <typename UnmaterializedCalculatedColumnsT = Aws::Vector<UnmaterializedCalculatedColumn>>
+  CreateDataSetRequest& WithUnmaterializedCalculatedColumns(UnmaterializedCalculatedColumnsT&& value) {
+    SetUnmaterializedCalculatedColumns(std::forward<UnmaterializedCalculatedColumnsT>(value));
+    return *this;
+  }
+  template <typename UnmaterializedCalculatedColumnsT = UnmaterializedCalculatedColumn>
+  CreateDataSetRequest& AddUnmaterializedCalculatedColumns(UnmaterializedCalculatedColumnsT&& value) {
+    m_unmaterializedCalculatedColumnsHasBeenSet = true;
+    m_unmaterializedCalculatedColumns.emplace_back(std::forward<UnmaterializedCalculatedColumnsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_awsAccountId;
 
@@ -438,6 +467,8 @@ class CreateDataSetRequest : public QuickSightRequest {
   DataPrepConfiguration m_dataPrepConfiguration;
 
   SemanticModelConfiguration m_semanticModelConfiguration;
+
+  Aws::Vector<UnmaterializedCalculatedColumn> m_unmaterializedCalculatedColumns;
   bool m_awsAccountIdHasBeenSet = false;
   bool m_dataSetIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -455,6 +486,7 @@ class CreateDataSetRequest : public QuickSightRequest {
   bool m_useAsHasBeenSet = false;
   bool m_dataPrepConfigurationHasBeenSet = false;
   bool m_semanticModelConfigurationHasBeenSet = false;
+  bool m_unmaterializedCalculatedColumnsHasBeenSet = false;
 };
 
 }  // namespace Model

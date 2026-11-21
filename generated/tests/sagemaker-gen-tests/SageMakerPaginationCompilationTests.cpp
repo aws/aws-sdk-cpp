@@ -20,6 +20,7 @@
 #include <aws/sagemaker/model/ListAutoMLJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListEdgePackagingJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrialsPaginationTraits.h>
+#include <aws/sagemaker/model/DescribeResourceAssociationsPaginationTraits.h>
 #include <aws/sagemaker/model/ListComputeQuotasPaginationTraits.h>
 #include <aws/sagemaker/model/ListArtifactsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTagsPaginationTraits.h>
@@ -28,6 +29,7 @@
 #include <aws/sagemaker/model/ListClusterNodesPaginationTraits.h>
 #include <aws/sagemaker/model/ListModelsPaginationTraits.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobPaginationTraits.h>
+#include <aws/sagemaker/model/ListCapacityReservationsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterExtensionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListImageVersionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListInferenceGatewaysPaginationTraits.h>
@@ -43,6 +45,7 @@
 #include <aws/sagemaker/model/ListCompilationJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListStageDevicesPaginationTraits.h>
 #include <aws/sagemaker/model/ListSubscribedWorkteamsPaginationTraits.h>
+#include <aws/sagemaker/model/GetCapacityReservationUsagePaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterOperationsPaginationTraits.h>
 #include <aws/sagemaker/model/ListCodeRepositoriesPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrainingSessionsPaginationTraits.h>

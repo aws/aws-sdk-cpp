@@ -5505,6 +5505,37 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns details about a SageMaker Capacity Reservation, such as its instance
+   * type, instance count, Availability Zone, and start and end times.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCapacityReservation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeCapacityReservationOutcome DescribeCapacityReservation(
+      const Model::DescribeCapacityReservationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeCapacityReservation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeCapacityReservationRequestT = Model::DescribeCapacityReservationRequest>
+  Model::DescribeCapacityReservationOutcomeCallable DescribeCapacityReservationCallable(
+      const DescribeCapacityReservationRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeCapacityReservation, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeCapacityReservation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeCapacityReservationRequestT = Model::DescribeCapacityReservationRequest>
+  void DescribeCapacityReservationAsync(const DescribeCapacityReservationRequestT& request,
+                                        const DescribeCapacityReservationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeCapacityReservation, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves information of a SageMaker HyperPod cluster.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCluster">AWS
@@ -7165,6 +7196,38 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns the resources in your account that are associated with a SageMaker
+   * Capacity Reservation and the status of each association. Resources include
+   * SageMaker AI HyperPod clusters and SageMaker AI endpoints.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeResourceAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeResourceAssociationsOutcome DescribeResourceAssociations(
+      const Model::DescribeResourceAssociationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeResourceAssociations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeResourceAssociationsRequestT = Model::DescribeResourceAssociationsRequest>
+  Model::DescribeResourceAssociationsOutcomeCallable DescribeResourceAssociationsCallable(
+      const DescribeResourceAssociationsRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeResourceAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeResourceAssociations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeResourceAssociationsRequestT = Model::DescribeResourceAssociationsRequest>
+  void DescribeResourceAssociationsAsync(const DescribeResourceAssociationsRequestT& request,
+                                         const DescribeResourceAssociationsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeResourceAssociations, request, handler, context);
+  }
+
+  /**
    * <p>Describes the space.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSpace">AWS
    * API Reference</a></p>
@@ -7702,6 +7765,38 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void ExtendTrainingPlanAsync(const ExtendTrainingPlanRequestT& request, const ExtendTrainingPlanResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::ExtendTrainingPlan, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the number of instances in use from a SageMaker Capacity Reservation,
+   * for each account that uses them.</p> <p>SageMaker AI refreshes the usage counts
+   * periodically. The <code>LastRefreshTime</code> value shows when the counts were
+   * last refreshed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetCapacityReservationUsage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCapacityReservationUsageOutcome GetCapacityReservationUsage(
+      const Model::GetCapacityReservationUsageRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCapacityReservationUsage that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetCapacityReservationUsageRequestT = Model::GetCapacityReservationUsageRequest>
+  Model::GetCapacityReservationUsageOutcomeCallable GetCapacityReservationUsageCallable(
+      const GetCapacityReservationUsageRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::GetCapacityReservationUsage, request);
+  }
+
+  /**
+   * An Async wrapper for GetCapacityReservationUsage that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetCapacityReservationUsageRequestT = Model::GetCapacityReservationUsageRequest>
+  void GetCapacityReservationUsageAsync(const GetCapacityReservationUsageRequestT& request,
+                                        const GetCapacityReservationUsageResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::GetCapacityReservationUsage, request, handler, context);
   }
 
   /**
@@ -8265,6 +8360,35 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                        const ListCandidatesForAutoMLJobResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::ListCandidatesForAutoMLJob, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the SageMaker Capacity Reservations in your account.</p> <p>An empty
+   * list is a valid response.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCapacityReservations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCapacityReservationsOutcome ListCapacityReservations(const Model::ListCapacityReservationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListCapacityReservations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListCapacityReservationsRequestT = Model::ListCapacityReservationsRequest>
+  Model::ListCapacityReservationsOutcomeCallable ListCapacityReservationsCallable(
+      const ListCapacityReservationsRequestT& request = {}) const {
+    return SubmitCallable(&SageMakerClient::ListCapacityReservations, request);
+  }
+
+  /**
+   * An Async wrapper for ListCapacityReservations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListCapacityReservationsRequestT = Model::ListCapacityReservationsRequest>
+  void ListCapacityReservationsAsync(const ListCapacityReservationsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const ListCapacityReservationsRequestT& request = {}) const {
+    return SubmitAsync(&SageMakerClient::ListCapacityReservations, request, handler, context);
   }
 
   /**

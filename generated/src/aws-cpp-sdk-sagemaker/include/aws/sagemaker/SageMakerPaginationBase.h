@@ -8,7 +8,9 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/sagemaker/model/CreateHubContentPresignedUrlsPaginationTraits.h>
+#include <aws/sagemaker/model/DescribeResourceAssociationsPaginationTraits.h>
 #include <aws/sagemaker/model/DescribeTrainingPlanExtensionHistoryPaginationTraits.h>
+#include <aws/sagemaker/model/GetCapacityReservationUsagePaginationTraits.h>
 #include <aws/sagemaker/model/ListAIBenchmarkJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAIRecommendationJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAIWorkloadConfigsPaginationTraits.h>
@@ -21,6 +23,7 @@
 #include <aws/sagemaker/model/ListAssociationsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAutoMLJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobPaginationTraits.h>
+#include <aws/sagemaker/model/ListCapacityReservationsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterEventsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterExtensionVersionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterExtensionsPaginationTraits.h>
@@ -127,6 +130,18 @@ class SageMakerPaginationBase {
   }
 
   /**
+   * Create a paginator for DescribeResourceAssociations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeResourceAssociationsRequest,
+                                    Pagination::DescribeResourceAssociationsPaginationTraits<DerivedClient>>
+  DescribeResourceAssociationsPaginator(const Model::DescribeResourceAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeResourceAssociationsRequest,
+                                             Pagination::DescribeResourceAssociationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for DescribeTrainingPlanExtensionHistory operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrainingPlanExtensionHistoryRequest,
@@ -135,6 +150,18 @@ class SageMakerPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrainingPlanExtensionHistoryRequest,
                                              Pagination::DescribeTrainingPlanExtensionHistoryPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for GetCapacityReservationUsage operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCapacityReservationUsageRequest,
+                                    Pagination::GetCapacityReservationUsagePaginationTraits<DerivedClient>>
+  GetCapacityReservationUsagePaginator(const Model::GetCapacityReservationUsageRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCapacityReservationUsageRequest,
+                                             Pagination::GetCapacityReservationUsagePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 
@@ -272,6 +299,18 @@ class SageMakerPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCandidatesForAutoMLJobRequest,
                                              Pagination::ListCandidatesForAutoMLJobPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListCapacityReservations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCapacityReservationsRequest,
+                                    Pagination::ListCapacityReservationsPaginationTraits<DerivedClient>>
+  ListCapacityReservationsPaginator(const Model::ListCapacityReservationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCapacityReservationsRequest,
+                                             Pagination::ListCapacityReservationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

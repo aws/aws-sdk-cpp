@@ -124,6 +124,15 @@ DataSet& DataSet::operator=(JsonView jsonValue) {
     m_semanticModelConfiguration = jsonValue.GetObject("SemanticModelConfiguration");
     m_semanticModelConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UnmaterializedCalculatedColumns")) {
+    Aws::Utils::Array<JsonView> unmaterializedCalculatedColumnsJsonList = jsonValue.GetArray("UnmaterializedCalculatedColumns");
+    for (unsigned unmaterializedCalculatedColumnsIndex = 0;
+         unmaterializedCalculatedColumnsIndex < unmaterializedCalculatedColumnsJsonList.GetLength();
+         ++unmaterializedCalculatedColumnsIndex) {
+      m_unmaterializedCalculatedColumns.push_back(unmaterializedCalculatedColumnsJsonList[unmaterializedCalculatedColumnsIndex].AsObject());
+    }
+    m_unmaterializedCalculatedColumnsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -242,6 +251,17 @@ JsonValue DataSet::Jsonize() const {
 
   if (m_semanticModelConfigurationHasBeenSet) {
     payload.WithObject("SemanticModelConfiguration", m_semanticModelConfiguration.Jsonize());
+  }
+
+  if (m_unmaterializedCalculatedColumnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> unmaterializedCalculatedColumnsJsonList(m_unmaterializedCalculatedColumns.size());
+    for (unsigned unmaterializedCalculatedColumnsIndex = 0;
+         unmaterializedCalculatedColumnsIndex < unmaterializedCalculatedColumnsJsonList.GetLength();
+         ++unmaterializedCalculatedColumnsIndex) {
+      unmaterializedCalculatedColumnsJsonList[unmaterializedCalculatedColumnsIndex].AsObject(
+          m_unmaterializedCalculatedColumns[unmaterializedCalculatedColumnsIndex].Jsonize());
+    }
+    payload.WithArray("UnmaterializedCalculatedColumns", std::move(unmaterializedCalculatedColumnsJsonList));
   }
 
   return payload;

@@ -81,5 +81,16 @@ Aws::String UpdateDataSetRequest::SerializePayload() const {
     payload.WithObject("SemanticModelConfiguration", m_semanticModelConfiguration.Jsonize());
   }
 
+  if (m_unmaterializedCalculatedColumnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> unmaterializedCalculatedColumnsJsonList(m_unmaterializedCalculatedColumns.size());
+    for (unsigned unmaterializedCalculatedColumnsIndex = 0;
+         unmaterializedCalculatedColumnsIndex < unmaterializedCalculatedColumnsJsonList.GetLength();
+         ++unmaterializedCalculatedColumnsIndex) {
+      unmaterializedCalculatedColumnsJsonList[unmaterializedCalculatedColumnsIndex].AsObject(
+          m_unmaterializedCalculatedColumns[unmaterializedCalculatedColumnsIndex].Jsonize());
+    }
+    payload.WithArray("UnmaterializedCalculatedColumns", std::move(unmaterializedCalculatedColumnsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

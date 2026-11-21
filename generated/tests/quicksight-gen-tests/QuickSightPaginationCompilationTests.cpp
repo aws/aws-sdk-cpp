@@ -9,6 +9,7 @@
 #include <aws/quicksight/QuickSightClientPagination.h>
 #include <aws/quicksight/QuickSightPaginationBase.h>
 #include <aws/quicksight/model/ListDashboardsPaginationTraits.h>
+#include <aws/quicksight/model/ListInboundConnectorApplicationAssociationsPaginationTraits.h>
 #include <aws/quicksight/model/ListLimitsProfilesPaginationTraits.h>
 #include <aws/quicksight/model/ListThemeVersionsPaginationTraits.h>
 #include <aws/quicksight/model/ListBrandsPaginationTraits.h>
@@ -22,6 +23,7 @@
 #include <aws/quicksight/model/ListTopicsV2PaginationTraits.h>
 #include <aws/quicksight/model/SearchGroupsPaginationTraits.h>
 #include <aws/quicksight/model/ListUserGroupsPaginationTraits.h>
+#include <aws/quicksight/model/ListPrincipalsForPolicyPaginationTraits.h>
 #include <aws/quicksight/model/SearchDashboardsPaginationTraits.h>
 #include <aws/quicksight/model/DescribeFolderResolvedPermissionsPaginationTraits.h>
 #include <aws/quicksight/model/ListTopicsPaginationTraits.h>
@@ -42,6 +44,7 @@
 #include <aws/quicksight/model/DescribeFolderPermissionsPaginationTraits.h>
 #include <aws/quicksight/model/ListThemesPaginationTraits.h>
 #include <aws/quicksight/model/ListFoldersPaginationTraits.h>
+#include <aws/quicksight/model/ListKnowledgeBaseRefreshSchedulesPaginationTraits.h>
 #include <aws/quicksight/model/ListKnowledgeBasesPaginationTraits.h>
 #include <aws/quicksight/model/ListFolderMembersPaginationTraits.h>
 #include <aws/quicksight/model/ListDataSourcesPaginationTraits.h>
@@ -49,9 +52,11 @@
 #include <aws/quicksight/model/SearchKnowledgeBasesPaginationTraits.h>
 #include <aws/quicksight/model/ListActionConnectorsPaginationTraits.h>
 #include <aws/quicksight/model/ListDlpSettingsPaginationTraits.h>
+#include <aws/quicksight/model/ListInboundConnectorsPaginationTraits.h>
 #include <aws/quicksight/model/SearchAppsPaginationTraits.h>
 #include <aws/quicksight/model/ListDataSetsPaginationTraits.h>
 #include <aws/quicksight/model/SearchActionConnectorsPaginationTraits.h>
+#include <aws/quicksight/model/ListAccessControlApplicationsPaginationTraits.h>
 #include <aws/quicksight/model/ListDashboardVersionsPaginationTraits.h>
 #include <aws/quicksight/model/SearchFoldersPaginationTraits.h>
 #include <aws/quicksight/model/ListFoldersForResourcePaginationTraits.h>

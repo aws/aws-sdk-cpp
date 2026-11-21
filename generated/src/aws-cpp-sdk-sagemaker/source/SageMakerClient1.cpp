@@ -85,6 +85,7 @@
 #include <aws/sagemaker/model/DescribeArtifactRequest.h>
 #include <aws/sagemaker/model/DescribeAutoMLJobRequest.h>
 #include <aws/sagemaker/model/DescribeAutoMLJobV2Request.h>
+#include <aws/sagemaker/model/DescribeCapacityReservationRequest.h>
 #include <aws/sagemaker/model/DescribeClusterEventRequest.h>
 #include <aws/sagemaker/model/DescribeClusterExtensionRequest.h>
 #include <aws/sagemaker/model/DescribeClusterNodeRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/sagemaker/model/DescribeInferenceRecommendationsJobRequest.h>
 #include <aws/sagemaker/model/DescribeInferenceRouterRequest.h>
 #include <aws/sagemaker/model/DescribeJobRequest.h>
-#include <aws/sagemaker/model/DescribeJobSchemaVersionRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -515,6 +515,12 @@ DescribeAutoMLJobV2Outcome SageMakerClient::DescribeAutoMLJobV2(const DescribeAu
                             : DescribeAutoMLJobV2Outcome(std::move(result.GetError()));
 }
 
+DescribeCapacityReservationOutcome SageMakerClient::DescribeCapacityReservation(const DescribeCapacityReservationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityReservationOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityReservationOutcome(std::move(result.GetError()));
+}
+
 DescribeClusterOutcome SageMakerClient::DescribeCluster(const DescribeClusterRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeClusterOutcome(result.GetResultWithOwnership())
@@ -717,10 +723,4 @@ DescribeInferenceRouterOutcome SageMakerClient::DescribeInferenceRouter(const De
 DescribeJobOutcome SageMakerClient::DescribeJob(const DescribeJobRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeJobOutcome(result.GetResultWithOwnership()) : DescribeJobOutcome(std::move(result.GetError()));
-}
-
-DescribeJobSchemaVersionOutcome SageMakerClient::DescribeJobSchemaVersion(const DescribeJobSchemaVersionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeJobSchemaVersionOutcome(result.GetResultWithOwnership())
-                            : DescribeJobSchemaVersionOutcome(std::move(result.GetError()));
 }

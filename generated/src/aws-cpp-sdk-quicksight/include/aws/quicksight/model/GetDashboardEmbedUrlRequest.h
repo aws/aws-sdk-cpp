@@ -164,9 +164,9 @@ class GetDashboardEmbedUrlRequest : public QuickSightRequest {
 
   ///@{
   /**
-   * <p>The Amazon Quick user's Amazon Resource Name (ARN), for use with
-   * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon Quick
-   * users in your account (readers, authors, or admins) authenticated as one of the
+   * <p>The Quick user's Amazon Resource Name (ARN), for use with
+   * <code>QUICKSIGHT</code> identity type. You can use this for any Quick users in
+   * your account (readers, authors, or admins) authenticated as one of the
    * following:</p> <ul> <li> <p>Active Directory (AD) users or group members</p>
    * </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users and IAM
    * role-based sessions authenticated through Federated Single Sign-On using SAML,

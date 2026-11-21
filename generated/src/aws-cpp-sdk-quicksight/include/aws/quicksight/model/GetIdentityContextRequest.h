@@ -17,8 +17,7 @@ namespace QuickSight {
 namespace Model {
 
 /**
- * <p>///////////////////////// /////////////////////////</p><p><h3>See Also:</h3>
- * <a
+ * <p/><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetIdentityContextRequest">AWS
  * API Reference</a></p>
  */

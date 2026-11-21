@@ -20,6 +20,10 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/UpdateDeviceFleetRequest.h>
+#include <aws/sagemaker/model/UpdateDevicesRequest.h>
+#include <aws/sagemaker/model/UpdateDomainRequest.h>
+#include <aws/sagemaker/model/UpdateEndpointRequest.h>
 #include <aws/sagemaker/model/UpdateEndpointWeightsAndCapacitiesRequest.h>
 #include <aws/sagemaker/model/UpdateExperimentRequest.h>
 #include <aws/sagemaker/model/UpdateFeatureGroupRequest.h>
@@ -65,6 +69,27 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UpdateDeviceFleetOutcome SageMakerClient::UpdateDeviceFleet(const UpdateDeviceFleetRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDeviceFleetOutcome(result.GetResultWithOwnership())
+                            : UpdateDeviceFleetOutcome(std::move(result.GetError()));
+}
+
+UpdateDevicesOutcome SageMakerClient::UpdateDevices(const UpdateDevicesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDevicesOutcome(result.GetResultWithOwnership()) : UpdateDevicesOutcome(std::move(result.GetError()));
+}
+
+UpdateDomainOutcome SageMakerClient::UpdateDomain(const UpdateDomainRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDomainOutcome(result.GetResultWithOwnership()) : UpdateDomainOutcome(std::move(result.GetError()));
+}
+
+UpdateEndpointOutcome SageMakerClient::UpdateEndpoint(const UpdateEndpointRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEndpointOutcome(result.GetResultWithOwnership()) : UpdateEndpointOutcome(std::move(result.GetError()));
+}
 
 UpdateEndpointWeightsAndCapacitiesOutcome SageMakerClient::UpdateEndpointWeightsAndCapacities(
     const UpdateEndpointWeightsAndCapacitiesRequest& request) const {
