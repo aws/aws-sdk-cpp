@@ -20,7 +20,7 @@ namespace CloudFrontKeyValueStore {
 namespace Model {
 
 /**
- * <p>List item for key value pair to put.</p><p><h3>See Also:</h3>   <a
+ * <p>List item for key-value pair to put.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/PutKeyRequestListItem">AWS
  * API Reference</a></p>
  */
@@ -33,7 +33,7 @@ class PutKeyRequestListItem {
 
   ///@{
   /**
-   * <p>The key of the key value pair list item to put.</p>
+   * <p>The key of the key-value pair list item to put.</p>
    */
   inline const Aws::String& GetKey() const { return m_key; }
   inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
@@ -51,7 +51,7 @@ class PutKeyRequestListItem {
 
   ///@{
   /**
-   * <p>The value for the key value pair to put.</p>
+   * <p>The value for the key-value pair to put.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

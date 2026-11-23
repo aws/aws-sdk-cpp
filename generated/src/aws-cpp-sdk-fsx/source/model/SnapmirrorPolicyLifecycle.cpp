@@ -1,0 +1,68 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/fsx/model/SnapmirrorPolicyLifecycle.h>
+
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace FSx {
+namespace Model {
+namespace SnapmirrorPolicyLifecycleMapper {
+
+static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+static const int CREATED_HASH = HashingUtils::HashString("CREATED");
+static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+
+SnapmirrorPolicyLifecycle GetSnapmirrorPolicyLifecycleForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CREATING_HASH) {
+    return SnapmirrorPolicyLifecycle::CREATING;
+  } else if (hashCode == CREATED_HASH) {
+    return SnapmirrorPolicyLifecycle::CREATED;
+  } else if (hashCode == DELETING_HASH) {
+    return SnapmirrorPolicyLifecycle::DELETING;
+  } else if (hashCode == FAILED_HASH) {
+    return SnapmirrorPolicyLifecycle::FAILED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<SnapmirrorPolicyLifecycle>(hashCode);
+  }
+
+  return SnapmirrorPolicyLifecycle::NOT_SET;
+}
+
+Aws::String GetNameForSnapmirrorPolicyLifecycle(SnapmirrorPolicyLifecycle enumValue) {
+  switch (enumValue) {
+    case SnapmirrorPolicyLifecycle::NOT_SET:
+      return {};
+    case SnapmirrorPolicyLifecycle::CREATING:
+      return "CREATING";
+    case SnapmirrorPolicyLifecycle::CREATED:
+      return "CREATED";
+    case SnapmirrorPolicyLifecycle::DELETING:
+      return "DELETING";
+    case SnapmirrorPolicyLifecycle::FAILED:
+      return "FAILED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
+
+      return {};
+  }
+}
+
+}  // namespace SnapmirrorPolicyLifecycleMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

@@ -26,23 +26,34 @@
 #include <aws/fsx/model/CopySnapshotAndUpdateVolumeRequest.h>
 #include <aws/fsx/model/CreateAndAttachS3AccessPointRequest.h>
 #include <aws/fsx/model/CreateBackupRequest.h>
+#include <aws/fsx/model/CreateClusterPeerRequest.h>
 #include <aws/fsx/model/CreateDataRepositoryAssociationRequest.h>
 #include <aws/fsx/model/CreateDataRepositoryTaskRequest.h>
 #include <aws/fsx/model/CreateFileCacheRequest.h>
 #include <aws/fsx/model/CreateFileSystemFromBackupRequest.h>
 #include <aws/fsx/model/CreateFileSystemRequest.h>
+#include <aws/fsx/model/CreateSnapmirrorPolicyRequest.h>
+#include <aws/fsx/model/CreateSnapmirrorRelationshipRequest.h>
+#include <aws/fsx/model/CreateSnapshotPolicyRequest.h>
 #include <aws/fsx/model/CreateSnapshotRequest.h>
+#include <aws/fsx/model/CreateStorageVirtualMachinePeerRequest.h>
 #include <aws/fsx/model/CreateStorageVirtualMachineRequest.h>
 #include <aws/fsx/model/CreateVolumeFromBackupRequest.h>
 #include <aws/fsx/model/CreateVolumeRequest.h>
 #include <aws/fsx/model/DeleteBackupRequest.h>
+#include <aws/fsx/model/DeleteClusterPeerRequest.h>
 #include <aws/fsx/model/DeleteDataRepositoryAssociationRequest.h>
 #include <aws/fsx/model/DeleteFileCacheRequest.h>
 #include <aws/fsx/model/DeleteFileSystemRequest.h>
+#include <aws/fsx/model/DeleteSnapmirrorPolicyRequest.h>
+#include <aws/fsx/model/DeleteSnapmirrorRelationshipRequest.h>
+#include <aws/fsx/model/DeleteSnapshotPolicyRequest.h>
 #include <aws/fsx/model/DeleteSnapshotRequest.h>
+#include <aws/fsx/model/DeleteStorageVirtualMachinePeerRequest.h>
 #include <aws/fsx/model/DeleteStorageVirtualMachineRequest.h>
 #include <aws/fsx/model/DeleteVolumeRequest.h>
 #include <aws/fsx/model/DescribeBackupsRequest.h>
+#include <aws/fsx/model/DescribeClusterPeersRequest.h>
 #include <aws/fsx/model/DescribeDataRepositoryAssociationsRequest.h>
 #include <aws/fsx/model/DescribeDataRepositoryTasksRequest.h>
 #include <aws/fsx/model/DescribeFileCachesRequest.h>
@@ -50,7 +61,11 @@
 #include <aws/fsx/model/DescribeFileSystemsRequest.h>
 #include <aws/fsx/model/DescribeS3AccessPointAttachmentsRequest.h>
 #include <aws/fsx/model/DescribeSharedVpcConfigurationRequest.h>
+#include <aws/fsx/model/DescribeSnapmirrorPoliciesRequest.h>
+#include <aws/fsx/model/DescribeSnapmirrorRelationshipsRequest.h>
+#include <aws/fsx/model/DescribeSnapshotPoliciesRequest.h>
 #include <aws/fsx/model/DescribeSnapshotsRequest.h>
+#include <aws/fsx/model/DescribeStorageVirtualMachinePeersRequest.h>
 #include <aws/fsx/model/DescribeStorageVirtualMachinesRequest.h>
 #include <aws/fsx/model/DescribeVolumesRequest.h>
 #include <aws/fsx/model/DetachAndDeleteS3AccessPointRequest.h>
@@ -61,11 +76,16 @@
 #include <aws/fsx/model/StartMisconfiguredStateRecoveryRequest.h>
 #include <aws/fsx/model/TagResourceRequest.h>
 #include <aws/fsx/model/UntagResourceRequest.h>
+#include <aws/fsx/model/UpdateClusterPeerRequest.h>
 #include <aws/fsx/model/UpdateDataRepositoryAssociationRequest.h>
 #include <aws/fsx/model/UpdateFileCacheRequest.h>
 #include <aws/fsx/model/UpdateFileSystemRequest.h>
 #include <aws/fsx/model/UpdateSharedVpcConfigurationRequest.h>
+#include <aws/fsx/model/UpdateSnapmirrorPolicyRequest.h>
+#include <aws/fsx/model/UpdateSnapmirrorRelationshipRequest.h>
+#include <aws/fsx/model/UpdateSnapshotPolicyRequest.h>
 #include <aws/fsx/model/UpdateSnapshotRequest.h>
+#include <aws/fsx/model/UpdateStorageVirtualMachinePeerRequest.h>
 #include <aws/fsx/model/UpdateStorageVirtualMachineRequest.h>
 #include <aws/fsx/model/UpdateVolumeRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -252,6 +272,12 @@ CreateBackupOutcome FSxClient::CreateBackup(const CreateBackupRequest& request) 
   return result.IsSuccess() ? CreateBackupOutcome(result.GetResultWithOwnership()) : CreateBackupOutcome(std::move(result.GetError()));
 }
 
+CreateClusterPeerOutcome FSxClient::CreateClusterPeer(const CreateClusterPeerRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterPeerOutcome(result.GetResultWithOwnership())
+                            : CreateClusterPeerOutcome(std::move(result.GetError()));
+}
+
 CreateDataRepositoryAssociationOutcome FSxClient::CreateDataRepositoryAssociation(
     const CreateDataRepositoryAssociationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -283,15 +309,40 @@ CreateFileSystemFromBackupOutcome FSxClient::CreateFileSystemFromBackup(const Cr
                             : CreateFileSystemFromBackupOutcome(std::move(result.GetError()));
 }
 
+CreateSnapmirrorPolicyOutcome FSxClient::CreateSnapmirrorPolicy(const CreateSnapmirrorPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSnapmirrorPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateSnapmirrorPolicyOutcome(std::move(result.GetError()));
+}
+
+CreateSnapmirrorRelationshipOutcome FSxClient::CreateSnapmirrorRelationship(const CreateSnapmirrorRelationshipRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSnapmirrorRelationshipOutcome(result.GetResultWithOwnership())
+                            : CreateSnapmirrorRelationshipOutcome(std::move(result.GetError()));
+}
+
 CreateSnapshotOutcome FSxClient::CreateSnapshot(const CreateSnapshotRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateSnapshotOutcome(result.GetResultWithOwnership()) : CreateSnapshotOutcome(std::move(result.GetError()));
+}
+
+CreateSnapshotPolicyOutcome FSxClient::CreateSnapshotPolicy(const CreateSnapshotPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSnapshotPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateSnapshotPolicyOutcome(std::move(result.GetError()));
 }
 
 CreateStorageVirtualMachineOutcome FSxClient::CreateStorageVirtualMachine(const CreateStorageVirtualMachineRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateStorageVirtualMachineOutcome(result.GetResultWithOwnership())
                             : CreateStorageVirtualMachineOutcome(std::move(result.GetError()));
+}
+
+CreateStorageVirtualMachinePeerOutcome FSxClient::CreateStorageVirtualMachinePeer(
+    const CreateStorageVirtualMachinePeerRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStorageVirtualMachinePeerOutcome(result.GetResultWithOwnership())
+                            : CreateStorageVirtualMachinePeerOutcome(std::move(result.GetError()));
 }
 
 CreateVolumeOutcome FSxClient::CreateVolume(const CreateVolumeRequest& request) const {
@@ -308,6 +359,12 @@ CreateVolumeFromBackupOutcome FSxClient::CreateVolumeFromBackup(const CreateVolu
 DeleteBackupOutcome FSxClient::DeleteBackup(const DeleteBackupRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteBackupOutcome(result.GetResultWithOwnership()) : DeleteBackupOutcome(std::move(result.GetError()));
+}
+
+DeleteClusterPeerOutcome FSxClient::DeleteClusterPeer(const DeleteClusterPeerRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteClusterPeerOutcome(result.GetResultWithOwnership())
+                            : DeleteClusterPeerOutcome(std::move(result.GetError()));
 }
 
 DeleteDataRepositoryAssociationOutcome FSxClient::DeleteDataRepositoryAssociation(
@@ -329,15 +386,40 @@ DeleteFileSystemOutcome FSxClient::DeleteFileSystem(const DeleteFileSystemReques
                             : DeleteFileSystemOutcome(std::move(result.GetError()));
 }
 
+DeleteSnapmirrorPolicyOutcome FSxClient::DeleteSnapmirrorPolicy(const DeleteSnapmirrorPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSnapmirrorPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteSnapmirrorPolicyOutcome(std::move(result.GetError()));
+}
+
+DeleteSnapmirrorRelationshipOutcome FSxClient::DeleteSnapmirrorRelationship(const DeleteSnapmirrorRelationshipRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSnapmirrorRelationshipOutcome(result.GetResultWithOwnership())
+                            : DeleteSnapmirrorRelationshipOutcome(std::move(result.GetError()));
+}
+
 DeleteSnapshotOutcome FSxClient::DeleteSnapshot(const DeleteSnapshotRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteSnapshotOutcome(result.GetResultWithOwnership()) : DeleteSnapshotOutcome(std::move(result.GetError()));
+}
+
+DeleteSnapshotPolicyOutcome FSxClient::DeleteSnapshotPolicy(const DeleteSnapshotPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSnapshotPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteSnapshotPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteStorageVirtualMachineOutcome FSxClient::DeleteStorageVirtualMachine(const DeleteStorageVirtualMachineRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteStorageVirtualMachineOutcome(result.GetResultWithOwnership())
                             : DeleteStorageVirtualMachineOutcome(std::move(result.GetError()));
+}
+
+DeleteStorageVirtualMachinePeerOutcome FSxClient::DeleteStorageVirtualMachinePeer(
+    const DeleteStorageVirtualMachinePeerRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStorageVirtualMachinePeerOutcome(result.GetResultWithOwnership())
+                            : DeleteStorageVirtualMachinePeerOutcome(std::move(result.GetError()));
 }
 
 DeleteVolumeOutcome FSxClient::DeleteVolume(const DeleteVolumeRequest& request) const {
@@ -349,6 +431,12 @@ DescribeBackupsOutcome FSxClient::DescribeBackups(const DescribeBackupsRequest& 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeBackupsOutcome(result.GetResultWithOwnership())
                             : DescribeBackupsOutcome(std::move(result.GetError()));
+}
+
+DescribeClusterPeersOutcome FSxClient::DescribeClusterPeers(const DescribeClusterPeersRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClusterPeersOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterPeersOutcome(std::move(result.GetError()));
 }
 
 DescribeDataRepositoryAssociationsOutcome FSxClient::DescribeDataRepositoryAssociations(
@@ -396,10 +484,36 @@ DescribeSharedVpcConfigurationOutcome FSxClient::DescribeSharedVpcConfiguration(
                             : DescribeSharedVpcConfigurationOutcome(std::move(result.GetError()));
 }
 
+DescribeSnapmirrorPoliciesOutcome FSxClient::DescribeSnapmirrorPolicies(const DescribeSnapmirrorPoliciesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSnapmirrorPoliciesOutcome(result.GetResultWithOwnership())
+                            : DescribeSnapmirrorPoliciesOutcome(std::move(result.GetError()));
+}
+
+DescribeSnapmirrorRelationshipsOutcome FSxClient::DescribeSnapmirrorRelationships(
+    const DescribeSnapmirrorRelationshipsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSnapmirrorRelationshipsOutcome(result.GetResultWithOwnership())
+                            : DescribeSnapmirrorRelationshipsOutcome(std::move(result.GetError()));
+}
+
+DescribeSnapshotPoliciesOutcome FSxClient::DescribeSnapshotPolicies(const DescribeSnapshotPoliciesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSnapshotPoliciesOutcome(result.GetResultWithOwnership())
+                            : DescribeSnapshotPoliciesOutcome(std::move(result.GetError()));
+}
+
 DescribeSnapshotsOutcome FSxClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeSnapshotsOutcome(result.GetResultWithOwnership())
                             : DescribeSnapshotsOutcome(std::move(result.GetError()));
+}
+
+DescribeStorageVirtualMachinePeersOutcome FSxClient::DescribeStorageVirtualMachinePeers(
+    const DescribeStorageVirtualMachinePeersRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStorageVirtualMachinePeersOutcome(result.GetResultWithOwnership())
+                            : DescribeStorageVirtualMachinePeersOutcome(std::move(result.GetError()));
 }
 
 DescribeStorageVirtualMachinesOutcome FSxClient::DescribeStorageVirtualMachines(
@@ -462,6 +576,12 @@ UntagResourceOutcome FSxClient::UntagResource(const UntagResourceRequest& reques
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
+UpdateClusterPeerOutcome FSxClient::UpdateClusterPeer(const UpdateClusterPeerRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateClusterPeerOutcome(result.GetResultWithOwnership())
+                            : UpdateClusterPeerOutcome(std::move(result.GetError()));
+}
+
 UpdateDataRepositoryAssociationOutcome FSxClient::UpdateDataRepositoryAssociation(
     const UpdateDataRepositoryAssociationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -487,15 +607,40 @@ UpdateSharedVpcConfigurationOutcome FSxClient::UpdateSharedVpcConfiguration(cons
                             : UpdateSharedVpcConfigurationOutcome(std::move(result.GetError()));
 }
 
+UpdateSnapmirrorPolicyOutcome FSxClient::UpdateSnapmirrorPolicy(const UpdateSnapmirrorPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSnapmirrorPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateSnapmirrorPolicyOutcome(std::move(result.GetError()));
+}
+
+UpdateSnapmirrorRelationshipOutcome FSxClient::UpdateSnapmirrorRelationship(const UpdateSnapmirrorRelationshipRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSnapmirrorRelationshipOutcome(result.GetResultWithOwnership())
+                            : UpdateSnapmirrorRelationshipOutcome(std::move(result.GetError()));
+}
+
 UpdateSnapshotOutcome FSxClient::UpdateSnapshot(const UpdateSnapshotRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateSnapshotOutcome(result.GetResultWithOwnership()) : UpdateSnapshotOutcome(std::move(result.GetError()));
+}
+
+UpdateSnapshotPolicyOutcome FSxClient::UpdateSnapshotPolicy(const UpdateSnapshotPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSnapshotPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateSnapshotPolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateStorageVirtualMachineOutcome FSxClient::UpdateStorageVirtualMachine(const UpdateStorageVirtualMachineRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateStorageVirtualMachineOutcome(result.GetResultWithOwnership())
                             : UpdateStorageVirtualMachineOutcome(std::move(result.GetError()));
+}
+
+UpdateStorageVirtualMachinePeerOutcome FSxClient::UpdateStorageVirtualMachinePeer(
+    const UpdateStorageVirtualMachinePeerRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStorageVirtualMachinePeerOutcome(result.GetResultWithOwnership())
+                            : UpdateStorageVirtualMachinePeerOutcome(std::move(result.GetError()));
 }
 
 UpdateVolumeOutcome FSxClient::UpdateVolume(const UpdateVolumeRequest& request) const {

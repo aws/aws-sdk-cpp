@@ -19,6 +19,7 @@ static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 static const int CREATING_HASH = HashingUtils::HashString("CREATING");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 SnapshotLifecycle GetSnapshotLifecycleForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ SnapshotLifecycle GetSnapshotLifecycleForName(const Aws::String& name) {
     return SnapshotLifecycle::DELETING;
   } else if (hashCode == AVAILABLE_HASH) {
     return SnapshotLifecycle::AVAILABLE;
+  } else if (hashCode == FAILED_HASH) {
+    return SnapshotLifecycle::FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForSnapshotLifecycle(SnapshotLifecycle enumValue) {
       return "DELETING";
     case SnapshotLifecycle::AVAILABLE:
       return "AVAILABLE";
+    case SnapshotLifecycle::FAILED:
+      return "FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

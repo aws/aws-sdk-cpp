@@ -74,16 +74,16 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase>> CloudFrontKeyValueStoreEndpointProviderTests::TEST_CASES;
-const size_t CloudFrontKeyValueStoreEndpointProviderTests::TEST_CASES_SZ = 15;
+const size_t CloudFrontKeyValueStoreEndpointProviderTests::TEST_CASES_SZ = 29;
 
 Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase> CloudFrontKeyValueStoreEndpointProviderTests::getTestCase() {
 
   Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
-  {"FIPS should error", // documentation
+  {"FIPS without a KVS ARN, should error on the missing ARN", // documentation
     {EpParam("UseFIPS", true)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore."} // expect
+    {{/*No endpoint expected*/}, /*error*/"KVS ARN must be provided to use this service"} // expect
   },
   /*TEST CASE 1*/
   {"KVS ARN must be provided to use this service", // documentation
@@ -152,12 +152,42 @@ Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase> CloudFrontK
     {{/*No endpoint expected*/}, /*error*/"Client was configured for partition `aws-cn` but Kvs ARN has `aws`"} // expect
   },
   /*TEST CASE 11*/
-  {"Valid account based endpoint with FIPS, should error", // documentation
+  {"Valid account based endpoint with FIPS resolves to the same endpoint", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("KvsARN", "arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore."} // expect
+    {{/*epUrl*/"https://123456789012.cloudfront-kvs.global.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 12*/
+  {"Valid account based endpoint with FIPS, without SDK region", // documentation
+    {EpParam("UseFIPS", true), EpParam("KvsARN", "arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.cloudfront-kvs.global.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 13*/
+  {"FIPS with a custom sdk endpoint override, should error", // documentation
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://my-override.example.com"), EpParam("Region", "us-east-1"), EpParam("KvsARN", "arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 14*/
+  {"FIPS with a custom sdk endpoint override, without SDK region, should error", // documentation
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://my-override.example.com"), EpParam("KvsARN", "arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 15*/
+  {"FIPS in an unsupported partition reports the partition, not FIPS", // documentation
+    {EpParam("UseFIPS", true), EpParam("KvsARN", "arn:aws-cn:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"CloudFront-KeyValueStore is not supported in partition `aws-cn`"} // expect
+  },
+  /*TEST CASE 16*/
   {"Custom sdk endpoint override", // documentation
     {EpParam("Endpoint", "https://my-override.example.com"), EpParam("Region", "us-east-1"), EpParam("KvsARN", "arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
     {}, // tags
@@ -166,7 +196,7 @@ Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase> CloudFrontK
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 13*/
+  /*TEST CASE 17*/
   {"Custom sdk endpoint override with path and http", // documentation
     {EpParam("Endpoint", "http://my-override.example.com/custom-path"), EpParam("KvsARN", "arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
     {}, // tags
@@ -175,11 +205,83 @@ Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase> CloudFrontK
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 14*/
+  /*TEST CASE 18*/
   {"Custom override with different partition should error", // documentation
     {EpParam("Endpoint", "https://my-override.example.com"), EpParam("Region", "us-gov-east-1"), EpParam("KvsARN", "arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Client was configured for partition `aws-us-gov` but Kvs ARN has `aws`"} // expect
+  },
+  /*TEST CASE 19*/
+  {"Valid aws ARN, aws-eusc SDK region, should error", // documentation
+    {EpParam("Region", "eusc-de-east-1"), EpParam("KvsARN", "arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Client was configured for partition `aws-eusc` but Kvs ARN has `aws`"} // expect
+  },
+  /*TEST CASE 20*/
+  {"Empty ARN resource type should error", // documentation
+    {EpParam("KvsARN", "arn:aws:cloudfront::123456789012:/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"No resource type found in the KVS ARN. Resource type must be `key-value-store`."} // expect
+  },
+  /*TEST CASE 21*/
+  {"Valid account based endpoint in aws-eusc", // documentation
+    {EpParam("KvsARN", "arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.cloudfront-kvs.global.api.amazonwebservices.eu",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 22*/
+  {"Valid account based endpoint in aws-eusc, with SDK region", // documentation
+    {EpParam("Region", "eusc-de-east-1"), EpParam("KvsARN", "arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.cloudfront-kvs.global.api.amazonwebservices.eu",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 23*/
+  {"Valid aws-eusc ARN, aws SDK region, should error", // documentation
+    {EpParam("Region", "us-east-1"), EpParam("KvsARN", "arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Client was configured for partition `aws` but Kvs ARN has `aws-eusc`"} // expect
+  },
+  /*TEST CASE 24*/
+  {"Valid account based endpoint in aws-eusc with FIPS, should error", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "eusc-de-east-1"), EpParam("KvsARN", "arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore."} // expect
+  },
+  /*TEST CASE 25*/
+  {"aws-eusc with FIPS and a custom endpoint override reports the partition-level FIPS error", // documentation
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://my-override.example.com"), EpParam("Region", "eusc-de-east-1"), EpParam("KvsARN", "arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore."} // expect
+  },
+  /*TEST CASE 26*/
+  {"Custom sdk endpoint override in aws-eusc", // documentation
+    {EpParam("Endpoint", "https://my-override.example.com"), EpParam("Region", "eusc-de-east-1"), EpParam("KvsARN", "arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123456789012.my-override.example.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 27*/
+  {"Custom sdk endpoint override with path and http in aws-eusc", // documentation
+    {EpParam("Endpoint", "http://my-override.example.com/custom-path"), EpParam("KvsARN", "arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*epUrl*/"http://123456789012.my-override.example.com/custom-path",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 28*/
+  {"Custom override in aws-eusc with different partition should error", // documentation
+    {EpParam("Endpoint", "https://my-override.example.com"), EpParam("Region", "us-east-1"), EpParam("KvsARN", "arn:aws-eusc:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Client was configured for partition `aws` but Kvs ARN has `aws-eusc`"} // expect
   }
   };
   return test_cases;

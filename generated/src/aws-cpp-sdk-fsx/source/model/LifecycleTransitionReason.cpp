@@ -22,6 +22,10 @@ LifecycleTransitionReason& LifecycleTransitionReason::operator=(JsonView jsonVal
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OntapError")) {
+    m_ontapError = jsonValue.GetObject("OntapError");
+    m_ontapErrorHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue LifecycleTransitionReason::Jsonize() const {
 
   if (m_messageHasBeenSet) {
     payload.WithString("Message", m_message);
+  }
+
+  if (m_ontapErrorHasBeenSet) {
+    payload.WithObject("OntapError", m_ontapError.Jsonize());
   }
 
   return payload;

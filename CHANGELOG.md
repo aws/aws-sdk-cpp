@@ -1,3 +1,14 @@
+# 1.11.936 (2026-11-23)
+
+## SDK Highlights
+* **Bug Fix**: Fix S3CrtClient to use origin-form request-target
+
+## Service Updates
+* **CloudFront KeyValueStore**: This release adds support for KVSHQ API in the AWS European Sovereign Cloud. Requests for key value stores in the aws-eusc partition are now routed to account-based endpoints under cloudfront-kvs.global.api.amazonwebservices.eu.
+* **CloudFront**: Launch CloudFront in AWS European Sovereign Cloud.
+* **CloudWatchOmni**: Release of the new integration type in CreateIntegration API - Used to add Microsoft Azure resources to the Amazon CloudWatch Omni context graph through an AWS Config connector for your Azure tenant.
+* **FSx**: Adds support for new FSx for NetApp ONTAP resources
+
 # 1.11.935 (2026-11-21)
 
 ## Service Updates

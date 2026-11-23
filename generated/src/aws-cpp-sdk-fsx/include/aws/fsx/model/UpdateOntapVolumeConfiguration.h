@@ -8,6 +8,7 @@
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/SecurityStyle.h>
 #include <aws/fsx/model/TieringPolicy.h>
+#include <aws/fsx/model/UpdateCloneConfiguration.h>
 #include <aws/fsx/model/UpdateSnaplockConfiguration.h>
 
 #include <utility>
@@ -210,6 +211,25 @@ class UpdateOntapVolumeConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the clone configuration changes to make to the volume. Use this
+   * property to split a clone from its parent volume.</p>
+   */
+  inline const UpdateCloneConfiguration& GetCloneConfiguration() const { return m_cloneConfiguration; }
+  inline bool CloneConfigurationHasBeenSet() const { return m_cloneConfigurationHasBeenSet; }
+  template <typename CloneConfigurationT = UpdateCloneConfiguration>
+  void SetCloneConfiguration(CloneConfigurationT&& value) {
+    m_cloneConfigurationHasBeenSet = true;
+    m_cloneConfiguration = std::forward<CloneConfigurationT>(value);
+  }
+  template <typename CloneConfigurationT = UpdateCloneConfiguration>
+  UpdateOntapVolumeConfiguration& WithCloneConfiguration(CloneConfigurationT&& value) {
+    SetCloneConfiguration(std::forward<CloneConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_junctionPath;
 
@@ -228,6 +248,8 @@ class UpdateOntapVolumeConfiguration {
   UpdateSnaplockConfiguration m_snaplockConfiguration;
 
   long long m_sizeInBytes{0};
+
+  UpdateCloneConfiguration m_cloneConfiguration;
   bool m_junctionPathHasBeenSet = false;
   bool m_securityStyleHasBeenSet = false;
   bool m_sizeInMegabytesHasBeenSet = false;
@@ -237,6 +259,7 @@ class UpdateOntapVolumeConfiguration {
   bool m_copyTagsToBackupsHasBeenSet = false;
   bool m_snaplockConfigurationHasBeenSet = false;
   bool m_sizeInBytesHasBeenSet = false;
+  bool m_cloneConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -37,7 +37,7 @@ class DeleteKeyRequest : public CloudFrontKeyValueStoreRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+   * <p>The Amazon Resource Name (ARN) of the key value store.</p>
    */
   inline const Aws::String& GetKvsARN() const { return m_kvsARN; }
   inline bool KvsARNHasBeenSet() const { return m_kvsARNHasBeenSet; }
@@ -73,8 +73,9 @@ class DeleteKeyRequest : public CloudFrontKeyValueStoreRequest {
 
   ///@{
   /**
-   * <p>The current version (ETag) of the Key Value Store that you are deleting keys
-   * from, which you can get using DescribeKeyValueStore.</p>
+   * <p>The current version (<code>ETag</code>) of the key value store that you are
+   * deleting keys from, which you can get by using the
+   * <code>DescribeKeyValueStore</code> API operation.</p>
    */
   inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
   inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }

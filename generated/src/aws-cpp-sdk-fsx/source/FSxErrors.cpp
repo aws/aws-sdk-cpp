@@ -124,6 +124,8 @@ static const int INVALID_DATA_REPOSITORY_TYPE_HASH = HashingUtils::HashString("I
 static const int INVALID_NETWORK_SETTINGS_HASH = HashingUtils::HashString("InvalidNetworkSettings");
 static const int INVALID_SOURCE_KMS_KEY_HASH = HashingUtils::HashString("InvalidSourceKmsKey");
 static const int TOO_MANY_ACCESS_POINTS_HASH = HashingUtils::HashString("TooManyAccessPoints");
+static const int CLUSTER_PEER_NOT_FOUND_HASH = HashingUtils::HashString("ClusterPeerNotFound");
+static const int SNAPMIRROR_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("SnapmirrorPolicyNotFound");
 static const int INVALID_IMPORT_PATH_HASH = HashingUtils::HashString("InvalidImportPath");
 static const int SOURCE_BACKUP_UNAVAILABLE_HASH = HashingUtils::HashString("SourceBackupUnavailable");
 static const int BACKUP_BEING_COPIED_HASH = HashingUtils::HashString("BackupBeingCopied");
@@ -137,6 +139,7 @@ static const int MISSING_FILE_CACHE_CONFIGURATION_HASH = HashingUtils::HashStrin
 static const int BACKUP_RESTORING_HASH = HashingUtils::HashString("BackupRestoring");
 static const int INCOMPATIBLE_REGION_FOR_MULTI_A_Z_HASH = HashingUtils::HashString("IncompatibleRegionForMultiAZ");
 static const int SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ServiceLimitExceeded");
+static const int STORAGE_VIRTUAL_MACHINE_PEER_NOT_FOUND_HASH = HashingUtils::HashString("StorageVirtualMachinePeerNotFound");
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperation");
 static const int ACCESS_POINT_ALREADY_OWNED_BY_YOU_HASH = HashingUtils::HashString("AccessPointAlreadyOwnedByYou");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequest");
@@ -145,11 +148,13 @@ static const int NOT_SERVICE_RESOURCE_HASH = HashingUtils::HashString("NotServic
 static const int INVALID_DESTINATION_KMS_KEY_HASH = HashingUtils::HashString("InvalidDestinationKmsKey");
 static const int RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH = HashingUtils::HashString("ResourceDoesNotSupportTagging");
 static const int DATA_REPOSITORY_TASK_EXECUTING_HASH = HashingUtils::HashString("DataRepositoryTaskExecuting");
+static const int SNAPSHOT_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("SnapshotPolicyNotFound");
 static const int STORAGE_VIRTUAL_MACHINE_NOT_FOUND_HASH = HashingUtils::HashString("StorageVirtualMachineNotFound");
 static const int S3_ACCESS_POINT_ATTACHMENT_NOT_FOUND_HASH = HashingUtils::HashString("S3AccessPointAttachmentNotFound");
 static const int FILE_CACHE_NOT_FOUND_HASH = HashingUtils::HashString("FileCacheNotFound");
 static const int VOLUME_NOT_FOUND_HASH = HashingUtils::HashString("VolumeNotFound");
 static const int MISSING_VOLUME_CONFIGURATION_HASH = HashingUtils::HashString("MissingVolumeConfiguration");
+static const int SNAPMIRROR_RELATIONSHIP_NOT_FOUND_HASH = HashingUtils::HashString("SnapmirrorRelationshipNotFound");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequest");
 static const int MISSING_FILE_SYSTEM_CONFIGURATION_HASH = HashingUtils::HashString("MissingFileSystemConfiguration");
 
@@ -176,6 +181,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_SOURCE_KMS_KEY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_ACCESS_POINTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::TOO_MANY_ACCESS_POINTS), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CLUSTER_PEER_NOT_FOUND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::CLUSTER_PEER_NOT_FOUND), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SNAPMIRROR_POLICY_NOT_FOUND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SNAPMIRROR_POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_IMPORT_PATH_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_IMPORT_PATH), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SOURCE_BACKUP_UNAVAILABLE_HASH) {
@@ -202,6 +211,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INCOMPATIBLE_REGION_FOR_MULTI_A_Z), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERVICE_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SERVICE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == STORAGE_VIRTUAL_MACHINE_PEER_NOT_FOUND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::STORAGE_VIRTUAL_MACHINE_PEER_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == UNSUPPORTED_OPERATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == ACCESS_POINT_ALREADY_OWNED_BY_YOU_HASH) {
@@ -218,6 +229,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::RESOURCE_DOES_NOT_SUPPORT_TAGGING), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == DATA_REPOSITORY_TASK_EXECUTING_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_TASK_EXECUTING), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SNAPSHOT_POLICY_NOT_FOUND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SNAPSHOT_POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == STORAGE_VIRTUAL_MACHINE_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::STORAGE_VIRTUAL_MACHINE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == S3_ACCESS_POINT_ATTACHMENT_NOT_FOUND_HASH) {
@@ -228,6 +241,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::VOLUME_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == MISSING_VOLUME_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::MISSING_VOLUME_CONFIGURATION), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SNAPMIRROR_RELATIONSHIP_NOT_FOUND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SNAPMIRROR_RELATIONSHIP_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == MISSING_FILE_SYSTEM_CONFIGURATION_HASH) {

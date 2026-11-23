@@ -33,7 +33,7 @@ class DeleteKeyRequestListItem {
 
   ///@{
   /**
-   * <p>The key of the key value pair to be deleted.</p>
+   * <p>The key of the key-value pair to be deleted.</p>
    */
   inline const Aws::String& GetKey() const { return m_key; }
   inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }

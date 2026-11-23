@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CloudWatchOmni {
 namespace Model {
-enum class IntegrationType { NOT_SET, AWS_CONFIG_SLREC, SLACK, EXTERNAL_AGENT, AWS_INTEGRATION };
+enum class IntegrationType { NOT_SET, AWS_CONFIG_SLREC, AWS_CONFIG_AZURE_SLREC, SLACK, EXTERNAL_AGENT, AWS_INTEGRATION };
 
 namespace IntegrationTypeMapper {
 AWS_CLOUDWATCHOMNI_API IntegrationType GetIntegrationTypeForName(const Aws::String& name);

@@ -35,7 +35,7 @@ class DescribeKeyValueStoreRequest : public CloudFrontKeyValueStoreRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+   * <p>The Amazon Resource Name (ARN) of the key value store.</p>
    */
   inline const Aws::String& GetKvsARN() const { return m_kvsARN; }
   inline bool KvsARNHasBeenSet() const { return m_kvsARNHasBeenSet; }

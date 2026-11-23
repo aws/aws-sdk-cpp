@@ -7,13 +7,18 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/fsx/FSxClient.h>
 #include <aws/fsx/model/DescribeBackupsPaginationTraits.h>
+#include <aws/fsx/model/DescribeClusterPeersPaginationTraits.h>
 #include <aws/fsx/model/DescribeDataRepositoryAssociationsPaginationTraits.h>
 #include <aws/fsx/model/DescribeDataRepositoryTasksPaginationTraits.h>
 #include <aws/fsx/model/DescribeFileCachesPaginationTraits.h>
 #include <aws/fsx/model/DescribeFileSystemAliasesPaginationTraits.h>
 #include <aws/fsx/model/DescribeFileSystemsPaginationTraits.h>
 #include <aws/fsx/model/DescribeS3AccessPointAttachmentsPaginationTraits.h>
+#include <aws/fsx/model/DescribeSnapmirrorPoliciesPaginationTraits.h>
+#include <aws/fsx/model/DescribeSnapmirrorRelationshipsPaginationTraits.h>
+#include <aws/fsx/model/DescribeSnapshotPoliciesPaginationTraits.h>
 #include <aws/fsx/model/DescribeSnapshotsPaginationTraits.h>
+#include <aws/fsx/model/DescribeStorageVirtualMachinePeersPaginationTraits.h>
 #include <aws/fsx/model/DescribeStorageVirtualMachinesPaginationTraits.h>
 #include <aws/fsx/model/DescribeVolumesPaginationTraits.h>
 #include <aws/fsx/model/ListTagsForResourcePaginationTraits.h>
@@ -23,6 +28,8 @@ namespace FSx {
 
 using DescribeBackupsPaginator =
     Aws::Utils::Pagination::Paginator<FSxClient, Model::DescribeBackupsRequest, Pagination::DescribeBackupsPaginationTraits<FSxClient>>;
+using DescribeClusterPeersPaginator = Aws::Utils::Pagination::Paginator<FSxClient, Model::DescribeClusterPeersRequest,
+                                                                        Pagination::DescribeClusterPeersPaginationTraits<FSxClient>>;
 using DescribeDataRepositoryAssociationsPaginator =
     Aws::Utils::Pagination::Paginator<FSxClient, Model::DescribeDataRepositoryAssociationsRequest,
                                       Pagination::DescribeDataRepositoryAssociationsPaginationTraits<FSxClient>>;
@@ -39,8 +46,20 @@ using DescribeFileSystemsPaginator = Aws::Utils::Pagination::Paginator<FSxClient
 using DescribeS3AccessPointAttachmentsPaginator =
     Aws::Utils::Pagination::Paginator<FSxClient, Model::DescribeS3AccessPointAttachmentsRequest,
                                       Pagination::DescribeS3AccessPointAttachmentsPaginationTraits<FSxClient>>;
+using DescribeSnapmirrorPoliciesPaginator =
+    Aws::Utils::Pagination::Paginator<FSxClient, Model::DescribeSnapmirrorPoliciesRequest,
+                                      Pagination::DescribeSnapmirrorPoliciesPaginationTraits<FSxClient>>;
+using DescribeSnapmirrorRelationshipsPaginator =
+    Aws::Utils::Pagination::Paginator<FSxClient, Model::DescribeSnapmirrorRelationshipsRequest,
+                                      Pagination::DescribeSnapmirrorRelationshipsPaginationTraits<FSxClient>>;
+using DescribeSnapshotPoliciesPaginator =
+    Aws::Utils::Pagination::Paginator<FSxClient, Model::DescribeSnapshotPoliciesRequest,
+                                      Pagination::DescribeSnapshotPoliciesPaginationTraits<FSxClient>>;
 using DescribeSnapshotsPaginator =
     Aws::Utils::Pagination::Paginator<FSxClient, Model::DescribeSnapshotsRequest, Pagination::DescribeSnapshotsPaginationTraits<FSxClient>>;
+using DescribeStorageVirtualMachinePeersPaginator =
+    Aws::Utils::Pagination::Paginator<FSxClient, Model::DescribeStorageVirtualMachinePeersRequest,
+                                      Pagination::DescribeStorageVirtualMachinePeersPaginationTraits<FSxClient>>;
 using DescribeStorageVirtualMachinesPaginator =
     Aws::Utils::Pagination::Paginator<FSxClient, Model::DescribeStorageVirtualMachinesRequest,
                                       Pagination::DescribeStorageVirtualMachinesPaginationTraits<FSxClient>>;

@@ -40,7 +40,7 @@ class ListKeysRequest : public CloudFrontKeyValueStoreRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+   * <p>The Amazon Resource Name (ARN) of the key value store.</p>
    */
   inline const Aws::String& GetKvsARN() const { return m_kvsARN; }
   inline bool KvsARNHasBeenSet() const { return m_kvsARNHasBeenSet; }
@@ -58,8 +58,9 @@ class ListKeysRequest : public CloudFrontKeyValueStoreRequest {
 
   ///@{
   /**
-   * <p>If nextToken is returned in the response, there are more results available.
-   * Make the next call using the returned token to retrieve the next page.</p>
+   * <p>If <code>nextToken</code> is returned in the response, there are more results
+   * available. Make the next call using the returned token to retrieve the next
+   * page.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

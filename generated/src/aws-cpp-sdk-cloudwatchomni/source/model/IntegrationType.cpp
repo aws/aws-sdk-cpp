@@ -16,6 +16,7 @@ namespace Model {
 namespace IntegrationTypeMapper {
 
 static const int AWS_CONFIG_SLREC_HASH = HashingUtils::HashString("AWS_CONFIG_SLREC");
+static const int AWS_CONFIG_AZURE_SLREC_HASH = HashingUtils::HashString("AWS_CONFIG_AZURE_SLREC");
 static const int SLACK_HASH = HashingUtils::HashString("SLACK");
 static const int EXTERNAL_AGENT_HASH = HashingUtils::HashString("EXTERNAL_AGENT");
 static const int AWS_INTEGRATION_HASH = HashingUtils::HashString("AWS_INTEGRATION");
@@ -24,6 +25,8 @@ IntegrationType GetIntegrationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == AWS_CONFIG_SLREC_HASH) {
     return IntegrationType::AWS_CONFIG_SLREC;
+  } else if (hashCode == AWS_CONFIG_AZURE_SLREC_HASH) {
+    return IntegrationType::AWS_CONFIG_AZURE_SLREC;
   } else if (hashCode == SLACK_HASH) {
     return IntegrationType::SLACK;
   } else if (hashCode == EXTERNAL_AGENT_HASH) {
@@ -46,6 +49,8 @@ Aws::String GetNameForIntegrationType(IntegrationType enumValue) {
       return {};
     case IntegrationType::AWS_CONFIG_SLREC:
       return "AWS_CONFIG_SLREC";
+    case IntegrationType::AWS_CONFIG_AZURE_SLREC:
+      return "AWS_CONFIG_AZURE_SLREC";
     case IntegrationType::SLACK:
       return "SLACK";
     case IntegrationType::EXTERNAL_AGENT:

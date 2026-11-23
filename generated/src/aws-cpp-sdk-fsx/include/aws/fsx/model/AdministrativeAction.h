@@ -57,9 +57,10 @@ class AdministrativeAction {
 
   ///@{
   /**
-   * <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> or
-   * <code>DOWNLOAD_DATA_FROM_BACKUP</code> administrative action. Does not apply to
-   * any other administrative action type.</p>
+   * <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>,
+   * <code>DOWNLOAD_DATA_FROM_BACKUP</code>, or <code>VOLUME_CLONE_SPLIT</code>
+   * administrative action. Does not apply to any other administrative action
+   * type.</p>
    */
   inline int GetProgressPercent() const { return m_progressPercent; }
   inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }

@@ -15,7 +15,7 @@ namespace CloudFrontKeyValueStore {
 namespace Model {
 
 /**
- * <p>A key value pair.</p><p><h3>See Also:</h3>   <a
+ * <p>A key-value pair.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/PutKeyRequest">AWS
  * API Reference</a></p>
  */
@@ -76,7 +76,7 @@ class PutKeyRequest : public CloudFrontKeyValueStoreRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+   * <p>The Amazon Resource Name (ARN) of the key value store.</p>
    */
   inline const Aws::String& GetKvsARN() const { return m_kvsARN; }
   inline bool KvsARNHasBeenSet() const { return m_kvsARNHasBeenSet; }
@@ -94,8 +94,9 @@ class PutKeyRequest : public CloudFrontKeyValueStoreRequest {
 
   ///@{
   /**
-   * <p>The current version (ETag) of the Key Value Store that you are putting keys
-   * into, which you can get using DescribeKeyValueStore.</p>
+   * <p>The current version (<code>ETag</code>) of the key value store that you are
+   * putting keys into, which you can get by using the
+   * <code>DescribeKeyValueStore</code> API operation.</p>
    */
   inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
   inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }

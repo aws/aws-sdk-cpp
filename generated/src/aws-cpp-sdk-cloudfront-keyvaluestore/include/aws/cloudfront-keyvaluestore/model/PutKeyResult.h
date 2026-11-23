@@ -22,7 +22,7 @@ class JsonValue;
 namespace CloudFrontKeyValueStore {
 namespace Model {
 /**
- * <p>Metadata information about a Key Value Store.</p><p><h3>See Also:</h3>   <a
+ * <p>Metadata information about a key value store.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/PutKeyResponse">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,7 @@ class PutKeyResult {
 
   ///@{
   /**
-   * <p>Number of key value pairs in the Key Value Store after the successful
+   * <p>Number of key-value pairs in the key value store after the successful
    * put.</p>
    */
   inline int GetItemCount() const { return m_itemCount; }
@@ -50,7 +50,7 @@ class PutKeyResult {
 
   ///@{
   /**
-   * <p>Total size of the Key Value Store after the successful put, in bytes.</p>
+   * <p>Total size of the key value store after the successful put, in bytes.</p>
    */
   inline long long GetTotalSizeInBytes() const { return m_totalSizeInBytes; }
   inline void SetTotalSizeInBytes(long long value) {
@@ -65,7 +65,7 @@ class PutKeyResult {
 
   ///@{
   /**
-   * <p>The current version identifier of the Key Value Store after the successful
+   * <p>The current version identifier of the key value store after the successful
    * put.</p>
    */
   inline const Aws::String& GetETag() const { return m_eTag; }

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/AggregateConfiguration.h>
+#include <aws/fsx/model/CloneConfiguration.h>
 #include <aws/fsx/model/FlexCacheEndpointType.h>
 #include <aws/fsx/model/OntapVolumeType.h>
 #include <aws/fsx/model/SecurityStyle.h>
@@ -356,6 +357,26 @@ class OntapVolumeConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The clone configuration of the volume, if the volume is a clone. This
+   * property doesn't appear for a volume that isn't a clone, or for a clone that has
+   * been split from its parent volume.</p>
+   */
+  inline const CloneConfiguration& GetCloneConfiguration() const { return m_cloneConfiguration; }
+  inline bool CloneConfigurationHasBeenSet() const { return m_cloneConfigurationHasBeenSet; }
+  template <typename CloneConfigurationT = CloneConfiguration>
+  void SetCloneConfiguration(CloneConfigurationT&& value) {
+    m_cloneConfigurationHasBeenSet = true;
+    m_cloneConfiguration = std::forward<CloneConfigurationT>(value);
+  }
+  template <typename CloneConfigurationT = CloneConfiguration>
+  OntapVolumeConfiguration& WithCloneConfiguration(CloneConfigurationT&& value) {
+    SetCloneConfiguration(std::forward<CloneConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   FlexCacheEndpointType m_flexCacheEndpointType{FlexCacheEndpointType::NOT_SET};
 
@@ -388,6 +409,8 @@ class OntapVolumeConfiguration {
   AggregateConfiguration m_aggregateConfiguration;
 
   long long m_sizeInBytes{0};
+
+  CloneConfiguration m_cloneConfiguration;
   bool m_flexCacheEndpointTypeHasBeenSet = false;
   bool m_junctionPathHasBeenSet = false;
   bool m_securityStyleHasBeenSet = false;
@@ -404,6 +427,7 @@ class OntapVolumeConfiguration {
   bool m_volumeStyleHasBeenSet = false;
   bool m_aggregateConfigurationHasBeenSet = false;
   bool m_sizeInBytesHasBeenSet = false;
+  bool m_cloneConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

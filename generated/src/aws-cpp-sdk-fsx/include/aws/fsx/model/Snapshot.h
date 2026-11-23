@@ -10,7 +10,9 @@
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/AdministrativeAction.h>
 #include <aws/fsx/model/LifecycleTransitionReason.h>
+#include <aws/fsx/model/OntapSnapshotConfiguration.h>
 #include <aws/fsx/model/SnapshotLifecycle.h>
+#include <aws/fsx/model/SnapshotType.h>
 #include <aws/fsx/model/Tag.h>
 
 #include <utility>
@@ -27,7 +29,8 @@ namespace Model {
 class AdministrativeAction;
 
 /**
- * <p>A snapshot of an Amazon FSx for OpenZFS volume.</p><p><h3>See Also:</h3>   <a
+ * <p>A snapshot of an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP
+ * volume.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Snapshot">AWS API
  * Reference</a></p>
  */
@@ -130,7 +133,9 @@ class Snapshot {
    * - Amazon FSx hasn't started creating the snapshot.</p> </li> <li> <p>
    * <code>CREATING</code> - Amazon FSx is creating the snapshot.</p> </li> <li> <p>
    * <code>DELETING</code> - Amazon FSx is deleting the snapshot.</p> </li> <li> <p>
-   * <code>AVAILABLE</code> - The snapshot is fully available.</p> </li> </ul>
+   * <code>AVAILABLE</code> - The snapshot is fully available.</p> </li> <li> <p>
+   * <code>FAILED</code> - Amazon FSx was unable to create the snapshot.</p> </li>
+   * </ul>
    */
   inline SnapshotLifecycle GetLifecycle() const { return m_lifecycle; }
   inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
@@ -145,7 +150,25 @@ class Snapshot {
   ///@}
 
   ///@{
+  /**
+   * <p>The type of the snapshot.</p>
+   */
+  inline SnapshotType GetSnapshotType() const { return m_snapshotType; }
+  inline bool SnapshotTypeHasBeenSet() const { return m_snapshotTypeHasBeenSet; }
+  inline void SetSnapshotType(SnapshotType value) {
+    m_snapshotTypeHasBeenSet = true;
+    m_snapshotType = value;
+  }
+  inline Snapshot& WithSnapshotType(SnapshotType value) {
+    SetSnapshotType(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The reason why the snapshot lifecycle status changed.</p>
+   */
   inline const LifecycleTransitionReason& GetLifecycleTransitionReason() const { return m_lifecycleTransitionReason; }
   inline bool LifecycleTransitionReasonHasBeenSet() const { return m_lifecycleTransitionReasonHasBeenSet; }
   template <typename LifecycleTransitionReasonT = LifecycleTransitionReason>
@@ -207,6 +230,24 @@ class Snapshot {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration of an Amazon FSx for NetApp ONTAP snapshot.</p>
+   */
+  inline const OntapSnapshotConfiguration& GetOntapConfiguration() const { return m_ontapConfiguration; }
+  inline bool OntapConfigurationHasBeenSet() const { return m_ontapConfigurationHasBeenSet; }
+  template <typename OntapConfigurationT = OntapSnapshotConfiguration>
+  void SetOntapConfiguration(OntapConfigurationT&& value) {
+    m_ontapConfigurationHasBeenSet = true;
+    m_ontapConfiguration = std::forward<OntapConfigurationT>(value);
+  }
+  template <typename OntapConfigurationT = OntapSnapshotConfiguration>
+  Snapshot& WithOntapConfiguration(OntapConfigurationT&& value) {
+    SetOntapConfiguration(std::forward<OntapConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resourceARN;
 
@@ -220,20 +261,26 @@ class Snapshot {
 
   SnapshotLifecycle m_lifecycle{SnapshotLifecycle::NOT_SET};
 
+  SnapshotType m_snapshotType{SnapshotType::NOT_SET};
+
   LifecycleTransitionReason m_lifecycleTransitionReason;
 
   Aws::Vector<Tag> m_tags;
 
   Aws::Vector<AdministrativeAction> m_administrativeActions;
+
+  OntapSnapshotConfiguration m_ontapConfiguration;
   bool m_resourceARNHasBeenSet = false;
   bool m_snapshotIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_volumeIdHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
+  bool m_snapshotTypeHasBeenSet = false;
   bool m_lifecycleTransitionReasonHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_administrativeActionsHasBeenSet = false;
+  bool m_ontapConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

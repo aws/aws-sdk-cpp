@@ -349,6 +349,36 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a cluster peer relationship between an Amazon FSx for NetApp ONTAP
+   * file system and another ONTAP cluster.</p> <p>The <code>CreateClusterPeer</code>
+   * operation returns while the cluster peer's lifecycle state is still
+   * <code>CREATING</code>. You can check the cluster peer creation status by calling
+   * the DescribeClusterPeers operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateClusterPeer">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateClusterPeerOutcome CreateClusterPeer(const Model::CreateClusterPeerRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateClusterPeer that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateClusterPeerRequestT = Model::CreateClusterPeerRequest>
+  Model::CreateClusterPeerOutcomeCallable CreateClusterPeerCallable(const CreateClusterPeerRequestT& request) const {
+    return SubmitCallable(&FSxClient::CreateClusterPeer, request);
+  }
+
+  /**
+   * An Async wrapper for CreateClusterPeer that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateClusterPeerRequestT = Model::CreateClusterPeerRequest>
+  void CreateClusterPeerAsync(const CreateClusterPeerRequestT& request, const CreateClusterPeerResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::CreateClusterPeer, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Amazon FSx for Lustre data repository association (DRA). A data
    * repository association is a link between a directory on the file system and an
    * Amazon S3 bucket or prefix. You can have a maximum of 8 data repository
@@ -585,25 +615,94 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With
-   * snapshots, you can easily undo file changes and compare file versions by
-   * restoring the volume to a previous version.</p> <p>If a snapshot with the
-   * specified client request token exists, and the parameters match, this operation
-   * returns the description of the existing snapshot. If a snapshot with the
-   * specified client request token exists, and the parameters don't match, this
-   * operation returns <code>IncompatibleParameterError</code>. If a snapshot with
-   * the specified client request token doesn't exist, <code>CreateSnapshot</code>
-   * does the following:</p> <ul> <li> <p>Creates a new OpenZFS snapshot with an
-   * assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
-   * <li> <p>Returns the description of the snapshot.</p> </li> </ul> <p>By using the
-   * idempotent operation, you can retry a <code>CreateSnapshot</code> operation
-   * without the risk of creating an extra snapshot. This approach can be useful when
-   * an initial call fails in a way that makes it unclear whether a snapshot was
-   * created. If you use the same client request token and the initial call created a
-   * snapshot, the operation returns a successful result because all the parameters
-   * are the same.</p> <p>The <code>CreateSnapshot</code> operation returns while the
-   * snapshot's lifecycle state is still <code>CREATING</code>. You can check the
-   * snapshot creation status by calling the <a
+   * <p>Creates a SnapMirror policy for an Amazon FSx for NetApp ONTAP file system or
+   * storage virtual machine (SVM). A SnapMirror policy defines how the SnapMirror
+   * relationships that use the policy replicate data, including which snapshots to
+   * transfer, the maximum number of snapshots to retain on the destination volume,
+   * and when to transfer data.</p> <p>The <code>CreateSnapmirrorPolicy</code>
+   * operation returns while the SnapMirror policy's lifecycle state is still
+   * <code>CREATING</code>. You can check the SnapMirror policy creation status by
+   * calling the DescribeSnapmirrorPolicies operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapmirrorPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateSnapmirrorPolicyOutcome CreateSnapmirrorPolicy(const Model::CreateSnapmirrorPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateSnapmirrorPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateSnapmirrorPolicyRequestT = Model::CreateSnapmirrorPolicyRequest>
+  Model::CreateSnapmirrorPolicyOutcomeCallable CreateSnapmirrorPolicyCallable(const CreateSnapmirrorPolicyRequestT& request) const {
+    return SubmitCallable(&FSxClient::CreateSnapmirrorPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for CreateSnapmirrorPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateSnapmirrorPolicyRequestT = Model::CreateSnapmirrorPolicyRequest>
+  void CreateSnapmirrorPolicyAsync(const CreateSnapmirrorPolicyRequestT& request,
+                                   const CreateSnapmirrorPolicyResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::CreateSnapmirrorPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a SnapMirror relationship that replicates data from a source volume
+   * to a destination volume on an Amazon FSx for NetApp ONTAP file system.</p>
+   * <p>The <code>CreateSnapmirrorRelationship</code> operation returns while the
+   * SnapMirror relationship's lifecycle state is still <code>CREATING</code>. You
+   * can check the SnapMirror relationship creation status by calling the
+   * DescribeSnapmirrorRelationships operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapmirrorRelationship">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateSnapmirrorRelationshipOutcome CreateSnapmirrorRelationship(
+      const Model::CreateSnapmirrorRelationshipRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateSnapmirrorRelationship that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateSnapmirrorRelationshipRequestT = Model::CreateSnapmirrorRelationshipRequest>
+  Model::CreateSnapmirrorRelationshipOutcomeCallable CreateSnapmirrorRelationshipCallable(
+      const CreateSnapmirrorRelationshipRequestT& request) const {
+    return SubmitCallable(&FSxClient::CreateSnapmirrorRelationship, request);
+  }
+
+  /**
+   * An Async wrapper for CreateSnapmirrorRelationship that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateSnapmirrorRelationshipRequestT = Model::CreateSnapmirrorRelationshipRequest>
+  void CreateSnapmirrorRelationshipAsync(const CreateSnapmirrorRelationshipRequestT& request,
+                                         const CreateSnapmirrorRelationshipResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::CreateSnapmirrorRelationship, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a snapshot of an existing Amazon FSx for OpenZFS or Amazon FSx for
+   * NetApp ONTAP volume. With snapshots, you can easily undo file changes and
+   * compare file versions by restoring the volume to a previous version.</p> <p>If a
+   * snapshot with the specified client request token exists, and the parameters
+   * match, this operation returns the description of the existing snapshot. If a
+   * snapshot with the specified client request token exists, and the parameters
+   * don't match, this operation returns <code>IncompatibleParameterError</code>. If
+   * a snapshot with the specified client request token doesn't exist,
+   * <code>CreateSnapshot</code> does the following:</p> <ul> <li> <p>Creates a new
+   * snapshot with an assigned ID, and an initial lifecycle state of
+   * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the
+   * snapshot.</p> </li> </ul> <p>By using the idempotent operation, you can retry a
+   * <code>CreateSnapshot</code> operation without the risk of creating an extra
+   * snapshot. This approach can be useful when an initial call fails in a way that
+   * makes it unclear whether a snapshot was created. If you use the same client
+   * request token and the initial call created a snapshot, the operation returns a
+   * successful result because all the parameters are the same.</p> <p>The
+   * <code>CreateSnapshot</code> operation returns while the snapshot's lifecycle
+   * state is still <code>CREATING</code>. You can check the snapshot creation status
+   * by calling the <a
    * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
    * operation, which returns the snapshot state along with other
    * information.</p><p><h3>See Also:</h3>   <a
@@ -628,6 +727,39 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
   void CreateSnapshotAsync(const CreateSnapshotRequestT& request, const CreateSnapshotResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&FSxClient::CreateSnapshot, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a snapshot policy for an Amazon FSx for NetApp ONTAP file system or
+   * storage virtual machine (SVM). A snapshot policy defines the schedules on which
+   * ONTAP automatically creates snapshots of the volumes that use the policy, and
+   * the maximum number of snapshots to retain for each schedule.</p> <p>The
+   * <code>CreateSnapshotPolicy</code> operation returns while the snapshot policy's
+   * lifecycle state is still <code>CREATING</code>. You can check the snapshot
+   * policy creation status by calling the DescribeSnapshotPolicies
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshotPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateSnapshotPolicyOutcome CreateSnapshotPolicy(const Model::CreateSnapshotPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateSnapshotPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateSnapshotPolicyRequestT = Model::CreateSnapshotPolicyRequest>
+  Model::CreateSnapshotPolicyOutcomeCallable CreateSnapshotPolicyCallable(const CreateSnapshotPolicyRequestT& request) const {
+    return SubmitCallable(&FSxClient::CreateSnapshotPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for CreateSnapshotPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateSnapshotPolicyRequestT = Model::CreateSnapshotPolicyRequest>
+  void CreateSnapshotPolicyAsync(const CreateSnapshotPolicyRequestT& request, const CreateSnapshotPolicyResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::CreateSnapshotPolicy, request, handler, context);
   }
 
   /**
@@ -658,6 +790,40 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
                                         const CreateStorageVirtualMachineResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&FSxClient::CreateStorageVirtualMachine, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a storage virtual machine (SVM) peer relationship between an SVM on
+   * an Amazon FSx for NetApp ONTAP file system and another SVM.</p> <p>The
+   * <code>CreateStorageVirtualMachinePeer</code> operation returns while the SVM
+   * peer's lifecycle state is still <code>CREATING</code>. You can check the SVM
+   * peer creation status by calling the DescribeStorageVirtualMachinePeers
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateStorageVirtualMachinePeer">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateStorageVirtualMachinePeerOutcome CreateStorageVirtualMachinePeer(
+      const Model::CreateStorageVirtualMachinePeerRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateStorageVirtualMachinePeer that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateStorageVirtualMachinePeerRequestT = Model::CreateStorageVirtualMachinePeerRequest>
+  Model::CreateStorageVirtualMachinePeerOutcomeCallable CreateStorageVirtualMachinePeerCallable(
+      const CreateStorageVirtualMachinePeerRequestT& request) const {
+    return SubmitCallable(&FSxClient::CreateStorageVirtualMachinePeer, request);
+  }
+
+  /**
+   * An Async wrapper for CreateStorageVirtualMachinePeer that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateStorageVirtualMachinePeerRequestT = Model::CreateStorageVirtualMachinePeerRequest>
+  void CreateStorageVirtualMachinePeerAsync(const CreateStorageVirtualMachinePeerRequestT& request,
+                                            const CreateStorageVirtualMachinePeerResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::CreateStorageVirtualMachinePeer, request, handler, context);
   }
 
   /**
@@ -741,6 +907,33 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
   void DeleteBackupAsync(const DeleteBackupRequestT& request, const DeleteBackupResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&FSxClient::DeleteBackup, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an Amazon FSx for NetApp ONTAP cluster peer
+   * relationship.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteClusterPeer">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteClusterPeerOutcome DeleteClusterPeer(const Model::DeleteClusterPeerRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteClusterPeer that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteClusterPeerRequestT = Model::DeleteClusterPeerRequest>
+  Model::DeleteClusterPeerOutcomeCallable DeleteClusterPeerCallable(const DeleteClusterPeerRequestT& request) const {
+    return SubmitCallable(&FSxClient::DeleteClusterPeer, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteClusterPeer that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteClusterPeerRequestT = Model::DeleteClusterPeerRequest>
+  void DeleteClusterPeerAsync(const DeleteClusterPeerRequestT& request, const DeleteClusterPeerResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::DeleteClusterPeer, request, handler, context);
   }
 
   /**
@@ -883,9 +1076,67 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no
-   * longer exists, and its data is gone. Deleting a snapshot doesn't affect
-   * snapshots stored in a file system backup. </p> <p>The
+   * <p>Deletes an Amazon FSx for NetApp ONTAP SnapMirror policy.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapmirrorPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSnapmirrorPolicyOutcome DeleteSnapmirrorPolicy(const Model::DeleteSnapmirrorPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSnapmirrorPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteSnapmirrorPolicyRequestT = Model::DeleteSnapmirrorPolicyRequest>
+  Model::DeleteSnapmirrorPolicyOutcomeCallable DeleteSnapmirrorPolicyCallable(const DeleteSnapmirrorPolicyRequestT& request) const {
+    return SubmitCallable(&FSxClient::DeleteSnapmirrorPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSnapmirrorPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteSnapmirrorPolicyRequestT = Model::DeleteSnapmirrorPolicyRequest>
+  void DeleteSnapmirrorPolicyAsync(const DeleteSnapmirrorPolicyRequestT& request,
+                                   const DeleteSnapmirrorPolicyResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::DeleteSnapmirrorPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an Amazon FSx for NetApp ONTAP SnapMirror relationship.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapmirrorRelationship">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSnapmirrorRelationshipOutcome DeleteSnapmirrorRelationship(
+      const Model::DeleteSnapmirrorRelationshipRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSnapmirrorRelationship that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteSnapmirrorRelationshipRequestT = Model::DeleteSnapmirrorRelationshipRequest>
+  Model::DeleteSnapmirrorRelationshipOutcomeCallable DeleteSnapmirrorRelationshipCallable(
+      const DeleteSnapmirrorRelationshipRequestT& request) const {
+    return SubmitCallable(&FSxClient::DeleteSnapmirrorRelationship, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSnapmirrorRelationship that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteSnapmirrorRelationshipRequestT = Model::DeleteSnapmirrorRelationshipRequest>
+  void DeleteSnapmirrorRelationshipAsync(const DeleteSnapmirrorRelationshipRequestT& request,
+                                         const DeleteSnapmirrorRelationshipResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::DeleteSnapmirrorRelationship, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP snapshot.
+   * After deletion, the snapshot no longer exists, and its data is gone. Deleting a
+   * snapshot doesn't affect snapshots stored in a file system backup.</p> <p>The
    * <code>DeleteSnapshot</code> operation returns instantly. The snapshot appears
    * with the lifecycle status of <code>DELETING</code> until the deletion is
    * complete.</p><p><h3>See Also:</h3>   <a
@@ -910,6 +1161,33 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
   void DeleteSnapshotAsync(const DeleteSnapshotRequestT& request, const DeleteSnapshotResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&FSxClient::DeleteSnapshot, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an Amazon FSx for NetApp ONTAP snapshot policy.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapshotPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSnapshotPolicyOutcome DeleteSnapshotPolicy(const Model::DeleteSnapshotPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSnapshotPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteSnapshotPolicyRequestT = Model::DeleteSnapshotPolicyRequest>
+  Model::DeleteSnapshotPolicyOutcomeCallable DeleteSnapshotPolicyCallable(const DeleteSnapshotPolicyRequestT& request) const {
+    return SubmitCallable(&FSxClient::DeleteSnapshotPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSnapshotPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteSnapshotPolicyRequestT = Model::DeleteSnapshotPolicyRequest>
+  void DeleteSnapshotPolicyAsync(const DeleteSnapshotPolicyRequestT& request, const DeleteSnapshotPolicyResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::DeleteSnapshotPolicy, request, handler, context);
   }
 
   /**
@@ -941,6 +1219,36 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
                                         const DeleteStorageVirtualMachineResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&FSxClient::DeleteStorageVirtualMachine, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an Amazon FSx for NetApp ONTAP storage virtual machine (SVM) peer
+   * relationship.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteStorageVirtualMachinePeer">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteStorageVirtualMachinePeerOutcome DeleteStorageVirtualMachinePeer(
+      const Model::DeleteStorageVirtualMachinePeerRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteStorageVirtualMachinePeer that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteStorageVirtualMachinePeerRequestT = Model::DeleteStorageVirtualMachinePeerRequest>
+  Model::DeleteStorageVirtualMachinePeerOutcomeCallable DeleteStorageVirtualMachinePeerCallable(
+      const DeleteStorageVirtualMachinePeerRequestT& request) const {
+    return SubmitCallable(&FSxClient::DeleteStorageVirtualMachinePeer, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteStorageVirtualMachinePeer that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteStorageVirtualMachinePeerRequestT = Model::DeleteStorageVirtualMachinePeerRequest>
+  void DeleteStorageVirtualMachinePeerAsync(const DeleteStorageVirtualMachinePeerRequestT& request,
+                                            const DeleteStorageVirtualMachinePeerResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::DeleteStorageVirtualMachinePeer, request, handler, context);
   }
 
   /**
@@ -1012,6 +1320,42 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                             const DescribeBackupsRequestT& request = {}) const {
     return SubmitAsync(&FSxClient::DescribeBackups, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the description of specific Amazon FSx for NetApp ONTAP cluster
+   * peers, if a <code>ClusterPeerIds</code> value is provided. Otherwise, this
+   * operation returns all cluster peers owned by your Amazon Web Services account in
+   * the Amazon Web Services Region of the endpoint that you're calling.</p> <p>When
+   * retrieving all cluster peers, you can optionally specify the
+   * <code>MaxResults</code> parameter to limit the number of cluster peers in a
+   * response. If more cluster peers remain, Amazon FSx returns a
+   * <code>NextToken</code> value in the response. In this case, send a later request
+   * with the <code>NextToken</code> request parameter set to the value of
+   * <code>NextToken</code> from the last response.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeClusterPeers">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeClusterPeersOutcome DescribeClusterPeers(const Model::DescribeClusterPeersRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeClusterPeers that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeClusterPeersRequestT = Model::DescribeClusterPeersRequest>
+  Model::DescribeClusterPeersOutcomeCallable DescribeClusterPeersCallable(const DescribeClusterPeersRequestT& request = {}) const {
+    return SubmitCallable(&FSxClient::DescribeClusterPeers, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeClusterPeers that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeClusterPeersRequestT = Model::DescribeClusterPeersRequest>
+  void DescribeClusterPeersAsync(const DescribeClusterPeersResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const DescribeClusterPeersRequestT& request = {}) const {
+    return SubmitAsync(&FSxClient::DescribeClusterPeers, request, handler, context);
   }
 
   /**
@@ -1298,16 +1642,131 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns the description of specific Amazon FSx for OpenZFS snapshots, if a
-   * <code>SnapshotIds</code> value is provided. Otherwise, this operation returns
-   * all snapshots owned by your Amazon Web Services account in the Amazon Web
-   * Services Region of the endpoint that you're calling.</p> <p>When retrieving all
-   * snapshots, you can optionally specify the <code>MaxResults</code> parameter to
-   * limit the number of snapshots in a response. If more snapshots remain, Amazon
-   * FSx returns a <code>NextToken</code> value in the response. In this case, send a
-   * later request with the <code>NextToken</code> request parameter set to the value
-   * of <code>NextToken</code> from the last response. </p> <p>Use this operation in
-   * an iterative process to retrieve a list of your snapshots.
+   * <p>Returns the description of specific Amazon FSx for NetApp ONTAP SnapMirror
+   * policies, if a <code>SnapmirrorPolicyIds</code> value is provided. Otherwise,
+   * this operation returns all SnapMirror policies owned by your Amazon Web Services
+   * account in the Amazon Web Services Region of the endpoint that you're
+   * calling.</p> <p>When retrieving all SnapMirror policies, you can optionally
+   * specify the <code>MaxResults</code> parameter to limit the number of SnapMirror
+   * policies in a response. If more SnapMirror policies remain, Amazon FSx returns a
+   * <code>NextToken</code> value in the response. In this case, send a later request
+   * with the <code>NextToken</code> request parameter set to the value of
+   * <code>NextToken</code> from the last response.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapmirrorPolicies">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeSnapmirrorPoliciesOutcome DescribeSnapmirrorPolicies(
+      const Model::DescribeSnapmirrorPoliciesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeSnapmirrorPolicies that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeSnapmirrorPoliciesRequestT = Model::DescribeSnapmirrorPoliciesRequest>
+  Model::DescribeSnapmirrorPoliciesOutcomeCallable DescribeSnapmirrorPoliciesCallable(
+      const DescribeSnapmirrorPoliciesRequestT& request = {}) const {
+    return SubmitCallable(&FSxClient::DescribeSnapmirrorPolicies, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeSnapmirrorPolicies that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeSnapmirrorPoliciesRequestT = Model::DescribeSnapmirrorPoliciesRequest>
+  void DescribeSnapmirrorPoliciesAsync(const DescribeSnapmirrorPoliciesResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                       const DescribeSnapmirrorPoliciesRequestT& request = {}) const {
+    return SubmitAsync(&FSxClient::DescribeSnapmirrorPolicies, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the description of specific Amazon FSx for NetApp ONTAP SnapMirror
+   * relationships, if a <code>SnapmirrorRelationshipIds</code> value is provided.
+   * Otherwise, this operation returns all SnapMirror relationships owned by your
+   * Amazon Web Services account in the Amazon Web Services Region of the endpoint
+   * that you're calling.</p> <p>When retrieving all SnapMirror relationships, you
+   * can optionally specify the <code>MaxResults</code> parameter to limit the number
+   * of SnapMirror relationships in a response. If more SnapMirror relationships
+   * remain, Amazon FSx returns a <code>NextToken</code> value in the response. In
+   * this case, send a later request with the <code>NextToken</code> request
+   * parameter set to the value of <code>NextToken</code> from the last
+   * response.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapmirrorRelationships">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeSnapmirrorRelationshipsOutcome DescribeSnapmirrorRelationships(
+      const Model::DescribeSnapmirrorRelationshipsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeSnapmirrorRelationships that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeSnapmirrorRelationshipsRequestT = Model::DescribeSnapmirrorRelationshipsRequest>
+  Model::DescribeSnapmirrorRelationshipsOutcomeCallable DescribeSnapmirrorRelationshipsCallable(
+      const DescribeSnapmirrorRelationshipsRequestT& request = {}) const {
+    return SubmitCallable(&FSxClient::DescribeSnapmirrorRelationships, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeSnapmirrorRelationships that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeSnapmirrorRelationshipsRequestT = Model::DescribeSnapmirrorRelationshipsRequest>
+  void DescribeSnapmirrorRelationshipsAsync(const DescribeSnapmirrorRelationshipsResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                            const DescribeSnapmirrorRelationshipsRequestT& request = {}) const {
+    return SubmitAsync(&FSxClient::DescribeSnapmirrorRelationships, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the description of specific Amazon FSx for NetApp ONTAP snapshot
+   * policies, if a <code>SnapshotPolicyIds</code> value is provided. Otherwise, this
+   * operation returns all snapshot policies owned by your Amazon Web Services
+   * account in the Amazon Web Services Region of the endpoint that you're
+   * calling.</p> <p>When retrieving all snapshot policies, you can optionally
+   * specify the <code>MaxResults</code> parameter to limit the number of snapshot
+   * policies in a response. If more snapshot policies remain, Amazon FSx returns a
+   * <code>NextToken</code> value in the response. In this case, send a later request
+   * with the <code>NextToken</code> request parameter set to the value of
+   * <code>NextToken</code> from the last response.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapshotPolicies">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeSnapshotPoliciesOutcome DescribeSnapshotPolicies(const Model::DescribeSnapshotPoliciesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeSnapshotPolicies that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeSnapshotPoliciesRequestT = Model::DescribeSnapshotPoliciesRequest>
+  Model::DescribeSnapshotPoliciesOutcomeCallable DescribeSnapshotPoliciesCallable(
+      const DescribeSnapshotPoliciesRequestT& request = {}) const {
+    return SubmitCallable(&FSxClient::DescribeSnapshotPolicies, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeSnapshotPolicies that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeSnapshotPoliciesRequestT = Model::DescribeSnapshotPoliciesRequest>
+  void DescribeSnapshotPoliciesAsync(const DescribeSnapshotPoliciesResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const DescribeSnapshotPoliciesRequestT& request = {}) const {
+    return SubmitAsync(&FSxClient::DescribeSnapshotPolicies, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the description of specific Amazon FSx for OpenZFS and Amazon FSx for
+   * NetApp ONTAP snapshots, if a <code>SnapshotIds</code> value is provided.
+   * Otherwise, this operation returns all snapshots owned by your Amazon Web
+   * Services account in the Amazon Web Services Region of the endpoint that you're
+   * calling.</p> <p>When retrieving all snapshots, you can optionally specify the
+   * <code>MaxResults</code> parameter to limit the number of snapshots in a
+   * response. If more snapshots remain, Amazon FSx returns a <code>NextToken</code>
+   * value in the response. In this case, send a later request with the
+   * <code>NextToken</code> request parameter set to the value of
+   * <code>NextToken</code> from the last response. </p> <p>Use this operation in an
+   * iterative process to retrieve a list of your snapshots.
    * <code>DescribeSnapshots</code> is called first without a <code>NextToken</code>
    * value. Then the operation continues to be called with the <code>NextToken</code>
    * parameter set to the value of the last <code>NextToken</code> value until a
@@ -1341,6 +1800,44 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                               const DescribeSnapshotsRequestT& request = {}) const {
     return SubmitAsync(&FSxClient::DescribeSnapshots, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the description of specific Amazon FSx for NetApp ONTAP storage
+   * virtual machine (SVM) peers, if a <code>StorageVirtualMachinePeerIds</code>
+   * value is provided. Otherwise, this operation returns all SVM peers owned by your
+   * Amazon Web Services account in the Amazon Web Services Region of the endpoint
+   * that you're calling.</p> <p>When retrieving all SVM peers, you can optionally
+   * specify the <code>MaxResults</code> parameter to limit the number of SVM peers
+   * in a response. If more SVM peers remain, Amazon FSx returns a
+   * <code>NextToken</code> value in the response. In this case, send a later request
+   * with the <code>NextToken</code> request parameter set to the value of
+   * <code>NextToken</code> from the last response.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeStorageVirtualMachinePeers">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeStorageVirtualMachinePeersOutcome DescribeStorageVirtualMachinePeers(
+      const Model::DescribeStorageVirtualMachinePeersRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeStorageVirtualMachinePeers that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DescribeStorageVirtualMachinePeersRequestT = Model::DescribeStorageVirtualMachinePeersRequest>
+  Model::DescribeStorageVirtualMachinePeersOutcomeCallable DescribeStorageVirtualMachinePeersCallable(
+      const DescribeStorageVirtualMachinePeersRequestT& request = {}) const {
+    return SubmitCallable(&FSxClient::DescribeStorageVirtualMachinePeers, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeStorageVirtualMachinePeers that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeStorageVirtualMachinePeersRequestT = Model::DescribeStorageVirtualMachinePeersRequest>
+  void DescribeStorageVirtualMachinePeersAsync(const DescribeStorageVirtualMachinePeersResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                               const DescribeStorageVirtualMachinePeersRequestT& request = {}) const {
+    return SubmitAsync(&FSxClient::DescribeStorageVirtualMachinePeers, request, handler, context);
   }
 
   /**
@@ -1657,6 +2154,33 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Updates an Amazon FSx for NetApp ONTAP cluster peer
+   * relationship.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateClusterPeer">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateClusterPeerOutcome UpdateClusterPeer(const Model::UpdateClusterPeerRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateClusterPeer that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateClusterPeerRequestT = Model::UpdateClusterPeerRequest>
+  Model::UpdateClusterPeerOutcomeCallable UpdateClusterPeerCallable(const UpdateClusterPeerRequestT& request) const {
+    return SubmitCallable(&FSxClient::UpdateClusterPeer, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateClusterPeer that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateClusterPeerRequestT = Model::UpdateClusterPeerRequest>
+  void UpdateClusterPeerAsync(const UpdateClusterPeerRequestT& request, const UpdateClusterPeerResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::UpdateClusterPeer, request, handler, context);
+  }
+
+  /**
    * <p>Updates the configuration of an existing data repository association on an
    * Amazon FSx for Lustre file system. Data repository associations are supported on
    * all FSx for Lustre 2.12 and 2.15 file systems, excluding <code>scratch_1</code>
@@ -1828,8 +2352,68 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the name of an Amazon FSx for OpenZFS snapshot.</p><p><h3>See
+   * <p>Updates an Amazon FSx for NetApp ONTAP SnapMirror policy.</p><p><h3>See
    * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapmirrorPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateSnapmirrorPolicyOutcome UpdateSnapmirrorPolicy(const Model::UpdateSnapmirrorPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateSnapmirrorPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateSnapmirrorPolicyRequestT = Model::UpdateSnapmirrorPolicyRequest>
+  Model::UpdateSnapmirrorPolicyOutcomeCallable UpdateSnapmirrorPolicyCallable(const UpdateSnapmirrorPolicyRequestT& request) const {
+    return SubmitCallable(&FSxClient::UpdateSnapmirrorPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateSnapmirrorPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateSnapmirrorPolicyRequestT = Model::UpdateSnapmirrorPolicyRequest>
+  void UpdateSnapmirrorPolicyAsync(const UpdateSnapmirrorPolicyRequestT& request,
+                                   const UpdateSnapmirrorPolicyResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::UpdateSnapmirrorPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an Amazon FSx for NetApp ONTAP SnapMirror relationship.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapmirrorRelationship">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateSnapmirrorRelationshipOutcome UpdateSnapmirrorRelationship(
+      const Model::UpdateSnapmirrorRelationshipRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateSnapmirrorRelationship that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateSnapmirrorRelationshipRequestT = Model::UpdateSnapmirrorRelationshipRequest>
+  Model::UpdateSnapmirrorRelationshipOutcomeCallable UpdateSnapmirrorRelationshipCallable(
+      const UpdateSnapmirrorRelationshipRequestT& request) const {
+    return SubmitCallable(&FSxClient::UpdateSnapmirrorRelationship, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateSnapmirrorRelationship that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateSnapmirrorRelationshipRequestT = Model::UpdateSnapmirrorRelationshipRequest>
+  void UpdateSnapmirrorRelationshipAsync(const UpdateSnapmirrorRelationshipRequestT& request,
+                                         const UpdateSnapmirrorRelationshipResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::UpdateSnapmirrorRelationship, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP
+   * snapshot.</p> <p>For Amazon FSx for OpenZFS snapshots, you can update only the
+   * name. For Amazon FSx for NetApp ONTAP snapshots, you can update the name and the
+   * properties in <code>OntapConfiguration</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapshot">AWS
    * API Reference</a></p>
    */
@@ -1851,6 +2435,33 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
   void UpdateSnapshotAsync(const UpdateSnapshotRequestT& request, const UpdateSnapshotResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&FSxClient::UpdateSnapshot, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an Amazon FSx for NetApp ONTAP snapshot policy. You can enable or
+   * disable the snapshot policy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapshotPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateSnapshotPolicyOutcome UpdateSnapshotPolicy(const Model::UpdateSnapshotPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateSnapshotPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateSnapshotPolicyRequestT = Model::UpdateSnapshotPolicyRequest>
+  Model::UpdateSnapshotPolicyOutcomeCallable UpdateSnapshotPolicyCallable(const UpdateSnapshotPolicyRequestT& request) const {
+    return SubmitCallable(&FSxClient::UpdateSnapshotPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateSnapshotPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateSnapshotPolicyRequestT = Model::UpdateSnapshotPolicyRequest>
+  void UpdateSnapshotPolicyAsync(const UpdateSnapshotPolicyRequestT& request, const UpdateSnapshotPolicyResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::UpdateSnapshotPolicy, request, handler, context);
   }
 
   /**
@@ -1881,6 +2492,36 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
                                         const UpdateStorageVirtualMachineResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&FSxClient::UpdateStorageVirtualMachine, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an Amazon FSx for NetApp ONTAP storage virtual machine (SVM) peer
+   * relationship.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateStorageVirtualMachinePeer">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateStorageVirtualMachinePeerOutcome UpdateStorageVirtualMachinePeer(
+      const Model::UpdateStorageVirtualMachinePeerRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateStorageVirtualMachinePeer that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateStorageVirtualMachinePeerRequestT = Model::UpdateStorageVirtualMachinePeerRequest>
+  Model::UpdateStorageVirtualMachinePeerOutcomeCallable UpdateStorageVirtualMachinePeerCallable(
+      const UpdateStorageVirtualMachinePeerRequestT& request) const {
+    return SubmitCallable(&FSxClient::UpdateStorageVirtualMachinePeer, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateStorageVirtualMachinePeer that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateStorageVirtualMachinePeerRequestT = Model::UpdateStorageVirtualMachinePeerRequest>
+  void UpdateStorageVirtualMachinePeerAsync(const UpdateStorageVirtualMachinePeerRequestT& request,
+                                            const UpdateStorageVirtualMachinePeerResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&FSxClient::UpdateStorageVirtualMachinePeer, request, handler, context);
   }
 
   /**

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace FSx {
 namespace Model {
-enum class SnapshotLifecycle { NOT_SET, PENDING, CREATING, DELETING, AVAILABLE };
+enum class SnapshotLifecycle { NOT_SET, PENDING, CREATING, DELETING, AVAILABLE, FAILED };
 
 namespace SnapshotLifecycleMapper {
 AWS_FSX_API SnapshotLifecycle GetSnapshotLifecycleForName(const Aws::String& name);
