@@ -3,44 +3,98 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/ListBackupsRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/MapSerializer.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeSerializer.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListBackupsRequest::SerializePayload() const {
-  JsonValue payload;
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+namespace {
+class ListBackupsRequestSerializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit ListBackupsRequestSerializable(const ListBackupsRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
+  void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
 
-  if (m_tableNameHasBeenSet) {
-    payload.WithString("TableName", m_tableName);
+ private:
+  const ListBackupsRequest& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void ListBackupsRequestSerializable::SerializeMembers(smithy::schema::ShapeSerializer& serializer) const {
+  if (m_obj.TableNameHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("TableName").value();
+    serializer.WriteString(memberSchema, m_obj.GetTableName());
   }
-
-  if (m_limitHasBeenSet) {
-    payload.WithInteger("Limit", m_limit);
+  if (m_obj.LimitHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("Limit").value();
+    serializer.WriteInteger(memberSchema, m_obj.GetLimit());
   }
-
-  if (m_timeRangeLowerBoundHasBeenSet) {
-    payload.WithDouble("TimeRangeLowerBound", m_timeRangeLowerBound.SecondsWithMSPrecision());
+  if (m_obj.TimeRangeLowerBoundHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("TimeRangeLowerBound").value();
+    serializer.WriteTimestamp(memberSchema, m_obj.GetTimeRangeLowerBound());
   }
-
-  if (m_timeRangeUpperBoundHasBeenSet) {
-    payload.WithDouble("TimeRangeUpperBound", m_timeRangeUpperBound.SecondsWithMSPrecision());
+  if (m_obj.TimeRangeUpperBoundHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("TimeRangeUpperBound").value();
+    serializer.WriteTimestamp(memberSchema, m_obj.GetTimeRangeUpperBound());
   }
-
-  if (m_exclusiveStartBackupArnHasBeenSet) {
-    payload.WithString("ExclusiveStartBackupArn", m_exclusiveStartBackupArn);
+  if (m_obj.ExclusiveStartBackupArnHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("ExclusiveStartBackupArn").value();
+    serializer.WriteString(memberSchema, m_obj.GetExclusiveStartBackupArn());
   }
-
-  if (m_backupTypeHasBeenSet) {
-    payload.WithString("BackupType", BackupTypeFilterMapper::GetNameForBackupTypeFilter(m_backupType));
+  if (m_obj.BackupTypeHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("BackupType").value();
+    serializer.WriteString(memberSchema, BackupTypeFilterMapper::GetNameForBackupTypeFilter(m_obj.GetBackupType()));
   }
-
-  return payload.View().WriteReadable();
 }
+
+std::shared_ptr<const smithy::schema::Schema> ListBackupsRequestSerializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("ListBackupsRequest")
+      .PutMember("TableName", smithy::schema::Schema::CreateString("TableName"))
+      .PutMember("Limit", smithy::schema::Schema::CreateInteger("Limit"))
+      .PutMember("TimeRangeLowerBound", smithy::schema::Schema::CreateTimestamp("TimeRangeLowerBound"))
+      .PutMember("TimeRangeUpperBound", smithy::schema::Schema::CreateTimestamp("TimeRangeUpperBound"))
+      .PutMember("ExclusiveStartBackupArn", smithy::schema::Schema::CreateString("ExclusiveStartBackupArn"))
+      .PutMember("BackupType", smithy::schema::Schema::CreateEnum("BackupType"))
+      .Build();
+}
+
+}  // namespace
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> ListBackupsRequest::GetSchemaSerdeInput() const {
+  return Aws::MakeUnique<ListBackupsRequestSerializable>("ListBackupsRequestSerializable", *this);
+}
+
+Aws::String ListBackupsRequest::SerializePayload() const { return {}; }
+smithy::schema::OperationRequestContext ListBackupsRequest::GetSchemaSerdeContext() const { return {"ListBackups", "2012-08-10"}; }
 
 Aws::Http::HeaderValueCollection ListBackupsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

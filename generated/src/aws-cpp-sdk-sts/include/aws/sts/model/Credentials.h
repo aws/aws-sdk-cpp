@@ -31,9 +31,8 @@ class Credentials {
   AWS_STS_API Credentials() = default;
   AWS_STS_API Credentials(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_STS_API Credentials& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_STS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_STS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_STS_API void OutputToStream(Aws::OStream& ostream, const char* location) const;
 
   ///@{
   /**

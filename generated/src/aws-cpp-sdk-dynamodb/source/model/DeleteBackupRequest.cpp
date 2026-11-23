@@ -3,24 +3,73 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/DeleteBackupRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/MapSerializer.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeSerializer.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteBackupRequest::SerializePayload() const {
-  JsonValue payload;
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+namespace {
+class DeleteBackupRequestSerializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit DeleteBackupRequestSerializable(const DeleteBackupRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
+  void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
 
-  if (m_backupArnHasBeenSet) {
-    payload.WithString("BackupArn", m_backupArn);
+ private:
+  const DeleteBackupRequest& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void DeleteBackupRequestSerializable::SerializeMembers(smithy::schema::ShapeSerializer& serializer) const {
+  if (m_obj.BackupArnHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("BackupArn").value();
+    serializer.WriteString(memberSchema, m_obj.GetBackupArn());
   }
-
-  return payload.View().WriteReadable();
 }
+
+std::shared_ptr<const smithy::schema::Schema> DeleteBackupRequestSerializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("DeleteBackupRequest")
+      .PutMember("BackupArn", smithy::schema::Schema::CreateString("BackupArn"))
+      .Build();
+}
+
+}  // namespace
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> DeleteBackupRequest::GetSchemaSerdeInput() const {
+  return Aws::MakeUnique<DeleteBackupRequestSerializable>("DeleteBackupRequestSerializable", *this);
+}
+
+Aws::String DeleteBackupRequest::SerializePayload() const { return {}; }
+smithy::schema::OperationRequestContext DeleteBackupRequest::GetSchemaSerdeContext() const { return {"DeleteBackup", "2012-08-10"}; }
 
 Aws::Http::HeaderValueCollection DeleteBackupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

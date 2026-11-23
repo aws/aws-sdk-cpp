@@ -32,6 +32,8 @@ class UpdateGlobalTableSettingsRequest : public DynamoDBRequest {
   inline virtual const char* GetServiceRequestName() const override { return "UpdateGlobalTableSettings"; }
 
   AWS_DYNAMODB_API Aws::String SerializePayload() const override;
+  AWS_DYNAMODB_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_DYNAMODB_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 

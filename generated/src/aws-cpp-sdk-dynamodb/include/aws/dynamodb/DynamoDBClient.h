@@ -12,7 +12,7 @@
 #include <aws/dynamodb/DynamoDBWaiter.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <smithy/client/AwsSmithyClient.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <smithy/client/serializer/RawOutcomeSerializer.h>
 #include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
@@ -41,8 +41,8 @@ class AWS_DYNAMODB_API DynamoDBClient
     : Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>,
       public smithy::client::AwsSmithyClientT<Aws::DynamoDB::SERVICE_NAME, Aws::DynamoDB::DynamoDBClientConfiguration,
                                               smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-                                              DynamoDBEndpointProviderBase, smithy::client::JsonOutcomeSerializer,
-                                              smithy::client::JsonOutcome, Aws::Client::DynamoDBErrorMarshaller>,
+                                              DynamoDBEndpointProviderBase, smithy::client::RawOutcomeSerializer,
+                                              smithy::client::RawOutcome, Aws::Client::DynamoDBErrorMarshaller>,
       public DynamoDBPaginationBase<DynamoDBClient>,
       public DynamoDBWaiter<DynamoDBClient> {
  public:
@@ -2521,7 +2521,7 @@ class AWS_DYNAMODB_API DynamoDBClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>;
 
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>, DynamoDBError> InvokeOperationOutcome;
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::String>, DynamoDBError> InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 

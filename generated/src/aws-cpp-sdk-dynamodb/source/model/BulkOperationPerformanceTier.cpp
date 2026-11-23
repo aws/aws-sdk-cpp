@@ -30,7 +30,6 @@ BulkOperationPerformanceTier GetBulkOperationPerformanceTierForName(const Aws::S
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<BulkOperationPerformanceTier>(hashCode);
   }
-
   return BulkOperationPerformanceTier::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForBulkOperationPerformanceTier(BulkOperationPerformanceTier 
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

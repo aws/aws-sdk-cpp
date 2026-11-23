@@ -12,7 +12,7 @@
 #include <aws/sts/STSWaiter.h>
 #include <aws/sts/STS_EXPORTS.h>
 #include <smithy/client/AwsSmithyClient.h>
-#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <smithy/client/serializer/RawOutcomeSerializer.h>
 #include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/NoAuthScheme.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
@@ -56,7 +56,7 @@ class AWS_STS_API STSClient
     : Aws::Client::ClientWithAsyncTemplateMethods<STSClient>,
       public smithy::client::AwsSmithyClientT<Aws::STS::SERVICE_NAME, Aws::STS::STSClientConfiguration, smithy::AuthSchemeResolverBase<>,
                                               Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::SigV4aAuthScheme, smithy::NoAuthScheme>,
-                                              STSEndpointProviderBase, smithy::client::XmlOutcomeSerializer, smithy::client::XmlOutcome,
+                                              STSEndpointProviderBase, smithy::client::RawOutcomeSerializer, smithy::client::RawOutcome,
                                               Aws::Client::STSErrorMarshaller>,
       public STSPaginationBase<STSClient>,
       public STSWaiter<STSClient> {
@@ -954,7 +954,7 @@ class AWS_STS_API STSClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<STSClient>;
 
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>, STSError> InvokeOperationOutcome;
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::String>, STSError> InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 };

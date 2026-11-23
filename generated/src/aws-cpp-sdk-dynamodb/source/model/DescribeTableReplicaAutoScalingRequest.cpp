@@ -3,23 +3,75 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/DescribeTableReplicaAutoScalingRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/MapSerializer.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeSerializer.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeTableReplicaAutoScalingRequest::SerializePayload() const {
-  JsonValue payload;
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+namespace {
+class DescribeTableReplicaAutoScalingRequestSerializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit DescribeTableReplicaAutoScalingRequestSerializable(const DescribeTableReplicaAutoScalingRequest& obj)
+      : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
+  void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
 
-  if (m_tableNameHasBeenSet) {
-    payload.WithString("TableName", m_tableName);
+ private:
+  const DescribeTableReplicaAutoScalingRequest& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void DescribeTableReplicaAutoScalingRequestSerializable::SerializeMembers(smithy::schema::ShapeSerializer& serializer) const {
+  if (m_obj.TableNameHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("TableName").value();
+    serializer.WriteString(memberSchema, m_obj.GetTableName());
   }
+}
 
-  return payload.View().WriteReadable();
+std::shared_ptr<const smithy::schema::Schema> DescribeTableReplicaAutoScalingRequestSerializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("DescribeTableReplicaAutoScalingRequest")
+      .PutMember("TableName", smithy::schema::Schema::CreateString("TableName"))
+      .Build();
+}
+
+}  // namespace
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> DescribeTableReplicaAutoScalingRequest::GetSchemaSerdeInput() const {
+  return Aws::MakeUnique<DescribeTableReplicaAutoScalingRequestSerializable>("DescribeTableReplicaAutoScalingRequestSerializable", *this);
+}
+
+Aws::String DescribeTableReplicaAutoScalingRequest::SerializePayload() const { return {}; }
+smithy::schema::OperationRequestContext DescribeTableReplicaAutoScalingRequest::GetSchemaSerdeContext() const {
+  return {"DescribeTableReplicaAutoScaling", "2012-08-10"};
 }
 
 Aws::Http::HeaderValueCollection DescribeTableReplicaAutoScalingRequest::GetRequestSpecificHeaders() const {

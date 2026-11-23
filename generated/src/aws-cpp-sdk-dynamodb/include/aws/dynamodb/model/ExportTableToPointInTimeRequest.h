@@ -34,6 +34,8 @@ class ExportTableToPointInTimeRequest : public DynamoDBRequest {
   inline virtual const char* GetServiceRequestName() const override { return "ExportTableToPointInTime"; }
 
   AWS_DYNAMODB_API Aws::String SerializePayload() const override;
+  AWS_DYNAMODB_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_DYNAMODB_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
@@ -127,8 +129,8 @@ class ExportTableToPointInTimeRequest : public DynamoDBRequest {
   ///@{
   /**
    * <p>The ID of the Amazon Web Services account that owns the bucket the export
-   * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
-   * exporting to a S3 bucket in another account.</p>
+   * will be stored in.</p>  <p>S3BucketOwner is a required parameter when exporting
+   * to a S3 bucket in another account.</p>
    */
   inline const Aws::String& GetS3BucketOwner() const { return m_s3BucketOwner; }
   inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }

@@ -42,7 +42,6 @@ BulkOperationStatus GetBulkOperationStatusForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<BulkOperationStatus>(hashCode);
   }
-
   return BulkOperationStatus::NOT_SET;
 }
 
@@ -67,7 +66,6 @@ Aws::String GetNameForBulkOperationStatus(BulkOperationStatus enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

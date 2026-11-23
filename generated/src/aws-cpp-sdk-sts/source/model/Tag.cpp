@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sts/model/Tag.h>
@@ -19,43 +22,11 @@ namespace Model {
 
 Tag::Tag(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Tag& Tag::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+Tag& Tag::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode keyNode = resultNode.FirstChild("Key");
-    if (!keyNode.IsNull()) {
-      m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
-      m_keyHasBeenSet = true;
-    }
-    XmlNode valueNode = resultNode.FirstChild("Value");
-    if (!valueNode.IsNull()) {
-      m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
-      m_valueHasBeenSet = true;
-    }
-  }
+void Tag::OutputToStream(Aws::OStream&, const char*, unsigned, const char*) const {}
 
-  return *this;
-}
-
-void Tag::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
-  if (m_keyHasBeenSet) {
-    oStream << location << index << locationValue << ".Key=" << StringUtils::URLEncode(m_key.c_str()) << "&";
-  }
-
-  if (m_valueHasBeenSet) {
-    oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
-  }
-}
-
-void Tag::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_keyHasBeenSet) {
-    oStream << location << ".Key=" << StringUtils::URLEncode(m_key.c_str()) << "&";
-  }
-  if (m_valueHasBeenSet) {
-    oStream << location << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
-  }
-}
+void Tag::OutputToStream(Aws::OStream&, const char*) const {}
 
 }  // namespace Model
 }  // namespace STS

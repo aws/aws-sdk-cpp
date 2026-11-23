@@ -30,7 +30,6 @@ BulkOperationInputFormat GetBulkOperationInputFormatForName(const Aws::String& n
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<BulkOperationInputFormat>(hashCode);
   }
-
   return BulkOperationInputFormat::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForBulkOperationInputFormat(BulkOperationInputFormat enumValu
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

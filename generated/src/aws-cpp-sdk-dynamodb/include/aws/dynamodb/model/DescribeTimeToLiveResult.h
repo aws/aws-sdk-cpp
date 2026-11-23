@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/TimeToLiveDescription.h>
@@ -20,17 +21,25 @@ namespace Json {
 class JsonValue;
 }  // namespace Json
 }  // namespace Utils
+}  // namespace Aws
+namespace smithy {
+namespace schema {
+class SerializableStruct;
+}
+}  // namespace smithy
+namespace Aws {
 namespace DynamoDB {
 namespace Model {
 class DescribeTimeToLiveResult {
  public:
   AWS_DYNAMODB_API DescribeTimeToLiveResult() = default;
-  AWS_DYNAMODB_API DescribeTimeToLiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_DYNAMODB_API DescribeTimeToLiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DYNAMODB_API DescribeTimeToLiveResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_DYNAMODB_API DescribeTimeToLiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_DYNAMODB_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{
   /**
-   * <p/>
+   * <p></p>
    */
   inline const TimeToLiveDescription& GetTimeToLiveDescription() const { return m_timeToLiveDescription; }
   template <typename TimeToLiveDescriptionT = TimeToLiveDescription>

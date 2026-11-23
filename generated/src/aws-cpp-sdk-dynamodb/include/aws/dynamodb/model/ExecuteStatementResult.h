@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -23,13 +24,21 @@ namespace Json {
 class JsonValue;
 }  // namespace Json
 }  // namespace Utils
+}  // namespace Aws
+namespace smithy {
+namespace schema {
+class SerializableStruct;
+}
+}  // namespace smithy
+namespace Aws {
 namespace DynamoDB {
 namespace Model {
 class ExecuteStatementResult {
  public:
   AWS_DYNAMODB_API ExecuteStatementResult() = default;
-  AWS_DYNAMODB_API ExecuteStatementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_DYNAMODB_API ExecuteStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DYNAMODB_API ExecuteStatementResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_DYNAMODB_API ExecuteStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_DYNAMODB_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{
   /**

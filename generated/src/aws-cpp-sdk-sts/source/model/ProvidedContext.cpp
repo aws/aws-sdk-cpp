@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sts/model/ProvidedContext.h>
@@ -19,43 +22,11 @@ namespace Model {
 
 ProvidedContext::ProvidedContext(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ProvidedContext& ProvidedContext::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ProvidedContext& ProvidedContext::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode providerArnNode = resultNode.FirstChild("ProviderArn");
-    if (!providerArnNode.IsNull()) {
-      m_providerArn = Aws::Utils::Xml::DecodeEscapedXmlText(providerArnNode.GetText());
-      m_providerArnHasBeenSet = true;
-    }
-    XmlNode contextAssertionNode = resultNode.FirstChild("ContextAssertion");
-    if (!contextAssertionNode.IsNull()) {
-      m_contextAssertion = Aws::Utils::Xml::DecodeEscapedXmlText(contextAssertionNode.GetText());
-      m_contextAssertionHasBeenSet = true;
-    }
-  }
+void ProvidedContext::OutputToStream(Aws::OStream&, const char*, unsigned, const char*) const {}
 
-  return *this;
-}
-
-void ProvidedContext::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
-  if (m_providerArnHasBeenSet) {
-    oStream << location << index << locationValue << ".ProviderArn=" << StringUtils::URLEncode(m_providerArn.c_str()) << "&";
-  }
-
-  if (m_contextAssertionHasBeenSet) {
-    oStream << location << index << locationValue << ".ContextAssertion=" << StringUtils::URLEncode(m_contextAssertion.c_str()) << "&";
-  }
-}
-
-void ProvidedContext::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_providerArnHasBeenSet) {
-    oStream << location << ".ProviderArn=" << StringUtils::URLEncode(m_providerArn.c_str()) << "&";
-  }
-  if (m_contextAssertionHasBeenSet) {
-    oStream << location << ".ContextAssertion=" << StringUtils::URLEncode(m_contextAssertion.c_str()) << "&";
-  }
-}
+void ProvidedContext::OutputToStream(Aws::OStream&, const char*) const {}
 
 }  // namespace Model
 }  // namespace STS

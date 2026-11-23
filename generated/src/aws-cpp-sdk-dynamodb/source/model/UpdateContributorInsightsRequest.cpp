@@ -3,37 +3,92 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/UpdateContributorInsightsRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/MapSerializer.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeSerializer.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateContributorInsightsRequest::SerializePayload() const {
-  JsonValue payload;
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+namespace {
+class UpdateContributorInsightsRequestSerializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit UpdateContributorInsightsRequestSerializable(const UpdateContributorInsightsRequest& obj)
+      : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
+  void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
 
-  if (m_tableNameHasBeenSet) {
-    payload.WithString("TableName", m_tableName);
+ private:
+  const UpdateContributorInsightsRequest& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void UpdateContributorInsightsRequestSerializable::SerializeMembers(smithy::schema::ShapeSerializer& serializer) const {
+  if (m_obj.TableNameHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("TableName").value();
+    serializer.WriteString(memberSchema, m_obj.GetTableName());
   }
-
-  if (m_indexNameHasBeenSet) {
-    payload.WithString("IndexName", m_indexName);
+  if (m_obj.IndexNameHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("IndexName").value();
+    serializer.WriteString(memberSchema, m_obj.GetIndexName());
   }
-
-  if (m_contributorInsightsActionHasBeenSet) {
-    payload.WithString("ContributorInsightsAction",
-                       ContributorInsightsActionMapper::GetNameForContributorInsightsAction(m_contributorInsightsAction));
+  if (m_obj.ContributorInsightsActionHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("ContributorInsightsAction").value();
+    serializer.WriteString(memberSchema,
+                           ContributorInsightsActionMapper::GetNameForContributorInsightsAction(m_obj.GetContributorInsightsAction()));
   }
-
-  if (m_contributorInsightsModeHasBeenSet) {
-    payload.WithString("ContributorInsightsMode",
-                       ContributorInsightsModeMapper::GetNameForContributorInsightsMode(m_contributorInsightsMode));
+  if (m_obj.ContributorInsightsModeHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("ContributorInsightsMode").value();
+    serializer.WriteString(memberSchema,
+                           ContributorInsightsModeMapper::GetNameForContributorInsightsMode(m_obj.GetContributorInsightsMode()));
   }
+}
 
-  return payload.View().WriteReadable();
+std::shared_ptr<const smithy::schema::Schema> UpdateContributorInsightsRequestSerializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("UpdateContributorInsightsRequest")
+      .PutMember("TableName", smithy::schema::Schema::CreateString("TableName"))
+      .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
+      .PutMember("ContributorInsightsAction", smithy::schema::Schema::CreateEnum("ContributorInsightsAction"))
+      .PutMember("ContributorInsightsMode", smithy::schema::Schema::CreateEnum("ContributorInsightsMode"))
+      .Build();
+}
+
+}  // namespace
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> UpdateContributorInsightsRequest::GetSchemaSerdeInput() const {
+  return Aws::MakeUnique<UpdateContributorInsightsRequestSerializable>("UpdateContributorInsightsRequestSerializable", *this);
+}
+
+Aws::String UpdateContributorInsightsRequest::SerializePayload() const { return {}; }
+smithy::schema::OperationRequestContext UpdateContributorInsightsRequest::GetSchemaSerdeContext() const {
+  return {"UpdateContributorInsights", "2012-08-10"};
 }
 
 Aws::Http::HeaderValueCollection UpdateContributorInsightsRequest::GetRequestSpecificHeaders() const {

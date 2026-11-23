@@ -36,7 +36,6 @@ IndexStatus GetIndexStatusForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<IndexStatus>(hashCode);
   }
-
   return IndexStatus::NOT_SET;
 }
 
@@ -57,7 +56,6 @@ Aws::String GetNameForIndexStatus(IndexStatus enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

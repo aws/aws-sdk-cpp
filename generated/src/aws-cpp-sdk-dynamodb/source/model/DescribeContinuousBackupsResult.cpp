@@ -4,11 +4,21 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/DescribeContinuousBackupsResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
 
 #include <utility>
 
@@ -17,15 +27,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeContinuousBackupsResult::DescribeContinuousBackupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+DescribeContinuousBackupsResult::DescribeContinuousBackupsResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-DescribeContinuousBackupsResult& DescribeContinuousBackupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+DescribeContinuousBackupsResult& DescribeContinuousBackupsResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("ContinuousBackupsDescription")) {
-    m_continuousBackupsDescription = jsonValue.GetObject("ContinuousBackupsDescription");
-    m_continuousBackupsDescriptionHasBeenSet = true;
-  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
@@ -35,4 +40,145 @@ DescribeContinuousBackupsResult& DescribeContinuousBackupsResult::operator=(cons
   }
 
   return *this;
+}
+
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+namespace {
+class DescribeContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
+ public:
+  explicit DescribeContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser(ContinuousBackupsDescription& obj)
+      : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  ContinuousBackupsDescription& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+class DescribeContinuousBackupsResult_PointInTimeRecoveryDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
+ public:
+  explicit DescribeContinuousBackupsResult_PointInTimeRecoveryDescriptionSchemaSerdeDeser(PointInTimeRecoveryDescription& obj)
+      : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  PointInTimeRecoveryDescription& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+class DescribeContinuousBackupsResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit DescribeContinuousBackupsResultDeserializable(DescribeContinuousBackupsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  DescribeContinuousBackupsResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void DescribeContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser::From(const smithy::schema::Schema& memberSchema,
+                                                                                        smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "ContinuousBackupsStatus") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetContinuousBackupsStatus(ContinuousBackupsStatusMapper::GetContinuousBackupsStatusForName(*value0));
+    }
+    return;
+  }
+  if (memberName == "PointInTimeRecoveryDescription") {
+    PointInTimeRecoveryDescription nested0;
+    DescribeContinuousBackupsResult_PointInTimeRecoveryDescriptionSchemaSerdeDeser{nested0}.Deserialize(deserializer);
+    m_obj.SetPointInTimeRecoveryDescription(std::move(nested0));
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> DescribeContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("ContinuousBackupsDescription")
+      .PutMember("ContinuousBackupsStatus", smithy::schema::Schema::CreateEnum("ContinuousBackupsStatus"))
+      .PutMember("PointInTimeRecoveryDescription",
+                 DescribeContinuousBackupsResult_PointInTimeRecoveryDescriptionSchemaSerdeDeser::BuildSchema())
+      .Build();
+}
+
+void DescribeContinuousBackupsResult_PointInTimeRecoveryDescriptionSchemaSerdeDeser::From(const smithy::schema::Schema& memberSchema,
+                                                                                          smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "PointInTimeRecoveryStatus") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetPointInTimeRecoveryStatus(PointInTimeRecoveryStatusMapper::GetPointInTimeRecoveryStatusForName(*value0));
+    }
+    return;
+  }
+  if (memberName == "RecoveryPeriodInDays") {
+    auto value0 = deserializer.ReadInteger(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetRecoveryPeriodInDays(*value0);
+    }
+    return;
+  }
+  if (memberName == "EarliestRestorableDateTime") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetEarliestRestorableDateTime(*value0);
+    }
+    return;
+  }
+  if (memberName == "LatestRestorableDateTime") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetLatestRestorableDateTime(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema>
+DescribeContinuousBackupsResult_PointInTimeRecoveryDescriptionSchemaSerdeDeser::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("PointInTimeRecoveryDescription")
+      .PutMember("PointInTimeRecoveryStatus", smithy::schema::Schema::CreateEnum("PointInTimeRecoveryStatus"))
+      .PutMember("RecoveryPeriodInDays", smithy::schema::Schema::CreateInteger("RecoveryPeriodInDays"))
+      .PutMember("EarliestRestorableDateTime", smithy::schema::Schema::CreateTimestamp("EarliestRestorableDateTime"))
+      .PutMember("LatestRestorableDateTime", smithy::schema::Schema::CreateTimestamp("LatestRestorableDateTime"))
+      .Build();
+}
+
+void DescribeContinuousBackupsResultDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                                         smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "ContinuousBackupsDescription") {
+    ContinuousBackupsDescription nested0;
+    DescribeContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser{nested0}.Deserialize(deserializer);
+    m_obj.SetContinuousBackupsDescription(std::move(nested0));
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> DescribeContinuousBackupsResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("DescribeContinuousBackupsResult")
+      .PutMember("ContinuousBackupsDescription",
+                 DescribeContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser::BuildSchema())
+      .Build();
+}
+
+}  // namespace
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> DescribeContinuousBackupsResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<DescribeContinuousBackupsResultDeserializable>("DescribeContinuousBackupsResultDeserializable", *this);
 }

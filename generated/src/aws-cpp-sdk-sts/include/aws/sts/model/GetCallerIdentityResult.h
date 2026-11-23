@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/sts/model/ResponseMetadata.h>
@@ -20,6 +21,13 @@ namespace Xml {
 class XmlDocument;
 }  // namespace Xml
 }  // namespace Utils
+}  // namespace Aws
+namespace smithy {
+namespace schema {
+class SerializableStruct;
+}
+}  // namespace smithy
+namespace Aws {
 namespace STS {
 namespace Model {
 /**
@@ -32,8 +40,9 @@ namespace Model {
 class GetCallerIdentityResult {
  public:
   AWS_STS_API GetCallerIdentityResult() = default;
-  AWS_STS_API GetCallerIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_STS_API GetCallerIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_STS_API GetCallerIdentityResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_STS_API GetCallerIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_STS_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{
   /**

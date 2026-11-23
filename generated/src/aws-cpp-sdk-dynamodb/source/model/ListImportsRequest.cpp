@@ -3,32 +3,83 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/ListImportsRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/MapSerializer.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeSerializer.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListImportsRequest::SerializePayload() const {
-  JsonValue payload;
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+namespace {
+class ListImportsRequestSerializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit ListImportsRequestSerializable(const ListImportsRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
+  void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
 
-  if (m_tableArnHasBeenSet) {
-    payload.WithString("TableArn", m_tableArn);
+ private:
+  const ListImportsRequest& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void ListImportsRequestSerializable::SerializeMembers(smithy::schema::ShapeSerializer& serializer) const {
+  if (m_obj.TableArnHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("TableArn").value();
+    serializer.WriteString(memberSchema, m_obj.GetTableArn());
   }
-
-  if (m_pageSizeHasBeenSet) {
-    payload.WithInteger("PageSize", m_pageSize);
+  if (m_obj.PageSizeHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("PageSize").value();
+    serializer.WriteInteger(memberSchema, m_obj.GetPageSize());
   }
-
-  if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
+  if (m_obj.NextTokenHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("NextToken").value();
+    serializer.WriteString(memberSchema, m_obj.GetNextToken());
   }
-
-  return payload.View().WriteReadable();
 }
+
+std::shared_ptr<const smithy::schema::Schema> ListImportsRequestSerializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("ListImportsRequest")
+      .PutMember("TableArn", smithy::schema::Schema::CreateString("TableArn"))
+      .PutMember("PageSize", smithy::schema::Schema::CreateInteger("PageSize"))
+      .PutMember("NextToken", smithy::schema::Schema::CreateString("NextToken"))
+      .Build();
+}
+
+}  // namespace
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> ListImportsRequest::GetSchemaSerdeInput() const {
+  return Aws::MakeUnique<ListImportsRequestSerializable>("ListImportsRequestSerializable", *this);
+}
+
+Aws::String ListImportsRequest::SerializePayload() const { return {}; }
+smithy::schema::OperationRequestContext ListImportsRequest::GetSchemaSerdeContext() const { return {"ListImports", "2012-08-10"}; }
 
 Aws::Http::HeaderValueCollection ListImportsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;

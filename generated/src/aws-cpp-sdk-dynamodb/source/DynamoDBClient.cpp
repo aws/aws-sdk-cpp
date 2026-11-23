@@ -115,7 +115,9 @@ DynamoDBClient::DynamoDBClient(const DynamoDB::DynamoDBClientConfiguration& clie
                            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                             smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
                                                     clientConfiguration.ResolveCredentialProviderConfig()}},
-                       }) {}
+                       }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::AwsJson10Protocol>(ALLOCATION_TAG));
+}
 
 DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials, std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider,
                                const DynamoDB::DynamoDBClientConfiguration& clientConfiguration)
@@ -129,7 +131,9 @@ DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials, std::shared_pt
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
                                        GetServiceName(), clientConfiguration.region}},
-          }) {}
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::AwsJson10Protocol>(ALLOCATION_TAG));
+}
 
 DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider,
@@ -144,7 +148,9 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
                                        GetServiceName(), clientConfiguration.region}},
-          }) {}
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::AwsJson10Protocol>(ALLOCATION_TAG));
+}
 
 /* Legacy constructors due deprecation */
 DynamoDBClient::DynamoDBClient(const Aws::Client::ClientConfiguration& clientConfiguration)
@@ -156,7 +162,9 @@ DynamoDBClient::DynamoDBClient(const Aws::Client::ClientConfiguration& clientCon
                            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                             smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
                                                     clientConfiguration.ResolveCredentialProviderConfig()}},
-                       }) {}
+                       }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::AwsJson10Protocol>(ALLOCATION_TAG));
+}
 
 DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
@@ -168,7 +176,9 @@ DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials, const Aws::Cli
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
                                        GetServiceName(), clientConfiguration.region}},
-          }) {}
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::AwsJson10Protocol>(ALLOCATION_TAG));
+}
 
 DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                const Aws::Client::ClientConfiguration& clientConfiguration)
@@ -181,7 +191,9 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
                                        GetServiceName(), clientConfiguration.region}},
-          }) {}
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::AwsJson10Protocol>(ALLOCATION_TAG));
+}
 /* End of legacy constructors due deprecation */
 
 DynamoDBClient::~DynamoDBClient() { ShutdownSdkClient(this, -1); }
@@ -226,293 +238,664 @@ DynamoDBClient::InvokeOperationOutcome DynamoDBClient::InvokeServiceOperation(co
 }
 BatchExecuteStatementOutcome DynamoDBClient::BatchExecuteStatement(const BatchExecuteStatementRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? BatchExecuteStatementOutcome(result.GetResultWithOwnership())
-                            : BatchExecuteStatementOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return BatchExecuteStatementOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return BatchExecuteStatementOutcome(
+      BuildOperationResult<BatchExecuteStatementResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? BatchGetItemOutcome(result.GetResultWithOwnership()) : BatchGetItemOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return BatchGetItemOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return BatchGetItemOutcome(BuildOperationResult<BatchGetItemResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 BatchWriteItemOutcome DynamoDBClient::BatchWriteItem(const BatchWriteItemRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? BatchWriteItemOutcome(result.GetResultWithOwnership()) : BatchWriteItemOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return BatchWriteItemOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return BatchWriteItemOutcome(
+      BuildOperationResult<BatchWriteItemResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 CancelBulkOperationOutcome DynamoDBClient::CancelBulkOperation(const CancelBulkOperationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CancelBulkOperationOutcome(result.GetResultWithOwnership())
-                            : CancelBulkOperationOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return CancelBulkOperationOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return CancelBulkOperationOutcome(
+      BuildOperationResult<CancelBulkOperationResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 CreateBackupOutcome DynamoDBClient::CreateBackup(const CreateBackupRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateBackupOutcome(result.GetResultWithOwnership()) : CreateBackupOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return CreateBackupOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return CreateBackupOutcome(BuildOperationResult<CreateBackupResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 CreateGlobalTableOutcome DynamoDBClient::CreateGlobalTable(const CreateGlobalTableRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateGlobalTableOutcome(result.GetResultWithOwnership())
-                            : CreateGlobalTableOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return CreateGlobalTableOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return CreateGlobalTableOutcome(
+      BuildOperationResult<CreateGlobalTableResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 CreateTableOutcome DynamoDBClient::CreateTable(const CreateTableRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateTableOutcome(result.GetResultWithOwnership()) : CreateTableOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return CreateTableOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return CreateTableOutcome(BuildOperationResult<CreateTableResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DeleteBackupOutcome DynamoDBClient::DeleteBackup(const DeleteBackupRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteBackupOutcome(result.GetResultWithOwnership()) : DeleteBackupOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DeleteBackupOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DeleteBackupOutcome(BuildOperationResult<DeleteBackupResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DeleteItemOutcome DynamoDBClient::DeleteItem(const DeleteItemRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteItemOutcome(result.GetResultWithOwnership()) : DeleteItemOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DeleteItemOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DeleteItemOutcome(BuildOperationResult<DeleteItemResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DeleteResourcePolicyOutcome DynamoDBClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
-                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DeleteResourcePolicyOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DeleteResourcePolicyOutcome(
+      BuildOperationResult<DeleteResourcePolicyResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DeleteTableOutcome DynamoDBClient::DeleteTable(const DeleteTableRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteTableOutcome(result.GetResultWithOwnership()) : DeleteTableOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DeleteTableOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DeleteTableOutcome(BuildOperationResult<DeleteTableResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeBackupOutcome DynamoDBClient::DescribeBackup(const DescribeBackupRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeBackupOutcome(result.GetResultWithOwnership()) : DescribeBackupOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeBackupOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeBackupOutcome(
+      BuildOperationResult<DescribeBackupResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeBulkOperationOutcome DynamoDBClient::DescribeBulkOperation(const DescribeBulkOperationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeBulkOperationOutcome(result.GetResultWithOwnership())
-                            : DescribeBulkOperationOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeBulkOperationOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeBulkOperationOutcome(
+      BuildOperationResult<DescribeBulkOperationResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeContinuousBackupsOutcome DynamoDBClient::DescribeContinuousBackups(const DescribeContinuousBackupsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeContinuousBackupsOutcome(result.GetResultWithOwnership())
-                            : DescribeContinuousBackupsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeContinuousBackupsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeContinuousBackupsOutcome(
+      BuildOperationResult<DescribeContinuousBackupsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeContributorInsightsOutcome DynamoDBClient::DescribeContributorInsights(const DescribeContributorInsightsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeContributorInsightsOutcome(result.GetResultWithOwnership())
-                            : DescribeContributorInsightsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeContributorInsightsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeContributorInsightsOutcome(
+      BuildOperationResult<DescribeContributorInsightsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeEndpointsOutcome DynamoDBClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeEndpointsOutcome(result.GetResultWithOwnership())
-                            : DescribeEndpointsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeEndpointsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeEndpointsOutcome(
+      BuildOperationResult<DescribeEndpointsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeExportOutcome DynamoDBClient::DescribeExport(const DescribeExportRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeExportOutcome(result.GetResultWithOwnership()) : DescribeExportOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeExportOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeExportOutcome(
+      BuildOperationResult<DescribeExportResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeGlobalTableOutcome DynamoDBClient::DescribeGlobalTable(const DescribeGlobalTableRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeGlobalTableOutcome(result.GetResultWithOwnership())
-                            : DescribeGlobalTableOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeGlobalTableOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeGlobalTableOutcome(
+      BuildOperationResult<DescribeGlobalTableResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeGlobalTableSettingsOutcome DynamoDBClient::DescribeGlobalTableSettings(const DescribeGlobalTableSettingsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeGlobalTableSettingsOutcome(result.GetResultWithOwnership())
-                            : DescribeGlobalTableSettingsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeGlobalTableSettingsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeGlobalTableSettingsOutcome(
+      BuildOperationResult<DescribeGlobalTableSettingsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeImportOutcome DynamoDBClient::DescribeImport(const DescribeImportRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeImportOutcome(result.GetResultWithOwnership()) : DescribeImportOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeImportOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeImportOutcome(
+      BuildOperationResult<DescribeImportResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeKinesisStreamingDestinationOutcome DynamoDBClient::DescribeKinesisStreamingDestination(
     const DescribeKinesisStreamingDestinationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeKinesisStreamingDestinationOutcome(result.GetResultWithOwnership())
-                            : DescribeKinesisStreamingDestinationOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeKinesisStreamingDestinationOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeKinesisStreamingDestinationOutcome(
+      BuildOperationResult<DescribeKinesisStreamingDestinationResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeLimitsOutcome DynamoDBClient::DescribeLimits(const DescribeLimitsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeLimitsOutcome(result.GetResultWithOwnership()) : DescribeLimitsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeLimitsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeLimitsOutcome(
+      BuildOperationResult<DescribeLimitsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeTableOutcome DynamoDBClient::DescribeTable(const DescribeTableRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeTableOutcome(result.GetResultWithOwnership()) : DescribeTableOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeTableOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeTableOutcome(BuildOperationResult<DescribeTableResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeTableReplicaAutoScalingOutcome DynamoDBClient::DescribeTableReplicaAutoScaling(
     const DescribeTableReplicaAutoScalingRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeTableReplicaAutoScalingOutcome(result.GetResultWithOwnership())
-                            : DescribeTableReplicaAutoScalingOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeTableReplicaAutoScalingOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeTableReplicaAutoScalingOutcome(
+      BuildOperationResult<DescribeTableReplicaAutoScalingResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DescribeTimeToLiveOutcome DynamoDBClient::DescribeTimeToLive(const DescribeTimeToLiveRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeTimeToLiveOutcome(result.GetResultWithOwnership())
-                            : DescribeTimeToLiveOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DescribeTimeToLiveOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DescribeTimeToLiveOutcome(
+      BuildOperationResult<DescribeTimeToLiveResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 DisableKinesisStreamingDestinationOutcome DynamoDBClient::DisableKinesisStreamingDestination(
     const DisableKinesisStreamingDestinationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableKinesisStreamingDestinationOutcome(result.GetResultWithOwnership())
-                            : DisableKinesisStreamingDestinationOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DisableKinesisStreamingDestinationOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DisableKinesisStreamingDestinationOutcome(
+      BuildOperationResult<DisableKinesisStreamingDestinationResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 EnableKinesisStreamingDestinationOutcome DynamoDBClient::EnableKinesisStreamingDestination(
     const EnableKinesisStreamingDestinationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? EnableKinesisStreamingDestinationOutcome(result.GetResultWithOwnership())
-                            : EnableKinesisStreamingDestinationOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return EnableKinesisStreamingDestinationOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return EnableKinesisStreamingDestinationOutcome(
+      BuildOperationResult<EnableKinesisStreamingDestinationResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 ExecuteStatementOutcome DynamoDBClient::ExecuteStatement(const ExecuteStatementRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ExecuteStatementOutcome(result.GetResultWithOwnership())
-                            : ExecuteStatementOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return ExecuteStatementOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ExecuteStatementOutcome(
+      BuildOperationResult<ExecuteStatementResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 ExecuteTransactionOutcome DynamoDBClient::ExecuteTransaction(const ExecuteTransactionRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ExecuteTransactionOutcome(result.GetResultWithOwnership())
-                            : ExecuteTransactionOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return ExecuteTransactionOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ExecuteTransactionOutcome(
+      BuildOperationResult<ExecuteTransactionResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 ExportTableToPointInTimeOutcome DynamoDBClient::ExportTableToPointInTime(const ExportTableToPointInTimeRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ExportTableToPointInTimeOutcome(result.GetResultWithOwnership())
-                            : ExportTableToPointInTimeOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return ExportTableToPointInTimeOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ExportTableToPointInTimeOutcome(
+      BuildOperationResult<ExportTableToPointInTimeResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetItemOutcome(result.GetResultWithOwnership()) : GetItemOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return GetItemOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return GetItemOutcome(BuildOperationResult<GetItemResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 GetResourcePolicyOutcome DynamoDBClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
-                            : GetResourcePolicyOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return GetResourcePolicyOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return GetResourcePolicyOutcome(
+      BuildOperationResult<GetResourcePolicyResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 ImportTableOutcome DynamoDBClient::ImportTable(const ImportTableRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ImportTableOutcome(result.GetResultWithOwnership()) : ImportTableOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return ImportTableOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ImportTableOutcome(BuildOperationResult<ImportTableResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 ListBackupsOutcome DynamoDBClient::ListBackups(const ListBackupsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListBackupsOutcome(result.GetResultWithOwnership()) : ListBackupsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return ListBackupsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ListBackupsOutcome(BuildOperationResult<ListBackupsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 ListBulkOperationsOutcome DynamoDBClient::ListBulkOperations(const ListBulkOperationsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListBulkOperationsOutcome(result.GetResultWithOwnership())
-                            : ListBulkOperationsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return ListBulkOperationsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ListBulkOperationsOutcome(
+      BuildOperationResult<ListBulkOperationsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 ListContributorInsightsOutcome DynamoDBClient::ListContributorInsights(const ListContributorInsightsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListContributorInsightsOutcome(result.GetResultWithOwnership())
-                            : ListContributorInsightsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return ListContributorInsightsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ListContributorInsightsOutcome(
+      BuildOperationResult<ListContributorInsightsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 ListExportsOutcome DynamoDBClient::ListExports(const ListExportsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListExportsOutcome(result.GetResultWithOwnership()) : ListExportsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return ListExportsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ListExportsOutcome(BuildOperationResult<ListExportsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 ListGlobalTablesOutcome DynamoDBClient::ListGlobalTables(const ListGlobalTablesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListGlobalTablesOutcome(result.GetResultWithOwnership())
-                            : ListGlobalTablesOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return ListGlobalTablesOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ListGlobalTablesOutcome(
+      BuildOperationResult<ListGlobalTablesResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 ListImportsOutcome DynamoDBClient::ListImports(const ListImportsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListImportsOutcome(result.GetResultWithOwnership()) : ListImportsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return ListImportsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ListImportsOutcome(BuildOperationResult<ListImportsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 ListTablesOutcome DynamoDBClient::ListTables(const ListTablesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListTablesOutcome(result.GetResultWithOwnership()) : ListTablesOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return ListTablesOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ListTablesOutcome(BuildOperationResult<ListTablesResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 ListTagsOfResourceOutcome DynamoDBClient::ListTagsOfResource(const ListTagsOfResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListTagsOfResourceOutcome(result.GetResultWithOwnership())
-                            : ListTagsOfResourceOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return ListTagsOfResourceOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ListTagsOfResourceOutcome(
+      BuildOperationResult<ListTagsOfResourceResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 PutItemOutcome DynamoDBClient::PutItem(const PutItemRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? PutItemOutcome(result.GetResultWithOwnership()) : PutItemOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return PutItemOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return PutItemOutcome(BuildOperationResult<PutItemResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 PutResourcePolicyOutcome DynamoDBClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
-                            : PutResourcePolicyOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return PutResourcePolicyOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return PutResourcePolicyOutcome(
+      BuildOperationResult<PutResourcePolicyResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 QueryOutcome DynamoDBClient::Query(const QueryRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? QueryOutcome(result.GetResultWithOwnership()) : QueryOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return QueryOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return QueryOutcome(BuildOperationResult<QueryResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 RestoreTableFromBackupOutcome DynamoDBClient::RestoreTableFromBackup(const RestoreTableFromBackupRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RestoreTableFromBackupOutcome(result.GetResultWithOwnership())
-                            : RestoreTableFromBackupOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return RestoreTableFromBackupOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return RestoreTableFromBackupOutcome(
+      BuildOperationResult<RestoreTableFromBackupResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 RestoreTableToPointInTimeOutcome DynamoDBClient::RestoreTableToPointInTime(const RestoreTableToPointInTimeRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RestoreTableToPointInTimeOutcome(result.GetResultWithOwnership())
-                            : RestoreTableToPointInTimeOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return RestoreTableToPointInTimeOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return RestoreTableToPointInTimeOutcome(
+      BuildOperationResult<RestoreTableToPointInTimeResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ScanOutcome(result.GetResultWithOwnership()) : ScanOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return ScanOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ScanOutcome(BuildOperationResult<ScanResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 SearchVectorsOutcome DynamoDBClient::SearchVectors(const SearchVectorsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? SearchVectorsOutcome(result.GetResultWithOwnership()) : SearchVectorsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return SearchVectorsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return SearchVectorsOutcome(BuildOperationResult<SearchVectorsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 StartBulkPutItemsOutcome DynamoDBClient::StartBulkPutItems(const StartBulkPutItemsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? StartBulkPutItemsOutcome(result.GetResultWithOwnership())
-                            : StartBulkPutItemsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return StartBulkPutItemsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return StartBulkPutItemsOutcome(
+      BuildOperationResult<StartBulkPutItemsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 TagResourceOutcome DynamoDBClient::TagResource(const TagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return TagResourceOutcome(std::move(result.GetError()));
+  }
+  return TagResourceOutcome(result.GetResultWithOwnership());
 }
 TransactGetItemsOutcome DynamoDBClient::TransactGetItems(const TransactGetItemsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? TransactGetItemsOutcome(result.GetResultWithOwnership())
-                            : TransactGetItemsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return TransactGetItemsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return TransactGetItemsOutcome(
+      BuildOperationResult<TransactGetItemsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 TransactWriteItemsOutcome DynamoDBClient::TransactWriteItems(const TransactWriteItemsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? TransactWriteItemsOutcome(result.GetResultWithOwnership())
-                            : TransactWriteItemsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return TransactWriteItemsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return TransactWriteItemsOutcome(
+      BuildOperationResult<TransactWriteItemsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 UntagResourceOutcome DynamoDBClient::UntagResource(const UntagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return UntagResourceOutcome(std::move(result.GetError()));
+  }
+  return UntagResourceOutcome(result.GetResultWithOwnership());
 }
 UpdateContinuousBackupsOutcome DynamoDBClient::UpdateContinuousBackups(const UpdateContinuousBackupsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateContinuousBackupsOutcome(result.GetResultWithOwnership())
-                            : UpdateContinuousBackupsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return UpdateContinuousBackupsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return UpdateContinuousBackupsOutcome(
+      BuildOperationResult<UpdateContinuousBackupsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 UpdateContributorInsightsOutcome DynamoDBClient::UpdateContributorInsights(const UpdateContributorInsightsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateContributorInsightsOutcome(result.GetResultWithOwnership())
-                            : UpdateContributorInsightsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return UpdateContributorInsightsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return UpdateContributorInsightsOutcome(
+      BuildOperationResult<UpdateContributorInsightsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 UpdateGlobalTableOutcome DynamoDBClient::UpdateGlobalTable(const UpdateGlobalTableRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateGlobalTableOutcome(result.GetResultWithOwnership())
-                            : UpdateGlobalTableOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return UpdateGlobalTableOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return UpdateGlobalTableOutcome(
+      BuildOperationResult<UpdateGlobalTableResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 UpdateGlobalTableSettingsOutcome DynamoDBClient::UpdateGlobalTableSettings(const UpdateGlobalTableSettingsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateGlobalTableSettingsOutcome(result.GetResultWithOwnership())
-                            : UpdateGlobalTableSettingsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return UpdateGlobalTableSettingsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return UpdateGlobalTableSettingsOutcome(
+      BuildOperationResult<UpdateGlobalTableSettingsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 UpdateItemOutcome DynamoDBClient::UpdateItem(const UpdateItemRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateItemOutcome(result.GetResultWithOwnership()) : UpdateItemOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return UpdateItemOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return UpdateItemOutcome(BuildOperationResult<UpdateItemResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 UpdateKinesisStreamingDestinationOutcome DynamoDBClient::UpdateKinesisStreamingDestination(
     const UpdateKinesisStreamingDestinationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateKinesisStreamingDestinationOutcome(result.GetResultWithOwnership())
-                            : UpdateKinesisStreamingDestinationOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return UpdateKinesisStreamingDestinationOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return UpdateKinesisStreamingDestinationOutcome(
+      BuildOperationResult<UpdateKinesisStreamingDestinationResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 UpdateTableOutcome DynamoDBClient::UpdateTable(const UpdateTableRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateTableOutcome(result.GetResultWithOwnership()) : UpdateTableOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return UpdateTableOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return UpdateTableOutcome(BuildOperationResult<UpdateTableResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 UpdateTableReplicaAutoScalingOutcome DynamoDBClient::UpdateTableReplicaAutoScaling(
     const UpdateTableReplicaAutoScalingRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateTableReplicaAutoScalingOutcome(result.GetResultWithOwnership())
-                            : UpdateTableReplicaAutoScalingOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return UpdateTableReplicaAutoScalingOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return UpdateTableReplicaAutoScalingOutcome(
+      BuildOperationResult<UpdateTableReplicaAutoScalingResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 UpdateTimeToLiveOutcome DynamoDBClient::UpdateTimeToLive(const UpdateTimeToLiveRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateTimeToLiveOutcome(result.GetResultWithOwnership())
-                            : UpdateTimeToLiveOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return UpdateTimeToLiveOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return UpdateTimeToLiveOutcome(
+      BuildOperationResult<UpdateTimeToLiveResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 void DynamoDBClient::OptionallyUpdateDescribeEndpointsCache(Aws::Endpoint::AWSEndpoint& resolvedEndpoint, const Aws::String& operationName,

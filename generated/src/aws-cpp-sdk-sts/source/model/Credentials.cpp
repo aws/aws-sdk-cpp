@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sts/model/Credentials.h>
@@ -19,70 +22,11 @@ namespace Model {
 
 Credentials::Credentials(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Credentials& Credentials::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+Credentials& Credentials::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode accessKeyIdNode = resultNode.FirstChild("AccessKeyId");
-    if (!accessKeyIdNode.IsNull()) {
-      m_accessKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(accessKeyIdNode.GetText());
-      m_accessKeyIdHasBeenSet = true;
-    }
-    XmlNode secretAccessKeyNode = resultNode.FirstChild("SecretAccessKey");
-    if (!secretAccessKeyNode.IsNull()) {
-      m_secretAccessKey = Aws::Utils::Xml::DecodeEscapedXmlText(secretAccessKeyNode.GetText());
-      m_secretAccessKeyHasBeenSet = true;
-    }
-    XmlNode sessionTokenNode = resultNode.FirstChild("SessionToken");
-    if (!sessionTokenNode.IsNull()) {
-      m_sessionToken = Aws::Utils::Xml::DecodeEscapedXmlText(sessionTokenNode.GetText());
-      m_sessionTokenHasBeenSet = true;
-    }
-    XmlNode expirationNode = resultNode.FirstChild("Expiration");
-    if (!expirationNode.IsNull()) {
-      m_expiration = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationNode.GetText()).c_str()).c_str(),
-                              Aws::Utils::DateFormat::ISO_8601);
-      m_expirationHasBeenSet = true;
-    }
-  }
+void Credentials::OutputToStream(Aws::OStream&, const char*, unsigned, const char*) const {}
 
-  return *this;
-}
-
-void Credentials::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
-  if (m_accessKeyIdHasBeenSet) {
-    oStream << location << index << locationValue << ".AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
-  }
-
-  if (m_secretAccessKeyHasBeenSet) {
-    oStream << location << index << locationValue << ".SecretAccessKey=" << StringUtils::URLEncode(m_secretAccessKey.c_str()) << "&";
-  }
-
-  if (m_sessionTokenHasBeenSet) {
-    oStream << location << index << locationValue << ".SessionToken=" << StringUtils::URLEncode(m_sessionToken.c_str()) << "&";
-  }
-
-  if (m_expirationHasBeenSet) {
-    oStream << location << index << locationValue
-            << ".Expiration=" << StringUtils::URLEncode(m_expiration.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-}
-
-void Credentials::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_accessKeyIdHasBeenSet) {
-    oStream << location << ".AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
-  }
-  if (m_secretAccessKeyHasBeenSet) {
-    oStream << location << ".SecretAccessKey=" << StringUtils::URLEncode(m_secretAccessKey.c_str()) << "&";
-  }
-  if (m_sessionTokenHasBeenSet) {
-    oStream << location << ".SessionToken=" << StringUtils::URLEncode(m_sessionToken.c_str()) << "&";
-  }
-  if (m_expirationHasBeenSet) {
-    oStream << location << ".Expiration=" << StringUtils::URLEncode(m_expiration.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
-            << "&";
-  }
-}
+void Credentials::OutputToStream(Aws::OStream&, const char*) const {}
 
 }  // namespace Model
 }  // namespace STS

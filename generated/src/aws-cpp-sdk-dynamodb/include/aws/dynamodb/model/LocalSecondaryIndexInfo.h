@@ -58,13 +58,13 @@ class LocalSecondaryIndexInfo {
    * <p>The complete key schema for a local secondary index, which consists of one or
    * more pairs of attribute names and key types:</p> <ul> <li> <p> <code>HASH</code>
    * - partition key</p> </li> <li> <p> <code>RANGE</code> - sort key</p> </li> </ul>
-   *  <p>The partition key of an item is also known as its <i>hash
-   * attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an
-   * internal hash function to evenly distribute data items across partitions, based
-   * on their partition key values.</p> <p>The sort key of an item is also known as
-   * its <i>range attribute</i>. The term "range attribute" derives from the way
-   * DynamoDB stores items with the same partition key physically close together, in
-   * sorted order by the sort key value.</p>
+   *  <p>The partition key of an item is also known as its <i>hash attribute</i>. The
+   * term "hash attribute" derives from DynamoDB's usage of an internal hash function
+   * to evenly distribute data items across partitions, based on their partition key
+   * values.</p> <p>The sort key of an item is also known as its <i>range
+   * attribute</i>. The term "range attribute" derives from the way DynamoDB stores
+   * items with the same partition key physically close together, in sorted order by
+   * the sort key value.</p>
    */
   inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const { return m_keySchema; }
   inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }

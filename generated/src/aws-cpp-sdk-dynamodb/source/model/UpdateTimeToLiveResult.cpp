@@ -4,11 +4,21 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/UpdateTimeToLiveResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
 
 #include <utility>
 
@@ -17,15 +27,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateTimeToLiveResult::UpdateTimeToLiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+UpdateTimeToLiveResult::UpdateTimeToLiveResult(const Aws::AmazonWebServiceResult<Aws::String>& result) { *this = result; }
 
-UpdateTimeToLiveResult& UpdateTimeToLiveResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+UpdateTimeToLiveResult& UpdateTimeToLiveResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("TimeToLiveSpecification")) {
-    m_timeToLiveSpecification = jsonValue.GetObject("TimeToLiveSpecification");
-    m_timeToLiveSpecificationHasBeenSet = true;
-  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
@@ -35,4 +40,87 @@ UpdateTimeToLiveResult& UpdateTimeToLiveResult::operator=(const Aws::AmazonWebSe
   }
 
   return *this;
+}
+
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+namespace {
+class UpdateTimeToLiveResult_TimeToLiveSpecificationSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
+ public:
+  explicit UpdateTimeToLiveResult_TimeToLiveSpecificationSchemaSerdeDeser(TimeToLiveSpecification& obj)
+      : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  TimeToLiveSpecification& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+class UpdateTimeToLiveResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit UpdateTimeToLiveResultDeserializable(UpdateTimeToLiveResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  UpdateTimeToLiveResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void UpdateTimeToLiveResult_TimeToLiveSpecificationSchemaSerdeDeser::From(const smithy::schema::Schema& memberSchema,
+                                                                          smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "Enabled") {
+    auto value0 = deserializer.ReadBoolean(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetEnabled(*value0);
+    }
+    return;
+  }
+  if (memberName == "AttributeName") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetAttributeName(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> UpdateTimeToLiveResult_TimeToLiveSpecificationSchemaSerdeDeser::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("TimeToLiveSpecification")
+      .PutMember("Enabled", smithy::schema::Schema::CreateBoolean("Enabled"))
+      .PutMember("AttributeName", smithy::schema::Schema::CreateString("AttributeName"))
+      .Build();
+}
+
+void UpdateTimeToLiveResultDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                                smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "TimeToLiveSpecification") {
+    TimeToLiveSpecification nested0;
+    UpdateTimeToLiveResult_TimeToLiveSpecificationSchemaSerdeDeser{nested0}.Deserialize(deserializer);
+    m_obj.SetTimeToLiveSpecification(std::move(nested0));
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> UpdateTimeToLiveResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("UpdateTimeToLiveResult")
+      .PutMember("TimeToLiveSpecification", UpdateTimeToLiveResult_TimeToLiveSpecificationSchemaSerdeDeser::BuildSchema())
+      .Build();
+}
+
+}  // namespace
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> UpdateTimeToLiveResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<UpdateTimeToLiveResultDeserializable>("UpdateTimeToLiveResultDeserializable", *this);
 }

@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/DisassociateReplicationGroupMemberAction.h>
 
 #include <utility>
@@ -17,29 +20,10 @@ namespace Model {
 
 DisassociateReplicationGroupMemberAction::DisassociateReplicationGroupMemberAction(JsonView jsonValue) { *this = jsonValue; }
 
-DisassociateReplicationGroupMemberAction& DisassociateReplicationGroupMemberAction::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("RegionName")) {
-    m_regionName = jsonValue.GetString("RegionName");
-    m_regionNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DisassociationMode")) {
-    m_disassociationMode = DisassociationModeMapper::GetDisassociationModeForName(jsonValue.GetString("DisassociationMode"));
-    m_disassociationModeHasBeenSet = true;
-  }
-  return *this;
-}
+DisassociateReplicationGroupMemberAction& DisassociateReplicationGroupMemberAction::operator=(JsonView) { return *this; }
 
 JsonValue DisassociateReplicationGroupMemberAction::Jsonize() const {
   JsonValue payload;
-
-  if (m_regionNameHasBeenSet) {
-    payload.WithString("RegionName", m_regionName);
-  }
-
-  if (m_disassociationModeHasBeenSet) {
-    payload.WithString("DisassociationMode", DisassociationModeMapper::GetNameForDisassociationMode(m_disassociationMode));
-  }
-
   return payload;
 }
 

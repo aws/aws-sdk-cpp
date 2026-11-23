@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sts/model/AssumedRoleUser.h>
@@ -19,43 +22,11 @@ namespace Model {
 
 AssumedRoleUser::AssumedRoleUser(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AssumedRoleUser& AssumedRoleUser::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+AssumedRoleUser& AssumedRoleUser::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode assumedRoleIdNode = resultNode.FirstChild("AssumedRoleId");
-    if (!assumedRoleIdNode.IsNull()) {
-      m_assumedRoleId = Aws::Utils::Xml::DecodeEscapedXmlText(assumedRoleIdNode.GetText());
-      m_assumedRoleIdHasBeenSet = true;
-    }
-    XmlNode arnNode = resultNode.FirstChild("Arn");
-    if (!arnNode.IsNull()) {
-      m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
-      m_arnHasBeenSet = true;
-    }
-  }
+void AssumedRoleUser::OutputToStream(Aws::OStream&, const char*, unsigned, const char*) const {}
 
-  return *this;
-}
-
-void AssumedRoleUser::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
-  if (m_assumedRoleIdHasBeenSet) {
-    oStream << location << index << locationValue << ".AssumedRoleId=" << StringUtils::URLEncode(m_assumedRoleId.c_str()) << "&";
-  }
-
-  if (m_arnHasBeenSet) {
-    oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
-  }
-}
-
-void AssumedRoleUser::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_assumedRoleIdHasBeenSet) {
-    oStream << location << ".AssumedRoleId=" << StringUtils::URLEncode(m_assumedRoleId.c_str()) << "&";
-  }
-  if (m_arnHasBeenSet) {
-    oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
-  }
-}
+void AssumedRoleUser::OutputToStream(Aws::OStream&, const char*) const {}
 
 }  // namespace Model
 }  // namespace STS

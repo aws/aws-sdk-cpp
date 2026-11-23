@@ -33,7 +33,6 @@ InputFormat GetInputFormatForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<InputFormat>(hashCode);
   }
-
   return InputFormat::NOT_SET;
 }
 
@@ -52,7 +51,6 @@ Aws::String GetNameForInputFormat(InputFormat enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

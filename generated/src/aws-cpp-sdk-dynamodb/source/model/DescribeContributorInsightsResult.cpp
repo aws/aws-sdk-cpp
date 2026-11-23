@@ -4,11 +4,21 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/DescribeContributorInsightsResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
 
 #include <utility>
 
@@ -17,47 +27,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeContributorInsightsResult::DescribeContributorInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+DescribeContributorInsightsResult::DescribeContributorInsightsResult(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   *this = result;
 }
 
-DescribeContributorInsightsResult& DescribeContributorInsightsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+DescribeContributorInsightsResult& DescribeContributorInsightsResult::operator=(const Aws::AmazonWebServiceResult<Aws::String>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("TableName")) {
-    m_tableName = jsonValue.GetString("TableName");
-    m_tableNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("IndexName")) {
-    m_indexName = jsonValue.GetString("IndexName");
-    m_indexNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ContributorInsightsRuleList")) {
-    Aws::Utils::Array<JsonView> contributorInsightsRuleListJsonList = jsonValue.GetArray("ContributorInsightsRuleList");
-    for (unsigned contributorInsightsRuleListIndex = 0; contributorInsightsRuleListIndex < contributorInsightsRuleListJsonList.GetLength();
-         ++contributorInsightsRuleListIndex) {
-      m_contributorInsightsRuleList.push_back(contributorInsightsRuleListJsonList[contributorInsightsRuleListIndex].AsString());
-    }
-    m_contributorInsightsRuleListHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ContributorInsightsStatus")) {
-    m_contributorInsightsStatus =
-        ContributorInsightsStatusMapper::GetContributorInsightsStatusForName(jsonValue.GetString("ContributorInsightsStatus"));
-    m_contributorInsightsStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LastUpdateDateTime")) {
-    m_lastUpdateDateTime = jsonValue.GetDouble("LastUpdateDateTime");
-    m_lastUpdateDateTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("FailureException")) {
-    m_failureException = jsonValue.GetObject("FailureException");
-    m_failureExceptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ContributorInsightsMode")) {
-    m_contributorInsightsMode =
-        ContributorInsightsModeMapper::GetContributorInsightsModeForName(jsonValue.GetString("ContributorInsightsMode"));
-    m_contributorInsightsModeHasBeenSet = true;
-  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
@@ -67,4 +42,142 @@ DescribeContributorInsightsResult& DescribeContributorInsightsResult::operator=(
   }
 
   return *this;
+}
+
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+namespace {
+class DescribeContributorInsightsResult_FailureExceptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
+ public:
+  explicit DescribeContributorInsightsResult_FailureExceptionSchemaSerdeDeser(FailureException& obj)
+      : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  FailureException& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+class DescribeContributorInsightsResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit DescribeContributorInsightsResultDeserializable(DescribeContributorInsightsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  DescribeContributorInsightsResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void DescribeContributorInsightsResult_FailureExceptionSchemaSerdeDeser::From(const smithy::schema::Schema& memberSchema,
+                                                                              smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "ExceptionName") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetExceptionName(*value0);
+    }
+    return;
+  }
+  if (memberName == "ExceptionDescription") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetExceptionDescription(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> DescribeContributorInsightsResult_FailureExceptionSchemaSerdeDeser::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("FailureException")
+      .PutMember("ExceptionName", smithy::schema::Schema::CreateString("ExceptionName"))
+      .PutMember("ExceptionDescription", smithy::schema::Schema::CreateString("ExceptionDescription"))
+      .Build();
+}
+
+void DescribeContributorInsightsResultDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                                           smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "TableName") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetTableName(*value0);
+    }
+    return;
+  }
+  if (memberName == "IndexName") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetIndexName(*value0);
+    }
+    return;
+  }
+  if (memberName == "ContributorInsightsRuleList") {
+    Aws::Vector<Aws::String> list0;
+    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer0) {
+      const smithy::schema::Schema& itemSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("member").value();
+      auto value1 = itemDeserializer0.ReadString(itemSchema0);
+      if (value1.has_value()) {
+        list0.push_back(*value1);
+      }
+    });
+    m_obj.SetContributorInsightsRuleList(std::move(list0));
+    return;
+  }
+  if (memberName == "ContributorInsightsStatus") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetContributorInsightsStatus(ContributorInsightsStatusMapper::GetContributorInsightsStatusForName(*value0));
+    }
+    return;
+  }
+  if (memberName == "LastUpdateDateTime") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetLastUpdateDateTime(*value0);
+    }
+    return;
+  }
+  if (memberName == "FailureException") {
+    FailureException nested0;
+    DescribeContributorInsightsResult_FailureExceptionSchemaSerdeDeser{nested0}.Deserialize(deserializer);
+    m_obj.SetFailureException(std::move(nested0));
+    return;
+  }
+  if (memberName == "ContributorInsightsMode") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetContributorInsightsMode(ContributorInsightsModeMapper::GetContributorInsightsModeForName(*value0));
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> DescribeContributorInsightsResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("DescribeContributorInsightsResult")
+      .PutMember("TableName", smithy::schema::Schema::CreateString("TableName"))
+      .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
+      .PutMember("ContributorInsightsRuleList", smithy::schema::Schema::ListBuilder("ContributorInsightsRuleList")
+                                                    .PutMember("member", smithy::schema::Schema::CreateString("member"))
+                                                    .Build())
+      .PutMember("ContributorInsightsStatus", smithy::schema::Schema::CreateEnum("ContributorInsightsStatus"))
+      .PutMember("LastUpdateDateTime", smithy::schema::Schema::CreateTimestamp("LastUpdateDateTime"))
+      .PutMember("FailureException", DescribeContributorInsightsResult_FailureExceptionSchemaSerdeDeser::BuildSchema())
+      .PutMember("ContributorInsightsMode", smithy::schema::Schema::CreateEnum("ContributorInsightsMode"))
+      .Build();
+}
+
+}  // namespace
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> DescribeContributorInsightsResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<DescribeContributorInsightsResultDeserializable>("DescribeContributorInsightsResultDeserializable", *this);
 }

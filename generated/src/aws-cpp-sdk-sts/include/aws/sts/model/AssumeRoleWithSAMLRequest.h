@@ -29,7 +29,8 @@ class AssumeRoleWithSAMLRequest : public STSRequest {
   inline virtual const char* GetServiceRequestName() const override { return "AssumeRoleWithSAML"; }
 
   AWS_STS_API Aws::String SerializePayload() const override;
-
+  AWS_STS_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_STS_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
   AWS_STS_API Aws::Vector<smithy::AuthSchemeOption> GetRequestSpecificSupportedAuth() const override;
 
  protected:
@@ -104,10 +105,10 @@ class AssumeRoleWithSAMLRequest : public STSRequest {
    * see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
    * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
-   * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
-   * conversion compresses the passed inline session policy, managed policy ARNs, and
-   * session tags into a packed binary format that has a separate limit. Your request
-   * can fail for this limit even if your plaintext meets the other requirements. The
+   * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services conversion
+   * compresses the passed inline session policy, managed policy ARNs, and session
+   * tags into a packed binary format that has a separate limit. Your request can
+   * fail for this limit even if your plaintext meets the other requirements. The
    * <code>PackedPolicySize</code> response element indicates by percentage how close
    * the policies and tags for your request are to the upper size limit.</p>
    * <p>Passing policies to this operation returns new temporary credentials. The
@@ -159,10 +160,10 @@ class AssumeRoleWithSAMLRequest : public STSRequest {
    * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
    * characters.</p> <p>For more information about role session permissions, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
-   * policies</a>.</p>  <p>An Amazon Web Services conversion compresses the
-   * passed inline session policy, managed policy ARNs, and session tags into a
-   * packed binary format that has a separate limit. Your request can fail for this
-   * limit even if your plaintext meets the other requirements. The
+   * policies</a>.</p>  <p>An Amazon Web Services conversion compresses the passed
+   * inline session policy, managed policy ARNs, and session tags into a packed
+   * binary format that has a separate limit. Your request can fail for this limit
+   * even if your plaintext meets the other requirements. The
    * <code>PackedPolicySize</code> response element indicates by percentage how close
    * the policies and tags for your request are to the upper size limit.</p>
    */

@@ -72,7 +72,9 @@ STSClient::STSClient(const STS::STSClientConfiguration& clientConfiguration, std
                                         clientConfiguration.ResolveCredentialProviderConfig()}},
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
                smithy::NoAuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.ResolveCredentialProviderConfig()}},
-          }) {}
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::AwsQueryProtocol>(ALLOCATION_TAG));
+}
 
 STSClient::STSClient(const AWSCredentials& credentials, std::shared_ptr<STSEndpointProviderBase> endpointProvider,
                      const STS::STSClientConfiguration& clientConfiguration)
@@ -93,7 +95,9 @@ STSClient::STSClient(const AWSCredentials& credentials, std::shared_ptr<STSEndpo
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
                smithy::NoAuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
                                     GetServiceName(), clientConfiguration.region}},
-          }) {}
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::AwsQueryProtocol>(ALLOCATION_TAG));
+}
 
 STSClient::STSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                      std::shared_ptr<STSEndpointProviderBase> endpointProvider, const STS::STSClientConfiguration& clientConfiguration)
@@ -115,7 +119,9 @@ STSClient::STSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
                smithy::NoAuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
                                     GetServiceName(), clientConfiguration.region}},
-          }) {}
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::AwsQueryProtocol>(ALLOCATION_TAG));
+}
 
 /* Legacy constructors due deprecation */
 STSClient::STSClient(const Aws::Client::ClientConfiguration& clientConfiguration)
@@ -134,7 +140,9 @@ STSClient::STSClient(const Aws::Client::ClientConfiguration& clientConfiguration
                                         clientConfiguration.ResolveCredentialProviderConfig()}},
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
                smithy::NoAuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.ResolveCredentialProviderConfig()}},
-          }) {}
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::AwsQueryProtocol>(ALLOCATION_TAG));
+}
 
 STSClient::STSClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
@@ -153,7 +161,9 @@ STSClient::STSClient(const AWSCredentials& credentials, const Aws::Client::Clien
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
                smithy::NoAuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
                                     GetServiceName(), clientConfiguration.region}},
-          }) {}
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::AwsQueryProtocol>(ALLOCATION_TAG));
+}
 
 STSClient::STSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                      const Aws::Client::ClientConfiguration& clientConfiguration)
@@ -174,7 +184,9 @@ STSClient::STSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
               {smithy::NoAuthSchemeOption::noAuthSchemeOption.schemeId,
                smithy::NoAuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
                                     GetServiceName(), clientConfiguration.region}},
-          }) {}
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::AwsQueryProtocol>(ALLOCATION_TAG));
+}
 /* End of legacy constructors due deprecation */
 
 STSClient::~STSClient() { ShutdownSdkClient(this, -1); }
@@ -228,64 +240,130 @@ STSClient::InvokeOperationOutcome STSClient::InvokeServiceOperation(const Amazon
 }
 AssumeRoleOutcome STSClient::AssumeRole(const AssumeRoleRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? AssumeRoleOutcome(result.GetResultWithOwnership()) : AssumeRoleOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return AssumeRoleOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return AssumeRoleOutcome(BuildOperationResult<AssumeRoleResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 AssumeRoleWithSAMLOutcome STSClient::AssumeRoleWithSAML(const AssumeRoleWithSAMLRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? AssumeRoleWithSAMLOutcome(result.GetResultWithOwnership())
-                            : AssumeRoleWithSAMLOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return AssumeRoleWithSAMLOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return AssumeRoleWithSAMLOutcome(
+      BuildOperationResult<AssumeRoleWithSAMLResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 AssumeRoleWithWebIdentityOutcome STSClient::AssumeRoleWithWebIdentity(const AssumeRoleWithWebIdentityRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? AssumeRoleWithWebIdentityOutcome(result.GetResultWithOwnership())
-                            : AssumeRoleWithWebIdentityOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return AssumeRoleWithWebIdentityOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return AssumeRoleWithWebIdentityOutcome(
+      BuildOperationResult<AssumeRoleWithWebIdentityResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 AssumeRootOutcome STSClient::AssumeRoot(const AssumeRootRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? AssumeRootOutcome(result.GetResultWithOwnership()) : AssumeRootOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return AssumeRootOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return AssumeRootOutcome(BuildOperationResult<AssumeRootResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 DecodeAuthorizationMessageOutcome STSClient::DecodeAuthorizationMessage(const DecodeAuthorizationMessageRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DecodeAuthorizationMessageOutcome(result.GetResultWithOwnership())
-                            : DecodeAuthorizationMessageOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DecodeAuthorizationMessageOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DecodeAuthorizationMessageOutcome(
+      BuildOperationResult<DecodeAuthorizationMessageResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 GetAccessKeyInfoOutcome STSClient::GetAccessKeyInfo(const GetAccessKeyInfoRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetAccessKeyInfoOutcome(result.GetResultWithOwnership())
-                            : GetAccessKeyInfoOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return GetAccessKeyInfoOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return GetAccessKeyInfoOutcome(
+      BuildOperationResult<GetAccessKeyInfoResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 GetCallerIdentityOutcome STSClient::GetCallerIdentity(const GetCallerIdentityRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetCallerIdentityOutcome(result.GetResultWithOwnership())
-                            : GetCallerIdentityOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return GetCallerIdentityOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return GetCallerIdentityOutcome(
+      BuildOperationResult<GetCallerIdentityResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 GetDelegatedAccessTokenOutcome STSClient::GetDelegatedAccessToken(const GetDelegatedAccessTokenRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetDelegatedAccessTokenOutcome(result.GetResultWithOwnership())
-                            : GetDelegatedAccessTokenOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return GetDelegatedAccessTokenOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return GetDelegatedAccessTokenOutcome(
+      BuildOperationResult<GetDelegatedAccessTokenResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 GetFederationTokenOutcome STSClient::GetFederationToken(const GetFederationTokenRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetFederationTokenOutcome(result.GetResultWithOwnership())
-                            : GetFederationTokenOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return GetFederationTokenOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return GetFederationTokenOutcome(
+      BuildOperationResult<GetFederationTokenResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 GetSessionTokenOutcome STSClient::GetSessionToken(const GetSessionTokenRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetSessionTokenOutcome(result.GetResultWithOwnership())
-                            : GetSessionTokenOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return GetSessionTokenOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return GetSessionTokenOutcome(
+      BuildOperationResult<GetSessionTokenResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 GetWebIdentityTokenOutcome STSClient::GetWebIdentityToken(const GetWebIdentityTokenRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetWebIdentityTokenOutcome(result.GetResultWithOwnership())
-                            : GetWebIdentityTokenOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return GetWebIdentityTokenOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return GetWebIdentityTokenOutcome(
+      BuildOperationResult<GetWebIdentityTokenResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }

@@ -35,9 +35,9 @@ namespace Model {
  * standalone regional table.</p> </li> </ul> <p>Each
  * <code>ReplicationGroupUpdate</code> contains exactly one action. A
  * <code>Disassociate</code> action must be the only replica update in the request;
- * including other updates causes the request to fail.</p>  <p>When you
- * manually remove a table or global table replica, you do not automatically remove
- * any associated scalable targets, scaling policies, or CloudWatch alarms.</p>
+ * including other updates causes the request to fail.</p>  <p>When you manually
+ * remove a table or global table replica, you do not automatically remove any
+ * associated scalable targets, scaling policies, or CloudWatch alarms.</p>
  * <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicationGroupUpdate">AWS
  * API Reference</a></p>

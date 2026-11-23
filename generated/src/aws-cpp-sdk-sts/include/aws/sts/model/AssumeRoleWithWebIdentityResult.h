@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/sts/model/AssumedRoleUser.h>
@@ -22,6 +23,13 @@ namespace Xml {
 class XmlDocument;
 }  // namespace Xml
 }  // namespace Utils
+}  // namespace Aws
+namespace smithy {
+namespace schema {
+class SerializableStruct;
+}
+}  // namespace smithy
+namespace Aws {
 namespace STS {
 namespace Model {
 /**
@@ -34,15 +42,16 @@ namespace Model {
 class AssumeRoleWithWebIdentityResult {
  public:
   AWS_STS_API AssumeRoleWithWebIdentityResult() = default;
-  AWS_STS_API AssumeRoleWithWebIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_STS_API AssumeRoleWithWebIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_STS_API AssumeRoleWithWebIdentityResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_STS_API AssumeRoleWithWebIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_STS_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{
   /**
    * <p>The temporary security credentials, which include an access key ID, a secret
-   * access key, and a security token.</p>  <p>The size of the security token
-   * that STS API operations return is not fixed. We strongly recommend that you make
-   * no assumptions about the maximum size.</p>
+   * access key, and a security token.</p>  <p>The size of the security token that
+   * STS API operations return is not fixed. We strongly recommend that you make no
+   * assumptions about the maximum size.</p>
    */
   inline const Credentials& GetCredentials() const { return m_credentials; }
   template <typename CredentialsT = Credentials>

@@ -30,7 +30,6 @@ ReturnValuesOnConditionCheckFailure GetReturnValuesOnConditionCheckFailureForNam
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<ReturnValuesOnConditionCheckFailure>(hashCode);
   }
-
   return ReturnValuesOnConditionCheckFailure::NOT_SET;
 }
 
@@ -47,7 +46,6 @@ Aws::String GetNameForReturnValuesOnConditionCheckFailure(ReturnValuesOnConditio
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }

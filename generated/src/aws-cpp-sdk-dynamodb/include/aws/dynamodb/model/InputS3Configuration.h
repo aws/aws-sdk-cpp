@@ -39,8 +39,8 @@ class InputS3Configuration {
   /**
    * <p>The Amazon Web Services account ID of the input bucket owner. If you omit
    * this value, DynamoDB uses the Amazon Web Services account ID of the
-   * requester.</p>  <p> <code>S3BucketOwner</code> is required when the bucket
-   * is owned by another Amazon Web Services account.</p>
+   * requester.</p>  <p> <code>S3BucketOwner</code> is required when the bucket is
+   * owned by another Amazon Web Services account.</p>
    */
   inline const Aws::String& GetS3BucketOwner() const { return m_s3BucketOwner; }
   inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }

@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/BulkOperationBytes.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 BulkOperationBytes::BulkOperationBytes(JsonView jsonValue) { *this = jsonValue; }
 
-BulkOperationBytes& BulkOperationBytes::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("BulkPutBytes")) {
-    m_bulkPutBytes = jsonValue.GetInt64("BulkPutBytes");
-    m_bulkPutBytesHasBeenSet = true;
-  }
-  return *this;
-}
+BulkOperationBytes& BulkOperationBytes::operator=(JsonView) { return *this; }
 
 JsonValue BulkOperationBytes::Jsonize() const {
   JsonValue payload;
-
-  if (m_bulkPutBytesHasBeenSet) {
-    payload.WithInt64("BulkPutBytes", m_bulkPutBytes);
-  }
-
   return payload;
 }
 

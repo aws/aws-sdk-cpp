@@ -25,7 +25,7 @@ namespace Model {
 
 /**
  * <p>Represents the auto scaling settings of the replica.</p><p><h3>See Also:</h3>
- * <a
+ *   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicaAutoScalingDescription">AWS
  * API Reference</a></p>
  */

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
@@ -19,13 +20,21 @@ namespace Json {
 class JsonValue;
 }  // namespace Json
 }  // namespace Utils
+}  // namespace Aws
+namespace smithy {
+namespace schema {
+class SerializableStruct;
+}
+}  // namespace smithy
+namespace Aws {
 namespace DynamoDB {
 namespace Model {
 class GetResourcePolicyResult {
  public:
   AWS_DYNAMODB_API GetResourcePolicyResult() = default;
-  AWS_DYNAMODB_API GetResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_DYNAMODB_API GetResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DYNAMODB_API GetResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_DYNAMODB_API GetResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::String>& result);
+  AWS_DYNAMODB_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{
   /**

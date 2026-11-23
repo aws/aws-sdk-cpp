@@ -28,6 +28,8 @@ class AssumeRootRequest : public STSRequest {
   inline virtual const char* GetServiceRequestName() const override { return "AssumeRoot"; }
 
   AWS_STS_API Aws::String SerializePayload() const override;
+  AWS_STS_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_STS_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
  protected:
   AWS_STS_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;

@@ -3,27 +3,112 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/dynamodb/model/UpdateTimeToLiveRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/MapSerializer.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeSerializer.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateTimeToLiveRequest::SerializePayload() const {
-  JsonValue payload;
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+namespace {
+class UpdateTimeToLiveRequest_TimeToLiveSpecificationSchemaSerdeSer final : public smithy::schema::SerializableStruct {
+ public:
+  explicit UpdateTimeToLiveRequest_TimeToLiveSpecificationSchemaSerdeSer(const TimeToLiveSpecification& obj)
+      : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
+  void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
 
-  if (m_tableNameHasBeenSet) {
-    payload.WithString("TableName", m_tableName);
+ private:
+  const TimeToLiveSpecification& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+class UpdateTimeToLiveRequestSerializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit UpdateTimeToLiveRequestSerializable(const UpdateTimeToLiveRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
+  void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  const UpdateTimeToLiveRequest& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void UpdateTimeToLiveRequest_TimeToLiveSpecificationSchemaSerdeSer::SerializeMembers(smithy::schema::ShapeSerializer& serializer) const {
+  if (m_obj.EnabledHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("Enabled").value();
+    serializer.WriteBoolean(memberSchema, m_obj.GetEnabled());
   }
-
-  if (m_timeToLiveSpecificationHasBeenSet) {
-    payload.WithObject("TimeToLiveSpecification", m_timeToLiveSpecification.Jsonize());
+  if (m_obj.AttributeNameHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("AttributeName").value();
+    serializer.WriteString(memberSchema, m_obj.GetAttributeName());
   }
+}
 
-  return payload.View().WriteReadable();
+std::shared_ptr<const smithy::schema::Schema> UpdateTimeToLiveRequest_TimeToLiveSpecificationSchemaSerdeSer::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("TimeToLiveSpecification")
+      .PutMember("Enabled", smithy::schema::Schema::CreateBoolean("Enabled"))
+      .PutMember("AttributeName", smithy::schema::Schema::CreateString("AttributeName"))
+      .Build();
+}
+
+void UpdateTimeToLiveRequestSerializable::SerializeMembers(smithy::schema::ShapeSerializer& serializer) const {
+  if (m_obj.TableNameHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("TableName").value();
+    serializer.WriteString(memberSchema, m_obj.GetTableName());
+  }
+  if (m_obj.TimeToLiveSpecificationHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("TimeToLiveSpecification").value();
+    UpdateTimeToLiveRequest_TimeToLiveSpecificationSchemaSerdeSer nested0(m_obj.GetTimeToLiveSpecification());
+    serializer.WriteStruct(memberSchema, nested0);
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> UpdateTimeToLiveRequestSerializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("UpdateTimeToLiveRequest")
+      .PutMember("TableName", smithy::schema::Schema::CreateString("TableName"))
+      .PutMember("TimeToLiveSpecification", UpdateTimeToLiveRequest_TimeToLiveSpecificationSchemaSerdeSer::BuildSchema())
+      .Build();
+}
+
+}  // namespace
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> UpdateTimeToLiveRequest::GetSchemaSerdeInput() const {
+  return Aws::MakeUnique<UpdateTimeToLiveRequestSerializable>("UpdateTimeToLiveRequestSerializable", *this);
+}
+
+Aws::String UpdateTimeToLiveRequest::SerializePayload() const { return {}; }
+smithy::schema::OperationRequestContext UpdateTimeToLiveRequest::GetSchemaSerdeContext() const {
+  return {"UpdateTimeToLive", "2012-08-10"};
 }
 
 Aws::Http::HeaderValueCollection UpdateTimeToLiveRequest::GetRequestSpecificHeaders() const {

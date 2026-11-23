@@ -1,0 +1,11 @@
+schema-serde benchmark run, macOS `sample` profile, busy (main) thread only (idle CRT event-loop threads excluded).
+Inclusive share of main-thread samples:
+
+  38.5%  smithy::schema::SchemaBuilder::SchemaBuilderImpl::Build      (schemas built per adapter, per call)
+  45.1%  malloc / operator new, anywhere below                        (overlaps the line above)
+  49.9%  JsonShapeSerializer writes                                    (serialize cases)
+  48.2%  JsonShapeDeserializer reads                                   (deserialize cases)
+   0.3%  Schema::GetMember lookups
+
+Top self-time frames on the busy thread: free / malloc, memmove, memcmp, base64 encode (blob cases),
+SchemaBuilder::Build, std::map<std::string,int> lookups, std::string::append, MemberSchema construction.

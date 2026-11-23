@@ -27,7 +27,6 @@ DisassociationMode GetDisassociationModeForName(const Aws::String& name) {
     overflowContainer->StoreOverflow(hashCode, name);
     return static_cast<DisassociationMode>(hashCode);
   }
-
   return DisassociationMode::NOT_SET;
 }
 
@@ -42,7 +41,6 @@ Aws::String GetNameForDisassociationMode(DisassociationMode enumValue) {
       if (overflowContainer) {
         return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
       }
-
       return {};
   }
 }
