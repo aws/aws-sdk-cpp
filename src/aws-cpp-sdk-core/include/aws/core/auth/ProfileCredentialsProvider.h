@@ -38,7 +38,7 @@ class AWS_CORE_API ProfileCredentialsProvider : public AWSCredentialsProvider {
   AWSCredentials GetAWSCredentials() override;
 
   /**
-   * Returns the fullpath of the calculated credentials profile file
+   * Returns the full path of the calculated credentials profile file.
    */
   static Aws::String GetCredentialsProfileFilename();
 
@@ -46,9 +46,6 @@ class AWS_CORE_API ProfileCredentialsProvider : public AWSCredentialsProvider {
    * Returns the directory storing the profile file.
    */
   static Aws::String GetProfileDirectory();
-
- protected:
-  void Reload() override;
 
  private:
   class ProfileCredentialsProviderImp;

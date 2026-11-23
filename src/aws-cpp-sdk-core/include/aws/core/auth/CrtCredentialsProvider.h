@@ -37,6 +37,10 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
    */
   AWSCredentials GetAWSCredentials() override;
 
+ protected:
+  void Reload() override;
+  virtual void RefreshIfExpired();
+
  private:
   enum class STATE {
     INITIALIZED,
@@ -44,8 +48,6 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
   };
 
   static AWSCredentials ExtractCredentialsFromCrt(const Aws::Crt::Auth::Credentials& crtCredentials);
-  void Reload() override;
-  void RefreshIfExpired();
 
   std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
   AWSCredentials m_credentials;
