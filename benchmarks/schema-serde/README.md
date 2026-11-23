@@ -3,6 +3,47 @@
 This branch exists to share evidence. It contains the schema-serde work, DynamoDB and STS regenerated with
 `--use-smithy-models`, and the benchmark below. **Do not merge it**: the regenerated clients change shipping code.
 
+## Summary
+
+- As generated today, schema-serde is **2-15x slower** than C2J on DynamoDB (run 1, below).
+- The cause is that every generated adapter builds its `Schema` per request and per nested value. Building each schema
+  **once** (run 2, an experiment) makes schema-serde **faster than C2J in 15 of 17 cases**, up to 16x on large items,
+  with identical output. So the gap is mostly fixable in codegen.
+- The exception is decoding large blobs (base64 in the JSON reader), which caching does not help: a separate core fix.
+
+## Run 2: schemas built once (experiment)
+
+`cache_schemas_experiment.py` rewrites every generated `BuildSchema()` in DynamoDB to build its schema once and reuse it.
+The cached schemas are deliberately never freed, which sidesteps the `ShutdownAPI` lifetime problem (a function-local
+static would be destroyed after `ShutdownAPI`); a real fix needs ownership inside the `InitAPI` ... `ShutdownAPI`
+window. All three builds ran back to back on the same machine; request JSON and parsed attributes matched C2J in every case.
+
+| Case | C2J | schema-serde today | schema-serde, schemas cached | cached vs C2J |
+|---|---|---|---|---|
+| serialize PutItem Item_S | 1.8 us | 27.4 us | 1.2 us | 1.5x faster |
+| serialize PutItem Item_M | 19.9 us | 279.0 us | 8.6 us | 2.3x faster |
+| serialize PutItem Item_ShallowMap_L | 1,887 us | 3,795 us | 116 us | 16x faster |
+| serialize PutItem Item_Binary_L | 198 us | 130 us | 79 us | 2.5x faster |
+| deserialize GetItem Item_S | 2.8 us | 27.8 us | 1.4 us | 1.9x faster |
+| deserialize GetItem Item_M | 36.0 us | 283.2 us | 16.8 us | 2.1x faster |
+| deserialize GetItem Item_ShallowMap_L | 740 us | 4,007 us | 314 us | 2.4x faster |
+| deserialize GetItem Item_Binary_L | 224 us | 625 us | 565 us | 2.5x slower |
+| deserialize Query 100 x Item_M | 3,915 us | 27,706 us | 1,692 us | 2.3x faster |
+| e2e PutItem Item_S | 33.2 us | 69.4 us | 32.4 us | same |
+| e2e GetItem Item_S | 34.3 us | 68.7 us | 33.7 us | same |
+| e2e PutItem Item_M | 53.1 us | 315.4 us | 41.0 us | 1.3x faster |
+| e2e GetItem Item_M | 66.1 us | 328.6 us | 54.5 us | 1.2x faster |
+| e2e PutItem Item_ShallowMap_L | 1,919 us | 3,831 us | 163 us | 12x faster |
+| e2e GetItem Item_ShallowMap_L | 746 us | 4,101 us | 434 us | 1.7x faster |
+| e2e PutItem Item_Binary_L | 314 us | 255 us | 194 us | 1.6x faster |
+| e2e GetItem Item_Binary_L | 667 us | 1,151 us | 1,088 us | 1.6x slower |
+
+Raw data: `results/run2-cached/results-{c2j,schema,cached}.tsv`. To reproduce, regenerate DynamoDB on this branch, run
+`python3 benchmarks/schema-serde/cache_schemas_experiment.py <sdk root> dynamodb`, build and install that SDK, and build
+the benchmark against it with `-DSCHEMA_SERDE=ON`.
+
+## Run 1: schema-serde as generated today
+
 ## What is measured
 
 One program (`bench.cpp`) built twice, with identical payloads:

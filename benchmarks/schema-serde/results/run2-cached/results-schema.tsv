@@ -1,0 +1,18 @@
+schema-serde	serialize	PutItem/Item_S	27409	27250	30792	36410
+schema-serde	deserialize	GetItem/Item_S	27771	27625	30750	35940
+schema-serde	serialize	PutItem/Item_M	278987	272958	444000	3584
+schema-serde	deserialize	GetItem/Item_M	283193	282583	295333	3531
+schema-serde	serialize	PutItem/Item_ShallowMap_L	3794606	3789750	3855500	264
+schema-serde	deserialize	GetItem/Item_ShallowMap_L	4007088	4008959	4178000	250
+schema-serde	serialize	PutItem/Item_Binary_L	130170	129792	138083	7679
+schema-serde	deserialize	GetItem/Item_Binary_L	625162	616583	679083	1600
+schema-serde	deserialize	Query/100xItem_M	27705985	27626750	28562292	73
+schema-serde	e2e	PutItem/Item_S	69394	68959	76792	14399
+schema-serde	e2e	GetItem/Item_S	68719	68542	74042	14541
+schema-serde	e2e	PutItem/Item_M	315355	314458	330750	3171
+schema-serde	e2e	GetItem/Item_M	328594	327500	345292	3043
+schema-serde	e2e	PutItem/Item_ShallowMap_L	3830973	3828417	3927000	262
+schema-serde	e2e	GetItem/Item_ShallowMap_L	4100813	4093000	4224750	244
+schema-serde	e2e	PutItem/Item_Binary_L	255277	254125	271708	3917
+schema-serde	e2e	GetItem/Item_Binary_L	1151244	1147709	1198791	869
+schema-serde	cpu	serde-section-cpu-seconds	17.42			
