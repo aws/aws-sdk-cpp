@@ -432,7 +432,10 @@ TEST_F(DynamoDBUnitTest, ShouldUseStandardEndpointIfAccountIdMissingFromCredenti
   configFile << "aws_secret_access_key = of-fallen" << std::endl;
   configFile << "aws_session_token = angels" << std::endl;
   configFile.close();
-  Environment::EnvironmentRAII envVars{{{CREDS_FILE_ENV_VAR, configFile.GetFileName().c_str()}}};
+  // ProfileCredentialsProvider also reads the config file; point it at a missing file so the host's config can't interfere.
+  const Aws::String missingConfigFile = configFile.GetFileName() + "_no_config";
+  Environment::EnvironmentRAII envVars{{{CREDS_FILE_ENV_VAR, configFile.GetFileName().c_str()},
+                                        {CONFIGURATION_FILE_ENV_VAR, missingConfigFile.c_str()}}};
   Aws::Config::ReloadCachedCredentialsFile();
 
   DynamoDBClientConfiguration configuration;
@@ -473,13 +476,16 @@ TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromCredentialsFile)
   configFile << "aws_session_token = angels" << std::endl;
   configFile << "aws_account_id = spike-spiegel" << std::endl;;
   configFile.close();
-  Environment::EnvironmentRAII envVars{{{CREDS_FILE_ENV_VAR, configFile.GetFileName().c_str()}}};
+  // ProfileCredentialsProvider also reads the config file; point it at a missing file so the host's config can't interfere.
+  const Aws::String missingConfigFile = configFile.GetFileName() + "_no_config";
+  Environment::EnvironmentRAII envVars{{{CREDS_FILE_ENV_VAR, configFile.GetFileName().c_str()},
+                                        {CONFIGURATION_FILE_ENV_VAR, missingConfigFile.c_str()}}};
   Aws::Config::ReloadCachedCredentialsFile();
 
   DynamoDBClientConfiguration configuration;
   configuration.region = "us-east-1";
 
-  auto credsProvider = Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(LOG_TAG);
+  auto credsProvider = Aws::MakeShared<ProfileCredentialsProvider>(LOG_TAG);
 
   const auto accountIdClient = Aws::MakeShared<DynamoDBClient>(LOG_TAG, std::move(credsProvider), nullptr, configuration);
 
@@ -545,7 +551,7 @@ TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromEnviornmentCredentialsPro
   EXPECT_TRUE(std::find(features.begin(), features.end(), "T") != features.end());
 }
 
-TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromProcessCredentialsProvider)
+TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromCredentialProcess)
 {
   // create configruation file with process credentials provider with account id
   Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
@@ -553,13 +559,18 @@ TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromProcessCredentialsProvide
   configFile << "[default]" << std::endl;
   configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"honky\", \"SecretAccessKey\": \"tonk\", \"SecretAccessKey\": \"woman\", \"AccountId\": \"faye\"}") << std::endl;
   configFile.close();
-  Environment::EnvironmentRAII envVars{{{CONFIGURATION_FILE_ENV_VAR, configFile.GetFileName().c_str()}}};
+  // ProfileCredentialsProvider also reads the credentials file, so point it at an empty one to keep a local [default] from taking over.
+  Utils::TempFile credsFile(std::ios_base::out | std::ios_base::trunc);
+  ASSERT_TRUE(credsFile.good());
+  credsFile.close();
+  Environment::EnvironmentRAII envVars{{{CONFIGURATION_FILE_ENV_VAR, configFile.GetFileName().c_str()},
+                                        {CREDS_FILE_ENV_VAR, credsFile.GetFileName().c_str()}}};
   Aws::Config::ReloadCachedConfigFile();
 
   DynamoDBClientConfiguration configuration;
   configuration.region = "us-east-1";
 
-  auto credsProvider = Aws::MakeShared<ProcessCredentialsProvider>(LOG_TAG);
+  auto credsProvider = Aws::MakeShared<ProfileCredentialsProvider>(LOG_TAG);
 
   const auto accountIdClient = Aws::MakeShared<DynamoDBClient>(LOG_TAG, std::move(credsProvider), nullptr, configuration);
 

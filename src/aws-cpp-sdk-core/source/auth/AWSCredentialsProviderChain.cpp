@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/auth/GeneralHTTPCredentialsProvider.h>
 #include <aws/core/auth/LoginCredentialsProvider.h>
 #include <aws/core/auth/SSOCredentialsProvider.h>
 #include <aws/core/auth/STSCredentialsProvider.h>

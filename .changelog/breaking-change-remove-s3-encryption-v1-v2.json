@@ -1,0 +1,6 @@
+{
+  "type": "breaking-change",
+  "category": "aws-cpp-sdk-s3-encryption",
+  "contributor": "averyk22",
+  "description": "Remove the deprecated S3EncryptionClient and S3EncryptionClientV2, along with CryptoConfigurationV2. Use S3EncryptionClientV3 with CryptoConfigurationV3; call AllowLegacy() on the configuration to keep reading objects the older clients wrote. S3EncryptionClientBase's constructors are now protected, so the base client can no longer be built directly with legacy encryption settings."
+}

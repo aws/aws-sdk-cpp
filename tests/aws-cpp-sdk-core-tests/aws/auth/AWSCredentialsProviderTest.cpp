@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/auth/SSOCredentialsProvider.h>
 #include <aws/core/client/AWSError.h>
@@ -33,21 +34,24 @@ using namespace Aws::FileSystem;
 using namespace Aws::Http;
 using namespace Aws::Http::Standard;
 
-class ProfileConfigFileAWSCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite
+class ProfileCredentialsProviderFileTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 public:
     void SetUp()
     {
         SaveEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE");
+        SaveEnvironmentVariable("AWS_CONFIG_FILE");
         SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
         SaveEnvironmentVariable("AWS_PROFILE");
 
-        Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
+        Aws::FileSystem::CreateDirectoryIfNotExists(ProfileCredentialsProvider::GetProfileDirectory().c_str());
         Aws::StringStream ss;
-        ss << ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() << "_blah" << std::this_thread::get_id();
+        ss << ProfileCredentialsProvider::GetCredentialsProfileFilename() << "_blah" << std::this_thread::get_id();
         m_credsFileName = ss.str();
 
         Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", m_credsFileName.c_str(), 1);
+        // ProfileCredentialsProvider also reads the config file; point it at a missing file so the host's config can't interfere.
+        Aws::Environment::SetEnv("AWS_CONFIG_FILE", (m_credsFileName + "_no_config").c_str(), 1);
         Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
         Aws::Environment::UnSetEnv("AWS_PROFILE");
     }
@@ -81,16 +85,8 @@ public:
     Aws::String m_credsFileName;
 };
 
-TEST_F(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
+TEST_F(ProfileCredentialsProviderFileTest, TestDefaultConfig)
 {
-    struct ReloadableProfileConfigProvider : ProfileConfigFileAWSCredentialsProvider
-    {
-        void ReloadNow()
-        {
-            Reload();
-        }
-    };
-
     Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     credsFile << std::endl;
@@ -105,22 +101,20 @@ TEST_F(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
     credsFile << "aws_session_token=DefaultSessionToken" << std::endl;
     credsFile << "aws_account_id=111111111111" << std::endl;
     credsFile << std::endl;
-    credsFile << " [Somebody Else Again]" << std::endl;
+    credsFile << "[Somebody Else Again]" << std::endl;
     credsFile << "aws_secret_access_key = SomebodyElseAgainAccessId" << std::endl;
-    credsFile << " aws_secret_access_key=SomebodyElseAgainSecretKey" << std::endl;
+    credsFile << "aws_secret_access_key=SomebodyElseAgainSecretKey" << std::endl;
     credsFile << "aws_session_token=SomebodyElseAgainSessionToken" << std::endl;
     credsFile << "aws_account_id=333333333333" << std::endl;
     credsFile.close();
 
-    ReloadableProfileConfigProvider provider;
+    ProfileCredentialsProvider provider;
     EXPECT_STREQ("DefaultAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("DefaultSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
     EXPECT_STREQ("111111111111", provider.GetAWSCredentials().GetAccountId().c_str());
 
+    // ProfileCredentialsProvider reads the files once, when it is created, so removing the file doesn't clear its credentials.
     Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
-    provider.ReloadNow();
-    EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 }
 
 class EnvironmentModifyingTest : public Aws::Testing::AwsCppSdkGTestSuite
@@ -129,12 +123,13 @@ public:
 
     void SetUp()
     {
-        Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
+        Aws::FileSystem::CreateDirectoryIfNotExists(ProfileCredentialsProvider::GetProfileDirectory().c_str());
         Aws::StringStream ss;
-        ss << ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() << "_blah" << std::this_thread::get_id();
+        ss << ProfileCredentialsProvider::GetCredentialsProfileFilename() << "_blah" << std::this_thread::get_id();
         m_credsFileName = ss.str();
         Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", m_credsFileName.c_str(), 1);
-
+        // ProfileCredentialsProvider also reads the config file; point it at a missing file so the host's config can't interfere.
+        Aws::Environment::SetEnv("AWS_CONFIG_FILE", (m_credsFileName + "_no_config").c_str(), 1);
     }
 
     Aws::Vector<std::pair<const char*, Aws::String>> m_environment;
@@ -151,22 +146,22 @@ public:
     }};
 };
 
-TEST_F(EnvironmentModifyingTest, TestOrderOfAwsDefaultProfileAndAwsProfile)
+TEST_F(EnvironmentModifyingTest, TestAwsProfileIsUsedAndAwsDefaultProfileIsIgnored)
 {
     Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     credsFile << "[default_profile]" << std::endl;
-    credsFile << " aws_access_key_id = DefaultProfileAccessKey " << std::endl;
+    credsFile << "aws_access_key_id = DefaultProfileAccessKey " << std::endl;
     credsFile << "aws_secret_access_key= DefaultProfileSecretKey" << std::endl;
     credsFile << std::endl;
 
     credsFile << "[default]" << std::endl;
-    credsFile << " aws_access_key_id = DefaultAccessKey " << std::endl;
+    credsFile << "aws_access_key_id = DefaultAccessKey " << std::endl;
     credsFile << "aws_secret_access_key= DefaultSecretKey" << std::endl;
     credsFile << std::endl;
 
     credsFile << "[profile]" << std::endl;
-    credsFile << " aws_access_key_id = ProfileAccessKey " << std::endl;
+    credsFile << "aws_access_key_id = ProfileAccessKey " << std::endl;
     credsFile << "aws_secret_access_key =ProfileSecretKey" << std::endl;
     credsFile << std::endl;
 
@@ -180,19 +175,26 @@ TEST_F(EnvironmentModifyingTest, TestOrderOfAwsDefaultProfileAndAwsProfile)
     Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "default_profile", 1/*override*/);
     Aws::Environment::SetEnv("AWS_PROFILE", "profile", 1/*override*/);
 
-    ProfileConfigFileAWSCredentialsProvider providerDefaultProfile(10);
-    EXPECT_STREQ("DefaultProfileAccessKey", providerDefaultProfile.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    EXPECT_STREQ("DefaultProfileSecretKey", providerDefaultProfile.GetAWSCredentials().GetAWSSecretKey().c_str());
+    // ProfileCredentialsProvider picks the profile from AWS_PROFILE only.
+    ProfileCredentialsProvider providerBothSet(10);
+    EXPECT_STREQ("ProfileAccessKey", providerBothSet.GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("ProfileSecretKey", providerBothSet.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "", 1/*override*/);
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "default_profile", 1/*override*/);
+    Aws::Environment::UnSetEnv("AWS_PROFILE");
+    ProfileCredentialsProvider providerDefaultProfileOnly(10);
+    EXPECT_STREQ("DefaultAccessKey", providerDefaultProfileOnly.GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("DefaultSecretKey", providerDefaultProfileOnly.GetAWSCredentials().GetAWSSecretKey().c_str());
+
+    Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
     Aws::Environment::SetEnv("AWS_PROFILE", "profile", 1/*override*/);
-    ProfileConfigFileAWSCredentialsProvider providerProfile(10);
+    ProfileCredentialsProvider providerProfile(10);
     EXPECT_STREQ("ProfileAccessKey", providerProfile.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("ProfileSecretKey", providerProfile.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "", 1/*override*/);
-    Aws::Environment::SetEnv("AWS_PROFILE", "", 1/*override*/);
-    ProfileConfigFileAWSCredentialsProvider providerDefault(10);
+    Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
+    Aws::Environment::UnSetEnv("AWS_PROFILE");
+    ProfileCredentialsProvider providerDefault(10);
     EXPECT_STREQ("DefaultAccessKey", providerDefault.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("DefaultSecretKey", providerDefault.GetAWSCredentials().GetAWSSecretKey().c_str());
 
@@ -202,19 +204,19 @@ TEST_F(EnvironmentModifyingTest, TestOrderOfAwsDefaultProfileAndAwsProfile)
 TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVars)
 {
     Aws::Environment::EnvironmentRAII testEnvironment{{
-      {"AWS_DEFAULT_PROFILE", ""},
+      {"AWS_PROFILE", ""},
     }};
-    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "someProfile", 1);
+    Aws::Environment::SetEnv("AWS_PROFILE", "someProfile", 1);
     Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     credsFile << "[ someProfile]" << std::endl;
-    credsFile << " aws_access_key_id = SomeProfileAccessKey " << std::endl;
+    credsFile << "aws_access_key_id = SomeProfileAccessKey " << std::endl;
     credsFile << "aws_secret_access_key =SomeProfileSecretKey" << std::endl;
     credsFile << "aws_session_token=SomeProfileSessionToken " << std::endl;
     credsFile << std::endl;
     credsFile.close();
 
-    ProfileConfigFileAWSCredentialsProvider provider(10);
+    ProfileCredentialsProvider provider(10);
     EXPECT_STREQ("SomeProfileAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("SomeProfileSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
@@ -229,19 +231,19 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVarsButSpecifiedProfile
     Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "someProfile", 1);
     Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
-    credsFile << " [ someProfile]" << std::endl;
-    credsFile << " aws_access_key_id = SomeProfileAccessKey" << std::endl;
+    credsFile << "[ someProfile]" << std::endl;
+    credsFile << "aws_access_key_id = SomeProfileAccessKey" << std::endl;
     credsFile << "aws_secret_access_key=SomeProfileSecretKey " << std::endl;
     credsFile << "aws_session_token= SomeProfileSessionToken" << std::endl;
     credsFile << std::endl;
     credsFile << "[customProfile]" << std::endl;
     credsFile << "aws_access_key_id =customProfileAccessKey" << std::endl;
     credsFile << "aws_secret_access_key=customProfileSecretKey " << std::endl;
-    credsFile << " aws_session_token=customProfileSessionToken" << std::endl;
+    credsFile << "aws_session_token=customProfileSessionToken" << std::endl;
     credsFile << std::endl;
     credsFile.close();
 
-    ProfileConfigFileAWSCredentialsProvider provider("customProfile", 10);
+    ProfileCredentialsProvider provider("customProfile", 10);
     EXPECT_STREQ("customProfileAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("customProfileSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
@@ -251,13 +253,13 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVarsButSpecifiedProfile
 TEST_F(EnvironmentModifyingTest, ProfileConfigTestNotSetup)
 {
     Aws::Environment::EnvironmentRAII testEnvironment{{
-      {"AWS_DEFAULT_PROFILE", ""},
+      {"AWS_PROFILE", ""},
     }};
     //On windows we don't redirect the home directory
     //This is to prevent when user actually sets .aws/credentials with Keys, this test would fail.
-    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "SomeUnknownProfileThatDoesNotExist", 1);
+    Aws::Environment::SetEnv("AWS_PROFILE", "SomeUnknownProfileThatDoesNotExist", 1);
 
-    ProfileConfigFileAWSCredentialsProvider provider;
+    ProfileCredentialsProvider provider;
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 }
@@ -448,7 +450,7 @@ static Aws::String WrapEchoStringWithSingleQuoteForUnixShell(Aws::String str)
     return str;
 }
 
-class ProcessCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite
+class ConfigFileTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 public:
     void SetUp()
@@ -464,7 +466,7 @@ public:
         Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
         Aws::Environment::UnSetEnv("AWS_PROFILE");
 
-        auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+        auto profileDirectory = ProfileCredentialsProvider::GetProfileDirectory();
         Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
     }
 
@@ -497,95 +499,7 @@ public:
     Aws::String m_configFileName;
 };
 
-TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderExpiredThenRefreshed)
-{
-    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-    configFile << "[default]" << std::endl;
-    configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey123\", \"SecretAccessKey\": \"SecretKey321\", \"Expiration\": \"1970-01-01T00:00:01Z\"}") << std::endl;
-    configFile.close();
-
-    Aws::Config::ReloadCachedConfigFile();
-    ProcessCredentialsProvider provider;
-    Aws::Auth::AWSCredentials credsOne = provider.GetAWSCredentials();
-    EXPECT_TRUE(credsOne.IsExpired());
-
-    Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-    configFileNew << "[default]" << std::endl;
-    configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey321\", \"SecretAccessKey\": \"SecretKey123\", \"AccountId\": \"123456789012\"}") << std::endl;
-    configFileNew.close();
-
-    Aws::Config::ReloadCachedConfigFile();
-    Aws::Auth::AWSCredentials credsTwo = provider.GetAWSCredentials();
-    EXPECT_NE(credsOne, credsTwo);
-    EXPECT_FALSE(credsTwo.IsEmpty());
-    EXPECT_STREQ("AccessKey321", credsTwo.GetAWSAccessKeyId().c_str());
-    EXPECT_STREQ("SecretKey123", credsTwo.GetAWSSecretKey().c_str());
-    EXPECT_STREQ("123456789012", credsTwo.GetAccountId().c_str());
-
-    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
-}
-
-TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderNonSupportedVersion)
-{
-    Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-    configFileNew << "[default]" << std::endl;
-    configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 2, \"AccessKeyId\": \"AccessKey321\", \"SecretAccessKey\": \"SecretKey123\"}") << std::endl;
-    configFileNew.close();
-    Aws::Config::ReloadCachedConfigFile();
-
-    ProcessCredentialsProvider provider;
-    EXPECT_TRUE(provider.GetAWSCredentials().IsEmpty());
-
-    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
-}
-
-TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderDoNotRefresh)
-{
-    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-
-    configFile << "[default]" << std::endl;
-    configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey456\", \"SecretAccessKey\": \"SecretKey654\"}") << std::endl;
-    configFile.close();
-    Aws::Config::ReloadCachedConfigFile();
-
-    ProcessCredentialsProvider provider;
-    Aws::Auth::AWSCredentials credsOne = provider.GetAWSCredentials();
-    EXPECT_STREQ("AccessKey456", credsOne.GetAWSAccessKeyId().c_str());
-    EXPECT_STREQ("SecretKey654", credsOne.GetAWSSecretKey().c_str());
-
-    Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-
-    configFileNew << "[default]" << std::endl;
-    configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey789\", \"SecretAccessKey\": \"SecretKey987\"}") << std::endl;
-    configFileNew.close();
-    Aws::Config::ReloadCachedConfigFile();
-
-    Aws::Auth::AWSCredentials credsTwo = provider.GetAWSCredentials();
-    EXPECT_EQ(credsOne, credsTwo);
-    EXPECT_FALSE(credsTwo.IsEmpty());
-    EXPECT_STREQ("AccessKey456", credsTwo.GetAWSAccessKeyId().c_str());
-    EXPECT_STREQ("SecretKey654", credsTwo.GetAWSSecretKey().c_str());
-
-    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
-}
-
-TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderCaptureInvalidOutput)
-{
-    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-
-    configFile << "[default]" << std::endl;
-    configFile << "credential_process = echo 'Error: Failed to retrieve credentials'" << std::endl;
-    configFile << std::endl;
-    configFile.close();
-    Aws::Config::ReloadCachedConfigFile();
-
-    ProcessCredentialsProvider provider;
-    EXPECT_TRUE(provider.GetAWSCredentials().IsEmpty());
-
-    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
-}
-
-class SSOCredentialsProviderTest :public ProcessCredentialsProviderTest
+class SSOCredentialsProviderTest :public ConfigFileTest
 {
 public:
     void SetUp()
@@ -604,7 +518,7 @@ public:
         // avoid reading region environment var when testing get correct region from config file
         Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
 
-        auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+        auto profileDirectory = ProfileCredentialsProvider::GetProfileDirectory();
         Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
         Aws::StringStream ssCachedTokenDirectory;
         ssCachedTokenDirectory << profileDirectory << PATH_DELIM << "sso";
@@ -1322,7 +1236,7 @@ TEST_F(EnvironmentModifyingTest, TestChainWithProcessCredentials)
     DefaultAWSCredentialsProviderChain chain;
     auto creds = chain.GetAWSCredentials();
 
-    // Should get credentials from ProcessCredentialsProvider in the chain
+    // Should get credentials from ProfileCredentialsProvider in the chain
     EXPECT_STREQ("ProcessAccessKey", creds.GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("ProcessSecretKey", creds.GetAWSSecretKey().c_str());
 
@@ -1481,7 +1395,7 @@ TEST_F(EnvironmentModifyingTest, TestChainOrderWithMultipleValidProviders)
     credsFile << "aws_secret_access_key = ProfileSecretKey" << std::endl;
     credsFile.close();
 
-    // Create config with credential_process (third in chain via ProcessCredentialsProvider)
+    // Create config with credential_process (via ProfileCredentialsProvider in the chain)
     Aws::StringStream ss;
     ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
     auto configFileName = ss.str();

@@ -79,6 +79,7 @@ protected:
     StringStream ss;
     ss << Aws::Auth::GetConfigProfileFilename() << "_blah" << std::this_thread::get_id();
     m_configPath = ss.str();
+    m_savedConfigFileEnv = Aws::Environment::GetEnv("AWS_CONFIG_FILE");
     Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_configPath.c_str(), 1);
 
     m_profileDir = profileDir;
@@ -95,6 +96,11 @@ protected:
     if (mockHttpClient) { mockHttpClient->Reset(); mockHttpClient = nullptr; }
     mockHttpClientFactory = nullptr;
     Aws::FileSystem::RemoveFileIfExists(m_configPath.c_str());
+    if (m_savedConfigFileEnv.empty()) {
+      Aws::Environment::UnSetEnv("AWS_CONFIG_FILE");
+    } else {
+      Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_savedConfigFileEnv.c_str(), 1);
+    }
     AwsCppSdkGTestSuite::TearDown();
   }
 
@@ -199,6 +205,7 @@ protected:
   Aws::String m_profileDir;
   Aws::String m_ssoCacheDir;
   Aws::String m_configPath;
+  Aws::String m_savedConfigFileEnv;
 
   std::shared_ptr<MockHttpClient>        mockHttpClient;
   std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;

@@ -22,11 +22,11 @@ This table describes the current support status of each major version of the S3E
       - Current status
       - Next status
     * - S3EncryptionClient
-      - End Of Support
+      - Removed in 1.12
       -
     * - S3EncryptionClientV2
-      - Maintenance
-      - End Of Support
+      - Removed in 1.12
+      -
     * - S3EncryptionClientV3
       - Generally Available
       -
