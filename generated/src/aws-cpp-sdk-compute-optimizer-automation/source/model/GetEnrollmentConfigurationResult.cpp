@@ -112,6 +112,16 @@ GetEnrollmentConfigurationResult& GetEnrollmentConfigurationResult::operator=(
                 m_lastUpdatedTimestampHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "organizationEnrollmentConfigurationStatus") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_organizationEnrollmentConfigurationStatus =
+                      OrganizationEnrollmentConfigurationStatusMapper::GetOrganizationEnrollmentConfigurationStatusForName(
+                          Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_organizationEnrollmentConfigurationStatusHasBeenSet = true;
+              }
+
               else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -208,6 +218,16 @@ GetEnrollmentConfigurationResult& GetEnrollmentConfigurationResult::operator=(
                 }
               }
               m_lastUpdatedTimestampHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "organizationEnrollmentConfigurationStatus") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_organizationEnrollmentConfigurationStatus =
+                    OrganizationEnrollmentConfigurationStatusMapper::GetOrganizationEnrollmentConfigurationStatusForName(
+                        Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_organizationEnrollmentConfigurationStatusHasBeenSet = true;
             }
 
             else {

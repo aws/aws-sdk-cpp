@@ -43,6 +43,10 @@ Aws::String CreateProgramManagementAccountRequest::SerializePayload() const {
     payload.WithArray("tags", std::move(tagsJsonList));
   }
 
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ProgramManagementAccountTypeMapper::GetNameForProgramManagementAccountType(m_type));
+  }
+
   return payload.View().WriteReadable();
 }
 

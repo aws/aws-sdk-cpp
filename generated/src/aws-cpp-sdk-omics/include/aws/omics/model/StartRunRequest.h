@@ -223,7 +223,9 @@ class StartRunRequest : public OmicsRequest {
    * <p>Parameters for the run. The run needs all required parameters and can include
    * optional parameters. The run cannot include any parameters that are not defined
    * in the parameter template. To retrieve parameters from the run, use the GetRun
-   * API operation.</p>
+   * API operation. To supply the parameters in a file in S3 instead, use
+   * <code>parametersUri</code>. Specify either <code>parameters</code> or
+   * <code>parametersUri</code>, not both.</p>
    */
   inline Aws::Utils::DocumentView GetParameters() const { return m_parameters; }
   inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
@@ -511,7 +513,7 @@ class StartRunRequest : public OmicsRequest {
   /**
    * <p>Engine-specific settings for the workflow run. Use this field to specify
    * configuration options that are specific to the workflow engine (for example,
-   * Nextflow profiles).</p>
+   * Nextflow profiles, Nextflow runtime configuration).</p>
    */
   inline Aws::Utils::DocumentView GetEngineSettings() const { return m_engineSettings; }
   inline bool EngineSettingsHasBeenSet() const { return m_engineSettingsHasBeenSet; }
@@ -541,6 +543,55 @@ class StartRunRequest : public OmicsRequest {
   }
   inline StartRunRequest& WithOutputUriPrefixMode(RunOutputUriPrefixMode value) {
     SetOutputUriPrefixMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the workflow run that this request starts can read inputs
+   * from Amazon S3 buckets that use Requester Pays. Your account pays the request
+   * and data transfer charges for those reads. The default is
+   * <code>false</code>.</p>
+   */
+  inline bool GetRequesterPaysEnabled() const { return m_requesterPaysEnabled; }
+  inline bool RequesterPaysEnabledHasBeenSet() const { return m_requesterPaysEnabledHasBeenSet; }
+  inline void SetRequesterPaysEnabled(bool value) {
+    m_requesterPaysEnabledHasBeenSet = true;
+    m_requesterPaysEnabled = value;
+  }
+  inline StartRunRequest& WithRequesterPaysEnabled(bool value) {
+    SetRequesterPaysEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The S3 URI of a JSON file that contains the run parameters. Use this field
+   * instead of <code>parameters</code> when your parameters are too large for the
+   * request. Specify either <code>parameters</code> or <code>parametersUri</code>,
+   * not both.</p> <p>Amazon Web Services HealthOmics validates the file after
+   * <code>StartRun</code> returns. If the file isn't valid, Amazon Web Services
+   * HealthOmics fails the run with the failure reason
+   * <code>INVALID_RUN_PARAMETERS</code>. For more information about permissions,
+   * limits, and other requirements, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-inputs.html">Amazon
+   * Web Services HealthOmics run inputs</a> and <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/fixed-quotas.html">Amazon Web
+   * Services HealthOmics service quotas</a> in the <i>Amazon Web Services
+   * HealthOmics User Guide</i>.</p>
+   */
+  inline const Aws::String& GetParametersUri() const { return m_parametersUri; }
+  inline bool ParametersUriHasBeenSet() const { return m_parametersUriHasBeenSet; }
+  template <typename ParametersUriT = Aws::String>
+  void SetParametersUri(ParametersUriT&& value) {
+    m_parametersUriHasBeenSet = true;
+    m_parametersUri = std::forward<ParametersUriT>(value);
+  }
+  template <typename ParametersUriT = Aws::String>
+  StartRunRequest& WithParametersUri(ParametersUriT&& value) {
+    SetParametersUri(std::forward<ParametersUriT>(value));
     return *this;
   }
   ///@}
@@ -594,6 +645,10 @@ class StartRunRequest : public OmicsRequest {
   Aws::Utils::Document m_engineSettings;
 
   RunOutputUriPrefixMode m_outputUriPrefixMode{RunOutputUriPrefixMode::NOT_SET};
+
+  bool m_requesterPaysEnabled{false};
+
+  Aws::String m_parametersUri;
   bool m_workflowIdHasBeenSet = false;
   bool m_workflowTypeHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
@@ -619,6 +674,8 @@ class StartRunRequest : public OmicsRequest {
   bool m_sessionPolicyHasBeenSet = false;
   bool m_engineSettingsHasBeenSet = false;
   bool m_outputUriPrefixModeHasBeenSet = false;
+  bool m_requesterPaysEnabledHasBeenSet = false;
+  bool m_parametersUriHasBeenSet = false;
 };
 
 }  // namespace Model

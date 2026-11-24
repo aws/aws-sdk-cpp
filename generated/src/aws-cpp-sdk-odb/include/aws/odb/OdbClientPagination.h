@@ -10,6 +10,7 @@
 #include <aws/odb/model/ListAutonomousDatabaseCharacterSetsPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabaseClonesPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabasePeersPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabaseRefreshableClonesPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabaseVersionsPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabasesPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousVirtualMachinesPaginationTraits.h>
@@ -43,6 +44,9 @@ using ListAutonomousDatabaseClonesPaginator =
 using ListAutonomousDatabasePeersPaginator =
     Aws::Utils::Pagination::Paginator<OdbClient, Model::ListAutonomousDatabasePeersRequest,
                                       Pagination::ListAutonomousDatabasePeersPaginationTraits<OdbClient>>;
+using ListAutonomousDatabaseRefreshableClonesPaginator =
+    Aws::Utils::Pagination::Paginator<OdbClient, Model::ListAutonomousDatabaseRefreshableClonesRequest,
+                                      Pagination::ListAutonomousDatabaseRefreshableClonesPaginationTraits<OdbClient>>;
 using ListAutonomousDatabasesPaginator = Aws::Utils::Pagination::Paginator<OdbClient, Model::ListAutonomousDatabasesRequest,
                                                                            Pagination::ListAutonomousDatabasesPaginationTraits<OdbClient>>;
 using ListAutonomousDatabaseVersionsPaginator =

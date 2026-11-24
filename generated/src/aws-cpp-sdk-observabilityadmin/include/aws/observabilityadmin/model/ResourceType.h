@@ -34,7 +34,9 @@ enum class ResourceType {
   AWS_MSK_Cluster,
   AWS_S3_Bucket,
   AWS_Bedrock_KnowledgeBase,
-  AWS_XRay_TransactionSearchConfig
+  AWS_XRay_TransactionSearchConfig,
+  AWS_CloudWatchOmni,
+  AWS_NetworkFirewall_Firewall
 };
 
 namespace ResourceTypeMapper {

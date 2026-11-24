@@ -22,13 +22,17 @@ SearchResultItem& SearchResultItem::operator=(JsonView jsonValue) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("AssetName")) {
-    m_assetName = jsonValue.GetString("AssetName");
-    m_assetNameHasBeenSet = true;
+  if (jsonValue.ValueExists("Name")) {
+    m_name = jsonValue.GetString("Name");
+    m_nameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("AssetDescription")) {
-    m_assetDescription = jsonValue.GetString("AssetDescription");
-    m_assetDescriptionHasBeenSet = true;
+  if (jsonValue.ValueExists("Description")) {
+    m_description = jsonValue.GetString("Description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatedAt")) {
+    m_createdAt = jsonValue.GetDouble("CreatedAt");
+    m_createdAtHasBeenSet = true;
   }
   if (jsonValue.ValueExists("UpdatedAt")) {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
@@ -48,12 +52,16 @@ JsonValue SearchResultItem::Jsonize() const {
     payload.WithString("Id", m_id);
   }
 
-  if (m_assetNameHasBeenSet) {
-    payload.WithString("AssetName", m_assetName);
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if (m_assetDescriptionHasBeenSet) {
-    payload.WithString("AssetDescription", m_assetDescription);
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if (m_updatedAtHasBeenSet) {

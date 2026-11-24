@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-discovery/MarketplaceDiscovery_EXPORTS.h>
 #include <aws/marketplace-discovery/model/FulfillmentOptionType.h>
+#include <aws/marketplace-discovery/model/SaasDeploymentTemplate.h>
 #include <aws/marketplace-discovery/model/SaasQuickLaunchStatus.h>
 
 #include <utility>
@@ -107,7 +109,7 @@ class SaasFulfillmentOption {
 
   ///@{
   /**
-   * <p>Instructions on how to access and use this SaaS product.</p>
+   * <p>Instructions on how you access and use this SaaS product.</p>
    */
   inline const Aws::String& GetUsageInstructions() const { return m_usageInstructions; }
   inline bool UsageInstructionsHasBeenSet() const { return m_usageInstructionsHasBeenSet; }
@@ -143,7 +145,7 @@ class SaasFulfillmentOption {
 
   ///@{
   /**
-   * <p>The URL that a buyer uses to launch the seller's SaaS product. This URL is
+   * <p>The URL that you use to launch the seller's SaaS product. This URL is
    * distinct from <code>fulfillmentUrl</code>, which is the seller's software
    * registration landing page.</p>
    */
@@ -163,7 +165,10 @@ class SaasFulfillmentOption {
 
   ///@{
   /**
-   * <p>Specifies whether the SaaS product supports quick-launch deployment.</p>
+   * <p>Specifies whether the SaaS product supports Quick Launch deployment. This
+   * field has one of the following values:</p> <dl> <dt>DISABLED</dt> <dd> <p>The
+   * product does not support Quick Launch.</p> </dd> <dt>ENABLED</dt> <dd> <p>The
+   * product supports Quick Launch.</p> </dd> </dl>
    */
   inline SaasQuickLaunchStatus GetQuickLaunch() const { return m_quickLaunch; }
   inline bool QuickLaunchHasBeenSet() const { return m_quickLaunchHasBeenSet; }
@@ -173,6 +178,31 @@ class SaasFulfillmentOption {
   }
   inline SaasFulfillmentOption& WithQuickLaunch(SaasQuickLaunchStatus value) {
     SetQuickLaunch(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The AWS CloudFormation deployment templates available for this SaaS product.
+   * The list is empty when no deployment templates are available.</p>
+   */
+  inline const Aws::Vector<SaasDeploymentTemplate>& GetDeploymentTemplates() const { return m_deploymentTemplates; }
+  inline bool DeploymentTemplatesHasBeenSet() const { return m_deploymentTemplatesHasBeenSet; }
+  template <typename DeploymentTemplatesT = Aws::Vector<SaasDeploymentTemplate>>
+  void SetDeploymentTemplates(DeploymentTemplatesT&& value) {
+    m_deploymentTemplatesHasBeenSet = true;
+    m_deploymentTemplates = std::forward<DeploymentTemplatesT>(value);
+  }
+  template <typename DeploymentTemplatesT = Aws::Vector<SaasDeploymentTemplate>>
+  SaasFulfillmentOption& WithDeploymentTemplates(DeploymentTemplatesT&& value) {
+    SetDeploymentTemplates(std::forward<DeploymentTemplatesT>(value));
+    return *this;
+  }
+  template <typename DeploymentTemplatesT = SaasDeploymentTemplate>
+  SaasFulfillmentOption& AddDeploymentTemplates(DeploymentTemplatesT&& value) {
+    m_deploymentTemplatesHasBeenSet = true;
+    m_deploymentTemplates.emplace_back(std::forward<DeploymentTemplatesT>(value));
     return *this;
   }
   ///@}
@@ -192,6 +222,8 @@ class SaasFulfillmentOption {
   Aws::String m_launchUrl;
 
   SaasQuickLaunchStatus m_quickLaunch{SaasQuickLaunchStatus::NOT_SET};
+
+  Aws::Vector<SaasDeploymentTemplate> m_deploymentTemplates;
   bool m_fulfillmentOptionIdHasBeenSet = false;
   bool m_fulfillmentOptionTypeHasBeenSet = false;
   bool m_fulfillmentOptionDisplayNameHasBeenSet = false;
@@ -200,6 +232,7 @@ class SaasFulfillmentOption {
   bool m_availableFromTimeHasBeenSet = false;
   bool m_launchUrlHasBeenSet = false;
   bool m_quickLaunchHasBeenSet = false;
+  bool m_deploymentTemplatesHasBeenSet = false;
 };
 
 }  // namespace Model

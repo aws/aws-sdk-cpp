@@ -111,6 +111,42 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Adds an in-cluster inference gateway to a global inference gateway. This
+   * operation is asynchronous: the in-cluster inference gateway starts in the
+   * <code>ADDING</code> status. To check its status, call
+   * <code>ListInferenceGateways</code>. If the in-cluster inference gateway is
+   * already in the global inference gateway, the operation succeeds and returns its
+   * current status.</p> <p>An in-cluster inference gateway can belong to only one
+   * global inference gateway. If it already belongs to another global inference
+   * gateway, the operation fails with <code>ResourceInUse</code>. The operation
+   * fails with <code>ConflictException</code> while another operation is in progress
+   * on the global inference gateway, or if the global inference gateway failed to
+   * create.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddInferenceGateway">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AddInferenceGatewayOutcome AddInferenceGateway(const Model::AddInferenceGatewayRequest& request) const;
+
+  /**
+   * A Callable wrapper for AddInferenceGateway that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AddInferenceGatewayRequestT = Model::AddInferenceGatewayRequest>
+  Model::AddInferenceGatewayOutcomeCallable AddInferenceGatewayCallable(const AddInferenceGatewayRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::AddInferenceGateway, request);
+  }
+
+  /**
+   * An Async wrapper for AddInferenceGateway that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename AddInferenceGatewayRequestT = Model::AddInferenceGatewayRequest>
+  void AddInferenceGatewayAsync(const AddInferenceGatewayRequestT& request, const AddInferenceGatewayResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::AddInferenceGateway, request, handler, context);
+  }
+
+  /**
    * <p>Adds or overwrites one or more tags for the specified SageMaker resource. You
    * can add tags to notebook instances, training jobs, hyperparameter tuning jobs,
    * batch transform jobs, models, labeling jobs, work teams, endpoint
@@ -1498,6 +1534,41 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void CreateFlowDefinitionAsync(const CreateFlowDefinitionRequestT& request, const CreateFlowDefinitionResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::CreateFlowDefinition, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a global inference gateway. This operation is asynchronous: the
+   * global inference gateway starts in the <code>CREATING</code> status. To check
+   * its status, call <code>DescribeGlobalInferenceGateway</code> until the status is
+   * <code>ACTIVE</code> or <code>FAILED</code>. The operation fails with
+   * <code>ResourceInUse</code> if the name is already in use, or if one of the
+   * in-cluster inference gateways in <code>Gateways</code> already belongs to
+   * another global inference gateway.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateGlobalInferenceGateway">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateGlobalInferenceGatewayOutcome CreateGlobalInferenceGateway(
+      const Model::CreateGlobalInferenceGatewayRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateGlobalInferenceGateway that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateGlobalInferenceGatewayRequestT = Model::CreateGlobalInferenceGatewayRequest>
+  Model::CreateGlobalInferenceGatewayOutcomeCallable CreateGlobalInferenceGatewayCallable(
+      const CreateGlobalInferenceGatewayRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::CreateGlobalInferenceGateway, request);
+  }
+
+  /**
+   * An Async wrapper for CreateGlobalInferenceGateway that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateGlobalInferenceGatewayRequestT = Model::CreateGlobalInferenceGatewayRequest>
+  void CreateGlobalInferenceGatewayAsync(const CreateGlobalInferenceGatewayRequestT& request,
+                                         const CreateGlobalInferenceGatewayResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::CreateGlobalInferenceGateway, request, handler, context);
   }
 
   /**
@@ -3968,6 +4039,41 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Delete a global inference gateway and its member inference gateways, which
+   * are then free to join another global inference gateway. Asynchronous: the global
+   * inference gateway is DELETING while its managed endpoint resources are torn
+   * down; poll DescribeGlobalInferenceGateway until it returns ResourceNotFound.
+   * Does not touch the customer's clusters. Idempotent: a Delete whose Identifier
+   * matches no global inference gateway succeeds and echoes what the Identifier says
+   * (Arn and Id for an ARN or Id, Name for a name).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteGlobalInferenceGateway">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteGlobalInferenceGatewayOutcome DeleteGlobalInferenceGateway(
+      const Model::DeleteGlobalInferenceGatewayRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteGlobalInferenceGateway that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteGlobalInferenceGatewayRequestT = Model::DeleteGlobalInferenceGatewayRequest>
+  Model::DeleteGlobalInferenceGatewayOutcomeCallable DeleteGlobalInferenceGatewayCallable(
+      const DeleteGlobalInferenceGatewayRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DeleteGlobalInferenceGateway, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteGlobalInferenceGateway that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteGlobalInferenceGatewayRequestT = Model::DeleteGlobalInferenceGatewayRequest>
+  void DeleteGlobalInferenceGatewayAsync(const DeleteGlobalInferenceGatewayRequestT& request,
+                                         const DeleteGlobalInferenceGatewayResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DeleteGlobalInferenceGateway, request, handler, context);
+  }
+
+  /**
    * <p>Delete a hub.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHub">AWS
    * API Reference</a></p>
@@ -5399,6 +5505,37 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns details about a SageMaker Capacity Reservation, such as its instance
+   * type, instance count, Availability Zone, and start and end times.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCapacityReservation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeCapacityReservationOutcome DescribeCapacityReservation(
+      const Model::DescribeCapacityReservationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeCapacityReservation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeCapacityReservationRequestT = Model::DescribeCapacityReservationRequest>
+  Model::DescribeCapacityReservationOutcomeCallable DescribeCapacityReservationCallable(
+      const DescribeCapacityReservationRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeCapacityReservation, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeCapacityReservation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeCapacityReservationRequestT = Model::DescribeCapacityReservationRequest>
+  void DescribeCapacityReservationAsync(const DescribeCapacityReservationRequestT& request,
+                                        const DescribeCapacityReservationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeCapacityReservation, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves information of a SageMaker HyperPod cluster.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCluster">AWS
@@ -6013,6 +6150,39 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                    const DescribeFlowDefinitionResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::DescribeFlowDefinition, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a global inference gateway, including its status,
+   * endpoints, and routing configuration. To list the in-cluster inference gateways
+   * of the global inference gateway, use <code>ListInferenceGateways</code>. To read
+   * the tags of the global inference gateway, use
+   * <code>ListTags</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeGlobalInferenceGateway">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeGlobalInferenceGatewayOutcome DescribeGlobalInferenceGateway(
+      const Model::DescribeGlobalInferenceGatewayRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeGlobalInferenceGateway that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeGlobalInferenceGatewayRequestT = Model::DescribeGlobalInferenceGatewayRequest>
+  Model::DescribeGlobalInferenceGatewayOutcomeCallable DescribeGlobalInferenceGatewayCallable(
+      const DescribeGlobalInferenceGatewayRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeGlobalInferenceGateway, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeGlobalInferenceGateway that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeGlobalInferenceGatewayRequestT = Model::DescribeGlobalInferenceGatewayRequest>
+  void DescribeGlobalInferenceGatewayAsync(const DescribeGlobalInferenceGatewayRequestT& request,
+                                           const DescribeGlobalInferenceGatewayResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeGlobalInferenceGateway, request, handler, context);
   }
 
   /**
@@ -7026,6 +7196,38 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns the resources in your account that are associated with a SageMaker
+   * Capacity Reservation and the status of each association. Resources include
+   * SageMaker AI HyperPod clusters and SageMaker AI endpoints.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeResourceAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeResourceAssociationsOutcome DescribeResourceAssociations(
+      const Model::DescribeResourceAssociationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeResourceAssociations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeResourceAssociationsRequestT = Model::DescribeResourceAssociationsRequest>
+  Model::DescribeResourceAssociationsOutcomeCallable DescribeResourceAssociationsCallable(
+      const DescribeResourceAssociationsRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeResourceAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeResourceAssociations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeResourceAssociationsRequestT = Model::DescribeResourceAssociationsRequest>
+  void DescribeResourceAssociationsAsync(const DescribeResourceAssociationsRequestT& request,
+                                         const DescribeResourceAssociationsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeResourceAssociations, request, handler, context);
+  }
+
+  /**
    * <p>Describes the space.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSpace">AWS
    * API Reference</a></p>
@@ -7563,6 +7765,38 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void ExtendTrainingPlanAsync(const ExtendTrainingPlanRequestT& request, const ExtendTrainingPlanResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::ExtendTrainingPlan, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the number of instances in use from a SageMaker Capacity Reservation,
+   * for each account that uses them.</p> <p>SageMaker AI refreshes the usage counts
+   * periodically. The <code>LastRefreshTime</code> value shows when the counts were
+   * last refreshed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetCapacityReservationUsage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCapacityReservationUsageOutcome GetCapacityReservationUsage(
+      const Model::GetCapacityReservationUsageRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCapacityReservationUsage that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetCapacityReservationUsageRequestT = Model::GetCapacityReservationUsageRequest>
+  Model::GetCapacityReservationUsageOutcomeCallable GetCapacityReservationUsageCallable(
+      const GetCapacityReservationUsageRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::GetCapacityReservationUsage, request);
+  }
+
+  /**
+   * An Async wrapper for GetCapacityReservationUsage that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetCapacityReservationUsageRequestT = Model::GetCapacityReservationUsageRequest>
+  void GetCapacityReservationUsageAsync(const GetCapacityReservationUsageRequestT& request,
+                                        const GetCapacityReservationUsageResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::GetCapacityReservationUsage, request, handler, context);
   }
 
   /**
@@ -8126,6 +8360,35 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                        const ListCandidatesForAutoMLJobResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::ListCandidatesForAutoMLJob, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the SageMaker Capacity Reservations in your account.</p> <p>An empty
+   * list is a valid response.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCapacityReservations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCapacityReservationsOutcome ListCapacityReservations(const Model::ListCapacityReservationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListCapacityReservations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListCapacityReservationsRequestT = Model::ListCapacityReservationsRequest>
+  Model::ListCapacityReservationsOutcomeCallable ListCapacityReservationsCallable(
+      const ListCapacityReservationsRequestT& request = {}) const {
+    return SubmitCallable(&SageMakerClient::ListCapacityReservations, request);
+  }
+
+  /**
+   * An Async wrapper for ListCapacityReservations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListCapacityReservationsRequestT = Model::ListCapacityReservationsRequest>
+  void ListCapacityReservationsAsync(const ListCapacityReservationsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const ListCapacityReservationsRequestT& request = {}) const {
+    return SubmitAsync(&SageMakerClient::ListCapacityReservations, request, handler, context);
   }
 
   /**
@@ -8747,6 +9010,36 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists summaries of the global inference gateways in your account. You can
+   * filter the results by status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListGlobalInferenceGateways">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListGlobalInferenceGatewaysOutcome ListGlobalInferenceGateways(
+      const Model::ListGlobalInferenceGatewaysRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListGlobalInferenceGateways that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListGlobalInferenceGatewaysRequestT = Model::ListGlobalInferenceGatewaysRequest>
+  Model::ListGlobalInferenceGatewaysOutcomeCallable ListGlobalInferenceGatewaysCallable(
+      const ListGlobalInferenceGatewaysRequestT& request = {}) const {
+    return SubmitCallable(&SageMakerClient::ListGlobalInferenceGateways, request);
+  }
+
+  /**
+   * An Async wrapper for ListGlobalInferenceGateways that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListGlobalInferenceGatewaysRequestT = Model::ListGlobalInferenceGatewaysRequest>
+  void ListGlobalInferenceGatewaysAsync(const ListGlobalInferenceGatewaysResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const ListGlobalInferenceGatewaysRequestT& request = {}) const {
+    return SubmitAsync(&SageMakerClient::ListGlobalInferenceGateways, request, handler, context);
+  }
+
+  /**
    * <p>List hub content versions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContentVersions">AWS
    * API Reference</a></p>
@@ -8993,6 +9286,37 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                      const ListInferenceExperimentsRequestT& request = {}) const {
     return SubmitAsync(&SageMakerClient::ListInferenceExperiments, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the in-cluster inference gateways in a global inference gateway, in the
+   * order that they were added. Each summary includes the status of the in-cluster
+   * inference gateway and, if the status is <code>FAILED</code>, the reason for the
+   * failure. <code>DescribeGlobalInferenceGateway</code> doesn't return the
+   * in-cluster inference gateways; use this operation to list them.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceGateways">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListInferenceGatewaysOutcome ListInferenceGateways(const Model::ListInferenceGatewaysRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListInferenceGateways that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListInferenceGatewaysRequestT = Model::ListInferenceGatewaysRequest>
+  Model::ListInferenceGatewaysOutcomeCallable ListInferenceGatewaysCallable(const ListInferenceGatewaysRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::ListInferenceGateways, request);
+  }
+
+  /**
+   * An Async wrapper for ListInferenceGateways that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListInferenceGatewaysRequestT = Model::ListInferenceGatewaysRequest>
+  void ListInferenceGatewaysAsync(const ListInferenceGatewaysRequestT& request, const ListInferenceGatewaysResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::ListInferenceGateways, request, handler, context);
   }
 
   /**
@@ -10496,6 +10820,53 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Moves running nodes from one instance group to another instance group. The
+   * target instance group can be in the same HyperPod cluster or in a different
+   * HyperPod cluster in the same account and Region. The underlying instances aren't
+   * terminated.</p> <p>Each node keeps its instance ID, its
+   * <code>NodeLogicalId</code>, its network interfaces and IP addresses, and its
+   * capacity. The node then joins the target instance group with the target's
+   * configuration and lifecycle scripts.</p>  <p>The move replaces the
+   * node's root Amazon Elastic Block Store (Amazon EBS) volume and secondary EBS
+   * volume, which deletes any data stored on them. Back up any data that you need
+   * before you move the node.</p>  <p>Specify the nodes to move with
+   * exactly one of <code>NodeIds</code>, <code>NodeLogicalIds</code>, or
+   * <code>InstanceCount</code>. The operation is asynchronous and returns after it
+   * accepts the nodes for the move. While a node moves, its status is
+   * <code>DetachInProgress</code> and then <code>AttachInProgress</code>. The node
+   * appears in the source cluster while it detaches. After HyperPod hands the node
+   * off to the target instance group, the node appears in the target cluster. To
+   * track the node, call <code>DescribeClusterNode</code> or
+   * <code>ListClusterNodes</code> on the source or target cluster.</p>
+   * <p>Both clusters must be <code>InService</code>, use Amazon EKS orchestration,
+   * and use <code>Continuous</code> as the <code>NodeProvisioningMode</code>.</p>
+   * <p>The source and target instance groups must also use compatible
+   * configurations.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MoveClusterNodes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::MoveClusterNodesOutcome MoveClusterNodes(const Model::MoveClusterNodesRequest& request) const;
+
+  /**
+   * A Callable wrapper for MoveClusterNodes that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename MoveClusterNodesRequestT = Model::MoveClusterNodesRequest>
+  Model::MoveClusterNodesOutcomeCallable MoveClusterNodesCallable(const MoveClusterNodesRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::MoveClusterNodes, request);
+  }
+
+  /**
+   * An Async wrapper for MoveClusterNodes that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename MoveClusterNodesRequestT = Model::MoveClusterNodesRequest>
+  void MoveClusterNodesAsync(const MoveClusterNodesRequestT& request, const MoveClusterNodesResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::MoveClusterNodes, request, handler, context);
+  }
+
+  /**
    * <p>Attaches a resource-based policy to an endpoint. With an endpoint policy, you
    * can allow other Amazon Web Services accounts to send requests to your endpoint,
    * or to inference components on it, through an inference router. The policy that
@@ -10618,6 +10989,43 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void RegisterDevicesAsync(const RegisterDevicesRequestT& request, const RegisterDevicesResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::RegisterDevices, request, handler, context);
+  }
+
+  /**
+   * <p>Removes an in-cluster inference gateway from a global inference gateway. This
+   * operation is asynchronous: the in-cluster inference gateway moves to the
+   * <code>REMOVING</code> status, and then no longer appears in
+   * <code>ListInferenceGateways</code>. If the in-cluster inference gateway isn't in
+   * the global inference gateway, the operation succeeds and returns no status. The
+   * operation returns <code>ResourceNotFound</code> only if the global inference
+   * gateway doesn't exist.</p> <p>The operation fails with
+   * <code>ConflictException</code> while another operation is in progress on the
+   * global inference gateway. It fails with <code>ValidationException</code> if the
+   * in-cluster inference gateway is the last one, because a global inference gateway
+   * must have at least one.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RemoveInferenceGateway">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RemoveInferenceGatewayOutcome RemoveInferenceGateway(const Model::RemoveInferenceGatewayRequest& request) const;
+
+  /**
+   * A Callable wrapper for RemoveInferenceGateway that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RemoveInferenceGatewayRequestT = Model::RemoveInferenceGatewayRequest>
+  Model::RemoveInferenceGatewayOutcomeCallable RemoveInferenceGatewayCallable(const RemoveInferenceGatewayRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::RemoveInferenceGateway, request);
+  }
+
+  /**
+   * An Async wrapper for RemoveInferenceGateway that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RemoveInferenceGatewayRequestT = Model::RemoveInferenceGatewayRequest>
+  void RemoveInferenceGatewayAsync(const RemoveInferenceGatewayRequestT& request,
+                                   const RemoveInferenceGatewayResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::RemoveInferenceGateway, request, handler, context);
   }
 
   /**
@@ -12156,6 +12564,40 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void UpdateFeatureMetadataAsync(const UpdateFeatureMetadataRequestT& request, const UpdateFeatureMetadataResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::UpdateFeatureMetadata, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the routing configuration of a global inference gateway. To add or
+   * remove in-cluster inference gateways, use <code>AddInferenceGateway</code> and
+   * <code>RemoveInferenceGateway</code>. This operation is asynchronous: the global
+   * inference gateway moves to the <code>UPDATING</code> status. The operation fails
+   * with <code>ConflictException</code> while another operation is in progress on
+   * the global inference gateway.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateGlobalInferenceGateway">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateGlobalInferenceGatewayOutcome UpdateGlobalInferenceGateway(
+      const Model::UpdateGlobalInferenceGatewayRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateGlobalInferenceGateway that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateGlobalInferenceGatewayRequestT = Model::UpdateGlobalInferenceGatewayRequest>
+  Model::UpdateGlobalInferenceGatewayOutcomeCallable UpdateGlobalInferenceGatewayCallable(
+      const UpdateGlobalInferenceGatewayRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::UpdateGlobalInferenceGateway, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateGlobalInferenceGateway that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateGlobalInferenceGatewayRequestT = Model::UpdateGlobalInferenceGatewayRequest>
+  void UpdateGlobalInferenceGatewayAsync(const UpdateGlobalInferenceGatewayRequestT& request,
+                                         const UpdateGlobalInferenceGatewayResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::UpdateGlobalInferenceGateway, request, handler, context);
   }
 
   /**

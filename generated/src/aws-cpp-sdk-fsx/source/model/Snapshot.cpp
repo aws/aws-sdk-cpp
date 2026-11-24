@@ -42,6 +42,10 @@ Snapshot& Snapshot::operator=(JsonView jsonValue) {
     m_lifecycle = SnapshotLifecycleMapper::GetSnapshotLifecycleForName(jsonValue.GetString("Lifecycle"));
     m_lifecycleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SnapshotType")) {
+    m_snapshotType = SnapshotTypeMapper::GetSnapshotTypeForName(jsonValue.GetString("SnapshotType"));
+    m_snapshotTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("LifecycleTransitionReason")) {
     m_lifecycleTransitionReason = jsonValue.GetObject("LifecycleTransitionReason");
     m_lifecycleTransitionReasonHasBeenSet = true;
@@ -60,6 +64,10 @@ Snapshot& Snapshot::operator=(JsonView jsonValue) {
       m_administrativeActions.push_back(administrativeActionsJsonList[administrativeActionsIndex].AsObject());
     }
     m_administrativeActionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OntapConfiguration")) {
+    m_ontapConfiguration = jsonValue.GetObject("OntapConfiguration");
+    m_ontapConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -91,6 +99,10 @@ JsonValue Snapshot::Jsonize() const {
     payload.WithString("Lifecycle", SnapshotLifecycleMapper::GetNameForSnapshotLifecycle(m_lifecycle));
   }
 
+  if (m_snapshotTypeHasBeenSet) {
+    payload.WithString("SnapshotType", SnapshotTypeMapper::GetNameForSnapshotType(m_snapshotType));
+  }
+
   if (m_lifecycleTransitionReasonHasBeenSet) {
     payload.WithObject("LifecycleTransitionReason", m_lifecycleTransitionReason.Jsonize());
   }
@@ -110,6 +122,10 @@ JsonValue Snapshot::Jsonize() const {
       administrativeActionsJsonList[administrativeActionsIndex].AsObject(m_administrativeActions[administrativeActionsIndex].Jsonize());
     }
     payload.WithArray("AdministrativeActions", std::move(administrativeActionsJsonList));
+  }
+
+  if (m_ontapConfigurationHasBeenSet) {
+    payload.WithObject("OntapConfiguration", m_ontapConfiguration.Jsonize());
   }
 
   return payload;

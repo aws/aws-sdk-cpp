@@ -26,6 +26,7 @@
 #include <aws/agent-registry/model/BatchGetDiscoverableRegistryRecordErrorCode.h>
 #include <aws/agent-registry/model/BatchGetDiscoverableRegistryRecordRequest.h>
 #include <aws/agent-registry/model/BatchGetDiscoverableRegistryRecordResult.h>
+#include <aws/agent-registry/model/BotCategory.h>
 #include <aws/agent-registry/model/CustomDescriptor.h>
 #include <aws/agent-registry/model/DescriptorSource.h>
 #include <aws/agent-registry/model/DescriptorSourceFromUrl.h>
@@ -49,6 +50,8 @@
 #include <aws/agent-registry/model/SearchDiscoverableRegistryRecordsRequest.h>
 #include <aws/agent-registry/model/SearchDiscoverableRegistryRecordsResult.h>
 #include <aws/agent-registry/model/SearchType.h>
+#include <aws/agent-registry/model/SignatureAgentCardAdditionalData.h>
+#include <aws/agent-registry/model/SignatureAgentCardDescriptor.h>
 #include <aws/agent-registry/model/ValidationException.h>
 #include <aws/agent-registry/model/ValidationExceptionField.h>
 #include <aws/agent-registry/model/ValidationExceptionReason.h>

@@ -124,7 +124,8 @@ class UpdateRelationshipRequest : public PartnerCentralChannelRequest {
 
   ///@{
   /**
-   * <p>The updated support plan for the relationship.</p>
+   * <p>The updated support plan for the relationship. Applies only to billing
+   * transfer relationships.</p>
    */
   inline const SupportPlan& GetRequestedSupportPlan() const { return m_requestedSupportPlan; }
   inline bool RequestedSupportPlanHasBeenSet() const { return m_requestedSupportPlanHasBeenSet; }

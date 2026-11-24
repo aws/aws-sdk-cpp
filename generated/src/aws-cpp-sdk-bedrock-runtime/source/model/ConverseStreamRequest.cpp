@@ -43,6 +43,10 @@ Aws::String ConverseStreamRequest::SerializePayload() const {
     payload.WithObject("guardrailConfig", m_guardrailConfig.Jsonize());
   }
 
+  if (m_projectIdentifierHasBeenSet) {
+    payload.WithString("projectIdentifier", m_projectIdentifier);
+  }
+
   if (m_additionalModelRequestFieldsHasBeenSet) {
     if (!m_additionalModelRequestFields.View().IsNull()) {
       payload.WithObject("additionalModelRequestFields", JsonValue(m_additionalModelRequestFields.View()));

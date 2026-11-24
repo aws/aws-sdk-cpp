@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
 #include <aws/compute-optimizer-automation/model/EnrollmentStatus.h>
+#include <aws/compute-optimizer-automation/model/OrganizationEnrollmentConfigurationStatus.h>
 #include <aws/compute-optimizer-automation/model/OrganizationRuleMode.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
@@ -98,6 +99,28 @@ class GetEnrollmentConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p> Specifies whether an organization enrollment configuration on your account,
+   * or inherited from a parent OU or the organization root, enables Automation for
+   * your member account. Associations made using <code>AssociateAccounts</code>
+   * don't affect this status. This field is returned for organization member
+   * accounts, including delegated administrators. It's omitted for management
+   * accounts and accounts that aren't in an organization. </p>
+   */
+  inline OrganizationEnrollmentConfigurationStatus GetOrganizationEnrollmentConfigurationStatus() const {
+    return m_organizationEnrollmentConfigurationStatus;
+  }
+  inline void SetOrganizationEnrollmentConfigurationStatus(OrganizationEnrollmentConfigurationStatus value) {
+    m_organizationEnrollmentConfigurationStatusHasBeenSet = true;
+    m_organizationEnrollmentConfigurationStatus = value;
+  }
+  inline GetEnrollmentConfigurationResult& WithOrganizationEnrollmentConfigurationStatus(OrganizationEnrollmentConfigurationStatus value) {
+    SetOrganizationEnrollmentConfigurationStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -122,12 +145,15 @@ class GetEnrollmentConfigurationResult {
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
 
+  OrganizationEnrollmentConfigurationStatus m_organizationEnrollmentConfigurationStatus{OrganizationEnrollmentConfigurationStatus::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_organizationRuleModeHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
+  bool m_organizationEnrollmentConfigurationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

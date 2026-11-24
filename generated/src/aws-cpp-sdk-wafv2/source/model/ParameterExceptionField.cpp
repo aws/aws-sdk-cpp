@@ -93,6 +93,8 @@ static const int PRICE_AMOUNT_HASH = HashingUtils::HashString("PRICE_AMOUNT");
 static const int PAYMENT_NETWORK_HASH = HashingUtils::HashString("PAYMENT_NETWORK");
 static const int PRE_PARSE_TEXT_TRANSFORMATION_HASH = HashingUtils::HashString("PRE_PARSE_TEXT_TRANSFORMATION");
 static const int CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG_HASH = HashingUtils::HashString("CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG");
+static const int BEDROCK_GUARDRAILS_HASH = HashingUtils::HashString("BEDROCK_GUARDRAILS");
+static const int ROLE_ARN_HASH = HashingUtils::HashString("ROLE_ARN");
 
 ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -252,6 +254,10 @@ ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& nam
     return ParameterExceptionField::PRE_PARSE_TEXT_TRANSFORMATION;
   } else if (hashCode == CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG_HASH) {
     return ParameterExceptionField::CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG;
+  } else if (hashCode == BEDROCK_GUARDRAILS_HASH) {
+    return ParameterExceptionField::BEDROCK_GUARDRAILS;
+  } else if (hashCode == ROLE_ARN_HASH) {
+    return ParameterExceptionField::ROLE_ARN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -422,6 +428,10 @@ Aws::String GetNameForParameterExceptionField(ParameterExceptionField enumValue)
       return "PRE_PARSE_TEXT_TRANSFORMATION";
     case ParameterExceptionField::CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG:
       return "CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG";
+    case ParameterExceptionField::BEDROCK_GUARDRAILS:
+      return "BEDROCK_GUARDRAILS";
+    case ParameterExceptionField::ROLE_ARN:
+      return "ROLE_ARN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

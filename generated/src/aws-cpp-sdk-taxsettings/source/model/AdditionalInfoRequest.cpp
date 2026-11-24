@@ -122,6 +122,18 @@ AdditionalInfoRequest& AdditionalInfoRequest::operator=(JsonView jsonValue) {
     m_mexicoAdditionalInfo = jsonValue.GetObject("mexicoAdditionalInfo");
     m_mexicoAdditionalInfoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("unitedArabEmiratesAdditionalInfo")) {
+    m_unitedArabEmiratesAdditionalInfo = jsonValue.GetObject("unitedArabEmiratesAdditionalInfo");
+    m_unitedArabEmiratesAdditionalInfoHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("norwayAdditionalInfo")) {
+    m_norwayAdditionalInfo = jsonValue.GetObject("norwayAdditionalInfo");
+    m_norwayAdditionalInfoHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("newZealandAdditionalInfo")) {
+    m_newZealandAdditionalInfo = jsonValue.GetObject("newZealandAdditionalInfo");
+    m_newZealandAdditionalInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -230,6 +242,18 @@ JsonValue AdditionalInfoRequest::Jsonize() const {
 
   if (m_mexicoAdditionalInfoHasBeenSet) {
     payload.WithObject("mexicoAdditionalInfo", m_mexicoAdditionalInfo.Jsonize());
+  }
+
+  if (m_unitedArabEmiratesAdditionalInfoHasBeenSet) {
+    payload.WithObject("unitedArabEmiratesAdditionalInfo", m_unitedArabEmiratesAdditionalInfo.Jsonize());
+  }
+
+  if (m_norwayAdditionalInfoHasBeenSet) {
+    payload.WithObject("norwayAdditionalInfo", m_norwayAdditionalInfo.Jsonize());
+  }
+
+  if (m_newZealandAdditionalInfoHasBeenSet) {
+    payload.WithObject("newZealandAdditionalInfo", m_newZealandAdditionalInfo.Jsonize());
   }
 
   return payload;

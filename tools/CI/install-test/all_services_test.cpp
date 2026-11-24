@@ -11,6 +11,7 @@
 #include <aws/account/AccountClient.h>
 #include <aws/acm-pca/ACMPCAClient.h>
 #include <aws/acm/ACMClient.h>
+#include <aws/agent-discovery/AgentDiscoveryClient.h>
 #include <aws/agent-registry-control/AgentRegistryControlClient.h>
 #include <aws/agent-registry/AgentRegistryClient.h>
 #include <aws/aiops/AIOpsClient.h>
@@ -21,6 +22,7 @@
 #include <aws/apigateway/APIGatewayClient.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiClient.h>
 #include <aws/apigatewayv2/ApiGatewayV2Client.h>
+#include <aws/apiportal/APIPortalClient.h>
 #include <aws/appconfig/AppConfigClient.h>
 #include <aws/appconfigdata/AppConfigDataClient.h>
 #include <aws/appfabric/AppFabricClient.h>
@@ -314,6 +316,7 @@
 #include <aws/partnercentral-selling/PartnerCentralSellingClient.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataClient.h>
 #include <aws/payment-cryptography/PaymentCryptographyClient.h>
+#include <aws/payments/PaymentsClient.h>
 #include <aws/pca-connector-ad/PcaConnectorAdClient.h>
 #include <aws/pca-connector-scep/PcaConnectorScepClient.h>
 #include <aws/pcs/PCSClient.h>
@@ -368,6 +371,7 @@
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeClient.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerClient.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeClient.h>
+#include <aws/sagemaker-gateway-runtime/SageMakerGatewayRuntimeClient.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialClient.h>
 #include <aws/sagemaker-inference-router-runtime/SageMakerInferenceRouterRuntimeClient.h>
 #include <aws/sagemaker-metrics/SageMakerMetricsClient.h>

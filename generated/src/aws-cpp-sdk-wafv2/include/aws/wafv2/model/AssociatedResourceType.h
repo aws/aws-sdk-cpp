@@ -17,7 +17,8 @@ enum class AssociatedResourceType {
   COGNITO_USER_POOL,
   APP_RUNNER_SERVICE,
   VERIFIED_ACCESS_INSTANCE,
-  AGENTCORE_GATEWAY
+  AGENTCORE_GATEWAY,
+  APPLICATION_LOAD_BALANCER
 };
 
 namespace AssociatedResourceTypeMapper {

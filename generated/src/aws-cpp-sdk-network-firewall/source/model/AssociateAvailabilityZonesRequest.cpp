@@ -29,6 +29,9 @@ Aws::String AssociateAvailabilityZonesRequest::SerializePayload() const {
   if (m_availabilityZoneMappingsHasBeenSet) {
     mapSize++;
   }
+  if (m_firewallTypeHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -53,6 +56,11 @@ Aws::String AssociateAvailabilityZonesRequest::SerializePayload() const {
     for (const auto& item_0 : m_availabilityZoneMappings) {
       item_0.CborEncode(encoder);
     }
+  }
+
+  if (m_firewallTypeHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(FirewallTypeMapper::GetNameForFirewallType(m_firewallType).c_str()));
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

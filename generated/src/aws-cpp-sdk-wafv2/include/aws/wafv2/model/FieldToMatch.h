@@ -176,14 +176,15 @@ class FieldToMatch {
    * the web request body if the body exceeds the limit for the resource type. When a
    * web request body is larger than the limit, the underlying host service only
    * forwards the contents that are within the limit to WAF for inspection. </p> <ul>
-   * <li> <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB
-   * (8,192 bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito,
-   * App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and
-   * you can increase the limit for each resource type in the web ACL
-   * <code>AssociationConfig</code>, for additional processing fees. </p> </li> <li>
-   * <p>For Amplify, use the CloudFront limit.</p> </li> </ul> <p>For information
-   * about how to handle oversized request bodies, see the <code>Body</code> object
-   * configuration. </p>
+   * <li> <p>For AppSync, the limit is fixed at 8 KB (8,192 bytes).</p> </li> <li>
+   * <p>For Application Load Balancer, the default limit is 8 KB (8,192 bytes), and
+   * you can change the limit in the web ACL <code>AssociationConfig</code>. </p>
+   * </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and
+   * Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase
+   * the limit for each resource type in the web ACL <code>AssociationConfig</code>,
+   * for additional processing fees. </p> </li> <li> <p>For Amplify, use the
+   * CloudFront limit.</p> </li> </ul> <p>For information about how to handle
+   * oversized request bodies, see the <code>Body</code> object configuration. </p>
    */
   inline const Body& GetBody() const { return m_body; }
   inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
@@ -227,14 +228,15 @@ class FieldToMatch {
    * web request body if the body exceeds the limit for the resource type. When a web
    * request body is larger than the limit, the underlying host service only forwards
    * the contents that are within the limit to WAF for inspection. </p> <ul> <li>
-   * <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192
-   * bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito, App
-   * Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you
-   * can increase the limit for each resource type in the web ACL
-   * <code>AssociationConfig</code>, for additional processing fees. </p> </li> <li>
-   * <p>For Amplify, use the CloudFront limit.</p> </li> </ul> <p>For information
-   * about how to handle oversized request bodies, see the <code>JsonBody</code>
-   * object configuration. </p>
+   * <p>For AppSync, the limit is fixed at 8 KB (8,192 bytes).</p> </li> <li> <p>For
+   * Application Load Balancer, the default limit is 8 KB (8,192 bytes), and you can
+   * change the limit in the web ACL <code>AssociationConfig</code>. </p> </li> <li>
+   * <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access,
+   * the default limit is 16 KB (16,384 bytes), and you can increase the limit for
+   * each resource type in the web ACL <code>AssociationConfig</code>, for additional
+   * processing fees. </p> </li> <li> <p>For Amplify, use the CloudFront limit.</p>
+   * </li> </ul> <p>For information about how to handle oversized request bodies, see
+   * the <code>JsonBody</code> object configuration. </p>
    */
   inline const JsonBody& GetJsonBody() const { return m_jsonBody; }
   inline bool JsonBodyHasBeenSet() const { return m_jsonBodyHasBeenSet; }

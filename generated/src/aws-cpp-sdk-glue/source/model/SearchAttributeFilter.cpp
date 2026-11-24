@@ -22,9 +22,9 @@ SearchAttributeFilter& SearchAttributeFilter::operator=(JsonView jsonValue) {
     m_attribute = jsonValue.GetString("Attribute");
     m_attributeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Operator")) {
-    m_operator = SearchFilterOperatorMapper::GetSearchFilterOperatorForName(jsonValue.GetString("Operator"));
-    m_operatorHasBeenSet = true;
+  if (jsonValue.ValueExists("Comparator")) {
+    m_comparator = SearchFilterComparatorMapper::GetSearchFilterComparatorForName(jsonValue.GetString("Comparator"));
+    m_comparatorHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetObject("Value");
@@ -40,8 +40,8 @@ JsonValue SearchAttributeFilter::Jsonize() const {
     payload.WithString("Attribute", m_attribute);
   }
 
-  if (m_operatorHasBeenSet) {
-    payload.WithString("Operator", SearchFilterOperatorMapper::GetNameForSearchFilterOperator(m_operator));
+  if (m_comparatorHasBeenSet) {
+    payload.WithString("Comparator", SearchFilterComparatorMapper::GetNameForSearchFilterComparator(m_comparator));
   }
 
   if (m_valueHasBeenSet) {

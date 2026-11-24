@@ -49,11 +49,12 @@ class DeviceSelectionConfiguration {
    * <li> <p>AVAILABILITY: The current availability of the device. Valid values are
    * AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li> <li>
    * <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p>
-   * </li> <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p>
-   * </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote
-   * access. Valid values are TRUE or FALSE.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED:
-   * Whether the device is enabled for remote debugging. Valid values are TRUE or
-   * FALSE. Because remote debugging is <a
+   * </li> <li> <p>DEVICE_TYPE: The device type. Valid values are PHYSICAL or
+   * VIRTUAL.</p> </li> <li> <p>MANUFACTURER: The device manufacturer (for example,
+   * Apple).</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
+   * for remote access. Valid values are TRUE or FALSE.</p> </li> <li>
+   * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+   * Valid values are TRUE or FALSE. Because remote debugging is <a
    * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
    * longer supported</a>, this filter is ignored.</p> </li> <li> <p>INSTANCE_ARN:
    * The Amazon Resource Name (ARN) of the device instance.</p> </li> <li>
@@ -75,8 +76,11 @@ class DeviceSelectionConfiguration {
    * IOS.</p> </li> <li> <p>The AVAILABILITY attribute can be set to AVAILABLE,
    * HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li> <li> <p>The
    * FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li> <li> <p>The
+   * DEVICE_TYPE attribute can be set to PHYSICAL or VIRTUAL.</p> </li> <li> <p>The
    * FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li> </ul> </li>
-   * </ul>
+   * </ul>  <p>If the filters select devices by attribute and do not include a
+   * <code>DEVICE_TYPE</code> filter, only physical devices are selected. If the
+   * filters select devices by ARN, the run uses the devices you list.</p>
    */
   inline const Aws::Vector<DeviceFilter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

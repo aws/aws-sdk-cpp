@@ -10,6 +10,7 @@
 #include <aws/mediaconvert/model/ChromaPositionMode.h>
 #include <aws/mediaconvert/model/ColorMetadata.h>
 #include <aws/mediaconvert/model/DropFrameTimecode.h>
+#include <aws/mediaconvert/model/DynamicMultiviewSettings.h>
 #include <aws/mediaconvert/model/Rectangle.h>
 #include <aws/mediaconvert/model/RespondToAfd.h>
 #include <aws/mediaconvert/model/ScalingBehavior.h>
@@ -178,6 +179,27 @@ class VideoDescription {
   }
   inline VideoDescription& WithDropFrameTimecode(DropFrameTimecode value) {
     SetDropFrameTimecode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Dynamic Multiview settings. Encodes this video output so that a downstream
+   * packager can combine it with other outputs in a Dynamic Multiview presentation,
+   * or replace parts of it. Available for H.264 and H.265 outputs. Enabling Dynamic
+   * Multiview reduces compression efficiency.
+   */
+  inline const DynamicMultiviewSettings& GetDynamicMultiviewSettings() const { return m_dynamicMultiviewSettings; }
+  inline bool DynamicMultiviewSettingsHasBeenSet() const { return m_dynamicMultiviewSettingsHasBeenSet; }
+  template <typename DynamicMultiviewSettingsT = DynamicMultiviewSettings>
+  void SetDynamicMultiviewSettings(DynamicMultiviewSettingsT&& value) {
+    m_dynamicMultiviewSettingsHasBeenSet = true;
+    m_dynamicMultiviewSettings = std::forward<DynamicMultiviewSettingsT>(value);
+  }
+  template <typename DynamicMultiviewSettingsT = DynamicMultiviewSettings>
+  VideoDescription& WithDynamicMultiviewSettings(DynamicMultiviewSettingsT&& value) {
+    SetDynamicMultiviewSettings(std::forward<DynamicMultiviewSettingsT>(value));
     return *this;
   }
   ///@}
@@ -399,6 +421,8 @@ class VideoDescription {
 
   DropFrameTimecode m_dropFrameTimecode{DropFrameTimecode::NOT_SET};
 
+  DynamicMultiviewSettings m_dynamicMultiviewSettings;
+
   int m_fixedAfd{0};
 
   int m_height{0};
@@ -425,6 +449,7 @@ class VideoDescription {
   bool m_colorMetadataHasBeenSet = false;
   bool m_cropHasBeenSet = false;
   bool m_dropFrameTimecodeHasBeenSet = false;
+  bool m_dynamicMultiviewSettingsHasBeenSet = false;
   bool m_fixedAfdHasBeenSet = false;
   bool m_heightHasBeenSet = false;
   bool m_positionHasBeenSet = false;

@@ -44,7 +44,8 @@ enum class ComputeOptimizerAutomationErrors {
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  FORBIDDEN = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  FORBIDDEN,
   IDEMPOTENCY_TOKEN_IN_USE,
   IDEMPOTENT_PARAMETER_MISMATCH,
   INTERNAL_SERVER,

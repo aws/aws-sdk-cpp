@@ -35,6 +35,15 @@ GatewayInterceptorConfiguration& GatewayInterceptorConfiguration::operator=(Json
     m_inputConfiguration = jsonValue.GetObject("inputConfiguration");
     m_inputConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("responseInterceptionMode")) {
+    m_responseInterceptionMode =
+        ResponseInterceptionModeMapper::GetResponseInterceptionModeForName(jsonValue.GetString("responseInterceptionMode"));
+    m_responseInterceptionModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("responseStreamingConfiguration")) {
+    m_responseStreamingConfiguration = jsonValue.GetObject("responseStreamingConfiguration");
+    m_responseStreamingConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -57,6 +66,15 @@ JsonValue GatewayInterceptorConfiguration::Jsonize() const {
 
   if (m_inputConfigurationHasBeenSet) {
     payload.WithObject("inputConfiguration", m_inputConfiguration.Jsonize());
+  }
+
+  if (m_responseInterceptionModeHasBeenSet) {
+    payload.WithString("responseInterceptionMode",
+                       ResponseInterceptionModeMapper::GetNameForResponseInterceptionMode(m_responseInterceptionMode));
+  }
+
+  if (m_responseStreamingConfigurationHasBeenSet) {
+    payload.WithObject("responseStreamingConfiguration", m_responseStreamingConfiguration.Jsonize());
   }
 
   return payload;

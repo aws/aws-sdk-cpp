@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class Av1AdaptiveQuantization { NOT_SET, OFF, LOW, MEDIUM, HIGH, HIGHER, MAX };
+enum class Av1AdaptiveQuantization { NOT_SET, OFF, AUTO, LOW, MEDIUM, HIGH, HIGHER, MAX };
 
 namespace Av1AdaptiveQuantizationMapper {
 AWS_MEDIACONVERT_API Av1AdaptiveQuantization GetAv1AdaptiveQuantizationForName(const Aws::String& name);

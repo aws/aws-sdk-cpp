@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MarketplaceDiscovery {
 namespace Model {
-enum class SellerEngagementType { NOT_SET, REQUEST_FOR_PRIVATE_OFFER, REQUEST_FOR_DEMO };
+enum class SellerEngagementType { NOT_SET, REQUEST_FOR_PRIVATE_OFFER, REQUEST_FOR_DEMO, EXPRESS_PRIVATE_OFFER, BUY_NOW, TRY_FOR_FREE };
 
 namespace SellerEngagementTypeMapper {
 AWS_MARKETPLACEDISCOVERY_API SellerEngagementType GetSellerEngagementTypeForName(const Aws::String& name);

@@ -22,7 +22,7 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>An entitlement granted to the buyer as part of a pricing term.</p><p><h3>See
+ * <p>An entitlement that you receive as part of a pricing term.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/GrantItem">AWS
  * API Reference</a></p>
@@ -90,7 +90,7 @@ class GrantItem {
 
   ///@{
   /**
-   * <p>Labels used to categorize this entitlement, such as by region.</p>
+   * <p>Labels that categorize this entitlement, such as by region.</p>
    */
   inline const Aws::Vector<DimensionLabel>& GetDimensionLabels() const { return m_dimensionLabels; }
   inline bool DimensionLabelsHasBeenSet() const { return m_dimensionLabelsHasBeenSet; }
@@ -132,7 +132,7 @@ class GrantItem {
 
   ///@{
   /**
-   * <p>The maximum quantity of the entitlement that can be granted.</p>
+   * <p>The maximum quantity of the entitlement that you can receive.</p>
    */
   inline int GetMaxQuantity() const { return m_maxQuantity; }
   inline bool MaxQuantityHasBeenSet() const { return m_maxQuantityHasBeenSet; }

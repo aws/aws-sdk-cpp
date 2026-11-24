@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class UnlimitedSupportedInstanceFamily { NOT_SET, t2, t3, t3a, t4g, t8i };
+enum class UnlimitedSupportedInstanceFamily { NOT_SET, t2, t3, t3a, t4g, t8i, t9g };
 
 namespace UnlimitedSupportedInstanceFamilyMapper {
 AWS_EC2_API UnlimitedSupportedInstanceFamily GetUnlimitedSupportedInstanceFamilyForName(const Aws::String& name);

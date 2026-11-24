@@ -26,6 +26,7 @@
 #include <aws/marketplace-discovery/model/GetOfferTermsRequest.h>
 #include <aws/marketplace-discovery/model/GetProductRequest.h>
 #include <aws/marketplace-discovery/model/ListFulfillmentOptionsRequest.h>
+#include <aws/marketplace-discovery/model/ListListingAttributesRequest.h>
 #include <aws/marketplace-discovery/model/ListPurchaseOptionsRequest.h>
 #include <aws/marketplace-discovery/model/SearchFacetsRequest.h>
 #include <aws/marketplace-discovery/model/SearchListingsRequest.h>
@@ -256,6 +257,17 @@ ListFulfillmentOptionsOutcome MarketplaceDiscoveryClient::ListFulfillmentOptions
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListFulfillmentOptionsOutcome(result.GetResultWithOwnership())
                             : ListFulfillmentOptionsOutcome(std::move(result.GetError()));
+}
+
+ListListingAttributesOutcome MarketplaceDiscoveryClient::ListListingAttributes(const ListListingAttributesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2026-02-05/listListingAttributes");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListListingAttributesOutcome(result.GetResultWithOwnership())
+                            : ListListingAttributesOutcome(std::move(result.GetError()));
 }
 
 ListPurchaseOptionsOutcome MarketplaceDiscoveryClient::ListPurchaseOptions(const ListPurchaseOptionsRequest& request) const {

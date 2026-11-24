@@ -20,7 +20,6 @@
 #include <aws/glue/GlueClient.h>
 #include <aws/glue/GlueEndpointProvider.h>
 #include <aws/glue/GlueErrorMarshaller.h>
-#include <aws/glue/model/DescribeConnectionTypeRequest.h>
 #include <aws/glue/model/DescribeEntityRequest.h>
 #include <aws/glue/model/DescribeInboundIntegrationsRequest.h>
 #include <aws/glue/model/DescribeIntegrationsRequest.h>
@@ -120,6 +119,7 @@
 #include <aws/glue/model/ImportCatalogToGlueRequest.h>
 #include <aws/glue/model/ListAssetTypesRequest.h>
 #include <aws/glue/model/ListBlueprintsRequest.h>
+#include <aws/glue/model/ListColumnStatisticsTaskRunsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,12 +131,6 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
-
-DescribeConnectionTypeOutcome GlueClient::DescribeConnectionType(const DescribeConnectionTypeRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeConnectionTypeOutcome(result.GetResultWithOwnership())
-                            : DescribeConnectionTypeOutcome(std::move(result.GetError()));
-}
 
 DescribeEntityOutcome GlueClient::DescribeEntity(const DescribeEntityRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -700,4 +694,10 @@ ListAssetTypesOutcome GlueClient::ListAssetTypes(const ListAssetTypesRequest& re
 ListBlueprintsOutcome GlueClient::ListBlueprints(const ListBlueprintsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListBlueprintsOutcome(result.GetResultWithOwnership()) : ListBlueprintsOutcome(std::move(result.GetError()));
+}
+
+ListColumnStatisticsTaskRunsOutcome GlueClient::ListColumnStatisticsTaskRuns(const ListColumnStatisticsTaskRunsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListColumnStatisticsTaskRunsOutcome(result.GetResultWithOwnership())
+                            : ListColumnStatisticsTaskRunsOutcome(std::move(result.GetError()));
 }

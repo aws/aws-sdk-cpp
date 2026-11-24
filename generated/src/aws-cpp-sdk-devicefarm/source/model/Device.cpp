@@ -46,6 +46,10 @@ Device& Device::operator=(JsonView jsonValue) {
     m_platform = DevicePlatformMapper::GetDevicePlatformForName(jsonValue.GetString("platform"));
     m_platformHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("type")) {
+    m_type = DeviceTypeMapper::GetDeviceTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("os")) {
     m_os = jsonValue.GetString("os");
     m_osHasBeenSet = true;
@@ -133,6 +137,10 @@ JsonValue Device::Jsonize() const {
 
   if (m_platformHasBeenSet) {
     payload.WithString("platform", DevicePlatformMapper::GetNameForDevicePlatform(m_platform));
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", DeviceTypeMapper::GetNameForDeviceType(m_type));
   }
 
   if (m_osHasBeenSet) {

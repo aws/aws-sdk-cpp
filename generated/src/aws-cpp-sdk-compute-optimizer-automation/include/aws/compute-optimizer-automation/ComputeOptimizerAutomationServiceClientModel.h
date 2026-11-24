@@ -22,6 +22,7 @@
 #include <aws/compute-optimizer-automation/model/AssociateAccountsResult.h>
 #include <aws/compute-optimizer-automation/model/CreateAutomationRuleResult.h>
 #include <aws/compute-optimizer-automation/model/DeleteAutomationRuleResult.h>
+#include <aws/compute-optimizer-automation/model/DeleteOrganizationEnrollmentConfigurationResult.h>
 #include <aws/compute-optimizer-automation/model/DisassociateAccountsResult.h>
 #include <aws/compute-optimizer-automation/model/GetAutomationEventResult.h>
 #include <aws/compute-optimizer-automation/model/GetAutomationRuleResult.h>
@@ -38,11 +39,16 @@
 #include <aws/compute-optimizer-automation/model/ListAutomationRulePreviewSummariesResult.h>
 #include <aws/compute-optimizer-automation/model/ListAutomationRulesRequest.h>
 #include <aws/compute-optimizer-automation/model/ListAutomationRulesResult.h>
+#include <aws/compute-optimizer-automation/model/ListOrganizationEnrollmentConfigurationsRequest.h>
+#include <aws/compute-optimizer-automation/model/ListOrganizationEnrollmentConfigurationsResult.h>
+#include <aws/compute-optimizer-automation/model/ListOrganizationalUnitsRequest.h>
+#include <aws/compute-optimizer-automation/model/ListOrganizationalUnitsResult.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionSummariesRequest.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionSummariesResult.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionsRequest.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionsResult.h>
 #include <aws/compute-optimizer-automation/model/ListTagsForResourceResult.h>
+#include <aws/compute-optimizer-automation/model/PutOrganizationEnrollmentConfigurationResult.h>
 #include <aws/compute-optimizer-automation/model/RollbackAutomationEventResult.h>
 #include <aws/compute-optimizer-automation/model/StartAutomationEventResult.h>
 #include <aws/compute-optimizer-automation/model/TagResourceResult.h>
@@ -86,6 +92,7 @@ namespace Model {
 class AssociateAccountsRequest;
 class CreateAutomationRuleRequest;
 class DeleteAutomationRuleRequest;
+class DeleteOrganizationEnrollmentConfigurationRequest;
 class DisassociateAccountsRequest;
 class GetAutomationEventRequest;
 class GetAutomationRuleRequest;
@@ -97,9 +104,12 @@ class ListAutomationEventsRequest;
 class ListAutomationRulePreviewRequest;
 class ListAutomationRulePreviewSummariesRequest;
 class ListAutomationRulesRequest;
+class ListOrganizationEnrollmentConfigurationsRequest;
+class ListOrganizationalUnitsRequest;
 class ListRecommendedActionSummariesRequest;
 class ListRecommendedActionsRequest;
 class ListTagsForResourceRequest;
+class PutOrganizationEnrollmentConfigurationRequest;
 class RollbackAutomationEventRequest;
 class StartAutomationEventRequest;
 class TagResourceRequest;
@@ -112,6 +122,8 @@ class UpdateEnrollmentConfigurationRequest;
 typedef Aws::Utils::Outcome<AssociateAccountsResult, ComputeOptimizerAutomationError> AssociateAccountsOutcome;
 typedef Aws::Utils::Outcome<CreateAutomationRuleResult, ComputeOptimizerAutomationError> CreateAutomationRuleOutcome;
 typedef Aws::Utils::Outcome<DeleteAutomationRuleResult, ComputeOptimizerAutomationError> DeleteAutomationRuleOutcome;
+typedef Aws::Utils::Outcome<DeleteOrganizationEnrollmentConfigurationResult, ComputeOptimizerAutomationError>
+    DeleteOrganizationEnrollmentConfigurationOutcome;
 typedef Aws::Utils::Outcome<DisassociateAccountsResult, ComputeOptimizerAutomationError> DisassociateAccountsOutcome;
 typedef Aws::Utils::Outcome<GetAutomationEventResult, ComputeOptimizerAutomationError> GetAutomationEventOutcome;
 typedef Aws::Utils::Outcome<GetAutomationRuleResult, ComputeOptimizerAutomationError> GetAutomationRuleOutcome;
@@ -124,9 +136,14 @@ typedef Aws::Utils::Outcome<ListAutomationRulePreviewResult, ComputeOptimizerAut
 typedef Aws::Utils::Outcome<ListAutomationRulePreviewSummariesResult, ComputeOptimizerAutomationError>
     ListAutomationRulePreviewSummariesOutcome;
 typedef Aws::Utils::Outcome<ListAutomationRulesResult, ComputeOptimizerAutomationError> ListAutomationRulesOutcome;
+typedef Aws::Utils::Outcome<ListOrganizationEnrollmentConfigurationsResult, ComputeOptimizerAutomationError>
+    ListOrganizationEnrollmentConfigurationsOutcome;
+typedef Aws::Utils::Outcome<ListOrganizationalUnitsResult, ComputeOptimizerAutomationError> ListOrganizationalUnitsOutcome;
 typedef Aws::Utils::Outcome<ListRecommendedActionSummariesResult, ComputeOptimizerAutomationError> ListRecommendedActionSummariesOutcome;
 typedef Aws::Utils::Outcome<ListRecommendedActionsResult, ComputeOptimizerAutomationError> ListRecommendedActionsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, ComputeOptimizerAutomationError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<PutOrganizationEnrollmentConfigurationResult, ComputeOptimizerAutomationError>
+    PutOrganizationEnrollmentConfigurationOutcome;
 typedef Aws::Utils::Outcome<RollbackAutomationEventResult, ComputeOptimizerAutomationError> RollbackAutomationEventOutcome;
 typedef Aws::Utils::Outcome<StartAutomationEventResult, ComputeOptimizerAutomationError> StartAutomationEventOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, ComputeOptimizerAutomationError> TagResourceOutcome;
@@ -139,6 +156,7 @@ typedef Aws::Utils::Outcome<UpdateEnrollmentConfigurationResult, ComputeOptimize
 typedef std::future<AssociateAccountsOutcome> AssociateAccountsOutcomeCallable;
 typedef std::future<CreateAutomationRuleOutcome> CreateAutomationRuleOutcomeCallable;
 typedef std::future<DeleteAutomationRuleOutcome> DeleteAutomationRuleOutcomeCallable;
+typedef std::future<DeleteOrganizationEnrollmentConfigurationOutcome> DeleteOrganizationEnrollmentConfigurationOutcomeCallable;
 typedef std::future<DisassociateAccountsOutcome> DisassociateAccountsOutcomeCallable;
 typedef std::future<GetAutomationEventOutcome> GetAutomationEventOutcomeCallable;
 typedef std::future<GetAutomationRuleOutcome> GetAutomationRuleOutcomeCallable;
@@ -150,9 +168,12 @@ typedef std::future<ListAutomationEventsOutcome> ListAutomationEventsOutcomeCall
 typedef std::future<ListAutomationRulePreviewOutcome> ListAutomationRulePreviewOutcomeCallable;
 typedef std::future<ListAutomationRulePreviewSummariesOutcome> ListAutomationRulePreviewSummariesOutcomeCallable;
 typedef std::future<ListAutomationRulesOutcome> ListAutomationRulesOutcomeCallable;
+typedef std::future<ListOrganizationEnrollmentConfigurationsOutcome> ListOrganizationEnrollmentConfigurationsOutcomeCallable;
+typedef std::future<ListOrganizationalUnitsOutcome> ListOrganizationalUnitsOutcomeCallable;
 typedef std::future<ListRecommendedActionSummariesOutcome> ListRecommendedActionSummariesOutcomeCallable;
 typedef std::future<ListRecommendedActionsOutcome> ListRecommendedActionsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<PutOrganizationEnrollmentConfigurationOutcome> PutOrganizationEnrollmentConfigurationOutcomeCallable;
 typedef std::future<RollbackAutomationEventOutcome> RollbackAutomationEventOutcomeCallable;
 typedef std::future<StartAutomationEventOutcome> StartAutomationEventOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -174,6 +195,10 @@ typedef std::function<void(const ComputeOptimizerAutomationClient*, const Model:
 typedef std::function<void(const ComputeOptimizerAutomationClient*, const Model::DeleteAutomationRuleRequest&,
                            const Model::DeleteAutomationRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAutomationRuleResponseReceivedHandler;
+typedef std::function<void(const ComputeOptimizerAutomationClient*, const Model::DeleteOrganizationEnrollmentConfigurationRequest&,
+                           const Model::DeleteOrganizationEnrollmentConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteOrganizationEnrollmentConfigurationResponseReceivedHandler;
 typedef std::function<void(const ComputeOptimizerAutomationClient*, const Model::DisassociateAccountsRequest&,
                            const Model::DisassociateAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateAccountsResponseReceivedHandler;
@@ -209,6 +234,13 @@ typedef std::function<void(const ComputeOptimizerAutomationClient*, const Model:
 typedef std::function<void(const ComputeOptimizerAutomationClient*, const Model::ListAutomationRulesRequest&,
                            const Model::ListAutomationRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAutomationRulesResponseReceivedHandler;
+typedef std::function<void(const ComputeOptimizerAutomationClient*, const Model::ListOrganizationEnrollmentConfigurationsRequest&,
+                           const Model::ListOrganizationEnrollmentConfigurationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListOrganizationEnrollmentConfigurationsResponseReceivedHandler;
+typedef std::function<void(const ComputeOptimizerAutomationClient*, const Model::ListOrganizationalUnitsRequest&,
+                           const Model::ListOrganizationalUnitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListOrganizationalUnitsResponseReceivedHandler;
 typedef std::function<void(const ComputeOptimizerAutomationClient*, const Model::ListRecommendedActionSummariesRequest&,
                            const Model::ListRecommendedActionSummariesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -219,6 +251,10 @@ typedef std::function<void(const ComputeOptimizerAutomationClient*, const Model:
 typedef std::function<void(const ComputeOptimizerAutomationClient*, const Model::ListTagsForResourceRequest&,
                            const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const ComputeOptimizerAutomationClient*, const Model::PutOrganizationEnrollmentConfigurationRequest&,
+                           const Model::PutOrganizationEnrollmentConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutOrganizationEnrollmentConfigurationResponseReceivedHandler;
 typedef std::function<void(const ComputeOptimizerAutomationClient*, const Model::RollbackAutomationEventRequest&,
                            const Model::RollbackAutomationEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RollbackAutomationEventResponseReceivedHandler;

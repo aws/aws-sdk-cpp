@@ -109,7 +109,12 @@ class DevicePool {
 
   ///@{
   /**
-   * <p>Information about the device pool's rules.</p>
+   * <p>Information about the device pool's rules.</p>  <p>A device pool
+   * contains either physical devices or virtual devices, but not both. If you define
+   * the pool with attribute rules and those rules do not include a
+   * <code>DEVICE_TYPE</code> rule, the pool contains only physical devices. If you
+   * define the pool by listing device ARNs, the pool contains the devices you
+   * list.</p>
    */
   inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
   inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }

@@ -21,7 +21,7 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>A label used to group or categorize pricing dimensions, such as by region or
+ * <p>A label that groups or categorizes pricing dimensions, such as by region or
  * SageMaker option.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/DimensionLabel">AWS
  * API Reference</a></p>
@@ -35,8 +35,10 @@ class DimensionLabel {
 
   ///@{
   /**
-   * <p>The type of the dimension label, such as <code>Region</code> or
-   * <code>SagemakerOption</code>.</p>
+   * <p>The type of the dimension label. This field has one of the following
+   * values:</p> <dl> <dt>Region</dt> <dd> <p>The label groups dimensions by AWS
+   * Region.</p> </dd> <dt>SagemakerOption</dt> <dd> <p>The label groups dimensions
+   * by Amazon SageMaker option.</p> </dd> </dl>
    */
   inline DimensionLabelType GetLabelType() const { return m_labelType; }
   inline bool LabelTypeHasBeenSet() const { return m_labelTypeHasBeenSet; }

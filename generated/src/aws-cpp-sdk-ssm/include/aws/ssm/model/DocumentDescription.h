@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/AttachmentInformation.h>
+#include <aws/ssm/model/CloudProvider.h>
 #include <aws/ssm/model/DocumentFormat.h>
 #include <aws/ssm/model/DocumentHashType.h>
 #include <aws/ssm/model/DocumentParameter.h>
@@ -639,6 +640,30 @@ class DocumentDescription {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>This field specifies the cloud providers that the returned version of the
+   * document can run against.</p>
+   */
+  inline const Aws::Vector<CloudProvider>& GetCloudProviders() const { return m_cloudProviders; }
+  inline bool CloudProvidersHasBeenSet() const { return m_cloudProvidersHasBeenSet; }
+  template <typename CloudProvidersT = Aws::Vector<CloudProvider>>
+  void SetCloudProviders(CloudProvidersT&& value) {
+    m_cloudProvidersHasBeenSet = true;
+    m_cloudProviders = std::forward<CloudProvidersT>(value);
+  }
+  template <typename CloudProvidersT = Aws::Vector<CloudProvider>>
+  DocumentDescription& WithCloudProviders(CloudProvidersT&& value) {
+    SetCloudProviders(std::forward<CloudProvidersT>(value));
+    return *this;
+  }
+  inline DocumentDescription& AddCloudProviders(CloudProvider value) {
+    m_cloudProvidersHasBeenSet = true;
+    m_cloudProviders.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sha1;
 
@@ -699,6 +724,8 @@ class DocumentDescription {
   Aws::Vector<Aws::String> m_category;
 
   Aws::Vector<Aws::String> m_categoryEnum;
+
+  Aws::Vector<CloudProvider> m_cloudProviders;
   bool m_sha1HasBeenSet = false;
   bool m_hashHasBeenSet = false;
   bool m_hashTypeHasBeenSet = false;
@@ -729,6 +756,7 @@ class DocumentDescription {
   bool m_reviewStatusHasBeenSet = false;
   bool m_categoryHasBeenSet = false;
   bool m_categoryEnumHasBeenSet = false;
+  bool m_cloudProvidersHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -21,6 +21,8 @@ static const int AWS_EC2_EIP_HASH = HashingUtils::HashString("AWS::EC2::EIP");
 static const int AWS_ElasticLoadBalancingV2_LoadBalancer_application_HASH =
     HashingUtils::HashString("AWS::ElasticLoadBalancingV2::LoadBalancer::application");
 static const int AWS_ElasticLoadBalancing_LoadBalancer_HASH = HashingUtils::HashString("AWS::ElasticLoadBalancing::LoadBalancer");
+static const int AWS_EC2_VPC_HASH = HashingUtils::HashString("AWS::EC2::VPC");
+static const int AWS_EC2_Subnet_HASH = HashingUtils::HashString("AWS::EC2::Subnet");
 
 ScopeResourceType GetScopeResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -34,6 +36,10 @@ ScopeResourceType GetScopeResourceTypeForName(const Aws::String& name) {
     return ScopeResourceType::AWS_ElasticLoadBalancingV2_LoadBalancer_application;
   } else if (hashCode == AWS_ElasticLoadBalancing_LoadBalancer_HASH) {
     return ScopeResourceType::AWS_ElasticLoadBalancing_LoadBalancer;
+  } else if (hashCode == AWS_EC2_VPC_HASH) {
+    return ScopeResourceType::AWS_EC2_VPC;
+  } else if (hashCode == AWS_EC2_Subnet_HASH) {
+    return ScopeResourceType::AWS_EC2_Subnet;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -58,6 +64,10 @@ Aws::String GetNameForScopeResourceType(ScopeResourceType enumValue) {
       return "AWS::ElasticLoadBalancingV2::LoadBalancer::application";
     case ScopeResourceType::AWS_ElasticLoadBalancing_LoadBalancer:
       return "AWS::ElasticLoadBalancing::LoadBalancer";
+    case ScopeResourceType::AWS_EC2_VPC:
+      return "AWS::EC2::VPC";
+    case ScopeResourceType::AWS_EC2_Subnet:
+      return "AWS::EC2::Subnet";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

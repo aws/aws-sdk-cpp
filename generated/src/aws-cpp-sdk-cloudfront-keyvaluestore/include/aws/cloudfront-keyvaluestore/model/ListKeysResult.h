@@ -31,8 +31,9 @@ class ListKeysResult {
 
   ///@{
   /**
-   * <p>If nextToken is returned in the response, there are more results available.
-   * Make the next call using the returned token to retrieve the next page.</p>
+   * <p>If <code>nextToken</code> is returned in the response, there are more results
+   * available. Make the next call using the returned token to retrieve the next
+   * page.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   template <typename NextTokenT = Aws::String>
@@ -49,7 +50,7 @@ class ListKeysResult {
 
   ///@{
   /**
-   * <p>Key value pairs</p>
+   * <p>The key-value pairs.</p>
    */
   inline const Aws::Vector<ListKeysResponseListItem>& GetItems() const { return m_items; }
   template <typename ItemsT = Aws::Vector<ListKeysResponseListItem>>

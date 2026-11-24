@@ -23,8 +23,9 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Defines a legal term containing documents proposed to buyers, such as EULAs
- * and data subscription agreements.</p><p><h3>See Also:</h3>   <a
+ * <p>Describes a legal term containing documents proposed to you, such as End User
+ * License Agreements (EULAs) and data subscription agreements.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/LegalTerm">AWS
  * API Reference</a></p>
  */
@@ -71,7 +72,7 @@ class LegalTerm {
 
   ///@{
   /**
-   * <p>The legal documents proposed to the buyer as part of this term.</p>
+   * <p>The legal documents proposed to you as part of this term.</p>
    */
   inline const Aws::Vector<DocumentItem>& GetDocuments() const { return m_documents; }
   inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }

@@ -62,6 +62,7 @@
 #include <aws/route53/model/GetHealthCheckRequest.h>
 #include <aws/route53/model/GetHealthCheckSourceRequest.h>
 #include <aws/route53/model/GetHealthCheckStatusRequest.h>
+#include <aws/route53/model/GetHostedZoneChangeBatchRequest.h>
 #include <aws/route53/model/GetHostedZoneCountRequest.h>
 #include <aws/route53/model/GetHostedZoneLimitRequest.h>
 #include <aws/route53/model/GetHostedZoneRequest.h>
@@ -78,10 +79,12 @@
 #include <aws/route53/model/ListHealthCheckSourcesRequest.h>
 #include <aws/route53/model/ListHealthChecksBySourceRequest.h>
 #include <aws/route53/model/ListHealthChecksRequest.h>
+#include <aws/route53/model/ListHostedZoneChangeBatchesRequest.h>
 #include <aws/route53/model/ListHostedZonesByNameRequest.h>
 #include <aws/route53/model/ListHostedZonesByVPCRequest.h>
 #include <aws/route53/model/ListHostedZonesRequest.h>
 #include <aws/route53/model/ListQueryLoggingConfigsRequest.h>
+#include <aws/route53/model/ListResourceRecordSetChangesRequest.h>
 #include <aws/route53/model/ListResourceRecordSetProtectionsRequest.h>
 #include <aws/route53/model/ListResourceRecordSetsRequest.h>
 #include <aws/route53/model/ListReusableDelegationSetsRequest.h>
@@ -97,6 +100,7 @@
 #include <aws/route53/model/UpdateHealthCheckRequest.h>
 #include <aws/route53/model/UpdateHostedZoneCommentRequest.h>
 #include <aws/route53/model/UpdateHostedZoneFeaturesRequest.h>
+#include <aws/route53/model/UpdateHostedZoneTierRequest.h>
 #include <aws/route53/model/UpdateTrafficPolicyCommentRequest.h>
 #include <aws/route53/model/UpdateTrafficPolicyInstanceRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -989,6 +993,31 @@ GetHostedZoneOutcome Route53Client::GetHostedZone(const GetHostedZoneRequest& re
   return result.IsSuccess() ? GetHostedZoneOutcome(result.GetResultWithOwnership()) : GetHostedZoneOutcome(std::move(result.GetError()));
 }
 
+GetHostedZoneChangeBatchOutcome Route53Client::GetHostedZoneChangeBatch(const GetHostedZoneChangeBatchRequest& request) const {
+  if (!request.HostedZoneIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetHostedZoneChangeBatch", "Required field: HostedZoneId, is not set");
+    return GetHostedZoneChangeBatchOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [HostedZoneId]", false));
+  }
+  if (!request.ChangeIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetHostedZoneChangeBatch", "Required field: ChangeId, is not set");
+    return GetHostedZoneChangeBatchOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [ChangeId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/changebatches/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChangeId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHostedZoneChangeBatchOutcome(result.GetResultWithOwnership())
+                            : GetHostedZoneChangeBatchOutcome(std::move(result.GetError()));
+}
+
 GetHostedZoneCountOutcome Route53Client::GetHostedZoneCount(const GetHostedZoneCountRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1238,6 +1267,25 @@ ListHealthChecksBySourceOutcome Route53Client::ListHealthChecksBySource(const Li
                             : ListHealthChecksBySourceOutcome(std::move(result.GetError()));
 }
 
+ListHostedZoneChangeBatchesOutcome Route53Client::ListHostedZoneChangeBatches(const ListHostedZoneChangeBatchesRequest& request) const {
+  if (!request.HostedZoneIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListHostedZoneChangeBatches", "Required field: HostedZoneId, is not set");
+    return ListHostedZoneChangeBatchesOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [HostedZoneId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/changebatches");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHostedZoneChangeBatchesOutcome(result.GetResultWithOwnership())
+                            : ListHostedZoneChangeBatchesOutcome(std::move(result.GetError()));
+}
+
 ListHostedZonesOutcome Route53Client::ListHostedZones(const ListHostedZonesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1291,6 +1339,25 @@ ListQueryLoggingConfigsOutcome Route53Client::ListQueryLoggingConfigs(const List
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListQueryLoggingConfigsOutcome(result.GetResultWithOwnership())
                             : ListQueryLoggingConfigsOutcome(std::move(result.GetError()));
+}
+
+ListResourceRecordSetChangesOutcome Route53Client::ListResourceRecordSetChanges(const ListResourceRecordSetChangesRequest& request) const {
+  if (!request.HostedZoneIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListResourceRecordSetChanges", "Required field: HostedZoneId, is not set");
+    return ListResourceRecordSetChangesOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                    "Missing required field [HostedZoneId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/rrsetchanges");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResourceRecordSetChangesOutcome(result.GetResultWithOwnership())
+                            : ListResourceRecordSetChangesOutcome(std::move(result.GetError()));
 }
 
 ListResourceRecordSetProtectionsOutcome Route53Client::ListResourceRecordSetProtections(
@@ -1566,6 +1633,25 @@ UpdateHostedZoneFeaturesOutcome Route53Client::UpdateHostedZoneFeatures(const Up
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateHostedZoneFeaturesOutcome(result.GetResultWithOwnership())
                             : UpdateHostedZoneFeaturesOutcome(std::move(result.GetError()));
+}
+
+UpdateHostedZoneTierOutcome Route53Client::UpdateHostedZoneTier(const UpdateHostedZoneTierRequest& request) const {
+  if (!request.HostedZoneIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateHostedZoneTier", "Required field: HostedZoneId, is not set");
+    return UpdateHostedZoneTierOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [HostedZoneId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/tier");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHostedZoneTierOutcome(result.GetResultWithOwnership())
+                            : UpdateHostedZoneTierOutcome(std::move(result.GetError()));
 }
 
 UpdateTrafficPolicyCommentOutcome Route53Client::UpdateTrafficPolicyComment(const UpdateTrafficPolicyCommentRequest& request) const {

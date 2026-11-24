@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include <aws/agent-registry-control/model/ListPublisherAssociationsPaginationTraits.h>
+#include <aws/agent-registry-control/model/ListPublishersPaginationTraits.h>
 #include <aws/agent-registry-control/model/ListRegistriesPaginationTraits.h>
 #include <aws/agent-registry-control/model/ListRegistryRecordsPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
@@ -18,6 +20,29 @@ namespace AgentRegistryControl {
 template <typename DerivedClient>
 class AgentRegistryControlPaginationBase {
  public:
+  /**
+   * Create a paginator for ListPublisherAssociations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublisherAssociationsRequest,
+                                    Pagination::ListPublisherAssociationsPaginationTraits<DerivedClient>>
+  ListPublisherAssociationsPaginator(const Model::ListPublisherAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublisherAssociationsRequest,
+                                             Pagination::ListPublisherAssociationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListPublishers operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublishersRequest, Pagination::ListPublishersPaginationTraits<DerivedClient>>
+  ListPublishersPaginator(const Model::ListPublishersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublishersRequest,
+                                             Pagination::ListPublishersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                        request};
+  }
+
   /**
    * Create a paginator for ListRegistries operation
    */

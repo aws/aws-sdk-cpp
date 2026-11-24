@@ -18,6 +18,7 @@ namespace AssetTypeMapper {
 static const int AGENT_HASH = HashingUtils::HashString("AGENT");
 static const int SPACE_HASH = HashingUtils::HashString("SPACE");
 static const int KNOWLEDGE_BASE_HASH = HashingUtils::HashString("KNOWLEDGE_BASE");
+static const int FLOW_HASH = HashingUtils::HashString("FLOW");
 
 AssetType GetAssetTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ AssetType GetAssetTypeForName(const Aws::String& name) {
     return AssetType::SPACE;
   } else if (hashCode == KNOWLEDGE_BASE_HASH) {
     return AssetType::KNOWLEDGE_BASE;
+  } else if (hashCode == FLOW_HASH) {
+    return AssetType::FLOW;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForAssetType(AssetType enumValue) {
       return "SPACE";
     case AssetType::KNOWLEDGE_BASE:
       return "KNOWLEDGE_BASE";
+    case AssetType::FLOW:
+      return "FLOW";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

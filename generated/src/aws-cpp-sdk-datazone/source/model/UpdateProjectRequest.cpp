@@ -59,5 +59,9 @@ Aws::String UpdateProjectRequest::SerializePayload() const {
     payload.WithString("projectProfileVersion", m_projectProfileVersion);
   }
 
+  if (m_projectProfileActionHasBeenSet) {
+    payload.WithString("projectProfileAction", ProjectProfileActionMapper::GetNameForProjectProfileAction(m_projectProfileAction));
+  }
+
   return payload.View().WriteReadable();
 }

@@ -442,6 +442,8 @@
 #include <aws/inspector2/model/ProviderDetailCreate.h>
 #include <aws/inspector2/model/ProviderDetailUpdate.h>
 #include <aws/inspector2/model/ProviderFilter.h>
+#include <aws/inspector2/model/PurlQualifierFilter.h>
+#include <aws/inspector2/model/PurlQualifierKey.h>
 #include <aws/inspector2/model/Recommendation.h>
 #include <aws/inspector2/model/RelationshipStatus.h>
 #include <aws/inspector2/model/Remediation.h>
@@ -466,6 +468,11 @@
 #include <aws/inspector2/model/ResourceType.h>
 #include <aws/inspector2/model/RuleSetCategory.h>
 #include <aws/inspector2/model/Runtime.h>
+#include <aws/inspector2/model/RuntimeReachability.h>
+#include <aws/inspector2/model/RuntimeReachabilityComparison.h>
+#include <aws/inspector2/model/RuntimeReachabilityFilter.h>
+#include <aws/inspector2/model/RuntimeReachabilityReason.h>
+#include <aws/inspector2/model/RuntimeReachabilityReasonFilter.h>
 #include <aws/inspector2/model/SbomReportFormat.h>
 #include <aws/inspector2/model/ScanMode.h>
 #include <aws/inspector2/model/ScanSource.h>

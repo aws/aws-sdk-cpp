@@ -22,7 +22,7 @@ class JsonValue;
 namespace CloudFrontKeyValueStore {
 namespace Model {
 /**
- * <p>A key value pair.</p><p><h3>See Also:</h3>   <a
+ * <p>A key-value pair.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/GetKeyResponse">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,7 @@ class GetKeyResult {
 
   ///@{
   /**
-   * <p>The key of the key value pair.</p>
+   * <p>The key of the key-value pair.</p>
    */
   inline const Aws::String& GetKey() const { return m_key; }
   template <typename KeyT = Aws::String>
@@ -51,7 +51,7 @@ class GetKeyResult {
 
   ///@{
   /**
-   * <p>The value of the key value pair.</p>
+   * <p>The value of the key-value pair.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   template <typename ValueT = Aws::String>
@@ -68,7 +68,7 @@ class GetKeyResult {
 
   ///@{
   /**
-   * <p>Number of key value pairs in the Key Value Store.</p>
+   * <p>Number of key-value pairs in the key value store.</p>
    */
   inline int GetItemCount() const { return m_itemCount; }
   inline void SetItemCount(int value) {
@@ -83,7 +83,7 @@ class GetKeyResult {
 
   ///@{
   /**
-   * <p>Total size of the Key Value Store in bytes.</p>
+   * <p>Total size of the key value store in bytes.</p>
    */
   inline long long GetTotalSizeInBytes() const { return m_totalSizeInBytes; }
   inline void SetTotalSizeInBytes(long long value) {

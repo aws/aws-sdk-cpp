@@ -25,13 +25,13 @@ PutDataCatalogExportConfigurationResult& PutDataCatalogExportConfigurationResult
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("ExportSetting")) {
-    m_exportSetting = ExportSettingMapper::GetExportSettingForName(jsonValue.GetString("ExportSetting"));
-    m_exportSettingHasBeenSet = true;
+  if (jsonValue.ValueExists("S3TablesConfiguration")) {
+    m_s3TablesConfiguration = jsonValue.GetObject("S3TablesConfiguration");
+    m_s3TablesConfigurationHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("EncryptionConfiguration")) {
-    m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
-    m_encryptionConfigurationHasBeenSet = true;
+  if (jsonValue.ValueExists("Assets")) {
+    m_assets = jsonValue.GetObject("Assets");
+    m_assetsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

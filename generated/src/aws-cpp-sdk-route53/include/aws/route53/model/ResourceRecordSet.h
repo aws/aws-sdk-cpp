@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/Route53_EXPORTS.h>
+#include <aws/route53/model/AZAffinity.h>
 #include <aws/route53/model/AliasTarget.h>
 #include <aws/route53/model/CidrRoutingConfig.h>
 #include <aws/route53/model/GeoLocation.h>
@@ -608,6 +609,35 @@ class ResourceRecordSet {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> <i>AZ-affinity resource record sets only:</i> The location that this
+   * resource record set answers DNS queries from, such as an Availability Zone (AZ)
+   * or an Amazon Web Services Region. For each query, Route 53 starts with the most
+   * specific location that the query matches and falls back to a less specific
+   * location when there's no record for that location or the record is unhealthy
+   * (its health check fails or, for an alias record that has
+   * <code>EvaluateTargetHealth</code> set to <code>true</code>, its target is
+   * unhealthy). You must also specify <code>SetIdentifier</code>, and you can't
+   * specify another routing policy element, such as <code>Weight</code>, in the same
+   * resource record set.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-azaffinity.html">AZ-affinity
+   * routing</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+   */
+  inline const AZAffinity& GetAZAffinity() const { return m_aZAffinity; }
+  inline bool AZAffinityHasBeenSet() const { return m_aZAffinityHasBeenSet; }
+  template <typename AZAffinityT = AZAffinity>
+  void SetAZAffinity(AZAffinityT&& value) {
+    m_aZAffinityHasBeenSet = true;
+    m_aZAffinity = std::forward<AZAffinityT>(value);
+  }
+  template <typename AZAffinityT = AZAffinity>
+  ResourceRecordSet& WithAZAffinity(AZAffinityT&& value) {
+    SetAZAffinity(std::forward<AZAffinityT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -638,6 +668,8 @@ class ResourceRecordSet {
   CidrRoutingConfig m_cidrRoutingConfig;
 
   GeoProximityLocation m_geoProximityLocation;
+
+  AZAffinity m_aZAffinity;
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_setIdentifierHasBeenSet = false;
@@ -653,6 +685,7 @@ class ResourceRecordSet {
   bool m_trafficPolicyInstanceIdHasBeenSet = false;
   bool m_cidrRoutingConfigHasBeenSet = false;
   bool m_geoProximityLocationHasBeenSet = false;
+  bool m_aZAffinityHasBeenSet = false;
 };
 
 }  // namespace Model

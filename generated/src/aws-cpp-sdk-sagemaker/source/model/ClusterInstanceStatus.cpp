@@ -22,6 +22,8 @@ static const int ShuttingDown_HASH = HashingUtils::HashString("ShuttingDown");
 static const int SystemUpdating_HASH = HashingUtils::HashString("SystemUpdating");
 static const int DeepHealthCheckInProgress_HASH = HashingUtils::HashString("DeepHealthCheckInProgress");
 static const int NotFound_HASH = HashingUtils::HashString("NotFound");
+static const int DetachInProgress_HASH = HashingUtils::HashString("DetachInProgress");
+static const int AttachInProgress_HASH = HashingUtils::HashString("AttachInProgress");
 
 ClusterInstanceStatus GetClusterInstanceStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +41,10 @@ ClusterInstanceStatus GetClusterInstanceStatusForName(const Aws::String& name) {
     return ClusterInstanceStatus::DeepHealthCheckInProgress;
   } else if (hashCode == NotFound_HASH) {
     return ClusterInstanceStatus::NotFound;
+  } else if (hashCode == DetachInProgress_HASH) {
+    return ClusterInstanceStatus::DetachInProgress;
+  } else if (hashCode == AttachInProgress_HASH) {
+    return ClusterInstanceStatus::AttachInProgress;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +73,10 @@ Aws::String GetNameForClusterInstanceStatus(ClusterInstanceStatus enumValue) {
       return "DeepHealthCheckInProgress";
     case ClusterInstanceStatus::NotFound:
       return "NotFound";
+    case ClusterInstanceStatus::DetachInProgress:
+      return "DetachInProgress";
+    case ClusterInstanceStatus::AttachInProgress:
+      return "AttachInProgress";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

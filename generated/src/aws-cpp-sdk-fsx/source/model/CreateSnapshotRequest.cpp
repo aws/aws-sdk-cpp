@@ -35,6 +35,10 @@ Aws::String CreateSnapshotRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_ontapConfigurationHasBeenSet) {
+    payload.WithObject("OntapConfiguration", m_ontapConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

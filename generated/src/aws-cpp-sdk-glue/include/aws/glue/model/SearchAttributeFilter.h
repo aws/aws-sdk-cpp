@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
-#include <aws/glue/model/SearchFilterOperator.h>
+#include <aws/glue/model/SearchFilterComparator.h>
 #include <aws/glue/model/SearchFilterValue.h>
 
 #include <utility>
@@ -54,19 +54,19 @@ class SearchAttributeFilter {
 
   ///@{
   /**
-   * <p>The comparison operator. Valid values are <code>equals</code>,
-   * <code>greaterThan</code>, <code>greaterThanOrEquals</code>,
-   * <code>lessThan</code>, <code>lessThanOrEquals</code>, and
-   * <code>notExists</code>.</p>
+   * <p>The comparison operator. Valid values are <code>EQUALS</code>,
+   * <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>,
+   * <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, and
+   * <code>NOT_EXISTS</code>. This field is required.</p>
    */
-  inline SearchFilterOperator GetOperator() const { return m_operator; }
-  inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-  inline void SetOperator(SearchFilterOperator value) {
-    m_operatorHasBeenSet = true;
-    m_operator = value;
+  inline SearchFilterComparator GetComparator() const { return m_comparator; }
+  inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
+  inline void SetComparator(SearchFilterComparator value) {
+    m_comparatorHasBeenSet = true;
+    m_comparator = value;
   }
-  inline SearchAttributeFilter& WithOperator(SearchFilterOperator value) {
-    SetOperator(value);
+  inline SearchAttributeFilter& WithComparator(SearchFilterComparator value) {
+    SetComparator(value);
     return *this;
   }
   ///@}
@@ -91,11 +91,11 @@ class SearchAttributeFilter {
  private:
   Aws::String m_attribute;
 
-  SearchFilterOperator m_operator{SearchFilterOperator::NOT_SET};
+  SearchFilterComparator m_comparator{SearchFilterComparator::NOT_SET};
 
   SearchFilterValue m_value;
   bool m_attributeHasBeenSet = false;
-  bool m_operatorHasBeenSet = false;
+  bool m_comparatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

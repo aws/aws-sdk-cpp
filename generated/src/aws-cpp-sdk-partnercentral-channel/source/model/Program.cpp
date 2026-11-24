@@ -18,6 +18,7 @@ namespace ProgramMapper {
 static const int SOLUTION_PROVIDER_HASH = HashingUtils::HashString("SOLUTION_PROVIDER");
 static const int DISTRIBUTION_HASH = HashingUtils::HashString("DISTRIBUTION");
 static const int DISTRIBUTION_SELLER_HASH = HashingUtils::HashString("DISTRIBUTION_SELLER");
+static const int MANAGED_SERVICES_PROVIDER_HASH = HashingUtils::HashString("MANAGED_SERVICES_PROVIDER");
 
 Program GetProgramForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ Program GetProgramForName(const Aws::String& name) {
     return Program::DISTRIBUTION;
   } else if (hashCode == DISTRIBUTION_SELLER_HASH) {
     return Program::DISTRIBUTION_SELLER;
+  } else if (hashCode == MANAGED_SERVICES_PROVIDER_HASH) {
+    return Program::MANAGED_SERVICES_PROVIDER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForProgram(Program enumValue) {
       return "DISTRIBUTION";
     case Program::DISTRIBUTION_SELLER:
       return "DISTRIBUTION_SELLER";
+    case Program::MANAGED_SERVICES_PROVIDER:
+      return "MANAGED_SERVICES_PROVIDER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

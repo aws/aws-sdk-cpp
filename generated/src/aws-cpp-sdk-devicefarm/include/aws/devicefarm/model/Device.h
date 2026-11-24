@@ -12,6 +12,7 @@
 #include <aws/devicefarm/model/DeviceFormFactor.h>
 #include <aws/devicefarm/model/DeviceInstance.h>
 #include <aws/devicefarm/model/DevicePlatform.h>
+#include <aws/devicefarm/model/DeviceType.h>
 #include <aws/devicefarm/model/Resolution.h>
 
 #include <utility>
@@ -27,8 +28,8 @@ namespace DeviceFarm {
 namespace Model {
 
 /**
- * <p>Represents a device type that an app is tested against.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Represents a device that an app is tested against.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Device">AWS
  * API Reference</a></p>
  */
@@ -159,6 +160,27 @@ class Device {
   }
   inline Device& WithPlatform(DevicePlatform value) {
     SetPlatform(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The device type.</p> <p>Allowed values include:</p> <ul> <li> <p>PHYSICAL: A
+   * physical device.</p> </li> <li> <p>VIRTUAL: An emulator or simulator hosted by
+   * Device Farm.</p> </li> </ul>  <p>For iOS, a virtual device requires a
+   * simulator build of your app, and a physical device requires a device build. If
+   * the app does not match the device type, the device is reported as incompatible
+   * with a <code>DEVICE_TYPE</code> incompatibility message.</p>
+   */
+  inline DeviceType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(DeviceType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline Device& WithType(DeviceType value) {
+    SetType(value);
     return *this;
   }
   ///@}
@@ -412,6 +434,8 @@ class Device {
 
   DevicePlatform m_platform{DevicePlatform::NOT_SET};
 
+  DeviceType m_type{DeviceType::NOT_SET};
+
   Aws::String m_os;
 
   CPU m_cpu;
@@ -444,6 +468,7 @@ class Device {
   bool m_modelIdHasBeenSet = false;
   bool m_formFactorHasBeenSet = false;
   bool m_platformHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_osHasBeenSet = false;
   bool m_cpuHasBeenSet = false;
   bool m_resolutionHasBeenSet = false;

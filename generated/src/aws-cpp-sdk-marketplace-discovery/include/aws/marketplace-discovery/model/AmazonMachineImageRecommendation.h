@@ -22,7 +22,7 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Recommended instance types for running an AMI fulfillment
+ * <p>The recommended instance types for running an AMI fulfillment
  * option.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/AmazonMachineImageRecommendation">AWS
  * API Reference</a></p>
@@ -36,7 +36,8 @@ class AmazonMachineImageRecommendation {
 
   ///@{
   /**
-   * <p>The recommended EC2 instance type for this AMI.</p>
+   * <p>The recommended Amazon Elastic Compute Cloud (Amazon EC2) instance type for
+   * this AMI.</p>
    */
   inline const Aws::String& GetInstanceType() const { return m_instanceType; }
   inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }

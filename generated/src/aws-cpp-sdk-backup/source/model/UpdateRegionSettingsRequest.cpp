@@ -32,5 +32,13 @@ Aws::String UpdateRegionSettingsRequest::SerializePayload() const {
     payload.WithObject("ResourceTypeManagementPreference", std::move(resourceTypeManagementPreferenceJsonMap));
   }
 
+  if (m_resourceTypeOptInIncrementalHasBeenSet) {
+    JsonValue resourceTypeOptInIncrementalJsonMap;
+    for (auto& resourceTypeOptInIncrementalItem : m_resourceTypeOptInIncremental) {
+      resourceTypeOptInIncrementalJsonMap.WithBool(resourceTypeOptInIncrementalItem.first, resourceTypeOptInIncrementalItem.second);
+    }
+    payload.WithObject("ResourceTypeOptInIncremental", std::move(resourceTypeOptInIncrementalJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-discovery/MarketplaceDiscovery_EXPORTS.h>
+#include <aws/marketplace-discovery/model/CaseStudiesSummary.h>
 #include <aws/marketplace-discovery/model/Category.h>
 #include <aws/marketplace-discovery/model/FulfillmentOptionSummary.h>
 #include <aws/marketplace-discovery/model/ListingBadge.h>
@@ -14,7 +15,10 @@
 #include <aws/marketplace-discovery/model/PricingModel.h>
 #include <aws/marketplace-discovery/model/PricingUnit.h>
 #include <aws/marketplace-discovery/model/ReviewSummary.h>
+#include <aws/marketplace-discovery/model/SellerEngagement.h>
 #include <aws/marketplace-discovery/model/SellerInformation.h>
+#include <aws/marketplace-discovery/model/TrustCenterSummary.h>
+#include <aws/marketplace-discovery/model/UseCaseSummary.h>
 
 #include <utility>
 
@@ -176,7 +180,7 @@ class ListingSummary {
 
   ///@{
   /**
-   * <p>The categories used to classify this listing into logical groups.</p>
+   * <p>The categories that classify this listing into logical groups.</p>
    */
   inline const Aws::Vector<Category>& GetCategories() const { return m_categories; }
   inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
@@ -312,6 +316,89 @@ class ListingSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A summary of trust center sources and certifications associated with the
+   * listing.</p>
+   */
+  inline const TrustCenterSummary& GetTrustCenterSummary() const { return m_trustCenterSummary; }
+  inline bool TrustCenterSummaryHasBeenSet() const { return m_trustCenterSummaryHasBeenSet; }
+  template <typename TrustCenterSummaryT = TrustCenterSummary>
+  void SetTrustCenterSummary(TrustCenterSummaryT&& value) {
+    m_trustCenterSummaryHasBeenSet = true;
+    m_trustCenterSummary = std::forward<TrustCenterSummaryT>(value);
+  }
+  template <typename TrustCenterSummaryT = TrustCenterSummary>
+  ListingSummary& WithTrustCenterSummary(TrustCenterSummaryT&& value) {
+    SetTrustCenterSummary(std::forward<TrustCenterSummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A summary of the case studies associated with the listing. Retrieve the case
+   * studies with <code>ListListingAttributes</code>.</p>
+   */
+  inline const CaseStudiesSummary& GetCaseStudiesSummary() const { return m_caseStudiesSummary; }
+  inline bool CaseStudiesSummaryHasBeenSet() const { return m_caseStudiesSummaryHasBeenSet; }
+  template <typename CaseStudiesSummaryT = CaseStudiesSummary>
+  void SetCaseStudiesSummary(CaseStudiesSummaryT&& value) {
+    m_caseStudiesSummaryHasBeenSet = true;
+    m_caseStudiesSummary = std::forward<CaseStudiesSummaryT>(value);
+  }
+  template <typename CaseStudiesSummaryT = CaseStudiesSummary>
+  ListingSummary& WithCaseStudiesSummary(CaseStudiesSummaryT&& value) {
+    SetCaseStudiesSummary(std::forward<CaseStudiesSummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A summary of the use cases the listing is written for: the name and
+   * identifier of each, without descriptions. The summary is empty when the listing
+   * has none.</p>
+   */
+  inline const UseCaseSummary& GetUseCaseSummary() const { return m_useCaseSummary; }
+  inline bool UseCaseSummaryHasBeenSet() const { return m_useCaseSummaryHasBeenSet; }
+  template <typename UseCaseSummaryT = UseCaseSummary>
+  void SetUseCaseSummary(UseCaseSummaryT&& value) {
+    m_useCaseSummaryHasBeenSet = true;
+    m_useCaseSummary = std::forward<UseCaseSummaryT>(value);
+  }
+  template <typename UseCaseSummaryT = UseCaseSummary>
+  ListingSummary& WithUseCaseSummary(UseCaseSummaryT&& value) {
+    SetUseCaseSummary(std::forward<UseCaseSummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The seller engagement options available for this listing, such as buying now,
+   * requesting a private offer, or requesting a demo.</p>
+   */
+  inline const Aws::Vector<SellerEngagement>& GetSellerEngagements() const { return m_sellerEngagements; }
+  inline bool SellerEngagementsHasBeenSet() const { return m_sellerEngagementsHasBeenSet; }
+  template <typename SellerEngagementsT = Aws::Vector<SellerEngagement>>
+  void SetSellerEngagements(SellerEngagementsT&& value) {
+    m_sellerEngagementsHasBeenSet = true;
+    m_sellerEngagements = std::forward<SellerEngagementsT>(value);
+  }
+  template <typename SellerEngagementsT = Aws::Vector<SellerEngagement>>
+  ListingSummary& WithSellerEngagements(SellerEngagementsT&& value) {
+    SetSellerEngagements(std::forward<SellerEngagementsT>(value));
+    return *this;
+  }
+  template <typename SellerEngagementsT = SellerEngagement>
+  ListingSummary& AddSellerEngagements(SellerEngagementsT&& value) {
+    m_sellerEngagementsHasBeenSet = true;
+    m_sellerEngagements.emplace_back(std::forward<SellerEngagementsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_listingId;
 
@@ -338,6 +425,14 @@ class ListingSummary {
   Aws::Vector<PricingUnit> m_pricingUnits;
 
   Aws::Vector<ListingSummaryAssociatedEntity> m_associatedEntities;
+
+  TrustCenterSummary m_trustCenterSummary;
+
+  CaseStudiesSummary m_caseStudiesSummary;
+
+  UseCaseSummary m_useCaseSummary;
+
+  Aws::Vector<SellerEngagement> m_sellerEngagements;
   bool m_listingIdHasBeenSet = false;
   bool m_listingNameHasBeenSet = false;
   bool m_publisherHasBeenSet = false;
@@ -351,6 +446,10 @@ class ListingSummary {
   bool m_pricingModelsHasBeenSet = false;
   bool m_pricingUnitsHasBeenSet = false;
   bool m_associatedEntitiesHasBeenSet = false;
+  bool m_trustCenterSummaryHasBeenSet = false;
+  bool m_caseStudiesSummaryHasBeenSet = false;
+  bool m_useCaseSummaryHasBeenSet = false;
+  bool m_sellerEngagementsHasBeenSet = false;
 };
 
 }  // namespace Model

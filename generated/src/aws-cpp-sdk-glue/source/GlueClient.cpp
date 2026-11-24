@@ -80,7 +80,6 @@
 #include <aws/glue/model/CreateUserDefinedFunctionRequest.h>
 #include <aws/glue/model/CreateWorkflowRequest.h>
 #include <aws/glue/model/DeleteAssetRequest.h>
-#include <aws/glue/model/DeleteAssetTypeRequest.h>
 #include <aws/glue/model/DeleteAttachmentRequest.h>
 #include <aws/glue/model/DeleteBlueprintRequest.h>
 #include <aws/glue/model/DeleteCatalogRequest.h>
@@ -120,6 +119,7 @@
 #include <aws/glue/model/DeleteUsageProfileRequest.h>
 #include <aws/glue/model/DeleteUserDefinedFunctionRequest.h>
 #include <aws/glue/model/DeleteWorkflowRequest.h>
+#include <aws/glue/model/DescribeConnectionTypeRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -625,12 +625,6 @@ DeleteAssetOutcome GlueClient::DeleteAsset(const DeleteAssetRequest& request) co
   return result.IsSuccess() ? DeleteAssetOutcome(result.GetResultWithOwnership()) : DeleteAssetOutcome(std::move(result.GetError()));
 }
 
-DeleteAssetTypeOutcome GlueClient::DeleteAssetType(const DeleteAssetTypeRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteAssetTypeOutcome(result.GetResultWithOwnership())
-                            : DeleteAssetTypeOutcome(std::move(result.GetError()));
-}
-
 DeleteAttachmentOutcome GlueClient::DeleteAttachment(const DeleteAttachmentRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteAttachmentOutcome(result.GetResultWithOwnership())
@@ -858,4 +852,10 @@ DeleteUserDefinedFunctionOutcome GlueClient::DeleteUserDefinedFunction(const Del
 DeleteWorkflowOutcome GlueClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteWorkflowOutcome(result.GetResultWithOwnership()) : DeleteWorkflowOutcome(std::move(result.GetError()));
+}
+
+DescribeConnectionTypeOutcome GlueClient::DescribeConnectionType(const DescribeConnectionTypeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConnectionTypeOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectionTypeOutcome(std::move(result.GetError()));
 }

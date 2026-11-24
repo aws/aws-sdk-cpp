@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/FSxRequest.h>
 #include <aws/fsx/FSx_EXPORTS.h>
+#include <aws/fsx/model/UpdateOntapSnapshotConfiguration.h>
 
 #include <utility>
 
@@ -83,15 +84,36 @@ class UpdateSnapshotRequest : public FSxRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration of the ONTAP snapshot that you are updating.</p>
+   */
+  inline const UpdateOntapSnapshotConfiguration& GetOntapConfiguration() const { return m_ontapConfiguration; }
+  inline bool OntapConfigurationHasBeenSet() const { return m_ontapConfigurationHasBeenSet; }
+  template <typename OntapConfigurationT = UpdateOntapSnapshotConfiguration>
+  void SetOntapConfiguration(OntapConfigurationT&& value) {
+    m_ontapConfigurationHasBeenSet = true;
+    m_ontapConfiguration = std::forward<OntapConfigurationT>(value);
+  }
+  template <typename OntapConfigurationT = UpdateOntapSnapshotConfiguration>
+  UpdateSnapshotRequest& WithOntapConfiguration(OntapConfigurationT&& value) {
+    SetOntapConfiguration(std::forward<OntapConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::String m_name;
 
   Aws::String m_snapshotId;
+
+  UpdateOntapSnapshotConfiguration m_ontapConfiguration;
   bool m_clientRequestTokenHasBeenSet = true;
   bool m_nameHasBeenSet = false;
   bool m_snapshotIdHasBeenSet = false;
+  bool m_ontapConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

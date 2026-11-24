@@ -26,6 +26,14 @@ EmbeddedDestinationSettings& EmbeddedDestinationSettings::operator=(JsonView jso
     m_styleControl = EmbeddedDestinationStyleControlMapper::GetEmbeddedDestinationStyleControlForName(jsonValue.GetString("styleControl"));
     m_styleControlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("captionServiceChannel")) {
+    m_captionServiceChannel = jsonValue.GetInteger("captionServiceChannel");
+    m_captionServiceChannelHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("embeddedMode")) {
+    m_embeddedMode = EmbeddedModeTypeMapper::GetEmbeddedModeTypeForName(jsonValue.GetString("embeddedMode"));
+    m_embeddedModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue EmbeddedDestinationSettings::Jsonize() const {
 
   if (m_styleControlHasBeenSet) {
     payload.WithString("styleControl", EmbeddedDestinationStyleControlMapper::GetNameForEmbeddedDestinationStyleControl(m_styleControl));
+  }
+
+  if (m_captionServiceChannelHasBeenSet) {
+    payload.WithInteger("captionServiceChannel", m_captionServiceChannel);
+  }
+
+  if (m_embeddedModeHasBeenSet) {
+    payload.WithString("embeddedMode", EmbeddedModeTypeMapper::GetNameForEmbeddedModeType(m_embeddedMode));
   }
 
   return payload;

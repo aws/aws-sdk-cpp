@@ -374,6 +374,26 @@ class CreateMicrovmImageResult {
 
   ///@{
   /**
+   * <p>The customer managed Amazon Web Services Key Management Service (Amazon Web
+   * Services KMS) key that encrypts the contents and metadata of your MicroVM image
+   * version. If you don't specify a key, your MicroVM image version uses an Amazon
+   * Web Services owned key.</p>
+   */
+  inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    m_kmsKeyIdentifierHasBeenSet = true;
+    m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value);
+  }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  CreateMicrovmImageResult& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A set of key-value pairs that you can attach to the resource. Use tags to
    * categorize resources for cost allocation, access control (ABAC), and
    * organization.</p>
@@ -484,6 +504,8 @@ class CreateMicrovmImageResult {
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
 
+  Aws::String m_kmsKeyIdentifier;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -510,6 +532,7 @@ class CreateMicrovmImageResult {
   bool m_additionalOsCapabilitiesHasBeenSet = false;
   bool m_hooksHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_imageVersionHasBeenSet = false;

@@ -15,6 +15,7 @@
 #include <aws/pcs/model/ScalingConfigurationRequest.h>
 #include <aws/pcs/model/SpotOptions.h>
 #include <aws/pcs/model/UpdateComputeNodeGroupSlurmConfigurationRequest.h>
+#include <aws/pcs/model/UpdateInstanceHealthChecksRequest.h>
 #include <aws/pcs/model/UpdateNodeLifecycleActionsRequest.h>
 
 #include <utility>
@@ -368,6 +369,37 @@ class UpdateComputeNodeGroupRequest : public PCSRequest {
 
   ///@{
   /**
+   * <p>The instance health check settings for the compute node group. Instance
+   * health checks detect faults on instances in the compute node group and respond
+   * with the repair action that you choose. You can configure health monitoring,
+   * deep health checks, or both. You can't specify an empty object
+   * (<code>{}</code>). Instance health checks require Slurm version 26.05 or
+   * later.</p> <p>The settings that you specify replace all of the current instance
+   * health check settings of the compute node group. Include every setting that you
+   * want to keep. If you omit this member, the current settings don't change. If you
+   * omit <code>healthMonitoring</code> or <code>deepHealthChecks</code>, that check
+   * is turned off. You can also turn off a check: set
+   * <code>healthMonitoring.mode</code> or
+   * <code>deepHealthChecks.onStart.profile</code> to <code>NONE</code> and omit its
+   * <code>repairAction</code>. When you change these settings, PCS drains and
+   * replaces the instances in the compute node group.</p>
+   */
+  inline const UpdateInstanceHealthChecksRequest& GetInstanceHealthChecks() const { return m_instanceHealthChecks; }
+  inline bool InstanceHealthChecksHasBeenSet() const { return m_instanceHealthChecksHasBeenSet; }
+  template <typename InstanceHealthChecksT = UpdateInstanceHealthChecksRequest>
+  void SetInstanceHealthChecks(InstanceHealthChecksT&& value) {
+    m_instanceHealthChecksHasBeenSet = true;
+    m_instanceHealthChecks = std::forward<InstanceHealthChecksT>(value);
+  }
+  template <typename InstanceHealthChecksT = UpdateInstanceHealthChecksRequest>
+  UpdateComputeNodeGroupRequest& WithInstanceHealthChecks(InstanceHealthChecksT&& value) {
+    SetInstanceHealthChecks(std::forward<InstanceHealthChecksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request. Idempotency ensures that an API request completes
    * only once. With an idempotent request, if the original request completes
@@ -418,6 +450,8 @@ class UpdateComputeNodeGroupRequest : public PCSRequest {
 
   UpdateNodeLifecycleActionsRequest m_nodeLifecycleActions;
 
+  UpdateInstanceHealthChecksRequest m_instanceHealthChecks;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_amiIdHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
@@ -433,6 +467,7 @@ class UpdateComputeNodeGroupRequest : public PCSRequest {
   bool m_iamInstanceProfileArnHasBeenSet = false;
   bool m_slurmConfigurationHasBeenSet = false;
   bool m_nodeLifecycleActionsHasBeenSet = false;
+  bool m_instanceHealthChecksHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

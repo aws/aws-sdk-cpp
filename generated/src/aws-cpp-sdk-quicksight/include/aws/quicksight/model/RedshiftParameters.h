@@ -90,6 +90,29 @@ class RedshiftParameters {
 
   ///@{
   /**
+   * <p>The federated database to use for table and schema discovery. Specify the
+   * exact database name returned by <code>SHOW DATABASES</code>, such as
+   * <code>producer_database@catalog_name</code>. This value must differ from
+   * <code>Database</code>, which specifies the database used for the connection.</p>
+   * <p>For <code>UpdateDataSource</code>, omit this parameter to keep the current
+   * catalog, or specify an empty string to clear the configured catalog.</p>
+   */
+  inline const Aws::String& GetFederatedCatalog() const { return m_federatedCatalog; }
+  inline bool FederatedCatalogHasBeenSet() const { return m_federatedCatalogHasBeenSet; }
+  template <typename FederatedCatalogT = Aws::String>
+  void SetFederatedCatalog(FederatedCatalogT&& value) {
+    m_federatedCatalogHasBeenSet = true;
+    m_federatedCatalog = std::forward<FederatedCatalogT>(value);
+  }
+  template <typename FederatedCatalogT = Aws::String>
+  RedshiftParameters& WithFederatedCatalog(FederatedCatalogT&& value) {
+    SetFederatedCatalog(std::forward<FederatedCatalogT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Cluster ID. This field can be blank if the <code>Host</code> and
    * <code>Port</code> are provided.</p>
    */
@@ -154,6 +177,8 @@ class RedshiftParameters {
 
   Aws::String m_database;
 
+  Aws::String m_federatedCatalog;
+
   Aws::String m_clusterId;
 
   RedshiftIAMParameters m_iAMParameters;
@@ -162,6 +187,7 @@ class RedshiftParameters {
   bool m_hostHasBeenSet = false;
   bool m_portHasBeenSet = false;
   bool m_databaseHasBeenSet = false;
+  bool m_federatedCatalogHasBeenSet = false;
   bool m_clusterIdHasBeenSet = false;
   bool m_iAMParametersHasBeenSet = false;
   bool m_identityCenterConfigurationHasBeenSet = false;

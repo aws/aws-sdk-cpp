@@ -87,6 +87,78 @@ class AWS_AGENTREGISTRYCONTROL_API AgentRegistryControlClient
   virtual ~AgentRegistryControlClient();
 
   /**
+   * <p>Associate a registry record with a publisher and assign the record a public
+   * identifier under the publisher's domain. The registry record must be APPROVED
+   * and the publisher must be ACTIVE. A registry record can have only one publisher
+   * association. The new association starts in PENDING_APPROVAL until a curator
+   * approves or rejects it. A ConflictException (HTTP 409) means the publisher is
+   * not ACTIVE yet, the registry record already has an association, or another
+   * registry record already holds the public identifier. To retry safely, repeat the
+   * request with the same clientToken; a retry returns the original association. If
+   * the publisher has reached its association quota, the request fails with
+   * ServiceQuotaExceededException (HTTP 402). Remove an unused association or
+   * request a quota increase.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/AssociatePublisher">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociatePublisherOutcome AssociatePublisher(const Model::AssociatePublisherRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociatePublisher that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AssociatePublisherRequestT = Model::AssociatePublisherRequest>
+  Model::AssociatePublisherOutcomeCallable AssociatePublisherCallable(const AssociatePublisherRequestT& request) const {
+    return SubmitCallable(&AgentRegistryControlClient::AssociatePublisher, request);
+  }
+
+  /**
+   * An Async wrapper for AssociatePublisher that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename AssociatePublisherRequestT = Model::AssociatePublisherRequest>
+  void AssociatePublisherAsync(const AssociatePublisherRequestT& request, const AssociatePublisherResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgentRegistryControlClient::AssociatePublisher, request, handler, context);
+  }
+
+  /**
+   * <p>Create a publisher for a domain you control. The publisher starts in
+   * ACTION_REQUIRED, and the response includes a domainChallenge. To verify the
+   * domain, create a DNS TXT record with the challenge's recordName and recordValue.
+   * When the registry finds the record, the publisher becomes ACTIVE and you can
+   * associate registry records with it. Your account can have one publisher per
+   * domain. Creating a second publisher for the same domain fails with
+   * ConflictException unless the request repeats the original clientToken, which
+   * returns the existing publisher. The request also fails with ConflictException
+   * when another account has already verified the domain. If your account has
+   * reached its Publisher quota, the request fails with
+   * ServiceQuotaExceededException (HTTP 402). Delete an unused Publisher or request
+   * a quota increase.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/CreatePublisher">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreatePublisherOutcome CreatePublisher(const Model::CreatePublisherRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreatePublisher that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreatePublisherRequestT = Model::CreatePublisherRequest>
+  Model::CreatePublisherOutcomeCallable CreatePublisherCallable(const CreatePublisherRequestT& request) const {
+    return SubmitCallable(&AgentRegistryControlClient::CreatePublisher, request);
+  }
+
+  /**
+   * An Async wrapper for CreatePublisher that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreatePublisherRequestT = Model::CreatePublisherRequest>
+  void CreatePublisherAsync(const CreatePublisherRequestT& request, const CreatePublisherResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgentRegistryControlClient::CreatePublisher, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new registry, a catalog that organizes registry records and defines
    * their discovery authorization and record approval behavior. Creation is
    * asynchronous: the registry begins in the CREATING status and becomes usable once
@@ -149,6 +221,38 @@ class AWS_AGENTREGISTRYCONTROL_API AgentRegistryControlClient
   }
 
   /**
+   * <p>Delete a publisher. A successful call returns an empty response. You can't
+   * delete a publisher that has registry record associations; disassociate every
+   * registry record from it first. The request fails with ConflictException while
+   * the publisher has associations or another delete is in progress. Association
+   * removals can take a few seconds to be reflected, so a delete that follows a
+   * disassociation can briefly fail with ConflictException; retry after a short
+   * wait. If the publisher ARN names your account and the publisher doesn't exist,
+   * the request fails with ResourceNotFoundException.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/DeletePublisher">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeletePublisherOutcome DeletePublisher(const Model::DeletePublisherRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeletePublisher that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeletePublisherRequestT = Model::DeletePublisherRequest>
+  Model::DeletePublisherOutcomeCallable DeletePublisherCallable(const DeletePublisherRequestT& request) const {
+    return SubmitCallable(&AgentRegistryControlClient::DeletePublisher, request);
+  }
+
+  /**
+   * An Async wrapper for DeletePublisher that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeletePublisherRequestT = Model::DeletePublisherRequest>
+  void DeletePublisherAsync(const DeletePublisherRequestT& request, const DeletePublisherResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgentRegistryControlClient::DeletePublisher, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a registry. Deletion is asynchronous: the registry transitions to the
    * DELETING status and is removed along with its registry records.</p><p><h3>See
    * Also:</h3>   <a
@@ -199,6 +303,64 @@ class AWS_AGENTREGISTRYCONTROL_API AgentRegistryControlClient
   void DeleteRegistryRecordAsync(const DeleteRegistryRecordRequestT& request, const DeleteRegistryRecordResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AgentRegistryControlClient::DeleteRegistryRecord, request, handler, context);
+  }
+
+  /**
+   * <p>Remove a registry record's publisher association and release its public
+   * identifier. A successful call returns an empty response. Disassociating a
+   * registry record that has no association succeeds. If another account created the
+   * association, the request fails with AccessDeniedException.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/DisassociatePublisher">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociatePublisherOutcome DisassociatePublisher(const Model::DisassociatePublisherRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociatePublisher that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DisassociatePublisherRequestT = Model::DisassociatePublisherRequest>
+  Model::DisassociatePublisherOutcomeCallable DisassociatePublisherCallable(const DisassociatePublisherRequestT& request) const {
+    return SubmitCallable(&AgentRegistryControlClient::DisassociatePublisher, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociatePublisher that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisassociatePublisherRequestT = Model::DisassociatePublisherRequest>
+  void DisassociatePublisherAsync(const DisassociatePublisherRequestT& request, const DisassociatePublisherResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgentRegistryControlClient::DisassociatePublisher, request, handler, context);
+  }
+
+  /**
+   * <p>Get a publisher, including its verification status and the DNS challenge for
+   * its domain. If the publisher ARN names your account and the publisher doesn't
+   * exist, the request fails with ResourceNotFoundException.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/GetPublisher">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPublisherOutcome GetPublisher(const Model::GetPublisherRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPublisher that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetPublisherRequestT = Model::GetPublisherRequest>
+  Model::GetPublisherOutcomeCallable GetPublisherCallable(const GetPublisherRequestT& request) const {
+    return SubmitCallable(&AgentRegistryControlClient::GetPublisher, request);
+  }
+
+  /**
+   * An Async wrapper for GetPublisher that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetPublisherRequestT = Model::GetPublisherRequest>
+  void GetPublisherAsync(const GetPublisherRequestT& request, const GetPublisherResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgentRegistryControlClient::GetPublisher, request, handler, context);
   }
 
   /**
@@ -254,6 +416,66 @@ class AWS_AGENTREGISTRYCONTROL_API AgentRegistryControlClient
   void GetRegistryRecordAsync(const GetRegistryRecordRequestT& request, const GetRegistryRecordResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AgentRegistryControlClient::GetRegistryRecord, request, handler, context);
+  }
+
+  /**
+   * <p>List the registry record associations your account created. Pass publisherArn
+   * to list only the associations for that publisher; omit it to list associations
+   * across all publishers. Results are eventually consistent, so an association you
+   * just created or removed can take a few seconds to appear in or disappear from
+   * the list.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/ListPublisherAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPublisherAssociationsOutcome ListPublisherAssociations(
+      const Model::ListPublisherAssociationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListPublisherAssociations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPublisherAssociationsRequestT = Model::ListPublisherAssociationsRequest>
+  Model::ListPublisherAssociationsOutcomeCallable ListPublisherAssociationsCallable(
+      const ListPublisherAssociationsRequestT& request = {}) const {
+    return SubmitCallable(&AgentRegistryControlClient::ListPublisherAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for ListPublisherAssociations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListPublisherAssociationsRequestT = Model::ListPublisherAssociationsRequest>
+  void ListPublisherAssociationsAsync(const ListPublisherAssociationsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                      const ListPublisherAssociationsRequestT& request = {}) const {
+    return SubmitAsync(&AgentRegistryControlClient::ListPublisherAssociations, request, handler, context);
+  }
+
+  /**
+   * <p>List the publishers your account owns, followed by the ACTIVE publishers
+   * shared with your account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/ListPublishers">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPublishersOutcome ListPublishers(const Model::ListPublishersRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListPublishers that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListPublishersRequestT = Model::ListPublishersRequest>
+  Model::ListPublishersOutcomeCallable ListPublishersCallable(const ListPublishersRequestT& request = {}) const {
+    return SubmitCallable(&AgentRegistryControlClient::ListPublishers, request);
+  }
+
+  /**
+   * An Async wrapper for ListPublishers that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListPublishersRequestT = Model::ListPublishersRequest>
+  void ListPublishersAsync(const ListPublishersResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const ListPublishersRequestT& request = {}) const {
+    return SubmitAsync(&AgentRegistryControlClient::ListPublishers, request, handler, context);
   }
 
   /**
@@ -427,6 +649,45 @@ class AWS_AGENTREGISTRYCONTROL_API AgentRegistryControlClient
   }
 
   /**
+   * <p>Record the curator's decision (APPROVED or REJECTED) on a registry record's
+   * publisher association. A successful call returns an empty response. Repeating
+   * the decision the association already holds changes nothing; the same
+   * approvalStatus with a different approvalStatusReason updates the reason. If the
+   * caller has no publisher association for the registry record, the request fails
+   * with AccessDeniedException. A ConflictException (HTTP 409) means the association
+   * is not in a state that accepts the decision (e.g. not
+   * PENDING_APPROVAL/APPROVED/REJECTED) or it changed while the request was being
+   * applied; read it again before deciding whether to resubmit.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/UpdatePublisherAssociationApprovalStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdatePublisherAssociationApprovalStatusOutcome UpdatePublisherAssociationApprovalStatus(
+      const Model::UpdatePublisherAssociationApprovalStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdatePublisherAssociationApprovalStatus that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename UpdatePublisherAssociationApprovalStatusRequestT = Model::UpdatePublisherAssociationApprovalStatusRequest>
+  Model::UpdatePublisherAssociationApprovalStatusOutcomeCallable UpdatePublisherAssociationApprovalStatusCallable(
+      const UpdatePublisherAssociationApprovalStatusRequestT& request) const {
+    return SubmitCallable(&AgentRegistryControlClient::UpdatePublisherAssociationApprovalStatus, request);
+  }
+
+  /**
+   * An Async wrapper for UpdatePublisherAssociationApprovalStatus that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename UpdatePublisherAssociationApprovalStatusRequestT = Model::UpdatePublisherAssociationApprovalStatusRequest>
+  void UpdatePublisherAssociationApprovalStatusAsync(
+      const UpdatePublisherAssociationApprovalStatusRequestT& request,
+      const UpdatePublisherAssociationApprovalStatusResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgentRegistryControlClient::UpdatePublisherAssociationApprovalStatus, request, handler, context);
+  }
+
+  /**
    * <p>Updates an existing registry. This operation uses PATCH semantics: specify
    * only the fields you want to change, and omit the rest to leave them unchanged.
    * Updates are applied asynchronously and the registry transitions to the UPDATING
@@ -515,6 +776,38 @@ class AWS_AGENTREGISTRYCONTROL_API AgentRegistryControlClient
                                        const UpdateRegistryRecordStatusResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AgentRegistryControlClient::UpdateRegistryRecordStatus, request, handler, context);
+  }
+
+  /**
+   * <p>Restart domain verification for a publisher in FAILED or SUSPENDED. The
+   * publisher returns to ACTION_REQUIRED with a new domainChallenge, which the
+   * response includes. Update the DNS TXT record with the new recordValue; the
+   * previous value no longer verifies the domain. The request fails with
+   * ConflictException when the publisher is ACTIVE, verification is already in
+   * progress (ACTION_REQUIRED), or the publisher is being deleted.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/ValidatePublisher">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ValidatePublisherOutcome ValidatePublisher(const Model::ValidatePublisherRequest& request) const;
+
+  /**
+   * A Callable wrapper for ValidatePublisher that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ValidatePublisherRequestT = Model::ValidatePublisherRequest>
+  Model::ValidatePublisherOutcomeCallable ValidatePublisherCallable(const ValidatePublisherRequestT& request) const {
+    return SubmitCallable(&AgentRegistryControlClient::ValidatePublisher, request);
+  }
+
+  /**
+   * An Async wrapper for ValidatePublisher that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ValidatePublisherRequestT = Model::ValidatePublisherRequest>
+  void ValidatePublisherAsync(const ValidatePublisherRequestT& request, const ValidatePublisherResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AgentRegistryControlClient::ValidatePublisher, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

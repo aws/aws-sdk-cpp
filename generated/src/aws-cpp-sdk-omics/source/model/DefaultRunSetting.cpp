@@ -113,6 +113,10 @@ DefaultRunSetting& DefaultRunSetting::operator=(JsonView jsonValue) {
     m_scratchStorageMode = ScratchStorageModeMapper::GetScratchStorageModeForName(jsonValue.GetString("scratchStorageMode"));
     m_scratchStorageModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("requesterPaysEnabled")) {
+    m_requesterPaysEnabled = jsonValue.GetBool("requesterPaysEnabled");
+    m_requesterPaysEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -217,6 +221,10 @@ JsonValue DefaultRunSetting::Jsonize() const {
 
   if (m_scratchStorageModeHasBeenSet) {
     payload.WithString("scratchStorageMode", ScratchStorageModeMapper::GetNameForScratchStorageMode(m_scratchStorageMode));
+  }
+
+  if (m_requesterPaysEnabledHasBeenSet) {
+    payload.WithBool("requesterPaysEnabled", m_requesterPaysEnabled);
   }
 
   return payload;

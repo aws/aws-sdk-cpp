@@ -25,6 +25,7 @@
 #include <aws/marketplace-discovery/model/GetOfferTermsResult.h>
 #include <aws/marketplace-discovery/model/GetProductResult.h>
 #include <aws/marketplace-discovery/model/ListFulfillmentOptionsResult.h>
+#include <aws/marketplace-discovery/model/ListListingAttributesResult.h>
 #include <aws/marketplace-discovery/model/ListPurchaseOptionsRequest.h>
 #include <aws/marketplace-discovery/model/ListPurchaseOptionsResult.h>
 #include <aws/marketplace-discovery/model/SearchFacetsRequest.h>
@@ -70,6 +71,7 @@ class GetOfferSetRequest;
 class GetOfferTermsRequest;
 class GetProductRequest;
 class ListFulfillmentOptionsRequest;
+class ListListingAttributesRequest;
 class ListPurchaseOptionsRequest;
 class SearchFacetsRequest;
 class SearchListingsRequest;
@@ -82,6 +84,7 @@ typedef Aws::Utils::Outcome<GetOfferSetResult, MarketplaceDiscoveryError> GetOff
 typedef Aws::Utils::Outcome<GetOfferTermsResult, MarketplaceDiscoveryError> GetOfferTermsOutcome;
 typedef Aws::Utils::Outcome<GetProductResult, MarketplaceDiscoveryError> GetProductOutcome;
 typedef Aws::Utils::Outcome<ListFulfillmentOptionsResult, MarketplaceDiscoveryError> ListFulfillmentOptionsOutcome;
+typedef Aws::Utils::Outcome<ListListingAttributesResult, MarketplaceDiscoveryError> ListListingAttributesOutcome;
 typedef Aws::Utils::Outcome<ListPurchaseOptionsResult, MarketplaceDiscoveryError> ListPurchaseOptionsOutcome;
 typedef Aws::Utils::Outcome<SearchFacetsResult, MarketplaceDiscoveryError> SearchFacetsOutcome;
 typedef Aws::Utils::Outcome<SearchListingsResult, MarketplaceDiscoveryError> SearchListingsOutcome;
@@ -94,6 +97,7 @@ typedef std::future<GetOfferSetOutcome> GetOfferSetOutcomeCallable;
 typedef std::future<GetOfferTermsOutcome> GetOfferTermsOutcomeCallable;
 typedef std::future<GetProductOutcome> GetProductOutcomeCallable;
 typedef std::future<ListFulfillmentOptionsOutcome> ListFulfillmentOptionsOutcomeCallable;
+typedef std::future<ListListingAttributesOutcome> ListListingAttributesOutcomeCallable;
 typedef std::future<ListPurchaseOptionsOutcome> ListPurchaseOptionsOutcomeCallable;
 typedef std::future<SearchFacetsOutcome> SearchFacetsOutcomeCallable;
 typedef std::future<SearchListingsOutcome> SearchListingsOutcomeCallable;
@@ -121,6 +125,9 @@ typedef std::function<void(const MarketplaceDiscoveryClient*, const Model::GetPr
 typedef std::function<void(const MarketplaceDiscoveryClient*, const Model::ListFulfillmentOptionsRequest&,
                            const Model::ListFulfillmentOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFulfillmentOptionsResponseReceivedHandler;
+typedef std::function<void(const MarketplaceDiscoveryClient*, const Model::ListListingAttributesRequest&,
+                           const Model::ListListingAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListListingAttributesResponseReceivedHandler;
 typedef std::function<void(const MarketplaceDiscoveryClient*, const Model::ListPurchaseOptionsRequest&,
                            const Model::ListPurchaseOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPurchaseOptionsResponseReceivedHandler;

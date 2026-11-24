@@ -78,6 +78,11 @@ AccountInfo& AccountInfo::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                 m_organizationRuleModeHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "organizationRuleModeSource") {
+                m_organizationRuleModeSource = OrganizationRuleModeSource(decoder);
+                m_organizationRuleModeSourceHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "statusReason") {
                 auto peekType = decoder->PeekType();
                 if (peekType.has_value()) {
@@ -204,6 +209,11 @@ AccountInfo& AccountInfo::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
               m_organizationRuleModeHasBeenSet = true;
             }
 
+            else if (initialKeyStr == "organizationRuleModeSource") {
+              m_organizationRuleModeSource = OrganizationRuleModeSource(decoder);
+              m_organizationRuleModeSourceHasBeenSet = true;
+            }
+
             else if (initialKeyStr == "statusReason") {
               auto peekType = decoder->PeekType();
               if (peekType.has_value()) {
@@ -280,6 +290,9 @@ void AccountInfo::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_organizationRuleModeHasBeenSet) {
     mapSize++;
   }
+  if (m_organizationRuleModeSourceHasBeenSet) {
+    mapSize++;
+  }
   if (m_statusReasonHasBeenSet) {
     mapSize++;
   }
@@ -303,6 +316,11 @@ void AccountInfo::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("organizationRuleMode"));
     encoder.WriteText(
         Aws::Crt::ByteCursorFromCString(OrganizationRuleModeMapper::GetNameForOrganizationRuleMode(m_organizationRuleMode).c_str()));
+  }
+
+  if (m_organizationRuleModeSourceHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("organizationRuleModeSource"));
+    m_organizationRuleModeSource.CborEncode(encoder);
   }
 
   if (m_statusReasonHasBeenSet) {

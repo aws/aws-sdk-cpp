@@ -40,7 +40,7 @@ class UpdateKeysRequest : public CloudFrontKeyValueStoreRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+   * <p>The Amazon Resource Name (ARN) of the key value store.</p>
    */
   inline const Aws::String& GetKvsARN() const { return m_kvsARN; }
   inline bool KvsARNHasBeenSet() const { return m_kvsARNHasBeenSet; }
@@ -58,8 +58,9 @@ class UpdateKeysRequest : public CloudFrontKeyValueStoreRequest {
 
   ///@{
   /**
-   * <p>The current version (ETag) of the Key Value Store that you are updating keys
-   * of, which you can get using DescribeKeyValueStore.</p>
+   * <p>The current version (<code>ETag</code>) of the key value store that you are
+   * updating keys of, which you can get by using the
+   * <code>DescribeKeyValueStore</code> API operation.</p>
    */
   inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
   inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
@@ -77,7 +78,7 @@ class UpdateKeysRequest : public CloudFrontKeyValueStoreRequest {
 
   ///@{
   /**
-   * <p>List of key value pairs to put.</p>
+   * <p>List of key-value pairs to put.</p>
    */
   inline const Aws::Vector<PutKeyRequestListItem>& GetPuts() const { return m_puts; }
   inline bool PutsHasBeenSet() const { return m_putsHasBeenSet; }

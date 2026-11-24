@@ -20,7 +20,7 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Constraints that control how a buyer can configure a rate card.</p><p><h3>See
+ * <p>Constraints that control how you can configure a rate card.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/Constraints">AWS
  * API Reference</a></p>
@@ -34,8 +34,10 @@ class Constraints {
 
   ///@{
   /**
-   * <p>Whether the buyer can select multiple dimensions. Values are
-   * <code>Allowed</code> or <code>Disallowed</code>.</p>
+   * <p>Specifies whether you can select multiple dimensions. This field has one of
+   * the following values:</p> <dl> <dt>Allowed</dt> <dd> <p>You can select more than
+   * one dimension.</p> </dd> <dt>Disallowed</dt> <dd> <p>You can select only one
+   * dimension.</p> </dd> </dl>
    */
   inline RateCardConstraintType GetMultipleDimensionSelection() const { return m_multipleDimensionSelection; }
   inline bool MultipleDimensionSelectionHasBeenSet() const { return m_multipleDimensionSelectionHasBeenSet; }
@@ -51,8 +53,10 @@ class Constraints {
 
   ///@{
   /**
-   * <p>Whether the buyer can configure quantities. Values are <code>Allowed</code>
-   * or <code>Disallowed</code>.</p>
+   * <p>Specifies whether you can configure quantities. This field has one of the
+   * following values:</p> <dl> <dt>Allowed</dt> <dd> <p>You can set the quantity of
+   * each dimension.</p> </dd> <dt>Disallowed</dt> <dd> <p>You cannot change the
+   * quantity.</p> </dd> </dl>
    */
   inline RateCardConstraintType GetQuantityConfiguration() const { return m_quantityConfiguration; }
   inline bool QuantityConfigurationHasBeenSet() const { return m_quantityConfigurationHasBeenSet; }

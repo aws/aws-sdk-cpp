@@ -23,6 +23,11 @@ static const int PRICING_MODEL_HASH = HashingUtils::HashString("PRICING_MODEL");
 static const int PRICING_UNIT_HASH = HashingUtils::HashString("PRICING_UNIT");
 static const int DEPLOYED_ON_AWS_HASH = HashingUtils::HashString("DEPLOYED_ON_AWS");
 static const int NUMBER_OF_PRODUCTS_HASH = HashingUtils::HashString("NUMBER_OF_PRODUCTS");
+static const int CERTIFICATES_HASH = HashingUtils::HashString("CERTIFICATES");
+static const int SPECIALIZATION_HASH = HashingUtils::HashString("SPECIALIZATION");
+static const int SPECIALIZATION_CATEGORY_HASH = HashingUtils::HashString("SPECIALIZATION_CATEGORY");
+static const int SELLER_ENGAGEMENT_HASH = HashingUtils::HashString("SELLER_ENGAGEMENT");
+static const int TRUST_CENTER_HASH = HashingUtils::HashString("TRUST_CENTER");
 
 SearchFacetType GetSearchFacetTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +47,16 @@ SearchFacetType GetSearchFacetTypeForName(const Aws::String& name) {
     return SearchFacetType::DEPLOYED_ON_AWS;
   } else if (hashCode == NUMBER_OF_PRODUCTS_HASH) {
     return SearchFacetType::NUMBER_OF_PRODUCTS;
+  } else if (hashCode == CERTIFICATES_HASH) {
+    return SearchFacetType::CERTIFICATES;
+  } else if (hashCode == SPECIALIZATION_HASH) {
+    return SearchFacetType::SPECIALIZATION;
+  } else if (hashCode == SPECIALIZATION_CATEGORY_HASH) {
+    return SearchFacetType::SPECIALIZATION_CATEGORY;
+  } else if (hashCode == SELLER_ENGAGEMENT_HASH) {
+    return SearchFacetType::SELLER_ENGAGEMENT;
+  } else if (hashCode == TRUST_CENTER_HASH) {
+    return SearchFacetType::TRUST_CENTER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +87,16 @@ Aws::String GetNameForSearchFacetType(SearchFacetType enumValue) {
       return "DEPLOYED_ON_AWS";
     case SearchFacetType::NUMBER_OF_PRODUCTS:
       return "NUMBER_OF_PRODUCTS";
+    case SearchFacetType::CERTIFICATES:
+      return "CERTIFICATES";
+    case SearchFacetType::SPECIALIZATION:
+      return "SPECIALIZATION";
+    case SearchFacetType::SPECIALIZATION_CATEGORY:
+      return "SPECIALIZATION_CATEGORY";
+    case SearchFacetType::SELLER_ENGAGEMENT:
+      return "SELLER_ENGAGEMENT";
+    case SearchFacetType::TRUST_CENTER:
+      return "TRUST_CENTER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

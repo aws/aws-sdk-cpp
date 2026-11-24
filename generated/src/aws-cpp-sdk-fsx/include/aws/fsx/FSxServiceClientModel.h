@@ -26,24 +26,36 @@
 #include <aws/fsx/model/CreateAndAttachS3AccessPointResult.h>
 #include <aws/fsx/model/CreateBackupRequest.h>
 #include <aws/fsx/model/CreateBackupResult.h>
+#include <aws/fsx/model/CreateClusterPeerResult.h>
 #include <aws/fsx/model/CreateDataRepositoryAssociationResult.h>
 #include <aws/fsx/model/CreateDataRepositoryTaskResult.h>
 #include <aws/fsx/model/CreateFileCacheResult.h>
 #include <aws/fsx/model/CreateFileSystemFromBackupResult.h>
 #include <aws/fsx/model/CreateFileSystemResult.h>
+#include <aws/fsx/model/CreateSnapmirrorPolicyResult.h>
+#include <aws/fsx/model/CreateSnapmirrorRelationshipResult.h>
+#include <aws/fsx/model/CreateSnapshotPolicyResult.h>
 #include <aws/fsx/model/CreateSnapshotResult.h>
+#include <aws/fsx/model/CreateStorageVirtualMachinePeerResult.h>
 #include <aws/fsx/model/CreateStorageVirtualMachineResult.h>
 #include <aws/fsx/model/CreateVolumeFromBackupResult.h>
 #include <aws/fsx/model/CreateVolumeResult.h>
 #include <aws/fsx/model/DeleteBackupResult.h>
+#include <aws/fsx/model/DeleteClusterPeerResult.h>
 #include <aws/fsx/model/DeleteDataRepositoryAssociationResult.h>
 #include <aws/fsx/model/DeleteFileCacheResult.h>
 #include <aws/fsx/model/DeleteFileSystemResult.h>
+#include <aws/fsx/model/DeleteSnapmirrorPolicyResult.h>
+#include <aws/fsx/model/DeleteSnapmirrorRelationshipResult.h>
+#include <aws/fsx/model/DeleteSnapshotPolicyResult.h>
 #include <aws/fsx/model/DeleteSnapshotResult.h>
+#include <aws/fsx/model/DeleteStorageVirtualMachinePeerResult.h>
 #include <aws/fsx/model/DeleteStorageVirtualMachineResult.h>
 #include <aws/fsx/model/DeleteVolumeResult.h>
 #include <aws/fsx/model/DescribeBackupsRequest.h>
 #include <aws/fsx/model/DescribeBackupsResult.h>
+#include <aws/fsx/model/DescribeClusterPeersRequest.h>
+#include <aws/fsx/model/DescribeClusterPeersResult.h>
 #include <aws/fsx/model/DescribeDataRepositoryAssociationsRequest.h>
 #include <aws/fsx/model/DescribeDataRepositoryAssociationsResult.h>
 #include <aws/fsx/model/DescribeDataRepositoryTasksRequest.h>
@@ -57,8 +69,16 @@
 #include <aws/fsx/model/DescribeS3AccessPointAttachmentsResult.h>
 #include <aws/fsx/model/DescribeSharedVpcConfigurationRequest.h>
 #include <aws/fsx/model/DescribeSharedVpcConfigurationResult.h>
+#include <aws/fsx/model/DescribeSnapmirrorPoliciesRequest.h>
+#include <aws/fsx/model/DescribeSnapmirrorPoliciesResult.h>
+#include <aws/fsx/model/DescribeSnapmirrorRelationshipsRequest.h>
+#include <aws/fsx/model/DescribeSnapmirrorRelationshipsResult.h>
+#include <aws/fsx/model/DescribeSnapshotPoliciesRequest.h>
+#include <aws/fsx/model/DescribeSnapshotPoliciesResult.h>
 #include <aws/fsx/model/DescribeSnapshotsRequest.h>
 #include <aws/fsx/model/DescribeSnapshotsResult.h>
+#include <aws/fsx/model/DescribeStorageVirtualMachinePeersRequest.h>
+#include <aws/fsx/model/DescribeStorageVirtualMachinePeersResult.h>
 #include <aws/fsx/model/DescribeStorageVirtualMachinesRequest.h>
 #include <aws/fsx/model/DescribeStorageVirtualMachinesResult.h>
 #include <aws/fsx/model/DescribeVolumesRequest.h>
@@ -71,12 +91,17 @@
 #include <aws/fsx/model/StartMisconfiguredStateRecoveryResult.h>
 #include <aws/fsx/model/TagResourceResult.h>
 #include <aws/fsx/model/UntagResourceResult.h>
+#include <aws/fsx/model/UpdateClusterPeerResult.h>
 #include <aws/fsx/model/UpdateDataRepositoryAssociationResult.h>
 #include <aws/fsx/model/UpdateFileCacheResult.h>
 #include <aws/fsx/model/UpdateFileSystemResult.h>
 #include <aws/fsx/model/UpdateSharedVpcConfigurationRequest.h>
 #include <aws/fsx/model/UpdateSharedVpcConfigurationResult.h>
+#include <aws/fsx/model/UpdateSnapmirrorPolicyResult.h>
+#include <aws/fsx/model/UpdateSnapmirrorRelationshipResult.h>
+#include <aws/fsx/model/UpdateSnapshotPolicyResult.h>
 #include <aws/fsx/model/UpdateSnapshotResult.h>
+#include <aws/fsx/model/UpdateStorageVirtualMachinePeerResult.h>
 #include <aws/fsx/model/UpdateStorageVirtualMachineResult.h>
 #include <aws/fsx/model/UpdateVolumeResult.h>
 /* End of service model headers required in FSxClient header */
@@ -118,23 +143,34 @@ class CopyBackupRequest;
 class CopySnapshotAndUpdateVolumeRequest;
 class CreateAndAttachS3AccessPointRequest;
 class CreateBackupRequest;
+class CreateClusterPeerRequest;
 class CreateDataRepositoryAssociationRequest;
 class CreateDataRepositoryTaskRequest;
 class CreateFileCacheRequest;
 class CreateFileSystemRequest;
 class CreateFileSystemFromBackupRequest;
+class CreateSnapmirrorPolicyRequest;
+class CreateSnapmirrorRelationshipRequest;
 class CreateSnapshotRequest;
+class CreateSnapshotPolicyRequest;
 class CreateStorageVirtualMachineRequest;
+class CreateStorageVirtualMachinePeerRequest;
 class CreateVolumeRequest;
 class CreateVolumeFromBackupRequest;
 class DeleteBackupRequest;
+class DeleteClusterPeerRequest;
 class DeleteDataRepositoryAssociationRequest;
 class DeleteFileCacheRequest;
 class DeleteFileSystemRequest;
+class DeleteSnapmirrorPolicyRequest;
+class DeleteSnapmirrorRelationshipRequest;
 class DeleteSnapshotRequest;
+class DeleteSnapshotPolicyRequest;
 class DeleteStorageVirtualMachineRequest;
+class DeleteStorageVirtualMachinePeerRequest;
 class DeleteVolumeRequest;
 class DescribeBackupsRequest;
+class DescribeClusterPeersRequest;
 class DescribeDataRepositoryAssociationsRequest;
 class DescribeDataRepositoryTasksRequest;
 class DescribeFileCachesRequest;
@@ -142,7 +178,11 @@ class DescribeFileSystemAliasesRequest;
 class DescribeFileSystemsRequest;
 class DescribeS3AccessPointAttachmentsRequest;
 class DescribeSharedVpcConfigurationRequest;
+class DescribeSnapmirrorPoliciesRequest;
+class DescribeSnapmirrorRelationshipsRequest;
+class DescribeSnapshotPoliciesRequest;
 class DescribeSnapshotsRequest;
+class DescribeStorageVirtualMachinePeersRequest;
 class DescribeStorageVirtualMachinesRequest;
 class DescribeVolumesRequest;
 class DetachAndDeleteS3AccessPointRequest;
@@ -153,12 +193,17 @@ class RestoreVolumeFromSnapshotRequest;
 class StartMisconfiguredStateRecoveryRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateClusterPeerRequest;
 class UpdateDataRepositoryAssociationRequest;
 class UpdateFileCacheRequest;
 class UpdateFileSystemRequest;
 class UpdateSharedVpcConfigurationRequest;
+class UpdateSnapmirrorPolicyRequest;
+class UpdateSnapmirrorRelationshipRequest;
 class UpdateSnapshotRequest;
+class UpdateSnapshotPolicyRequest;
 class UpdateStorageVirtualMachineRequest;
+class UpdateStorageVirtualMachinePeerRequest;
 class UpdateVolumeRequest;
 /* End of service model forward declarations required in FSxClient header */
 
@@ -169,23 +214,34 @@ typedef Aws::Utils::Outcome<CopyBackupResult, FSxError> CopyBackupOutcome;
 typedef Aws::Utils::Outcome<CopySnapshotAndUpdateVolumeResult, FSxError> CopySnapshotAndUpdateVolumeOutcome;
 typedef Aws::Utils::Outcome<CreateAndAttachS3AccessPointResult, FSxError> CreateAndAttachS3AccessPointOutcome;
 typedef Aws::Utils::Outcome<CreateBackupResult, FSxError> CreateBackupOutcome;
+typedef Aws::Utils::Outcome<CreateClusterPeerResult, FSxError> CreateClusterPeerOutcome;
 typedef Aws::Utils::Outcome<CreateDataRepositoryAssociationResult, FSxError> CreateDataRepositoryAssociationOutcome;
 typedef Aws::Utils::Outcome<CreateDataRepositoryTaskResult, FSxError> CreateDataRepositoryTaskOutcome;
 typedef Aws::Utils::Outcome<CreateFileCacheResult, FSxError> CreateFileCacheOutcome;
 typedef Aws::Utils::Outcome<CreateFileSystemResult, FSxError> CreateFileSystemOutcome;
 typedef Aws::Utils::Outcome<CreateFileSystemFromBackupResult, FSxError> CreateFileSystemFromBackupOutcome;
+typedef Aws::Utils::Outcome<CreateSnapmirrorPolicyResult, FSxError> CreateSnapmirrorPolicyOutcome;
+typedef Aws::Utils::Outcome<CreateSnapmirrorRelationshipResult, FSxError> CreateSnapmirrorRelationshipOutcome;
 typedef Aws::Utils::Outcome<CreateSnapshotResult, FSxError> CreateSnapshotOutcome;
+typedef Aws::Utils::Outcome<CreateSnapshotPolicyResult, FSxError> CreateSnapshotPolicyOutcome;
 typedef Aws::Utils::Outcome<CreateStorageVirtualMachineResult, FSxError> CreateStorageVirtualMachineOutcome;
+typedef Aws::Utils::Outcome<CreateStorageVirtualMachinePeerResult, FSxError> CreateStorageVirtualMachinePeerOutcome;
 typedef Aws::Utils::Outcome<CreateVolumeResult, FSxError> CreateVolumeOutcome;
 typedef Aws::Utils::Outcome<CreateVolumeFromBackupResult, FSxError> CreateVolumeFromBackupOutcome;
 typedef Aws::Utils::Outcome<DeleteBackupResult, FSxError> DeleteBackupOutcome;
+typedef Aws::Utils::Outcome<DeleteClusterPeerResult, FSxError> DeleteClusterPeerOutcome;
 typedef Aws::Utils::Outcome<DeleteDataRepositoryAssociationResult, FSxError> DeleteDataRepositoryAssociationOutcome;
 typedef Aws::Utils::Outcome<DeleteFileCacheResult, FSxError> DeleteFileCacheOutcome;
 typedef Aws::Utils::Outcome<DeleteFileSystemResult, FSxError> DeleteFileSystemOutcome;
+typedef Aws::Utils::Outcome<DeleteSnapmirrorPolicyResult, FSxError> DeleteSnapmirrorPolicyOutcome;
+typedef Aws::Utils::Outcome<DeleteSnapmirrorRelationshipResult, FSxError> DeleteSnapmirrorRelationshipOutcome;
 typedef Aws::Utils::Outcome<DeleteSnapshotResult, FSxError> DeleteSnapshotOutcome;
+typedef Aws::Utils::Outcome<DeleteSnapshotPolicyResult, FSxError> DeleteSnapshotPolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteStorageVirtualMachineResult, FSxError> DeleteStorageVirtualMachineOutcome;
+typedef Aws::Utils::Outcome<DeleteStorageVirtualMachinePeerResult, FSxError> DeleteStorageVirtualMachinePeerOutcome;
 typedef Aws::Utils::Outcome<DeleteVolumeResult, FSxError> DeleteVolumeOutcome;
 typedef Aws::Utils::Outcome<DescribeBackupsResult, FSxError> DescribeBackupsOutcome;
+typedef Aws::Utils::Outcome<DescribeClusterPeersResult, FSxError> DescribeClusterPeersOutcome;
 typedef Aws::Utils::Outcome<DescribeDataRepositoryAssociationsResult, FSxError> DescribeDataRepositoryAssociationsOutcome;
 typedef Aws::Utils::Outcome<DescribeDataRepositoryTasksResult, FSxError> DescribeDataRepositoryTasksOutcome;
 typedef Aws::Utils::Outcome<DescribeFileCachesResult, FSxError> DescribeFileCachesOutcome;
@@ -193,7 +249,11 @@ typedef Aws::Utils::Outcome<DescribeFileSystemAliasesResult, FSxError> DescribeF
 typedef Aws::Utils::Outcome<DescribeFileSystemsResult, FSxError> DescribeFileSystemsOutcome;
 typedef Aws::Utils::Outcome<DescribeS3AccessPointAttachmentsResult, FSxError> DescribeS3AccessPointAttachmentsOutcome;
 typedef Aws::Utils::Outcome<DescribeSharedVpcConfigurationResult, FSxError> DescribeSharedVpcConfigurationOutcome;
+typedef Aws::Utils::Outcome<DescribeSnapmirrorPoliciesResult, FSxError> DescribeSnapmirrorPoliciesOutcome;
+typedef Aws::Utils::Outcome<DescribeSnapmirrorRelationshipsResult, FSxError> DescribeSnapmirrorRelationshipsOutcome;
+typedef Aws::Utils::Outcome<DescribeSnapshotPoliciesResult, FSxError> DescribeSnapshotPoliciesOutcome;
 typedef Aws::Utils::Outcome<DescribeSnapshotsResult, FSxError> DescribeSnapshotsOutcome;
+typedef Aws::Utils::Outcome<DescribeStorageVirtualMachinePeersResult, FSxError> DescribeStorageVirtualMachinePeersOutcome;
 typedef Aws::Utils::Outcome<DescribeStorageVirtualMachinesResult, FSxError> DescribeStorageVirtualMachinesOutcome;
 typedef Aws::Utils::Outcome<DescribeVolumesResult, FSxError> DescribeVolumesOutcome;
 typedef Aws::Utils::Outcome<DetachAndDeleteS3AccessPointResult, FSxError> DetachAndDeleteS3AccessPointOutcome;
@@ -204,12 +264,17 @@ typedef Aws::Utils::Outcome<RestoreVolumeFromSnapshotResult, FSxError> RestoreVo
 typedef Aws::Utils::Outcome<StartMisconfiguredStateRecoveryResult, FSxError> StartMisconfiguredStateRecoveryOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, FSxError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, FSxError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateClusterPeerResult, FSxError> UpdateClusterPeerOutcome;
 typedef Aws::Utils::Outcome<UpdateDataRepositoryAssociationResult, FSxError> UpdateDataRepositoryAssociationOutcome;
 typedef Aws::Utils::Outcome<UpdateFileCacheResult, FSxError> UpdateFileCacheOutcome;
 typedef Aws::Utils::Outcome<UpdateFileSystemResult, FSxError> UpdateFileSystemOutcome;
 typedef Aws::Utils::Outcome<UpdateSharedVpcConfigurationResult, FSxError> UpdateSharedVpcConfigurationOutcome;
+typedef Aws::Utils::Outcome<UpdateSnapmirrorPolicyResult, FSxError> UpdateSnapmirrorPolicyOutcome;
+typedef Aws::Utils::Outcome<UpdateSnapmirrorRelationshipResult, FSxError> UpdateSnapmirrorRelationshipOutcome;
 typedef Aws::Utils::Outcome<UpdateSnapshotResult, FSxError> UpdateSnapshotOutcome;
+typedef Aws::Utils::Outcome<UpdateSnapshotPolicyResult, FSxError> UpdateSnapshotPolicyOutcome;
 typedef Aws::Utils::Outcome<UpdateStorageVirtualMachineResult, FSxError> UpdateStorageVirtualMachineOutcome;
+typedef Aws::Utils::Outcome<UpdateStorageVirtualMachinePeerResult, FSxError> UpdateStorageVirtualMachinePeerOutcome;
 typedef Aws::Utils::Outcome<UpdateVolumeResult, FSxError> UpdateVolumeOutcome;
 /* End of service model Outcome class definitions */
 
@@ -220,23 +285,34 @@ typedef std::future<CopyBackupOutcome> CopyBackupOutcomeCallable;
 typedef std::future<CopySnapshotAndUpdateVolumeOutcome> CopySnapshotAndUpdateVolumeOutcomeCallable;
 typedef std::future<CreateAndAttachS3AccessPointOutcome> CreateAndAttachS3AccessPointOutcomeCallable;
 typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
+typedef std::future<CreateClusterPeerOutcome> CreateClusterPeerOutcomeCallable;
 typedef std::future<CreateDataRepositoryAssociationOutcome> CreateDataRepositoryAssociationOutcomeCallable;
 typedef std::future<CreateDataRepositoryTaskOutcome> CreateDataRepositoryTaskOutcomeCallable;
 typedef std::future<CreateFileCacheOutcome> CreateFileCacheOutcomeCallable;
 typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
 typedef std::future<CreateFileSystemFromBackupOutcome> CreateFileSystemFromBackupOutcomeCallable;
+typedef std::future<CreateSnapmirrorPolicyOutcome> CreateSnapmirrorPolicyOutcomeCallable;
+typedef std::future<CreateSnapmirrorRelationshipOutcome> CreateSnapmirrorRelationshipOutcomeCallable;
 typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
+typedef std::future<CreateSnapshotPolicyOutcome> CreateSnapshotPolicyOutcomeCallable;
 typedef std::future<CreateStorageVirtualMachineOutcome> CreateStorageVirtualMachineOutcomeCallable;
+typedef std::future<CreateStorageVirtualMachinePeerOutcome> CreateStorageVirtualMachinePeerOutcomeCallable;
 typedef std::future<CreateVolumeOutcome> CreateVolumeOutcomeCallable;
 typedef std::future<CreateVolumeFromBackupOutcome> CreateVolumeFromBackupOutcomeCallable;
 typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
+typedef std::future<DeleteClusterPeerOutcome> DeleteClusterPeerOutcomeCallable;
 typedef std::future<DeleteDataRepositoryAssociationOutcome> DeleteDataRepositoryAssociationOutcomeCallable;
 typedef std::future<DeleteFileCacheOutcome> DeleteFileCacheOutcomeCallable;
 typedef std::future<DeleteFileSystemOutcome> DeleteFileSystemOutcomeCallable;
+typedef std::future<DeleteSnapmirrorPolicyOutcome> DeleteSnapmirrorPolicyOutcomeCallable;
+typedef std::future<DeleteSnapmirrorRelationshipOutcome> DeleteSnapmirrorRelationshipOutcomeCallable;
 typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
+typedef std::future<DeleteSnapshotPolicyOutcome> DeleteSnapshotPolicyOutcomeCallable;
 typedef std::future<DeleteStorageVirtualMachineOutcome> DeleteStorageVirtualMachineOutcomeCallable;
+typedef std::future<DeleteStorageVirtualMachinePeerOutcome> DeleteStorageVirtualMachinePeerOutcomeCallable;
 typedef std::future<DeleteVolumeOutcome> DeleteVolumeOutcomeCallable;
 typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
+typedef std::future<DescribeClusterPeersOutcome> DescribeClusterPeersOutcomeCallable;
 typedef std::future<DescribeDataRepositoryAssociationsOutcome> DescribeDataRepositoryAssociationsOutcomeCallable;
 typedef std::future<DescribeDataRepositoryTasksOutcome> DescribeDataRepositoryTasksOutcomeCallable;
 typedef std::future<DescribeFileCachesOutcome> DescribeFileCachesOutcomeCallable;
@@ -244,7 +320,11 @@ typedef std::future<DescribeFileSystemAliasesOutcome> DescribeFileSystemAliasesO
 typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
 typedef std::future<DescribeS3AccessPointAttachmentsOutcome> DescribeS3AccessPointAttachmentsOutcomeCallable;
 typedef std::future<DescribeSharedVpcConfigurationOutcome> DescribeSharedVpcConfigurationOutcomeCallable;
+typedef std::future<DescribeSnapmirrorPoliciesOutcome> DescribeSnapmirrorPoliciesOutcomeCallable;
+typedef std::future<DescribeSnapmirrorRelationshipsOutcome> DescribeSnapmirrorRelationshipsOutcomeCallable;
+typedef std::future<DescribeSnapshotPoliciesOutcome> DescribeSnapshotPoliciesOutcomeCallable;
 typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
+typedef std::future<DescribeStorageVirtualMachinePeersOutcome> DescribeStorageVirtualMachinePeersOutcomeCallable;
 typedef std::future<DescribeStorageVirtualMachinesOutcome> DescribeStorageVirtualMachinesOutcomeCallable;
 typedef std::future<DescribeVolumesOutcome> DescribeVolumesOutcomeCallable;
 typedef std::future<DetachAndDeleteS3AccessPointOutcome> DetachAndDeleteS3AccessPointOutcomeCallable;
@@ -255,12 +335,17 @@ typedef std::future<RestoreVolumeFromSnapshotOutcome> RestoreVolumeFromSnapshotO
 typedef std::future<StartMisconfiguredStateRecoveryOutcome> StartMisconfiguredStateRecoveryOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateClusterPeerOutcome> UpdateClusterPeerOutcomeCallable;
 typedef std::future<UpdateDataRepositoryAssociationOutcome> UpdateDataRepositoryAssociationOutcomeCallable;
 typedef std::future<UpdateFileCacheOutcome> UpdateFileCacheOutcomeCallable;
 typedef std::future<UpdateFileSystemOutcome> UpdateFileSystemOutcomeCallable;
 typedef std::future<UpdateSharedVpcConfigurationOutcome> UpdateSharedVpcConfigurationOutcomeCallable;
+typedef std::future<UpdateSnapmirrorPolicyOutcome> UpdateSnapmirrorPolicyOutcomeCallable;
+typedef std::future<UpdateSnapmirrorRelationshipOutcome> UpdateSnapmirrorRelationshipOutcomeCallable;
 typedef std::future<UpdateSnapshotOutcome> UpdateSnapshotOutcomeCallable;
+typedef std::future<UpdateSnapshotPolicyOutcome> UpdateSnapshotPolicyOutcomeCallable;
 typedef std::future<UpdateStorageVirtualMachineOutcome> UpdateStorageVirtualMachineOutcomeCallable;
+typedef std::future<UpdateStorageVirtualMachinePeerOutcome> UpdateStorageVirtualMachinePeerOutcomeCallable;
 typedef std::future<UpdateVolumeOutcome> UpdateVolumeOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -287,6 +372,9 @@ typedef std::function<void(const FSxClient*, const Model::CreateAndAttachS3Acces
 typedef std::function<void(const FSxClient*, const Model::CreateBackupRequest&, const Model::CreateBackupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateBackupResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::CreateClusterPeerRequest&, const Model::CreateClusterPeerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateClusterPeerResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::CreateDataRepositoryAssociationRequest&,
                            const Model::CreateDataRepositoryAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -303,12 +391,26 @@ typedef std::function<void(const FSxClient*, const Model::CreateFileSystemReques
 typedef std::function<void(const FSxClient*, const Model::CreateFileSystemFromBackupRequest&,
                            const Model::CreateFileSystemFromBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateFileSystemFromBackupResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::CreateSnapmirrorPolicyRequest&, const Model::CreateSnapmirrorPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateSnapmirrorPolicyResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::CreateSnapmirrorRelationshipRequest&,
+                           const Model::CreateSnapmirrorRelationshipOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateSnapmirrorRelationshipResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::CreateSnapshotRequest&, const Model::CreateSnapshotOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateSnapshotResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::CreateSnapshotPolicyRequest&, const Model::CreateSnapshotPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateSnapshotPolicyResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::CreateStorageVirtualMachineRequest&,
                            const Model::CreateStorageVirtualMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateStorageVirtualMachineResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::CreateStorageVirtualMachinePeerRequest&,
+                           const Model::CreateStorageVirtualMachinePeerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateStorageVirtualMachinePeerResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::CreateVolumeRequest&, const Model::CreateVolumeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateVolumeResponseReceivedHandler;
@@ -318,6 +420,9 @@ typedef std::function<void(const FSxClient*, const Model::CreateVolumeFromBackup
 typedef std::function<void(const FSxClient*, const Model::DeleteBackupRequest&, const Model::DeleteBackupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteBackupResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::DeleteClusterPeerRequest&, const Model::DeleteClusterPeerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteClusterPeerResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::DeleteDataRepositoryAssociationRequest&,
                            const Model::DeleteDataRepositoryAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -328,18 +433,35 @@ typedef std::function<void(const FSxClient*, const Model::DeleteFileCacheRequest
 typedef std::function<void(const FSxClient*, const Model::DeleteFileSystemRequest&, const Model::DeleteFileSystemOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteFileSystemResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::DeleteSnapmirrorPolicyRequest&, const Model::DeleteSnapmirrorPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteSnapmirrorPolicyResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::DeleteSnapmirrorRelationshipRequest&,
+                           const Model::DeleteSnapmirrorRelationshipOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteSnapmirrorRelationshipResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::DeleteSnapshotRequest&, const Model::DeleteSnapshotOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteSnapshotResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::DeleteSnapshotPolicyRequest&, const Model::DeleteSnapshotPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteSnapshotPolicyResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::DeleteStorageVirtualMachineRequest&,
                            const Model::DeleteStorageVirtualMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteStorageVirtualMachineResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::DeleteStorageVirtualMachinePeerRequest&,
+                           const Model::DeleteStorageVirtualMachinePeerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteStorageVirtualMachinePeerResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::DeleteVolumeRequest&, const Model::DeleteVolumeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteVolumeResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::DescribeBackupsRequest&, const Model::DescribeBackupsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeBackupsResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::DescribeClusterPeersRequest&, const Model::DescribeClusterPeersOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeClusterPeersResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::DescribeDataRepositoryAssociationsRequest&,
                            const Model::DescribeDataRepositoryAssociationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -364,9 +486,23 @@ typedef std::function<void(const FSxClient*, const Model::DescribeSharedVpcConfi
                            const Model::DescribeSharedVpcConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeSharedVpcConfigurationResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::DescribeSnapmirrorPoliciesRequest&,
+                           const Model::DescribeSnapmirrorPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeSnapmirrorPoliciesResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::DescribeSnapmirrorRelationshipsRequest&,
+                           const Model::DescribeSnapmirrorRelationshipsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeSnapmirrorRelationshipsResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::DescribeSnapshotPoliciesRequest&, const Model::DescribeSnapshotPoliciesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeSnapshotPoliciesResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeSnapshotsResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::DescribeStorageVirtualMachinePeersRequest&,
+                           const Model::DescribeStorageVirtualMachinePeersOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeStorageVirtualMachinePeersResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::DescribeStorageVirtualMachinesRequest&,
                            const Model::DescribeStorageVirtualMachinesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -401,6 +537,9 @@ typedef std::function<void(const FSxClient*, const Model::TagResourceRequest&, c
 typedef std::function<void(const FSxClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::UpdateClusterPeerRequest&, const Model::UpdateClusterPeerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateClusterPeerResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::UpdateDataRepositoryAssociationRequest&,
                            const Model::UpdateDataRepositoryAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -415,12 +554,26 @@ typedef std::function<void(const FSxClient*, const Model::UpdateSharedVpcConfigu
                            const Model::UpdateSharedVpcConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateSharedVpcConfigurationResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::UpdateSnapmirrorPolicyRequest&, const Model::UpdateSnapmirrorPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateSnapmirrorPolicyResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::UpdateSnapmirrorRelationshipRequest&,
+                           const Model::UpdateSnapmirrorRelationshipOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateSnapmirrorRelationshipResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::UpdateSnapshotRequest&, const Model::UpdateSnapshotOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateSnapshotResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::UpdateSnapshotPolicyRequest&, const Model::UpdateSnapshotPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateSnapshotPolicyResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::UpdateStorageVirtualMachineRequest&,
                            const Model::UpdateStorageVirtualMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateStorageVirtualMachineResponseReceivedHandler;
+typedef std::function<void(const FSxClient*, const Model::UpdateStorageVirtualMachinePeerRequest&,
+                           const Model::UpdateStorageVirtualMachinePeerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateStorageVirtualMachinePeerResponseReceivedHandler;
 typedef std::function<void(const FSxClient*, const Model::UpdateVolumeRequest&, const Model::UpdateVolumeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateVolumeResponseReceivedHandler;

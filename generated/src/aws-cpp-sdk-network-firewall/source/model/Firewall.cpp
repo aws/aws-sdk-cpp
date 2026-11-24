@@ -449,6 +449,11 @@ Firewall& Firewall::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
                 m_availabilityZoneChangeProtectionHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "IgwFirewallConfiguration") {
+                m_igwFirewallConfiguration = IgwFirewallConfiguration(decoder);
+                m_igwFirewallConfigurationHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "NatGatewayCreateMappings") {
                 auto peekType_0 = decoder->PeekType();
                 if (peekType_0.has_value() &&
@@ -1001,6 +1006,11 @@ Firewall& Firewall::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
               m_availabilityZoneChangeProtectionHasBeenSet = true;
             }
 
+            else if (initialKeyStr == "IgwFirewallConfiguration") {
+              m_igwFirewallConfiguration = IgwFirewallConfiguration(decoder);
+              m_igwFirewallConfigurationHasBeenSet = true;
+            }
+
             else if (initialKeyStr == "NatGatewayCreateMappings") {
               auto peekType_0 = decoder->PeekType();
               if (peekType_0.has_value() &&
@@ -1177,6 +1187,9 @@ void Firewall::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_availabilityZoneChangeProtectionHasBeenSet) {
     mapSize++;
   }
+  if (m_igwFirewallConfigurationHasBeenSet) {
+    mapSize++;
+  }
   if (m_natGatewayCreateMappingsHasBeenSet) {
     mapSize++;
   }
@@ -1298,6 +1311,11 @@ void Firewall::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_availabilityZoneChangeProtectionHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("AvailabilityZoneChangeProtection"));
     encoder.WriteBool(m_availabilityZoneChangeProtection);
+  }
+
+  if (m_igwFirewallConfigurationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("IgwFirewallConfiguration"));
+    m_igwFirewallConfiguration.CborEncode(encoder);
   }
 
   if (m_natGatewayCreateMappingsHasBeenSet) {

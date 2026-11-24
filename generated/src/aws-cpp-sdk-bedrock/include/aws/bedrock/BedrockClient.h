@@ -94,6 +94,33 @@ class AWS_BEDROCK_API BedrockClient
   virtual ~BedrockClient();
 
   /**
+   * <p>Archives a project. Archiving is terminal; there is no delete. Archiving an
+   * already-archived project succeeds without effect. The default project cannot be
+   * archived.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ArchiveProject">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ArchiveProjectOutcome ArchiveProject(const Model::ArchiveProjectRequest& request) const;
+
+  /**
+   * A Callable wrapper for ArchiveProject that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ArchiveProjectRequestT = Model::ArchiveProjectRequest>
+  Model::ArchiveProjectOutcomeCallable ArchiveProjectCallable(const ArchiveProjectRequestT& request) const {
+    return SubmitCallable(&BedrockClient::ArchiveProject, request);
+  }
+
+  /**
+   * An Async wrapper for ArchiveProject that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ArchiveProjectRequestT = Model::ArchiveProjectRequest>
+  void ArchiveProjectAsync(const ArchiveProjectRequestT& request, const ArchiveProjectResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::ArchiveProject, request, handler, context);
+  }
+
+  /**
    * <p>Deletes one or more advanced prompt optimization jobs.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteAdvancedPromptOptimizationJob">AWS
@@ -741,6 +768,32 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
+   * <p>Creates a project: a workload boundary within the account that inference
+   * requests can be associated with.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateProject">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateProject that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateProjectRequestT = Model::CreateProjectRequest>
+  Model::CreateProjectOutcomeCallable CreateProjectCallable(const CreateProjectRequestT& request) const {
+    return SubmitCallable(&BedrockClient::CreateProject, request);
+  }
+
+  /**
+   * An Async wrapper for CreateProject that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateProjectRequestT = Model::CreateProjectRequest>
+  void CreateProjectAsync(const CreateProjectRequestT& request, const CreateProjectResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::CreateProject, request, handler, context);
+  }
+
+  /**
    * <p>Creates a prompt router that manages the routing of requests between multiple
    * foundation models based on the routing criteria.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreatePromptRouter">AWS
@@ -801,6 +854,38 @@ class AWS_BEDROCK_API BedrockClient
                                              const CreateProvisionedModelThroughputResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockClient::CreateProvisionedModelThroughput, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes your account's retention storage configuration for a model provider.
+   * Deleting an absent configuration succeeds. You do not need to participate in the
+   * program to delete the configuration. You can delete it even if your account is
+   * ineligible or its eligibility is revoked.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAccountDataRetentionStorage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAccountDataRetentionStorageOutcome DeleteAccountDataRetentionStorage(
+      const Model::DeleteAccountDataRetentionStorageRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAccountDataRetentionStorage that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteAccountDataRetentionStorageRequestT = Model::DeleteAccountDataRetentionStorageRequest>
+  Model::DeleteAccountDataRetentionStorageOutcomeCallable DeleteAccountDataRetentionStorageCallable(
+      const DeleteAccountDataRetentionStorageRequestT& request) const {
+    return SubmitCallable(&BedrockClient::DeleteAccountDataRetentionStorage, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAccountDataRetentionStorage that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteAccountDataRetentionStorageRequestT = Model::DeleteAccountDataRetentionStorageRequest>
+  void DeleteAccountDataRetentionStorageAsync(const DeleteAccountDataRetentionStorageRequestT& request,
+                                              const DeleteAccountDataRetentionStorageResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::DeleteAccountDataRetentionStorage, request, handler, context);
   }
 
   /**
@@ -1177,6 +1262,74 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
+   * <p>Deletes the organization's retention storage configuration for a model
+   * provider. The caller must be the organization's management account or a
+   * delegated administrator. Deleting an absent configuration succeeds; no program
+   * participation is required to delete.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteOrganizationDataRetentionStorage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteOrganizationDataRetentionStorageOutcome DeleteOrganizationDataRetentionStorage(
+      const Model::DeleteOrganizationDataRetentionStorageRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteOrganizationDataRetentionStorage that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteOrganizationDataRetentionStorageRequestT = Model::DeleteOrganizationDataRetentionStorageRequest>
+  Model::DeleteOrganizationDataRetentionStorageOutcomeCallable DeleteOrganizationDataRetentionStorageCallable(
+      const DeleteOrganizationDataRetentionStorageRequestT& request) const {
+    return SubmitCallable(&BedrockClient::DeleteOrganizationDataRetentionStorage, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteOrganizationDataRetentionStorage that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteOrganizationDataRetentionStorageRequestT = Model::DeleteOrganizationDataRetentionStorageRequest>
+  void DeleteOrganizationDataRetentionStorageAsync(const DeleteOrganizationDataRetentionStorageRequestT& request,
+                                                   const DeleteOrganizationDataRetentionStorageResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::DeleteOrganizationDataRetentionStorage, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a project's retention storage configuration for a model provider.
+   * Deleting an absent configuration on an active project succeeds. If the project
+   * does not exist or your account does not own it, the operation returns
+   * <code>ResourceNotFoundException</code>. For an archived project, the operation
+   * returns <code>ValidationException</code>. You can read the archived project's
+   * stored configuration until Amazon Bedrock purges the project. You do not need to
+   * participate in the program to delete the configuration.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteProjectDataRetentionStorage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteProjectDataRetentionStorageOutcome DeleteProjectDataRetentionStorage(
+      const Model::DeleteProjectDataRetentionStorageRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteProjectDataRetentionStorage that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteProjectDataRetentionStorageRequestT = Model::DeleteProjectDataRetentionStorageRequest>
+  Model::DeleteProjectDataRetentionStorageOutcomeCallable DeleteProjectDataRetentionStorageCallable(
+      const DeleteProjectDataRetentionStorageRequestT& request) const {
+    return SubmitCallable(&BedrockClient::DeleteProjectDataRetentionStorage, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteProjectDataRetentionStorage that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteProjectDataRetentionStorageRequestT = Model::DeleteProjectDataRetentionStorageRequest>
+  void DeleteProjectDataRetentionStorageAsync(const DeleteProjectDataRetentionStorageRequestT& request,
+                                              const DeleteProjectDataRetentionStorageResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::DeleteProjectDataRetentionStorage, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a specified prompt router. This action cannot be
    * undone.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeletePromptRouter">AWS
@@ -1352,6 +1505,38 @@ class AWS_BEDROCK_API BedrockClient
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                     const GetAccountDataRetentionRequestT& request = {}) const {
     return SubmitAsync(&BedrockClient::GetAccountDataRetention, request, handler, context);
+  }
+
+  /**
+   * <p>Returns your account's stored retention storage configuration for a model
+   * provider. Amazon Bedrock determines whether the configuration applies when
+   * processing an inference request. Returns <code>ResourceNotFoundException</code>
+   * when no configuration exists.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAccountDataRetentionStorage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAccountDataRetentionStorageOutcome GetAccountDataRetentionStorage(
+      const Model::GetAccountDataRetentionStorageRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAccountDataRetentionStorage that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetAccountDataRetentionStorageRequestT = Model::GetAccountDataRetentionStorageRequest>
+  Model::GetAccountDataRetentionStorageOutcomeCallable GetAccountDataRetentionStorageCallable(
+      const GetAccountDataRetentionStorageRequestT& request) const {
+    return SubmitCallable(&BedrockClient::GetAccountDataRetentionStorage, request);
+  }
+
+  /**
+   * An Async wrapper for GetAccountDataRetentionStorage that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetAccountDataRetentionStorageRequestT = Model::GetAccountDataRetentionStorageRequest>
+  void GetAccountDataRetentionStorageAsync(const GetAccountDataRetentionStorageRequestT& request,
+                                           const GetAccountDataRetentionStorageResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::GetAccountDataRetentionStorage, request, handler, context);
   }
 
   /**
@@ -2019,6 +2204,94 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
+   * <p>Returns the organization's retention storage configuration for a model
+   * provider. The caller must be the organization's management account or a
+   * delegated administrator. Returns ResourceNotFoundException when no configuration
+   * exists.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetOrganizationDataRetentionStorage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetOrganizationDataRetentionStorageOutcome GetOrganizationDataRetentionStorage(
+      const Model::GetOrganizationDataRetentionStorageRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetOrganizationDataRetentionStorage that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetOrganizationDataRetentionStorageRequestT = Model::GetOrganizationDataRetentionStorageRequest>
+  Model::GetOrganizationDataRetentionStorageOutcomeCallable GetOrganizationDataRetentionStorageCallable(
+      const GetOrganizationDataRetentionStorageRequestT& request) const {
+    return SubmitCallable(&BedrockClient::GetOrganizationDataRetentionStorage, request);
+  }
+
+  /**
+   * An Async wrapper for GetOrganizationDataRetentionStorage that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetOrganizationDataRetentionStorageRequestT = Model::GetOrganizationDataRetentionStorageRequest>
+  void GetOrganizationDataRetentionStorageAsync(const GetOrganizationDataRetentionStorageRequestT& request,
+                                                const GetOrganizationDataRetentionStorageResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::GetOrganizationDataRetentionStorage, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a project.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetProject">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetProjectOutcome GetProject(const Model::GetProjectRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetProject that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetProjectRequestT = Model::GetProjectRequest>
+  Model::GetProjectOutcomeCallable GetProjectCallable(const GetProjectRequestT& request) const {
+    return SubmitCallable(&BedrockClient::GetProject, request);
+  }
+
+  /**
+   * An Async wrapper for GetProject that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetProjectRequestT = Model::GetProjectRequest>
+  void GetProjectAsync(const GetProjectRequestT& request, const GetProjectResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::GetProject, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a project's retention storage configuration for a model provider.
+   * Returns ResourceNotFoundException when the project does not exist, is not owned
+   * by the calling account, or has no configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetProjectDataRetentionStorage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetProjectDataRetentionStorageOutcome GetProjectDataRetentionStorage(
+      const Model::GetProjectDataRetentionStorageRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetProjectDataRetentionStorage that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetProjectDataRetentionStorageRequestT = Model::GetProjectDataRetentionStorageRequest>
+  Model::GetProjectDataRetentionStorageOutcomeCallable GetProjectDataRetentionStorageCallable(
+      const GetProjectDataRetentionStorageRequestT& request) const {
+    return SubmitCallable(&BedrockClient::GetProjectDataRetentionStorage, request);
+  }
+
+  /**
+   * An Async wrapper for GetProjectDataRetentionStorage that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetProjectDataRetentionStorageRequestT = Model::GetProjectDataRetentionStorageRequest>
+  void GetProjectDataRetentionStorageAsync(const GetProjectDataRetentionStorageRequestT& request,
+                                           const GetProjectDataRetentionStorageResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::GetProjectDataRetentionStorage, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves details about a prompt router.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetPromptRouter">AWS
    * API Reference</a></p>
@@ -2101,6 +2374,144 @@ class AWS_BEDROCK_API BedrockClient
   void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockClient::GetResourcePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Gets trusted access program details and resolves participation for your
+   * account and its current organization. If you specify a project, Amazon Bedrock
+   * resolves participation for the project, including inheritance from the account
+   * and organization. Archived projects remain readable until they expire. Returns
+   * the same flat summary as a ListTrustedAccessPrograms item. An absent or
+   * invisible program returns ResourceNotFoundException.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetTrustedAccessProgram">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTrustedAccessProgramOutcome GetTrustedAccessProgram(const Model::GetTrustedAccessProgramRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTrustedAccessProgram that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetTrustedAccessProgramRequestT = Model::GetTrustedAccessProgramRequest>
+  Model::GetTrustedAccessProgramOutcomeCallable GetTrustedAccessProgramCallable(const GetTrustedAccessProgramRequestT& request) const {
+    return SubmitCallable(&BedrockClient::GetTrustedAccessProgram, request);
+  }
+
+  /**
+   * An Async wrapper for GetTrustedAccessProgram that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetTrustedAccessProgramRequestT = Model::GetTrustedAccessProgramRequest>
+  void GetTrustedAccessProgramAsync(const GetTrustedAccessProgramRequestT& request,
+                                    const GetTrustedAccessProgramResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::GetTrustedAccessProgram, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the calling account's stored enrollment setting for a trusted access
+   * program. The account is derived from the authenticated caller. Use
+   * GetTrustedAccessProgram to retrieve the resolved participation status, including
+   * organization inheritance. If no enrollment is stored, returns inherit without
+   * timestamps.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetTrustedAccessProgramAccountEnrollment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTrustedAccessProgramAccountEnrollmentOutcome GetTrustedAccessProgramAccountEnrollment(
+      const Model::GetTrustedAccessProgramAccountEnrollmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTrustedAccessProgramAccountEnrollment that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetTrustedAccessProgramAccountEnrollmentRequestT = Model::GetTrustedAccessProgramAccountEnrollmentRequest>
+  Model::GetTrustedAccessProgramAccountEnrollmentOutcomeCallable GetTrustedAccessProgramAccountEnrollmentCallable(
+      const GetTrustedAccessProgramAccountEnrollmentRequestT& request) const {
+    return SubmitCallable(&BedrockClient::GetTrustedAccessProgramAccountEnrollment, request);
+  }
+
+  /**
+   * An Async wrapper for GetTrustedAccessProgramAccountEnrollment that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetTrustedAccessProgramAccountEnrollmentRequestT = Model::GetTrustedAccessProgramAccountEnrollmentRequest>
+  void GetTrustedAccessProgramAccountEnrollmentAsync(
+      const GetTrustedAccessProgramAccountEnrollmentRequestT& request,
+      const GetTrustedAccessProgramAccountEnrollmentResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::GetTrustedAccessProgramAccountEnrollment, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the current organization's stored enrollment setting for a trusted
+   * access program. The organization and payer account are derived from the
+   * authenticated context. Requires operation permission and management-account or
+   * Bedrock-specific delegated-administrator authority. The setting can differ from
+   * the caller's resolved status returned by GetTrustedAccessProgram. If no
+   * enrollment is stored, returns inherit without timestamps.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetTrustedAccessProgramOrganizationEnrollment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTrustedAccessProgramOrganizationEnrollmentOutcome GetTrustedAccessProgramOrganizationEnrollment(
+      const Model::GetTrustedAccessProgramOrganizationEnrollmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTrustedAccessProgramOrganizationEnrollment that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename GetTrustedAccessProgramOrganizationEnrollmentRequestT = Model::GetTrustedAccessProgramOrganizationEnrollmentRequest>
+  Model::GetTrustedAccessProgramOrganizationEnrollmentOutcomeCallable GetTrustedAccessProgramOrganizationEnrollmentCallable(
+      const GetTrustedAccessProgramOrganizationEnrollmentRequestT& request) const {
+    return SubmitCallable(&BedrockClient::GetTrustedAccessProgramOrganizationEnrollment, request);
+  }
+
+  /**
+   * An Async wrapper for GetTrustedAccessProgramOrganizationEnrollment that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename GetTrustedAccessProgramOrganizationEnrollmentRequestT = Model::GetTrustedAccessProgramOrganizationEnrollmentRequest>
+  void GetTrustedAccessProgramOrganizationEnrollmentAsync(
+      const GetTrustedAccessProgramOrganizationEnrollmentRequestT& request,
+      const GetTrustedAccessProgramOrganizationEnrollmentResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::GetTrustedAccessProgramOrganizationEnrollment, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a named project's stored enrollment setting for a trusted access
+   * program. The project must exist in this Region and be owned by the calling
+   * account. Archived projects remain readable until they expire. Use
+   * GetTrustedAccessProgram with projectIdentifier to retrieve resolved
+   * participation, including account and organization inheritance. If no enrollment
+   * is stored, returns inherit without timestamps.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetTrustedAccessProgramProjectEnrollment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTrustedAccessProgramProjectEnrollmentOutcome GetTrustedAccessProgramProjectEnrollment(
+      const Model::GetTrustedAccessProgramProjectEnrollmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTrustedAccessProgramProjectEnrollment that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetTrustedAccessProgramProjectEnrollmentRequestT = Model::GetTrustedAccessProgramProjectEnrollmentRequest>
+  Model::GetTrustedAccessProgramProjectEnrollmentOutcomeCallable GetTrustedAccessProgramProjectEnrollmentCallable(
+      const GetTrustedAccessProgramProjectEnrollmentRequestT& request) const {
+    return SubmitCallable(&BedrockClient::GetTrustedAccessProgramProjectEnrollment, request);
+  }
+
+  /**
+   * An Async wrapper for GetTrustedAccessProgramProjectEnrollment that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetTrustedAccessProgramProjectEnrollmentRequestT = Model::GetTrustedAccessProgramProjectEnrollmentRequest>
+  void GetTrustedAccessProgramProjectEnrollmentAsync(
+      const GetTrustedAccessProgramProjectEnrollmentRequestT& request,
+      const GetTrustedAccessProgramProjectEnrollmentResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::GetTrustedAccessProgramProjectEnrollment, request, handler, context);
   }
 
   /**
@@ -2734,6 +3145,36 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
+   * <p>Lists the account's projects. Results are paginated: when the response
+   * includes <code>nextToken</code>, pass it in the next request to fetch the
+   * following page. Page size is 1-100, default 20. By default every project is
+   * returned regardless of status; set <code>statusFilter</code> to list only active
+   * or only archived projects.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListProjects">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListProjectsRequestT = Model::ListProjectsRequest>
+  Model::ListProjectsOutcomeCallable ListProjectsCallable(const ListProjectsRequestT& request = {}) const {
+    return SubmitCallable(&BedrockClient::ListProjects, request);
+  }
+
+  /**
+   * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListProjectsRequestT = Model::ListProjectsRequest>
+  void ListProjectsAsync(const ListProjectsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                         const ListProjectsRequestT& request = {}) const {
+    return SubmitAsync(&BedrockClient::ListProjects, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves a list of prompt routers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListPromptRouters">AWS
    * API Reference</a></p>
@@ -2826,6 +3267,40 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
+   * <p>Lists all trusted access programs visible to your account, ordered by program
+   * ID. Amazon Bedrock resolves participation for your account and its current
+   * organization. If you specify a project, Amazon Bedrock resolves participation
+   * for the project, including inheritance from the account and organization.
+   * Archived projects remain readable until they expire. Amazon Bedrock returns all
+   * visible programs in one response.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListTrustedAccessPrograms">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTrustedAccessProgramsOutcome ListTrustedAccessPrograms(
+      const Model::ListTrustedAccessProgramsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListTrustedAccessPrograms that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTrustedAccessProgramsRequestT = Model::ListTrustedAccessProgramsRequest>
+  Model::ListTrustedAccessProgramsOutcomeCallable ListTrustedAccessProgramsCallable(
+      const ListTrustedAccessProgramsRequestT& request = {}) const {
+    return SubmitCallable(&BedrockClient::ListTrustedAccessPrograms, request);
+  }
+
+  /**
+   * An Async wrapper for ListTrustedAccessPrograms that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListTrustedAccessProgramsRequestT = Model::ListTrustedAccessProgramsRequest>
+  void ListTrustedAccessProgramsAsync(const ListTrustedAccessProgramsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                      const ListTrustedAccessProgramsRequestT& request = {}) const {
+    return SubmitAsync(&BedrockClient::ListTrustedAccessPrograms, request, handler, context);
+  }
+
+  /**
    * <p>Sets the account-wide data retention mode for Amazon Bedrock.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutAccountDataRetention">AWS
@@ -2851,6 +3326,44 @@ class AWS_BEDROCK_API BedrockClient
                                     const PutAccountDataRetentionResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockClient::PutAccountDataRetention, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or replaces the calling account's retention storage record for a
+   * model provider. Amazon Bedrock identifies the account from your authenticated
+   * request. Requires resolved trusted access eligibility for a storage-capable
+   * program of the provider at a covering scope; otherwise returns
+   * ConflictException. Writes replace the whole record; the last write wins.</p>
+   * <p>For <code>customer_managed</code> destinations, Amazon Bedrock validates the
+   * caller's and service's access to the bucket and key before saving the
+   * configuration. The bucket and key must be in the AWS Region where you register
+   * the configuration. Validation failures reject the write.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutAccountDataRetentionStorage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAccountDataRetentionStorageOutcome PutAccountDataRetentionStorage(
+      const Model::PutAccountDataRetentionStorageRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAccountDataRetentionStorage that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutAccountDataRetentionStorageRequestT = Model::PutAccountDataRetentionStorageRequest>
+  Model::PutAccountDataRetentionStorageOutcomeCallable PutAccountDataRetentionStorageCallable(
+      const PutAccountDataRetentionStorageRequestT& request) const {
+    return SubmitCallable(&BedrockClient::PutAccountDataRetentionStorage, request);
+  }
+
+  /**
+   * An Async wrapper for PutAccountDataRetentionStorage that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename PutAccountDataRetentionStorageRequestT = Model::PutAccountDataRetentionStorageRequest>
+  void PutAccountDataRetentionStorageAsync(const PutAccountDataRetentionStorageRequestT& request,
+                                           const PutAccountDataRetentionStorageResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::PutAccountDataRetentionStorage, request, handler, context);
   }
 
   /**
@@ -2914,6 +3427,87 @@ class AWS_BEDROCK_API BedrockClient
   }
 
   /**
+   * <p>Creates or replaces the organization's retention storage record for a model
+   * provider. The organization is resolved from the authenticated caller's
+   * management context; the caller must be the organization's management account or
+   * a delegated administrator. Requires resolved organization-scope trusted access
+   * eligibility for a storage-capable program of the provider; otherwise returns
+   * ConflictException. Writes replace the whole record; the last write wins.</p>
+   * <p>For <code>customer_managed</code> destinations, Amazon Bedrock validates the
+   * caller's and service's access to the bucket and key before saving the
+   * configuration. The bucket and key must be in the AWS Region where you register
+   * the configuration. Validation failures reject the write.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutOrganizationDataRetentionStorage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutOrganizationDataRetentionStorageOutcome PutOrganizationDataRetentionStorage(
+      const Model::PutOrganizationDataRetentionStorageRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutOrganizationDataRetentionStorage that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename PutOrganizationDataRetentionStorageRequestT = Model::PutOrganizationDataRetentionStorageRequest>
+  Model::PutOrganizationDataRetentionStorageOutcomeCallable PutOrganizationDataRetentionStorageCallable(
+      const PutOrganizationDataRetentionStorageRequestT& request) const {
+    return SubmitCallable(&BedrockClient::PutOrganizationDataRetentionStorage, request);
+  }
+
+  /**
+   * An Async wrapper for PutOrganizationDataRetentionStorage that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename PutOrganizationDataRetentionStorageRequestT = Model::PutOrganizationDataRetentionStorageRequest>
+  void PutOrganizationDataRetentionStorageAsync(const PutOrganizationDataRetentionStorageRequestT& request,
+                                                const PutOrganizationDataRetentionStorageResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::PutOrganizationDataRetentionStorage, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or replaces a project's retention storage record for a model
+   * provider. The project must be active in this AWS Region and owned by the calling
+   * account. A missing or unowned project returns
+   * <code>ResourceNotFoundException</code>; an archived project returns
+   * <code>ValidationException</code>.</p> <p>Requires applicable project, account,
+   * or organization approval for a storage-capable trusted access program of the
+   * provider, with no applicable revocation. Otherwise, the operation returns
+   * <code>ConflictException</code>. Enrollment is not required to save the
+   * configuration.</p> <p>The request replaces the complete stored configuration.
+   * The last successful write wins.</p> <p>For <code>customer_managed</code>
+   * destinations, Amazon Bedrock validates the caller's and service's access to the
+   * bucket and key before saving the configuration. The bucket and key must be in
+   * the AWS Region where you register the configuration. Validation failures reject
+   * the write.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutProjectDataRetentionStorage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutProjectDataRetentionStorageOutcome PutProjectDataRetentionStorage(
+      const Model::PutProjectDataRetentionStorageRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutProjectDataRetentionStorage that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutProjectDataRetentionStorageRequestT = Model::PutProjectDataRetentionStorageRequest>
+  Model::PutProjectDataRetentionStorageOutcomeCallable PutProjectDataRetentionStorageCallable(
+      const PutProjectDataRetentionStorageRequestT& request) const {
+    return SubmitCallable(&BedrockClient::PutProjectDataRetentionStorage, request);
+  }
+
+  /**
+   * An Async wrapper for PutProjectDataRetentionStorage that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename PutProjectDataRetentionStorageRequestT = Model::PutProjectDataRetentionStorageRequest>
+  void PutProjectDataRetentionStorageAsync(const PutProjectDataRetentionStorageRequestT& request,
+                                           const PutProjectDataRetentionStorageResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::PutProjectDataRetentionStorage, request, handler, context);
+  }
+
+  /**
    * <p>Adds a resource policy for a Bedrock resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutResourcePolicy">AWS
    * API Reference</a></p>
@@ -2937,6 +3531,118 @@ class AWS_BEDROCK_API BedrockClient
   void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockClient::PutResourcePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Sets your account's enrollment preference for a trusted access program.
+   * Amazon Bedrock identifies the account from your authenticated request. To enable
+   * enrollment, your account needs applicable approval and no applicable revocation,
+   * including when you repeat an enabled setting. Otherwise, Amazon Bedrock returns
+   * <code>ConflictException</code> and preserves the stored setting. With the
+   * required permissions, you can set <code>disabled</code> or <code>inherit</code>
+   * even if your account is ineligible or its eligibility is revoked.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutTrustedAccessProgramAccountEnrollment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutTrustedAccessProgramAccountEnrollmentOutcome PutTrustedAccessProgramAccountEnrollment(
+      const Model::PutTrustedAccessProgramAccountEnrollmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutTrustedAccessProgramAccountEnrollment that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename PutTrustedAccessProgramAccountEnrollmentRequestT = Model::PutTrustedAccessProgramAccountEnrollmentRequest>
+  Model::PutTrustedAccessProgramAccountEnrollmentOutcomeCallable PutTrustedAccessProgramAccountEnrollmentCallable(
+      const PutTrustedAccessProgramAccountEnrollmentRequestT& request) const {
+    return SubmitCallable(&BedrockClient::PutTrustedAccessProgramAccountEnrollment, request);
+  }
+
+  /**
+   * An Async wrapper for PutTrustedAccessProgramAccountEnrollment that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename PutTrustedAccessProgramAccountEnrollmentRequestT = Model::PutTrustedAccessProgramAccountEnrollmentRequest>
+  void PutTrustedAccessProgramAccountEnrollmentAsync(
+      const PutTrustedAccessProgramAccountEnrollmentRequestT& request,
+      const PutTrustedAccessProgramAccountEnrollmentResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::PutTrustedAccessProgramAccountEnrollment, request, handler, context);
+  }
+
+  /**
+   * <p>Sets the current organization's enrollment preference for a trusted access
+   * program. The organization and payer account are derived from the authenticated
+   * context. Every write requires operation permission and management-account or
+   * Bedrock-specific delegated-administrator authority. Enabling requires approval
+   * and no revocation for the organization, including when repeating an enabled
+   * setting; otherwise returns ConflictException and preserves the stored setting.
+   * Account approval alone is insufficient. If you have the required permissions,
+   * you can set the enrollment preference to <code>disabled</code> or
+   * <code>inherit</code> even if your organization is ineligible or its eligibility
+   * is revoked.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutTrustedAccessProgramOrganizationEnrollment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutTrustedAccessProgramOrganizationEnrollmentOutcome PutTrustedAccessProgramOrganizationEnrollment(
+      const Model::PutTrustedAccessProgramOrganizationEnrollmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutTrustedAccessProgramOrganizationEnrollment that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename PutTrustedAccessProgramOrganizationEnrollmentRequestT = Model::PutTrustedAccessProgramOrganizationEnrollmentRequest>
+  Model::PutTrustedAccessProgramOrganizationEnrollmentOutcomeCallable PutTrustedAccessProgramOrganizationEnrollmentCallable(
+      const PutTrustedAccessProgramOrganizationEnrollmentRequestT& request) const {
+    return SubmitCallable(&BedrockClient::PutTrustedAccessProgramOrganizationEnrollment, request);
+  }
+
+  /**
+   * An Async wrapper for PutTrustedAccessProgramOrganizationEnrollment that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename PutTrustedAccessProgramOrganizationEnrollmentRequestT = Model::PutTrustedAccessProgramOrganizationEnrollmentRequest>
+  void PutTrustedAccessProgramOrganizationEnrollmentAsync(
+      const PutTrustedAccessProgramOrganizationEnrollmentRequestT& request,
+      const PutTrustedAccessProgramOrganizationEnrollmentResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::PutTrustedAccessProgramOrganizationEnrollment, request, handler, context);
+  }
+
+  /**
+   * <p>Sets a named project's enrollment preference for a trusted access program.
+   * The project must be active in this Region and owned by the calling account.
+   * Enabling requires applicable project, account, or organization approval and no
+   * applicable revocation, including when repeating an enabled setting; otherwise
+   * returns ConflictException and preserves the stored setting. Authorized disable
+   * and inherit writes are allowed while ineligible or revoked. Archived projects
+   * reject all writes with ValidationException.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutTrustedAccessProgramProjectEnrollment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutTrustedAccessProgramProjectEnrollmentOutcome PutTrustedAccessProgramProjectEnrollment(
+      const Model::PutTrustedAccessProgramProjectEnrollmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutTrustedAccessProgramProjectEnrollment that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename PutTrustedAccessProgramProjectEnrollmentRequestT = Model::PutTrustedAccessProgramProjectEnrollmentRequest>
+  Model::PutTrustedAccessProgramProjectEnrollmentOutcomeCallable PutTrustedAccessProgramProjectEnrollmentCallable(
+      const PutTrustedAccessProgramProjectEnrollmentRequestT& request) const {
+    return SubmitCallable(&BedrockClient::PutTrustedAccessProgramProjectEnrollment, request);
+  }
+
+  /**
+   * An Async wrapper for PutTrustedAccessProgramProjectEnrollment that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename PutTrustedAccessProgramProjectEnrollmentRequestT = Model::PutTrustedAccessProgramProjectEnrollmentRequest>
+  void PutTrustedAccessProgramProjectEnrollmentAsync(
+      const PutTrustedAccessProgramProjectEnrollmentRequestT& request,
+      const PutTrustedAccessProgramProjectEnrollmentResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::PutTrustedAccessProgramProjectEnrollment, request, handler, context);
   }
 
   /**
@@ -3059,6 +3765,114 @@ class AWS_BEDROCK_API BedrockClient
       const StartAutomatedReasoningPolicyTestWorkflowResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockClient::StartAutomatedReasoningPolicyTestWorkflow, request, handler, context);
+  }
+
+  /**
+   * <p>Prepare a provider application handoff for the calling account. This does not
+   * submit an application, grant eligibility, or change enrollment. Programs without
+   * self-service applications return ValidationException with guidance to contact
+   * the AWS account team. Repeated calls can issue fresh tokens. Successful
+   * responses use Cache-Control: no-store.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartTrustedAccessProgramAccountApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartTrustedAccessProgramAccountApplicationOutcome StartTrustedAccessProgramAccountApplication(
+      const Model::StartTrustedAccessProgramAccountApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartTrustedAccessProgramAccountApplication that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename StartTrustedAccessProgramAccountApplicationRequestT = Model::StartTrustedAccessProgramAccountApplicationRequest>
+  Model::StartTrustedAccessProgramAccountApplicationOutcomeCallable StartTrustedAccessProgramAccountApplicationCallable(
+      const StartTrustedAccessProgramAccountApplicationRequestT& request) const {
+    return SubmitCallable(&BedrockClient::StartTrustedAccessProgramAccountApplication, request);
+  }
+
+  /**
+   * An Async wrapper for StartTrustedAccessProgramAccountApplication that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename StartTrustedAccessProgramAccountApplicationRequestT = Model::StartTrustedAccessProgramAccountApplicationRequest>
+  void StartTrustedAccessProgramAccountApplicationAsync(
+      const StartTrustedAccessProgramAccountApplicationRequestT& request,
+      const StartTrustedAccessProgramAccountApplicationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::StartTrustedAccessProgramAccountApplication, request, handler, context);
+  }
+
+  /**
+   * <p>Prepare a provider application handoff for the calling account's current
+   * organization. Requires operation permission and management-account or
+   * Bedrock-specific delegated-administrator authority. This does not submit an
+   * application, grant eligibility, or change enrollment. Programs without
+   * self-service applications return ValidationException with guidance to contact
+   * the AWS account team. Repeated calls can issue fresh tokens. Successful
+   * responses use Cache-Control: no-store.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartTrustedAccessProgramOrganizationApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartTrustedAccessProgramOrganizationApplicationOutcome StartTrustedAccessProgramOrganizationApplication(
+      const Model::StartTrustedAccessProgramOrganizationApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartTrustedAccessProgramOrganizationApplication that returns a future to the operation so that it can be
+   * executed in parallel to other requests.
+   */
+  template <
+      typename StartTrustedAccessProgramOrganizationApplicationRequestT = Model::StartTrustedAccessProgramOrganizationApplicationRequest>
+  Model::StartTrustedAccessProgramOrganizationApplicationOutcomeCallable StartTrustedAccessProgramOrganizationApplicationCallable(
+      const StartTrustedAccessProgramOrganizationApplicationRequestT& request) const {
+    return SubmitCallable(&BedrockClient::StartTrustedAccessProgramOrganizationApplication, request);
+  }
+
+  /**
+   * An Async wrapper for StartTrustedAccessProgramOrganizationApplication that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <
+      typename StartTrustedAccessProgramOrganizationApplicationRequestT = Model::StartTrustedAccessProgramOrganizationApplicationRequest>
+  void StartTrustedAccessProgramOrganizationApplicationAsync(
+      const StartTrustedAccessProgramOrganizationApplicationRequestT& request,
+      const StartTrustedAccessProgramOrganizationApplicationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::StartTrustedAccessProgramOrganizationApplication, request, handler, context);
+  }
+
+  /**
+   * <p>Prepare a provider application handoff for a named project. The project must
+   * be active in this Region and owned by the calling account. Archived projects
+   * return ValidationException. This does not submit an application, grant
+   * eligibility, or change enrollment. Programs without self-service applications
+   * return ValidationException with guidance to contact the AWS account team.
+   * Repeated calls can issue fresh tokens. Successful responses use Cache-Control:
+   * no-store.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartTrustedAccessProgramProjectApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartTrustedAccessProgramProjectApplicationOutcome StartTrustedAccessProgramProjectApplication(
+      const Model::StartTrustedAccessProgramProjectApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartTrustedAccessProgramProjectApplication that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename StartTrustedAccessProgramProjectApplicationRequestT = Model::StartTrustedAccessProgramProjectApplicationRequest>
+  Model::StartTrustedAccessProgramProjectApplicationOutcomeCallable StartTrustedAccessProgramProjectApplicationCallable(
+      const StartTrustedAccessProgramProjectApplicationRequestT& request) const {
+    return SubmitCallable(&BedrockClient::StartTrustedAccessProgramProjectApplication, request);
+  }
+
+  /**
+   * An Async wrapper for StartTrustedAccessProgramProjectApplication that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename StartTrustedAccessProgramProjectApplicationRequestT = Model::StartTrustedAccessProgramProjectApplicationRequest>
+  void StartTrustedAccessProgramProjectApplicationAsync(
+      const StartTrustedAccessProgramProjectApplicationRequestT& request,
+      const StartTrustedAccessProgramProjectApplicationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::StartTrustedAccessProgramProjectApplication, request, handler, context);
   }
 
   /**
@@ -3443,6 +4257,33 @@ class AWS_BEDROCK_API BedrockClient
                                            const UpdateMarketplaceModelEndpointResponseReceivedHandler& handler,
                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockClient::UpdateMarketplaceModelEndpoint, request, handler, context);
+  }
+
+  /**
+   * <p>Updates one mutable project field per call: exactly one of <code>name</code>
+   * or <code>dataRetention</code> must be set. The default project and archived
+   * projects cannot be updated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateProject">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateProject that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateProjectRequestT = Model::UpdateProjectRequest>
+  Model::UpdateProjectOutcomeCallable UpdateProjectCallable(const UpdateProjectRequestT& request) const {
+    return SubmitCallable(&BedrockClient::UpdateProject, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProject that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateProjectRequestT = Model::UpdateProjectRequest>
+  void UpdateProjectAsync(const UpdateProjectRequestT& request, const UpdateProjectResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockClient::UpdateProject, request, handler, context);
   }
 
   /**

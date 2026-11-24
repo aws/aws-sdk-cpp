@@ -23,7 +23,7 @@ class JsonValue;
 namespace CloudFrontKeyValueStore {
 namespace Model {
 /**
- * <p>Metadata information about a Key Value Store.</p><p><h3>See Also:</h3>   <a
+ * <p>Metadata information about a key value store.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/DescribeKeyValueStoreResponse">AWS
  * API Reference</a></p>
  */
@@ -36,7 +36,7 @@ class DescribeKeyValueStoreResult {
 
   ///@{
   /**
-   * <p>Number of key value pairs in the Key Value Store.</p>
+   * <p>Number of key-value pairs in the key value store.</p>
    */
   inline int GetItemCount() const { return m_itemCount; }
   inline void SetItemCount(int value) {
@@ -51,7 +51,7 @@ class DescribeKeyValueStoreResult {
 
   ///@{
   /**
-   * <p>Total size of the Key Value Store in bytes.</p>
+   * <p>Total size of the key value store in bytes.</p>
    */
   inline long long GetTotalSizeInBytes() const { return m_totalSizeInBytes; }
   inline void SetTotalSizeInBytes(long long value) {
@@ -66,7 +66,7 @@ class DescribeKeyValueStoreResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
+   * <p>The Amazon Resource Name (ARN) of the key value store.</p>
    */
   inline const Aws::String& GetKvsARN() const { return m_kvsARN; }
   template <typename KvsARNT = Aws::String>
@@ -83,7 +83,7 @@ class DescribeKeyValueStoreResult {
 
   ///@{
   /**
-   * <p>Date and time when the Key Value Store was created.</p>
+   * <p>Date and time when the key value store was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreated() const { return m_created; }
   template <typename CreatedT = Aws::Utils::DateTime>
@@ -100,7 +100,7 @@ class DescribeKeyValueStoreResult {
 
   ///@{
   /**
-   * <p>The version identifier for the current version of the Key Value Store.</p>
+   * <p>The version identifier for the current version of the key value store.</p>
    */
   inline const Aws::String& GetETag() const { return m_eTag; }
   template <typename ETagT = Aws::String>
@@ -117,7 +117,7 @@ class DescribeKeyValueStoreResult {
 
   ///@{
   /**
-   * <p>Date and time when the key value pairs in the Key Value Store was last
+   * <p>Date and time when the key-value pairs in the key value store was last
    * modified.</p>
    */
   inline const Aws::Utils::DateTime& GetLastModified() const { return m_lastModified; }
@@ -135,7 +135,7 @@ class DescribeKeyValueStoreResult {
 
   ///@{
   /**
-   * <p>The current status of the Key Value Store.</p>
+   * <p>The current status of the key value store.</p>
    */
   inline const Aws::String& GetStatus() const { return m_status; }
   template <typename StatusT = Aws::String>
@@ -152,7 +152,7 @@ class DescribeKeyValueStoreResult {
 
   ///@{
   /**
-   * <p>The reason for Key Value Store creation failure.</p>
+   * <p>The reason why the key value store wasn't created.</p>
    */
   inline const Aws::String& GetFailureReason() const { return m_failureReason; }
   template <typename FailureReasonT = Aws::String>

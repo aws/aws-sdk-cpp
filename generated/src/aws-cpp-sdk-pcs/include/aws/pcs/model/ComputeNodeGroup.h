@@ -13,6 +13,7 @@
 #include <aws/pcs/model/CustomLaunchTemplate.h>
 #include <aws/pcs/model/ErrorInfo.h>
 #include <aws/pcs/model/InstanceConfig.h>
+#include <aws/pcs/model/InstanceHealthChecks.h>
 #include <aws/pcs/model/LaunchTemplateMode.h>
 #include <aws/pcs/model/NodeLifecycleActions.h>
 #include <aws/pcs/model/PurchaseOption.h>
@@ -467,6 +468,26 @@ class ComputeNodeGroup {
 
   ///@{
   /**
+   * <p>The instance health check settings of the compute node group. Instance health
+   * checks detect faults on instances in the compute node group and respond with the
+   * repair action that you choose.</p>
+   */
+  inline const InstanceHealthChecks& GetInstanceHealthChecks() const { return m_instanceHealthChecks; }
+  inline bool InstanceHealthChecksHasBeenSet() const { return m_instanceHealthChecksHasBeenSet; }
+  template <typename InstanceHealthChecksT = InstanceHealthChecks>
+  void SetInstanceHealthChecks(InstanceHealthChecksT&& value) {
+    m_instanceHealthChecksHasBeenSet = true;
+    m_instanceHealthChecks = std::forward<InstanceHealthChecksT>(value);
+  }
+  template <typename InstanceHealthChecksT = InstanceHealthChecks>
+  ComputeNodeGroup& WithInstanceHealthChecks(InstanceHealthChecksT&& value) {
+    SetInstanceHealthChecks(std::forward<InstanceHealthChecksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of errors that occurred during compute node group provisioning.</p>
    */
   inline const Aws::Vector<ErrorInfo>& GetErrorInfo() const { return m_errorInfo; }
@@ -529,6 +550,8 @@ class ComputeNodeGroup {
 
   NodeLifecycleActions m_nodeLifecycleActions;
 
+  InstanceHealthChecks m_instanceHealthChecks;
+
   Aws::Vector<ErrorInfo> m_errorInfo;
   bool m_amiIdHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
@@ -550,6 +573,7 @@ class ComputeNodeGroup {
   bool m_spotOptionsHasBeenSet = false;
   bool m_slurmConfigurationHasBeenSet = false;
   bool m_nodeLifecycleActionsHasBeenSet = false;
+  bool m_instanceHealthChecksHasBeenSet = false;
   bool m_errorInfoHasBeenSet = false;
 };
 

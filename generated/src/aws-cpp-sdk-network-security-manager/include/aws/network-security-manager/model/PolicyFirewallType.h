@@ -10,7 +10,7 @@
 namespace Aws {
 namespace NetworkSecurityManager {
 namespace Model {
-enum class PolicyFirewallType { NOT_SET, WAF, SHIELD_ADVANCED };
+enum class PolicyFirewallType { NOT_SET, WAF, SHIELD_ADVANCED, IGW_FIREWALL };
 
 namespace PolicyFirewallTypeMapper {
 AWS_NETWORKSECURITYMANAGER_API PolicyFirewallType GetPolicyFirewallTypeForName(const Aws::String& name);

@@ -42,6 +42,10 @@ Descriptors& Descriptors::operator=(JsonView jsonValue) {
     m_agui = jsonValue.GetObject("agui");
     m_aguiHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("signatureAgentCard")) {
+    m_signatureAgentCard = jsonValue.GetObject("signatureAgentCard");
+    m_signatureAgentCardHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue Descriptors::Jsonize() const {
 
   if (m_aguiHasBeenSet) {
     payload.WithObject("agui", m_agui.Jsonize());
+  }
+
+  if (m_signatureAgentCardHasBeenSet) {
+    payload.WithObject("signatureAgentCard", m_signatureAgentCard.Jsonize());
   }
 
   return payload;

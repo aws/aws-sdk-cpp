@@ -23,8 +23,8 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Defines a usage-based pricing term (typically pay-as-you-go), where buyers
- * are charged based on product usage.</p><p><h3>See Also:</h3>   <a
+ * <p>Describes a usage-based pricing term, typically pay-as-you-go. You are
+ * charged based on your use of the product.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/UsageBasedPricingTerm">AWS
  * API Reference</a></p>
  */

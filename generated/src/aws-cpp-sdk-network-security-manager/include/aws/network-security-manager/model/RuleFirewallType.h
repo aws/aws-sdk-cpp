@@ -10,7 +10,7 @@
 namespace Aws {
 namespace NetworkSecurityManager {
 namespace Model {
-enum class RuleFirewallType { NOT_SET, WAF };
+enum class RuleFirewallType { NOT_SET, WAF, IGW_FIREWALL };
 
 namespace RuleFirewallTypeMapper {
 AWS_NETWORKSECURITYMANAGER_API RuleFirewallType GetRuleFirewallTypeForName(const Aws::String& name);

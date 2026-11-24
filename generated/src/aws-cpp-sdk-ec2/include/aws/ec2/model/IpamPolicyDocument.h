@@ -77,7 +77,10 @@ class IpamPolicyDocument {
    * <p>The resource type of the IPAM policy document.</p> <p>The Amazon Web Services
    * service or resource type that can use IP addresses through IPAM policies.
    * Supported services and resource types include:</p> <ul> <li> <p>Elastic IP
-   * addresses</p> </li> </ul>
+   * addresses</p> </li> <li> <p>Application Load Balancers</p> </li> <li> <p>Amazon
+   * RDS</p> </li> <li> <p>NAT gateways in regional availability mode</p> </li> <li>
+   * <p>Lambda Network Connector</p> </li> <li> <p>Automated Internet Firewall</p>
+   * </li> </ul>
    */
   inline IpamPolicyResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

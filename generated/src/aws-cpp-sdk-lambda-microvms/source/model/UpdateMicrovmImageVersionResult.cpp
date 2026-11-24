@@ -88,6 +88,10 @@ UpdateMicrovmImageVersionResult& UpdateMicrovmImageVersionResult::operator=(cons
     }
     m_environmentVariablesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("kmsKeyIdentifier")) {
+    m_kmsKeyIdentifier = jsonValue.GetString("kmsKeyIdentifier");
+    m_kmsKeyIdentifierHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("imageArn")) {
     m_imageArn = jsonValue.GetString("imageArn");
     m_imageArnHasBeenSet = true;

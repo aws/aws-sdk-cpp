@@ -87,11 +87,12 @@ class ListDevicesRequest : public DeviceFarmRequest {
    * <li> <p>AVAILABILITY: The current availability of the device. Valid values are
    * AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li> <li>
    * <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p>
-   * </li> <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p>
-   * </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote
-   * access. Valid values are TRUE or FALSE.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED:
-   * Whether the device is enabled for remote debugging. Valid values are TRUE or
-   * FALSE. Because remote debugging is <a
+   * </li> <li> <p>DEVICE_TYPE: The device type. Valid values are PHYSICAL or
+   * VIRTUAL.</p> </li> <li> <p>MANUFACTURER: The device manufacturer (for example,
+   * Apple).</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
+   * for remote access. Valid values are TRUE or FALSE.</p> </li> <li>
+   * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+   * Valid values are TRUE or FALSE. Because remote debugging is <a
    * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
    * longer supported</a>, this attribute is ignored.</p> </li> <li> <p>INSTANCE_ARN:
    * The Amazon Resource Name (ARN) of the device instance.</p> </li> <li>

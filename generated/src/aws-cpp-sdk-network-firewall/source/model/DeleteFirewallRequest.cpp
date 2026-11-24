@@ -23,6 +23,9 @@ Aws::String DeleteFirewallRequest::SerializePayload() const {
   if (m_firewallArnHasBeenSet) {
     mapSize++;
   }
+  if (m_firewallTypeHasBeenSet) {
+    mapSize++;
+  }
   if (m_deleteAssociatedNatGatewaysHasBeenSet) {
     mapSize++;
   }
@@ -37,6 +40,11 @@ Aws::String DeleteFirewallRequest::SerializePayload() const {
   if (m_firewallArnHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallArn"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_firewallArn.c_str()));
+  }
+
+  if (m_firewallTypeHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(FirewallTypeMapper::GetNameForFirewallType(m_firewallType).c_str()));
   }
 
   if (m_deleteAssociatedNatGatewaysHasBeenSet) {

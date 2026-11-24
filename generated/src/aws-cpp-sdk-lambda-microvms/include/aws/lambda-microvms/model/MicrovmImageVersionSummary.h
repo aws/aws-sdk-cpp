@@ -289,6 +289,27 @@ class MicrovmImageVersionSummary {
 
   ///@{
   /**
+   * <p>The customer managed Amazon Web Services Key Management Service (Amazon Web
+   * Services KMS) key that encrypts the contents and metadata of your MicroVM image
+   * version. If you don't specify a key, your MicroVM image version uses an Amazon
+   * Web Services owned key.</p>
+   */
+  inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+  inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    m_kmsKeyIdentifierHasBeenSet = true;
+    m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value);
+  }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  MicrovmImageVersionSummary& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ARN of the MicroVM image.</p>
    */
   inline const Aws::String& GetImageArn() const { return m_imageArn; }
@@ -458,6 +479,8 @@ class MicrovmImageVersionSummary {
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
 
+  Aws::String m_kmsKeyIdentifier;
+
   Aws::String m_imageArn;
 
   Aws::String m_imageVersion;
@@ -485,6 +508,7 @@ class MicrovmImageVersionSummary {
   bool m_additionalOsCapabilitiesHasBeenSet = false;
   bool m_hooksHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_imageArnHasBeenSet = false;
   bool m_imageVersionHasBeenSet = false;
   bool m_stateHasBeenSet = false;

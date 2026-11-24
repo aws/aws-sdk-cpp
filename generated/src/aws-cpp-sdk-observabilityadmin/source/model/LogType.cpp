@@ -24,6 +24,9 @@ static const int S3_SERVER_ACCESS_LOGS_HASH = HashingUtils::HashString("S3_SERVE
 static const int ALB_ACCESS_LOGS_HASH = HashingUtils::HashString("ALB_ACCESS_LOGS");
 static const int ALB_CONNECTION_LOGS_HASH = HashingUtils::HashString("ALB_CONNECTION_LOGS");
 static const int ALB_HEALTH_CHECK_LOGS_HASH = HashingUtils::HashString("ALB_HEALTH_CHECK_LOGS");
+static const int FLOW_LOGS_HASH = HashingUtils::HashString("FLOW_LOGS");
+static const int ALERT_LOGS_HASH = HashingUtils::HashString("ALERT_LOGS");
+static const int TLS_LOGS_HASH = HashingUtils::HashString("TLS_LOGS");
 
 LogType GetLogTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +48,12 @@ LogType GetLogTypeForName(const Aws::String& name) {
     return LogType::ALB_CONNECTION_LOGS;
   } else if (hashCode == ALB_HEALTH_CHECK_LOGS_HASH) {
     return LogType::ALB_HEALTH_CHECK_LOGS;
+  } else if (hashCode == FLOW_LOGS_HASH) {
+    return LogType::FLOW_LOGS;
+  } else if (hashCode == ALERT_LOGS_HASH) {
+    return LogType::ALERT_LOGS;
+  } else if (hashCode == TLS_LOGS_HASH) {
+    return LogType::TLS_LOGS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +86,12 @@ Aws::String GetNameForLogType(LogType enumValue) {
       return "ALB_CONNECTION_LOGS";
     case LogType::ALB_HEALTH_CHECK_LOGS:
       return "ALB_HEALTH_CHECK_LOGS";
+    case LogType::FLOW_LOGS:
+      return "FLOW_LOGS";
+    case LogType::ALERT_LOGS:
+      return "ALERT_LOGS";
+    case LogType::TLS_LOGS:
+      return "TLS_LOGS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

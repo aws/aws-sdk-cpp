@@ -8,6 +8,7 @@
 #include <aws/marketplace-discovery/MarketplaceDiscoveryClient.h>
 #include <aws/marketplace-discovery/model/GetOfferTermsPaginationTraits.h>
 #include <aws/marketplace-discovery/model/ListFulfillmentOptionsPaginationTraits.h>
+#include <aws/marketplace-discovery/model/ListListingAttributesPaginationTraits.h>
 #include <aws/marketplace-discovery/model/ListPurchaseOptionsPaginationTraits.h>
 #include <aws/marketplace-discovery/model/SearchFacetsPaginationTraits.h>
 #include <aws/marketplace-discovery/model/SearchListingsPaginationTraits.h>
@@ -20,6 +21,9 @@ using GetOfferTermsPaginator = Aws::Utils::Pagination::Paginator<MarketplaceDisc
 using ListFulfillmentOptionsPaginator =
     Aws::Utils::Pagination::Paginator<MarketplaceDiscoveryClient, Model::ListFulfillmentOptionsRequest,
                                       Pagination::ListFulfillmentOptionsPaginationTraits<MarketplaceDiscoveryClient>>;
+using ListListingAttributesPaginator =
+    Aws::Utils::Pagination::Paginator<MarketplaceDiscoveryClient, Model::ListListingAttributesRequest,
+                                      Pagination::ListListingAttributesPaginationTraits<MarketplaceDiscoveryClient>>;
 using ListPurchaseOptionsPaginator =
     Aws::Utils::Pagination::Paginator<MarketplaceDiscoveryClient, Model::ListPurchaseOptionsRequest,
                                       Pagination::ListPurchaseOptionsPaginationTraits<MarketplaceDiscoveryClient>>;

@@ -777,6 +777,8 @@
 #include <aws/bedrock-agentcore-control/model/ResourceConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ResourceLocation.h>
 #include <aws/bedrock-agentcore-control/model/ResourceType.h>
+#include <aws/bedrock-agentcore-control/model/ResponseInterceptionMode.h>
+#include <aws/bedrock-agentcore-control/model/ResponseStreamingConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RestApiMethod.h>
 #include <aws/bedrock-agentcore-control/model/ResultDestination.h>
 #include <aws/bedrock-agentcore-control/model/RootVolumeConfiguration.h>

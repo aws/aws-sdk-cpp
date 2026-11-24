@@ -10,8 +10,10 @@
 #include <aws/network-security-manager/model/ListAggregateResourceSynchronizationStatusesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListDeploymentSnapshotsPaginationTraits.h>
 #include <aws/network-security-manager/model/ListDeploymentsPaginationTraits.h>
+#include <aws/network-security-manager/model/ListEntityCoveragesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListPoliciesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListPolicySnapshotsPaginationTraits.h>
+#include <aws/network-security-manager/model/ListProtectedResourceCoveragesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListResourceAssociationsPaginationTraits.h>
 #include <aws/network-security-manager/model/ListResourceSynchronizationStatusesPaginationTraits.h>
 #include <aws/network-security-manager/model/ListRuleSnapshotsPaginationTraits.h>
@@ -36,11 +38,17 @@ using ListDeploymentsPaginator =
 using ListDeploymentSnapshotsPaginator =
     Aws::Utils::Pagination::Paginator<NetworkSecurityManagerClient, Model::ListDeploymentSnapshotsRequest,
                                       Pagination::ListDeploymentSnapshotsPaginationTraits<NetworkSecurityManagerClient>>;
+using ListEntityCoveragesPaginator =
+    Aws::Utils::Pagination::Paginator<NetworkSecurityManagerClient, Model::ListEntityCoveragesRequest,
+                                      Pagination::ListEntityCoveragesPaginationTraits<NetworkSecurityManagerClient>>;
 using ListPoliciesPaginator = Aws::Utils::Pagination::Paginator<NetworkSecurityManagerClient, Model::ListPoliciesRequest,
                                                                 Pagination::ListPoliciesPaginationTraits<NetworkSecurityManagerClient>>;
 using ListPolicySnapshotsPaginator =
     Aws::Utils::Pagination::Paginator<NetworkSecurityManagerClient, Model::ListPolicySnapshotsRequest,
                                       Pagination::ListPolicySnapshotsPaginationTraits<NetworkSecurityManagerClient>>;
+using ListProtectedResourceCoveragesPaginator =
+    Aws::Utils::Pagination::Paginator<NetworkSecurityManagerClient, Model::ListProtectedResourceCoveragesRequest,
+                                      Pagination::ListProtectedResourceCoveragesPaginationTraits<NetworkSecurityManagerClient>>;
 using ListResourceAssociationsPaginator =
     Aws::Utils::Pagination::Paginator<NetworkSecurityManagerClient, Model::ListResourceAssociationsRequest,
                                       Pagination::ListResourceAssociationsPaginationTraits<NetworkSecurityManagerClient>>;

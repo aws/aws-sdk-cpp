@@ -29,10 +29,32 @@ HostedZoneFeatures& HostedZoneFeatures::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(acceleratedRecoveryStatusNode.GetText()).c_str()));
       m_acceleratedRecoveryStatusHasBeenSet = true;
     }
+    XmlNode publicDNSFallbackStatusNode = resultNode.FirstChild("PublicDNSFallbackStatus");
+    if (!publicDNSFallbackStatusNode.IsNull()) {
+      m_publicDNSFallbackStatus = FeatureStatusMapper::GetFeatureStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publicDNSFallbackStatusNode.GetText()).c_str()));
+      m_publicDNSFallbackStatusHasBeenSet = true;
+    }
+    XmlNode changeHistoryNode = resultNode.FirstChild("ChangeHistory");
+    if (!changeHistoryNode.IsNull()) {
+      m_changeHistory = changeHistoryNode;
+      m_changeHistoryHasBeenSet = true;
+    }
     XmlNode failureReasonsNode = resultNode.FirstChild("FailureReasons");
     if (!failureReasonsNode.IsNull()) {
       m_failureReasons = failureReasonsNode;
       m_failureReasonsHasBeenSet = true;
+    }
+    XmlNode changeGuardrailsNode = resultNode.FirstChild("ChangeGuardrails");
+    if (!changeGuardrailsNode.IsNull()) {
+      XmlNode changeGuardrailsMember = changeGuardrailsNode.FirstChild("ChangeGuardrail");
+      m_changeGuardrailsHasBeenSet = !changeGuardrailsMember.IsNull();
+      while (!changeGuardrailsMember.IsNull()) {
+        m_changeGuardrails.push_back(changeGuardrailsMember);
+        changeGuardrailsMember = changeGuardrailsMember.NextNode("ChangeGuardrail");
+      }
+
+      m_changeGuardrailsHasBeenSet = true;
     }
   }
 
@@ -47,9 +69,27 @@ void HostedZoneFeatures::AddToNode(XmlNode& parentNode) const {
         AcceleratedRecoveryStatusMapper::GetNameForAcceleratedRecoveryStatus(m_acceleratedRecoveryStatus));
   }
 
+  if (m_publicDNSFallbackStatusHasBeenSet) {
+    XmlNode publicDNSFallbackStatusNode = parentNode.CreateChildElement("PublicDNSFallbackStatus");
+    publicDNSFallbackStatusNode.SetText(FeatureStatusMapper::GetNameForFeatureStatus(m_publicDNSFallbackStatus));
+  }
+
+  if (m_changeHistoryHasBeenSet) {
+    XmlNode changeHistoryNode = parentNode.CreateChildElement("ChangeHistory");
+    m_changeHistory.AddToNode(changeHistoryNode);
+  }
+
   if (m_failureReasonsHasBeenSet) {
     XmlNode failureReasonsNode = parentNode.CreateChildElement("FailureReasons");
     m_failureReasons.AddToNode(failureReasonsNode);
+  }
+
+  if (m_changeGuardrailsHasBeenSet) {
+    XmlNode changeGuardrailsParentNode = parentNode.CreateChildElement("ChangeGuardrails");
+    for (const auto& item : m_changeGuardrails) {
+      XmlNode changeGuardrailsNode = changeGuardrailsParentNode.CreateChildElement("ChangeGuardrail");
+      item.AddToNode(changeGuardrailsNode);
+    }
   }
 }
 

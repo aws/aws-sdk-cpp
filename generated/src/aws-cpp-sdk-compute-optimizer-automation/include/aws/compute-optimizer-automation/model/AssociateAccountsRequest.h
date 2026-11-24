@@ -59,8 +59,8 @@ class AssociateAccountsRequest : public ComputeOptimizerAutomationRequest {
 
   ///@{
   /**
-   * <p> A unique identifier to ensure idempotency of the request. Valid for 24 hours
-   * after creation. </p>
+   * <p> A unique identifier to ensure idempotency of the request. Valid for 30
+   * minutes after creation. </p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

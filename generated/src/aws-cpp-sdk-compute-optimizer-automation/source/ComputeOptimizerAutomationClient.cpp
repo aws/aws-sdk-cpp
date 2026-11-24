@@ -9,6 +9,7 @@
 #include <aws/compute-optimizer-automation/model/AssociateAccountsRequest.h>
 #include <aws/compute-optimizer-automation/model/CreateAutomationRuleRequest.h>
 #include <aws/compute-optimizer-automation/model/DeleteAutomationRuleRequest.h>
+#include <aws/compute-optimizer-automation/model/DeleteOrganizationEnrollmentConfigurationRequest.h>
 #include <aws/compute-optimizer-automation/model/DisassociateAccountsRequest.h>
 #include <aws/compute-optimizer-automation/model/GetAutomationEventRequest.h>
 #include <aws/compute-optimizer-automation/model/GetAutomationRuleRequest.h>
@@ -20,9 +21,12 @@
 #include <aws/compute-optimizer-automation/model/ListAutomationRulePreviewRequest.h>
 #include <aws/compute-optimizer-automation/model/ListAutomationRulePreviewSummariesRequest.h>
 #include <aws/compute-optimizer-automation/model/ListAutomationRulesRequest.h>
+#include <aws/compute-optimizer-automation/model/ListOrganizationEnrollmentConfigurationsRequest.h>
+#include <aws/compute-optimizer-automation/model/ListOrganizationalUnitsRequest.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionSummariesRequest.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionsRequest.h>
 #include <aws/compute-optimizer-automation/model/ListTagsForResourceRequest.h>
+#include <aws/compute-optimizer-automation/model/PutOrganizationEnrollmentConfigurationRequest.h>
 #include <aws/compute-optimizer-automation/model/RollbackAutomationEventRequest.h>
 #include <aws/compute-optimizer-automation/model/StartAutomationEventRequest.h>
 #include <aws/compute-optimizer-automation/model/TagResourceRequest.h>
@@ -225,6 +229,13 @@ DeleteAutomationRuleOutcome ComputeOptimizerAutomationClient::DeleteAutomationRu
                             : DeleteAutomationRuleOutcome(std::move(result.GetError()));
 }
 
+DeleteOrganizationEnrollmentConfigurationOutcome ComputeOptimizerAutomationClient::DeleteOrganizationEnrollmentConfiguration(
+    const DeleteOrganizationEnrollmentConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOrganizationEnrollmentConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteOrganizationEnrollmentConfigurationOutcome(std::move(result.GetError()));
+}
+
 DisassociateAccountsOutcome ComputeOptimizerAutomationClient::DisassociateAccounts(const DisassociateAccountsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisassociateAccountsOutcome(result.GetResultWithOwnership())
@@ -295,6 +306,20 @@ ListAutomationRulesOutcome ComputeOptimizerAutomationClient::ListAutomationRules
                             : ListAutomationRulesOutcome(std::move(result.GetError()));
 }
 
+ListOrganizationEnrollmentConfigurationsOutcome ComputeOptimizerAutomationClient::ListOrganizationEnrollmentConfigurations(
+    const ListOrganizationEnrollmentConfigurationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOrganizationEnrollmentConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationEnrollmentConfigurationsOutcome(std::move(result.GetError()));
+}
+
+ListOrganizationalUnitsOutcome ComputeOptimizerAutomationClient::ListOrganizationalUnits(
+    const ListOrganizationalUnitsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOrganizationalUnitsOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationalUnitsOutcome(std::move(result.GetError()));
+}
+
 ListRecommendedActionSummariesOutcome ComputeOptimizerAutomationClient::ListRecommendedActionSummaries(
     const ListRecommendedActionSummariesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -312,6 +337,13 @@ ListTagsForResourceOutcome ComputeOptimizerAutomationClient::ListTagsForResource
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
+}
+
+PutOrganizationEnrollmentConfigurationOutcome ComputeOptimizerAutomationClient::PutOrganizationEnrollmentConfiguration(
+    const PutOrganizationEnrollmentConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutOrganizationEnrollmentConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutOrganizationEnrollmentConfigurationOutcome(std::move(result.GetError()));
 }
 
 RollbackAutomationEventOutcome ComputeOptimizerAutomationClient::RollbackAutomationEvent(

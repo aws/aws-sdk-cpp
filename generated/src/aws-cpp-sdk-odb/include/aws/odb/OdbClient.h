@@ -1434,6 +1434,36 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the refreshable clones of the specified Autonomous
+   * Database.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseRefreshableClones">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAutonomousDatabaseRefreshableClonesOutcome ListAutonomousDatabaseRefreshableClones(
+      const Model::ListAutonomousDatabaseRefreshableClonesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAutonomousDatabaseRefreshableClones that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListAutonomousDatabaseRefreshableClonesRequestT = Model::ListAutonomousDatabaseRefreshableClonesRequest>
+  Model::ListAutonomousDatabaseRefreshableClonesOutcomeCallable ListAutonomousDatabaseRefreshableClonesCallable(
+      const ListAutonomousDatabaseRefreshableClonesRequestT& request) const {
+    return SubmitCallable(&OdbClient::ListAutonomousDatabaseRefreshableClones, request);
+  }
+
+  /**
+   * An Async wrapper for ListAutonomousDatabaseRefreshableClones that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListAutonomousDatabaseRefreshableClonesRequestT = Model::ListAutonomousDatabaseRefreshableClonesRequest>
+  void ListAutonomousDatabaseRefreshableClonesAsync(const ListAutonomousDatabaseRefreshableClonesRequestT& request,
+                                                    const ListAutonomousDatabaseRefreshableClonesResponseReceivedHandler& handler,
+                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::ListAutonomousDatabaseRefreshableClones, request, handler, context);
+  }
+
+  /**
    * <p>Lists the available Oracle Database software versions for Autonomous
    * Databases.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseVersions">AWS
@@ -2079,6 +2109,38 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
                                     const StartAutonomousDatabaseResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OdbClient::StartAutonomousDatabase, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a refresh of the specified refreshable clone Autonomous Database with
+   * data from its source database. The refresh runs asynchronously. To track its
+   * progress, check the <code>refreshableStatus</code> of the Autonomous
+   * Database.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/StartAutonomousDatabaseRefresh">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartAutonomousDatabaseRefreshOutcome StartAutonomousDatabaseRefresh(
+      const Model::StartAutonomousDatabaseRefreshRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartAutonomousDatabaseRefresh that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartAutonomousDatabaseRefreshRequestT = Model::StartAutonomousDatabaseRefreshRequest>
+  Model::StartAutonomousDatabaseRefreshOutcomeCallable StartAutonomousDatabaseRefreshCallable(
+      const StartAutonomousDatabaseRefreshRequestT& request) const {
+    return SubmitCallable(&OdbClient::StartAutonomousDatabaseRefresh, request);
+  }
+
+  /**
+   * An Async wrapper for StartAutonomousDatabaseRefresh that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename StartAutonomousDatabaseRefreshRequestT = Model::StartAutonomousDatabaseRefreshRequest>
+  void StartAutonomousDatabaseRefreshAsync(const StartAutonomousDatabaseRefreshRequestT& request,
+                                           const StartAutonomousDatabaseRefreshResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::StartAutonomousDatabaseRefresh, request, handler, context);
   }
 
   /**

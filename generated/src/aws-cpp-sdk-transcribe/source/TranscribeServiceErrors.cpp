@@ -5,14 +5,24 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/transcribe/TranscribeServiceErrors.h>
+#include <aws/transcribe/model/BadRequestException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::TranscribeService;
+using namespace Aws::TranscribeService::Model;
 
 namespace Aws {
 namespace TranscribeService {
+template <>
+AWS_TRANSCRIBESERVICE_API BadRequestException TranscribeServiceError::GetModeledError() {
+  assert(this->GetErrorType() == TranscribeServiceErrors::BAD_REQUEST);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return BadRequestException(payload.GetDecoder());
+}
+
 namespace TranscribeServiceErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");

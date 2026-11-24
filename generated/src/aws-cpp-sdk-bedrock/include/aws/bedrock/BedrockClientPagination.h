@@ -22,8 +22,10 @@
 #include <aws/bedrock/model/ListModelCustomizationJobsPaginationTraits.h>
 #include <aws/bedrock/model/ListModelImportJobsPaginationTraits.h>
 #include <aws/bedrock/model/ListModelInvocationJobsPaginationTraits.h>
+#include <aws/bedrock/model/ListProjectsPaginationTraits.h>
 #include <aws/bedrock/model/ListPromptRoutersPaginationTraits.h>
 #include <aws/bedrock/model/ListProvisionedModelThroughputsPaginationTraits.h>
+#include <aws/bedrock/model/ListTrustedAccessProgramsPaginationTraits.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 namespace Aws {
@@ -73,11 +75,16 @@ using ListModelImportJobsPaginator = Aws::Utils::Pagination::Paginator<BedrockCl
 using ListModelInvocationJobsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockClient, Model::ListModelInvocationJobsRequest,
                                       Pagination::ListModelInvocationJobsPaginationTraits<BedrockClient>>;
+using ListProjectsPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockClient, Model::ListProjectsRequest, Pagination::ListProjectsPaginationTraits<BedrockClient>>;
 using ListPromptRoutersPaginator = Aws::Utils::Pagination::Paginator<BedrockClient, Model::ListPromptRoutersRequest,
                                                                      Pagination::ListPromptRoutersPaginationTraits<BedrockClient>>;
 using ListProvisionedModelThroughputsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockClient, Model::ListProvisionedModelThroughputsRequest,
                                       Pagination::ListProvisionedModelThroughputsPaginationTraits<BedrockClient>>;
+using ListTrustedAccessProgramsPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockClient, Model::ListTrustedAccessProgramsRequest,
+                                      Pagination::ListTrustedAccessProgramsPaginationTraits<BedrockClient>>;
 
 }  // namespace Bedrock
 }  // namespace Aws

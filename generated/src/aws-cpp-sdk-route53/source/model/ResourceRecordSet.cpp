@@ -108,6 +108,11 @@ ResourceRecordSet& ResourceRecordSet::operator=(const XmlNode& xmlNode) {
       m_geoProximityLocation = geoProximityLocationNode;
       m_geoProximityLocationHasBeenSet = true;
     }
+    XmlNode aZAffinityNode = resultNode.FirstChild("AZAffinity");
+    if (!aZAffinityNode.IsNull()) {
+      m_aZAffinity = aZAffinityNode;
+      m_aZAffinityHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -197,6 +202,11 @@ void ResourceRecordSet::AddToNode(XmlNode& parentNode) const {
   if (m_geoProximityLocationHasBeenSet) {
     XmlNode geoProximityLocationNode = parentNode.CreateChildElement("GeoProximityLocation");
     m_geoProximityLocation.AddToNode(geoProximityLocationNode);
+  }
+
+  if (m_aZAffinityHasBeenSet) {
+    XmlNode aZAffinityNode = parentNode.CreateChildElement("AZAffinity");
+    m_aZAffinity.AddToNode(aZAffinityNode);
   }
 }
 

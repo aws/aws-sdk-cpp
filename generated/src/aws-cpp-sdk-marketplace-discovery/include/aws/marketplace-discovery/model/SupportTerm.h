@@ -21,7 +21,7 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Defines a support term that includes the refund policy for the
+ * <p>Describes a support term that includes the refund policy for the
  * offer.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/SupportTerm">AWS
  * API Reference</a></p>

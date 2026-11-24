@@ -785,6 +785,64 @@ class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the details of the specified event for the specified web ACL,
+   * including the event actors that are associated with the event and the event
+   * timeline. Currently, this operation supports API Security Amazon Web Services
+   * Managed Rules.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetEvent">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::GetEventOutcome GetEvent(const Model::GetEventRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetEvent that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetEventRequestT = Model::GetEventRequest>
+  Model::GetEventOutcomeCallable GetEventCallable(const GetEventRequestT& request) const {
+    return SubmitCallable(&WAFV2Client::GetEvent, request);
+  }
+
+  /**
+   * An Async wrapper for GetEvent that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetEventRequestT = Model::GetEventRequest>
+  void GetEventAsync(const GetEventRequestT& request, const GetEventResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WAFV2Client::GetEvent, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the details of the specified event actor. An event actor is a
+   * client that is associated with one or more events. The details include the
+   * latest observed attributes of the event actor, the events that it's associated
+   * with, and the history of changes to its attributes. Currently, this operation
+   * supports API Security Amazon Web Services Managed Rules.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetEventActor">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetEventActorOutcome GetEventActor(const Model::GetEventActorRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetEventActor that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetEventActorRequestT = Model::GetEventActorRequest>
+  Model::GetEventActorOutcomeCallable GetEventActorCallable(const GetEventActorRequestT& request) const {
+    return SubmitCallable(&WAFV2Client::GetEventActor, request);
+  }
+
+  /**
+   * An Async wrapper for GetEventActor that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetEventActorRequestT = Model::GetEventActorRequest>
+  void GetEventActorAsync(const GetEventActorRequestT& request, const GetEventActorResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WAFV2Client::GetEventActor, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the specified <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetIPSet">AWS API
    * Reference</a></p>
@@ -1359,6 +1417,106 @@ class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient,
                                            const ListAvailableManagedRuleGroupsResponseReceivedHandler& handler,
                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&WAFV2Client::ListAvailableManagedRuleGroups, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a paginated list of the event actors in your account that are
+   * associated with events in the specified time window. An event actor is a client
+   * that is associated with one or more events. The operation returns up to the top
+   * 100 event actors by event count. Results are paginated. Use the
+   * <code>NextMarker</code> value from the response to retrieve the next batch of
+   * results. Currently, this operation supports API Security Amazon Web Services
+   * Managed Rules.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListEventActors">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListEventActorsOutcome ListEventActors(const Model::ListEventActorsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListEventActors that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListEventActorsRequestT = Model::ListEventActorsRequest>
+  Model::ListEventActorsOutcomeCallable ListEventActorsCallable(const ListEventActorsRequestT& request) const {
+    return SubmitCallable(&WAFV2Client::ListEventActors, request);
+  }
+
+  /**
+   * An Async wrapper for ListEventActors that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListEventActorsRequestT = Model::ListEventActorsRequest>
+  void ListEventActorsAsync(const ListEventActorsRequestT& request, const ListEventActorsResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WAFV2Client::ListEventActors, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a paginated list of event summaries for your account. Use this
+   * operation to monitor and investigate potential threats to the resources that
+   * your web ACLs protect. Results are paginated. Use the <code>NextMarker</code>
+   * value from the response to retrieve the next batch of results. Currently, this
+   * operation supports API Security Amazon Web Services Managed Rules.</p> <p>You
+   * can filter the results by time window, event category, resource, and API
+   * pattern, and sort them by start time, end time, or confidence.</p> <p>To
+   * retrieve the events for a single web ACL, use <a>ListEventsByWebACL</a>. To
+   * retrieve the full details of a single event, use <a>GetEvent</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListEvents">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListEventsOutcome ListEvents(const Model::ListEventsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListEventsRequestT = Model::ListEventsRequest>
+  Model::ListEventsOutcomeCallable ListEventsCallable(const ListEventsRequestT& request) const {
+    return SubmitCallable(&WAFV2Client::ListEvents, request);
+  }
+
+  /**
+   * An Async wrapper for ListEvents that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListEventsRequestT = Model::ListEventsRequest>
+  void ListEventsAsync(const ListEventsRequestT& request, const ListEventsResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WAFV2Client::ListEvents, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a paginated list of event summaries for the specified web ACL. Use
+   * this operation to monitor and investigate potential threats to the resources
+   * that the web ACL protects. Results are paginated. Use the
+   * <code>NextMarker</code> value from the response to retrieve the next batch of
+   * results. Currently, this operation supports API Security Amazon Web Services
+   * Managed Rules.</p> <p>You can filter the results by time window, event category,
+   * resource, and API pattern, and sort them by start time, end time, or
+   * confidence.</p> <p>To retrieve the events for all of the web ACLs in your
+   * account, use <a>ListEvents</a>. To retrieve the full details of a single event,
+   * use <a>GetEvent</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListEventsByWebACL">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListEventsByWebACLOutcome ListEventsByWebACL(const Model::ListEventsByWebACLRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListEventsByWebACL that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListEventsByWebACLRequestT = Model::ListEventsByWebACLRequest>
+  Model::ListEventsByWebACLOutcomeCallable ListEventsByWebACLCallable(const ListEventsByWebACLRequestT& request) const {
+    return SubmitCallable(&WAFV2Client::ListEventsByWebACL, request);
+  }
+
+  /**
+   * An Async wrapper for ListEventsByWebACL that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListEventsByWebACLRequestT = Model::ListEventsByWebACLRequest>
+  void ListEventsByWebACLAsync(const ListEventsByWebACLRequestT& request, const ListEventsByWebACLResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WAFV2Client::ListEventsByWebACL, request, handler, context);
   }
 
   /**

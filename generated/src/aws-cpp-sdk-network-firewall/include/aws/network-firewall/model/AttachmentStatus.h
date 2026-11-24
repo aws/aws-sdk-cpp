@@ -10,7 +10,7 @@
 namespace Aws {
 namespace NetworkFirewall {
 namespace Model {
-enum class AttachmentStatus { NOT_SET, CREATING, DELETING, FAILED, ERROR_, SCALING, READY };
+enum class AttachmentStatus { NOT_SET, CREATING, DELETING, FAILED, ERROR_, SCALING, READY, STANDBY };
 
 namespace AttachmentStatusMapper {
 AWS_NETWORKFIREWALL_API AttachmentStatus GetAttachmentStatusForName(const Aws::String& name);

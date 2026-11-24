@@ -3111,6 +3111,59 @@ class Capabilities {
 
   ///@{
   /**
+   * <p>The ability to create, update, and use local Model Context Protocol (MCP)
+   * actions. This capability includes <code>CreateAndUpdateLocalMCPAction</code> and
+   * <code>UseLocalMCPAction</code>.</p>
+   */
+  inline CapabilityState GetLocalMCPAction() const { return m_localMCPAction; }
+  inline bool LocalMCPActionHasBeenSet() const { return m_localMCPActionHasBeenSet; }
+  inline void SetLocalMCPAction(CapabilityState value) {
+    m_localMCPActionHasBeenSet = true;
+    m_localMCPAction = value;
+  }
+  inline Capabilities& WithLocalMCPAction(CapabilityState value) {
+    SetLocalMCPAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update local Model Context Protocol (MCP) server
+   * configurations. Denying this capability does not by itself deny use of
+   * previously configured local MCP servers.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateLocalMCPAction() const { return m_createAndUpdateLocalMCPAction; }
+  inline bool CreateAndUpdateLocalMCPActionHasBeenSet() const { return m_createAndUpdateLocalMCPActionHasBeenSet; }
+  inline void SetCreateAndUpdateLocalMCPAction(CapabilityState value) {
+    m_createAndUpdateLocalMCPActionHasBeenSet = true;
+    m_createAndUpdateLocalMCPAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateLocalMCPAction(CapabilityState value) {
+    SetCreateAndUpdateLocalMCPAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to start local Model Context Protocol (MCP) servers and use their
+   * actions, including actions from previously configured local MCP servers.</p>
+   */
+  inline CapabilityState GetUseLocalMCPAction() const { return m_useLocalMCPAction; }
+  inline bool UseLocalMCPActionHasBeenSet() const { return m_useLocalMCPActionHasBeenSet; }
+  inline void SetUseLocalMCPAction(CapabilityState value) {
+    m_useLocalMCPActionHasBeenSet = true;
+    m_useLocalMCPAction = value;
+  }
+  inline Capabilities& WithUseLocalMCPAction(CapabilityState value) {
+    SetUseLocalMCPAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ability to perform actions using OpenAPI Specification connectors.</p>
    */
   inline CapabilityState GetOpenAPIAction() const { return m_openAPIAction; }
@@ -9568,6 +9621,12 @@ class Capabilities {
 
   CapabilityState m_useMCPAction{CapabilityState::NOT_SET};
 
+  CapabilityState m_localMCPAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateLocalMCPAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useLocalMCPAction{CapabilityState::NOT_SET};
+
   CapabilityState m_openAPIAction{CapabilityState::NOT_SET};
 
   CapabilityState m_createAndUpdateOpenAPIAction{CapabilityState::NOT_SET};
@@ -10520,6 +10579,9 @@ class Capabilities {
   bool m_createAndUpdateMCPActionHasBeenSet = false;
   bool m_shareMCPActionHasBeenSet = false;
   bool m_useMCPActionHasBeenSet = false;
+  bool m_localMCPActionHasBeenSet = false;
+  bool m_createAndUpdateLocalMCPActionHasBeenSet = false;
+  bool m_useLocalMCPActionHasBeenSet = false;
   bool m_openAPIActionHasBeenSet = false;
   bool m_createAndUpdateOpenAPIActionHasBeenSet = false;
   bool m_shareOpenAPIActionHasBeenSet = false;

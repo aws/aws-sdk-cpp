@@ -153,7 +153,7 @@ class AmazonMachineImageFulfillmentOption {
 
   ///@{
   /**
-   * <p>Recommended instance types for running this AMI.</p>
+   * <p>The recommended instance types for running this AMI.</p>
    */
   inline const AmazonMachineImageRecommendation& GetRecommendation() const { return m_recommendation; }
   inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
@@ -171,7 +171,7 @@ class AmazonMachineImageFulfillmentOption {
 
   ///@{
   /**
-   * <p>Release notes describing changes in this version of the fulfillment
+   * <p>Release notes that describe the changes in this version of the fulfillment
    * option.</p>
    */
   inline const Aws::String& GetReleaseNotes() const { return m_releaseNotes; }
@@ -280,7 +280,8 @@ class AmazonMachineImageFulfillmentOption {
 
   ///@{
   /**
-   * <p>The supported Amazon EBS volume configuration for the AMI.</p>
+   * <p>The supported Amazon Elastic Block Store (Amazon EBS) volume configuration
+   * for the AMI.</p>
    */
   inline const AmazonMachineImageEbsVolume& GetEbsVolume() const { return m_ebsVolume; }
   inline bool EbsVolumeHasBeenSet() const { return m_ebsVolumeHasBeenSet; }

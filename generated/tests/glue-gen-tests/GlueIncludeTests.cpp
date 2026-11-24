@@ -32,8 +32,11 @@
 #include <aws/glue/model/AnnotationError.h>
 #include <aws/glue/model/ApplyMapping.h>
 #include <aws/glue/model/AssetFormEntry.h>
-#include <aws/glue/model/AssetTypeFormReference.h>
+#include <aws/glue/model/AssetFormInput.h>
+#include <aws/glue/model/AssetTypeFormOutput.h>
 #include <aws/glue/model/AssetTypeItem.h>
+#include <aws/glue/model/AssetsExport.h>
+#include <aws/glue/model/AssetsExportResult.h>
 #include <aws/glue/model/AssociateGlossaryTermsRequest.h>
 #include <aws/glue/model/AssociateGlossaryTermsResult.h>
 #include <aws/glue/model/AthenaConnectorSource.h>
@@ -339,8 +342,6 @@
 #include <aws/glue/model/DecimalNumber.h>
 #include <aws/glue/model/DeleteAssetRequest.h>
 #include <aws/glue/model/DeleteAssetResult.h>
-#include <aws/glue/model/DeleteAssetTypeRequest.h>
-#include <aws/glue/model/DeleteAssetTypeResult.h>
 #include <aws/glue/model/DeleteAttachmentRequest.h>
 #include <aws/glue/model/DeleteAttachmentResult.h>
 #include <aws/glue/model/DeleteBehavior.h>
@@ -979,8 +980,6 @@
 #include <aws/glue/model/PublishDataQualityResultV2Result.h>
 #include <aws/glue/model/PutAssetRequest.h>
 #include <aws/glue/model/PutAssetResult.h>
-#include <aws/glue/model/PutAssetTypeRequest.h>
-#include <aws/glue/model/PutAssetTypeResult.h>
 #include <aws/glue/model/PutAttachmentRequest.h>
 #include <aws/glue/model/PutAttachmentResult.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsRequest.h>
@@ -1066,6 +1065,9 @@
 #include <aws/glue/model/S3JsonSource.h>
 #include <aws/glue/model/S3ParquetSource.h>
 #include <aws/glue/model/S3SourceAdditionalOptions.h>
+#include <aws/glue/model/S3TablesConfiguration.h>
+#include <aws/glue/model/S3TablesConfigurationResult.h>
+#include <aws/glue/model/S3TablesExportState.h>
 #include <aws/glue/model/S3Target.h>
 #include <aws/glue/model/Schedule.h>
 #include <aws/glue/model/ScheduleState.h>
@@ -1086,7 +1088,7 @@
 #include <aws/glue/model/SearchAssetsResult.h>
 #include <aws/glue/model/SearchAttributeFilter.h>
 #include <aws/glue/model/SearchFilterClause.h>
-#include <aws/glue/model/SearchFilterOperator.h>
+#include <aws/glue/model/SearchFilterComparator.h>
 #include <aws/glue/model/SearchFilterValue.h>
 #include <aws/glue/model/SearchMapFilter.h>
 #include <aws/glue/model/SearchMapFilterValue.h>

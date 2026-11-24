@@ -6,6 +6,9 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/NumberFilter.h>
+#include <aws/inspector2/model/PurlQualifierFilter.h>
+#include <aws/inspector2/model/RuntimeReachabilityFilter.h>
+#include <aws/inspector2/model/RuntimeReachabilityReasonFilter.h>
 #include <aws/inspector2/model/StringFilter.h>
 
 #include <utility>
@@ -177,6 +180,67 @@ class PackageFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains details on the runtime reachability status of the
+   * package to filter on. For more information, see <a
+   * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding
+   * runtime reachability</a> in the Amazon Inspector user guide.</p>
+   */
+  inline const RuntimeReachabilityFilter& GetRuntimeReachability() const { return m_runtimeReachability; }
+  inline bool RuntimeReachabilityHasBeenSet() const { return m_runtimeReachabilityHasBeenSet; }
+  template <typename RuntimeReachabilityT = RuntimeReachabilityFilter>
+  void SetRuntimeReachability(RuntimeReachabilityT&& value) {
+    m_runtimeReachabilityHasBeenSet = true;
+    m_runtimeReachability = std::forward<RuntimeReachabilityT>(value);
+  }
+  template <typename RuntimeReachabilityT = RuntimeReachabilityFilter>
+  PackageFilter& WithRuntimeReachability(RuntimeReachabilityT&& value) {
+    SetRuntimeReachability(std::forward<RuntimeReachabilityT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains details on the runtime reachability reason of the
+   * package to filter on. For more information, see <a
+   * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding
+   * runtime reachability</a> in the Amazon Inspector user guide.</p>
+   */
+  inline const RuntimeReachabilityReasonFilter& GetRuntimeReachabilityReason() const { return m_runtimeReachabilityReason; }
+  inline bool RuntimeReachabilityReasonHasBeenSet() const { return m_runtimeReachabilityReasonHasBeenSet; }
+  template <typename RuntimeReachabilityReasonT = RuntimeReachabilityReasonFilter>
+  void SetRuntimeReachabilityReason(RuntimeReachabilityReasonT&& value) {
+    m_runtimeReachabilityReasonHasBeenSet = true;
+    m_runtimeReachabilityReason = std::forward<RuntimeReachabilityReasonT>(value);
+  }
+  template <typename RuntimeReachabilityReasonT = RuntimeReachabilityReasonFilter>
+  PackageFilter& WithRuntimeReachabilityReason(RuntimeReachabilityReasonT&& value) {
+    SetRuntimeReachabilityReason(std::forward<RuntimeReachabilityReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains details on the package URL (purl) qualifier to filter
+   * on.</p>
+   */
+  inline const PurlQualifierFilter& GetPurlQualifier() const { return m_purlQualifier; }
+  inline bool PurlQualifierHasBeenSet() const { return m_purlQualifierHasBeenSet; }
+  template <typename PurlQualifierT = PurlQualifierFilter>
+  void SetPurlQualifier(PurlQualifierT&& value) {
+    m_purlQualifierHasBeenSet = true;
+    m_purlQualifier = std::forward<PurlQualifierT>(value);
+  }
+  template <typename PurlQualifierT = PurlQualifierFilter>
+  PackageFilter& WithPurlQualifier(PurlQualifierT&& value) {
+    SetPurlQualifier(std::forward<PurlQualifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   StringFilter m_name;
 
@@ -193,6 +257,12 @@ class PackageFilter {
   StringFilter m_sourceLambdaLayerArn;
 
   StringFilter m_filePath;
+
+  RuntimeReachabilityFilter m_runtimeReachability;
+
+  RuntimeReachabilityReasonFilter m_runtimeReachabilityReason;
+
+  PurlQualifierFilter m_purlQualifier;
   bool m_nameHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_epochHasBeenSet = false;
@@ -201,6 +271,9 @@ class PackageFilter {
   bool m_sourceLayerHashHasBeenSet = false;
   bool m_sourceLambdaLayerArnHasBeenSet = false;
   bool m_filePathHasBeenSet = false;
+  bool m_runtimeReachabilityHasBeenSet = false;
+  bool m_runtimeReachabilityReasonHasBeenSet = false;
+  bool m_purlQualifierHasBeenSet = false;
 };
 
 }  // namespace Model

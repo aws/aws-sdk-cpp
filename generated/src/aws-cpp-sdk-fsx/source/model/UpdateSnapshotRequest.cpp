@@ -27,6 +27,10 @@ Aws::String UpdateSnapshotRequest::SerializePayload() const {
     payload.WithString("SnapshotId", m_snapshotId);
   }
 
+  if (m_ontapConfigurationHasBeenSet) {
+    payload.WithObject("OntapConfiguration", m_ontapConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -855,6 +855,19 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
     m_useMCPAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseMCPAction"));
     m_useMCPActionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LocalMCPAction")) {
+    m_localMCPAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("LocalMCPAction"));
+    m_localMCPActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateLocalMCPAction")) {
+    m_createAndUpdateLocalMCPAction =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateLocalMCPAction"));
+    m_createAndUpdateLocalMCPActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseLocalMCPAction")) {
+    m_useLocalMCPAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseLocalMCPAction"));
+    m_useLocalMCPActionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("OpenAPIAction")) {
     m_openAPIAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("OpenAPIAction"));
     m_openAPIActionHasBeenSet = true;
@@ -3243,6 +3256,18 @@ JsonValue Capabilities::Jsonize() const {
 
   if (m_useMCPActionHasBeenSet) {
     payload.WithString("UseMCPAction", CapabilityStateMapper::GetNameForCapabilityState(m_useMCPAction));
+  }
+
+  if (m_localMCPActionHasBeenSet) {
+    payload.WithString("LocalMCPAction", CapabilityStateMapper::GetNameForCapabilityState(m_localMCPAction));
+  }
+
+  if (m_createAndUpdateLocalMCPActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateLocalMCPAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateLocalMCPAction));
+  }
+
+  if (m_useLocalMCPActionHasBeenSet) {
+    payload.WithString("UseLocalMCPAction", CapabilityStateMapper::GetNameForCapabilityState(m_useLocalMCPAction));
   }
 
   if (m_openAPIActionHasBeenSet) {

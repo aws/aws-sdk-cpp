@@ -1,0 +1,73 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/agent-registry-control/model/CreatePublisherResult.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::AgentRegistryControl::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+CreatePublisherResult::CreatePublisherResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+CreatePublisherResult& CreatePublisherResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("value")) {
+    m_value = jsonValue.GetObject("value");
+    m_valueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("identifierType")) {
+    m_identifierType = IdentifierTypeMapper::GetIdentifierTypeForName(jsonValue.GetString("identifierType"));
+    m_identifierTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status = VerificationStatusMapper::GetVerificationStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("statusReason")) {
+    m_statusReason = jsonValue.GetString("statusReason");
+    m_statusReasonHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("domainChallenge")) {
+    m_domainChallenge = jsonValue.GetObject("domainChallenge");
+    m_domainChallengeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("tags")) {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for (auto& tagsItem : tagsJsonMap) {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("updatedAt")) {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("publisherArn")) {
+    m_publisherArn = jsonValue.GetString("publisherArn");
+    m_publisherArnHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

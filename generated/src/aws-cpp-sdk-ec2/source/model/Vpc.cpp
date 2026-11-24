@@ -83,6 +83,17 @@ Vpc& Vpc::operator=(const XmlNode& xmlNode) {
       m_blockPublicAccessStates = blockPublicAccessStatesNode;
       m_blockPublicAccessStatesHasBeenSet = true;
     }
+    XmlNode networkFirewallAssociationsNode = resultNode.FirstChild("networkFirewallAssociationSet");
+    if (!networkFirewallAssociationsNode.IsNull()) {
+      XmlNode networkFirewallAssociationsMember = networkFirewallAssociationsNode.FirstChild("item");
+      m_networkFirewallAssociationsHasBeenSet = !networkFirewallAssociationsMember.IsNull();
+      while (!networkFirewallAssociationsMember.IsNull()) {
+        m_networkFirewallAssociations.push_back(networkFirewallAssociationsMember);
+        networkFirewallAssociationsMember = networkFirewallAssociationsMember.NextNode("item");
+      }
+
+      m_networkFirewallAssociationsHasBeenSet = true;
+    }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if (!vpcIdNode.IsNull()) {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
@@ -162,6 +173,16 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
     m_blockPublicAccessStates.OutputToStream(oStream, blockPublicAccessStatesLocationAndMemberSs.str().c_str());
   }
 
+  if (m_networkFirewallAssociationsHasBeenSet) {
+    unsigned networkFirewallAssociationsIdx = 1;
+    for (auto& item : m_networkFirewallAssociations) {
+      Aws::StringStream networkFirewallAssociationsSs;
+      networkFirewallAssociationsSs << location << index << locationValue << ".NetworkFirewallAssociationSet."
+                                    << networkFirewallAssociationsIdx++;
+      item.OutputToStream(oStream, networkFirewallAssociationsSs.str().c_str());
+    }
+  }
+
   if (m_vpcIdHasBeenSet) {
     oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
@@ -223,6 +244,14 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const {
     Aws::String blockPublicAccessStatesLocationAndMember(location);
     blockPublicAccessStatesLocationAndMember += ".BlockPublicAccessStates";
     m_blockPublicAccessStates.OutputToStream(oStream, blockPublicAccessStatesLocationAndMember.c_str());
+  }
+  if (m_networkFirewallAssociationsHasBeenSet) {
+    unsigned networkFirewallAssociationsIdx = 1;
+    for (auto& item : m_networkFirewallAssociations) {
+      Aws::StringStream networkFirewallAssociationsSs;
+      networkFirewallAssociationsSs << location << ".NetworkFirewallAssociationSet." << networkFirewallAssociationsIdx++;
+      item.OutputToStream(oStream, networkFirewallAssociationsSs.str().c_str());
+    }
   }
   if (m_vpcIdHasBeenSet) {
     oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/FSx_EXPORTS.h>
+#include <aws/fsx/model/OntapError.h>
 
 #include <utility>
 
@@ -47,9 +48,31 @@ class LifecycleTransitionReason {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The error returned by ONTAP when an operation on the resource fails. Returned
+   * only for certain FSx for ONTAP resources.</p>
+   */
+  inline const OntapError& GetOntapError() const { return m_ontapError; }
+  inline bool OntapErrorHasBeenSet() const { return m_ontapErrorHasBeenSet; }
+  template <typename OntapErrorT = OntapError>
+  void SetOntapError(OntapErrorT&& value) {
+    m_ontapErrorHasBeenSet = true;
+    m_ontapError = std::forward<OntapErrorT>(value);
+  }
+  template <typename OntapErrorT = OntapError>
+  LifecycleTransitionReason& WithOntapError(OntapErrorT&& value) {
+    SetOntapError(std::forward<OntapErrorT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_message;
+
+  OntapError m_ontapError;
   bool m_messageHasBeenSet = false;
+  bool m_ontapErrorHasBeenSet = false;
 };
 
 }  // namespace Model

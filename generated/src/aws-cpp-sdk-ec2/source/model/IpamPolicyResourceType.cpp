@@ -19,6 +19,8 @@ static const int alb_HASH = HashingUtils::HashString("alb");
 static const int eip_HASH = HashingUtils::HashString("eip");
 static const int rds_HASH = HashingUtils::HashString("rds");
 static const int rnat_HASH = HashingUtils::HashString("rnat");
+static const int lambda_network_connector_HASH = HashingUtils::HashString("lambda-network-connector");
+static const int igw_firewall_HASH = HashingUtils::HashString("igw-firewall");
 
 IpamPolicyResourceType GetIpamPolicyResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +32,10 @@ IpamPolicyResourceType GetIpamPolicyResourceTypeForName(const Aws::String& name)
     return IpamPolicyResourceType::rds;
   } else if (hashCode == rnat_HASH) {
     return IpamPolicyResourceType::rnat;
+  } else if (hashCode == lambda_network_connector_HASH) {
+    return IpamPolicyResourceType::lambda_network_connector;
+  } else if (hashCode == igw_firewall_HASH) {
+    return IpamPolicyResourceType::igw_firewall;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +58,10 @@ Aws::String GetNameForIpamPolicyResourceType(IpamPolicyResourceType enumValue) {
       return "rds";
     case IpamPolicyResourceType::rnat:
       return "rnat";
+    case IpamPolicyResourceType::lambda_network_connector:
+      return "lambda-network-connector";
+    case IpamPolicyResourceType::igw_firewall:
+      return "igw-firewall";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

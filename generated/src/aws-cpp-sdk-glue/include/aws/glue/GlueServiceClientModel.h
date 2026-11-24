@@ -81,7 +81,6 @@
 #include <aws/glue/model/CreateUserDefinedFunctionResult.h>
 #include <aws/glue/model/CreateWorkflowResult.h>
 #include <aws/glue/model/DeleteAssetResult.h>
-#include <aws/glue/model/DeleteAssetTypeResult.h>
 #include <aws/glue/model/DeleteAttachmentResult.h>
 #include <aws/glue/model/DeleteBlueprintResult.h>
 #include <aws/glue/model/DeleteCatalogResult.h>
@@ -309,9 +308,9 @@
 #include <aws/glue/model/ModifyIntegrationResult.h>
 #include <aws/glue/model/PublishDataQualityResultV2Result.h>
 #include <aws/glue/model/PutAssetResult.h>
-#include <aws/glue/model/PutAssetTypeResult.h>
 #include <aws/glue/model/PutAttachmentResult.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsResult.h>
+#include <aws/glue/model/PutDataCatalogExportConfigurationRequest.h>
 #include <aws/glue/model/PutDataCatalogExportConfigurationResult.h>
 #include <aws/glue/model/PutDataQualityProfileAnnotationResult.h>
 #include <aws/glue/model/PutFormTypeResult.h>
@@ -488,7 +487,6 @@ class CreateUsageProfileRequest;
 class CreateUserDefinedFunctionRequest;
 class CreateWorkflowRequest;
 class DeleteAssetRequest;
-class DeleteAssetTypeRequest;
 class DeleteAttachmentRequest;
 class DeleteBlueprintRequest;
 class DeleteCatalogRequest;
@@ -664,7 +662,6 @@ class ListWorkflowsRequest;
 class ModifyIntegrationRequest;
 class PublishDataQualityResultV2Request;
 class PutAssetRequest;
-class PutAssetTypeRequest;
 class PutAttachmentRequest;
 class PutDataCatalogEncryptionSettingsRequest;
 class PutDataCatalogExportConfigurationRequest;
@@ -805,7 +802,6 @@ typedef Aws::Utils::Outcome<CreateUsageProfileResult, GlueError> CreateUsageProf
 typedef Aws::Utils::Outcome<CreateUserDefinedFunctionResult, GlueError> CreateUserDefinedFunctionOutcome;
 typedef Aws::Utils::Outcome<CreateWorkflowResult, GlueError> CreateWorkflowOutcome;
 typedef Aws::Utils::Outcome<DeleteAssetResult, GlueError> DeleteAssetOutcome;
-typedef Aws::Utils::Outcome<DeleteAssetTypeResult, GlueError> DeleteAssetTypeOutcome;
 typedef Aws::Utils::Outcome<DeleteAttachmentResult, GlueError> DeleteAttachmentOutcome;
 typedef Aws::Utils::Outcome<DeleteBlueprintResult, GlueError> DeleteBlueprintOutcome;
 typedef Aws::Utils::Outcome<DeleteCatalogResult, GlueError> DeleteCatalogOutcome;
@@ -981,7 +977,6 @@ typedef Aws::Utils::Outcome<ListWorkflowsResult, GlueError> ListWorkflowsOutcome
 typedef Aws::Utils::Outcome<ModifyIntegrationResult, GlueError> ModifyIntegrationOutcome;
 typedef Aws::Utils::Outcome<PublishDataQualityResultV2Result, GlueError> PublishDataQualityResultV2Outcome;
 typedef Aws::Utils::Outcome<PutAssetResult, GlueError> PutAssetOutcome;
-typedef Aws::Utils::Outcome<PutAssetTypeResult, GlueError> PutAssetTypeOutcome;
 typedef Aws::Utils::Outcome<PutAttachmentResult, GlueError> PutAttachmentOutcome;
 typedef Aws::Utils::Outcome<PutDataCatalogEncryptionSettingsResult, GlueError> PutDataCatalogEncryptionSettingsOutcome;
 typedef Aws::Utils::Outcome<PutDataCatalogExportConfigurationResult, GlueError> PutDataCatalogExportConfigurationOutcome;
@@ -1122,7 +1117,6 @@ typedef std::future<CreateUsageProfileOutcome> CreateUsageProfileOutcomeCallable
 typedef std::future<CreateUserDefinedFunctionOutcome> CreateUserDefinedFunctionOutcomeCallable;
 typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
 typedef std::future<DeleteAssetOutcome> DeleteAssetOutcomeCallable;
-typedef std::future<DeleteAssetTypeOutcome> DeleteAssetTypeOutcomeCallable;
 typedef std::future<DeleteAttachmentOutcome> DeleteAttachmentOutcomeCallable;
 typedef std::future<DeleteBlueprintOutcome> DeleteBlueprintOutcomeCallable;
 typedef std::future<DeleteCatalogOutcome> DeleteCatalogOutcomeCallable;
@@ -1298,7 +1292,6 @@ typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
 typedef std::future<ModifyIntegrationOutcome> ModifyIntegrationOutcomeCallable;
 typedef std::future<PublishDataQualityResultV2Outcome> PublishDataQualityResultV2OutcomeCallable;
 typedef std::future<PutAssetOutcome> PutAssetOutcomeCallable;
-typedef std::future<PutAssetTypeOutcome> PutAssetTypeOutcomeCallable;
 typedef std::future<PutAttachmentOutcome> PutAttachmentOutcomeCallable;
 typedef std::future<PutDataCatalogEncryptionSettingsOutcome> PutDataCatalogEncryptionSettingsOutcomeCallable;
 typedef std::future<PutDataCatalogExportConfigurationOutcome> PutDataCatalogExportConfigurationOutcomeCallable;
@@ -1571,9 +1564,6 @@ typedef std::function<void(const GlueClient*, const Model::CreateWorkflowRequest
 typedef std::function<void(const GlueClient*, const Model::DeleteAssetRequest&, const Model::DeleteAssetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAssetResponseReceivedHandler;
-typedef std::function<void(const GlueClient*, const Model::DeleteAssetTypeRequest&, const Model::DeleteAssetTypeOutcome&,
-                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    DeleteAssetTypeResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::DeleteAttachmentRequest&, const Model::DeleteAttachmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAttachmentResponseReceivedHandler;
@@ -2127,9 +2117,6 @@ typedef std::function<void(const GlueClient*, const Model::PublishDataQualityRes
 typedef std::function<void(const GlueClient*, const Model::PutAssetRequest&, const Model::PutAssetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutAssetResponseReceivedHandler;
-typedef std::function<void(const GlueClient*, const Model::PutAssetTypeRequest&, const Model::PutAssetTypeOutcome&,
-                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
-    PutAssetTypeResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::PutAttachmentRequest&, const Model::PutAttachmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutAttachmentResponseReceivedHandler;

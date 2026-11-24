@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/route53/Route53_EXPORTS.h>
+#include <aws/route53/model/ChangeGuardrail.h>
 #include <aws/route53/model/HostedZoneConfig.h>
 #include <aws/route53/model/VPC.h>
 
@@ -155,6 +157,60 @@ class CreateHostedZoneRequest : public Route53Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to enable public DNS fallback for the hosted zone. When
+   * public DNS fallback is enabled and a query for a domain name in the private
+   * hosted zone matches no existing name (<code>NXDOMAIN</code>), Route 53 retries
+   * the query against public DNS instead of returning a negative response. Fallback
+   * does not occur when the name exists but has no record of the requested type.</p>
+   * <p>Set to <code>true</code> to enable public DNS fallback, or <code>false</code>
+   * to disable it. The default is <code>false</code>.</p> <p>Public DNS fallback is
+   * supported only for private hosted zones. If you specify <code>true</code> for a
+   * public hosted zone, the request fails with an <code>InvalidInput</code>
+   * error.</p>
+   */
+  inline bool GetEnablePublicDNSFallback() const { return m_enablePublicDNSFallback; }
+  inline bool EnablePublicDNSFallbackHasBeenSet() const { return m_enablePublicDNSFallbackHasBeenSet; }
+  inline void SetEnablePublicDNSFallback(bool value) {
+    m_enablePublicDNSFallbackHasBeenSet = true;
+    m_enablePublicDNSFallback = value;
+  }
+  inline CreateHostedZoneRequest& WithEnablePublicDNSFallback(bool value) {
+    SetEnablePublicDNSFallback(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specify the optional Change Guardrails to turn on for the hosted zone. Each
+   * entry specifies the name and status of a guardrail. For the guardrail names and
+   * statuses, see <code>ChangeGuardrail</code>.</p> <p>Route 53 turns on the
+   * guardrails that the tier of the hosted zone includes, so you don't need to
+   * specify them. If you turn on a guardrail that the tier doesn't offer, Route 53
+   * returns an <code>InvalidInput</code> error.</p>
+   */
+  inline const Aws::Vector<ChangeGuardrail>& GetChangeGuardrails() const { return m_changeGuardrails; }
+  inline bool ChangeGuardrailsHasBeenSet() const { return m_changeGuardrailsHasBeenSet; }
+  template <typename ChangeGuardrailsT = Aws::Vector<ChangeGuardrail>>
+  void SetChangeGuardrails(ChangeGuardrailsT&& value) {
+    m_changeGuardrailsHasBeenSet = true;
+    m_changeGuardrails = std::forward<ChangeGuardrailsT>(value);
+  }
+  template <typename ChangeGuardrailsT = Aws::Vector<ChangeGuardrail>>
+  CreateHostedZoneRequest& WithChangeGuardrails(ChangeGuardrailsT&& value) {
+    SetChangeGuardrails(std::forward<ChangeGuardrailsT>(value));
+    return *this;
+  }
+  template <typename ChangeGuardrailsT = ChangeGuardrail>
+  CreateHostedZoneRequest& AddChangeGuardrails(ChangeGuardrailsT&& value) {
+    m_changeGuardrailsHasBeenSet = true;
+    m_changeGuardrails.emplace_back(std::forward<ChangeGuardrailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -165,11 +221,17 @@ class CreateHostedZoneRequest : public Route53Request {
   HostedZoneConfig m_hostedZoneConfig;
 
   Aws::String m_delegationSetId;
+
+  bool m_enablePublicDNSFallback{false};
+
+  Aws::Vector<ChangeGuardrail> m_changeGuardrails;
   bool m_nameHasBeenSet = false;
   bool m_vPCHasBeenSet = false;
   bool m_callerReferenceHasBeenSet = false;
   bool m_hostedZoneConfigHasBeenSet = false;
   bool m_delegationSetIdHasBeenSet = false;
+  bool m_enablePublicDNSFallbackHasBeenSet = false;
+  bool m_changeGuardrailsHasBeenSet = false;
 };
 
 }  // namespace Model

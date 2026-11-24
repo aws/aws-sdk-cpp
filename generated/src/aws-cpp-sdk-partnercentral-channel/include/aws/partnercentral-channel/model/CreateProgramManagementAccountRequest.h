@@ -10,6 +10,7 @@
 #include <aws/partnercentral-channel/PartnerCentralChannelRequest.h>
 #include <aws/partnercentral-channel/PartnerCentralChannel_EXPORTS.h>
 #include <aws/partnercentral-channel/model/Program.h>
+#include <aws/partnercentral-channel/model/ProgramManagementAccountType.h>
 #include <aws/partnercentral-channel/model/Tag.h>
 
 #include <utility>
@@ -145,6 +146,24 @@ class CreateProgramManagementAccountRequest : public PartnerCentralChannelReques
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the program management account (for example, resale billing
+   * transfer, managed services), required for the managed services provider
+   * program.</p>
+   */
+  inline ProgramManagementAccountType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(ProgramManagementAccountType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline CreateProgramManagementAccountRequest& WithType(ProgramManagementAccountType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalog;
 
@@ -157,12 +176,15 @@ class CreateProgramManagementAccountRequest : public PartnerCentralChannelReques
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::Vector<Tag> m_tags;
+
+  ProgramManagementAccountType m_type{ProgramManagementAccountType::NOT_SET};
   bool m_catalogHasBeenSet = false;
   bool m_programHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

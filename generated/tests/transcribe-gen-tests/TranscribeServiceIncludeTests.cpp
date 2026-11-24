@@ -18,6 +18,8 @@
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/internal/TranscribeServiceEndpointRules.h>
 #include <aws/transcribe/model/AbsoluteTimeRange.h>
+#include <aws/transcribe/model/BadRequestException.h>
+#include <aws/transcribe/model/BadRequestExceptionReason.h>
 #include <aws/transcribe/model/BaseModelName.h>
 #include <aws/transcribe/model/CLMLanguageCode.h>
 #include <aws/transcribe/model/CallAnalyticsFeature.h>
@@ -78,6 +80,7 @@
 #include <aws/transcribe/model/JobExecutionSettings.h>
 #include <aws/transcribe/model/LanguageCode.h>
 #include <aws/transcribe/model/LanguageCodeItem.h>
+#include <aws/transcribe/model/LanguageDetectionMode.h>
 #include <aws/transcribe/model/LanguageIdSettings.h>
 #include <aws/transcribe/model/LanguageModel.h>
 #include <aws/transcribe/model/ListCallAnalyticsCategoriesPaginationTraits.h>
@@ -154,14 +157,26 @@
 #include <aws/transcribe/model/Subtitles.h>
 #include <aws/transcribe/model/SubtitlesOutput.h>
 #include <aws/transcribe/model/Summarization.h>
+#include <aws/transcribe/model/SyncItem.h>
+#include <aws/transcribe/model/SyncLanguage.h>
+#include <aws/transcribe/model/SyncLanguageCode.h>
+#include <aws/transcribe/model/SyncLanguageCodeItem.h>
+#include <aws/transcribe/model/SyncMedia.h>
+#include <aws/transcribe/model/SyncOutputConfiguration.h>
+#include <aws/transcribe/model/SyncRedaction.h>
 #include <aws/transcribe/model/Tag.h>
 #include <aws/transcribe/model/TagResourceRequest.h>
 #include <aws/transcribe/model/TagResourceResult.h>
 #include <aws/transcribe/model/ToxicityCategory.h>
 #include <aws/transcribe/model/ToxicityDetectionSettings.h>
+#include <aws/transcribe/model/TranscribeAudioMetadata.h>
+#include <aws/transcribe/model/TranscribeAudioRequest.h>
+#include <aws/transcribe/model/TranscribeAudioResult.h>
+#include <aws/transcribe/model/TranscribeAudioResults.h>
 #include <aws/transcribe/model/Transcript.h>
 #include <aws/transcribe/model/TranscriptFilter.h>
 #include <aws/transcribe/model/TranscriptFilterType.h>
+#include <aws/transcribe/model/TranscriptResponse.h>
 #include <aws/transcribe/model/TranscriptionJob.h>
 #include <aws/transcribe/model/TranscriptionJobStatus.h>
 #include <aws/transcribe/model/TranscriptionJobSummary.h>
@@ -178,9 +193,13 @@
 #include <aws/transcribe/model/UpdateVocabularyFilterResult.h>
 #include <aws/transcribe/model/UpdateVocabularyRequest.h>
 #include <aws/transcribe/model/UpdateVocabularyResult.h>
+#include <aws/transcribe/model/VocabularyFilterEntry.h>
 #include <aws/transcribe/model/VocabularyFilterInfo.h>
 #include <aws/transcribe/model/VocabularyFilterMethod.h>
+#include <aws/transcribe/model/VocabularyFilterSettings.h>
 #include <aws/transcribe/model/VocabularyInfo.h>
+#include <aws/transcribe/model/VocabularyPhrase.h>
+#include <aws/transcribe/model/VocabularySettingsEntry.h>
 #include <aws/transcribe/model/VocabularyState.h>
 
 using TranscribeServiceIncludeTest = ::testing::Test;

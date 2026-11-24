@@ -23,6 +23,7 @@
 #include <aws/network-firewall/model/ActionDefinition.h>
 #include <aws/network-firewall/model/ActionScope.h>
 #include <aws/network-firewall/model/Address.h>
+#include <aws/network-firewall/model/AddressTranslations.h>
 #include <aws/network-firewall/model/AnalysisReport.h>
 #include <aws/network-firewall/model/AnalysisResult.h>
 #include <aws/network-firewall/model/AnalysisTypeReportResult.h>
@@ -126,6 +127,7 @@
 #include <aws/network-firewall/model/EnabledAnalysisType.h>
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
 #include <aws/network-firewall/model/EncryptionType.h>
+#include <aws/network-firewall/model/EnforcementMode.h>
 #include <aws/network-firewall/model/Firewall.h>
 #include <aws/network-firewall/model/FirewallMetadata.h>
 #include <aws/network-firewall/model/FirewallPolicy.h>
@@ -144,6 +146,7 @@
 #include <aws/network-firewall/model/FirewallRulesSource.h>
 #include <aws/network-firewall/model/FirewallStatus.h>
 #include <aws/network-firewall/model/FirewallStatusValue.h>
+#include <aws/network-firewall/model/FirewallType.h>
 #include <aws/network-firewall/model/Flow.h>
 #include <aws/network-firewall/model/FlowFilter.h>
 #include <aws/network-firewall/model/FlowOperation.h>
@@ -163,6 +166,7 @@
 #include <aws/network-firewall/model/IPSetMetadata.h>
 #include <aws/network-firewall/model/IPSetReference.h>
 #include <aws/network-firewall/model/IdentifiedType.h>
+#include <aws/network-firewall/model/IgwFirewallConfiguration.h>
 #include <aws/network-firewall/model/IpsRuleGroup.h>
 #include <aws/network-firewall/model/IpsRuleGroupEntry.h>
 #include <aws/network-firewall/model/IpsRuleGroupOverride.h>

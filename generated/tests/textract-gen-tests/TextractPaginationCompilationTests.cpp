@@ -8,7 +8,9 @@
 
 #include <aws/textract/TextractClientPagination.h>
 #include <aws/textract/TextractPaginationBase.h>
+#include <aws/textract/model/ListBlueprintsPaginationTraits.h>
 #include <aws/textract/model/ListAdaptersPaginationTraits.h>
+#include <aws/textract/model/ListProjectsPaginationTraits.h>
 #include <aws/textract/model/ListAdapterVersionsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

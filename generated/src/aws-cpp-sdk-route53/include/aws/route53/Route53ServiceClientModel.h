@@ -64,6 +64,7 @@
 #include <aws/route53/model/GetHealthCheckResult.h>
 #include <aws/route53/model/GetHealthCheckSourceResult.h>
 #include <aws/route53/model/GetHealthCheckStatusResult.h>
+#include <aws/route53/model/GetHostedZoneChangeBatchResult.h>
 #include <aws/route53/model/GetHostedZoneCountRequest.h>
 #include <aws/route53/model/GetHostedZoneCountResult.h>
 #include <aws/route53/model/GetHostedZoneLimitResult.h>
@@ -86,6 +87,7 @@
 #include <aws/route53/model/ListHealthChecksBySourceResult.h>
 #include <aws/route53/model/ListHealthChecksRequest.h>
 #include <aws/route53/model/ListHealthChecksResult.h>
+#include <aws/route53/model/ListHostedZoneChangeBatchesResult.h>
 #include <aws/route53/model/ListHostedZonesByNameRequest.h>
 #include <aws/route53/model/ListHostedZonesByNameResult.h>
 #include <aws/route53/model/ListHostedZonesByVPCResult.h>
@@ -93,6 +95,7 @@
 #include <aws/route53/model/ListHostedZonesResult.h>
 #include <aws/route53/model/ListQueryLoggingConfigsRequest.h>
 #include <aws/route53/model/ListQueryLoggingConfigsResult.h>
+#include <aws/route53/model/ListResourceRecordSetChangesResult.h>
 #include <aws/route53/model/ListResourceRecordSetProtectionsResult.h>
 #include <aws/route53/model/ListResourceRecordSetsResult.h>
 #include <aws/route53/model/ListReusableDelegationSetsRequest.h>
@@ -111,6 +114,7 @@
 #include <aws/route53/model/UpdateHealthCheckResult.h>
 #include <aws/route53/model/UpdateHostedZoneCommentResult.h>
 #include <aws/route53/model/UpdateHostedZoneFeaturesResult.h>
+#include <aws/route53/model/UpdateHostedZoneTierResult.h>
 #include <aws/route53/model/UpdateTrafficPolicyCommentResult.h>
 #include <aws/route53/model/UpdateTrafficPolicyInstanceResult.h>
 /* End of service model headers required in Route53Client header */
@@ -189,6 +193,7 @@ class GetHealthCheckLastFailureReasonRequest;
 class GetHealthCheckSourceRequest;
 class GetHealthCheckStatusRequest;
 class GetHostedZoneRequest;
+class GetHostedZoneChangeBatchRequest;
 class GetHostedZoneCountRequest;
 class GetHostedZoneLimitRequest;
 class GetQueryLoggingConfigRequest;
@@ -204,10 +209,12 @@ class ListGeoLocationsRequest;
 class ListHealthCheckSourcesRequest;
 class ListHealthChecksRequest;
 class ListHealthChecksBySourceRequest;
+class ListHostedZoneChangeBatchesRequest;
 class ListHostedZonesRequest;
 class ListHostedZonesByNameRequest;
 class ListHostedZonesByVPCRequest;
 class ListQueryLoggingConfigsRequest;
+class ListResourceRecordSetChangesRequest;
 class ListResourceRecordSetProtectionsRequest;
 class ListResourceRecordSetsRequest;
 class ListReusableDelegationSetsRequest;
@@ -223,6 +230,7 @@ class TestDNSAnswerRequest;
 class UpdateHealthCheckRequest;
 class UpdateHostedZoneCommentRequest;
 class UpdateHostedZoneFeaturesRequest;
+class UpdateHostedZoneTierRequest;
 class UpdateTrafficPolicyCommentRequest;
 class UpdateTrafficPolicyInstanceRequest;
 /* End of service model forward declarations required in Route53Client header */
@@ -271,6 +279,7 @@ typedef Aws::Utils::Outcome<GetHealthCheckLastFailureReasonResult, Route53Error>
 typedef Aws::Utils::Outcome<GetHealthCheckSourceResult, Route53Error> GetHealthCheckSourceOutcome;
 typedef Aws::Utils::Outcome<GetHealthCheckStatusResult, Route53Error> GetHealthCheckStatusOutcome;
 typedef Aws::Utils::Outcome<GetHostedZoneResult, Route53Error> GetHostedZoneOutcome;
+typedef Aws::Utils::Outcome<GetHostedZoneChangeBatchResult, Route53Error> GetHostedZoneChangeBatchOutcome;
 typedef Aws::Utils::Outcome<GetHostedZoneCountResult, Route53Error> GetHostedZoneCountOutcome;
 typedef Aws::Utils::Outcome<GetHostedZoneLimitResult, Route53Error> GetHostedZoneLimitOutcome;
 typedef Aws::Utils::Outcome<GetQueryLoggingConfigResult, Route53Error> GetQueryLoggingConfigOutcome;
@@ -286,10 +295,12 @@ typedef Aws::Utils::Outcome<ListGeoLocationsResult, Route53Error> ListGeoLocatio
 typedef Aws::Utils::Outcome<ListHealthCheckSourcesResult, Route53Error> ListHealthCheckSourcesOutcome;
 typedef Aws::Utils::Outcome<ListHealthChecksResult, Route53Error> ListHealthChecksOutcome;
 typedef Aws::Utils::Outcome<ListHealthChecksBySourceResult, Route53Error> ListHealthChecksBySourceOutcome;
+typedef Aws::Utils::Outcome<ListHostedZoneChangeBatchesResult, Route53Error> ListHostedZoneChangeBatchesOutcome;
 typedef Aws::Utils::Outcome<ListHostedZonesResult, Route53Error> ListHostedZonesOutcome;
 typedef Aws::Utils::Outcome<ListHostedZonesByNameResult, Route53Error> ListHostedZonesByNameOutcome;
 typedef Aws::Utils::Outcome<ListHostedZonesByVPCResult, Route53Error> ListHostedZonesByVPCOutcome;
 typedef Aws::Utils::Outcome<ListQueryLoggingConfigsResult, Route53Error> ListQueryLoggingConfigsOutcome;
+typedef Aws::Utils::Outcome<ListResourceRecordSetChangesResult, Route53Error> ListResourceRecordSetChangesOutcome;
 typedef Aws::Utils::Outcome<ListResourceRecordSetProtectionsResult, Route53Error> ListResourceRecordSetProtectionsOutcome;
 typedef Aws::Utils::Outcome<ListResourceRecordSetsResult, Route53Error> ListResourceRecordSetsOutcome;
 typedef Aws::Utils::Outcome<ListReusableDelegationSetsResult, Route53Error> ListReusableDelegationSetsOutcome;
@@ -305,6 +316,7 @@ typedef Aws::Utils::Outcome<TestDNSAnswerResult, Route53Error> TestDNSAnswerOutc
 typedef Aws::Utils::Outcome<UpdateHealthCheckResult, Route53Error> UpdateHealthCheckOutcome;
 typedef Aws::Utils::Outcome<UpdateHostedZoneCommentResult, Route53Error> UpdateHostedZoneCommentOutcome;
 typedef Aws::Utils::Outcome<UpdateHostedZoneFeaturesResult, Route53Error> UpdateHostedZoneFeaturesOutcome;
+typedef Aws::Utils::Outcome<UpdateHostedZoneTierResult, Route53Error> UpdateHostedZoneTierOutcome;
 typedef Aws::Utils::Outcome<UpdateTrafficPolicyCommentResult, Route53Error> UpdateTrafficPolicyCommentOutcome;
 typedef Aws::Utils::Outcome<UpdateTrafficPolicyInstanceResult, Route53Error> UpdateTrafficPolicyInstanceOutcome;
 /* End of service model Outcome class definitions */
@@ -353,6 +365,7 @@ typedef std::future<GetHealthCheckLastFailureReasonOutcome> GetHealthCheckLastFa
 typedef std::future<GetHealthCheckSourceOutcome> GetHealthCheckSourceOutcomeCallable;
 typedef std::future<GetHealthCheckStatusOutcome> GetHealthCheckStatusOutcomeCallable;
 typedef std::future<GetHostedZoneOutcome> GetHostedZoneOutcomeCallable;
+typedef std::future<GetHostedZoneChangeBatchOutcome> GetHostedZoneChangeBatchOutcomeCallable;
 typedef std::future<GetHostedZoneCountOutcome> GetHostedZoneCountOutcomeCallable;
 typedef std::future<GetHostedZoneLimitOutcome> GetHostedZoneLimitOutcomeCallable;
 typedef std::future<GetQueryLoggingConfigOutcome> GetQueryLoggingConfigOutcomeCallable;
@@ -368,10 +381,12 @@ typedef std::future<ListGeoLocationsOutcome> ListGeoLocationsOutcomeCallable;
 typedef std::future<ListHealthCheckSourcesOutcome> ListHealthCheckSourcesOutcomeCallable;
 typedef std::future<ListHealthChecksOutcome> ListHealthChecksOutcomeCallable;
 typedef std::future<ListHealthChecksBySourceOutcome> ListHealthChecksBySourceOutcomeCallable;
+typedef std::future<ListHostedZoneChangeBatchesOutcome> ListHostedZoneChangeBatchesOutcomeCallable;
 typedef std::future<ListHostedZonesOutcome> ListHostedZonesOutcomeCallable;
 typedef std::future<ListHostedZonesByNameOutcome> ListHostedZonesByNameOutcomeCallable;
 typedef std::future<ListHostedZonesByVPCOutcome> ListHostedZonesByVPCOutcomeCallable;
 typedef std::future<ListQueryLoggingConfigsOutcome> ListQueryLoggingConfigsOutcomeCallable;
+typedef std::future<ListResourceRecordSetChangesOutcome> ListResourceRecordSetChangesOutcomeCallable;
 typedef std::future<ListResourceRecordSetProtectionsOutcome> ListResourceRecordSetProtectionsOutcomeCallable;
 typedef std::future<ListResourceRecordSetsOutcome> ListResourceRecordSetsOutcomeCallable;
 typedef std::future<ListReusableDelegationSetsOutcome> ListReusableDelegationSetsOutcomeCallable;
@@ -387,6 +402,7 @@ typedef std::future<TestDNSAnswerOutcome> TestDNSAnswerOutcomeCallable;
 typedef std::future<UpdateHealthCheckOutcome> UpdateHealthCheckOutcomeCallable;
 typedef std::future<UpdateHostedZoneCommentOutcome> UpdateHostedZoneCommentOutcomeCallable;
 typedef std::future<UpdateHostedZoneFeaturesOutcome> UpdateHostedZoneFeaturesOutcomeCallable;
+typedef std::future<UpdateHostedZoneTierOutcome> UpdateHostedZoneTierOutcomeCallable;
 typedef std::future<UpdateTrafficPolicyCommentOutcome> UpdateTrafficPolicyCommentOutcomeCallable;
 typedef std::future<UpdateTrafficPolicyInstanceOutcome> UpdateTrafficPolicyInstanceOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -530,6 +546,9 @@ typedef std::function<void(const Route53Client*, const Model::GetHealthCheckStat
 typedef std::function<void(const Route53Client*, const Model::GetHostedZoneRequest&, const Model::GetHostedZoneOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetHostedZoneResponseReceivedHandler;
+typedef std::function<void(const Route53Client*, const Model::GetHostedZoneChangeBatchRequest&,
+                           const Model::GetHostedZoneChangeBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetHostedZoneChangeBatchResponseReceivedHandler;
 typedef std::function<void(const Route53Client*, const Model::GetHostedZoneCountRequest&, const Model::GetHostedZoneCountOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetHostedZoneCountResponseReceivedHandler;
@@ -577,6 +596,9 @@ typedef std::function<void(const Route53Client*, const Model::ListHealthChecksRe
 typedef std::function<void(const Route53Client*, const Model::ListHealthChecksBySourceRequest&,
                            const Model::ListHealthChecksBySourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListHealthChecksBySourceResponseReceivedHandler;
+typedef std::function<void(const Route53Client*, const Model::ListHostedZoneChangeBatchesRequest&,
+                           const Model::ListHostedZoneChangeBatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListHostedZoneChangeBatchesResponseReceivedHandler;
 typedef std::function<void(const Route53Client*, const Model::ListHostedZonesRequest&, const Model::ListHostedZonesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListHostedZonesResponseReceivedHandler;
@@ -589,6 +611,10 @@ typedef std::function<void(const Route53Client*, const Model::ListHostedZonesByV
 typedef std::function<void(const Route53Client*, const Model::ListQueryLoggingConfigsRequest&, const Model::ListQueryLoggingConfigsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListQueryLoggingConfigsResponseReceivedHandler;
+typedef std::function<void(const Route53Client*, const Model::ListResourceRecordSetChangesRequest&,
+                           const Model::ListResourceRecordSetChangesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListResourceRecordSetChangesResponseReceivedHandler;
 typedef std::function<void(const Route53Client*, const Model::ListResourceRecordSetProtectionsRequest&,
                            const Model::ListResourceRecordSetProtectionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -638,6 +664,9 @@ typedef std::function<void(const Route53Client*, const Model::UpdateHostedZoneCo
 typedef std::function<void(const Route53Client*, const Model::UpdateHostedZoneFeaturesRequest&,
                            const Model::UpdateHostedZoneFeaturesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateHostedZoneFeaturesResponseReceivedHandler;
+typedef std::function<void(const Route53Client*, const Model::UpdateHostedZoneTierRequest&, const Model::UpdateHostedZoneTierOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateHostedZoneTierResponseReceivedHandler;
 typedef std::function<void(const Route53Client*, const Model::UpdateTrafficPolicyCommentRequest&,
                            const Model::UpdateTrafficPolicyCommentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateTrafficPolicyCommentResponseReceivedHandler;

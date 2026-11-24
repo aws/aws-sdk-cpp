@@ -240,10 +240,10 @@ class UpdateFileSystemLustreConfiguration {
 
   ///@{
   /**
-   * <p>The throughput of an Amazon FSx for Lustre file system using an
-   * Intelligent-Tiering storage class, measured in megabytes per second (MBps). You
-   * can only increase your file system's throughput. Valid values are 4000 MBps or
-   * multiples of 4000 MBps.</p>
+   * <p>The throughput of an FSx for Lustre file system using the Intelligent-Tiering
+   * storage class, measured in megabytes per second (MBps). You can only increase
+   * your file system's throughput capacity. Valid values are 1000 MBps, 2000 MBps,
+   * and multiples of 4000 MBps, up to a maximum of 2000000 MBps.</p>
    */
   inline int GetThroughputCapacity() const { return m_throughputCapacity; }
   inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }

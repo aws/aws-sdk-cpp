@@ -34,6 +34,10 @@ VietnamAdditionalInfo& VietnamAdditionalInfo::operator=(JsonView jsonValue) {
     m_paymentVoucherNumberDate = jsonValue.GetString("paymentVoucherNumberDate");
     m_paymentVoucherNumberDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vatCreditMethod")) {
+    m_vatCreditMethod = jsonValue.GetBool("vatCreditMethod");
+    m_vatCreditMethodHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue VietnamAdditionalInfo::Jsonize() const {
 
   if (m_paymentVoucherNumberDateHasBeenSet) {
     payload.WithString("paymentVoucherNumberDate", m_paymentVoucherNumberDate);
+  }
+
+  if (m_vatCreditMethodHasBeenSet) {
+    payload.WithBool("vatCreditMethod", m_vatCreditMethod);
   }
 
   return payload;

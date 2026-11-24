@@ -46,5 +46,20 @@ Aws::String CreateHostedZoneRequest::SerializePayload() const {
     delegationSetIdNode.SetText(m_delegationSetId);
   }
 
+  if (m_enablePublicDNSFallbackHasBeenSet) {
+    XmlNode enablePublicDNSFallbackNode = parentNode.CreateChildElement("EnablePublicDNSFallback");
+    ss << std::boolalpha << m_enablePublicDNSFallback;
+    enablePublicDNSFallbackNode.SetText(ss.str());
+    ss.str("");
+  }
+
+  if (m_changeGuardrailsHasBeenSet) {
+    XmlNode changeGuardrailsParentNode = parentNode.CreateChildElement("ChangeGuardrails");
+    for (const auto& item : m_changeGuardrails) {
+      XmlNode changeGuardrailsNode = changeGuardrailsParentNode.CreateChildElement("ChangeGuardrail");
+      item.AddToNode(changeGuardrailsNode);
+    }
+  }
+
   return payloadDoc.ConvertToCompactString();
 }

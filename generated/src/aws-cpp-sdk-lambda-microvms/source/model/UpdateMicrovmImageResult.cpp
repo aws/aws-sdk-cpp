@@ -112,6 +112,10 @@ UpdateMicrovmImageResult& UpdateMicrovmImageResult::operator=(const Aws::AmazonW
     }
     m_environmentVariablesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("kmsKeyIdentifier")) {
+    m_kmsKeyIdentifier = jsonValue.GetString("kmsKeyIdentifier");
+    m_kmsKeyIdentifierHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;

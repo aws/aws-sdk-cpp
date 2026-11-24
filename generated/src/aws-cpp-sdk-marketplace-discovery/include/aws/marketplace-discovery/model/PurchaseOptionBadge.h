@@ -22,7 +22,7 @@ namespace Model {
 
 /**
  * <p>A badge indicating a special attribute of a purchase option, such as private
- * pricing or future dated.</p><p><h3>See Also:</h3>   <a
+ * pricing or future-dated.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/PurchaseOptionBadge">AWS
  * API Reference</a></p>
  */
@@ -53,7 +53,8 @@ class PurchaseOptionBadge {
 
   ///@{
   /**
-   * <p>The machine-readable type of the badge.</p>
+   * <p>The machine-readable type of the badge. See
+   * <code>PurchaseOptionBadgeType</code> for the values.</p>
    */
   inline PurchaseOptionBadgeType GetBadgeType() const { return m_badgeType; }
   inline bool BadgeTypeHasBeenSet() const { return m_badgeTypeHasBeenSet; }

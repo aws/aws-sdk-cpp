@@ -21,8 +21,9 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>A pricing model that determines how buyers are charged for a listing, such as
- * usage-based, contract, BYOL, or free.</p><p><h3>See Also:</h3>   <a
+ * <p>A pricing model that determines how you are charged for a listing, such as
+ * usage-based, contract, Bring Your Own License (BYOL), or free.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/PricingModel">AWS
  * API Reference</a></p>
  */
@@ -35,7 +36,8 @@ class PricingModel {
 
   ///@{
   /**
-   * <p>The machine-readable type of the pricing model.</p>
+   * <p>The machine-readable type of the pricing model. See
+   * <code>PricingModelType</code> for the values.</p>
    */
   inline PricingModelType GetPricingModelType() const { return m_pricingModelType; }
   inline bool PricingModelTypeHasBeenSet() const { return m_pricingModelTypeHasBeenSet; }

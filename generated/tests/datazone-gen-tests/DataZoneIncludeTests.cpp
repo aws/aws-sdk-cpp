@@ -52,6 +52,8 @@
 #include <aws/datazone/model/AssetListingDetails.h>
 #include <aws/datazone/model/AssetListingItem.h>
 #include <aws/datazone/model/AssetListingItemAdditionalAttributes.h>
+#include <aws/datazone/model/AssetOwnershipTransfer.h>
+#include <aws/datazone/model/AssetOwnershipTransferStatus.h>
 #include <aws/datazone/model/AssetPermission.h>
 #include <aws/datazone/model/AssetRevision.h>
 #include <aws/datazone/model/AssetScope.h>
@@ -661,6 +663,7 @@
 #include <aws/datazone/model/ProjectMember.h>
 #include <aws/datazone/model/ProjectMembershipAssignment.h>
 #include <aws/datazone/model/ProjectPolicyGrantPrincipal.h>
+#include <aws/datazone/model/ProjectProfileAction.h>
 #include <aws/datazone/model/ProjectProfileSummary.h>
 #include <aws/datazone/model/ProjectStatus.h>
 #include <aws/datazone/model/ProjectSummary.h>
@@ -844,6 +847,8 @@
 #include <aws/datazone/model/UpdateAccountPoolResult.h>
 #include <aws/datazone/model/UpdateAssetFilterRequest.h>
 #include <aws/datazone/model/UpdateAssetFilterResult.h>
+#include <aws/datazone/model/UpdateAssetOwnerRequest.h>
+#include <aws/datazone/model/UpdateAssetOwnerResult.h>
 #include <aws/datazone/model/UpdateConnectionRequest.h>
 #include <aws/datazone/model/UpdateConnectionResult.h>
 #include <aws/datazone/model/UpdateDataSourceRequest.h>

@@ -111,6 +111,30 @@ class ListFoundationModelsRequest : public BedrockRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the
+   * project's trusted access program participation when determining which models to
+   * return. The project must belong to your account in the same AWS Region and
+   * partition as the request.</p> <p>If you omit this parameter or specify
+   * <code>default</code>, Amazon Bedrock uses your account's participation,
+   * including organization inheritance. A project that doesn't exist or is archived
+   * causes a <code>ValidationException</code>.</p>
+   */
+  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
+  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
+  template <typename ProjectIdentifierT = Aws::String>
+  void SetProjectIdentifier(ProjectIdentifierT&& value) {
+    m_projectIdentifierHasBeenSet = true;
+    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
+  }
+  template <typename ProjectIdentifierT = Aws::String>
+  ListFoundationModelsRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
+    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_byProvider;
 
@@ -119,10 +143,13 @@ class ListFoundationModelsRequest : public BedrockRequest {
   ModelModality m_byOutputModality{ModelModality::NOT_SET};
 
   InferenceType m_byInferenceType{InferenceType::NOT_SET};
+
+  Aws::String m_projectIdentifier;
   bool m_byProviderHasBeenSet = false;
   bool m_byCustomizationTypeHasBeenSet = false;
   bool m_byOutputModalityHasBeenSet = false;
   bool m_byInferenceTypeHasBeenSet = false;
+  bool m_projectIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

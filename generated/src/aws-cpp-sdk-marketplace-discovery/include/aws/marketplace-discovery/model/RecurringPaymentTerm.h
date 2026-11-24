@@ -22,7 +22,7 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Defines a recurring payment term with fixed charges at regular billing
+ * <p>Describes a recurring payment term with fixed charges at regular billing
  * intervals.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/RecurringPaymentTerm">AWS
  * API Reference</a></p>

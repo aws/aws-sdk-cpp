@@ -54,6 +54,10 @@ UpdateOntapVolumeConfiguration& UpdateOntapVolumeConfiguration::operator=(JsonVi
     m_sizeInBytes = jsonValue.GetInt64("SizeInBytes");
     m_sizeInBytesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CloneConfiguration")) {
+    m_cloneConfiguration = jsonValue.GetObject("CloneConfiguration");
+    m_cloneConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue UpdateOntapVolumeConfiguration::Jsonize() const {
 
   if (m_sizeInBytesHasBeenSet) {
     payload.WithInt64("SizeInBytes", m_sizeInBytes);
+  }
+
+  if (m_cloneConfigurationHasBeenSet) {
+    payload.WithObject("CloneConfiguration", m_cloneConfiguration.Jsonize());
   }
 
   return payload;

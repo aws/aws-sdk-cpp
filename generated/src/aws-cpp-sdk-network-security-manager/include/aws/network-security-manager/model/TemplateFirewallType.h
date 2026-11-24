@@ -10,7 +10,7 @@
 namespace Aws {
 namespace NetworkSecurityManager {
 namespace Model {
-enum class TemplateFirewallType { NOT_SET, WAF };
+enum class TemplateFirewallType { NOT_SET, WAF, IGW_FIREWALL };
 
 namespace TemplateFirewallTypeMapper {
 AWS_NETWORKSECURITYMANAGER_API TemplateFirewallType GetTemplateFirewallTypeForName(const Aws::String& name);

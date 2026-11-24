@@ -7,6 +7,7 @@
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
 #include <aws/compute-optimizer-automation/model/EnrollmentStatus.h>
 #include <aws/compute-optimizer-automation/model/OrganizationRuleMode.h>
+#include <aws/compute-optimizer-automation/model/OrganizationRuleModeSource.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/crt/cbor/Cbor.h>
@@ -90,6 +91,25 @@ class AccountInfo {
 
   ///@{
   /**
+   * <p>Information about the source of the account's effective organization rule
+   * mode. </p>
+   */
+  inline const OrganizationRuleModeSource& GetOrganizationRuleModeSource() const { return m_organizationRuleModeSource; }
+  inline bool OrganizationRuleModeSourceHasBeenSet() const { return m_organizationRuleModeSourceHasBeenSet; }
+  template <typename OrganizationRuleModeSourceT = OrganizationRuleModeSource>
+  void SetOrganizationRuleModeSource(OrganizationRuleModeSourceT&& value) {
+    m_organizationRuleModeSourceHasBeenSet = true;
+    m_organizationRuleModeSource = std::forward<OrganizationRuleModeSourceT>(value);
+  }
+  template <typename OrganizationRuleModeSourceT = OrganizationRuleModeSource>
+  AccountInfo& WithOrganizationRuleModeSource(OrganizationRuleModeSourceT&& value) {
+    SetOrganizationRuleModeSource(std::forward<OrganizationRuleModeSourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The reason for the current Automation enrollment status. </p>
    */
   inline const Aws::String& GetStatusReason() const { return m_statusReason; }
@@ -131,12 +151,15 @@ class AccountInfo {
 
   OrganizationRuleMode m_organizationRuleMode{OrganizationRuleMode::NOT_SET};
 
+  OrganizationRuleModeSource m_organizationRuleModeSource;
+
   Aws::String m_statusReason;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
   bool m_accountIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_organizationRuleModeHasBeenSet = false;
+  bool m_organizationRuleModeSourceHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
 };

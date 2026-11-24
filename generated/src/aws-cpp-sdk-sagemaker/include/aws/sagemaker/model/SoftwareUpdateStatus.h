@@ -10,7 +10,16 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class SoftwareUpdateStatus { NOT_SET, Pending, InProgress, Succeeded, Failed, RollbackInProgress, RollbackComplete };
+enum class SoftwareUpdateStatus {
+  NOT_SET,
+  Pending,
+  InProgress,
+  Succeeded,
+  Failed,
+  RollbackInProgress,
+  RollbackComplete,
+  PartiallySucceeded
+};
 
 namespace SoftwareUpdateStatusMapper {
 AWS_SAGEMAKER_API SoftwareUpdateStatus GetSoftwareUpdateStatusForName(const Aws::String& name);

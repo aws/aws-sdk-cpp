@@ -84,6 +84,10 @@ MicrovmImageVersionSummary& MicrovmImageVersionSummary::operator=(JsonView jsonV
     }
     m_environmentVariablesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("kmsKeyIdentifier")) {
+    m_kmsKeyIdentifier = jsonValue.GetString("kmsKeyIdentifier");
+    m_kmsKeyIdentifierHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("imageArn")) {
     m_imageArn = jsonValue.GetString("imageArn");
     m_imageArnHasBeenSet = true;
@@ -194,6 +198,10 @@ JsonValue MicrovmImageVersionSummary::Jsonize() const {
       environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
     }
     payload.WithObject("environmentVariables", std::move(environmentVariablesJsonMap));
+  }
+
+  if (m_kmsKeyIdentifierHasBeenSet) {
+    payload.WithString("kmsKeyIdentifier", m_kmsKeyIdentifier);
   }
 
   if (m_imageArnHasBeenSet) {

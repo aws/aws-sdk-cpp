@@ -45,6 +45,12 @@ VpcOriginConfig& VpcOriginConfig::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originKeepaliveTimeoutNode.GetText()).c_str()).c_str());
       m_originKeepaliveTimeoutHasBeenSet = true;
     }
+    XmlNode originHttpVersionNode = resultNode.FirstChild("OriginHttpVersion");
+    if (!originHttpVersionNode.IsNull()) {
+      m_originHttpVersion = OriginHttpVersionMapper::GetOriginHttpVersionForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originHttpVersionNode.GetText()).c_str()));
+      m_originHttpVersionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -74,6 +80,11 @@ void VpcOriginConfig::AddToNode(XmlNode& parentNode) const {
     ss << m_originKeepaliveTimeout;
     originKeepaliveTimeoutNode.SetText(ss.str());
     ss.str("");
+  }
+
+  if (m_originHttpVersionHasBeenSet) {
+    XmlNode originHttpVersionNode = parentNode.CreateChildElement("OriginHttpVersion");
+    originHttpVersionNode.SetText(OriginHttpVersionMapper::GetNameForOriginHttpVersion(m_originHttpVersion));
   }
 }
 

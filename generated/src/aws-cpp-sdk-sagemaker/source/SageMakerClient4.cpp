@@ -20,6 +20,19 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/UpdateDeviceFleetRequest.h>
+#include <aws/sagemaker/model/UpdateDevicesRequest.h>
+#include <aws/sagemaker/model/UpdateDomainRequest.h>
+#include <aws/sagemaker/model/UpdateEndpointRequest.h>
+#include <aws/sagemaker/model/UpdateEndpointWeightsAndCapacitiesRequest.h>
+#include <aws/sagemaker/model/UpdateExperimentRequest.h>
+#include <aws/sagemaker/model/UpdateFeatureGroupRequest.h>
+#include <aws/sagemaker/model/UpdateFeatureMetadataRequest.h>
+#include <aws/sagemaker/model/UpdateGlobalInferenceGatewayRequest.h>
+#include <aws/sagemaker/model/UpdateHubContentReferenceRequest.h>
+#include <aws/sagemaker/model/UpdateHubContentRequest.h>
+#include <aws/sagemaker/model/UpdateHubRequest.h>
+#include <aws/sagemaker/model/UpdateImageRequest.h>
 #include <aws/sagemaker/model/UpdateImageVersionRequest.h>
 #include <aws/sagemaker/model/UpdateInferenceComponentRequest.h>
 #include <aws/sagemaker/model/UpdateInferenceComponentRuntimeConfigRequest.h>
@@ -56,6 +69,81 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UpdateDeviceFleetOutcome SageMakerClient::UpdateDeviceFleet(const UpdateDeviceFleetRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDeviceFleetOutcome(result.GetResultWithOwnership())
+                            : UpdateDeviceFleetOutcome(std::move(result.GetError()));
+}
+
+UpdateDevicesOutcome SageMakerClient::UpdateDevices(const UpdateDevicesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDevicesOutcome(result.GetResultWithOwnership()) : UpdateDevicesOutcome(std::move(result.GetError()));
+}
+
+UpdateDomainOutcome SageMakerClient::UpdateDomain(const UpdateDomainRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDomainOutcome(result.GetResultWithOwnership()) : UpdateDomainOutcome(std::move(result.GetError()));
+}
+
+UpdateEndpointOutcome SageMakerClient::UpdateEndpoint(const UpdateEndpointRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEndpointOutcome(result.GetResultWithOwnership()) : UpdateEndpointOutcome(std::move(result.GetError()));
+}
+
+UpdateEndpointWeightsAndCapacitiesOutcome SageMakerClient::UpdateEndpointWeightsAndCapacities(
+    const UpdateEndpointWeightsAndCapacitiesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEndpointWeightsAndCapacitiesOutcome(result.GetResultWithOwnership())
+                            : UpdateEndpointWeightsAndCapacitiesOutcome(std::move(result.GetError()));
+}
+
+UpdateExperimentOutcome SageMakerClient::UpdateExperiment(const UpdateExperimentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateExperimentOutcome(result.GetResultWithOwnership())
+                            : UpdateExperimentOutcome(std::move(result.GetError()));
+}
+
+UpdateFeatureGroupOutcome SageMakerClient::UpdateFeatureGroup(const UpdateFeatureGroupRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFeatureGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateFeatureGroupOutcome(std::move(result.GetError()));
+}
+
+UpdateFeatureMetadataOutcome SageMakerClient::UpdateFeatureMetadata(const UpdateFeatureMetadataRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFeatureMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateFeatureMetadataOutcome(std::move(result.GetError()));
+}
+
+UpdateGlobalInferenceGatewayOutcome SageMakerClient::UpdateGlobalInferenceGateway(
+    const UpdateGlobalInferenceGatewayRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGlobalInferenceGatewayOutcome(result.GetResultWithOwnership())
+                            : UpdateGlobalInferenceGatewayOutcome(std::move(result.GetError()));
+}
+
+UpdateHubOutcome SageMakerClient::UpdateHub(const UpdateHubRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHubOutcome(result.GetResultWithOwnership()) : UpdateHubOutcome(std::move(result.GetError()));
+}
+
+UpdateHubContentOutcome SageMakerClient::UpdateHubContent(const UpdateHubContentRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHubContentOutcome(result.GetResultWithOwnership())
+                            : UpdateHubContentOutcome(std::move(result.GetError()));
+}
+
+UpdateHubContentReferenceOutcome SageMakerClient::UpdateHubContentReference(const UpdateHubContentReferenceRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHubContentReferenceOutcome(result.GetResultWithOwnership())
+                            : UpdateHubContentReferenceOutcome(std::move(result.GetError()));
+}
+
+UpdateImageOutcome SageMakerClient::UpdateImage(const UpdateImageRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateImageOutcome(result.GetResultWithOwnership()) : UpdateImageOutcome(std::move(result.GetError()));
+}
 
 UpdateImageVersionOutcome SageMakerClient::UpdateImageVersion(const UpdateImageVersionRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

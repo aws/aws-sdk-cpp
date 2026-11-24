@@ -23,9 +23,8 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Defines a configurable upfront pricing term with selectable rate cards, where
- * buyers choose from predefined pricing configurations.</p><p><h3>See Also:</h3>
- * <a
+ * <p>Describes a configurable upfront pricing term with selectable rate cards. You
+ * choose from predefined pricing configurations.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ConfigurableUpfrontPricingTerm">AWS
  * API Reference</a></p>
  */

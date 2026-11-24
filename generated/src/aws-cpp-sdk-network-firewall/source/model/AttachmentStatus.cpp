@@ -21,6 +21,7 @@ static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 static const int SCALING_HASH = HashingUtils::HashString("SCALING");
 static const int READY_HASH = HashingUtils::HashString("READY");
+static const int STANDBY_HASH = HashingUtils::HashString("STANDBY");
 
 AttachmentStatus GetAttachmentStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ AttachmentStatus GetAttachmentStatusForName(const Aws::String& name) {
     return AttachmentStatus::SCALING;
   } else if (hashCode == READY_HASH) {
     return AttachmentStatus::READY;
+  } else if (hashCode == STANDBY_HASH) {
+    return AttachmentStatus::STANDBY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForAttachmentStatus(AttachmentStatus enumValue) {
       return "SCALING";
     case AttachmentStatus::READY:
       return "READY";
+    case AttachmentStatus::STANDBY:
+      return "STANDBY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace QuickSight {
 namespace Model {
-enum class GovernedAction { NOT_SET, SHARE };
+enum class GovernedAction { NOT_SET, SHARE, PUBLISH };
 
 namespace GovernedActionMapper {
 AWS_QUICKSIGHT_API GovernedAction GetGovernedActionForName(const Aws::String& name);

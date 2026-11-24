@@ -8,17 +8,22 @@
 
 #include <aws/fsx/FSxClientPagination.h>
 #include <aws/fsx/FSxPaginationBase.h>
-#include <aws/fsx/model/DescribeDataRepositoryAssociationsPaginationTraits.h>
-#include <aws/fsx/model/DescribeStorageVirtualMachinesPaginationTraits.h>
+#include <aws/fsx/model/DescribeSnapmirrorPoliciesPaginationTraits.h>
+#include <aws/fsx/model/DescribeSnapmirrorRelationshipsPaginationTraits.h>
 #include <aws/fsx/model/DescribeS3AccessPointAttachmentsPaginationTraits.h>
+#include <aws/fsx/model/DescribeSnapshotPoliciesPaginationTraits.h>
 #include <aws/fsx/model/DescribeFileCachesPaginationTraits.h>
 #include <aws/fsx/model/DescribeFileSystemsPaginationTraits.h>
 #include <aws/fsx/model/DescribeBackupsPaginationTraits.h>
 #include <aws/fsx/model/DescribeVolumesPaginationTraits.h>
+#include <aws/fsx/model/DescribeStorageVirtualMachinePeersPaginationTraits.h>
+#include <aws/fsx/model/DescribeClusterPeersPaginationTraits.h>
+#include <aws/fsx/model/DescribeSnapshotsPaginationTraits.h>
+#include <aws/fsx/model/DescribeDataRepositoryAssociationsPaginationTraits.h>
+#include <aws/fsx/model/DescribeStorageVirtualMachinesPaginationTraits.h>
 #include <aws/fsx/model/ListTagsForResourcePaginationTraits.h>
 #include <aws/fsx/model/DescribeFileSystemAliasesPaginationTraits.h>
 #include <aws/fsx/model/DescribeDataRepositoryTasksPaginationTraits.h>
-#include <aws/fsx/model/DescribeSnapshotsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

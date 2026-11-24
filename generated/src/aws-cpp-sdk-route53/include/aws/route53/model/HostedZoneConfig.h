@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/Route53_EXPORTS.h>
+#include <aws/route53/model/HostedZoneTier.h>
 
 #include <utility>
 
@@ -66,12 +67,39 @@ class HostedZoneConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tier of the hosted zone. The tier controls which features you get and
+   * which optional features you can turn on. Valid values are the following:</p>
+   * <dl> <dt>STANDARD</dt> <dd> <p> <code>STANDARD</code> is the default tier for
+   * new hosted zones.</p> </dd> <dt>ADVANCED</dt> <dd> <p> <code>ADVANCED</code> is
+   * a tier that includes Change History and offers more optional features.</p> </dd>
+   * </dl> <p>If you don't specify a tier when you create a hosted zone, Route 53
+   * uses <code>STANDARD</code>. Route 53 always returns this value. For pricing
+   * information, see Amazon Route 53 pricing on the <a
+   * href="https://aws.amazon.com/route53/pricing/">AWS website</a>.</p>
+   */
+  inline HostedZoneTier GetHostedZoneTier() const { return m_hostedZoneTier; }
+  inline bool HostedZoneTierHasBeenSet() const { return m_hostedZoneTierHasBeenSet; }
+  inline void SetHostedZoneTier(HostedZoneTier value) {
+    m_hostedZoneTierHasBeenSet = true;
+    m_hostedZoneTier = value;
+  }
+  inline HostedZoneConfig& WithHostedZoneTier(HostedZoneTier value) {
+    SetHostedZoneTier(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_comment;
 
   bool m_privateZone{false};
+
+  HostedZoneTier m_hostedZoneTier{HostedZoneTier::NOT_SET};
   bool m_commentHasBeenSet = false;
   bool m_privateZoneHasBeenSet = false;
+  bool m_hostedZoneTierHasBeenSet = false;
 };
 
 }  // namespace Model

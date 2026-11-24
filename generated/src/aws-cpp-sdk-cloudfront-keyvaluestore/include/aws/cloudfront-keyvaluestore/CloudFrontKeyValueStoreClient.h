@@ -16,8 +16,11 @@
 namespace Aws {
 namespace CloudFrontKeyValueStore {
 /**
- * <p>Amazon CloudFront KeyValueStore Service to View and Update Data in a KVS
- * Resource</p>
+ * <p>You can use Amazon CloudFront KeyValueStore to view and update data in a key
+ * value store resource. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/kvs-with-functions.html">Using
+ * CloudFront KeyValueStore</a> in the <i>Amazon CloudFront Developer
+ * Guide</i>.</p>
  */
 class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreClient
     : public Aws::Client::AWSJsonClient,
@@ -82,7 +85,7 @@ class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreClient
   virtual ~CloudFrontKeyValueStoreClient();
 
   /**
-   * <p>Deletes the key value pair specified by the key.</p><p><h3>See Also:</h3>
+   * <p>Deletes the key-value pair specified by the key.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/DeleteKey">AWS
    * API Reference</a></p>
@@ -108,8 +111,8 @@ class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreClient
   }
 
   /**
-   * <p>Returns metadata information about Key Value Store.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Returns metadata information about the key value store.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/DescribeKeyValueStore">AWS
    * API Reference</a></p>
    */
@@ -135,7 +138,7 @@ class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreClient
   }
 
   /**
-   * <p>Returns a key value pair.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns a key-value pair.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/GetKey">AWS
    * API Reference</a></p>
    */
@@ -160,7 +163,7 @@ class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreClient
   }
 
   /**
-   * <p>Returns a list of key value pairs.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns a list of key-value pairs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/ListKeys">AWS
    * API Reference</a></p>
    */
@@ -185,7 +188,7 @@ class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreClient
   }
 
   /**
-   * <p>Creates a new key value pair or replaces the value of an existing
+   * <p>Creates a new key-value pair or replaces the value of an existing
    * key.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/PutKey">AWS
    * API Reference</a></p>
@@ -211,7 +214,7 @@ class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreClient
   }
 
   /**
-   * <p>Puts or Deletes multiple key value pairs in a single, all-or-nothing
+   * <p>Puts or deletes multiple key-value pairs in a single, all-or-nothing
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/UpdateKeys">AWS
    * API Reference</a></p>

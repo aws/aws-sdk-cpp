@@ -20,8 +20,8 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Describes an operating system supported by an EKS add-on fulfillment
- * option.</p><p><h3>See Also:</h3>   <a
+ * <p>Describes an operating system that an Amazon EKS add-on fulfillment option
+ * supports.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/EksAddOnOperatingSystem">AWS
  * API Reference</a></p>
  */

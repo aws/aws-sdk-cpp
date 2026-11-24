@@ -7,8 +7,8 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
-#include <aws/glue/model/ExportEncryptionConfiguration.h>
-#include <aws/glue/model/ExportSetting.h>
+#include <aws/glue/model/AssetsExport.h>
+#include <aws/glue/model/S3TablesConfiguration.h>
 
 #include <utility>
 
@@ -38,32 +38,34 @@ class PutDataCatalogExportConfigurationResult {
 
   ///@{
   /**
-   * <p>The export setting for the data catalog.</p>
+   * <p>The S3 Tables configuration for the export.</p>
    */
-  inline ExportSetting GetExportSetting() const { return m_exportSetting; }
-  inline void SetExportSetting(ExportSetting value) {
-    m_exportSettingHasBeenSet = true;
-    m_exportSetting = value;
+  inline const S3TablesConfiguration& GetS3TablesConfiguration() const { return m_s3TablesConfiguration; }
+  template <typename S3TablesConfigurationT = S3TablesConfiguration>
+  void SetS3TablesConfiguration(S3TablesConfigurationT&& value) {
+    m_s3TablesConfigurationHasBeenSet = true;
+    m_s3TablesConfiguration = std::forward<S3TablesConfigurationT>(value);
   }
-  inline PutDataCatalogExportConfigurationResult& WithExportSetting(ExportSetting value) {
-    SetExportSetting(value);
+  template <typename S3TablesConfigurationT = S3TablesConfiguration>
+  PutDataCatalogExportConfigurationResult& WithS3TablesConfiguration(S3TablesConfigurationT&& value) {
+    SetS3TablesConfiguration(std::forward<S3TablesConfigurationT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The encryption configuration for the exported data.</p>
+   * <p>The export setting for asset metadata.</p>
    */
-  inline const ExportEncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
-  template <typename EncryptionConfigurationT = ExportEncryptionConfiguration>
-  void SetEncryptionConfiguration(EncryptionConfigurationT&& value) {
-    m_encryptionConfigurationHasBeenSet = true;
-    m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value);
+  inline const AssetsExport& GetAssets() const { return m_assets; }
+  template <typename AssetsT = AssetsExport>
+  void SetAssets(AssetsT&& value) {
+    m_assetsHasBeenSet = true;
+    m_assets = std::forward<AssetsT>(value);
   }
-  template <typename EncryptionConfigurationT = ExportEncryptionConfiguration>
-  PutDataCatalogExportConfigurationResult& WithEncryptionConfiguration(EncryptionConfigurationT&& value) {
-    SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value));
+  template <typename AssetsT = AssetsExport>
+  PutDataCatalogExportConfigurationResult& WithAssets(AssetsT&& value) {
+    SetAssets(std::forward<AssetsT>(value));
     return *this;
   }
   ///@}
@@ -85,14 +87,14 @@ class PutDataCatalogExportConfigurationResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  ExportSetting m_exportSetting{ExportSetting::NOT_SET};
+  S3TablesConfiguration m_s3TablesConfiguration;
 
-  ExportEncryptionConfiguration m_encryptionConfiguration;
+  AssetsExport m_assets;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_exportSettingHasBeenSet = false;
-  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_s3TablesConfigurationHasBeenSet = false;
+  bool m_assetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

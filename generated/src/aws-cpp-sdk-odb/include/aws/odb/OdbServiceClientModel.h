@@ -69,6 +69,7 @@
 #include <aws/odb/model/ListAutonomousDatabaseCharacterSetsResult.h>
 #include <aws/odb/model/ListAutonomousDatabaseClonesResult.h>
 #include <aws/odb/model/ListAutonomousDatabasePeersResult.h>
+#include <aws/odb/model/ListAutonomousDatabaseRefreshableClonesResult.h>
 #include <aws/odb/model/ListAutonomousDatabaseVersionsRequest.h>
 #include <aws/odb/model/ListAutonomousDatabaseVersionsResult.h>
 #include <aws/odb/model/ListAutonomousDatabasesRequest.h>
@@ -104,6 +105,7 @@
 #include <aws/odb/model/RebootDbNodeResult.h>
 #include <aws/odb/model/RestoreAutonomousDatabaseResult.h>
 #include <aws/odb/model/ShrinkAutonomousDatabaseResult.h>
+#include <aws/odb/model/StartAutonomousDatabaseRefreshResult.h>
 #include <aws/odb/model/StartAutonomousDatabaseResult.h>
 #include <aws/odb/model/StartDbNodeResult.h>
 #include <aws/odb/model/StopAutonomousDatabaseResult.h>
@@ -201,6 +203,7 @@ class ListAutonomousDatabaseBackupsRequest;
 class ListAutonomousDatabaseCharacterSetsRequest;
 class ListAutonomousDatabaseClonesRequest;
 class ListAutonomousDatabasePeersRequest;
+class ListAutonomousDatabaseRefreshableClonesRequest;
 class ListAutonomousDatabaseVersionsRequest;
 class ListAutonomousDatabasesRequest;
 class ListAutonomousVirtualMachinesRequest;
@@ -224,6 +227,7 @@ class RebootDbNodeRequest;
 class RestoreAutonomousDatabaseRequest;
 class ShrinkAutonomousDatabaseRequest;
 class StartAutonomousDatabaseRequest;
+class StartAutonomousDatabaseRefreshRequest;
 class StartDbNodeRequest;
 class StopAutonomousDatabaseRequest;
 class StopDbNodeRequest;
@@ -293,6 +297,7 @@ typedef Aws::Utils::Outcome<ListAutonomousDatabaseBackupsResult, OdbError> ListA
 typedef Aws::Utils::Outcome<ListAutonomousDatabaseCharacterSetsResult, OdbError> ListAutonomousDatabaseCharacterSetsOutcome;
 typedef Aws::Utils::Outcome<ListAutonomousDatabaseClonesResult, OdbError> ListAutonomousDatabaseClonesOutcome;
 typedef Aws::Utils::Outcome<ListAutonomousDatabasePeersResult, OdbError> ListAutonomousDatabasePeersOutcome;
+typedef Aws::Utils::Outcome<ListAutonomousDatabaseRefreshableClonesResult, OdbError> ListAutonomousDatabaseRefreshableClonesOutcome;
 typedef Aws::Utils::Outcome<ListAutonomousDatabaseVersionsResult, OdbError> ListAutonomousDatabaseVersionsOutcome;
 typedef Aws::Utils::Outcome<ListAutonomousDatabasesResult, OdbError> ListAutonomousDatabasesOutcome;
 typedef Aws::Utils::Outcome<ListAutonomousVirtualMachinesResult, OdbError> ListAutonomousVirtualMachinesOutcome;
@@ -316,6 +321,7 @@ typedef Aws::Utils::Outcome<RebootDbNodeResult, OdbError> RebootDbNodeOutcome;
 typedef Aws::Utils::Outcome<RestoreAutonomousDatabaseResult, OdbError> RestoreAutonomousDatabaseOutcome;
 typedef Aws::Utils::Outcome<ShrinkAutonomousDatabaseResult, OdbError> ShrinkAutonomousDatabaseOutcome;
 typedef Aws::Utils::Outcome<StartAutonomousDatabaseResult, OdbError> StartAutonomousDatabaseOutcome;
+typedef Aws::Utils::Outcome<StartAutonomousDatabaseRefreshResult, OdbError> StartAutonomousDatabaseRefreshOutcome;
 typedef Aws::Utils::Outcome<StartDbNodeResult, OdbError> StartDbNodeOutcome;
 typedef Aws::Utils::Outcome<StopAutonomousDatabaseResult, OdbError> StopAutonomousDatabaseOutcome;
 typedef Aws::Utils::Outcome<StopDbNodeResult, OdbError> StopDbNodeOutcome;
@@ -384,6 +390,7 @@ typedef std::future<ListAutonomousDatabaseBackupsOutcome> ListAutonomousDatabase
 typedef std::future<ListAutonomousDatabaseCharacterSetsOutcome> ListAutonomousDatabaseCharacterSetsOutcomeCallable;
 typedef std::future<ListAutonomousDatabaseClonesOutcome> ListAutonomousDatabaseClonesOutcomeCallable;
 typedef std::future<ListAutonomousDatabasePeersOutcome> ListAutonomousDatabasePeersOutcomeCallable;
+typedef std::future<ListAutonomousDatabaseRefreshableClonesOutcome> ListAutonomousDatabaseRefreshableClonesOutcomeCallable;
 typedef std::future<ListAutonomousDatabaseVersionsOutcome> ListAutonomousDatabaseVersionsOutcomeCallable;
 typedef std::future<ListAutonomousDatabasesOutcome> ListAutonomousDatabasesOutcomeCallable;
 typedef std::future<ListAutonomousVirtualMachinesOutcome> ListAutonomousVirtualMachinesOutcomeCallable;
@@ -407,6 +414,7 @@ typedef std::future<RebootDbNodeOutcome> RebootDbNodeOutcomeCallable;
 typedef std::future<RestoreAutonomousDatabaseOutcome> RestoreAutonomousDatabaseOutcomeCallable;
 typedef std::future<ShrinkAutonomousDatabaseOutcome> ShrinkAutonomousDatabaseOutcomeCallable;
 typedef std::future<StartAutonomousDatabaseOutcome> StartAutonomousDatabaseOutcomeCallable;
+typedef std::future<StartAutonomousDatabaseRefreshOutcome> StartAutonomousDatabaseRefreshOutcomeCallable;
 typedef std::future<StartDbNodeOutcome> StartDbNodeOutcomeCallable;
 typedef std::future<StopAutonomousDatabaseOutcome> StopAutonomousDatabaseOutcomeCallable;
 typedef std::future<StopDbNodeOutcome> StopDbNodeOutcomeCallable;
@@ -589,6 +597,10 @@ typedef std::function<void(const OdbClient*, const Model::ListAutonomousDatabase
 typedef std::function<void(const OdbClient*, const Model::ListAutonomousDatabasePeersRequest&,
                            const Model::ListAutonomousDatabasePeersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAutonomousDatabasePeersResponseReceivedHandler;
+typedef std::function<void(const OdbClient*, const Model::ListAutonomousDatabaseRefreshableClonesRequest&,
+                           const Model::ListAutonomousDatabaseRefreshableClonesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAutonomousDatabaseRefreshableClonesResponseReceivedHandler;
 typedef std::function<void(const OdbClient*, const Model::ListAutonomousDatabaseVersionsRequest&,
                            const Model::ListAutonomousDatabaseVersionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -662,6 +674,10 @@ typedef std::function<void(const OdbClient*, const Model::ShrinkAutonomousDataba
 typedef std::function<void(const OdbClient*, const Model::StartAutonomousDatabaseRequest&, const Model::StartAutonomousDatabaseOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartAutonomousDatabaseResponseReceivedHandler;
+typedef std::function<void(const OdbClient*, const Model::StartAutonomousDatabaseRefreshRequest&,
+                           const Model::StartAutonomousDatabaseRefreshOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartAutonomousDatabaseRefreshResponseReceivedHandler;
 typedef std::function<void(const OdbClient*, const Model::StartDbNodeRequest&, const Model::StartDbNodeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartDbNodeResponseReceivedHandler;

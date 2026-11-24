@@ -53,6 +53,10 @@ Aws::String RunMicrovmRequest::SerializePayload() const {
     payload.WithObject("logging", m_logging.Jsonize());
   }
 
+  if (m_kmsKeyIdentifierHasBeenSet) {
+    payload.WithString("kmsKeyIdentifier", m_kmsKeyIdentifier);
+  }
+
   if (m_runHookPayloadHasBeenSet) {
     payload.WithString("runHookPayload", m_runHookPayload);
   }

@@ -23,7 +23,7 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Defines a payment schedule term with installment payments at specified
+ * <p>Describes a payment schedule term with installment payments at specified
  * dates.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/PaymentScheduleTerm">AWS
  * API Reference</a></p>

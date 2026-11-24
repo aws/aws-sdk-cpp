@@ -60,8 +60,8 @@ class LustreReadCacheConfiguration {
    * <p> Required if <code>SizingMode</code> is set to <code>USER_PROVISIONED</code>.
    * Specifies the size of the file system's SSD read cache, in gibibytes (GiB). </p>
    * <p>The SSD read cache size is distributed across provisioned file servers in
-   * your file system. Intelligent-Tiering file systems support a minimum of 32 GiB
-   * and maximum of 131072 GiB for SSD read cache size for every 4,000 MB/s of
+   * your file system. Intelligent-Tiering file systems support a minimum of 8 GiB
+   * and maximum of 32768 GiB for SSD read cache size for every 1000 MBps of
    * throughput capacity provisioned.</p>
    */
   inline int GetSizeGiB() const { return m_sizeGiB; }

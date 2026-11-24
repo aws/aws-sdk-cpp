@@ -56,6 +56,7 @@
 #include <aws/observabilityadmin/model/CentralizationRuleDestination.h>
 #include <aws/observabilityadmin/model/CentralizationRuleSource.h>
 #include <aws/observabilityadmin/model/CentralizationRuleSummary.h>
+#include <aws/observabilityadmin/model/CentralizeWithDataProtection.h>
 #include <aws/observabilityadmin/model/CloudtrailParameters.h>
 #include <aws/observabilityadmin/model/Condition.h>
 #include <aws/observabilityadmin/model/ConfigurationSummary.h>

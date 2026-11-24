@@ -8,9 +8,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
-#include <aws/glue/model/ExportEncryptionConfiguration.h>
-#include <aws/glue/model/ExportSetting.h>
-#include <aws/glue/model/ExportStatus.h>
+#include <aws/glue/model/AssetsExportResult.h>
+#include <aws/glue/model/S3TablesConfigurationResult.h>
 
 #include <utility>
 
@@ -37,73 +36,6 @@ class GetDataCatalogExportConfigurationResult {
   AWS_GLUE_API GetDataCatalogExportConfigurationResult() = default;
   AWS_GLUE_API GetDataCatalogExportConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_GLUE_API GetDataCatalogExportConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-  ///@{
-  /**
-   * <p>The export setting for the data catalog. Valid values are
-   * <code>ENABLED</code> and <code>DISABLED</code>.</p>
-   */
-  inline ExportSetting GetExportSetting() const { return m_exportSetting; }
-  inline void SetExportSetting(ExportSetting value) {
-    m_exportSettingHasBeenSet = true;
-    m_exportSetting = value;
-  }
-  inline GetDataCatalogExportConfigurationResult& WithExportSetting(ExportSetting value) {
-    SetExportSetting(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The current status of the export. Valid values are <code>ENABLING</code>,
-   * <code>ENABLED</code>, <code>DISABLING</code>, <code>DISABLED</code>, and
-   * <code>FAILED</code>.</p>
-   */
-  inline ExportStatus GetStatus() const { return m_status; }
-  inline void SetStatus(ExportStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline GetDataCatalogExportConfigurationResult& WithStatus(ExportStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The encryption configuration for the exported data.</p>
-   */
-  inline const ExportEncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
-  template <typename EncryptionConfigurationT = ExportEncryptionConfiguration>
-  void SetEncryptionConfiguration(EncryptionConfigurationT&& value) {
-    m_encryptionConfigurationHasBeenSet = true;
-    m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value);
-  }
-  template <typename EncryptionConfigurationT = ExportEncryptionConfiguration>
-  GetDataCatalogExportConfigurationResult& WithEncryptionConfiguration(EncryptionConfigurationT&& value) {
-    SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ARN of the S3 Tables bucket where catalog metadata is exported.</p>
-   */
-  inline const Aws::String& GetS3TableBucketArn() const { return m_s3TableBucketArn; }
-  template <typename S3TableBucketArnT = Aws::String>
-  void SetS3TableBucketArn(S3TableBucketArnT&& value) {
-    m_s3TableBucketArnHasBeenSet = true;
-    m_s3TableBucketArn = std::forward<S3TableBucketArnT>(value);
-  }
-  template <typename S3TableBucketArnT = Aws::String>
-  GetDataCatalogExportConfigurationResult& WithS3TableBucketArn(S3TableBucketArnT&& value) {
-    SetS3TableBucketArn(std::forward<S3TableBucketArnT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -140,6 +72,41 @@ class GetDataCatalogExportConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The S3 Tables configuration for the export, including the table bucket that
+   * holds the exported catalog metadata and its encryption configuration.</p>
+   */
+  inline const S3TablesConfigurationResult& GetS3TablesConfiguration() const { return m_s3TablesConfiguration; }
+  template <typename S3TablesConfigurationT = S3TablesConfigurationResult>
+  void SetS3TablesConfiguration(S3TablesConfigurationT&& value) {
+    m_s3TablesConfigurationHasBeenSet = true;
+    m_s3TablesConfiguration = std::forward<S3TablesConfigurationT>(value);
+  }
+  template <typename S3TablesConfigurationT = S3TablesConfigurationResult>
+  GetDataCatalogExportConfigurationResult& WithS3TablesConfiguration(S3TablesConfigurationT&& value) {
+    SetS3TablesConfiguration(std::forward<S3TablesConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The export setting and current export state for asset metadata.</p>
+   */
+  inline const AssetsExportResult& GetAssets() const { return m_assets; }
+  template <typename AssetsT = AssetsExportResult>
+  void SetAssets(AssetsT&& value) {
+    m_assetsHasBeenSet = true;
+    m_assets = std::forward<AssetsT>(value);
+  }
+  template <typename AssetsT = AssetsExportResult>
+  GetDataCatalogExportConfigurationResult& WithAssets(AssetsT&& value) {
+    SetAssets(std::forward<AssetsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -156,26 +123,20 @@ class GetDataCatalogExportConfigurationResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  ExportSetting m_exportSetting{ExportSetting::NOT_SET};
-
-  ExportStatus m_status{ExportStatus::NOT_SET};
-
-  ExportEncryptionConfiguration m_encryptionConfiguration;
-
-  Aws::String m_s3TableBucketArn;
-
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
 
+  S3TablesConfigurationResult m_s3TablesConfiguration;
+
+  AssetsExportResult m_assets;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_exportSettingHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
-  bool m_encryptionConfigurationHasBeenSet = false;
-  bool m_s3TableBucketArnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_s3TablesConfigurationHasBeenSet = false;
+  bool m_assetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -62,6 +62,19 @@ VulnerablePackage& VulnerablePackage::operator=(JsonView jsonValue) {
     m_sourceLambdaLayerArn = jsonValue.GetString("sourceLambdaLayerArn");
     m_sourceLambdaLayerArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("runtimeReachability")) {
+    m_runtimeReachability = RuntimeReachabilityMapper::GetRuntimeReachabilityForName(jsonValue.GetString("runtimeReachability"));
+    m_runtimeReachabilityHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("runtimeReachabilityReason")) {
+    m_runtimeReachabilityReason =
+        RuntimeReachabilityReasonMapper::GetRuntimeReachabilityReasonForName(jsonValue.GetString("runtimeReachabilityReason"));
+    m_runtimeReachabilityReasonHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("purl")) {
+    m_purl = jsonValue.GetString("purl");
+    m_purlHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +123,19 @@ JsonValue VulnerablePackage::Jsonize() const {
 
   if (m_sourceLambdaLayerArnHasBeenSet) {
     payload.WithString("sourceLambdaLayerArn", m_sourceLambdaLayerArn);
+  }
+
+  if (m_runtimeReachabilityHasBeenSet) {
+    payload.WithString("runtimeReachability", RuntimeReachabilityMapper::GetNameForRuntimeReachability(m_runtimeReachability));
+  }
+
+  if (m_runtimeReachabilityReasonHasBeenSet) {
+    payload.WithString("runtimeReachabilityReason",
+                       RuntimeReachabilityReasonMapper::GetNameForRuntimeReachabilityReason(m_runtimeReachabilityReason));
+  }
+
+  if (m_purlHasBeenSet) {
+    payload.WithString("purl", m_purl);
   }
 
   return payload;

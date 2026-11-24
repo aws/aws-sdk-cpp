@@ -23,7 +23,7 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Defines a fixed upfront pricing term with a pre-paid amount and granted
+ * <p>Describes a fixed upfront pricing term with a pre-paid amount and granted
  * entitlements.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/FixedUpfrontPricingTerm">AWS
  * API Reference</a></p>
@@ -125,7 +125,7 @@ class FixedUpfrontPricingTerm {
 
   ///@{
   /**
-   * <p>The entitlements granted to the buyer as part of this term.</p>
+   * <p>The entitlements that you receive as part of this term.</p>
    */
   inline const Aws::Vector<GrantItem>& GetGrants() const { return m_grants; }
   inline bool GrantsHasBeenSet() const { return m_grantsHasBeenSet; }

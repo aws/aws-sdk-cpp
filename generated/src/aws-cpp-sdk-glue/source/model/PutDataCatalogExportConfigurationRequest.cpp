@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String PutDataCatalogExportConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_exportSettingHasBeenSet) {
-    payload.WithString("ExportSetting", ExportSettingMapper::GetNameForExportSetting(m_exportSetting));
-  }
-
-  if (m_encryptionConfigurationHasBeenSet) {
-    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
-  }
-
   if (m_clientTokenHasBeenSet) {
     payload.WithString("ClientToken", m_clientToken);
+  }
+
+  if (m_s3TablesConfigurationHasBeenSet) {
+    payload.WithObject("S3TablesConfiguration", m_s3TablesConfiguration.Jsonize());
+  }
+
+  if (m_assetsHasBeenSet) {
+    payload.WithObject("Assets", m_assets.Jsonize());
   }
 
   return payload.View().WriteReadable();

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace QuickSight {
 namespace Model {
-enum class AssetType { NOT_SET, AGENT, SPACE, KNOWLEDGE_BASE };
+enum class AssetType { NOT_SET, AGENT, SPACE, KNOWLEDGE_BASE, FLOW };
 
 namespace AssetTypeMapper {
 AWS_QUICKSIGHT_API AssetType GetAssetTypeForName(const Aws::String& name);

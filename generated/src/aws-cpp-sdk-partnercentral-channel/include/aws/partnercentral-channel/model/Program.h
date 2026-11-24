@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PartnerCentralChannel {
 namespace Model {
-enum class Program { NOT_SET, SOLUTION_PROVIDER, DISTRIBUTION, DISTRIBUTION_SELLER };
+enum class Program { NOT_SET, SOLUTION_PROVIDER, DISTRIBUTION, DISTRIBUTION_SELLER, MANAGED_SERVICES_PROVIDER };
 
 namespace ProgramMapper {
 AWS_PARTNERCENTRALCHANNEL_API Program GetProgramForName(const Aws::String& name);

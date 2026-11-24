@@ -175,8 +175,8 @@ class InlineSetting {
   /**
    * <p>Per-run engine-specific settings. Use this field to specify configuration
    * options that are specific to the workflow engine (for example, Nextflow
-   * profiles). Overrides <code>defaultRunSetting.engineSettings</code> for this
-   * run.</p>
+   * profiles, Nextflow runtime configuration). Overrides
+   * <code>defaultRunSetting.engineSettings</code> for this run.</p>
    */
   inline Aws::Utils::DocumentView GetEngineSettings() const { return m_engineSettings; }
   inline bool EngineSettingsHasBeenSet() const { return m_engineSettingsHasBeenSet; }

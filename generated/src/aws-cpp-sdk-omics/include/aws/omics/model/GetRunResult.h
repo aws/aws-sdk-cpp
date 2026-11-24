@@ -790,6 +790,50 @@ class GetRunResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Specifies whether this workflow run can read inputs from Amazon S3 buckets
+   * that use Requester Pays, as set in the <code>StartRun</code> or
+   * <code>StartRunBatch</code> request.</p>
+   */
+  inline bool GetRequesterPaysEnabled() const { return m_requesterPaysEnabled; }
+  inline void SetRequesterPaysEnabled(bool value) {
+    m_requesterPaysEnabledHasBeenSet = true;
+    m_requesterPaysEnabled = value;
+  }
+  inline GetRunResult& WithRequesterPaysEnabled(bool value) {
+    SetRequesterPaysEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>For a run that you started with <code>parametersUri</code>, the service
+   * returns the location of the run parameters in this field instead of
+   * <code>parameters</code>. The value is one of the following values:</p> <ul> <li>
+   * <p>A presigned HTTPS URL for the copy of the parameters file that Amazon Web
+   * Services HealthOmics stores for the run</p> </li> <li> <p>The S3 URI that you
+   * submitted, if Amazon Web Services HealthOmics has not stored a copy of the file
+   * yet or the run failed validation</p> </li> </ul> <p>A presigned URL expires
+   * after a limited time. Call <code>GetRun</code> again to get a new URL. Treat the
+   * URL as a credential and do not share it. If the run failed because the
+   * parameters were not valid, check <code>failureReason</code> and
+   * <code>statusMessage</code>.</p>
+   */
+  inline const Aws::String& GetParametersUri() const { return m_parametersUri; }
+  template <typename ParametersUriT = Aws::String>
+  void SetParametersUri(ParametersUriT&& value) {
+    m_parametersUriHasBeenSet = true;
+    m_parametersUri = std::forward<ParametersUriT>(value);
+  }
+  template <typename ParametersUriT = Aws::String>
+  GetRunResult& WithParametersUri(ParametersUriT&& value) {
+    SetParametersUri(std::forward<ParametersUriT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -894,6 +938,10 @@ class GetRunResult {
 
   RunOutputUriPrefixMode m_outputUriPrefixMode{RunOutputUriPrefixMode::NOT_SET};
 
+  bool m_requesterPaysEnabled{false};
+
+  Aws::String m_parametersUri;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -940,6 +988,8 @@ class GetRunResult {
   bool m_engineSettingsHasBeenSet = false;
   bool m_sessionPolicyHasBeenSet = false;
   bool m_outputUriPrefixModeHasBeenSet = false;
+  bool m_requesterPaysEnabledHasBeenSet = false;
+  bool m_parametersUriHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

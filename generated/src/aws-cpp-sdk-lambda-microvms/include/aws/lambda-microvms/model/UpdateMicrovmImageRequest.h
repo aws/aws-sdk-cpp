@@ -286,6 +286,29 @@ class UpdateMicrovmImageRequest : public LambdaMicrovmsRequest {
 
   ///@{
   /**
+   * <p>The customer managed Amazon Web Services Key Management Service (Amazon Web
+   * Services KMS) key that encrypts the contents and metadata of your MicroVM image
+   * version. You must have permission to use the key. Specify the key in one of the
+   * following formats:</p> <ul> <li> <p>Key ARN</p> </li> <li> <p>Alias ARN</p>
+   * </li> </ul> <p>If you don't specify a key, your MicroVM image version uses an
+   * Amazon Web Services owned key.</p>
+   */
+  inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+  inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    m_kmsKeyIdentifierHasBeenSet = true;
+    m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value);
+  }
+  template <typename KmsKeyIdentifierT = Aws::String>
+  UpdateMicrovmImageRequest& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) {
+    SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The unique identifier (ARN or ID) of the MicroVM image to update.</p>
    */
   inline const Aws::String& GetImageIdentifier() const { return m_imageIdentifier; }
@@ -345,6 +368,8 @@ class UpdateMicrovmImageRequest : public LambdaMicrovmsRequest {
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
 
+  Aws::String m_kmsKeyIdentifier;
+
   Aws::String m_imageIdentifier;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -360,6 +385,7 @@ class UpdateMicrovmImageRequest : public LambdaMicrovmsRequest {
   bool m_additionalOsCapabilitiesHasBeenSet = false;
   bool m_hooksHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_imageIdentifierHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };

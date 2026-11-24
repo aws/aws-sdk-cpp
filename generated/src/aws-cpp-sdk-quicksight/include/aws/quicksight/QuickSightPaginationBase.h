@@ -9,6 +9,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/quicksight/model/DescribeFolderPermissionsPaginationTraits.h>
 #include <aws/quicksight/model/DescribeFolderResolvedPermissionsPaginationTraits.h>
+#include <aws/quicksight/model/ListAccessControlApplicationsPaginationTraits.h>
 #include <aws/quicksight/model/ListActionConnectorsPaginationTraits.h>
 #include <aws/quicksight/model/ListAnalysesPaginationTraits.h>
 #include <aws/quicksight/model/ListApprovalPoliciesPaginationTraits.h>
@@ -30,11 +31,15 @@
 #include <aws/quicksight/model/ListGroupsPaginationTraits.h>
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsForUserPaginationTraits.h>
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsPaginationTraits.h>
+#include <aws/quicksight/model/ListInboundConnectorApplicationAssociationsPaginationTraits.h>
+#include <aws/quicksight/model/ListInboundConnectorsPaginationTraits.h>
 #include <aws/quicksight/model/ListIngestionsPaginationTraits.h>
+#include <aws/quicksight/model/ListKnowledgeBaseRefreshSchedulesPaginationTraits.h>
 #include <aws/quicksight/model/ListKnowledgeBasesPaginationTraits.h>
 #include <aws/quicksight/model/ListLimitsProfilesPaginationTraits.h>
 #include <aws/quicksight/model/ListNamespacesPaginationTraits.h>
 #include <aws/quicksight/model/ListOAuthClientApplicationsPaginationTraits.h>
+#include <aws/quicksight/model/ListPrincipalsForPolicyPaginationTraits.h>
 #include <aws/quicksight/model/ListRoleMembershipsPaginationTraits.h>
 #include <aws/quicksight/model/ListTemplateAliasesPaginationTraits.h>
 #include <aws/quicksight/model/ListTemplateVersionsPaginationTraits.h>
@@ -88,6 +93,18 @@ class QuickSightPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFolderResolvedPermissionsRequest,
                                              Pagination::DescribeFolderResolvedPermissionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAccessControlApplications operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessControlApplicationsRequest,
+                                    Pagination::ListAccessControlApplicationsPaginationTraits<DerivedClient>>
+  ListAccessControlApplicationsPaginator(const Model::ListAccessControlApplicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessControlApplicationsRequest,
+                                             Pagination::ListAccessControlApplicationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 
@@ -334,6 +351,30 @@ class QuickSightPaginationBase {
   }
 
   /**
+   * Create a paginator for ListInboundConnectorApplicationAssociations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInboundConnectorApplicationAssociationsRequest,
+                                    Pagination::ListInboundConnectorApplicationAssociationsPaginationTraits<DerivedClient>>
+  ListInboundConnectorApplicationAssociationsPaginator(const Model::ListInboundConnectorApplicationAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInboundConnectorApplicationAssociationsRequest,
+                                             Pagination::ListInboundConnectorApplicationAssociationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListInboundConnectors operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInboundConnectorsRequest,
+                                    Pagination::ListInboundConnectorsPaginationTraits<DerivedClient>>
+  ListInboundConnectorsPaginator(const Model::ListInboundConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInboundConnectorsRequest,
+                                             Pagination::ListInboundConnectorsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListIngestions operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestionsRequest, Pagination::ListIngestionsPaginationTraits<DerivedClient>>
@@ -342,6 +383,18 @@ class QuickSightPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestionsRequest,
                                              Pagination::ListIngestionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
+  }
+
+  /**
+   * Create a paginator for ListKnowledgeBaseRefreshSchedules operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKnowledgeBaseRefreshSchedulesRequest,
+                                    Pagination::ListKnowledgeBaseRefreshSchedulesPaginationTraits<DerivedClient>>
+  ListKnowledgeBaseRefreshSchedulesPaginator(const Model::ListKnowledgeBaseRefreshSchedulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKnowledgeBaseRefreshSchedulesRequest,
+                                             Pagination::ListKnowledgeBaseRefreshSchedulesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -388,6 +441,18 @@ class QuickSightPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOAuthClientApplicationsRequest,
                                              Pagination::ListOAuthClientApplicationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListPrincipalsForPolicy operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrincipalsForPolicyRequest,
+                                    Pagination::ListPrincipalsForPolicyPaginationTraits<DerivedClient>>
+  ListPrincipalsForPolicyPaginator(const Model::ListPrincipalsForPolicyRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrincipalsForPolicyRequest,
+                                             Pagination::ListPrincipalsForPolicyPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

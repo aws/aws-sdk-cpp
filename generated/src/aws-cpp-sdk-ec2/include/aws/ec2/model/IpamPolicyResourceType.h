@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class IpamPolicyResourceType { NOT_SET, alb, eip, rds, rnat };
+enum class IpamPolicyResourceType { NOT_SET, alb, eip, rds, rnat, lambda_network_connector, igw_firewall };
 
 namespace IpamPolicyResourceTypeMapper {
 AWS_EC2_API IpamPolicyResourceType GetIpamPolicyResourceTypeForName(const Aws::String& name);

@@ -69,7 +69,8 @@ class UpdateGlossaryTermRequest : public GlueRequest {
 
   ///@{
   /**
-   * <p>The updated short description of the glossary term.</p>
+   * The new short description. Omit it to keep the current one; set it to an empty
+   * string to clear it.
    */
   inline const Aws::String& GetShortDescription() const { return m_shortDescription; }
   inline bool ShortDescriptionHasBeenSet() const { return m_shortDescriptionHasBeenSet; }
@@ -87,7 +88,8 @@ class UpdateGlossaryTermRequest : public GlueRequest {
 
   ///@{
   /**
-   * <p>The updated long description of the glossary term.</p>
+   * The new long description. Omit it to keep the current one; set it to an empty
+   * string to clear it.
    */
   inline const Aws::String& GetLongDescription() const { return m_longDescription; }
   inline bool LongDescriptionHasBeenSet() const { return m_longDescriptionHasBeenSet; }

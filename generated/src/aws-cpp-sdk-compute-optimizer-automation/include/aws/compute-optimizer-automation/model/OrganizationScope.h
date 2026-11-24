@@ -57,9 +57,94 @@ class OrganizationScope {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The organizational unit (OU) or organization root IDs to include in the
+   * preview scope. The preview includes accounts in the specified OUs and their
+   * child OUs.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const { return m_organizationalUnitIds; }
+  inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
+  template <typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+  void SetOrganizationalUnitIds(OrganizationalUnitIdsT&& value) {
+    m_organizationalUnitIdsHasBeenSet = true;
+    m_organizationalUnitIds = std::forward<OrganizationalUnitIdsT>(value);
+  }
+  template <typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+  OrganizationScope& WithOrganizationalUnitIds(OrganizationalUnitIdsT&& value) {
+    SetOrganizationalUnitIds(std::forward<OrganizationalUnitIdsT>(value));
+    return *this;
+  }
+  template <typename OrganizationalUnitIdsT = Aws::String>
+  OrganizationScope& AddOrganizationalUnitIds(OrganizationalUnitIdsT&& value) {
+    m_organizationalUnitIdsHasBeenSet = true;
+    m_organizationalUnitIds.emplace_back(std::forward<OrganizationalUnitIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The organizational unit (OU) or organization root IDs to exclude from the
+   * preview scope. The preview doesn't include accounts in the specified OUs or
+   * their child OUs.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetExcludedOrganizationalUnitIds() const { return m_excludedOrganizationalUnitIds; }
+  inline bool ExcludedOrganizationalUnitIdsHasBeenSet() const { return m_excludedOrganizationalUnitIdsHasBeenSet; }
+  template <typename ExcludedOrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+  void SetExcludedOrganizationalUnitIds(ExcludedOrganizationalUnitIdsT&& value) {
+    m_excludedOrganizationalUnitIdsHasBeenSet = true;
+    m_excludedOrganizationalUnitIds = std::forward<ExcludedOrganizationalUnitIdsT>(value);
+  }
+  template <typename ExcludedOrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+  OrganizationScope& WithExcludedOrganizationalUnitIds(ExcludedOrganizationalUnitIdsT&& value) {
+    SetExcludedOrganizationalUnitIds(std::forward<ExcludedOrganizationalUnitIdsT>(value));
+    return *this;
+  }
+  template <typename ExcludedOrganizationalUnitIdsT = Aws::String>
+  OrganizationScope& AddExcludedOrganizationalUnitIds(ExcludedOrganizationalUnitIdsT&& value) {
+    m_excludedOrganizationalUnitIdsHasBeenSet = true;
+    m_excludedOrganizationalUnitIds.emplace_back(std::forward<ExcludedOrganizationalUnitIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services account IDs to exclude from the preview scope.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetExcludedAccountIds() const { return m_excludedAccountIds; }
+  inline bool ExcludedAccountIdsHasBeenSet() const { return m_excludedAccountIdsHasBeenSet; }
+  template <typename ExcludedAccountIdsT = Aws::Vector<Aws::String>>
+  void SetExcludedAccountIds(ExcludedAccountIdsT&& value) {
+    m_excludedAccountIdsHasBeenSet = true;
+    m_excludedAccountIds = std::forward<ExcludedAccountIdsT>(value);
+  }
+  template <typename ExcludedAccountIdsT = Aws::Vector<Aws::String>>
+  OrganizationScope& WithExcludedAccountIds(ExcludedAccountIdsT&& value) {
+    SetExcludedAccountIds(std::forward<ExcludedAccountIdsT>(value));
+    return *this;
+  }
+  template <typename ExcludedAccountIdsT = Aws::String>
+  OrganizationScope& AddExcludedAccountIds(ExcludedAccountIdsT&& value) {
+    m_excludedAccountIdsHasBeenSet = true;
+    m_excludedAccountIds.emplace_back(std::forward<ExcludedAccountIdsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
+
+  Aws::Vector<Aws::String> m_organizationalUnitIds;
+
+  Aws::Vector<Aws::String> m_excludedOrganizationalUnitIds;
+
+  Aws::Vector<Aws::String> m_excludedAccountIds;
   bool m_accountIdsHasBeenSet = false;
+  bool m_organizationalUnitIdsHasBeenSet = false;
+  bool m_excludedOrganizationalUnitIdsHasBeenSet = false;
+  bool m_excludedAccountIdsHasBeenSet = false;
 };
 
 }  // namespace Model

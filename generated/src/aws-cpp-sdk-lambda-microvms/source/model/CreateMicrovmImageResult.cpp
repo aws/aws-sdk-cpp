@@ -112,6 +112,10 @@ CreateMicrovmImageResult& CreateMicrovmImageResult::operator=(const Aws::AmazonW
     }
     m_environmentVariablesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("kmsKeyIdentifier")) {
+    m_kmsKeyIdentifier = jsonValue.GetString("kmsKeyIdentifier");
+    m_kmsKeyIdentifierHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {

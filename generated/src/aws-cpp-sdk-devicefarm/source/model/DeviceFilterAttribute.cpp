@@ -21,6 +21,7 @@ static const int OS_VERSION_HASH = HashingUtils::HashString("OS_VERSION");
 static const int MODEL_HASH = HashingUtils::HashString("MODEL");
 static const int AVAILABILITY_HASH = HashingUtils::HashString("AVAILABILITY");
 static const int FORM_FACTOR_HASH = HashingUtils::HashString("FORM_FACTOR");
+static const int DEVICE_TYPE_HASH = HashingUtils::HashString("DEVICE_TYPE");
 static const int MANUFACTURER_HASH = HashingUtils::HashString("MANUFACTURER");
 static const int REMOTE_ACCESS_ENABLED_HASH = HashingUtils::HashString("REMOTE_ACCESS_ENABLED");
 static const int REMOTE_DEBUG_ENABLED_HASH = HashingUtils::HashString("REMOTE_DEBUG_ENABLED");
@@ -42,6 +43,8 @@ DeviceFilterAttribute GetDeviceFilterAttributeForName(const Aws::String& name) {
     return DeviceFilterAttribute::AVAILABILITY;
   } else if (hashCode == FORM_FACTOR_HASH) {
     return DeviceFilterAttribute::FORM_FACTOR;
+  } else if (hashCode == DEVICE_TYPE_HASH) {
+    return DeviceFilterAttribute::DEVICE_TYPE;
   } else if (hashCode == MANUFACTURER_HASH) {
     return DeviceFilterAttribute::MANUFACTURER;
   } else if (hashCode == REMOTE_ACCESS_ENABLED_HASH) {
@@ -80,6 +83,8 @@ Aws::String GetNameForDeviceFilterAttribute(DeviceFilterAttribute enumValue) {
       return "AVAILABILITY";
     case DeviceFilterAttribute::FORM_FACTOR:
       return "FORM_FACTOR";
+    case DeviceFilterAttribute::DEVICE_TYPE:
+      return "DEVICE_TYPE";
     case DeviceFilterAttribute::MANUFACTURER:
       return "MANUFACTURER";
     case DeviceFilterAttribute::REMOTE_ACCESS_ENABLED:

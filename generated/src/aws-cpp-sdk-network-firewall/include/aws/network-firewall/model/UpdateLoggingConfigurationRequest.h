@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/NetworkFirewallRequest.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
+#include <aws/network-firewall/model/FirewallType.h>
 #include <aws/network-firewall/model/LoggingConfiguration.h>
 
 #include <utility>
@@ -72,6 +73,29 @@ class UpdateLoggingConfigurationRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
+   * <p>The type of firewall that the request targets. Network Firewall supports the
+   * following firewall types:</p> <ul> <li> <p> <code>IGW_FIREWALL</code> - An
+   * internet gateway firewall, which Amazon Web Services Network Security Manager
+   * creates and manages for a VPC.</p> </li> <li> <p> <code>FIREWALL</code> - A
+   * standard Network Firewall firewall.</p> </li> </ul> <p>If you specify the
+   * firewall ARN, the type must match the resource type in the ARN. If you specify
+   * only the firewall name, Network Firewall uses this value to identify the
+   * firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+   */
+  inline FirewallType GetFirewallType() const { return m_firewallType; }
+  inline bool FirewallTypeHasBeenSet() const { return m_firewallTypeHasBeenSet; }
+  inline void SetFirewallType(FirewallType value) {
+    m_firewallTypeHasBeenSet = true;
+    m_firewallType = value;
+  }
+  inline UpdateLoggingConfigurationRequest& WithFirewallType(FirewallType value) {
+    SetFirewallType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Defines how Network Firewall performs logging for a firewall. If you omit
    * this setting, Network Firewall disables logging for the firewall.</p>
    */
@@ -116,11 +140,14 @@ class UpdateLoggingConfigurationRequest : public NetworkFirewallRequest {
 
   Aws::String m_firewallName;
 
+  FirewallType m_firewallType{FirewallType::NOT_SET};
+
   LoggingConfiguration m_loggingConfiguration;
 
   bool m_enableMonitoringDashboard{false};
   bool m_firewallArnHasBeenSet = false;
   bool m_firewallNameHasBeenSet = false;
+  bool m_firewallTypeHasBeenSet = false;
   bool m_loggingConfigurationHasBeenSet = false;
   bool m_enableMonitoringDashboardHasBeenSet = false;
 };

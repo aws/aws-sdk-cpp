@@ -21,6 +21,7 @@ static const int COGNITO_USER_POOL_HASH = HashingUtils::HashString("COGNITO_USER
 static const int APP_RUNNER_SERVICE_HASH = HashingUtils::HashString("APP_RUNNER_SERVICE");
 static const int VERIFIED_ACCESS_INSTANCE_HASH = HashingUtils::HashString("VERIFIED_ACCESS_INSTANCE");
 static const int AGENTCORE_GATEWAY_HASH = HashingUtils::HashString("AGENTCORE_GATEWAY");
+static const int APPLICATION_LOAD_BALANCER_HASH = HashingUtils::HashString("APPLICATION_LOAD_BALANCER");
 
 AssociatedResourceType GetAssociatedResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ AssociatedResourceType GetAssociatedResourceTypeForName(const Aws::String& name)
     return AssociatedResourceType::VERIFIED_ACCESS_INSTANCE;
   } else if (hashCode == AGENTCORE_GATEWAY_HASH) {
     return AssociatedResourceType::AGENTCORE_GATEWAY;
+  } else if (hashCode == APPLICATION_LOAD_BALANCER_HASH) {
+    return AssociatedResourceType::APPLICATION_LOAD_BALANCER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForAssociatedResourceType(AssociatedResourceType enumValue) {
       return "VERIFIED_ACCESS_INSTANCE";
     case AssociatedResourceType::AGENTCORE_GATEWAY:
       return "AGENTCORE_GATEWAY";
+    case AssociatedResourceType::APPLICATION_LOAD_BALANCER:
+      return "APPLICATION_LOAD_BALANCER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

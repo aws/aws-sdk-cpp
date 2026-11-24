@@ -34,6 +34,10 @@ ManagedRuleGroupConfig& ManagedRuleGroupConfig::operator=(JsonView jsonValue) {
     m_aWSManagedRulesAntiDDoSRuleSet = jsonValue.GetObject("AWSManagedRulesAntiDDoSRuleSet");
     m_aWSManagedRulesAntiDDoSRuleSetHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AWSManagedRulesAISecurityRuleSet")) {
+    m_aWSManagedRulesAISecurityRuleSet = jsonValue.GetObject("AWSManagedRulesAISecurityRuleSet");
+    m_aWSManagedRulesAISecurityRuleSetHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue ManagedRuleGroupConfig::Jsonize() const {
 
   if (m_aWSManagedRulesAntiDDoSRuleSetHasBeenSet) {
     payload.WithObject("AWSManagedRulesAntiDDoSRuleSet", m_aWSManagedRulesAntiDDoSRuleSet.Jsonize());
+  }
+
+  if (m_aWSManagedRulesAISecurityRuleSetHasBeenSet) {
+    payload.WithObject("AWSManagedRulesAISecurityRuleSet", m_aWSManagedRulesAISecurityRuleSet.Jsonize());
   }
 
   return payload;

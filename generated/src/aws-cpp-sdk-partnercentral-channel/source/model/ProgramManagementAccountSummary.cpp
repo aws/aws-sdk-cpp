@@ -62,6 +62,10 @@ ProgramManagementAccountSummary& ProgramManagementAccountSummary::operator=(Json
     m_status = ProgramManagementAccountStatusMapper::GetProgramManagementAccountStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("type")) {
+    m_type = ProgramManagementAccountTypeMapper::GetProgramManagementAccountTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +114,10 @@ JsonValue ProgramManagementAccountSummary::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", ProgramManagementAccountStatusMapper::GetNameForProgramManagementAccountStatus(m_status));
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ProgramManagementAccountTypeMapper::GetNameForProgramManagementAccountType(m_type));
   }
 
   return payload;

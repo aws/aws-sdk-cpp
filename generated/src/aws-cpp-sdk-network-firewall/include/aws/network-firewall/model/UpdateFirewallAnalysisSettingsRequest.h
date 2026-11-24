@@ -9,6 +9,7 @@
 #include <aws/network-firewall/NetworkFirewallRequest.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/EnabledAnalysisType.h>
+#include <aws/network-firewall/model/FirewallType.h>
 
 #include <utility>
 
@@ -123,6 +124,29 @@ class UpdateFirewallAnalysisSettingsRequest : public NetworkFirewallRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of firewall that the request targets. Network Firewall supports the
+   * following firewall types:</p> <ul> <li> <p> <code>IGW_FIREWALL</code> - An
+   * internet gateway firewall, which Amazon Web Services Network Security Manager
+   * creates and manages for a VPC.</p> </li> <li> <p> <code>FIREWALL</code> - A
+   * standard Network Firewall firewall.</p> </li> </ul> <p>If you specify the
+   * firewall ARN, the type must match the resource type in the ARN. If you specify
+   * only the firewall name, Network Firewall uses this value to identify the
+   * firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+   */
+  inline FirewallType GetFirewallType() const { return m_firewallType; }
+  inline bool FirewallTypeHasBeenSet() const { return m_firewallTypeHasBeenSet; }
+  inline void SetFirewallType(FirewallType value) {
+    m_firewallTypeHasBeenSet = true;
+    m_firewallType = value;
+  }
+  inline UpdateFirewallAnalysisSettingsRequest& WithFirewallType(FirewallType value) {
+    SetFirewallType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<EnabledAnalysisType> m_enabledAnalysisTypes;
 
@@ -131,10 +155,13 @@ class UpdateFirewallAnalysisSettingsRequest : public NetworkFirewallRequest {
   Aws::String m_firewallName;
 
   Aws::String m_updateToken;
+
+  FirewallType m_firewallType{FirewallType::NOT_SET};
   bool m_enabledAnalysisTypesHasBeenSet = false;
   bool m_firewallArnHasBeenSet = false;
   bool m_firewallNameHasBeenSet = false;
   bool m_updateTokenHasBeenSet = false;
+  bool m_firewallTypeHasBeenSet = false;
 };
 
 }  // namespace Model

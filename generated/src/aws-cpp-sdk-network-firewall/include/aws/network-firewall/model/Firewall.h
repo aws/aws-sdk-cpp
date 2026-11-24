@@ -11,6 +11,7 @@
 #include <aws/network-firewall/model/AvailabilityZoneMapping.h>
 #include <aws/network-firewall/model/EnabledAnalysisType.h>
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
+#include <aws/network-firewall/model/IgwFirewallConfiguration.h>
 #include <aws/network-firewall/model/NatGatewayCreateMapping.h>
 #include <aws/network-firewall/model/ProxySettings.h>
 #include <aws/network-firewall/model/SubnetMapping.h>
@@ -427,6 +428,27 @@ class Firewall {
 
   ///@{
   /**
+   * <p>Contains the settings that configure an internet gateway firewall, which
+   * Amazon Web Services Network Security Manager creates and manages for a VPC.
+   * Network Firewall returns this setting only for an internet gateway firewall. For
+   * a standard firewall, this setting isn't present.</p>
+   */
+  inline const IgwFirewallConfiguration& GetIgwFirewallConfiguration() const { return m_igwFirewallConfiguration; }
+  inline bool IgwFirewallConfigurationHasBeenSet() const { return m_igwFirewallConfigurationHasBeenSet; }
+  template <typename IgwFirewallConfigurationT = IgwFirewallConfiguration>
+  void SetIgwFirewallConfiguration(IgwFirewallConfigurationT&& value) {
+    m_igwFirewallConfigurationHasBeenSet = true;
+    m_igwFirewallConfiguration = std::forward<IgwFirewallConfigurationT>(value);
+  }
+  template <typename IgwFirewallConfigurationT = IgwFirewallConfiguration>
+  Firewall& WithIgwFirewallConfiguration(IgwFirewallConfigurationT&& value) {
+    SetIgwFirewallConfiguration(std::forward<IgwFirewallConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The NAT gateways that you specified for Network Firewall to create for a
    * proxy mode firewall. To get the IDs and status of the NAT gateways that are
    * attached to the firewall, see <code>NatGatewayAttachments</code> in the
@@ -586,6 +608,8 @@ class Firewall {
 
   bool m_availabilityZoneChangeProtection{false};
 
+  IgwFirewallConfiguration m_igwFirewallConfiguration;
+
   Aws::Vector<NatGatewayCreateMapping> m_natGatewayCreateMappings;
 
   ProxySettings m_proxySettings;
@@ -615,6 +639,7 @@ class Firewall {
   bool m_transitGatewayOwnerAccountIdHasBeenSet = false;
   bool m_availabilityZoneMappingsHasBeenSet = false;
   bool m_availabilityZoneChangeProtectionHasBeenSet = false;
+  bool m_igwFirewallConfigurationHasBeenSet = false;
   bool m_natGatewayCreateMappingsHasBeenSet = false;
   bool m_proxySettingsHasBeenSet = false;
   bool m_vpcEndpointHasBeenSet = false;

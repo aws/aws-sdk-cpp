@@ -21,8 +21,9 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>The input fails to satisfy the constraints specified by the
- * service.</p><p><h3>See Also:</h3>   <a
+ * <p>The input fails to satisfy the constraints specified by the service. Check
+ * the <code>reason</code> field for the constraint that failed.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ValidationException">AWS
  * API Reference</a></p>
  */
@@ -51,8 +52,16 @@ class ValidationException {
 
   ///@{
   /**
-   * <p>The reason that the input fails to satisfy the constraints specified by the
-   * service.</p>
+   * <p>The reason that the input fails to satisfy the constraints that the Discovery
+   * API specifies. This field has one of the following values:</p> <dl>
+   * <dt>INVALID_PAGINATION_TOKEN</dt> <dd> <p>The <code>nextToken</code> value is
+   * malformed, expired, or belongs to a different request. Start the pagination
+   * again from the first page.</p> </dd> <dt>MALFORMED_REQUEST_PARAMETERS</dt> <dd>
+   * <p>One or more request parameters have an invalid value. Correct the parameters
+   * that you specified, and then resubmit your request.</p> </dd>
+   * <dt>PAGINATION_LIMIT_EXCEEDED</dt> <dd> <p>The request asks for results beyond
+   * the deepest page that the operation returns. Narrow your request with filters or
+   * a more specific search.</p> </dd> </dl>
    */
   inline ValidationExceptionReason GetReason() const { return m_reason; }
   inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }

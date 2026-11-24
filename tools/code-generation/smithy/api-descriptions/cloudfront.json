@@ -709,7 +709,7 @@
                             "min": 1,
                             "max": 32
                         },
-                        "smithy.api#pattern": "^[a-z]{2}-[a-z]+-\\d$",
+                        "smithy.api#pattern": "^([a-z]+-){2,3}\\d+$",
                         "smithy.api#required": {}
                     }
                 },
@@ -2051,6 +2051,17 @@
                                 "region": "cn-northwest-1",
                                 "fips": true
                             }
+                        ],
+                        "aws-eusc": [
+                            {
+                                "endpoint": "https://cloudfront.amazonaws.eu",
+                                "region": "eusc-de-east-1"
+                            },
+                            {
+                                "endpoint": "https://cloudfront.global.api.amazonwebservices.eu",
+                                "region": "eusc-de-east-1",
+                                "dualStack": true
+                            }
                         ]
                     }
                 },
@@ -2165,6 +2176,21 @@
                             ]
                         },
                         {
+                            "fn": "stringEquals",
+                            "argv": [
+                                {
+                                    "fn": "getAttr",
+                                    "argv": [
+                                        {
+                                            "ref": "PartitionResult"
+                                        },
+                                        "name"
+                                    ]
+                                },
+                                "aws-eusc"
+                            ]
+                        },
+                        {
                             "fn": "booleanEquals",
                             "argv": [
                                 {
@@ -2173,7 +2199,7 @@
                                         {
                                             "ref": "PartitionResult"
                                         },
-                                        "supportsDualStack"
+                                        "supportsFIPS"
                                     ]
                                 },
                                 true
@@ -2188,7 +2214,7 @@
                                         {
                                             "ref": "PartitionResult"
                                         },
-                                        "supportsFIPS"
+                                        "supportsDualStack"
                                     ]
                                 },
                                 true
@@ -2284,6 +2310,38 @@
                         {
                             "conditions": [],
                             "endpoint": {
+                                "url": "https://cloudfront.amazonaws.eu",
+                                "properties": {
+                                    "authSchemes": [
+                                        {
+                                            "name": "sigv4",
+                                            "signingRegion": "eusc-de-east-1"
+                                        }
+                                    ]
+                                },
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
+                                "url": "https://cloudfront.global.api.amazonwebservices.eu",
+                                "properties": {
+                                    "authSchemes": [
+                                        {
+                                            "name": "sigv4",
+                                            "signingRegion": "eusc-de-east-1"
+                                        }
+                                    ]
+                                },
+                                "headers": {}
+                            },
+                            "type": "endpoint"
+                        },
+                        {
+                            "conditions": [],
+                            "endpoint": {
                                 "url": "https://cloudfront-fips.{PartitionResult#dualStackDnsSuffix}",
                                 "properties": {
                                     "authSchemes": [
@@ -2367,8 +2425,8 @@
                         }
                     ],
                     "root": 2,
-                    "nodeCount": 17,
-                    "nodes": "/////wAAAAH/////AAAAAAAAABAAAAADAAAAAQAAAAQF9eEPAAAAAgAAAAUF9eEPAAAAAwAAAAoAAAAGAAAABAAAAAgAAAAHAAAABgX14QYF9eEOAAAABQX14QQAAAAJAAAABwX14QwF9eENAAAABAAAAA0AAAALAAAABgX14QcAAAAMAAAACAX14QoF9eELAAAABQX14QUAAAAOAAAABwAAAA8F9eEJAAAACAX14QgF9eEJAAAAAwX14QEAAAARAAAABAX14QIF9eED"
+                    "nodeCount": 19,
+                    "nodes": "/////wAAAAH/////AAAAAAAAABIAAAADAAAAAQAAAAQF9eERAAAAAgAAAAUF9eERAAAAAwAAAAwAAAAGAAAABAAAAAkAAAAHAAAABgX14QYAAAAIAAAABwX14QgF9eEQAAAABQX14QQAAAAKAAAABwX14QkAAAALAAAACQX14Q4F9eEPAAAABAAAAA8AAAANAAAABgX14QcAAAAOAAAACAX14QwF9eENAAAABQX14QUAAAAQAAAACAAAABEF9eELAAAACQX14QoF9eELAAAAAwX14QEAAAATAAAABAX14QIF9eED"
                 },
                 "smithy.rules#endpointRuleSet": {
                     "version": "1.0",
@@ -2684,6 +2742,106 @@
                                                                 {
                                                                     "name": "sigv4",
                                                                     "signingRegion": "cn-northwest-1"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "headers": {}
+                                                    },
+                                                    "type": "endpoint"
+                                                },
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "stringEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "name"
+                                                                    ]
+                                                                },
+                                                                "aws-eusc"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseFIPS"
+                                                                },
+                                                                false
+                                                            ]
+                                                        },
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseDualStack"
+                                                                },
+                                                                false
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "endpoint": {
+                                                        "url": "https://cloudfront.amazonaws.eu",
+                                                        "properties": {
+                                                            "authSchemes": [
+                                                                {
+                                                                    "name": "sigv4",
+                                                                    "signingRegion": "eusc-de-east-1"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "headers": {}
+                                                    },
+                                                    "type": "endpoint"
+                                                },
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "stringEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "name"
+                                                                    ]
+                                                                },
+                                                                "aws-eusc"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseFIPS"
+                                                                },
+                                                                false
+                                                            ]
+                                                        },
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseDualStack"
+                                                                },
+                                                                true
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "endpoint": {
+                                                        "url": "https://cloudfront.global.api.amazonwebservices.eu",
+                                                        "properties": {
+                                                            "authSchemes": [
+                                                                {
+                                                                    "name": "sigv4",
+                                                                    "signingRegion": "eusc-de-east-1"
                                                                 }
                                                             ]
                                                         },
@@ -7436,6 +7594,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Configures mutual TLS authentication between CloudFront and your origin server.</p>"
                     }
+                },
+                "OriginHttpVersion": {
+                    "target": "com.amazonaws.cloudfront#OriginHttpVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The HTTP version that CloudFront uses for requests to your custom origin. Valid values are <code>http1.1</code> and <code>http2</code>. If you don't specify a value, CloudFront uses HTTP/1.1.</p> <p>When you specify <code>http2</code>, CloudFront offers HTTP/2 to the origin by using ALPN. If the origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses HTTP/1.1.</p> <p>If you use a version of an AWS SDK or the AWS CLI that doesn't support this field, an update that sends back a configuration you got from CloudFront removes the value, and CloudFront then uses HTTP/1.1.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion\">Origin HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>"
+                    }
                 }
             },
             "traits": {
@@ -11134,9 +11298,9 @@
             "traits": {
                 "smithy.api#length": {
                     "min": 0,
-                    "max": 108
+                    "max": 111
                 },
-                "smithy.api#pattern": "^arn:aws:cloudfront::[0-9]{12}:function\\/[a-zA-Z0-9-_]{1,64}$"
+                "smithy.api#pattern": "^arn:aws(-[a-z]+)*:cloudfront::[0-9]{12}:function\\/[a-zA-Z0-9-_]{1,64}$"
             }
         },
         "com.amazonaws.cloudfront#FunctionAlreadyExists": {
@@ -15249,9 +15413,9 @@
             "traits": {
                 "smithy.api#length": {
                     "min": 0,
-                    "max": 85
+                    "max": 90
                 },
-                "smithy.api#pattern": "^arn:aws:cloudfront::[0-9]{12}:key-value-store\\/[0-9a-fA-F-]{36}$"
+                "smithy.api#pattern": "^arn:aws(-[a-z]+)*:cloudfront::[0-9]{12}:key-value-store\\/[0-9a-fA-F-]{36}$"
             }
         },
         "com.amazonaws.cloudfront#KeyValueStoreAssociation": {
@@ -19407,6 +19571,26 @@
                 "smithy.api#documentation": "<p>A complex data type for the origin groups specified for a distribution.</p>"
             }
         },
+        "com.amazonaws.cloudfront#OriginHttpVersion": {
+            "type": "enum",
+            "members": {
+                "Http1_1": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "http1.1"
+                    }
+                },
+                "Http2": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "http2"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "HTTP version CloudFront uses for connections to a custom or VPC origin. http2 negotiates HTTP/2 via ALPN,\nwith automatic fallback to HTTP/1.1 if the origin does not support HTTP/2. CloudFront uses HTTP/2 only over\nTLS 1.2 or later; otherwise it uses HTTP/1.1. When absent, HTTP/1.1 is used."
+            }
+        },
         "com.amazonaws.cloudfront#OriginList": {
             "type": "list",
             "member": {
@@ -19816,7 +20000,7 @@
                     "min": 1,
                     "max": 32
                 },
-                "smithy.api#pattern": "^[a-z]{2}-[a-z]+-\\d$"
+                "smithy.api#pattern": "^([a-z]+-){2,3}\\d+$"
             }
         },
         "com.amazonaws.cloudfront#OriginSslProtocols": {
@@ -20835,7 +21019,7 @@
         "com.amazonaws.cloudfront#ResourceARN": {
             "type": "string",
             "traits": {
-                "smithy.api#pattern": "^arn:aws(-cn)?:cloudfront::[0-9]+:"
+                "smithy.api#pattern": "^arn:aws(-[a-z]+)*:cloudfront::[0-9]{12}:"
             }
         },
         "com.amazonaws.cloudfront#ResourceId": {
@@ -26790,6 +26974,12 @@
                     "target": "com.amazonaws.cloudfront#integer",
                     "traits": {
                         "smithy.api#documentation": "<p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 120 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginKeepaliveTimeout\">Keep-alive timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>"
+                    }
+                },
+                "OriginHttpVersion": {
+                    "target": "com.amazonaws.cloudfront#OriginHttpVersion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The HTTP version that CloudFront uses for requests to the VPC origin for this distribution. Valid values are <code>http1.1</code> and <code>http2</code>. If you don't specify a value, CloudFront uses HTTP/1.1.</p> <p>When you specify <code>http2</code>, CloudFront offers HTTP/2 to the origin by using ALPN. If the origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses HTTP/1.1.</p> <p>If you use a version of an AWS SDK or the AWS CLI that doesn't support this field, an update that sends back a configuration you got from CloudFront removes the value, and CloudFront then uses HTTP/1.1.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion\">Origin HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>"
                     }
                 }
             },

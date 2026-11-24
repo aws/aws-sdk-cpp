@@ -15,8 +15,8 @@ using namespace Aws::Utils;
 Aws::String PutAssetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_assetTypeIdHasBeenSet) {
-    payload.WithString("AssetTypeId", m_assetTypeId);
+  if (m_assetTypeIdentifierHasBeenSet) {
+    payload.WithString("AssetTypeIdentifier", m_assetTypeIdentifier);
   }
 
   if (m_identifierHasBeenSet) {

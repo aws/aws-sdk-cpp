@@ -197,8 +197,8 @@ class CreateVocabularyRequest : public TranscribeServiceRequest {
   ///@{
   /**
    * <p>Specifies the encryption configuration for your custom vocabulary. Your
-   * vocabulary artifacts are encrypted with the specified KMS key or with an
-   * AWS-owned key if a key is not supplied.</p>
+   * vocabulary artifacts are encrypted with the specified KMS key or with an Amazon
+   * Web Services owned key if a key is not supplied.</p>
    */
   inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
   inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }

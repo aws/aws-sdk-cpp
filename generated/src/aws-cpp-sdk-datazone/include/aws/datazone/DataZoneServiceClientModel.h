@@ -188,6 +188,7 @@
 #include <aws/datazone/model/UntagResourceResult.h>
 #include <aws/datazone/model/UpdateAccountPoolResult.h>
 #include <aws/datazone/model/UpdateAssetFilterResult.h>
+#include <aws/datazone/model/UpdateAssetOwnerResult.h>
 #include <aws/datazone/model/UpdateConnectionResult.h>
 #include <aws/datazone/model/UpdateDataSourceResult.h>
 #include <aws/datazone/model/UpdateDesignationResult.h>
@@ -416,6 +417,7 @@ class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAccountPoolRequest;
 class UpdateAssetFilterRequest;
+class UpdateAssetOwnerRequest;
 class UpdateConnectionRequest;
 class UpdateDataSourceRequest;
 class UpdateDesignationRequest;
@@ -614,6 +616,7 @@ typedef Aws::Utils::Outcome<TagResourceResult, DataZoneError> TagResourceOutcome
 typedef Aws::Utils::Outcome<UntagResourceResult, DataZoneError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAccountPoolResult, DataZoneError> UpdateAccountPoolOutcome;
 typedef Aws::Utils::Outcome<UpdateAssetFilterResult, DataZoneError> UpdateAssetFilterOutcome;
+typedef Aws::Utils::Outcome<UpdateAssetOwnerResult, DataZoneError> UpdateAssetOwnerOutcome;
 typedef Aws::Utils::Outcome<UpdateConnectionResult, DataZoneError> UpdateConnectionOutcome;
 typedef Aws::Utils::Outcome<UpdateDataSourceResult, DataZoneError> UpdateDataSourceOutcome;
 typedef Aws::Utils::Outcome<UpdateDesignationResult, DataZoneError> UpdateDesignationOutcome;
@@ -812,6 +815,7 @@ typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAccountPoolOutcome> UpdateAccountPoolOutcomeCallable;
 typedef std::future<UpdateAssetFilterOutcome> UpdateAssetFilterOutcomeCallable;
+typedef std::future<UpdateAssetOwnerOutcome> UpdateAssetOwnerOutcomeCallable;
 typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
 typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
 typedef std::future<UpdateDesignationOutcome> UpdateDesignationOutcomeCallable;
@@ -1367,6 +1371,9 @@ typedef std::function<void(const DataZoneClient*, const Model::UpdateAccountPool
 typedef std::function<void(const DataZoneClient*, const Model::UpdateAssetFilterRequest&, const Model::UpdateAssetFilterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAssetFilterResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::UpdateAssetOwnerRequest&, const Model::UpdateAssetOwnerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateAssetOwnerResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateConnectionResponseReceivedHandler;

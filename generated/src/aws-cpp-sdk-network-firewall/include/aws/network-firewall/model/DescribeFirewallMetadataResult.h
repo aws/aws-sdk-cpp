@@ -88,7 +88,10 @@ class DescribeFirewallMetadataResult {
    * <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code>
    * value is <code>IN_SYNC</code> and the <code>Attachment</code>
    * <code>Status</code> values for all of the configured subnets are
-   * <code>READY</code>. </p>
+   * <code>READY</code>. </p> <p>For an internet gateway firewall, this setting is
+   * <code>STANDBY</code> while no Availability Zone in the VPC has resources that
+   * need the firewall. Network Firewall provisions the firewall in an Availability
+   * Zone when the first resource is launched there.</p>
    */
   inline FirewallStatusValue GetStatus() const { return m_status; }
   inline void SetStatus(FirewallStatusValue value) {

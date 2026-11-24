@@ -21,7 +21,7 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Defines a variable payment term with a maximum total charge
+ * <p>Describes a variable payment term with a maximum total charge
  * amount.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/VariablePaymentTerm">AWS
  * API Reference</a></p>

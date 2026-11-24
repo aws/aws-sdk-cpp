@@ -67,6 +67,15 @@ Aws::String CreateDocumentRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_cloudProvidersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cloudProvidersJsonList(m_cloudProviders.size());
+    for (unsigned cloudProvidersIndex = 0; cloudProvidersIndex < cloudProvidersJsonList.GetLength(); ++cloudProvidersIndex) {
+      cloudProvidersJsonList[cloudProvidersIndex].AsString(
+          CloudProviderMapper::GetNameForCloudProvider(m_cloudProviders[cloudProvidersIndex]));
+    }
+    payload.WithArray("CloudProviders", std::move(cloudProvidersJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

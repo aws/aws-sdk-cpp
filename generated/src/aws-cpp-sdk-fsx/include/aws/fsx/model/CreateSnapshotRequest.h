@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/FSxRequest.h>
 #include <aws/fsx/FSx_EXPORTS.h>
+#include <aws/fsx/model/CreateOntapSnapshotConfiguration.h>
 #include <aws/fsx/model/Tag.h>
 
 #include <utility>
@@ -106,6 +107,24 @@ class CreateSnapshotRequest : public FSxRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the configuration to use when creating the ONTAP snapshot.</p>
+   */
+  inline const CreateOntapSnapshotConfiguration& GetOntapConfiguration() const { return m_ontapConfiguration; }
+  inline bool OntapConfigurationHasBeenSet() const { return m_ontapConfigurationHasBeenSet; }
+  template <typename OntapConfigurationT = CreateOntapSnapshotConfiguration>
+  void SetOntapConfiguration(OntapConfigurationT&& value) {
+    m_ontapConfigurationHasBeenSet = true;
+    m_ontapConfiguration = std::forward<OntapConfigurationT>(value);
+  }
+  template <typename OntapConfigurationT = CreateOntapSnapshotConfiguration>
+  CreateSnapshotRequest& WithOntapConfiguration(OntapConfigurationT&& value) {
+    SetOntapConfiguration(std::forward<OntapConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
@@ -114,10 +133,13 @@ class CreateSnapshotRequest : public FSxRequest {
   Aws::String m_volumeId;
 
   Aws::Vector<Tag> m_tags;
+
+  CreateOntapSnapshotConfiguration m_ontapConfiguration;
   bool m_clientRequestTokenHasBeenSet = true;
   bool m_nameHasBeenSet = false;
   bool m_volumeIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_ontapConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -34,9 +34,11 @@ class DescribeSnapshotsRequest : public FSxRequest {
 
   ///@{
   /**
-   * <p>The IDs of the snapshots that you want to retrieve. This parameter value
-   * overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code>
-   * error occurs.</p>
+   * <p>The IDs of the snapshots that you want to retrieve. You can include snapshots
+   * of Amazon FSx for OpenZFS and Amazon FSx for NetApp ONTAP volumes in the same
+   * request. If you also specify <code>Filters</code>, only snapshots that match
+   * both the IDs and the filters are returned. If any IDs aren't found, or if a
+   * filter excludes any of them, a <code>SnapshotNotFound</code> error occurs.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSnapshotIds() const { return m_snapshotIds; }
   inline bool SnapshotIdsHasBeenSet() const { return m_snapshotIdsHasBeenSet; }

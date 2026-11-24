@@ -20,13 +20,17 @@
 
 /* Service model headers required in PartnerCentralChannelClient header */
 #include <aws/partnercentral-channel/model/AcceptChannelHandshakeResult.h>
+#include <aws/partnercentral-channel/model/CancelChannelContractResult.h>
 #include <aws/partnercentral-channel/model/CancelChannelHandshakeResult.h>
+#include <aws/partnercentral-channel/model/CreateChannelContractResult.h>
 #include <aws/partnercentral-channel/model/CreateChannelHandshakeResult.h>
 #include <aws/partnercentral-channel/model/CreateProgramManagementAccountResult.h>
 #include <aws/partnercentral-channel/model/CreateRelationshipResult.h>
 #include <aws/partnercentral-channel/model/DeleteProgramManagementAccountResult.h>
 #include <aws/partnercentral-channel/model/DeleteRelationshipResult.h>
+#include <aws/partnercentral-channel/model/GetChannelContractResult.h>
 #include <aws/partnercentral-channel/model/GetRelationshipResult.h>
+#include <aws/partnercentral-channel/model/ListChannelContractsResult.h>
 #include <aws/partnercentral-channel/model/ListChannelHandshakesResult.h>
 #include <aws/partnercentral-channel/model/ListProgramManagementAccountsResult.h>
 #include <aws/partnercentral-channel/model/ListRelationshipsResult.h>
@@ -70,13 +74,17 @@ using PartnerCentralChannelEndpointProvider = Aws::PartnerCentralChannel::Endpoi
 namespace Model {
 /* Service model forward declarations required in PartnerCentralChannelClient header */
 class AcceptChannelHandshakeRequest;
+class CancelChannelContractRequest;
 class CancelChannelHandshakeRequest;
+class CreateChannelContractRequest;
 class CreateChannelHandshakeRequest;
 class CreateProgramManagementAccountRequest;
 class CreateRelationshipRequest;
 class DeleteProgramManagementAccountRequest;
 class DeleteRelationshipRequest;
+class GetChannelContractRequest;
 class GetRelationshipRequest;
+class ListChannelContractsRequest;
 class ListChannelHandshakesRequest;
 class ListProgramManagementAccountsRequest;
 class ListRelationshipsRequest;
@@ -90,13 +98,17 @@ class UpdateRelationshipRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<AcceptChannelHandshakeResult, PartnerCentralChannelError> AcceptChannelHandshakeOutcome;
+typedef Aws::Utils::Outcome<CancelChannelContractResult, PartnerCentralChannelError> CancelChannelContractOutcome;
 typedef Aws::Utils::Outcome<CancelChannelHandshakeResult, PartnerCentralChannelError> CancelChannelHandshakeOutcome;
+typedef Aws::Utils::Outcome<CreateChannelContractResult, PartnerCentralChannelError> CreateChannelContractOutcome;
 typedef Aws::Utils::Outcome<CreateChannelHandshakeResult, PartnerCentralChannelError> CreateChannelHandshakeOutcome;
 typedef Aws::Utils::Outcome<CreateProgramManagementAccountResult, PartnerCentralChannelError> CreateProgramManagementAccountOutcome;
 typedef Aws::Utils::Outcome<CreateRelationshipResult, PartnerCentralChannelError> CreateRelationshipOutcome;
 typedef Aws::Utils::Outcome<DeleteProgramManagementAccountResult, PartnerCentralChannelError> DeleteProgramManagementAccountOutcome;
 typedef Aws::Utils::Outcome<DeleteRelationshipResult, PartnerCentralChannelError> DeleteRelationshipOutcome;
+typedef Aws::Utils::Outcome<GetChannelContractResult, PartnerCentralChannelError> GetChannelContractOutcome;
 typedef Aws::Utils::Outcome<GetRelationshipResult, PartnerCentralChannelError> GetRelationshipOutcome;
+typedef Aws::Utils::Outcome<ListChannelContractsResult, PartnerCentralChannelError> ListChannelContractsOutcome;
 typedef Aws::Utils::Outcome<ListChannelHandshakesResult, PartnerCentralChannelError> ListChannelHandshakesOutcome;
 typedef Aws::Utils::Outcome<ListProgramManagementAccountsResult, PartnerCentralChannelError> ListProgramManagementAccountsOutcome;
 typedef Aws::Utils::Outcome<ListRelationshipsResult, PartnerCentralChannelError> ListRelationshipsOutcome;
@@ -110,13 +122,17 @@ typedef Aws::Utils::Outcome<UpdateRelationshipResult, PartnerCentralChannelError
 
 /* Service model Outcome callable definitions */
 typedef std::future<AcceptChannelHandshakeOutcome> AcceptChannelHandshakeOutcomeCallable;
+typedef std::future<CancelChannelContractOutcome> CancelChannelContractOutcomeCallable;
 typedef std::future<CancelChannelHandshakeOutcome> CancelChannelHandshakeOutcomeCallable;
+typedef std::future<CreateChannelContractOutcome> CreateChannelContractOutcomeCallable;
 typedef std::future<CreateChannelHandshakeOutcome> CreateChannelHandshakeOutcomeCallable;
 typedef std::future<CreateProgramManagementAccountOutcome> CreateProgramManagementAccountOutcomeCallable;
 typedef std::future<CreateRelationshipOutcome> CreateRelationshipOutcomeCallable;
 typedef std::future<DeleteProgramManagementAccountOutcome> DeleteProgramManagementAccountOutcomeCallable;
 typedef std::future<DeleteRelationshipOutcome> DeleteRelationshipOutcomeCallable;
+typedef std::future<GetChannelContractOutcome> GetChannelContractOutcomeCallable;
 typedef std::future<GetRelationshipOutcome> GetRelationshipOutcomeCallable;
+typedef std::future<ListChannelContractsOutcome> ListChannelContractsOutcomeCallable;
 typedef std::future<ListChannelHandshakesOutcome> ListChannelHandshakesOutcomeCallable;
 typedef std::future<ListProgramManagementAccountsOutcome> ListProgramManagementAccountsOutcomeCallable;
 typedef std::future<ListRelationshipsOutcome> ListRelationshipsOutcomeCallable;
@@ -135,9 +151,15 @@ class PartnerCentralChannelClient;
 typedef std::function<void(const PartnerCentralChannelClient*, const Model::AcceptChannelHandshakeRequest&,
                            const Model::AcceptChannelHandshakeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AcceptChannelHandshakeResponseReceivedHandler;
+typedef std::function<void(const PartnerCentralChannelClient*, const Model::CancelChannelContractRequest&,
+                           const Model::CancelChannelContractOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CancelChannelContractResponseReceivedHandler;
 typedef std::function<void(const PartnerCentralChannelClient*, const Model::CancelChannelHandshakeRequest&,
                            const Model::CancelChannelHandshakeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelChannelHandshakeResponseReceivedHandler;
+typedef std::function<void(const PartnerCentralChannelClient*, const Model::CreateChannelContractRequest&,
+                           const Model::CreateChannelContractOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateChannelContractResponseReceivedHandler;
 typedef std::function<void(const PartnerCentralChannelClient*, const Model::CreateChannelHandshakeRequest&,
                            const Model::CreateChannelHandshakeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateChannelHandshakeResponseReceivedHandler;
@@ -155,9 +177,15 @@ typedef std::function<void(const PartnerCentralChannelClient*, const Model::Dele
 typedef std::function<void(const PartnerCentralChannelClient*, const Model::DeleteRelationshipRequest&,
                            const Model::DeleteRelationshipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRelationshipResponseReceivedHandler;
+typedef std::function<void(const PartnerCentralChannelClient*, const Model::GetChannelContractRequest&,
+                           const Model::GetChannelContractOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetChannelContractResponseReceivedHandler;
 typedef std::function<void(const PartnerCentralChannelClient*, const Model::GetRelationshipRequest&, const Model::GetRelationshipOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRelationshipResponseReceivedHandler;
+typedef std::function<void(const PartnerCentralChannelClient*, const Model::ListChannelContractsRequest&,
+                           const Model::ListChannelContractsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListChannelContractsResponseReceivedHandler;
 typedef std::function<void(const PartnerCentralChannelClient*, const Model::ListChannelHandshakesRequest&,
                            const Model::ListChannelHandshakesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListChannelHandshakesResponseReceivedHandler;

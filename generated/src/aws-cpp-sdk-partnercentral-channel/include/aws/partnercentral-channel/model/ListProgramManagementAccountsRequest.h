@@ -11,6 +11,7 @@
 #include <aws/partnercentral-channel/model/ListProgramManagementAccountsSortBase.h>
 #include <aws/partnercentral-channel/model/Program.h>
 #include <aws/partnercentral-channel/model/ProgramManagementAccountStatus.h>
+#include <aws/partnercentral-channel/model/ProgramManagementAccountType.h>
 
 #include <utility>
 
@@ -197,6 +198,22 @@ class ListProgramManagementAccountsRequest : public PartnerCentralChannelRequest
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filter by program management account type.</p>
+   */
+  inline ProgramManagementAccountType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(ProgramManagementAccountType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline ListProgramManagementAccountsRequest& WithType(ProgramManagementAccountType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalog;
 
@@ -213,6 +230,8 @@ class ListProgramManagementAccountsRequest : public PartnerCentralChannelRequest
   ListProgramManagementAccountsSortBase m_sort;
 
   Aws::String m_nextToken;
+
+  ProgramManagementAccountType m_type{ProgramManagementAccountType::NOT_SET};
   bool m_catalogHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_displayNamesHasBeenSet = false;
@@ -221,6 +240,7 @@ class ListProgramManagementAccountsRequest : public PartnerCentralChannelRequest
   bool m_statusesHasBeenSet = false;
   bool m_sortHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

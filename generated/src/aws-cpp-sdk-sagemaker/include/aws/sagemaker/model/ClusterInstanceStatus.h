@@ -10,7 +10,18 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class ClusterInstanceStatus { NOT_SET, Running, Failure, Pending, ShuttingDown, SystemUpdating, DeepHealthCheckInProgress, NotFound };
+enum class ClusterInstanceStatus {
+  NOT_SET,
+  Running,
+  Failure,
+  Pending,
+  ShuttingDown,
+  SystemUpdating,
+  DeepHealthCheckInProgress,
+  NotFound,
+  DetachInProgress,
+  AttachInProgress
+};
 
 namespace ClusterInstanceStatusMapper {
 AWS_SAGEMAKER_API ClusterInstanceStatus GetClusterInstanceStatusForName(const Aws::String& name);

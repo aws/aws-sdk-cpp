@@ -22,6 +22,8 @@ static const int WAV_HASH = HashingUtils::HashString("WAV");
 static const int AIFF_HASH = HashingUtils::HashString("AIFF");
 static const int AC3_HASH = HashingUtils::HashString("AC3");
 static const int AC4_HASH = HashingUtils::HashString("AC4");
+static const int DTSX_HASH = HashingUtils::HashString("DTSX");
+static const int DTSC_HASH = HashingUtils::HashString("DTSC");
 static const int EAC3_HASH = HashingUtils::HashString("EAC3");
 static const int EAC3_ATMOS_HASH = HashingUtils::HashString("EAC3_ATMOS");
 static const int VORBIS_HASH = HashingUtils::HashString("VORBIS");
@@ -45,6 +47,10 @@ AudioCodec GetAudioCodecForName(const Aws::String& name) {
     return AudioCodec::AC3;
   } else if (hashCode == AC4_HASH) {
     return AudioCodec::AC4;
+  } else if (hashCode == DTSX_HASH) {
+    return AudioCodec::DTSX;
+  } else if (hashCode == DTSC_HASH) {
+    return AudioCodec::DTSC;
   } else if (hashCode == EAC3_HASH) {
     return AudioCodec::EAC3;
   } else if (hashCode == EAC3_ATMOS_HASH) {
@@ -85,6 +91,10 @@ Aws::String GetNameForAudioCodec(AudioCodec enumValue) {
       return "AC3";
     case AudioCodec::AC4:
       return "AC4";
+    case AudioCodec::DTSX:
+      return "DTSX";
+    case AudioCodec::DTSC:
+      return "DTSC";
     case AudioCodec::EAC3:
       return "EAC3";
     case AudioCodec::EAC3_ATMOS:

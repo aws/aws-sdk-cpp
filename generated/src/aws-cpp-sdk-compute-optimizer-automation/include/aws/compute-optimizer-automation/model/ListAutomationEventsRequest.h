@@ -59,6 +59,33 @@ class ListAutomationEventsRequest : public ComputeOptimizerAutomationRequest {
 
   ///@{
   /**
+   * <p> The organizational unit (OU) or organization root IDs to use to filter the
+   * results. The response includes events for accounts in the specified OUs and
+   * their child OUs. Only the management account or a delegated administrator can
+   * specify this parameter. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const { return m_organizationalUnitIds; }
+  inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
+  template <typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+  void SetOrganizationalUnitIds(OrganizationalUnitIdsT&& value) {
+    m_organizationalUnitIdsHasBeenSet = true;
+    m_organizationalUnitIds = std::forward<OrganizationalUnitIdsT>(value);
+  }
+  template <typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+  ListAutomationEventsRequest& WithOrganizationalUnitIds(OrganizationalUnitIdsT&& value) {
+    SetOrganizationalUnitIds(std::forward<OrganizationalUnitIdsT>(value));
+    return *this;
+  }
+  template <typename OrganizationalUnitIdsT = Aws::String>
+  ListAutomationEventsRequest& AddOrganizationalUnitIds(OrganizationalUnitIdsT&& value) {
+    m_organizationalUnitIdsHasBeenSet = true;
+    m_organizationalUnitIds.emplace_back(std::forward<OrganizationalUnitIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The start of the time range to query for events. </p>
    */
   inline const Aws::Utils::DateTime& GetStartTimeInclusive() const { return m_startTimeInclusive; }
@@ -95,7 +122,8 @@ class ListAutomationEventsRequest : public ComputeOptimizerAutomationRequest {
 
   ///@{
   /**
-   * <p> The maximum number of results to return in a single call. </p>
+   * <p> The maximum number of automation events to return in a single response. If
+   * you don't specify a value, the default is 100. </p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -129,6 +157,8 @@ class ListAutomationEventsRequest : public ComputeOptimizerAutomationRequest {
  private:
   Aws::Vector<AutomationEventFilter> m_filters;
 
+  Aws::Vector<Aws::String> m_organizationalUnitIds;
+
   Aws::Utils::DateTime m_startTimeInclusive{};
 
   Aws::Utils::DateTime m_endTimeExclusive{};
@@ -137,6 +167,7 @@ class ListAutomationEventsRequest : public ComputeOptimizerAutomationRequest {
 
   Aws::String m_nextToken;
   bool m_filtersHasBeenSet = false;
+  bool m_organizationalUnitIdsHasBeenSet = false;
   bool m_startTimeInclusiveHasBeenSet = false;
   bool m_endTimeExclusiveHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;

@@ -434,7 +434,7 @@ class DefaultRunSetting {
   /**
    * <p>Engine-specific settings for the workflow run. Use this field to specify
    * configuration options that are specific to the workflow engine (for example,
-   * Nextflow profiles).</p>
+   * Nextflow profiles, Nextflow runtime configuration).</p>
    */
   inline Aws::Utils::DocumentView GetEngineSettings() const { return m_engineSettings; }
   inline bool EngineSettingsHasBeenSet() const { return m_engineSettingsHasBeenSet; }
@@ -465,6 +465,25 @@ class DefaultRunSetting {
   }
   inline DefaultRunSetting& WithScratchStorageMode(ScratchStorageMode value) {
     SetScratchStorageMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether each workflow run in the batch can read inputs from Amazon
+   * Simple Storage Service (Amazon S3) buckets that use Requester Pays. Your account
+   * pays the request and data transfer charges for those reads. The default is
+   * <code>false</code>.</p>
+   */
+  inline bool GetRequesterPaysEnabled() const { return m_requesterPaysEnabled; }
+  inline bool RequesterPaysEnabledHasBeenSet() const { return m_requesterPaysEnabledHasBeenSet; }
+  inline void SetRequesterPaysEnabled(bool value) {
+    m_requesterPaysEnabledHasBeenSet = true;
+    m_requesterPaysEnabled = value;
+  }
+  inline DefaultRunSetting& WithRequesterPaysEnabled(bool value) {
+    SetRequesterPaysEnabled(value);
     return *this;
   }
   ///@}
@@ -514,6 +533,8 @@ class DefaultRunSetting {
   Aws::Utils::Document m_engineSettings;
 
   ScratchStorageMode m_scratchStorageMode{ScratchStorageMode::NOT_SET};
+
+  bool m_requesterPaysEnabled{false};
   bool m_workflowIdHasBeenSet = false;
   bool m_workflowTypeHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
@@ -537,6 +558,7 @@ class DefaultRunSetting {
   bool m_sessionPolicyHasBeenSet = false;
   bool m_engineSettingsHasBeenSet = false;
   bool m_scratchStorageModeHasBeenSet = false;
+  bool m_requesterPaysEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

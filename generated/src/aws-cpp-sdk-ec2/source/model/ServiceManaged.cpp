@@ -19,6 +19,8 @@ static const int alb_HASH = HashingUtils::HashString("alb");
 static const int nlb_HASH = HashingUtils::HashString("nlb");
 static const int rnat_HASH = HashingUtils::HashString("rnat");
 static const int rds_HASH = HashingUtils::HashString("rds");
+static const int lambda_network_connector_HASH = HashingUtils::HashString("lambda-network-connector");
+static const int igw_firewall_HASH = HashingUtils::HashString("igw-firewall");
 
 ServiceManaged GetServiceManagedForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +32,10 @@ ServiceManaged GetServiceManagedForName(const Aws::String& name) {
     return ServiceManaged::rnat;
   } else if (hashCode == rds_HASH) {
     return ServiceManaged::rds;
+  } else if (hashCode == lambda_network_connector_HASH) {
+    return ServiceManaged::lambda_network_connector;
+  } else if (hashCode == igw_firewall_HASH) {
+    return ServiceManaged::igw_firewall;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +58,10 @@ Aws::String GetNameForServiceManaged(ServiceManaged enumValue) {
       return "rnat";
     case ServiceManaged::rds:
       return "rds";
+    case ServiceManaged::lambda_network_connector:
+      return "lambda-network-connector";
+    case ServiceManaged::igw_firewall:
+      return "igw-firewall";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

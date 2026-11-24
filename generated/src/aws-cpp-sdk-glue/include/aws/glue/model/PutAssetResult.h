@@ -83,6 +83,23 @@ class PutAssetResult {
 
   ///@{
   /**
+   * <p>The identifier of the asset type for this asset.</p>
+   */
+  inline const Aws::String& GetAssetTypeId() const { return m_assetTypeId; }
+  template <typename AssetTypeIdT = Aws::String>
+  void SetAssetTypeId(AssetTypeIdT&& value) {
+    m_assetTypeIdHasBeenSet = true;
+    m_assetTypeId = std::forward<AssetTypeIdT>(value);
+  }
+  template <typename AssetTypeIdT = Aws::String>
+  PutAssetResult& WithAssetTypeId(AssetTypeIdT&& value) {
+    SetAssetTypeId(std::forward<AssetTypeIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp at which the asset was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -144,6 +161,8 @@ class PutAssetResult {
 
   Aws::String m_description;
 
+  Aws::String m_assetTypeId;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Map<Aws::String, AssetFormEntry> m_forms;
@@ -153,6 +172,7 @@ class PutAssetResult {
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_assetTypeIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_formsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -40,6 +40,7 @@
 #include <aws/odb/model/AutonomousDatabaseConnectionStrings.h>
 #include <aws/odb/model/AutonomousDatabaseConnectionUrls.h>
 #include <aws/odb/model/AutonomousDatabasePeerSummary.h>
+#include <aws/odb/model/AutonomousDatabaseRefreshableCloneSummary.h>
 #include <aws/odb/model/AutonomousDatabaseResourceStatus.h>
 #include <aws/odb/model/AutonomousDatabaseSummary.h>
 #include <aws/odb/model/AutonomousDatabaseVersionSummary.h>
@@ -209,6 +210,9 @@
 #include <aws/odb/model/ListAutonomousDatabasePeersPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabasePeersRequest.h>
 #include <aws/odb/model/ListAutonomousDatabasePeersResult.h>
+#include <aws/odb/model/ListAutonomousDatabaseRefreshableClonesPaginationTraits.h>
+#include <aws/odb/model/ListAutonomousDatabaseRefreshableClonesRequest.h>
+#include <aws/odb/model/ListAutonomousDatabaseRefreshableClonesResult.h>
 #include <aws/odb/model/ListAutonomousDatabaseVersionsPaginationTraits.h>
 #include <aws/odb/model/ListAutonomousDatabaseVersionsRequest.h>
 #include <aws/odb/model/ListAutonomousDatabaseVersionsResult.h>
@@ -313,6 +317,8 @@
 #include <aws/odb/model/SourceConfiguration.h>
 #include <aws/odb/model/SourceType.h>
 #include <aws/odb/model/StandbyAllowlistedIpsSource.h>
+#include <aws/odb/model/StartAutonomousDatabaseRefreshRequest.h>
+#include <aws/odb/model/StartAutonomousDatabaseRefreshResult.h>
 #include <aws/odb/model/StartAutonomousDatabaseRequest.h>
 #include <aws/odb/model/StartAutonomousDatabaseResult.h>
 #include <aws/odb/model/StartDbNodeRequest.h>

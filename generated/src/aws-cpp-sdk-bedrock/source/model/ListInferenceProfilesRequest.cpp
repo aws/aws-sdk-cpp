@@ -36,4 +36,10 @@ void ListInferenceProfilesRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("type", ss.str());
     ss.str("");
   }
+
+  if (m_projectIdentifierHasBeenSet) {
+    ss << m_projectIdentifier;
+    uri.AddQueryStringParameter("projectIdentifier", ss.str());
+    ss.str("");
+  }
 }

@@ -23,8 +23,8 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Defines a free trial pricing term that enables customers to try the product
- * before purchasing.</p><p><h3>See Also:</h3>   <a
+ * <p>Describes a free trial pricing term. With this term, you can try the product
+ * before you purchase it.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/FreeTrialPricingTerm">AWS
  * API Reference</a></p>
  */
@@ -89,7 +89,7 @@ class FreeTrialPricingTerm {
 
   ///@{
   /**
-   * <p>The entitlements granted to the buyer during the free trial.</p>
+   * <p>The entitlements that you receive during the free trial.</p>
    */
   inline const Aws::Vector<GrantItem>& GetGrants() const { return m_grants; }
   inline bool GrantsHasBeenSet() const { return m_grantsHasBeenSet; }

@@ -20,7 +20,7 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>A category used to classify a listing or product into a logical
+ * <p>A category that classifies a listing or product into a logical
  * group.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/Category">AWS
  * API Reference</a></p>

@@ -254,6 +254,88 @@ class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSRpcV2CborClient,
   }
 
   /**
+   * <p>Creates a blueprint that defines the schema Amazon Textract uses to extract
+   * structured data from a document during a document insights job. A blueprint
+   * describes the fields to extract and how to normalize them.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateBlueprint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateBlueprintOutcome CreateBlueprint(const Model::CreateBlueprintRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateBlueprint that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateBlueprintRequestT = Model::CreateBlueprintRequest>
+  Model::CreateBlueprintOutcomeCallable CreateBlueprintCallable(const CreateBlueprintRequestT& request) const {
+    return SubmitCallable(&TextractClient::CreateBlueprint, request);
+  }
+
+  /**
+   * An Async wrapper for CreateBlueprint that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateBlueprintRequestT = Model::CreateBlueprintRequest>
+  void CreateBlueprintAsync(const CreateBlueprintRequestT& request, const CreateBlueprintResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TextractClient::CreateBlueprint, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new, immutable version of an existing blueprint so that projects
+   * can pin to a specific version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateBlueprintVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateBlueprintVersionOutcome CreateBlueprintVersion(const Model::CreateBlueprintVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateBlueprintVersion that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateBlueprintVersionRequestT = Model::CreateBlueprintVersionRequest>
+  Model::CreateBlueprintVersionOutcomeCallable CreateBlueprintVersionCallable(const CreateBlueprintVersionRequestT& request) const {
+    return SubmitCallable(&TextractClient::CreateBlueprintVersion, request);
+  }
+
+  /**
+   * An Async wrapper for CreateBlueprintVersion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateBlueprintVersionRequestT = Model::CreateBlueprintVersionRequest>
+  void CreateBlueprintVersionAsync(const CreateBlueprintVersionRequestT& request,
+                                   const CreateBlueprintVersionResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TextractClient::CreateBlueprintVersion, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a project that groups the configuration used to run document insights
+   * jobs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateProject">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateProject that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateProjectRequestT = Model::CreateProjectRequest>
+  Model::CreateProjectOutcomeCallable CreateProjectCallable(const CreateProjectRequestT& request) const {
+    return SubmitCallable(&TextractClient::CreateProject, request);
+  }
+
+  /**
+   * An Async wrapper for CreateProject that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateProjectRequestT = Model::CreateProjectRequest>
+  void CreateProjectAsync(const CreateProjectRequestT& request, const CreateProjectResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TextractClient::CreateProject, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an Amazon Textract adapter. Takes an AdapterId and deletes the
    * adapter specified by the ID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapter">AWS
@@ -305,6 +387,57 @@ class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSRpcV2CborClient,
   void DeleteAdapterVersionAsync(const DeleteAdapterVersionRequestT& request, const DeleteAdapterVersionResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&TextractClient::DeleteAdapterVersion, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a blueprint, or a specific version of a blueprint.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteBlueprint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteBlueprintOutcome DeleteBlueprint(const Model::DeleteBlueprintRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteBlueprint that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteBlueprintRequestT = Model::DeleteBlueprintRequest>
+  Model::DeleteBlueprintOutcomeCallable DeleteBlueprintCallable(const DeleteBlueprintRequestT& request) const {
+    return SubmitCallable(&TextractClient::DeleteBlueprint, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteBlueprint that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteBlueprintRequestT = Model::DeleteBlueprintRequest>
+  void DeleteBlueprintAsync(const DeleteBlueprintRequestT& request, const DeleteBlueprintResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TextractClient::DeleteBlueprint, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a project.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteProject">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteProject that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteProjectRequestT = Model::DeleteProjectRequest>
+  Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const DeleteProjectRequestT& request) const {
+    return SubmitCallable(&TextractClient::DeleteProject, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteProject that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteProjectRequestT = Model::DeleteProjectRequest>
+  void DeleteProjectAsync(const DeleteProjectRequestT& request, const DeleteProjectResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TextractClient::DeleteProject, request, handler, context);
   }
 
   /**
@@ -403,6 +536,32 @@ class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSRpcV2CborClient,
   }
 
   /**
+   * <p>Gets the details of a blueprint, including its schema, encryption settings,
+   * and timestamps.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetBlueprint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetBlueprintOutcome GetBlueprint(const Model::GetBlueprintRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetBlueprint that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetBlueprintRequestT = Model::GetBlueprintRequest>
+  Model::GetBlueprintOutcomeCallable GetBlueprintCallable(const GetBlueprintRequestT& request) const {
+    return SubmitCallable(&TextractClient::GetBlueprint, request);
+  }
+
+  /**
+   * An Async wrapper for GetBlueprint that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetBlueprintRequestT = Model::GetBlueprintRequest>
+  void GetBlueprintAsync(const GetBlueprintRequestT& request, const GetBlueprintResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TextractClient::GetBlueprint, request, handler, context);
+  }
+
+  /**
    * <p>Gets the results for an Amazon Textract asynchronous operation that analyzes
    * text in a document.</p> <p>You start asynchronous text analysis by calling
    * <a>StartDocumentAnalysis</a>, which returns a job identifier
@@ -470,6 +629,33 @@ class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSRpcV2CborClient,
   void GetDocumentAnalysisAsync(const GetDocumentAnalysisRequestT& request, const GetDocumentAnalysisResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&TextractClient::GetDocumentAnalysis, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the status and results of a document insights job that was started by
+   * <a>StartDocumentInsights</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentInsights">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDocumentInsightsOutcome GetDocumentInsights(const Model::GetDocumentInsightsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDocumentInsights that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetDocumentInsightsRequestT = Model::GetDocumentInsightsRequest>
+  Model::GetDocumentInsightsOutcomeCallable GetDocumentInsightsCallable(const GetDocumentInsightsRequestT& request) const {
+    return SubmitCallable(&TextractClient::GetDocumentInsights, request);
+  }
+
+  /**
+   * An Async wrapper for GetDocumentInsights that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetDocumentInsightsRequestT = Model::GetDocumentInsightsRequest>
+  void GetDocumentInsightsAsync(const GetDocumentInsightsRequestT& request, const GetDocumentInsightsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TextractClient::GetDocumentInsights, request, handler, context);
   }
 
   /**
@@ -651,6 +837,32 @@ class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSRpcV2CborClient,
   }
 
   /**
+   * <p>Gets the details of a project, including its configuration, status, and
+   * timestamps.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetProject">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetProjectOutcome GetProject(const Model::GetProjectRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetProject that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetProjectRequestT = Model::GetProjectRequest>
+  Model::GetProjectOutcomeCallable GetProjectCallable(const GetProjectRequestT& request) const {
+    return SubmitCallable(&TextractClient::GetProject, request);
+  }
+
+  /**
+   * An Async wrapper for GetProject that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetProjectRequestT = Model::GetProjectRequest>
+  void GetProjectAsync(const GetProjectRequestT& request, const GetProjectResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TextractClient::GetProject, request, handler, context);
+  }
+
+  /**
    * <p>List all version of an adapter that meet the specified filtration
    * criteria.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapterVersions">AWS
@@ -703,6 +915,64 @@ class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSRpcV2CborClient,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                          const ListAdaptersRequestT& request = {}) const {
     return SubmitAsync(&TextractClient::ListAdapters, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the blueprints that are available to the caller, with optional
+   * filtering by project and resource owner. The results are paginated. If the
+   * response includes a <code>NextToken</code> value, pass it in a subsequent call
+   * to retrieve the next page of results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListBlueprints">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListBlueprintsOutcome ListBlueprints(const Model::ListBlueprintsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListBlueprints that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListBlueprintsRequestT = Model::ListBlueprintsRequest>
+  Model::ListBlueprintsOutcomeCallable ListBlueprintsCallable(const ListBlueprintsRequestT& request = {}) const {
+    return SubmitCallable(&TextractClient::ListBlueprints, request);
+  }
+
+  /**
+   * An Async wrapper for ListBlueprints that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListBlueprintsRequestT = Model::ListBlueprintsRequest>
+  void ListBlueprintsAsync(const ListBlueprintsResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const ListBlueprintsRequestT& request = {}) const {
+    return SubmitAsync(&TextractClient::ListBlueprints, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the projects that are available to the caller, with optional filtering
+   * by blueprint. The results are paginated. If the response includes a
+   * <code>NextToken</code> value, pass it in a subsequent call to retrieve the next
+   * page of results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListProjects">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListProjectsRequestT = Model::ListProjectsRequest>
+  Model::ListProjectsOutcomeCallable ListProjectsCallable(const ListProjectsRequestT& request = {}) const {
+    return SubmitCallable(&TextractClient::ListProjects, request);
+  }
+
+  /**
+   * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListProjectsRequestT = Model::ListProjectsRequest>
+  void ListProjectsAsync(const ListProjectsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                         const ListProjectsRequestT& request = {}) const {
+    return SubmitAsync(&TextractClient::ListProjects, request, handler, context);
   }
 
   /**
@@ -771,6 +1041,34 @@ class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSRpcV2CborClient,
   void StartDocumentAnalysisAsync(const StartDocumentAnalysisRequestT& request, const StartDocumentAnalysisResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&TextractClient::StartDocumentAnalysis, request, handler, context);
+  }
+
+  /**
+   * <p>Starts an asynchronous job that analyzes a document using the configuration
+   * defined by a project or a set of blueprints. Use <a>GetDocumentInsights</a> to
+   * retrieve the results of the job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentInsights">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartDocumentInsightsOutcome StartDocumentInsights(const Model::StartDocumentInsightsRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartDocumentInsights that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartDocumentInsightsRequestT = Model::StartDocumentInsightsRequest>
+  Model::StartDocumentInsightsOutcomeCallable StartDocumentInsightsCallable(const StartDocumentInsightsRequestT& request) const {
+    return SubmitCallable(&TextractClient::StartDocumentInsights, request);
+  }
+
+  /**
+   * An Async wrapper for StartDocumentInsights that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartDocumentInsightsRequestT = Model::StartDocumentInsightsRequest>
+  void StartDocumentInsightsAsync(const StartDocumentInsightsRequestT& request, const StartDocumentInsightsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TextractClient::StartDocumentInsights, request, handler, context);
   }
 
   /**
@@ -986,6 +1284,60 @@ class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSRpcV2CborClient,
   void UpdateAdapterAsync(const UpdateAdapterRequestT& request, const UpdateAdapterResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&TextractClient::UpdateAdapter, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing blueprint, replacing its schema and, optionally, its
+   * encryption configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateBlueprint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateBlueprintOutcome UpdateBlueprint(const Model::UpdateBlueprintRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateBlueprint that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateBlueprintRequestT = Model::UpdateBlueprintRequest>
+  Model::UpdateBlueprintOutcomeCallable UpdateBlueprintCallable(const UpdateBlueprintRequestT& request) const {
+    return SubmitCallable(&TextractClient::UpdateBlueprint, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateBlueprint that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateBlueprintRequestT = Model::UpdateBlueprintRequest>
+  void UpdateBlueprintAsync(const UpdateBlueprintRequestT& request, const UpdateBlueprintResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TextractClient::UpdateBlueprint, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of an existing project. If you omit a
+   * configuration, UpdateProject leaves it unchanged. A configuration that you
+   * supply replaces the stored one, so include every setting that you want to
+   * keep.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateProject">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateProject that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateProjectRequestT = Model::UpdateProjectRequest>
+  Model::UpdateProjectOutcomeCallable UpdateProjectCallable(const UpdateProjectRequestT& request) const {
+    return SubmitCallable(&TextractClient::UpdateProject, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProject that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateProjectRequestT = Model::UpdateProjectRequest>
+  void UpdateProjectAsync(const UpdateProjectRequestT& request, const UpdateProjectResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TextractClient::UpdateProject, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

@@ -32,15 +32,15 @@ class AssociateGlossaryTermsResult {
   /**
    * <p>The unique identifier of the asset.</p>
    */
-  inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
-  template <typename AssetIdentifierT = Aws::String>
-  void SetAssetIdentifier(AssetIdentifierT&& value) {
-    m_assetIdentifierHasBeenSet = true;
-    m_assetIdentifier = std::forward<AssetIdentifierT>(value);
+  inline const Aws::String& GetAssetId() const { return m_assetId; }
+  template <typename AssetIdT = Aws::String>
+  void SetAssetId(AssetIdT&& value) {
+    m_assetIdHasBeenSet = true;
+    m_assetId = std::forward<AssetIdT>(value);
   }
-  template <typename AssetIdentifierT = Aws::String>
-  AssociateGlossaryTermsResult& WithAssetIdentifier(AssetIdentifierT&& value) {
-    SetAssetIdentifier(std::forward<AssetIdentifierT>(value));
+  template <typename AssetIdT = Aws::String>
+  AssociateGlossaryTermsResult& WithAssetId(AssetIdT&& value) {
+    SetAssetId(std::forward<AssetIdT>(value));
     return *this;
   }
   ///@}
@@ -66,15 +66,15 @@ class AssociateGlossaryTermsResult {
   /**
    * <p>The identifier of the item within the iterable form, if applicable.</p>
    */
-  inline const Aws::String& GetItemIdentifier() const { return m_itemIdentifier; }
-  template <typename ItemIdentifierT = Aws::String>
-  void SetItemIdentifier(ItemIdentifierT&& value) {
-    m_itemIdentifierHasBeenSet = true;
-    m_itemIdentifier = std::forward<ItemIdentifierT>(value);
+  inline const Aws::String& GetItemId() const { return m_itemId; }
+  template <typename ItemIdT = Aws::String>
+  void SetItemId(ItemIdT&& value) {
+    m_itemIdHasBeenSet = true;
+    m_itemId = std::forward<ItemIdT>(value);
   }
-  template <typename ItemIdentifierT = Aws::String>
-  AssociateGlossaryTermsResult& WithItemIdentifier(ItemIdentifierT&& value) {
-    SetItemIdentifier(std::forward<ItemIdentifierT>(value));
+  template <typename ItemIdT = Aws::String>
+  AssociateGlossaryTermsResult& WithItemId(ItemIdT&& value) {
+    SetItemId(std::forward<ItemIdT>(value));
     return *this;
   }
   ///@}
@@ -119,19 +119,19 @@ class AssociateGlossaryTermsResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::String m_assetIdentifier;
+  Aws::String m_assetId;
 
   Aws::String m_iterableFormName;
 
-  Aws::String m_itemIdentifier;
+  Aws::String m_itemId;
 
   Aws::Vector<Aws::String> m_glossaryTerms;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_assetIdentifierHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
   bool m_iterableFormNameHasBeenSet = false;
-  bool m_itemIdentifierHasBeenSet = false;
+  bool m_itemIdHasBeenSet = false;
   bool m_glossaryTermsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

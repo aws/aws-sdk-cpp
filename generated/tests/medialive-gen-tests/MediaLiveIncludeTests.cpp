@@ -337,6 +337,7 @@
 #include <aws/medialive/model/EmbeddedConvert608To708.h>
 #include <aws/medialive/model/EmbeddedDestinationSettings.h>
 #include <aws/medialive/model/EmbeddedDestinationStyleControl.h>
+#include <aws/medialive/model/EmbeddedModeType.h>
 #include <aws/medialive/model/EmbeddedPlusScte20DestinationSettings.h>
 #include <aws/medialive/model/EmbeddedScte20Detection.h>
 #include <aws/medialive/model/EmbeddedSourceSettings.h>
@@ -1000,6 +1001,7 @@
 #include <aws/medialive/model/WavSettings.h>
 #include <aws/medialive/model/WebvttDestinationSettings.h>
 #include <aws/medialive/model/WebvttDestinationStyleControl.h>
+#include <aws/medialive/model/WebvttSourceSettings.h>
 
 using MediaLiveIncludeTest = ::testing::Test;
 

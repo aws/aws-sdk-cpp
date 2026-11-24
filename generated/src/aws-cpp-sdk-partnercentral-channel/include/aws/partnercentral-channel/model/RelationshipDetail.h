@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-channel/PartnerCentralChannel_EXPORTS.h>
+#include <aws/partnercentral-channel/model/AccountScope.h>
 #include <aws/partnercentral-channel/model/AssociationType.h>
 #include <aws/partnercentral-channel/model/ResaleAccountModel.h>
 #include <aws/partnercentral-channel/model/Sector.h>
@@ -180,7 +181,8 @@ class RelationshipDetail {
 
   ///@{
   /**
-   * <p>The resale account model for the relationship.</p>
+   * <p>The resale account model for the relationship. Applies only to billing
+   * transfer relationships.</p>
    */
   inline ResaleAccountModel GetResaleAccountModel() const { return m_resaleAccountModel; }
   inline bool ResaleAccountModelHasBeenSet() const { return m_resaleAccountModelHasBeenSet; }
@@ -206,6 +208,42 @@ class RelationshipDetail {
   }
   inline RelationshipDetail& WithSector(Sector value) {
     SetSector(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The account scope of the managed services relationship. Applies only to
+   * managed services relationships.</p>
+   */
+  inline AccountScope GetAccountScope() const { return m_accountScope; }
+  inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
+  inline void SetAccountScope(AccountScope value) {
+    m_accountScopeHasBeenSet = true;
+    m_accountScope = value;
+  }
+  inline RelationshipDetail& WithAccountScope(AccountScope value) {
+    SetAccountScope(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the channel contract currently in effect for the
+   * relationship. Applies only to managed services relationships.</p>
+   */
+  inline const Aws::String& GetChannelContractId() const { return m_channelContractId; }
+  inline bool ChannelContractIdHasBeenSet() const { return m_channelContractIdHasBeenSet; }
+  template <typename ChannelContractIdT = Aws::String>
+  void SetChannelContractId(ChannelContractIdT&& value) {
+    m_channelContractIdHasBeenSet = true;
+    m_channelContractId = std::forward<ChannelContractIdT>(value);
+  }
+  template <typename ChannelContractIdT = Aws::String>
+  RelationshipDetail& WithChannelContractId(ChannelContractIdT&& value) {
+    SetChannelContractId(std::forward<ChannelContractIdT>(value));
     return *this;
   }
   ///@}
@@ -263,6 +301,24 @@ class RelationshipDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The end date of the relationship.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEndDate() const { return m_endDate; }
+  inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
+  template <typename EndDateT = Aws::Utils::DateTime>
+  void SetEndDate(EndDateT&& value) {
+    m_endDateHasBeenSet = true;
+    m_endDate = std::forward<EndDateT>(value);
+  }
+  template <typename EndDateT = Aws::Utils::DateTime>
+  RelationshipDetail& WithEndDate(EndDateT&& value) {
+    SetEndDate(std::forward<EndDateT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -284,11 +340,17 @@ class RelationshipDetail {
 
   Sector m_sector{Sector::NOT_SET};
 
+  AccountScope m_accountScope{AccountScope::NOT_SET};
+
+  Aws::String m_channelContractId;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::Utils::DateTime m_startDate{};
+
+  Aws::Utils::DateTime m_endDate{};
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
@@ -299,9 +361,12 @@ class RelationshipDetail {
   bool m_displayNameHasBeenSet = false;
   bool m_resaleAccountModelHasBeenSet = false;
   bool m_sectorHasBeenSet = false;
+  bool m_accountScopeHasBeenSet = false;
+  bool m_channelContractIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
 };
 
 }  // namespace Model

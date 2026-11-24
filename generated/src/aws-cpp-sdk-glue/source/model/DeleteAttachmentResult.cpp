@@ -22,17 +22,17 @@ DeleteAttachmentResult::DeleteAttachmentResult(const Aws::AmazonWebServiceResult
 DeleteAttachmentResult& DeleteAttachmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("AssetIdentifier")) {
-    m_assetIdentifier = jsonValue.GetString("AssetIdentifier");
-    m_assetIdentifierHasBeenSet = true;
+  if (jsonValue.ValueExists("AssetId")) {
+    m_assetId = jsonValue.GetString("AssetId");
+    m_assetIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("IterableFormName")) {
     m_iterableFormName = jsonValue.GetString("IterableFormName");
     m_iterableFormNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ItemIdentifier")) {
-    m_itemIdentifier = jsonValue.GetString("ItemIdentifier");
-    m_itemIdentifierHasBeenSet = true;
+  if (jsonValue.ValueExists("ItemId")) {
+    m_itemId = jsonValue.GetString("ItemId");
+    m_itemIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

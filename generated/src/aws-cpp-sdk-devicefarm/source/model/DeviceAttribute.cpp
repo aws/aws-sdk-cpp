@@ -18,6 +18,7 @@ namespace DeviceAttributeMapper {
 static const int ARN_HASH = HashingUtils::HashString("ARN");
 static const int PLATFORM_HASH = HashingUtils::HashString("PLATFORM");
 static const int FORM_FACTOR_HASH = HashingUtils::HashString("FORM_FACTOR");
+static const int DEVICE_TYPE_HASH = HashingUtils::HashString("DEVICE_TYPE");
 static const int MANUFACTURER_HASH = HashingUtils::HashString("MANUFACTURER");
 static const int REMOTE_ACCESS_ENABLED_HASH = HashingUtils::HashString("REMOTE_ACCESS_ENABLED");
 static const int REMOTE_DEBUG_ENABLED_HASH = HashingUtils::HashString("REMOTE_DEBUG_ENABLED");
@@ -37,6 +38,8 @@ DeviceAttribute GetDeviceAttributeForName(const Aws::String& name) {
     return DeviceAttribute::PLATFORM;
   } else if (hashCode == FORM_FACTOR_HASH) {
     return DeviceAttribute::FORM_FACTOR;
+  } else if (hashCode == DEVICE_TYPE_HASH) {
+    return DeviceAttribute::DEVICE_TYPE;
   } else if (hashCode == MANUFACTURER_HASH) {
     return DeviceAttribute::MANUFACTURER;
   } else if (hashCode == REMOTE_ACCESS_ENABLED_HASH) {
@@ -77,6 +80,8 @@ Aws::String GetNameForDeviceAttribute(DeviceAttribute enumValue) {
       return "PLATFORM";
     case DeviceAttribute::FORM_FACTOR:
       return "FORM_FACTOR";
+    case DeviceAttribute::DEVICE_TYPE:
+      return "DEVICE_TYPE";
     case DeviceAttribute::MANUFACTURER:
       return "MANUFACTURER";
     case DeviceAttribute::REMOTE_ACCESS_ENABLED:

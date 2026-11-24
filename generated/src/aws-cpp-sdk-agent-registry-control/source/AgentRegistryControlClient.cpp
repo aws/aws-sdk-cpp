@@ -6,21 +6,30 @@
 #include <aws/agent-registry-control/AgentRegistryControlClient.h>
 #include <aws/agent-registry-control/AgentRegistryControlEndpointProvider.h>
 #include <aws/agent-registry-control/AgentRegistryControlErrorMarshaller.h>
+#include <aws/agent-registry-control/model/AssociatePublisherRequest.h>
+#include <aws/agent-registry-control/model/CreatePublisherRequest.h>
 #include <aws/agent-registry-control/model/CreateRegistryRecordRequest.h>
 #include <aws/agent-registry-control/model/CreateRegistryRequest.h>
+#include <aws/agent-registry-control/model/DeletePublisherRequest.h>
 #include <aws/agent-registry-control/model/DeleteRegistryRecordRequest.h>
 #include <aws/agent-registry-control/model/DeleteRegistryRequest.h>
+#include <aws/agent-registry-control/model/DisassociatePublisherRequest.h>
+#include <aws/agent-registry-control/model/GetPublisherRequest.h>
 #include <aws/agent-registry-control/model/GetRegistryRecordRequest.h>
 #include <aws/agent-registry-control/model/GetRegistryRequest.h>
+#include <aws/agent-registry-control/model/ListPublisherAssociationsRequest.h>
+#include <aws/agent-registry-control/model/ListPublishersRequest.h>
 #include <aws/agent-registry-control/model/ListRegistriesRequest.h>
 #include <aws/agent-registry-control/model/ListRegistryRecordsRequest.h>
 #include <aws/agent-registry-control/model/ListTagsForResourceRequest.h>
 #include <aws/agent-registry-control/model/SubmitRegistryRecordForApprovalRequest.h>
 #include <aws/agent-registry-control/model/TagResourceRequest.h>
 #include <aws/agent-registry-control/model/UntagResourceRequest.h>
+#include <aws/agent-registry-control/model/UpdatePublisherAssociationApprovalStatusRequest.h>
 #include <aws/agent-registry-control/model/UpdateRegistryRecordRequest.h>
 #include <aws/agent-registry-control/model/UpdateRegistryRecordStatusRequest.h>
 #include <aws/agent-registry-control/model/UpdateRegistryRequest.h>
+#include <aws/agent-registry-control/model/ValidatePublisherRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -199,6 +208,28 @@ AgentRegistryControlClient::InvokeOperationOutcome AgentRegistryControlClient::I
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+AssociatePublisherOutcome AgentRegistryControlClient::AssociatePublisher(const AssociatePublisherRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociatePublisherOutcome(result.GetResultWithOwnership())
+                            : AssociatePublisherOutcome(std::move(result.GetError()));
+}
+
+CreatePublisherOutcome AgentRegistryControlClient::CreatePublisher(const CreatePublisherRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/publishers");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePublisherOutcome(result.GetResultWithOwnership())
+                            : CreatePublisherOutcome(std::move(result.GetError()));
+}
+
 CreateRegistryOutcome AgentRegistryControlClient::CreateRegistry(const CreateRegistryRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -226,6 +257,24 @@ CreateRegistryRecordOutcome AgentRegistryControlClient::CreateRegistryRecord(con
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateRegistryRecordOutcome(result.GetResultWithOwnership())
                             : CreateRegistryRecordOutcome(std::move(result.GetError()));
+}
+
+DeletePublisherOutcome AgentRegistryControlClient::DeletePublisher(const DeletePublisherRequest& request) const {
+  if (!request.PublisherArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeletePublisher", "Required field: PublisherArn, is not set");
+    return DeletePublisherOutcome(Aws::Client::AWSError<AgentRegistryControlErrors>(
+        AgentRegistryControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PublisherArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/publishers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPublisherArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePublisherOutcome(result.GetResultWithOwnership())
+                            : DeletePublisherOutcome(std::move(result.GetError()));
 }
 
 DeleteRegistryOutcome AgentRegistryControlClient::DeleteRegistry(const DeleteRegistryRequest& request) const {
@@ -270,6 +319,41 @@ DeleteRegistryRecordOutcome AgentRegistryControlClient::DeleteRegistryRecord(con
                             : DeleteRegistryRecordOutcome(std::move(result.GetError()));
 }
 
+DisassociatePublisherOutcome AgentRegistryControlClient::DisassociatePublisher(const DisassociatePublisherRequest& request) const {
+  if (!request.RecordArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DisassociatePublisher", "Required field: RecordArn, is not set");
+    return DisassociatePublisherOutcome(Aws::Client::AWSError<AgentRegistryControlErrors>(
+        AgentRegistryControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecordArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/associations/");
+    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetRecordArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociatePublisherOutcome(result.GetResultWithOwnership())
+                            : DisassociatePublisherOutcome(std::move(result.GetError()));
+}
+
+GetPublisherOutcome AgentRegistryControlClient::GetPublisher(const GetPublisherRequest& request) const {
+  if (!request.PublisherArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPublisher", "Required field: PublisherArn, is not set");
+    return GetPublisherOutcome(Aws::Client::AWSError<AgentRegistryControlErrors>(
+        AgentRegistryControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PublisherArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/publishers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPublisherArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPublisherOutcome(result.GetResultWithOwnership()) : GetPublisherOutcome(std::move(result.GetError()));
+}
+
 GetRegistryOutcome AgentRegistryControlClient::GetRegistry(const GetRegistryRequest& request) const {
   if (!request.RegistryIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetRegistry", "Required field: RegistryId, is not set");
@@ -310,6 +394,28 @@ GetRegistryRecordOutcome AgentRegistryControlClient::GetRegistryRecord(const Get
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetRegistryRecordOutcome(result.GetResultWithOwnership())
                             : GetRegistryRecordOutcome(std::move(result.GetError()));
+}
+
+ListPublisherAssociationsOutcome AgentRegistryControlClient::ListPublisherAssociations(
+    const ListPublisherAssociationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPublisherAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListPublisherAssociationsOutcome(std::move(result.GetError()));
+}
+
+ListPublishersOutcome AgentRegistryControlClient::ListPublishers(const ListPublishersRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/publishers");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPublishersOutcome(result.GetResultWithOwnership()) : ListPublishersOutcome(std::move(result.GetError()));
 }
 
 ListRegistriesOutcome AgentRegistryControlClient::ListRegistries(const ListRegistriesRequest& request) const {
@@ -428,6 +534,25 @@ UntagResourceOutcome AgentRegistryControlClient::UntagResource(const UntagResour
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
+UpdatePublisherAssociationApprovalStatusOutcome AgentRegistryControlClient::UpdatePublisherAssociationApprovalStatus(
+    const UpdatePublisherAssociationApprovalStatusRequest& request) const {
+  if (!request.RecordArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdatePublisherAssociationApprovalStatus", "Required field: RecordArn, is not set");
+    return UpdatePublisherAssociationApprovalStatusOutcome(Aws::Client::AWSError<AgentRegistryControlErrors>(
+        AgentRegistryControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecordArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/associations/");
+    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetRecordArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdatePublisherAssociationApprovalStatusOutcome(result.GetResultWithOwnership())
+                            : UpdatePublisherAssociationApprovalStatusOutcome(std::move(result.GetError()));
+}
+
 UpdateRegistryOutcome AgentRegistryControlClient::UpdateRegistry(const UpdateRegistryRequest& request) const {
   if (!request.RegistryIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateRegistry", "Required field: RegistryId, is not set");
@@ -495,4 +620,23 @@ UpdateRegistryRecordStatusOutcome AgentRegistryControlClient::UpdateRegistryReco
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateRegistryRecordStatusOutcome(result.GetResultWithOwnership())
                             : UpdateRegistryRecordStatusOutcome(std::move(result.GetError()));
+}
+
+ValidatePublisherOutcome AgentRegistryControlClient::ValidatePublisher(const ValidatePublisherRequest& request) const {
+  if (!request.PublisherArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ValidatePublisher", "Required field: PublisherArn, is not set");
+    return ValidatePublisherOutcome(Aws::Client::AWSError<AgentRegistryControlErrors>(
+        AgentRegistryControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PublisherArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/publishers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPublisherArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/verification");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ValidatePublisherOutcome(result.GetResultWithOwnership())
+                            : ValidatePublisherOutcome(std::move(result.GetError()));
 }

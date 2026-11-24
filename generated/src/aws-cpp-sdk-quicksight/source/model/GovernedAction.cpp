@@ -16,11 +16,14 @@ namespace Model {
 namespace GovernedActionMapper {
 
 static const int SHARE_HASH = HashingUtils::HashString("SHARE");
+static const int PUBLISH_HASH = HashingUtils::HashString("PUBLISH");
 
 GovernedAction GetGovernedActionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == SHARE_HASH) {
     return GovernedAction::SHARE;
+  } else if (hashCode == PUBLISH_HASH) {
+    return GovernedAction::PUBLISH;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForGovernedAction(GovernedAction enumValue) {
       return {};
     case GovernedAction::SHARE:
       return "SHARE";
+    case GovernedAction::PUBLISH:
+      return "PUBLISH";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

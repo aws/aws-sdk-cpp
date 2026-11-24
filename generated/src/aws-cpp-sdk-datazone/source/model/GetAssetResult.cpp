@@ -118,6 +118,10 @@ GetAssetResult& GetAssetResult::operator=(const Aws::AmazonWebServiceResult<Json
     }
     m_latestTimeSeriesDataPointFormsOutputHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ownershipTransfer")) {
+    m_ownershipTransfer = jsonValue.GetObject("ownershipTransfer");
+    m_ownershipTransferHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -12,6 +12,8 @@
 #include <aws/compute-optimizer-automation/model/ListAutomationRulePreviewPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListAutomationRulePreviewSummariesPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListAutomationRulesPaginationTraits.h>
+#include <aws/compute-optimizer-automation/model/ListOrganizationEnrollmentConfigurationsPaginationTraits.h>
+#include <aws/compute-optimizer-automation/model/ListOrganizationalUnitsPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionSummariesPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionsPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
@@ -105,6 +107,30 @@ class ComputeOptimizerAutomationPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutomationRulesRequest,
                                              Pagination::ListAutomationRulesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListOrganizationalUnits operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationalUnitsRequest,
+                                    Pagination::ListOrganizationalUnitsPaginationTraits<DerivedClient>>
+  ListOrganizationalUnitsPaginator(const Model::ListOrganizationalUnitsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationalUnitsRequest,
+                                             Pagination::ListOrganizationalUnitsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListOrganizationEnrollmentConfigurations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationEnrollmentConfigurationsRequest,
+                                    Pagination::ListOrganizationEnrollmentConfigurationsPaginationTraits<DerivedClient>>
+  ListOrganizationEnrollmentConfigurationsPaginator(const Model::ListOrganizationEnrollmentConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationEnrollmentConfigurationsRequest,
+                                             Pagination::ListOrganizationEnrollmentConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

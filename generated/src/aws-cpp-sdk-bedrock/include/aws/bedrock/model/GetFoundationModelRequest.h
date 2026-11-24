@@ -11,6 +11,9 @@
 #include <utility>
 
 namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
 namespace Bedrock {
 namespace Model {
 
@@ -27,6 +30,8 @@ class GetFoundationModelRequest : public BedrockRequest {
   inline virtual const char* GetServiceRequestName() const override { return "GetFoundationModel"; }
 
   AWS_BEDROCK_API Aws::String SerializePayload() const override;
+
+  AWS_BEDROCK_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
   /**
@@ -45,9 +50,38 @@ class GetFoundationModelRequest : public BedrockRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the
+   * project's trusted access program participation when determining whether to
+   * return the model. The project must belong to your account in the same AWS Region
+   * and partition as the request.</p> <p>If you omit this parameter or specify
+   * <code>default</code>, Amazon Bedrock uses your account's participation,
+   * including organization inheritance.</p> <p>A project that doesn't exist or is
+   * archived causes a <code>ValidationException</code>. A model outside the
+   * project's available model catalog causes a
+   * <code>ResourceNotFoundException</code>.</p>
+   */
+  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
+  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
+  template <typename ProjectIdentifierT = Aws::String>
+  void SetProjectIdentifier(ProjectIdentifierT&& value) {
+    m_projectIdentifierHasBeenSet = true;
+    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
+  }
+  template <typename ProjectIdentifierT = Aws::String>
+  GetFoundationModelRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
+    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_modelIdentifier;
+
+  Aws::String m_projectIdentifier;
   bool m_modelIdentifierHasBeenSet = false;
+  bool m_projectIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

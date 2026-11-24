@@ -282,8 +282,7 @@ class Address {
 
   ///@{
   /**
-   * <p>The service that manages the elastic IP address.</p>  <p>The only
-   * option supported today is <code>alb</code>.</p>
+   * <p>The service that manages the elastic IP address.</p>
    */
   inline ServiceManaged GetServiceManaged() const { return m_serviceManaged; }
   inline bool ServiceManagedHasBeenSet() const { return m_serviceManagedHasBeenSet; }

@@ -21,6 +21,7 @@
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
 #include <aws/sagemaker/model/AddAssociationRequest.h>
+#include <aws/sagemaker/model/AddInferenceGatewayRequest.h>
 #include <aws/sagemaker/model/AddTagsRequest.h>
 #include <aws/sagemaker/model/AssociateTrialComponentRequest.h>
 #include <aws/sagemaker/model/AttachClusterNodeNetworkInterfaceRequest.h>
@@ -58,6 +59,7 @@
 #include <aws/sagemaker/model/CreateExperimentRequest.h>
 #include <aws/sagemaker/model/CreateFeatureGroupRequest.h>
 #include <aws/sagemaker/model/CreateFlowDefinitionRequest.h>
+#include <aws/sagemaker/model/CreateGlobalInferenceGatewayRequest.h>
 #include <aws/sagemaker/model/CreateHubContentPresignedUrlsRequest.h>
 #include <aws/sagemaker/model/CreateHubContentReferenceRequest.h>
 #include <aws/sagemaker/model/CreateHubRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/sagemaker/model/DeleteClusterRequest.h>
 #include <aws/sagemaker/model/DeleteClusterSchedulerConfigRequest.h>
 #include <aws/sagemaker/model/DeleteCodeRepositoryRequest.h>
-#include <aws/sagemaker/model/DeleteCompilationJobRequest.h>
-#include <aws/sagemaker/model/DeleteComputeQuotaRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -275,6 +275,12 @@ SageMakerClient::InvokeOperationOutcome SageMakerClient::InvokeServiceOperation(
 AddAssociationOutcome SageMakerClient::AddAssociation(const AddAssociationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AddAssociationOutcome(result.GetResultWithOwnership()) : AddAssociationOutcome(std::move(result.GetError()));
+}
+
+AddInferenceGatewayOutcome SageMakerClient::AddInferenceGateway(const AddInferenceGatewayRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddInferenceGatewayOutcome(result.GetResultWithOwnership())
+                            : AddInferenceGatewayOutcome(std::move(result.GetError()));
 }
 
 AddTagsOutcome SageMakerClient::AddTags(const AddTagsRequest& request) const {
@@ -492,6 +498,13 @@ CreateFlowDefinitionOutcome SageMakerClient::CreateFlowDefinition(const CreateFl
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateFlowDefinitionOutcome(result.GetResultWithOwnership())
                             : CreateFlowDefinitionOutcome(std::move(result.GetError()));
+}
+
+CreateGlobalInferenceGatewayOutcome SageMakerClient::CreateGlobalInferenceGateway(
+    const CreateGlobalInferenceGatewayRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGlobalInferenceGatewayOutcome(result.GetResultWithOwnership())
+                            : CreateGlobalInferenceGatewayOutcome(std::move(result.GetError()));
 }
 
 CreateHubOutcome SageMakerClient::CreateHub(const CreateHubRequest& request) const {
@@ -850,16 +863,4 @@ DeleteCodeRepositoryOutcome SageMakerClient::DeleteCodeRepository(const DeleteCo
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteCodeRepositoryOutcome(result.GetResultWithOwnership())
                             : DeleteCodeRepositoryOutcome(std::move(result.GetError()));
-}
-
-DeleteCompilationJobOutcome SageMakerClient::DeleteCompilationJob(const DeleteCompilationJobRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteCompilationJobOutcome(result.GetResultWithOwnership())
-                            : DeleteCompilationJobOutcome(std::move(result.GetError()));
-}
-
-DeleteComputeQuotaOutcome SageMakerClient::DeleteComputeQuota(const DeleteComputeQuotaRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteComputeQuotaOutcome(result.GetResultWithOwnership())
-                            : DeleteComputeQuotaOutcome(std::move(result.GetError()));
 }

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-security-manager/NetworkSecurityManager_EXPORTS.h>
 #include <aws/network-security-manager/model/EntityStatus.h>
+#include <aws/network-security-manager/model/SpecializedScopeType.h>
 
 #include <utility>
 
@@ -89,6 +90,26 @@ class ScopeSummary {
 
   ///@{
   /**
+   * <p>The specialized type of the scope, if the scope is built for one specific
+   * purpose. A scope with no <code>specializedScopeType</code> is a standard scope
+   * that you can associate with a deployment. A specialized scope can be used only
+   * for the purpose that its type defines and can't be associated with a deployment.
+   * This value is set when the scope is created and can't be changed.</p>
+   */
+  inline SpecializedScopeType GetSpecializedScopeType() const { return m_specializedScopeType; }
+  inline bool SpecializedScopeTypeHasBeenSet() const { return m_specializedScopeTypeHasBeenSet; }
+  inline void SetSpecializedScopeType(SpecializedScopeType value) {
+    m_specializedScopeTypeHasBeenSet = true;
+    m_specializedScopeType = value;
+  }
+  inline ScopeSummary& WithSpecializedScopeType(SpecializedScopeType value) {
+    SetSpecializedScopeType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current status of the resource: <code>DRAFT</code> (unpublished,
    * editable), <code>ACTIVE</code> (published, in use), or <code>DISABLED</code>
    * (deactivated; changes cannot be published until the resource is re-enabled).</p>
@@ -164,6 +185,8 @@ class ScopeSummary {
 
   Aws::String m_scopeName;
 
+  SpecializedScopeType m_specializedScopeType{SpecializedScopeType::NOT_SET};
+
   EntityStatus m_status{EntityStatus::NOT_SET};
 
   Aws::String m_version;
@@ -174,6 +197,7 @@ class ScopeSummary {
   bool m_scopeIdHasBeenSet = false;
   bool m_scopeArnHasBeenSet = false;
   bool m_scopeNameHasBeenSet = false;
+  bool m_specializedScopeTypeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_hasPublishedVersionHasBeenSet = false;

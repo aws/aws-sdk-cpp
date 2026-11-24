@@ -1,0 +1,106 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bedrock/BedrockRequest.h>
+#include <aws/bedrock/Bedrock_EXPORTS.h>
+#include <aws/bedrock/model/ProjectStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace Bedrock {
+namespace Model {
+
+/**
+ * <p>The page size, continuation token, and optional lifecycle status filter for
+ * listing projects.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListProjectsRequest">AWS
+ * API Reference</a></p>
+ */
+class ListProjectsRequest : public BedrockRequest {
+ public:
+  AWS_BEDROCK_API ListProjectsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListProjects"; }
+
+  AWS_BEDROCK_API Aws::String SerializePayload() const override;
+
+  AWS_BEDROCK_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
+  /**
+   * <p>Continuation token from a previous ListProjects response.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListProjectsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of projects to return in one response, from 1 to 100. The
+   * default is 20.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListProjectsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Returns only the projects in this lifecycle status. When absent, no status
+   * filtering is applied and every project is returned. New lifecycle states extend
+   * the <code>ProjectStatus</code> enum, and with it this filter, compatibly.</p>
+   */
+  inline ProjectStatus GetStatusFilter() const { return m_statusFilter; }
+  inline bool StatusFilterHasBeenSet() const { return m_statusFilterHasBeenSet; }
+  inline void SetStatusFilter(ProjectStatus value) {
+    m_statusFilterHasBeenSet = true;
+    m_statusFilter = value;
+  }
+  inline ListProjectsRequest& WithStatusFilter(ProjectStatus value) {
+    SetStatusFilter(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_nextToken;
+
+  int m_maxResults{0};
+
+  ProjectStatus m_statusFilter{ProjectStatus::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_statusFilterHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

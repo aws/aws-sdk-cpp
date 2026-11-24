@@ -115,6 +115,11 @@ Route& Route::operator=(const XmlNode& xmlNode) {
       m_ipAddress = Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressNode.GetText());
       m_ipAddressHasBeenSet = true;
     }
+    XmlNode igwFirewallNode = resultNode.FirstChild("igwFirewall");
+    if (!igwFirewallNode.IsNull()) {
+      m_igwFirewall = igwFirewallNode;
+      m_igwFirewallHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -199,6 +204,12 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   if (m_ipAddressHasBeenSet) {
     oStream << location << index << locationValue << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
   }
+
+  if (m_igwFirewallHasBeenSet) {
+    Aws::StringStream igwFirewallLocationAndMemberSs;
+    igwFirewallLocationAndMemberSs << location << index << locationValue << ".IgwFirewall";
+    m_igwFirewall.OutputToStream(oStream, igwFirewallLocationAndMemberSs.str().c_str());
+  }
 }
 
 void Route::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -255,6 +266,11 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location) const {
   }
   if (m_ipAddressHasBeenSet) {
     oStream << location << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
+  }
+  if (m_igwFirewallHasBeenSet) {
+    Aws::String igwFirewallLocationAndMember(location);
+    igwFirewallLocationAndMember += ".IgwFirewall";
+    m_igwFirewall.OutputToStream(oStream, igwFirewallLocationAndMember.c_str());
   }
 }
 

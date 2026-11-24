@@ -12,6 +12,7 @@
 #include <aws/marketplace-discovery/model/DeployedOnAwsStatus.h>
 #include <aws/marketplace-discovery/model/FulfillmentOptionSummary.h>
 #include <aws/marketplace-discovery/model/PromotionalMedia.h>
+#include <aws/marketplace-discovery/model/PurchaseIndicator.h>
 #include <aws/marketplace-discovery/model/Resource.h>
 #include <aws/marketplace-discovery/model/SellerEngagement.h>
 #include <aws/marketplace-discovery/model/SellerInformation.h>
@@ -37,8 +38,8 @@ class GetProductResult {
 
   ///@{
   /**
-   * <p>The locale of the returned content. Indicates whether the response contains
-   * content in the requested locale, or fell back to the default locale. See
+   * <p>The locale of the returned content. This value indicates whether the response
+   * contains content in the requested locale or fell back to the default locale. See
    * <code>Locale</code> for details.</p>
    */
   inline const Aws::String& GetLocale() const { return m_locale; }
@@ -124,7 +125,7 @@ class GetProductResult {
 
   ///@{
   /**
-   * <p>Indicates whether the product is deployed on AWS infrastructure.</p>
+   * <p>Specifies whether the product is deployed on AWS infrastructure.</p>
    */
   inline DeployedOnAwsStatus GetDeployedOnAws() const { return m_deployedOnAws; }
   inline void SetDeployedOnAws(DeployedOnAwsStatus value) {
@@ -191,7 +192,8 @@ class GetProductResult {
   ///@{
   /**
    * <p>A summary of fulfillment options available for deploying or accessing the
-   * product, such as AMI, SaaS, or Container.</p>
+   * product, such as Amazon Machine Image (AMI), Software as a Service (SaaS), or
+   * Container.</p>
    */
   inline const Aws::Vector<FulfillmentOptionSummary>& GetFulfillmentOptionSummaries() const { return m_fulfillmentOptionSummaries; }
   template <typename FulfillmentOptionSummariesT = Aws::Vector<FulfillmentOptionSummary>>
@@ -214,7 +216,7 @@ class GetProductResult {
 
   ///@{
   /**
-   * <p>The categories used to classify this product into logical groups.</p>
+   * <p>The categories that classify this product into logical groups.</p>
    */
   inline const Aws::Vector<Category>& GetCategories() const { return m_categories; }
   template <typename CategoriesT = Aws::Vector<Category>>
@@ -309,8 +311,8 @@ class GetProductResult {
 
   ///@{
   /**
-   * <p>Engagement options available to potential buyers, such as requesting a
-   * private offer or requesting a demo.</p>
+   * <p>The engagement options available to you, such as buying now, requesting a
+   * private offer, or requesting a demo.</p>
    */
   inline const Aws::Vector<SellerEngagement>& GetSellerEngagements() const { return m_sellerEngagements; }
   template <typename SellerEngagementsT = Aws::Vector<SellerEngagement>>
@@ -344,6 +346,31 @@ class GetProductResult {
   template <typename ListingIdT = Aws::String>
   GetProductResult& WithListingId(ListingIdT&& value) {
     SetListingId(std::forward<ListingIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicators describing purchase characteristics of this product, such as
+   * whether you can subscribe to it or use it without a subscription. The list is
+   * empty when no special purchase conditions apply.</p>
+   */
+  inline const Aws::Vector<PurchaseIndicator>& GetPurchaseIndicators() const { return m_purchaseIndicators; }
+  template <typename PurchaseIndicatorsT = Aws::Vector<PurchaseIndicator>>
+  void SetPurchaseIndicators(PurchaseIndicatorsT&& value) {
+    m_purchaseIndicatorsHasBeenSet = true;
+    m_purchaseIndicators = std::forward<PurchaseIndicatorsT>(value);
+  }
+  template <typename PurchaseIndicatorsT = Aws::Vector<PurchaseIndicator>>
+  GetProductResult& WithPurchaseIndicators(PurchaseIndicatorsT&& value) {
+    SetPurchaseIndicators(std::forward<PurchaseIndicatorsT>(value));
+    return *this;
+  }
+  template <typename PurchaseIndicatorsT = PurchaseIndicator>
+  GetProductResult& AddPurchaseIndicators(PurchaseIndicatorsT&& value) {
+    m_purchaseIndicatorsHasBeenSet = true;
+    m_purchaseIndicators.emplace_back(std::forward<PurchaseIndicatorsT>(value));
     return *this;
   }
   ///@}
@@ -397,6 +424,8 @@ class GetProductResult {
 
   Aws::String m_listingId;
 
+  Aws::Vector<PurchaseIndicator> m_purchaseIndicators;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_localeHasBeenSet = false;
@@ -415,6 +444,7 @@ class GetProductResult {
   bool m_resourcesHasBeenSet = false;
   bool m_sellerEngagementsHasBeenSet = false;
   bool m_listingIdHasBeenSet = false;
+  bool m_purchaseIndicatorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

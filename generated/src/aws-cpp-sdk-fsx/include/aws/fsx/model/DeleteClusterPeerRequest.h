@@ -1,0 +1,77 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSxRequest.h>
+#include <aws/fsx/FSx_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace FSx {
+namespace Model {
+
+/**
+ */
+class DeleteClusterPeerRequest : public FSxRequest {
+ public:
+  AWS_FSX_API DeleteClusterPeerRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteClusterPeer"; }
+
+  AWS_FSX_API Aws::String SerializePayload() const override;
+
+  AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+
+  inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
+  inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
+  template <typename ClientRequestTokenT = Aws::String>
+  void SetClientRequestToken(ClientRequestTokenT&& value) {
+    m_clientRequestTokenHasBeenSet = true;
+    m_clientRequestToken = std::forward<ClientRequestTokenT>(value);
+  }
+  template <typename ClientRequestTokenT = Aws::String>
+  DeleteClusterPeerRequest& WithClientRequestToken(ClientRequestTokenT&& value) {
+    SetClientRequestToken(std::forward<ClientRequestTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the cluster peer that you are deleting.</p>
+   */
+  inline const Aws::String& GetClusterPeerId() const { return m_clusterPeerId; }
+  inline bool ClusterPeerIdHasBeenSet() const { return m_clusterPeerIdHasBeenSet; }
+  template <typename ClusterPeerIdT = Aws::String>
+  void SetClusterPeerId(ClusterPeerIdT&& value) {
+    m_clusterPeerIdHasBeenSet = true;
+    m_clusterPeerId = std::forward<ClusterPeerIdT>(value);
+  }
+  template <typename ClusterPeerIdT = Aws::String>
+  DeleteClusterPeerRequest& WithClusterPeerId(ClusterPeerIdT&& value) {
+    SetClusterPeerId(std::forward<ClusterPeerIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  Aws::String m_clusterPeerId;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_clusterPeerIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

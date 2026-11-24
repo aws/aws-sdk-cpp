@@ -21,8 +21,8 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Defines a Bring Your Own License (BYOL) pricing term, where buyers use their
- * existing license for the product.</p><p><h3>See Also:</h3>   <a
+ * <p>Describes a Bring Your Own License (BYOL) pricing term. With this term, you
+ * use your existing license for the product.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ByolPricingTerm">AWS
  * API Reference</a></p>
  */

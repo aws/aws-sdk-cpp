@@ -64,10 +64,17 @@ class CompletionReport {
    * <p>Required if <code>Enabled</code> is set to <code>true</code>. Specifies the
    * location of the report on the file system's linked S3 data repository. An
    * absolute path that defines where the completion report will be stored in the
-   * destination location. The <code>Path</code> you provide must be located within
-   * the file system’s ExportPath. An example <code>Path</code> value is
-   * "s3://amzn-s3-demo-bucket/myExportPath/optionalPrefix". The report provides the
-   * following information for each file in the report: FilePath, FileStatus, and
+   * destination location. The <code>Path</code> you provide must be within the
+   * Amazon S3 location that the file system is linked to. That location depends on
+   * how the file system is configured:</p> <ul> <li> <p>The
+   * <code>DataRepositoryPath</code> of one of the associations, if the file system
+   * has data repository associations</p> </li> <li> <p>The <code>ExportPath</code>,
+   * if the file system was created with an <code>ImportPath</code> and an
+   * <code>ExportPath</code> </p> </li> </ul> <p>For example, if an association links
+   * to <code>s3://amzn-s3-demo-bucket/myPrefix</code>, then
+   * <code>s3://amzn-s3-demo-bucket/myPrefix/reports</code> is valid. The path
+   * <code>s3://amzn-s3-demo-bucket/reports</code> is not.</p> <p>The report provides
+   * the following information for each file in the report: FilePath, FileStatus, and
    * ErrorCode.</p>
    */
   inline const Aws::String& GetPath() const { return m_path; }

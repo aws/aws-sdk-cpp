@@ -15,6 +15,7 @@
 #include <aws/marketplace-discovery/model/PricingModel.h>
 #include <aws/marketplace-discovery/model/PricingUnit.h>
 #include <aws/marketplace-discovery/model/PromotionalMedia.h>
+#include <aws/marketplace-discovery/model/PurchaseIndicator.h>
 #include <aws/marketplace-discovery/model/Resource.h>
 #include <aws/marketplace-discovery/model/ReviewSummary.h>
 #include <aws/marketplace-discovery/model/SellerEngagement.h>
@@ -42,8 +43,8 @@ class GetListingResult {
 
   ///@{
   /**
-   * <p>The locale of the returned content. Indicates whether the response contains
-   * content in the requested locale, or fell back to the default locale. See
+   * <p>The locale of the returned content. This value indicates whether the response
+   * contains content in the requested locale or fell back to the default locale. See
    * <code>Locale</code> for details.</p>
    */
   inline const Aws::String& GetLocale() const { return m_locale; }
@@ -126,7 +127,7 @@ class GetListingResult {
 
   ///@{
   /**
-   * <p>The categories used to classify this listing into logical groups.</p>
+   * <p>The categories that classify this listing into logical groups.</p>
    */
   inline const Aws::Vector<Category>& GetCategories() const { return m_categories; }
   template <typename CategoriesT = Aws::Vector<Category>>
@@ -150,7 +151,8 @@ class GetListingResult {
   ///@{
   /**
    * <p>A summary of fulfillment options available for deploying or accessing the
-   * listing, such as AMI, SaaS, or Container.</p>
+   * listing, such as Amazon Machine Image (AMI), Software as a Service (SaaS), or
+   * Container.</p>
    */
   inline const Aws::Vector<FulfillmentOptionSummary>& GetFulfillmentOptionSummaries() const { return m_fulfillmentOptionSummaries; }
   template <typename FulfillmentOptionSummariesT = Aws::Vector<FulfillmentOptionSummary>>
@@ -283,7 +285,7 @@ class GetListingResult {
   ///@{
   /**
    * <p>The pricing models for offers associated with this listing, such as
-   * usage-based, contract, BYOL, or free.</p>
+   * usage-based, contract, Bring Your Own License (BYOL), or free.</p>
    */
   inline const Aws::Vector<PricingModel>& GetPricingModels() const { return m_pricingModels; }
   template <typename PricingModelsT = Aws::Vector<PricingModel>>
@@ -414,8 +416,8 @@ class GetListingResult {
 
   ///@{
   /**
-   * <p>Engagement options available to potential buyers, such as requesting a
-   * private offer or requesting a demo.</p>
+   * <p>The engagement options available to you, such as buying now, requesting a
+   * private offer, or requesting a demo.</p>
    */
   inline const Aws::Vector<SellerEngagement>& GetSellerEngagements() const { return m_sellerEngagements; }
   template <typename SellerEngagementsT = Aws::Vector<SellerEngagement>>
@@ -455,8 +457,8 @@ class GetListingResult {
 
   ///@{
   /**
-   * <p>Use cases associated with the listing, describing scenarios where the product
-   * can be applied.</p>
+   * <p>Use cases associated with the listing, describing scenarios where you can
+   * apply the product.</p>
    */
   inline const Aws::Vector<UseCaseEntry>& GetUseCases() const { return m_useCases; }
   template <typename UseCasesT = Aws::Vector<UseCaseEntry>>
@@ -473,6 +475,31 @@ class GetListingResult {
   GetListingResult& AddUseCases(UseCasesT&& value) {
     m_useCasesHasBeenSet = true;
     m_useCases.emplace_back(std::forward<UseCasesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicators describing purchase characteristics of this listing, such as
+   * whether you can subscribe to it or use it without a subscription. The list is
+   * empty when no special purchase conditions apply.</p>
+   */
+  inline const Aws::Vector<PurchaseIndicator>& GetPurchaseIndicators() const { return m_purchaseIndicators; }
+  template <typename PurchaseIndicatorsT = Aws::Vector<PurchaseIndicator>>
+  void SetPurchaseIndicators(PurchaseIndicatorsT&& value) {
+    m_purchaseIndicatorsHasBeenSet = true;
+    m_purchaseIndicators = std::forward<PurchaseIndicatorsT>(value);
+  }
+  template <typename PurchaseIndicatorsT = Aws::Vector<PurchaseIndicator>>
+  GetListingResult& WithPurchaseIndicators(PurchaseIndicatorsT&& value) {
+    SetPurchaseIndicators(std::forward<PurchaseIndicatorsT>(value));
+    return *this;
+  }
+  template <typename PurchaseIndicatorsT = PurchaseIndicator>
+  GetListingResult& AddPurchaseIndicators(PurchaseIndicatorsT&& value) {
+    m_purchaseIndicatorsHasBeenSet = true;
+    m_purchaseIndicators.emplace_back(std::forward<PurchaseIndicatorsT>(value));
     return *this;
   }
   ///@}
@@ -536,6 +563,8 @@ class GetListingResult {
 
   Aws::Vector<UseCaseEntry> m_useCases;
 
+  Aws::Vector<PurchaseIndicator> m_purchaseIndicators;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_localeHasBeenSet = false;
@@ -559,6 +588,7 @@ class GetListingResult {
   bool m_sellerEngagementsHasBeenSet = false;
   bool m_shortDescriptionHasBeenSet = false;
   bool m_useCasesHasBeenSet = false;
+  bool m_purchaseIndicatorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

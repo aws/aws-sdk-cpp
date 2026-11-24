@@ -16,7 +16,7 @@
 namespace Aws {
 namespace QuickSight {
 /**
- * <fullname>Amazon Quick API Reference</fullname> <p>Amazon Quick Sight is a fully
+ * <fullname>Quick API Reference</fullname> <p>Amazon Quick Sight is a fully
  * managed, serverless business intelligence service for the Amazon Web Services
  * Cloud that makes it easy to extend data and insights to every user in your
  * organization. This API reference contains documentation for a programming
@@ -139,6 +139,39 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Removes a governance policy from multiple Amazon Quick Sight principals in a
+   * single request. A principal that doesn't have the policy is reported as a
+   * success.</p> <p>Each entry succeeds or fails independently. Check the
+   * <code>Errors</code> list in the response for entries that failed.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchDeletePolicyAssignmentByPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchDeletePolicyAssignmentByPolicyOutcome BatchDeletePolicyAssignmentByPolicy(
+      const Model::BatchDeletePolicyAssignmentByPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchDeletePolicyAssignmentByPolicy that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename BatchDeletePolicyAssignmentByPolicyRequestT = Model::BatchDeletePolicyAssignmentByPolicyRequest>
+  Model::BatchDeletePolicyAssignmentByPolicyOutcomeCallable BatchDeletePolicyAssignmentByPolicyCallable(
+      const BatchDeletePolicyAssignmentByPolicyRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::BatchDeletePolicyAssignmentByPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for BatchDeletePolicyAssignmentByPolicy that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename BatchDeletePolicyAssignmentByPolicyRequestT = Model::BatchDeletePolicyAssignmentByPolicyRequest>
+  void BatchDeletePolicyAssignmentByPolicyAsync(const BatchDeletePolicyAssignmentByPolicyRequestT& request,
+                                                const BatchDeletePolicyAssignmentByPolicyResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::BatchDeletePolicyAssignmentByPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Deletes reviewed answers for Q Topic.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchDeleteTopicReviewedAnswer">AWS
    * API Reference</a></p>
@@ -197,6 +230,39 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Assigns a governance policy to multiple Amazon Quick Sight principals in a
+   * single request. If a principal already has a policy of the same type, this
+   * operation replaces it.</p> <p>Each entry succeeds or fails independently. Check
+   * the <code>Errors</code> list in the response for entries that
+   * failed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchPutPolicyAssignmentByPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchPutPolicyAssignmentByPolicyOutcome BatchPutPolicyAssignmentByPolicy(
+      const Model::BatchPutPolicyAssignmentByPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchPutPolicyAssignmentByPolicy that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename BatchPutPolicyAssignmentByPolicyRequestT = Model::BatchPutPolicyAssignmentByPolicyRequest>
+  Model::BatchPutPolicyAssignmentByPolicyOutcomeCallable BatchPutPolicyAssignmentByPolicyCallable(
+      const BatchPutPolicyAssignmentByPolicyRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::BatchPutPolicyAssignmentByPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for BatchPutPolicyAssignmentByPolicy that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename BatchPutPolicyAssignmentByPolicyRequestT = Model::BatchPutPolicyAssignmentByPolicyRequest>
+  void BatchPutPolicyAssignmentByPolicyAsync(const BatchPutPolicyAssignmentByPolicyRequestT& request,
+                                             const BatchPutPolicyAssignmentByPolicyResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::BatchPutPolicyAssignmentByPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Cancels an ongoing ingestion of data into SPICE.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CancelIngestion">AWS
@@ -220,6 +286,73 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void CancelIngestionAsync(const CancelIngestionRequestT& request, const CancelIngestionResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::CancelIngestion, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an access control application in an Amazon Quick Sight account. You
+   * use an access control application to define how an external client signs in to
+   * Quick Sight with OAuth 2.0.</p> <p>To connect a client to Quick Sight through an
+   * inbound connector, associate the access control application with the connector
+   * by using the <code>UpdateInboundConnectorApplicationAssociations</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccessControlApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAccessControlApplicationOutcome CreateAccessControlApplication(
+      const Model::CreateAccessControlApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAccessControlApplication that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateAccessControlApplicationRequestT = Model::CreateAccessControlApplicationRequest>
+  Model::CreateAccessControlApplicationOutcomeCallable CreateAccessControlApplicationCallable(
+      const CreateAccessControlApplicationRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::CreateAccessControlApplication, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAccessControlApplication that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateAccessControlApplicationRequestT = Model::CreateAccessControlApplicationRequest>
+  void CreateAccessControlApplicationAsync(const CreateAccessControlApplicationRequestT& request,
+                                           const CreateAccessControlApplicationResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::CreateAccessControlApplication, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a client secret for an access control application. An access control
+   * application can have up to two client secrets, so that you can rotate a secret
+   * without downtime.</p> <p>Provide the Amazon Web Services Secrets Manager
+   * (Secrets Manager) secret ARN for each Region where the client secret, issued by
+   * your identity provider (IdP), is stored.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccessControlApplicationSecret">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAccessControlApplicationSecretOutcome CreateAccessControlApplicationSecret(
+      const Model::CreateAccessControlApplicationSecretRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAccessControlApplicationSecret that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename CreateAccessControlApplicationSecretRequestT = Model::CreateAccessControlApplicationSecretRequest>
+  Model::CreateAccessControlApplicationSecretOutcomeCallable CreateAccessControlApplicationSecretCallable(
+      const CreateAccessControlApplicationSecretRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::CreateAccessControlApplicationSecret, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAccessControlApplicationSecret that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename CreateAccessControlApplicationSecretRequestT = Model::CreateAccessControlApplicationSecretRequest>
+  void CreateAccessControlApplicationSecretAsync(const CreateAccessControlApplicationSecretRequestT& request,
+                                                 const CreateAccessControlApplicationSecretResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::CreateAccessControlApplicationSecret, request, handler, context);
   }
 
   /**
@@ -769,6 +902,40 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates an inbound connector in a Quick Sight account. An inbound connector
+   * is the endpoint that an external client, such as the Quick Sight desktop
+   * application, uses to reach Quick Sight in your account.</p> <p>Your users
+   * authenticate through the access control applications that are associated with
+   * the connector. To manage these associations, use
+   * <code>UpdateInboundConnectorApplicationAssociations</code>.</p> <p>An account
+   * can have one <code>QUICK_DESKTOP</code> inbound connector in each
+   * Region.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateInboundConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateInboundConnectorOutcome CreateInboundConnector(const Model::CreateInboundConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateInboundConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateInboundConnectorRequestT = Model::CreateInboundConnectorRequest>
+  Model::CreateInboundConnectorOutcomeCallable CreateInboundConnectorCallable(const CreateInboundConnectorRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::CreateInboundConnector, request);
+  }
+
+  /**
+   * An Async wrapper for CreateInboundConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateInboundConnectorRequestT = Model::CreateInboundConnectorRequest>
+  void CreateInboundConnectorAsync(const CreateInboundConnectorRequestT& request,
+                                   const CreateInboundConnectorResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::CreateInboundConnector, request, handler, context);
+  }
+
+  /**
    * <p>Creates and starts a new SPICE ingestion for a dataset. You can manually
    * refresh datasets in an Enterprise edition account 32 times in a 24-hour period.
    * You can manually refresh datasets in a Standard edition account 8 times in a
@@ -836,6 +1003,39 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void CreateKnowledgeBaseAsync(const CreateKnowledgeBaseRequestT& request, const CreateKnowledgeBaseResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::CreateKnowledgeBase, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a schedule that periodically refreshes an Amazon Quick Sight
+   * knowledge base at the frequency that you specify.</p> <p>A knowledge base can
+   * have only one refresh schedule. If the knowledge base already has a refresh
+   * schedule, the request fails with a
+   * <code>LimitExceededException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateKnowledgeBaseRefreshSchedule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateKnowledgeBaseRefreshScheduleOutcome CreateKnowledgeBaseRefreshSchedule(
+      const Model::CreateKnowledgeBaseRefreshScheduleRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateKnowledgeBaseRefreshSchedule that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CreateKnowledgeBaseRefreshScheduleRequestT = Model::CreateKnowledgeBaseRefreshScheduleRequest>
+  Model::CreateKnowledgeBaseRefreshScheduleOutcomeCallable CreateKnowledgeBaseRefreshScheduleCallable(
+      const CreateKnowledgeBaseRefreshScheduleRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::CreateKnowledgeBaseRefreshSchedule, request);
+  }
+
+  /**
+   * An Async wrapper for CreateKnowledgeBaseRefreshSchedule that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateKnowledgeBaseRefreshScheduleRequestT = Model::CreateKnowledgeBaseRefreshScheduleRequest>
+  void CreateKnowledgeBaseRefreshScheduleAsync(const CreateKnowledgeBaseRefreshScheduleRequestT& request,
+                                               const CreateKnowledgeBaseRefreshScheduleResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::CreateKnowledgeBaseRefreshSchedule, request, handler, context);
   }
 
   /**
@@ -1226,6 +1426,69 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void CreateVPCConnectionAsync(const CreateVPCConnectionRequestT& request, const CreateVPCConnectionResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::CreateVPCConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an access control application. You can't delete an access control
+   * application that is associated with an inbound connector whose status is
+   * <code>ENABLED</code>.</p> <p>If another update to the same application is in
+   * progress, Quick Sight returns a <code>ConflictException</code>. Retry the
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccessControlApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAccessControlApplicationOutcome DeleteAccessControlApplication(
+      const Model::DeleteAccessControlApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAccessControlApplication that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteAccessControlApplicationRequestT = Model::DeleteAccessControlApplicationRequest>
+  Model::DeleteAccessControlApplicationOutcomeCallable DeleteAccessControlApplicationCallable(
+      const DeleteAccessControlApplicationRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::DeleteAccessControlApplication, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAccessControlApplication that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteAccessControlApplicationRequestT = Model::DeleteAccessControlApplicationRequest>
+  void DeleteAccessControlApplicationAsync(const DeleteAccessControlApplicationRequestT& request,
+                                           const DeleteAccessControlApplicationResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::DeleteAccessControlApplication, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a client secret from an access control application.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccessControlApplicationSecret">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAccessControlApplicationSecretOutcome DeleteAccessControlApplicationSecret(
+      const Model::DeleteAccessControlApplicationSecretRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAccessControlApplicationSecret that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteAccessControlApplicationSecretRequestT = Model::DeleteAccessControlApplicationSecretRequest>
+  Model::DeleteAccessControlApplicationSecretOutcomeCallable DeleteAccessControlApplicationSecretCallable(
+      const DeleteAccessControlApplicationSecretRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::DeleteAccessControlApplicationSecret, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAccessControlApplicationSecret that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteAccessControlApplicationSecretRequestT = Model::DeleteAccessControlApplicationSecretRequest>
+  void DeleteAccessControlApplicationSecretAsync(const DeleteAccessControlApplicationSecretRequestT& request,
+                                                 const DeleteAccessControlApplicationSecretResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::DeleteAccessControlApplicationSecret, request, handler, context);
   }
 
   /**
@@ -1930,6 +2193,35 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes an inbound connector. You must disable the connector before you can
+   * delete it. When you delete a connector, Quick Sight doesn't delete the access
+   * control applications that are associated with it.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteInboundConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteInboundConnectorOutcome DeleteInboundConnector(const Model::DeleteInboundConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteInboundConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteInboundConnectorRequestT = Model::DeleteInboundConnectorRequest>
+  Model::DeleteInboundConnectorOutcomeCallable DeleteInboundConnectorCallable(const DeleteInboundConnectorRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::DeleteInboundConnector, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteInboundConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteInboundConnectorRequestT = Model::DeleteInboundConnectorRequest>
+  void DeleteInboundConnectorAsync(const DeleteInboundConnectorRequestT& request,
+                                   const DeleteInboundConnectorResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::DeleteInboundConnector, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a knowledge base.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteKnowledgeBase">AWS
    * API Reference</a></p>
@@ -1953,6 +2245,37 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void DeleteKnowledgeBaseAsync(const DeleteKnowledgeBaseRequestT& request, const DeleteKnowledgeBaseResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::DeleteKnowledgeBase, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the refresh schedule for an Amazon Quick Sight knowledge base. Delete
+   * the schedule when you no longer want the knowledge base to refresh
+   * automatically.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteKnowledgeBaseRefreshSchedule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteKnowledgeBaseRefreshScheduleOutcome DeleteKnowledgeBaseRefreshSchedule(
+      const Model::DeleteKnowledgeBaseRefreshScheduleRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteKnowledgeBaseRefreshSchedule that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteKnowledgeBaseRefreshScheduleRequestT = Model::DeleteKnowledgeBaseRefreshScheduleRequest>
+  Model::DeleteKnowledgeBaseRefreshScheduleOutcomeCallable DeleteKnowledgeBaseRefreshScheduleCallable(
+      const DeleteKnowledgeBaseRefreshScheduleRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::DeleteKnowledgeBaseRefreshSchedule, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteKnowledgeBaseRefreshSchedule that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteKnowledgeBaseRefreshScheduleRequestT = Model::DeleteKnowledgeBaseRefreshScheduleRequest>
+  void DeleteKnowledgeBaseRefreshScheduleAsync(const DeleteKnowledgeBaseRefreshScheduleRequestT& request,
+                                               const DeleteKnowledgeBaseRefreshScheduleResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::DeleteKnowledgeBaseRefreshSchedule, request, handler, context);
   }
 
   /**
@@ -2036,6 +2359,36 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
                                          const DeleteOAuthClientApplicationResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::DeleteOAuthClientApplication, request, handler, context);
+  }
+
+  /**
+   * <p>Removes a governance policy from an Amazon Quick Sight principal. If the
+   * principal doesn't have the specified policy, the request succeeds and makes no
+   * change. If the principal has a different policy of the same type, the request
+   * fails with a <code>ConflictException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeletePolicyAssignment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeletePolicyAssignmentOutcome DeletePolicyAssignment(const Model::DeletePolicyAssignmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeletePolicyAssignment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeletePolicyAssignmentRequestT = Model::DeletePolicyAssignmentRequest>
+  Model::DeletePolicyAssignmentOutcomeCallable DeletePolicyAssignmentCallable(const DeletePolicyAssignmentRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::DeletePolicyAssignment, request);
+  }
+
+  /**
+   * An Async wrapper for DeletePolicyAssignment that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeletePolicyAssignmentRequestT = Model::DeletePolicyAssignmentRequest>
+  void DeletePolicyAssignmentAsync(const DeletePolicyAssignmentRequestT& request,
+                                   const DeletePolicyAssignmentResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::DeletePolicyAssignment, request, handler, context);
   }
 
   /**
@@ -2437,6 +2790,36 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void DeleteVPCConnectionAsync(const DeleteVPCConnectionRequestT& request, const DeleteVPCConnectionResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::DeleteVPCConnection, request, handler, context);
+  }
+
+  /**
+   * <p>Describes an access control application. The response includes client secret
+   * metadata, but never client secret values.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccessControlApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAccessControlApplicationOutcome DescribeAccessControlApplication(
+      const Model::DescribeAccessControlApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeAccessControlApplication that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DescribeAccessControlApplicationRequestT = Model::DescribeAccessControlApplicationRequest>
+  Model::DescribeAccessControlApplicationOutcomeCallable DescribeAccessControlApplicationCallable(
+      const DescribeAccessControlApplicationRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::DescribeAccessControlApplication, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAccessControlApplication that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeAccessControlApplicationRequestT = Model::DescribeAccessControlApplicationRequest>
+  void DescribeAccessControlApplicationAsync(const DescribeAccessControlApplicationRequestT& request,
+                                             const DescribeAccessControlApplicationResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::DescribeAccessControlApplication, request, handler, context);
   }
 
   /**
@@ -3690,6 +4073,33 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Describes an inbound connector.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeInboundConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeInboundConnectorOutcome DescribeInboundConnector(const Model::DescribeInboundConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeInboundConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeInboundConnectorRequestT = Model::DescribeInboundConnectorRequest>
+  Model::DescribeInboundConnectorOutcomeCallable DescribeInboundConnectorCallable(const DescribeInboundConnectorRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::DescribeInboundConnector, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeInboundConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeInboundConnectorRequestT = Model::DescribeInboundConnectorRequest>
+  void DescribeInboundConnectorAsync(const DescribeInboundConnectorRequestT& request,
+                                     const DescribeInboundConnectorResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::DescribeInboundConnector, request, handler, context);
+  }
+
+  /**
    * <p>Describes a SPICE ingestion.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIngestion">AWS
    * API Reference</a></p>
@@ -3823,6 +4233,37 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
                                              const DescribeKnowledgeBasePermissionsResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::DescribeKnowledgeBasePermissions, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the refresh schedule for an Amazon Quick Sight knowledge base,
+   * including the schedule's frequency, start time, and state.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKnowledgeBaseRefreshSchedule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeKnowledgeBaseRefreshScheduleOutcome DescribeKnowledgeBaseRefreshSchedule(
+      const Model::DescribeKnowledgeBaseRefreshScheduleRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeKnowledgeBaseRefreshSchedule that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DescribeKnowledgeBaseRefreshScheduleRequestT = Model::DescribeKnowledgeBaseRefreshScheduleRequest>
+  Model::DescribeKnowledgeBaseRefreshScheduleOutcomeCallable DescribeKnowledgeBaseRefreshScheduleCallable(
+      const DescribeKnowledgeBaseRefreshScheduleRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::DescribeKnowledgeBaseRefreshSchedule, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeKnowledgeBaseRefreshSchedule that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DescribeKnowledgeBaseRefreshScheduleRequestT = Model::DescribeKnowledgeBaseRefreshScheduleRequest>
+  void DescribeKnowledgeBaseRefreshScheduleAsync(const DescribeKnowledgeBaseRefreshScheduleRequestT& request,
+                                                 const DescribeKnowledgeBaseRefreshScheduleResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::DescribeKnowledgeBaseRefreshSchedule, request, handler, context);
   }
 
   /**
@@ -4548,9 +4989,9 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Generates an embed URL that you can use to embed an Amazon Quick dashboard or
-   * visual in your website, without having to register any reader users. Before you
-   * use this action, make sure that you have configured the dashboards and
+   * <p>Generates an embed URL that you can use to embed an Quick dashboard or visual
+   * in your website, without having to register any reader users. Before you use
+   * this action, make sure that you have configured the dashboards and
    * permissions.</p> <p>The following rules apply to the generated URL:</p> <ul>
    * <li> <p>It contains a temporary bearer token. It is valid for 5 minutes after it
    * is generated. Once redeemed within this period, it cannot be re-used again.</p>
@@ -4559,14 +5000,14 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
    * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
    * </code> parameter. The resulting user session is valid for 15 minutes (minimum)
    * to 10 hours (maximum). The default session duration is 10 hours.</p> </li> <li>
-   * <p>You are charged only when the URL is used or there is interaction with Amazon
+   * <p>You are charged only when the URL is used or there is interaction with
    * Quick.</p> </li> </ul> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-   * Analytics</a> in the <i>Amazon Quick User Guide</i>.</p> <p>For more information
-   * about the high-level steps for embedding and for an interactive demo of the ways
-   * you can customize embedding, visit the <a
-   * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-   * Quick Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
+   * Analytics</a> in the <i>Quick User Guide</i>.</p> <p>For more information about
+   * the high-level steps for embedding and for an interactive demo of the ways you
+   * can customize embedding, visit the <a
+   * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Quick
+   * Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForAnonymousUser">AWS
    * API Reference</a></p>
    */
@@ -4595,26 +5036,26 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Generates an embed URL that you can use to embed an Amazon Quick experience
-   * in your website. This action can be used for any type of user registered in an
-   * Amazon Quick account. Before you use this action, make sure that you have
-   * configured the relevant Amazon Quick resource and permissions.</p> <p>The
-   * following rules apply to the generated URL:</p> <ul> <li> <p>It contains a
-   * temporary bearer token. It is valid for 5 minutes after it is generated. Once
-   * redeemed within this period, it cannot be re-used again.</p> </li> <li> <p>The
-   * URL validity period should not be confused with the actual session lifetime that
-   * can be customized using the <code> <a
+   * <p>Generates an embed URL that you can use to embed an Quick experience in your
+   * website. This action can be used for any type of user registered in an Quick
+   * account. Before you use this action, make sure that you have configured the
+   * relevant Quick resource and permissions.</p> <p>The following rules apply to the
+   * generated URL:</p> <ul> <li> <p>It contains a temporary bearer token. It is
+   * valid for 5 minutes after it is generated. Once redeemed within this period, it
+   * cannot be re-used again.</p> </li> <li> <p>The URL validity period should not be
+   * confused with the actual session lifetime that can be customized using the
+   * <code> <a
    * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
    * </code> parameter.</p> <p>The resulting user session is valid for 15 minutes
    * (minimum) to 10 hours (maximum). The default session duration is 10 hours.</p>
    * </li> <li> <p>You are charged only when the URL is used or there is interaction
-   * with Amazon Quick.</p> </li> </ul> <p>For more information, see <a
+   * with Quick.</p> </li> </ul> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-   * Analytics</a> in the <i>Amazon Quick User Guide</i>.</p> <p>For more information
-   * about the high-level steps for embedding and for an interactive demo of the ways
-   * you can customize embedding, visit the <a
-   * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-   * Quick Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
+   * Analytics</a> in the <i>Quick User Guide</i>.</p> <p>For more information about
+   * the high-level steps for embedding and for an interactive demo of the ways you
+   * can customize embedding, visit the <a
+   * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Quick
+   * Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForRegisteredUser">AWS
    * API Reference</a></p>
    */
@@ -4702,12 +5143,11 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
    * <code>SessionLifetimeInMinutes</code> parameter to customize session
    * duration.</p> </li> </ul> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
-   * Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon Quick User
-   * Guide</i>.</p> <p>For more information about the high-level steps for embedding
-   * and for an interactive demo of the ways you can customize embedding, visit the
-   * <a
-   * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-   * Quick Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
+   * Analytics Using GetDashboardEmbedUrl</a> in the <i>Quick User Guide</i>.</p>
+   * <p>For more information about the high-level steps for embedding and for an
+   * interactive demo of the ways you can customize embedding, visit the <a
+   * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Quick
+   * Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
    * API Reference</a></p>
    */
@@ -4853,6 +5293,34 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Describes the policy of the specified type that an Amazon Quick Sight
+   * principal has. If the principal has no policy of that type, the response
+   * contains no policy details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetPolicyAssignment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPolicyAssignmentOutcome GetPolicyAssignment(const Model::GetPolicyAssignmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPolicyAssignment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetPolicyAssignmentRequestT = Model::GetPolicyAssignmentRequest>
+  Model::GetPolicyAssignmentOutcomeCallable GetPolicyAssignmentCallable(const GetPolicyAssignmentRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::GetPolicyAssignment, request);
+  }
+
+  /**
+   * An Async wrapper for GetPolicyAssignment that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetPolicyAssignmentRequestT = Model::GetPolicyAssignmentRequest>
+  void GetPolicyAssignmentAsync(const GetPolicyAssignmentRequestT& request, const GetPolicyAssignmentResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::GetPolicyAssignment, request, handler, context);
+  }
+
+  /**
    * <p>Generates a session URL and authorization code that you can use to embed the
    * Amazon Amazon Quick Sight console in your web server code. Use
    * <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal
@@ -4864,13 +5332,12 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
    * </code> API operation. Use <code> <a
    * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
    * </code> API operation to add a new user with a custom permission profile
-   * attached. For more information, see the following sections in the <i>Amazon
-   * Quick User Guide</i>:</p> <ul> <li> <p> <a
+   * attached. For more information, see the following sections in the <i>Quick User
+   * Guide</i>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding
    * Analytics</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
-   * Access to the Amazon Quick Console</a> </p> </li> </ul><p><h3>See Also:</h3>
-   * <a
+   * Access to the Quick Console</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetSessionEmbedUrl">AWS
    * API Reference</a></p>
    */
@@ -4893,6 +5360,38 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void GetSessionEmbedUrlAsync(const GetSessionEmbedUrlRequestT& request, const GetSessionEmbedUrlResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::GetSessionEmbedUrl, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the access control applications in a Quick Sight account in the current
+   * Amazon Web Services Region. You can filter the results by namespace. Quick Sight
+   * paginates the results. To retrieve additional results, use the
+   * <code>NextToken</code> parameter.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAccessControlApplications">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAccessControlApplicationsOutcome ListAccessControlApplications(
+      const Model::ListAccessControlApplicationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAccessControlApplications that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAccessControlApplicationsRequestT = Model::ListAccessControlApplicationsRequest>
+  Model::ListAccessControlApplicationsOutcomeCallable ListAccessControlApplicationsCallable(
+      const ListAccessControlApplicationsRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::ListAccessControlApplications, request);
+  }
+
+  /**
+   * An Async wrapper for ListAccessControlApplications that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAccessControlApplicationsRequestT = Model::ListAccessControlApplicationsRequest>
+  void ListAccessControlApplicationsAsync(const ListAccessControlApplicationsRequestT& request,
+                                          const ListAccessControlApplicationsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::ListAccessControlApplications, request, handler, context);
   }
 
   /**
@@ -5528,6 +6027,67 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the access control applications that are associated with an inbound
+   * connector. Quick Sight paginates the results. To retrieve additional results,
+   * use the <code>NextToken</code> parameter.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListInboundConnectorApplicationAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListInboundConnectorApplicationAssociationsOutcome ListInboundConnectorApplicationAssociations(
+      const Model::ListInboundConnectorApplicationAssociationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListInboundConnectorApplicationAssociations that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListInboundConnectorApplicationAssociationsRequestT = Model::ListInboundConnectorApplicationAssociationsRequest>
+  Model::ListInboundConnectorApplicationAssociationsOutcomeCallable ListInboundConnectorApplicationAssociationsCallable(
+      const ListInboundConnectorApplicationAssociationsRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::ListInboundConnectorApplicationAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for ListInboundConnectorApplicationAssociations that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListInboundConnectorApplicationAssociationsRequestT = Model::ListInboundConnectorApplicationAssociationsRequest>
+  void ListInboundConnectorApplicationAssociationsAsync(
+      const ListInboundConnectorApplicationAssociationsRequestT& request,
+      const ListInboundConnectorApplicationAssociationsResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::ListInboundConnectorApplicationAssociations, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the inbound connectors in a Quick Sight account. You can filter the
+   * results by connector type. Quick Sight paginates the results. To retrieve
+   * additional results, use the <code>NextToken</code> parameter.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListInboundConnectors">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListInboundConnectorsOutcome ListInboundConnectors(const Model::ListInboundConnectorsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListInboundConnectors that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListInboundConnectorsRequestT = Model::ListInboundConnectorsRequest>
+  Model::ListInboundConnectorsOutcomeCallable ListInboundConnectorsCallable(const ListInboundConnectorsRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::ListInboundConnectors, request);
+  }
+
+  /**
+   * An Async wrapper for ListInboundConnectors that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListInboundConnectorsRequestT = Model::ListInboundConnectorsRequest>
+  void ListInboundConnectorsAsync(const ListInboundConnectorsRequestT& request, const ListInboundConnectorsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::ListInboundConnectors, request, handler, context);
+  }
+
+  /**
    * <p>Lists the history of SPICE ingestions for a dataset. Limited to 5 TPS per
    * user and 25 TPS per account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIngestions">AWS
@@ -5551,6 +6111,39 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void ListIngestionsAsync(const ListIngestionsRequestT& request, const ListIngestionsResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::ListIngestions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the refresh schedules for an Amazon Quick Sight knowledge base.
+   * Currently, a knowledge base can have only one refresh schedule, so the list
+   * contains at most one schedule. Results are paginated. To retrieve the next page
+   * of results, use the <code>NextToken</code> value from the previous
+   * response.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListKnowledgeBaseRefreshSchedules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListKnowledgeBaseRefreshSchedulesOutcome ListKnowledgeBaseRefreshSchedules(
+      const Model::ListKnowledgeBaseRefreshSchedulesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListKnowledgeBaseRefreshSchedules that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListKnowledgeBaseRefreshSchedulesRequestT = Model::ListKnowledgeBaseRefreshSchedulesRequest>
+  Model::ListKnowledgeBaseRefreshSchedulesOutcomeCallable ListKnowledgeBaseRefreshSchedulesCallable(
+      const ListKnowledgeBaseRefreshSchedulesRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::ListKnowledgeBaseRefreshSchedules, request);
+  }
+
+  /**
+   * An Async wrapper for ListKnowledgeBaseRefreshSchedules that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListKnowledgeBaseRefreshSchedulesRequestT = Model::ListKnowledgeBaseRefreshSchedulesRequest>
+  void ListKnowledgeBaseRefreshSchedulesAsync(const ListKnowledgeBaseRefreshSchedulesRequestT& request,
+                                              const ListKnowledgeBaseRefreshSchedulesResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::ListKnowledgeBaseRefreshSchedules, request, handler, context);
   }
 
   /**
@@ -5663,6 +6256,42 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
                                         const ListOAuthClientApplicationsResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::ListOAuthClientApplications, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the Amazon Quick Sight principals that have a governance policy. This
+   * operation returns paginated results. A page can contain fewer results than
+   * <code>MaxResults</code>, or none, and still include a <code>NextToken</code>.
+   * Continue to call the operation until the response doesn't include a
+   * <code>NextToken</code>. We recommend that you use pagination to make sure that
+   * the operation returns quickly and successfully.</p> <p>Results are eventually
+   * consistent and might not reflect recent changes. If the policy has no
+   * assignments, the response contains an empty <code>Principals</code> list. If the
+   * policy doesn't exist, the request fails with a
+   * <code>ResourceNotFoundException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListPrincipalsForPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPrincipalsForPolicyOutcome ListPrincipalsForPolicy(const Model::ListPrincipalsForPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListPrincipalsForPolicy that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPrincipalsForPolicyRequestT = Model::ListPrincipalsForPolicyRequest>
+  Model::ListPrincipalsForPolicyOutcomeCallable ListPrincipalsForPolicyCallable(const ListPrincipalsForPolicyRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::ListPrincipalsForPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for ListPrincipalsForPolicy that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListPrincipalsForPolicyRequestT = Model::ListPrincipalsForPolicyRequest>
+  void ListPrincipalsForPolicyAsync(const ListPrincipalsForPolicyRequestT& request,
+                                    const ListPrincipalsForPolicyResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::ListPrincipalsForPolicy, request, handler, context);
   }
 
   /**
@@ -6266,6 +6895,39 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
                                         const PutDataSetRefreshPropertiesResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::PutDataSetRefreshProperties, request, handler, context);
+  }
+
+  /**
+   * <p>Assigns a governance policy to an Amazon Quick Sight principal. A principal
+   * can have one policy of each policy type. If the principal already has a policy
+   * of the same type, this operation replaces it.</p> <p>To make the change
+   * conditional, specify <code>ExistingPolicyArn</code>, <code>Revision</code>, or
+   * both. If the current assignment doesn't match, the request fails with a
+   * <code>ConflictException</code> and makes no change. If the principal already has
+   * the specified policy, the request succeeds and makes no change.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutPolicyAssignment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutPolicyAssignmentOutcome PutPolicyAssignment(const Model::PutPolicyAssignmentRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutPolicyAssignment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutPolicyAssignmentRequestT = Model::PutPolicyAssignmentRequest>
+  Model::PutPolicyAssignmentOutcomeCallable PutPolicyAssignmentCallable(const PutPolicyAssignmentRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::PutPolicyAssignment, request);
+  }
+
+  /**
+   * An Async wrapper for PutPolicyAssignment that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PutPolicyAssignmentRequestT = Model::PutPolicyAssignmentRequest>
+  void PutPolicyAssignmentAsync(const PutPolicyAssignmentRequestT& request, const PutPolicyAssignmentResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::PutPolicyAssignment, request, handler, context);
   }
 
   /**
@@ -7041,6 +7703,74 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an access control application. You can change its name, description,
+   * status, IdP settings such as the client ID and issuer URL, and its Quick Sight
+   * authentication settings such as redirect URIs.</p> <p>You can't change the
+   * <code>IdpAuthorizingType</code>, the <code>QuickAuthenticationType</code>, or
+   * the trusted token issuer after the application is created. To manage client
+   * secrets, use <code>CreateAccessControlApplicationSecret</code>,
+   * <code>UpdateAccessControlApplicationSecret</code>, and
+   * <code>DeleteAccessControlApplicationSecret</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccessControlApplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAccessControlApplicationOutcome UpdateAccessControlApplication(
+      const Model::UpdateAccessControlApplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAccessControlApplication that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateAccessControlApplicationRequestT = Model::UpdateAccessControlApplicationRequest>
+  Model::UpdateAccessControlApplicationOutcomeCallable UpdateAccessControlApplicationCallable(
+      const UpdateAccessControlApplicationRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::UpdateAccessControlApplication, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAccessControlApplication that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateAccessControlApplicationRequestT = Model::UpdateAccessControlApplicationRequest>
+  void UpdateAccessControlApplicationAsync(const UpdateAccessControlApplicationRequestT& request,
+                                           const UpdateAccessControlApplicationResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::UpdateAccessControlApplication, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the Amazon Web Services Secrets Manager secret ARNs of an
+   * IdP-provided client secret. You can add, replace, or remove the ARN for a
+   * Region, but you can't remove the last remaining Region. To remove it, delete the
+   * client secret.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccessControlApplicationSecret">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAccessControlApplicationSecretOutcome UpdateAccessControlApplicationSecret(
+      const Model::UpdateAccessControlApplicationSecretRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAccessControlApplicationSecret that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename UpdateAccessControlApplicationSecretRequestT = Model::UpdateAccessControlApplicationSecretRequest>
+  Model::UpdateAccessControlApplicationSecretOutcomeCallable UpdateAccessControlApplicationSecretCallable(
+      const UpdateAccessControlApplicationSecretRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::UpdateAccessControlApplicationSecret, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAccessControlApplicationSecret that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename UpdateAccessControlApplicationSecretRequestT = Model::UpdateAccessControlApplicationSecretRequest>
+  void UpdateAccessControlApplicationSecretAsync(const UpdateAccessControlApplicationSecretRequestT& request,
+                                                 const UpdateAccessControlApplicationSecretResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::UpdateAccessControlApplicationSecret, request, handler, context);
   }
 
   /**
@@ -8003,6 +8733,68 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Updates an inbound connector. You can change its name, description, status,
+   * and configuration. You can't change the connector type after the connector is
+   * created.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateInboundConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateInboundConnectorOutcome UpdateInboundConnector(const Model::UpdateInboundConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateInboundConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateInboundConnectorRequestT = Model::UpdateInboundConnectorRequest>
+  Model::UpdateInboundConnectorOutcomeCallable UpdateInboundConnectorCallable(const UpdateInboundConnectorRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::UpdateInboundConnector, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateInboundConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateInboundConnectorRequestT = Model::UpdateInboundConnectorRequest>
+  void UpdateInboundConnectorAsync(const UpdateInboundConnectorRequestT& request,
+                                   const UpdateInboundConnectorResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::UpdateInboundConnector, request, handler, context);
+  }
+
+  /**
+   * <p>Associates access control applications with an inbound connector,
+   * disassociates them from it, or both. You can add up to 20 associations and
+   * remove up to 20 associations in each request. An inbound connector supports up
+   * to 6,000 associations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateInboundConnectorApplicationAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateInboundConnectorApplicationAssociationsOutcome UpdateInboundConnectorApplicationAssociations(
+      const Model::UpdateInboundConnectorApplicationAssociationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateInboundConnectorApplicationAssociations that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename UpdateInboundConnectorApplicationAssociationsRequestT = Model::UpdateInboundConnectorApplicationAssociationsRequest>
+  Model::UpdateInboundConnectorApplicationAssociationsOutcomeCallable UpdateInboundConnectorApplicationAssociationsCallable(
+      const UpdateInboundConnectorApplicationAssociationsRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::UpdateInboundConnectorApplicationAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateInboundConnectorApplicationAssociations that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename UpdateInboundConnectorApplicationAssociationsRequestT = Model::UpdateInboundConnectorApplicationAssociationsRequest>
+  void UpdateInboundConnectorApplicationAssociationsAsync(
+      const UpdateInboundConnectorApplicationAssociationsRequestT& request,
+      const UpdateInboundConnectorApplicationAssociationsResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::UpdateInboundConnectorApplicationAssociations, request, handler, context);
+  }
+
+  /**
    * <p>Updates the content and status of IP rules. Traffic from a source is allowed
    * when the source satisfies either the <code>IpRestrictionRule</code>,
    * <code>VpcIdRestrictionRule</code>, or <code>VpcEndpointIdRestrictionRule</code>.
@@ -8115,6 +8907,39 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
                                            const UpdateKnowledgeBasePermissionsResponseReceivedHandler& handler,
                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::UpdateKnowledgeBasePermissions, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the refresh schedule for an Amazon Quick Sight knowledge base. Use
+   * this operation to change how often the knowledge base refreshes, or to enable or
+   * disable the schedule. Specify the schedule by its <code>ScheduleId</code>. The
+   * operation changes only the fields that you provide. Any field that you omit
+   * keeps its existing value.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKnowledgeBaseRefreshSchedule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateKnowledgeBaseRefreshScheduleOutcome UpdateKnowledgeBaseRefreshSchedule(
+      const Model::UpdateKnowledgeBaseRefreshScheduleRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateKnowledgeBaseRefreshSchedule that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdateKnowledgeBaseRefreshScheduleRequestT = Model::UpdateKnowledgeBaseRefreshScheduleRequest>
+  Model::UpdateKnowledgeBaseRefreshScheduleOutcomeCallable UpdateKnowledgeBaseRefreshScheduleCallable(
+      const UpdateKnowledgeBaseRefreshScheduleRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::UpdateKnowledgeBaseRefreshSchedule, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateKnowledgeBaseRefreshSchedule that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateKnowledgeBaseRefreshScheduleRequestT = Model::UpdateKnowledgeBaseRefreshScheduleRequest>
+  void UpdateKnowledgeBaseRefreshScheduleAsync(const UpdateKnowledgeBaseRefreshScheduleRequestT& request,
+                                               const UpdateKnowledgeBaseRefreshScheduleResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::UpdateKnowledgeBaseRefreshSchedule, request, handler, context);
   }
 
   /**

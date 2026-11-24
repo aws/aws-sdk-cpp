@@ -35,8 +35,8 @@ class GetOfferResult {
 
   ///@{
   /**
-   * <p>The locale of the returned content. Indicates whether the response contains
-   * content in the requested locale, or fell back to the default locale. See
+   * <p>The locale of the returned content. This value indicates whether the response
+   * contains content in the requested locale or fell back to the default locale. See
    * <code>Locale</code> for details.</p>
    */
   inline const Aws::String& GetLocale() const { return m_locale; }
@@ -88,8 +88,7 @@ class GetOfferResult {
 
   ///@{
   /**
-   * <p>The display name of the offer. This is free-form text provided by the
-   * seller.</p>
+   * <p>The display name of the offer. The seller provides this free-form text.</p>
    */
   inline const Aws::String& GetOfferName() const { return m_offerName; }
   template <typename OfferNameT = Aws::String>
@@ -106,7 +105,7 @@ class GetOfferResult {
 
   ///@{
   /**
-   * <p>The date and time until when the offer can be procured. This value is null
+   * <p>The date and time until which you can procure the offer. This value is null
    * for offers that never expire.</p>
    */
   inline const Aws::Utils::DateTime& GetExpirationTime() const { return m_expirationTime; }
@@ -124,7 +123,7 @@ class GetOfferResult {
 
   ///@{
   /**
-   * <p>The date and time when the offer became available to the buyer.</p>
+   * <p>The date and time when the offer became available to you.</p>
    */
   inline const Aws::Utils::DateTime& GetAvailableFromTime() const { return m_availableFromTime; }
   template <typename AvailableFromTimeT = Aws::Utils::DateTime>
@@ -181,7 +180,7 @@ class GetOfferResult {
 
   ///@{
   /**
-   * <p>An encoded string to be passed by the acceptor of the terms when creating an
+   * <p>An encoded string that you pass when you accept the terms and create an
    * agreement.</p>
    */
   inline const Aws::String& GetAgreementProposalId() const { return m_agreementProposalId; }
@@ -199,8 +198,7 @@ class GetOfferResult {
 
   ///@{
   /**
-   * <p>The identifier of the existing agreement that this offer would replace.
-   * Enables agreement-based offer functionality.</p>
+   * <p>The identifier of the existing agreement that this offer would replace.</p>
    */
   inline const Aws::String& GetReplacementAgreementId() const { return m_replacementAgreementId; }
   template <typename ReplacementAgreementIdT = Aws::String>
@@ -217,8 +215,8 @@ class GetOfferResult {
 
   ///@{
   /**
-   * <p>The pricing model that determines how buyers are charged, such as
-   * usage-based, contract, BYOL, or free.</p>
+   * <p>The pricing model that determines how you are charged, such as usage-based,
+   * contract, Bring Your Own License (BYOL), or free.</p>
    */
   inline const PricingModel& GetPricingModel() const { return m_pricingModel; }
   template <typename PricingModelT = PricingModel>
@@ -236,7 +234,7 @@ class GetOfferResult {
   ///@{
   /**
    * <p>Badges indicating special attributes of the offer, such as private pricing,
-   * future dated, or replacement offer.</p>
+   * future-dated, or replacement offer.</p>
    */
   inline const Aws::Vector<PurchaseOptionBadge>& GetBadges() const { return m_badges; }
   template <typename BadgesT = Aws::Vector<PurchaseOptionBadge>>

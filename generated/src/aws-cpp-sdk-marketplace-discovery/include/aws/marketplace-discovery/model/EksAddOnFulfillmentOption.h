@@ -24,8 +24,8 @@ namespace MarketplaceDiscovery {
 namespace Model {
 
 /**
- * <p>Describes an Amazon EKS add-on fulfillment option.</p><p><h3>See Also:</h3>
- * <a
+ * <p>Describes an Amazon Elastic Kubernetes Service (Amazon EKS) add-on
+ * fulfillment option.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/EksAddOnFulfillmentOption">AWS
  * API Reference</a></p>
  */
@@ -150,7 +150,7 @@ class EksAddOnFulfillmentOption {
 
   ///@{
   /**
-   * <p>Release notes describing changes in this version of the fulfillment
+   * <p>Release notes that describe the changes in this version of the fulfillment
    * option.</p>
    */
   inline const Aws::String& GetReleaseNotes() const { return m_releaseNotes; }

@@ -16,10 +16,13 @@
 namespace Aws {
 namespace MarketplaceDiscovery {
 /**
- * <p>The AWS Marketplace Discovery API provides programmatic access to the AWS
- * Marketplace catalog, including searching and browsing listings, retrieving
- * product details and fulfillment options, and accessing public and private offer
- * pricing and terms.</p>
+ * <p>With the AWS Marketplace Discovery API (Discovery API), you have programmatic
+ * access to the AWS Marketplace catalog. You can search and browse listings,
+ * retrieve product details and fulfillment options, and access public and private
+ * offer pricing and terms. For more information, see <a
+ * href="https://docs.aws.amazon.com/marketplace/latest/developerguide/discovery-apis.html">Using
+ * the AWS Marketplace Discovery API</a> in the <i>AWS Marketplace Developer
+ * Guide</i>.</p>
  */
 class AWS_MARKETPLACEDISCOVERY_API MarketplaceDiscoveryClient
     : public Aws::Client::AWSJsonClient,
@@ -165,9 +168,11 @@ class AWS_MARKETPLACEDISCOVERY_API MarketplaceDiscoveryClient
   }
 
   /**
-   * <p>Returns the terms attached to an offer, such as pricing terms (usage-based,
-   * contract, BYOL, free trial), legal terms, payment schedules, validity terms,
-   * support terms, and renewal terms.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves the terms attached to an offer, such as pricing terms (usage-based,
+   * contract, Bring Your Own License (BYOL), free trial), legal terms, payment
+   * schedules, validity terms, support terms, and renewal terms. The operation
+   * returns results in pages. Use <code>nextToken</code> to retrieve the next
+   * page.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/GetOfferTerms">AWS
    * API Reference</a></p>
    */
@@ -219,9 +224,10 @@ class AWS_MARKETPLACEDISCOVERY_API MarketplaceDiscoveryClient
   }
 
   /**
-   * <p>Returns the fulfillment options available for a product, including deployment
-   * details such as version information, operating systems, usage instructions, and
-   * release notes.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves the fulfillment options available for a product, including
+   * deployment details such as version information, operating systems, usage
+   * instructions, and release notes. The operation returns results in pages. Use
+   * <code>nextToken</code> to retrieve the next page.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ListFulfillmentOptions">AWS
    * API Reference</a></p>
    */
@@ -248,11 +254,40 @@ class AWS_MARKETPLACEDISCOVERY_API MarketplaceDiscoveryClient
   }
 
   /**
-   * <p>Returns the purchase options (offers and offer sets) available to the buyer.
-   * You can filter results by product, seller, purchase option type, visibility
-   * scope, and availability status.</p>  <p>You must include at least one of
-   * the following filters in the request: a <code>PRODUCT_ID</code> filter to
-   * specify the product for which to retrieve purchase options, or a
+   * <p>Retrieves the requested attributes for a listing, including case studies and
+   * trust center information. The operation returns results in pages. Use
+   * <code>nextToken</code> to retrieve the next page.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ListListingAttributes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListListingAttributesOutcome ListListingAttributes(const Model::ListListingAttributesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListListingAttributes that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListListingAttributesRequestT = Model::ListListingAttributesRequest>
+  Model::ListListingAttributesOutcomeCallable ListListingAttributesCallable(const ListListingAttributesRequestT& request) const {
+    return SubmitCallable(&MarketplaceDiscoveryClient::ListListingAttributes, request);
+  }
+
+  /**
+   * An Async wrapper for ListListingAttributes that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListListingAttributesRequestT = Model::ListListingAttributesRequest>
+  void ListListingAttributesAsync(const ListListingAttributesRequestT& request, const ListListingAttributesResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MarketplaceDiscoveryClient::ListListingAttributes, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the purchase options (offers and offer sets) available to you. You
+   * can filter results by product, seller, purchase option type, visibility scope,
+   * and availability status. The operation returns results in pages. Use
+   * <code>nextToken</code> to retrieve the next page.</p>  <p>You must include
+   * at least one of the following filters in the request: a <code>PRODUCT_ID</code>
+   * filter to specify the product for which to retrieve purchase options, or a
    * <code>VISIBILITY_SCOPE</code> filter to retrieve purchase options by
    * visibility.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ListPurchaseOptions">AWS
@@ -281,9 +316,10 @@ class AWS_MARKETPLACEDISCOVERY_API MarketplaceDiscoveryClient
   }
 
   /**
-   * <p>Returns available facet values for filtering listings, such as categories,
-   * pricing models, fulfillment option types, publishers, and customer ratings. Each
-   * facet value includes a count of matching listings.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves the available facet values for filtering listings, such as
+   * categories, pricing models, fulfillment option types, publishers, and customer
+   * ratings. Each facet value includes a count of matching listings.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/SearchFacets">AWS
    * API Reference</a></p>
    */
@@ -309,10 +345,11 @@ class AWS_MARKETPLACEDISCOVERY_API MarketplaceDiscoveryClient
   }
 
   /**
-   * <p>Returns a list of product listings based on search criteria and filters. You
-   * can search by keyword, filter by category, pricing model, fulfillment type, and
-   * other attributes, and sort results by relevance or customer
-   * rating.</p><p><h3>See Also:</h3>   <a
+   * <p>Searches for listings that match your search criteria and filters. You can
+   * search by keyword, filter by category, pricing model, fulfillment type, and
+   * other attributes, and sort results by relevance or customer rating. The
+   * operation returns results in pages. Use <code>nextToken</code> to retrieve the
+   * next page.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/SearchListings">AWS
    * API Reference</a></p>
    */

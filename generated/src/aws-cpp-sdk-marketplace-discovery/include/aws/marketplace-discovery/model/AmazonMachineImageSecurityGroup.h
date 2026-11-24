@@ -85,7 +85,7 @@ class AmazonMachineImageSecurityGroup {
 
   ///@{
   /**
-   * <p>The IP address ranges in CIDR format.</p>
+   * <p>The IP address ranges in Classless Inter-Domain Routing (CIDR) format.</p>
    */
   inline const Aws::Vector<Aws::String>& GetCidrIpAddresses() const { return m_cidrIpAddresses; }
   inline bool CidrIpAddressesHasBeenSet() const { return m_cidrIpAddressesHasBeenSet; }

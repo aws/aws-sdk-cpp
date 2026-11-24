@@ -43,8 +43,10 @@ class TelemetryRule {
    * example, <code>AWS::EC2::VPC</code>, <code>AWS::EKS::Cluster</code>,
    * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
    * <code>AWS::Bedrock::KnowledgeBase</code>,
-   * <code>AWS::BedrockAgentCore::PaymentManager</code>, or
-   * <code>AWS::XRay::TransactionSearchConfig</code>). </p>
+   * <code>AWS::BedrockAgentCore::PaymentManager</code>,
+   * <code>AWS::XRay::TransactionSearchConfig</code>,
+   * <code>AWS::CloudWatchOmni</code>, or
+   * <code>AWS::NetworkFirewall::Firewall</code>). </p>
    */
   inline ResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

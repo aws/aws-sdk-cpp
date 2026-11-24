@@ -40,6 +40,10 @@
 #include <aws/pcs/model/CreateQueueRequest.h>
 #include <aws/pcs/model/CreateQueueResult.h>
 #include <aws/pcs/model/CustomLaunchTemplate.h>
+#include <aws/pcs/model/DeepHealthCheckOnStart.h>
+#include <aws/pcs/model/DeepHealthCheckOnStartProfile.h>
+#include <aws/pcs/model/DeepHealthCheckOnStartRepairAction.h>
+#include <aws/pcs/model/DeepHealthChecks.h>
 #include <aws/pcs/model/DeleteClusterRequest.h>
 #include <aws/pcs/model/DeleteClusterResult.h>
 #include <aws/pcs/model/DeleteComputeNodeGroupRequest.h>
@@ -56,7 +60,12 @@
 #include <aws/pcs/model/GetComputeNodeGroupResult.h>
 #include <aws/pcs/model/GetQueueRequest.h>
 #include <aws/pcs/model/GetQueueResult.h>
+#include <aws/pcs/model/HealthMonitoring.h>
+#include <aws/pcs/model/HealthMonitoringMode.h>
+#include <aws/pcs/model/HealthMonitoringRepairAction.h>
 #include <aws/pcs/model/InstanceConfig.h>
+#include <aws/pcs/model/InstanceHealthChecks.h>
+#include <aws/pcs/model/InstanceHealthChecksRequest.h>
 #include <aws/pcs/model/JobSubmitPlugin.h>
 #include <aws/pcs/model/JobSubmitPluginType.h>
 #include <aws/pcs/model/JobSubmitScriptSource.h>
@@ -120,6 +129,7 @@
 #include <aws/pcs/model/UpdateComputeNodeGroupRequest.h>
 #include <aws/pcs/model/UpdateComputeNodeGroupResult.h>
 #include <aws/pcs/model/UpdateComputeNodeGroupSlurmConfigurationRequest.h>
+#include <aws/pcs/model/UpdateInstanceHealthChecksRequest.h>
 #include <aws/pcs/model/UpdateNodeLifecycleActionsRequest.h>
 #include <aws/pcs/model/UpdateQueueRequest.h>
 #include <aws/pcs/model/UpdateQueueResult.h>

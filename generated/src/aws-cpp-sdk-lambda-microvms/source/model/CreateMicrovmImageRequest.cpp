@@ -86,6 +86,10 @@ Aws::String CreateMicrovmImageRequest::SerializePayload() const {
     payload.WithObject("environmentVariables", std::move(environmentVariablesJsonMap));
   }
 
+  if (m_kmsKeyIdentifierHasBeenSet) {
+    payload.WithString("kmsKeyIdentifier", m_kmsKeyIdentifier);
+  }
+
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }

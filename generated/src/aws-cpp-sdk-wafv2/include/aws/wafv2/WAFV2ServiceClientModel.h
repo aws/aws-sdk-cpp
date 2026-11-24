@@ -40,6 +40,8 @@
 #include <aws/wafv2/model/DisassociateWebACLResult.h>
 #include <aws/wafv2/model/GenerateMobileSdkReleaseUrlResult.h>
 #include <aws/wafv2/model/GetDecryptedAPIKeyResult.h>
+#include <aws/wafv2/model/GetEventActorResult.h>
+#include <aws/wafv2/model/GetEventResult.h>
 #include <aws/wafv2/model/GetIPSetResult.h>
 #include <aws/wafv2/model/GetLoggingConfigurationResult.h>
 #include <aws/wafv2/model/GetManagedRuleSetResult.h>
@@ -60,6 +62,9 @@
 #include <aws/wafv2/model/ListAPIKeysResult.h>
 #include <aws/wafv2/model/ListAvailableManagedRuleGroupVersionsResult.h>
 #include <aws/wafv2/model/ListAvailableManagedRuleGroupsResult.h>
+#include <aws/wafv2/model/ListEventActorsResult.h>
+#include <aws/wafv2/model/ListEventsByWebACLResult.h>
+#include <aws/wafv2/model/ListEventsResult.h>
 #include <aws/wafv2/model/ListIPSetsResult.h>
 #include <aws/wafv2/model/ListLoggingConfigurationsResult.h>
 #include <aws/wafv2/model/ListManagedRuleSetsResult.h>
@@ -134,6 +139,8 @@ class DescribeManagedRuleGroupRequest;
 class DisassociateWebACLRequest;
 class GenerateMobileSdkReleaseUrlRequest;
 class GetDecryptedAPIKeyRequest;
+class GetEventRequest;
+class GetEventActorRequest;
 class GetIPSetRequest;
 class GetLoggingConfigurationRequest;
 class GetManagedRuleSetRequest;
@@ -152,6 +159,9 @@ class GetWebACLForResourceRequest;
 class ListAPIKeysRequest;
 class ListAvailableManagedRuleGroupVersionsRequest;
 class ListAvailableManagedRuleGroupsRequest;
+class ListEventActorsRequest;
+class ListEventsRequest;
+class ListEventsByWebACLRequest;
 class ListIPSetsRequest;
 class ListLoggingConfigurationsRequest;
 class ListManagedRuleSetsRequest;
@@ -196,6 +206,8 @@ typedef Aws::Utils::Outcome<DescribeManagedRuleGroupResult, WAFV2Error> Describe
 typedef Aws::Utils::Outcome<DisassociateWebACLResult, WAFV2Error> DisassociateWebACLOutcome;
 typedef Aws::Utils::Outcome<GenerateMobileSdkReleaseUrlResult, WAFV2Error> GenerateMobileSdkReleaseUrlOutcome;
 typedef Aws::Utils::Outcome<GetDecryptedAPIKeyResult, WAFV2Error> GetDecryptedAPIKeyOutcome;
+typedef Aws::Utils::Outcome<GetEventResult, WAFV2Error> GetEventOutcome;
+typedef Aws::Utils::Outcome<GetEventActorResult, WAFV2Error> GetEventActorOutcome;
 typedef Aws::Utils::Outcome<GetIPSetResult, WAFV2Error> GetIPSetOutcome;
 typedef Aws::Utils::Outcome<GetLoggingConfigurationResult, WAFV2Error> GetLoggingConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetManagedRuleSetResult, WAFV2Error> GetManagedRuleSetOutcome;
@@ -214,6 +226,9 @@ typedef Aws::Utils::Outcome<GetWebACLForResourceResult, WAFV2Error> GetWebACLFor
 typedef Aws::Utils::Outcome<ListAPIKeysResult, WAFV2Error> ListAPIKeysOutcome;
 typedef Aws::Utils::Outcome<ListAvailableManagedRuleGroupVersionsResult, WAFV2Error> ListAvailableManagedRuleGroupVersionsOutcome;
 typedef Aws::Utils::Outcome<ListAvailableManagedRuleGroupsResult, WAFV2Error> ListAvailableManagedRuleGroupsOutcome;
+typedef Aws::Utils::Outcome<ListEventActorsResult, WAFV2Error> ListEventActorsOutcome;
+typedef Aws::Utils::Outcome<ListEventsResult, WAFV2Error> ListEventsOutcome;
+typedef Aws::Utils::Outcome<ListEventsByWebACLResult, WAFV2Error> ListEventsByWebACLOutcome;
 typedef Aws::Utils::Outcome<ListIPSetsResult, WAFV2Error> ListIPSetsOutcome;
 typedef Aws::Utils::Outcome<ListLoggingConfigurationsResult, WAFV2Error> ListLoggingConfigurationsOutcome;
 typedef Aws::Utils::Outcome<ListManagedRuleSetsResult, WAFV2Error> ListManagedRuleSetsOutcome;
@@ -258,6 +273,8 @@ typedef std::future<DescribeManagedRuleGroupOutcome> DescribeManagedRuleGroupOut
 typedef std::future<DisassociateWebACLOutcome> DisassociateWebACLOutcomeCallable;
 typedef std::future<GenerateMobileSdkReleaseUrlOutcome> GenerateMobileSdkReleaseUrlOutcomeCallable;
 typedef std::future<GetDecryptedAPIKeyOutcome> GetDecryptedAPIKeyOutcomeCallable;
+typedef std::future<GetEventOutcome> GetEventOutcomeCallable;
+typedef std::future<GetEventActorOutcome> GetEventActorOutcomeCallable;
 typedef std::future<GetIPSetOutcome> GetIPSetOutcomeCallable;
 typedef std::future<GetLoggingConfigurationOutcome> GetLoggingConfigurationOutcomeCallable;
 typedef std::future<GetManagedRuleSetOutcome> GetManagedRuleSetOutcomeCallable;
@@ -276,6 +293,9 @@ typedef std::future<GetWebACLForResourceOutcome> GetWebACLForResourceOutcomeCall
 typedef std::future<ListAPIKeysOutcome> ListAPIKeysOutcomeCallable;
 typedef std::future<ListAvailableManagedRuleGroupVersionsOutcome> ListAvailableManagedRuleGroupVersionsOutcomeCallable;
 typedef std::future<ListAvailableManagedRuleGroupsOutcome> ListAvailableManagedRuleGroupsOutcomeCallable;
+typedef std::future<ListEventActorsOutcome> ListEventActorsOutcomeCallable;
+typedef std::future<ListEventsOutcome> ListEventsOutcomeCallable;
+typedef std::future<ListEventsByWebACLOutcome> ListEventsByWebACLOutcomeCallable;
 typedef std::future<ListIPSetsOutcome> ListIPSetsOutcomeCallable;
 typedef std::future<ListLoggingConfigurationsOutcome> ListLoggingConfigurationsOutcomeCallable;
 typedef std::future<ListManagedRuleSetsOutcome> ListManagedRuleSetsOutcomeCallable;
@@ -367,6 +387,12 @@ typedef std::function<void(const WAFV2Client*, const Model::GenerateMobileSdkRel
 typedef std::function<void(const WAFV2Client*, const Model::GetDecryptedAPIKeyRequest&, const Model::GetDecryptedAPIKeyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDecryptedAPIKeyResponseReceivedHandler;
+typedef std::function<void(const WAFV2Client*, const Model::GetEventRequest&, const Model::GetEventOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetEventResponseReceivedHandler;
+typedef std::function<void(const WAFV2Client*, const Model::GetEventActorRequest&, const Model::GetEventActorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetEventActorResponseReceivedHandler;
 typedef std::function<void(const WAFV2Client*, const Model::GetIPSetRequest&, const Model::GetIPSetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetIPSetResponseReceivedHandler;
@@ -426,6 +452,15 @@ typedef std::function<void(const WAFV2Client*, const Model::ListAvailableManaged
                            const Model::ListAvailableManagedRuleGroupsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAvailableManagedRuleGroupsResponseReceivedHandler;
+typedef std::function<void(const WAFV2Client*, const Model::ListEventActorsRequest&, const Model::ListEventActorsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListEventActorsResponseReceivedHandler;
+typedef std::function<void(const WAFV2Client*, const Model::ListEventsRequest&, const Model::ListEventsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListEventsResponseReceivedHandler;
+typedef std::function<void(const WAFV2Client*, const Model::ListEventsByWebACLRequest&, const Model::ListEventsByWebACLOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListEventsByWebACLResponseReceivedHandler;
 typedef std::function<void(const WAFV2Client*, const Model::ListIPSetsRequest&, const Model::ListIPSetsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListIPSetsResponseReceivedHandler;

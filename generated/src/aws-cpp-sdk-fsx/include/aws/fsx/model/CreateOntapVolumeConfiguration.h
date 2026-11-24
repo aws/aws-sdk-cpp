@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/CreateAggregateConfiguration.h>
+#include <aws/fsx/model/CreateCloneConfiguration.h>
 #include <aws/fsx/model/CreateSnaplockConfiguration.h>
 #include <aws/fsx/model/InputOntapVolumeType.h>
 #include <aws/fsx/model/SecurityStyle.h>
@@ -291,6 +292,26 @@ class CreateOntapVolumeConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the configuration to use when creating the volume as a clone of
+   * another FSx for ONTAP volume. A clone is a writable, point-in-time copy of its
+   * parent volume.</p>
+   */
+  inline const CreateCloneConfiguration& GetCloneConfiguration() const { return m_cloneConfiguration; }
+  inline bool CloneConfigurationHasBeenSet() const { return m_cloneConfigurationHasBeenSet; }
+  template <typename CloneConfigurationT = CreateCloneConfiguration>
+  void SetCloneConfiguration(CloneConfigurationT&& value) {
+    m_cloneConfigurationHasBeenSet = true;
+    m_cloneConfiguration = std::forward<CloneConfigurationT>(value);
+  }
+  template <typename CloneConfigurationT = CreateCloneConfiguration>
+  CreateOntapVolumeConfiguration& WithCloneConfiguration(CloneConfigurationT&& value) {
+    SetCloneConfiguration(std::forward<CloneConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_junctionPath;
 
@@ -315,6 +336,8 @@ class CreateOntapVolumeConfiguration {
   CreateAggregateConfiguration m_aggregateConfiguration;
 
   long long m_sizeInBytes{0};
+
+  CreateCloneConfiguration m_cloneConfiguration;
   bool m_junctionPathHasBeenSet = false;
   bool m_securityStyleHasBeenSet = false;
   bool m_storageEfficiencyEnabledHasBeenSet = false;
@@ -327,6 +350,7 @@ class CreateOntapVolumeConfiguration {
   bool m_volumeStyleHasBeenSet = false;
   bool m_aggregateConfigurationHasBeenSet = false;
   bool m_sizeInBytesHasBeenSet = false;
+  bool m_cloneConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

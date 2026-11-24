@@ -36,7 +36,8 @@ class SearchFilter {
 
   ///@{
   /**
-   * <p>The type of filter to apply.</p>
+   * <p>The type of filter to apply. See <code>filterValues</code> for the supported
+   * types and their values.</p>
    */
   inline SearchFilterType GetFilterType() const { return m_filterType; }
   inline bool FilterTypeHasBeenSet() const { return m_filterTypeHasBeenSet; }
@@ -52,9 +53,46 @@ class SearchFilter {
 
   ///@{
   /**
-   * <p>The values to filter by. Term filters accept multiple values (OR logic).
-   * Range filters (MIN/MAX_AVERAGE_CUSTOMER_RATING) accept a single value between
-   * 0.0 and 5.0.</p>
+   * <p>The values to filter by. Term filters accept multiple values, and a result
+   * matches if it has any of them. Range filters accept a single value. The
+   * supported values for each <code>filterType</code> are as follows:</p> <dl>
+   * <dt>CATEGORY</dt> <dd> <p>One or more category identifiers. Matches listings in
+   * those categories.</p> </dd> <dt>CERTIFICATES</dt> <dd> <p>One or more
+   * certification identifiers, such as <code>ISO_27001</code> or
+   * <code>SOC2_TYPE_2</code>. Matches listings that hold those certifications.</p>
+   * </dd> <dt>DEPLOYED_ON_AWS</dt> <dd> <p>The single value
+   * <code>DEPLOYED_ON_AWS</code>. Matches listings whose products are deployed on
+   * AWS infrastructure.</p> </dd> <dt>FULFILLMENT_OPTION_TYPE</dt> <dd> <p>One or
+   * more fulfillment option types, such as <code>SAAS</code>,
+   * <code>AMAZON_MACHINE_IMAGE</code>, or <code>CONTAINER</code>. Matches listings
+   * that you can deploy or access in those ways.</p> </dd>
+   * <dt>MAX_AVERAGE_CUSTOMER_RATING</dt> <dd> <p>A single rating between
+   * <code>0.0</code> and <code>5.0</code>. Matches listings whose average customer
+   * rating is at or below that value.</p> </dd> <dt>MIN_AVERAGE_CUSTOMER_RATING</dt>
+   * <dd> <p>A single rating between <code>0.0</code> and <code>5.0</code>. Matches
+   * listings whose average customer rating is at or above that value.</p> </dd>
+   * <dt>NUMBER_OF_PRODUCTS</dt> <dd> <p> <code>SINGLE_PRODUCT</code> or
+   * <code>MULTI_PRODUCT</code>. Matches single-product listings or multi-product
+   * solutions.</p> </dd> <dt>PRICING_MODEL</dt> <dd> <p>One or more of
+   * <code>BYOL</code>, <code>CONTRACT</code>, <code>FREE</code>, and
+   * <code>USAGE</code>. Matches listings with offers that use those pricing
+   * models.</p> </dd> <dt>PRICING_UNIT</dt> <dd> <p>One or more pricing units, such
+   * as <code>USERS</code>, <code>HOSTS</code>, or <code>REQUESTS</code>. Matches
+   * listings that bill by those units.</p> </dd> <dt>PRODUCT_ID</dt> <dd> <p>One or
+   * more product identifiers. Matches listings that contain those products.</p>
+   * </dd> <dt>PUBLISHER</dt> <dd> <p>One or more publisher identifiers. Matches
+   * listings from those sellers.</p> </dd> <dt>SELLER_ENGAGEMENT</dt> <dd> <p>One or
+   * more <code>SellerEngagementType</code> values, such as <code>BUY_NOW</code> or
+   * <code>REQUEST_FOR_DEMO</code>. Matches listings that offer those ways to engage
+   * with the seller.</p> </dd> <dt>SPECIALIZATION</dt> <dd> <p>One or more
+   * specialization identifiers. Matches listings that earned those
+   * specializations.</p> </dd> <dt>SPECIALIZATION_CATEGORY</dt> <dd> <p>One or more
+   * specialization category identifiers. Matches listings that earned a category
+   * under a specialization.</p> </dd> <dt>TRUST_CENTER</dt> <dd> <p>The single value
+   * <code>HAS_TRUST_CENTER</code>. Matches listings that have a trust center.</p>
+   * </dd> </dl> <p>Use <code>SearchFacets</code> to retrieve the values available
+   * for <code>CATEGORY</code>, <code>PUBLISHER</code>, <code>CERTIFICATES</code>,
+   * <code>SPECIALIZATION</code>, and <code>SPECIALIZATION_CATEGORY</code>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetFilterValues() const { return m_filterValues; }
   inline bool FilterValuesHasBeenSet() const { return m_filterValuesHasBeenSet; }

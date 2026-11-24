@@ -21,6 +21,7 @@ static const int ita_HASH = HashingUtils::HashString("ita");
 static const int deu_HASH = HashingUtils::HashString("deu");
 static const int spa_HASH = HashingUtils::HashString("spa");
 static const int por_HASH = HashingUtils::HashString("por");
+static const int ara_HASH = HashingUtils::HashString("ara");
 
 DictionaryLanguage GetDictionaryLanguageForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ DictionaryLanguage GetDictionaryLanguageForName(const Aws::String& name) {
     return DictionaryLanguage::spa;
   } else if (hashCode == por_HASH) {
     return DictionaryLanguage::por;
+  } else if (hashCode == ara_HASH) {
+    return DictionaryLanguage::ara;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForDictionaryLanguage(DictionaryLanguage enumValue) {
       return "spa";
     case DictionaryLanguage::por:
       return "por";
+    case DictionaryLanguage::ara:
+      return "ara";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

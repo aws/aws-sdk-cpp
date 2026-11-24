@@ -34,6 +34,12 @@ HostedZoneConfig& HostedZoneConfig::operator=(const XmlNode& xmlNode) {
           StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privateZoneNode.GetText()).c_str()).c_str());
       m_privateZoneHasBeenSet = true;
     }
+    XmlNode hostedZoneTierNode = resultNode.FirstChild("HostedZoneTier");
+    if (!hostedZoneTierNode.IsNull()) {
+      m_hostedZoneTier = HostedZoneTierMapper::GetHostedZoneTierForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneTierNode.GetText()).c_str()));
+      m_hostedZoneTierHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -51,6 +57,11 @@ void HostedZoneConfig::AddToNode(XmlNode& parentNode) const {
     ss << std::boolalpha << m_privateZone;
     privateZoneNode.SetText(ss.str());
     ss.str("");
+  }
+
+  if (m_hostedZoneTierHasBeenSet) {
+    XmlNode hostedZoneTierNode = parentNode.CreateChildElement("HostedZoneTier");
+    hostedZoneTierNode.SetText(HostedZoneTierMapper::GetNameForHostedZoneTier(m_hostedZoneTier));
   }
 }
 

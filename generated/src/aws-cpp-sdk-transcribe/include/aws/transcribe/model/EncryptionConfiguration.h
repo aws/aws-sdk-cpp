@@ -21,7 +21,11 @@ namespace TranscribeService {
 namespace Model {
 
 /**
- * Encryption configuration for the invocation<p><h3>See Also:</h3>   <a
+ * <p>The encryption configuration for your custom resource. Specify a customer
+ * managed KMS key, and optionally an encryption context, to encrypt your custom
+ * vocabulary, custom vocabulary filter, or custom language model artifacts at
+ * rest. If you do not provide a key, your artifacts are encrypted with an Amazon
+ * Web Services owned key.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/EncryptionConfiguration">AWS
  * API Reference</a></p>
  */

@@ -38,7 +38,10 @@ class Resource {
   ///@{
   /**
    * <p>The category of the resource, such as manufacturer support or usage
-   * instructions.</p>
+   * instructions. This field has one of the following values:</p> <dl>
+   * <dt>MANUFACTURER_INSTRUCTIONS</dt> <dd> <p>Usage instructions from the
+   * seller.</p> </dd> <dt>MANUFACTURER_SUPPORT</dt> <dd> <p>Support information from
+   * the seller.</p> </dd> </dl>
    */
   inline ResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -54,8 +57,11 @@ class Resource {
 
   ///@{
   /**
-   * <p>The format of the resource content, such as a URL, email address, or
-   * text.</p>
+   * <p>The format of the resource content, such as a URL, email address, or text.
+   * This field has one of the following values:</p> <dl> <dt>EMAIL</dt> <dd> <p>An
+   * email address.</p> </dd> <dt>LINK</dt> <dd> <p>A URL.</p> </dd> <dt>OTHER</dt>
+   * <dd> <p>Text in another format.</p> </dd> <dt>PHONE_NUMBER</dt> <dd> <p>A phone
+   * number.</p> </dd> </dl>
    */
   inline ResourceContentType GetContentType() const { return m_contentType; }
   inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }

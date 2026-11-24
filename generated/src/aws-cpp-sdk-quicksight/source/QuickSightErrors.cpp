@@ -28,6 +28,7 @@
 #include <aws/quicksight/model/ThrottlingException.h>
 #include <aws/quicksight/model/UnsupportedPricingPlanException.h>
 #include <aws/quicksight/model/UnsupportedUserEditionException.h>
+#include <aws/quicksight/model/ValidationException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -52,6 +53,12 @@ template <>
 AWS_QUICKSIGHT_API ResourceNotFoundException QuickSightError::GetModeledError() {
   assert(this->GetErrorType() == QuickSightErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_QUICKSIGHT_API ValidationException QuickSightError::GetModeledError() {
+  assert(this->GetErrorType() == QuickSightErrors::VALIDATION);
+  return ValidationException(this->GetJsonPayload().View());
 }
 
 template <>

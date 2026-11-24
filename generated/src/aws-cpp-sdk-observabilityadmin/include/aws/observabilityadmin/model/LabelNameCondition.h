@@ -35,7 +35,7 @@ class LabelNameCondition {
   ///@{
   /**
    * <p> The label name to match, supporting alphanumeric characters, underscores,
-   * hyphens, and colons. </p>
+   * hyphens, colons, and periods. </p>
    */
   inline const Aws::String& GetLabelName() const { return m_labelName; }
   inline bool LabelNameHasBeenSet() const { return m_labelNameHasBeenSet; }

@@ -86,6 +86,9 @@
 #include <aws/taxsettings/model/MalaysiaServiceTaxCode.h>
 #include <aws/taxsettings/model/MexicoAdditionalInfo.h>
 #include <aws/taxsettings/model/MonacoAdditionalInfo.h>
+#include <aws/taxsettings/model/NewZealandAdditionalInfo.h>
+#include <aws/taxsettings/model/NorwayAdditionalInfo.h>
+#include <aws/taxsettings/model/NorwayTaxRegistrationNumberType.h>
 #include <aws/taxsettings/model/PersonType.h>
 #include <aws/taxsettings/model/PhilippinesAdditionalInfo.h>
 #include <aws/taxsettings/model/PolandAdditionalInfo.h>
@@ -125,8 +128,10 @@
 #include <aws/taxsettings/model/TaxRegistrationType.h>
 #include <aws/taxsettings/model/TaxRegistrationWithJurisdiction.h>
 #include <aws/taxsettings/model/TurkeyAdditionalInfo.h>
+#include <aws/taxsettings/model/UaeTaxRegistrationNumberType.h>
 #include <aws/taxsettings/model/UkraineAdditionalInfo.h>
 #include <aws/taxsettings/model/UkraineTrnType.h>
+#include <aws/taxsettings/model/UnitedArabEmiratesAdditionalInfo.h>
 #include <aws/taxsettings/model/UzbekistanAdditionalInfo.h>
 #include <aws/taxsettings/model/UzbekistanTaxRegistrationNumberType.h>
 #include <aws/taxsettings/model/ValidationException.h>

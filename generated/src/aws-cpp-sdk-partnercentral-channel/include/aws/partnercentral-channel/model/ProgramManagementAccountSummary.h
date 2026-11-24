@@ -9,6 +9,7 @@
 #include <aws/partnercentral-channel/PartnerCentralChannel_EXPORTS.h>
 #include <aws/partnercentral-channel/model/Program.h>
 #include <aws/partnercentral-channel/model/ProgramManagementAccountStatus.h>
+#include <aws/partnercentral-channel/model/ProgramManagementAccountType.h>
 
 #include <utility>
 
@@ -228,6 +229,22 @@ class ProgramManagementAccountSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the program management account.</p>
+   */
+  inline ProgramManagementAccountType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(ProgramManagementAccountType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline ProgramManagementAccountSummary& WithType(ProgramManagementAccountType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -250,6 +267,8 @@ class ProgramManagementAccountSummary {
   Aws::Utils::DateTime m_startDate{};
 
   ProgramManagementAccountStatus m_status{ProgramManagementAccountStatus::NOT_SET};
+
+  ProgramManagementAccountType m_type{ProgramManagementAccountType::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
   bool m_catalogHasBeenSet = false;
@@ -261,6 +280,7 @@ class ProgramManagementAccountSummary {
   bool m_updatedAtHasBeenSet = false;
   bool m_startDateHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

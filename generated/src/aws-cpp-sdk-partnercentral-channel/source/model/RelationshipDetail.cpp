@@ -58,6 +58,14 @@ RelationshipDetail& RelationshipDetail::operator=(JsonView jsonValue) {
     m_sector = SectorMapper::GetSectorForName(jsonValue.GetString("sector"));
     m_sectorHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("accountScope")) {
+    m_accountScope = AccountScopeMapper::GetAccountScopeForName(jsonValue.GetString("accountScope"));
+    m_accountScopeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("channelContractId")) {
+    m_channelContractId = jsonValue.GetString("channelContractId");
+    m_channelContractIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -69,6 +77,10 @@ RelationshipDetail& RelationshipDetail::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("startDate")) {
     m_startDate = jsonValue.GetString("startDate");
     m_startDateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endDate")) {
+    m_endDate = jsonValue.GetString("endDate");
+    m_endDateHasBeenSet = true;
   }
   return *this;
 }
@@ -116,6 +128,14 @@ JsonValue RelationshipDetail::Jsonize() const {
     payload.WithString("sector", SectorMapper::GetNameForSector(m_sector));
   }
 
+  if (m_accountScopeHasBeenSet) {
+    payload.WithString("accountScope", AccountScopeMapper::GetNameForAccountScope(m_accountScope));
+  }
+
+  if (m_channelContractIdHasBeenSet) {
+    payload.WithString("channelContractId", m_channelContractId);
+  }
+
   if (m_createdAtHasBeenSet) {
     payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
@@ -126,6 +146,10 @@ JsonValue RelationshipDetail::Jsonize() const {
 
   if (m_startDateHasBeenSet) {
     payload.WithString("startDate", m_startDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_endDateHasBeenSet) {
+    payload.WithString("endDate", m_endDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

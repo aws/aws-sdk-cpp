@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
+#include <aws/cloudfront/model/OriginHttpVersion.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -110,6 +111,33 @@ class VpcOriginConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The HTTP version that CloudFront uses for requests to the VPC origin for this
+   * distribution. Valid values are <code>http1.1</code> and <code>http2</code>. If
+   * you don't specify a value, CloudFront uses HTTP/1.1.</p> <p>When you specify
+   * <code>http2</code>, CloudFront offers HTTP/2 to the origin by using ALPN. If the
+   * origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses
+   * HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses
+   * HTTP/1.1.</p> <p>If you use a version of an AWS SDK or the AWS CLI that doesn't
+   * support this field, an update that sends back a configuration you got from
+   * CloudFront removes the value, and CloudFront then uses HTTP/1.1.</p> <p>For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion">Origin
+   * HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+   */
+  inline OriginHttpVersion GetOriginHttpVersion() const { return m_originHttpVersion; }
+  inline bool OriginHttpVersionHasBeenSet() const { return m_originHttpVersionHasBeenSet; }
+  inline void SetOriginHttpVersion(OriginHttpVersion value) {
+    m_originHttpVersionHasBeenSet = true;
+    m_originHttpVersion = value;
+  }
+  inline VpcOriginConfig& WithOriginHttpVersion(OriginHttpVersion value) {
+    SetOriginHttpVersion(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_vpcOriginId;
 
@@ -118,10 +146,13 @@ class VpcOriginConfig {
   int m_originReadTimeout{0};
 
   int m_originKeepaliveTimeout{0};
+
+  OriginHttpVersion m_originHttpVersion{OriginHttpVersion::NOT_SET};
   bool m_vpcOriginIdHasBeenSet = false;
   bool m_ownerAccountIdHasBeenSet = false;
   bool m_originReadTimeoutHasBeenSet = false;
   bool m_originKeepaliveTimeoutHasBeenSet = false;
+  bool m_originHttpVersionHasBeenSet = false;
 };
 
 }  // namespace Model

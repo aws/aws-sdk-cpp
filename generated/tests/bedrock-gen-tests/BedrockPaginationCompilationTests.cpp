@@ -10,6 +10,7 @@
 #include <aws/bedrock/BedrockPaginationBase.h>
 #include <aws/bedrock/model/ListAutomatedReasoningPolicyTestResultsPaginationTraits.h>
 #include <aws/bedrock/model/ListGuardrailsPaginationTraits.h>
+#include <aws/bedrock/model/ListTrustedAccessProgramsPaginationTraits.h>
 #include <aws/bedrock/model/ListEnforcedGuardrailsConfigurationPaginationTraits.h>
 #include <aws/bedrock/model/ListPromptRoutersPaginationTraits.h>
 #include <aws/bedrock/model/ListAdvancedPromptOptimizationJobsPaginationTraits.h>
@@ -27,6 +28,7 @@
 #include <aws/bedrock/model/ListEvaluationJobsPaginationTraits.h>
 #include <aws/bedrock/model/ListModelCustomizationJobsPaginationTraits.h>
 #include <aws/bedrock/model/ListInferenceProfilesPaginationTraits.h>
+#include <aws/bedrock/model/ListProjectsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

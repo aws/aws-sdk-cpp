@@ -26,6 +26,21 @@ FirewallSyncReason& FirewallSyncReason::operator=(JsonView jsonValue) {
     m_invalidFirewall = jsonValue.GetObject("invalidFirewall");
     m_invalidFirewallHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("invalidResource")) {
+    Aws::Map<Aws::String, JsonView> invalidResourceJsonMap = jsonValue.GetObject("invalidResource").GetAllObjects();
+    for (auto& invalidResourceItem : invalidResourceJsonMap) {
+      Aws::Utils::Array<JsonView> invalidResourceIssueList2JsonList = invalidResourceItem.second.AsArray();
+      Aws::Vector<InvalidResourceIssue> invalidResourceIssueList2List;
+      invalidResourceIssueList2List.reserve((size_t)invalidResourceIssueList2JsonList.GetLength());
+      for (unsigned invalidResourceIssueList2Index = 0; invalidResourceIssueList2Index < invalidResourceIssueList2JsonList.GetLength();
+           ++invalidResourceIssueList2Index) {
+        invalidResourceIssueList2List.push_back(invalidResourceIssueList2JsonList[invalidResourceIssueList2Index].AsObject());
+      }
+      m_invalidResource[ScopeResourceTypeMapper::GetScopeResourceTypeForName(invalidResourceItem.first)] =
+          std::move(invalidResourceIssueList2List);
+    }
+    m_invalidResourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +53,21 @@ JsonValue FirewallSyncReason::Jsonize() const {
 
   if (m_invalidFirewallHasBeenSet) {
     payload.WithObject("invalidFirewall", m_invalidFirewall.Jsonize());
+  }
+
+  if (m_invalidResourceHasBeenSet) {
+    JsonValue invalidResourceJsonMap;
+    for (auto& invalidResourceItem : m_invalidResource) {
+      Aws::Utils::Array<JsonValue> invalidResourceIssueListJsonList(invalidResourceItem.second.size());
+      for (unsigned invalidResourceIssueListIndex = 0; invalidResourceIssueListIndex < invalidResourceIssueListJsonList.GetLength();
+           ++invalidResourceIssueListIndex) {
+        invalidResourceIssueListJsonList[invalidResourceIssueListIndex].AsObject(
+            invalidResourceItem.second[invalidResourceIssueListIndex].Jsonize());
+      }
+      invalidResourceJsonMap.WithArray(ScopeResourceTypeMapper::GetNameForScopeResourceType(invalidResourceItem.first),
+                                       std::move(invalidResourceIssueListJsonList));
+    }
+    payload.WithObject("invalidResource", std::move(invalidResourceJsonMap));
   }
 
   return payload;

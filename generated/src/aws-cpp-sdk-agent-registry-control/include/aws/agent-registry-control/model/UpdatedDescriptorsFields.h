@@ -11,6 +11,7 @@
 #include <aws/agent-registry-control/model/UpdatedCustomDescriptor.h>
 #include <aws/agent-registry-control/model/UpdatedHttpDescriptor.h>
 #include <aws/agent-registry-control/model/UpdatedMcpServerDescriptor.h>
+#include <aws/agent-registry-control/model/UpdatedSignatureAgentCardDescriptor.h>
 
 #include <utility>
 
@@ -144,6 +145,24 @@ class UpdatedDescriptorsFields {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The patch for the signature agent card descriptor.</p>
+   */
+  inline const UpdatedSignatureAgentCardDescriptor& GetSignatureAgentCard() const { return m_signatureAgentCard; }
+  inline bool SignatureAgentCardHasBeenSet() const { return m_signatureAgentCardHasBeenSet; }
+  template <typename SignatureAgentCardT = UpdatedSignatureAgentCardDescriptor>
+  void SetSignatureAgentCard(SignatureAgentCardT&& value) {
+    m_signatureAgentCardHasBeenSet = true;
+    m_signatureAgentCard = std::forward<SignatureAgentCardT>(value);
+  }
+  template <typename SignatureAgentCardT = UpdatedSignatureAgentCardDescriptor>
+  UpdatedDescriptorsFields& WithSignatureAgentCard(SignatureAgentCardT&& value) {
+    SetSignatureAgentCard(std::forward<SignatureAgentCardT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UpdatedMcpServerDescriptor m_mcpServer;
 
@@ -156,12 +175,15 @@ class UpdatedDescriptorsFields {
   UpdatedHttpDescriptor m_http;
 
   UpdatedAgUiDescriptor m_agui;
+
+  UpdatedSignatureAgentCardDescriptor m_signatureAgentCard;
   bool m_mcpServerHasBeenSet = false;
   bool m_a2aAgentCardHasBeenSet = false;
   bool m_agentSkillsDefinitionHasBeenSet = false;
   bool m_customHasBeenSet = false;
   bool m_httpHasBeenSet = false;
   bool m_aguiHasBeenSet = false;
+  bool m_signatureAgentCardHasBeenSet = false;
 };
 
 }  // namespace Model

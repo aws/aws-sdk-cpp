@@ -71,8 +71,8 @@ class CreateAndAttachS3AccessPointRequest : public FSxRequest {
 
   ///@{
   /**
-   * <p>The type of S3 access point you want to create. Only <code>OpenZFS</code> is
-   * supported.</p>
+   * <p>The type of S3 access point you want to create. Valid values are
+   * <code>OPENZFS</code> and <code>ONTAP</code>.</p>
    */
   inline S3AccessPointAttachmentType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
