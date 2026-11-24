@@ -27,5 +27,9 @@ Aws::String InvokeWebSearchRequest::SerializePayload() const {
     payload.WithObject("filters", m_filters.Jsonize());
   }
 
+  if (m_userLocationHasBeenSet) {
+    payload.WithObject("userLocation", m_userLocation.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

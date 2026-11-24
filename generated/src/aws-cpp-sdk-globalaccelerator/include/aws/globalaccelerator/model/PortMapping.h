@@ -75,7 +75,7 @@ class PortMapping {
 
   ///@{
   /**
-   * <p>The IP address of the VPC subnet (the subnet ID).</p>
+   * <p>The ID of the virtual private cloud (VPC) subnet.</p>
    */
   inline const Aws::String& GetEndpointId() const { return m_endpointId; }
   inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }

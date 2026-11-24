@@ -89,7 +89,15 @@ class UpdateAcceleratorRequest : public GlobalAcceleratorRequest {
 
   ///@{
   /**
-   * <p>The IP addresses for an accelerator.</p>
+   * <p>The IP addresses for an accelerator. Specify one or two IPv4 addresses. Do
+   * not include the /32 suffix.</p> <p>You can update IP addresses only for an
+   * accelerator that you created with at least one BYOIP address. You can't update
+   * an accelerator that has only IP addresses provided by Global Accelerator to use
+   * BYOIP addresses. Instead, create a new accelerator with your BYOIP
+   * addresses.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.update-accelerator.html">Update
+   * an accelerator to change your IP addresses</a> in the <i>Global Accelerator
+   * Developer Guide</i>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetIpAddresses() const { return m_ipAddresses; }
   inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }

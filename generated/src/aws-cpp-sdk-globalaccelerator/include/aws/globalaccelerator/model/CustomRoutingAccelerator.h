@@ -137,8 +137,8 @@ class CustomRoutingAccelerator {
   /**
    * <p>The Domain Name System (DNS) name that Global Accelerator creates that points
    * to an accelerator's static IPv4 addresses. </p> <p>The naming convention for the
-   * DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
-   * string, followed by .awsglobalaccelerator.com. For example:
+   * DNS name is the following: A lowercase letter a, followed by a 16-character
+   * random hexadecimal string, followed by .awsglobalaccelerator.com. For example:
    * a1234567890abcdef.awsglobalaccelerator.com.</p> <p>If you have a dual-stack
    * accelerator, you also have a second DNS name, <code>DualStackDnsName</code>,
    * that points to both the A record and the AAAA record for all four static

@@ -83,12 +83,15 @@ class EndpointConfiguration {
    * <p>Indicates whether client IP address preservation is enabled for an endpoint.
    * The value is true or false. The default value is true for Application Load
    * Balancer endpoints. </p> <p>If the value is set to true, the client's IP address
-   * is preserved in the <code>X-Forwarded-For</code> request header as traffic
-   * travels to applications on the endpoint fronted by the accelerator.</p>
-   * <p>Client IP address preservation is supported, in specific Amazon Web Services
-   * Regions, for endpoints that are Application Load Balancers, Amazon EC2
-   * instances, and Network Load Balancers with security groups. IMPORTANT: You
-   * cannot use client IP address preservation with Network Load Balancers with TLS
+   * is preserved in packets that arrive at the endpoint. For Amazon EC2 instance and
+   * Network Load Balancer endpoints, the client IP address is the source address in
+   * the IP header of the packet. For Application Load Balancer endpoints, because
+   * the Application Load Balancer terminates the incoming TCP connection, the client
+   * IP address is available in the <code>X-Forwarded-For</code> request header.</p>
+   * <p>Client IP address preservation is supported in all Amazon Web Services
+   * Regions where Global Accelerator is supported, for endpoints that are
+   * Application Load Balancers, Amazon EC2 instances, and Network Load Balancers
+   * with security groups. This includes Network Load Balancers that have TLS
    * listeners.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
    * Preserve client IP addresses in Global Accelerator</a> in the <i>Global

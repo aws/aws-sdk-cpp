@@ -43,8 +43,8 @@ namespace GlobalAccelerator {
  * two static IPv6 addresses. With a standard accelerator for IPv4, instead of
  * using the addresses that Global Accelerator provides, you can configure these
  * entry points to be IPv4 addresses from your own IP address ranges that you bring
- * to Global Accelerator (BYOIP). </p> <p>For a standard accelerator, they
- * distribute incoming application traffic across multiple endpoint resources in
+ * to Global Accelerator (BYOIP). </p> <p>For a standard accelerator, it
+ * distributes incoming application traffic across multiple endpoint resources in
  * multiple Amazon Web Services Regions , which increases the availability of your
  * applications. Endpoints for standard accelerators can be Network Load Balancers,
  * Application Load Balancers, Amazon EC2 instances, or Elastic IP addresses that
@@ -1325,7 +1325,7 @@ class AWS_GLOBALACCELERATOR_API GlobalAcceleratorClient : public Aws::Client::AW
 
   /**
    * <p>Provides a complete mapping from the public accelerator IP address and port
-   * to destination EC2 instance IP addresses and ports in the virtual public cloud
+   * to destination EC2 instance IP addresses and ports in the virtual private cloud
    * (VPC) subnet endpoint for a custom routing accelerator. For each subnet endpoint
    * that you add, Global Accelerator creates a new static port mapping for the
    * accelerator. The port mappings don't change after Global Accelerator generates
@@ -1550,7 +1550,7 @@ class AWS_GLOBALACCELERATOR_API GlobalAcceleratorClient : public Aws::Client::AW
    * removing endpoints. The alternative is to remove endpoints by updating an
    * endpoint group by using the <a
    * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
-   * API operation. There are two advantages to using <code>AddEndpoints</code> to
+   * API operation. There are two advantages to using <code>RemoveEndpoints</code> to
    * remove endpoints instead:</p> <ul> <li> <p>It's more convenient, because you
    * only need to specify the endpoints that you want to remove. With the
    * <code>UpdateEndpointGroup</code> API operation, you must specify all of the

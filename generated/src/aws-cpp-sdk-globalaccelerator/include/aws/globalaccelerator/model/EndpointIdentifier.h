@@ -59,8 +59,12 @@ class EndpointIdentifier {
   /**
    * <p>Indicates whether client IP address preservation is enabled for an endpoint.
    * The value is true or false. </p> <p>If the value is set to true, the client's IP
-   * address is preserved in the <code>X-Forwarded-For</code> request header as
-   * traffic travels to applications on the endpoint fronted by the accelerator.</p>
+   * address is preserved in packets that arrive at the endpoint. For Amazon EC2
+   * instance and Network Load Balancer endpoints, the client IP address is the
+   * source address in the IP header of the packet. For Application Load Balancer
+   * endpoints, because the Application Load Balancer terminates the incoming TCP
+   * connection, the client IP address is available in the
+   * <code>X-Forwarded-For</code> request header.</p>
    */
   inline bool GetClientIPPreservationEnabled() const { return m_clientIPPreservationEnabled; }
   inline bool ClientIPPreservationEnabledHasBeenSet() const { return m_clientIPPreservationEnabledHasBeenSet; }

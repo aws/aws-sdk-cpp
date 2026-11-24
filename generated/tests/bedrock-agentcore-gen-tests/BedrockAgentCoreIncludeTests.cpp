@@ -563,6 +563,7 @@
 #include <aws/bedrock-agentcore/model/ViewPort.h>
 #include <aws/bedrock-agentcore/model/WebSearchFilters.h>
 #include <aws/bedrock-agentcore/model/WebSearchResult.h>
+#include <aws/bedrock-agentcore/model/WebSearchUserLocation.h>
 
 using BedrockAgentCoreIncludeTest = ::testing::Test;
 

@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/WebSearchFilters.h>
+#include <aws/bedrock-agentcore/model/WebSearchUserLocation.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -103,6 +104,30 @@ class InvokeWebSearchRequest : public BedrockAgentCoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> <code>userLocation</code> may allow for Web Search results to be refined for
+   * that location. This is done by supplying a <code>country</code>. The field is
+   * optional.</p> <p>The value is checked against assigned ISO 3166-1 alpha-2 codes,
+   * so unassigned and user-assigned codes such as <code>UK</code> and
+   * <code>XK</code>, empty or whitespace-only values are rejected. An omitted value
+   * is treated as absent. Without location, as a fallback Web Search may use your
+   * query to localize results or default to <code>en_US</code>.</p>
+   */
+  inline const WebSearchUserLocation& GetUserLocation() const { return m_userLocation; }
+  inline bool UserLocationHasBeenSet() const { return m_userLocationHasBeenSet; }
+  template <typename UserLocationT = WebSearchUserLocation>
+  void SetUserLocation(UserLocationT&& value) {
+    m_userLocationHasBeenSet = true;
+    m_userLocation = std::forward<UserLocationT>(value);
+  }
+  template <typename UserLocationT = WebSearchUserLocation>
+  InvokeWebSearchRequest& WithUserLocation(UserLocationT&& value) {
+    SetUserLocation(std::forward<UserLocationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_webSearchId;
 
@@ -111,10 +136,13 @@ class InvokeWebSearchRequest : public BedrockAgentCoreRequest {
   int m_maxResults{0};
 
   WebSearchFilters m_filters;
+
+  WebSearchUserLocation m_userLocation;
   bool m_webSearchIdHasBeenSet = false;
   bool m_searchQueryHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
+  bool m_userLocationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -84,9 +84,13 @@ class CreateAcceleratorRequest : public GlobalAcceleratorRequest {
    * accelerator. This restriction is because Global Accelerator assigns each address
    * range to a different network zone, for high availability.</p> <p>You can specify
    * one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-   * <p>Note that you can't update IP addresses for an existing accelerator. To
-   * change them, you must create a new accelerator with the new addresses.</p>
-   * <p>For more information, see <a
+   * <p>If you create an accelerator with only IP addresses provided by Global
+   * Accelerator, you can't update it later to use BYOIP addresses. If you create an
+   * accelerator with at least one BYOIP address, you can update its IP addresses
+   * later. For more information, see <a
+   * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.update-accelerator.html">Update
+   * an accelerator to change your IP addresses</a> in the <i>Global Accelerator
+   * Developer Guide</i>.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
    * your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer
    * Guide</i>.</p>

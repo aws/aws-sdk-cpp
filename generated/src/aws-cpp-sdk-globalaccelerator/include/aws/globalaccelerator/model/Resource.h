@@ -57,7 +57,7 @@ class Resource {
 
   ///@{
   /**
-   * <p>An IP address range, in CIDR format, that is specified as resource. The
+   * <p>An IP address range, in CIDR format, that is specified as a resource. The
    * address must be provisioned and advertised in Global Accelerator by following
    * the bring your own IP address (BYOIP) process for Global Accelerator</p> <p> For
    * more information, see <a
