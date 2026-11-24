@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "0z5a",
+  "description": "Apply numeric UTC offsets when parsing ISO 8601, ISO 8601 basic and RFC 822 timestamps instead of reading them as local time ([#4006](https://github.com/aws/aws-sdk-cpp/issues/4006))"
+}

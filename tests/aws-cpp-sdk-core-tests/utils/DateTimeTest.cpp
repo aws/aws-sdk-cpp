@@ -228,6 +228,24 @@ TEST_F(DateTimeTest, TestISO_8601BasicParsing)
     ASSERT_EQ(gmtDate, DateTime(utcOffsetVersion, DateFormat::ISO_8601_BASIC));
 }
 
+TEST_F(DateTimeTest, TestParsingWithNonZeroUtcOffset) {
+  // Same instant as the Smithy DatetimeOffsets protocol tests, written with different offsets.
+  DateTime gmtDate("2019-12-16T23:48:18Z", DateFormat::ISO_8601);
+  ASSERT_TRUE(gmtDate.WasParseSuccessful());
+  ASSERT_EQ(1576540098, gmtDate.Seconds());
+
+  ASSERT_EQ(gmtDate, DateTime("2019-12-16T22:48:18-01:00", DateFormat::ISO_8601));
+  ASSERT_EQ(gmtDate, DateTime("2019-12-17T00:48:18+01:00", DateFormat::ISO_8601));
+  ASSERT_EQ(gmtDate, DateTime("2019-12-17T05:18:18+05:30", DateFormat::ISO_8601));
+  ASSERT_EQ(gmtDate, DateTime("2019-12-16T23:48:18-00:00", DateFormat::ISO_8601));
+  ASSERT_EQ(gmtDate, DateTime("2019-12-16T23:48:18+0000", DateFormat::ISO_8601));
+  ASSERT_EQ(gmtDate, DateTime("2019-12-16T13:48:18.000-10:00", DateFormat::ISO_8601));
+  ASSERT_EQ(gmtDate, DateTime("20191217T004818+0100", DateFormat::ISO_8601_BASIC));
+  ASSERT_EQ(gmtDate, DateTime("Tue, 17 Dec 2019 00:48:18 +0100", DateFormat::RFC822));
+  ASSERT_EQ(gmtDate, DateTime("Mon, 16 Dec 2019 18:48:18 -0500", DateFormat::RFC822));
+  ASSERT_EQ(gmtDate, DateTime("2019-12-17T00:48:18+01:00", DateFormat::AutoDetect));
+}
+
 TEST_F(DateTimeTest, TestISO_8601ParsingMSPrecision)
 {
     const char* gmtDateStr = "2002-10-02T08:05:09.000Z";
