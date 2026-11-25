@@ -1,3 +1,9 @@
+# 1.11.938 (2026-11-25)
+
+## Service Updates
+* **ELB Proxy**: Introducing Elastic Load Balancing for Envoy. Run your existing Envoy configurations with AWS integrations, managed scaling, and automatic patching.
+* **WAFV2**: AWS WAF added support for associating AWS WAF web ACLs with Elastic Load Balancing proxies. You can now use AssociateWebACL, DisassociateWebACL, GetWebACLForResource, and ListResourcesForWebACL with the ELB PROXY resource type to protect your proxies with AWS WAF
+
 # 1.11.937 (2026-11-24)
 
 ## Service Updates

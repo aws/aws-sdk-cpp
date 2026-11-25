@@ -52,11 +52,12 @@ class ByteMatchStatement {
    * <p> <code>UriPath</code>: The value that you want WAF to search for in the URI
    * path, for example, <code>/images/daily-ad.jpg</code>. </p> </li> <li> <p>
    * <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront
-   * distributions and Application Load Balancers. Match against the request's JA3
-   * fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
-   * Client Hello of an incoming request. This fingerprint serves as a unique
-   * identifier for the client's TLS configuration. You can use this choice with a
-   * <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>,
+   * distributions, Application Load Balancers, and Elastic Load Balancing for Envoy
+   * proxies. Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+   * 32-character hash derived from the TLS Client Hello of an incoming request. This
+   * fingerprint serves as a unique identifier for the client's TLS configuration.
+   * You can use this choice with a <code>ByteMatchStatement</code>,
+   * <code>RegexMatchStatement</code>,
    * <code>RegexPatternSetReferenceStatement</code>, or
    * <code>SizeConstraintStatement</code>. You can't use it with
    * <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>. </p> <p>You

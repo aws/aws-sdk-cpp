@@ -20,14 +20,15 @@ namespace WAFV2 {
 namespace Model {
 
 /**
- * <p>Available for use with Amazon CloudFront distributions and Application Load
- * Balancers. Match against the request's JA4 fingerprint. The JA4 fingerprint is a
- * 36-character hash derived from the TLS Client Hello of an incoming request. This
- * fingerprint serves as a unique identifier for the client's TLS configuration.
- * WAF calculates and logs this fingerprint for each request that has enough TLS
- * Client Hello information for the calculation. Almost all web requests include
- * this information.</p>  <p>You can use this choice with a
- * <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>,
+ * <p>Available for use with Amazon CloudFront distributions, Application Load
+ * Balancers, and Elastic Load Balancing for Envoy proxies. Match against the
+ * request's JA4 fingerprint. The JA4 fingerprint is a 36-character hash derived
+ * from the TLS Client Hello of an incoming request. This fingerprint serves as a
+ * unique identifier for the client's TLS configuration. WAF calculates and logs
+ * this fingerprint for each request that has enough TLS Client Hello information
+ * for the calculation. Almost all web requests include this information.</p>
+ *  <p>You can use this choice with a <code>ByteMatchStatement</code>,
+ * <code>RegexMatchStatement</code>,
  * <code>RegexPatternSetReferenceStatement</code>, or
  * <code>SizeConstraintStatement</code>. You can't use it with
  * <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>. </p>

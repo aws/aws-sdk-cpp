@@ -159,6 +159,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancingClient.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Client.h>
 #include <aws/elasticmapreduce/EMRClient.h>
+#include <aws/elb-proxy/ELBProxyClient.h>
 #include <aws/elementalinference/ElementalInferenceClient.h>
 #include <aws/email/SESClient.h>
 #include <aws/emr-containers/EMRContainersClient.h>

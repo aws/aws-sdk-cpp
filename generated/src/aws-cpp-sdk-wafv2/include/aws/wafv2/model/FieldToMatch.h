@@ -179,12 +179,13 @@ class FieldToMatch {
    * <li> <p>For AppSync, the limit is fixed at 8 KB (8,192 bytes).</p> </li> <li>
    * <p>For Application Load Balancer, the default limit is 8 KB (8,192 bytes), and
    * you can change the limit in the web ACL <code>AssociationConfig</code>. </p>
-   * </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and
-   * Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase
-   * the limit for each resource type in the web ACL <code>AssociationConfig</code>,
-   * for additional processing fees. </p> </li> <li> <p>For Amplify, use the
-   * CloudFront limit.</p> </li> </ul> <p>For information about how to handle
-   * oversized request bodies, see the <code>Body</code> object configuration. </p>
+   * </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, Verified
+   * Access, and Elastic Load Balancing for Envoy, the default limit is 16 KB (16,384
+   * bytes), and you can increase the limit for each resource type in the web ACL
+   * <code>AssociationConfig</code>, for additional processing fees. </p> </li> <li>
+   * <p>For Amplify, use the CloudFront limit.</p> </li> </ul> <p>For information
+   * about how to handle oversized request bodies, see the <code>Body</code> object
+   * configuration. </p>
    */
   inline const Body& GetBody() const { return m_body; }
   inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
@@ -231,12 +232,13 @@ class FieldToMatch {
    * <p>For AppSync, the limit is fixed at 8 KB (8,192 bytes).</p> </li> <li> <p>For
    * Application Load Balancer, the default limit is 8 KB (8,192 bytes), and you can
    * change the limit in the web ACL <code>AssociationConfig</code>. </p> </li> <li>
-   * <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access,
-   * the default limit is 16 KB (16,384 bytes), and you can increase the limit for
-   * each resource type in the web ACL <code>AssociationConfig</code>, for additional
-   * processing fees. </p> </li> <li> <p>For Amplify, use the CloudFront limit.</p>
-   * </li> </ul> <p>For information about how to handle oversized request bodies, see
-   * the <code>JsonBody</code> object configuration. </p>
+   * <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, and
+   * Elastic Load Balancing for Envoy, the default limit is 16 KB (16,384 bytes), and
+   * you can increase the limit for each resource type in the web ACL
+   * <code>AssociationConfig</code>, for additional processing fees. </p> </li> <li>
+   * <p>For Amplify, use the CloudFront limit.</p> </li> </ul> <p>For information
+   * about how to handle oversized request bodies, see the <code>JsonBody</code>
+   * object configuration. </p>
    */
   inline const JsonBody& GetJsonBody() const { return m_jsonBody; }
   inline bool JsonBodyHasBeenSet() const { return m_jsonBodyHasBeenSet; }
@@ -327,14 +329,15 @@ class FieldToMatch {
 
   ///@{
   /**
-   * <p>Available for use with Amazon CloudFront distributions and Application Load
-   * Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a
-   * 32-character hash derived from the TLS Client Hello of an incoming request. This
-   * fingerprint serves as a unique identifier for the client's TLS configuration.
-   * WAF calculates and logs this fingerprint for each request that has enough TLS
-   * Client Hello information for the calculation. Almost all web requests include
-   * this information.</p>  <p>You can use this choice with a
-   * <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>,
+   * <p>Available for use with Amazon CloudFront distributions, Application Load
+   * Balancers, and Elastic Load Balancing for Envoy proxies. Match against the
+   * request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived
+   * from the TLS Client Hello of an incoming request. This fingerprint serves as a
+   * unique identifier for the client's TLS configuration. WAF calculates and logs
+   * this fingerprint for each request that has enough TLS Client Hello information
+   * for the calculation. Almost all web requests include this information.</p>
+   *  <p>You can use this choice with a <code>ByteMatchStatement</code>,
+   * <code>RegexMatchStatement</code>,
    * <code>RegexPatternSetReferenceStatement</code>, or
    * <code>SizeConstraintStatement</code>. You can't use it with
    * <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>. </p>
@@ -363,14 +366,15 @@ class FieldToMatch {
 
   ///@{
   /**
-   * <p>Available for use with Amazon CloudFront distributions and Application Load
-   * Balancers. Match against the request's JA4 fingerprint. The JA4 fingerprint is a
-   * 36-character hash derived from the TLS Client Hello of an incoming request. This
-   * fingerprint serves as a unique identifier for the client's TLS configuration.
-   * WAF calculates and logs this fingerprint for each request that has enough TLS
-   * Client Hello information for the calculation. Almost all web requests include
-   * this information.</p>  <p>You can use this choice with a
-   * <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>,
+   * <p>Available for use with Amazon CloudFront distributions, Application Load
+   * Balancers, and Elastic Load Balancing for Envoy proxies. Match against the
+   * request's JA4 fingerprint. The JA4 fingerprint is a 36-character hash derived
+   * from the TLS Client Hello of an incoming request. This fingerprint serves as a
+   * unique identifier for the client's TLS configuration. WAF calculates and logs
+   * this fingerprint for each request that has enough TLS Client Hello information
+   * for the calculation. Almost all web requests include this information.</p>
+   *  <p>You can use this choice with a <code>ByteMatchStatement</code>,
+   * <code>RegexMatchStatement</code>,
    * <code>RegexPatternSetReferenceStatement</code>, or
    * <code>SizeConstraintStatement</code>. You can't use it with
    * <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>. </p>
