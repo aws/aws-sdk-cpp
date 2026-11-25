@@ -1122,6 +1122,11 @@
 * **SecurityAgent**: Adding private and self-signed certificate configuration support for penetration tests
 * **Timestream InfluxDB**: Service-managed parameter groups now only apply optimized defaults to DB Clusters automatically. New field effectiveDbParameterGroupIdentifier surfaces the parameter group actually applied.
 
+# 1.11.760 (2026-02-27)
+
+## SDK Highlights
+* **Breaking Change**: `ProfileCredentialsProvider`, used by the default credentials provider chain, is now backed by the CRT and no longer re-reads the shared credentials file on a timer. This is a runtime behavior change: credentials from the file have no expiration, so they are loaded once, matching other AWS SDKs, and `refreshRateMs` is still accepted but ignored. Use `credential_process` or web identity for credentials that rotate, or use `ProfileConfigFileAWSCredentialsProvider` to keep re-reading the file on an interval.
+
 # Announcement
 We are moving the changelog to a new format and tying it to a new release process.
 

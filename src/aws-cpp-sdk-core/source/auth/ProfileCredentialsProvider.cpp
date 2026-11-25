@@ -8,6 +8,7 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/FileSystem.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/crt/auth/Credentials.h>
 #include <aws/crt/http/HttpConnection.h>
 
@@ -22,7 +23,8 @@ namespace {
 const char PROFILE_AWS_CREDENTIALS_FILE[] = "AWS_SHARED_CREDENTIALS_FILE";
 const char PROFILE_DEFAULT_CREDENTIALS_FILE[] = "credentials";
 const char PROFILE_PROFILE_DIRECTORY[] = ".aws";
-const long DEFAULT_REFRESH_RATE_MS = 300000;
+const char PROFILE_PROVIDER_LOG_TAG[] = "ProfileCredentialsProvider";
+const long PROVIDER_FUTURES_TIMEOUT_MS = 300000;
 
 std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> GetProfileCrtProvider(
     const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialsConfig) {
@@ -56,15 +58,12 @@ class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCred
               CredentialsProviderProfileConfig config;
               return CredentialsProvider::CreateCredentialsProviderProfile(config);
             },
-            std::chrono::milliseconds(DEFAULT_REFRESH_RATE_MS), UserAgentFeature::CREDENTIALS_PROFILE, "ProfileCredentialsProvider") {}
+            std::chrono::milliseconds(PROVIDER_FUTURES_TIMEOUT_MS), UserAgentFeature::CREDENTIALS_PROFILE, "ProfileCredentialsProvider") {}
 
   ProfileCredentialsProviderImp(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialsConfig)
       : CrtCredentialsProvider(
-            [credentialsConfig]() -> std::shared_ptr<ICredentialsProvider> {
-              return GetProfileCrtProvider(credentialsConfig);
-            },
-            std::chrono::milliseconds(DEFAULT_REFRESH_RATE_MS), UserAgentFeature::CREDENTIALS_PROFILE,
-            "ProfileCredentialsProvider") {}
+            [credentialsConfig]() -> std::shared_ptr<ICredentialsProvider> { return GetProfileCrtProvider(credentialsConfig); },
+            std::chrono::milliseconds(PROVIDER_FUTURES_TIMEOUT_MS), UserAgentFeature::CREDENTIALS_PROFILE, "ProfileCredentialsProvider") {}
 
   static Aws::String GetCredentialsProfileFilename() {
     auto credentialsFileNameFromVar = Aws::Environment::GetEnv(PROFILE_AWS_CREDENTIALS_FILE);
@@ -86,24 +85,38 @@ class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCred
   }
 };
 
-ProfileCredentialsProvider::ProfileCredentialsProvider(long refreshRateMs) : m_impl(std::make_shared<ProfileCredentialsProviderImp>()) {
+ProfileCredentialsProvider::ProfileCredentialsProvider() : m_impl(std::make_shared<ProfileCredentialsProviderImp>()) {}
+
+ProfileCredentialsProvider::ProfileCredentialsProvider(long refreshRateMs) : ProfileCredentialsProvider() {
   AWS_UNREFERENCED_PARAM(refreshRateMs);
+  AWS_LOGSTREAM_WARN(PROFILE_PROVIDER_LOG_TAG, "refreshRateMs is ignored, credentials refresh when they expire");
 }
 
-ProfileCredentialsProvider::ProfileCredentialsProvider(const char* profile, long refreshRateMs) {
+ProfileCredentialsProvider::ProfileCredentialsProvider(const char* profile) {
   Aws::Client::ClientConfiguration::CredentialProviderConfiguration credentialsConfig{};
   credentialsConfig.profile = profile;
   m_impl = std::make_shared<ProfileCredentialsProviderImp>(credentialsConfig);
+}
+
+ProfileCredentialsProvider::ProfileCredentialsProvider(const char* profile, long refreshRateMs) : ProfileCredentialsProvider(profile) {
   AWS_UNREFERENCED_PARAM(refreshRateMs);
+  AWS_LOGSTREAM_WARN(PROFILE_PROVIDER_LOG_TAG, "refreshRateMs is ignored, credentials refresh when they expire");
 }
 
 ProfileCredentialsProvider::ProfileCredentialsProvider(
+    const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialsConfig)
+    : m_impl(std::make_shared<ProfileCredentialsProviderImp>(credentialsConfig)) {}
+
+ProfileCredentialsProvider::ProfileCredentialsProvider(
     const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialsConfig, long refreshRateMs)
-    : m_impl(std::make_shared<ProfileCredentialsProviderImp>(credentialsConfig)) {
+    : ProfileCredentialsProvider(credentialsConfig) {
   AWS_UNREFERENCED_PARAM(refreshRateMs);
+  AWS_LOGSTREAM_WARN(PROFILE_PROVIDER_LOG_TAG, "refreshRateMs is ignored, credentials refresh when they expire");
 }
 
-void ProfileCredentialsProvider::Reload() {}
+void ProfileCredentialsProvider::Reload() {
+  AWS_LOGSTREAM_WARN(PROFILE_PROVIDER_LOG_TAG, "Reload does nothing, credentials refresh when they expire");
+}
 
 Aws::String ProfileCredentialsProvider::GetCredentialsProfileFilename() {
   return ProfileCredentialsProviderImp::GetCredentialsProfileFilename();
