@@ -185,7 +185,10 @@ TEST_F(ClientProtocolTest, AwsQueryDeserializeResponsePeelsResultWrapper) {
       "</GetCallerIdentityResult><ResponseMetadata><RequestId>req-1</RequestId></ResponseMetadata></GetCallerIdentityResponse>";
   CaptureResult result(CallerIdentityResultSchema());
   OperationRequestContext ctx{"GetCallerIdentity", "2011-06-15"};
-  AwsQueryProtocol().DeserializeResponse(ctx, Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.data()), xml.size()), result);
+  ASSERT_FALSE(
+      AwsQueryProtocol()
+          .DeserializeResponse(ctx, Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.data()), xml.size()), result)
+          .has_value());
   EXPECT_EQ(result.arn, "arn:aws:iam::123456789012:user/x");
   EXPECT_EQ(result.userId, "AIDAEXAMPLE");
   EXPECT_EQ(result.account, "123456789012");
@@ -216,4 +219,18 @@ TEST_F(ClientProtocolTest, QueryResponseParsedAsXml) {
   });
   ASSERT_TRUE(got.has_value());
   EXPECT_EQ(got.value(), "ok");
+}
+
+TEST_F(ClientProtocolTest, DeserializeResponseReportsMalformedBody) {
+  CaptureResult result(CallerIdentityResultSchema());
+  OperationRequestContext ctx{"GetCallerIdentity", "2011-06-15"};
+  const Aws::String json = R"({"Arn":"unterminated)";
+  EXPECT_TRUE(
+      RestJsonProtocol()
+          .DeserializeResponse(ctx, Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()), result)
+          .has_value());
+  const Aws::String xml = "<GetCallerIdentityResponse><GetCallerIdentityResult>";
+  EXPECT_TRUE(AwsQueryProtocol()
+                  .DeserializeResponse(ctx, Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.data()), xml.size()), result)
+                  .has_value());
 }

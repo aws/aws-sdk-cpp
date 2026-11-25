@@ -14,6 +14,7 @@
 #include <smithy/client/schema/JsonTraits.h>
 #include <smithy/client/schema/SerdeTraits.h>
 
+#include <cmath>
 #include <cstring>
 #include <limits>
 #include <memory>
@@ -23,44 +24,30 @@ using namespace Aws::Utils;
 
 class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
  public:
+  // A leading byte-order mark is skipped, as cJSON does.
   explicit Impl(Aws::Crt::ByteCursor data, CodecSettings settings)
-      : m_bytes(reinterpret_cast<const char*>(data.ptr), data.len), m_pos(0), m_settings(settings) {}
+      : m_bytes(reinterpret_cast<const char*>(data.ptr), data.len),
+        m_pos(m_bytes.compare(0, 3, "\xEF\xBB\xBF") == 0 ? 3 : 0),
+        m_settings(settings) {}
 
   void ReadStruct(const Schema& schema, const StructMemberConsumer& consumer) override {
-    if (PeekNonWs() != '{') {
-      SkipValue();
-      return;
-    }
-    ++m_pos;
-    if (PeekNonWs() == '}') {
-      ++m_pos;
-      return;
-    }
-    while (true) {
-      auto key = ParseString();
-      if (!key.has_value()) {
-        return;
-      }
-      if (PeekNonWs() == ':') {
-        ++m_pos;
-      }
-      PeekNonWs();
-      const auto member = ResolveMember(schema, *key);
-      if (member.has_value() && *member && !IsNull()) {
-        ConsumeOne([&] { consumer(**member, *this); });
-      } else {
-        SkipValue();
-      }
-      const auto more = NextInContainer('}');
-      if (!more.has_value() || !*more) {
-        break;
-      }
+    const bool root = AtRoot();
+    ReadStructBody(schema, consumer);
+    if (root && !HasFailed() && !AtEnd()) {
+      Fail("Malformed JSON: trailing data after root value");
     }
   }
 
   void ReadList(const Schema&, const ListElementConsumer& consumer) override {
+    if (HasFailed()) {
+      return;
+    }
     if (PeekNonWs() != '[') {
       SkipValue();
+      return;
+    }
+    const ContainerScope scope(*this);
+    if (!scope.Entered()) {
       return;
     }
     ++m_pos;
@@ -68,23 +55,29 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       ++m_pos;
       return;
     }
-    while (true) {
+    while (!HasFailed()) {
       PeekNonWs();
       if (IsNull()) {
         SkipValue();
       } else {
         ConsumeOne([&] { consumer(*this); });
       }
-      const auto more = NextInContainer(']');
-      if (!more.has_value() || !*more) {
+      if (!NextOrClose(']')) {
         break;
       }
     }
   }
 
   void ReadMap(const Schema&, const MapEntryConsumer& consumer) override {
+    if (HasFailed()) {
+      return;
+    }
     if (PeekNonWs() != '{') {
       SkipValue();
+      return;
+    }
+    const ContainerScope scope(*this);
+    if (!scope.Entered()) {
       return;
     }
     ++m_pos;
@@ -92,28 +85,30 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       ++m_pos;
       return;
     }
-    while (true) {
+    while (!HasFailed()) {
       auto key = ParseString();
       if (!key.has_value()) {
+        Fail("Malformed JSON: expected object key");
         return;
       }
-      if (PeekNonWs() == ':') {
-        ++m_pos;
+      if (!ExpectColon()) {
+        return;
       }
-      PeekNonWs();
       if (IsNull()) {
         SkipValue();
       } else {
         ConsumeOne([&] { consumer(*key, *this); });
       }
-      const auto more = NextInContainer('}');
-      if (!more.has_value() || !*more) {
+      if (!NextOrClose('}')) {
         break;
       }
     }
   }
 
   Aws::Crt::Optional<bool> ReadBoolean(const Schema&) override {
+    if (HasFailed()) {
+      return {};
+    }
     if (Match("true")) {
       return true;
     }
@@ -129,22 +124,30 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     if (!val.has_value()) {
       return {};
     }
-    return static_cast<int>(val.value());
+    return NarrowToInt(val.value());
   }
 
   Aws::Crt::Optional<int64_t> ReadLong(const Schema&) override {
+    if (HasFailed()) {
+      return {};
+    }
     if (!IsNumberStart(PeekNonWs())) {
       SkipValue();
       return {};
     }
     const Aws::String token = ReadNumberToken();
-    // ParseInt64 saturates, so clamping out-of-range plain integers is intentional.
-    const auto value = StringUtils::ParseInt64(token);
-    if (value.has_value()) {
+    const auto value = ParseLong(token);
+    if (value.has_value() || HasFailed()) {
       return value;
     }
+    // Fraction/exponent forms are accepted only when they denote an exact int64.
     const auto d = StringUtils::ParseDouble(token);
-    if (!d.has_value() || !IsRepresentableAsInt64(*d)) {
+    if (!d.has_value()) {
+      Fail("Malformed JSON: invalid number");
+      return {};
+    }
+    if (!IsRepresentableAsInt64(*d) || std::trunc(*d) != *d) {
+      FailUnrepresentable("long");
       return {};
     }
     return static_cast<int64_t>(*d);
@@ -155,10 +158,13 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     if (!val.has_value()) {
       return {};
     }
-    return static_cast<float>(val.value());
+    return NarrowToFloat(val.value());
   }
 
   Aws::Crt::Optional<double> ReadDouble(const Schema&) override {
+    if (HasFailed()) {
+      return {};
+    }
     const char c = PeekNonWs();
     if (c == '"') {
       auto token = ParseString();
@@ -180,10 +186,22 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       SkipValue();
       return {};
     }
-    return StringUtils::ParseDouble(ReadNumberToken());
+    const auto value = StringUtils::ParseDouble(ReadNumberToken());
+    if (!value.has_value()) {
+      Fail("Malformed JSON: invalid number");
+      return {};
+    }
+    if (!std::isfinite(*value)) {
+      FailUnrepresentable("double");
+      return {};
+    }
+    return value;
   }
 
   Aws::Crt::Optional<Aws::String> ReadString(const Schema&) override {
+    if (HasFailed()) {
+      return {};
+    }
     if (PeekNonWs() != '"') {
       SkipValue();
       return {};
@@ -192,13 +210,17 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
   }
 
   Aws::Crt::Optional<DateTime> ReadTimestamp(const Schema& schema) override {
+    if (HasFailed()) {
+      return {};
+    }
     const char c = PeekNonWs();
     if (IsNumberStart(c)) {
       const auto seconds = StringUtils::ParseDouble(ReadNumberToken());
       if (!seconds.has_value()) {
+        Fail("Malformed JSON: invalid number");
         return {};
       }
-      return DateTime(*seconds);
+      return EpochSecondsToTimestamp(*seconds);
     }
     if (c == '"') {
       auto token = ParseString();
@@ -218,6 +240,9 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
   }
 
   Aws::Crt::Optional<ByteBuffer> ReadBlob(const Schema&) override {
+    if (HasFailed()) {
+      return {};
+    }
     if (PeekNonWs() != '"') {
       SkipValue();
       return {};
@@ -230,10 +255,13 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
   }
 
   std::shared_ptr<const Document> ReadDocument(const Schema&) override {
+    if (HasFailed()) {
+      return nullptr;
+    }
     const size_t start = m_pos;
-    auto doc = ReadDocumentValue(0);
-    if (!doc) {
-      // A failed parse can stop part-way into the value; rewind and skip it whole so sibling members stay aligned.
+    auto doc = ReadDocumentValue();
+    if (!doc && !HasFailed()) {
+      // Rewind past a partly parsed unrecognised literal so siblings stay aligned.
       m_pos = start;
       SkipValue();
     }
@@ -249,9 +277,51 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
   }
 
  private:
-  // Below the serializer's MAX_DEPTH so a document that parses can always be written back, and far
-  // enough below cJSON's 1000 to keep the recursive descent inside a 1 MB stack.
-  static constexpr int MAX_DOCUMENT_DEPTH = 256;
+  void ReadStructBody(const Schema& schema, const StructMemberConsumer& consumer) {
+    if (HasFailed()) {
+      return;
+    }
+    if (PeekNonWs() != '{') {
+      if (!AtRoot()) {
+        SkipValue();
+      } else if (!AtEnd() && !Match("null")) {
+        Fail("Malformed JSON: expected object");
+      }
+      return;
+    }
+    const ContainerScope scope(*this);
+    if (!scope.Entered()) {
+      return;
+    }
+    ++m_pos;
+    if (PeekNonWs() == '}') {
+      ++m_pos;
+      return;
+    }
+    bool delivered = false;
+    while (!HasFailed()) {
+      auto key = ParseString();
+      if (!key.has_value()) {
+        Fail("Malformed JSON: expected object key");
+        return;
+      }
+      if (!ExpectColon()) {
+        return;
+      }
+      const auto member = ResolveMember(schema, *key);
+      if (member.has_value() && *member && !IsNull()) {
+        if (!AdmitMember(schema, delivered)) {
+          return;
+        }
+        ConsumeOne([&] { consumer(**member, *this); });
+      } else {
+        SkipValue();
+      }
+      if (!NextOrClose('}')) {
+        break;
+      }
+    }
+  }
 
   // JSON-flavored document nodes: carries this deserializer's timestamp format so AsBlob/AsTimestamp
   // on the resulting Document apply JSON coercion (base64 strings, epoch/ISO-8601 timestamps).
@@ -259,12 +329,13 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     return NewJsonDocument(m_settings.GetDefaultTimestampFormat());
   }
 
-  std::shared_ptr<const Document> ReadDocumentValue(int depth) {
-    if (depth >= MAX_DOCUMENT_DEPTH) {
-      return nullptr;
-    }
+  std::shared_ptr<const Document> ReadDocumentValue() {
     const char c = PeekNonWs();
     if (c == '{') {
+      const ContainerScope scope(*this);
+      if (!scope.Entered()) {
+        return nullptr;
+      }
       ++m_pos;
       Aws::Map<Aws::String, std::shared_ptr<const Document>> object;
       if (PeekNonWs() == '}') {
@@ -276,22 +347,21 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       while (true) {
         auto key = ParseString();
         if (!key.has_value()) {
+          Fail("Malformed JSON: expected object key");
           return nullptr;
         }
-        if (PeekNonWs() != ':') {
+        if (!ExpectColon()) {
           return nullptr;
         }
-        ++m_pos;
-        auto value = ReadDocumentValue(depth + 1);
+        auto value = ReadDocumentValue();
         if (!value) {
           return nullptr;
         }
         object.emplace(std::move(*key), std::move(value));
-        const auto more = NextInContainer('}');
-        if (!more.has_value()) {
-          return nullptr;
-        }
-        if (!*more) {
+        if (!NextOrClose('}')) {
+          if (HasFailed()) {
+            return nullptr;
+          }
           break;
         }
       }
@@ -300,6 +370,10 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       return node;
     }
     if (c == '[') {
+      const ContainerScope scope(*this);
+      if (!scope.Entered()) {
+        return nullptr;
+      }
       ++m_pos;
       Aws::Vector<std::shared_ptr<const Document>> list;
       if (PeekNonWs() == ']') {
@@ -309,16 +383,15 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
         return node;
       }
       while (true) {
-        auto value = ReadDocumentValue(depth + 1);
+        auto value = ReadDocumentValue();
         if (!value) {
           return nullptr;
         }
         list.push_back(std::move(value));
-        const auto more = NextInContainer(']');
-        if (!more.has_value()) {
-          return nullptr;
-        }
-        if (!*more) {
+        if (!NextOrClose(']')) {
+          if (HasFailed()) {
+            return nullptr;
+          }
           break;
         }
       }
@@ -351,7 +424,7 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     if (IsNumberStart(c)) {
       const Aws::String token = ReadNumberToken();
       const auto v = StringUtils::ParseInt64(token);
-      if (v.has_value() && !SaturatedInt64(*v, token)) {
+      if (v.has_value()) {
         auto node = NewJsonNode();
         node->SetInteger(*v);
         return node;
@@ -359,6 +432,11 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
       // Fraction/exponent forms, and integers out of int64 range (magnitude preserved rather than clamped).
       const auto d = StringUtils::ParseDouble(token);
       if (!d.has_value()) {
+        Fail("Malformed JSON: invalid number");
+        return nullptr;
+      }
+      if (!std::isfinite(*d)) {
+        FailUnrepresentable("document number");
         return nullptr;
       }
       auto node = NewJsonNode();
@@ -367,15 +445,6 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     }
     SkipValue();
     return nullptr;
-  }
-
-  // True when ParseInt64 clamped an out-of-range integer, detected via its double magnitude.
-  static bool SaturatedInt64(int64_t value, const Aws::String& token) {
-    if (value != (std::numeric_limits<int64_t>::max)() && value != (std::numeric_limits<int64_t>::min)()) {
-      return false;
-    }
-    const auto d = StringUtils::ParseDouble(token);
-    return d.has_value() && (*d > LLONG_MAX_PLUS_ONE || *d < LLONG_MIN_AS_DOUBLE);
   }
 
   static Aws::String JsonName(const Schema& member) {
@@ -396,25 +465,32 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
   void ConsumeOne(const Fn& fn) {
     const size_t before = m_pos;
     fn();
-    if (m_pos == before) {
+    if (m_pos == before && !HasFailed()) {
       SkipValue();
     }
   }
 
-  // True after a separator, false at the closing bracket, absent when the next token is neither. Modeled
-  // readers treat absent as a break; the document parser rejects, so a document never comes back
-  // silently truncated.
-  Aws::Crt::Optional<bool> NextInContainer(char close) {
+  bool NextOrClose(char close) {
     const char c = PeekNonWs();
     if (c == ',') {
       ++m_pos;
       return true;
     }
     if (c != close) {
-      return {};
+      Fail("Malformed JSON: expected ',' or closing bracket");
+      return false;
     }
     ++m_pos;
     return false;
+  }
+
+  bool ExpectColon() {
+    if (PeekNonWs() != ':') {
+      Fail("Malformed JSON: expected ':' after object key");
+      return false;
+    }
+    ++m_pos;
+    return true;
   }
 
   static bool IsWs(char c) { return c == ' ' || c == '\t' || c == '\n' || c == '\r'; }
@@ -428,6 +504,10 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
   char PeekNonWs() {
     SkipWs();
     return Peek();
+  }
+  bool AtEnd() {
+    SkipWs();
+    return m_pos >= m_bytes.size();
   }
   bool Match(const char* literal) {
     SkipWs();
@@ -497,71 +577,78 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
           out += '\t';
           break;
         case 'u':
-          AppendUnicodeEscape(out);
+          if (!AppendUnicodeEscape(out)) {
+            Fail("Malformed JSON: invalid \\u escape");
+            return {};
+          }
           break;
         default:
-          out += esc;
-          break;
+          Fail("Malformed JSON: invalid escape");
+          return {};
       }
     }
+    Fail("Malformed JSON: unterminated string");
     return {};
   }
 
+  // Held to the same grammar as a value that is read, but numbers are never out of range.
   void SkipValue() {
     const char c = PeekNonWs();
     if (c == '"') {
       ParseString();
-      return;
-    }
-    if (c == '{' || c == '[') {
-      SkipContainer();
-      return;
-    }
-    while (m_pos < m_bytes.size()) {
-      const char ch = m_bytes[m_pos];
-      if (ch == ',' || ch == '}' || ch == ']' || IsWs(ch)) {
-        break;
+    } else if (c == '{' || c == '[') {
+      SkipContainer(c == '{' ? '}' : ']');
+    } else if (IsNumberStart(c)) {
+      if (!StringUtils::ParseDouble(ReadNumberToken()).has_value()) {
+        Fail("Malformed JSON: invalid number");
       }
-      ++m_pos;
+    } else if (!Match("true") && !Match("false") && !Match("null")) {
+      Fail("Malformed JSON: unexpected token");
     }
   }
 
-  void SkipContainer() {
-    int depth = 0;
-    while (m_pos < m_bytes.size()) {
-      const char ch = m_bytes[m_pos];
-      if (ch == '"') {
-        ParseString();
-        continue;
-      }
-      if (ch == '{' || ch == '[') {
-        ++depth;
-        ++m_pos;
-      } else if (ch == '}' || ch == ']') {
-        --depth;
-        ++m_pos;
-        if (depth == 0) {
+  void SkipContainer(char close) {
+    const ContainerScope scope(*this);
+    if (!scope.Entered()) {
+      return;
+    }
+    ++m_pos;
+    if (PeekNonWs() == close) {
+      ++m_pos;
+      return;
+    }
+    bool more = true;
+    while (more && !HasFailed()) {
+      if (close == '}') {
+        if (PeekNonWs() != '"') {
+          Fail("Malformed JSON: expected object key");
           return;
         }
-      } else {
-        ++m_pos;
+        if (!ParseString().has_value() || !ExpectColon()) {
+          return;
+        }
       }
+      SkipValue();
+      more = !HasFailed() && NextOrClose(close);
     }
   }
 
-  void AppendUnicodeEscape(Aws::String& out) {
+  bool AppendUnicodeEscape(Aws::String& out) {
     uint32_t cp = 0;
-    if (!ReadHex4(cp)) {
-      return;
+    if (!ReadHex4(cp) || (cp >= 0xDC00 && cp <= 0xDFFF)) {
+      return false;
     }
-    if (cp >= 0xD800 && cp <= 0xDBFF && m_pos + 1 < m_bytes.size() && m_bytes[m_pos] == '\\' && m_bytes[m_pos + 1] == 'u') {
-      m_pos += 2;
+    if (cp >= 0xD800 && cp <= 0xDBFF) {
       uint32_t low = 0;
-      if (ReadHex4(low) && low >= 0xDC00 && low <= 0xDFFF) {
-        cp = 0x10000 + ((cp - 0xD800) << 10) + (low - 0xDC00);
+      const bool escape = m_pos + 1 < m_bytes.size() && m_bytes[m_pos] == '\\' && m_bytes[m_pos + 1] == 'u';
+      m_pos += escape ? 2 : 0;
+      if (!escape || !ReadHex4(low) || low < 0xDC00 || low > 0xDFFF) {
+        return false;
       }
+      cp = 0x10000 + ((cp - 0xD800) << 10) + (low - 0xDC00);
     }
     AppendUtf8(out, cp);
+    return true;
   }
   bool ReadHex4(uint32_t& out) {
     if (m_pos + 4 > m_bytes.size()) {
@@ -626,3 +713,4 @@ std::shared_ptr<const smithy::schema::Document> JsonShapeDeserializer::ReadDocum
   return m_impl->ReadDocument(schema);
 }
 bool JsonShapeDeserializer::IsNull() { return m_impl->IsNull(); }
+Aws::Crt::Optional<smithy::schema::DeserializerError> JsonShapeDeserializer::GetError() const { return m_impl->GetError(); }

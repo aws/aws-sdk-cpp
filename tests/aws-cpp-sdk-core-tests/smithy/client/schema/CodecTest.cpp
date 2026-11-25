@@ -137,6 +137,15 @@ TEST_F(CodecTest, JsonDeserializeShapeReturnsTypedObject) {
   EXPECT_EQ(p.count, 7);
 }
 
+TEST_F(CodecTest, JsonDeserializeShapeReportsNonObjectRoot) {
+  const Aws::String payload = "hello";
+  JsonCodec codec;
+  Person p;
+  const auto error =
+      codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()), p);
+  EXPECT_TRUE(error.has_value());
+}
+
 TEST_F(CodecTest, CborDeserializeShapeRoundTrip) {
   Person source;
   source.name = "Bob";
@@ -456,15 +465,81 @@ TEST_F(CodecTest, JsonDocumentInt64BoundariesStayExactOnLongRung) {
 }
 
 TEST_F(CodecTest, JsonDocumentAtReaderDepthLimitStillSerializes) {
-  // The reader's cap must stay under the serializer's: a document nested inside a struct spends an
-  // extra writer level on the wrapper, so an equal pair rejects on write what it just accepted on read.
-  for (int depth : {254, 255}) {
+  // The wrapper struct is one container, so the document may nest MAX_NESTING_DEPTH - 1 more.
+  for (int depth : {MAX_NESTING_DEPTH - 2, MAX_NESTING_DEPTH - 1}) {
     Aws::String body = "{\"payload\":" + Aws::String(depth, '[') + "1" + Aws::String(depth, ']') + "}";
     JsonCodec codec;
     DocHolder in;
-    codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
+    ASSERT_FALSE(
+        codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in).has_value())
+        << "parse failed at depth " << depth;
     ASSERT_TRUE(in.HasPayload()) << "parse failed at depth " << depth;
     auto reserialized = codec.Serialize(in.GetSchema(), in);
     EXPECT_TRUE(reserialized.IsSuccess()) << "write failed at depth " << depth;
   }
+}
+
+TEST_F(CodecTest, JsonDocumentPastReaderDepthLimitFails) {
+  const int depth = MAX_NESTING_DEPTH;
+  Aws::String body = "{\"payload\":" + Aws::String(depth, '[') + "1" + Aws::String(depth, ']') + "}";
+  DocHolder in;
+  auto error = JsonCodec().DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
+  ASSERT_TRUE(error.has_value());
+  EXPECT_NE(Aws::String(error->GetMessage()).find("depth"), Aws::String::npos);
+}
+
+namespace {
+Aws::Crt::ByteCursor CursorOf(const Aws::String& s) {
+  return Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(s.data()), s.size());
+}
+}  // namespace
+
+TEST_F(CodecTest, DeserializeShapeSucceedsOnWellFormedInput) {
+  Person p;
+  EXPECT_FALSE(JsonCodec().DeserializeShape(CursorOf("{\"name\":\"Alice\",\"count\":7}"), p).has_value());
+}
+
+TEST_F(CodecTest, DeserializeShapeTreatsEmptyPayloadAsEmptyStruct) {
+  const Aws::String empty;
+  Person json;
+  Person cbor;
+  Person xml;
+  EXPECT_FALSE(JsonCodec().DeserializeShape(CursorOf(empty), json).has_value());
+  EXPECT_FALSE(CborCodec().DeserializeShape(CursorOf(empty), cbor).has_value());
+  EXPECT_FALSE(XmlCodec().DeserializeShape(CursorOf(empty), xml).has_value());
+}
+
+TEST_F(CodecTest, JsonDeserializeShapeReportsUnterminatedString) {
+  Person p;
+  auto error = JsonCodec().DeserializeShape(CursorOf("{\"name\":\"Ali"), p);
+  ASSERT_TRUE(error.has_value());
+  EXPECT_EQ(error->GetExceptionName(), "SerializationException");
+  EXPECT_NE(error->GetMessage().find("unterminated"), Aws::String::npos);
+}
+
+TEST_F(CodecTest, JsonDeserializeShapeTypeMismatchIsNotAnError) {
+  Person p;
+  EXPECT_FALSE(JsonCodec().DeserializeShape(CursorOf("{\"name\":5,\"count\":7}"), p).has_value());
+  EXPECT_EQ(p.count, 7);
+}
+
+TEST_F(CodecTest, CborDeserializeShapeReportsTruncatedInput) {
+  Person source;
+  source.name = "Bob";
+  source.count = 9;
+  CborCodec codec;
+  Aws::String encoded = codec.Serialize(source.GetSchema(), source).GetResult();
+  encoded.resize(encoded.size() - 2);
+  Person p;
+  EXPECT_TRUE(codec.DeserializeShape(CursorOf(encoded), p).has_value());
+}
+
+TEST_F(CodecTest, XmlDeserializeShapeReportsNonXmlInput) {
+  Person p;
+  EXPECT_TRUE(XmlCodec().DeserializeShape(CursorOf("not xml at all"), p).has_value());
+}
+
+TEST_F(CodecTest, XmlDeserializeShapeReportsUnclosedRoot) {
+  Person p;
+  EXPECT_TRUE(XmlCodec().DeserializeShape(CursorOf("<Person><name>Bob</name>"), p).has_value());
 }
