@@ -8,6 +8,7 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/FileSystem.h>
+#include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/crt/auth/Credentials.h>
 #include <aws/crt/http/HttpConnection.h>
 
@@ -16,13 +17,14 @@
 using namespace Aws::Auth;
 using namespace Aws::Client;
 using namespace Aws::FileSystem;
+using namespace Aws::Utils::Threading;
 using namespace Aws::Crt::Auth;
 
 namespace {
 const char PROFILE_AWS_CREDENTIALS_FILE[] = "AWS_SHARED_CREDENTIALS_FILE";
 const char PROFILE_DEFAULT_CREDENTIALS_FILE[] = "credentials";
 const char PROFILE_PROFILE_DIRECTORY[] = ".aws";
-const long DEFAULT_REFRESH_RATE_MS = 300000;
+const long PROFILE_FUTURES_TIMEOUT_MS = 60'000;
 
 std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> GetProfileCrtProvider(
     const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialsConfig) {
@@ -50,21 +52,41 @@ std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> GetProfileCrtProvider(
 
 class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCredentialsProvider {
  public:
-  ProfileCredentialsProviderImp()
+  ProfileCredentialsProviderImp(long refreshRateMs)
       : CrtCredentialsProvider(
             []() -> std::shared_ptr<ICredentialsProvider> {
               CredentialsProviderProfileConfig config;
               return CredentialsProvider::CreateCredentialsProviderProfile(config);
             },
-            std::chrono::milliseconds(DEFAULT_REFRESH_RATE_MS), UserAgentFeature::CREDENTIALS_PROFILE, "ProfileCredentialsProvider") {}
+            std::chrono::milliseconds(PROFILE_FUTURES_TIMEOUT_MS), UserAgentFeature::CREDENTIALS_PROFILE, "ProfileCredentialsProvider"),
+        m_loadFrequencyMs(refreshRateMs) {}
 
-  ProfileCredentialsProviderImp(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialsConfig)
+  ProfileCredentialsProviderImp(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialsConfig,
+                                long refreshRateMs)
       : CrtCredentialsProvider(
             [credentialsConfig]() -> std::shared_ptr<ICredentialsProvider> {
               return GetProfileCrtProvider(credentialsConfig);
             },
-            std::chrono::milliseconds(DEFAULT_REFRESH_RATE_MS), UserAgentFeature::CREDENTIALS_PROFILE,
-            "ProfileCredentialsProvider") {}
+            std::chrono::milliseconds(PROFILE_FUTURES_TIMEOUT_MS), UserAgentFeature::CREDENTIALS_PROFILE,
+            "ProfileCredentialsProvider"),
+        m_loadFrequencyMs(refreshRateMs) {}
+
+
+  void RefreshIfExpired() override {
+    ReaderLockGuard guard(m_reloadLock);
+    if (!IsTimeToRefresh(m_loadFrequencyMs)) {
+       return;
+    }
+
+    guard.UpgradeToWriterLock();
+    if (!IsTimeToRefresh(m_loadFrequencyMs)) { // double-checked lock to avoid refreshing twice
+        return;
+    }
+
+    Reload();
+    AWSCredentialsProvider::Reload();
+  }
+
 
   static Aws::String GetCredentialsProfileFilename() {
     auto credentialsFileNameFromVar = Aws::Environment::GetEnv(PROFILE_AWS_CREDENTIALS_FILE);
@@ -84,26 +106,23 @@ class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCred
       return {};
     }
   }
+
+ private:
+  long m_loadFrequencyMs;
 };
 
-ProfileCredentialsProvider::ProfileCredentialsProvider(long refreshRateMs) : m_impl(std::make_shared<ProfileCredentialsProviderImp>()) {
-  AWS_UNREFERENCED_PARAM(refreshRateMs);
-}
+ProfileCredentialsProvider::ProfileCredentialsProvider(long refreshRateMs) :
+    m_impl(std::make_shared<ProfileCredentialsProviderImp>(refreshRateMs)) {}
 
 ProfileCredentialsProvider::ProfileCredentialsProvider(const char* profile, long refreshRateMs) {
   Aws::Client::ClientConfiguration::CredentialProviderConfiguration credentialsConfig{};
   credentialsConfig.profile = profile;
-  m_impl = std::make_shared<ProfileCredentialsProviderImp>(credentialsConfig);
-  AWS_UNREFERENCED_PARAM(refreshRateMs);
+  m_impl = std::make_shared<ProfileCredentialsProviderImp>(credentialsConfig, refreshRateMs);
 }
 
 ProfileCredentialsProvider::ProfileCredentialsProvider(
     const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialsConfig, long refreshRateMs)
-    : m_impl(std::make_shared<ProfileCredentialsProviderImp>(credentialsConfig)) {
-  AWS_UNREFERENCED_PARAM(refreshRateMs);
-}
-
-void ProfileCredentialsProvider::Reload() {}
+    : m_impl(std::make_shared<ProfileCredentialsProviderImp>(credentialsConfig, refreshRateMs)) {}
 
 Aws::String ProfileCredentialsProvider::GetCredentialsProfileFilename() {
   return ProfileCredentialsProviderImp::GetCredentialsProfileFilename();
