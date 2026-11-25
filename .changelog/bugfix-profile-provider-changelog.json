@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "sbiscigl",
+  "description": "Add ProfileCredentialsProvider constructors without refreshRateMs, log a warning when refreshRateMs is passed or Reload is called since neither does anything, document the 1.11.760 ProfileCredentialsProvider runtime change in the CHANGELOG, and remove a stray deprecation comment from ProfileConfigFileAWSCredentialsProvider."
+}

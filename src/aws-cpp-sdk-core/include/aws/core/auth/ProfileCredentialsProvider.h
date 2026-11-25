@@ -16,21 +16,37 @@ namespace Auth {
 class AWS_CORE_API ProfileCredentialsProvider : public AWSCredentialsProvider {
  public:
   /**
-   * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
+   * Initializes with the default profile. Credentials are refreshed when they expire,
+   * and credentials without an expiration are loaded once.
    */
-  ProfileCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
+  ProfileCredentialsProvider();
 
   /**
-   * Initializes with a profile override and
-   * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
+   * Initializes with the default profile. refreshRateMs is ignored, only kept so existing code compiles, and logs a warning.
    */
-  ProfileCredentialsProvider(const char* profile, long refreshRateMs = REFRESH_THRESHOLD);
+  ProfileCredentialsProvider(long refreshRateMs);
+
+  /**
+   * Initializes with a profile override. Credentials are refreshed when they expire,
+   * and credentials without an expiration are loaded once.
+   */
+  ProfileCredentialsProvider(const char* profile);
+
+  /**
+   * Initializes with a profile override. refreshRateMs is ignored, only kept so existing code compiles, and logs a warning.
+   */
+  ProfileCredentialsProvider(const char* profile, long refreshRateMs);
 
   /**
    * Initializes from a CredentialProviderConfiguration so settings such as allowSystemProxy can flow through.
    */
-  ProfileCredentialsProvider(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config,
-                             long refreshRateMs = REFRESH_THRESHOLD);
+  ProfileCredentialsProvider(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config);
+
+  /**
+   * Initializes from a CredentialProviderConfiguration. refreshRateMs is ignored, only kept so existing code compiles,
+   * and logs a warning.
+   */
+  ProfileCredentialsProvider(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config, long refreshRateMs);
 
   /**
    * Retrieves the credentials if found, otherwise returns empty credential set.
