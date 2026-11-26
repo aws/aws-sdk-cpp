@@ -121,6 +121,11 @@ macro(do_packaging)
         # )
 
     if(${PROJECT_NAME} STREQUAL "aws-cpp-sdk-core")
+        if(ENABLE_ZLIB_REQUEST_COMPRESSION AND NOT BUILD_SHARED_LIBS)
+            set(AWSSDK_CORE_EXPORTS_ZLIB_DEPENDENCY ON)
+        else()
+            set(AWSSDK_CORE_EXPORTS_ZLIB_DEPENDENCY OFF)
+        endif()
         configure_file(
             "${AWS_NATIVE_SDK_ROOT}/toolchains/core-config.cmake"
             "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
