@@ -177,6 +177,10 @@ if (project.hasProperty("protocolTests")) {
     tasks.named<software.amazon.smithy.gradle.tasks.SmithyBuildTask>("smithyBuild") {
         dependsOn("generate-protocol-test-smithy-build")
         getSmithyBuildConfigs().set(files("protocol-tests-smithy-build.json"))
+        // smithy-base takes the output directory from smithy-build.json when that file exists, and otherwise
+        // uses build/smithyprojections. smithy_cpp_gen.py reads ./output, so set it here instead of relying
+        // on a smithy-build.json left behind by an earlier run.
+        getOutputDir().set(layout.projectDirectory.dir("output"))
     }
 }
 
