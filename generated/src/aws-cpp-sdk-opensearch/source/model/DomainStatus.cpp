@@ -119,6 +119,10 @@ DomainStatus& DomainStatus::operator=(JsonView jsonValue) {
     }
     m_logPublishingOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CatalogOptions")) {
+    m_catalogOptions = jsonValue.GetObject("CatalogOptions");
+    m_catalogOptionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ServiceSoftwareOptions")) {
     m_serviceSoftwareOptions = jsonValue.GetObject("ServiceSoftwareOptions");
     m_serviceSoftwareOptionsHasBeenSet = true;
@@ -293,6 +297,10 @@ JsonValue DomainStatus::Jsonize() const {
                                              logPublishingOptionsItem.second.Jsonize());
     }
     payload.WithObject("LogPublishingOptions", std::move(logPublishingOptionsJsonMap));
+  }
+
+  if (m_catalogOptionsHasBeenSet) {
+    payload.WithObject("CatalogOptions", m_catalogOptions.Jsonize());
   }
 
   if (m_serviceSoftwareOptionsHasBeenSet) {

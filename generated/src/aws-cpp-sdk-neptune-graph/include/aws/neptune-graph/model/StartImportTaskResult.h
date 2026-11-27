@@ -149,7 +149,13 @@ class StartImportTaskResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Contains options for controlling the import process. For example, if the
+   * <code>failOnError</code> key is set to <code>false</code>, the import skips
+   * problem data and attempts to continue (whereas if set to <code>true</code>, the
+   * default, or if omitted, the import operation halts immediately when an error is
+   * encountered.</p>
+   */
   inline const ImportOptions& GetImportOptions() const { return m_importOptions; }
   template <typename ImportOptionsT = ImportOptions>
   void SetImportOptions(ImportOptionsT&& value) {

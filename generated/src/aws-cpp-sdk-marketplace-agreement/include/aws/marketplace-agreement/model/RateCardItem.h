@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
+#include <aws/marketplace-agreement/model/RegionalPrice.h>
 
 #include <utility>
 
@@ -70,12 +72,41 @@ class RateCardItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The per-Region price overrides for the product dimension. When a Regional
+   * price is present for an AWS Region, it replaces the default <code>price</code>.
+   * This field is absent when the offer doesn't define regional price overrides.</p>
+   */
+  inline const Aws::Vector<RegionalPrice>& GetRegionalPrices() const { return m_regionalPrices; }
+  inline bool RegionalPricesHasBeenSet() const { return m_regionalPricesHasBeenSet; }
+  template <typename RegionalPricesT = Aws::Vector<RegionalPrice>>
+  void SetRegionalPrices(RegionalPricesT&& value) {
+    m_regionalPricesHasBeenSet = true;
+    m_regionalPrices = std::forward<RegionalPricesT>(value);
+  }
+  template <typename RegionalPricesT = Aws::Vector<RegionalPrice>>
+  RateCardItem& WithRegionalPrices(RegionalPricesT&& value) {
+    SetRegionalPrices(std::forward<RegionalPricesT>(value));
+    return *this;
+  }
+  template <typename RegionalPricesT = RegionalPrice>
+  RateCardItem& AddRegionalPrices(RegionalPricesT&& value) {
+    m_regionalPricesHasBeenSet = true;
+    m_regionalPrices.emplace_back(std::forward<RegionalPricesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dimensionKey;
 
   Aws::String m_price;
+
+  Aws::Vector<RegionalPrice> m_regionalPrices;
   bool m_dimensionKeyHasBeenSet = false;
   bool m_priceHasBeenSet = false;
+  bool m_regionalPricesHasBeenSet = false;
 };
 
 }  // namespace Model

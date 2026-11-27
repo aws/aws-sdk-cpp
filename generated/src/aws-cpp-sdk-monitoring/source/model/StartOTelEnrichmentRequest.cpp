@@ -23,6 +23,9 @@ Aws::String StartOTelEnrichmentRequest::SerializePayload() const {
   if (m_excludeFiltersHasBeenSet) {
     mapSize++;
   }
+  if (m_enableTagEnrichmentHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -40,6 +43,11 @@ Aws::String StartOTelEnrichmentRequest::SerializePayload() const {
     for (const auto& item_0 : m_excludeFilters) {
       item_0.CborEncode(encoder);
     }
+  }
+
+  if (m_enableTagEnrichmentHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EnableTagEnrichment"));
+    encoder.WriteBool(m_enableTagEnrichment);
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

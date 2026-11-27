@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
+#include <aws/neptune-graph/model/ComputeConfiguration.h>
 #include <aws/neptune-graph/model/GraphStatus.h>
 #include <aws/neptune-graph/model/VectorSearchConfiguration.h>
 
@@ -132,16 +133,18 @@ class StopGraphResult {
 
   ///@{
   /**
-   * <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to
-   * the graph.</p>
+   * <p>The compute configuration of the graph: either a provisioned graph or a graph
+   * session.</p>
    */
-  inline int GetProvisionedMemory() const { return m_provisionedMemory; }
-  inline void SetProvisionedMemory(int value) {
-    m_provisionedMemoryHasBeenSet = true;
-    m_provisionedMemory = value;
+  inline const ComputeConfiguration& GetComputeConfiguration() const { return m_computeConfiguration; }
+  template <typename ComputeConfigurationT = ComputeConfiguration>
+  void SetComputeConfiguration(ComputeConfigurationT&& value) {
+    m_computeConfigurationHasBeenSet = true;
+    m_computeConfiguration = std::forward<ComputeConfigurationT>(value);
   }
-  inline StopGraphResult& WithProvisionedMemory(int value) {
-    SetProvisionedMemory(value);
+  template <typename ComputeConfigurationT = ComputeConfiguration>
+  StopGraphResult& WithComputeConfiguration(ComputeConfigurationT&& value) {
+    SetComputeConfiguration(std::forward<ComputeConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -179,7 +182,10 @@ class StopGraphResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The vector-search configuration for the graph, which specifies the vector
+   * dimension to use in the vector index, if any.</p>
+   */
   inline const VectorSearchConfiguration& GetVectorSearchConfiguration() const { return m_vectorSearchConfiguration; }
   template <typename VectorSearchConfigurationT = VectorSearchConfiguration>
   void SetVectorSearchConfiguration(VectorSearchConfigurationT&& value) {
@@ -304,7 +310,7 @@ class StopGraphResult {
 
   Aws::Utils::DateTime m_createTime{};
 
-  int m_provisionedMemory{0};
+  ComputeConfiguration m_computeConfiguration;
 
   Aws::String m_endpoint;
 
@@ -330,7 +336,7 @@ class StopGraphResult {
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
-  bool m_provisionedMemoryHasBeenSet = false;
+  bool m_computeConfigurationHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
   bool m_publicConnectivityHasBeenSet = false;
   bool m_vectorSearchConfigurationHasBeenSet = false;

@@ -151,6 +151,14 @@ GetOTelEnrichmentResult& GetOTelEnrichmentResult::operator=(const Aws::AmazonWeb
                 m_updatedAtHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "EnableTagEnrichment") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_enableTagEnrichment = val.value();
+                }
+                m_enableTagEnrichmentHasBeenSet = true;
+              }
+
               else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -289,6 +297,14 @@ GetOTelEnrichmentResult& GetOTelEnrichmentResult::operator=(const Aws::AmazonWeb
                 }
               }
               m_updatedAtHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EnableTagEnrichment") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_enableTagEnrichment = val.value();
+              }
+              m_enableTagEnrichmentHasBeenSet = true;
             }
 
             else {

@@ -19,8 +19,8 @@ Aws::String RestoreGraphFromSnapshotRequest::SerializePayload() const {
     payload.WithString("graphName", m_graphName);
   }
 
-  if (m_provisionedMemoryHasBeenSet) {
-    payload.WithInteger("provisionedMemory", m_provisionedMemory);
+  if (m_computeConfigurationHasBeenSet) {
+    payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
   }
 
   if (m_deletionProtectionHasBeenSet) {

@@ -11,6 +11,7 @@
 #include <aws/es/model/AdvancedSecurityOptionsStatus.h>
 #include <aws/es/model/AutoTuneOptionsStatus.h>
 #include <aws/es/model/AutomatedSnapshotPauseOptionsStatus.h>
+#include <aws/es/model/CatalogOptionsStatus.h>
 #include <aws/es/model/ChangeProgressDetails.h>
 #include <aws/es/model/CognitoOptionsStatus.h>
 #include <aws/es/model/DeploymentStrategyOptionsStatus.h>
@@ -262,6 +263,25 @@ class ElasticsearchDomainConfig {
 
   ///@{
   /**
+   * <p>The catalog options configured for the given domain and their current
+   * status.</p>
+   */
+  inline const CatalogOptionsStatus& GetCatalogOptions() const { return m_catalogOptions; }
+  inline bool CatalogOptionsHasBeenSet() const { return m_catalogOptionsHasBeenSet; }
+  template <typename CatalogOptionsT = CatalogOptionsStatus>
+  void SetCatalogOptions(CatalogOptionsT&& value) {
+    m_catalogOptionsHasBeenSet = true;
+    m_catalogOptions = std::forward<CatalogOptionsT>(value);
+  }
+  template <typename CatalogOptionsT = CatalogOptionsStatus>
+  ElasticsearchDomainConfig& WithCatalogOptions(CatalogOptionsT&& value) {
+    SetCatalogOptions(std::forward<CatalogOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the <code>DomainEndpointOptions</code> for the Elasticsearch
    * domain.</p>
    */
@@ -452,6 +472,8 @@ class ElasticsearchDomainConfig {
 
   LogPublishingOptionsStatus m_logPublishingOptions;
 
+  CatalogOptionsStatus m_catalogOptions;
+
   DomainEndpointOptionsStatus m_domainEndpointOptions;
 
   AdvancedSecurityOptionsStatus m_advancedSecurityOptions;
@@ -480,6 +502,7 @@ class ElasticsearchDomainConfig {
   bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
   bool m_advancedOptionsHasBeenSet = false;
   bool m_logPublishingOptionsHasBeenSet = false;
+  bool m_catalogOptionsHasBeenSet = false;
   bool m_domainEndpointOptionsHasBeenSet = false;
   bool m_advancedSecurityOptionsHasBeenSet = false;
   bool m_autoTuneOptionsHasBeenSet = false;

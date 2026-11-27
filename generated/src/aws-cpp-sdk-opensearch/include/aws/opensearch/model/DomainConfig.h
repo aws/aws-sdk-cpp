@@ -12,6 +12,7 @@
 #include <aws/opensearch/model/AdvancedSecurityOptionsStatus.h>
 #include <aws/opensearch/model/AutoTuneOptionsStatus.h>
 #include <aws/opensearch/model/AutomatedSnapshotPauseOptionsStatus.h>
+#include <aws/opensearch/model/CatalogOptionsStatus.h>
 #include <aws/opensearch/model/ChangeProgressDetails.h>
 #include <aws/opensearch/model/ClusterConfigStatus.h>
 #include <aws/opensearch/model/CognitoOptionsStatus.h>
@@ -277,6 +278,24 @@ class DomainConfig {
   template <typename LogPublishingOptionsT = LogPublishingOptionsStatus>
   DomainConfig& WithLogPublishingOptions(LogPublishingOptionsT&& value) {
     SetLogPublishingOptions(std::forward<LogPublishingOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The catalog options configured for the domain and their current status.</p>
+   */
+  inline const CatalogOptionsStatus& GetCatalogOptions() const { return m_catalogOptions; }
+  inline bool CatalogOptionsHasBeenSet() const { return m_catalogOptionsHasBeenSet; }
+  template <typename CatalogOptionsT = CatalogOptionsStatus>
+  void SetCatalogOptions(CatalogOptionsT&& value) {
+    m_catalogOptionsHasBeenSet = true;
+    m_catalogOptions = std::forward<CatalogOptionsT>(value);
+  }
+  template <typename CatalogOptionsT = CatalogOptionsStatus>
+  DomainConfig& WithCatalogOptions(CatalogOptionsT&& value) {
+    SetCatalogOptions(std::forward<CatalogOptionsT>(value));
     return *this;
   }
   ///@}
@@ -550,6 +569,8 @@ class DomainConfig {
 
   LogPublishingOptionsStatus m_logPublishingOptions;
 
+  CatalogOptionsStatus m_catalogOptions;
+
   DomainEndpointOptionsStatus m_domainEndpointOptions;
 
   AdvancedSecurityOptionsStatus m_advancedSecurityOptions;
@@ -587,6 +608,7 @@ class DomainConfig {
   bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
   bool m_advancedOptionsHasBeenSet = false;
   bool m_logPublishingOptionsHasBeenSet = false;
+  bool m_catalogOptionsHasBeenSet = false;
   bool m_domainEndpointOptionsHasBeenSet = false;
   bool m_advancedSecurityOptionsHasBeenSet = false;
   bool m_identityCenterOptionsHasBeenSet = false;

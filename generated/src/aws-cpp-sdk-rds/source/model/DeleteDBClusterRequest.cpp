@@ -29,6 +29,10 @@ Aws::String DeleteDBClusterRequest::SerializePayload() const {
     ss << "DeleteAutomatedBackups=" << std::boolalpha << m_deleteAutomatedBackups << "&";
   }
 
+  if (m_deleteDBInstancesHasBeenSet) {
+    ss << "DeleteDBInstances=" << std::boolalpha << m_deleteDBInstances << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

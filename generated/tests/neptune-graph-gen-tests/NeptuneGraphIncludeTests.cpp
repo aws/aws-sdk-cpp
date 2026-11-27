@@ -23,6 +23,7 @@
 #include <aws/neptune-graph/model/CancelImportTaskRequest.h>
 #include <aws/neptune-graph/model/CancelImportTaskResult.h>
 #include <aws/neptune-graph/model/CancelQueryRequest.h>
+#include <aws/neptune-graph/model/ComputeConfiguration.h>
 #include <aws/neptune-graph/model/ConflictException.h>
 #include <aws/neptune-graph/model/ConflictExceptionReason.h>
 #include <aws/neptune-graph/model/CreateGraphRequest.h>
@@ -66,6 +67,7 @@
 #include <aws/neptune-graph/model/GetQueryRequest.h>
 #include <aws/neptune-graph/model/GetQueryResult.h>
 #include <aws/neptune-graph/model/GraphDataSummary.h>
+#include <aws/neptune-graph/model/GraphSessionConfiguration.h>
 #include <aws/neptune-graph/model/GraphSnapshotSummary.h>
 #include <aws/neptune-graph/model/GraphStatus.h>
 #include <aws/neptune-graph/model/GraphSummary.h>
@@ -100,6 +102,7 @@
 #include <aws/neptune-graph/model/PlanCacheType.h>
 #include <aws/neptune-graph/model/PrivateGraphEndpointStatus.h>
 #include <aws/neptune-graph/model/PrivateGraphEndpointSummary.h>
+#include <aws/neptune-graph/model/ProvisionedGraphConfiguration.h>
 #include <aws/neptune-graph/model/QueryLanguage.h>
 #include <aws/neptune-graph/model/QueryState.h>
 #include <aws/neptune-graph/model/QueryStateInput.h>

@@ -12,6 +12,7 @@
 #include <aws/es/model/AdvancedSecurityOptionsInput.h>
 #include <aws/es/model/AutoTuneOptionsInput.h>
 #include <aws/es/model/AutomatedSnapshotPauseRequestOptions.h>
+#include <aws/es/model/CatalogOptions.h>
 #include <aws/es/model/CognitoOptions.h>
 #include <aws/es/model/DeploymentStrategyOptions.h>
 #include <aws/es/model/DomainEndpointOptions.h>
@@ -298,6 +299,25 @@ class CreateElasticsearchDomainRequest : public ElasticsearchServiceRequest {
 
   ///@{
   /**
+   * <p>Options for publishing the domain's data to a data catalog, such as a
+   * service-managed Amazon S3 Tables catalog.</p>
+   */
+  inline const CatalogOptions& GetCatalogOptions() const { return m_catalogOptions; }
+  inline bool CatalogOptionsHasBeenSet() const { return m_catalogOptionsHasBeenSet; }
+  template <typename CatalogOptionsT = CatalogOptions>
+  void SetCatalogOptions(CatalogOptionsT&& value) {
+    m_catalogOptionsHasBeenSet = true;
+    m_catalogOptions = std::forward<CatalogOptionsT>(value);
+  }
+  template <typename CatalogOptionsT = CatalogOptions>
+  CreateElasticsearchDomainRequest& WithCatalogOptions(CatalogOptionsT&& value) {
+    SetCatalogOptions(std::forward<CatalogOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Options to specify configuration that will be applied to the domain
    * endpoint.</p>
    */
@@ -473,6 +493,8 @@ class CreateElasticsearchDomainRequest : public ElasticsearchServiceRequest {
 
   Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
 
+  CatalogOptions m_catalogOptions;
+
   DomainEndpointOptions m_domainEndpointOptions;
 
   AdvancedSecurityOptionsInput m_advancedSecurityOptions;
@@ -500,6 +522,7 @@ class CreateElasticsearchDomainRequest : public ElasticsearchServiceRequest {
   bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
   bool m_advancedOptionsHasBeenSet = false;
   bool m_logPublishingOptionsHasBeenSet = false;
+  bool m_catalogOptionsHasBeenSet = false;
   bool m_domainEndpointOptionsHasBeenSet = false;
   bool m_advancedSecurityOptionsHasBeenSet = false;
   bool m_autoTuneOptionsHasBeenSet = false;

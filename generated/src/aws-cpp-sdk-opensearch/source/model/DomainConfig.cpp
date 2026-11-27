@@ -66,6 +66,10 @@ DomainConfig& DomainConfig::operator=(JsonView jsonValue) {
     m_logPublishingOptions = jsonValue.GetObject("LogPublishingOptions");
     m_logPublishingOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CatalogOptions")) {
+    m_catalogOptions = jsonValue.GetObject("CatalogOptions");
+    m_catalogOptionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DomainEndpointOptions")) {
     m_domainEndpointOptions = jsonValue.GetObject("DomainEndpointOptions");
     m_domainEndpointOptionsHasBeenSet = true;
@@ -174,6 +178,10 @@ JsonValue DomainConfig::Jsonize() const {
 
   if (m_logPublishingOptionsHasBeenSet) {
     payload.WithObject("LogPublishingOptions", m_logPublishingOptions.Jsonize());
+  }
+
+  if (m_catalogOptionsHasBeenSet) {
+    payload.WithObject("CatalogOptions", m_catalogOptions.Jsonize());
   }
 
   if (m_domainEndpointOptionsHasBeenSet) {

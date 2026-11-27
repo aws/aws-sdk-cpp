@@ -13,6 +13,7 @@
 #include <aws/opensearch/model/AdvancedSecurityOptionsInput.h>
 #include <aws/opensearch/model/AutoTuneOptionsInput.h>
 #include <aws/opensearch/model/AutomatedSnapshotPauseRequestOptions.h>
+#include <aws/opensearch/model/CatalogOptions.h>
 #include <aws/opensearch/model/ClusterConfig.h>
 #include <aws/opensearch/model/CognitoOptions.h>
 #include <aws/opensearch/model/DeploymentStrategyOptions.h>
@@ -336,6 +337,25 @@ class CreateDomainRequest : public OpenSearchServiceRequest {
 
   ///@{
   /**
+   * <p>Options for publishing the domain's data to a data catalog, such as a
+   * service-managed Amazon S3 Tables catalog.</p>
+   */
+  inline const CatalogOptions& GetCatalogOptions() const { return m_catalogOptions; }
+  inline bool CatalogOptionsHasBeenSet() const { return m_catalogOptionsHasBeenSet; }
+  template <typename CatalogOptionsT = CatalogOptions>
+  void SetCatalogOptions(CatalogOptionsT&& value) {
+    m_catalogOptionsHasBeenSet = true;
+    m_catalogOptions = std::forward<CatalogOptionsT>(value);
+  }
+  template <typename CatalogOptionsT = CatalogOptions>
+  CreateDomainRequest& WithCatalogOptions(CatalogOptionsT&& value) {
+    SetCatalogOptions(std::forward<CatalogOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Additional options for the domain endpoint, such as whether to require HTTPS
    * for all traffic.</p>
    */
@@ -590,6 +610,8 @@ class CreateDomainRequest : public OpenSearchServiceRequest {
 
   Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
 
+  CatalogOptions m_catalogOptions;
+
   DomainEndpointOptions m_domainEndpointOptions;
 
   AdvancedSecurityOptionsInput m_advancedSecurityOptions;
@@ -626,6 +648,7 @@ class CreateDomainRequest : public OpenSearchServiceRequest {
   bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
   bool m_advancedOptionsHasBeenSet = false;
   bool m_logPublishingOptionsHasBeenSet = false;
+  bool m_catalogOptionsHasBeenSet = false;
   bool m_domainEndpointOptionsHasBeenSet = false;
   bool m_advancedSecurityOptionsHasBeenSet = false;
   bool m_identityCenterOptionsHasBeenSet = false;

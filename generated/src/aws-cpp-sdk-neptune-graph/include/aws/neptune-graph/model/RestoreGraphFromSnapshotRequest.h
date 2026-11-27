@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/NeptuneGraphRequest.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
+#include <aws/neptune-graph/model/ComputeConfiguration.h>
 
 #include <utility>
 
@@ -75,17 +76,22 @@ class RestoreGraphFromSnapshotRequest : public NeptuneGraphRequest {
 
   ///@{
   /**
-   * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-   * the graph.</p> <p>Min = 16</p>
+   * <p>The compute configuration for the restored graph. A snapshot can be restored
+   * into either a provisioned graph or a graph session, regardless of the compute
+   * type of the source graph. A snapshot taken from a provisioned graph can be
+   * restored into a graph session as long as the data in the snapshot fits within
+   * the graph session.</p>
    */
-  inline int GetProvisionedMemory() const { return m_provisionedMemory; }
-  inline bool ProvisionedMemoryHasBeenSet() const { return m_provisionedMemoryHasBeenSet; }
-  inline void SetProvisionedMemory(int value) {
-    m_provisionedMemoryHasBeenSet = true;
-    m_provisionedMemory = value;
+  inline const ComputeConfiguration& GetComputeConfiguration() const { return m_computeConfiguration; }
+  inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }
+  template <typename ComputeConfigurationT = ComputeConfiguration>
+  void SetComputeConfiguration(ComputeConfigurationT&& value) {
+    m_computeConfigurationHasBeenSet = true;
+    m_computeConfiguration = std::forward<ComputeConfigurationT>(value);
   }
-  inline RestoreGraphFromSnapshotRequest& WithProvisionedMemory(int value) {
-    SetProvisionedMemory(value);
+  template <typename ComputeConfigurationT = ComputeConfiguration>
+  RestoreGraphFromSnapshotRequest& WithComputeConfiguration(ComputeConfigurationT&& value) {
+    SetComputeConfiguration(std::forward<ComputeConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -172,7 +178,7 @@ class RestoreGraphFromSnapshotRequest : public NeptuneGraphRequest {
 
   Aws::String m_graphName;
 
-  int m_provisionedMemory{0};
+  ComputeConfiguration m_computeConfiguration;
 
   bool m_deletionProtection{false};
 
@@ -183,7 +189,7 @@ class RestoreGraphFromSnapshotRequest : public NeptuneGraphRequest {
   bool m_publicConnectivity{false};
   bool m_snapshotIdentifierHasBeenSet = false;
   bool m_graphNameHasBeenSet = false;
-  bool m_provisionedMemoryHasBeenSet = false;
+  bool m_computeConfigurationHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_replicaCountHasBeenSet = false;

@@ -86,12 +86,41 @@ class UpdateOTelEnrichmentRequest : public CloudWatchRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether enriched metrics include resource tag labels. If
+   * <code>true</code>, enriched metrics include resource tag labels. If
+   * <code>false</code>, they include resource ARN labels but no resource tag labels.
+   * If you omit this parameter, the stored value is not changed. The operation also
+   * replaces the stored filters, so to change only this setting, specify the current
+   * <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same
+   * request.</p> <p>When <code>EnableTagEnrichment</code> is <code>true</code>,
+   * enriched metrics that carry resource tag labels are charged at the OTel
+   * enrichment rate. For more information, see <a
+   * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+   * Pricing</a>.</p>
+   */
+  inline bool GetEnableTagEnrichment() const { return m_enableTagEnrichment; }
+  inline bool EnableTagEnrichmentHasBeenSet() const { return m_enableTagEnrichmentHasBeenSet; }
+  inline void SetEnableTagEnrichment(bool value) {
+    m_enableTagEnrichmentHasBeenSet = true;
+    m_enableTagEnrichment = value;
+  }
+  inline UpdateOTelEnrichmentRequest& WithEnableTagEnrichment(bool value) {
+    SetEnableTagEnrichment(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<OTelEnrichmentMetricSelector> m_includeFilters;
 
   Aws::Vector<OTelEnrichmentMetricSelector> m_excludeFilters;
+
+  bool m_enableTagEnrichment{false};
   bool m_includeFiltersHasBeenSet = false;
   bool m_excludeFiltersHasBeenSet = false;
+  bool m_enableTagEnrichmentHasBeenSet = false;
 };
 
 }  // namespace Model

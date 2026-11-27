@@ -113,6 +113,22 @@ class StartOTelEnrichmentResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Specifies whether enriched metrics include resource tag labels for the
+   * account.</p>
+   */
+  inline bool GetEnableTagEnrichment() const { return m_enableTagEnrichment; }
+  inline void SetEnableTagEnrichment(bool value) {
+    m_enableTagEnrichmentHasBeenSet = true;
+    m_enableTagEnrichment = value;
+  }
+  inline StartOTelEnrichmentResult& WithEnableTagEnrichment(bool value) {
+    SetEnableTagEnrichment(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -152,6 +168,8 @@ class StartOTelEnrichmentResult {
 
   Aws::Utils::DateTime m_updatedAt{};
 
+  bool m_enableTagEnrichment{false};
+
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
@@ -160,6 +178,7 @@ class StartOTelEnrichmentResult {
   bool m_excludeFiltersHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_enableTagEnrichmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

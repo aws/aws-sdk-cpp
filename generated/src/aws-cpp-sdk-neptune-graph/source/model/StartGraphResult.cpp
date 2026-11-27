@@ -46,9 +46,9 @@ StartGraphResult& StartGraphResult::operator=(const Aws::AmazonWebServiceResult<
     m_createTime = jsonValue.GetDouble("createTime");
     m_createTimeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("provisionedMemory")) {
-    m_provisionedMemory = jsonValue.GetInteger("provisionedMemory");
-    m_provisionedMemoryHasBeenSet = true;
+  if (jsonValue.ValueExists("computeConfiguration")) {
+    m_computeConfiguration = jsonValue.GetObject("computeConfiguration");
+    m_computeConfigurationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("endpoint")) {
     m_endpoint = jsonValue.GetString("endpoint");

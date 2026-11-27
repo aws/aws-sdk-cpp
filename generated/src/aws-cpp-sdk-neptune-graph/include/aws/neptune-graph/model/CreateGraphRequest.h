@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/NeptuneGraphRequest.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
+#include <aws/neptune-graph/model/ComputeConfiguration.h>
 #include <aws/neptune-graph/model/VectorSearchConfiguration.h>
 
 #include <utility>
@@ -175,17 +176,22 @@ class CreateGraphRequest : public NeptuneGraphRequest {
 
   ///@{
   /**
-   * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-   * the graph. Min = 16</p>
+   * <p>The compute configuration for the new graph. Specify
+   * <code>provisionedGraph</code> to create a provisioned graph with dedicated,
+   * always-available compute, or <code>graphSession</code> to create a graph session
+   * that uses ephemeral compute bootstrapped on demand when a query is sent, and is
+   * subject to cold start latency.</p>
    */
-  inline int GetProvisionedMemory() const { return m_provisionedMemory; }
-  inline bool ProvisionedMemoryHasBeenSet() const { return m_provisionedMemoryHasBeenSet; }
-  inline void SetProvisionedMemory(int value) {
-    m_provisionedMemoryHasBeenSet = true;
-    m_provisionedMemory = value;
+  inline const ComputeConfiguration& GetComputeConfiguration() const { return m_computeConfiguration; }
+  inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }
+  template <typename ComputeConfigurationT = ComputeConfiguration>
+  void SetComputeConfiguration(ComputeConfigurationT&& value) {
+    m_computeConfigurationHasBeenSet = true;
+    m_computeConfiguration = std::forward<ComputeConfigurationT>(value);
   }
-  inline CreateGraphRequest& WithProvisionedMemory(int value) {
-    SetProvisionedMemory(value);
+  template <typename ComputeConfigurationT = ComputeConfiguration>
+  CreateGraphRequest& WithComputeConfiguration(ComputeConfigurationT&& value) {
+    SetComputeConfiguration(std::forward<ComputeConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -204,7 +210,7 @@ class CreateGraphRequest : public NeptuneGraphRequest {
 
   bool m_deletionProtection{false};
 
-  int m_provisionedMemory{0};
+  ComputeConfiguration m_computeConfiguration;
   bool m_graphNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_publicConnectivityHasBeenSet = false;
@@ -212,7 +218,7 @@ class CreateGraphRequest : public NeptuneGraphRequest {
   bool m_vectorSearchConfigurationHasBeenSet = false;
   bool m_replicaCountHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
-  bool m_provisionedMemoryHasBeenSet = false;
+  bool m_computeConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

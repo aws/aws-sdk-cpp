@@ -80,6 +80,9 @@
 #include <aws/opensearch/model/CapabilityFailure.h>
 #include <aws/opensearch/model/CapabilityFailureReason.h>
 #include <aws/opensearch/model/CapabilityStatus.h>
+#include <aws/opensearch/model/CatalogConfiguration.h>
+#include <aws/opensearch/model/CatalogOptions.h>
+#include <aws/opensearch/model/CatalogOptionsStatus.h>
 #include <aws/opensearch/model/CategoryDiffResult.h>
 #include <aws/opensearch/model/ChangeProgressDetails.h>
 #include <aws/opensearch/model/ChangeProgressStage.h>
@@ -421,6 +424,7 @@
 #include <aws/opensearch/model/RollbackServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/RollbackServiceSoftwareUpdateResult.h>
 #include <aws/opensearch/model/S3GlueDataCatalog.h>
+#include <aws/opensearch/model/S3TablesEncryptionConfiguration.h>
 #include <aws/opensearch/model/S3VectorsEngine.h>
 #include <aws/opensearch/model/SAMLIdp.h>
 #include <aws/opensearch/model/SAMLOptionsInput.h>
@@ -434,6 +438,7 @@
 #include <aws/opensearch/model/ScheduledBy.h>
 #include <aws/opensearch/model/SecurityLakeDirectQueryDataSource.h>
 #include <aws/opensearch/model/ServerlessVectorAcceleration.h>
+#include <aws/opensearch/model/ServiceManagedS3TablesCatalog.h>
 #include <aws/opensearch/model/ServiceOptions.h>
 #include <aws/opensearch/model/ServiceSoftwareOptions.h>
 #include <aws/opensearch/model/SkipUnavailableStatus.h>

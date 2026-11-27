@@ -56,6 +56,10 @@ Aws::String UpdateElasticsearchDomainConfigRequest::SerializePayload() const {
     payload.WithObject("LogPublishingOptions", std::move(logPublishingOptionsJsonMap));
   }
 
+  if (m_catalogOptionsHasBeenSet) {
+    payload.WithObject("CatalogOptions", m_catalogOptions.Jsonize());
+  }
+
   if (m_domainEndpointOptionsHasBeenSet) {
     payload.WithObject("DomainEndpointOptions", m_domainEndpointOptions.Jsonize());
   }

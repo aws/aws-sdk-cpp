@@ -12,6 +12,7 @@
 #include <aws/opensearch/model/AdvancedSecurityOptions.h>
 #include <aws/opensearch/model/AutoTuneOptionsOutput.h>
 #include <aws/opensearch/model/AutomatedSnapshotPauseOptions.h>
+#include <aws/opensearch/model/CatalogOptions.h>
 #include <aws/opensearch/model/ChangeProgressDetails.h>
 #include <aws/opensearch/model/ClusterConfig.h>
 #include <aws/opensearch/model/CognitoOptions.h>
@@ -505,6 +506,24 @@ class DomainStatus {
 
   ///@{
   /**
+   * <p>The catalog options for the domain.</p>
+   */
+  inline const CatalogOptions& GetCatalogOptions() const { return m_catalogOptions; }
+  inline bool CatalogOptionsHasBeenSet() const { return m_catalogOptionsHasBeenSet; }
+  template <typename CatalogOptionsT = CatalogOptions>
+  void SetCatalogOptions(CatalogOptionsT&& value) {
+    m_catalogOptionsHasBeenSet = true;
+    m_catalogOptions = std::forward<CatalogOptionsT>(value);
+  }
+  template <typename CatalogOptionsT = CatalogOptions>
+  DomainStatus& WithCatalogOptions(CatalogOptionsT&& value) {
+    SetCatalogOptions(std::forward<CatalogOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current status of the domain's service software.</p>
    */
   inline const ServiceSoftwareOptions& GetServiceSoftwareOptions() const { return m_serviceSoftwareOptions; }
@@ -824,6 +843,8 @@ class DomainStatus {
 
   Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
 
+  CatalogOptions m_catalogOptions;
+
   ServiceSoftwareOptions m_serviceSoftwareOptions;
 
   DomainEndpointOptions m_domainEndpointOptions;
@@ -876,6 +897,7 @@ class DomainStatus {
   bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
   bool m_advancedOptionsHasBeenSet = false;
   bool m_logPublishingOptionsHasBeenSet = false;
+  bool m_catalogOptionsHasBeenSet = false;
   bool m_serviceSoftwareOptionsHasBeenSet = false;
   bool m_domainEndpointOptionsHasBeenSet = false;
   bool m_advancedSecurityOptionsHasBeenSet = false;

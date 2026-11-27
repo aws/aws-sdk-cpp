@@ -50,6 +50,9 @@
 #include <aws/es/model/CancelElasticsearchServiceSoftwareUpdateRequest.h>
 #include <aws/es/model/CancelElasticsearchServiceSoftwareUpdateResult.h>
 #include <aws/es/model/CancelledChangeProperty.h>
+#include <aws/es/model/CatalogConfiguration.h>
+#include <aws/es/model/CatalogOptions.h>
+#include <aws/es/model/CatalogOptionsStatus.h>
 #include <aws/es/model/ChangeProgressDetails.h>
 #include <aws/es/model/ChangeProgressStage.h>
 #include <aws/es/model/ChangeProgressStatusDetails.h>
@@ -225,12 +228,14 @@
 #include <aws/es/model/RevokeVpcEndpointAccessRequest.h>
 #include <aws/es/model/RevokeVpcEndpointAccessResult.h>
 #include <aws/es/model/RollbackOnDisable.h>
+#include <aws/es/model/S3TablesEncryptionConfiguration.h>
 #include <aws/es/model/SAMLIdp.h>
 #include <aws/es/model/SAMLOptionsInput.h>
 #include <aws/es/model/SAMLOptionsOutput.h>
 #include <aws/es/model/ScheduledAutoTuneActionType.h>
 #include <aws/es/model/ScheduledAutoTuneDetails.h>
 #include <aws/es/model/ScheduledAutoTuneSeverityType.h>
+#include <aws/es/model/ServiceManagedS3TablesCatalog.h>
 #include <aws/es/model/ServiceSoftwareOptions.h>
 #include <aws/es/model/SnapshotOptions.h>
 #include <aws/es/model/SnapshotOptionsStatus.h>

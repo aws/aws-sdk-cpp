@@ -13,6 +13,7 @@
 #include <aws/opensearch/model/AdvancedSecurityOptionsInput.h>
 #include <aws/opensearch/model/AutoTuneOptions.h>
 #include <aws/opensearch/model/AutomatedSnapshotPauseRequestOptions.h>
+#include <aws/opensearch/model/CatalogOptions.h>
 #include <aws/opensearch/model/ClusterConfig.h>
 #include <aws/opensearch/model/CognitoOptions.h>
 #include <aws/opensearch/model/DeploymentStrategyOptions.h>
@@ -267,6 +268,25 @@ class UpdateDomainConfigRequest : public OpenSearchServiceRequest {
   inline UpdateDomainConfigRequest& AddLogPublishingOptions(LogType key, LogPublishingOption value) {
     m_logPublishingOptionsHasBeenSet = true;
     m_logPublishingOptions.emplace(key, value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Options for publishing the domain's data to a data catalog, such as a
+   * service-managed Amazon S3 Tables catalog.</p>
+   */
+  inline const CatalogOptions& GetCatalogOptions() const { return m_catalogOptions; }
+  inline bool CatalogOptionsHasBeenSet() const { return m_catalogOptionsHasBeenSet; }
+  template <typename CatalogOptionsT = CatalogOptions>
+  void SetCatalogOptions(CatalogOptionsT&& value) {
+    m_catalogOptionsHasBeenSet = true;
+    m_catalogOptions = std::forward<CatalogOptionsT>(value);
+  }
+  template <typename CatalogOptionsT = CatalogOptions>
+  UpdateDomainConfigRequest& WithCatalogOptions(CatalogOptionsT&& value) {
+    SetCatalogOptions(std::forward<CatalogOptionsT>(value));
     return *this;
   }
   ///@}
@@ -599,6 +619,8 @@ class UpdateDomainConfigRequest : public OpenSearchServiceRequest {
 
   Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
 
+  CatalogOptions m_catalogOptions;
+
   EncryptionAtRestOptions m_encryptionAtRestOptions;
 
   DomainEndpointOptions m_domainEndpointOptions;
@@ -640,6 +662,7 @@ class UpdateDomainConfigRequest : public OpenSearchServiceRequest {
   bool m_accessPoliciesHasBeenSet = false;
   bool m_iPAddressTypeHasBeenSet = false;
   bool m_logPublishingOptionsHasBeenSet = false;
+  bool m_catalogOptionsHasBeenSet = false;
   bool m_encryptionAtRestOptionsHasBeenSet = false;
   bool m_domainEndpointOptionsHasBeenSet = false;
   bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;

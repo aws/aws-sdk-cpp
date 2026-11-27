@@ -88,6 +88,35 @@ RateCardItem& RateCardItem::operator=(const std::shared_ptr<Aws::Crt::Cbor::Cbor
                   }
                 }
                 m_priceHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "regionalPrices") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_regionalPrices.push_back(RegionalPrice(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_regionalPrices.push_back(RegionalPrice(decoder));
+                    }
+                  }
+                }
+                m_regionalPricesHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -173,6 +202,35 @@ RateCardItem& RateCardItem::operator=(const std::shared_ptr<Aws::Crt::Cbor::Cbor
                 }
               }
               m_priceHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "regionalPrices") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_regionalPrices.push_back(RegionalPrice(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_regionalPrices.push_back(RegionalPrice(decoder));
+                  }
+                }
+              }
+              m_regionalPricesHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -195,6 +253,9 @@ void RateCardItem::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_priceHasBeenSet) {
     mapSize++;
   }
+  if (m_regionalPricesHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -206,6 +267,14 @@ void RateCardItem::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_priceHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("price"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_price.c_str()));
+  }
+
+  if (m_regionalPricesHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("regionalPrices"));
+    encoder.WriteArrayStart(m_regionalPrices.size());
+    for (const auto& item_0 : m_regionalPrices) {
+      item_0.CborEncode(encoder);
+    }
   }
 }
 

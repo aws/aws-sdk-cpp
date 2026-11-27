@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
+#include <aws/neptune-graph/model/ComputeConfiguration.h>
 #include <aws/neptune-graph/model/GraphStatus.h>
 #include <aws/neptune-graph/model/VectorSearchConfiguration.h>
 
@@ -135,16 +136,18 @@ class CreateGraphResult {
 
   ///@{
   /**
-   * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-   * the graph.</p> <p>Min = 16</p>
+   * <p>The compute configuration of the graph: either a provisioned graph or a graph
+   * session.</p>
    */
-  inline int GetProvisionedMemory() const { return m_provisionedMemory; }
-  inline void SetProvisionedMemory(int value) {
-    m_provisionedMemoryHasBeenSet = true;
-    m_provisionedMemory = value;
+  inline const ComputeConfiguration& GetComputeConfiguration() const { return m_computeConfiguration; }
+  template <typename ComputeConfigurationT = ComputeConfiguration>
+  void SetComputeConfiguration(ComputeConfigurationT&& value) {
+    m_computeConfigurationHasBeenSet = true;
+    m_computeConfiguration = std::forward<ComputeConfigurationT>(value);
   }
-  inline CreateGraphResult& WithProvisionedMemory(int value) {
-    SetProvisionedMemory(value);
+  template <typename ComputeConfigurationT = ComputeConfiguration>
+  CreateGraphResult& WithComputeConfiguration(ComputeConfigurationT&& value) {
+    SetComputeConfiguration(std::forward<ComputeConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -314,7 +317,7 @@ class CreateGraphResult {
 
   Aws::Utils::DateTime m_createTime{};
 
-  int m_provisionedMemory{0};
+  ComputeConfiguration m_computeConfiguration;
 
   Aws::String m_endpoint;
 
@@ -340,7 +343,7 @@ class CreateGraphResult {
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
-  bool m_provisionedMemoryHasBeenSet = false;
+  bool m_computeConfigurationHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
   bool m_publicConnectivityHasBeenSet = false;
   bool m_vectorSearchConfigurationHasBeenSet = false;

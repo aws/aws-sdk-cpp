@@ -60,6 +60,10 @@ Aws::String UpdateDomainConfigRequest::SerializePayload() const {
     payload.WithObject("LogPublishingOptions", std::move(logPublishingOptionsJsonMap));
   }
 
+  if (m_catalogOptionsHasBeenSet) {
+    payload.WithObject("CatalogOptions", m_catalogOptions.Jsonize());
+  }
+
   if (m_encryptionAtRestOptionsHasBeenSet) {
     payload.WithObject("EncryptionAtRestOptions", m_encryptionAtRestOptions.Jsonize());
   }

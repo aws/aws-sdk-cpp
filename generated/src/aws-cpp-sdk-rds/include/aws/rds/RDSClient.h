@@ -1461,7 +1461,10 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
    * and can't be recovered. Manual DB cluster snapshots of the specified DB cluster
    * are not deleted.</p> <p>If you're deleting a Multi-AZ DB cluster with read
    * replicas, all cluster members are terminated and read replicas are promoted to
-   * standalone instances.</p> <p>For more information on Amazon Aurora, see <a
+   * standalone instances.</p> <p>To delete an Amazon Aurora DB cluster and all of
+   * its DB instances in a single call, set <code>DeleteDBInstances</code> to
+   * <code>true</code>. Otherwise, delete each DB instance in the DB cluster before
+   * you delete the DB cluster.</p> <p>For more information on Amazon Aurora, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
    * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
    * more information on Multi-AZ DB clusters, see <a

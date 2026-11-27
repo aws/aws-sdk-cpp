@@ -121,6 +121,45 @@ class DeleteDBClusterRequest : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to delete all DB instances in the DB cluster together with
+   * the DB cluster. If you set this value to <code>true</code>, RDS deletes every DB
+   * instance in the DB cluster and then deletes the DB cluster. You don't need to
+   * call <code>DeleteDBInstance</code> for each DB instance first. If you set this
+   * value to <code>false</code> or don't specify it, RDS deletes the DB cluster only
+   * after you delete each of its DB instances.</p> <p>You must have permission to
+   * call <code>DeleteDBInstance</code> on every DB instance in the DB cluster. If
+   * RDS can't delete a DB instance in the DB cluster, the request fails and RDS
+   * doesn't delete the DB cluster or any of its DB instances.</p>
+   * <p>Constraints:</p> <ul> <li> <p>You can't specify this parameter for a DB
+   * cluster that is a member of an Aurora global database. Remove the DB cluster
+   * from the global database first.</p> </li> <li> <p>You can't specify this
+   * parameter for an Aurora Limitless Database DB cluster.</p> </li> <li>
+   * <p>Deletion protection must be turned off for the DB cluster.</p> </li> <li>
+   * <p>No DB instance in the DB cluster can be in the <code>deleting</code> state or
+   * be switching over, be the blue DB instance of an active blue/green deployment,
+   * or have an active zero-ETL integration.</p> </li> <li> <p>No DB instance in the
+   * DB cluster can be the source of an Aurora read replica DB cluster, or have a
+   * read replica that is being created or a cross-Region read replica that is being
+   * restored.</p> </li> <li> <p>The DB cluster can't be in the <code>stopping</code>
+   * state.</p> </li> </ul> <p>If the DB cluster doesn't contain any DB instances,
+   * RDS deletes the DB cluster the same way as when you don't specify this
+   * parameter.</p> <p>Default: <code>false</code> </p> <p>Valid for Cluster Type:
+   * Aurora MySQL and Aurora PostgreSQL DB clusters only</p>
+   */
+  inline bool GetDeleteDBInstances() const { return m_deleteDBInstances; }
+  inline bool DeleteDBInstancesHasBeenSet() const { return m_deleteDBInstancesHasBeenSet; }
+  inline void SetDeleteDBInstances(bool value) {
+    m_deleteDBInstancesHasBeenSet = true;
+    m_deleteDBInstances = value;
+  }
+  inline DeleteDBClusterRequest& WithDeleteDBInstances(bool value) {
+    SetDeleteDBInstances(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBClusterIdentifier;
 
@@ -129,10 +168,13 @@ class DeleteDBClusterRequest : public RDSRequest {
   Aws::String m_finalDBSnapshotIdentifier;
 
   bool m_deleteAutomatedBackups{false};
+
+  bool m_deleteDBInstances{false};
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_skipFinalSnapshotHasBeenSet = false;
   bool m_finalDBSnapshotIdentifierHasBeenSet = false;
   bool m_deleteAutomatedBackupsHasBeenSet = false;
+  bool m_deleteDBInstancesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -19,8 +19,8 @@ Aws::String UpdateGraphRequest::SerializePayload() const {
     payload.WithBool("publicConnectivity", m_publicConnectivity);
   }
 
-  if (m_provisionedMemoryHasBeenSet) {
-    payload.WithInteger("provisionedMemory", m_provisionedMemory);
+  if (m_computeConfigurationHasBeenSet) {
+    payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
   }
 
   if (m_deletionProtectionHasBeenSet) {

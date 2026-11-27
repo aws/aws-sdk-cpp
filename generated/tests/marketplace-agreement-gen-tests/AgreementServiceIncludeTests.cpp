@@ -188,6 +188,7 @@
 #include <aws/marketplace-agreement/model/PurchaseOrder.h>
 #include <aws/marketplace-agreement/model/RateCardItem.h>
 #include <aws/marketplace-agreement/model/RecurringPaymentTerm.h>
+#include <aws/marketplace-agreement/model/RegionalPrice.h>
 #include <aws/marketplace-agreement/model/RejectAgreementApprovalRequest.h>
 #include <aws/marketplace-agreement/model/RejectAgreementApprovalResult.h>
 #include <aws/marketplace-agreement/model/RejectAgreementCancellationRequestRequest.h>

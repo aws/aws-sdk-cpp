@@ -34,10 +34,6 @@ GraphSummary& GraphSummary::operator=(JsonView jsonValue) {
     m_status = GraphStatusMapper::GetGraphStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("provisionedMemory")) {
-    m_provisionedMemory = jsonValue.GetInteger("provisionedMemory");
-    m_provisionedMemoryHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("publicConnectivity")) {
     m_publicConnectivity = jsonValue.GetBool("publicConnectivity");
     m_publicConnectivityHasBeenSet = true;
@@ -57,6 +53,10 @@ GraphSummary& GraphSummary::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("deletionProtection")) {
     m_deletionProtection = jsonValue.GetBool("deletionProtection");
     m_deletionProtectionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("computeConfiguration")) {
+    m_computeConfiguration = jsonValue.GetObject("computeConfiguration");
+    m_computeConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -80,10 +80,6 @@ JsonValue GraphSummary::Jsonize() const {
     payload.WithString("status", GraphStatusMapper::GetNameForGraphStatus(m_status));
   }
 
-  if (m_provisionedMemoryHasBeenSet) {
-    payload.WithInteger("provisionedMemory", m_provisionedMemory);
-  }
-
   if (m_publicConnectivityHasBeenSet) {
     payload.WithBool("publicConnectivity", m_publicConnectivity);
   }
@@ -102,6 +98,10 @@ JsonValue GraphSummary::Jsonize() const {
 
   if (m_deletionProtectionHasBeenSet) {
     payload.WithBool("deletionProtection", m_deletionProtection);
+  }
+
+  if (m_computeConfigurationHasBeenSet) {
+    payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
   }
 
   return payload;

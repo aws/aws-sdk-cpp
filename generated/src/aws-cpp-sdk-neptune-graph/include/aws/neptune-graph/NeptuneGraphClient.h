@@ -159,7 +159,15 @@ class AWS_NEPTUNEGRAPH_API NeptuneGraphClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Creates a new Neptune Analytics graph.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a new Neptune Analytics graph.</p> <p>Neptune Analytics supports two
+   * types of graphs, selected using <code>computeConfiguration</code>:</p> <ul> <li>
+   * <p> <i>Provisioned graphs</i> use dedicated compute that is always available.
+   * Use provisioned graphs for workloads that require higher memory or predictable
+   * latency.</p> </li> <li> <p> <i>Graph sessions</i> use ephemeral compute that is
+   * bootstrapped when a query is sent to the graph. The compute is automatically
+   * stopped after a few minutes with no traffic. The next query sent to the graph
+   * bootstraps the compute again, so queries that bootstrap the compute are subject
+   * to cold start latency.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreateGraph">AWS
    * API Reference</a></p>
    */
@@ -217,7 +225,15 @@ class AWS_NEPTUNEGRAPH_API NeptuneGraphClient : public Aws::Client::AWSJsonClien
    * href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
    * CSV format</a> or the <a
    * href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
-   * load format</a>.</p><p><h3>See Also:</h3>   <a
+   * load format</a>.</p>  <p>Graph session cannot be created using this API.
+   * Create an empty Graph Session using <a
+   * href="https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CreateGraph.html">CreateGraph</a>
+   * or restore a snapshot as Graph Session using <a
+   * href="https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_RestoreGraphFromSnapshot.html">RestoreGraphFromSnapshot</a>
+   * and use <a
+   * href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/batch-load.html">neptune.load
+   * CALL procedure</a> to load data into the Graph Session instead.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreateGraphUsingImportTask">AWS
    * API Reference</a></p>
    */
@@ -836,7 +852,9 @@ class AWS_NEPTUNEGRAPH_API NeptuneGraphClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Starts the specific graph.</p><p><h3>See Also:</h3>   <a
+   * <p>Starts the specific graph.</p>  <p>Graph sessions are started
+   * automatically when a query is sent to the graph. While this API is supported for
+   * graph sessions, it isn't required.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartGraph">AWS
    * API Reference</a></p>
    */
@@ -862,8 +880,11 @@ class AWS_NEPTUNEGRAPH_API NeptuneGraphClient : public Aws::Client::AWSJsonClien
 
   /**
    * <p>Import data into existing Neptune Analytics graph from Amazon Simple Storage
-   * Service (S3). The graph needs to be empty and in the AVAILABLE
-   * state.</p><p><h3>See Also:</h3>   <a
+   * Service (S3). The graph needs to be empty and in the AVAILABLE state.</p>
+   * <p>Graph sessions don't support this API. Use <a
+   * href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/batch-load.html">neptune.load
+   * CALL procedure</a> to load data into the Graph Session instead.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartImportTask">AWS
    * API Reference</a></p>
    */
@@ -888,7 +909,9 @@ class AWS_NEPTUNEGRAPH_API NeptuneGraphClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Stops the specific graph.</p><p><h3>See Also:</h3>   <a
+   * <p>Stops the specific graph.</p>  <p>Graph sessions are stopped
+   * automatically after a few minutes with no traffic. While this API is supported
+   * for graph sessions, it isn't required.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StopGraph">AWS
    * API Reference</a></p>
    */

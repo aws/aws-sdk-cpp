@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
+#include <aws/neptune-graph/model/ComputeConfiguration.h>
 #include <aws/neptune-graph/model/GraphStatus.h>
 
 #include <utility>
@@ -104,23 +105,6 @@ class GraphSummary {
 
   ///@{
   /**
-   * <p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to
-   * the graph.</p>
-   */
-  inline int GetProvisionedMemory() const { return m_provisionedMemory; }
-  inline bool ProvisionedMemoryHasBeenSet() const { return m_provisionedMemoryHasBeenSet; }
-  inline void SetProvisionedMemory(int value) {
-    m_provisionedMemoryHasBeenSet = true;
-    m_provisionedMemory = value;
-  }
-  inline GraphSummary& WithProvisionedMemory(int value) {
-    SetProvisionedMemory(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>If <code>true</code>, the graph has a public endpoint, otherwise not.</p>
    */
   inline bool GetPublicConnectivity() const { return m_publicConnectivity; }
@@ -202,6 +186,25 @@ class GraphSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The compute configuration of the graph: either a provisioned graph or a graph
+   * session.</p>
+   */
+  inline const ComputeConfiguration& GetComputeConfiguration() const { return m_computeConfiguration; }
+  inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }
+  template <typename ComputeConfigurationT = ComputeConfiguration>
+  void SetComputeConfiguration(ComputeConfigurationT&& value) {
+    m_computeConfigurationHasBeenSet = true;
+    m_computeConfiguration = std::forward<ComputeConfigurationT>(value);
+  }
+  template <typename ComputeConfigurationT = ComputeConfiguration>
+  GraphSummary& WithComputeConfiguration(ComputeConfigurationT&& value) {
+    SetComputeConfiguration(std::forward<ComputeConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -210,8 +213,6 @@ class GraphSummary {
   Aws::String m_arn;
 
   GraphStatus m_status{GraphStatus::NOT_SET};
-
-  int m_provisionedMemory{0};
 
   bool m_publicConnectivity{false};
 
@@ -222,16 +223,18 @@ class GraphSummary {
   Aws::String m_kmsKeyIdentifier;
 
   bool m_deletionProtection{false};
+
+  ComputeConfiguration m_computeConfiguration;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
-  bool m_provisionedMemoryHasBeenSet = false;
   bool m_publicConnectivityHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
   bool m_replicaCountHasBeenSet = false;
   bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
+  bool m_computeConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

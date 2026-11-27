@@ -144,6 +144,14 @@ UpdateOTelEnrichmentResult& UpdateOTelEnrichmentResult::operator=(const Aws::Ama
                 m_updatedAtHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "EnableTagEnrichment") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_enableTagEnrichment = val.value();
+                }
+                m_enableTagEnrichmentHasBeenSet = true;
+              }
+
               else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -273,6 +281,14 @@ UpdateOTelEnrichmentResult& UpdateOTelEnrichmentResult::operator=(const Aws::Ama
                 }
               }
               m_updatedAtHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EnableTagEnrichment") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_enableTagEnrichment = val.value();
+              }
+              m_enableTagEnrichmentHasBeenSet = true;
             }
 
             else {

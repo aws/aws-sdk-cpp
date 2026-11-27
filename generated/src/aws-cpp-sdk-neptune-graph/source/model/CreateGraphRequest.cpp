@@ -47,8 +47,8 @@ Aws::String CreateGraphRequest::SerializePayload() const {
     payload.WithBool("deletionProtection", m_deletionProtection);
   }
 
-  if (m_provisionedMemoryHasBeenSet) {
-    payload.WithInteger("provisionedMemory", m_provisionedMemory);
+  if (m_computeConfigurationHasBeenSet) {
+    payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();

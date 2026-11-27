@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/NeptuneGraphRequest.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
+#include <aws/neptune-graph/model/ComputeConfiguration.h>
 
 #include <utility>
 
@@ -71,17 +72,21 @@ class UpdateGraphRequest : public NeptuneGraphRequest {
 
   ///@{
   /**
-   * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-   * the graph.</p> <p>Min = 16</p>
+   * <p>The updated compute configuration for the graph. A graph session can be
+   * scaled up to a provisioned graph, and a provisioned graph can be scaled down to
+   * a graph session, as long as the data in the graph fits within the graph
+   * session.</p>
    */
-  inline int GetProvisionedMemory() const { return m_provisionedMemory; }
-  inline bool ProvisionedMemoryHasBeenSet() const { return m_provisionedMemoryHasBeenSet; }
-  inline void SetProvisionedMemory(int value) {
-    m_provisionedMemoryHasBeenSet = true;
-    m_provisionedMemory = value;
+  inline const ComputeConfiguration& GetComputeConfiguration() const { return m_computeConfiguration; }
+  inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }
+  template <typename ComputeConfigurationT = ComputeConfiguration>
+  void SetComputeConfiguration(ComputeConfigurationT&& value) {
+    m_computeConfigurationHasBeenSet = true;
+    m_computeConfiguration = std::forward<ComputeConfigurationT>(value);
   }
-  inline UpdateGraphRequest& WithProvisionedMemory(int value) {
-    SetProvisionedMemory(value);
+  template <typename ComputeConfigurationT = ComputeConfiguration>
+  UpdateGraphRequest& WithComputeConfiguration(ComputeConfigurationT&& value) {
+    SetComputeConfiguration(std::forward<ComputeConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -107,12 +112,12 @@ class UpdateGraphRequest : public NeptuneGraphRequest {
 
   bool m_publicConnectivity{false};
 
-  int m_provisionedMemory{0};
+  ComputeConfiguration m_computeConfiguration;
 
   bool m_deletionProtection{false};
   bool m_graphIdentifierHasBeenSet = false;
   bool m_publicConnectivityHasBeenSet = false;
-  bool m_provisionedMemoryHasBeenSet = false;
+  bool m_computeConfigurationHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
 };
 
