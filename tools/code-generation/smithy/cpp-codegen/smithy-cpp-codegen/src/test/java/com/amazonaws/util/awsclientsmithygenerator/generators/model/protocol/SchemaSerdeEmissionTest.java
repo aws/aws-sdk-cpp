@@ -69,6 +69,11 @@ class SchemaSerdeEmissionTest {
     private static void assertSchemaSerde(String out) {
         assertTrue(out.contains("class DoThingRequestSerializable final : public smithy::schema::SerializableStruct"), out);
         assertTrue(out.contains("static std::shared_ptr<const smithy::schema::Schema> BuildSchema()"), out);
+        // The schema is built once per InitAPI..ShutdownAPI window and shared, not rebuilt per request.
+        assertTrue(out.contains("class DoThingRequestSchemaCache {"), out);
+        assertTrue(out.contains("Aws::Utils::ComponentRegistry::RegisterComponent(\"DoThingRequestSchemaCache\", built, &Release);"), out);
+        assertTrue(out.contains("m_schema(DoThingRequestSchemaCache<DoThingRequestSerializable>::Get())"), out);
+        assertFalse(out.contains("m_schema(BuildSchema())"), out);
         assertTrue(out.contains(".PutMember(\"name\""), out);
         // Client-driven entry points: the shape hands its agnostic adapter + operation context to the
         // client-owned protocol.
@@ -218,7 +223,10 @@ class SchemaSerdeEmissionTest {
         assertTrue(out.indexOf("DoNestedResult_NestedSchemaSerdeDeser final") < out.indexOf("DoNestedResultDeserializable final"), out);
         assertTrue(out.indexOf("DoNestedResultDeserializable final") < out.indexOf("void DoNestedResult_NestedSchemaSerdeDeser::From("), out);
         // Parent schema embeds the child schema (recursive composition).
-        assertTrue(out.contains(".PutMember(\"creds\", DoNestedResult_NestedSchemaSerdeDeser::BuildSchema()"), out);
+        assertTrue(out.contains(".PutMember(\"creds\", DoNestedResultSchemaCache<DoNestedResult_NestedSchemaSerdeDeser>::Get()"), out);
+        // Each anonymous namespace carries its own cache, declared before the adapters that use it.
+        assertTrue(out.indexOf("class DoNestedResultSchemaCache {") < out.indexOf("DoNestedResult_NestedSchemaSerdeDeser final"), out);
+        assertTrue(out.contains("m_schema(DoNestedResultSchemaCache<DoNestedResultDeserializable>::Get())"), out);
         // Parent From deserializes through the child adapter (its own full schema) and stores the sub-object.
         assertTrue(out.contains("Nested nested0;"), out);
         assertTrue(out.contains("DoNestedResult_NestedSchemaSerdeDeser{nested0}.Deserialize(deserializer);"), out);
