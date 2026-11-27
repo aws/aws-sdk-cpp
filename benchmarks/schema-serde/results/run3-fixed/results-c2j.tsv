@@ -1,0 +1,18 @@
+c2j	serialize	PutItem/Item_S	1829	1792	2291	200000
+c2j	deserialize	GetItem/Item_S	2758	2750	3000	200000
+c2j	serialize	PutItem/Item_M	19960	19916	20708	49966
+c2j	deserialize	GetItem/Item_M	35620	35500	38667	28032
+c2j	serialize	PutItem/Item_ShallowMap_L	1828442	1824416	1863708	547
+c2j	deserialize	GetItem/Item_ShallowMap_L	730690	729750	752500	1369
+c2j	serialize	PutItem/Item_Binary_L	198708	197708	210250	5032
+c2j	deserialize	GetItem/Item_Binary_L	223343	222833	231208	4477
+c2j	deserialize	Query/100xItem_M	3864097	3850375	3998875	518
+c2j	e2e	PutItem/Item_S	32796	32584	35500	30442
+c2j	e2e	GetItem/Item_S	33888	33791	36666	29463
+c2j	e2e	PutItem/Item_M	52391	52250	55917	19068
+c2j	e2e	GetItem/Item_M	64406	64250	68750	15514
+c2j	e2e	PutItem/Item_ShallowMap_L	1901874	1883250	2023000	526
+c2j	e2e	GetItem/Item_ShallowMap_L	725526	721291	758750	1379
+c2j	e2e	PutItem/Item_Binary_L	312806	312167	326875	3197
+c2j	e2e	GetItem/Item_Binary_L	778967	680042	1989250	1285
+c2j	cpu	serde-section-cpu-seconds	10.34			

@@ -5,13 +5,49 @@ This branch exists to share evidence. It contains the schema-serde work, DynamoD
 
 ## Summary
 
-- As generated today, schema-serde is **2-15x slower** than C2J on DynamoDB (run 1, below).
-- The cause is that every generated adapter builds its `Schema` per request and per nested value. Building each schema
-  **once** (run 2, an experiment) makes schema-serde **faster than C2J in 15 of 17 cases**, up to 16x on large items,
-  with identical output. So the gap is mostly fixable in codegen.
-- The exception is decoding large blobs (base64 in the JSON reader), which caching does not help: a separate core fix.
+- Before the fix, schema-serde was **slower than C2J in 15 of 17 cases**, by 2-15x; it was faster only when sending
+  large blobs (run 1, below).
+- The cause was that every generated adapter built its `Schema` per request and per nested value. The codegen now
+  builds each schema **once**, shares it, and frees it in `ShutdownAPI` (run 3). Schema-serde is now **faster than
+  C2J in 13 of 17 cases** (1.2-15x), **the same in 2** (end-to-end calls on the smallest item) and slower in 2, with
+  identical output.
+- The 2 slower cases are decoding large blobs (base64 in the JSON reader): 2.5x on deserialize, 1.4x end to end.
+  Building schemas once does not help there; it needs a separate core fix.
 
-## Run 2: schemas built once (experiment)
+## Run 3: schemas built once, as generated
+
+The Smithy codegen gives each request / result `.cpp` a file-local cache. It builds each adapter's schema on first use,
+shares it with every later request, and registers with `Aws::Utils::ComponentRegistry`, which `ShutdownAPI` terminates
+first. So the schemas are freed through the SDK allocator inside the `InitAPI` ... `ShutdownAPI` window, and rebuilt
+after the next `InitAPI`. Core is unchanged. The protocol tests pass with the exact memory checker
+(`USE_AWS_MEMORY_MANAGEMENT`): nothing is left allocated after `ShutdownAPI`.
+
+DynamoDB and STS on this branch are regenerated with the cache. The three builds ran back to back on the same machine;
+"before" is the run 1 build. Request JSON and parsed attributes matched C2J in every case.
+
+| Case | C2J | schema-serde before | schema-serde now | now vs C2J |
+|---|---|---|---|---|
+| serialize PutItem Item_S | 1.8 us | 28.5 us | 1.2 us | 1.5x faster |
+| serialize PutItem Item_M | 20.0 us | 273.7 us | 8.7 us | 2.3x faster |
+| serialize PutItem Item_ShallowMap_L | 1,828 us | 3,766 us | 118 us | 15x faster |
+| serialize PutItem Item_Binary_L | 199 us | 130 us | 79 us | 2.5x faster |
+| deserialize GetItem Item_S | 2.8 us | 28.0 us | 1.4 us | 1.9x faster |
+| deserialize GetItem Item_M | 35.6 us | 283.5 us | 16.6 us | 2.1x faster |
+| deserialize GetItem Item_ShallowMap_L | 731 us | 3,985 us | 315 us | 2.3x faster |
+| deserialize GetItem Item_Binary_L | 223 us | 615 us | 564 us | 2.5x slower |
+| deserialize Query 100 x Item_M | 3,864 us | 29,040 us | 1,709 us | 2.3x faster |
+| e2e PutItem Item_S | 32.8 us | 68.8 us | 32.1 us | same |
+| e2e GetItem Item_S | 33.9 us | 67.9 us | 33.5 us | same |
+| e2e PutItem Item_M | 52.4 us | 316.8 us | 40.8 us | 1.3x faster |
+| e2e GetItem Item_M | 64.4 us | 328.0 us | 54.3 us | 1.2x faster |
+| e2e PutItem Item_ShallowMap_L | 1,902 us | 3,846 us | 163 us | 12x faster |
+| e2e GetItem Item_ShallowMap_L | 726 us | 4,228 us | 436 us | 1.7x faster |
+| e2e PutItem Item_Binary_L | 313 us | 255 us | 194 us | 1.6x faster |
+| e2e GetItem Item_Binary_L | 779 us | 1,148 us | 1,087 us | 1.4x slower |
+
+Raw data: `results/run3-fixed/results-{c2j,schema,fixed}.tsv` (`schema` is before the fix, `fixed` is now).
+
+## Run 2: schemas built once (experiment, superseded by run 3)
 
 `cache_schemas_experiment.py` rewrites every generated `BuildSchema()` in DynamoDB to build its schema once and reuse it.
 The cached schemas are deliberately never freed, which sidesteps the `ShutdownAPI` lifetime problem (a function-local
@@ -38,11 +74,12 @@ window. All three builds ran back to back on the same machine; request JSON and 
 | e2e PutItem Item_Binary_L | 314 us | 255 us | 194 us | 1.6x faster |
 | e2e GetItem Item_Binary_L | 667 us | 1,151 us | 1,088 us | 1.6x slower |
 
-Raw data: `results/run2-cached/results-{c2j,schema,cached}.tsv`. To reproduce, regenerate DynamoDB on this branch, run
+Raw data: `results/run2-cached/results-{c2j,schema,cached}.tsv`. The experiment rewrote code generated before the
+cache existed; it does not apply to the code now on this branch. To reproduce it, check out 55f12f5b8c5, regenerate DynamoDB, run
 `python3 benchmarks/schema-serde/cache_schemas_experiment.py <sdk root> dynamodb`, build and install that SDK, and build
 the benchmark against it with `-DSCHEMA_SERDE=ON`.
 
-## Run 1: schema-serde as generated today
+## Run 1: schema-serde before the fix (schemas built per request)
 
 ## What is measured
 
