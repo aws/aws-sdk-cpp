@@ -49,16 +49,19 @@ import java.util.function.Function;
  * Emits the schema-serde adapters of request and result classes. Everything is confined to the
  * {@code .cpp}: a file-local (anonymous-namespace) {@link smithy.client.schema.SerializableStruct}
  * adapter wraps the request ({@code GetSchemaSerdeInput}) or result ({@code GetSchemaSerdeOutput}),
- * builds a per-instance {@code Schema} and streams members to / from the client-owned {@link
+ * holds its {@code Schema} and streams members to / from the client-owned {@link
  * smithy.client.schema.ClientProtocol}, which produces the wire format for any protocol (JSON / XML /
  * aws-query / ec2 form-encoding). The generated shapes name no concrete protocol.
  *
- * <p><b>Lifetime:</b> the {@code Schema} is scoped to a single request — built when the adapter is
- * constructed (a local in {@code SerializePayload}) and destroyed when the call returns, so the
- * whole tree lives inside the {@code Aws::InitAPI}/{@code Aws::ShutdownAPI} window. It is held in a
- * per-instance member, never a function-local static or namespace global (see the lifetime contract
- * on {@code SerializableStruct::GetSchema}); a static schema would free its SDK-allocated internals
- * after {@code ShutdownAPI} and crash.
+ * <p><b>Lifetime:</b> each adapter's {@code Schema} is built once, on first use, by a file-local
+ * {@code <Class>SchemaCache<Adapter>} and shared by every later request; each adapter instance holds a
+ * {@code shared_ptr} to it. The cache registers with {@code Aws::Utils::ComponentRegistry}, which
+ * {@code Aws::ShutdownAPI} terminates first, so the schemas are freed inside the {@code InitAPI} /
+ * {@code ShutdownAPI} window (through the SDK allocator that made them) and rebuilt after the next
+ * {@code InitAPI}. A plain function-local static would instead be destroyed at process exit, after
+ * {@code ShutdownAPI}, and crash; building per request was correct but spent most of the serde time
+ * rebuilding identical schemas. Requests must not be serialized concurrently with {@code ShutdownAPI}
+ * (already required of every client call).
  *
  * <p><b>Wire names:</b> the schema member name is always the raw Smithy member name (it is the
  * lookup key). Protocol wire-name overrides are attached as traits on the member — never baked into
@@ -254,8 +257,9 @@ final class SchemaSerdeRenderer {
         adapters.put(className + "Serializable", new Adapter(className + "Serializable", className, false, members, null));
         modelNamespace(writer, namespace, () -> {
             writer.write("namespace {");
+            writeSchemaCache(writer, className);
             for (Adapter adapter : adapters.values()) {
-                declareStructSerAdapter(writer, adapter);
+                declareStructSerAdapter(writer, className, adapter);
             }
             for (Adapter adapter : adapters.values()) {
                 defineStructSerAdapter(writer, className, adapter, model, memberTraits);
@@ -269,6 +273,59 @@ final class SchemaSerdeRenderer {
         writer.write("}");
         writer.write("");
         writer.write("Aws::String $L::SerializePayload() const { return {}; }", className);
+    }
+
+    /** The file-local schema cache template of one request / result {@code .cpp}. */
+    static String schemaCacheName(String unitPrefix) {
+        return unitPrefix + "SchemaCache";
+    }
+
+    /** {@code <Class>SchemaCache<adapter>::Get()}: the shared schema of {@code adapterClass}. */
+    private static String cachedSchemaExpr(String unitPrefix, String adapterClass) {
+        return schemaCacheName(unitPrefix) + "<" + adapterClass + ">::Get()";
+    }
+
+    /**
+     * Emits the file-local cache that builds each adapter's schema once and frees it in
+     * {@code Aws::ShutdownAPI} (see the class doc). The fast path is one atomic load; the first call
+     * takes a per-adapter mutex, builds the schema (nested adapters' caches fill on the way) and
+     * registers the release with the component registry. The release only clears the pointer and frees
+     * the holder, never taking the mutex, because the registry calls it with its own lock held.
+     */
+    private static void writeSchemaCache(CppWriter writer, String unitPrefix) {
+        String cache = schemaCacheName(unitPrefix);
+        String holder = "std::shared_ptr<const smithy::schema::Schema>";
+        writer.write("template <typename Adapter>");
+        writer.write("class $L {", cache);
+        writer.write(" public:");
+        writer.write("  static $L Get() {", holder);
+        writer.write("    if ($L* cached = s_schema.load(std::memory_order_acquire)) {", holder);
+        writer.write("      return *cached;");
+        writer.write("    }");
+        writer.write("    std::lock_guard<std::mutex> lock(s_mutex);");
+        writer.write("    if ($L* cached = s_schema.load(std::memory_order_relaxed)) {", holder);
+        writer.write("      return *cached;");
+        writer.write("    }");
+        writer.write("    $L* built = Aws::New<$L>(\"$L\", Adapter::BuildSchema());", holder, holder, cache);
+        writer.write("    Aws::Utils::ComponentRegistry::RegisterComponent(\"$L\", built, &Release);", cache);
+        writer.write("    s_schema.store(built, std::memory_order_release);");
+        writer.write("    return *built;");
+        writer.write("  }");
+        writer.write("");
+        writer.write(" private:");
+        writer.write("  static void Release(void* schema, int64_t) {");
+        writer.write("    s_schema.store(nullptr, std::memory_order_release);");
+        writer.write("    Aws::Delete(static_cast<$L*>(schema));", holder);
+        writer.write("  }");
+        writer.write("");
+        writer.write("  static std::atomic<$L*> s_schema;", holder);
+        writer.write("  static std::mutex s_mutex;");
+        writer.write("};");
+        writer.write("template <typename Adapter>");
+        writer.write("std::atomic<$L*> $L<Adapter>::s_schema{nullptr};", holder, cache);
+        writer.write("template <typename Adapter>");
+        writer.write("std::mutex $L<Adapter>::s_mutex;", cache);
+        writer.write("");
     }
 
     /** A (de)serialize adapter over one C++ structure / union class. */
@@ -345,16 +402,17 @@ final class SchemaSerdeRenderer {
         }
     }
 
-    private static void declareStructSerAdapter(CppWriter writer, Adapter adapter) {
+    private static void declareStructSerAdapter(CppWriter writer, String unitPrefix, Adapter adapter) {
         boolean empty = adapter.members.isEmpty();
+        String schema = cachedSchemaExpr(unitPrefix, adapter.adapterClass);
         writer.write("class $L final : public smithy::schema::SerializableStruct {", adapter.adapterClass);
         writer.write(" public:");
         if (empty) {
             // Empty body (e.g. GetCallerIdentity): the shape carries no members; only the protocol
             // envelope is emitted. No m_obj field / named serializer param to avoid -Werror.
-            writer.write("  explicit $L(const $L&) : m_schema(BuildSchema()) {}", adapter.adapterClass, adapter.cppType);
+            writer.write("  explicit $L(const $L&) : m_schema($L) {}", adapter.adapterClass, adapter.cppType, schema);
         } else {
-            writer.write("  explicit $L(const $L& obj) : m_obj(obj), m_schema(BuildSchema()) {}", adapter.adapterClass, adapter.cppType);
+            writer.write("  explicit $L(const $L& obj) : m_obj(obj), m_schema($L) {}", adapter.adapterClass, adapter.cppType, schema);
         }
         writer.write("  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }");
         writer.write("  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;");
@@ -411,7 +469,7 @@ final class SchemaSerdeRenderer {
                 return "smithy::schema::Schema::" + (target.isUnionShape() ? "UnionBuilder" : "StructureBuilder")
                     + "(\"" + CppTypeMapper.cppShapeName(target) + "\").Build()";
             }
-            return nestedAdapterName(unitPrefix, target, adapterSuffix) + "::BuildSchema()";
+            return cachedSchemaExpr(unitPrefix, nestedAdapterName(unitPrefix, target, adapterSuffix));
         }
         if (target.isListShape()) {
             MemberShape item = target.asListShape().get().getMember();
@@ -584,8 +642,9 @@ final class SchemaSerdeRenderer {
         adapters.put(rootAdapter, new Adapter(rootAdapter, className, false, members, null));
         modelNamespace(writer, namespace, () -> {
             writer.write("namespace {");
+            writeSchemaCache(writer, className);
             for (Adapter adapter : adapters.values()) {
-                declareStructDeserAdapter(writer, adapter);
+                declareStructDeserAdapter(writer, className, adapter);
             }
             for (Adapter adapter : adapters.values()) {
                 defineStructDeserAdapter(writer, className, adapter, model, memberTraits);
@@ -613,15 +672,16 @@ final class SchemaSerdeRenderer {
         writer.write("}");
     }
 
-    private static void declareStructDeserAdapter(CppWriter writer, Adapter adapter) {
+    private static void declareStructDeserAdapter(CppWriter writer, String unitPrefix, Adapter adapter) {
         boolean empty = adapter.members.isEmpty();
+        String schema = cachedSchemaExpr(unitPrefix, adapter.adapterClass);
         writer.write("class $L final : public smithy::schema::SerializableStruct {", adapter.adapterClass);
         writer.write(" public:");
         if (empty) {
             // A member-less shape has nothing to route; no m_obj field to avoid -Wunused-private-field.
-            writer.write("  explicit $L($L&) : m_schema(BuildSchema()) {}", adapter.adapterClass, adapter.cppType);
+            writer.write("  explicit $L($L&) : m_schema($L) {}", adapter.adapterClass, adapter.cppType, schema);
         } else {
-            writer.write("  explicit $L($L& obj) : m_obj(obj), m_schema(BuildSchema()) {}", adapter.adapterClass, adapter.cppType);
+            writer.write("  explicit $L($L& obj) : m_obj(obj), m_schema($L) {}", adapter.adapterClass, adapter.cppType, schema);
         }
         writer.write("  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }");
         writer.write("  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}");
