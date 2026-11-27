@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -22,6 +23,8 @@
 #include <smithy/client/schema/ShapeSerializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 #include <utility>
 
@@ -34,9 +37,42 @@ namespace Aws {
 namespace RestXmlProtocol {
 namespace Model {
 namespace {
+template <typename Adapter>
+class XmlNamespacesRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("XmlNamespacesRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("XmlNamespacesRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> XmlNamespacesRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex XmlNamespacesRequestSchemaCache<Adapter>::s_mutex;
+
 class XmlNamespacesRequest_XmlNamespaceNestedSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit XmlNamespacesRequest_XmlNamespaceNestedSchemaSerdeSer(const XmlNamespaceNested& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit XmlNamespacesRequest_XmlNamespaceNestedSchemaSerdeSer(const XmlNamespaceNested& obj)
+      : m_obj(obj), m_schema(XmlNamespacesRequestSchemaCache<XmlNamespacesRequest_XmlNamespaceNestedSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -49,7 +85,8 @@ class XmlNamespacesRequest_XmlNamespaceNestedSchemaSerdeSer final : public smith
 
 class XmlNamespacesRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit XmlNamespacesRequestSerializable(const XmlNamespacesRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit XmlNamespacesRequestSerializable(const XmlNamespacesRequest& obj)
+      : m_obj(obj), m_schema(XmlNamespacesRequestSchemaCache<XmlNamespacesRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -102,7 +139,7 @@ void XmlNamespacesRequestSerializable::SerializeMembers(smithy::schema::ShapeSer
 
 std::shared_ptr<const smithy::schema::Schema> XmlNamespacesRequestSerializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("XmlNamespacesRequest")
-      .PutMember("nested", XmlNamespacesRequest_XmlNamespaceNestedSchemaSerdeSer::BuildSchema())
+      .PutMember("nested", XmlNamespacesRequestSchemaCache<XmlNamespacesRequest_XmlNamespaceNestedSchemaSerdeSer>::Get())
       .Build();
 }
 

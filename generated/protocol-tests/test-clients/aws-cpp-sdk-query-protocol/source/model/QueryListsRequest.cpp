@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -23,6 +24,8 @@
 #include <smithy/client/schema/ShapeSerializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 
 using namespace Aws::QueryProtocol::Model;
@@ -32,9 +35,42 @@ namespace Aws {
 namespace QueryProtocol {
 namespace Model {
 namespace {
+template <typename Adapter>
+class QueryListsRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("QueryListsRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("QueryListsRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> QueryListsRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex QueryListsRequestSchemaCache<Adapter>::s_mutex;
+
 class QueryListsRequest_GreetingStructSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit QueryListsRequest_GreetingStructSchemaSerdeSer(const GreetingStruct& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit QueryListsRequest_GreetingStructSchemaSerdeSer(const GreetingStruct& obj)
+      : m_obj(obj), m_schema(QueryListsRequestSchemaCache<QueryListsRequest_GreetingStructSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -47,7 +83,8 @@ class QueryListsRequest_GreetingStructSchemaSerdeSer final : public smithy::sche
 
 class QueryListsRequest_NestedStructWithListSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit QueryListsRequest_NestedStructWithListSchemaSerdeSer(const NestedStructWithList& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit QueryListsRequest_NestedStructWithListSchemaSerdeSer(const NestedStructWithList& obj)
+      : m_obj(obj), m_schema(QueryListsRequestSchemaCache<QueryListsRequest_NestedStructWithListSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -60,7 +97,8 @@ class QueryListsRequest_NestedStructWithListSchemaSerdeSer final : public smithy
 
 class QueryListsRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit QueryListsRequestSerializable(const QueryListsRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit QueryListsRequestSerializable(const QueryListsRequest& obj)
+      : m_obj(obj), m_schema(QueryListsRequestSchemaCache<QueryListsRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -162,9 +200,10 @@ std::shared_ptr<const smithy::schema::Schema> QueryListsRequestSerializable::Bui
       .PutMember(
           "ListArg",
           smithy::schema::Schema::ListBuilder("StringList").PutMember("member", smithy::schema::Schema::CreateString("member")).Build())
-      .PutMember("ComplexListArg", smithy::schema::Schema::ListBuilder("GreetingList")
-                                       .PutMember("member", QueryListsRequest_GreetingStructSchemaSerdeSer::BuildSchema())
-                                       .Build())
+      .PutMember("ComplexListArg",
+                 smithy::schema::Schema::ListBuilder("GreetingList")
+                     .PutMember("member", QueryListsRequestSchemaCache<QueryListsRequest_GreetingStructSchemaSerdeSer>::Get())
+                     .Build())
       .PutMember(
           "FlattenedListArg",
           smithy::schema::Schema::ListBuilder("StringList").PutMember("member", smithy::schema::Schema::CreateString("member")).Build(),
@@ -187,7 +226,7 @@ std::shared_ptr<const smithy::schema::Schema> QueryListsRequestSerializable::Bui
            {smithy::schema::XmlFlattenedTrait::KEY(), Aws::MakeShared<smithy::schema::XmlFlattenedTrait>("SchemaSerdeTrait")},
            {smithy::schema::XmlListItemNameTrait::KEY(),
             Aws::MakeShared<smithy::schema::XmlListItemNameTrait>("SchemaSerdeTrait", "item")}})
-      .PutMember("NestedWithList", QueryListsRequest_NestedStructWithListSchemaSerdeSer::BuildSchema())
+      .PutMember("NestedWithList", QueryListsRequestSchemaCache<QueryListsRequest_NestedStructWithListSchemaSerdeSer>::Get())
       .Build();
 }
 
