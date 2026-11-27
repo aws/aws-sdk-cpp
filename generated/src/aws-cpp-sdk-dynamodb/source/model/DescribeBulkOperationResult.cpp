@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
@@ -46,10 +49,43 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class DescribeBulkOperationResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("DescribeBulkOperationResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("DescribeBulkOperationResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> DescribeBulkOperationResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex DescribeBulkOperationResultSchemaCache<Adapter>::s_mutex;
+
 class DescribeBulkOperationResult_BulkOperationDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DescribeBulkOperationResult_BulkOperationDescriptionSchemaSerdeDeser(BulkOperationDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_BulkOperationDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -63,7 +99,8 @@ class DescribeBulkOperationResult_BulkOperationDescriptionSchemaSerdeDeser final
 class DescribeBulkOperationResult_BulkOperationTableDetailSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DescribeBulkOperationResult_BulkOperationTableDetailSchemaSerdeDeser(BulkOperationTableDetail& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_BulkOperationTableDetailSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -77,7 +114,8 @@ class DescribeBulkOperationResult_BulkOperationTableDetailSchemaSerdeDeser final
 class DescribeBulkOperationResult_InputS3ConfigurationSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DescribeBulkOperationResult_InputS3ConfigurationSchemaSerdeDeser(InputS3Configuration& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_InputS3ConfigurationSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -91,7 +129,8 @@ class DescribeBulkOperationResult_InputS3ConfigurationSchemaSerdeDeser final : p
 class DescribeBulkOperationResult_OutputS3ConfigurationSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DescribeBulkOperationResult_OutputS3ConfigurationSchemaSerdeDeser(OutputS3Configuration& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_OutputS3ConfigurationSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -104,7 +143,9 @@ class DescribeBulkOperationResult_OutputS3ConfigurationSchemaSerdeDeser final : 
 
 class DescribeBulkOperationResult_BulkOperationUsageSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DescribeBulkOperationResult_BulkOperationUsageSchemaSerdeDeser(BulkOperationUsage& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DescribeBulkOperationResult_BulkOperationUsageSchemaSerdeDeser(BulkOperationUsage& obj)
+      : m_obj(obj),
+        m_schema(DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_BulkOperationUsageSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -117,7 +158,9 @@ class DescribeBulkOperationResult_BulkOperationUsageSchemaSerdeDeser final : pub
 
 class DescribeBulkOperationResult_BulkOperationBytesSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DescribeBulkOperationResult_BulkOperationBytesSchemaSerdeDeser(BulkOperationBytes& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DescribeBulkOperationResult_BulkOperationBytesSchemaSerdeDeser(BulkOperationBytes& obj)
+      : m_obj(obj),
+        m_schema(DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_BulkOperationBytesSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -131,7 +174,8 @@ class DescribeBulkOperationResult_BulkOperationBytesSchemaSerdeDeser final : pub
 class DescribeBulkOperationResult_BulkOperationVectorBytesSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DescribeBulkOperationResult_BulkOperationVectorBytesSchemaSerdeDeser(BulkOperationVectorBytes& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_BulkOperationVectorBytesSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -144,7 +188,8 @@ class DescribeBulkOperationResult_BulkOperationVectorBytesSchemaSerdeDeser final
 
 class DescribeBulkOperationResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit DescribeBulkOperationResultDeserializable(DescribeBulkOperationResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DescribeBulkOperationResultDeserializable(DescribeBulkOperationResult& obj)
+      : m_obj(obj), m_schema(DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -287,22 +332,29 @@ std::shared_ptr<const smithy::schema::Schema> DescribeBulkOperationResult_BulkOp
   return smithy::schema::Schema::StructureBuilder("BulkOperationDescription")
       .PutMember("BulkOperationArn", smithy::schema::Schema::CreateString("BulkOperationArn"))
       .PutMember("BulkOperationStatus", smithy::schema::Schema::CreateEnum("BulkOperationStatus"))
-      .PutMember("TableDetails",
-                 smithy::schema::Schema::ListBuilder("BulkOperationTableDetails")
-                     .PutMember("member", DescribeBulkOperationResult_BulkOperationTableDetailSchemaSerdeDeser::BuildSchema())
-                     .Build())
+      .PutMember(
+          "TableDetails",
+          smithy::schema::Schema::ListBuilder("BulkOperationTableDetails")
+              .PutMember(
+                  "member",
+                  DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_BulkOperationTableDetailSchemaSerdeDeser>::Get())
+              .Build())
       .PutMember("ClientToken", smithy::schema::Schema::CreateString("ClientToken"))
-      .PutMember("InputS3Configuration", DescribeBulkOperationResult_InputS3ConfigurationSchemaSerdeDeser::BuildSchema())
-      .PutMember("OutputS3Configuration", DescribeBulkOperationResult_OutputS3ConfigurationSchemaSerdeDeser::BuildSchema())
+      .PutMember("InputS3Configuration",
+                 DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_InputS3ConfigurationSchemaSerdeDeser>::Get())
+      .PutMember("OutputS3Configuration",
+                 DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_OutputS3ConfigurationSchemaSerdeDeser>::Get())
       .PutMember("StartTime", smithy::schema::Schema::CreateTimestamp("StartTime"))
       .PutMember("EndTime", smithy::schema::Schema::CreateTimestamp("EndTime"))
       .PutMember("ProcessedItemCount", smithy::schema::Schema::CreateLong("ProcessedItemCount"))
       .PutMember("ProcessedInputBytes", smithy::schema::Schema::CreateLong("ProcessedInputBytes"))
       .PutMember("TotalInputBytes", smithy::schema::Schema::CreateLong("TotalInputBytes"))
-      .PutMember("BulkOperationUsage",
-                 smithy::schema::Schema::ListBuilder("BulkOperationUsageMultiple")
-                     .PutMember("member", DescribeBulkOperationResult_BulkOperationUsageSchemaSerdeDeser::BuildSchema())
-                     .Build())
+      .PutMember(
+          "BulkOperationUsage",
+          smithy::schema::Schema::ListBuilder("BulkOperationUsageMultiple")
+              .PutMember("member",
+                         DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_BulkOperationUsageSchemaSerdeDeser>::Get())
+              .Build())
       .PutMember("FailedItemCount", smithy::schema::Schema::CreateLong("FailedItemCount"))
       .PutMember("FailureCode", smithy::schema::Schema::CreateString("FailureCode"))
       .PutMember("FailureMessage", smithy::schema::Schema::CreateString("FailureMessage"))
@@ -511,22 +563,29 @@ std::shared_ptr<const smithy::schema::Schema> DescribeBulkOperationResult_BulkOp
   return smithy::schema::Schema::StructureBuilder("BulkOperationUsage")
       .PutMember("TableName", smithy::schema::Schema::CreateString("TableName"))
       .PutMember("BulkPutBytes", smithy::schema::Schema::CreateLong("BulkPutBytes"))
-      .PutMember("Table", DescribeBulkOperationResult_BulkOperationBytesSchemaSerdeDeser::BuildSchema())
-      .PutMember("LocalSecondaryIndexes",
-                 smithy::schema::Schema::MapBuilder("SecondaryIndexesBulkBytesMap")
-                     .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                     .PutMember("value", DescribeBulkOperationResult_BulkOperationBytesSchemaSerdeDeser::BuildSchema())
-                     .Build())
-      .PutMember("GlobalSecondaryIndexes",
-                 smithy::schema::Schema::MapBuilder("SecondaryIndexesBulkBytesMap")
-                     .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                     .PutMember("value", DescribeBulkOperationResult_BulkOperationBytesSchemaSerdeDeser::BuildSchema())
-                     .Build())
-      .PutMember("VectorIndexes",
-                 smithy::schema::Schema::MapBuilder("VectorIndexesBulkVectorBytesMap")
-                     .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                     .PutMember("value", DescribeBulkOperationResult_BulkOperationVectorBytesSchemaSerdeDeser::BuildSchema())
-                     .Build())
+      .PutMember("Table", DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_BulkOperationBytesSchemaSerdeDeser>::Get())
+      .PutMember(
+          "LocalSecondaryIndexes",
+          smithy::schema::Schema::MapBuilder("SecondaryIndexesBulkBytesMap")
+              .PutMember("key", smithy::schema::Schema::CreateString("key"))
+              .PutMember("value",
+                         DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_BulkOperationBytesSchemaSerdeDeser>::Get())
+              .Build())
+      .PutMember(
+          "GlobalSecondaryIndexes",
+          smithy::schema::Schema::MapBuilder("SecondaryIndexesBulkBytesMap")
+              .PutMember("key", smithy::schema::Schema::CreateString("key"))
+              .PutMember("value",
+                         DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_BulkOperationBytesSchemaSerdeDeser>::Get())
+              .Build())
+      .PutMember(
+          "VectorIndexes",
+          smithy::schema::Schema::MapBuilder("VectorIndexesBulkVectorBytesMap")
+              .PutMember("key", smithy::schema::Schema::CreateString("key"))
+              .PutMember(
+                  "value",
+                  DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_BulkOperationVectorBytesSchemaSerdeDeser>::Get())
+              .Build())
       .Build();
 }
 
@@ -579,7 +638,8 @@ void DescribeBulkOperationResultDeserializable::From(const smithy::schema::Schem
 
 std::shared_ptr<const smithy::schema::Schema> DescribeBulkOperationResultDeserializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("DescribeBulkOperationResult")
-      .PutMember("BulkOperationDescription", DescribeBulkOperationResult_BulkOperationDescriptionSchemaSerdeDeser::BuildSchema())
+      .PutMember("BulkOperationDescription",
+                 DescribeBulkOperationResultSchemaCache<DescribeBulkOperationResult_BulkOperationDescriptionSchemaSerdeDeser>::Get())
       .Build();
 }
 

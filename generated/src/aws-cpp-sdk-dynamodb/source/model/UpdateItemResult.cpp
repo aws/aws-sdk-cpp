@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
@@ -46,9 +49,42 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class UpdateItemResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("UpdateItemResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("UpdateItemResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> UpdateItemResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex UpdateItemResultSchemaCache<Adapter>::s_mutex;
+
 class UpdateItemResult_AttributeValueSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateItemResult_AttributeValueSchemaSerdeDeser(AttributeValue& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateItemResult_AttributeValueSchemaSerdeDeser(AttributeValue& obj)
+      : m_obj(obj), m_schema(UpdateItemResultSchemaCache<UpdateItemResult_AttributeValueSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -61,7 +97,8 @@ class UpdateItemResult_AttributeValueSchemaSerdeDeser final : public smithy::sch
 
 class UpdateItemResult_ConsumedCapacitySchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateItemResult_ConsumedCapacitySchemaSerdeDeser(ConsumedCapacity& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateItemResult_ConsumedCapacitySchemaSerdeDeser(ConsumedCapacity& obj)
+      : m_obj(obj), m_schema(UpdateItemResultSchemaCache<UpdateItemResult_ConsumedCapacitySchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -74,7 +111,8 @@ class UpdateItemResult_ConsumedCapacitySchemaSerdeDeser final : public smithy::s
 
 class UpdateItemResult_CapacitySchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateItemResult_CapacitySchemaSerdeDeser(Capacity& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateItemResult_CapacitySchemaSerdeDeser(Capacity& obj)
+      : m_obj(obj), m_schema(UpdateItemResultSchemaCache<UpdateItemResult_CapacitySchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -87,7 +125,8 @@ class UpdateItemResult_CapacitySchemaSerdeDeser final : public smithy::schema::S
 
 class UpdateItemResult_VectorCapacitySchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateItemResult_VectorCapacitySchemaSerdeDeser(VectorCapacity& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateItemResult_VectorCapacitySchemaSerdeDeser(VectorCapacity& obj)
+      : m_obj(obj), m_schema(UpdateItemResultSchemaCache<UpdateItemResult_VectorCapacitySchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -100,7 +139,8 @@ class UpdateItemResult_VectorCapacitySchemaSerdeDeser final : public smithy::sch
 
 class UpdateItemResult_ItemCollectionMetricsSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateItemResult_ItemCollectionMetricsSchemaSerdeDeser(ItemCollectionMetrics& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateItemResult_ItemCollectionMetricsSchemaSerdeDeser(ItemCollectionMetrics& obj)
+      : m_obj(obj), m_schema(UpdateItemResultSchemaCache<UpdateItemResult_ItemCollectionMetricsSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -113,7 +153,8 @@ class UpdateItemResult_ItemCollectionMetricsSchemaSerdeDeser final : public smit
 
 class UpdateItemResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateItemResultDeserializable(UpdateItemResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateItemResultDeserializable(UpdateItemResult& obj)
+      : m_obj(obj), m_schema(UpdateItemResultSchemaCache<UpdateItemResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -316,19 +357,22 @@ std::shared_ptr<const smithy::schema::Schema> UpdateItemResult_ConsumedCapacityS
       .PutMember("CapacityUnits", smithy::schema::Schema::CreateDouble("CapacityUnits"))
       .PutMember("ReadCapacityUnits", smithy::schema::Schema::CreateDouble("ReadCapacityUnits"))
       .PutMember("WriteCapacityUnits", smithy::schema::Schema::CreateDouble("WriteCapacityUnits"))
-      .PutMember("Table", UpdateItemResult_CapacitySchemaSerdeDeser::BuildSchema())
-      .PutMember("LocalSecondaryIndexes", smithy::schema::Schema::MapBuilder("SecondaryIndexesCapacityMap")
-                                              .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                              .PutMember("value", UpdateItemResult_CapacitySchemaSerdeDeser::BuildSchema())
-                                              .Build())
-      .PutMember("GlobalSecondaryIndexes", smithy::schema::Schema::MapBuilder("SecondaryIndexesCapacityMap")
-                                               .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                               .PutMember("value", UpdateItemResult_CapacitySchemaSerdeDeser::BuildSchema())
-                                               .Build())
-      .PutMember("VectorIndexes", smithy::schema::Schema::MapBuilder("VectorIndexesCapacityMap")
-                                      .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                      .PutMember("value", UpdateItemResult_VectorCapacitySchemaSerdeDeser::BuildSchema())
-                                      .Build())
+      .PutMember("Table", UpdateItemResultSchemaCache<UpdateItemResult_CapacitySchemaSerdeDeser>::Get())
+      .PutMember("LocalSecondaryIndexes",
+                 smithy::schema::Schema::MapBuilder("SecondaryIndexesCapacityMap")
+                     .PutMember("key", smithy::schema::Schema::CreateString("key"))
+                     .PutMember("value", UpdateItemResultSchemaCache<UpdateItemResult_CapacitySchemaSerdeDeser>::Get())
+                     .Build())
+      .PutMember("GlobalSecondaryIndexes",
+                 smithy::schema::Schema::MapBuilder("SecondaryIndexesCapacityMap")
+                     .PutMember("key", smithy::schema::Schema::CreateString("key"))
+                     .PutMember("value", UpdateItemResultSchemaCache<UpdateItemResult_CapacitySchemaSerdeDeser>::Get())
+                     .Build())
+      .PutMember("VectorIndexes",
+                 smithy::schema::Schema::MapBuilder("VectorIndexesCapacityMap")
+                     .PutMember("key", smithy::schema::Schema::CreateString("key"))
+                     .PutMember("value", UpdateItemResultSchemaCache<UpdateItemResult_VectorCapacitySchemaSerdeDeser>::Get())
+                     .Build())
       .Build();
 }
 
@@ -463,8 +507,8 @@ std::shared_ptr<const smithy::schema::Schema> UpdateItemResultDeserializable::Bu
                                    .PutMember("key", smithy::schema::Schema::CreateString("key"))
                                    .PutMember("value", smithy::schema::Schema::UnionBuilder("AttributeValue").Build())
                                    .Build())
-      .PutMember("ConsumedCapacity", UpdateItemResult_ConsumedCapacitySchemaSerdeDeser::BuildSchema())
-      .PutMember("ItemCollectionMetrics", UpdateItemResult_ItemCollectionMetricsSchemaSerdeDeser::BuildSchema())
+      .PutMember("ConsumedCapacity", UpdateItemResultSchemaCache<UpdateItemResult_ConsumedCapacitySchemaSerdeDeser>::Get())
+      .PutMember("ItemCollectionMetrics", UpdateItemResultSchemaCache<UpdateItemResult_ItemCollectionMetricsSchemaSerdeDeser>::Get())
       .Build();
 }
 

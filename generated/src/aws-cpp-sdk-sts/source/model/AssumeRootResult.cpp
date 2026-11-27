@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -21,6 +22,8 @@
 #include <smithy/client/schema/ShapeDeserializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::STS::Model;
@@ -47,9 +50,42 @@ namespace Aws {
 namespace STS {
 namespace Model {
 namespace {
+template <typename Adapter>
+class AssumeRootResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("AssumeRootResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("AssumeRootResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> AssumeRootResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex AssumeRootResultSchemaCache<Adapter>::s_mutex;
+
 class AssumeRootResult_CredentialsSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit AssumeRootResult_CredentialsSchemaSerdeDeser(Credentials& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit AssumeRootResult_CredentialsSchemaSerdeDeser(Credentials& obj)
+      : m_obj(obj), m_schema(AssumeRootResultSchemaCache<AssumeRootResult_CredentialsSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -62,7 +98,8 @@ class AssumeRootResult_CredentialsSchemaSerdeDeser final : public smithy::schema
 
 class AssumeRootResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit AssumeRootResultDeserializable(AssumeRootResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit AssumeRootResultDeserializable(AssumeRootResult& obj)
+      : m_obj(obj), m_schema(AssumeRootResultSchemaCache<AssumeRootResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -148,7 +185,7 @@ void AssumeRootResultDeserializable::From(const smithy::schema::Schema& memberSc
 
 std::shared_ptr<const smithy::schema::Schema> AssumeRootResultDeserializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("AssumeRootResult")
-      .PutMember("Credentials", AssumeRootResult_CredentialsSchemaSerdeDeser::BuildSchema())
+      .PutMember("Credentials", AssumeRootResultSchemaCache<AssumeRootResult_CredentialsSchemaSerdeDeser>::Get())
       .PutMember("SourceIdentity", smithy::schema::Schema::CreateString("SourceIdentity"))
       .PutMember("SessionTokenUtilization", smithy::schema::Schema::CreateInteger("SessionTokenUtilization"))
       .PutMember("SessionTokenSize", smithy::schema::Schema::CreateInteger("SessionTokenSize"))

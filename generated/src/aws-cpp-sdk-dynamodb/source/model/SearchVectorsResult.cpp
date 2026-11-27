@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
@@ -46,9 +49,42 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class SearchVectorsResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("SearchVectorsResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("SearchVectorsResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> SearchVectorsResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex SearchVectorsResultSchemaCache<Adapter>::s_mutex;
+
 class SearchVectorsResult_VectorCapacitySchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit SearchVectorsResult_VectorCapacitySchemaSerdeDeser(VectorCapacity& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit SearchVectorsResult_VectorCapacitySchemaSerdeDeser(VectorCapacity& obj)
+      : m_obj(obj), m_schema(SearchVectorsResultSchemaCache<SearchVectorsResult_VectorCapacitySchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -61,7 +97,8 @@ class SearchVectorsResult_VectorCapacitySchemaSerdeDeser final : public smithy::
 
 class SearchVectorsResult_SearchResultItemSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit SearchVectorsResult_SearchResultItemSchemaSerdeDeser(SearchResultItem& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit SearchVectorsResult_SearchResultItemSchemaSerdeDeser(SearchResultItem& obj)
+      : m_obj(obj), m_schema(SearchVectorsResultSchemaCache<SearchVectorsResult_SearchResultItemSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -74,7 +111,8 @@ class SearchVectorsResult_SearchResultItemSchemaSerdeDeser final : public smithy
 
 class SearchVectorsResult_AttributeValueSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit SearchVectorsResult_AttributeValueSchemaSerdeDeser(AttributeValue& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit SearchVectorsResult_AttributeValueSchemaSerdeDeser(AttributeValue& obj)
+      : m_obj(obj), m_schema(SearchVectorsResultSchemaCache<SearchVectorsResult_AttributeValueSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -87,7 +125,8 @@ class SearchVectorsResult_AttributeValueSchemaSerdeDeser final : public smithy::
 
 class SearchVectorsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit SearchVectorsResultDeserializable(SearchVectorsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit SearchVectorsResultDeserializable(SearchVectorsResult& obj)
+      : m_obj(obj), m_schema(SearchVectorsResultSchemaCache<SearchVectorsResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -295,10 +334,11 @@ void SearchVectorsResultDeserializable::From(const smithy::schema::Schema& membe
 
 std::shared_ptr<const smithy::schema::Schema> SearchVectorsResultDeserializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("SearchVectorsResult")
-      .PutMember("ConsumedCapacity", SearchVectorsResult_VectorCapacitySchemaSerdeDeser::BuildSchema())
-      .PutMember("SearchResults", smithy::schema::Schema::ListBuilder("SearchResultList")
-                                      .PutMember("member", SearchVectorsResult_SearchResultItemSchemaSerdeDeser::BuildSchema())
-                                      .Build())
+      .PutMember("ConsumedCapacity", SearchVectorsResultSchemaCache<SearchVectorsResult_VectorCapacitySchemaSerdeDeser>::Get())
+      .PutMember("SearchResults",
+                 smithy::schema::Schema::ListBuilder("SearchResultList")
+                     .PutMember("member", SearchVectorsResultSchemaCache<SearchVectorsResult_SearchResultItemSchemaSerdeDeser>::Get())
+                     .Build())
       .Build();
 }
 

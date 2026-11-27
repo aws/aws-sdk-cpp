@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
@@ -46,9 +49,43 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class ExportTableToPointInTimeResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("ExportTableToPointInTimeResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("ExportTableToPointInTimeResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> ExportTableToPointInTimeResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex ExportTableToPointInTimeResultSchemaCache<Adapter>::s_mutex;
+
 class ExportTableToPointInTimeResult_ExportDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit ExportTableToPointInTimeResult_ExportDescriptionSchemaSerdeDeser(ExportDescription& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit ExportTableToPointInTimeResult_ExportDescriptionSchemaSerdeDeser(ExportDescription& obj)
+      : m_obj(obj),
+        m_schema(ExportTableToPointInTimeResultSchemaCache<ExportTableToPointInTimeResult_ExportDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -62,7 +99,9 @@ class ExportTableToPointInTimeResult_ExportDescriptionSchemaSerdeDeser final : p
 class ExportTableToPointInTimeResult_IncrementalExportSpecificationSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit ExportTableToPointInTimeResult_IncrementalExportSpecificationSchemaSerdeDeser(IncrementalExportSpecification& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(ExportTableToPointInTimeResultSchemaCache<
+                 ExportTableToPointInTimeResult_IncrementalExportSpecificationSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -76,7 +115,8 @@ class ExportTableToPointInTimeResult_IncrementalExportSpecificationSchemaSerdeDe
 class ExportTableToPointInTimeResult_FilterSpecificationSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit ExportTableToPointInTimeResult_FilterSpecificationSchemaSerdeDeser(FilterSpecification& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(ExportTableToPointInTimeResultSchemaCache<ExportTableToPointInTimeResult_FilterSpecificationSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -89,7 +129,9 @@ class ExportTableToPointInTimeResult_FilterSpecificationSchemaSerdeDeser final :
 
 class ExportTableToPointInTimeResult_AttributeValueSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit ExportTableToPointInTimeResult_AttributeValueSchemaSerdeDeser(AttributeValue& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit ExportTableToPointInTimeResult_AttributeValueSchemaSerdeDeser(AttributeValue& obj)
+      : m_obj(obj),
+        m_schema(ExportTableToPointInTimeResultSchemaCache<ExportTableToPointInTimeResult_AttributeValueSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -102,7 +144,8 @@ class ExportTableToPointInTimeResult_AttributeValueSchemaSerdeDeser final : publ
 
 class ExportTableToPointInTimeResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit ExportTableToPointInTimeResultDeserializable(ExportTableToPointInTimeResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit ExportTableToPointInTimeResultDeserializable(ExportTableToPointInTimeResult& obj)
+      : m_obj(obj), m_schema(ExportTableToPointInTimeResultSchemaCache<ExportTableToPointInTimeResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -292,9 +335,11 @@ std::shared_ptr<const smithy::schema::Schema> ExportTableToPointInTimeResult_Exp
       .PutMember("BilledSizeBytes", smithy::schema::Schema::CreateLong("BilledSizeBytes"))
       .PutMember("ItemCount", smithy::schema::Schema::CreateLong("ItemCount"))
       .PutMember("ExportType", smithy::schema::Schema::CreateEnum("ExportType"))
-      .PutMember("IncrementalExportSpecification",
-                 ExportTableToPointInTimeResult_IncrementalExportSpecificationSchemaSerdeDeser::BuildSchema())
-      .PutMember("FilterSpecification", ExportTableToPointInTimeResult_FilterSpecificationSchemaSerdeDeser::BuildSchema())
+      .PutMember(
+          "IncrementalExportSpecification",
+          ExportTableToPointInTimeResultSchemaCache<ExportTableToPointInTimeResult_IncrementalExportSpecificationSchemaSerdeDeser>::Get())
+      .PutMember("FilterSpecification",
+                 ExportTableToPointInTimeResultSchemaCache<ExportTableToPointInTimeResult_FilterSpecificationSchemaSerdeDeser>::Get())
       .Build();
 }
 
@@ -526,7 +571,8 @@ void ExportTableToPointInTimeResultDeserializable::From(const smithy::schema::Sc
 
 std::shared_ptr<const smithy::schema::Schema> ExportTableToPointInTimeResultDeserializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("ExportTableToPointInTimeResult")
-      .PutMember("ExportDescription", ExportTableToPointInTimeResult_ExportDescriptionSchemaSerdeDeser::BuildSchema())
+      .PutMember("ExportDescription",
+                 ExportTableToPointInTimeResultSchemaCache<ExportTableToPointInTimeResult_ExportDescriptionSchemaSerdeDeser>::Get())
       .Build();
 }
 

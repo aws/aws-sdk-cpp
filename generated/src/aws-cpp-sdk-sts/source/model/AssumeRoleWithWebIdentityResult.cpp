@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -21,6 +22,8 @@
 #include <smithy/client/schema/ShapeDeserializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::STS::Model;
@@ -47,9 +50,43 @@ namespace Aws {
 namespace STS {
 namespace Model {
 namespace {
+template <typename Adapter>
+class AssumeRoleWithWebIdentityResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("AssumeRoleWithWebIdentityResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("AssumeRoleWithWebIdentityResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> AssumeRoleWithWebIdentityResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex AssumeRoleWithWebIdentityResultSchemaCache<Adapter>::s_mutex;
+
 class AssumeRoleWithWebIdentityResult_CredentialsSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit AssumeRoleWithWebIdentityResult_CredentialsSchemaSerdeDeser(Credentials& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit AssumeRoleWithWebIdentityResult_CredentialsSchemaSerdeDeser(Credentials& obj)
+      : m_obj(obj),
+        m_schema(AssumeRoleWithWebIdentityResultSchemaCache<AssumeRoleWithWebIdentityResult_CredentialsSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -62,7 +99,9 @@ class AssumeRoleWithWebIdentityResult_CredentialsSchemaSerdeDeser final : public
 
 class AssumeRoleWithWebIdentityResult_AssumedRoleUserSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit AssumeRoleWithWebIdentityResult_AssumedRoleUserSchemaSerdeDeser(AssumedRoleUser& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit AssumeRoleWithWebIdentityResult_AssumedRoleUserSchemaSerdeDeser(AssumedRoleUser& obj)
+      : m_obj(obj),
+        m_schema(AssumeRoleWithWebIdentityResultSchemaCache<AssumeRoleWithWebIdentityResult_AssumedRoleUserSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -75,7 +114,8 @@ class AssumeRoleWithWebIdentityResult_AssumedRoleUserSchemaSerdeDeser final : pu
 
 class AssumeRoleWithWebIdentityResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit AssumeRoleWithWebIdentityResultDeserializable(AssumeRoleWithWebIdentityResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit AssumeRoleWithWebIdentityResultDeserializable(AssumeRoleWithWebIdentityResult& obj)
+      : m_obj(obj), m_schema(AssumeRoleWithWebIdentityResultSchemaCache<AssumeRoleWithWebIdentityResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -215,9 +255,11 @@ void AssumeRoleWithWebIdentityResultDeserializable::From(const smithy::schema::S
 
 std::shared_ptr<const smithy::schema::Schema> AssumeRoleWithWebIdentityResultDeserializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("AssumeRoleWithWebIdentityResult")
-      .PutMember("Credentials", AssumeRoleWithWebIdentityResult_CredentialsSchemaSerdeDeser::BuildSchema())
+      .PutMember("Credentials",
+                 AssumeRoleWithWebIdentityResultSchemaCache<AssumeRoleWithWebIdentityResult_CredentialsSchemaSerdeDeser>::Get())
       .PutMember("SubjectFromWebIdentityToken", smithy::schema::Schema::CreateString("SubjectFromWebIdentityToken"))
-      .PutMember("AssumedRoleUser", AssumeRoleWithWebIdentityResult_AssumedRoleUserSchemaSerdeDeser::BuildSchema())
+      .PutMember("AssumedRoleUser",
+                 AssumeRoleWithWebIdentityResultSchemaCache<AssumeRoleWithWebIdentityResult_AssumedRoleUserSchemaSerdeDeser>::Get())
       .PutMember("Provider", smithy::schema::Schema::CreateString("Provider"))
       .PutMember("Audience", smithy::schema::Schema::CreateString("Audience"))
       .PutMember("SourceIdentity", smithy::schema::Schema::CreateString("SourceIdentity"))

@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -22,6 +23,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 #include <utility>
 
@@ -33,9 +36,42 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class UpdateGlobalTableRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("UpdateGlobalTableRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("UpdateGlobalTableRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> UpdateGlobalTableRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex UpdateGlobalTableRequestSchemaCache<Adapter>::s_mutex;
+
 class UpdateGlobalTableRequest_ReplicaUpdateSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateGlobalTableRequest_ReplicaUpdateSchemaSerdeSer(const ReplicaUpdate& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateGlobalTableRequest_ReplicaUpdateSchemaSerdeSer(const ReplicaUpdate& obj)
+      : m_obj(obj), m_schema(UpdateGlobalTableRequestSchemaCache<UpdateGlobalTableRequest_ReplicaUpdateSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -49,7 +85,7 @@ class UpdateGlobalTableRequest_ReplicaUpdateSchemaSerdeSer final : public smithy
 class UpdateGlobalTableRequest_CreateReplicaActionSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateGlobalTableRequest_CreateReplicaActionSchemaSerdeSer(const CreateReplicaAction& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(UpdateGlobalTableRequestSchemaCache<UpdateGlobalTableRequest_CreateReplicaActionSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -63,7 +99,7 @@ class UpdateGlobalTableRequest_CreateReplicaActionSchemaSerdeSer final : public 
 class UpdateGlobalTableRequest_DeleteReplicaActionSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateGlobalTableRequest_DeleteReplicaActionSchemaSerdeSer(const DeleteReplicaAction& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(UpdateGlobalTableRequestSchemaCache<UpdateGlobalTableRequest_DeleteReplicaActionSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -76,7 +112,8 @@ class UpdateGlobalTableRequest_DeleteReplicaActionSchemaSerdeSer final : public 
 
 class UpdateGlobalTableRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateGlobalTableRequestSerializable(const UpdateGlobalTableRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateGlobalTableRequestSerializable(const UpdateGlobalTableRequest& obj)
+      : m_obj(obj), m_schema(UpdateGlobalTableRequestSchemaCache<UpdateGlobalTableRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -102,8 +139,8 @@ void UpdateGlobalTableRequest_ReplicaUpdateSchemaSerdeSer::SerializeMembers(smit
 
 std::shared_ptr<const smithy::schema::Schema> UpdateGlobalTableRequest_ReplicaUpdateSchemaSerdeSer::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("ReplicaUpdate")
-      .PutMember("Create", UpdateGlobalTableRequest_CreateReplicaActionSchemaSerdeSer::BuildSchema())
-      .PutMember("Delete", UpdateGlobalTableRequest_DeleteReplicaActionSchemaSerdeSer::BuildSchema())
+      .PutMember("Create", UpdateGlobalTableRequestSchemaCache<UpdateGlobalTableRequest_CreateReplicaActionSchemaSerdeSer>::Get())
+      .PutMember("Delete", UpdateGlobalTableRequestSchemaCache<UpdateGlobalTableRequest_DeleteReplicaActionSchemaSerdeSer>::Get())
       .Build();
 }
 
@@ -153,9 +190,10 @@ void UpdateGlobalTableRequestSerializable::SerializeMembers(smithy::schema::Shap
 std::shared_ptr<const smithy::schema::Schema> UpdateGlobalTableRequestSerializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("UpdateGlobalTableRequest")
       .PutMember("GlobalTableName", smithy::schema::Schema::CreateString("GlobalTableName"))
-      .PutMember("ReplicaUpdates", smithy::schema::Schema::ListBuilder("ReplicaUpdateList")
-                                       .PutMember("member", UpdateGlobalTableRequest_ReplicaUpdateSchemaSerdeSer::BuildSchema())
-                                       .Build())
+      .PutMember("ReplicaUpdates",
+                 smithy::schema::Schema::ListBuilder("ReplicaUpdateList")
+                     .PutMember("member", UpdateGlobalTableRequestSchemaCache<UpdateGlobalTableRequest_ReplicaUpdateSchemaSerdeSer>::Get())
+                     .Build())
       .Build();
 }
 

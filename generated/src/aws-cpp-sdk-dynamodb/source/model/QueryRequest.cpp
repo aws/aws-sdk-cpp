@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -22,6 +23,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 #include <utility>
 
@@ -33,9 +36,42 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class QueryRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("QueryRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("QueryRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> QueryRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex QueryRequestSchemaCache<Adapter>::s_mutex;
+
 class QueryRequest_ConditionSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit QueryRequest_ConditionSchemaSerdeSer(const Condition& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit QueryRequest_ConditionSchemaSerdeSer(const Condition& obj)
+      : m_obj(obj), m_schema(QueryRequestSchemaCache<QueryRequest_ConditionSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -48,7 +84,8 @@ class QueryRequest_ConditionSchemaSerdeSer final : public smithy::schema::Serial
 
 class QueryRequest_AttributeValueSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit QueryRequest_AttributeValueSchemaSerdeSer(const AttributeValue& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit QueryRequest_AttributeValueSchemaSerdeSer(const AttributeValue& obj)
+      : m_obj(obj), m_schema(QueryRequestSchemaCache<QueryRequest_AttributeValueSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -61,7 +98,8 @@ class QueryRequest_AttributeValueSchemaSerdeSer final : public smithy::schema::S
 
 class QueryRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit QueryRequestSerializable(const QueryRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit QueryRequestSerializable(const QueryRequest& obj)
+      : m_obj(obj), m_schema(QueryRequestSchemaCache<QueryRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -341,11 +379,11 @@ std::shared_ptr<const smithy::schema::Schema> QueryRequestSerializable::BuildSch
       .PutMember("ConsistentRead", smithy::schema::Schema::CreateBoolean("ConsistentRead"))
       .PutMember("KeyConditions", smithy::schema::Schema::MapBuilder("KeyConditions")
                                       .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                      .PutMember("value", QueryRequest_ConditionSchemaSerdeSer::BuildSchema())
+                                      .PutMember("value", QueryRequestSchemaCache<QueryRequest_ConditionSchemaSerdeSer>::Get())
                                       .Build())
       .PutMember("QueryFilter", smithy::schema::Schema::MapBuilder("FilterConditionMap")
                                     .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                    .PutMember("value", QueryRequest_ConditionSchemaSerdeSer::BuildSchema())
+                                    .PutMember("value", QueryRequestSchemaCache<QueryRequest_ConditionSchemaSerdeSer>::Get())
                                     .Build())
       .PutMember("ConditionalOperator", smithy::schema::Schema::CreateEnum("ConditionalOperator"))
       .PutMember("ScanIndexForward", smithy::schema::Schema::CreateBoolean("ScanIndexForward"))

@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -22,6 +23,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 #include <utility>
 
@@ -33,9 +36,42 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class TransactGetItemsRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("TransactGetItemsRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("TransactGetItemsRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> TransactGetItemsRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex TransactGetItemsRequestSchemaCache<Adapter>::s_mutex;
+
 class TransactGetItemsRequest_TransactGetItemSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit TransactGetItemsRequest_TransactGetItemSchemaSerdeSer(const TransactGetItem& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit TransactGetItemsRequest_TransactGetItemSchemaSerdeSer(const TransactGetItem& obj)
+      : m_obj(obj), m_schema(TransactGetItemsRequestSchemaCache<TransactGetItemsRequest_TransactGetItemSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -48,7 +84,8 @@ class TransactGetItemsRequest_TransactGetItemSchemaSerdeSer final : public smith
 
 class TransactGetItemsRequest_GetSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit TransactGetItemsRequest_GetSchemaSerdeSer(const Get& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit TransactGetItemsRequest_GetSchemaSerdeSer(const Get& obj)
+      : m_obj(obj), m_schema(TransactGetItemsRequestSchemaCache<TransactGetItemsRequest_GetSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -61,7 +98,8 @@ class TransactGetItemsRequest_GetSchemaSerdeSer final : public smithy::schema::S
 
 class TransactGetItemsRequest_AttributeValueSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit TransactGetItemsRequest_AttributeValueSchemaSerdeSer(const AttributeValue& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit TransactGetItemsRequest_AttributeValueSchemaSerdeSer(const AttributeValue& obj)
+      : m_obj(obj), m_schema(TransactGetItemsRequestSchemaCache<TransactGetItemsRequest_AttributeValueSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -74,7 +112,8 @@ class TransactGetItemsRequest_AttributeValueSchemaSerdeSer final : public smithy
 
 class TransactGetItemsRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit TransactGetItemsRequestSerializable(const TransactGetItemsRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit TransactGetItemsRequestSerializable(const TransactGetItemsRequest& obj)
+      : m_obj(obj), m_schema(TransactGetItemsRequestSchemaCache<TransactGetItemsRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -95,7 +134,7 @@ void TransactGetItemsRequest_TransactGetItemSchemaSerdeSer::SerializeMembers(smi
 
 std::shared_ptr<const smithy::schema::Schema> TransactGetItemsRequest_TransactGetItemSchemaSerdeSer::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("TransactGetItem")
-      .PutMember("Get", TransactGetItemsRequest_GetSchemaSerdeSer::BuildSchema())
+      .PutMember("Get", TransactGetItemsRequestSchemaCache<TransactGetItemsRequest_GetSchemaSerdeSer>::Get())
       .Build();
 }
 
@@ -283,9 +322,10 @@ void TransactGetItemsRequestSerializable::SerializeMembers(smithy::schema::Shape
 
 std::shared_ptr<const smithy::schema::Schema> TransactGetItemsRequestSerializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("TransactGetItemsRequest")
-      .PutMember("TransactItems", smithy::schema::Schema::ListBuilder("TransactGetItemList")
-                                      .PutMember("member", TransactGetItemsRequest_TransactGetItemSchemaSerdeSer::BuildSchema())
-                                      .Build())
+      .PutMember("TransactItems",
+                 smithy::schema::Schema::ListBuilder("TransactGetItemList")
+                     .PutMember("member", TransactGetItemsRequestSchemaCache<TransactGetItemsRequest_TransactGetItemSchemaSerdeSer>::Get())
+                     .Build())
       .PutMember("ReturnConsumedCapacity", smithy::schema::Schema::CreateEnum("ReturnConsumedCapacity"))
       .Build();
 }

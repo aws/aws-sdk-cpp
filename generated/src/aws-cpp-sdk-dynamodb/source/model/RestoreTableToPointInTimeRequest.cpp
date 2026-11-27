@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -22,6 +23,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 #include <utility>
 
@@ -33,10 +36,43 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class RestoreTableToPointInTimeRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("RestoreTableToPointInTimeRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("RestoreTableToPointInTimeRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> RestoreTableToPointInTimeRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex RestoreTableToPointInTimeRequestSchemaCache<Adapter>::s_mutex;
+
 class RestoreTableToPointInTimeRequest_GlobalSecondaryIndexSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit RestoreTableToPointInTimeRequest_GlobalSecondaryIndexSchemaSerdeSer(const GlobalSecondaryIndex& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_GlobalSecondaryIndexSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -50,7 +86,8 @@ class RestoreTableToPointInTimeRequest_GlobalSecondaryIndexSchemaSerdeSer final 
 class RestoreTableToPointInTimeRequest_KeySchemaElementSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit RestoreTableToPointInTimeRequest_KeySchemaElementSchemaSerdeSer(const KeySchemaElement& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_KeySchemaElementSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -63,7 +100,9 @@ class RestoreTableToPointInTimeRequest_KeySchemaElementSchemaSerdeSer final : pu
 
 class RestoreTableToPointInTimeRequest_ProjectionSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit RestoreTableToPointInTimeRequest_ProjectionSchemaSerdeSer(const Projection& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit RestoreTableToPointInTimeRequest_ProjectionSchemaSerdeSer(const Projection& obj)
+      : m_obj(obj),
+        m_schema(RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_ProjectionSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -77,7 +116,9 @@ class RestoreTableToPointInTimeRequest_ProjectionSchemaSerdeSer final : public s
 class RestoreTableToPointInTimeRequest_ProvisionedThroughputSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit RestoreTableToPointInTimeRequest_ProvisionedThroughputSchemaSerdeSer(const ProvisionedThroughput& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_ProvisionedThroughputSchemaSerdeSer>::Get()) {
+  }
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -91,7 +132,8 @@ class RestoreTableToPointInTimeRequest_ProvisionedThroughputSchemaSerdeSer final
 class RestoreTableToPointInTimeRequest_OnDemandThroughputSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit RestoreTableToPointInTimeRequest_OnDemandThroughputSchemaSerdeSer(const OnDemandThroughput& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_OnDemandThroughputSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -104,7 +146,9 @@ class RestoreTableToPointInTimeRequest_OnDemandThroughputSchemaSerdeSer final : 
 
 class RestoreTableToPointInTimeRequest_WarmThroughputSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit RestoreTableToPointInTimeRequest_WarmThroughputSchemaSerdeSer(const WarmThroughput& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit RestoreTableToPointInTimeRequest_WarmThroughputSchemaSerdeSer(const WarmThroughput& obj)
+      : m_obj(obj),
+        m_schema(RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_WarmThroughputSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -118,7 +162,8 @@ class RestoreTableToPointInTimeRequest_WarmThroughputSchemaSerdeSer final : publ
 class RestoreTableToPointInTimeRequest_LocalSecondaryIndexSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit RestoreTableToPointInTimeRequest_LocalSecondaryIndexSchemaSerdeSer(const LocalSecondaryIndex& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_LocalSecondaryIndexSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -132,7 +177,8 @@ class RestoreTableToPointInTimeRequest_LocalSecondaryIndexSchemaSerdeSer final :
 class RestoreTableToPointInTimeRequest_SSESpecificationSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit RestoreTableToPointInTimeRequest_SSESpecificationSchemaSerdeSer(const SSESpecification& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_SSESpecificationSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -145,7 +191,9 @@ class RestoreTableToPointInTimeRequest_SSESpecificationSchemaSerdeSer final : pu
 
 class RestoreTableToPointInTimeRequest_VectorIndexSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit RestoreTableToPointInTimeRequest_VectorIndexSchemaSerdeSer(const VectorIndex& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit RestoreTableToPointInTimeRequest_VectorIndexSchemaSerdeSer(const VectorIndex& obj)
+      : m_obj(obj),
+        m_schema(RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_VectorIndexSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -159,7 +207,9 @@ class RestoreTableToPointInTimeRequest_VectorIndexSchemaSerdeSer final : public 
 class RestoreTableToPointInTimeRequest_VectorAttributeDefinitionSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit RestoreTableToPointInTimeRequest_VectorAttributeDefinitionSchemaSerdeSer(const VectorAttributeDefinition& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(
+            RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_VectorAttributeDefinitionSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -173,7 +223,8 @@ class RestoreTableToPointInTimeRequest_VectorAttributeDefinitionSchemaSerdeSer f
 class RestoreTableToPointInTimeRequest_SearchSchemaElementSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit RestoreTableToPointInTimeRequest_SearchSchemaElementSchemaSerdeSer(const SearchSchemaElement& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_SearchSchemaElementSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -187,7 +238,7 @@ class RestoreTableToPointInTimeRequest_SearchSchemaElementSchemaSerdeSer final :
 class RestoreTableToPointInTimeRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
   explicit RestoreTableToPointInTimeRequestSerializable(const RestoreTableToPointInTimeRequest& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -239,13 +290,21 @@ void RestoreTableToPointInTimeRequest_GlobalSecondaryIndexSchemaSerdeSer::Serial
 std::shared_ptr<const smithy::schema::Schema> RestoreTableToPointInTimeRequest_GlobalSecondaryIndexSchemaSerdeSer::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("GlobalSecondaryIndex")
       .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
-      .PutMember("KeySchema", smithy::schema::Schema::ListBuilder("KeySchema")
-                                  .PutMember("member", RestoreTableToPointInTimeRequest_KeySchemaElementSchemaSerdeSer::BuildSchema())
-                                  .Build())
-      .PutMember("Projection", RestoreTableToPointInTimeRequest_ProjectionSchemaSerdeSer::BuildSchema())
-      .PutMember("ProvisionedThroughput", RestoreTableToPointInTimeRequest_ProvisionedThroughputSchemaSerdeSer::BuildSchema())
-      .PutMember("OnDemandThroughput", RestoreTableToPointInTimeRequest_OnDemandThroughputSchemaSerdeSer::BuildSchema())
-      .PutMember("WarmThroughput", RestoreTableToPointInTimeRequest_WarmThroughputSchemaSerdeSer::BuildSchema())
+      .PutMember(
+          "KeySchema",
+          smithy::schema::Schema::ListBuilder("KeySchema")
+              .PutMember(
+                  "member",
+                  RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_KeySchemaElementSchemaSerdeSer>::Get())
+              .Build())
+      .PutMember("Projection",
+                 RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_ProjectionSchemaSerdeSer>::Get())
+      .PutMember("ProvisionedThroughput",
+                 RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_ProvisionedThroughputSchemaSerdeSer>::Get())
+      .PutMember("OnDemandThroughput",
+                 RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_OnDemandThroughputSchemaSerdeSer>::Get())
+      .PutMember("WarmThroughput",
+                 RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_WarmThroughputSchemaSerdeSer>::Get())
       .Build();
 }
 
@@ -374,10 +433,15 @@ void RestoreTableToPointInTimeRequest_LocalSecondaryIndexSchemaSerdeSer::Seriali
 std::shared_ptr<const smithy::schema::Schema> RestoreTableToPointInTimeRequest_LocalSecondaryIndexSchemaSerdeSer::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("LocalSecondaryIndex")
       .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
-      .PutMember("KeySchema", smithy::schema::Schema::ListBuilder("KeySchema")
-                                  .PutMember("member", RestoreTableToPointInTimeRequest_KeySchemaElementSchemaSerdeSer::BuildSchema())
-                                  .Build())
-      .PutMember("Projection", RestoreTableToPointInTimeRequest_ProjectionSchemaSerdeSer::BuildSchema())
+      .PutMember(
+          "KeySchema",
+          smithy::schema::Schema::ListBuilder("KeySchema")
+              .PutMember(
+                  "member",
+                  RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_KeySchemaElementSchemaSerdeSer>::Get())
+              .Build())
+      .PutMember("Projection",
+                 RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_ProjectionSchemaSerdeSer>::Get())
       .Build();
 }
 
@@ -442,11 +506,18 @@ void RestoreTableToPointInTimeRequest_VectorIndexSchemaSerdeSer::SerializeMember
 std::shared_ptr<const smithy::schema::Schema> RestoreTableToPointInTimeRequest_VectorIndexSchemaSerdeSer::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("VectorIndex")
       .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
-      .PutMember("VectorAttribute", RestoreTableToPointInTimeRequest_VectorAttributeDefinitionSchemaSerdeSer::BuildSchema())
-      .PutMember("SearchSchema", smithy::schema::Schema::ListBuilder("SearchSchema")
-                                     .PutMember("member", RestoreTableToPointInTimeRequest_SearchSchemaElementSchemaSerdeSer::BuildSchema())
-                                     .Build())
-      .PutMember("Projection", RestoreTableToPointInTimeRequest_ProjectionSchemaSerdeSer::BuildSchema())
+      .PutMember(
+          "VectorAttribute",
+          RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_VectorAttributeDefinitionSchemaSerdeSer>::Get())
+      .PutMember(
+          "SearchSchema",
+          smithy::schema::Schema::ListBuilder("SearchSchema")
+              .PutMember(
+                  "member",
+                  RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_SearchSchemaElementSchemaSerdeSer>::Get())
+              .Build())
+      .PutMember("Projection",
+                 RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_ProjectionSchemaSerdeSer>::Get())
       .PutMember("Dimensions", smithy::schema::Schema::CreateLong("Dimensions"))
       .PutMember("DistanceFunction", smithy::schema::Schema::CreateEnum("DistanceFunction"))
       .Build();
@@ -568,20 +639,32 @@ std::shared_ptr<const smithy::schema::Schema> RestoreTableToPointInTimeRequestSe
       .PutMember("UseLatestRestorableTime", smithy::schema::Schema::CreateBoolean("UseLatestRestorableTime"))
       .PutMember("RestoreDateTime", smithy::schema::Schema::CreateTimestamp("RestoreDateTime"))
       .PutMember("BillingModeOverride", smithy::schema::Schema::CreateEnum("BillingModeOverride"))
-      .PutMember("GlobalSecondaryIndexOverride",
-                 smithy::schema::Schema::ListBuilder("GlobalSecondaryIndexList")
-                     .PutMember("member", RestoreTableToPointInTimeRequest_GlobalSecondaryIndexSchemaSerdeSer::BuildSchema())
-                     .Build())
-      .PutMember("LocalSecondaryIndexOverride",
-                 smithy::schema::Schema::ListBuilder("LocalSecondaryIndexList")
-                     .PutMember("member", RestoreTableToPointInTimeRequest_LocalSecondaryIndexSchemaSerdeSer::BuildSchema())
-                     .Build())
-      .PutMember("ProvisionedThroughputOverride", RestoreTableToPointInTimeRequest_ProvisionedThroughputSchemaSerdeSer::BuildSchema())
-      .PutMember("OnDemandThroughputOverride", RestoreTableToPointInTimeRequest_OnDemandThroughputSchemaSerdeSer::BuildSchema())
-      .PutMember("SSESpecificationOverride", RestoreTableToPointInTimeRequest_SSESpecificationSchemaSerdeSer::BuildSchema())
-      .PutMember("VectorIndexOverride", smithy::schema::Schema::ListBuilder("VectorIndexList")
-                                            .PutMember("member", RestoreTableToPointInTimeRequest_VectorIndexSchemaSerdeSer::BuildSchema())
-                                            .Build())
+      .PutMember(
+          "GlobalSecondaryIndexOverride",
+          smithy::schema::Schema::ListBuilder("GlobalSecondaryIndexList")
+              .PutMember(
+                  "member",
+                  RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_GlobalSecondaryIndexSchemaSerdeSer>::Get())
+              .Build())
+      .PutMember(
+          "LocalSecondaryIndexOverride",
+          smithy::schema::Schema::ListBuilder("LocalSecondaryIndexList")
+              .PutMember(
+                  "member",
+                  RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_LocalSecondaryIndexSchemaSerdeSer>::Get())
+              .Build())
+      .PutMember("ProvisionedThroughputOverride",
+                 RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_ProvisionedThroughputSchemaSerdeSer>::Get())
+      .PutMember("OnDemandThroughputOverride",
+                 RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_OnDemandThroughputSchemaSerdeSer>::Get())
+      .PutMember("SSESpecificationOverride",
+                 RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_SSESpecificationSchemaSerdeSer>::Get())
+      .PutMember(
+          "VectorIndexOverride",
+          smithy::schema::Schema::ListBuilder("VectorIndexList")
+              .PutMember("member",
+                         RestoreTableToPointInTimeRequestSchemaCache<RestoreTableToPointInTimeRequest_VectorIndexSchemaSerdeSer>::Get())
+              .Build())
       .Build();
 }
 

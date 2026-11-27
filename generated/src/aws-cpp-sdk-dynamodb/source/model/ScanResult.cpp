@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
@@ -46,9 +49,42 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class ScanResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("ScanResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("ScanResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> ScanResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex ScanResultSchemaCache<Adapter>::s_mutex;
+
 class ScanResult_AttributeValueSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit ScanResult_AttributeValueSchemaSerdeDeser(AttributeValue& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit ScanResult_AttributeValueSchemaSerdeDeser(AttributeValue& obj)
+      : m_obj(obj), m_schema(ScanResultSchemaCache<ScanResult_AttributeValueSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -61,7 +97,8 @@ class ScanResult_AttributeValueSchemaSerdeDeser final : public smithy::schema::S
 
 class ScanResult_ConsumedCapacitySchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit ScanResult_ConsumedCapacitySchemaSerdeDeser(ConsumedCapacity& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit ScanResult_ConsumedCapacitySchemaSerdeDeser(ConsumedCapacity& obj)
+      : m_obj(obj), m_schema(ScanResultSchemaCache<ScanResult_ConsumedCapacitySchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -74,7 +111,8 @@ class ScanResult_ConsumedCapacitySchemaSerdeDeser final : public smithy::schema:
 
 class ScanResult_CapacitySchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit ScanResult_CapacitySchemaSerdeDeser(Capacity& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit ScanResult_CapacitySchemaSerdeDeser(Capacity& obj)
+      : m_obj(obj), m_schema(ScanResultSchemaCache<ScanResult_CapacitySchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -87,7 +125,8 @@ class ScanResult_CapacitySchemaSerdeDeser final : public smithy::schema::Seriali
 
 class ScanResult_VectorCapacitySchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit ScanResult_VectorCapacitySchemaSerdeDeser(VectorCapacity& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit ScanResult_VectorCapacitySchemaSerdeDeser(VectorCapacity& obj)
+      : m_obj(obj), m_schema(ScanResultSchemaCache<ScanResult_VectorCapacitySchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -100,7 +139,7 @@ class ScanResult_VectorCapacitySchemaSerdeDeser final : public smithy::schema::S
 
 class ScanResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit ScanResultDeserializable(ScanResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit ScanResultDeserializable(ScanResult& obj) : m_obj(obj), m_schema(ScanResultSchemaCache<ScanResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -303,18 +342,18 @@ std::shared_ptr<const smithy::schema::Schema> ScanResult_ConsumedCapacitySchemaS
       .PutMember("CapacityUnits", smithy::schema::Schema::CreateDouble("CapacityUnits"))
       .PutMember("ReadCapacityUnits", smithy::schema::Schema::CreateDouble("ReadCapacityUnits"))
       .PutMember("WriteCapacityUnits", smithy::schema::Schema::CreateDouble("WriteCapacityUnits"))
-      .PutMember("Table", ScanResult_CapacitySchemaSerdeDeser::BuildSchema())
+      .PutMember("Table", ScanResultSchemaCache<ScanResult_CapacitySchemaSerdeDeser>::Get())
       .PutMember("LocalSecondaryIndexes", smithy::schema::Schema::MapBuilder("SecondaryIndexesCapacityMap")
                                               .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                              .PutMember("value", ScanResult_CapacitySchemaSerdeDeser::BuildSchema())
+                                              .PutMember("value", ScanResultSchemaCache<ScanResult_CapacitySchemaSerdeDeser>::Get())
                                               .Build())
       .PutMember("GlobalSecondaryIndexes", smithy::schema::Schema::MapBuilder("SecondaryIndexesCapacityMap")
                                                .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                               .PutMember("value", ScanResult_CapacitySchemaSerdeDeser::BuildSchema())
+                                               .PutMember("value", ScanResultSchemaCache<ScanResult_CapacitySchemaSerdeDeser>::Get())
                                                .Build())
       .PutMember("VectorIndexes", smithy::schema::Schema::MapBuilder("VectorIndexesCapacityMap")
                                       .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                      .PutMember("value", ScanResult_VectorCapacitySchemaSerdeDeser::BuildSchema())
+                                      .PutMember("value", ScanResultSchemaCache<ScanResult_VectorCapacitySchemaSerdeDeser>::Get())
                                       .Build())
       .Build();
 }
@@ -442,7 +481,7 @@ std::shared_ptr<const smithy::schema::Schema> ScanResultDeserializable::BuildSch
                                          .PutMember("key", smithy::schema::Schema::CreateString("key"))
                                          .PutMember("value", smithy::schema::Schema::UnionBuilder("AttributeValue").Build())
                                          .Build())
-      .PutMember("ConsumedCapacity", ScanResult_ConsumedCapacitySchemaSerdeDeser::BuildSchema())
+      .PutMember("ConsumedCapacity", ScanResultSchemaCache<ScanResult_ConsumedCapacitySchemaSerdeDeser>::Get())
       .Build();
 }
 

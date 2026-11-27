@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
@@ -49,10 +52,44 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class UpdateTableReplicaAutoScalingResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("UpdateTableReplicaAutoScalingResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("UpdateTableReplicaAutoScalingResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> UpdateTableReplicaAutoScalingResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex UpdateTableReplicaAutoScalingResultSchemaCache<Adapter>::s_mutex;
+
 class UpdateTableReplicaAutoScalingResult_TableAutoScalingDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateTableReplicaAutoScalingResult_TableAutoScalingDescriptionSchemaSerdeDeser(TableAutoScalingDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateTableReplicaAutoScalingResultSchemaCache<
+                 UpdateTableReplicaAutoScalingResult_TableAutoScalingDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -66,7 +103,9 @@ class UpdateTableReplicaAutoScalingResult_TableAutoScalingDescriptionSchemaSerde
 class UpdateTableReplicaAutoScalingResult_ReplicaAutoScalingDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateTableReplicaAutoScalingResult_ReplicaAutoScalingDescriptionSchemaSerdeDeser(ReplicaAutoScalingDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateTableReplicaAutoScalingResultSchemaCache<
+                 UpdateTableReplicaAutoScalingResult_ReplicaAutoScalingDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -82,7 +121,9 @@ class UpdateTableReplicaAutoScalingResult_ReplicaGlobalSecondaryIndexAutoScaling
  public:
   explicit UpdateTableReplicaAutoScalingResult_ReplicaGlobalSecondaryIndexAutoScalingDescriptionSchemaSerdeDeser(
       ReplicaGlobalSecondaryIndexAutoScalingDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateTableReplicaAutoScalingResultSchemaCache<
+                 UpdateTableReplicaAutoScalingResult_ReplicaGlobalSecondaryIndexAutoScalingDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -96,7 +137,9 @@ class UpdateTableReplicaAutoScalingResult_ReplicaGlobalSecondaryIndexAutoScaling
 class UpdateTableReplicaAutoScalingResult_AutoScalingSettingsDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateTableReplicaAutoScalingResult_AutoScalingSettingsDescriptionSchemaSerdeDeser(AutoScalingSettingsDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateTableReplicaAutoScalingResultSchemaCache<
+                 UpdateTableReplicaAutoScalingResult_AutoScalingSettingsDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -110,7 +153,9 @@ class UpdateTableReplicaAutoScalingResult_AutoScalingSettingsDescriptionSchemaSe
 class UpdateTableReplicaAutoScalingResult_AutoScalingPolicyDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateTableReplicaAutoScalingResult_AutoScalingPolicyDescriptionSchemaSerdeDeser(AutoScalingPolicyDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateTableReplicaAutoScalingResultSchemaCache<
+                 UpdateTableReplicaAutoScalingResult_AutoScalingPolicyDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -126,7 +171,10 @@ class UpdateTableReplicaAutoScalingResult_AutoScalingTargetTrackingScalingPolicy
  public:
   explicit UpdateTableReplicaAutoScalingResult_AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionSchemaSerdeDeser(
       AutoScalingTargetTrackingScalingPolicyConfigurationDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateTableReplicaAutoScalingResultSchemaCache<
+                 UpdateTableReplicaAutoScalingResult_AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionSchemaSerdeDeser>::
+                     Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -140,7 +188,7 @@ class UpdateTableReplicaAutoScalingResult_AutoScalingTargetTrackingScalingPolicy
 class UpdateTableReplicaAutoScalingResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateTableReplicaAutoScalingResultDeserializable(UpdateTableReplicaAutoScalingResult& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(UpdateTableReplicaAutoScalingResultSchemaCache<UpdateTableReplicaAutoScalingResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -187,7 +235,8 @@ UpdateTableReplicaAutoScalingResult_TableAutoScalingDescriptionSchemaSerdeDeser:
       .PutMember("TableStatus", smithy::schema::Schema::CreateEnum("TableStatus"))
       .PutMember("Replicas",
                  smithy::schema::Schema::ListBuilder("ReplicaAutoScalingDescriptionList")
-                     .PutMember("member", UpdateTableReplicaAutoScalingResult_ReplicaAutoScalingDescriptionSchemaSerdeDeser::BuildSchema())
+                     .PutMember("member", UpdateTableReplicaAutoScalingResultSchemaCache<
+                                              UpdateTableReplicaAutoScalingResult_ReplicaAutoScalingDescriptionSchemaSerdeDeser>::Get())
                      .Build())
       .Build();
 }
@@ -241,14 +290,16 @@ UpdateTableReplicaAutoScalingResult_ReplicaAutoScalingDescriptionSchemaSerdeDese
       .PutMember(
           "GlobalSecondaryIndexes",
           smithy::schema::Schema::ListBuilder("ReplicaGlobalSecondaryIndexAutoScalingDescriptionList")
-              .PutMember(
-                  "member",
-                  UpdateTableReplicaAutoScalingResult_ReplicaGlobalSecondaryIndexAutoScalingDescriptionSchemaSerdeDeser::BuildSchema())
+              .PutMember("member",
+                         UpdateTableReplicaAutoScalingResultSchemaCache<
+                             UpdateTableReplicaAutoScalingResult_ReplicaGlobalSecondaryIndexAutoScalingDescriptionSchemaSerdeDeser>::Get())
               .Build())
       .PutMember("ReplicaProvisionedReadCapacityAutoScalingSettings",
-                 UpdateTableReplicaAutoScalingResult_AutoScalingSettingsDescriptionSchemaSerdeDeser::BuildSchema())
+                 UpdateTableReplicaAutoScalingResultSchemaCache<
+                     UpdateTableReplicaAutoScalingResult_AutoScalingSettingsDescriptionSchemaSerdeDeser>::Get())
       .PutMember("ReplicaProvisionedWriteCapacityAutoScalingSettings",
-                 UpdateTableReplicaAutoScalingResult_AutoScalingSettingsDescriptionSchemaSerdeDeser::BuildSchema())
+                 UpdateTableReplicaAutoScalingResultSchemaCache<
+                     UpdateTableReplicaAutoScalingResult_AutoScalingSettingsDescriptionSchemaSerdeDeser>::Get())
       .PutMember("ReplicaStatus", smithy::schema::Schema::CreateEnum("ReplicaStatus"))
       .Build();
 }
@@ -290,9 +341,11 @@ UpdateTableReplicaAutoScalingResult_ReplicaGlobalSecondaryIndexAutoScalingDescri
       .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
       .PutMember("IndexStatus", smithy::schema::Schema::CreateEnum("IndexStatus"))
       .PutMember("ProvisionedReadCapacityAutoScalingSettings",
-                 UpdateTableReplicaAutoScalingResult_AutoScalingSettingsDescriptionSchemaSerdeDeser::BuildSchema())
+                 UpdateTableReplicaAutoScalingResultSchemaCache<
+                     UpdateTableReplicaAutoScalingResult_AutoScalingSettingsDescriptionSchemaSerdeDeser>::Get())
       .PutMember("ProvisionedWriteCapacityAutoScalingSettings",
-                 UpdateTableReplicaAutoScalingResult_AutoScalingSettingsDescriptionSchemaSerdeDeser::BuildSchema())
+                 UpdateTableReplicaAutoScalingResultSchemaCache<
+                     UpdateTableReplicaAutoScalingResult_AutoScalingSettingsDescriptionSchemaSerdeDeser>::Get())
       .Build();
 }
 
@@ -348,7 +401,8 @@ UpdateTableReplicaAutoScalingResult_AutoScalingSettingsDescriptionSchemaSerdeDes
       .PutMember("AutoScalingRoleArn", smithy::schema::Schema::CreateString("AutoScalingRoleArn"))
       .PutMember("ScalingPolicies",
                  smithy::schema::Schema::ListBuilder("AutoScalingPolicyDescriptionList")
-                     .PutMember("member", UpdateTableReplicaAutoScalingResult_AutoScalingPolicyDescriptionSchemaSerdeDeser::BuildSchema())
+                     .PutMember("member", UpdateTableReplicaAutoScalingResultSchemaCache<
+                                              UpdateTableReplicaAutoScalingResult_AutoScalingPolicyDescriptionSchemaSerdeDeser>::Get())
                      .Build())
       .Build();
 }
@@ -378,7 +432,8 @@ UpdateTableReplicaAutoScalingResult_AutoScalingPolicyDescriptionSchemaSerdeDeser
       .PutMember("PolicyName", smithy::schema::Schema::CreateString("PolicyName"))
       .PutMember(
           "TargetTrackingScalingPolicyConfiguration",
-          UpdateTableReplicaAutoScalingResult_AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionSchemaSerdeDeser::BuildSchema())
+          UpdateTableReplicaAutoScalingResultSchemaCache<
+              UpdateTableReplicaAutoScalingResult_AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionSchemaSerdeDeser>::Get())
       .Build();
 }
 
@@ -438,8 +493,8 @@ void UpdateTableReplicaAutoScalingResultDeserializable::From(const smithy::schem
 
 std::shared_ptr<const smithy::schema::Schema> UpdateTableReplicaAutoScalingResultDeserializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("UpdateTableReplicaAutoScalingResult")
-      .PutMember("TableAutoScalingDescription",
-                 UpdateTableReplicaAutoScalingResult_TableAutoScalingDescriptionSchemaSerdeDeser::BuildSchema())
+      .PutMember("TableAutoScalingDescription", UpdateTableReplicaAutoScalingResultSchemaCache<
+                                                    UpdateTableReplicaAutoScalingResult_TableAutoScalingDescriptionSchemaSerdeDeser>::Get())
       .Build();
 }
 

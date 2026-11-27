@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -22,6 +23,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 #include <utility>
 
@@ -33,9 +36,42 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class UpdateItemRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("UpdateItemRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("UpdateItemRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> UpdateItemRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex UpdateItemRequestSchemaCache<Adapter>::s_mutex;
+
 class UpdateItemRequest_AttributeValueSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateItemRequest_AttributeValueSchemaSerdeSer(const AttributeValue& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateItemRequest_AttributeValueSchemaSerdeSer(const AttributeValue& obj)
+      : m_obj(obj), m_schema(UpdateItemRequestSchemaCache<UpdateItemRequest_AttributeValueSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -48,7 +84,8 @@ class UpdateItemRequest_AttributeValueSchemaSerdeSer final : public smithy::sche
 
 class UpdateItemRequest_AttributeValueUpdateSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateItemRequest_AttributeValueUpdateSchemaSerdeSer(const AttributeValueUpdate& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateItemRequest_AttributeValueUpdateSchemaSerdeSer(const AttributeValueUpdate& obj)
+      : m_obj(obj), m_schema(UpdateItemRequestSchemaCache<UpdateItemRequest_AttributeValueUpdateSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -62,7 +99,7 @@ class UpdateItemRequest_AttributeValueUpdateSchemaSerdeSer final : public smithy
 class UpdateItemRequest_ExpectedAttributeValueSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateItemRequest_ExpectedAttributeValueSchemaSerdeSer(const ExpectedAttributeValue& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(UpdateItemRequestSchemaCache<UpdateItemRequest_ExpectedAttributeValueSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -75,7 +112,8 @@ class UpdateItemRequest_ExpectedAttributeValueSchemaSerdeSer final : public smit
 
 class UpdateItemRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateItemRequestSerializable(const UpdateItemRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateItemRequestSerializable(const UpdateItemRequest& obj)
+      : m_obj(obj), m_schema(UpdateItemRequestSchemaCache<UpdateItemRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -361,14 +399,16 @@ std::shared_ptr<const smithy::schema::Schema> UpdateItemRequestSerializable::Bui
                             .PutMember("key", smithy::schema::Schema::CreateString("key"))
                             .PutMember("value", smithy::schema::Schema::UnionBuilder("AttributeValue").Build())
                             .Build())
-      .PutMember("AttributeUpdates", smithy::schema::Schema::MapBuilder("AttributeUpdates")
-                                         .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                         .PutMember("value", UpdateItemRequest_AttributeValueUpdateSchemaSerdeSer::BuildSchema())
-                                         .Build())
-      .PutMember("Expected", smithy::schema::Schema::MapBuilder("ExpectedAttributeMap")
-                                 .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                 .PutMember("value", UpdateItemRequest_ExpectedAttributeValueSchemaSerdeSer::BuildSchema())
-                                 .Build())
+      .PutMember("AttributeUpdates",
+                 smithy::schema::Schema::MapBuilder("AttributeUpdates")
+                     .PutMember("key", smithy::schema::Schema::CreateString("key"))
+                     .PutMember("value", UpdateItemRequestSchemaCache<UpdateItemRequest_AttributeValueUpdateSchemaSerdeSer>::Get())
+                     .Build())
+      .PutMember("Expected",
+                 smithy::schema::Schema::MapBuilder("ExpectedAttributeMap")
+                     .PutMember("key", smithy::schema::Schema::CreateString("key"))
+                     .PutMember("value", UpdateItemRequestSchemaCache<UpdateItemRequest_ExpectedAttributeValueSchemaSerdeSer>::Get())
+                     .Build())
       .PutMember("ConditionalOperator", smithy::schema::Schema::CreateEnum("ConditionalOperator"))
       .PutMember("ReturnValues", smithy::schema::Schema::CreateEnum("ReturnValues"))
       .PutMember("ReturnConsumedCapacity", smithy::schema::Schema::CreateEnum("ReturnConsumedCapacity"))

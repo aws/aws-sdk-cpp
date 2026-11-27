@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -22,6 +23,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 #include <utility>
 
@@ -33,10 +36,43 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class BatchExecuteStatementRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("BatchExecuteStatementRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("BatchExecuteStatementRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> BatchExecuteStatementRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex BatchExecuteStatementRequestSchemaCache<Adapter>::s_mutex;
+
 class BatchExecuteStatementRequest_BatchStatementRequestSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit BatchExecuteStatementRequest_BatchStatementRequestSchemaSerdeSer(const BatchStatementRequest& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(BatchExecuteStatementRequestSchemaCache<BatchExecuteStatementRequest_BatchStatementRequestSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -49,7 +85,8 @@ class BatchExecuteStatementRequest_BatchStatementRequestSchemaSerdeSer final : p
 
 class BatchExecuteStatementRequest_AttributeValueSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit BatchExecuteStatementRequest_AttributeValueSchemaSerdeSer(const AttributeValue& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit BatchExecuteStatementRequest_AttributeValueSchemaSerdeSer(const AttributeValue& obj)
+      : m_obj(obj), m_schema(BatchExecuteStatementRequestSchemaCache<BatchExecuteStatementRequest_AttributeValueSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -62,7 +99,8 @@ class BatchExecuteStatementRequest_AttributeValueSchemaSerdeSer final : public s
 
 class BatchExecuteStatementRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit BatchExecuteStatementRequestSerializable(const BatchExecuteStatementRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit BatchExecuteStatementRequestSerializable(const BatchExecuteStatementRequest& obj)
+      : m_obj(obj), m_schema(BatchExecuteStatementRequestSchemaCache<BatchExecuteStatementRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -245,9 +283,12 @@ void BatchExecuteStatementRequestSerializable::SerializeMembers(smithy::schema::
 
 std::shared_ptr<const smithy::schema::Schema> BatchExecuteStatementRequestSerializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("BatchExecuteStatementRequest")
-      .PutMember("Statements", smithy::schema::Schema::ListBuilder("PartiQLBatchRequest")
-                                   .PutMember("member", BatchExecuteStatementRequest_BatchStatementRequestSchemaSerdeSer::BuildSchema())
-                                   .Build())
+      .PutMember(
+          "Statements",
+          smithy::schema::Schema::ListBuilder("PartiQLBatchRequest")
+              .PutMember("member",
+                         BatchExecuteStatementRequestSchemaCache<BatchExecuteStatementRequest_BatchStatementRequestSchemaSerdeSer>::Get())
+              .Build())
       .PutMember("ReturnConsumedCapacity", smithy::schema::Schema::CreateEnum("ReturnConsumedCapacity"))
       .Build();
 }

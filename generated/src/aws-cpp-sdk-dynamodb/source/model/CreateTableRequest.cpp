@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -22,6 +23,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 #include <utility>
 
@@ -33,9 +36,42 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class CreateTableRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("CreateTableRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("CreateTableRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> CreateTableRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex CreateTableRequestSchemaCache<Adapter>::s_mutex;
+
 class CreateTableRequest_AttributeDefinitionSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequest_AttributeDefinitionSchemaSerdeSer(const AttributeDefinition& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequest_AttributeDefinitionSchemaSerdeSer(const AttributeDefinition& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_AttributeDefinitionSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -48,7 +84,8 @@ class CreateTableRequest_AttributeDefinitionSchemaSerdeSer final : public smithy
 
 class CreateTableRequest_KeySchemaElementSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequest_KeySchemaElementSchemaSerdeSer(const KeySchemaElement& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequest_KeySchemaElementSchemaSerdeSer(const KeySchemaElement& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_KeySchemaElementSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -61,7 +98,8 @@ class CreateTableRequest_KeySchemaElementSchemaSerdeSer final : public smithy::s
 
 class CreateTableRequest_LocalSecondaryIndexSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequest_LocalSecondaryIndexSchemaSerdeSer(const LocalSecondaryIndex& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequest_LocalSecondaryIndexSchemaSerdeSer(const LocalSecondaryIndex& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_LocalSecondaryIndexSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -74,7 +112,8 @@ class CreateTableRequest_LocalSecondaryIndexSchemaSerdeSer final : public smithy
 
 class CreateTableRequest_ProjectionSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequest_ProjectionSchemaSerdeSer(const Projection& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequest_ProjectionSchemaSerdeSer(const Projection& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_ProjectionSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -87,7 +126,8 @@ class CreateTableRequest_ProjectionSchemaSerdeSer final : public smithy::schema:
 
 class CreateTableRequest_GlobalSecondaryIndexSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequest_GlobalSecondaryIndexSchemaSerdeSer(const GlobalSecondaryIndex& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequest_GlobalSecondaryIndexSchemaSerdeSer(const GlobalSecondaryIndex& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_GlobalSecondaryIndexSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -100,7 +140,8 @@ class CreateTableRequest_GlobalSecondaryIndexSchemaSerdeSer final : public smith
 
 class CreateTableRequest_ProvisionedThroughputSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequest_ProvisionedThroughputSchemaSerdeSer(const ProvisionedThroughput& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequest_ProvisionedThroughputSchemaSerdeSer(const ProvisionedThroughput& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_ProvisionedThroughputSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -113,7 +154,8 @@ class CreateTableRequest_ProvisionedThroughputSchemaSerdeSer final : public smit
 
 class CreateTableRequest_OnDemandThroughputSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequest_OnDemandThroughputSchemaSerdeSer(const OnDemandThroughput& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequest_OnDemandThroughputSchemaSerdeSer(const OnDemandThroughput& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_OnDemandThroughputSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -126,7 +168,8 @@ class CreateTableRequest_OnDemandThroughputSchemaSerdeSer final : public smithy:
 
 class CreateTableRequest_WarmThroughputSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequest_WarmThroughputSchemaSerdeSer(const WarmThroughput& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequest_WarmThroughputSchemaSerdeSer(const WarmThroughput& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_WarmThroughputSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -139,7 +182,8 @@ class CreateTableRequest_WarmThroughputSchemaSerdeSer final : public smithy::sch
 
 class CreateTableRequest_StreamSpecificationSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequest_StreamSpecificationSchemaSerdeSer(const StreamSpecification& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequest_StreamSpecificationSchemaSerdeSer(const StreamSpecification& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_StreamSpecificationSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -152,7 +196,8 @@ class CreateTableRequest_StreamSpecificationSchemaSerdeSer final : public smithy
 
 class CreateTableRequest_SSESpecificationSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequest_SSESpecificationSchemaSerdeSer(const SSESpecification& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequest_SSESpecificationSchemaSerdeSer(const SSESpecification& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_SSESpecificationSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -165,7 +210,8 @@ class CreateTableRequest_SSESpecificationSchemaSerdeSer final : public smithy::s
 
 class CreateTableRequest_TagSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequest_TagSchemaSerdeSer(const Tag& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequest_TagSchemaSerdeSer(const Tag& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_TagSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -178,7 +224,8 @@ class CreateTableRequest_TagSchemaSerdeSer final : public smithy::schema::Serial
 
 class CreateTableRequest_VectorIndexSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequest_VectorIndexSchemaSerdeSer(const VectorIndex& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequest_VectorIndexSchemaSerdeSer(const VectorIndex& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_VectorIndexSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -192,7 +239,7 @@ class CreateTableRequest_VectorIndexSchemaSerdeSer final : public smithy::schema
 class CreateTableRequest_VectorAttributeDefinitionSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit CreateTableRequest_VectorAttributeDefinitionSchemaSerdeSer(const VectorAttributeDefinition& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_VectorAttributeDefinitionSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -205,7 +252,8 @@ class CreateTableRequest_VectorAttributeDefinitionSchemaSerdeSer final : public 
 
 class CreateTableRequest_SearchSchemaElementSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequest_SearchSchemaElementSchemaSerdeSer(const SearchSchemaElement& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequest_SearchSchemaElementSchemaSerdeSer(const SearchSchemaElement& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequest_SearchSchemaElementSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -218,7 +266,8 @@ class CreateTableRequest_SearchSchemaElementSchemaSerdeSer final : public smithy
 
 class CreateTableRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit CreateTableRequestSerializable(const CreateTableRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit CreateTableRequestSerializable(const CreateTableRequest& obj)
+      : m_obj(obj), m_schema(CreateTableRequestSchemaCache<CreateTableRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -290,10 +339,11 @@ void CreateTableRequest_LocalSecondaryIndexSchemaSerdeSer::SerializeMembers(smit
 std::shared_ptr<const smithy::schema::Schema> CreateTableRequest_LocalSecondaryIndexSchemaSerdeSer::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("LocalSecondaryIndex")
       .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
-      .PutMember("KeySchema", smithy::schema::Schema::ListBuilder("KeySchema")
-                                  .PutMember("member", CreateTableRequest_KeySchemaElementSchemaSerdeSer::BuildSchema())
-                                  .Build())
-      .PutMember("Projection", CreateTableRequest_ProjectionSchemaSerdeSer::BuildSchema())
+      .PutMember("KeySchema",
+                 smithy::schema::Schema::ListBuilder("KeySchema")
+                     .PutMember("member", CreateTableRequestSchemaCache<CreateTableRequest_KeySchemaElementSchemaSerdeSer>::Get())
+                     .Build())
+      .PutMember("Projection", CreateTableRequestSchemaCache<CreateTableRequest_ProjectionSchemaSerdeSer>::Get())
       .Build();
 }
 
@@ -362,13 +412,14 @@ void CreateTableRequest_GlobalSecondaryIndexSchemaSerdeSer::SerializeMembers(smi
 std::shared_ptr<const smithy::schema::Schema> CreateTableRequest_GlobalSecondaryIndexSchemaSerdeSer::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("GlobalSecondaryIndex")
       .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
-      .PutMember("KeySchema", smithy::schema::Schema::ListBuilder("KeySchema")
-                                  .PutMember("member", CreateTableRequest_KeySchemaElementSchemaSerdeSer::BuildSchema())
-                                  .Build())
-      .PutMember("Projection", CreateTableRequest_ProjectionSchemaSerdeSer::BuildSchema())
-      .PutMember("ProvisionedThroughput", CreateTableRequest_ProvisionedThroughputSchemaSerdeSer::BuildSchema())
-      .PutMember("OnDemandThroughput", CreateTableRequest_OnDemandThroughputSchemaSerdeSer::BuildSchema())
-      .PutMember("WarmThroughput", CreateTableRequest_WarmThroughputSchemaSerdeSer::BuildSchema())
+      .PutMember("KeySchema",
+                 smithy::schema::Schema::ListBuilder("KeySchema")
+                     .PutMember("member", CreateTableRequestSchemaCache<CreateTableRequest_KeySchemaElementSchemaSerdeSer>::Get())
+                     .Build())
+      .PutMember("Projection", CreateTableRequestSchemaCache<CreateTableRequest_ProjectionSchemaSerdeSer>::Get())
+      .PutMember("ProvisionedThroughput", CreateTableRequestSchemaCache<CreateTableRequest_ProvisionedThroughputSchemaSerdeSer>::Get())
+      .PutMember("OnDemandThroughput", CreateTableRequestSchemaCache<CreateTableRequest_OnDemandThroughputSchemaSerdeSer>::Get())
+      .PutMember("WarmThroughput", CreateTableRequestSchemaCache<CreateTableRequest_WarmThroughputSchemaSerdeSer>::Get())
       .Build();
 }
 
@@ -523,11 +574,12 @@ void CreateTableRequest_VectorIndexSchemaSerdeSer::SerializeMembers(smithy::sche
 std::shared_ptr<const smithy::schema::Schema> CreateTableRequest_VectorIndexSchemaSerdeSer::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("VectorIndex")
       .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
-      .PutMember("VectorAttribute", CreateTableRequest_VectorAttributeDefinitionSchemaSerdeSer::BuildSchema())
-      .PutMember("SearchSchema", smithy::schema::Schema::ListBuilder("SearchSchema")
-                                     .PutMember("member", CreateTableRequest_SearchSchemaElementSchemaSerdeSer::BuildSchema())
-                                     .Build())
-      .PutMember("Projection", CreateTableRequest_ProjectionSchemaSerdeSer::BuildSchema())
+      .PutMember("VectorAttribute", CreateTableRequestSchemaCache<CreateTableRequest_VectorAttributeDefinitionSchemaSerdeSer>::Get())
+      .PutMember("SearchSchema",
+                 smithy::schema::Schema::ListBuilder("SearchSchema")
+                     .PutMember("member", CreateTableRequestSchemaCache<CreateTableRequest_SearchSchemaElementSchemaSerdeSer>::Get())
+                     .Build())
+      .PutMember("Projection", CreateTableRequestSchemaCache<CreateTableRequest_ProjectionSchemaSerdeSer>::Get())
       .PutMember("Dimensions", smithy::schema::Schema::CreateLong("Dimensions"))
       .PutMember("DistanceFunction", smithy::schema::Schema::CreateEnum("DistanceFunction"))
       .Build();
@@ -684,36 +736,41 @@ void CreateTableRequestSerializable::SerializeMembers(smithy::schema::ShapeSeria
 
 std::shared_ptr<const smithy::schema::Schema> CreateTableRequestSerializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("CreateTableRequest")
-      .PutMember("AttributeDefinitions", smithy::schema::Schema::ListBuilder("AttributeDefinitions")
-                                             .PutMember("member", CreateTableRequest_AttributeDefinitionSchemaSerdeSer::BuildSchema())
-                                             .Build())
+      .PutMember("AttributeDefinitions",
+                 smithy::schema::Schema::ListBuilder("AttributeDefinitions")
+                     .PutMember("member", CreateTableRequestSchemaCache<CreateTableRequest_AttributeDefinitionSchemaSerdeSer>::Get())
+                     .Build())
       .PutMember("TableName", smithy::schema::Schema::CreateString("TableName"))
-      .PutMember("KeySchema", smithy::schema::Schema::ListBuilder("KeySchema")
-                                  .PutMember("member", CreateTableRequest_KeySchemaElementSchemaSerdeSer::BuildSchema())
-                                  .Build())
-      .PutMember("LocalSecondaryIndexes", smithy::schema::Schema::ListBuilder("LocalSecondaryIndexList")
-                                              .PutMember("member", CreateTableRequest_LocalSecondaryIndexSchemaSerdeSer::BuildSchema())
-                                              .Build())
-      .PutMember("GlobalSecondaryIndexes", smithy::schema::Schema::ListBuilder("GlobalSecondaryIndexList")
-                                               .PutMember("member", CreateTableRequest_GlobalSecondaryIndexSchemaSerdeSer::BuildSchema())
-                                               .Build())
+      .PutMember("KeySchema",
+                 smithy::schema::Schema::ListBuilder("KeySchema")
+                     .PutMember("member", CreateTableRequestSchemaCache<CreateTableRequest_KeySchemaElementSchemaSerdeSer>::Get())
+                     .Build())
+      .PutMember("LocalSecondaryIndexes",
+                 smithy::schema::Schema::ListBuilder("LocalSecondaryIndexList")
+                     .PutMember("member", CreateTableRequestSchemaCache<CreateTableRequest_LocalSecondaryIndexSchemaSerdeSer>::Get())
+                     .Build())
+      .PutMember("GlobalSecondaryIndexes",
+                 smithy::schema::Schema::ListBuilder("GlobalSecondaryIndexList")
+                     .PutMember("member", CreateTableRequestSchemaCache<CreateTableRequest_GlobalSecondaryIndexSchemaSerdeSer>::Get())
+                     .Build())
       .PutMember("BillingMode", smithy::schema::Schema::CreateEnum("BillingMode"))
-      .PutMember("ProvisionedThroughput", CreateTableRequest_ProvisionedThroughputSchemaSerdeSer::BuildSchema())
-      .PutMember("StreamSpecification", CreateTableRequest_StreamSpecificationSchemaSerdeSer::BuildSchema())
-      .PutMember("SSESpecification", CreateTableRequest_SSESpecificationSchemaSerdeSer::BuildSchema())
-      .PutMember(
-          "Tags",
-          smithy::schema::Schema::ListBuilder("TagList").PutMember("member", CreateTableRequest_TagSchemaSerdeSer::BuildSchema()).Build())
+      .PutMember("ProvisionedThroughput", CreateTableRequestSchemaCache<CreateTableRequest_ProvisionedThroughputSchemaSerdeSer>::Get())
+      .PutMember("StreamSpecification", CreateTableRequestSchemaCache<CreateTableRequest_StreamSpecificationSchemaSerdeSer>::Get())
+      .PutMember("SSESpecification", CreateTableRequestSchemaCache<CreateTableRequest_SSESpecificationSchemaSerdeSer>::Get())
+      .PutMember("Tags", smithy::schema::Schema::ListBuilder("TagList")
+                             .PutMember("member", CreateTableRequestSchemaCache<CreateTableRequest_TagSchemaSerdeSer>::Get())
+                             .Build())
       .PutMember("TableClass", smithy::schema::Schema::CreateEnum("TableClass"))
       .PutMember("DeletionProtectionEnabled", smithy::schema::Schema::CreateBoolean("DeletionProtectionEnabled"))
-      .PutMember("WarmThroughput", CreateTableRequest_WarmThroughputSchemaSerdeSer::BuildSchema())
+      .PutMember("WarmThroughput", CreateTableRequestSchemaCache<CreateTableRequest_WarmThroughputSchemaSerdeSer>::Get())
       .PutMember("ResourcePolicy", smithy::schema::Schema::CreateString("ResourcePolicy"))
-      .PutMember("OnDemandThroughput", CreateTableRequest_OnDemandThroughputSchemaSerdeSer::BuildSchema())
+      .PutMember("OnDemandThroughput", CreateTableRequestSchemaCache<CreateTableRequest_OnDemandThroughputSchemaSerdeSer>::Get())
       .PutMember("GlobalTableSourceArn", smithy::schema::Schema::CreateString("GlobalTableSourceArn"))
       .PutMember("GlobalTableSettingsReplicationMode", smithy::schema::Schema::CreateEnum("GlobalTableSettingsReplicationMode"))
-      .PutMember("VectorIndexes", smithy::schema::Schema::ListBuilder("VectorIndexList")
-                                      .PutMember("member", CreateTableRequest_VectorIndexSchemaSerdeSer::BuildSchema())
-                                      .Build())
+      .PutMember("VectorIndexes",
+                 smithy::schema::Schema::ListBuilder("VectorIndexList")
+                     .PutMember("member", CreateTableRequestSchemaCache<CreateTableRequest_VectorIndexSchemaSerdeSer>::Get())
+                     .Build())
       .Build();
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
@@ -46,10 +49,44 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class UpdateContinuousBackupsResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("UpdateContinuousBackupsResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("UpdateContinuousBackupsResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> UpdateContinuousBackupsResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex UpdateContinuousBackupsResultSchemaCache<Adapter>::s_mutex;
+
 class UpdateContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser(ContinuousBackupsDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(
+            UpdateContinuousBackupsResultSchemaCache<UpdateContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -63,7 +100,10 @@ class UpdateContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser
 class UpdateContinuousBackupsResult_PointInTimeRecoveryDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateContinuousBackupsResult_PointInTimeRecoveryDescriptionSchemaSerdeDeser(PointInTimeRecoveryDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(
+            UpdateContinuousBackupsResultSchemaCache<UpdateContinuousBackupsResult_PointInTimeRecoveryDescriptionSchemaSerdeDeser>::Get()) {
+  }
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -76,7 +116,8 @@ class UpdateContinuousBackupsResult_PointInTimeRecoveryDescriptionSchemaSerdeDes
 
 class UpdateContinuousBackupsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateContinuousBackupsResultDeserializable(UpdateContinuousBackupsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateContinuousBackupsResultDeserializable(UpdateContinuousBackupsResult& obj)
+      : m_obj(obj), m_schema(UpdateContinuousBackupsResultSchemaCache<UpdateContinuousBackupsResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -108,8 +149,9 @@ void UpdateContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser:
 std::shared_ptr<const smithy::schema::Schema> UpdateContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("ContinuousBackupsDescription")
       .PutMember("ContinuousBackupsStatus", smithy::schema::Schema::CreateEnum("ContinuousBackupsStatus"))
-      .PutMember("PointInTimeRecoveryDescription",
-                 UpdateContinuousBackupsResult_PointInTimeRecoveryDescriptionSchemaSerdeDeser::BuildSchema())
+      .PutMember(
+          "PointInTimeRecoveryDescription",
+          UpdateContinuousBackupsResultSchemaCache<UpdateContinuousBackupsResult_PointInTimeRecoveryDescriptionSchemaSerdeDeser>::Get())
       .Build();
 }
 
@@ -168,7 +210,9 @@ void UpdateContinuousBackupsResultDeserializable::From(const smithy::schema::Sch
 
 std::shared_ptr<const smithy::schema::Schema> UpdateContinuousBackupsResultDeserializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("UpdateContinuousBackupsResult")
-      .PutMember("ContinuousBackupsDescription", UpdateContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser::BuildSchema())
+      .PutMember(
+          "ContinuousBackupsDescription",
+          UpdateContinuousBackupsResultSchemaCache<UpdateContinuousBackupsResult_ContinuousBackupsDescriptionSchemaSerdeDeser>::Get())
       .Build();
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
@@ -46,9 +49,42 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class DescribeExportResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("DescribeExportResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("DescribeExportResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> DescribeExportResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex DescribeExportResultSchemaCache<Adapter>::s_mutex;
+
 class DescribeExportResult_ExportDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DescribeExportResult_ExportDescriptionSchemaSerdeDeser(ExportDescription& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DescribeExportResult_ExportDescriptionSchemaSerdeDeser(ExportDescription& obj)
+      : m_obj(obj), m_schema(DescribeExportResultSchemaCache<DescribeExportResult_ExportDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -62,7 +98,7 @@ class DescribeExportResult_ExportDescriptionSchemaSerdeDeser final : public smit
 class DescribeExportResult_IncrementalExportSpecificationSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DescribeExportResult_IncrementalExportSpecificationSchemaSerdeDeser(IncrementalExportSpecification& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(DescribeExportResultSchemaCache<DescribeExportResult_IncrementalExportSpecificationSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -75,7 +111,8 @@ class DescribeExportResult_IncrementalExportSpecificationSchemaSerdeDeser final 
 
 class DescribeExportResult_FilterSpecificationSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DescribeExportResult_FilterSpecificationSchemaSerdeDeser(FilterSpecification& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DescribeExportResult_FilterSpecificationSchemaSerdeDeser(FilterSpecification& obj)
+      : m_obj(obj), m_schema(DescribeExportResultSchemaCache<DescribeExportResult_FilterSpecificationSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -88,7 +125,8 @@ class DescribeExportResult_FilterSpecificationSchemaSerdeDeser final : public sm
 
 class DescribeExportResult_AttributeValueSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DescribeExportResult_AttributeValueSchemaSerdeDeser(AttributeValue& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DescribeExportResult_AttributeValueSchemaSerdeDeser(AttributeValue& obj)
+      : m_obj(obj), m_schema(DescribeExportResultSchemaCache<DescribeExportResult_AttributeValueSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -101,7 +139,8 @@ class DescribeExportResult_AttributeValueSchemaSerdeDeser final : public smithy:
 
 class DescribeExportResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit DescribeExportResultDeserializable(DescribeExportResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DescribeExportResultDeserializable(DescribeExportResult& obj)
+      : m_obj(obj), m_schema(DescribeExportResultSchemaCache<DescribeExportResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -291,8 +330,9 @@ std::shared_ptr<const smithy::schema::Schema> DescribeExportResult_ExportDescrip
       .PutMember("BilledSizeBytes", smithy::schema::Schema::CreateLong("BilledSizeBytes"))
       .PutMember("ItemCount", smithy::schema::Schema::CreateLong("ItemCount"))
       .PutMember("ExportType", smithy::schema::Schema::CreateEnum("ExportType"))
-      .PutMember("IncrementalExportSpecification", DescribeExportResult_IncrementalExportSpecificationSchemaSerdeDeser::BuildSchema())
-      .PutMember("FilterSpecification", DescribeExportResult_FilterSpecificationSchemaSerdeDeser::BuildSchema())
+      .PutMember("IncrementalExportSpecification",
+                 DescribeExportResultSchemaCache<DescribeExportResult_IncrementalExportSpecificationSchemaSerdeDeser>::Get())
+      .PutMember("FilterSpecification", DescribeExportResultSchemaCache<DescribeExportResult_FilterSpecificationSchemaSerdeDeser>::Get())
       .Build();
 }
 
@@ -523,7 +563,7 @@ void DescribeExportResultDeserializable::From(const smithy::schema::Schema& memb
 
 std::shared_ptr<const smithy::schema::Schema> DescribeExportResultDeserializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("DescribeExportResult")
-      .PutMember("ExportDescription", DescribeExportResult_ExportDescriptionSchemaSerdeDeser::BuildSchema())
+      .PutMember("ExportDescription", DescribeExportResultSchemaCache<DescribeExportResult_ExportDescriptionSchemaSerdeDeser>::Get())
       .Build();
 }
 

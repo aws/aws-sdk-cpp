@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
@@ -46,10 +49,42 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class UpdateGlobalTableResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("UpdateGlobalTableResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("UpdateGlobalTableResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> UpdateGlobalTableResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex UpdateGlobalTableResultSchemaCache<Adapter>::s_mutex;
+
 class UpdateGlobalTableResult_GlobalTableDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateGlobalTableResult_GlobalTableDescriptionSchemaSerdeDeser(GlobalTableDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_GlobalTableDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -62,7 +97,8 @@ class UpdateGlobalTableResult_GlobalTableDescriptionSchemaSerdeDeser final : pub
 
 class UpdateGlobalTableResult_ReplicaDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateGlobalTableResult_ReplicaDescriptionSchemaSerdeDeser(ReplicaDescription& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateGlobalTableResult_ReplicaDescriptionSchemaSerdeDeser(ReplicaDescription& obj)
+      : m_obj(obj), m_schema(UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_ReplicaDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -76,7 +112,8 @@ class UpdateGlobalTableResult_ReplicaDescriptionSchemaSerdeDeser final : public 
 class UpdateGlobalTableResult_ProvisionedThroughputOverrideSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateGlobalTableResult_ProvisionedThroughputOverrideSchemaSerdeDeser(ProvisionedThroughputOverride& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_ProvisionedThroughputOverrideSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -90,7 +127,8 @@ class UpdateGlobalTableResult_ProvisionedThroughputOverrideSchemaSerdeDeser fina
 class UpdateGlobalTableResult_OnDemandThroughputOverrideSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateGlobalTableResult_OnDemandThroughputOverrideSchemaSerdeDeser(OnDemandThroughputOverride& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_OnDemandThroughputOverrideSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -104,7 +142,8 @@ class UpdateGlobalTableResult_OnDemandThroughputOverrideSchemaSerdeDeser final :
 class UpdateGlobalTableResult_TableWarmThroughputDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateGlobalTableResult_TableWarmThroughputDescriptionSchemaSerdeDeser(TableWarmThroughputDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_TableWarmThroughputDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -118,7 +157,9 @@ class UpdateGlobalTableResult_TableWarmThroughputDescriptionSchemaSerdeDeser fin
 class UpdateGlobalTableResult_ReplicaGlobalSecondaryIndexDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateGlobalTableResult_ReplicaGlobalSecondaryIndexDescriptionSchemaSerdeDeser(ReplicaGlobalSecondaryIndexDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(
+            UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_ReplicaGlobalSecondaryIndexDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -134,7 +175,9 @@ class UpdateGlobalTableResult_GlobalSecondaryIndexWarmThroughputDescriptionSchem
  public:
   explicit UpdateGlobalTableResult_GlobalSecondaryIndexWarmThroughputDescriptionSchemaSerdeDeser(
       GlobalSecondaryIndexWarmThroughputDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateGlobalTableResultSchemaCache<
+                 UpdateGlobalTableResult_GlobalSecondaryIndexWarmThroughputDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -147,7 +190,8 @@ class UpdateGlobalTableResult_GlobalSecondaryIndexWarmThroughputDescriptionSchem
 
 class UpdateGlobalTableResult_TableClassSummarySchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateGlobalTableResult_TableClassSummarySchemaSerdeDeser(TableClassSummary& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateGlobalTableResult_TableClassSummarySchemaSerdeDeser(TableClassSummary& obj)
+      : m_obj(obj), m_schema(UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_TableClassSummarySchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -160,7 +204,8 @@ class UpdateGlobalTableResult_TableClassSummarySchemaSerdeDeser final : public s
 
 class UpdateGlobalTableResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit UpdateGlobalTableResultDeserializable(UpdateGlobalTableResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit UpdateGlobalTableResultDeserializable(UpdateGlobalTableResult& obj)
+      : m_obj(obj), m_schema(UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -216,9 +261,11 @@ void UpdateGlobalTableResult_GlobalTableDescriptionSchemaSerdeDeser::From(const 
 
 std::shared_ptr<const smithy::schema::Schema> UpdateGlobalTableResult_GlobalTableDescriptionSchemaSerdeDeser::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("GlobalTableDescription")
-      .PutMember("ReplicationGroup", smithy::schema::Schema::ListBuilder("ReplicaDescriptionList")
-                                         .PutMember("member", UpdateGlobalTableResult_ReplicaDescriptionSchemaSerdeDeser::BuildSchema())
-                                         .Build())
+      .PutMember(
+          "ReplicationGroup",
+          smithy::schema::Schema::ListBuilder("ReplicaDescriptionList")
+              .PutMember("member", UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_ReplicaDescriptionSchemaSerdeDeser>::Get())
+              .Build())
       .PutMember("GlobalTableArn", smithy::schema::Schema::CreateString("GlobalTableArn"))
       .PutMember("CreationDateTime", smithy::schema::Schema::CreateTimestamp("CreationDateTime"))
       .PutMember("GlobalTableStatus", smithy::schema::Schema::CreateEnum("GlobalTableStatus"))
@@ -330,15 +377,22 @@ std::shared_ptr<const smithy::schema::Schema> UpdateGlobalTableResult_ReplicaDes
       .PutMember("ReplicaStatusDescription", smithy::schema::Schema::CreateString("ReplicaStatusDescription"))
       .PutMember("ReplicaStatusPercentProgress", smithy::schema::Schema::CreateString("ReplicaStatusPercentProgress"))
       .PutMember("KMSMasterKeyId", smithy::schema::Schema::CreateString("KMSMasterKeyId"))
-      .PutMember("ProvisionedThroughputOverride", UpdateGlobalTableResult_ProvisionedThroughputOverrideSchemaSerdeDeser::BuildSchema())
-      .PutMember("OnDemandThroughputOverride", UpdateGlobalTableResult_OnDemandThroughputOverrideSchemaSerdeDeser::BuildSchema())
-      .PutMember("WarmThroughput", UpdateGlobalTableResult_TableWarmThroughputDescriptionSchemaSerdeDeser::BuildSchema())
-      .PutMember("GlobalSecondaryIndexes",
-                 smithy::schema::Schema::ListBuilder("ReplicaGlobalSecondaryIndexDescriptionList")
-                     .PutMember("member", UpdateGlobalTableResult_ReplicaGlobalSecondaryIndexDescriptionSchemaSerdeDeser::BuildSchema())
-                     .Build())
+      .PutMember("ProvisionedThroughputOverride",
+                 UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_ProvisionedThroughputOverrideSchemaSerdeDeser>::Get())
+      .PutMember("OnDemandThroughputOverride",
+                 UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_OnDemandThroughputOverrideSchemaSerdeDeser>::Get())
+      .PutMember("WarmThroughput",
+                 UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_TableWarmThroughputDescriptionSchemaSerdeDeser>::Get())
+      .PutMember(
+          "GlobalSecondaryIndexes",
+          smithy::schema::Schema::ListBuilder("ReplicaGlobalSecondaryIndexDescriptionList")
+              .PutMember(
+                  "member",
+                  UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_ReplicaGlobalSecondaryIndexDescriptionSchemaSerdeDeser>::Get())
+              .Build())
       .PutMember("ReplicaInaccessibleDateTime", smithy::schema::Schema::CreateTimestamp("ReplicaInaccessibleDateTime"))
-      .PutMember("ReplicaTableClassSummary", UpdateGlobalTableResult_TableClassSummarySchemaSerdeDeser::BuildSchema())
+      .PutMember("ReplicaTableClassSummary",
+                 UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_TableClassSummarySchemaSerdeDeser>::Get())
       .PutMember("GlobalTableSettingsReplicationMode", smithy::schema::Schema::CreateEnum("GlobalTableSettingsReplicationMode"))
       .Build();
 }
@@ -447,9 +501,13 @@ std::shared_ptr<const smithy::schema::Schema>
 UpdateGlobalTableResult_ReplicaGlobalSecondaryIndexDescriptionSchemaSerdeDeser::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("ReplicaGlobalSecondaryIndexDescription")
       .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
-      .PutMember("ProvisionedThroughputOverride", UpdateGlobalTableResult_ProvisionedThroughputOverrideSchemaSerdeDeser::BuildSchema())
-      .PutMember("OnDemandThroughputOverride", UpdateGlobalTableResult_OnDemandThroughputOverrideSchemaSerdeDeser::BuildSchema())
-      .PutMember("WarmThroughput", UpdateGlobalTableResult_GlobalSecondaryIndexWarmThroughputDescriptionSchemaSerdeDeser::BuildSchema())
+      .PutMember("ProvisionedThroughputOverride",
+                 UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_ProvisionedThroughputOverrideSchemaSerdeDeser>::Get())
+      .PutMember("OnDemandThroughputOverride",
+                 UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_OnDemandThroughputOverrideSchemaSerdeDeser>::Get())
+      .PutMember(
+          "WarmThroughput",
+          UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_GlobalSecondaryIndexWarmThroughputDescriptionSchemaSerdeDeser>::Get())
       .Build();
 }
 
@@ -527,7 +585,8 @@ void UpdateGlobalTableResultDeserializable::From(const smithy::schema::Schema& m
 
 std::shared_ptr<const smithy::schema::Schema> UpdateGlobalTableResultDeserializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("UpdateGlobalTableResult")
-      .PutMember("GlobalTableDescription", UpdateGlobalTableResult_GlobalTableDescriptionSchemaSerdeDeser::BuildSchema())
+      .PutMember("GlobalTableDescription",
+                 UpdateGlobalTableResultSchemaCache<UpdateGlobalTableResult_GlobalTableDescriptionSchemaSerdeDeser>::Get())
       .Build();
 }
 

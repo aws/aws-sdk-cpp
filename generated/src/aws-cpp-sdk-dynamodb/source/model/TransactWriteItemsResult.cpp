@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
@@ -46,9 +49,42 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class TransactWriteItemsResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("TransactWriteItemsResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("TransactWriteItemsResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> TransactWriteItemsResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex TransactWriteItemsResultSchemaCache<Adapter>::s_mutex;
+
 class TransactWriteItemsResult_ConsumedCapacitySchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit TransactWriteItemsResult_ConsumedCapacitySchemaSerdeDeser(ConsumedCapacity& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit TransactWriteItemsResult_ConsumedCapacitySchemaSerdeDeser(ConsumedCapacity& obj)
+      : m_obj(obj), m_schema(TransactWriteItemsResultSchemaCache<TransactWriteItemsResult_ConsumedCapacitySchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -61,7 +97,8 @@ class TransactWriteItemsResult_ConsumedCapacitySchemaSerdeDeser final : public s
 
 class TransactWriteItemsResult_CapacitySchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit TransactWriteItemsResult_CapacitySchemaSerdeDeser(Capacity& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit TransactWriteItemsResult_CapacitySchemaSerdeDeser(Capacity& obj)
+      : m_obj(obj), m_schema(TransactWriteItemsResultSchemaCache<TransactWriteItemsResult_CapacitySchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -74,7 +111,8 @@ class TransactWriteItemsResult_CapacitySchemaSerdeDeser final : public smithy::s
 
 class TransactWriteItemsResult_VectorCapacitySchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit TransactWriteItemsResult_VectorCapacitySchemaSerdeDeser(VectorCapacity& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit TransactWriteItemsResult_VectorCapacitySchemaSerdeDeser(VectorCapacity& obj)
+      : m_obj(obj), m_schema(TransactWriteItemsResultSchemaCache<TransactWriteItemsResult_VectorCapacitySchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -88,7 +126,7 @@ class TransactWriteItemsResult_VectorCapacitySchemaSerdeDeser final : public smi
 class TransactWriteItemsResult_ItemCollectionMetricsSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit TransactWriteItemsResult_ItemCollectionMetricsSchemaSerdeDeser(ItemCollectionMetrics& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(TransactWriteItemsResultSchemaCache<TransactWriteItemsResult_ItemCollectionMetricsSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -101,7 +139,8 @@ class TransactWriteItemsResult_ItemCollectionMetricsSchemaSerdeDeser final : pub
 
 class TransactWriteItemsResult_AttributeValueSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit TransactWriteItemsResult_AttributeValueSchemaSerdeDeser(AttributeValue& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit TransactWriteItemsResult_AttributeValueSchemaSerdeDeser(AttributeValue& obj)
+      : m_obj(obj), m_schema(TransactWriteItemsResultSchemaCache<TransactWriteItemsResult_AttributeValueSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -114,7 +153,8 @@ class TransactWriteItemsResult_AttributeValueSchemaSerdeDeser final : public smi
 
 class TransactWriteItemsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit TransactWriteItemsResultDeserializable(TransactWriteItemsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit TransactWriteItemsResultDeserializable(TransactWriteItemsResult& obj)
+      : m_obj(obj), m_schema(TransactWriteItemsResultSchemaCache<TransactWriteItemsResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -200,19 +240,23 @@ std::shared_ptr<const smithy::schema::Schema> TransactWriteItemsResult_ConsumedC
       .PutMember("CapacityUnits", smithy::schema::Schema::CreateDouble("CapacityUnits"))
       .PutMember("ReadCapacityUnits", smithy::schema::Schema::CreateDouble("ReadCapacityUnits"))
       .PutMember("WriteCapacityUnits", smithy::schema::Schema::CreateDouble("WriteCapacityUnits"))
-      .PutMember("Table", TransactWriteItemsResult_CapacitySchemaSerdeDeser::BuildSchema())
-      .PutMember("LocalSecondaryIndexes", smithy::schema::Schema::MapBuilder("SecondaryIndexesCapacityMap")
-                                              .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                              .PutMember("value", TransactWriteItemsResult_CapacitySchemaSerdeDeser::BuildSchema())
-                                              .Build())
-      .PutMember("GlobalSecondaryIndexes", smithy::schema::Schema::MapBuilder("SecondaryIndexesCapacityMap")
-                                               .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                               .PutMember("value", TransactWriteItemsResult_CapacitySchemaSerdeDeser::BuildSchema())
-                                               .Build())
-      .PutMember("VectorIndexes", smithy::schema::Schema::MapBuilder("VectorIndexesCapacityMap")
-                                      .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                      .PutMember("value", TransactWriteItemsResult_VectorCapacitySchemaSerdeDeser::BuildSchema())
-                                      .Build())
+      .PutMember("Table", TransactWriteItemsResultSchemaCache<TransactWriteItemsResult_CapacitySchemaSerdeDeser>::Get())
+      .PutMember("LocalSecondaryIndexes",
+                 smithy::schema::Schema::MapBuilder("SecondaryIndexesCapacityMap")
+                     .PutMember("key", smithy::schema::Schema::CreateString("key"))
+                     .PutMember("value", TransactWriteItemsResultSchemaCache<TransactWriteItemsResult_CapacitySchemaSerdeDeser>::Get())
+                     .Build())
+      .PutMember("GlobalSecondaryIndexes",
+                 smithy::schema::Schema::MapBuilder("SecondaryIndexesCapacityMap")
+                     .PutMember("key", smithy::schema::Schema::CreateString("key"))
+                     .PutMember("value", TransactWriteItemsResultSchemaCache<TransactWriteItemsResult_CapacitySchemaSerdeDeser>::Get())
+                     .Build())
+      .PutMember(
+          "VectorIndexes",
+          smithy::schema::Schema::MapBuilder("VectorIndexesCapacityMap")
+              .PutMember("key", smithy::schema::Schema::CreateString("key"))
+              .PutMember("value", TransactWriteItemsResultSchemaCache<TransactWriteItemsResult_VectorCapacitySchemaSerdeDeser>::Get())
+              .Build())
       .Build();
 }
 
@@ -464,16 +508,21 @@ void TransactWriteItemsResultDeserializable::From(const smithy::schema::Schema& 
 
 std::shared_ptr<const smithy::schema::Schema> TransactWriteItemsResultDeserializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("TransactWriteItemsResult")
-      .PutMember("ConsumedCapacity", smithy::schema::Schema::ListBuilder("ConsumedCapacityMultiple")
-                                         .PutMember("member", TransactWriteItemsResult_ConsumedCapacitySchemaSerdeDeser::BuildSchema())
-                                         .Build())
+      .PutMember(
+          "ConsumedCapacity",
+          smithy::schema::Schema::ListBuilder("ConsumedCapacityMultiple")
+              .PutMember("member", TransactWriteItemsResultSchemaCache<TransactWriteItemsResult_ConsumedCapacitySchemaSerdeDeser>::Get())
+              .Build())
       .PutMember(
           "ItemCollectionMetrics",
           smithy::schema::Schema::MapBuilder("ItemCollectionMetricsPerTable")
               .PutMember("key", smithy::schema::Schema::CreateString("key"))
-              .PutMember("value", smithy::schema::Schema::ListBuilder("ItemCollectionMetricsMultiple")
-                                      .PutMember("member", TransactWriteItemsResult_ItemCollectionMetricsSchemaSerdeDeser::BuildSchema())
-                                      .Build())
+              .PutMember(
+                  "value",
+                  smithy::schema::Schema::ListBuilder("ItemCollectionMetricsMultiple")
+                      .PutMember("member",
+                                 TransactWriteItemsResultSchemaCache<TransactWriteItemsResult_ItemCollectionMetricsSchemaSerdeDeser>::Get())
+                      .Build())
               .Build())
       .Build();
 }

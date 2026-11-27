@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -24,6 +25,8 @@
 #include <smithy/client/schema/XmlTraits.h>
 #include <smithy/identity/auth/built-in/NoAuthSchemeOption.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 
 using namespace Aws::STS::Model;
@@ -33,10 +36,43 @@ namespace Aws {
 namespace STS {
 namespace Model {
 namespace {
+template <typename Adapter>
+class AssumeRoleWithWebIdentityRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("AssumeRoleWithWebIdentityRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("AssumeRoleWithWebIdentityRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> AssumeRoleWithWebIdentityRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex AssumeRoleWithWebIdentityRequestSchemaCache<Adapter>::s_mutex;
+
 class AssumeRoleWithWebIdentityRequest_PolicyDescriptorTypeSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit AssumeRoleWithWebIdentityRequest_PolicyDescriptorTypeSchemaSerdeSer(const PolicyDescriptorType& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(AssumeRoleWithWebIdentityRequestSchemaCache<AssumeRoleWithWebIdentityRequest_PolicyDescriptorTypeSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -50,7 +86,7 @@ class AssumeRoleWithWebIdentityRequest_PolicyDescriptorTypeSchemaSerdeSer final 
 class AssumeRoleWithWebIdentityRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
   explicit AssumeRoleWithWebIdentityRequestSerializable(const AssumeRoleWithWebIdentityRequest& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(AssumeRoleWithWebIdentityRequestSchemaCache<AssumeRoleWithWebIdentityRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -122,9 +158,13 @@ std::shared_ptr<const smithy::schema::Schema> AssumeRoleWithWebIdentityRequestSe
       .PutMember("RoleSessionName", smithy::schema::Schema::CreateString("RoleSessionName"))
       .PutMember("WebIdentityToken", smithy::schema::Schema::CreateString("WebIdentityToken"))
       .PutMember("ProviderId", smithy::schema::Schema::CreateString("ProviderId"))
-      .PutMember("PolicyArns", smithy::schema::Schema::ListBuilder("policyDescriptorListType")
-                                   .PutMember("member", AssumeRoleWithWebIdentityRequest_PolicyDescriptorTypeSchemaSerdeSer::BuildSchema())
-                                   .Build())
+      .PutMember(
+          "PolicyArns",
+          smithy::schema::Schema::ListBuilder("policyDescriptorListType")
+              .PutMember(
+                  "member",
+                  AssumeRoleWithWebIdentityRequestSchemaCache<AssumeRoleWithWebIdentityRequest_PolicyDescriptorTypeSchemaSerdeSer>::Get())
+              .Build())
       .PutMember("Policy", smithy::schema::Schema::CreateString("Policy"))
       .PutMember("DurationSeconds", smithy::schema::Schema::CreateInteger("DurationSeconds"))
       .PutMember("MinimumSessionTokenSize", smithy::schema::Schema::CreateInteger("MinimumSessionTokenSize"))

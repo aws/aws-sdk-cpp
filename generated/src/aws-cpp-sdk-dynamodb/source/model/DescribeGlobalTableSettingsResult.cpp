@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
@@ -48,10 +51,44 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class DescribeGlobalTableSettingsResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("DescribeGlobalTableSettingsResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("DescribeGlobalTableSettingsResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> DescribeGlobalTableSettingsResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex DescribeGlobalTableSettingsResultSchemaCache<Adapter>::s_mutex;
+
 class DescribeGlobalTableSettingsResult_ReplicaSettingsDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DescribeGlobalTableSettingsResult_ReplicaSettingsDescriptionSchemaSerdeDeser(ReplicaSettingsDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(DescribeGlobalTableSettingsResultSchemaCache<
+                 DescribeGlobalTableSettingsResult_ReplicaSettingsDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -65,7 +102,9 @@ class DescribeGlobalTableSettingsResult_ReplicaSettingsDescriptionSchemaSerdeDes
 class DescribeGlobalTableSettingsResult_BillingModeSummarySchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DescribeGlobalTableSettingsResult_BillingModeSummarySchemaSerdeDeser(BillingModeSummary& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(
+            DescribeGlobalTableSettingsResultSchemaCache<DescribeGlobalTableSettingsResult_BillingModeSummarySchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -79,7 +118,9 @@ class DescribeGlobalTableSettingsResult_BillingModeSummarySchemaSerdeDeser final
 class DescribeGlobalTableSettingsResult_AutoScalingSettingsDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DescribeGlobalTableSettingsResult_AutoScalingSettingsDescriptionSchemaSerdeDeser(AutoScalingSettingsDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(DescribeGlobalTableSettingsResultSchemaCache<
+                 DescribeGlobalTableSettingsResult_AutoScalingSettingsDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -93,7 +134,9 @@ class DescribeGlobalTableSettingsResult_AutoScalingSettingsDescriptionSchemaSerd
 class DescribeGlobalTableSettingsResult_AutoScalingPolicyDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DescribeGlobalTableSettingsResult_AutoScalingPolicyDescriptionSchemaSerdeDeser(AutoScalingPolicyDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(DescribeGlobalTableSettingsResultSchemaCache<
+                 DescribeGlobalTableSettingsResult_AutoScalingPolicyDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -109,7 +152,10 @@ class DescribeGlobalTableSettingsResult_AutoScalingTargetTrackingScalingPolicyCo
  public:
   explicit DescribeGlobalTableSettingsResult_AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionSchemaSerdeDeser(
       AutoScalingTargetTrackingScalingPolicyConfigurationDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(DescribeGlobalTableSettingsResultSchemaCache<
+                 DescribeGlobalTableSettingsResult_AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionSchemaSerdeDeser>::Get()) {
+  }
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -125,7 +171,9 @@ class DescribeGlobalTableSettingsResult_ReplicaGlobalSecondaryIndexSettingsDescr
  public:
   explicit DescribeGlobalTableSettingsResult_ReplicaGlobalSecondaryIndexSettingsDescriptionSchemaSerdeDeser(
       ReplicaGlobalSecondaryIndexSettingsDescription& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(DescribeGlobalTableSettingsResultSchemaCache<
+                 DescribeGlobalTableSettingsResult_ReplicaGlobalSecondaryIndexSettingsDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -139,7 +187,9 @@ class DescribeGlobalTableSettingsResult_ReplicaGlobalSecondaryIndexSettingsDescr
 class DescribeGlobalTableSettingsResult_TableClassSummarySchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DescribeGlobalTableSettingsResult_TableClassSummarySchemaSerdeDeser(TableClassSummary& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(DescribeGlobalTableSettingsResultSchemaCache<DescribeGlobalTableSettingsResult_TableClassSummarySchemaSerdeDeser>::Get()) {
+  }
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -152,7 +202,8 @@ class DescribeGlobalTableSettingsResult_TableClassSummarySchemaSerdeDeser final 
 
 class DescribeGlobalTableSettingsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit DescribeGlobalTableSettingsResultDeserializable(DescribeGlobalTableSettingsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DescribeGlobalTableSettingsResultDeserializable(DescribeGlobalTableSettingsResult& obj)
+      : m_obj(obj), m_schema(DescribeGlobalTableSettingsResultSchemaCache<DescribeGlobalTableSettingsResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -235,20 +286,25 @@ std::shared_ptr<const smithy::schema::Schema> DescribeGlobalTableSettingsResult_
   return smithy::schema::Schema::StructureBuilder("ReplicaSettingsDescription")
       .PutMember("RegionName", smithy::schema::Schema::CreateString("RegionName"))
       .PutMember("ReplicaStatus", smithy::schema::Schema::CreateEnum("ReplicaStatus"))
-      .PutMember("ReplicaBillingModeSummary", DescribeGlobalTableSettingsResult_BillingModeSummarySchemaSerdeDeser::BuildSchema())
+      .PutMember("ReplicaBillingModeSummary",
+                 DescribeGlobalTableSettingsResultSchemaCache<DescribeGlobalTableSettingsResult_BillingModeSummarySchemaSerdeDeser>::Get())
       .PutMember("ReplicaProvisionedReadCapacityUnits", smithy::schema::Schema::CreateLong("ReplicaProvisionedReadCapacityUnits"))
       .PutMember("ReplicaProvisionedReadCapacityAutoScalingSettings",
-                 DescribeGlobalTableSettingsResult_AutoScalingSettingsDescriptionSchemaSerdeDeser::BuildSchema())
+                 DescribeGlobalTableSettingsResultSchemaCache<
+                     DescribeGlobalTableSettingsResult_AutoScalingSettingsDescriptionSchemaSerdeDeser>::Get())
       .PutMember("ReplicaProvisionedWriteCapacityUnits", smithy::schema::Schema::CreateLong("ReplicaProvisionedWriteCapacityUnits"))
       .PutMember("ReplicaProvisionedWriteCapacityAutoScalingSettings",
-                 DescribeGlobalTableSettingsResult_AutoScalingSettingsDescriptionSchemaSerdeDeser::BuildSchema())
+                 DescribeGlobalTableSettingsResultSchemaCache<
+                     DescribeGlobalTableSettingsResult_AutoScalingSettingsDescriptionSchemaSerdeDeser>::Get())
       .PutMember(
           "ReplicaGlobalSecondaryIndexSettings",
           smithy::schema::Schema::ListBuilder("ReplicaGlobalSecondaryIndexSettingsDescriptionList")
               .PutMember("member",
-                         DescribeGlobalTableSettingsResult_ReplicaGlobalSecondaryIndexSettingsDescriptionSchemaSerdeDeser::BuildSchema())
+                         DescribeGlobalTableSettingsResultSchemaCache<
+                             DescribeGlobalTableSettingsResult_ReplicaGlobalSecondaryIndexSettingsDescriptionSchemaSerdeDeser>::Get())
               .Build())
-      .PutMember("ReplicaTableClassSummary", DescribeGlobalTableSettingsResult_TableClassSummarySchemaSerdeDeser::BuildSchema())
+      .PutMember("ReplicaTableClassSummary",
+                 DescribeGlobalTableSettingsResultSchemaCache<DescribeGlobalTableSettingsResult_TableClassSummarySchemaSerdeDeser>::Get())
       .Build();
 }
 
@@ -330,7 +386,8 @@ DescribeGlobalTableSettingsResult_AutoScalingSettingsDescriptionSchemaSerdeDeser
       .PutMember("AutoScalingRoleArn", smithy::schema::Schema::CreateString("AutoScalingRoleArn"))
       .PutMember("ScalingPolicies",
                  smithy::schema::Schema::ListBuilder("AutoScalingPolicyDescriptionList")
-                     .PutMember("member", DescribeGlobalTableSettingsResult_AutoScalingPolicyDescriptionSchemaSerdeDeser::BuildSchema())
+                     .PutMember("member", DescribeGlobalTableSettingsResultSchemaCache<
+                                              DescribeGlobalTableSettingsResult_AutoScalingPolicyDescriptionSchemaSerdeDeser>::Get())
                      .Build())
       .Build();
 }
@@ -360,7 +417,8 @@ DescribeGlobalTableSettingsResult_AutoScalingPolicyDescriptionSchemaSerdeDeser::
       .PutMember("PolicyName", smithy::schema::Schema::CreateString("PolicyName"))
       .PutMember(
           "TargetTrackingScalingPolicyConfiguration",
-          DescribeGlobalTableSettingsResult_AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionSchemaSerdeDeser::BuildSchema())
+          DescribeGlobalTableSettingsResultSchemaCache<
+              DescribeGlobalTableSettingsResult_AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionSchemaSerdeDeser>::Get())
       .Build();
 }
 
@@ -459,10 +517,12 @@ DescribeGlobalTableSettingsResult_ReplicaGlobalSecondaryIndexSettingsDescription
       .PutMember("IndexStatus", smithy::schema::Schema::CreateEnum("IndexStatus"))
       .PutMember("ProvisionedReadCapacityUnits", smithy::schema::Schema::CreateLong("ProvisionedReadCapacityUnits"))
       .PutMember("ProvisionedReadCapacityAutoScalingSettings",
-                 DescribeGlobalTableSettingsResult_AutoScalingSettingsDescriptionSchemaSerdeDeser::BuildSchema())
+                 DescribeGlobalTableSettingsResultSchemaCache<
+                     DescribeGlobalTableSettingsResult_AutoScalingSettingsDescriptionSchemaSerdeDeser>::Get())
       .PutMember("ProvisionedWriteCapacityUnits", smithy::schema::Schema::CreateLong("ProvisionedWriteCapacityUnits"))
       .PutMember("ProvisionedWriteCapacityAutoScalingSettings",
-                 DescribeGlobalTableSettingsResult_AutoScalingSettingsDescriptionSchemaSerdeDeser::BuildSchema())
+                 DescribeGlobalTableSettingsResultSchemaCache<
+                     DescribeGlobalTableSettingsResult_AutoScalingSettingsDescriptionSchemaSerdeDeser>::Get())
       .Build();
 }
 
@@ -519,7 +579,8 @@ std::shared_ptr<const smithy::schema::Schema> DescribeGlobalTableSettingsResultD
       .PutMember("GlobalTableName", smithy::schema::Schema::CreateString("GlobalTableName"))
       .PutMember("ReplicaSettings",
                  smithy::schema::Schema::ListBuilder("ReplicaSettingsDescriptionList")
-                     .PutMember("member", DescribeGlobalTableSettingsResult_ReplicaSettingsDescriptionSchemaSerdeDeser::BuildSchema())
+                     .PutMember("member", DescribeGlobalTableSettingsResultSchemaCache<
+                                              DescribeGlobalTableSettingsResult_ReplicaSettingsDescriptionSchemaSerdeDeser>::Get())
                      .Build())
       .Build();
 }

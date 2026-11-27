@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::DynamoDB::Model;
@@ -46,9 +49,42 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class DeleteBackupResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("DeleteBackupResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("DeleteBackupResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> DeleteBackupResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex DeleteBackupResultSchemaCache<Adapter>::s_mutex;
+
 class DeleteBackupResult_BackupDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResult_BackupDescriptionSchemaSerdeDeser(BackupDescription& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResult_BackupDescriptionSchemaSerdeDeser(BackupDescription& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_BackupDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -61,7 +97,8 @@ class DeleteBackupResult_BackupDescriptionSchemaSerdeDeser final : public smithy
 
 class DeleteBackupResult_BackupDetailsSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResult_BackupDetailsSchemaSerdeDeser(BackupDetails& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResult_BackupDetailsSchemaSerdeDeser(BackupDetails& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_BackupDetailsSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -74,7 +111,8 @@ class DeleteBackupResult_BackupDetailsSchemaSerdeDeser final : public smithy::sc
 
 class DeleteBackupResult_SourceTableDetailsSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResult_SourceTableDetailsSchemaSerdeDeser(SourceTableDetails& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResult_SourceTableDetailsSchemaSerdeDeser(SourceTableDetails& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_SourceTableDetailsSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -87,7 +125,8 @@ class DeleteBackupResult_SourceTableDetailsSchemaSerdeDeser final : public smith
 
 class DeleteBackupResult_KeySchemaElementSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResult_KeySchemaElementSchemaSerdeDeser(KeySchemaElement& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResult_KeySchemaElementSchemaSerdeDeser(KeySchemaElement& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_KeySchemaElementSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -100,7 +139,8 @@ class DeleteBackupResult_KeySchemaElementSchemaSerdeDeser final : public smithy:
 
 class DeleteBackupResult_ProvisionedThroughputSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResult_ProvisionedThroughputSchemaSerdeDeser(ProvisionedThroughput& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResult_ProvisionedThroughputSchemaSerdeDeser(ProvisionedThroughput& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_ProvisionedThroughputSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -113,7 +153,8 @@ class DeleteBackupResult_ProvisionedThroughputSchemaSerdeDeser final : public sm
 
 class DeleteBackupResult_OnDemandThroughputSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResult_OnDemandThroughputSchemaSerdeDeser(OnDemandThroughput& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResult_OnDemandThroughputSchemaSerdeDeser(OnDemandThroughput& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_OnDemandThroughputSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -127,7 +168,7 @@ class DeleteBackupResult_OnDemandThroughputSchemaSerdeDeser final : public smith
 class DeleteBackupResult_SourceTableFeatureDetailsSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DeleteBackupResult_SourceTableFeatureDetailsSchemaSerdeDeser(SourceTableFeatureDetails& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_SourceTableFeatureDetailsSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -140,7 +181,8 @@ class DeleteBackupResult_SourceTableFeatureDetailsSchemaSerdeDeser final : publi
 
 class DeleteBackupResult_LocalSecondaryIndexInfoSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResult_LocalSecondaryIndexInfoSchemaSerdeDeser(LocalSecondaryIndexInfo& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResult_LocalSecondaryIndexInfoSchemaSerdeDeser(LocalSecondaryIndexInfo& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_LocalSecondaryIndexInfoSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -153,7 +195,8 @@ class DeleteBackupResult_LocalSecondaryIndexInfoSchemaSerdeDeser final : public 
 
 class DeleteBackupResult_ProjectionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResult_ProjectionSchemaSerdeDeser(Projection& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResult_ProjectionSchemaSerdeDeser(Projection& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_ProjectionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -167,7 +210,7 @@ class DeleteBackupResult_ProjectionSchemaSerdeDeser final : public smithy::schem
 class DeleteBackupResult_GlobalSecondaryIndexInfoSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DeleteBackupResult_GlobalSecondaryIndexInfoSchemaSerdeDeser(GlobalSecondaryIndexInfo& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_GlobalSecondaryIndexInfoSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -180,7 +223,8 @@ class DeleteBackupResult_GlobalSecondaryIndexInfoSchemaSerdeDeser final : public
 
 class DeleteBackupResult_StreamSpecificationSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResult_StreamSpecificationSchemaSerdeDeser(StreamSpecification& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResult_StreamSpecificationSchemaSerdeDeser(StreamSpecification& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_StreamSpecificationSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -193,7 +237,8 @@ class DeleteBackupResult_StreamSpecificationSchemaSerdeDeser final : public smit
 
 class DeleteBackupResult_TimeToLiveDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResult_TimeToLiveDescriptionSchemaSerdeDeser(TimeToLiveDescription& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResult_TimeToLiveDescriptionSchemaSerdeDeser(TimeToLiveDescription& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_TimeToLiveDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -206,7 +251,8 @@ class DeleteBackupResult_TimeToLiveDescriptionSchemaSerdeDeser final : public sm
 
 class DeleteBackupResult_SSEDescriptionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResult_SSEDescriptionSchemaSerdeDeser(SSEDescription& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResult_SSEDescriptionSchemaSerdeDeser(SSEDescription& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_SSEDescriptionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -219,7 +265,8 @@ class DeleteBackupResult_SSEDescriptionSchemaSerdeDeser final : public smithy::s
 
 class DeleteBackupResult_VectorIndexInfoSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResult_VectorIndexInfoSchemaSerdeDeser(VectorIndexInfo& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResult_VectorIndexInfoSchemaSerdeDeser(VectorIndexInfo& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_VectorIndexInfoSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -233,7 +280,7 @@ class DeleteBackupResult_VectorIndexInfoSchemaSerdeDeser final : public smithy::
 class DeleteBackupResult_VectorAttributeDefinitionSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit DeleteBackupResult_VectorAttributeDefinitionSchemaSerdeDeser(VectorAttributeDefinition& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_VectorAttributeDefinitionSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -246,7 +293,8 @@ class DeleteBackupResult_VectorAttributeDefinitionSchemaSerdeDeser final : publi
 
 class DeleteBackupResult_SearchSchemaElementSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResult_SearchSchemaElementSchemaSerdeDeser(SearchSchemaElement& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResult_SearchSchemaElementSchemaSerdeDeser(SearchSchemaElement& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResult_SearchSchemaElementSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -259,7 +307,8 @@ class DeleteBackupResult_SearchSchemaElementSchemaSerdeDeser final : public smit
 
 class DeleteBackupResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit DeleteBackupResultDeserializable(DeleteBackupResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit DeleteBackupResultDeserializable(DeleteBackupResult& obj)
+      : m_obj(obj), m_schema(DeleteBackupResultSchemaCache<DeleteBackupResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -295,9 +344,10 @@ void DeleteBackupResult_BackupDescriptionSchemaSerdeDeser::From(const smithy::sc
 
 std::shared_ptr<const smithy::schema::Schema> DeleteBackupResult_BackupDescriptionSchemaSerdeDeser::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("BackupDescription")
-      .PutMember("BackupDetails", DeleteBackupResult_BackupDetailsSchemaSerdeDeser::BuildSchema())
-      .PutMember("SourceTableDetails", DeleteBackupResult_SourceTableDetailsSchemaSerdeDeser::BuildSchema())
-      .PutMember("SourceTableFeatureDetails", DeleteBackupResult_SourceTableFeatureDetailsSchemaSerdeDeser::BuildSchema())
+      .PutMember("BackupDetails", DeleteBackupResultSchemaCache<DeleteBackupResult_BackupDetailsSchemaSerdeDeser>::Get())
+      .PutMember("SourceTableDetails", DeleteBackupResultSchemaCache<DeleteBackupResult_SourceTableDetailsSchemaSerdeDeser>::Get())
+      .PutMember("SourceTableFeatureDetails",
+                 DeleteBackupResultSchemaCache<DeleteBackupResult_SourceTableFeatureDetailsSchemaSerdeDeser>::Get())
       .Build();
 }
 
@@ -449,12 +499,13 @@ std::shared_ptr<const smithy::schema::Schema> DeleteBackupResult_SourceTableDeta
       .PutMember("TableId", smithy::schema::Schema::CreateString("TableId"))
       .PutMember("TableArn", smithy::schema::Schema::CreateString("TableArn"))
       .PutMember("TableSizeBytes", smithy::schema::Schema::CreateLong("TableSizeBytes"))
-      .PutMember("KeySchema", smithy::schema::Schema::ListBuilder("KeySchema")
-                                  .PutMember("member", DeleteBackupResult_KeySchemaElementSchemaSerdeDeser::BuildSchema())
-                                  .Build())
+      .PutMember("KeySchema",
+                 smithy::schema::Schema::ListBuilder("KeySchema")
+                     .PutMember("member", DeleteBackupResultSchemaCache<DeleteBackupResult_KeySchemaElementSchemaSerdeDeser>::Get())
+                     .Build())
       .PutMember("TableCreationDateTime", smithy::schema::Schema::CreateTimestamp("TableCreationDateTime"))
-      .PutMember("ProvisionedThroughput", DeleteBackupResult_ProvisionedThroughputSchemaSerdeDeser::BuildSchema())
-      .PutMember("OnDemandThroughput", DeleteBackupResult_OnDemandThroughputSchemaSerdeDeser::BuildSchema())
+      .PutMember("ProvisionedThroughput", DeleteBackupResultSchemaCache<DeleteBackupResult_ProvisionedThroughputSchemaSerdeDeser>::Get())
+      .PutMember("OnDemandThroughput", DeleteBackupResultSchemaCache<DeleteBackupResult_OnDemandThroughputSchemaSerdeDeser>::Get())
       .PutMember("ItemCount", smithy::schema::Schema::CreateLong("ItemCount"))
       .PutMember("BillingMode", smithy::schema::Schema::CreateEnum("BillingMode"))
       .Build();
@@ -595,18 +646,19 @@ std::shared_ptr<const smithy::schema::Schema> DeleteBackupResult_SourceTableFeat
   return smithy::schema::Schema::StructureBuilder("SourceTableFeatureDetails")
       .PutMember("LocalSecondaryIndexes",
                  smithy::schema::Schema::ListBuilder("LocalSecondaryIndexes")
-                     .PutMember("member", DeleteBackupResult_LocalSecondaryIndexInfoSchemaSerdeDeser::BuildSchema())
+                     .PutMember("member", DeleteBackupResultSchemaCache<DeleteBackupResult_LocalSecondaryIndexInfoSchemaSerdeDeser>::Get())
                      .Build())
       .PutMember("GlobalSecondaryIndexes",
                  smithy::schema::Schema::ListBuilder("GlobalSecondaryIndexes")
-                     .PutMember("member", DeleteBackupResult_GlobalSecondaryIndexInfoSchemaSerdeDeser::BuildSchema())
+                     .PutMember("member", DeleteBackupResultSchemaCache<DeleteBackupResult_GlobalSecondaryIndexInfoSchemaSerdeDeser>::Get())
                      .Build())
-      .PutMember("StreamDescription", DeleteBackupResult_StreamSpecificationSchemaSerdeDeser::BuildSchema())
-      .PutMember("TimeToLiveDescription", DeleteBackupResult_TimeToLiveDescriptionSchemaSerdeDeser::BuildSchema())
-      .PutMember("SSEDescription", DeleteBackupResult_SSEDescriptionSchemaSerdeDeser::BuildSchema())
-      .PutMember("VectorIndexes", smithy::schema::Schema::ListBuilder("VectorIndexes")
-                                      .PutMember("member", DeleteBackupResult_VectorIndexInfoSchemaSerdeDeser::BuildSchema())
-                                      .Build())
+      .PutMember("StreamDescription", DeleteBackupResultSchemaCache<DeleteBackupResult_StreamSpecificationSchemaSerdeDeser>::Get())
+      .PutMember("TimeToLiveDescription", DeleteBackupResultSchemaCache<DeleteBackupResult_TimeToLiveDescriptionSchemaSerdeDeser>::Get())
+      .PutMember("SSEDescription", DeleteBackupResultSchemaCache<DeleteBackupResult_SSEDescriptionSchemaSerdeDeser>::Get())
+      .PutMember("VectorIndexes",
+                 smithy::schema::Schema::ListBuilder("VectorIndexes")
+                     .PutMember("member", DeleteBackupResultSchemaCache<DeleteBackupResult_VectorIndexInfoSchemaSerdeDeser>::Get())
+                     .Build())
       .Build();
 }
 
@@ -641,10 +693,11 @@ void DeleteBackupResult_LocalSecondaryIndexInfoSchemaSerdeDeser::From(const smit
 std::shared_ptr<const smithy::schema::Schema> DeleteBackupResult_LocalSecondaryIndexInfoSchemaSerdeDeser::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("LocalSecondaryIndexInfo")
       .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
-      .PutMember("KeySchema", smithy::schema::Schema::ListBuilder("KeySchema")
-                                  .PutMember("member", DeleteBackupResult_KeySchemaElementSchemaSerdeDeser::BuildSchema())
-                                  .Build())
-      .PutMember("Projection", DeleteBackupResult_ProjectionSchemaSerdeDeser::BuildSchema())
+      .PutMember("KeySchema",
+                 smithy::schema::Schema::ListBuilder("KeySchema")
+                     .PutMember("member", DeleteBackupResultSchemaCache<DeleteBackupResult_KeySchemaElementSchemaSerdeDeser>::Get())
+                     .Build())
+      .PutMember("Projection", DeleteBackupResultSchemaCache<DeleteBackupResult_ProjectionSchemaSerdeDeser>::Get())
       .Build();
 }
 
@@ -724,12 +777,13 @@ void DeleteBackupResult_GlobalSecondaryIndexInfoSchemaSerdeDeser::From(const smi
 std::shared_ptr<const smithy::schema::Schema> DeleteBackupResult_GlobalSecondaryIndexInfoSchemaSerdeDeser::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("GlobalSecondaryIndexInfo")
       .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
-      .PutMember("KeySchema", smithy::schema::Schema::ListBuilder("KeySchema")
-                                  .PutMember("member", DeleteBackupResult_KeySchemaElementSchemaSerdeDeser::BuildSchema())
-                                  .Build())
-      .PutMember("Projection", DeleteBackupResult_ProjectionSchemaSerdeDeser::BuildSchema())
-      .PutMember("ProvisionedThroughput", DeleteBackupResult_ProvisionedThroughputSchemaSerdeDeser::BuildSchema())
-      .PutMember("OnDemandThroughput", DeleteBackupResult_OnDemandThroughputSchemaSerdeDeser::BuildSchema())
+      .PutMember("KeySchema",
+                 smithy::schema::Schema::ListBuilder("KeySchema")
+                     .PutMember("member", DeleteBackupResultSchemaCache<DeleteBackupResult_KeySchemaElementSchemaSerdeDeser>::Get())
+                     .Build())
+      .PutMember("Projection", DeleteBackupResultSchemaCache<DeleteBackupResult_ProjectionSchemaSerdeDeser>::Get())
+      .PutMember("ProvisionedThroughput", DeleteBackupResultSchemaCache<DeleteBackupResult_ProvisionedThroughputSchemaSerdeDeser>::Get())
+      .PutMember("OnDemandThroughput", DeleteBackupResultSchemaCache<DeleteBackupResult_OnDemandThroughputSchemaSerdeDeser>::Get())
       .Build();
 }
 
@@ -878,11 +932,12 @@ void DeleteBackupResult_VectorIndexInfoSchemaSerdeDeser::From(const smithy::sche
 std::shared_ptr<const smithy::schema::Schema> DeleteBackupResult_VectorIndexInfoSchemaSerdeDeser::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("VectorIndexInfo")
       .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
-      .PutMember("VectorAttribute", DeleteBackupResult_VectorAttributeDefinitionSchemaSerdeDeser::BuildSchema())
-      .PutMember("SearchSchema", smithy::schema::Schema::ListBuilder("SearchSchema")
-                                     .PutMember("member", DeleteBackupResult_SearchSchemaElementSchemaSerdeDeser::BuildSchema())
-                                     .Build())
-      .PutMember("Projection", DeleteBackupResult_ProjectionSchemaSerdeDeser::BuildSchema())
+      .PutMember("VectorAttribute", DeleteBackupResultSchemaCache<DeleteBackupResult_VectorAttributeDefinitionSchemaSerdeDeser>::Get())
+      .PutMember("SearchSchema",
+                 smithy::schema::Schema::ListBuilder("SearchSchema")
+                     .PutMember("member", DeleteBackupResultSchemaCache<DeleteBackupResult_SearchSchemaElementSchemaSerdeDeser>::Get())
+                     .Build())
+      .PutMember("Projection", DeleteBackupResultSchemaCache<DeleteBackupResult_ProjectionSchemaSerdeDeser>::Get())
       .PutMember("Dimensions", smithy::schema::Schema::CreateLong("Dimensions"))
       .PutMember("DistanceFunction", smithy::schema::Schema::CreateEnum("DistanceFunction"))
       .Build();
@@ -944,7 +999,7 @@ void DeleteBackupResultDeserializable::From(const smithy::schema::Schema& member
 
 std::shared_ptr<const smithy::schema::Schema> DeleteBackupResultDeserializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("DeleteBackupResult")
-      .PutMember("BackupDescription", DeleteBackupResult_BackupDescriptionSchemaSerdeDeser::BuildSchema())
+      .PutMember("BackupDescription", DeleteBackupResultSchemaCache<DeleteBackupResult_BackupDescriptionSchemaSerdeDeser>::Get())
       .Build();
 }
 

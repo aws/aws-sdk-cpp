@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -22,6 +23,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 #include <utility>
 
@@ -33,10 +36,44 @@ namespace Aws {
 namespace DynamoDB {
 namespace Model {
 namespace {
+template <typename Adapter>
+class UpdateGlobalTableSettingsRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("UpdateGlobalTableSettingsRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("UpdateGlobalTableSettingsRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> UpdateGlobalTableSettingsRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex UpdateGlobalTableSettingsRequestSchemaCache<Adapter>::s_mutex;
+
 class UpdateGlobalTableSettingsRequest_AutoScalingSettingsUpdateSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateGlobalTableSettingsRequest_AutoScalingSettingsUpdateSchemaSerdeSer(const AutoScalingSettingsUpdate& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(
+            UpdateGlobalTableSettingsRequestSchemaCache<UpdateGlobalTableSettingsRequest_AutoScalingSettingsUpdateSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -50,7 +87,9 @@ class UpdateGlobalTableSettingsRequest_AutoScalingSettingsUpdateSchemaSerdeSer f
 class UpdateGlobalTableSettingsRequest_AutoScalingPolicyUpdateSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateGlobalTableSettingsRequest_AutoScalingPolicyUpdateSchemaSerdeSer(const AutoScalingPolicyUpdate& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(
+            UpdateGlobalTableSettingsRequestSchemaCache<UpdateGlobalTableSettingsRequest_AutoScalingPolicyUpdateSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -66,7 +105,9 @@ class UpdateGlobalTableSettingsRequest_AutoScalingTargetTrackingScalingPolicyCon
  public:
   explicit UpdateGlobalTableSettingsRequest_AutoScalingTargetTrackingScalingPolicyConfigurationUpdateSchemaSerdeSer(
       const AutoScalingTargetTrackingScalingPolicyConfigurationUpdate& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateGlobalTableSettingsRequestSchemaCache<
+                 UpdateGlobalTableSettingsRequest_AutoScalingTargetTrackingScalingPolicyConfigurationUpdateSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -82,7 +123,9 @@ class UpdateGlobalTableSettingsRequest_GlobalTableGlobalSecondaryIndexSettingsUp
  public:
   explicit UpdateGlobalTableSettingsRequest_GlobalTableGlobalSecondaryIndexSettingsUpdateSchemaSerdeSer(
       const GlobalTableGlobalSecondaryIndexSettingsUpdate& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateGlobalTableSettingsRequestSchemaCache<
+                 UpdateGlobalTableSettingsRequest_GlobalTableGlobalSecondaryIndexSettingsUpdateSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -96,7 +139,9 @@ class UpdateGlobalTableSettingsRequest_GlobalTableGlobalSecondaryIndexSettingsUp
 class UpdateGlobalTableSettingsRequest_ReplicaSettingsUpdateSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateGlobalTableSettingsRequest_ReplicaSettingsUpdateSchemaSerdeSer(const ReplicaSettingsUpdate& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateGlobalTableSettingsRequestSchemaCache<UpdateGlobalTableSettingsRequest_ReplicaSettingsUpdateSchemaSerdeSer>::Get()) {
+  }
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -112,7 +157,9 @@ class UpdateGlobalTableSettingsRequest_ReplicaGlobalSecondaryIndexSettingsUpdate
  public:
   explicit UpdateGlobalTableSettingsRequest_ReplicaGlobalSecondaryIndexSettingsUpdateSchemaSerdeSer(
       const ReplicaGlobalSecondaryIndexSettingsUpdate& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(UpdateGlobalTableSettingsRequestSchemaCache<
+                 UpdateGlobalTableSettingsRequest_ReplicaGlobalSecondaryIndexSettingsUpdateSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -126,7 +173,7 @@ class UpdateGlobalTableSettingsRequest_ReplicaGlobalSecondaryIndexSettingsUpdate
 class UpdateGlobalTableSettingsRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
   explicit UpdateGlobalTableSettingsRequestSerializable(const UpdateGlobalTableSettingsRequest& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj), m_schema(UpdateGlobalTableSettingsRequestSchemaCache<UpdateGlobalTableSettingsRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -168,7 +215,8 @@ std::shared_ptr<const smithy::schema::Schema> UpdateGlobalTableSettingsRequest_A
       .PutMember("MaximumUnits", smithy::schema::Schema::CreateLong("MaximumUnits"))
       .PutMember("AutoScalingDisabled", smithy::schema::Schema::CreateBoolean("AutoScalingDisabled"))
       .PutMember("AutoScalingRoleArn", smithy::schema::Schema::CreateString("AutoScalingRoleArn"))
-      .PutMember("ScalingPolicyUpdate", UpdateGlobalTableSettingsRequest_AutoScalingPolicyUpdateSchemaSerdeSer::BuildSchema())
+      .PutMember("ScalingPolicyUpdate",
+                 UpdateGlobalTableSettingsRequestSchemaCache<UpdateGlobalTableSettingsRequest_AutoScalingPolicyUpdateSchemaSerdeSer>::Get())
       .Build();
 }
 
@@ -190,7 +238,8 @@ std::shared_ptr<const smithy::schema::Schema> UpdateGlobalTableSettingsRequest_A
   return smithy::schema::Schema::StructureBuilder("AutoScalingPolicyUpdate")
       .PutMember("PolicyName", smithy::schema::Schema::CreateString("PolicyName"))
       .PutMember("TargetTrackingScalingPolicyConfiguration",
-                 UpdateGlobalTableSettingsRequest_AutoScalingTargetTrackingScalingPolicyConfigurationUpdateSchemaSerdeSer::BuildSchema())
+                 UpdateGlobalTableSettingsRequestSchemaCache<
+                     UpdateGlobalTableSettingsRequest_AutoScalingTargetTrackingScalingPolicyConfigurationUpdateSchemaSerdeSer>::Get())
       .Build();
 }
 
@@ -247,8 +296,9 @@ UpdateGlobalTableSettingsRequest_GlobalTableGlobalSecondaryIndexSettingsUpdateSc
   return smithy::schema::Schema::StructureBuilder("GlobalTableGlobalSecondaryIndexSettingsUpdate")
       .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
       .PutMember("ProvisionedWriteCapacityUnits", smithy::schema::Schema::CreateLong("ProvisionedWriteCapacityUnits"))
-      .PutMember("ProvisionedWriteCapacityAutoScalingSettingsUpdate",
-                 UpdateGlobalTableSettingsRequest_AutoScalingSettingsUpdateSchemaSerdeSer::BuildSchema())
+      .PutMember(
+          "ProvisionedWriteCapacityAutoScalingSettingsUpdate",
+          UpdateGlobalTableSettingsRequestSchemaCache<UpdateGlobalTableSettingsRequest_AutoScalingSettingsUpdateSchemaSerdeSer>::Get())
       .Build();
 }
 
@@ -289,12 +339,14 @@ std::shared_ptr<const smithy::schema::Schema> UpdateGlobalTableSettingsRequest_R
   return smithy::schema::Schema::StructureBuilder("ReplicaSettingsUpdate")
       .PutMember("RegionName", smithy::schema::Schema::CreateString("RegionName"))
       .PutMember("ReplicaProvisionedReadCapacityUnits", smithy::schema::Schema::CreateLong("ReplicaProvisionedReadCapacityUnits"))
-      .PutMember("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate",
-                 UpdateGlobalTableSettingsRequest_AutoScalingSettingsUpdateSchemaSerdeSer::BuildSchema())
+      .PutMember(
+          "ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate",
+          UpdateGlobalTableSettingsRequestSchemaCache<UpdateGlobalTableSettingsRequest_AutoScalingSettingsUpdateSchemaSerdeSer>::Get())
       .PutMember(
           "ReplicaGlobalSecondaryIndexSettingsUpdate",
           smithy::schema::Schema::ListBuilder("ReplicaGlobalSecondaryIndexSettingsUpdateList")
-              .PutMember("member", UpdateGlobalTableSettingsRequest_ReplicaGlobalSecondaryIndexSettingsUpdateSchemaSerdeSer::BuildSchema())
+              .PutMember("member", UpdateGlobalTableSettingsRequestSchemaCache<
+                                       UpdateGlobalTableSettingsRequest_ReplicaGlobalSecondaryIndexSettingsUpdateSchemaSerdeSer>::Get())
               .Build())
       .PutMember("ReplicaTableClass", smithy::schema::Schema::CreateEnum("ReplicaTableClass"))
       .Build();
@@ -323,8 +375,9 @@ UpdateGlobalTableSettingsRequest_ReplicaGlobalSecondaryIndexSettingsUpdateSchema
   return smithy::schema::Schema::StructureBuilder("ReplicaGlobalSecondaryIndexSettingsUpdate")
       .PutMember("IndexName", smithy::schema::Schema::CreateString("IndexName"))
       .PutMember("ProvisionedReadCapacityUnits", smithy::schema::Schema::CreateLong("ProvisionedReadCapacityUnits"))
-      .PutMember("ProvisionedReadCapacityAutoScalingSettingsUpdate",
-                 UpdateGlobalTableSettingsRequest_AutoScalingSettingsUpdateSchemaSerdeSer::BuildSchema())
+      .PutMember(
+          "ProvisionedReadCapacityAutoScalingSettingsUpdate",
+          UpdateGlobalTableSettingsRequestSchemaCache<UpdateGlobalTableSettingsRequest_AutoScalingSettingsUpdateSchemaSerdeSer>::Get())
       .Build();
 }
 
@@ -376,17 +429,22 @@ std::shared_ptr<const smithy::schema::Schema> UpdateGlobalTableSettingsRequestSe
       .PutMember("GlobalTableName", smithy::schema::Schema::CreateString("GlobalTableName"))
       .PutMember("GlobalTableBillingMode", smithy::schema::Schema::CreateEnum("GlobalTableBillingMode"))
       .PutMember("GlobalTableProvisionedWriteCapacityUnits", smithy::schema::Schema::CreateLong("GlobalTableProvisionedWriteCapacityUnits"))
-      .PutMember("GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate",
-                 UpdateGlobalTableSettingsRequest_AutoScalingSettingsUpdateSchemaSerdeSer::BuildSchema())
-      .PutMember("GlobalTableGlobalSecondaryIndexSettingsUpdate",
-                 smithy::schema::Schema::ListBuilder("GlobalTableGlobalSecondaryIndexSettingsUpdateList")
-                     .PutMember("member",
-                                UpdateGlobalTableSettingsRequest_GlobalTableGlobalSecondaryIndexSettingsUpdateSchemaSerdeSer::BuildSchema())
-                     .Build())
-      .PutMember("ReplicaSettingsUpdate",
-                 smithy::schema::Schema::ListBuilder("ReplicaSettingsUpdateList")
-                     .PutMember("member", UpdateGlobalTableSettingsRequest_ReplicaSettingsUpdateSchemaSerdeSer::BuildSchema())
-                     .Build())
+      .PutMember(
+          "GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate",
+          UpdateGlobalTableSettingsRequestSchemaCache<UpdateGlobalTableSettingsRequest_AutoScalingSettingsUpdateSchemaSerdeSer>::Get())
+      .PutMember(
+          "GlobalTableGlobalSecondaryIndexSettingsUpdate",
+          smithy::schema::Schema::ListBuilder("GlobalTableGlobalSecondaryIndexSettingsUpdateList")
+              .PutMember("member", UpdateGlobalTableSettingsRequestSchemaCache<
+                                       UpdateGlobalTableSettingsRequest_GlobalTableGlobalSecondaryIndexSettingsUpdateSchemaSerdeSer>::Get())
+              .Build())
+      .PutMember(
+          "ReplicaSettingsUpdate",
+          smithy::schema::Schema::ListBuilder("ReplicaSettingsUpdateList")
+              .PutMember(
+                  "member",
+                  UpdateGlobalTableSettingsRequestSchemaCache<UpdateGlobalTableSettingsRequest_ReplicaSettingsUpdateSchemaSerdeSer>::Get())
+              .Build())
       .Build();
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -23,6 +24,8 @@
 #include <smithy/client/schema/ShapeSerializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 
 using namespace Aws::STS::Model;
@@ -32,9 +35,42 @@ namespace Aws {
 namespace STS {
 namespace Model {
 namespace {
+template <typename Adapter>
+class AssumeRoleRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("AssumeRoleRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("AssumeRoleRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> AssumeRoleRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex AssumeRoleRequestSchemaCache<Adapter>::s_mutex;
+
 class AssumeRoleRequest_PolicyDescriptorTypeSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit AssumeRoleRequest_PolicyDescriptorTypeSchemaSerdeSer(const PolicyDescriptorType& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit AssumeRoleRequest_PolicyDescriptorTypeSchemaSerdeSer(const PolicyDescriptorType& obj)
+      : m_obj(obj), m_schema(AssumeRoleRequestSchemaCache<AssumeRoleRequest_PolicyDescriptorTypeSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -47,7 +83,8 @@ class AssumeRoleRequest_PolicyDescriptorTypeSchemaSerdeSer final : public smithy
 
 class AssumeRoleRequest_TagSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit AssumeRoleRequest_TagSchemaSerdeSer(const Tag& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit AssumeRoleRequest_TagSchemaSerdeSer(const Tag& obj)
+      : m_obj(obj), m_schema(AssumeRoleRequestSchemaCache<AssumeRoleRequest_TagSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -60,7 +97,8 @@ class AssumeRoleRequest_TagSchemaSerdeSer final : public smithy::schema::Seriali
 
 class AssumeRoleRequest_ProvidedContextSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit AssumeRoleRequest_ProvidedContextSchemaSerdeSer(const ProvidedContext& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit AssumeRoleRequest_ProvidedContextSchemaSerdeSer(const ProvidedContext& obj)
+      : m_obj(obj), m_schema(AssumeRoleRequestSchemaCache<AssumeRoleRequest_ProvidedContextSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -73,7 +111,8 @@ class AssumeRoleRequest_ProvidedContextSchemaSerdeSer final : public smithy::sch
 
 class AssumeRoleRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit AssumeRoleRequestSerializable(const AssumeRoleRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit AssumeRoleRequestSerializable(const AssumeRoleRequest& obj)
+      : m_obj(obj), m_schema(AssumeRoleRequestSchemaCache<AssumeRoleRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -215,13 +254,14 @@ std::shared_ptr<const smithy::schema::Schema> AssumeRoleRequestSerializable::Bui
   return smithy::schema::Schema::StructureBuilder("AssumeRoleRequest")
       .PutMember("RoleArn", smithy::schema::Schema::CreateString("RoleArn"))
       .PutMember("RoleSessionName", smithy::schema::Schema::CreateString("RoleSessionName"))
-      .PutMember("PolicyArns", smithy::schema::Schema::ListBuilder("policyDescriptorListType")
-                                   .PutMember("member", AssumeRoleRequest_PolicyDescriptorTypeSchemaSerdeSer::BuildSchema())
-                                   .Build())
+      .PutMember("PolicyArns",
+                 smithy::schema::Schema::ListBuilder("policyDescriptorListType")
+                     .PutMember("member", AssumeRoleRequestSchemaCache<AssumeRoleRequest_PolicyDescriptorTypeSchemaSerdeSer>::Get())
+                     .Build())
       .PutMember("Policy", smithy::schema::Schema::CreateString("Policy"))
       .PutMember("DurationSeconds", smithy::schema::Schema::CreateInteger("DurationSeconds"))
       .PutMember("Tags", smithy::schema::Schema::ListBuilder("tagListType")
-                             .PutMember("member", AssumeRoleRequest_TagSchemaSerdeSer::BuildSchema())
+                             .PutMember("member", AssumeRoleRequestSchemaCache<AssumeRoleRequest_TagSchemaSerdeSer>::Get())
                              .Build())
       .PutMember(
           "TransitiveTagKeys",
@@ -230,9 +270,10 @@ std::shared_ptr<const smithy::schema::Schema> AssumeRoleRequestSerializable::Bui
       .PutMember("SerialNumber", smithy::schema::Schema::CreateString("SerialNumber"))
       .PutMember("TokenCode", smithy::schema::Schema::CreateString("TokenCode"))
       .PutMember("SourceIdentity", smithy::schema::Schema::CreateString("SourceIdentity"))
-      .PutMember("ProvidedContexts", smithy::schema::Schema::ListBuilder("ProvidedContextsListType")
-                                         .PutMember("member", AssumeRoleRequest_ProvidedContextSchemaSerdeSer::BuildSchema())
-                                         .Build())
+      .PutMember("ProvidedContexts",
+                 smithy::schema::Schema::ListBuilder("ProvidedContextsListType")
+                     .PutMember("member", AssumeRoleRequestSchemaCache<AssumeRoleRequest_ProvidedContextSchemaSerdeSer>::Get())
+                     .Build())
       .PutMember("MinimumSessionTokenSize", smithy::schema::Schema::CreateInteger("MinimumSessionTokenSize"))
       .Build();
 }
