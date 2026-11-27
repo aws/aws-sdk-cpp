@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::JsonProtocol::Model;
@@ -46,9 +49,42 @@ namespace Aws {
 namespace JsonProtocol {
 namespace Model {
 namespace {
+template <typename Adapter>
+class KitchenSinkOperationResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("KitchenSinkOperationResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("KitchenSinkOperationResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> KitchenSinkOperationResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex KitchenSinkOperationResultSchemaCache<Adapter>::s_mutex;
+
 class KitchenSinkOperationResult_EmptyStructSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit KitchenSinkOperationResult_EmptyStructSchemaSerdeDeser(EmptyStruct&) : m_schema(BuildSchema()) {}
+  explicit KitchenSinkOperationResult_EmptyStructSchemaSerdeDeser(EmptyStruct&)
+      : m_schema(KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_EmptyStructSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -60,7 +96,8 @@ class KitchenSinkOperationResult_EmptyStructSchemaSerdeDeser final : public smit
 
 class KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser(SimpleStruct& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser(SimpleStruct& obj)
+      : m_obj(obj), m_schema(KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -73,7 +110,8 @@ class KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser final : public smi
 
 class KitchenSinkOperationResult_KitchenSinkSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit KitchenSinkOperationResult_KitchenSinkSchemaSerdeDeser(KitchenSink& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit KitchenSinkOperationResult_KitchenSinkSchemaSerdeDeser(KitchenSink& obj)
+      : m_obj(obj), m_schema(KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_KitchenSinkSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -86,7 +124,8 @@ class KitchenSinkOperationResult_KitchenSinkSchemaSerdeDeser final : public smit
 
 class KitchenSinkOperationResult_StructWithJsonNameSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit KitchenSinkOperationResult_StructWithJsonNameSchemaSerdeDeser(StructWithJsonName& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit KitchenSinkOperationResult_StructWithJsonNameSchemaSerdeDeser(StructWithJsonName& obj)
+      : m_obj(obj), m_schema(KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_StructWithJsonNameSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -99,7 +138,8 @@ class KitchenSinkOperationResult_StructWithJsonNameSchemaSerdeDeser final : publ
 
 class KitchenSinkOperationResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit KitchenSinkOperationResultDeserializable(KitchenSinkOperationResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit KitchenSinkOperationResultDeserializable(KitchenSinkOperationResult& obj)
+      : m_obj(obj), m_schema(KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -382,7 +422,7 @@ std::shared_ptr<const smithy::schema::Schema> KitchenSinkOperationResult_Kitchen
       .PutMember("Blob", smithy::schema::Schema::CreateBlob("Blob"))
       .PutMember("Boolean", smithy::schema::Schema::CreateBoolean("Boolean"))
       .PutMember("Double", smithy::schema::Schema::CreateDouble("Double"))
-      .PutMember("EmptyStruct", KitchenSinkOperationResult_EmptyStructSchemaSerdeDeser::BuildSchema())
+      .PutMember("EmptyStruct", KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_EmptyStructSchemaSerdeDeser>::Get())
       .PutMember("Float", smithy::schema::Schema::CreateDouble("Float"))
       .PutMember(
           "HttpdateTimestamp", smithy::schema::Schema::CreateTimestamp("HttpdateTimestamp"),
@@ -410,9 +450,11 @@ std::shared_ptr<const smithy::schema::Schema> KitchenSinkOperationResult_Kitchen
       .PutMember(
           "ListOfStrings",
           smithy::schema::Schema::ListBuilder("ListOfStrings").PutMember("member", smithy::schema::Schema::CreateString("member")).Build())
-      .PutMember("ListOfStructs", smithy::schema::Schema::ListBuilder("ListOfStructs")
-                                      .PutMember("member", KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser::BuildSchema())
-                                      .Build())
+      .PutMember(
+          "ListOfStructs",
+          smithy::schema::Schema::ListBuilder("ListOfStructs")
+              .PutMember("member", KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser>::Get())
+              .Build())
       .PutMember("Long", smithy::schema::Schema::CreateLong("Long"))
       .PutMember("MapOfListsOfStrings", smithy::schema::Schema::MapBuilder("MapOfListsOfStrings")
                                             .PutMember("key", smithy::schema::Schema::CreateString("key"))
@@ -431,10 +473,12 @@ std::shared_ptr<const smithy::schema::Schema> KitchenSinkOperationResult_Kitchen
                                      .PutMember("key", smithy::schema::Schema::CreateString("key"))
                                      .PutMember("value", smithy::schema::Schema::CreateString("value"))
                                      .Build())
-      .PutMember("MapOfStructs", smithy::schema::Schema::MapBuilder("MapOfStructs")
-                                     .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                     .PutMember("value", KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser::BuildSchema())
-                                     .Build())
+      .PutMember(
+          "MapOfStructs",
+          smithy::schema::Schema::MapBuilder("MapOfStructs")
+              .PutMember("key", smithy::schema::Schema::CreateString("key"))
+              .PutMember("value", KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser>::Get())
+              .Build())
       .PutMember("RecursiveList", smithy::schema::Schema::ListBuilder("ListOfKitchenSinks")
                                       .PutMember("member", smithy::schema::Schema::StructureBuilder("KitchenSink").Build())
                                       .Build())
@@ -443,9 +487,10 @@ std::shared_ptr<const smithy::schema::Schema> KitchenSinkOperationResult_Kitchen
                                      .PutMember("value", smithy::schema::Schema::StructureBuilder("KitchenSink").Build())
                                      .Build())
       .PutMember("RecursiveStruct", smithy::schema::Schema::StructureBuilder("KitchenSink").Build())
-      .PutMember("SimpleStruct", KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser::BuildSchema())
+      .PutMember("SimpleStruct", KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser>::Get())
       .PutMember("String", smithy::schema::Schema::CreateString("String"))
-      .PutMember("StructWithJsonName", KitchenSinkOperationResult_StructWithJsonNameSchemaSerdeDeser::BuildSchema())
+      .PutMember("StructWithJsonName",
+                 KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_StructWithJsonNameSchemaSerdeDeser>::Get())
       .PutMember("Timestamp", smithy::schema::Schema::CreateTimestamp("Timestamp"))
       .PutMember("UnixTimestamp", smithy::schema::Schema::CreateTimestamp("UnixTimestamp"),
                  {{smithy::schema::TimestampFormatTrait::KEY(),
@@ -722,7 +767,7 @@ std::shared_ptr<const smithy::schema::Schema> KitchenSinkOperationResultDeserial
       .PutMember("Blob", smithy::schema::Schema::CreateBlob("Blob"))
       .PutMember("Boolean", smithy::schema::Schema::CreateBoolean("Boolean"))
       .PutMember("Double", smithy::schema::Schema::CreateDouble("Double"))
-      .PutMember("EmptyStruct", KitchenSinkOperationResult_EmptyStructSchemaSerdeDeser::BuildSchema())
+      .PutMember("EmptyStruct", KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_EmptyStructSchemaSerdeDeser>::Get())
       .PutMember("Float", smithy::schema::Schema::CreateDouble("Float"))
       .PutMember(
           "HttpdateTimestamp", smithy::schema::Schema::CreateTimestamp("HttpdateTimestamp"),
@@ -750,9 +795,11 @@ std::shared_ptr<const smithy::schema::Schema> KitchenSinkOperationResultDeserial
       .PutMember(
           "ListOfStrings",
           smithy::schema::Schema::ListBuilder("ListOfStrings").PutMember("member", smithy::schema::Schema::CreateString("member")).Build())
-      .PutMember("ListOfStructs", smithy::schema::Schema::ListBuilder("ListOfStructs")
-                                      .PutMember("member", KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser::BuildSchema())
-                                      .Build())
+      .PutMember(
+          "ListOfStructs",
+          smithy::schema::Schema::ListBuilder("ListOfStructs")
+              .PutMember("member", KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser>::Get())
+              .Build())
       .PutMember("Long", smithy::schema::Schema::CreateLong("Long"))
       .PutMember("MapOfListsOfStrings", smithy::schema::Schema::MapBuilder("MapOfListsOfStrings")
                                             .PutMember("key", smithy::schema::Schema::CreateString("key"))
@@ -771,10 +818,12 @@ std::shared_ptr<const smithy::schema::Schema> KitchenSinkOperationResultDeserial
                                      .PutMember("key", smithy::schema::Schema::CreateString("key"))
                                      .PutMember("value", smithy::schema::Schema::CreateString("value"))
                                      .Build())
-      .PutMember("MapOfStructs", smithy::schema::Schema::MapBuilder("MapOfStructs")
-                                     .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                                     .PutMember("value", KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser::BuildSchema())
-                                     .Build())
+      .PutMember(
+          "MapOfStructs",
+          smithy::schema::Schema::MapBuilder("MapOfStructs")
+              .PutMember("key", smithy::schema::Schema::CreateString("key"))
+              .PutMember("value", KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser>::Get())
+              .Build())
       .PutMember("RecursiveList", smithy::schema::Schema::ListBuilder("ListOfKitchenSinks")
                                       .PutMember("member", smithy::schema::Schema::StructureBuilder("KitchenSink").Build())
                                       .Build())
@@ -783,9 +832,10 @@ std::shared_ptr<const smithy::schema::Schema> KitchenSinkOperationResultDeserial
                                      .PutMember("value", smithy::schema::Schema::StructureBuilder("KitchenSink").Build())
                                      .Build())
       .PutMember("RecursiveStruct", smithy::schema::Schema::StructureBuilder("KitchenSink").Build())
-      .PutMember("SimpleStruct", KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser::BuildSchema())
+      .PutMember("SimpleStruct", KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_SimpleStructSchemaSerdeDeser>::Get())
       .PutMember("String", smithy::schema::Schema::CreateString("String"))
-      .PutMember("StructWithJsonName", KitchenSinkOperationResult_StructWithJsonNameSchemaSerdeDeser::BuildSchema())
+      .PutMember("StructWithJsonName",
+                 KitchenSinkOperationResultSchemaCache<KitchenSinkOperationResult_StructWithJsonNameSchemaSerdeDeser>::Get())
       .PutMember("Timestamp", smithy::schema::Schema::CreateTimestamp("Timestamp"))
       .PutMember("UnixTimestamp", smithy::schema::Schema::CreateTimestamp("UnixTimestamp"),
                  {{smithy::schema::TimestampFormatTrait::KEY(),

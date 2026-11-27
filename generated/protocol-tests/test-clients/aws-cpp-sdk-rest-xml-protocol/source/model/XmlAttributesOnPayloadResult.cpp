@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/ShapeDeserializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::RestXmlProtocol::Model;
@@ -46,10 +49,44 @@ namespace Aws {
 namespace RestXmlProtocol {
 namespace Model {
 namespace {
+template <typename Adapter>
+class XmlAttributesOnPayloadResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("XmlAttributesOnPayloadResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("XmlAttributesOnPayloadResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> XmlAttributesOnPayloadResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex XmlAttributesOnPayloadResultSchemaCache<Adapter>::s_mutex;
+
 class XmlAttributesOnPayloadResult_XmlAttributesPayloadResponseSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
   explicit XmlAttributesOnPayloadResult_XmlAttributesPayloadResponseSchemaSerdeDeser(XmlAttributesPayloadResponse& obj)
-      : m_obj(obj), m_schema(BuildSchema()) {}
+      : m_obj(obj),
+        m_schema(
+            XmlAttributesOnPayloadResultSchemaCache<XmlAttributesOnPayloadResult_XmlAttributesPayloadResponseSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -62,7 +99,8 @@ class XmlAttributesOnPayloadResult_XmlAttributesPayloadResponseSchemaSerdeDeser 
 
 class XmlAttributesOnPayloadResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit XmlAttributesOnPayloadResultDeserializable(XmlAttributesOnPayloadResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit XmlAttributesOnPayloadResultDeserializable(XmlAttributesOnPayloadResult& obj)
+      : m_obj(obj), m_schema(XmlAttributesOnPayloadResultSchemaCache<XmlAttributesOnPayloadResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -114,7 +152,8 @@ void XmlAttributesOnPayloadResultDeserializable::From(const smithy::schema::Sche
 
 std::shared_ptr<const smithy::schema::Schema> XmlAttributesOnPayloadResultDeserializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("XmlAttributesOnPayloadResult")
-      .PutMember("payload", XmlAttributesOnPayloadResult_XmlAttributesPayloadResponseSchemaSerdeDeser::BuildSchema(),
+      .PutMember("payload",
+                 XmlAttributesOnPayloadResultSchemaCache<XmlAttributesOnPayloadResult_XmlAttributesPayloadResponseSchemaSerdeDeser>::Get(),
                  {{smithy::schema::XmlNameTrait::KEY(),
                    Aws::MakeShared<smithy::schema::XmlNameTrait>("SchemaSerdeTrait", "XmlAttributesPayloadResponse")},
                   {smithy::schema::HttpPayloadTrait::KEY(), Aws::MakeShared<smithy::schema::HttpPayloadTrait>("SchemaSerdeTrait")}})

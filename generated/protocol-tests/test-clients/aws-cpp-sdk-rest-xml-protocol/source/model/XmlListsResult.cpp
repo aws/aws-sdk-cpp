@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/ShapeDeserializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::RestXmlProtocol::Model;
@@ -46,9 +49,42 @@ namespace Aws {
 namespace RestXmlProtocol {
 namespace Model {
 namespace {
+template <typename Adapter>
+class XmlListsResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("XmlListsResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("XmlListsResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> XmlListsResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex XmlListsResultSchemaCache<Adapter>::s_mutex;
+
 class XmlListsResult_StructureListMemberSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit XmlListsResult_StructureListMemberSchemaSerdeDeser(StructureListMember& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit XmlListsResult_StructureListMemberSchemaSerdeDeser(StructureListMember& obj)
+      : m_obj(obj), m_schema(XmlListsResultSchemaCache<XmlListsResult_StructureListMemberSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -61,7 +97,8 @@ class XmlListsResult_StructureListMemberSchemaSerdeDeser final : public smithy::
 
 class XmlListsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit XmlListsResultDeserializable(XmlListsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit XmlListsResultDeserializable(XmlListsResult& obj)
+      : m_obj(obj), m_schema(XmlListsResultSchemaCache<XmlListsResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -356,7 +393,7 @@ std::shared_ptr<const smithy::schema::Schema> XmlListsResultDeserializable::Buil
       .PutMember(
           "structureList",
           smithy::schema::Schema::ListBuilder("StructureList")
-              .PutMember("member", XmlListsResult_StructureListMemberSchemaSerdeDeser::BuildSchema(),
+              .PutMember("member", XmlListsResultSchemaCache<XmlListsResult_StructureListMemberSchemaSerdeDeser>::Get(),
                          {{smithy::schema::XmlNameTrait::KEY(), Aws::MakeShared<smithy::schema::XmlNameTrait>("SchemaSerdeTrait", "item")}})
               .Build(),
           {{smithy::schema::XmlNameTrait::KEY(), Aws::MakeShared<smithy::schema::XmlNameTrait>("SchemaSerdeTrait", "myStructureList")},
@@ -365,7 +402,7 @@ std::shared_ptr<const smithy::schema::Schema> XmlListsResultDeserializable::Buil
       .PutMember(
           "flattenedStructureList",
           smithy::schema::Schema::ListBuilder("StructureList")
-              .PutMember("member", XmlListsResult_StructureListMemberSchemaSerdeDeser::BuildSchema(),
+              .PutMember("member", XmlListsResultSchemaCache<XmlListsResult_StructureListMemberSchemaSerdeDeser>::Get(),
                          {{smithy::schema::XmlNameTrait::KEY(), Aws::MakeShared<smithy::schema::XmlNameTrait>("SchemaSerdeTrait", "item")}})
               .Build(),
           {{smithy::schema::XmlFlattenedTrait::KEY(), Aws::MakeShared<smithy::schema::XmlFlattenedTrait>("SchemaSerdeTrait")},

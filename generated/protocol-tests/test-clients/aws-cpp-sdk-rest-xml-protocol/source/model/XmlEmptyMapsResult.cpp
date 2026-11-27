@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -20,6 +21,8 @@
 #include <smithy/client/schema/ShapeDeserializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
+#include <atomic>
+#include <mutex>
 #include <utility>
 
 using namespace Aws::RestXmlProtocol::Model;
@@ -46,9 +49,42 @@ namespace Aws {
 namespace RestXmlProtocol {
 namespace Model {
 namespace {
+template <typename Adapter>
+class XmlEmptyMapsResultSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("XmlEmptyMapsResultSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("XmlEmptyMapsResultSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> XmlEmptyMapsResultSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex XmlEmptyMapsResultSchemaCache<Adapter>::s_mutex;
+
 class XmlEmptyMapsResult_GreetingStructSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
  public:
-  explicit XmlEmptyMapsResult_GreetingStructSchemaSerdeDeser(GreetingStruct& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit XmlEmptyMapsResult_GreetingStructSchemaSerdeDeser(GreetingStruct& obj)
+      : m_obj(obj), m_schema(XmlEmptyMapsResultSchemaCache<XmlEmptyMapsResult_GreetingStructSchemaSerdeDeser>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -61,7 +97,8 @@ class XmlEmptyMapsResult_GreetingStructSchemaSerdeDeser final : public smithy::s
 
 class XmlEmptyMapsResultDeserializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit XmlEmptyMapsResultDeserializable(XmlEmptyMapsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit XmlEmptyMapsResultDeserializable(XmlEmptyMapsResult& obj)
+      : m_obj(obj), m_schema(XmlEmptyMapsResultSchemaCache<XmlEmptyMapsResultDeserializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
   void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
@@ -106,7 +143,7 @@ std::shared_ptr<const smithy::schema::Schema> XmlEmptyMapsResultDeserializable::
   return smithy::schema::Schema::StructureBuilder("XmlEmptyMapsResult")
       .PutMember("myMap", smithy::schema::Schema::MapBuilder("XmlMapsInputOutputMap")
                               .PutMember("key", smithy::schema::Schema::CreateString("key"))
-                              .PutMember("value", XmlEmptyMapsResult_GreetingStructSchemaSerdeDeser::BuildSchema())
+                              .PutMember("value", XmlEmptyMapsResultSchemaCache<XmlEmptyMapsResult_GreetingStructSchemaSerdeDeser>::Get())
                               .Build())
       .Build();
 }

@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -22,6 +23,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 #include <utility>
 
@@ -33,9 +36,43 @@ namespace Aws {
 namespace RestJsonProtocol {
 namespace Model {
 namespace {
+template <typename Adapter>
+class HttpPayloadWithStructureRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("HttpPayloadWithStructureRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("HttpPayloadWithStructureRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> HttpPayloadWithStructureRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex HttpPayloadWithStructureRequestSchemaCache<Adapter>::s_mutex;
+
 class HttpPayloadWithStructureRequest_NestedPayloadSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit HttpPayloadWithStructureRequest_NestedPayloadSchemaSerdeSer(const NestedPayload& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit HttpPayloadWithStructureRequest_NestedPayloadSchemaSerdeSer(const NestedPayload& obj)
+      : m_obj(obj),
+        m_schema(HttpPayloadWithStructureRequestSchemaCache<HttpPayloadWithStructureRequest_NestedPayloadSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -48,7 +85,8 @@ class HttpPayloadWithStructureRequest_NestedPayloadSchemaSerdeSer final : public
 
 class HttpPayloadWithStructureRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit HttpPayloadWithStructureRequestSerializable(const HttpPayloadWithStructureRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit HttpPayloadWithStructureRequestSerializable(const HttpPayloadWithStructureRequest& obj)
+      : m_obj(obj), m_schema(HttpPayloadWithStructureRequestSchemaCache<HttpPayloadWithStructureRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -87,7 +125,7 @@ void HttpPayloadWithStructureRequestSerializable::SerializeMembers(smithy::schem
 
 std::shared_ptr<const smithy::schema::Schema> HttpPayloadWithStructureRequestSerializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("HttpPayloadWithStructureRequest")
-      .PutMember("nested", HttpPayloadWithStructureRequest_NestedPayloadSchemaSerdeSer::BuildSchema(),
+      .PutMember("nested", HttpPayloadWithStructureRequestSchemaCache<HttpPayloadWithStructureRequest_NestedPayloadSchemaSerdeSer>::Get(),
                  {{smithy::schema::HttpPayloadTrait::KEY(), Aws::MakeShared<smithy::schema::HttpPayloadTrait>("SchemaSerdeTrait")}})
       .Build();
 }

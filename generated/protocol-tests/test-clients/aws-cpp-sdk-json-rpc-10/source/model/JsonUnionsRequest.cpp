@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -22,6 +23,8 @@
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeSerializer.h>
 
+#include <atomic>
+#include <mutex>
 #include <numeric>
 #include <utility>
 
@@ -33,9 +36,42 @@ namespace Aws {
 namespace JSONRPC10 {
 namespace Model {
 namespace {
+template <typename Adapter>
+class JsonUnionsRequestSchemaCache {
+ public:
+  static std::shared_ptr<const smithy::schema::Schema> Get() {
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_acquire)) {
+      return *cached;
+    }
+    std::lock_guard<std::mutex> lock(s_mutex);
+    if (std::shared_ptr<const smithy::schema::Schema>* cached = s_schema.load(std::memory_order_relaxed)) {
+      return *cached;
+    }
+    std::shared_ptr<const smithy::schema::Schema>* built =
+        Aws::New<std::shared_ptr<const smithy::schema::Schema>>("JsonUnionsRequestSchemaCache", Adapter::BuildSchema());
+    Aws::Utils::ComponentRegistry::RegisterComponent("JsonUnionsRequestSchemaCache", built, &Release);
+    s_schema.store(built, std::memory_order_release);
+    return *built;
+  }
+
+ private:
+  static void Release(void* schema, int64_t) {
+    s_schema.store(nullptr, std::memory_order_release);
+    Aws::Delete(static_cast<std::shared_ptr<const smithy::schema::Schema>*>(schema));
+  }
+
+  static std::atomic<std::shared_ptr<const smithy::schema::Schema>*> s_schema;
+  static std::mutex s_mutex;
+};
+template <typename Adapter>
+std::atomic<std::shared_ptr<const smithy::schema::Schema>*> JsonUnionsRequestSchemaCache<Adapter>::s_schema{nullptr};
+template <typename Adapter>
+std::mutex JsonUnionsRequestSchemaCache<Adapter>::s_mutex;
+
 class JsonUnionsRequest_MyUnionSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit JsonUnionsRequest_MyUnionSchemaSerdeSer(const MyUnion& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit JsonUnionsRequest_MyUnionSchemaSerdeSer(const MyUnion& obj)
+      : m_obj(obj), m_schema(JsonUnionsRequestSchemaCache<JsonUnionsRequest_MyUnionSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -48,7 +84,8 @@ class JsonUnionsRequest_MyUnionSchemaSerdeSer final : public smithy::schema::Ser
 
 class JsonUnionsRequest_GreetingStructSchemaSerdeSer final : public smithy::schema::SerializableStruct {
  public:
-  explicit JsonUnionsRequest_GreetingStructSchemaSerdeSer(const GreetingStruct& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit JsonUnionsRequest_GreetingStructSchemaSerdeSer(const GreetingStruct& obj)
+      : m_obj(obj), m_schema(JsonUnionsRequestSchemaCache<JsonUnionsRequest_GreetingStructSchemaSerdeSer>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -61,7 +98,8 @@ class JsonUnionsRequest_GreetingStructSchemaSerdeSer final : public smithy::sche
 
 class JsonUnionsRequestSerializable final : public smithy::schema::SerializableStruct {
  public:
-  explicit JsonUnionsRequestSerializable(const JsonUnionsRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  explicit JsonUnionsRequestSerializable(const JsonUnionsRequest& obj)
+      : m_obj(obj), m_schema(JsonUnionsRequestSchemaCache<JsonUnionsRequestSerializable>::Get()) {}
   const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
   void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
   void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
@@ -144,7 +182,7 @@ std::shared_ptr<const smithy::schema::Schema> JsonUnionsRequest_MyUnionSchemaSer
                                  .PutMember("key", smithy::schema::Schema::CreateString("key"))
                                  .PutMember("value", smithy::schema::Schema::CreateString("value"))
                                  .Build())
-      .PutMember("structureValue", JsonUnionsRequest_GreetingStructSchemaSerdeSer::BuildSchema())
+      .PutMember("structureValue", JsonUnionsRequestSchemaCache<JsonUnionsRequest_GreetingStructSchemaSerdeSer>::Get())
       .Build();
 }
 
@@ -169,7 +207,7 @@ void JsonUnionsRequestSerializable::SerializeMembers(smithy::schema::ShapeSerial
 
 std::shared_ptr<const smithy::schema::Schema> JsonUnionsRequestSerializable::BuildSchema() {
   return smithy::schema::Schema::StructureBuilder("JsonUnionsRequest")
-      .PutMember("contents", JsonUnionsRequest_MyUnionSchemaSerdeSer::BuildSchema())
+      .PutMember("contents", JsonUnionsRequestSchemaCache<JsonUnionsRequest_MyUnionSchemaSerdeSer>::Get())
       .Build();
 }
 
